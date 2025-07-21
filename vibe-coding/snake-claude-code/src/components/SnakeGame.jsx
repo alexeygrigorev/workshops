@@ -144,8 +144,8 @@ function SnakeGame() {
       <div 
         className="relative bg-gray-800 border-2 border-gray-600"
         style={{
-          width: GRID_SIZE * CELL_SIZE,
-          height: GRID_SIZE * CELL_SIZE
+          width: GRID_SIZE * CELL_SIZE + 5,
+          height: GRID_SIZE * CELL_SIZE + 5
         }}
       >
         {/* Grid lines */}
@@ -154,7 +154,7 @@ function SnakeGame() {
             key={`v-${i}`}
             className="absolute bg-gray-700"
             style={{
-              left: i * CELL_SIZE - 1,
+              left: i === GRID_SIZE ? GRID_SIZE * CELL_SIZE - 1 : i * CELL_SIZE,
               top: 0,
               width: i === 0 || i === GRID_SIZE ? 2 : 1,
               height: GRID_SIZE * CELL_SIZE,
@@ -169,7 +169,7 @@ function SnakeGame() {
             key={`h-${i}`}
             className="absolute bg-gray-700"
             style={{
-              top: i * CELL_SIZE - 1,
+              top: i === GRID_SIZE ? GRID_SIZE * CELL_SIZE - 1 : i * CELL_SIZE,
               left: 0,
               height: i === 0 || i === GRID_SIZE ? 2 : 1,
               width: GRID_SIZE * CELL_SIZE,
@@ -185,10 +185,10 @@ function SnakeGame() {
             key={index}
             className={`absolute ${index === 0 ? 'bg-green-400' : 'bg-green-500'}`}
             style={{
-              left: segment.x * CELL_SIZE,
-              top: segment.y * CELL_SIZE,
-              width: CELL_SIZE,
-              height: CELL_SIZE,
+              left: segment.x * CELL_SIZE + 1,
+              top: segment.y * CELL_SIZE + 1,
+              width: CELL_SIZE - 2,
+              height: CELL_SIZE - 2,
               zIndex: 2
             }}
           />
@@ -197,10 +197,10 @@ function SnakeGame() {
         <div
           className="absolute bg-red-500"
           style={{
-            left: food.x * CELL_SIZE,
-            top: food.y * CELL_SIZE,
-            width: CELL_SIZE,
-            height: CELL_SIZE,
+            left: food.x * CELL_SIZE + 1,
+            top: food.y * CELL_SIZE + 1,
+            width: CELL_SIZE - 2,
+            height: CELL_SIZE - 2,
             zIndex: 2
           }}
         />
