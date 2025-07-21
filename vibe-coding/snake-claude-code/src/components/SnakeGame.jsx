@@ -10,6 +10,7 @@ function SnakeGame() {
   const [gameOver, setGameOver] = useState(false)
   const [score, setScore] = useState(0)
   const [gameStarted, setGameStarted] = useState(false)
+  const [mode, setMode] = useState('walls') // 'walls' or 'pass-through'
 
   const generateFood = useCallback(() => {
     let newFood
@@ -41,9 +42,18 @@ function SnakeGame() {
       head.x += direction.x
       head.y += direction.y
 
-      if (head.x < 0 || head.x >= GRID_SIZE || head.y < 0 || head.y >= GRID_SIZE) {
-        setGameOver(true)
-        return currentSnake
+      if (mode === 'pass-through') {
+        // Wrap around
+        if (head.x < 0) head.x = GRID_SIZE - 1
+        if (head.x >= GRID_SIZE) head.x = 0
+        if (head.y < 0) head.y = GRID_SIZE - 1
+        if (head.y >= GRID_SIZE) head.y = 0
+      } else {
+        // Walls mode: end game if out of bounds
+        if (head.x < 0 || head.x >= GRID_SIZE || head.y < 0 || head.y >= GRID_SIZE) {
+          setGameOver(true)
+          return currentSnake
+        }
       }
 
       if (newSnake.some(segment => segment.x === head.x && segment.y === head.y)) {
@@ -54,16 +64,15 @@ function SnakeGame() {
       newSnake.unshift(head)
 
       if (head.x === food.x && head.y === food.y) {
-        setFood(generateFood())
         setScore(prev => prev + 5)
-        
+        setFood(generateFood())
       } else {
         newSnake.pop()
       }
 
       return newSnake
     })
-  }, [direction, food, gameOver, gameStarted, generateFood])
+  }, [direction, food, gameOver, gameStarted, generateFood, mode])
 
   const intervalRef = useRef(null)
 
@@ -116,6 +125,18 @@ function SnakeGame() {
 
   return (
     <div className="flex flex-col items-center">
+      <div className="mb-2">
+        <button
+          className="px-3 py-1 bg-gray-700 text-white rounded mb-2 disabled:opacity-50"
+          onClick={() => setMode(mode === 'walls' ? 'pass-through' : 'walls')}
+          disabled={gameStarted}
+        >
+          Switch to {mode === 'walls' ? 'Pass-Through' : 'Walls'} Mode
+        </button>
+        <div className="text-sm text-gray-300 mt-1">
+          Mode: <span className="font-bold">{mode === 'walls' ? 'Walls' : 'Pass-Through'}</span>
+        </div>
+      </div>
       <div className="mb-4">
         <p className="text-xl">Score: {score}</p>
       </div>
