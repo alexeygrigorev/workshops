@@ -38,13 +38,16 @@ between the chat application and the IDE
 
 
 
-# Coding Assistants
+# Coding Assistants / IDEs
 
 - [Claude Code](https://www.anthropic.com/claude-code)
 - [Github Copilot](https://github.com/features/copilot)
 - [Cursor](https://cursor.com/)
 - [Pear](https://trypear.ai/)
 
+```bash
+npm install -g @anthropic-ai/claude-code
+```
 
 # Project bootstapers
 
