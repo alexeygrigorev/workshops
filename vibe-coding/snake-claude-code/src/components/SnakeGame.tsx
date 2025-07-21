@@ -16,6 +16,9 @@ function SnakeGame() {
   const [gameOver, setGameOver] = useState(false)
   const [score, setScore] = useState(0)
 
+  const FRUIT_EMOJIS = ['🍎', '🍌', '🍒', '🍇', '🍉', '🍓', '🍍', '🥝', '🍑', '🍊', '🍋', '🍐', '🥭', '🍈', '🍏']
+  const [foodEmoji, setFoodEmoji] = useState(FRUIT_EMOJIS[Math.floor(Math.random() * FRUIT_EMOJIS.length)])
+
   const generateFood = useCallback((): Position => {
     let newFood: Position
     do {
@@ -24,6 +27,7 @@ function SnakeGame() {
         y: Math.floor(Math.random() * BOARD_SIZE)
       }
     } while (snake.some(segment => segment.x === newFood.x && segment.y === newFood.y))
+    setFoodEmoji(FRUIT_EMOJIS[Math.floor(Math.random() * FRUIT_EMOJIS.length)])
     return newFood
   }, [snake])
 
@@ -161,17 +165,29 @@ function SnakeGame() {
           const isFood = food.x === x && food.y === y
           const isHead = snake.length > 0 && snake[0].x === x && snake[0].y === y
 
-          let cellClass = 'w-full h-full border border-gray-800'
+          let cellClass = 'w-full h-full border-2 border-gray-700'
           
           if (isSnake) {
             cellClass += isHead ? ' bg-green-400' : ' bg-green-600'
           } else if (isFood) {
-            cellClass += ' bg-red-500'
+            // No background for food cell
           } else {
             cellClass += ' bg-gray-800'
           }
 
-          return <div key={index} className={cellClass} />
+          return (
+            <div key={index} className="relative w-full h-full flex items-center justify-center">
+              {isFood && (
+                <span
+                  className="absolute left-1/2 -top-1 -translate-x-1/2 text-xl select-none pointer-events-none"
+                  style={{fontFamily: 'Apple Color Emoji, Segoe UI Emoji, Noto Color Emoji, EmojiOne, Twemoji, sans-serif'}}
+                >
+                  {foodEmoji}
+                </span>
+              )}
+              <div className={cellClass} style={{width: '100%', height: '100%', maxWidth: 20, maxHeight: 20, minWidth: 20, minHeight: 20}} />
+            </div>
+          )
         })}
       </div>
 
