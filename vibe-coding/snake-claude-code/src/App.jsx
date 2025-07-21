@@ -1,0 +1,169 @@
+import { useState, useEffect, useCallback } from 'react'
+
+const GRID_SIZE = 20
+const CELL_SIZE = 20
+
+function App() {
+  const [snake, setSnake] = useState([{ x: 10, y: 10 }])
+  const [food, setFood] = useState({ x: 15, y: 15 })
+  const [direction, setDirection] = useState({ x: 0, y: 0 })
+  const [gameOver, setGameOver] = useState(false)
+  const [score, setScore] = useState(0)
+  const [gameStarted, setGameStarted] = useState(false)
+
+  const generateFood = useCallback(() => {
+    let newFood
+    do {
+      newFood = {
+        x: Math.floor(Math.random() * GRID_SIZE),
+        y: Math.floor(Math.random() * GRID_SIZE)
+      }
+    } while (snake.some(segment => segment.x === newFood.x && segment.y === newFood.y))
+    return newFood
+  }, [snake])
+
+  const resetGame = () => {
+    setSnake([{ x: 10, y: 10 }])
+    setFood({ x: 15, y: 15 })
+    setDirection({ x: 0, y: 0 })
+    setGameOver(false)
+    setScore(0)
+    setGameStarted(false)
+  }
+
+  const moveSnake = useCallback(() => {
+    if (!gameStarted || gameOver || (direction.x === 0 && direction.y === 0)) return
+
+    setSnake(currentSnake => {
+      const newSnake = [...currentSnake]
+      const head = { ...newSnake[0] }
+      
+      head.x += direction.x
+      head.y += direction.y
+
+      if (head.x < 0 || head.x >= GRID_SIZE || head.y < 0 || head.y >= GRID_SIZE) {
+        setGameOver(true)
+        return currentSnake
+      }
+
+      if (newSnake.some(segment => segment.x === head.x && segment.y === head.y)) {
+        setGameOver(true)
+        return currentSnake
+      }
+
+      newSnake.unshift(head)
+
+      if (head.x === food.x && head.y === food.y) {
+        setScore(prev => prev + 10)
+        setFood(generateFood())
+      } else {
+        newSnake.pop()
+      }
+
+      return newSnake
+    })
+  }, [direction, food, gameOver, gameStarted, generateFood])
+
+  useEffect(() => {
+    const handleKeyPress = (e) => {
+      if (!gameStarted) {
+        if (e.code === 'Space') {
+          setGameStarted(true)
+          setDirection({ x: 1, y: 0 })
+        }
+        return
+      }
+
+      if (gameOver) {
+        if (e.code === 'Space') {
+          resetGame()
+        }
+        return
+      }
+
+      switch (e.code) {
+        case 'ArrowUp':
+        case 'KeyW':
+          if (direction.y === 0) setDirection({ x: 0, y: -1 })
+          break
+        case 'ArrowDown':
+        case 'KeyS':
+          if (direction.y === 0) setDirection({ x: 0, y: 1 })
+          break
+        case 'ArrowLeft':
+        case 'KeyA':
+          if (direction.x === 0) setDirection({ x: -1, y: 0 })
+          break
+        case 'ArrowRight':
+        case 'KeyD':
+          if (direction.x === 0) setDirection({ x: 1, y: 0 })
+          break
+      }
+    }
+
+    window.addEventListener('keydown', handleKeyPress)
+    return () => window.removeEventListener('keydown', handleKeyPress)
+  }, [direction, gameOver, gameStarted])
+
+  useEffect(() => {
+    const gameInterval = setInterval(moveSnake, 150)
+    return () => clearInterval(gameInterval)
+  }, [moveSnake])
+
+  return (
+    <div className="flex flex-col items-center justify-center min-h-screen bg-gray-900 text-white">
+      <h1 className="text-4xl font-bold mb-4">Snake Game</h1>
+      <div className="mb-4">
+        <p className="text-xl">Score: {score}</p>
+      </div>
+      
+      <div 
+        className="relative bg-gray-800 border-2 border-gray-600"
+        style={{
+          width: GRID_SIZE * CELL_SIZE,
+          height: GRID_SIZE * CELL_SIZE
+        }}
+      >
+        {snake.map((segment, index) => (
+          <div
+            key={index}
+            className={`absolute ${index === 0 ? 'bg-green-400' : 'bg-green-500'}`}
+            style={{
+              left: segment.x * CELL_SIZE,
+              top: segment.y * CELL_SIZE,
+              width: CELL_SIZE,
+              height: CELL_SIZE
+            }}
+          />
+        ))}
+        
+        <div
+          className="absolute bg-red-500"
+          style={{
+            left: food.x * CELL_SIZE,
+            top: food.y * CELL_SIZE,
+            width: CELL_SIZE,
+            height: CELL_SIZE
+          }}
+        />
+      </div>
+
+      <div className="mt-4 text-center">
+        {!gameStarted && !gameOver && (
+          <p className="text-lg">Press SPACE to start</p>
+        )}
+        {gameOver && (
+          <div>
+            <p className="text-xl text-red-400 mb-2">Game Over!</p>
+            <p className="text-lg">Press SPACE to restart</p>
+          </div>
+        )}
+        {gameStarted && !gameOver && (
+          <p className="text-sm text-gray-400">Use WASD or Arrow keys to move</p>
+        )}
+      </div>
+    </div>
+  )
+}
+
+export default App
