@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback } from 'react'
+import { useState, useEffect, useCallback, useRef } from 'react'
 
 const GRID_SIZE = 20
 const CELL_SIZE = 20
@@ -54,8 +54,9 @@ function SnakeGame() {
       newSnake.unshift(head)
 
       if (head.x === food.x && head.y === food.y) {
-        setScore(prev => prev + 5)
         setFood(generateFood())
+        setScore(prev => prev + 5)
+        
       } else {
         newSnake.pop()
       }
@@ -63,6 +64,8 @@ function SnakeGame() {
       return newSnake
     })
   }, [direction, food, gameOver, gameStarted, generateFood])
+
+  const intervalRef = useRef(null)
 
   useEffect(() => {
     const handleKeyPress = (e) => {
@@ -106,8 +109,9 @@ function SnakeGame() {
   }, [direction, gameOver, gameStarted])
 
   useEffect(() => {
-    const gameInterval = setInterval(moveSnake, 150)
-    return () => clearInterval(gameInterval)
+    if (intervalRef.current) clearInterval(intervalRef.current)
+    intervalRef.current = setInterval(moveSnake, 150)
+    return () => clearInterval(intervalRef.current)
   }, [moveSnake])
 
   return (
@@ -123,6 +127,38 @@ function SnakeGame() {
           height: GRID_SIZE * CELL_SIZE
         }}
       >
+        {/* Grid lines */}
+        {[...Array(GRID_SIZE + 1)].map((_, i) => (
+          <div
+            key={`v-${i}`}
+            className="absolute bg-gray-700"
+            style={{
+              left: i * CELL_SIZE - 1,
+              top: 0,
+              width: i === 0 || i === GRID_SIZE ? 2 : 1,
+              height: GRID_SIZE * CELL_SIZE,
+              opacity: 0.3,
+              pointerEvents: 'none',
+              zIndex: 1
+            }}
+          />
+        ))}
+        {[...Array(GRID_SIZE + 1)].map((_, i) => (
+          <div
+            key={`h-${i}`}
+            className="absolute bg-gray-700"
+            style={{
+              top: i * CELL_SIZE - 1,
+              left: 0,
+              height: i === 0 || i === GRID_SIZE ? 2 : 1,
+              width: GRID_SIZE * CELL_SIZE,
+              opacity: 0.3,
+              pointerEvents: 'none',
+              zIndex: 1
+            }}
+          />
+        ))}
+        {/* Snake */}
         {snake.map((segment, index) => (
           <div
             key={index}
@@ -131,18 +167,20 @@ function SnakeGame() {
               left: segment.x * CELL_SIZE,
               top: segment.y * CELL_SIZE,
               width: CELL_SIZE,
-              height: CELL_SIZE
+              height: CELL_SIZE,
+              zIndex: 2
             }}
           />
         ))}
-        
+        {/* Food */}
         <div
           className="absolute bg-red-500"
           style={{
             left: food.x * CELL_SIZE,
             top: food.y * CELL_SIZE,
             width: CELL_SIZE,
-            height: CELL_SIZE
+            height: CELL_SIZE,
+            zIndex: 2
           }}
         />
       </div>
