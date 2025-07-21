@@ -12,6 +12,8 @@ In particular, we'll cover
 We will build the Snake game (with JavaScript and React) as an example.
 You don't need to know React to take part in this workshop.
 
+<img style="width: 50%;" src="https://github.com/user-attachments/assets/bc732a3c-7f8e-4a2a-ac64-d1834f0f27bd" />
+
 
 # Chat Applications
 
