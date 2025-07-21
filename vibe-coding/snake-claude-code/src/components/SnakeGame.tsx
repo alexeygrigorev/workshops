@@ -82,18 +82,26 @@ function SnakeGame() {
 
       switch (e.key) {
         case 'ArrowUp':
+        case 'w':
+        case 'W':
           e.preventDefault()
           setDirection(prev => prev !== 'DOWN' ? 'UP' : prev)
           break
         case 'ArrowDown':
+        case 's':
+        case 'S':
           e.preventDefault()
           setDirection(prev => prev !== 'UP' ? 'DOWN' : prev)
           break
         case 'ArrowLeft':
+        case 'a':
+        case 'A':
           e.preventDefault()
           setDirection(prev => prev !== 'RIGHT' ? 'LEFT' : prev)
           break
         case 'ArrowRight':
+        case 'd':
+        case 'D':
           e.preventDefault()
           setDirection(prev => prev !== 'LEFT' ? 'RIGHT' : prev)
           break
@@ -200,7 +208,7 @@ function SnakeGame() {
       </div>
 
       <div className="mt-4 text-gray-400 text-sm">
-        Use arrow keys to control the snake
+        Use arrow keys or WASD to control the snake
       </div>
     </div>
   )
