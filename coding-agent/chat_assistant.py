@@ -107,7 +107,7 @@ class ChatAssistant:
             while True:  # inner request loop
                 response = self.gpt(chat_messages)
 
-                has_messages = False
+                has_function_calls = False
 
                 for entry in response.output:
                     chat_messages.append(entry)
@@ -116,12 +116,12 @@ class ChatAssistant:
                         result = self.tools.function_call(entry)
                         chat_messages.append(result)
                         self.chat_interface.display_function_call(entry, result)
+                        has_function_calls = True
 
                     elif entry.type == "message":
                         self.chat_interface.display_response(entry)
-                        has_messages = True
 
-                if has_messages:
+                if not has_function_calls:
                     break
     
 
