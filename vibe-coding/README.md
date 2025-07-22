@@ -1,8 +1,15 @@
 # Introduction to Vibe Coding
 
-In this workshop, we'll look at different tools for AI-assisted development
+Watch the workshop here:
 
-In particular, we'll cover
+<a href="https://www.youtube.com/watch?v=NSMXQk4Axig">
+  <img src="https://markdown-videos-api.jorgenkh.no/youtube/NSMXQk4Axig">
+</a>
+
+
+In this workshop, we look at different tools for AI-assisted development
+
+In particular, we cover
 
 - Chat applications
 - Coding assistants and IDEs
