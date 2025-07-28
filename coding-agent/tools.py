@@ -16,7 +16,7 @@ class AgentTools:
         """
         self.project_dir = project_dir
 
-    def read_file(self, filepath):
+    def read_file(self, filepath: str) -> None:
         """
         Read and return the contents of a file at the given relative filepath.
 
@@ -29,7 +29,7 @@ class AgentTools:
         with open(abs_path, 'r', encoding='utf-8') as f:
             return f.read()
 
-    def write_file(self, filepath, content):
+    def write_file(self, filepath: str, content: str) -> None:
         """
         Write the given content to a file at the given relative filepath, creating directories as needed.
 
@@ -44,7 +44,7 @@ class AgentTools:
         with open(abs_path, 'w', encoding='utf-8') as f:
             f.write(content)
 
-    def see_file_tree(self, root_dir="."):
+    def see_file_tree(self, root_dir: str = ".") -> list[str]:
         """
         Return a list of all files and directories under the given root directory, relative to the project directory.
 
@@ -61,7 +61,7 @@ class AgentTools:
                 tree.append(rel_path)
         return tree
 
-    def execute_bash_command(self, command, cwd=None):
+    def execute_bash_command(self, command: str, cwd: str = None) -> tuple[str, str, int]:
         """
         Execute a bash command in the shell and return its output, error, and exit code. Blocks running the Django development server (runserver).
 
@@ -82,7 +82,7 @@ class AgentTools:
         result = subprocess.run(command, shell=True, capture_output=True, text=True, cwd=abs_cwd)
         return result.stdout, result.stderr, result.returncode
 
-    def search_in_files(self, pattern, root_dir="."):
+    def search_in_files(self, pattern: str, root_dir: str = ".") -> list[tuple[str, int, str]]:
         """
         Search for a pattern in all files under the given root directory and return a list of matches as (relative path, line number, line content).
 
