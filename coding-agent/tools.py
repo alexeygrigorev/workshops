@@ -7,6 +7,9 @@ import os
 import subprocess
 
 class AgentTools:
+    # Directories to skip when building file tree
+    SKIP_DIRS = {'.venv', '__pycache__', '.git', '.pytest_cache', '.mypy_cache', '.coverage', 'node_modules', '.DS_Store'}
+    
     def __init__(self, project_dir: Path):
         """
         Initialize AgentTools with the given project directory.
@@ -46,19 +49,29 @@ class AgentTools:
 
     def see_file_tree(self, root_dir: str = ".") -> list[str]:
         """
-        Return a list of all files and directories under the given root directory, relative to the project directory.
+        Return a list of all files and directories under the given root directory, 
+        relative to the project directory.
 
         Parameters:
-            root_dir (str): Root directory to list from, relative to the project directory. Defaults to ".".
+            root_dir (str): Root directory to list from, relative to the project directory. 
+                           Defaults to ".".
         Returns:
             list[str]: List of relative paths for all files and directories.
         """
         abs_root = self.project_dir / root_dir
         tree = []
+
         for dirpath, dirnames, filenames in os.walk(abs_root):
+            # Remove blacklisted directories from dirnames to prevent os.walk from entering them
+            for skip_dir in list(dirnames):
+                if skip_dir in self.SKIP_DIRS:
+                    dirnames.remove(skip_dir)
+            
             for name in dirnames + filenames:
-                rel_path = os.path.relpath(os.path.join(dirpath, name), self.project_dir)
+                full_path = os.path.join(dirpath, name)
+                rel_path = os.path.relpath(full_path, self.project_dir)
                 tree.append(rel_path)
+        
         return tree
 
     def execute_bash_command(self, command: str, cwd: str = None) -> tuple[str, str, int]:
