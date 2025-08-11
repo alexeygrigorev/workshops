@@ -1,4 +1,6 @@
+# Deploying ML Models with FastAPI and uv
 
+* Video: https://www.youtube.com/watch?v=jzGzw98Eikk
 
 In this workshop we will revise [Module 5](https://github.com/DataTalksClub/machine-learning-zoomcamp/tree/master/05-deployment) of 
 [Machine Learning Zoomcamp](https://github.com/DataTalksClub/machine-learning-zoomcamp).
@@ -8,6 +10,7 @@ In particular, we will introduce more modern tools:
 - Scikit-Learn pipelines
 - uv instead of Pipenv
 - FastAPI instead of Flask
+- Fly.io instead of AWS EBS
 
 In this workshop, we will follow the same order as in the module:
 
@@ -15,9 +18,10 @@ In this workshop, we will follow the same order as in the module:
 - Turning the notebook into a train script
 - Introduction to FastAPI (instead of Flask)
 - Serving the model with FastAPI
+- Input validation with Pydantic (new)
 - Virtual environment management - uv (instead of Pipenv)
 - Containerization - Docker
-- Deployment
+- Deployment with Fly.io
 
 
 ## Environment
@@ -25,11 +29,20 @@ In this workshop, we will follow the same order as in the module:
 For the environment, you can use [GitHub Codespaces](https://www.youtube.com/watch?v=pqQFlV3f9Bo&list=PL3MmuxUbc_hIhxl5Ji8t4O6lPAOpHaCLR)
 
 
-First, download the starter notebook and save it as workshop-uv-fastapi.ipynb. We will base our work on it.
+Install the requered libraries:
+
+```bash
+pip install jupyter scikit-learn pandas
+```
+
+Then download the starter notebook and save it as workshop-uv-fastapi.ipynb. We will base our work on it.
 
 ```bash
 wget https://raw.githubusercontent.com/alexeygrigorev/workshops/refs/heads/main/mlzoomcamp-flask-uv/starter.ipynb -O workshop-uv-fastapi.ipynb
 ```
+
+Open it in Jupyter.
+
 
 ## Loading and saving the model
 
@@ -68,7 +81,7 @@ X = dv.transform(datapoint)
 And then get the predictions
 
 ```python
-model.predict_proba(X)[0, 0]
+model.predict_proba(X)[0, 1]
 ```
 
 Let's save this to pickle:
@@ -106,7 +119,7 @@ pipeline.fit(train_dict, y_train)
 Now predicting becomes simpler too:
 
 ```python
-pipeline.predict_proba(datapoint)[0, 0]
+pipeline.predict_proba(datapoint)[0, 1]
 ```
 
 ## Turning the notebook into a script
@@ -151,8 +164,6 @@ Let's install FastAPI and uvicorn for that:
 ```bash
 pip install fastapi uvicorn
 ```
-
-
 
 The simplest FastAPI app
 ([created with ChatGPT](https://chatgpt.com/share/6899dc68-03a8-800a-8bd8-9f2218f103e6)
@@ -215,7 +226,7 @@ with open('model.bin', 'rb') as f_in:
 
 
 def predict_single(customer):
-    result = pipeline.predict_proba(customer)[0, 0]
+    result = pipeline.predict_proba(customer)[0, 1]
     return float(result)
 
 
@@ -351,6 +362,8 @@ customer = {
 
 response = requests.post(url, json=customer)
 predictions = response.json()
+
+print(predictions)
 if predictions['churn']:
     print('customer is likely to churn, send promo')
 else:
@@ -419,12 +432,60 @@ the output we generate:
 ```python
 @app.post("/predict")
 def predict(customer: Customer) -> PredictResponse:
-    prob = predict_single(customer.dict())
+    prob = predict_single(customer.model_dump())
 
     return PredictResponse(
         churn_probability=prob,
         churn=prob >= 0.5
     )
+```
+
+Note: if you use `customer.dict()` instead of `model_dump()`, you can get the following warning:
+
+```
+PydanticDeprecatedSince20: The `dict` method is deprecated; use `model_dump` instead. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.11/migration/
+```
+
+
+We now can test how it behaves with incorrect input. Let's add a
+field `"whatever": 31337` to our test.py and execute it.
+
+When we run it, nothing happens: it continues working like 
+previously.
+
+In order to make Pydantic raise an error, we need to add `model_config`:
+
+
+```python
+from pydantic import ConfigDict
+
+
+class Customer(BaseModel):
+    model_config = ConfigDict(extra="forbid")
+
+    ... # rest of the fields
+```
+
+Now we will get an error:
+
+```python
+response: {'detail': [{'type': 'extra_forbidden', 'loc': ['body', 'whatever'], 'msg': 'Extra inputs are not permitted', 'input': 31337}]}
+```
+
+What if we send a value that is not defined by the model? For example,
+
+```json
+{
+    ...
+    "streamingtv": "maybe"
+    ...
+}
+```
+
+In this case, it works as expected: it throws an error:
+
+```python
+response: {'detail': [{'type': 'literal_error', 'loc': ['body', 'streamingtv'], 'msg': "Input should be 'no', 'yes' or 'no_internet_service'", 'input': 'maybe', 'ctx': {'expected': "'no', 'yes' or 'no_internet_service'"}}]}
 ```
 
 ## Environment management
@@ -477,7 +538,7 @@ A few more things appeared:
 We also have a development dependency -- we won't need it in production:
 
 ```bash
-uv add --dev request
+uv add --dev requests
 ```
 
 If we want to run something in this virtual environment, simply 
@@ -579,12 +640,12 @@ In the course, we showed Elastic Beanstalk. Other alternatives:
 According to ChatGPT, using Fly.io is very simple, so let's do that:
 
 ```bash
-# for linux, other OS -> check https://fly.io/docs/flyctl/install/
+# for other OS, check https://fly.io/docs/flyctl/install/
 # you may also need to replace fly with flyctl
 curl -L https://fly.io/install.sh | sh
 
 fly auth signup
-fly launch --generate-name  # detects Dockerfile, makes fly.toml
+fly launch --generate-name
 fly deploy
 ```
 
@@ -594,7 +655,6 @@ along these lines:
 ```
 Visit your newly deployed app at https://mlzoomcamp-flask-uv.fly.dev/
 ```
-
 
 Put the url into test.py and check that it works.
 

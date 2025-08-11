@@ -1,7 +1,7 @@
 import requests
 
-# url = 'http://localhost:9696/predict'
-url = 'https://mlzoomcamp-flask-uv.fly.dev/predict'
+url = 'http://localhost:9696/predict'
+# url = 'https://mlzoomcamp-flask-uv.fly.dev/predict'
 
 customer = {
     'gender': 'female',

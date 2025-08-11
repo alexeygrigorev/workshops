@@ -1,5 +1,4 @@
 import pickle
-from typing import Dict, Any
 from typing import Literal
 from pydantic import BaseModel, Field
 
@@ -48,13 +47,13 @@ with open('model.bin', 'rb') as f_in:
 
 
 def predict_single(customer):
-    result = pipeline.predict_proba(customer)[0, 0]
+    result = pipeline.predict_proba(customer)[0, 1]
     return float(result)
 
 
 @app.post("/predict")
 def predict(customer: Customer) -> PredictResponse:
-    prob = predict_single(customer.dict())
+    prob = predict_single(customer.model_dump())
 
     return PredictResponse(
         churn_probability=prob,

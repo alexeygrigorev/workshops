@@ -25,5 +25,5 @@ datapoint = {
     'totalcharges': 29.85
 }
 
-result = pipeline.predict_proba(datapoint)[0, 0]
+result = pipeline.predict_proba(datapoint)[0, 1]
 print(f'Probability of churn: {result:.3f}')
