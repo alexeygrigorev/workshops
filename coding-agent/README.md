@@ -16,8 +16,160 @@ ourselves.
 ## Prerequisites
 
 - Python
-- Make (optionally)
-- OpenAI key 
+- Make (optional)
+- OpenAI key
+
+
+## Environment
+
+* For this workshop, all you need is Python with Jupyter.
+* I use GitHub Codespaces to run it (see [here](https://www.loom.com/share/80c17fbadc9442d3a4829af56514a194)) but you can use whatever environment you like.
+* Also, you need an [OpenAI account](https://openai.com/) (or an alternative provider).
+
+### Setting up Github Codespaces
+
+Github Codespaces is the recommended environment for this 
+workshop.
+
+But you can use any other environment with Jupyter Notebook.
+If you want to do it on your laptop, it's perfectly fine.
+
+* Create a repository on GitHub, initialize it with README.md
+* Add the OpenAI key:
+    * Go to Settings -> Secrets and Variables (under Security) -> Codespaces
+    * Click "New repository secret"
+    * Name: `OPENAI_API_KEY`, Secret: your key
+    * Click "Add secret"
+* Create a codespace
+    * Click "Code" 
+    * Select the "Codespaces" tab
+    * "Create codespaces on main"
+
+In case you use it on your laptop, add this before you start your
+jupyter:
+
+```bash
+export OPENAI_API_KEY='YOUR_KEY'
+```
+
+
+### Installing required libraries
+
+Next we need to install the required libraries:
+
+```bash
+pip install jupyter django uv openai
+```
+
+## OpenAI API: Quick Recap
+
+We will learn more about agents in the upcoming workshop.
+
+You can sign up here: https://maven.com/p/3b1afc/hands-on-with-ai-agents-and-model-context-protocol-mcp
+
+But here's a recap
+
+```python
+from openai import OpenAI
+
+openai_client = OpenAI()
+
+system_prompt = "You can make funny and original jokes."
+user_prompt = "Tell me a joke about Alexey."
+
+chat_messages = [
+    {"role": "developer", "content": system_prompt},
+    {"role": "user", "content": user_prompt}
+]
+
+response = openai_client.responses.create(
+    model='gpt-4o-mini',
+    input=chat_messages,
+)
+
+print(response.output_text)
+```
+
+With function caling:
+
+```python
+import random
+
+def make_joke(name):
+    jokes = [
+        f"Why did {name} bring a pencil to the party? Because he wanted to draw some attention!",
+        f"Did you hear about {name}'s bakery? Business is on a roll!",
+        f"{name} walked into a library and asked for a burger. The librarian said, 'This is a library.' So {name} whispered, 'Can I get a burger?'",
+        f"When {name} does push-ups, the Earth moves down.",
+        f"{name} told a chemistry joke... but there was no reaction.",
+    ]
+    return random.choice(jokes)
+
+print(make_joke("Alexey"))
+
+make_joke_description = {
+    "type": "function",
+    "name": "make_joke",
+    "description": "Generates a random personalized joke using the provided name.",
+    "parameters": {
+        "type": "object",
+        "properties": {
+            "name": {
+                "type": "string",
+                "description": "The name to insert into the joke, personalizing the output.",
+            }
+        },
+        "required": ["name"],
+        "additionalProperties": False,
+    },
+}
+
+### 
+
+system_prompt = "You can make funny and original jokes. Find out the user's name to make the joke personalized."
+
+user_prompt = "Tell me a joke about Alexey."
+
+chat_messages = [
+    {"role": "developer", "content": system_prompt},
+    {"role": "user", "content": user_prompt}
+]
+
+response = openai_client.responses.create(
+    model='gpt-4o-mini',
+    input=chat_messages,
+    tools=[make_joke_description]
+)
+
+response.output
+```
+
+With toyaikit:
+
+```bash
+pip install toyaikit
+```
+
+```python
+from toyaikit.tools import Tools
+from toyaikit.chat import ChatAssistant, OpenAIClient, IPythonChatInterface
+
+tools_obj = Tools()
+tools_obj.add_tool(make_joke, make_joke_description)
+
+chat_interface = IPythonChatInterface()
+openai_client = OpenAIClient(client=OpenAI())
+
+chat_assistant = ChatAssistant(
+    tools=tools_obj,
+    developer_prompt=system_prompt,
+    chat_interface=chat_interface,
+    llm_client=openai_client
+)
+
+chat_assistant.run()
+```
+
 
 ## Django Template Project
 
@@ -163,7 +315,17 @@ Next, we need to define a few functions for the agent:
 
 We will use ChatGPT (or Cursor) for creating these files
 
+When debugging it, you can use this magic command for automatic
+file reload:
+
+```python
+%load_ext autoreload
+%autoreload 2
+```
+
 You can see the result in [tools.py](tools.py)
+
+
 
 Note: for bash, you want to disable running "runserver" - if you
 allow the agent to run it in Jupyter, it will hand up the environment.
