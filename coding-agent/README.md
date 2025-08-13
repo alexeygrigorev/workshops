@@ -144,7 +144,10 @@ response = openai_client.responses.create(
 response.output
 ```
 
-With toyaikit:
+For orchestrating, we can use [`toyaikit`](https://github.com/alexeygrigorev/toyaikit).
+
+This is a library that I wrote based on the other workshops and our
+courses, so if you watched them, you'll recognize what's happening inside.
 
 ```bash
 pip install toyaikit
@@ -373,7 +376,6 @@ The project is a Django 5.2.4 web application scaffolded with standard best prac
 
 ## File Tree
 
-
 ├── .python-version
 ├── README.md
 ├── manage.py
@@ -418,16 +420,15 @@ You have full access to modify, add, or remove files and code within this struct
 ## Additional instructions
 
 - Don't execute "runproject", but you can execute other commands to check if the project is working.
-- Make sure you use Tailwind styles for making the result look beatiful
+- Make sure you use TailwindCSS styles for making the result look beatiful
+- Keep the original URL for TailwindCSS
 - Use pictograms and emojis when possible. Font-awesome is awailable
 - Avoid putting complex logic to templates - do it on the server side when possible
 """
 ```
 
 
-For orchestrating, we'll use [`toyaikit`](https://github.com/alexeygrigorev/toyaikit).
-This is a library that I wrote based on the other workshops and our
-courses, so if you watched them, you'll recognize what's happening insideю
+
 
 Let's use it:
 
@@ -465,5 +466,94 @@ make run
 If it doesn't work - continue your conversation with the agent 
 until it's fixed.
 
-That's all!
+## OpenAI Agents SDK
 
+We have used toyaikit. It's not a production-ready library - we only
+use it for education.
+
+Let's use another library for our agent -
+[OpenAI Agents SDK](https://openai.github.io/openai-agents-python/).
+
+```bash
+pip install openai-agents
+```
+
+Some imports:
+
+```python
+from agents import Agent, Runner, SQLiteSession, function_tool
+```
+
+
+To define tools, we use the `@function_tool` annotation:
+
+```python
+import random
+
+@function_tool
+def make_joke(name: str) -> str:
+    """
+    Generates a personalized joke using the provided name.
+
+    Parameters:
+        name (str): The name to insert into the joke.
+
+    Returns:
+        str: A joke with the name included.
+    """
+    jokes = [
+        f"Why did {name} bring a pencil to the party? Because he wanted to draw some attention!",
+        f"Did you hear about {name}'s bakery? Business is on a roll!",
+        f"{name} walked into a library and asked for a burger. The librarian said, 'This is a library.' So {name} whispered, 'Can I get a burger?'",
+        f"When {name} does push-ups, the Earth moves down.",
+        f"{name} told a chemistry joke... but there was no reaction.",
+    ]
+    return random.choice(jokes)
+```
+
+Note that we also have to use type hints and docstrings.
+
+If it's a function that is already defined somewhere, then we 
+can do this:
+
+```python
+make_joke_tool = function_tool(make_joke)
+```
+
+We will use the interface from toyaikit for this workshop,
+because it provides convenient methods for displaying the
+dialog:
+
+```python
+interface = IPythonChatInterface()
+```
+
+Running it:
+
+
+
+The function for running the dialog:
+
+```python
+async def run(agent, session):
+    while True:
+        user_input = interface.input()
+        if user_input.lower() == "stop":
+            interface.display("Chat ended.")
+            break
+
+        result = await runner.run(agent, input=user_input, session=session)
+    
+        func_calls = {}
+    
+        for ni in result.new_items:
+            raw = ni.raw_item
+            if ni.type == 'tool_call_item':
+                func_calls[raw.call_id] = raw
+            if ni.type == 'tool_call_output_item':
+                func_call = func_calls[raw['call_id']]
+                interface.display_function_call(func_call.name, func_call.arguments, raw['output'])
+            if ni.type == 'message_output_item':
+                md = raw.content[0].text
+                interface.display_response(md)
+```

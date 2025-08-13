@@ -6,10 +6,20 @@ from pathlib import Path
 import os
 import subprocess
 
+
 class AgentTools:
     # Directories to skip when building file tree
-    SKIP_DIRS = {'.venv', '__pycache__', '.git', '.pytest_cache', '.mypy_cache', '.coverage', 'node_modules', '.DS_Store'}
-    
+    SKIP_DIRS = {
+        ".venv",
+        "__pycache__",
+        ".git",
+        ".pytest_cache",
+        ".mypy_cache",
+        ".coverage",
+        "node_modules",
+        ".DS_Store",
+    }
+
     def __init__(self, project_dir: Path):
         """
         Initialize AgentTools with the given project directory.
@@ -29,7 +39,7 @@ class AgentTools:
             str: Contents of the file.
         """
         abs_path = self.project_dir / filepath
-        with open(abs_path, 'r', encoding='utf-8') as f:
+        with open(abs_path, "r", encoding="utf-8") as f:
             return f.read()
 
     def write_file(self, filepath: str, content: str) -> None:
@@ -44,16 +54,16 @@ class AgentTools:
         """
         abs_path = self.project_dir / filepath
         abs_path.parent.mkdir(parents=True, exist_ok=True)
-        with open(abs_path, 'w', encoding='utf-8') as f:
+        with open(abs_path, "w", encoding="utf-8") as f:
             f.write(content)
 
     def see_file_tree(self, root_dir: str = ".") -> list[str]:
         """
-        Return a list of all files and directories under the given root directory, 
+        Return a list of all files and directories under the given root directory,
         relative to the project directory.
 
         Parameters:
-            root_dir (str): Root directory to list from, relative to the project directory. 
+            root_dir (str): Root directory to list from, relative to the project directory.
                            Defaults to ".".
         Returns:
             list[str]: List of relative paths for all files and directories.
@@ -66,15 +76,17 @@ class AgentTools:
             for skip_dir in list(dirnames):
                 if skip_dir in self.SKIP_DIRS:
                     dirnames.remove(skip_dir)
-            
+
             for name in dirnames + filenames:
                 full_path = os.path.join(dirpath, name)
                 rel_path = os.path.relpath(full_path, self.project_dir)
                 tree.append(rel_path)
-        
+
         return tree
 
-    def execute_bash_command(self, command: str, cwd: str = None) -> tuple[str, str, int]:
+    def execute_bash_command(
+        self, command: str, cwd: str = None
+    ) -> tuple[str, str, int]:
         """
         Execute a bash command in the shell and return its output, error, and exit code. Blocks running the Django development server (runserver).
 
@@ -85,17 +97,29 @@ class AgentTools:
             tuple: (stdout (str), stderr (str), returncode (int))
         """
         # Block running the Django development server
-        if 'runserver' in command:
+        if "runserver" in command:
             return (
-                '',
-                'Error: Running the Django development server (runserver) is not allowed through this tool.',
-                1
+                "",
+                "Error: Running the Django development server (runserver) is not allowed through this tool.",
+                1,
             )
+
         abs_cwd = (self.project_dir / cwd) if cwd else self.project_dir
-        result = subprocess.run(command, shell=True, capture_output=True, text=True, cwd=abs_cwd)
+
+        result = subprocess.run(
+            command,
+            shell=True,
+            capture_output=True,
+            text=True,
+            cwd=abs_cwd,
+            timeout=15,
+        )
+
         return result.stdout, result.stderr, result.returncode
 
-    def search_in_files(self, pattern: str, root_dir: str = ".") -> list[tuple[str, int, str]]:
+    def search_in_files(
+        self, pattern: str, root_dir: str = "."
+    ) -> list[tuple[str, int, str]]:
         """
         Search for a pattern in all files under the given root directory and return a list of matches as (relative path, line number, line content).
 
@@ -111,11 +135,11 @@ class AgentTools:
             for filename in filenames:
                 filepath = os.path.join(dirpath, filename)
                 try:
-                    with open(filepath, 'r', encoding='utf-8') as f:
+                    with open(filepath, "r", encoding="utf-8") as f:
                         for i, line in enumerate(f, 1):
                             if pattern in line:
                                 rel_path = os.path.relpath(filepath, self.project_dir)
                                 matches.append((rel_path, i, line.strip()))
                 except Exception:
                     continue
-        return matches 
+        return matches
