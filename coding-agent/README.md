@@ -1,5 +1,9 @@
 # Create a Coding Agent
 
+This workshop is a part of the
+[AI Bootcamp: From RAG to Agents](https://maven.com/alexey-grigorev/from-rag-to-agents) course.
+
+
 In this workshop, we create our own coding Agent. This agent
 will use the provided Django template and create an application
 using it.
@@ -18,6 +22,8 @@ ourselves.
 - Python
 - Make (optional)
 - OpenAI key
+- Anthropic key (optional)
+- Github (optional)
 
 
 ## Environment
@@ -58,8 +64,9 @@ export OPENAI_API_KEY='YOUR_KEY'
 Next we need to install the required libraries:
 
 ```bash
-pip install jupyter django uv openai
+pip install jupyter django uv openai toyaikit
 ```
+
 
 ## OpenAI API: Quick Recap
 
@@ -67,7 +74,7 @@ We will learn more about agents in the upcoming workshop.
 
 You can sign up here: https://maven.com/p/3b1afc/hands-on-with-ai-agents-and-model-context-protocol-mcp
 
-But here's a recap
+But here's a quick recap:
 
 ```python
 from openai import OpenAI
@@ -150,12 +157,16 @@ This is a library that I wrote based on the other workshops and our
 courses, so if you watched them, you'll recognize what's happening inside.
 
 ```bash
-pip install toyaikit
+pip install -U toyaikit
 ```
+
+Make sure your version is at least 0.0.3.
 
 ```python
 from toyaikit.tools import Tools
-from toyaikit.chat import ChatAssistant, OpenAIClient, IPythonChatInterface
+from toyaikit.chat import IPythonChatInterface
+from toyaikit.llm import OpenAIClient
+from toyaikit.chat.runners import OpenAIResponsesRunner
 
 tools_obj = Tools()
 tools_obj.add_tool(make_joke, make_joke_description)
@@ -163,18 +174,40 @@ tools_obj.add_tool(make_joke, make_joke_description)
 chat_interface = IPythonChatInterface()
 openai_client = OpenAIClient(client=OpenAI())
 
-chat_assistant = ChatAssistant(
+runner = OpenAIResponsesRunner(
     tools=tools_obj,
     developer_prompt=system_prompt,
     chat_interface=chat_interface,
     llm_client=openai_client
 )
 
-chat_assistant.run()
+runner.run()
 ```
 
 
 ## Django Template Project
+
+### Template
+
+You can download the template that is already working:
+
+```bash
+git clone https://github.com/alexeygrigorev/django_template.git
+```
+
+Install dependencies, activate the database and run it:
+
+```bash
+cd django_template
+uv sync
+
+make migrate
+make run
+```
+
+Open localhost:8000
+
+### Build from scratch
 
 Let's start a new Django project
 
@@ -276,6 +309,7 @@ Finally, let's add TailwindCSS and Font-Awesome to our `base.html` template:
 
 We can update `base.html` with [this code](django_template/templates/base.html).
 
+
 ## Agent
 
 Now let's create the code for our Agent. We'll do it inside a jupyter notebook.
@@ -327,8 +361,6 @@ file reload:
 ```
 
 You can see the result in [tools.py](tools.py)
-
-
 
 Note: for bash, you want to disable running "runserver" - if you
 allow the agent to run it in Jupyter, it will hand up the environment.
@@ -435,23 +467,25 @@ Let's use it:
 ```python
 from openai import OpenAI
 
-from toyaikit.chat import ChatAssistant, OpenAIClient, IPythonChatInterface
 from toyaikit.tools import Tools
+from toyaikit.chat import IPythonChatInterface
+from toyaikit.llm import OpenAIClient
+from toyaikit.chat.runners import OpenAIResponsesRunner
 
 tools_obj = Tools()
 tools_obj.add_tools(agent_tools)
 
 chat_interface = IPythonChatInterface()
-openai_client = OpenAIClient(client=OpenAI())
+llm_client = OpenAIClient(client=OpenAI())
 
-chat_assistant = ChatAssistant(
+runner = OpenAIResponsesRunner(
     tools=tools_obj,
     developer_prompt=DEVELOPER_PROMPT,
     chat_interface=chat_interface,
-    llm_client=openai_client
+    llm_client=llm_client
 )
 
-chat_assistant.run()
+runner.run()
 ```
 
 Now tell it about the app you want to implement!
@@ -466,9 +500,10 @@ make run
 If it doesn't work - continue your conversation with the agent 
 until it's fixed.
 
+
 ## OpenAI Agents SDK
 
-We have used toyaikit. It's not a production-ready library - we only
+We have used ToyAIKit. It's not a production-ready library - we only
 use it for education.
 
 Let's use another library for our agent -
@@ -481,9 +516,8 @@ pip install openai-agents
 Some imports:
 
 ```python
-from agents import Agent, Runner, SQLiteSession, function_tool
+from agents import Agent, function_tool
 ```
-
 
 To define tools, we use the `@function_tool` annotation:
 
@@ -520,40 +554,234 @@ can do this:
 make_joke_tool = function_tool(make_joke)
 ```
 
-We will use the interface from toyaikit for this workshop,
-because it provides convenient methods for displaying the
-dialog:
+Now define an agent:
+
 
 ```python
+joke_system_prompt = """
+You can make funny and original jokes.
+Find out the user's name to make the joke personalized.
+"""
+
+coding_agent = Agent(
+    name="JokeAgent",
+    instructions=joke_system_prompt,
+    tools=[make_joke],
+    model='gpt-4o-mini'
+)
+```
+
+ToyAIKit has a runner for it, so we don't need to write boilerplate
+code
+
+```python
+from toyaikit.chat import IPythonChatInterface
+from toyaikit.chat.runners import OpenAIAgentsSDKRunner
+
 interface = IPythonChatInterface()
+runner = OpenAIAgentsSDKRunner(
+    chat_interface=interface,
+    agent=coding_agent
+)
+
+# OpenAI Agents SDK is async, so we need to use await here
+await runner.run()
 ```
 
-Running it:
+[Check the code for the runner](https://github.com/alexeygrigorev/toyaikit/blob/main/toyaikit/chat/runners.py#L75)
+to see how it's implemented - it will be useful for you later
+if you want to work with the Agents SDK.
 
 
-
-The function for running the dialog:
+Let's extend it to our example. First, create the tools
+class:
 
 ```python
-async def run(agent, session):
-    while True:
-        user_input = interface.input()
-        if user_input.lower() == "stop":
-            interface.display("Chat ended.")
-            break
-
-        result = await runner.run(agent, input=user_input, session=session)
-    
-        func_calls = {}
-    
-        for ni in result.new_items:
-            raw = ni.raw_item
-            if ni.type == 'tool_call_item':
-                func_calls[raw.call_id] = raw
-            if ni.type == 'tool_call_output_item':
-                func_call = func_calls[raw['call_id']]
-                interface.display_function_call(func_call.name, func_call.arguments, raw['output'])
-            if ni.type == 'message_output_item':
-                md = raw.content[0].text
-                interface.display_response(md)
+agent_tools = tools.AgentTools(Path(project_name))
 ```
+
+Next, wrap the tools with `function_tool`:
+
+```python
+coding_agent_tools_list = [
+    function_tool(agent_tools.execute_bash_command),
+    function_tool(agent_tools.read_file),
+    function_tool(agent_tools.search_in_files),
+    function_tool(agent_tools.see_file_tree),
+    function_tool(agent_tools.write_file)
+]
+```
+
+We can avoid that by automatically scanning all methods
+of an object and applything the decorator:
+
+```python
+from toyaikit.tools import wrap_instance_methods
+
+coding_agent_tools_list = wrap_instance_methods(function_tool, agent_tools)
+```
+
+Create the coding agent:
+
+```python
+coding_agent = Agent(
+    name="CodingAgent",
+    instructions=DEVELOPER_PROMPT,
+    tools=coding_agent_tools_list,
+    model='gpt-4o-mini'
+)
+```
+
+And run it:
+
+```python
+runner = OpenAIAgentsSDKRunner(
+    chat_interface=interface,
+    agent=coding_agent
+)
+await runner.run()
+```
+
+## PydanticAI 
+
+The next library we will look at is [PydanticAI](https://ai.pydantic.dev/).
+
+We will jump directly to implementing the coding agent. Feel free
+to explore the docs to see how to make a simpler agent with
+the joke function. 
+
+```bash
+pip install pydantic-ai
+```
+
+Some imports:
+
+```python
+from pydantic_ai import Agent
+```
+
+Next, define the tools. No need for a wrapper here:
+
+```python
+agent_tools = tools.AgentTools(Path(project_name))
+
+coding_agent_tools_list = [
+    agent_tools.execute_bash_command,
+    agent_tools.read_file,
+    agent_tools.search_in_files,
+    agent_tools.see_file_tree,
+    agent_tools.write_file
+]
+```
+
+Again, we can simply go through all the methods of this object:
+
+```python
+from toyaikit.tools import get_instance_methods
+
+coding_agent_tools_list = get_instance_methods(agent_tools)
+```
+
+Next, define the Agent:
+
+```python
+coding_agent = Agent(
+    'openai:gpt-4o-mini',
+    instructions=DEVELOPER_PROMPT,
+    tools=coding_agent_tools_list
+)
+```
+
+And run it:
+
+```python
+from toyaikit.chat import IPythonChatInterface
+from toyaikit.chat.runners import PydanticAIRunner
+
+chat_interface = IPythonChatInterface()
+
+runner = PydanticAIRunner(
+    chat_interface=chat_interface,
+    agent=coding_agent
+)
+
+await runner.run()
+```
+
+Take some time to see 
+[how the run() function is implemented](https://github.com/alexeygrigorev/toyaikit/blob/main/toyaikit/chat/runners.py#L129).
+
+
+It's also easy to switch to another LLM provider with 
+PydanticAI:
+
+```python
+coding_agent = Agent(
+    'anthropic:claude-3-5-sonnet-latest',
+    instructions=DEVELOPER_PROMPT,
+    tools=coding_agent_tools_list
+)
+```
+
+## Z.ai 
+
+Last thing we will do on this workshop is using a different
+LLM provider - Z.ai. They released multiple good LLMs a few weeks ago.
+
+Z.ai, like most LLM providers, follow OpenAI API, so we can just use 
+the OpenAI client:
+
+```python
+from openai import OpenAI
+
+zai_client = OpenAI(
+    api_key=os.getenv('ZAI_API_KEY'),
+    base_url='https://api.z.ai/api/paas/v4/'
+)
+```
+
+It doesn't support the `responses` API like OpenAI's latest models,
+so we will need to use the older `chat.completions` API.
+
+The rest is similar, including tools definition:
+
+
+```python
+from toyaikit.tools import Tools
+
+from toyaikit.chat import IPythonChatInterface
+from toyaikit.chat.runners import OpenAIChatCompletionsRunner
+from toyaikit.llm import OpenAIChatCompletionsClient
+
+agent_tools = tools.AgentTools(Path(project_name))
+
+tools_obj = Tools()
+tools_obj.add_tools(agent_tools)
+
+llm_client = OpenAIChatCompletionsClient(model='glm-4.5', client=zai_client)
+chat_interface = IPythonChatInterface()
+
+runner = OpenAIChatCompletionsRunner(
+    tools=tools_obj,
+    developer_prompt=developer_prompt,
+    chat_interface=chat_interface,
+    llm_client=llm_client
+)
+runner.run()
+```
+
+Here we use 
+
+- `OpenAIChatCompletionsRunner` instead of `OpenAIResponsesRunner`
+- `OpenAIChatCompletionsClient` insead of `OpenAIClient`
+
+
+
+## Final words 
+
+
+That's it! 
+
+If you're interested in learning more about it, check out my new course:
+
+https://maven.com/alexey-grigorev/from-rag-to-agents
