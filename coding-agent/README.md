@@ -3,6 +3,8 @@
 This workshop is a part of the
 [AI Bootcamp: From RAG to Agents](https://maven.com/alexey-grigorev/from-rag-to-agents) course.
 
+- Video: https://www.youtube.com/watch?v=Sue_mn0JCsY
+- TODO app made with Z-ai: https://www.loom.com/share/b4c47e3491504375b9244ea69fe095df
 
 In this workshop, we create our own coding Agent. This agent
 will use the provided Django template and create an application
