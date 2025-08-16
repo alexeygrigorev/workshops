@@ -38,7 +38,7 @@ pip install jupyter scikit-learn pandas
 Then download the starter notebook and save it as workshop-uv-fastapi.ipynb. We will base our work on it.
 
 ```bash
-wget https://raw.githubusercontent.com/alexeygrigorev/workshops/refs/heads/main/mlzoomcamp-flask-uv/starter.ipynb -O workshop-uv-fastapi.ipynb
+wget https://raw.githubusercontent.com/alexeygrigorev/workshops/main/mlzoomcamp-fastapi-uv/starter.ipynb -O workshop-uv-fastapi.ipynb
 ```
 
 Open it in Jupyter.
