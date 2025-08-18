@@ -22,8 +22,8 @@ The plan for the workshop:
 
 - Creating a simple AWS Lambda function
 - Deploying Scikit-Learn models with Docker
-- Using Onnx for Keras and TF models
-- Onnx for PyTorch models
+- Using ONNX for Keras and TF models
+- ONNX for PyTorch models
 
 ## Prerequisites
 
@@ -35,7 +35,7 @@ The plan for the workshop:
 
 First, let's train a simple scikit-learn model that we will later deploy
 
-We will take the [train.py](train/train.py) script (slighly adjusted) from the [uv+FastAPI workshop](../mlzoomcamp-fastapi-uv/)
+We will take the [train.py](train/train.py) script (slightly adjusted) from the [uv+FastAPI workshop](../mlzoomcamp-fastapi-uv/)
 
 ```bash
 cd train
@@ -50,7 +50,7 @@ As the result, you will have [model.bin](train/model.bin) - this is what we're g
 
 First, let's look at the simplest AWS Lambda application.
 
-We will send a request, and it will look at it, and repond with 
+We will send a request, and it will look at it, and respond with 
 a prediction. 
 
 Let's create a file `lambda_function.py`
@@ -389,7 +389,7 @@ Invoking the function is the same as before. See [`invoke.py`](lambda-sklearn/in
 
 Previously we used TF-lite for AWS Lambda. 
 
-In this workshop, we'll use an alternative - ONNX.
+In this workshop, we'll use an alternative - ONNX (Open Neural Network Exchange).
 
 We need will use the same Keras model as before.
 It was retrained for the newest TF version, you
@@ -411,7 +411,7 @@ For the second step, we will need to install tf2onnx:
 ```bash
 # normally you install it with pip like that:
 # pip install tf2onnx
-# but the last releave (Jan 2025) doesn't contain numpy 2 update
+# but the last release (Jan 2025) doesn't contain numpy 2 update
 # so install it from github directly:
 
 pip install git+https://github.com/onnx/tensorflow-onnx.git
@@ -479,21 +479,21 @@ You can download the results here:
 wget https://github.com/DataTalksClub/machine-learning-zoomcamp/releases/download/dl-models/clothing-model-new.onnx
 ```
 
-Now our models are saves in the ONNX format. Like with TF-lite,
+Now our models are saved in the ONNX format. Like with TF-lite,
 we only need ONNX-Runtime to run it:
 
 ```bash
 pip install onnxruntime
 ```
 
-Like in the module, we can't use TF for our pre-preprocessing. That's 
+Like in the module, we can't use TF for our preprocessing. That's 
 why we will rely on `keras-image-helper` to do that:
 
 ```bash
 pip install keras-image-helper
 ```
 
-This is now you use ONNX-Runtime to make predictions:
+This is how you use ONNX-Runtime to make predictions:
 
 ```python
 import onnxruntime as ort
@@ -664,3 +664,27 @@ python test.py
 ```
 
 That's all!
+
+## Summary
+
+We covered:
+
+1. **Scikit-Learn Model Deployment**
+   - Training a simple ML model for churn prediction
+   - Basic AWS Lambda function creation and testing
+   - Docker containerization to overcome size limitations
+   - ECR deployment and AWS Lambda container image deployment
+
+2. **Deep Learning Model Deployment with ONNX**
+   - Converting TensorFlow/Keras models to ONNX format
+   - Converting PyTorch models to ONNX format
+   - Using ONNX Runtime for efficient inference
+   - Docker-based deployment for deep learning models
+
+**Next Steps:**
+
+- Explore API Gateway integration for web service exposure
+- Implement monitoring and logging with CloudWatch
+- Consider using AWS Step Functions for complex ML workflows
+- Explore other serverless services like AWS Batch for training
+
