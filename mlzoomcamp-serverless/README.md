@@ -1,7 +1,11 @@
 # Machine Learning and Deep Learning Model Deployment with Serverless
 
-In the ML Zoomcamp course, [the serverless module](https://github.com/DataTalksClub/machine-learning-zoomcamp/tree/master/09-serverless),
-we introduce the serverless way of deploying neural networks:
+* Video: https://www.youtube.com/watch?v=sHQaeVm5hT8
+
+In this workshop we will revise [he Serverless module (Module 9)](https://github.com/DataTalksClub/machine-learning-zoomcamp/tree/master/09-serverless) of 
+[Machine Learning Zoomcamp](https://github.com/DataTalksClub/machine-learning-zoomcamp).
+
+In the module, we
 
 - Convert a model into TF-lite representation
 - Deploy it with Lambda and Docker
@@ -27,7 +31,7 @@ The plan for the workshop:
 
 ## Prerequisites
 
-- AWS Account
+- [AWS Account](https://mlbookcamp.com/article/aws)
 - [AWS Cli](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html)
 
 
@@ -190,9 +194,7 @@ Define the Dockerfile (based on [this](https://github.com/alexeygrigorev/worksho
 
 ```dockerfile
 FROM public.ecr.aws/lambda/python:3.13
-COPY --from=ghcr.io/astral-sh/uv:latest /uv /uvx /bin/
-
-WORKDIR ${LAMBDA_TASK_ROOT}
+COPY --from=ghcr.io/astral-sh/uv:latest /uv /bin/
 
 COPY pyproject.toml uv.lock ./
 RUN uv pip install --system -r <(uv export --format requirements-txt)
@@ -340,7 +342,7 @@ Now go to Lambda:
 ```
 
 
-If you have problems with ECR,
+If you have problems with ECR permissions,
 create a policy with name "Lambda-ECR-Read":
 
 ```json
