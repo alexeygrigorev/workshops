@@ -6,6 +6,7 @@ install:
 	uv sync --dev
 
 migrate:
+	uv run python manage.py makemigrations
 	uv run python manage.py migrate
 
 run:
