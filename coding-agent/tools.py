@@ -113,6 +113,8 @@ class AgentTools:
             text=True,
             cwd=abs_cwd,
             timeout=15,
+            encoding='utf-8',
+            errors='replace',
         )
 
         return result.stdout, result.stderr, result.returncode
