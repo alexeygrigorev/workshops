@@ -606,9 +606,651 @@ runner = OpenAIAgentsSDKRunner(
 await runner.run();
 ```
 
-After the workshop, check the code for OpenAIAgentsSDKRunner to
-see how it's implemented. When you work with this framework,
+After the workshop, check the code for
+[`OpenAIAgentsSDKRunner`](https://github.com/alexeygrigorev/toyaikit/blob/main/toyaikit/chat/runners.py#L169)
+to see how it's implemented. When you work with Agents SDK,
 you will need to implement it yourself.
 
+Let's test it:
+
+- "How do I do well in module 1?"
+- "How about Docker?"
+- "Add this back to FAQ"
+
+Also, it provides a very convenient way to run multiple agents.
+You can [_handoff_ a task to another agent](https://openai.github.io/openai-agents-python/handoffs/).
+You can implement it yourself by creating a tool that
+wraps up the code for invoking another agent.
+But Agents SDK can do it for you. We will not cover it here
+but we will talk about it in the course. (Also it's fairy
+easy to implement it yourself.)
+
+## Pydantic AI
+
+Another framework that makes it easier to interact with SDKs 
+is [PydanticAI](https://ai.pydantic.dev/). Like Agents SDK,
+it's also a wrapper around the OpenAI API. But unlike Agents SDK,
+it works with other providers too, like Anthropic or Groq.
+
+```bash
+pip install pydantic-ai
+```
+
+Let's implement the same code with Pydantic AI:
+
+```python
+from pydantic_ai import Agent
+
+tools = [
+    search_tools.search,
+    search_tools.add_entry
+]
+
+agent = Agent(
+    name="faq_agent",
+    instructions=developer_prompt,
+    tools=tools,
+    model='gpt-4o-mini'
+)
+```
+
+Note that we don't need to decorate the tools, but we can 
+do it if we want (see [here](https://ai.pydantic.dev/agents/))
+
+We can also use a helper function from toyaikit to 
+get a list of all instance methods: 
+
+```python
+from toyaikit.tools import get_instance_methods
+tools = get_instance_methods(search_tools)
+```
+
+Let's run it:
+
+```python
+from toyaikit.chat import IPythonChatInterface
+from toyaikit.chat.runners import PydanticAIRunner
+
+chat_interface = IPythonChatInterface()
+runner = PydanticAIRunner(
+    chat_interface=chat_interface,
+    agent=deep_research_agent
+)
+
+await runner.run();
+```
+
+Here I use toyaikit for simplicity, but later you will
+probably need to implement this code yourself, so check 
+[the implementation](https://github.com/alexeygrigorev/toyaikit/blob/main/toyaikit/chat/runners.py#L216).
 
 
+## MCP (Model-Context Protocol)
+
+Anthropic says that [MCP is like USB but for agent tools](https://modelcontextprotocol.io/docs/getting-started/intro).
+
+Imagine you want to use a database in your application. You can 
+spend a few days implementing the access to the DB using function
+calls. And everyone who needs this will need to do it too.
+
+Or, the database developer releases an MCP server, and everyone 
+can use it. 
+
+Let's put our FAQ data inside a database. Like previously,
+we will have two methods: search and add_entry.
+
+This is a separate project, so let's start a new `uv` project:
+
+```bash
+pip install uv # if you don't have uv
+uv init
+uv add minsearch requests fastmcp
+```
+
+Create a file `search_tools.py`:
+
+```python
+from typing import List, Dict, Any
+
+class SearchTools:
+
+    def __init__(self, index):
+        self.index = index
+
+    def search(self, query: str) -> List[Dict[str, Any]]:
+        """
+        Search the FAQ database for entries matching the given query.
+    
+        Args:
+            query (str): Search query text to look up in the course FAQ.
+    
+        Returns:
+            List[Dict[str, Any]]: A list of search result entries, each containing relevant metadata.
+        """
+        boost = {'question': 3.0, 'section': 0.5}
+    
+        results = self.index.search(
+            query=query,
+            filter_dict={'course': 'data-engineering-zoomcamp'},
+            boost_dict=boost,
+            num_results=5,
+        )
+    
+        return results
+
+    def add_entry(self, question: str, answer: str) -> None:
+        """
+        Add a new entry to the FAQ database.
+    
+        Args:
+            question (str): The question to be added to the FAQ database.
+            answer (str): The corresponding answer to the question.
+        """
+        doc = {
+            'question': question,
+            'text': answer,
+            'section': 'user added',
+            'course': 'data-engineering-zoomcamp'
+        }
+        self.index.append(doc)
+```
+
+There's nothing new in this code - I copy-pasted it from before.
+
+Now let's create the main scrip - `main.py`. It will 
+create the index and the tools.
+
+```python
+import requests 
+from minsearch import AppendableIndex
+
+from search_tools import SearchTools
+
+def init_index():
+    docs_url = 'https://github.com/alexeygrigorev/llm-rag-workshop/raw/main/notebooks/documents.json'
+    docs_response = requests.get(docs_url)
+    documents_raw = docs_response.json()
+
+    documents = []
+
+    for course in documents_raw:
+        course_name = course['course']
+
+        for doc in course['documents']:
+            doc['course'] = course_name
+            documents.append(doc)
+
+
+    index = AppendableIndex(
+        text_fields=["question", "text", "section"],
+        keyword_fields=["course"]
+    )
+
+    index.fit(documents)
+    return index
+
+
+def init_tools():
+    index = init_index()
+    return SearchTools(index)
+
+
+if __name__ == "__main__":
+    tools = init_tools()
+    print(tools.search("How do I install Kafka?"))
+```
+
+This is actually a good improvement - we could import the
+`init_tools` function from main and already use it in our 
+previous code (althougth in this case I'd keep it all inside
+`search_tools.py`)
+
+Now let's expose these tools with MCP. For that, we will need 
+to create an MCP server. There are many frameworks for creating
+them. We will use [FastMCP](https://github.com/jlowin/fastmcp):
+
+```bash
+uv add fastmcp # but we already did it before
+```
+
+This is the simplest possible MCP server (taken from the docs):
+
+```python
+from fastmcp import FastMCP
+
+mcp = FastMCP("Demo 🚀")
+
+@mcp.tool
+def add(a: int, b: int) -> int:
+    """Add two numbers"""
+    return a + b
+
+if __name__ == "__main__":
+    mcp.run()
+```
+
+We see that we simply add an annotation to our functions 
+and that's all we need to do.
+
+Like previously, we can use toyaikit's helpers for doing 
+this for all the methods of the `SearchTools` class
+
+Add this to `main.py`
+
+```python
+from fastmcp import FastMCP
+from toyaikit.tools import wrap_instance_methods
+
+
+def init_mcp():
+    mcp = FastMCP("Demo 🚀")
+    agent_tools = init_tools()
+    wrap_instance_methods(mcp.tool, agent_tools)
+    return mcp
+
+
+if __name__ == "__main__":
+    mcp = init_mcp()
+    mcp.run()
+```
+
+Let's run it!
+
+```python
+uv run python main.py
+```
+
+It uses standard input/output as transport:
+
+```
+📦 Transport:       STDIO 
+```
+
+Which means, we can paste things into our terminal to test it 
+(and simulate the interaction with the server)
+
+First, we need to initialize the connection. We do it with the 
+handshake sequence:
+
+1. Send the ininialization request
+2. Confirm the initialization
+3. Now can see the list of available tools 
+
+Let's do this. Send the initialization request:
+
+```json
+{"jsonrpc": "2.0", "id": 1, "method": "initialize", "params": {"protocolVersion": "2024-11-05", "capabilities": {"roots": {"listChanged": true}, "sampling": {}}, "clientInfo": {"name": "test-client", "version": "1.0.0"}}}
+```
+
+We get back something like that:
+
+```json
+{"jsonrpc":"2.0","id":1,"result":{"protocolVersion":"2024-11-05","capabilities":{"experimental":{},"prompts":{"listChanged":false},"resources":{"subscribe":false,"listChanged":false},"tools":{"listChanged":true}},"serverInfo":{"name":"Demo 🚀","version":"1.13.1"}}}
+```
+
+This is a confirmation that we can proceed. 
+
+Next, confirm the initialization:
+
+```json
+{"jsonrpc": "2.0", "method": "notifications/initialized"}
+```
+
+We don't get back anything.
+
+Now we can see the list of available tools:
+
+```json
+{"jsonrpc": "2.0", "id": 2, "method": "tools/list"}
+```
+
+We get back the list:
+
+```json
+{"jsonrpc":"2.0","id":2,"result":{"tools":[{"name":"add_entry","description":"Add a new entry to the FAQ database.\n\nArgs:\n    question (str): The question to be added to the FAQ database.\n    answer (str): The corresponding answer to the question.","inputSchema":{"properties":{"question":{"title":"Question","type":"string"},"answer":{"title":"Answer","type":"string"}},"required":["question","answer"],"type":"object"},"_meta":{"_fastmcp":{"tags":[]}}},{"name":"search","description":"Search the FAQ database for entries matching the given query.\n\nArgs:\n    query (str): Search query text to look up in the course FAQ.\n\nReturns:\n    List[Dict[str, Any]]: A list of search result entries, each containing relevant metadata.","inputSchema":{"properties":{"query":{"title":"Query","type":"string"}},"required":["query"],"type":"object"},"outputSchema":{"properties":{"result":{"items":{"additionalProperties":true,"type":"object"},"title":"Result","type":"array"}},"required":["result"],"title":"_WrappedResult","type":"object","x-fastmcp-wrap-result":true},"_meta":{"_fastmcp":{"tags":[]}}}]}}
+```
+
+If we format it, we see that we have two tools: `search` and `add_entry`:
+
+```json
+{
+    "jsonrpc": "2.0",
+    "id": 2,
+    "result": {
+        "tools": [
+            {
+                "name": "add_entry",
+                "description": "Add a new entry to the FAQ database.\n\nArgs:\n    question (str): The question to be added to the FAQ database.\n    answer (str): The corresponding answer to the question.",
+                "inputSchema": {
+                    "properties": {
+                        "question": {
+                            "title": "Question",
+                            "type": "string"
+                        },
+                        "answer": {
+                            "title": "Answer",
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+                        "question",
+                        "answer"
+                    ],
+                    "type": "object"
+                },
+                "_meta": {
+                    "_fastmcp": {
+                        "tags": []
+                    }
+                }
+            },
+            {
+                "name": "search",
+                "description": "Search the FAQ database for entries matching the given query.\n\nArgs:\n    query (str): Search query text to look up in the course FAQ.\n\nReturns:\n    List[Dict[str, Any]]: A list of search result entries, each containing relevant metadata.",
+                "inputSchema": {
+                    "properties": {
+                        "query": {
+                            "title": "Query",
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+                        "query"
+                    ],
+                    "type": "object"
+                },
+                "outputSchema": {
+                    "properties": {
+                        "result": {
+                            "items": {
+                                "additionalProperties": true,
+                                "type": "object"
+                            },
+                            "title": "Result",
+                            "type": "array"
+                        }
+                    },
+                    "required": [
+                        "result"
+                    ],
+                    "title": "_WrappedResult",
+                    "type": "object",
+                    "x-fastmcp-wrap-result": true
+                },
+                "_meta": {
+                    "_fastmcp": {
+                        "tags": []
+                    }
+                }
+            }
+        ]
+    }
+}
+```
+
+Note: the schema for tools is somewhat similar to the OpenAI's function
+calling, but not the same. 
+
+Invoke a function:
+
+```json
+{"jsonrpc": "2.0", "id": 3, "method": "tools/call", "params": {"name": "search", "arguments": {"query": "how do I run kafka?"}}}
+```
+
+And we get back the response:
+
+```json
+{"jsonrpc":"2.0","id":3,"result":{"content":[{"type":"text","text":"..."}],"isError":false}}
+```
+
+Let's invoke it from Jupyter.
+
+First, we will use a simple MCP client
+from toyaikit. You can check the implementation
+[here](https://github.com/alexeygrigorev/toyaikit/blob/main/toyaikit/mcp/client.py). 
+It's very similar to simply copying things to the terminal.
+I asked Claude to implement it.
+
+If you need an MCP client, you should use the built-in one
+from FastMCP. However, it's async (which is good for production
+cases), so testing it inside Jupyter is difficult.
+
+Let's continue in Jupyter:
+
+```python
+from toyaikit.mcp import MCPClient, SubprocessMCPTransport
+
+command = "uv run python main.py".split()
+workdir = "faq-mcp"
+
+client = MCPClient(
+    transport=SubprocessMCPTransport(
+        server_command=command,
+        workdir=workdir
+    )
+)
+```
+
+Like we saw previously, we now need to:
+
+- start the server (run the command)
+- send "initialize"
+- send "initialized"
+- get tools 
+
+This is how it looks in code:
+
+```python
+client.start_server()
+
+client.initialize()
+client.initialized()
+client.get_tools()
+```
+
+Or we can do all 4 with one command:
+
+```python
+client.full_initialize()
+```
+
+Let's invoke the search tool:
+
+```python
+result = client.call_tool('search', {'query': 'how do I run docker?'})
+```
+
+Now if we want to use MCP with plain OpenAI API,
+we need to convert the MCP tools into the function calling 
+schemas. I implemented it in toyaikit, you can see the code 
+here: TODO.
+
+Let's use it:
+
+```python
+from toyaikit.llm import OpenAIClient
+from toyaikit.mcp import MCPTools
+from toyaikit.chat import IPythonChatInterface
+from toyaikit.chat.runners import OpenAIResponsesRunner
+
+mcp_tools = MCPTools(client)
+
+chat_interface = IPythonChatInterface()
+
+runner = OpenAIResponsesRunner(
+    tools=mcp_tools,
+    developer_prompt=developer_prompt,
+    chat_interface=chat_interface,
+    llm_client=OpenAIClient(model='gpt-4o-mini')
+)
+```
+
+Run it:
+
+```python
+runner.run();
+```
+
+
+If we want to use the client from FastMCP,
+it looks like that (but we won't do it here):
+
+```python
+import asyncio
+
+async def main():
+    async with Client("uv run python main.py") as mcp_client:
+        # ...
+
+if __name__ == "__main__":
+    test = asyncio.run(main())
+```
+
+
+## PydanticAI with MCP
+
+In practice you probably won't ever need to implement the
+client yourself when we integrate tools into our agents:
+frameworks like Agents SDK and PydanticAI can do it. 
+
+Let's see how to do it with PydanticAI.
+
+Make sure you have Pydantic AI with MCP support:
+
+```bash
+pip install pydantic-ai[mcp]
+# or uv add
+```
+
+At the moment of writing, there are problems with running
+this code on Windows. If you're on Windows, skip to 
+"Running MCP with SSE". 
+
+We will run it in Terminal (because of async-io) - but 
+the code with SSE we will create later will also work in Jupyter.
+If you only use Jupyter, also skip to "Running MCP with SSE". 
+
+Here's our script test.py - create it in a separate folder:
+
+```python
+# test.py
+from pydantic_ai import Agent
+from pydantic_ai.mcp import MCPServerStdio
+from toyaikit.chat.interface import StdOutputInterface
+from toyaikit.chat.runners import PydanticAIRunner
+
+mcp_client = MCPServerStdio(
+    command="uv",
+    args=["run", "python", "main.py"],
+    cwd="faq-mcp"
+)
+
+
+developer_prompt = """
+You're a course teaching assistant. 
+You're given a question from a course student and your task is to answer it.
+
+If you want to look up the answer, explain why before making the call. Use as many 
+keywords from the user question as possible when making first requests.
+
+Make multiple searches. Try to expand your search by using new keywords based on the results you
+get from the search.
+
+At the end, make a clarifying question based on what you presented and ask if there are 
+other areas that the user wants to explore.
+""".strip()
+
+
+agent = Agent(
+    name="faq_agent",
+    instructions=developer_prompt,
+    toolsets=[mcp_client],
+    model='gpt-4o-mini'
+)
+
+
+chat_interface = StdOutputInterface()
+runner = PydanticAIRunner(
+    chat_interface=chat_interface,
+    agent=agent
+)
+
+
+if __name__ == "__main__":
+    import asyncio
+    asyncio.run(runner.run())
+```
+
+We'll deal with dependencies using `uv`, so let's create an empty project
+
+```bash
+uv init 
+uv add pydantic-ai[mcp] openai toyaikit
+```
+
+Run:
+
+```bash
+uv run python test.py
+```
+
+
+
+## Running MCP with SSE 
+
+Previously we used Standard Input/Output as the transport for MCP.
+We can also use HTTP (SSE) for that.
+
+The only thing we need to change is how we run our server:
+
+```python
+mcp.run(transport="sse")
+```
+
+It's now available at "http://localhost:8000/sse". 
+
+When it comes to our code, we only need to change this part:
+
+```python
+from pydantic_ai.mcp import MCPServerSSE
+
+mcp_client = MCPServerSSE(
+    url='http://localhost:8000/sse'
+)
+```
+
+How it will use HTTP for communication.
+
+## Adding MCP Server to Cursor
+
+Now we can use this MCP server with any MCP Client.
+For example, Cursor.
+
+Add this server to `.cursor/mcp.json`:
+
+```json
+{
+  "mcpServers": {
+    "faqmcp": {
+      "command": "uv",
+      "args": [
+        "run",
+        "--project", "faq-mcp",
+        "python",
+        "faq-mcp/main.py"
+      ]
+    }
+  }
+}
+```
+
+How ask "Write code for module 1, check the FAQ for requirements"
+
+Note: this isn't really a good usecase for Cursor. 
+A more powerful usecase would be adding search for some frameworks.
+LLMs have some knowledge cutoff, while frameworks keep developing.
+So having access to fresh information is important.
+
+In the course we create MCP server for
+[Evidently documentation](https://docs.evidentlyai.com/introduction)
+and can use it directly from Cursor. 
