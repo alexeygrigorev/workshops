@@ -1,4 +1,4 @@
-# Create a Coding Agent
+# Agents and MCP
 
 This workshop is a part of the
 [AI Bootcamp: From RAG to Agents](https://maven.com/alexey-grigorev/from-rag-to-agents) course.
