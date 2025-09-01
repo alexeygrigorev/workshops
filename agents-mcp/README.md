@@ -3,7 +3,7 @@
 This workshop is a part of the
 [AI Bootcamp: From RAG to Agents](https://maven.com/alexey-grigorev/from-rag-to-agents) course.
 
-- Video: TBA
+- Video: https://www.youtube.com/watch?v=W2EDdZplLcU
 
 Previously, in the ["Create Your Own Coding Agent" workshop](../coding-agent/)
 we created a coding agent that could create a Django application
