@@ -1,0 +1,20 @@
+[project]
+name = "agents-mcp"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "jupyter>=1.1.1",
+    "minsearch>=0.0.4",
+    "openai>=1.102.0",
+    "openai-agents>=0.2.10",
+    "pydantic-ai>=0.8.1",
+    "requests>=2.32.5",
+    "toyaikit>=0.0.4",
+]
+
+[tool.uv.workspace]
+members = [
+    "mcp_faq",
+]
