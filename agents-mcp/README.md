@@ -14,8 +14,6 @@ In this workshop, we will deep dive into agents.
 We will
 
 - look into function calling - the thing that distinguishes agents from Q&A bots
-- implement a deep research agent that  
-- ...
 - use OpenAI Agents SDK and PydanticAI 
 - wrap it into an MCP server 
 - add this server to our Agent
@@ -1194,8 +1192,6 @@ Run:
 uv run python test.py
 ```
 
-
-
 ## Running MCP with SSE 
 
 Previously we used Standard Input/Output as the transport for MCP.
@@ -1221,6 +1217,7 @@ mcp_client = MCPServerSSE(
 
 How it will use HTTP for communication.
 
+
 ## Adding MCP Server to Cursor
 
 Now we can use this MCP server with any MCP Client.
@@ -1244,7 +1241,27 @@ Add this server to `.cursor/mcp.json`:
 }
 ```
 
-How ask "Write code for module 1, check the FAQ for requirements"
+If we run our MCP server with SSE transport, we configure it this
+way: 
+
+
+```json
+{
+  "mcpServers": {
+    "faqmcp": {
+      "url": "http://localhost:8000/sse"
+    }
+  }
+}
+```
+
+If you don't get asked if you want to enable it, go to Preferenes -> Cursor settings -> MCP and Integrations, find your MCP server and enable it.
+ 
+
+Examples of prompts:
+
+- "Write code for module 1, check the FAQ for requirements"
+- "Implement kafka connection with Python. Use FAQ to do comprehensive research first and then explain your choices."
 
 Note: this isn't really a good usecase for Cursor. 
 A more powerful usecase would be adding search for some frameworks.
