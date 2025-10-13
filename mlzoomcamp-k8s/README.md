@@ -1,8 +1,8 @@
 # Model Deployment with Kubernetes and ONNX
 
-* Video: [TO BE ADDED]
+* Video: https://www.youtube.com/live/c_CzCsCnWoU?si=fgQ56JwunM3NoiWm
 
-In this workshop we will explore deploying ML models using Kubernetes, building upon concepts from:
+In this workshop, we will explore deploying ML models using Kubernetes, building upon concepts from:
 
 - [Module 5 - FastAPI deployment](../mlzoomcamp-fastapi-uv/)
 - [Module 9 - Serverless and ONNX](../mlzoomcamp-serverless/)
@@ -10,7 +10,7 @@ In this workshop we will explore deploying ML models using Kubernetes, building 
 Instead of deploying to AWS Lambda, we'll deploy to a local Kubernetes cluster using Kind (Kubernetes in Docker), making it accessible and cost-free for learners.
 
 
-We will not cover theory in details, for that, refer to the old content of [ML Zoomcamp module 10](https://github.com/DataTalksClub/machine-learning-zoomcamp/tree/master/10-kubernetes).
+We will not cover theory in detail. For that, refer to the old content of [ML Zoomcamp module 10](https://github.com/DataTalksClub/machine-learning-zoomcamp/tree/master/10-kubernetes).
 
 
 ## Plan
