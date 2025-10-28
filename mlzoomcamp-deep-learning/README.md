@@ -1,7 +1,7 @@
 # Deep Learning with PyTorch Workshop
 
-* Video: [TODO]
-* Notebook: [TODO]
+* [Video](https://www.youtube.com/watch?v=Ne25VujHRLA)
+* [Notebook](https://colab.research.google.com/drive/1nCA4Q0f8DVFiLpfXdXvZtYUh-yYDy5i_?usp=sharing)
 
 This workshop introduces deep learning for image classification using PyTorch. It is based on the [ML Zoomcamp Deep Learning module (08-deep-learning)](https://github.com/DataTalksClub/machine-learning-zoomcamp/tree/master/08-deep-learning) but adapted to use PyTorch instead of TensorFlow/Keras.
 
