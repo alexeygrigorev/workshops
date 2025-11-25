@@ -1304,3 +1304,21 @@ So having access to fresh information is important.
 In the course we create MCP server for
 [Evidently documentation](https://docs.evidentlyai.com/introduction)
 and can use it directly from Cursor. 
+
+
+## Adding MCP to VS Code
+
+https://code.visualstudio.com/docs/copilot/customization/mcp-servers
+
+File: `.vscode/mcp.json`:
+
+```json
+{
+  "servers": {
+    "faq-mcp": {
+      "type": "http",
+      "url": "http://127.0.0.1:8000/sse"
+    }
+  }
+}
+```
