@@ -28,6 +28,11 @@ We will
 - Groq key (optional)
 - Github (optional)
 
+Libraries that you need to install:
+
+```bash
+pip install jupyter openai minsearch toyaikit
+```
 
 
 ## Introduction
@@ -316,9 +321,46 @@ we need the next input from the user.
 
 Then we repeat it.
 
-We can implement it ourselves (try doing it after this workshop -
-it's very helpful for understading how it works), but we can 
-also use `toyaikit` - a library that simplifies the interactions
+
+Here's how:
+
+```python
+while True: # main Q&A loop
+    question = input() # How do I do my best for module 1?
+    if question == 'stop':
+        break
+
+    message = {"role": "user", "content": question}
+    chat_messages.append(message)
+
+    while True: # request-response loop - query API till get a message
+        response = client.responses.create(
+            model='gpt-4o-mini',
+            input=chat_messages,
+            tools=tools
+        )
+
+        has_tool_calls = False
+        
+        for entry in response.output:
+            chat_messages.append(entry)
+        
+            if entry.type == 'function_call':      
+                print('function_call:', entry)
+                print()
+                result = make_call(entry)
+                chat_messages.append(result)
+                has_tool_calls = True
+
+            elif entry.type == 'message':
+                print(entry.content[0].text)
+                print()
+
+        if not has_tool_calls:
+            break
+```
+
+We can also use `toyaikit` - a library that simplifies the interactions
 with the API:
 
 ```bash
