@@ -25,6 +25,7 @@ We will
 - Python
 - OpenAI key
 - Anthropic key (optional)
+- Groq key (optional)
 - Github (optional)
 
 
@@ -363,6 +364,38 @@ If we have a follow-up input, we invoke it again:
 new_messages = runner.loop(
     prompt='I want to run it in python',
     previous_messages=messages,
+    callback=callback
+)
+```
+
+You can also use Groq (via chat completions API) or any other chat-completions-compatible provider:
+
+```python
+import os
+from openai import OpenAI
+
+from toyaikit.chat.runners import OpenAIChatCompletionsRunner
+from toyaikit.llm import OpenAIChatCompletionsClient
+
+groq_client = OpenAI(
+    api_key=os.getenv('GROQ_API_KEY'),
+    base_url='https://api.groq.com/openai/v1'
+)
+
+groq_llm_client = OpenAIChatCompletionsClient(
+    model='openai/gpt-oss-20b',
+    client=groq_client
+)
+
+groq_runner = OpenAIChatCompletionsRunner(
+    tools=agent_tools,
+    developer_prompt=developer_prompt,
+    llm_client=groq_llm_client
+)
+
+callback = DisplayingRunnerCallback(chat_interface)
+messages = groq_runner.loop(
+    prompt='how do I install kafka',
     callback=callback
 )
 ```
