@@ -1,0 +1,1859 @@
+The Rise of MLOps
+
+0:01 um hello everyone
+0:03 this event is brought to you by data
+0:05 talks club which is a community of
+0:07 people who
+0:07 love data and we have regular events on
+0:10 tuesdays we have
+0:11 more technical events where we have some
+0:14 sort of presentation it's a webinar
+0:17 we will not have any next month because
+0:21 next month we will have a conference
+0:22 which i'll talk about
+0:24 soon but in march we will be back with
+0:26 technical meetups and we will talk
+0:28 the first meetup in march will be about
+0:31 building scalable
+0:32 scalable end-to-end deep learning
+0:33 pipeline in the cloud that's a very long
+0:36 name
+0:36 but i'm sure the talk will be very
+0:39 interesting and we have a different type
+0:40 of events
+0:41 like today which are a bit less
+0:44 technical they're more like
+0:46 conversational
+0:47 we call them live podcasts and today we
+0:49 have one of those
+0:51 uh about envelopes then on
+0:55 next week on tuesday where we usually
+0:58 have
+1:00 webinars we will again have a podcast
+1:02 about future stores
+1:04 and we'll again have a break
+1:07 for the conference and in march we'll
+1:08 come back with a topic of public
+1:10 speaking
+1:12 and then speaking about the conference
+1:14 the in february we will have
+1:17 a conference with for drugs
+1:20 every friday we will have
+1:24 four talks um first friday we will talk
+1:26 about machine learning use cases then we
+1:28 will talk about
+1:29 product and process then we'll talk
+1:31 about career in data and then
+1:33 finally in the last on the last friday
+1:35 we will talk about machine learning
+1:36 production
+1:37 and this event is supported by our
+1:39 friends from o'reilly and mlop's
+1:42 community
+1:42 and if you want to find out more about
+1:44 the event
+1:45 go to this you can just go to our
+1:47 website datatalks.com
+1:49 and you will find it there for questions
+1:53 today we will use
+1:54 slido so you can use uh either this link
+1:57 which i'll post
+1:58 now in chat or you can just go to
+2:00 slider.com enter ddc there
+2:02 and this way you'll be able to ask any
+2:05 questions today
+2:06 during our chat and now let me
+2:10 let me share the link i'll put it
+2:14 i'll put in the chat
+2:18 so just go there and ask any question
+2:22 during
+2:22 the call and so i'm bringing up
+2:27 putting in some notes and
+2:31 we can start so today we will talk
+2:35 about envelopes and we have a special
+2:38 guest today
+2:38 uh theophilus papapa nagioto and
+2:42 uh few and i are colleagues i work at
+2:44 the league's group
+2:45 and he works at the parent company of
+2:48 felix
+2:48 process and in our company ethio is the
+2:52 main advocate of emelops he is
+2:54 visually the goal person for everything
+2:56 related to machine learning production
+2:59 model deployments tools for serving
+3:01 machine learning cube flow
+3:03 everything related to that and i wanted
+3:06 to invite somebody to talk about
+3:07 envelopes and it was very difficult for
+3:09 me to think
+3:10 of anyone else better suited for this
+3:12 chat than
+3:14 so thank you very much for coming to our
+3:15 event welcome thanks alex it's my
+3:18 pleasure to be here
+3:20 yes before we ge go into our main topic
+3:23 uh
+3:23 today of about envelopes uh let's start
+3:26 with your background
+3:27 can you tell us a bit about your journey
+3:29 so far sure i'm an engineer
+3:33 so with a background of working in
+3:36 telcos
+3:37 for the last 20 years and so i studied
+3:41 computer science and then i had the
+3:43 master's in data communications
+3:45 and finally masters in ai so
+3:48 over in that journey of 20 years i've
+3:51 been transitioning from
+3:52 unix engineer to data ops and
+3:56 to ml engineering the last
+3:59 seven years let's say okay so you you
+4:02 actually
+4:02 had two masters yes i didn't finish the
+4:05 last one i
+4:06 tried some going ah you're still
+4:09 studying
+4:10 yeah i did i don't study anymore i
+4:12 finished with a
+4:13 lectures like a couple of years ago but
+4:16 there is still this thesis thing that i
+4:18 need to deliver ah yeah i know
+4:20 it's uh it really takes some time to do
+4:23 this
+4:24 yeah to start even to start
+4:29 and what do you do now
+4:33 so and now i'm working in process and
+4:36 it's a it's a company that is investing
+4:39 in other companies we are working
+4:40 together
+4:41 on some of them on some projects and
+4:45 this company is investing mostly in
+4:48 some segments like food delivery and
+4:51 payments and classifieds as well as
+4:56 edtech so we are trying to
+4:59 the we have a team called the process ai
+5:01 team and we are
+5:03 helping the data science teams of these
+5:05 companies to
+5:06 level up their uh their level of
+5:10 maturity in in the space of machine
+5:12 learning operations
+5:14 like colleagues for example where you
+5:16 help us to
+5:17 to do all these things related to
+5:19 envelopes
+5:20 yeah so what is envelopes
+5:24 right so uh it it's a buzzword these
+5:28 days
+5:28 and we were in this uh in this twiml
+5:31 conference and everyone was talking
+5:33 about
+5:33 mellops all the vendors that have a
+5:35 platform to sell were
+5:36 talking about this so and i remember
+5:39 that we had the same thing
+5:41 as in the same feeling like 10 years ago
+5:43 when people started talking about devops
+5:45 and what is the hopes uh but and there
+5:48 are a lot of things there is
+5:49 it's about the culture it's about the
+5:52 how people are working together and how
+5:53 they are they're collaborating to solve
+5:55 a problem
+5:56 but it's also about of course processes
+5:58 and technology
+5:59 so it's a set of best practices that
+6:04 helps people to deliver machine learning
+6:06 models in
+6:07 production and not only deliver but also
+6:10 maintain uh effectively and
+6:13 what is devops best practices
+6:17 yeah yeah so the community or the
+6:20 industry
+6:20 realized that like 10 years ago that
+6:23 having
+6:24 some barriers or some goals between the
+6:26 development
+6:28 department and an operational department
+6:30 is not helping with having
+6:32 fast iteration of delivering of
+6:35 releasing software fast
+6:37 and when you want to have a a
+6:40 product that is changing fast in order
+6:43 to deliver new features to your customer
+6:45 or to fix
+6:45 bugs you have to iterate fast you have
+6:48 to release a lot of times a day you have
+6:50 to minimize the
+6:52 the amount of time that you spend from
+6:53 the moment that you will write a line of
+6:55 code
+6:55 till the moment that it will reach the
+6:56 production and start serving uh
+6:58 customers so this is devops right
+7:02 and it's been
+7:05 described over a time with different
+7:07 names as well
+7:08 and the skill set of people that have
+7:10 been
+7:12 working without have has been changing
+7:14 although to me it's
+7:16 still the same the unix engineer or the
+7:18 system engineer that has been
+7:20 transitioning from different titles
+7:22 and cloud engineer also i think now
+7:25 comes up pretty often
+7:27 that absolutely although we should also
+7:30 mention that there are differences
+7:32 on the fundamentals like uh
+7:35 what is the software delivery workflow
+7:37 and what is the machine learning
+7:38 workflow right
+7:40 in the software space you you write code
+7:42 you you have some requirements and you
+7:44 you deliver a piece of artifact that you
+7:46 deploy somewhere
+7:48 and this is different fundamentally from
+7:50 the machine learning workflow where
+7:52 a data scientist has to to to do some
+7:55 exploratory analysis first on the data
+7:57 and build a pipeline that will build a
+7:59 model
+7:59 based on some modeling activity but the
+8:02 input of
+8:03 the modeling or the training process as
+8:05 we call it is not just the code that the
+8:07 data scientist is writing the input is
+8:09 also the data
+8:11 and the artifact that is being produced
+8:13 in that case
+8:14 is the is the model and that model has a
+8:17 life cycle
+8:19 which is not the same as the life cycle
+8:21 of a typical artifact from the software
+8:23 engineering world in the software
+8:25 engineering world
+8:27 you have an artifact in the form of a
+8:29 container or in the form of
+8:31 a binary file that you release or you
+8:34 deploy in the server
+8:35 and after the tests have been executed
+8:37 in your jenkins let's say in your ci
+8:39 process
+8:40 you you have it always running
+8:43 as long as there are no breaks in the
+8:45 connections with the other systems
+8:48 although in the space of the machine
+8:49 learning workflow
+8:51 this is different the model is is not
+8:53 something that you will build and will
+8:55 work forever
+8:56 and the model is degrading over time
+8:59 because
+8:59 the data are changing over time i have a
+9:02 nice example that i like to use
+9:04 in uh in our in the component saying
+9:06 that when
+9:07 a new iphone is coming every every year
+9:10 this class needs
+9:11 if you have a classifier that is uh
+9:14 that is identifying the model of the
+9:16 iphone let's say
+9:17 every year you will have to retrain the
+9:19 model that is doing this classification
+9:21 because
+9:21 you have a new class in the data space
+9:24 and that's why
+9:25 for example the model would degrade and
+9:27 other examples of models are being
+9:28 retrained
+9:29 for example every day or every time you
+9:31 are performing
+9:32 an action to label some data set in your
+9:35 doorbell
+9:36 from nest or in your car with a
+9:40 with your i don't know driving models
+9:43 that you
+9:43 might have so the the fundamental
+9:46 difference is that the model is
+9:47 decreasing over time and that's why
+9:50 the monitoring of the of this
+9:55 deployed artifact has to
+9:58 be able to trigger a retraining job
+10:02 not just stay there and and serve
+10:04 forever
+10:05 you will never have this in in the
+10:07 software engineering so basically the
+10:09 main difference between
+10:11 uh devops and envelopes is that the life
+10:14 cycle is different
+10:16 and then because the input to a machine
+10:19 learning service
+10:20 is data data changes over time and it
+10:23 means that we need to watch
+10:26 to look uh to look out and see okay if
+10:29 there are some changes then we possibly
+10:30 need to trigger some things right
+10:32 and this is not something we have in
+10:34 devops right absolutely
+10:36 yes of course in devops you you deploy
+10:38 an application right and this
+10:40 application
+10:41 is following some rules it's a
+10:42 rule-based software that is performing
+10:44 some action
+10:45 and based on the tests in the in the
+10:47 unit and the functional test that you
+10:48 have written
+10:49 you validate that that the artifact is
+10:51 performing exactly the activity that you
+10:53 have described in your
+10:54 in your requirements but
+10:58 yes with a model this is different it's
+11:00 not as
+11:01 uh as static as as a software artifact
+11:05 and uh are there other crucial
+11:07 differences between
+11:09 the two between devops and develops in
+11:10 addition to
+11:12 um to this uh so-called data drifts
+11:15 uh is there something else yes so uh
+11:18 there is another thing so if you
+11:20 remember from the especially
+11:22 in the world of sres this this statement
+11:25 that
+11:25 is a foundation that the monitoring is
+11:27 the foundation of
+11:28 um of of the operation of sre
+11:32 is important and the monitoring in the
+11:35 space of envelopes
+11:36 is even more important because you don't
+11:39 only need monitoring in order to
+11:41 to serve to have a service that is
+11:43 performing as you described it
+11:45 you also need monitoring in order to
+11:48 trigger these actions that you have
+11:49 described the
+11:50 retraining action so the monitoring is
+11:53 going
+11:53 to to another level in the typical
+11:56 devops environment or in the typical
+11:58 software
+11:58 uh environment you would have service
+12:01 related metrics and business related
+12:03 metrics
+12:04 like how many requests per second you
+12:05 receive and latency and i don't know
+12:08 but in the space of machine learning you
+12:10 might want also to
+12:12 to monitor some extra things that you
+12:14 are also doing during training time
+12:16 or even that you want to have only
+12:18 during influence time for example
+12:20 a fairness or an anomaly detection
+12:23 or i don't know adversarial attacks on
+12:25 your model
+12:26 uh in order to uh to to have such
+12:30 extended monitoring you need components
+12:32 in your in your workflow that are
+12:35 not only retrieving all these logs and
+12:37 metrics that you are producing from your
+12:39 inference
+12:40 but also performing the action to
+12:43 to kick off the training pipeline
+12:46 so are these tools that we are talking
+12:48 about for monitoring
+12:50 are they different from traditional
+12:52 devops tools so for example usually what
+12:54 we use is like
+12:54 prometheus grafana and things like that
+12:57 are they different in the melops
+12:59 world or they are similar or it's the
+13:03 same tools
+13:04 so in in in a typical
+13:07 in in a software component you are
+13:10 generating metrics in your prometheus
+13:12 from
+13:13 your let's say from your application
+13:16 itself when when a class has been
+13:18 instantiated you might want to increase
+13:19 a counter
+13:20 or when you are receiving a new request
+13:23 to export to a particular
+13:25 workflow of your application but in in
+13:28 the mail you want separate components
+13:30 that are receiving the data that you you
+13:33 are trying to infer
+13:34 and also receiving the maybe the payload
+13:36 of the response
+13:37 and do comparisons with the rest of the
+13:40 data that you have
+13:41 so you need a large infrastructure to
+13:45 to to build and send such metrics in
+13:47 prometheus and
+13:48 of course the tool set is the same
+13:50 prometheus is
+13:52 the the the standard let's say metric
+13:54 system now if
+13:55 like like graphite was 10 years ago and
+13:58 and grafana
+13:59 is dominant in the space of of
+14:00 visualization of dashboards for
+14:02 for monitoring but the component or the
+14:05 service that is going to generate this
+14:07 metrics
+14:08 is something new and it's something that
+14:11 should become something reusable that
+14:13 people can utilize
+14:15 you you can buy it you want to we want
+14:17 to have this commoditized you want to
+14:19 buy
+14:19 from a vendor or from the supermarket a
+14:22 component that's performing
+14:24 in inference monitoring on robustness of
+14:27 of your of your model yeah
+14:31 and why do we want to commoditize that
+14:33 like
+14:34 i know that it's uh it's a difficult
+14:36 thing right
+14:37 to to deploy models right so this is why
+14:41 we want to make it as simple as possible
+14:43 right
+14:44 yes absolutely so if we want to be able
+14:46 to iterate fast we don't want to spend
+14:48 time and development effort on figuring
+14:50 out what are the special
+14:53 metrics of each model that we need to
+14:55 have we need to be able to
+14:58 automatically let's say if possible and
+15:01 identify this and pull them or plug them
+15:04 in the
+15:05 in the pipeline
+15:08 um i see often that there is a confusion
+15:11 between
+15:12 ml engineering and envelopes so and
+15:15 often these terms now used as synonyms
+15:18 and i was wondering uh do you see
+15:22 like are they different and if they are
+15:25 what is the main difference between the
+15:27 two yeah
+15:29 so ml engineering is a relatively new
+15:31 topic the same as develops
+15:33 and
+15:36 the same way that you would say a
+15:38 software engineer and the
+15:40 devops or something like this i
+15:43 i could imagine so the the
+15:46 the role is the machine learning
+15:48 engineer and the male ops is the
+15:50 practice of
+15:52 following the best practices roadmap
+15:55 let's say or
+15:56 some maturity level a roadmap that is
+15:59 available out there
+16:00 so ml engineer is the profession or the
+16:02 role and the email ops is the practice
+16:04 of
+16:06 of performing such a role with the rest
+16:09 of the departments of
+16:10 communicating with your business and
+16:12 your operations
+16:14 okay and uh ml ops and operations uh
+16:18 um i guess like the people who are doing
+16:22 um envelopes who are they are they ml
+16:24 engineers
+16:25 or is it it's a sip like a special
+16:28 person
+16:28 uh who we can call a male ops engineer
+16:31 or uh
+16:32 like if you want to to make to to do
+16:35 envelopes what kind of role
+16:37 you want to look for well mlops is the
+16:40 practice of
+16:41 of having the the three different
+16:44 roles in an organization so the business
+16:46 need the
+16:48 production operation and the development
+16:50 working together
+16:51 yeah and following the best practices
+16:53 like in the devops phase you have the
+16:54 developer you have the operator you have
+16:56 the business need
+16:57 the business need to find the metric or
+16:58 the sl
+17:00 slo or sli so you define this metrics
+17:03 you define what is my error budget
+17:05 and then in the space of operator and
+17:08 developer you have someone who is
+17:10 producing something and
+17:11 he's collaborating with someone who is
+17:13 consuming something as a customer
+17:15 the operator is consuming the the code
+17:18 that the developer wrote
+17:20 in the space of ml ops it's similar you
+17:22 have the ml engineer who is
+17:24 right who is creating the model is
+17:27 creating the pipeline is maintaining it
+17:29 and you have the operator who is
+17:31 monitoring and operating the model and
+17:34 making sure that the pipeline is working
+17:36 properly
+17:38 and the business the product owner or
+17:41 however you want to call him
+17:43 or here is that they are setting the
+17:46 requirements or the the service level
+17:48 manager
+17:49 right yeah product manager but not in
+17:52 the form of
+17:53 giving requirements and not even knowing
+17:56 who's here
+17:56 who they are working with it's about
+17:58 having a common team that they are
+18:00 working together
+18:01 maybe under the same manager even if
+18:03 possible
+18:04 that are focusing on delivering
+18:06 something very particular like
+18:08 a set of models and this is the special
+18:10 team that is doing let's say the search
+18:12 in the organization and this is the
+18:13 special team that is doing the
+18:14 recommendation
+18:16 okay so basically a cross-functional
+18:18 team and everyone is working
+18:20 on solving uh the same problem together
+18:23 as they wanting so not like
+18:26 developers do something then throw it
+18:28 over the wall to the
+18:29 operational team and they they support
+18:32 it but like everyone is working together
+18:34 yeah and let's take the culture as
+18:38 a topic of ml ops and it's quite similar
+18:41 or even
+18:42 same as the devops so uh ml
+18:45 uh engineer is doing this uh like has
+18:48 this
+18:48 uh developer role but who has this
+18:52 operator role in the mlops world
+18:56 how do we call these people well
+18:59 you might you might have the same people
+19:01 who are performing this action
+19:03 if you have a small functionally
+19:05 complete team that is
+19:06 doing this and being responsible for
+19:08 what they're writing
+19:09 and that's what the the road that the
+19:11 amazon led for example with
+19:13 the the typical two pizza teams saying
+19:16 that
+19:16 you built it and you run it right you
+19:18 have a team of let's say
+19:19 five people and a product owner that is
+19:23 defining the inputs and outputs of the
+19:26 team or the interfaces the api
+19:27 definitions and everything
+19:29 and the developers are the same people
+19:30 who are also running it
+19:33 so if you would say that having separate
+19:37 departments
+19:38 in the past that were producing a model
+19:40 and were operating the model
+19:43 uh you would expect that in the future
+19:45 you would have one common team that is
+19:46 performing
+19:47 this action as a functional complete
+19:49 team
+19:51 now is there such a thing like a melops
+19:53 engineer as a role
+19:55 no in the same okay in the same way like
+19:58 let's say we have
+19:59 uh site reliability engineers or
+20:03 devops engineers i also saw this title
+20:05 sometimes popping up
+20:08 yeah i don't think that it will become a
+20:10 title
+20:12 maybe because it's a fancy word now to
+20:15 use it
+20:16 and people will have it like a data
+20:18 scientist was
+20:20 10 years ago but i don't think this will
+20:23 become a role of a department
+20:26 and if it would be that would be the
+20:27 same because we've seen this also in
+20:29 some
+20:30 organizations trying to create a or
+20:33 a role or even a team name called devops
+20:36 they are missing the whole concept of
+20:39 having devops right
+20:40 the whole concept is about having a
+20:42 common team that is
+20:43 performing this function rather than
+20:46 having different teams
+20:47 to communicate with each other over an
+20:50 escalation path let's say
+20:51 of different managers and operating
+20:53 silos
+20:54 okay so we have a team and in the team
+20:57 we have three roles
+20:58 we have the developer then we have the
+21:00 operator and then we have the somebody
+21:02 from
+21:03 business right and
+21:06 the developer is a machine learning
+21:08 engineer right so then this
+21:10 from business we have a product owner or
+21:12 product manager
+21:13 and operator is i guess we can
+21:17 it can be like a set reliability
+21:20 engineer right
+21:21 uh and i i know that to at least we have
+21:24 um
+21:25 this role called site availability
+21:27 engineer and then in parenthesis we
+21:30 save machine learning but it means
+21:32 nothing else uh
+21:33 but necessary who will be working with a
+21:36 male team
+21:37 and do you see these things coming up
+21:41 like some sort of spiritualization
+21:43 within this e3
+21:45 role yeah that's a good question
+21:48 eventually i think that
+21:50 more and more people will jump into that
+21:52 role because
+21:55 maintaining a model will become
+21:58 more more adopted in
+22:01 organizations having machine learning
+22:03 models will become more
+22:05 like not just the trend but the defect
+22:07 of how organizations operate
+22:09 as they are switching from process
+22:11 driven to
+22:12 data driven to model driven
+22:14 organizations
+22:16 so and that's the concept of
+22:18 democratization of the machine learning
+22:20 right you have
+22:21 your whole organization being able to
+22:24 utilize models
+22:25 and even to build if if possible
+22:29 so more and more software engineers will
+22:31 come to become
+22:32 machine learning engineers more and more
+22:34 data scientists will transition to that
+22:36 like they have transitioned from
+22:38 data mining experts or statisticians
+22:41 into that role and yeah so the software
+22:45 is the tool
+22:46 to achieve what you want anyway and the
+22:49 model can be also the tool in the future
+22:51 to achieve what you want as a as a
+22:53 function in an organization
+22:56 let's say we want to find a place a
+22:58 company that practices
+23:00 mlops and we're looking for a job right
+23:03 now
+23:05 so i'm looking for a job how do i
+23:07 recognize
+23:08 this from a job posting that this is uh
+23:10 this role is an
+23:12 ml ops role are there some keywords that
+23:16 i
+23:16 need to look uh to do to find to look
+23:19 for
+23:20 well the easy part is to look it on the
+23:22 skills required right because because
+23:24 you can search in the requirements or
+23:26 the how do you call it the
+23:27 the roles and the responsibilities of
+23:29 the other
+23:30 yeah the responsibility of the role but
+23:33 usually these are just sentences that
+23:35 are fancy and creating some uh
+23:40 yeah some experience in envelopes
+23:43 right and go figure what it means right
+23:46 but but if you of course if you start
+23:49 seeing
+23:50 names of tools like cube flow in the
+23:52 skill set or
+23:55 i don't know um pipelines and
+23:58 even special skills on on components
+24:02 that are
+24:03 trending now in the space of monitoring
+24:06 of machine learning models in the space
+24:08 of fairness detection
+24:09 and then of course you can understand
+24:12 that
+24:14 there is there is a depth in the
+24:16 material or
+24:17 they have reached some depth in the
+24:18 maturity of the mlops
+24:22 and maybe i can use this now to say that
+24:25 there is this article written by google
+24:28 and then there was an article written by
+24:30 microsoft on the topic of
+24:32 maturity on the mlops and they have
+24:34 defined
+24:35 levels each one of them google defined
+24:39 three levels zero one two and microsoft
+24:41 defined
+24:42 four five levels zero one two three four
+24:44 and they
+24:45 describe with some bullets
+24:48 and what are the requirements to achieve
+24:50 or to adopt
+24:53 to maturing in this adoption of
+24:55 envelopes
+24:56 and even there is this envelopes roadmap
+24:59 for
+25:00 2020 and to 2025
+25:03 which is describing all the
+25:07 technologies that you should adopt in
+25:10 order to mature
+25:11 in that space so we didn't have this
+25:13 back
+25:14 10 years ago when we were defining
+25:17 devops we had the manifest
+25:18 or manifesto of what is the devops and
+25:21 how we should collaborate
+25:23 but we didn't have such a nice
+25:25 definition of how to mature
+25:27 and i i i appreciate that i can post
+25:30 references at the end of the uh
+25:33 maybe we can just you can just quickly
+25:35 go over let's say
+25:36 we can take these three levels of
+25:38 maturity was it from google you said
+25:40 yeah there is one from google and one
+25:42 from microsoft yeah so like the one from
+25:44 google has three the one from microsoft
+25:46 has five right
+25:47 so probably the one from microsoft is
+25:48 more detailed but the one from google uh
+25:51 like what kind of stages yeah so so they
+25:54 break it down
+25:55 into people processes and technology
+25:58 yeah
+25:59 like traditional maturity models in
+26:01 front of their organization
+26:02 and then they describe with bullets uh
+26:05 what are the important things to have so
+26:08 in the in
+26:09 maturity level zero is when you don't
+26:11 have mlos which means that you have
+26:13 manual processes to to train a model and
+26:16 you have manual processes to deploy a
+26:18 model
+26:19 and you have someone who is monitoring
+26:21 the model and maybe
+26:23 make take a decision after comparing it
+26:26 with some data that they will receive
+26:28 from a data store to
+26:31 perform a training activity again by
+26:32 manual you mean like
+26:34 uh running it in a jupyter notebook or
+26:36 something
+26:37 fancier i mean training for example
+26:40 uh manual monitoring or the manual i
+26:43 don't know like model training
+26:45 uh because i know that for a fact that
+26:48 even
+26:48 we like sometimes do that we have a
+26:51 model and then what we do to train it we
+26:53 just
+26:53 run a jupiter in a notebook and then you
+26:55 know run run run then attempt you have a
+26:58 model
+26:58 yeah and even if you are not doing it in
+27:02 your laptop and you are doing it
+27:04 in the cloud let's say in sagemaker it's
+27:06 still a manual process right
+27:08 if you if you have to open to start a
+27:10 notebook
+27:11 and click click do
+27:14 run the cells and and produce your
+27:17 artifact
+27:17 produce your model so this is the manual
+27:20 process this is the maturity level zero
+27:22 we don't have envelopes you might have
+27:24 devops right you might have
+27:26 ci there and you might have that the
+27:28 model is being picked up by s3 and
+27:30 you deploy it's been deployed in
+27:33 sagemaker
+27:34 endpoint and it's been
+27:37 made available but you definitely don't
+27:40 have envelopes
+27:42 and of course there are other things
+27:44 there you might have integration with an
+27:46 application that you might want to
+27:48 introduce and this is also not something
+27:50 that
+27:51 you you have automated in the ml of
+27:54 space
+27:55 in the envelopes level zero and then
+27:57 they describe the level one of
+27:58 maturities when you are
+28:00 starting introducing some automation you
+28:02 you have
+28:03 you are building a pipeline and then you
+28:05 have the components of the pipeline that
+28:07 are doing the
+28:08 data validation that you are receiving
+28:10 like in the in the nice way that the
+28:12 tensorflow extended paper defined like
+28:15 three four years ago
+28:16 you have components that are validating
+28:19 the data that you have received or the
+28:20 features
+28:21 whether they are according to the schema
+28:23 of the data that you are expecting
+28:26 and performing the training having the
+28:28 valuation
+28:29 component of the valuation module that
+28:31 is setting the
+28:33 the criteria that you have set in order
+28:35 to promote it or to label it as a golden
+28:37 model that you will promote to
+28:38 production or
+28:40 you will go for more testing to release
+28:43 it
+28:44 and when you have a pipeline this is an
+28:47 automation task that
+28:48 can level you up to maturity level one
+28:51 because
+28:52 you spend less time on this less
+28:54 friction between teams
+28:55 the teams are working together and you
+28:57 have the data engineer
+28:59 who's producing the features working
+29:01 together with a machine learning
+29:02 engineer who is
+29:04 maintaining the training job and maybe
+29:06 wakes up during the night to
+29:08 fix a broken model because it's also the
+29:11 role of the operator
+29:12 who the machine learning engineer should
+29:14 have uh if we want to have this
+29:17 combined envelopes role
+29:20 and yeah so basically um
+29:24 when we have when we train our model in
+29:26 jupiter by clicking run run run
+29:28 this is automation level zero once we
+29:30 move this from
+29:32 uh notebook to a script and then there
+29:35 is some
+29:35 certain level of the automation when we
+29:37 don't do this
+29:39 manually but let's say there's some
+29:42 training pipeline that we can
+29:45 easily run like let's say change some
+29:47 parameters
+29:48 hit enter and then it just runs then
+29:50 this is a level
+29:52 one right yes and and more things
+29:55 you are producing metrics that you are
+29:56 observing and you make a decision to
+29:59 uh to hit the button in your
+30:02 ci to do retraining yeah
+30:09 maybe automatically your new features
+30:11 from your feature store if you have some
+30:13 data versioning system
+30:14 and etc etc so that's the maturity level
+30:18 one
+30:19 and then there is the division yeah the
+30:22 the ultimate goal
+30:23 and that we should target and that's the
+30:25 maturity level two
+30:26 in terms of google actually level four
+30:29 in terms of microsoft
+30:30 which says that we have an automated
+30:32 retraining process
+30:34 so the model is being monitored
+30:37 with all the metrics that we have
+30:39 mentioned in the past with uh
+30:41 not only the service level metrics like
+30:44 the latency and the number of requests
+30:46 but
+30:47 um all these quality metrics about the
+30:50 the fairness and the robustness
+30:53 and maybe even explainability topics
+30:57 that you want to have
+30:58 and in order to detect whether your
+31:00 model is degrading because this is a
+31:03 difficult problem so having all these
+31:05 metrics in your
+31:06 and in your prometheus let's say that
+31:09 are
+31:10 checking the data drift and then the
+31:11 model the concept drift and
+31:14 all these sensors that you have around
+31:16 your ecosystem
+31:18 are triggering so you have triggers and
+31:21 these are triggering
+31:22 and the execution of a pipeline and this
+31:26 is the maturity level too
+31:27 and the triggering of the execution of
+31:29 the pipeline is a whole is a whole
+31:31 another discussion
+31:32 because what we have been seeing in the
+31:36 last 10 years of big data was
+31:40 the scheduler that was the ultimate
+31:43 component that was
+31:44 periodically performing an action maybe
+31:47 daily
+31:47 trainer model or maybe a nightly every
+31:50 night
+31:51 effects create the new features from
+31:53 your
+31:54 orders from your data set
+31:58 that was typically time driven execution
+32:00 time driven
+32:01 scheduling but now the the modern
+32:04 or the machine learning pipelines which
+32:06 are different than the
+32:08 the the data pipelines are should be
+32:12 um data driven
+32:15 should be able to be triggered by
+32:18 your metrics your threshold so you
+32:20 define thresholds for your
+32:22 for the metrics that you have said or
+32:24 even the threshold is something static
+32:26 even the threshold should be something
+32:28 that you can
+32:30 create even a model to to identify when
+32:32 we we should trigger
+32:34 the retraining because imagine having
+32:36 this been trained when you don't want it
+32:39 so when you are setting up a data driven
+32:41 execution
+32:42 you need special tooling for for that
+32:45 pipeline
+32:46 and but then you you having you're
+32:49 having
+32:49 such quality problems and
+32:52 that you're facing as an organization
+32:54 that you are maturing
+32:56 even also on how the model is performing
+32:59 and that's why i think that this
+33:01 adoption or this maturity model
+33:04 will help organizations uh get
+33:07 deeper and better into onboarding
+33:10 muscular models
+33:11 so basically it will help not just
+33:13 directly jump on monitoring drift and
+33:15 having faith in the model that it will
+33:19 retrain itself and everything will be
+33:21 fine but just gradually move from one
+33:23 step to another and change mindset in
+33:26 the meantime right
+33:27 yes and of course the like in the in the
+33:30 sre
+33:31 the foundation is the monitoring and
+33:35 i'm vocal about this we should take care
+33:38 of
+33:39 our models in production and not only
+33:40 take care but create new data
+33:42 out of how they are performing because
+33:45 the monitoring is generating data it's
+33:47 not only the payload loading that you
+33:48 get
+33:49 the inference request and the inference
+33:50 response with the class names let's say
+33:52 you also want all the peripheral
+33:55 explainability metrics
+33:58 fairness etc yeah so i see that it's
+34:02 a change in mindset so we need to
+34:05 care about all these things before we
+34:07 can implement them
+34:08 but it also i assume it requires some
+34:10 special tooling
+34:12 some special tools what are these tools
+34:14 like what can we use to actually
+34:16 to to have a melops to
+34:20 to to have all these things what are the
+34:22 tools for this are there tools
+34:23 for that at all yes of course
+34:27 what i was fascinated about in the
+34:31 email con this and last week was that
+34:34 there are so many vendors
+34:35 jumping on this train and using the
+34:38 buzzword envelopes
+34:39 to promote their uh their solution
+34:43 and good vendors that are focusing on
+34:46 the right direction
+34:47 focusing on how to build systems that
+34:49 are triggering jobs
+34:50 how to build monitoring tools and how to
+34:54 produce sdks that are helping you build
+34:57 monitoring tools
+34:58 and not only vendors of course there are
+35:00 plenty of open source software
+35:02 and echo the whole ecosystem of cube
+35:05 flow is
+35:06 a collection of such tools so
+35:10 it's the fact that it should be
+35:12 kubernetes based
+35:13 yeah that's the that's the new linux for
+35:15 me like
+35:16 like like linux dominated the world 20
+35:18 years ago and we still have it
+35:20 like 19 something percent in our data
+35:23 centers
+35:24 kubernetes is the default way to manage
+35:26 workloads
+35:27 and the way that you are doing machine
+35:29 learning on kubernetes
+35:31 is today the cube flow is
+35:34 the leading so this is the tool we
+35:37 should have
+35:38 like if we want to start implementing
+35:40 envelopes in our organization then
+35:42 keep flow is let's say if we don't want
+35:45 to go to vendor we want to go with open
+35:47 source
+35:47 then kubeflow is the tool we want to
+35:50 have right
+35:50 absolutely but also vendors yeah the
+35:53 leading vendor right now in the cubeflow
+35:55 community
+35:56 is aws and microsoft together with
+36:00 google and
+36:00 uh and seldom and other great developers
+36:04 who are
+36:05 constantly delivering new functionality
+36:08 um
+36:09 so the the business identified that by
+36:13 sharing
+36:14 their um capabilities
+36:17 on the ecosystem they also promote their
+36:19 product
+36:20 so as they are delivering cloud services
+36:23 let's say
+36:24 they want to deliver cloud services
+36:26 which are based on
+36:27 a product that other people know and
+36:29 when you are using sagemaker maybe you
+36:31 are
+36:32 involving a pipeline that in the pack is
+36:33 a kubeflow pipeline
+36:35 when you are invoking when you are
+36:36 deploying in in google cloud
+36:40 a model an inference service it might be
+36:42 a kf serving inference service
+36:44 and when you are running a jupiter in
+36:47 azure
+36:48 it might be running as a as a
+36:51 kubernetes pod following the
+36:54 the cube flow uh definition okay
+36:58 maybe let's take a step back and talk
+37:00 about key flow
+37:01 what is it and what kind of what kind of
+37:04 components that we have in gibral
+37:06 yeah so uh for for me to flow is a
+37:09 what it's an ecosystem that is
+37:11 delivering an ml platform
+37:12 and if you jump on it you will start
+37:15 figuring out that there are components
+37:17 that you were not aware of and
+37:18 you might want to start using in your
+37:20 workflow for example when we deployed
+37:24 some models last year in in the company
+37:27 we just focused on having a model that
+37:30 is serveable
+37:31 that we can send inference requests and
+37:33 get the responses
+37:34 but then we have seen that with kf
+37:36 serving which is the kubeflow
+37:38 serving sub component we have peripheral
+37:41 tools like the explainer
+37:42 and the transformer and the
+37:47 the drift detector and the outlier
+37:49 detector
+37:50 and now we have more and more components
+37:53 and by utilizing them we started
+37:55 building a metrics so
+37:59 yeah keep flow is a super set of
+38:01 components and
+38:02 for me the component i love the most is
+38:05 kf serving because
+38:06 i'm so into the things that are in
+38:09 production
+38:11 but of course it's touching areas before
+38:13 the serving it's touching areas before
+38:15 the deployment
+38:16 the the big component of flow is also
+38:19 the cube flow pipelines
+38:20 which is i based on different schedulers
+38:24 you can have it with a
+38:25 two different uh data driven schedulers
+38:28 the one is the argo cd
+38:30 from into it and the other is the tecton
+38:32 with k
+38:34 from from a fork from
+38:37 a k native so and these pipelines are
+38:42 if you like an implementation of the tfx
+38:45 an implementation of the tensorflow
+38:47 extended
+38:48 so the paper that was sent was given
+38:51 to the public for four years ago from
+38:54 google
+38:55 saying that we should have component
+38:56 based uh
+38:58 and data driven execution between the
+39:01 components
+39:02 with a pub sub type of relationship
+39:05 and let the way to have such a
+39:09 implementation their keep flow pipelines
+39:12 and then more and more tools are jumping
+39:14 the
+39:15 this popular feature store called feast
+39:18 from godzik is now also part of the
+39:21 community
+39:22 has joined the ecosystem and i wouldn't
+39:25 be surprised if this will be donated to
+39:28 to a foundation at any moment soon
+39:33 so did i answer your question about
+39:34 qfloor would you like yeah so i think
+39:37 so what i understood so in keep flow we
+39:39 have this kf serving component
+39:42 that has also nice features in addition
+39:44 to just certain models
+39:46 it also has nice features of detecting
+39:49 outliers detecting drift then we also
+39:52 in addition to that there is another
+39:54 component keep flow pipelines
+39:56 which we use for building our training
+39:58 problems
+40:00 and there is the first component which
+40:02 is uh
+40:03 fist right it's not yet part of keyflow
+40:05 as i understood
+40:07 but it's a feature store that we can use
+40:09 when building our
+40:10 training pipelines yes and other
+40:13 components there is this
+40:14 nice tool for a hyper parameter
+40:17 optimization and
+40:19 neural architecture search which is
+40:20 called cutib
+40:23 it was a google vis
+40:26 visio or something a product that was
+40:29 evolved to
+40:30 to katip and katy imagine describing in
+40:32 the yaml that you want
+40:34 to search that space for your optimal
+40:38 so you define an optimization objective
+40:40 as a data scientist you want to train a
+40:42 model and
+40:43 achieve 99 accuracy so that's your
+40:45 optimization objective
+40:46 and then you define the ranges of your
+40:50 hyper parameters the same way that you
+40:51 are doing a grid search
+40:52 and you say i want my learning rate to
+40:55 to search values between 0
+40:56 0 1 and 0 0 2 with the step of
+40:59 this amount and then it splits all these
+41:03 different executions of the search in
+41:06 into components or into pods or into
+41:08 containers if you like in the space of
+41:11 docker and kubernetes that are
+41:13 performing this
+41:14 training job with these parameters and
+41:16 then they are producing a result
+41:18 it's been reduced and then comparing in
+41:20 a nice visual view all the results
+41:22 to to decide which model to promote
+41:26 and all these components then the nice
+41:28 thing that is that these components can
+41:29 be installed
+41:31 as standalone components in your cluster
+41:33 without without having to have the full
+41:35 blown
+41:36 cube flow although the beauty is that
+41:39 you can also
+41:40 have it full block fully blown so they
+41:43 have
+41:44 they are they have tight integration
+41:46 there are there is this even this
+41:47 company
+41:48 called arikto that has built this tool
+41:50 called kale
+41:51 that is giving you the ability to
+41:53 transform your uh
+41:54 notebook cells into containers so
+41:58 you this you you build the whole
+42:00 pipeline in a notebook
+42:02 and then when you click to play it's
+42:04 building
+42:05 containers of your cells to perform this
+42:08 activity and then you split it
+42:10 and send it to khatib for the hyper
+42:12 parameter search let's say
+42:14 and then deploy the best model beautiful
+42:16 stuff
+42:18 and you mentioned tfx tensorflow
+42:21 extended a couple of times
+42:22 did i understand correctly that keep
+42:23 flow is implementation of that paper
+42:26 uh yes yes and
+42:30 they don't call it as such since the
+42:32 beginning they were saying that
+42:33 they don't see something as an extend
+42:36 externalization of google
+42:38 ml platform but this is what it
+42:41 is to me and if you if you look at the
+42:45 tfx
+42:46 so it's how to do production with
+42:48 tensorflow is
+42:50 saying also that you can also do it with
+42:51 airflow yeah because airflow is also
+42:53 scheduler you have
+42:54 your dag you have your components you
+42:57 are producing an artifact from each
+42:58 component and it's been used maybe
+43:00 for the input of the next task and
+43:03 similarly you can also do it with apache
+43:04 beam which is
+43:05 another software that is abstracting
+43:08 your
+43:09 spark or your pandas or whatever
+43:11 framework you're using for your data
+43:13 processing to perform
+43:14 such tasks but for me the production
+43:18 or the enterprise level uh system
+43:21 is keep flow and if i want to learn keep
+43:24 flow
+43:25 how how can i do that so
+43:29 as a nice open source tool it has a
+43:32 beautiful community i would advise to
+43:35 start from the website of kubeflow
+43:37 they have excellent documentation still
+43:39 being built it's
+43:40 the documentation itself is open source
+43:42 so you can extend it if you will find
+43:44 the problem
+43:45 and you can also join as a contributor
+43:48 to the project if you have an idea of
+43:50 improving something and the organization
+43:52 of kubeflow has
+43:54 uh around 20 repositories of 20
+43:57 different components
+43:58 and you can onboard and read the github
+44:01 issues
+44:02 if you have a problem search the code
+44:04 and
+44:05 and figure out what's the the problem
+44:08 you are having if you if you want to
+44:09 resolve the problem
+44:10 because it's becoming a more and more
+44:13 complex system
+44:14 you will have more and more problems as
+44:16 you can imagine
+44:18 but it also has easy ways to start there
+44:21 there are two books already published
+44:23 about this from riley there is a
+44:26 there are youtube videos where you can
+44:29 find for its individual component how to
+44:32 get started there are
+44:33 a workshops delivered from its vendor
+44:35 aws for example has a workshop
+44:38 on kubeflow and there is a special
+44:40 website for that
+44:41 and ibm created the kubeflow dojo a set
+44:44 of
+44:46 training today's workshop
+44:49 specifying how to perform such different
+44:51 implementation and not only to install
+44:53 it but also to use it
+44:54 to get the tfx pipeline which is the to
+44:57 sorry to get a tfx example with a taxi
+44:59 for example taxi drivers if you remember
+45:02 from that was published two years ago
+45:05 and
+45:06 built it in uh in tecton pipelines in
+45:09 in kubeflow yes
+45:12 and i i remember going through this
+45:14 myself and uh
+45:16 we used aws and then in uh there is a
+45:19 nice
+45:20 article in uh cube flow documentation
+45:22 and to end to
+45:24 set up on adobe something like that and
+45:26 you just can
+45:27 follow this article and then you have a
+45:29 full blown uh cube flow
+45:30 in your cluster right yeah
+45:34 okay and uh
+45:37 they're also like do you have maybe like
+45:40 in mind what kind of
+45:41 uh an easy getting started project one
+45:44 can do let's say
+45:45 they followed this tutorial they said
+45:47 they
+45:48 set up keep flow in their aws or google
+45:51 cloud or whatever
+45:52 and yeah you just want to learn this is
+45:55 there an
+45:56 easy getting started like iris let's say
+45:59 in machine learning
+46:00 yeah so the easiest way is to just start
+46:03 sagemaker and
+46:04 build the pipeline and have fit some
+46:07 features from the feature store and
+46:09 deploy it in endpoint
+46:10 because it gives you this sagemaker
+46:12 studio that is
+46:13 doing all these things nicely the same
+46:15 way with google cloud
+46:17 is also keep flow based so the ai
+46:20 platform
+46:21 is when you are creating a model you are
+46:23 creating an inference service when you
+46:24 are creating a pipeline you are creating
+46:26 a
+46:27 kubeflow pipeline so that's the easiest
+46:29 way you consume it as a
+46:30 as a service from a cloud provider but
+46:32 if you want to get deeper as
+46:34 a machine learning engineer and maintain
+46:36 your own
+46:37 implementation from the open source tool
+46:40 rather than
+46:40 paying a vendor for that you can install
+46:43 it as you described from these nice
+46:45 documents yeah we also have a question
+46:49 about
+46:49 data version how much data versioning
+46:52 is important in the mallops
+46:56 in your opinion it is important the
+46:59 the data is the the role is the source
+47:02 of
+47:03 what you need in order to produce a
+47:04 model you cannot produce a model without
+47:06 data
+47:07 and as the data as with we discussed
+47:10 there is
+47:10 the concept of data drift so you want to
+47:12 retrain your model with a new data
+47:15 but when you have new versions of model
+47:18 and then
+47:18 we are also introducing the concept of
+47:20 model versioning next to your code
+47:21 version
+47:22 next to your data versioning you have
+47:24 you want to have some type of
+47:27 synchronization or a record of
+47:30 which version of model has used which
+47:31 version of data with which version of
+47:33 code
+47:34 because all these things as you will
+47:36 start automating and to have automated
+47:37 retraining
+47:39 you want to be able to review you want
+47:40 to be able to go back because
+47:42 i don't know maybe due to privacy or
+47:44 gdpr issues
+47:46 you would like to go back in time and
+47:47 figure out why this model
+47:49 gave this inference why did why did this
+47:51 model
+47:52 said that this customer should not get a
+47:54 loan from the bank
+47:56 yeah so you need to go back to the model
+47:58 version that gave this prediction
+47:59 you need to have the payload of course
+48:01 you need to go back
+48:02 from this model to map it to the data
+48:05 that you have used in order to train it
+48:07 to
+48:07 see which feature was important and for
+48:09 example see that
+48:11 the customer had another loan so that
+48:13 was another feature
+48:15 and because of that the importance of
+48:16 this feature said that
+48:18 this model should infer that the
+48:20 customer should not get
+48:21 a loan so the tracking of the
+48:24 versions of the data of the code and the
+48:26 model
+48:27 usually is done in a system called
+48:29 metadata
+48:30 machine learning metadata store and
+48:34 this is good news the the tensorflow
+48:39 team decided to work together with a
+48:41 kubeflow team
+48:42 and combine this project into one and
+48:45 build the mlmd
+48:46 system that is nothing more than a
+48:49 sql database with an api that is
+48:52 receiving metadata
+48:53 records when a model is being generated
+48:56 or a data
+48:57 set has been created or a feature is
+48:59 being updated
+49:00 and keeps a record for reference imagine
+49:03 having
+49:04 your model degradation metrics in your
+49:08 prometheus that are annotated with a
+49:10 model version
+49:11 yeah so you can see how it degrades each
+49:14 version and
+49:15 even if you are doing a b testing
+49:16 between different model versions or
+49:19 i don't know deployment you want to be
+49:20 able to see how different model versions
+49:22 are behaving
+49:23 so having the ability to track back into
+49:25 the data that
+49:26 were used to produce this is important
+49:29 crucial
+49:30 but not part of the responsibility of
+49:33 the machine learning platform
+49:35 the data versioning is a responsibility
+49:36 of the data platform
+49:38 and this is different yeah this is
+49:44 yeah why not so uh
+49:47 yeah data ops is so
+49:51 the we have been using the data already
+49:54 to build data driven organizations right
+49:56 for 15 years 10 years and
+50:01 build nice visuals dashboards and
+50:04 justify decisions based on data or even
+50:06 use data to make decisions even better
+50:08 and we have a lot of development and a
+50:11 lot of progress
+50:12 in the space of uh of data processing
+50:15 so all these data scientists and the
+50:17 data analysts that have been using the
+50:18 data platforms with data engineers
+50:21 have been doing this thing called data
+50:23 ops
+50:25 which was brilliant and we are moving on
+50:28 to the next step let's say
+50:30 to mn lops as they are on boarding
+50:31 machine learning models now
+50:34 okay so ml ops in a way is continuity
+50:37 and continuation of data ops which is
+50:41 also in a way continuation of devops
+50:42 that we had 10 years ago
+50:44 yeah or or different branches yeah
+50:46 different branches exactly because we
+50:48 have data engineers we have from our
+50:49 engineers right and then
+50:51 each has their own specific set of
+50:55 things they do to become more efficient
+50:59 yeah but i wouldn't be surprised if all
+51:01 these would merge under one time
+51:03 okay we've seen the data scientists
+51:06 troll becoming the
+51:07 one title to cover everything yes
+51:10 exactly
+51:10 but it's probably now uh well
+51:14 let's see what happens with data science
+51:16 title what probably
+51:17 will stop existing at some point right
+51:20 um so there is a question about a demo
+51:22 but we will not do a demo this is like a
+51:24 podcast which will be released without
+51:27 video
+51:27 uh eventually so there will be no demo
+51:30 sorry um filippa is asking
+51:32 uh do you have any experience in
+51:34 deploying models on mobile apps offline
+51:36 and does it make sense to use
+51:38 keep following this in this case and if
+51:40 not which kind of tool exists for this
+51:42 for this case so as far as i'm aware
+51:46 most of the deployments of these models
+51:48 in the
+51:48 apps are manual manual manual processes
+51:52 although the good news is that the
+51:54 vendors have realized that
+51:55 with adoption of 5g the mobile devices
+51:59 will become
+51:59 just edge devices like a i don't know
+52:02 cdn node
+52:02 is delivering video so they are
+52:05 extending kubernetes into the edge
+52:07 and a mobile device can be a kubernetes
+52:10 node that is performing
+52:12 uh that is running containers yeah so we
+52:15 have
+52:18 it's the data center in the mobile so
+52:22 uh imagine this and and microsoft for
+52:25 example how
+52:26 has this leaf is it called or i don't
+52:28 remember
+52:29 but the the mobile devices
+52:32 receiving containers they have so the
+52:35 scheduler is also considering the mobile
+52:37 device to receive a new
+52:38 version of the application or a new
+52:39 version of the model so here we are as
+52:42 this will become
+52:43 more and more fast than the line or the
+52:45 the phone line and the phone capability
+52:48 in terms of processing it would be able
+52:49 to handle loads
+52:51 in such a way to serve models
+52:53 individually and and in that
+52:55 the retraining would it would be even
+52:57 more important because you would have
+52:58 personalized you we already have
+53:00 personalized models yeah
+53:01 the durable model i have for my nest is
+53:03 personalized according to the people who
+53:05 are coming to my house and i'm touching
+53:06 them with their faces
+53:08 and every time i'm touching the face of
+53:10 someone as my friend
+53:11 then the model is detecting him and
+53:13 saying that i don't know your friend is
+53:15 in the door so he's
+53:16 he's telling me his name so this model
+53:19 has been retrained so often
+53:21 so yeah so this is something you have
+53:23 but
+53:24 in your home right you have this model
+53:27 well
+53:28 i don't even know how this model works
+53:30 but that's why i assume it's an
+53:31 image it's a detection model
+53:35 it's getting an image of someone who is
+53:37 ringing my doorbell
+53:39 and is saying oh this is your wife or
+53:41 this is your kid
+53:42 that key and every time there is a new
+53:44 face i have
+53:46 in my list of faces an
+53:49 option to tag them in order to improve
+53:51 the model or to create a new class of a
+53:53 new person that is a new friend of mine
+53:55 and the mo the doorbell has never seen
+53:57 them before
+53:58 so if i have this in so imagine how this
+54:01 will become more and more
+54:03 uh democratized yeah yeah that's
+54:06 interesting
+54:06 we have a question from howard it's not
+54:08 related to your doorbell
+54:10 model but it's interesting also do you
+54:12 think we'll see
+54:13 an emma ops manifesto anytime soon
+54:18 we briefly talked about this it's not
+54:20 there there was a device manifesto and i
+54:22 think the equivalent of
+54:24 devos manifesto these days is that uh
+54:27 the two articles of microsoft and google
+54:29 on mlop's maturity level or mlaps
+54:32 maturity model
+54:33 and of course the nice work of the
+54:37 the continuous delivery foundation from
+54:39 cnc from linux foundation
+54:41 on envelopes roadmap for 2025.
+54:45 so for the next five years what an
+54:47 organization should do
+54:49 to reach the maturity level that is
+54:51 described in the
+54:53 the papers with details this is how you
+54:56 should track fairness and this is how
+54:58 you should
+54:58 retrain the model etc yeah we will ask
+55:01 you to share the links
+55:03 later that our listeners can can read
+55:07 there is an interesting question that uh
+55:09 caught my attention would you recommend
+55:10 learning kubeflow
+55:13 absolutely yes yes even for the data
+55:16 scientist
+55:17 right because even even for the machine
+55:19 learning engineer it's not just
+55:21 using it it's about extending it we've
+55:23 seen so many
+55:25 people getting interested in this
+55:27 popular
+55:28 github project called tensorflow right
+55:30 and everyone contributed the
+55:32 the the implementation of their paper in
+55:35 tensorflow and python's over the last 10
+55:37 years
+55:38 the last five especially over the last
+55:40 five years uh
+55:42 why shouldn't we see the same in the
+55:43 space of of
+55:45 engineering and and the same way that we
+55:48 had air flow so successfully in the
+55:50 space of data orchestration
+55:53 we should have the same for the ml
+55:55 orchestration we should have
+55:56 a good representation of engineers
+55:58 contributing to the
+56:00 to the cooperflow project it's a
+56:02 welcoming community
+56:03 we have uh 10 minutes meetings every
+56:07 week
+56:07 about if it's different component and
+56:10 everyone is welcome to join and there is
+56:12 also slack right
+56:14 yes of course yes like uh i think it's
+56:18 quite uh a large community i i'm also in
+56:20 that stock it's almost like 5 000 people
+56:23 right or
+56:24 like it's pretty large well not that
+56:27 large as the kubernetes community right
+56:29 if you go to this
+56:30 package like 60 six digits already
+56:34 well still there is uh
+56:37 probably in a couple of years it will
+56:38 get there yeah
+56:42 what do you think makes envelopes easier
+56:44 is it uh
+56:46 probably the question uh
+56:49 is like how emelops helps to make things
+56:53 easier
+56:53 um like why should we even adopt that
+56:56 and uh what should we
+56:59 do like does it make it easier to
+57:01 monitor things to debug or
+57:03 what are the benefits yeah so i think i
+57:06 briefly mentioned that
+57:07 the technology is still the enabler for
+57:10 progress
+57:11 yeah so as as we have learned
+57:15 about experiment about explainability
+57:17 and uh
+57:19 animal detection because we have tr we
+57:21 have tried the
+57:22 the the serving the same that's how we
+57:25 got experienced into other components
+57:27 that we were not
+57:28 looking for yeah so when you get
+57:30 exposure to a new tool that is
+57:32 not only giving you what you want but
+57:34 also the other things that you don't
+57:35 know yet
+57:36 this is how you you get progress
+57:38 especially with
+57:40 new tools so this is this is what makes
+57:42 the technology an enabler and
+57:45 mlops is something you need to adopt as
+57:47 an organization because
+57:49 it will help you become a model driven
+57:50 organization it will
+57:52 help you replace functions
+57:55 that are manually that are manually done
+57:57 with automation
+57:59 or even improve or even build products
+58:02 based on models
+58:03 and there are so many businesses already
+58:04 having
+58:06 model based products and we have a
+58:10 somewhat related question about that and
+58:12 you also mentioned uh
+58:13 petite right this is automl 2 from
+58:16 kiplow
+58:18 will automl kill data science raw is
+58:21 there any risk
+58:22 for that well
+58:26 not kill but commoditized commodities
+58:30 why should we have the phd level expert
+58:33 to
+58:33 try to tune all these parameters if you
+58:35 can
+58:36 that's what we had in the past right one
+58:39 of the
+58:40 tasks of the data scientist or the
+58:43 who was also a phd level
+58:46 employee had to search in the space of
+58:50 hyper parameters on
+58:51 what optimal combination is giving him
+58:54 the best results for his model
+58:56 and this has been replaced by already by
+58:59 by
+58:59 the search capability
+59:02 and not but but that didn't give them
+59:07 that didn't send them away from the jobs
+59:09 that kept them in the jobs and make them
+59:11 more productive
+59:12 so the data scientists will become more
+59:14 productive without ml will become more
+59:16 productive with ml platforms and they
+59:18 will have to
+59:19 worry about more mature
+59:22 problems like which other metric should
+59:25 i introduce in my
+59:27 fairness detection should i also worry
+59:29 about
+59:30 how the model is going to perform to
+59:32 data that we haven't seen yet
+59:33 and things like that so the role of a
+59:37 data scientist is not at risk
+59:38 at least like unless
+59:42 the only thing the data scientist does
+59:44 is tune tuning models right
+59:48 in the space of cut tip yeah okay
+59:51 remember we also spent a lot of time
+59:53 also in our legs and
+59:54 in other companies on deploying and see
+59:57 how easy it is now with kf serving
+1:00:00 you just say this is my s3 location of
+1:00:02 my model
+1:00:03 and that's the name of the model and the
+1:00:05 bom you have an api
+1:00:07 endpoint which you can start consuming
+1:00:10 and a couple of years ago we would need
+1:00:12 to spend
+1:00:14 at least a week to actually uh you know
+1:00:16 build all this
+1:00:17 web service put the model there um
+1:00:21 create deployment in kubernetes create a
+1:00:23 service
+1:00:24 secure it secure it exactly then
+1:00:28 at metrics then at auto scaling
+1:00:32 and then have an sre uh sitting there
+1:00:35 tuning the model tuning not sorry not
+1:00:37 immortal but auto scaling and all that
+1:00:39 so now it's indeed a lot simpler yeah
+1:00:42 and and 20 years ago was
+1:00:44 we need to order some servers and wrap
+1:00:46 them and put the cable
+1:00:47 i have been doing this that's why i'm
+1:00:49 saying this because i see this
+1:00:52 this progress and that's that's that's
+1:00:54 good to abstract
+1:00:56 more and more the the work that you have
+1:00:59 been doing in the past and evolve
+1:01:01 into more high level uh
+1:01:04 tasks we still have two more questions
+1:01:07 do we have time to
+1:01:09 to answer them yes yes yeah
+1:01:12 so one question is how can a small team
+1:01:15 build fully automated envelopes
+1:01:17 operations it seems to me like only big
+1:01:20 teams
+1:01:21 can do that is it true in your opinion
+1:01:24 well we we have experience to share with
+1:01:26 this uh remember
+1:01:28 it was uh a couple of people or maybe
+1:01:31 three people in our
+1:01:32 organization and your company that we
+1:01:35 have worked together
+1:01:36 to put like 5 10 models
+1:01:39 in in the kf serving and release it and
+1:01:43 it took us
+1:01:44 it took us two hours to install it and
+1:01:46 the deployment was also
+1:01:48 a few minutes so even
+1:01:52 just just using one part of the
+1:01:53 component is simple
+1:01:55 and if you want also the full blown then
+1:01:58 you get
+1:01:59 it it depends it will give you the
+1:02:00 ability to spend more time on it because
+1:02:02 it will also give you the ability to do
+1:02:04 more stuff with it yeah
+1:02:06 so if a small team is if a small team of
+1:02:10 three people is all
+1:02:11 only spending time to to build a model
+1:02:14 and release it
+1:02:15 and spend time on monitoring imagine how
+1:02:19 more productive this team would be if
+1:02:20 they would have all these functions
+1:02:22 already
+1:02:22 available in form of services and they
+1:02:25 would worry about how to speak to the
+1:02:26 business to
+1:02:27 ask for on how to improve the model and
+1:02:30 make it better
+1:02:33 uh but when uh like it's also uh related
+1:02:36 to teams
+1:02:36 but when teams are silent uh silhouette
+1:02:40 like when teams are isolated uh
+1:02:43 with different languages different use
+1:02:45 cases uh
+1:02:47 experiment tracking how would you
+1:02:50 recommend these teams
+1:02:52 to start moving in the envelopes
+1:02:54 direction
+1:02:55 well the good news is that these things
+1:02:59 are
+1:03:00 language agnostic yeah so
+1:03:03 of course there should be cycles in the
+1:03:04 organization especially based on
+1:03:06 language yeah
+1:03:08 at least the development department
+1:03:09 should be
+1:03:11 working together but the tool the
+1:03:13 tooling
+1:03:14 is already helping with that it's
+1:03:16 another topic it's the culture topic of
+1:03:18 envelopes or even devops how do you make
+1:03:21 an organization that is not based on
+1:03:23 silos
+1:03:24 but you will always have the force
+1:03:26 moving towards that direction build
+1:03:28 silos because
+1:03:29 politics play a role and people are
+1:03:32 that's a normal thing for human beings
+1:03:34 to build silos around
+1:03:36 to protect their area to piss around
+1:03:38 their
+1:03:39 territory but the technology is helping
+1:03:42 here because
+1:03:43 it's also agnostic to the language that
+1:03:44 for example the tecton pipelines or even
+1:03:47 in general the pipelines is an is an sdk
+1:03:50 that is helping you build
+1:03:51 a yaml definition of the
+1:03:55 components and that's the difference
+1:03:56 also with airflow for example in airflow
+1:03:58 you have python only
+1:04:00 and your your tasks should be python
+1:04:02 based
+1:04:03 and all the tasks should be python based
+1:04:05 in a pipeline that is gen
+1:04:06 just invoking containers imagine that
+1:04:09 each container can be in a separate
+1:04:10 language
+1:04:10 so the container that is doing the data
+1:04:13 validation and built by the data
+1:04:14 department let's say can be
+1:04:16 written in scala and the the container
+1:04:19 that is doing the training can be
+1:04:21 written python with pythons
+1:04:23 so on this pipeline is involving those
+1:04:26 different
+1:04:27 components is getting the artifacts that
+1:04:29 are produced from the previous
+1:04:30 uh this and whatever is subscribed to
+1:04:32 that is pulling it
+1:04:34 to move to the next step so the
+1:04:36 technology is also helping if you have a
+1:04:38 silent organization as you said
+1:04:40 in the question in the form of using
+1:04:42 different languages
+1:04:43 that's not a barrier anymore you don't
+1:04:45 have to onboard everyone to learn scalar
+1:04:47 python
+1:04:48 that's a good thing yeah we don't have
+1:04:51 any more questions so thank you very
+1:04:53 much for coming today
+1:04:55 do you have many maybe any last words uh
+1:04:58 no it's been my pleasure
+1:05:00 talking to you alexa and the audience i
+1:05:02 will send the links to
+1:05:04 the maturity models and the roadmap in
+1:05:06 the
+1:05:08 we can share them in slack and then i'll
+1:05:09 put also them in comments in youtube
+1:05:11 and um podcasts
+1:05:14 yep thanks a lot for coming for sharing
+1:05:16 your knowledge for your experience with
+1:05:18 us
+1:05:19 and thanks everyone for attending this
+1:05:21 this talk today
+1:05:22 thanks alex

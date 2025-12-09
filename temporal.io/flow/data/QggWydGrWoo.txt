@@ -1,0 +1,1840 @@
+Dataset Creation and Curation
+
+0:00 hi everyone welcome to our event this
+0:02 event is brought to you by data talks
+0:03 group which is a community of people who
+0:05 love data we have weekly events this is
+0:07 one of such events if you want to find
+0:09 out to find out more about the events we
+0:11 have there is a link in the description
+0:13 so go there check it out we have a lot
+0:15 of events in
+0:17 our pipeline schedule
+0:19 then if you haven't subscribed to our
+0:21 youtube channel do it now there is this
+0:23 subscribe button below the video so
+0:25 click on this and you'll get notified
+0:27 about all our videos
+0:29 last but not least we have an amazing
+0:31 slack community so if you want to hang
+0:32 out with other data enthusiasts
+0:35 join us now
+0:36 and
+0:37 yeah we are also running a free dating
+0:40 free machine learning engineering course
+0:42 pretty soon it starts in september
+0:44 it's free so if you
+0:47 if you're interested in learning this so
+0:49 check it out the link is also in the
+0:50 description
+0:52 so during today's interview you can ask
+0:54 any question you want there is a link a
+0:57 pin linked in the live chat so click on
+0:59 this link and ask your questions and i
+1:01 will be covering these questions during
+1:02 the interview
+1:04 so that's all from me for now so now i
+1:09 prepare the notes i open the notes
+1:13 and
+1:15 i think i'm ready are you ready
+1:17 yeah i am i am
+1:19 [Music]
+1:20 so
+1:22 this week we'll talk about data set
+1:24 creation creation and annotation and
+1:28 creation curation annotation and we have
+1:31 a special guest today
+1:32 chris so chris has six years
+1:35 of experience delivering natural
+1:36 language processing tools and services
+1:39 so including emails compliance pharma
+1:44 sales industry so he has a lot of
+1:46 experience and i had a
+1:48 chat with chris a while ago and
+1:51 we
+1:52 got to talk about this topic and i
+1:55 understood how
+1:57 much we do not talk about these things
+1:59 so we usually talk about models we
+2:01 usually talk about
+2:03 things like okay we have model how do we
+2:05 deploy this model
+2:07 but we usually don't spend enough time
+2:09 talking about data set creation and we
+2:11 thought that it would be a good idea to
+2:13 record something about this that's why
+2:16 we have chris today with us hi chris
+2:19 hello alexa it's a real pleasure to be
+2:21 here and and thank you for inviting me
+2:24 um before we go into our main topic of
+2:27 data set creation and curation let's
+2:29 start with your background can you tell
+2:30 us about your career journey so far
+2:33 yeah so i studied ai and the university
+2:36 of edinburgh
+2:38 and
+2:39 i i fell in love with natural language
+2:41 processing while i was there
+2:43 i
+2:44 i think it's extremely interesting how
+2:47 can a computer understand language from
+2:50 a philosophical perspective i think it's
+2:52 a it's a really really interesting
+2:53 question
+2:54 and
+2:56 throughout my career i've i've just been
+2:57 trying to to work on this question and
+3:00 see you know what kind of understanding
+3:02 can we give a computer what kind of
+3:03 automated decision making can we do so
+3:06 after finishing my studies i
+3:09 i worked for a small email provider
+3:12 where i worked on extracting different
+3:14 information from emails and email
+3:16 classifications
+3:18 then i i worked at at the resolver which
+3:21 is a large complaint company that had
+3:24 over 10 million complaints in the uk and
+3:27 worked extremely closely with complaint
+3:29 departments and even the complaint
+3:31 authorities in the uk so it was very
+3:33 interesting from that type of regulatory
+3:35 uh perspective
+3:37 after after is over i i worked for for
+3:40 two years of helix which is a
+3:43 rare disease drug development company
+3:46 that focuses on rare diseases and using
+3:48 machine learning techniques to identify
+3:50 drug candidates to to to take to the
+3:53 market for patients who who have rare
+3:55 conditions so that was really
+3:56 interesting in in introducing me to the
+3:59 whole world of bio nlp where there's way
+4:01 more data sets than i think other other
+4:03 nlp areas have due to high levels of
+4:06 curation but they have their own
+4:07 challenges due to the ambiguity of
+4:10 biology added on top of ambiguity of
+4:12 natural language and and finally my
+4:15 journey led me to the co-found contour
+4:18 which is my own company where we we work
+4:20 on
+4:21 on making sure that you don't need to
+4:23 administer your sales force so we help
+4:25 we help sales teams capture useful
+4:27 information from from sales calls and
+4:30 then we we extract all the useful
+4:31 concepts and push them into salesforce
+4:34 for you using our interface
+4:37 um
+4:37 i think one of the key takeaways i had
+4:39 from from working at helix is some of
+4:41 these technologies are
+4:44 extremely challenging when you need to
+4:46 find them in a safety critical
+4:47 environment like like drug development
+4:50 and and so i'm i've been enjoying the
+4:53 less less pressure required in the sales
+4:55 environment because you know at the end
+4:57 of the day patients lives aren't at risk
+4:59 for for your your decisions that you're
+5:01 making and whether a deal will come
+5:03 through or not so but but sales
+5:05 processes are also extremely interesting
+5:07 from a from an nlp perspective as
+5:09 there's a lot of communication going on
+5:12 now what led you to actually
+5:14 start this company like what kind of
+5:16 problems did you see
+5:18 that you realize that okay
+5:20 now it's time to start this company
+5:22 so
+5:23 i
+5:24 i'm a massive data nerd as you can tell
+5:26 by the topic of this of this
+5:28 conversation i i i love to think about
+5:30 how do you create data sets and actually
+5:33 this was a huge huge reason i i like the
+5:36 idea of come tomorrow is it
+5:38 contour intersects
+5:40 with with transcription technology and
+5:42 crm technology so we capture what is
+5:44 said in the trenches what is said during
+5:46 the calls and we help push that into
+5:50 into sales source into the crm where
+5:51 business stores all its commercial
+5:53 intelligence so it's it's extremely
+5:55 interesting because you from a
+5:57 from a supervised machine learning
+5:58 perspective almost you've got the labels
+6:00 and the supervised stuff in the crm and
+6:03 you've got the unlabeled source data in
+6:05 the transcripts potentially and there's
+6:07 a number of other views you can do this
+6:08 from a from a machine learning
+6:10 perspective so i i was like this is
+6:12 awesome there's so much data available
+6:14 here there's um
+6:16 there's a huge impact potentially on on
+6:19 on sales teams as well like selling is
+6:22 extremely hard like
+6:23 making you know building up the
+6:25 connections and actually
+6:27 making sure it's a it's a good
+6:29 relationship so
+6:31 the whole workflow is is very difficult
+6:34 when you need to capture
+6:36 pages of information during sales call
+6:38 and you also need to build up a
+6:39 relationship so the idea was like you
+6:41 know why don't we do things that
+6:43 computers are good at capturing
+6:44 information i let people focus on
+6:46 building relationships and and selling
+6:48 better
+6:51 and you also mentioned like that there
+6:52 is so much data available but
+6:55 usually we have
+6:56 it's sometimes the case that we have
+6:58 data in abundance
+7:00 but we don't really know like what is
+7:02 there how to process this data how
+7:04 useful this data is
+7:06 and we need to somehow curate this data
+7:08 to make
+7:09 use of this to somehow understand what
+7:12 is
+7:12 good what is bad there
+7:14 so what are usual ways we collect and
+7:17 create data
+7:18 [Music]
+7:20 so
+7:21 i i like to i like to think about it in
+7:24 like three general terms of of data set
+7:27 creation let's say so automated manual
+7:30 and hybrid so in an automated form you
+7:32 may scrape scrape for example some kind
+7:35 of database or or some some or a number
+7:38 of websites to collect some some data
+7:40 automatically in a manual approach you
+7:42 may have a number of documents such as
+7:45 sales transcripts for example and you
+7:46 decide to annotate key sales concepts
+7:48 from them and then hybrid approach which
+7:50 is i think becoming more and more
+7:53 trendy in our industry currently you you
+7:55 mix these two together so so you use the
+7:58 the power and scale that automation can
+8:00 bring you to to make sure that your
+8:02 manual efforts are focused on the most
+8:04 valuable valuable data
+8:08 so it's like uh
+8:10 first you
+8:11 do some annotation manually so for
+8:13 example you said uh
+8:14 this sales call right so we required a
+8:16 call we make a transcript and then
+8:19 somebody needs to go there and say okay
+8:21 like i don't know what exactly you do
+8:23 there but like maybe this part should be
+8:26 i don't know it's a good indicator that
+8:28 the sale will close or
+8:30 well i'm just making this up
+8:32 so first you do this manually right and
+8:35 then you train a model such that next
+8:37 time
+8:39 it kind of
+8:40 you know already recognizes these clues
+8:43 in the transcript and then you can train
+8:46 another one based on the data you
+8:47 collect because maybe a person can
+8:50 review this this and say okay this is
+8:52 accurate this is not accurate so you
+8:53 refine your data set and over time your
+8:56 model becomes better and better and your
+8:58 data set becomes better and better did i
+9:00 get this right
+9:02 yeah i think i think this is this is
+9:03 like the bottom up view but i think the
+9:06 the top down view is is is i think what
+9:09 what most data scientists struggle with
+9:10 actually and i think i've made most of
+9:13 my mistakes from having this kind of
+9:14 bottom-up view rather than a more
+9:16 top-down view of this so
+9:18 i think
+9:19 i think it's really important to kind of
+9:21 manage upwards and it's a it's extremely
+9:23 important skill to develop and the way i
+9:25 would i would tie that back to data set
+9:27 creation is like you know what's the
+9:28 business value that this this
+9:32 data set creation will empower what
+9:34 usually it will be you create the data
+9:36 set there's going to be model deployment
+9:38 and it will it will realize some kind of
+9:40 business value for you and i think i
+9:42 think what's really hard is that until
+9:44 you have the data and until you have the
+9:46 model deployment you can't really know
+9:48 whether the business value will be
+9:49 realized right so that's why this is a
+9:51 high risk enterprise fundamentally and
+9:55 i think i think what's really important
+9:57 is de-risking this by by having you know
+10:00 when i do my initial my initial
+10:02 annotation
+10:03 i i will i've shared that with
+10:06 with ceos and other xx when i when i do
+10:09 that and i will literally walk them
+10:11 through this is literally our source
+10:12 data if you know do you think if we
+10:15 could if we could automatically map it
+10:17 in some way or do some transformation on
+10:18 this do you think this would be valuable
+10:20 so i i personally think the hidden art
+10:23 in data set creation is actually there's
+10:25 there's a huge like stakeholder
+10:27 management piece in it actually and and
+10:29 this goes back into this like defining
+10:31 the business problem you're trying to
+10:32 solve and defining the conceptual
+10:34 framework of how you're solving that so
+10:36 for example for
+10:38 for the sales classification let's let's
+10:40 let's say that we've got a sales call
+10:42 and we're going to try and decide
+10:43 whether the deal is going to win or lose
+10:45 is this sales is this going to be a
+10:47 successful call or not so then you
+10:50 then the next step for me would be like
+10:51 to come and to think about what are the
+10:53 concepts that that you know maybe what
+10:56 are the concepts the sales person would
+10:58 be thinking about in this let's say they
+10:59 would be using qualification
+11:00 methodologies they would have a number
+11:02 of ways they they kind of you know uh
+11:05 work through in breaking down the data
+11:07 into understandable chunks and which
+11:09 parts of these would be then kind of
+11:11 mappable
+11:12 into machine learning systems so you
+11:14 know are we going to be are we looking
+11:15 at on on a named entity level are we
+11:17 looking at a document level paragraph
+11:19 level you know what it what is our our
+11:21 unit of of work that we're going to look
+11:23 at and then i think the really important
+11:26 bit is having this kind of prototype
+11:28 idea so this is where i think i've done
+11:30 things wrong that i i just love building
+11:32 things and i'll just start building and
+11:34 i'm like okay you know let's build it
+11:36 let's do the modeling it's so much fun
+11:38 it's amazing yeah like it's the reason
+11:40 we do this work and and and i just don't
+11:43 spend enough time on this on this
+11:45 initial bit where i'm like where i find
+11:48 sharing even the first couple
+11:50 forms of label data through
+11:52 through i don't know displacy for
+11:54 example where you can actually show like
+11:56 a document annotated with the labels on
+11:58 it if you if you share something like
+12:00 this with other xx or you share this
+12:03 upwards in the initial stage of your
+12:05 project i find that that really helps in
+12:07 in getting some some amazing insights in
+12:09 how to break down the problem from from
+12:12 people who have huge experience in these
+12:13 areas um
+12:15 so so i think stakeholder management is
+12:17 this kind of hidden conceptual
+12:20 important thing and and in general the
+12:22 other aspect is also from a bottom-up
+12:24 view there can be also a process
+12:26 challenge so
+12:27 so this goes back to how do you define
+12:29 the atomic elements of your your your
+12:32 problem and okay let's say let's assume
+12:34 we're doing some name entity recognition
+12:36 we're going to extract like sales
+12:37 concepts so
+12:40 there what you're going to have as a
+12:41 challenge is is that these concepts what
+12:43 you came up with initially they won't
+12:45 cover everything at least i've never
+12:47 come up with them that they cover
+12:48 everything almost always some of them
+12:50 are going to be wrong some of them are
+12:51 like blind spots i didn't even think
+12:53 about and and the thing that you're
+12:55 going to need there from a process
+12:56 perspective is how do you adapt to that
+12:58 how do you you know can your your model
+13:00 or your system adapt to new concepts
+13:02 appearing to new things of interest
+13:04 appearing and
+13:06 i i think again the really important
+13:09 thing to manage this is a process
+13:10 actually a human centric process in my
+13:13 my opinion so i i like to have a
+13:15 annotation booklet which is just a
+13:17 document that has all of your your the
+13:20 tasks that you're working on it has
+13:21 sometimes definitions where we try and
+13:23 describe these concepts and it we we
+13:26 collect all of the ambiguous samples
+13:28 there and then what we can do is we we
+13:30 talk over those both with the machine
+13:32 learning team and also annotators we
+13:34 talk about ambiguity so so we we want to
+13:37 talk about these ambiguous cases and we
+13:38 collect them we review them and
+13:40 hopefully we refine the task and the
+13:42 conceptual framework that we can reduce
+13:43 ambiguity um so i i find that is super
+13:47 important and then this this booklet is
+13:50 part of a review process so where the
+13:53 annotation process would be reviewed
+13:55 each time so my annotation processes i
+13:57 will annotate the data so i will i will
+14:00 have some process to generate label data
+14:03 then my next step is i will review that
+14:05 so i will have some kind of quality
+14:06 control on top of it i think key parts
+14:08 of that would be like infra annotator
+14:10 agreement so i understand annotated
+14:12 performance then i will have some
+14:14 metrics around my model performance but
+14:16 then i i also
+14:18 will have actually feedback sessions
+14:20 with annotators ideally where i can i
+14:23 can actually get their views back on
+14:25 like what was tricky what was hard and
+14:27 have that information flow to learn from
+14:29 it this this is one of the reasons i
+14:31 much prefer in-house annotation actually
+14:34 to crowdsourcing but i think
+14:35 crowdsourcing can be awesome as well and
+14:38 in particular when you're setting up
+14:40 like a proof of concept or prototype you
+14:42 can you can get a crowdsourcing solution
+14:44 like mechanical took the scale up real
+14:46 fast but the cost of that in my
+14:48 experience is a quality and actually
+14:50 even a cost so it will cost you more i
+14:52 would say for getting high quality data
+14:55 and and it wouldn't be as good quality
+14:57 as potentially using in-house annotation
+15:00 i long term i i much much prefer
+15:02 in-house annotation because the key
+15:05 advantage in my my experience is
+15:08 that
+15:09 annotators who do a really good job are
+15:12 valuable and and they they they can
+15:15 build up both kind of institutional
+15:17 knowledge but but also their their their
+15:20 insights their views and and if they're
+15:22 productive their productivity is
+15:24 extremely valuable so so one of the key
+15:27 advantages of in-house data annotation
+15:29 is that you
+15:30 you can keep that relationship and you
+15:33 can keep keep it kind of alive and
+15:35 nurture that relationship with your
+15:36 annotators
+15:38 yeah that was uh quite a lot to
+15:41 to unpack a lot of information so let me
+15:43 try to summarize uh i probably uh
+15:47 missed a few of the very important bits
+15:50 so we need to like when it comes to
+15:52 process of actually collecting data so
+15:54 we first of all need to have the process
+15:56 right so the process
+15:58 is uh first we might start with external
+16:01 annotators so to do some proof of
+16:03 concept but then we should prefer
+16:06 internal data eventually because we can
+16:08 just i don't know come and sit closely
+16:10 to them and to talk to them
+16:12 and the process should be
+16:14 to annotate annotate the data you also
+16:16 annotate the data
+16:18 and
+16:20 then yeah
+16:22 you collect some data and then
+16:24 you monitor how good they do this right
+16:26 so you need to have some sort of metrics
+16:28 like how
+16:29 well they do the annotation and then
+16:31 finally you need to sit with them and
+16:32 say
+16:33 like what was difficult like what in
+16:35 this process was difficult right so this
+16:38 is um
+16:39 this is how we do this right and then at
+16:40 the end we'll probably save the result
+16:42 somewhere in a database right or
+16:44 something like this
+16:45 and then you mentioned uh before that
+16:48 like before you start this process
+16:50 before you go to external like
+16:52 crowdsourcing platform because before
+16:53 you start working with internal
+16:55 annotators you need to
+16:58 uh think what exactly you're doing right
+17:00 what exactly you're on dating so you
+17:02 need to talk to somebody like domain
+17:05 experts
+17:08 sea level people right and
+17:11 have them
+17:13 walk through this problem of annotating
+17:16 with you right
+17:17 so you understand what they want uh they
+17:20 understand what you want from them right
+17:22 so you kind of now understand the value
+17:24 in this process
+17:26 yeah yeah sorry i think that was was
+17:28 definitely quite a bit so yeah
+17:30 the first point was definitely this
+17:32 pitch process right because you will
+17:34 need some executives to kind of be your
+17:36 patrons and push your project and most
+17:38 machine learning projects are are big
+17:40 ticket items overall like you know like
+17:43 they
+17:44 in my experience costs between 500 000
+17:47 to a million pounds like if you if you
+17:49 consider everything over a year let's
+17:50 say um
+17:52 so
+17:52 so so there's always you know some some
+17:55 executives who are highly invested in in
+17:57 this project and i think i think
+18:00 managing upwards there can be a real
+18:02 superpower for your career and it will
+18:04 lead you to better data set as well
+18:07 and also you mentioned this annotation
+18:10 booklet or
+18:11 booklet right so where you collect
+18:13 ambiguous samples
+18:15 um so i guess this is uh this feedback
+18:18 step when you sit
+18:19 within datas and you ask them what was
+18:21 difficult and then say you know like
+18:23 this thing was tricky i didn't really
+18:25 understand how to label this particular
+18:27 piece of
+18:28 uh text right and then what you do is
+18:30 you take this thing and you put this
+18:32 i don't know is it some sort of google
+18:34 document or however yeah yeah it's just
+18:36 a collaborative google document where we
+18:38 we just keep track of the of the kind of
+18:41 data state
+18:42 and what do you do with this so you
+18:45 collected these three examples and what
+18:46 do you do like do you say like next time
+18:49 you come across an example like this
+18:51 this is how you should label or
+18:53 so so
+18:54 i think i think exactly so we
+18:57 so i i find the useful thing in this is
+19:00 trying to understand why is this
+19:01 ambiguous on a in a kind of
+19:04 conceptual level so so why
+19:07 like sometimes things can be two things
+19:09 at the same time
+19:10 you just don't have a choice and either
+19:12 label is correct actually and you just
+19:14 have to admit it and you just have to
+19:16 live with it and deal with it but
+19:17 sometimes it can be that you you may
+19:19 actually
+19:20 need to break things down a little bit
+19:22 more or you need to refine your your
+19:24 task labels so so for example back at
+19:27 resolver we did a lot of labeling of
+19:29 complaints and different categories and
+19:31 complaints at one point i think we had
+19:32 21 different labels for for for labeling
+19:36 complaint documents 21 labels and it was
+19:39 you have a huge attention fatigue there
+19:41 right so nobody can label 21 things i i
+19:45 hardly i don't think i can keep 21
+19:46 things in my mind at the same time while
+19:48 reading a document and doing some other
+19:50 stuff you know very difficult for me so
+19:54 so that was that was just an example of
+19:55 something that we did pretty poorly and
+19:57 it we
+19:58 we just wanted to try it actually and we
+20:00 we tried different distributions like
+20:02 what was the ideal number of of labels
+20:05 when we have a huge number of labels for
+20:06 document classification for example and
+20:08 i think it it it was between four and
+20:11 seven actually depending on on on what
+20:13 we wanted them and what sort of accuracy
+20:15 we wanted that that's what we found
+20:18 and
+20:19 so so i think i think that the whole
+20:20 point of this process is that you know
+20:22 your annotation process is something
+20:24 that you should iterate on and and this
+20:26 booklet is kind of like your problem
+20:28 list or your homework that you need to
+20:30 fix so this is your homework you may you
+20:33 may sometimes you need to admit defeat
+20:34 and be like you know it's ambiguous i
+20:36 can't sorry
+20:38 this is it but but other times i find
+20:40 there's there's a lot of
+20:42 there is some conceptual work that you
+20:44 can do or maybe improve the ui maybe you
+20:46 could you could use some active learning
+20:48 and pre-label pre-label the documents
+20:50 you know there's a number of kind of
+20:52 process iterations that you could do
+20:54 there to to break things down
+20:57 and this pre-labeling i think i saw a
+21:00 tool that is doing like something like
+21:01 this so correct me if i'm wrong so we
+21:05 present a piece of document and we ask
+21:07 annotators to label it right so it can
+21:09 be like a
+21:12 part from the sales call and we say okay
+21:14 do you think like based on the chunk you
+21:16 see do you think the deal was close or
+21:18 not right
+21:19 and uh
+21:22 and we already say we think that maybe
+21:24 this thing led to closing do you agree
+21:26 with this or not right so that would be
+21:28 like this pre pre-labeling
+21:32 yeah yeah yeah i i think in general it
+21:36 you could do it like that for example
+21:37 with an interpretability layer where you
+21:39 do some document classification and you
+21:41 will expose your interpretability layer
+21:43 to help people like like can
+21:46 agree with the model or disagree
+21:48 um
+21:49 i i think for for example where this
+21:52 pre-labeling and
+21:54 massively can simplify things
+21:57 is named entity recognition where
+21:59 potentially you know having to just
+22:01 review them quickly can have advantages
+22:03 but obviously the devil is always in the
+22:05 details and when you pre-label things
+22:07 then things that aren't pre-labeled are
+22:09 much less likely to get labeled so you
+22:12 know
+22:12 it's almost like each decision you make
+22:14 in your in your data set creation
+22:17 process that there is some trade-offs
+22:19 going on there and and i
+22:22 what i've learned is that you just need
+22:24 to run experiments like at the end end
+22:26 of the day like like often your
+22:28 assumptions
+22:29 can be wrong or like you know sometimes
+22:32 if there are
+22:33 let's say if there are highly
+22:36 valuable but kind of rare samples in
+22:38 your data set then you will need to do a
+22:41 lot more experiments i think and common
+22:43 sense can help you less because because
+22:45 of the nature of your data set if it's
+22:48 if it's if the distribution is
+22:50 if you're not focusing so much on
+22:51 outliers which are extremely hard to
+22:53 actually label then i think i think you
+22:56 know pre-labeling can
+22:57 can benefit you but sometimes it it
+23:00 doesn't
+23:01 you know it also depends on your model
+23:02 kind of
+23:04 i and now i want to take
+23:06 like a bit of us to take a step back and
+23:09 talk again about this data set creation
+23:11 process we talked a bit about this and
+23:14 he mentioned that we first need to get
+23:16 the main experts and execs on board
+23:20 work with them and then
+23:22 you set like how the process should be
+23:24 organized like you start an updating
+23:25 date and then review then get feedback
+23:28 um but before we can actually start
+23:30 annotating the data we should think
+23:32 about
+23:34 what is the task what people need to do
+23:36 and i think
+23:37 from my experience using crowdsourcing
+23:39 the quality of the data you get
+23:42 highly depends on how well you define
+23:44 the task right so maybe we can talk a
+23:46 bit about this so like how does the
+23:48 process of collecting a data set
+23:50 actually looks like like after we talk
+23:52 to execs and so on like how do we
+23:56 take this and
+23:58 create something that we can give to
+23:59 annotators
+24:02 this is i think this is a
+24:04 key insight i like say like like and and
+24:07 i i think i think the really good thing
+24:09 is that the way i see it is experts and
+24:12 and xxx can give you a blueprint because
+24:14 you have a proposal document and you you
+24:16 will ideally interview some experts as
+24:18 well to find out how do they actually do
+24:20 it or how do they think about this
+24:22 so
+24:23 then
+24:24 i fi what i find is it's a translation
+24:27 problem that i i take this like my my
+24:30 interviews for example was the
+24:34 with the experts and i i try and figure
+24:36 out what levels can i break that down
+24:38 into so for example for for sales
+24:40 modeling maybe i will take some
+24:42 qualification methodologies that are
+24:44 like about the pain points of the
+24:45 customers or about um about different
+24:49 you know attributes of the customers and
+24:51 and i will be i will be thinking like
+24:53 okay what would this be as a task what
+24:55 would this look like as a task
+24:57 and
+24:58 and i think i think this is why actually
+25:01 having this kind of business guidance is
+25:02 a huge benefit because when you actually
+25:05 are on the side of when you have to
+25:07 annotate the data yourself which i think
+25:10 every one of us should do a lot of when
+25:12 when starting a project
+25:14 um then you you realize that something's
+25:16 gonna be quite tricky and and i
+25:20 i think it's important to
+25:22 um
+25:24 to communicate clearly before you get
+25:26 stockholm syndrome from your own
+25:28 projects because after you've worked on
+25:29 something for for a year or six months
+25:32 you know it's it's very clear to kind of
+25:34 assume that your assumptions are correct
+25:36 and you're going in the right direction
+25:38 kind of but um but that's why this these
+25:41 initial conversations are so powerful
+25:43 because it's literally how experts have
+25:45 explained it to you how things are so
+25:48 maybe you can use the same already
+25:50 working explanation to explain how
+25:52 things are to annotators or or
+25:55 who will need to actually create this
+25:57 data for you
+26:00 how do you capture this because i guess
+26:02 when expert tells you
+26:04 um
+26:05 this and your records it's like a wall
+26:07 of text like it's a lot right you
+26:09 somehow need to process this and
+26:11 summarize it and how do you do this
+26:14 so i i find what works really well for
+26:17 me
+26:18 is
+26:20 i will i will run interviews with the
+26:22 experts where i collect this wall of
+26:24 text and then i think i think it's
+26:26 really good to come up with a mind map
+26:27 where you just you just unfold the
+26:29 concepts and you you
+26:31 i i really like this this idea of
+26:34 thinking this thing in conceptual terms
+26:35 and i think it's it's a bit of a blind
+26:38 spot in data science sometimes that we
+26:40 we really like maths we really like
+26:42 programming and sometimes we we less
+26:44 like the communication
+26:46 aspect of this that and there is one so
+26:49 so then i come up with this mind map
+26:51 where i'm like okay these are let's say
+26:53 my
+26:53 ideas of building blocks and this is how
+26:56 they associate back and it doesn't have
+26:58 to be you know for example the the sales
+27:00 let's say we're doing some sales
+27:02 qualification stuff and and i'm
+27:04 extracting these the sales qualification
+27:06 attributes and these are my building
+27:07 blocks my model may just work on text
+27:10 you know it may just work on the whole
+27:11 text and i'm not going to do any name
+27:13 entity recognition but maybe
+27:15 the
+27:16 my interpretability layer can have some
+27:18 insights that you know that would be a
+27:20 massive win if they can be associated
+27:23 somehow with with the qualification
+27:24 methodology for example so i'm i
+27:28 this this mind map isn't like a way to
+27:32 uh train us down but it's more of a way
+27:34 for us to i think to think about how how
+27:36 is this actually built up conceptually
+27:38 and and the really powerful thing i
+27:40 think if you have this mind map which
+27:42 then you you making the slides or or you
+27:44 know a short document
+27:46 is that this is going to be the basis of
+27:48 my annotation booklets and when i when i
+27:51 do a kickoff actually
+27:53 often it may just be like a slide based
+27:55 kickoff with with the annotators and i i
+27:58 want to actually maybe get some so when
+28:00 i i worked with some quite experienced
+28:02 annotators i want their views on what
+28:04 they think will be tricky about this
+28:06 what they think will be you know what
+28:09 what could be the risks and this so so
+28:11 this
+28:12 is obviously
+28:14 more of a scenario where you've got more
+28:15 domain expertise involved so for example
+28:17 in buy one lp you definitely need to
+28:20 involve curators a lot more you've got a
+28:22 whole level of expert expert
+28:23 consultation layer on top of this or at
+28:26 this point stage there
+28:29 and there i think it's a lot more
+28:30 difficult as well because there's no
+28:32 clear answers so my mind map won't
+28:34 necessarily help how to distinguish some
+28:36 genes and proteins for example between
+28:38 each other it's probably not going to be
+28:40 enough for that um but but then in that
+28:43 case i think it's more about
+28:45 having some project managers or product
+28:47 managers who you can also help manage
+28:50 some of the these technical challenges
+28:52 and actually make them you know into the
+28:54 road map and it kind of becomes a little
+28:56 bit of a product challenge i think which
+28:57 is extremely hard but
+29:00 but this this conceptual framework and a
+29:02 mind map i think can take you quite far
+29:05 ahead and just being like you know it's
+29:07 not so simple that just words are enough
+29:09 or just a kind not so good document you
+29:12 know like just make some slides some
+29:14 pictures and and really focus on
+29:17 like
+29:18 it's an economic thing as well the more
+29:19 your annotators understand what you're
+29:21 doing the better work they will do and
+29:24 and you're going to increase your
+29:25 chances of succeeding
+29:28 so in summary so first we
+29:31 talk to domain experts and we have them
+29:34 on a data data we interview with them we
+29:36 watch how exactly they annotate and we
+29:38 record everything and then we built a
+29:40 mind map and we tried to annotate the
+29:43 data ourselves right so to really uh
+29:45 make sure that we understood them like
+29:47 what are the tricky cases we see
+29:49 ourselves maybe we can go back to the
+29:51 experts and see okay what do you think
+29:53 about this one i'm not sure
+29:54 so you this way you extract the
+29:56 knowledge from from them and then you
+29:58 put them in a mind map and then
+30:01 now it's your turn
+30:03 to share this mind map and this
+30:04 knowledge you extracted from experts
+30:06 with annotators right and then
+30:08 annotators probably go through a similar
+30:10 process that as you just did when
+30:13 learning from experts and then the
+30:14 process starts right
+30:17 yes yes i i mean in my experience
+30:20 experts outside of
+30:23 of bio nlp
+30:25 it's usually not the experts who would
+30:26 do the annotation but i would do the
+30:28 initial annotation so okay it's usually
+30:32 difficult to maybe to get sales leaders
+30:34 to do annotation for you or or other
+30:37 other domain experts so there
+30:39 it's more that i run an interview with
+30:41 them then i do some basic annotation
+30:43 myself and then maybe i'll even send
+30:45 them a document and be like hey this is
+30:46 based on what you told me this is how i
+30:49 think these are where the concepts are
+30:51 that you describe this is where i see
+30:53 them and obviously i'm not going to do
+30:54 as good a job as somebody who's
+30:55 professional it is to to identify these
+30:57 concepts but it also gives me
+31:00 potentially a good idea of what's
+31:02 achievable as well because you know the
+31:04 experts are let's say above me and the
+31:06 quality of their ad but usually um i'm
+31:09 above or the same level as the
+31:10 annotators and then
+31:12 you know that also gives you a good idea
+31:14 of what's achievable and gives you this
+31:16 this kind of human level baseline before
+31:20 you you start into this project and i
+31:21 think that's that's really important way
+31:23 of de-risking things as well because if
+31:25 you can if you can use this this human
+31:28 level baseline to then and the real hard
+31:31 thing then i think is tying that back to
+31:32 the business value like you know now
+31:35 we've got a human level baseline we
+31:36 we're almost ready to start the project
+31:38 we've got an executive who's happy to
+31:40 support us we've got a conceptual
+31:42 overview we've we've kind of
+31:44 got an idea how we're gonna get the data
+31:47 but then then comes the next leap which
+31:49 is kind of like what is good data what
+31:51 is you know how do we tie this back to
+31:53 business value and i think this is
+31:56 extremely difficult
+31:58 um
+31:59 my
+32:00 approach here is trying to come up with
+32:02 a prototype try and this is why i think
+32:05 sharing even is some form of annotation
+32:07 or some kind of databases of
+32:09 digitization of the human baseline is so
+32:11 powerful so i want to share that to
+32:13 start managing the expectations of
+32:15 what's achievable from the project and
+32:17 also to get support from
+32:19 from the business leaders as well around
+32:22 around how could i translate this to
+32:23 business value you know i i want to see
+32:26 where they see this could add value
+32:28 already in the beginning even before i
+32:30 have my model deployment
+32:33 so the way i understood you is
+32:35 so humans make mistakes right when
+32:37 annotating it it's inevitable so there
+32:40 will be some accuracy that humans can
+32:43 provide and usually experts are most
+32:45 accurate then you and annotators are
+32:48 less accurate and then you have this
+32:50 data with some inaccuracies and then
+32:53 perhaps you like i don't know for this
+32:55 sales qualification task let's say human
+32:58 annotators are 70 correct right and then
+33:00 you can come back to the experts and say
+33:02 okay like if our system is 70 correct do
+33:06 you think it will be useful for the
+33:07 business or not right
+33:09 exactly but i think i think this process
+33:12 is still qualitative and more kind of
+33:14 consortive so what i would do is
+33:16 actually take some
+33:18 examples of of usually what i have done
+33:21 actually that's the level where i do
+33:22 this is i'll come up with my own ex my
+33:25 mo like here's literally a transcription
+33:27 that is annotated and in a nice easy to
+33:29 read way and i will send it to them and
+33:31 ask them to read it and look at it
+33:34 and
+33:34 and and share their thoughts ideally
+33:37 like what do they think because
+33:39 sometimes you know the feedback could be
+33:41 like hey hey chris like you know this is
+33:43 okay but but you're missing three
+33:45 concepts here you know like you know the
+33:48 if if i was just focusing on these two
+33:50 things i don't think i would be able to
+33:52 do this at all like um it can be
+33:54 something like that or or another thing
+33:57 can also be like oh this is really
+33:58 interesting actually like if if we had
+34:00 if our customer support people had
+34:02 access to this level of tagging for
+34:04 example maybe we could we could speed up
+34:07 like complaint resolution by five
+34:08 percent like you know this is this is
+34:10 really exciting and and this could be a
+34:12 track where we can we can provide value
+34:14 with this feature
+34:16 okay so not only you understand if it's
+34:18 useful for business but you can also get
+34:20 some insights how exactly it will be
+34:21 useful maybe it's different from what
+34:23 you initially thought right yeah yeah
+34:25 and in my experience there's almost
+34:27 always some
+34:28 you know new emergent ideas that come
+34:31 along
+34:33 and we talked a bit about this
+34:34 annotation booklet and you mentioned
+34:36 that we put tricky examples there but
+34:38 then we also said that
+34:40 i think it was like when we start this
+34:42 process we hand this booklet to
+34:45 we give this booklet to the annotators
+34:47 so my understanding is that these tricky
+34:49 examples is not the only part that we
+34:51 put in the booklet right so we
+34:53 probably put the entire task definition
+34:55 we give examples right we give this mind
+34:57 map that we talked about right so what
+35:00 what
+35:01 else do we put there
+35:02 exactly so
+35:04 the booklet i the way i see it is it's a
+35:06 complete guide to be as productive as
+35:09 possible in annotation process so so the
+35:12 objective there is to empower annotators
+35:15 to do as good a job as possible and i
+35:18 think i think this is a very
+35:20 important mindset in data creation to
+35:22 think in this
+35:24 to have empathy towards annotation
+35:26 because it's a hard job it's really
+35:27 difficult
+35:29 and and to really think about okay how
+35:30 can i make this easier how can i make
+35:32 this work better and and and the booklet
+35:35 for me is this this living document that
+35:37 has you know what the task is how do we
+35:40 actually conceptually think about it's
+35:41 like why is this this is the kind of
+35:43 thing we're interested in and and the
+35:45 third bit is is kind of more the craft
+35:47 aspect so here are ambiguous ambiguous
+35:50 ones
+35:51 i also
+35:52 i think it's also important to allow it
+35:55 in a way for annotators to potentially
+35:57 annotate as many share notes for example
+35:59 when they're doing annotation and then
+36:01 you can
+36:02 you or a project manager can collect
+36:04 those notes into this annotated booklet
+36:06 and then you you periodically review it
+36:08 so you would review them initially and
+36:10 then you you would have kind of debrief
+36:12 with your annotation team where you
+36:14 could discuss like what are the insights
+36:15 from this or what are the changes that
+36:17 you're going to do to
+36:18 to kind of react to that
+36:20 um now i think this is really important
+36:23 because when annotators
+36:25 feel that they're listened to
+36:27 um they
+36:29 you know that
+36:30 it's very important in a work
+36:32 relationship and they i find they can be
+36:35 you know it can be a lot easier to work
+36:37 together
+36:42 and uh you mentioned this um
+36:45 how can i make it easier for annotators
+36:47 i can booklet is uh
+36:49 is a way to make it easier and i think
+36:50 for me personally
+36:52 like i remember when i needed to do
+36:54 something like this and involved on the
+36:55 daters from the company where i worked
+36:58 i would do this myself and then see
+37:00 where it's not easy because i think this
+37:03 is what we data scientists sometimes
+37:04 don't do or don't do enough is trying to
+37:08 to how do you call it your own dog food
+37:10 right like try to put yourself in the
+37:12 shoes of the annotators and then
+37:15 uh feel the struggles of
+37:17 you know how boring it is how many
+37:20 actions you need to do to annotate a
+37:22 piece of text and then to think okay how
+37:24 can i actually make it faster so maybe
+37:26 instead of using mouse a lot maybe you
+37:27 can just click a button right a key
+37:30 a key button
+37:32 like on your keyboard and things like
+37:34 this right so this is when you get
+37:35 insights when you try to do this right
+37:37 was it
+37:38 um
+37:39 i guess you also came to do similar
+37:41 observation
+37:43 yeah i i think an annotation user
+37:46 experience is massive and and it's also
+37:48 measurable so so i'm i'm a huge fan of
+37:51 actually you know this whole annotation
+37:52 process
+37:53 you can have a very uh
+37:56 quantitative and database
+37:59 approach to how you measure the impact
+38:00 of these things and for example at
+38:03 resolver we use prodigy spaces on
+38:05 annotation interface which has one of
+38:08 these beneficial aspects it has hotkeys
+38:10 for example for doing quick quick
+38:12 acceptances of of
+38:15 of name entities or even classifications
+38:18 so so it makes it a lot easier with the
+38:21 ux and
+38:22 we would see potentially five to ten
+38:24 percent
+38:25 uh improvements in how many how many
+38:28 data samples we could get from an
+38:29 annotator in a day by by improving
+38:32 by iteratively improving the the ux
+38:35 from going for like you know like a
+38:37 better user experience there so so i
+38:40 think it's it's hugely important
+38:43 to
+38:44 i'd say the there's three kind of
+38:47 metrics that are really important to
+38:48 keep track of so the one and i've
+38:50 already said is inter annotator
+38:52 agreement
+38:53 i think
+38:55 maybe one of the most important ones
+38:56 because if there's if there's very low
+38:58 inter annotated agreement it means your
+39:00 task is very ambiguous and people have
+39:03 no idea what they're doing or it's just
+39:05 a very difficult task and you may need
+39:07 to re re figure out what you're doing i
+39:09 think the second metric that's quite
+39:11 important is like okay how many samples
+39:14 of data can you get from from annotators
+39:17 in a in a unit of time in in let's say
+39:20 eight hours for example um
+39:23 so i think it's important to keep track
+39:25 of this to make sure that the
+39:26 performance is you know is is on track
+39:30 there i think one of the
+39:32 important difficult things to model
+39:33 there is fatigue as well because again
+39:36 when when people are doing crowdsourced
+39:37 annotation they may do like a 10 12 hour
+39:40 shift of of mechanical turkey let's say
+39:42 and and by the hour nine you're even if
+39:45 you did for yourself if you did 12 hours
+39:47 of annotation a day i'm gonna have very
+39:49 strong questions about the last three
+39:51 hours of your annotation and and the
+39:53 output from there so
+39:55 so modeling fatigue can be challenge a
+39:58 challenge there but but you know you you
+40:00 can track that as well if you if you
+40:02 look at the rate of data and look at the
+40:04 the rate of the quality of the data but
+40:06 it's a bit harder i think and and i
+40:08 think that the final piece is probably
+40:11 real time
+40:12 uh kind of real-time uh model metrics
+40:15 around around performance so the way
+40:18 what we did at resolver that i thought
+40:20 was was quite clever
+40:22 is we would do a split of the data where
+40:25 we would leave out particular
+40:28 annotators data sets and we would test
+40:30 on those for example and see how how
+40:33 well
+40:34 how well would our models generalize the
+40:36 different splits of annotators data like
+40:38 in different time periods so the the
+40:40 idea here was that that we would look at
+40:43 is the
+40:46 we would look at this when we had some
+40:49 after a while we had some concerns that
+40:50 some annotators were annotating things
+40:52 very differently and this was something
+40:54 that emerged because they
+40:57 we did a project around identifying
+40:59 these identify vulnerable consumers who
+41:01 are are most at risk when they're making
+41:03 a complaint
+41:04 and and some people
+41:06 well some annotators were thinking like
+41:09 winter is a real problem and it is a
+41:11 huge problem and this was actually one
+41:12 of our big blind spots that we
+41:13 discovered through the annotators is
+41:15 that in winter in the uk heating
+41:18 so for example your boiler breaks it's
+41:20 extremely difficult obviously like
+41:22 you're going to freeze to death if
+41:23 nothing happens so extremely vulnerable
+41:26 situation
+41:27 top priority needs a lot of focus and
+41:30 attention from companies and companies
+41:32 do have specific departments for the
+41:33 section teams to work with these type of
+41:35 consumers but it's often
+41:37 we we didn't expect it to be such a huge
+41:39 percentage of our vulnerable vulnerable
+41:42 complaints so it was more than 10
+41:44 and we found this because there was a
+41:46 particular annotator who was who was
+41:48 more focused on this and who would then
+41:50 share these
+41:52 these views with us and we
+41:54 it was
+41:55 it was also
+41:57 what led us to actually find this is
+41:58 that we did periodic kind of qualitative
+42:01 looks as well so we would periodically
+42:03 kind of read about 100 100 annotations a
+42:07 week by different people so so that we
+42:09 would get an idea of like what are
+42:11 people picking out kind of what are they
+42:12 looking at so i think eyeballing the
+42:14 data is extremely important and
+42:17 you know all of that would be very hard
+42:19 for me to do if i didn't start the whole
+42:21 process with what you said as well like
+42:23 say it's like myself doing a lot of
+42:25 annotation i myself i think
+42:28 when i start a project i do about
+42:31 it really depends between 500 and a
+42:33 thousand data points let's say and
+42:35 that's usually the point where i get
+42:37 somebody external involved like other
+42:39 than myself
+42:40 um
+42:41 which is brutal i have to say i find it
+42:44 very difficult doing the 500 to 1000
+42:46 samples but very valuable
+42:50 and we talked a bit about
+42:53 was it pre-filling some of the
+42:56 suggestions and even at the beginning i
+42:59 talked a bit about this uh active
+43:01 learning like when you all collect a bit
+43:03 of data then you train your model then
+43:06 you show this to annotators and then you
+43:08 iterate so maybe we can talk about these
+43:10 things so one thing i wanted to ask you
+43:12 about tactic learning like how do you
+43:15 think it's helpful in data set
+43:17 collection
+43:18 so so active learning
+43:20 i think um can can really work and it
+43:24 can help you
+43:25 massively reduce the data amounts that
+43:28 you require but sometimes it can be it
+43:30 can be quite
+43:31 less impressive as well in my experience
+43:33 so
+43:34 so the general idea in active learning
+43:36 is that you you get model predictions
+43:39 and you take loca you sample low
+43:41 confidence model predictions or model
+43:43 predictions on decision boundary and
+43:45 then you will annotate those and that
+43:47 will help push the model in the right
+43:48 direction so the model is keeps training
+43:51 while you're you're feeding this data
+43:53 this is one of these hybrid data
+43:55 collection approaches
+43:56 um
+43:58 i think
+44:00 so in my experience
+44:01 it hasn't worked extremely well
+44:05 so far in
+44:06 or or maybe it was hyped up a lot when i
+44:09 started using active learning and i was
+44:11 surprised by the
+44:13 smaller impact than i expected so
+44:16 when it's worked for me it was usually
+44:18 about 20 less data required than than
+44:21 when it you know then without active
+44:23 learning when it worked but the problem
+44:25 i've had let's say
+44:27 uh and 20 is fantastic still so maybe
+44:30 it's just kind of my dreamlike
+44:31 expectations but i i honestly thought it
+44:34 would be a much larger kind of force
+44:36 multiplier i thought it would like be a
+44:38 complete game changer let's say and
+44:41 sadly i think active learning is not a
+44:43 complete game changer but it can work
+44:45 sometimes extremely well and other times
+44:47 it kind of falls on its face a bit
+44:50 and then there is another thing uh
+44:51 called distance supervision so can you
+44:54 tell us about this thing what is it
+44:56 yeah so distance supervision that is a
+44:59 game changer i think actually so
+45:01 distance supervision is is i think the
+45:05 the paradigm where data creation is
+45:07 moving towards its
+45:09 so what distance supervision is is when
+45:11 you can use some kind of
+45:13 some kind of programmatic approach to
+45:15 generate weak labels for your data set
+45:17 and then what you can do is you can
+45:19 either fine-tune your model straight
+45:20 away based on that or you may decide to
+45:22 sample
+45:23 from that
+45:24 collection of weak labels
+45:27 so for example at resolver what we we
+45:28 did is we had a semi-supervised topic
+45:31 model and we would sample vulnerable
+45:34 vulnerable complaints from there and it
+45:37 that was forced multiplier it led to
+45:40 requiring 10 times less data
+45:42 for finding
+45:44 for finding vulnerable consumers so it
+45:47 was a huge force multiplier and today
+45:50 this technology has matured even more so
+45:52 there's tools
+45:54 like snorkel for example where you can
+45:56 define these labeling functions
+45:58 and
+45:59 you can use snorkel has for example
+46:01 integration with spacey so so that's
+46:03 quite useful you can use you can define
+46:06 i don't know name entity based labeling
+46:08 function so if the i don't know if if
+46:11 there's a location in this document then
+46:13 you may want to say like i don't know it
+46:16 has location for example even something
+46:17 like that so then what you do is you you
+46:20 create all of these kind of weak labels
+46:23 and then what snorkel does is it will it
+46:25 will create a clever weighing on top of
+46:27 that to see how that aligns with with
+46:30 with the actual labels that you want to
+46:31 generate because some of them obviously
+46:34 so some combinations of these labels
+46:36 will be more successful than others
+46:39 and i think this technology is extremely
+46:42 powerful because it kind of allows
+46:44 domain experts and annotators
+46:47 to to have a much wider
+46:49 range in in doing this because when you
+46:52 come up with a labeling function it may
+46:54 affect i don't know uh two to three
+46:56 percent of your data per labeling
+46:57 function
+46:58 and that that's that's amazing actually
+47:00 so so you you're having you're using a
+47:03 much
+47:05 broader net to kind of collect your data
+47:07 then and
+47:09 the
+47:11 the quality that you're collecting is is
+47:13 lower though still so you will still
+47:14 need to do some more traditional
+47:16 annotation or maybe a subset of the data
+47:18 maybe even on data out of your distance
+47:22 supervision distribution just so you
+47:24 because you may have some biases there
+47:25 as well that you're introducing with
+47:27 this but it it's it i think i think uh
+47:31 distance supervision is a huge force
+47:33 multiplier in the industry currently and
+47:35 it's one of those things that that
+47:37 really empowers you to get more done
+47:40 with limited time and limited budget
+47:44 so um so you mentioned one of these
+47:46 sources for weak labeling is topic
+47:49 modeling so like let's say we have a
+47:51 huge pile of unlabeled text right so a
+47:55 lot of texts
+47:56 could be these transcriptions from sales
+47:58 calls right
+47:59 so what we can do is we can somehow
+48:01 cluster this text
+48:02 into a bunch of topics and then this
+48:05 topic that comes out of our clustering
+48:07 algorithm could be this weak label right
+48:09 so that could be one of the sources
+48:12 what about different heuristics like if
+48:15 we see a word
+48:17 like a certain word then we
+48:19 think it could be like i don't know this
+48:21 label
+48:22 is it also like a good source of weak
+48:24 labels yes yes yes so this is exactly
+48:26 the type of programmatic uh labeling
+48:29 functions that's the snorkel for example
+48:31 allows you to create and
+48:32 there's some other tools as well or you
+48:34 can even you can roll this somewhat
+48:36 yourself as well personally i've rolled
+48:38 it before i knew about snorkel myself
+48:41 um
+48:42 so so for example i'll i think a good
+48:45 example to understand is better is maybe
+48:48 bioenlp so when you're when you're
+48:50 developing a drug you're looking for
+48:52 you're looking for a particular drug
+48:54 that treats a particular disease so if
+48:56 you find a sentence that has a drug and
+48:58 a disease entity in it
+49:01 and the verb in it is treat for example
+49:04 then that's a good candidate for for
+49:06 having for example you know then you're
+49:08 like okay this drug treats this disease
+49:11 based on this document so so that's one
+49:13 way you could actually generate this
+49:14 type of label label um
+49:17 so i i think this can be
+49:20 you know you can take this quite far and
+49:22 then you could maybe do do things more
+49:25 a more fuzzy version of this if there's
+49:26 a verb and a drug and a disease but then
+49:30 you're obviously going to get a lot less
+49:31 lower quality because maybe it's like
+49:33 you know it doesn't treat it maybe
+49:34 that's what the sentence is saying if
+49:36 it's a pubmed abstract actually or that
+49:38 it has negative side effects or
+49:39 something like that so
+49:41 and this is the kind of fuzziness in it
+49:42 and how well do you specify these
+49:45 labeling functions so this is why i
+49:46 think it's it's quite important
+49:49 what what snorkel brought to the table i
+49:52 think as a user was having this this
+49:55 type of clever weighing mechanism on top
+49:58 of these labeling functions so there you
+50:00 could define them both as like does it
+50:01 contain this string you could use you
+50:03 know all of these uh space c linguistic
+50:05 features like name entity recognition i
+50:07 don't know part of speech tag etc all of
+50:09 these type of things and then you also
+50:11 have a layer on top of this that can
+50:13 weigh that for you so to make sure that
+50:15 it's you know you you're getting the
+50:17 best bang for buck and you're not
+50:20 like low quality labeling functions
+50:22 aren't pulling you down
+50:24 so you mentioned two tools you mentioned
+50:26 prodigy at some point and you mentioned
+50:28 snorkel right so what are the
+50:31 other options or
+50:33 one of these two is already enough to
+50:35 you know get started
+50:37 so
+50:38 personally if
+50:40 if i was starting out now
+50:42 and and i would just be doing my first
+50:45 kind of proof of concept project i would
+50:47 start with prodigy because i think
+50:49 prodigy has a really good user interface
+50:52 it integrates very well with spacey
+50:54 because it's it's run by the it's
+50:56 created by the creators of spacey so
+50:58 uh it has a very nice user user
+51:00 experience so it has these hotkeys and
+51:03 everything so it's just a pleasure to
+51:04 use
+51:05 um
+51:06 i i think docano is a quite good open
+51:09 source alternative or uh labeling studio
+51:12 those are both open source alternatives
+51:14 to prodigy they both allow you to do
+51:16 active learning actually um
+51:19 and for
+51:22 for distance
+51:24 for uh distance supervision
+51:26 uh i would recommend
+51:28 snorkel probably so snorkel um
+51:32 snorkel has an open source an open
+51:34 source uh version of their tool which
+51:37 they aren't developing actively anymore
+51:38 as they've moved into enterprise
+51:40 development but it's still usable and
+51:42 and i would i think it's a good entry
+51:44 point into into distance supervision
+51:47 because it allows you it has a nice
+51:48 interface that allows you to do to find
+51:51 these labeling functions and see their
+51:53 implant another tool there an open
+51:55 source tool that that has
+51:57 less powerful uh distance supervision
+52:00 features but is i think quite inspired
+52:02 by it is rubrics but i i haven't used
+52:04 that myself and i
+52:07 i just i just skimmed it actually and it
+52:09 looked like a similar alternative to
+52:11 snorkel if anybody watching this has
+52:13 some experience with rubrics please
+52:14 message me because i'd really love to
+52:16 learn more or if you you have
+52:18 more alternatives there because i think
+52:20 this is the space is kind of blowing up
+52:22 now as in it's becoming extremely
+52:24 important and i think this can be
+52:27 a large competitive advantage when
+52:29 you're when you're creating your data so
+52:33 and we have a question from the audience
+52:35 which is actually similar to one of the
+52:37 questions i prepared for you so how
+52:39 would
+52:40 what we talked about here how would we
+52:42 take this and apply to
+52:44 career transitioning
+52:46 so for example somebody wants to change
+52:48 career um to become a data scientist for
+52:51 example and they are building a project
+52:53 portfolio
+52:54 so how
+52:55 should they go about this because like
+52:58 one thing you can take a project from
+52:59 kaggle right and then it's a ready csv
+53:02 file somebody already put effort in
+53:03 collecting this data so you just you
+53:06 know
+53:07 use pandas read cc then you use logistic
+53:10 regression fit then you just use predict
+53:12 them here you go this is your project
+53:14 portfolio right
+53:15 it's uh like everyone has these projects
+53:19 but very few people actually
+53:22 work on
+53:24 collecting data sets very very few
+53:26 and this could be like a good
+53:30 you know
+53:31 a way to get noticed right so how would
+53:33 you
+53:34 suggest uh people can do this like how
+53:36 can we they use these things and do it
+53:38 in their project
+53:40 so if i put on my hiring manager had
+53:42 just for for five seconds i would love
+53:45 it if a candidate would tell me about
+53:47 their data set creation experience or or
+53:50 they would be like hey this is the data
+53:51 set i've created i think that would be
+53:53 mind-blowing and to me that would put
+53:55 them
+53:56 into a way more mature category than
+54:00 like i wouldn't i wouldn't think they
+54:01 were
+54:02 way more valuable than an entry entry
+54:05 data scientist for example an
+54:06 entry-level data scientist because this
+54:08 type of conceptual thinking and thinking
+54:10 that the data
+54:12 the data is expensive to create and it's
+54:14 valuable to create it well that type of
+54:16 maturity would be hugely hugely valuable
+54:19 for me taking off my
+54:21 hiring manager had um
+54:24 i i think i think if i was starting out
+54:27 on a project like this i think the most
+54:29 important thing is is
+54:30 to
+54:32 to to actually do something so in
+54:35 machine learning there's millions of
+54:36 tools there's so many things you could
+54:38 do so many documentation there's huge
+54:41 information overload going on so
+54:43 my
+54:44 my key suggestion would be just start
+54:47 doing something
+54:48 and it can be good if you do it in a
+54:50 kind of more simple way initially and
+54:52 it's more painful or something like that
+54:53 because you will learn that you know you
+54:56 will you will want to do it in a better
+54:58 way then but
+54:59 um
+55:00 i think i think it's really important to
+55:02 just
+55:04 have a project
+55:05 make it a simple project but maybe
+55:07 something that's of interest for you and
+55:09 where you may have some competitive
+55:11 advantage so if you're the main expert
+55:13 and you are probably the main expert in
+55:14 in some areas then you should make a
+55:16 data set using that domain expertise
+55:19 then the next thing i would suggest is
+55:21 select your stack and just stick with it
+55:24 so
+55:25 i think
+55:26 personally if if if you would start out
+55:28 now
+55:29 for for beginner if you would do a
+55:31 project with snorkel it would be a
+55:33 pretty strong way to distinguish
+55:35 yourself from from most candidates and
+55:37 it could learn it could also teach you
+55:40 maybe how to use spacey do some of that
+55:42 like linguistic pre-processing as well
+55:44 and and learn a little bit of like
+55:46 computational linguistics through that
+55:48 so as somebody who works out in nlp i
+55:50 think you know all of these things would
+55:51 be extremely good signals but if you use
+55:55 a more simple tool let's say docano or
+55:57 label studio and you and you create a
+55:59 data set like that i would still be
+56:01 quite impressed with that project so i
+56:03 think i think uh people who who
+56:06 who work through something like that
+56:08 it's it's it's very impressive
+56:11 because
+56:12 it's it's a huge amount of the cost
+56:14 basis is there as as we're seeing that
+56:16 more more and more um modeling is
+56:19 becoming a commodity and anybody can
+56:21 kind of plug in play transformers for
+56:23 example to get to some kind of baseline
+56:25 you you need to think about where do you
+56:27 provide the competitive value that
+56:30 there's a lack of in the market
+56:31 and uh
+56:33 i would say i would say data creation
+56:35 expert is something that we kind of need
+56:37 more
+56:38 more of and we kind of need to have more
+56:40 discussions about these type of things
+56:42 because it's it's less sexy in a way i'd
+56:45 say you know it's a lot of fun to train
+56:47 a model and and it's hugely rewarding
+56:49 when you finally have your model and
+56:51 it's making some good predictions and
+56:52 you you see the pleasure that gives your
+56:55 users very rewarding but building the
+56:58 data set to do that is also very
+56:59 rewarding because without this you
+57:01 wouldn't have gotten there you know so
+57:03 um i think
+57:05 i think it's really important to
+57:07 to frame this narrative around like you
+57:08 know let's talk more about data set
+57:10 creation and
+57:11 and make it also cool maybe it won't be
+57:14 as cool as very fancy machine learning
+57:15 models but hopefully it will get a bit
+57:17 cooler
+57:19 and
+57:20 like in my personal experience you can
+57:22 just start using ipython widgets like
+57:24 widgets in jupiter or notebook it's
+57:26 super easy to start with
+57:28 to
+57:29 like it's like it's not as advanced as i
+57:32 don't know snorkel or prodigy but if you
+57:35 need like i don't know it's a binary
+57:36 classification case then you can quickly
+57:39 get like a few hundred examples just
+57:41 from using ipython widgets
+57:44 so so if if you if you like ipython
+57:46 widgets and you're more of a beginner
+57:49 but if you know what ipython is then i
+57:51 would suggest the fast ai course because
+57:53 the whole fast ai course takes this idea
+57:55 of using ipython it's
+57:57 crazy crazy levels to the next level in
+58:00 every way and
+58:03 and it and it can be a great kind of
+58:05 structured way of building a project
+58:08 where you will have a data set creation
+58:10 and modeling piece on your own for your
+58:12 own domain but getting guidance
+58:13 throughout the process for free so
+58:15 that would be my my suggestion on based
+58:17 on that
+58:19 yeah i realized we don't have a lot of
+58:21 time left
+58:22 actually it's uh i don't do you have a
+58:24 couple of minutes yes i do i do
+58:27 good
+58:28 we have a few questions maybe what i
+58:30 will do i will suggest you two questions
+58:33 and then you will pick up the one you
+58:35 want to answer so the first question is
+58:37 about dealing with gdpr because like we
+58:40 can have sensitive data how do we
+58:41 present it to
+58:42 annotators and then another question is
+58:45 about different languages that come to
+58:47 work can capture and what are the
+58:49 different challenges
+58:50 with working with various languages or
+58:52 if you have time you can answer both
+58:54 yeah yeah i'll answer them both uh i'm
+58:57 good um
+58:58 so um
+59:00 the first question was around around
+59:02 gdpr complaints so actually gdpr i think
+59:05 is another great reason to favor
+59:07 in-house annotation actually because
+59:09 because crowdsourcing has a huge amount
+59:12 of kind of compliance risk in there
+59:13 potentially in in you leaking
+59:16 personally identifiable data so there's
+59:18 a number of kind of anonymization
+59:21 techniques that i've used as well to try
+59:23 and and blank out like locations names
+59:26 phone numbers credit cards other
+59:28 personality and identifiable information
+59:31 but um these algorithms usually aren't
+59:34 perfect and some data leaks through like
+59:36 identifying names
+59:37 working at resolver i realize there's a
+59:40 huge amount of different names that are
+59:41 not standard at all and are extremely
+59:43 difficult to actually capture and often
+59:45 they're typed
+59:46 with small letters as well and it can be
+59:48 a very very tricky thing actually so um
+59:51 personally i think i think this is a
+59:54 huge plus for for in-house data
+59:56 annotation um and managing because then
+1:00:00 you can manage the sensitivity of the
+1:00:02 data way better
+1:00:03 um
+1:00:04 with regards to to what languages come
+1:00:06 to work and support at the moment we we
+1:00:09 only support english but you know if
+1:00:11 you're interested you know i would uh
+1:00:14 get in touch with me and on one of one
+1:00:17 of the channels that that is the share
+1:00:19 and uh i'm happy to have have more of a
+1:00:21 chat about whatever language you're
+1:00:23 interested in playing contours
+1:00:26 you're hungarian aren't you
+1:00:28 yes so um
+1:00:30 i'm i'm half the trump hungarian
+1:00:32 actually but i grew up in america
+1:00:35 yeah and uh i'm asking this because i
+1:00:37 know i haven't studied hungarian but i
+1:00:39 know i heard that this is an extremely
+1:00:41 difficult language to
+1:00:42 like for a foreigner just to learn and
+1:00:46 like i imagine that for nlp
+1:00:49 tasks it's also quite tricky right
+1:00:51 because of the
+1:00:52 grammar because of like the linguistic
+1:00:54 properties of the language
+1:00:56 um have you worked with other languages
+1:00:58 apart from english
+1:00:59 i have done some
+1:01:02 extremely minor work with hungarian
+1:01:04 actually and
+1:01:05 actually hungarian is in many ways
+1:01:08 easier than english so um
+1:01:10 one of the things about english that is
+1:01:12 quite difficult is there's a lot of
+1:01:14 morphological ambiguity so when you when
+1:01:17 you have a
+1:01:18 word written in english
+1:01:19 it doesn't really give you a good idea
+1:01:21 about how to pronounce it right so you
+1:01:23 could pronounce you can pronounce the
+1:01:24 same wows in quite a few different ways
+1:01:27 um
+1:01:28 but in hungarian and and in many i'd say
+1:01:31 more sane languages you you if you have
+1:01:34 something written in some way it gives
+1:01:35 you a hundred percent you know knowledge
+1:01:38 on how to pronounce it you will be able
+1:01:40 to read it and you won't need any
+1:01:42 additional information to be able to
+1:01:43 read the word so
+1:01:45 that's one benefit and
+1:01:47 the other one is
+1:01:49 um
+1:01:50 hungarian well this this is is a bit
+1:01:53 more around tokenization so so hungarian
+1:01:56 um uses is an agglutinative language so
+1:01:58 so all the linguistic information is
+1:02:00 stored at the end of words in general um
+1:02:04 while english will you know use prefixes
+1:02:06 and suffixes potentially but mainly
+1:02:08 prefixes to kind of load up the
+1:02:10 linguistic information so
+1:02:13 what is a challenge is potentially how
+1:02:15 do you tokenize your your strings to
+1:02:18 capture that information but but
+1:02:20 actually uh transformer models i believe
+1:02:23 do work in hungarian as well like and
+1:02:26 and they can learn these uh these uh
+1:02:30 like suffixes and the linguistic
+1:02:32 information i'm assuming this is due to
+1:02:34 the work piece level tokenization that's
+1:02:36 going on there but i i haven't looked
+1:02:38 into this extremely deeply but
+1:02:41 surprisingly uh nlp in hungarian works
+1:02:44 quite well the the thing that makes it
+1:02:46 less advantages is hungary is quite a
+1:02:49 small country so only nine million
+1:02:50 people so uh
+1:02:52 the the impact of of uh hungarian nlp is
+1:02:55 is more limited than english-speaking
+1:02:57 nlp
+1:02:59 so that's the main reason it's just like
+1:03:01 how common
+1:03:02 the language is
+1:03:04 how many people speak it right
+1:03:06 and then i okay i remember i came across
+1:03:09 a tweet recently
+1:03:11 that in pacific ocean in france phrase
+1:03:13 pacific ocean all the c's are pronounced
+1:03:16 differently
+1:03:18 right so that's uh yes it doesn't happen
+1:03:21 in hungarian does it no no no it doesn't
+1:03:24 it doesn't um yeah i i think i think
+1:03:27 many languages are morphologically and
+1:03:29 more stable i'd say
+1:03:32 than english so actually english
+1:03:33 english is not an easy language in many
+1:03:35 ways i i'd say so
+1:03:39 okay
+1:03:39 okay thanks a lot for staying a bit
+1:03:41 longer with us and answering questions
+1:03:44 and thanks everyone also for asking
+1:03:46 questions yeah thanks for sharing their
+1:03:48 expertise with us
+1:03:50 i guess yeah so we have your contact
+1:03:52 information we'll put this in the
+1:03:53 description there is somebody
+1:03:56 asking
+1:03:58 to connect with you on linkedin
+1:04:00 so we'll share all the information
+1:04:02 definitely
+1:04:03 and i guess there are not so many
+1:04:05 christian sports on linkedin yeah if
+1:04:10 my yeah my linkedin username is
+1:04:13 christian swartz was two ways actually
+1:04:16 so that's the dutch way of spelling
+1:04:17 christian and and
+1:04:19 my my startup is called comtura so i
+1:04:22 think if you put in my name and contour
+1:04:24 you will you should get a hit for me um
+1:04:27 if if you struggle to to get in touch i
+1:04:31 i have a blog that's a use ml.net and
+1:04:35 you can get in touch with me there so if
+1:04:38 anybody uh struggles in another way i'd
+1:04:40 like to say thank you for
+1:04:42 you know connecting this interview it
+1:04:43 was a real pleasure i think this
+1:04:45 community that you're building is
+1:04:47 awesome and i think the the work that
+1:04:48 you're doing with this is really cool so
+1:04:51 i'm i'm really happy that i could be
+1:04:53 part of it for for an interview and uh
+1:04:56 yeah i'm i'm always looking forward to
+1:04:58 seeing you know what what you're up to
+1:05:01 thanks thank you for your kind words
+1:05:03 okay well i guess we will um
+1:05:06 yes conclude on this so

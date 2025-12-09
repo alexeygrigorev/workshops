@@ -1,0 +1,1660 @@
+Bayesian Modeling  and Probabilistic Programming
+
+0:00 Hi everyone, welcome to our event. This
+0:02 event is brought to you by data talks
+0:03 club which is a community of people who
+0:05 love data. We have weekly events and
+0:09 supposed to go to the next slide. Yeah,
+0:11 we have weekly events and today is one
+0:13 of such events. If you want to find out
+0:15 more about the events we have, there is
+0:17 a link in the description. Go there,
+0:20 check the link and you see you will see
+0:23 all the events we have in our pipeline
+0:25 which is currently not a lot because we
+0:28 like everyone else is going to have
+0:31 holidays soon but um yeah there's at
+0:34 least one I think um so the event we
+0:38 currently have in the schedule is for
+0:40 the course we're going to have soon
+0:41 about data engineering um so there will
+0:44 be a workshop so check it out and do not
+0:47 forget to subscribe to our YouTube
+0:48 channel very important. This way you
+0:50 will get you will stay up todated with
+0:53 all the events we have all the streams
+0:55 and you'll get notifications about them.
+0:59 And last but not least we have an
+1:01 amazing Slack community where you can
+1:03 hang out with other data to us. So check
+1:05 it out too. During today's interview you
+1:07 can ask any question you want. There is
+1:09 a pinned link in the live chat. Click on
+1:11 the link ask your question and we will
+1:14 be covering these questions during the
+1:15 interview.
+1:17 And I think uh like my Zoom says that my
+1:22 screen share is loading but I can see my
+1:26 screen from YouTube. So apparently
+1:29 screen sharing worked right
+1:33 blender. Anyways um
+1:38 Rob are you start to
+1:41 Yeah. Yeah. Okay. So this week I'll talk
+1:45 about Beijian modeling and probabilistic
+1:47 programming and we have a very special
+1:49 guest today. Rob is a machine learning
+1:51 engineer and a data scientist. He's
+1:53 interested in deep generative models as
+1:56 well as good statistical models.
+1:58 Previously he was a research scientist
+2:00 at Indiana University where he worked on
+2:03 the Hakaro probabilistic programming
+2:05 language. Sounds Japanese, right?
+2:08 Yes. Yes. Uh
+2:09 do
+2:11 yeah it's a it's it's it's actually a
+2:13 verb. So hakaroo means to measure and
+2:17 you know we were it was a system that um
+2:20 actually took seriously me measure
+2:23 spaces when modeling events. So it's
+2:26 kind of a the name also in some sense
+2:29 advertises unique features of the
+2:31 library
+2:33 only if you speak Japanese or understand
+2:35 well you know it's
+2:36 yeah okay yeah so the questions for
+2:40 today's interview are prepared by
+2:42 Johanna buyer thanks again Johanna for
+2:44 your help and let's start before we go
+2:47 into the main topic via modeling and
+2:50 proistic programming let's start with
+2:51 your background can you tell us about
+2:53 your career journey so
+2:56 Yeah, sure. So um so for me I was um I
+3:03 basically started as um fairly regular
+3:05 like software engineer, computer science
+3:07 person and um I
+3:12 went uh to LA sort of worked in
+3:14 different startups and sort of was
+3:16 getting involved as sort of just as sort
+3:18 of machine learning was kind of really
+3:21 having I don't want to say like a like a
+3:23 renaissance yet but it it was starting
+3:26 to really like pickup uh and and what
+3:29 like what do I mean by that? What I mean
+3:31 is like machine open-source machine
+3:34 learning tools were actually getting
+3:36 good because before I would say you know
+3:41 2006 2007
+3:44 lots of machine learning was like they
+3:46 were a very hit or miss like you had
+3:48 some nice stuff in the R ecosystem
+3:51 um and you know you had libraries like
+3:53 open CV and things
+3:56 you know
+3:58 but like there really weren't like like
+4:00 psych could learn only essentially was
+4:02 created like I think in like the late
+4:04 2000s and it was actually very hard to
+4:06 do good machine learning work readily
+4:08 well um
+4:12 like everyone was basically just it was
+4:13 all researchers so everyone's
+4:15 essentially just rewriting all the
+4:16 algorithms from scratch all the time um
+4:19 but they were starting to get pretty
+4:20 good and I was very much uh really
+4:23 engaging with machine learning um but I
+4:26 was often finding that like a lot of the
+4:29 kind problems I wanted to work with,
+4:31 they they didn't always fit things like
+4:33 scikitlearn or things that you could
+4:36 just throw a random forest at. Um so I
+4:40 got interested in uh Beijian modeling
+4:43 and
+4:45 through that an opportunity showed up so
+4:47 I can work with essentially a former um
+4:50 university professor of mine uh Ken Shan
+4:53 in Indiana and over there um I basically
+4:58 could work on ba um proistic modeling
+5:01 Beijian modeling tools
+5:03 um and
+5:06 through that you know I really came to
+5:09 kind of you know really love and
+5:11 appreciate the power and flexibility of
+5:13 these tools. Um and so from there I went
+5:18 you know did you know did a PhD program
+5:20 at Oxford where I kind of worked on more
+5:22 deep Asian modeling so very much like
+5:24 VAE sort of things um and then sort of
+5:28 after that I've moved to Berlin to sort
+5:30 of um sort of you know kind of move back
+5:34 into industry start actually applying
+5:36 these tools because you know in some
+5:38 sense I was motivated by you know the
+5:42 problems I cared about with a lot of
+5:44 these tools are things that are very
+5:45 challenging to sort of
+5:48 you know work on the side. They really
+5:51 are research problems that sort of
+5:53 require dedicated time but I I feel like
+5:57 you know
+5:59 I became very motivated to sort of see
+6:02 these tools now get widely adopted and
+6:05 just I also just enjoy solving actual
+6:07 problems.
+6:09 Um, so a lot of my trajectory's kind of
+6:13 been this, you know, kind of back and
+6:15 forth where I sort of pop into industry,
+6:19 dip into academia, pop back into
+6:21 industry, pop back into academia,
+6:25 uh, as I sort of try to kind of push the
+6:28 technology forward.
+6:31 And as a software, you said you were,
+6:34 how did you phrase it? like a usual
+6:36 software engineer computer science
+6:38 person.
+6:39 Yeah. And I imagine that for a usual
+6:43 computer science/
+6:45 software engineering person when they
+6:47 see all these mathematical formulas from
+6:51 the basian modeling they just freeze or
+6:56 freak out or whatever like I remember
+6:58 for me like oh all these integrals like
+7:00 I don't understand what's happening here
+7:02 like how did it happen for you like how
+7:04 did you like was it easy for you to get
+7:07 into the field with your software
+7:09 engineering, computer science background
+7:12 or you had to take like to do a lot of
+7:14 extra work to be able to
+7:19 work and not to be afraid of all these
+7:21 formulas.
+7:23 Sure. So I might be like, you know, I
+7:25 might be a little bit uh not the the
+7:29 typical case because I always had a love
+7:31 for like machine learning and AI. So I
+7:33 kind of always knew that like I'd need
+7:36 to like be comfortable with like
+7:39 integrals things like there are some
+7:41 people where like you know they were
+7:42 software engineer they were like used to
+7:44 like you know making things like web
+7:46 servers and uh you know mobile apps and
+7:49 then like they're like calculus I
+7:52 thought I thought that was useless. I
+7:54 was You mean this math I was taught in
+7:58 um
+8:00 uh secondary education is like this is
+8:02 like the most important thing I could
+8:04 have known that why did my teachers not
+8:07 say that? So there like I didn't quite
+8:09 have
+8:10 they did
+8:12 like
+8:13 if I wanted to do thing if I wanted to
+8:15 use these methods I had to at least be
+8:17 somewhat comfortable with optimization
+8:19 methods
+8:20 and like there's and linear algebra and
+8:22 there's kind of no way to do that
+8:24 without being at least a little
+8:26 comfortable with like taking a few
+8:28 integrals taking a few derivatives.
+8:31 So it was less of a that regard.
+8:35 Did your job as a software engineer. So
+8:37 as I understood you started your career
+8:39 as a software engineer and then you
+8:41 transitioned to more like Beijian stuff.
+8:44 Yeah.
+8:45 Like did your work as a software
+8:48 engineer involve mathematics or it was
+8:51 like uh you know creating websites and
+8:54 doing back end stuff? No, no, no, no. It
+8:56 was very, it was fairly like
+8:58 it was very much like, you know, scrape
+9:01 data from it was it was very much things
+9:04 like scrape data from the web, clean the
+9:06 data, put it in a database. Um,
+9:10 so fairly standard.
+9:12 Nothing like you know, not so much as
+9:15 even calculating a median.
+9:18 Okay. Okay.
+9:20 So you kind of kept your if I can say it
+9:23 mathematical muscles
+9:25 uh tit by doing some extra or extra
+9:29 stuff or you just adding so much
+9:32 it was just like you're just dabbling
+9:34 you're just sort of dabbling in the
+9:35 problems you're reading about them
+9:37 you know because in some sense like if
+9:38 you're like oh I want to learn machine
+9:40 learning so okay I'm going to learn how
+9:41 to like you know run a random farce or
+9:44 implement the rans I'm going to
+9:46 implement it's like you just sort of it
+9:48 just spend a lot time on the side sort
+9:50 of getting comfortable with things,
+9:51 making little programs. Um, you know,
+9:55 this was back where where there weren't
+9:56 these like very beautiful boot camps
+9:58 which really I think try to structure a
+10:02 lot of this knowledge. Uh, so I was just
+10:04 dabbling. So, uh, so I've told this to
+10:07 people. Um, I've never taken a formal
+10:10 statistics class ever. Like I never did.
+10:14 Uh I just basically just kept buying
+10:17 statistics textbooks uh until I felt
+10:20 sort of comfortable enough with the
+10:21 ideas. Um
+10:24 interesting.
+10:26 Yeah. For for me I remember my first
+10:28 formal machine learning class was a bit
+10:31 of a shock. Maybe not a bit of shock but
+10:33 like was actual
+10:36 like so so the it was at TU Berlin.
+10:38 Mhm.
+10:39 And the professor started with
+10:41 introduction to Beijian modeling.
+10:43 Yeah. with a lot of integrals and like
+10:48 the things we talked about like this
+10:49 marginalizing and he just assumed we
+10:51 kind of know all the stuff
+10:53 right right
+10:54 and this is like okay what I'm doing
+10:57 here but I decided to stay and see what
+10:59 happens it was a good decision but yeah
+11:02 it was it was scary like uh so for you
+11:05 you like from the university times you
+11:08 liked mathematics you were curious about
+11:11 that you were reading statist
+11:13 statistical
+11:14 statistics textbooks.
+11:16 So that's why this is how you kept your
+11:20 mathematical skills, right? So for you
+11:22 this transition so from software
+11:24 engineering to more mathematics heavy
+11:28 stuff was not
+11:30 uncomfortable. Right.
+11:31 Right. Right. Like I was like I was
+11:33 already reading these things of like
+11:36 this is how you marginalize and this is
+11:37 how
+11:38 I guess that's why you transitioned.
+11:40 Right. because you wanted to do more of
+11:42 that stuff, not scraping.
+11:43 Yeah, in some sense I kind of already
+11:45 did, but you know, it's,
+11:49 you know, this was the thing where it
+11:50 was like at that point like
+11:53 it was
+11:55 there like thinking about like, you
+11:57 know, 2006, 2007, 2008, there weren't
+12:00 machine learning engineer jobs. That
+12:02 that wasn't a thing that existed. Um,
+12:06 it's, you know, there were analysis
+12:08 jobs. Uh but um but like this idea that
+12:13 like you would be in a tech company like
+12:15 doing machine learning was like those
+12:18 jobs existed here and there like you
+12:21 know like like they might exist in
+12:23 Google like if you wanted to help with
+12:25 spam fighting or working on the ranking
+12:26 algorithm but that was a m like so that
+12:29 was a job where you use machine learning
+12:30 but you'd be basically hired as a
+12:31 software engineer. Uh, and you can sort
+12:33 of still see it like in like the culture
+12:36 of a lot of like companies that haven't
+12:38 really come back and like reflected on
+12:41 roles. It's just they hire software
+12:43 engineers and then they hope they can
+12:45 teach you statistics later. That's a
+12:47 culture that's I think still sort of
+12:49 persists quite a bit.
+12:51 I'm pretty sure it does. Yeah, I see it.
+12:53 I see that. Like there's an opinion that
+12:55 it's easier to learn the math you need
+12:58 than engineering. So, and it's easier to
+13:01 hire an engineer and then teach the math
+13:03 the basics and then let them work on the
+13:06 ML rather than getting a medicalization
+13:08 to be a good engineer. Right.
+13:11 I don't know if it's true. Like I've
+13:12 seen good people with
+13:14 Yeah. It's not clear if it's true
+13:16 because I've gotten to experience the
+13:18 opposite, which is you have a bunch of
+13:21 to put it bluntly, you have a bunch of
+13:23 unemployed physicists that know the math
+13:26 and basically are taught software
+13:28 engineering. And my personal experience
+13:29 is they do just fine.
+13:32 Mhm.
+13:33 Yeah. I'm pretty sure like if you know
+13:35 all the because like physics involves a
+13:38 lot of mathematics, right? Like all this
+13:40 gravitational stuff like if you look at
+13:42 that like you're just der the variety of
+13:46 symbols there and Greek letters and all
+13:48 that stuff. It's even scarier than the
+13:50 integrals, right? And then they
+13:51 understand all that, right? And if they
+13:53 understand all that and can make sense
+13:55 of that and spend like five years
+13:57 defending PhDs about that and for them
+14:00 like learning Java is not that
+14:01 difficult. Right.
+14:03 Right. Right. Yeah. So it's it feels
+14:04 like such a silly ne like I don't know
+14:07 it's it feels like I suspect that the
+14:10 reason we that the attitude this
+14:12 attitude is taken is more because
+14:15 software companies are run by people who
+14:18 used to be software engineers. So you
+14:22 know that's what they value. Uh so and
+14:25 so their attitude is software is what I
+14:27 know so software is not what I expect to
+14:29 teach. Statistics is something I don't
+14:32 know. I kind of had to dabble and learn.
+14:34 So that's what I'll expect of the people
+14:35 I hire.
+14:36 Like I feel like it actually just flows
+14:38 downstream from those kind of unstated
+14:41 values.
+14:43 So what's what is Beijian modeling? What
+14:45 are we talking about today?
+14:47 Right. Right. Okay. Yeah. So, so also
+14:48 like I've been saying the words
+14:49 probabistic modeling and basian
+14:51 modeling, they're not quite the same
+14:52 thing. They're they are the differences.
+14:54 Um, so
+14:57 if you take a statistics class, um,
+15:02 maybe this is changing, but like if you
+15:03 take a statistics class at some point,
+15:05 uh, I I know it feels a little bit silly
+15:07 to say this considering I never actually
+15:08 formally taken one, but I've read a
+15:11 bunch of textbooks that are used for
+15:12 these classes, but so hopefully this is
+15:14 like
+15:15 hopefully I'm not coming off too
+15:16 presumptuous. Uh, if you okay, let me
+15:20 say it this way. If you open up a
+15:22 statistics textbook, uh an instructional
+15:24 one, they'll often say there are these
+15:27 different schools of how to do
+15:29 statistics. And what they'll basically
+15:31 say is they'll say there's this sort of
+15:33 frequencies modeling approach and a
+15:35 beijian modeling approach.
+15:36 My statistics class started with that.
+15:38 Yeah.
+15:39 Okay. Good. Good. Good. Good. Okay. All
+15:40 right.
+15:42 You know, I don't want to be like, oh,
+15:44 this is how class starts. And I was
+15:46 like, no, no one does that anymore. They
+15:48 shouldn't but you know uh so
+15:50 long time ago though but yeah I can
+15:52 yeah so
+15:54 they'll say there's frequencies modeling
+15:56 and there's basian model. What do they
+15:58 mean by this? Um what they mean is
+16:03 in a frequentist modeling approach
+16:06 there's an assumption that you have a
+16:08 parameter that you're interested in you
+16:11 know so you're interested in say
+16:12 something like an like annual rainfall
+16:16 in Germany so this is like an actual
+16:19 quantity that exists in the world
+16:22 but you know there's no way to directly
+16:25 measure that
+16:27 but what you can so what instead said
+16:29 you can do is you can measure things
+16:32 that are sort of noisy down they're sort
+16:35 of
+16:36 they're the result of processes
+16:38 downstream of that. So you can do things
+16:41 like you know measure soil or sort of
+16:46 you know measure like increase water and
+16:49 sewer systems. These aren't annual
+16:51 rainfall but these are essentially
+16:53 quantities that you can then
+16:56 use to estimate annual rainfall. And
+16:58 there's of course some noise or some
+17:00 variance. So a lot of what frequentist
+17:03 modeling is about is
+17:06 we're going to essentially
+17:09 do these data collecting processes for
+17:12 these and then use that to estimate and
+17:14 then because there's some noise in that
+17:17 um we can't say this is what annual
+17:20 rainfall is. we essentially give you a
+17:23 confidence distribution
+17:25 uh which is that
+17:28 uh here's what we think it is and here's
+17:30 like some bars of where we think the
+17:33 value is. So you know so you'll say
+17:35 things like we we're 95%
+17:38 confident
+17:39 um
+17:41 that the true estimate of annual
+17:44 rainfall will be between these two
+17:46 values. Um and frequency statistics is
+17:49 nice in that regard in the sense of like
+17:51 these confidence values mean something.
+17:52 What they mean is like if you do a 100
+17:56 experiments where you gather data and
+17:58 then estimate the rainfall
+18:02 um 90 like your estimate 95% of the time
+18:07 will be between those two bars. So like
+18:11 there's really good guarantees there.
+18:14 Um but that's frequency statistics which
+18:16 I don't really do.
+18:19 There's um
+18:22 the uh
+18:25 there's but there's also Beijian
+18:27 statistic and Beijian statistics
+18:28 actually takes a very different
+18:30 attitude.
+18:32 Beijian statistics
+18:34 does not say in Beijian statistics
+18:38 there is no point estimate at any po at
+18:41 any part of the analysis. And by point
+18:43 estimate you mean like we make an
+18:45 experiment
+18:45 this just number where you say this is
+18:47 what I think the annual rainfall is.
+18:49 Yeah. So we get a number and this is our
+18:53 point estimate of the rainfall.
+18:55 Right. Right.
+18:57 And then we put some bars around it to
+18:59 say okay and like this is the interval.
+19:02 Right. So so then it's still point
+19:05 estimate. Right.
+19:06 Right. There's a point estimate and then
+19:08 there's a confidence interval around it.
+19:10 Um
+19:12 uh so
+19:14 there is
+19:17 in and there are things that use
+19:19 distributions in frequency um statistics
+19:22 but for bijian modeling the fundamental
+19:26 object is a distribution. You you almost
+19:29 never are doing anything with point
+19:30 estimates.
+19:32 So
+19:34 everything has a distribution. So
+19:37 you don't even so before you even begin
+19:40 you don't even talk about oh I want
+19:42 annual rainfall you say I have a prior
+19:45 distribution so I have a starting
+19:47 distribution of what I think annual
+19:49 rainfall is
+19:51 um you know and what you then do in
+19:56 Beijian um modeling is you then collect
+20:00 data and then through basically applying
+20:04 bay rule
+20:05 you end up with a posterior distribution
+20:08 of
+20:09 rainfall
+20:12 given the data you've now observed.
+20:15 So it's always distributions. You're
+20:17 always working with distribution. You
+20:18 never are.
+20:20 What's the advantage? Say what?
+20:22 Oh, so let's say I have some assumptions
+20:24 about rainfall, annual rainfall Germany.
+20:26 It could be if I have zero clue of what
+20:29 it is, it could be okay. It's uh uniform
+20:33 distribution between X and Y. I don't
+20:36 know some some numbers, right? Sure.
+20:38 Like I have no clue. And then this is
+20:40 the starting point, right? And then I go
+20:42 and dig a hole and then measure
+20:44 something, right? And then I get some
+20:46 data or go open like
+20:48 right
+20:49 look into the sewers and
+20:50 right right
+20:51 there some another variable, right? And
+20:53 then I collect data and then from the
+20:55 flatline from uniform distribution I
+20:58 start getting something else, right? And
+21:00 then this is what I do with BA modeling.
+21:02 Yeah. So bas Yeah, exactly. You would
+21:04 have you would start with some uh
+21:06 example like that. Um
+21:10 it's uh now I would hope you wouldn't
+21:13 use a uniform because you know you've
+21:15 sort of collected some data. You've
+21:18 you've looked at some annual rainfall
+21:19 estimates over the years uh and you said
+21:22 like oh it seems to you know sometimes
+21:25 there's less sometimes there's more. It
+21:27 all depends on what kind of data we
+21:29 already have, what kind of knowledge we
+21:30 already
+21:31 Yeah. Yeah. of course. Um but yeah, but
+21:34 the important thing it's you're always
+21:37 going it's always a process from one
+21:39 distribution to another.
+21:43 Now what why would someone prefer that?
+21:47 This feels like, you know, a little bit
+21:50 more uh it seems like more work. Um and
+21:54 and it is work because doing this Baze
+21:56 rule over and over again often involves
+21:58 computing a lot of these uh annoying
+22:00 integrals that are often like not
+22:02 efficient. Um but what's the actual
+22:05 advantage here?
+22:07 Because it's distribution in
+22:09 distribution out. It's ve it's a very
+22:12 composable framework. It's very easy to
+22:16 like extend your analysis and sort of
+22:19 build up an analysis because everything
+22:21 is just distribution in distribution
+22:23 out. So it's very easy to sort of
+22:26 because like here's the thing I have
+22:29 this distribution on data that can be
+22:31 the starting point for a future
+22:33 analysis.
+22:35 Um I want to add more variables into the
+22:38 model later. I can start with this one.
+22:41 add in a little bit, you know, where I
+22:43 sort of now observe more data and I have
+22:47 it's very composable. It's it's um in
+22:50 that way where it's very easy to sort of
+22:53 start from a simple analysis and
+22:55 incrementally build into a more
+22:56 complicated one. Um where often in uh
+23:01 frequency statistics you can't really do
+23:02 that. You often have to kind of throw
+23:04 away a lot of your old work. Um, so you
+23:08 know what this often leads to is because
+23:11 you can sort of build up your analysis,
+23:14 you can sort of write tools that sort of
+23:16 do this compositional work for you. Um
+23:19 and that's kind of like and it becomes
+23:22 much more amendable
+23:24 to these um
+23:27 what these sort of universal solutions
+23:29 where you can write a model
+23:32 kind of derive a sampler from it and you
+23:35 know get to work. So in that sense it's
+23:38 very useful in that regard.
+23:41 And how is it related to proistic
+23:44 programming? So probabistic programming
+23:48 are is effectively are effectively tools
+23:51 to make doing bijian modeling
+23:54 significantly easier by removing all the
+23:57 tedious steps.
+23:59 That's
+24:00 and tedious steps are computing
+24:01 integrals.
+24:02 It's computing the integrals or
+24:05 approximating the integrals by sampling.
+24:08 Um it's figuring out which integrals you
+24:10 have to compute when you write your
+24:13 model. It's it's all these little steps
+24:16 that um they're sort of straightforward
+24:19 to do, but they're very tedious if you
+24:22 have to do them again every time you
+24:24 make a little change to your model.
+24:28 Um
+24:29 and why computing integrals is such a
+24:32 big deal? Like why like why we just
+24:35 don't compute them? Like what's the
+24:37 problem with them?
+24:39 So
+24:40 the the so the issue with the integrals
+24:43 is like if you go to like a calc like
+24:46 your an introduction calculus class
+24:49 there's this impression of like you're
+24:50 going to write this integral you're
+24:52 going to write this formula you write
+24:53 integral and look it has this nice clean
+24:55 form but of course the you know the
+24:57 tragedy there is that
+25:00 this is actually like not the common
+25:04 case the idea that I can just write a
+25:07 function and get a nice integral from it
+25:10 is not what actually occurs. It it just
+25:14 it's they just don't often exist. Um it
+25:18 in some sense is the opposite of the
+25:19 case you have in derivatives where there
+25:21 actually are very nice ways to
+25:22 automatically calculate derivatives. So
+25:24 like when you use PyTorch, you could
+25:26 just write a function and be handed a
+25:28 for essentially another function that
+25:31 computes der.
+25:33 No such thing really exists in
+25:35 integrals. Um so what people have to
+25:37 often do is they have to approximate
+25:40 that. What do I mean by approximate? So
+25:42 if you remember when uh people talk
+25:45 about um
+25:47 uh Romanian uh where you sort of make
+25:52 these little bars and then you sum the
+25:54 bars.
+25:56 Um people effectively have to do things
+26:00 like that.
+26:01 So like
+26:02 you mean compute the integral
+26:04 numerically instead of computing it how
+26:07 do you call it analytically like when
+26:08 you see
+26:10 use rules to derive the formula
+26:14 you cannot do this because for some
+26:15 cases like there's no rule that you can
+26:18 apply here so the only thing you can do
+26:20 here at the end is just use numerical
+26:22 methods which involves summing one thing
+26:26 like like I remember usually integrals
+26:29 are from would be from minus infinity to
+26:31 infinity, right?
+26:32 And then like you need the okay, how do
+26:35 I compute numerically? Right. So it can
+26:37 be computationally intensive. Correct.
+26:40 Right. Yeah. So but effectively this is
+26:44 what we're kind of doing like we're kind
+26:46 of going in and like computing we're
+26:50 computing numerically. So like often
+26:52 what happens when you're sampling
+26:54 you're approximating an integral because
+26:56 you're like okay I have this curve I'm
+26:59 going to use probabilities to land on
+27:00 different parts of the curve and I'm
+27:02 going to count and that's effectively
+27:05 uh by counting them you're essentially
+27:08 like it's almost like building the
+27:10 histogram right you sort of like you're
+27:12 making each of the bars and you're
+27:13 counting what each of the bars are. So
+27:16 it a lot of times when you're sampling
+27:18 you're essentially just approximating
+27:19 this integral.
+27:22 Um
+27:24 so it's
+27:27 that's that's a lot of what the regime
+27:29 is. So in Beijian modeling because we
+27:31 can't most of these integrals are
+27:33 intractable we deise these sampling
+27:35 methods.
+27:37 Intractable you mean we cannot compute
+27:39 them on a piece of paper right?
+27:42 We can't take a formula, get back
+27:44 another formula and then essentially,
+27:48 you know, pass the bounds of integration
+27:50 in and do minus and then repeat if we
+27:52 have nested ones. Like that's like an
+27:55 option that really doesn't exist for the
+27:58 kind of integrals most people care
+28:00 about. Sometimes provably so. uh like if
+28:04 you look at some of the integrals that
+28:05 are involved for these probabilistic
+28:06 models like you know you're getting
+28:08 things like the error function and you
+28:11 know people are like what's the error
+28:12 function it's it's this integral does
+28:14 have a closed form we've never found one
+28:18 uh so or we've proven that one can't
+28:22 exist or that you just say these these
+28:27 functions these nice set of functions so
+28:29 you you have to do these numerical
+28:31 methods you have no choice
+28:33 Um
+28:35 so again if you go back to our
+28:37 discussion of baian versus frequentist
+28:39 in frequentist
+28:41 we get a number and then confidence
+28:43 interval and that's all we get right
+28:46 in Beijian on the other hand we start
+28:48 with the distribution we end with a
+28:50 distribution but because we deal with
+28:52 distributions we get all these nasty
+28:54 integrals that we have to deal with
+28:57 somehow
+28:59 and this is why we use probabistic
+29:01 programming. ing because otherwise if we
+29:04 just directly use numerical methods to
+29:06 compute these integrals
+29:09 the things you mentioned like histograms
+29:11 like it's just takes too much time right
+29:14 that's why we have approximation methods
+29:17 right
+29:18 right well there's two things one
+29:20 without problems the programming skills
+29:21 for every model you have to essentially
+29:25 figure out what the sampler is going to
+29:27 be and then write it
+29:30 and if you make your model a a little
+29:31 different. You have to change the
+29:33 sampler. You have to rewrite. You have
+29:35 to make a fresh
+29:37 what
+29:38 what is a sampler?
+29:40 Uh a sampler is this? Um it's a way to
+29:46 sort of figure out these integrals by
+29:49 basically you're going to sort of sample
+29:52 from the distribution in a particular
+29:54 way and that's uh from the posterior
+29:57 distribution and that's essentially
+29:59 going to give you a bunch of uh draws
+30:02 which you can then take the
+30:04 empirical average of and that's going to
+30:06 essentially let you approximate the
+30:08 integrals that are involved for
+30:10 so posterior distribution is the out.
+30:13 This is the the thing we're interested
+30:15 in.
+30:16 We cannot easily calculate it because
+30:18 there is no formula. So we need to
+30:20 somehow figure out what's the value
+30:21 there, right? That's why we need
+30:23 sampling. There are different samplers
+30:25 that different approaches for computing
+30:29 this integral. Right. So these are the
+30:30 samplers.
+30:31 Yeah.
+30:32 So Monte Carlo simulation is one of the
+30:35 possible samplers, right?
+30:36 Right. Yeah. So, so what what I think
+30:39 what so what happens is sampling is its
+30:43 own challenge. So what what you quickly
+30:45 realize is if you try to do this the
+30:47 naive way most of your time like if you
+30:50 just said I don't know where my
+30:52 distribution is. I'm just going to guess
+30:53 randomly and then check you will find
+30:56 that particularly in high dimensions
+30:58 most of your guesses are going to be in
+30:59 low probability regions.
+31:02 I have no idea what this sentence meant
+31:04 to be.
+31:05 So like if you're trying to guess
+31:08 rainfall and you know it's some number
+31:11 between zero and infinity
+31:14 um you might find that you often spend a
+31:17 lot of your time
+31:19 generating a guess that has low
+31:21 probability.
+31:22 Uhhuh. So like I think okay maybe it's
+31:26 thousand whatever unit it is like h but
+31:31 it's very slim chances it's actually
+31:33 thousand and no matter what number I
+31:35 take
+31:37 the the chance that I'm correct is still
+31:39 right you could use your prior
+31:42 distribution you know like that uniform
+31:44 example and use that as a guess as and
+31:46 then essentially do a reweing and that's
+31:50 better than guessing completely
+31:52 arbitrary Right? Um but if you think
+31:54 about it like that's just in one
+31:56 dimension. Now imagine in like say a
+31:59 thousand dimensions or a million
+32:00 dimensions
+32:02 and dimension is in this case would be
+32:06 like rainfall would be like one
+32:08 dimension, right?
+32:08 Well like imagine you're trying to now
+32:10 estimate rainfall for like not Germany
+32:12 but sort of every city in Germany.
+32:16 Ah okay.
+32:17 And there's clearly relationships
+32:19 between them. So like you know a guess
+32:21 for one's probably not a bad guess for
+32:23 others but it's very now but if you're
+32:27 if you're just guessing arbitrarily
+32:29 uh the chance the chance that you're
+32:32 going to pick a thing with reasonably
+32:33 high probability just goes down
+32:35 tremendously
+32:37 like even if we pick only like I don't
+32:38 know five largest city in Germany and
+32:41 then the probability that we pick the
+32:44 rainfall for each of them correctly is
+32:46 non-existent but like okay we might get
+32:49 like it. But if we add another city to
+32:51 that with each
+32:52 right just as you keep add as you
+32:54 increase the dimensionality like the
+32:56 chance that you're going to kind of do
+32:57 okay and of course you can keep running
+33:00 samples and hope that eventually you hit
+33:03 high probability regions.
+33:05 Um but that takes computation time and
+33:08 like
+33:09 and by running sampling you mean like
+33:11 okay we have these five cities let's
+33:13 just roll I don't know five dices dice.
+33:17 here stupid rule five whatever like we
+33:19 just go to our open our numpy and ask
+33:25 numpy okay get us five random numbers
+33:28 between zero and infinity right and we
+33:31 repeat until it's correct right
+33:33 that's
+33:35 yeah like it could take a while to like
+33:37 actually get answers that have like a
+33:39 high like high probability
+33:42 um so
+33:44 but how do we even know that these are
+33:46 correct if we just get them.
+33:49 Our model essentially returns to us
+33:52 what's the probability
+33:54 the parameter has this value given the
+33:57 data we return. So we have these
+33:59 probabilities there but
+34:03 we can't in advance know
+34:07 like what's going to be the high
+34:08 probability regions.
+34:11 There are tricks right you can sort of
+34:12 take the maximum you know the maximum
+34:14 apostori of this function and say okay
+34:17 uh what's the what particular set of
+34:20 parameters gives me like the top one but
+34:22 again that's a point estimate you know
+34:24 that's kind of what fruit you still want
+34:26 you still need to look at what what are
+34:27 other likely values
+34:30 um also the maxim posture can be
+34:32 deceptive for lots of problems though
+34:34 like there so all of these fancy
+34:38 sampling algorithms
+34:41 They're all tricks
+34:44 to
+34:46 make make it so that when you sample,
+34:47 you're likely to be sampling from a high
+34:49 probability region. So, you know, so
+34:52 that's, you know, that's where you get
+34:54 things like MCMC. So, you know, what
+34:56 does MCMC do? It says, well, pick a
+34:58 starting point and make a small move
+35:00 from there.
+35:01 Monte
+35:03 chain Monte Carlo.
+35:04 Monte Carlo. Yeah.
+35:05 Yeah. So, Monte Carlo because it's
+35:07 you're sampling, it's gambling, you're
+35:08 throwing dice, you know, and then markup
+35:11 chain because each sample that you pick
+35:15 is dependent on the previous one. So,
+35:17 it's they kind of form there's kind of a
+35:19 markoff chain
+35:21 of all these samples. So, we say markoff
+35:23 chain and you know why is markoff chain
+35:25 Monte Carlo like work fairly well
+35:27 particularly in high dimensions because
+35:29 you assume that you assume that your
+35:31 high probability points are near each
+35:33 other. So like for annual rainfall if we
+35:36 think if we think like something like 50
+35:40 uh uh uh 50 um centimeters of annual
+35:44 rainfall is a good estimate and has good
+35:47 probability. We expect 49 is not too bad
+35:50 either.
+35:52 So you can sort of you start there and
+35:56 then your next sample is near there. you
+35:59 make a move that's in the region and in
+36:01 that way you sort of hope to stay in the
+36:02 high probability regions of the space.
+36:07 Um and okay and then okay you can say
+36:10 okay well this algorith this sampling
+36:13 algorithm it has shortcomings too so we
+36:15 make a better one and so on and so forth
+36:17 but the whole development of sampling
+36:20 algorithms it's all for the purpose of
+36:25 getting points that are in high
+36:26 probability regions of the space without
+36:29 spending too much computational time
+36:31 doing so
+36:33 and that's what you did when you
+36:35 developed ko
+36:37 the Hakaro language, right?
+36:39 Uh we didn't actually develop new
+36:41 sampling algorithms for Hakaru.
+36:43 We just made we just took some of these
+36:46 algorithms that were out there and made
+36:48 them so that the users didn't have to
+36:51 run the algorithms. The user just ran
+36:53 the model and they got the algorithms.
+36:57 That's the main thing that every
+37:00 proistic programming uh language is
+37:03 doing. It's just about
+37:06 letting someone talk about their model
+37:08 and writing the sampling algorithm for
+37:10 them.
+37:12 And um what do we actually mean by
+37:16 saying it's a programming language? It's
+37:18 like there's Java, there's R, there's
+37:20 Python, there is Hakaro, right? So you
+37:22 actually write code there. It's
+37:25 you write code.
+37:26 It's a interpreter, different
+37:28 environment. So it's not Python. Right.
+37:31 Right. Right.
+37:32 Uhhuh.
+37:33 Right. Well, it's not quite Python, but
+37:34 it's
+37:35 or
+37:36 these sort of things that we've been
+37:38 talking about, right?
+37:40 Yeah.
+37:41 So, what we mean by that is
+37:45 when we think about statistical models,
+37:47 sometimes you'll think about um
+37:49 professor writes some notation on the
+37:51 board. They say I have some I have some
+37:53 param I have some parameter. It comes
+37:56 from this distribution. If I see this
+37:59 value, it comes from this. But if you
+38:02 just kind of pause and step back a bit
+38:04 and think about what a statistical model
+38:06 is
+38:08 um like think about um
+38:12 like just keeping using just the annual
+38:14 rainfall example like I might say I
+38:17 expect a certain amount of rainfall in a
+38:19 region just because it's in a particular
+38:20 latitude and longitude and I expect some
+38:23 regional variation. And why do I expect
+38:25 some regional variation? Well, some
+38:27 towns they're near a mountain and
+38:29 mountains affect things. uh some you
+38:32 know some towns um they just they're
+38:36 just maybe a little more south so it's a
+38:38 little warmer so they get more um and if
+38:42 you think about how you would write that
+38:45 model you know thinking about oh it's
+38:48 near um I have I have a loop I iterate
+38:52 over cities I have if statements that I
+38:55 check whether I have a mountain um some
+38:58 of these parts of the model might be
+39:00 tedious I I create sub routines. Oh my
+39:02 god, we have a programming language.
+39:04 Like this is clearly a programming
+39:05 language.
+39:07 Uh just by virtue of like trying to talk
+39:12 talk about what you're modeling, you
+39:14 inevitably are using a sort of language
+39:17 to do so.
+39:19 And
+39:20 so from my perspective, this model, the
+39:22 way we talk about modeling is a
+39:24 programming language.
+39:26 So what we do with browsing
+39:28 scikitlearn in the same sense as
+39:30 scikitlearn we can say it's a
+39:31 programming language because there are
+39:35 like what's the difference between a
+39:36 library and the I guess this
+39:38 I mean that's a that's a very beautiful
+39:40 question you know like you know if you
+39:42 talk to some uh people out of like the
+39:44 university of Utah or some of the racket
+39:46 scheme people they'll say this this
+39:49 distinction between a library and a
+39:51 language is a very it's it's not it's
+39:54 not very black and white. there is a
+39:56 little bit of a in between. Um so I I
+40:01 think the distinction can be a little
+40:03 bit but I'll make the case that
+40:08 there's this notion of ifs and sub
+40:11 routines and looping primitives. These
+40:15 are things that we associate with
+40:17 languages not libraries.
+40:20 uh like a looping primitive isn't like a
+40:24 thing you use within scikitlearn. It's a
+40:27 thing you use within Python which you
+40:29 then call scikitlearn from.
+40:32 Um, so when we talk about a statistical
+40:35 model, like it's not just that we're
+40:38 using an if in Python, it's that like
+40:42 when I when I talk about,
+40:45 oh, I think the rainfall should be
+40:47 higher if a town is near
+40:51 um
+40:53 a mountain. that actually affects how we
+40:57 compute the probability
+41:00 of there being
+41:02 uh rainfall in a particular town. So
+41:05 it's not just that we run a simulation,
+41:07 it actually has consequences
+41:10 um into how you compute um the log
+41:15 probability. And if it has consequences
+41:17 like that, then it's like, okay, we're
+41:22 not really evaluating this if we're
+41:24 interpreting it differently. But if
+41:26 you're interpreting differently, you're
+41:27 not in Python anymore, right? Like
+41:28 clearly this if is living in a different
+41:30 space at that point. So I think it's
+41:33 actually useful to say oh this is its
+41:35 own language which we can embed in
+41:37 Python or R and what have you but it's
+41:39 definitely its own language with its own
+41:41 semantics
+41:44 and scikitlearn is not because we don't
+41:48 use if
+41:49 we're just calling these we're just
+41:50 doing these API calls there's no notion
+41:53 of like a new sort of if or thing like
+41:57 like a unique notion of a control flow.
+42:00 Well, it's a still a little bit abstract
+42:02 for me to be honest, but um yeah, maybe
+42:04 I should read those uh
+42:08 Uts,
+42:09 right? You said that there is University
+42:11 of Utah who are really into programming
+42:13 languages and
+42:14 Yeah. Yeah. Yeah. So,
+42:15 they probably are things like libraries
+42:18 as languages and things like that. So
+42:20 like you import a library and you get a
+42:22 new language or you know you have a
+42:25 language that slowly turns you have a
+42:27 library that slowly turns into a
+42:28 language.
+42:30 Uh so there are these like notions you
+42:33 can the distinction isn't that like
+42:36 there is a gradient between uh these two
+42:41 but from my perspective scikitlearn has
+42:44 an API it has function calls um it has
+42:47 data types and they can kind of be moved
+42:49 together it is a language in a certain
+42:52 sense but it's a very restricted
+42:55 language and because it's so restricted
+42:57 I think most people are comfortable
+42:59 calling psych could learn a library more
+43:02 than calling it a language.
+43:05 Okay. What's PMC?
+43:08 Right. So, PMC is uh one of the major
+43:12 proistic programming uh languages
+43:15 libraries
+43:17 in Python.
+43:18 Libraries. Interesting. Okay.
+43:20 Well, it's a library because it's the
+43:22 Python library, but it very much has its
+43:25 own language. So like when you write a
+43:27 model in PMC you get a computational
+43:31 graph back you get an a
+43:34 so like which you can inspect uh like
+43:38 it's it's very so when you write models
+43:40 you aren't you use Python code to write
+43:43 them but what that Python code is
+43:45 actually doing is like building up this
+43:47 computational graph which is effectively
+43:50 an a
+43:51 okay I am lost like how Does a PMC can I
+43:57 say program looks like? So let's say we
+44:00 want to estimate the annual rainforest
+44:02 in German rainfall
+44:05 in German.
+44:06 Yeah. Yeah.
+44:07 So we want to use IMC for that. How does
+44:10 our program look like?
+44:13 Uh so the way it would look like is you
+44:17 would say let's just pick a very simple
+44:20 examp let's use a simple model just as
+44:22 an example uh for now which is we're
+44:24 going to assume that there's a certain
+44:26 annual rainfall we expect in Germany and
+44:29 we're going to assume that all the
+44:30 cities essentially are that rainfall
+44:33 plus a little noise
+44:36 which isn't the worst assumption. Uh
+44:41 the way you would write that in a PMC is
+44:44 you would write
+44:47 you know
+44:49 you know Ger you know Germany rainfall
+44:51 equals
+44:53 normal you know left parenthesy the uh
+44:57 as an example uh the mean rainfall
+45:02 uh um comma
+45:05 the uh
+45:08 the standard deviation to expect on the
+45:10 rainfall. Now that's not exactly how you
+45:12 write it because the syntax in PMC
+45:14 requires that you put a string so you
+45:15 name it.
+45:16 Very difficult to also explain it
+45:17 without like just by talking
+45:19 but like at a high level this is
+45:20 effectively what you do. Now you might
+45:21 say okay rainfall is never a negative
+45:23 number. Um but I I will handwave that
+45:27 and say that when we we're going to use
+45:29 a good sampler. So we're going to we're
+45:32 going to try never to sample negative
+45:34 numbers. But there
+45:37 if sample
+45:39 greater than or less or equal than zero
+45:42 then sample one more time.
+45:44 Yeah, we can do we can do something of
+45:45 that. Also, Pimec has a thing called a
+45:47 halfn normal which is just a normal but
+45:49 we just chopped off
+45:51 uh
+45:51 a part of it. So there like we we can do
+45:54 that as well. Um
+45:57 but we're going to do that and then so
+45:59 we're going to have so and then the next
+46:00 line is going to be we're going to
+46:03 sample
+46:04 um a annual rainfall for every city and
+46:08 that's just going to be rainfall for
+46:10 cities equals normal left parenthesy
+46:14 mean the the global mean we just
+46:18 estimated
+46:21 um
+46:23 comma some variance we how much variance
+46:26 we expect for each of the cities to have
+46:29 comma shape equals
+46:32 number of cities right parenthesis and
+46:36 then at that point we're then going to
+46:37 add another thing which is we'll say um
+46:41 sewer level
+46:43 for each city
+46:45 uh
+46:46 and we're going to say the sewer levels
+46:47 has some there's some function
+46:49 relationship between them and we're
+46:50 going to essentially call that annual
+46:52 rainfall thing
+46:54 pass that through that function for to
+46:56 get them and then that's what we're
+46:58 going to actually observe because what
+46:59 we observed is how much uh sewer levels
+47:02 rised rose for each of the cities. So
+47:05 what we are doing here is some sort of
+47:07 linear regression but instead of just
+47:10 output for each city we get a
+47:13 distribution right
+47:15 it's not quite a linear regression right
+47:18 because
+47:20 right like this is stuff from sewer
+47:23 we because we have this parameter that
+47:25 we're going to be using to sort of try
+47:27 to keep all the rainfall values near
+47:30 this global value because
+47:31 yeah that's why it's kind of sort of
+47:33 conceptually like linear regression or
+47:36 more like just regression, right? Cuz we
+47:39 predict we output a number or a bunch of
+47:42 numbers cuz it's
+47:44 so conceptually it's a regression except
+47:47 it's not linear regression, right?
+47:49 Right.
+47:49 It's a different sort of regression
+47:52 model that outputs probabilities or not
+47:56 probabilities like distributions.
+47:59 And we have this ability
+48:02 to say that this is the global mean and
+48:06 it shouldn't be too different from the
+48:07 global mean.
+48:08 Exactly.
+48:10 So
+48:11 I wouldn't quite call regression because
+48:13 you can represent regressions in PMC.
+48:16 You know you can say
+48:19 um
+48:21 you you can say that um there is uh you
+48:25 have some x you have some y and we have
+48:29 some relation between them this function
+48:32 this function has some weights I don't
+48:34 know what the weights are we're going to
+48:35 put a distribution of weight so you
+48:36 can't do regression
+48:38 this isn't quite that but it's the but
+48:41 yeah the intuition is that you can you
+48:44 you have this model that can say there's
+48:46 rainfall. There's a relationship between
+48:48 rainfall in these cities and the sewage
+48:50 levels. There's a relationship between
+48:52 rainfall between cities because they're
+48:54 kind of near each other. And you can and
+48:57 those are all you can just readily
+48:58 encode them. And these are all and this
+49:02 is just a threeline model, but already
+49:04 like there's already kind of a quite a
+49:06 bit of richness there. Uh and of course
+49:09 that's just the model. Then
+49:12 you probably want stuff uh you know you
+49:14 want some quantities to come out. You
+49:17 can then call you know pi pimc.sample
+49:22 to now get estimates of all these city
+49:24 rainfalls. You might care about also the
+49:26 annual one. You might ask for that one
+49:27 as well since you've already modeled it.
+49:30 And then when this runs as samples, you
+49:32 will now have a posterior distribution
+49:34 on rainfalls for each city
+49:39 and
+49:41 uh for uh just this estimate of what the
+49:44 rainfall is in the country as a whole.
+49:46 And
+49:48 at that point, that's pretty good. Uh
+49:51 now, in practice, you wouldn't just stop
+49:53 there. You know, you might actually pull
+49:55 up like statistics of actual previous
+49:59 estimates people had of rainfall and if
+50:01 your estimate was too far from these
+50:03 like you know government records, you
+50:06 there's something probably wrong with
+50:07 your model and you know you would go you
+50:09 would make the model slightly different.
+50:11 You might add other parameters than just
+50:13 measuring sewage rises. But over time
+50:17 your estimates would start to match the
+50:19 kind of estimates
+50:21 uh that others had and you can feel
+50:23 confident you can sort of have
+50:25 confidence that you've seem to have
+50:27 captured something.
+50:29 So from what I understood, from what you
+50:31 said, PMC and probably other
+50:34 probabilistic programming languages or
+50:36 frameworks,
+50:38 what they give us is the ability to
+50:40 express our problem.
+50:42 Mhm.
+50:43 In some sort of language and express
+50:46 dependencies between different things.
+50:48 So we can say there is some
+50:51 can I say locality dependence. So like
+50:54 cities that are closed, they probably
+50:55 shouldn't have two different um
+50:59 Right. No, no, the model I just said
+51:01 global
+51:02 in your case. Yeah. So in your case, it
+51:04 was they shouldn't be too different from
+51:06 the global.
+51:07 Exactly.
+51:07 Which kind of captures that, right? But
+51:10 you can you can make like you can make
+51:13 it more complex saying that cities that
+51:16 are close.
+51:17 Yeah. So you can write like you can
+51:19 start doing like spatial models where
+51:20 you say like cities that are close to
+51:23 each other should have similar similar
+51:24 annual rainfall and there are ways to
+51:26 sort of encode that. uh
+51:28 like how far it is from the
+51:32 sea right then
+51:34 right you can encode how far you are
+51:35 from the sea for mount like you can
+51:37 start quickly building up and what's
+51:39 nice is you know what does it mean to
+51:42 build it up you just add another line of
+51:44 code hit sample again it's a very like
+51:47 the process is much more natural
+51:50 uh you're not oh I want to mod I want to
+51:52 model what it means more far from the
+51:54 sea now I have to sit re like recalcul
+51:58 calculate by hand thing. I have to check
+52:01 if like I can still use the sampler from
+52:03 before. Am I doing something where
+52:05 suddenly my old sampler is not good? Do
+52:07 I need to make a hack to get around
+52:09 that? These are all things that like
+52:12 used to be the norm. Now people by and
+52:15 large they they write in something like
+52:17 PMC or other uh processed programming
+52:20 languages. you know the things like
+52:22 Hakaru, Turring, Stan
+52:26 there are many of these sort of
+52:28 and if I compare it to let's say can I
+52:32 say classical frequentist approaches
+52:34 right so when we let's say have linear
+52:36 regress regression problem it's let's
+52:38 say random forest or whatever
+52:41 and then like our features would be
+52:44 um like all these uh things we talked
+52:46 about plus maybe how far this is right
+52:49 so if we want to introduce use one more
+52:51 thing in our model in our program
+52:55 like I don't know distance from the sea
+52:57 then in the frequencies case we just
+53:00 would add another feature
+53:02 the distance from the sea and in case of
+53:06 probabilistic programming we would model
+53:08 it um
+53:11 differently right
+53:12 yeah now it might be like you add
+53:14 another feature because you know you're
+53:16 doing something like a beijian neural
+53:17 net and you just you just add another
+53:19 weight you put another prior on that
+53:21 weight uh and then go from there and you
+53:25 know you just say this is just going to
+53:26 be distance from the sea how important
+53:29 is this weight so you can do that as
+53:30 well but if you're trying to do
+53:32 something where you're like doing like
+53:34 these groups it becomes actually kind of
+53:36 a little bit uh tricky to do so if
+53:39 you're trying to do things like say
+53:41 dynamically turning on and off groups of
+53:43 features that's a thing that's actually
+53:46 like quite subtle to do uh using machine
+53:49 learning algorithms
+53:52 in a problem like programming language
+53:53 that's just another line of code like
+53:56 you're not even thinking about it you're
+53:57 just like yeah let's group things who
+53:59 cares like you're not even thinking
+54:00 about oh my god this tiny change I made
+54:04 has severely changed the algorithm and I
+54:06 can't use the one in in scikitlearn
+54:08 anymore
+54:10 also we should keep in mind that by and
+54:13 large for these prediction algorithms
+54:15 there there's no distribution it's just
+54:18 here are my inputs
+54:20 here's my outputs. Um, and maybe if
+54:23 you're lucky, you might get a confidence
+54:25 score on that output. And if the
+54:27 confidence score is too low, you might
+54:29 say, "Okay, maybe we should like be
+54:30 careful with the prediction." You don't
+54:32 get this distribution where I say,
+54:34 you've given me this input. Here's a
+54:37 distribution on the values.
+54:40 And this becomes particularly relevant
+54:42 when you start getting these multimodal
+54:44 distributions where you can say there
+54:46 isn't one good answer. There are two
+54:49 good answers that are very different
+54:51 from one another.
+54:54 Um
+54:56 because you know you might say things
+54:58 like well when there's a drought the
+55:00 rainfall is very different than when
+55:02 there's not.
+55:04 So if you're just asking me what the
+55:06 rainfall is I can say like well in
+55:08 drought years it was it tended to be
+55:10 this number. In normal years it tended
+55:13 to be this number. That is the thing
+55:15 that's very easy to express in a Bayian
+55:18 modeling framework and very difficult to
+55:21 express outside of it.
+55:23 And you mentioned when you were talking
+55:25 about different uh realistic programming
+55:28 languages
+55:29 frameworks you mentioned Stan right so
+55:32 and then there's a question from Yhana
+55:35 what do you think about Stan so what is
+55:36 Stan and what do you think about it
+55:39 sure um so
+55:43 Stan I think I can comfortably say this
+55:46 is the main and most predominant uh
+55:50 problemic programming system out
+55:53 It's it's a p it's a pioneer in many
+55:55 ways which I'll explain shortly. Um it's
+55:59 a leader in the space. It's like it's
+56:01 the main one. If you're kind of if you
+56:05 only look at one, you should look at
+56:08 stand because it is the main and
+56:10 dominant one.
+56:12 Um and and why is that? So, so part of
+56:15 what that is is uh there have been
+56:17 problems with programming systems before
+56:19 Stan, but Stan
+56:23 um it did kind of two things.
+56:27 Uh one, it introduced HMC into sort of
+56:31 popular use. Uh Hamiltonian Monte Carlo.
+56:35 What I'm not going to for the moment I'm
+56:37 not going to go into like what makes HMC
+56:39 like
+56:41 special other than to say it's a
+56:43 significantly better sampling algorithm
+56:46 than all the others that were previously
+56:48 in use. It is so much better that if
+56:52 your problem doesn't fit HMC
+56:57 um the advice is figure out a way to
+57:00 make it work in HMC.
+57:02 like
+57:04 it's that good of a sampler that you
+57:07 know it like it changes the gravity
+57:10 around the way you model things.
+57:13 And
+57:14 so if you're using Stan you're just
+57:17 getting better you're just getting
+57:19 better estimates better results than if
+57:20 you're using other tools before Stan
+57:22 kind of came along. Um
+57:25 and this trend continues. Um innovations
+57:29 in sampling algorithm often first appear
+57:32 in Stan before they appear in other
+57:34 systems.
+57:36 Um this isn't this isn't fully the case
+57:38 but this is the case often enough that
+57:40 it's true and it really sets and the
+57:44 best practices established in Stan set
+57:46 the tone to best practices used
+57:49 elsewhere. So if an algorithm gets
+57:51 introduced in Stan,
+57:53 it'll likely appear in PMC within a few
+57:56 months and others like it has a a
+57:58 there's a strong leader role there. Um
+58:03 and uh you know you know the second
+58:06 reason of course is that the algorithms
+58:09 that Sen uses
+58:12 tend to have a lot of their own
+58:13 hyperparameter tuning. So they work out
+58:16 of box. So you're not doing lots of
+58:18 fiddling. There really is just kind of
+58:20 this button called sample that you hit
+58:22 and you get samples out. You're not like
+58:25 doing these little tweaks where you're
+58:27 playing with little parameter numbers to
+58:30 kind of make it work. Uh so because HMC
+58:33 has existed for decades, but it required
+58:36 you to know these very particular
+58:39 arguments that you had to pass in. And
+58:41 if you got the arguments wrong, it
+58:43 didn't work. It didn't work at all. Uh
+58:45 but getting them right was very fiddly.
+58:47 So Stan added features where they
+58:50 figured out what were the correct
+58:51 arguments to pass to HMC. So when you
+58:53 have things it's called the no U-turn
+58:55 sampler nuts
+58:57 the main thing nuts is doing is it's
+58:58 taking HMC
+59:00 and figuring out the right parameters to
+59:02 like use in HMC for your specific
+59:06 problem. And because of that, you
+59:09 essentially had this sampler that was
+59:11 very efficient and and required
+59:15 basically little feedback to work.
+59:19 And yeah, I think sounds great like not
+59:21 gonna
+59:22 I'm not going to like say anything other
+59:25 than that.
+59:27 And uh yeah, I was just checking the
+59:29 questions and uh so the reason I was
+59:31 asking about PMC is because you
+59:32 contribute
+59:34 you have contributed to PMC. you are a
+59:36 contributor to this library. Thanks a
+59:38 lot for doing that. And um yeah, do you
+59:42 have a couple of more of more minutes
+59:44 before we finish?
+59:45 Of course. Of course. Yeah. Yeah.
+59:46 Great. So like we have a course, it's a
+59:50 machine learning engineering course and
+59:52 the way we do it is half of the content
+59:55 is about machine learning and the other
+59:58 half of the content is about
+59:59 engineering. So the half about machine
+1:00:02 learning as you can imagine is about the
+1:00:05 frequentist approach
+1:00:07 like first start with linear regression
+1:00:09 then we talk about logistic regression
+1:00:11 then we also cover three methods and
+1:00:14 then we cover neural networks right and
+1:00:16 then I imagine that our interview our
+1:00:19 chat
+1:00:20 some students will listen to our chat
+1:00:23 right now and some of them might wonder
+1:00:26 okay we now have learned these
+1:00:28 approaches like these frequencies
+1:00:30 approaches but I want to try something
+1:00:32 basian.
+1:00:34 So what would you suggest for them them
+1:00:37 do like what's the easiest way for them
+1:00:39 with the background they already have
+1:00:42 to try something the Asian like maybe
+1:00:45 with pipc
+1:00:48 so um so there's a book I like uh so
+1:00:53 this answer has gotten much easier in
+1:00:55 recent years because people have uh have
+1:00:58 really started to produce good materials
+1:00:59 for this wasn't as
+1:01:01 because before I would have said oh you
+1:01:03 should just like buy a book invasion
+1:01:04 statistics. Uh I'm going to still say
+1:01:06 that but but the books are better now.
+1:01:09 Uh it's so I'll suggest two things.
+1:01:12 There's um a book on Beijing computation
+1:01:15 that was written by a lot of the PMC
+1:01:17 people. So as Ravine Kumar
+1:01:20 um has a um as Waldo Martin and a few
+1:01:25 other people uh I'm blanking on. And the
+1:01:29 book's freely available online and you
+1:01:32 can sort of work through it. It uses PMC
+1:01:34 to sort of explain how to do um
+1:01:39 Beijian statistics. There's also an
+1:01:41 online book that's a little older called
+1:01:43 uh Beijing statistics for hackers. It
+1:01:45 also uses PMC.
+1:01:47 Um but uh if
+1:01:50 if people like a course environment,
+1:01:53 there's a really amazing course taught
+1:01:55 um by Richard McElry uh uh he's out of
+1:02:00 LIIPG
+1:02:01 uh called statistical rethinking and he
+1:02:04 uh has an online course uh previous
+1:02:07 versions of the course are freely
+1:02:09 available on YouTube. So you can see you
+1:02:11 can just you can just watch the course
+1:02:13 online. Uh there he has a book. The book
+1:02:17 isn't free, but the book's very good.
+1:02:19 And his book is really amazing. I think
+1:02:22 it's hard it's it's hard for me to I I
+1:02:26 I'd be hesitant to say anything wrong
+1:02:28 with the book for what it does. Um
+1:02:31 because what it does is it doesn't just
+1:02:33 teach how to do Beijian model
+1:02:35 statistics. It teaches how to do
+1:02:37 statistics.
+1:02:38 And a lot of the challenge of doing
+1:02:40 statistics is often not, oh, should you
+1:02:43 do frequentist or should you do Beijian?
+1:02:45 It's often like are you capturing
+1:02:47 causality properly? Are you do are you
+1:02:50 collecting data in a good way where
+1:02:52 you'll actually be able to like learn
+1:02:54 something improve your models. It really
+1:02:57 kind of takes this big holistic view uh
+1:03:01 which I think
+1:03:02 of saying one is better than the other.
+1:03:04 It just says okay like here are the
+1:03:06 problems here are the things you need to
+1:03:07 think about and here are the are the
+1:03:10 solutions right the tools you can use.
+1:03:12 It really teaches the workflow which is
+1:03:15 really where I think the like where I
+1:03:17 think statistics really can be lacking
+1:03:19 is that too much of the old ways it was
+1:03:22 taught were like they were cookbooks
+1:03:25 effectively
+1:03:26 here's your problem at the factory use
+1:03:28 this recipe from the cookbook which
+1:03:32 because of the dynamic way we work with
+1:03:33 data like the idea that you could like
+1:03:36 do a cookbook for a data science test I
+1:03:38 feel is very like
+1:03:41 it's It's it's it's
+1:03:44 um it's overly optimistic I would say
+1:03:47 for a lot of the challenges people face
+1:03:49 and where I think this book shows uh its
+1:03:53 strength is it says here's here's the
+1:03:56 attitude you should take for how you
+1:03:58 should be doing statistics and if you
+1:04:00 have this attitude it'll be very you'll
+1:04:03 figure out the correct steps you need to
+1:04:05 do to get an analysis that's useful
+1:04:10 and actually informative.
+1:04:14 So I yeah I recommend the statistical
+1:04:17 rethinking bookclass and particularly
+1:04:19 for PMC I recommend the Beijing
+1:04:22 computation book.
+1:04:24 I
+1:04:27 say sorry
+1:04:28 all the all the like programs that were
+1:04:30 written in Stan for the Cisco rethinking
+1:04:33 book have been ported to PMC by
+1:04:36 enthusiastic volunteers.
+1:04:40 I I found so first the book is called
+1:04:42 Beijian modeling and computation in
+1:04:44 Python with authors Martin Kumar and
+1:04:47 Lao. I posted the link and then the
+1:04:50 second one statistical thinking
+1:04:53 statistical rethinking
+1:04:55 um the author is uh Richard M.
+1:05:01 Yes.
+1:05:02 To see
+1:05:03 like it's very tiny but like I I just
+1:05:06 posted the link so I don't want to try
+1:05:09 and butcher the author's name. Um uh the
+1:05:12 examples are in R and Stan. Okay.
+1:05:16 Right. Yeah.
+1:05:18 And you said like the enthusiast ported
+1:05:20 everything from that book.
+1:05:21 Yeah. It's it's you know the book is so
+1:05:24 good good that students find it and then
+1:05:27 inu and then port the examples to PMC.
+1:05:32 Yeah, we should be wrapping up. So, it
+1:05:34 was amazing. Thanks, Rob. Um, so you
+1:05:36 made some things clearer to me
+1:05:38 personally. Um, like sometimes you would
+1:05:40 say something and I would just Okay. Uh,
+1:05:43 what is it? But now it's clearer.
+1:05:45 Thanks. And uh
+1:05:49 maybe before we wrap up like is there
+1:05:51 anything you want to mention?
+1:05:53 Yeah. Yeah, sure. So, yeah, this maybe a
+1:05:55 little bit of a plug. Uh, yeah. So I so
+1:05:58 I do uh statistical consulting. It's
+1:06:00 kind of the main thing I I I do these
+1:06:02 days. I I write software as well to help
+1:06:04 with that. But yeah, if if you know for
+1:06:07 anyone that's listening to this, if if
+1:06:09 you or your company have statistical
+1:06:11 challenges, uh you know, are actually
+1:06:14 interested in maybe applying Beijian
+1:06:15 modeling for your problems, um reach out
+1:06:19 to me. Uh I'm I'm always interested uh
+1:06:22 in helping people out on this. What's
+1:06:24 the best way? Uh
+1:06:26 the best way is just to email me. Uh
+1:06:28 robbed.com.
+1:06:30 Uh
+1:06:31 okay. So we will include also the email.
+1:06:34 Yeah,
+1:06:35 in the description. And I posted two
+1:06:37 links in the live chat. I will post them
+1:06:39 also in the description. And yeah, I
+1:06:42 guess that's all for today. Thanks a
+1:06:43 lot, Rob, for joining us today. And
+1:06:44 thanks everyone for joining us today
+1:06:46 too. Thank you everyone. Have a great
+1:06:49 week. So see you

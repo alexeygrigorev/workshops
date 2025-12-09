@@ -1,0 +1,1385 @@
+Cracking the Code: Machine Learning Made Understandable
+
+0:00 so like as always please subscribe to
+0:02 our YouTube channel there's a bunch of
+0:04 Link in the description one of them is
+0:06 about the events we have we have a bunch
+0:08 of interesting events check them
+0:10 out and also there is a link in in the
+0:14 live chat this is the link you can use
+0:17 for asking questions so during the
+0:19 interview we'll talk about different
+0:20 things and then if you feel like asking
+0:23 something it's better not to use live
+0:25 chat cuz it's very hard to keep track of
+0:27 questions there just use the
+0:32 link and now I will open the document we
+0:35 prepared for
+0:37 you and if you're ready we can start yes
+0:40 I'm
+0:41 ready this week we'll talk about making
+0:45 machine learning interpretable and we
+0:47 have a very special guest today Kristoff
+0:49 Kristoff has a PHD in interpretable
+0:52 machine learning from the ludic maximan
+0:54 University of
+0:55 Mich and he worked for a while in both
+0:59 Academia industry and now he is a
+1:01 full-time Tech writer he has written
+1:05 many technical books and if you're
+1:08 watching this in video there is a
+1:09 bookshelf behind Kristoff yeah with all
+1:12 these four books at the top which we
+1:16 will probably talk about some of them
+1:18 today and yeah it's a great pleasure to
+1:20 have you kristofh welcome to the show
+1:23 yeah thank you for the invitation yeah
+1:25 so the questions for today as always are
+1:28 prepared by Johanna Johanna B thanks
+1:30 youan for your help and before we start
+1:33 with our main topic let's talk about
+1:36 your background can you tell us about
+1:38 your career Journey so far yeah um so my
+1:41 background is kind of different phases
+1:45 phase one was classic statistician
+1:47 education I would say like Bachelor and
+1:49 statistics master and
+1:51 statistics um so very classic but like
+1:55 hypothesis testing and stuff like this
+1:58 and in the end I was already a bit drawn
+2:00 to machine learning did like Tagle
+2:01 competitions and stuff um and right
+2:05 after I finished my master I went to
+2:08 Industry so one year in fintech startup
+2:10 where I worked as a data scientist two
+2:13 years as more classic statistician where
+2:16 I worked in medical research and during
+2:19 that time I already started uh writing
+2:21 the book uh interpretable machine
+2:23 learning because I had like a part-time
+2:25 position so uh next I just like had side
+2:30 projects and one of them was the book
+2:32 it's a bit ironic because after my
+2:34 master thesis I really hated my master
+2:36 thesis like the writing process so it's
+2:38 quite ironic that I picked up writing
+2:40 again then um and as I was like
+2:43 different kind of writing right it's
+2:45 very different yeah um I think that was
+2:48 a reason why it worked for me um so when
+2:52 I was writing the book I was like it
+2:54 kind of took the fear out of writing for
+2:56 me again because um the main reason I
+2:58 also didn't do a PhD was like oh I have
+3:01 to write papers I hate writing I hated
+3:02 my master thesis so I should not do a
+3:05 PhD but when I started a book I realized
+3:08 I could you had a fear of writing yet
+3:11 you thought okay let's write a book
+3:14 let's see how it goes yeah yeah because
+3:16 I don't know for the master thesis I was
+3:19 very stressed out uh if it's it was not
+3:23 only about writing I wasn't maybe it
+3:25 wasn't fear of writing but I hated proc
+3:29 all that right and then getting feedback
+3:31 from your at least this is was
+3:34 this is how it was for me like I didn't
+3:38 all this experiments showing it to my
+3:40 supervisor and then he would say
+3:42 something doesn't seem right maybe you
+3:44 need another half a
+3:45 year yeah yeah and also didn't feel so
+3:48 free like writing the master CES but
+3:50 when I started the book I wrote it in
+3:52 the open and got feedback and uh I just
+3:56 could like write how I felt so like put
+3:59 in some jokes and not be like not hide
+4:03 behind math or anything just say like
+4:05 okay this is like this use like
+4:07 analogies and stuff like this so I
+4:09 enjoyed this part very much um which
+4:11 then led me to do a PhD uh so back to
+4:14 Academia then I I again learned to hate
+4:18 uh writing so I really hated uh writing
+4:22 papers um but still like I finished my
+4:25 PhD uh this was one year ago then I
+4:29 actually
+4:30 tried like a postt job for a few months
+4:32 and another job in industry for a few
+4:34 months and I it didn't feel right kind
+4:37 of I quit both very quickly and then I
+4:41 thought back like okay what what's left
+4:43 what can I do because I like all these
+4:45 things are now uh I quit all these
+4:48 things and so I looked back and the only
+4:50 constant thing was writing for me which
+4:52 I always
+4:54 enjoyed um and then I decided yeah why
+4:57 not do this fulltime I already had my
+4:59 first book so I had a little bit of
+5:01 income from that book and already some
+5:04 established like a reader base um and
+5:07 some experience and so I jumped into
+5:09 this um and I'm doing this now for a
+5:12 year and half now and yeah works out so
+5:16 far yeah well I know that Munich is not
+5:19 the cheapest City so apparently it's
+5:22 working out pretty well for you right
+5:24 well I'm earning less than I did at my
+5:26 PhD I usually people like climb up in
+5:30 the career like in the um how much they
+5:33 earn for me it was like each each career
+5:35 step was a little less money which is a
+5:38 bit funny but I have like so much
+5:39 Freedom that I don't regret it um but
+5:42 when I started I like my first job was
+5:44 in Switzerland so and my second job was
+5:46 part-time job so I was like a little bit
+5:48 less then back to Munich little bit less
+5:51 and now um with my writing again a
+5:54 little bit less than a PhD um but I
+5:56 think PhD fulltime PhD is not I mean you
+5:58 could earn more of course now if I would
+6:01 go for regular data scientist Ro um but
+6:05 I enjoy the freedom a lot um that I have
+6:07 now as a
+6:08 rider so you can just go to one of the
+6:12 lakes in the
+6:13 Alps laptop yeah writing well now maybe
+6:18 it's a bit cold for now for that now
+6:20 right but still you can do this right if
+6:22 you want it yeah and I can do like
+6:24 sports in the middle of the day or start
+6:26 cooking earlyer love cooking for example
+6:29 and but still think sometimes I'm about
+6:31 writing and it's so make progress there
+6:34 at the same time so yeah do you remember
+6:37 what was your first kgle
+6:39 competition oh the first
+6:41 [Music]
+6:43 one this was during my masters and I I
+6:47 didn't yet um know much machine learning
+6:50 so my first models was like a linear
+6:52 regression model and generalized
+6:55 additive model uh I think it was
+6:57 something with diabetes not not sure
+7:00 entirely what the topic was um but I
+7:02 remember that I was really really bad at
+7:04 the competition and this was for me also
+7:07 like this uh because in theory I I mean
+7:10 I I knew how to model data how to build
+7:12 a prediction model um but just like from
+7:15 stati statistician point of view not
+7:17 from a machine learning point of view so
+7:19 my first thoughts were like okay this
+7:21 should be like a generalized EDI of
+7:22 model with these of these features I
+7:24 didn't even like have a validation set
+7:26 up on my side and and haven't like fully
+7:30 do in statistics right
+7:33 yeah okay I remember my first CLE
+7:35 competition was like I did super bad
+7:38 because like I thought like with all
+7:39 this knowledge I have from my courses
+7:42 like I would just ace it and then the
+7:44 reality was the complete opposite yeah
+7:47 yeah was uh quite interesting and like
+7:50 how did you become interested in
+7:52 interpretable machine learning is it
+7:54 something you were doing during your
+7:55 Masters or is it something you needed to
+7:57 do at your work in your that inch
+8:00 startup
+8:02 or I
+8:04 think for me it was quite natural I
+8:08 think because as a statistician you
+8:11 always you think about the data
+8:13 generating process and when you build
+8:15 model they are usually
+8:17 interpretable and so this is the the
+8:19 mindset I came from this okay let's
+8:22 understand the data let's build an
+8:23 understandable model and when I
+8:25 transitioned more into machine learning
+8:27 I this this was kind of lost
+8:29 not fully because there were things like
+8:31 the random Forest which which had this
+8:33 built-in feature importance and stuff
+8:34 like this but it felt like okay there's
+8:37 parts
+8:38 missing and then during my this second
+8:42 job in in Switzerland I had the side
+8:45 projects and and one of and this one day
+8:48 off I I read the line paper which is
+8:50 about this interpretability method that
+8:52 fits like um linear models to explain
+8:56 individual predictions of more complex
+8:58 models and this was quite fascinating to
+9:00 me like oh w we could have a really
+9:02 complex model and then still use um or
+9:06 still have a chance to understand what's
+9:08 going on inside the model and then I
+9:11 wanted to learn more but I couldn't
+9:13 learn more because there was not so much
+9:15 material online and that's was my
+9:17 motivation to write a book about this
+9:20 topic was quite lucky with the timing as
+9:23 well because there there was no nothing
+9:25 on on the market yet so like speaking of
+9:28 kagle like in kagle you don't really
+9:30 care about the explainability
+9:34 interpretability all you care about is
+9:37 predictions right you care about all
+9:39 these predictions and like it doesn't
+9:42 matter how exactly the model is making
+9:44 these
+9:44 predictions and like sometimes at works
+9:47 at work is also like you have a similar
+9:49 station right like turn on turn maybe
+9:52 like if it's a lot of users you don't
+9:54 really go and dig deeper into each
+9:57 individual user when you want to
+10:00 understand like why this particular
+10:01 decision happened like as long as the
+10:04 business metrics are satisfied like
+10:06 everyone is happy like then you just you
+10:08 know stuck more layers or I don't know
+10:10 do something right so you don't
+10:13 necessarily go and try to figure out
+10:15 like for this particular customer why my
+10:18 model was
+10:19 wrong I imagine there are many many
+10:21 cases
+10:22 especially in medical research where you
+10:25 have to care about
+10:27 that yeah so
+10:29 I I think I don't fully agree with the
+10:33 kaggle case um because in kaggle of
+10:35 course the what gets you the money is um
+10:38 to be right with your predictions I
+10:40 think interpretability can help you even
+10:42 with keggle to debu a little and to this
+10:46 really stupid example but I'm doing a
+10:47 competition at the moment and I when I
+10:50 created the features I kind of had a
+10:53 Target leakage because I like a version
+10:56 of my target I put into my features um
+11:00 and I but I also had like
+11:02 interpretability at the end of the model
+11:03 like to look at the feature importances
+11:05 using shop and immediately so first of
+11:09 all I saw like oh the predictions go the
+11:11 prediction errow is going down by a lot
+11:13 was like super happy but then like a
+11:16 little voice in my head said this this
+11:17 is not true don't be happy there's
+11:19 something wrong with your model and it
+11:21 turned out to be wrong and I super
+11:23 quickly found the bug because I um for
+11:25 the feature importance ranking this one
+11:27 feature bubbl to the top now you
+11:29 wouldn't need feature importance for
+11:31 this of course because you could check
+11:32 your column names for example but if you
+11:34 have like a large feature uh set then
+11:39 it's quite tedious to look through all
+11:40 of them and um for these interpretation
+11:44 methods if you have such a mistake they
+11:46 like Target leakage it bubbles just to
+11:48 top like the the most important feature
+11:51 and so I I would say interpretability
+11:54 is useful for debugging your model
+11:57 yeah
+11:59 so you still take part in competitions
+12:02 it's been some time yeah um it's my
+12:04 first competition in many years um it's
+12:08 not on kle it's on what is it called
+12:11 Data driven I think it's for forecasting
+12:15 um water um water volume Through
+12:21 Rivers yeah speaking of flexibility
+12:23 right so with this kind of
+12:27 U I don't know can say a job but with
+12:30 this sort of activity you have the
+12:32 freedom of doing other things like
+12:35 taking par in
+12:37 competitions okay so
+12:39 you realized that this is an important
+12:42 topic there there is not so much there
+12:45 was not so much literature information
+12:49 available about that and you thought H I
+12:51 don't like writing but maybe I should
+12:53 try doing it one more time
+12:56 right I know yeah so I I just started to
+13:00 I don't know my thought process I was
+13:01 just like well this would be a cool
+13:03 opportunity and at this point my master
+13:06 thesis was I think two two
+13:09 years behind me maybe I just forgot how
+13:11 it
+13:12 felt um but also it was kind of stress
+13:16 free because I could just Rite it was a
+13:18 side project for me so no Stakes
+13:20 involved at this point so I had no
+13:23 pressure like okay you have to to do the
+13:26 writing so well that you get your mind
+13:29 degree or or to get a paper publish or
+13:31 anything it was just I could just write
+13:33 how how I felt it to be like the best
+13:37 way and so this brought kind of the fun
+13:41 back to me for like writing stuff
+13:44 because I really enjoy like
+13:46 understanding difficult things and
+13:48 writing them down in a simpler way and
+13:51 um this some yeah writing is one way how
+13:54 you can express this MH so the best way
+13:57 is to learn something something is to
+13:59 teach something or at least write about
+14:00 this way yeah a bit like this and it's
+14:02 also a problem because um sometimes when
+14:06 I write my newsletter or when I pick a
+14:08 new book when I already know the topic I
+14:11 feel like there's not so much value in
+14:13 it which is obviously wrong because at
+14:15 some point I didn't know these things
+14:16 and I would love to would like at this
+14:19 point in the past I would have loved to
+14:21 read about them but for me it feels like
+14:24 if it's too easy to write about it's not
+14:26 worth writing about it it's it's
+14:27 obviously wrong because it's if someone
+14:30 else if enough other people have value
+14:32 from from your writing then your writing
+14:36 is valuable um so I kind of mixed it's
+14:39 like easy an easy text because like when
+14:42 it machine learning it's a complex thing
+14:44 and if there's some resource that
+14:46 explain explains complex things with
+14:49 simple language then it's a good try
+14:53 yeah it's good um yeah but sometimes I'm
+14:55 I feel like I already understand this I
+14:57 shouldn't write about it but sometimes
+14:59 this maybe the most valuable thing to
+15:01 write about because I already have
+15:03 understood it and maybe it was hard for
+15:04 me to to understand it but if I want to
+15:07 write about something new I was feel
+15:08 like I also have to learn it right now
+15:11 but also one of the reason why I became
+15:13 a writer was so I can always learn new
+15:16 things uh so it's it's kind of like a
+15:20 dance between these two things like it
+15:22 should be like simple so I can don't
+15:25 spend too much time on one thing but
+15:27 also I want to about something that's
+15:29 exciting for me as
+15:32 well quite a book cuz like usually the
+15:35 story I hear from authors and I I also
+15:37 published uh book and for me it was like
+15:40 first I wrote an article then like a
+15:42 bunch of Articles and then I thought
+15:45 okay like maybe I do something larger
+15:48 but you just jumped yeah into a book
+15:52 while really liking writing yeah good
+15:56 question um for me
+15:59 I already did some blogging before but
+16:02 always quit after a few
+16:04 months so but I already had a little bit
+16:07 of experience with writing more freely
+16:11 and with the book it was some it wasn't
+16:13 like hide in my room for two years and
+16:15 then finish the book and and publish it
+16:18 but I published uh it as like a website
+16:21 it's still uh interpretable machine
+16:23 learning is still available for free and
+16:25 I publish it like chapter by chapter so
+16:27 it kind of like
+16:30 blogging uh but of course it was it's
+16:33 like a one unit um but but this allowed
+16:36 me to to get feedback very early on and
+16:39 to write this chapter by chapter so it
+16:42 didn't feel like one huge junk like like
+16:45 a huge mountain to to climb um but
+16:48 Little Steps so and I think if I didn't
+16:53 had hadn't gotten any feedback in the
+16:55 beginning so I shared it on Twitter for
+16:57 example I'm not sure if I would have
+16:59 finished a
+17:00 book or if it would have just been like
+17:03 half a book or so or much shorter book
+17:06 but also as we spoke at the beginning
+17:09 briefly you didn't you don't have a
+17:12 publisher you publish on your own right
+17:14 and then this requires a lot of self
+17:16 discipline so like if you don't publish
+17:19 a chapter in a CA in a case with a
+17:22 publisher publisher would chase you like
+17:24 Hey where's another chapter like yeah
+17:26 it's like the due date was like half a
+17:28 year ago
+17:29 like do something but here you have to
+17:31 be chasing like if you're late you have
+17:34 to like Chase yourself so you have to
+17:36 have discipline yeah that see how how do
+17:39 you do that like is there a secret or
+17:42 you're you just so like the topic and
+17:45 you so liked writing some so I'm I would
+17:50 say I'm inherently motivated to do the
+17:52 writing but sometimes to force myself to
+17:56 like bring everything together because
+17:59 um I sometimes use deadlines for myself
+18:03 to Yeah because sometimes it's you feel
+18:06 like okay you could write more or maybe
+18:08 add another chapter um but sometimes you
+18:11 just have to finish and a deadline is
+18:14 then important but I I I actually was
+18:18 approached by
+18:20 Publishers like typical technical
+18:22 Publishers and they asked me for example
+18:25 hey do you want to uh publish interpret
+18:28 machine learning with us um or maybe
+18:30 also write a new book on topic
+18:33 XYZ um and I always like research them
+18:35 like how did they work and then I read
+18:37 about it and I was like no that's not my
+18:39 style I don't want to like have like
+18:42 their strict schedule and then I heard
+18:44 about like oh sometimes the editors they
+18:46 have they are not so good and then I
+18:49 don't get all the Roy like like a much
+18:51 smaller share of the royalties and I was
+18:54 like no I'll do this
+18:57 myself so we already spoke about the
+19:00 books you have on your bookshelf can you
+19:02 tell us what these books are so I've
+19:05 written four books um one of this is
+19:08 interoperable machine learning which is
+19:10 my first book um and there's also a
+19:13 second edition
+19:14 already then this this already finished
+19:18 during my PhD and it's about different
+19:21 it's basically each chapter has one
+19:24 method that allows you to interpret your
+19:25 machine learning
+19:26 model and my second book this was when I
+19:29 started already doing this full-time is
+19:32 modeling mindsets it's a very small book
+19:35 and it's also quite different from the
+19:37 first one and it's about the different
+19:40 ways to think about uh modeling your
+19:43 data I already mentioned like how I as a
+19:46 statistician participated in a kaggle
+19:48 challenge and quickly you realized okay
+19:50 it won't get far with the way I approach
+19:52 modeling and so things like these
+19:55 inspired me to write this book and my
+19:58 third book is quite different it's about
+20:02 um conformal prediction a method to
+20:04 quantify uncertainty of your models um
+20:07 so it's an introduction to this topic
+20:08 and this was purely to because I wanted
+20:11 to learn about the topic and um so I
+20:13 wrote the book uh like an introduction
+20:15 book so this was a very classic case of
+20:18 learning by teaching the name of the
+20:20 book is Introduction to conform the
+20:21 prediction with python confounded conal
+20:26 like formal like conformal yeah I don't
+20:30 think I ever hear this term what does it
+20:32 actually mean um conformal prediction is
+20:36 about uh the basic ideas that you have
+20:40 some kind of uncertainty in your model
+20:43 and conforming prediction is kind of a
+20:44 process so there's many different um
+20:48 algorithms and they con formalize this
+20:51 uncertainty measure so that you can kind
+20:54 of trust your output so for example you
+20:57 could
+20:58 have a classifier that outputs like
+21:00 class probabilities and you could use
+21:03 conform prediction to say um that
+21:06 instead of outputting like one class or
+21:08 just the probabilities that you get a
+21:10 set and with some guarantees so that's
+21:12 the important part these guarantees of
+21:14 probability that there's like a 95%
+21:16 chance that the correct class is within
+21:19 uh Within These
+21:21 sets and you can use conforming
+21:24 prediction also to for quanti regression
+21:27 for example so that the quanti really
+21:29 contain 80% of your data of your
+21:32 predictions of the actual
+21:35 um um outcome so we spoke about this
+21:39 example of CH prediction so here uh
+21:42 instead of just saying that this John do
+21:44 will turn with probability 80% would
+21:48 have a range an interval yeah that's
+21:50 also one certain we are that this
+21:53 prediction is actually correct yeah
+21:55 that's also one uh method in conforming
+21:58 prediction this kind of um to for for
+22:02 predict for classification that you can
+22:05 put like kind of bounce on a probability
+22:08 that you say okay not you don't just
+22:10 give one probability but a range uh
+22:12 between which you
+22:14 believe is it Rel to I guess there is
+22:18 some relationship between interpretable
+22:21 AI this uh and this topic right cuz like
+22:25 to come up with this B
+22:28 you kind of need to do similar things
+22:31 right or am I completely wrong
+22:34 um so like
+22:37 technically I would say it's different
+22:40 because for conform prediction you
+22:43 separate your so one similar let's begin
+22:47 with the
+22:47 similarities um it's very it's a bit
+22:50 similar to these model agnostic
+22:51 interpretability techniques in so far
+22:53 that you can first train your model any
+22:56 model really it could be random Forest
+22:58 could be neuron Network and then apply
+23:00 the method afterwards because at least
+23:03 for some classes of conforming
+23:04 prediction which are called inductive
+23:06 conform prediction um these you can
+23:09 apply to your model after you've trained
+23:11 it and the idea is that you have like a
+23:13 calibration step so you can use some
+23:16 output from a model which quantifies the
+23:18 uncertainty and kind of calibrate it the
+23:20 right
+23:21 way um yeah but otherwise yeah that's
+23:25 they the methods are completely
+23:27 different right only the way you kind
+23:29 apply so there's a model running in
+23:30 production so you don't need to actually
+23:33 you know do anything with that model you
+23:35 just do something on top yeah it's at
+23:38 least one possibility with um inductive
+23:41 confir prediction
+23:43 yeah interesting and the fourth
+23:48 book uh yeah that's interpreting machine
+23:50 learning models with shop so it's uh has
+23:55 also python examples which my first book
+23:57 doesn't have about interpretable machine
+23:59 learning but otherwise it's kind of
+24:00 taking one of the chapters from from
+24:02 interpretable machine learning and doing
+24:04 a deep dive into one of the methods
+24:06 which I think is also the most uh
+24:09 popular method shop and also the one of
+24:13 the most versatile methods so I decided
+24:16 yeah would be cool to have a book on it
+24:19 this was one of the books where I was
+24:20 like okay I really have a lot of
+24:22 material already and I still learned ton
+24:25 while writing the book because you
+24:27 realize that you still have many gaps um
+24:30 but still this this was where I kind of
+24:33 took the stuff I already had and uh not
+24:37 only learned new
+24:40 things and how did you decide that uh
+24:43 you want to write a book about this
+24:45 particular method did you do some
+24:47 research that this is the most popular
+24:49 one did your readers maybe ask you for
+24:52 more examples or more
+24:54 Hands-On like Co with code examples or
+24:57 MH like what was your process how did
+25:01 you arrive at like you want to write
+25:02 this particular book yeah um for shop I
+25:07 already had some insights that this is
+25:08 hugely popular so it was kind of a
+25:11 market research because I already know
+25:13 from my book uh interoperable machine
+25:16 learning uh like Google analytics I know
+25:19 which chapters are popular and shop and
+25:22 then also have a separate Chaple values
+25:24 chapter and they kind of belong together
+25:26 they are by far the most popular ones so
+25:29 this was um have most visits right
+25:31 because you can see like how many times
+25:34 each chapter was VI TR yeah and um also
+25:41 I think shop is not super intuitive um I
+25:44 mean there's lots of material already
+25:45 like blog post and so on but I thought
+25:47 that um putting this all together in a
+25:49 book would be valuable to many readers
+25:52 um and then I also like find shop
+25:54 interesting because
+25:56 it's there always this danger like you
+25:58 shouldn't always only rely on one
+26:00 interpretation method um I also wrote
+26:03 like a blog post about it like shop is
+26:04 not all you need but if someone would
+26:07 force you to use only one I would use
+26:09 shop um because it's very versatile and
+26:12 I think there's a lot of value if you
+26:14 learn
+26:15 it okay well maybe we need to speak
+26:18 about the this particular method but I
+26:21 see that there are quite interesting
+26:22 questions and the first question is from
+26:25 Rona and the question is is there any
+26:27 difference between explainable Ai and
+26:30 interpretable AI many many people ask
+26:33 this um I don't think I have a
+26:34 satisfying answer um I for some some
+26:38 days ago I post about like an overview
+26:41 how researchers use this
+26:43 differently um I think so how I use
+26:46 these terms is um I use both
+26:50 interpretable machine learning and
+26:51 explainable AI as keywords and I think
+26:56 that's most useful because there's so
+26:57 much overlap so
+26:59 much but there people just use both
+27:03 quite
+27:04 interchangeably and so if you want to
+27:07 look like do a Google search on on some
+27:09 topic I would always use both and I I
+27:13 think I make a distinction with when I
+27:15 use worbs like uh when I say um I want
+27:19 to explain a prediction um some people
+27:22 would criticize me now ah you don't
+27:24 explain a prediction because it's a very
+27:25 strong word obviously um
+27:28 but I think it's still fair to use it
+27:30 and if it's so this would be more for
+27:32 local like understanding of the model
+27:35 and for Global understanding I use mod
+27:37 what
+27:38 interpreting um I know that others make
+27:41 the difference or distinguish between
+27:44 like interpretable models and they mean
+27:46 with this like that they kind of
+27:48 inherently interpretable like a linear
+27:50 regression model an explainable AI like
+27:53 for these postto things but I don't
+27:56 think that's a good like distinction
+27:58 because the it's not super clear always
+28:01 like the boundaries between the
+28:03 two so I'm sorry but I don't think I
+28:06 have a very satisfying
+28:08 clean much difference and like the
+28:12 question was about explainable Ai and
+28:14 interpretable Ai and you correct it to
+28:16 interpretable machine learning right
+28:18 interet cover both yeah interpretable AI
+28:21 usually used
+28:22 or like this is how the term is it's
+28:27 it's
+28:28 ml not I'm biased because I named my
+28:31 book this way so in my head it's always
+28:32 interpretable ML and not AI but you can
+28:36 also use this so I guess the question
+28:38 boils down to like definition between
+28:40 interpretable and
+28:42 explainable and yeah I I I don't make a
+28:46 big distinction between the
+28:48 two well if you think about the words
+28:51 themselves like what's the difference
+28:53 between explain and interpret yeah
+28:56 interet like you kind of interpret it
+28:57 and you don't necessarily explain it to
+28:59 others yeah for me I understand how it
+29:02 works explainable for me is a very
+29:04 strong word I think that was also like
+29:07 why like said interpretable machine
+29:09 learning when I named my book um but I
+29:13 named it quite early on so a lot of
+29:15 things happened afterwards and the term
+29:18 explainable AI got quite famous as well
+29:21 and at some point it actually was named
+29:23 explainable AI my book um but then I
+29:26 decided against it and now it's
+29:28 interoperable machine learning um I
+29:30 think I like interoperability a little
+29:32 bit more because explainability is very
+29:35 strong um because if you can explain
+29:37 something you have deeply understood it
+29:40 but interpretation is like okay you see
+29:42 something and you have an interpretation
+29:45 because you don't like fully understand
+29:47 it but just parts and kind of derive
+29:50 with your like insights which is an
+29:52 interpretation of what you see so that's
+29:54 why I like the term more more
+30:00 okay and now you work as a technical
+30:04 book writer yeah you said for a year
+30:08 right you have been doing
+30:10 this do you feel lonely when you just
+30:13 write
+30:14 but alone do you miss
+30:17 colleagues sometimes yes um I so I like
+30:21 working by myself a
+30:22 lot
+30:24 um um but sometimes I'm like
+30:27 I would be nice to like work in a team
+30:30 for a day or so the problem is you can't
+30:33 do this really on and off I mean you can
+30:35 but then you're like tied to what
+30:37 project and yeah I just would like to
+30:41 have this like each other day like some
+30:44 someday um I mean it's not fully lonely
+30:47 I me I'm talking to you right now for
+30:48 example U so you can do other things
+30:51 like podcasts and and talk to people
+30:54 also I I'm writing a book at the moment
+30:57 with team with rle who's a former
+30:59 colleague of mine and so we write this
+31:02 book together it's my first
+31:03 collaborative book um so I also have
+31:07 like a we're a little team right now at
+31:09 least for this one project so there's
+31:11 some it's not only me sitting alone in
+31:14 in my room and tinkering and
+31:17 writing I guess writing with somebody
+31:20 else not only makes the process not only
+31:24 makes it like kind of forces you to
+31:27 earlier CU like half of the content is
+31:31 written by you half of the content is
+31:33 written by your co-author and then you
+31:35 review each other so you kind of deliver
+31:37 the book P right
+31:40 um it's I would say it's slower because
+31:44 my co-author he's has like a full-time
+31:46 job uh like he's a post so he can
+31:50 dedicate as much time as I could so if I
+31:52 would write it alone I might be F I
+31:54 think I would be faster um but it's it's
+31:57 fine the way it is um because I think
+31:59 it's a it's so the topic is supervised
+32:02 machine learning and science it's about
+32:05 how supervised machine learning is is
+32:07 used like for doing research and stuff
+32:09 um so kind of Applied machine learning
+32:12 um and the book has two parts it's about
+32:14 like justification of why it's okay to
+32:15 do it or whether it's okay to use
+32:17 machine learning um because there's some
+32:19 problems of course with you don't
+32:21 understand uh fully understand the model
+32:24 and so on but also like puzzle pieces
+32:26 that if you use machine learning in
+32:27 science or in research like what do you
+32:30 actually need to make it work because if
+32:31 you just use it like as a keggle
+32:33 competition then there's lots of missing
+32:35 pieces you like causality
+32:37 interpretability uncertainty
+32:39 quantification so we're kind of putting
+32:41 this together
+32:43 and I think it's good that we take the
+32:45 time to write this um so we kind of have
+32:48 a half draft now um because but we take
+32:52 we're taking our time to really think
+32:53 this through um because it's a yeah I
+32:56 think a bit new topic and also
+32:59 philosophical component to
+33:02 it yeah so that's a I think it's a fun
+33:05 project okay so you said you would write
+33:08 it faster because like your co-author
+33:11 has other
+33:13 commitments so then you also don't
+33:15 invest as much time as you could
+33:17 potentially cuz like you
+33:19 probably so what I'm trying to say you
+33:22 probably have still time right so are
+33:24 you working on something else in the
+33:26 meantime M so right now I'm
+33:28 participating in a challenge uh like not
+33:32 on kle but another platform driven data
+33:34 right this one yeah that you mentioned
+33:37 yeah
+33:38 and almost fulltime at the moment like
+33:41 since a week or so uh but yeah but
+33:44 that's the first time I'm doing this
+33:45 since I'm writing but I felt like I need
+33:48 I need a Hands-On project again because
+33:51 sometimes can feel like this like like
+33:54 like a disconnect if you always write
+33:56 about using much machine learning and so
+33:57 on and I I do have lots of experience
+34:00 from earlier on but like last one and a
+34:03 half years I've only been writing and no
+34:05 doing no data analysis really and then
+34:08 feels like a bit out of touch maybe and
+34:10 so it was really good to do still feels
+34:13 really good to do like a Hands-On
+34:14 project with all like the problems with
+34:16 the data and how to model it and so on
+34:20 yeah that's nice that you brought this
+34:21 up cuz uh I also I used to work as a
+34:26 data scientist for time now I
+34:28 don't and what I'm afraid of is like
+34:31 I'll lose this touch with reality
+34:34 because if somebody asks me I don't know
+34:38 about something something then my answer
+34:40 would be based on my experience that I
+34:43 got at work right and I'm no longer
+34:46 working so this answer might be outdated
+34:49 and the more I know the longer I don't
+34:52 work as a data scientist the more
+34:54 outdated the answers my answers become
+34:56 right MH how do I
+34:59 stay hands on yeah this is what you do
+35:02 right so you take part in
+35:04 competitions and you make sure that the
+35:07 methods you teach the things you're
+35:08 write about they're still applicable
+35:10 because you can try them in this real
+35:12 life projects right yeah yeah but but I
+35:16 feel like it's it's I didn't expect this
+35:18 but that the writing helps me to be
+35:20 better in a
+35:22 competition and it's because I'm now
+35:24 much more structured and I actually have
+35:26 like a little log book and I write about
+35:29 okay when I'm stuck for example or when
+35:31 I have like a breakthrough and it's kind
+35:34 of it I didn't expect this but it helps
+35:36 me a lot to like keep my thoughts in
+35:39 order because in a machine learning
+35:41 competition you have so many like
+35:43 directions that you could follow and
+35:46 very often you try something and it
+35:48 doesn't work and usually you get very I
+35:51 still get frustrated when it happens
+35:53 especially if you invest a whole day but
+35:55 if you can write it down you can process
+35:56 it I think much faster be like yeah this
+35:59 was an experiment experiment showed uh
+36:02 for example this weather data didn't
+36:04 help anything with the prediction or
+36:05 improving the performance so I move on
+36:07 to the next experiment and to keep like
+36:11 to keep myself focused on what I'm doing
+36:14 it helps me so much like that I'm more
+36:17 um have this habit of
+36:19 writing this is so
+36:22 cooled yeah I want to learn more like
+36:25 how do you exactly structure this what
+36:26 kind of tools do you use like is it just
+36:28 Google doc or something you mean
+36:31 especially for this competition now or
+36:33 yeah for this competition in general
+36:34 like let's say I take part in a
+36:36 competition and they want to follow your
+36:38 approach I want to have this log book
+36:40 how should I do that it's extremely
+36:43 messy so um and it's I'm doing this the
+36:46 first time and kind of works but it's
+36:48 not like I have like a fully flashed up
+36:49 process how I do this so it's not like
+36:51 you finish the competition and you have
+36:53 a book that you can publish right yeah I
+36:56 actually thought about because there's
+36:57 um there's a communication so there's
+36:59 there's price money involved in this
+37:02 project and in this competition mostly
+37:04 of course if you're like
+37:05 performance-based but there's also like
+37:07 a competition part or like a price part
+37:10 about explainability and communication I
+37:13 see why you take part in that
+37:15 competition yeah that was a bonus yeah
+37:17 and also the topic was interesting to me
+37:19 so it's about predicting the water flow
+37:21 in rivers and I like all these ecology
+37:24 uh data tasks um
+37:27 yeah so one thought that I have is that
+37:30 I could also use them this journey to
+37:34 kind of write a narrative how I approach
+37:36 the entire challenge so I try to write
+37:39 down every day where I work on a
+37:41 challenge like a few thoughts at
+37:43 least is it like a diary uh diary how do
+37:47 I say it like is it like a journal that
+37:50 each time before going to bed you open
+37:53 right dear diary to dat this what I
+37:55 tried yeah it's a bit like this so I
+37:57 have I use obsidian electronic right I
+38:00 assume not like paper it's yeah it's
+38:04 just very messy so the idea is that it
+38:06 shouldn't
+38:07 be it it shouldn't take a lot of effort
+38:10 to do it so I write very hly very just
+38:13 short sentences and yeah just uh bullet
+38:16 points and I use as a not taking tool
+38:19 obsidian so also for other things and I
+38:22 just have like for this this challenge I
+38:25 have no one file and I just put dump
+38:27 every thoughts in there and also this
+38:30 logbook with what I
+38:32 do and yeah but this helps me like keep
+38:35 focused on a
+38:37 project and I guess like these buet
+38:39 points in case you want to go back to
+38:42 them and turn them into a proper text
+38:46 yeah that's one reason the information
+38:47 there right yeah one reason is that I
+38:50 just have this because I wouldn't
+38:51 remember like oh dat seven I struggle to
+38:55 make a good submission or whatever
+38:57 and the other reason is because just
+38:59 writing itself even if I don't ever look
+39:00 at it again if I don't ever touch it
+39:02 again it helps me to like to put into
+39:06 words or to summarize what I did the
+39:08 entire day because it's super
+39:10 frustrating if you just don't think
+39:13 about what you did all day um but if you
+39:15 write it down like two sentences okay
+39:17 today I finished this part and I
+39:20 realized that using weather data doesn't
+39:22 help then it's already it helps me to to
+39:26 keep f focused on what I do the next day
+39:28 and to not get frustrated that maybe I
+39:30 didn't make as much progress because
+39:32 often you do more than you think like
+39:35 because you tried many things well at
+39:37 least that's how I feel them so yeah
+39:40 because I was going to ask why would
+39:44 somebody even do that like why would
+39:46 somebody even write it on day seven I
+39:47 struggle to make a submission CU like
+39:50 it's not useful but when you say that
+39:52 put things in perspective like it's not
+39:55 like on day seven you and didn't do
+39:57 anything yeah exactly something except
+40:00 like there were some problems and you
+40:02 needed to work on solving these problems
+40:04 and now you know that okay like yeah I
+40:06 actually worked on something yeah
+40:08 sometimes motivated right yeah and it's
+40:11 hard to put into words but sometimes I I
+40:13 um struggle with something but I don't
+40:16 like formulate in my head what the
+40:17 problem is and then sometimes I get
+40:20 distracted and go to Twitter or do
+40:22 something else and but writing down what
+40:24 like what's the essence of my problem
+40:26 for example uh in this particular
+40:29 challenge the the problem or the the
+40:32 goal is to predict the volume in a
+40:34 season so that's the total volume over a
+40:38 few months but you have to make the
+40:39 predictions at different time points in
+40:42 time and some points or some dates are
+40:46 actually already within the season so
+40:48 you have some partial data or some
+40:50 partial water flow already and I really
+40:55 struggled how to put this this into my
+40:57 model how you like this knowledge
+40:59 because obviously if you already know
+41:01 that some amount is already through like
+41:03 has flown through the river then you can
+41:05 adapt your prediction and then this was
+41:09 kind of my problem I was thinking about
+41:11 for a few days actually and uh but this
+41:14 helped me to put this into writing like
+41:16 hey this is like what I have to achieve
+41:17 this is the problem I have to solve the
+41:19 most important one um
+41:21 yeah it's
+41:24 a almost like psychologic maybe to like
+41:28 like a mental process to to help to
+41:31 focus how much time do you spent on this
+41:33 log
+41:34 book very little very little it's maybe
+41:39 yeah so in the beginning I was just
+41:40 writing down okay this is the so I also
+41:44 have like Parts okay to understand
+41:45 evalation matric I just like put all the
+41:47 information in and things like okay
+41:50 these are the data side like the
+41:53 problems about the data I put have one
+41:55 section so in beginning I spent maybe a
+41:57 little more but this was like while I
+41:59 was reading the description of the
+42:00 challenge I put in some like I
+42:02 summarized the most important parts for
+42:04 me so there maybe I don't know one or
+42:06 two hours and now I just like five or 10
+42:09 minutes a day I just it's very short I
+42:11 just say a few lines like what I did
+42:13 today and yeah it's like diary except
+42:16 it's for the competition that's for the
+42:18 competition
+42:19 yeah okay uh there's a question I really
+42:22 like and I think we talked about that
+42:24 the question is do you have to be an
+42:27 expert in the field to start writing
+42:29 about
+42:31 it and it
+42:33 helps or maybe it doesn't maybe it
+42:35 doesn't
+42:37 um I can see why it's not always you can
+42:41 make the argument both ways so if you're
+42:43 not an expert then you have the same
+42:45 obstacles as your future
+42:47 readers that means when you write a book
+42:50 you
+42:51 can like write about these obstacles so
+42:54 these misunderstandings that you have in
+42:56 the beginning about the technique you're
+42:58 writing about or the the algorithms
+43:00 you're writing about um but it will also
+43:03 be very tough process maybe for you
+43:05 because you have to learn and write at
+43:07 the same time and you also need to make
+43:09 sure that what you write about is
+43:11 actually correct right exactly yeah
+43:13 that's it's like you misunderstood
+43:15 something but you thought like this is
+43:16 the right way and you right about this
+43:18 and then like half a year later it turns
+43:20 out that it's not and you have to redo
+43:22 like the whole thing yeah and it's also
+43:24 a question if you already know something
+43:26 so let's say you would write want to
+43:29 write a book about machine learning but
+43:30 you don't have like the basics in so for
+43:32 me it
+43:33 would uh going into machine learning for
+43:36 example was for me much easier because I
+43:38 studied statistics so a lot of the math
+43:40 behind the machine learning and uh
+43:44 working with data was already I already
+43:47 knew so you should also think about like
+43:50 where where do you start from so for
+43:52 example confirming prediction for me was
+43:54 new the topic itself but of of course
+43:56 many of the concepts I already knew um
+43:59 even if I didn't know conform prediction
+44:01 before so I would
+44:04 say if the best the very best thing
+44:07 would be if you're an
+44:09 expert but you still remember all your
+44:12 struggles anding go down to the level of
+44:15 the reader right so for you it can be
+44:18 like so for example cross validation for
+44:20 you it's just like you wake up in the
+44:21 middle of the night your eyes are
+44:24 blindfolded and you do cross validation
+44:26 right yeah somebody who is new to that
+44:29 might not even understand important
+44:31 thing and how it works and why we need
+44:33 it right and what are the goes so if you
+44:36 keep like a lock book when learning then
+44:38 you could also remember your
+44:42 struggles yeah so I think this would be
+44:44 the ideal setup being an expert but
+44:47 still remembering what it was to be a
+44:50 beginner having a beginner who you can
+44:53 experiment with your
+44:54 things I would say hey like I don't
+44:57 understand this thing you can see where
+44:59 they struggle right mhm this is I think
+45:02 this is what you do with your book to at
+45:05 least we talked about uh that for your
+45:08 first book cuz you wrote in the open so
+45:10 everyone could see and comment and say
+45:12 where they don't understand right so
+45:14 then you could take this feedback and
+45:16 incorporate it into the book right do
+45:19 you still write in the
+45:21 open
+45:22 um I have
+45:24 so quite different between the books I
+45:27 would say uh so the first book was fully
+45:29 open and I wrote a chapter by chapter
+45:32 and the next book were closed um so like
+45:36 most of the books I guess um but I did
+45:39 have so for for modeling mindsets I
+45:41 asked like friends and and colleagues to
+45:43 to read individual
+45:45 chapters and then later on for
+45:48 conforming prediction book and Sh book I
+45:50 actually asked um readers to be if they
+45:54 want to be um test readers and this work
+45:56 quite well so this because then I
+45:59 already
+46:00 got so you have you have a newsletter
+46:03 right so then the newsletter you can
+46:04 write hey like I'm writing a book about
+46:07 that do you want to be better users or
+46:09 test readers right exactly and then
+46:12 people say hey yes and then I um kind of
+46:15 share a um Google Drive version of the
+46:18 book and then got so far this work
+46:21 really really well so I got extremely
+46:24 good feedback from from through this
+46:26 process I'm very grateful to everyone
+46:28 who reads my book before they are
+46:30 finished um so this this work quite well
+46:33 for
+46:35 me can it be problematic if you have
+46:37 like too much feedback like too many
+46:40 people want to read your books I once
+46:42 had this problem with the shopbook that
+46:44 I invited a lot of um bet readers um I
+46:48 think one problem is of course if if you
+46:50 have a very problematic part like then
+46:53 all the readers will comment on this
+46:54 part and then it's like
+46:56 also kind of a not so good that you give
+46:59 this version to so a lot of people so I
+47:02 one lesson for me was to keep the list
+47:04 of readers um not like small um and so
+47:10 it's you shouldn't have too many
+47:11 batteries I think and rather you should
+47:13 have more phases where you like invite a
+47:16 few readers and incorporate the feedback
+47:19 have a new version have new readers for
+47:22 for this new version and that's what
+47:24 worked best for me so far but of course
+47:27 it prolongs the process of uh how long
+47:30 it takes until you can
+47:32 publish was also like if you don't agree
+47:34 with the feedback like what do you
+47:36 do if you don't agree you don't have to
+47:39 use it I mean that's that's the nature
+47:40 of feedback then like the person might
+47:43 feel offended and okay like he doesn't
+47:45 want to listen to my feedback what I'm
+47:47 doing here didn't have this case so far
+47:51 um I think it should always like double
+47:53 check the feedback like in sense of like
+47:55 maybe I'm wrong so I should I always
+47:58 come from this angle probably I'm wrong
+48:00 because uh the
+48:03 reader the reader so the end I'm writing
+48:05 for the
+48:06 reader but sometimes you can also have
+48:08 the case that this this I already had
+48:11 that like one reader says hey um you
+48:14 should have this a simple example in the
+48:16 beginning and the other reader says hey
+48:18 why is there an example already I
+48:20 haven't really understood what the
+48:21 method is about so this should be later
+48:24 in in the chapter so there's
+48:26 there can be like different tastes or
+48:29 different opinions also and this you
+48:32 just have to make the decision what you
+48:33 think is best
+48:35 then and probably like what is what
+48:37 feels more natural to you
+48:39 personally see then another question I
+48:42 really like is do you have any advice
+48:45 for somebody who is looking to start
+48:47 their Journey as a technical
+48:51 author yeah don't start with a book um
+48:55 no that's yeah no actually it's what I
+48:57 did but um I would say start with small
+49:01 units so this could be
+49:03 posts
+49:05 um yeah like a blog post or maybe even
+49:08 smaller like on social media LinkedIn
+49:10 Twitter muston whatever and start just
+49:13 start writing um obviously okay in for
+49:17 post you can that's just start writing
+49:21 kind
+49:23 of yeah because I think the biggest
+49:25 issue is that if you're write but never
+49:28 publish this is frustrating you don't
+49:30 get feedback and the worst that it I
+49:32 think the worst that you can happen is
+49:34 if you publish that nobody will read it
+49:37 and but that's Al but that's the case if
+49:39 you never publish then nobody will will
+49:41 read it for sure um because
+49:44 when yeah I mean you can do writing for
+49:46 yourself but then it's more like a diary
+49:48 or something um but I think just getting
+49:51 started is the most important it sounds
+49:53 so like that D but yeah make it small
+49:57 and publish it mhm but maybe also the
+50:01 question is like how can I be a fulltime
+50:04 technical author like what are my
+50:07 steps yeah I don't know I haven't
+50:09 studied many people who do this
+50:10 full-time uh actually I think most
+50:13 people are just doing this like at the
+50:15 side maybe they have a successful Cod
+50:17 and they write one book or two at on the
+50:20 side
+50:22 um I
+50:24 think the
+50:26 like public like write technical writing
+50:29 is
+50:30 something I wouldn't recommend it like
+50:32 if you haven't done anything like this
+50:34 before to to just quit your job and
+50:35 start it I think that's a bad idea uh
+50:37 because this something you can actually
+50:39 like build up right if you haven't done
+50:42 something like don't quit your job and
+50:43 start I mean if you have enough
+50:45 financial security right go for it but
+50:48 the thing is if you if you have a job
+50:51 until today and tomorrow you say Okay I
+50:54 I start technically writing even if
+50:55 you're good at it and even if you're
+50:56 fast your first income will come a few
+50:59 months later many months later actually
+51:01 because first you have to write a book
+51:03 you have to publish it and even after
+51:05 publishing it you have to wait like two
+51:07 months before and even if you make sales
+51:09 on day one you have to wait two months
+51:11 until you get the money from from how
+51:13 much time it takes to write a book
+51:16 that's really difficult to say um I
+51:18 would say at least a few months um it
+51:21 can take many years depending on how
+51:23 much time you spend with the book and
+51:25 how many people are involved and like if
+51:28 there's a long like editorial process
+51:31 behind it um for me I would say like
+51:34 half a year or
+51:36 so okay but half a year of working and
+51:39 then like after that after you publish
+51:42 maybe in a three in maybe in three
+51:44 months you'll start but also not
+51:46 full-time working because I think you
+51:48 can work work fulltime on a book there
+51:50 yeah I mean I can't write eight hours a
+51:52 day you just go yeah you go czy C and
+51:57 yeah so I do a lot of other things like
+52:00 now the challenge obviously um but also
+52:02 like uh posting on social media
+52:04 newsletter writing and these are things
+52:07 if you want to be self-published and you
+52:09 also need some means of uh distribution
+52:12 and reaching people even if you're not a
+52:15 self-publisher you often have to do your
+52:16 marketing
+52:18 yourself yeah so like I published a book
+52:21 with Ming it took two
+52:23 years and then it feels like
+52:25 I might be wrong but it feels like they
+52:27 just want me to do all the marketing yes
+52:29 yeah why do I need you guys right
+52:33 yeah yeah that's something I didn't
+52:35 expect in the beginning also I I
+52:37 researched this a lot I think it might
+52:40 help if you have a name tag on it like
+52:42 from a bigger publisher and then it's in
+52:44 their Library kind of in their in their
+52:46 shop and because of the stamp of the
+52:50 publish it I think it can help because
+52:52 for me people just have to trust like in
+52:54 in me kind of because there was no
+52:57 publish saying okay you do this by
+53:00 already like
+53:01 having audience followers right so you
+53:04 from the beginning you said you were
+53:06 writing in the open so people could
+53:09 follow you and could see what you write
+53:11 about
+53:13 already you already got some trust from
+53:15 them right and then by the moment you
+53:17 finish the book they thought okay like
+53:18 this is such a cool book and we know
+53:20 Kristoff so we want to buy from him yeah
+53:23 yeah I think this helped immens because
+53:25 I mean I didn't have any credibility in
+53:28 the beginning and but I wrote the book
+53:30 in the open so people just could see the
+53:32 book and later on decide whether they
+53:35 want to buy it and paperback form for
+53:38 example so there was not they didn't
+53:40 have like this there was no big trust
+53:43 issue or anything because they could
+53:46 just read it
+53:48 beforehand and what do you use for
+53:51 publishing cuz like you also have
+53:53 physical copies I know that there
+53:56 websites where you can sell like digital
+53:59 products PDFs videos whatever but like
+54:02 you have physical books yeah so yeah one
+54:06 first part is uh where I sell is on
+54:08 leanpub which is the PDF and ebooks and
+54:12 this like just a digital book store um
+54:15 then there's print on demand Services
+54:17 where you basically also upload a PDF
+54:20 file a cover file and put on all the
+54:22 details and then you can Sol publish
+54:24 there so um do they also handle the
+54:28 logistics not at all so or they send
+54:30 like you they send you a truck with
+54:33 books no they offload it in your yard
+54:36 and then you do whatever you want with
+54:37 this no that's uh fortunately not the
+54:40 way I mean you could do it this way it
+54:41 would be much more complicated and I
+54:43 would have to do all the the packaging
+54:45 and sending out books and I I guess I
+54:47 would earn more percentage per book
+54:51 um have life yeah just do this all the
+54:54 time
+54:56 yeah I'm using Amazon KDP but there are
+54:58 others as well so that's kind of a
+55:01 printer on demand service so you upload
+55:03 your book there and they sell it for you
+55:06 and if you buy a book of mine then uh
+55:10 they will just print it and send it to
+55:12 you so there's no no pre-printing like
+55:16 or having like a my garage full of books
+55:19 involved MH so the book when you do it
+55:22 through Amazon the book appears in all
+55:24 Amazon stores right right in the US in
+55:26 Germany like in
+55:28 France MH that's cool yeah you can
+55:31 actually pick like the marketplaces
+55:32 where you wanted to appear and you can
+55:34 even like uh pick expanded distribution
+55:38 so it gets to the other bookstores as
+55:39 well the bigger ones at least um like B
+55:42 and mobbles and
+55:43 stuff oh okay like even that so like
+55:46 even in uh people can see your books in
+55:49 a bookstore yeah so it's a good time to
+55:51 be a self-publisher because there's lots
+55:53 of these platforms and tools to
+55:55 available yeah so I actually had some
+55:58 doubts whether it's a smart choice
+56:00 because of like jgpt and stuff when it
+56:02 came out but I'm more relaxed now I mean
+56:04 there lots of books which
+56:06 are uh autogenerated by large language
+56:10 models yeah but I I still say it's a
+56:12 good time to be a
+56:15 writer interesting so you said that
+56:18 people can find your books on linp and
+56:20 Amazon but they have like a homepage
+56:23 with all the books and links and all
+56:24 that
+56:25 yeah my uh kristofh m.com
+56:29 christopher.com
+56:30 books it's just a list of my books yeah
+56:34 probably it's a good idea to follow you
+56:35 on LinkedIn and Twitter right yeah it's
+56:38 always a good idea of
+56:40 course anything else you wanted to
+56:42 mention but we forgot to talk
+56:44 about um no just U I had a lot of fun
+56:48 talking with you I think was a very nice
+56:50 uh
+56:51 conversation yeah yeah thanks yeah
+56:53 indeed it was nice uh
+56:55 yeah it's unfortunately all we have time
+56:59 this is all the time we have for today
+57:01 was very quick that was quick even
+57:04 though it was actually one hour yeah
+57:07 like very short yeah just thanks for
+57:09 joining us today and thanks also
+57:10 everyone for joining us today for asking
+57:12 questions and yeah well have a great
+57:15 week week ahead and see you in a week
+57:18 yeah

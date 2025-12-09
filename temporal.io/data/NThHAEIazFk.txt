@@ -1,0 +1,1265 @@
+Stock Market Analysis with Python and Machine Learning
+
+0:00 everyone Welcome to our event this event
+0:02 is brought to you by data do club which
+0:03 is a community of people who love
+0:05 data we have weekly events today is one
+0:08 of such events yeah it's January it's
+0:12 December right now so um new year so we
+0:16 don't have a lot of things planned but
+0:19 you can already see what we have in our
+0:22 pipeline so there is one event next
+0:25 week I think there is one that is not
+0:27 announced so keep an eye on the event we
+0:30 have so this is the link you can use and
+0:33 if you noticed I finally updated these
+0:35 slides so now it's the new
+0:37 interface and yeah so it used to be red
+0:42 button now it's black so if you have
+0:44 this button you need to click on this
+0:47 this way you will subscribe to our
+0:48 YouTube channel and stay up to date with
+0:50 all our
+0:52 events and we have an amazing slack
+0:55 Community where you can hang out with
+0:56 other dating twas so check it out too
+1:00 during today's interview you can ask any
+1:01 question you want right now there is no
+1:04 pined link in the live chat even though
+1:06 on this screenshot it is there is um so
+1:10 just ask your questions in live chat I'm
+1:13 monitoring these questions from my phone
+1:15 and then we will be covering these
+1:16 questions during the
+1:18 interview now I'm going to stop sharing
+1:21 the screen open the document with
+1:26 questions
+1:28 and we can start start the
+1:32 interview okay so this week we'll talk
+1:35 about stock market anal analysis with
+1:38 python and machine learning we have a
+1:40 special guest today Ivan Ivan works as
+1:43 analytics team lead at Google and he's
+1:46 interested in investing programming in
+1:48 Python and he blogs at python invest.com
+1:51 so check his check out his blog and
+1:55 welcome H hi Alex I'm really happy to be
+1:59 here here um I can give a short intro of
+2:04 my professional experience
+2:07 and yeah yeah we will go into that I
+2:10 just want to first thank Johanna Johanna
+2:13 Bayer who prepared the questions for
+2:15 this
+2:16 interview and also before we go into our
+2:19 main topic of stock market analysis with
+2:21 python and machine learning we also need
+2:25 to add a disclaimer here so this is um
+2:28 we usually don't do this but since this
+2:30 topic is about Market stock market
+2:34 analysis uh it's a kind of sensitive
+2:37 topic in a way that in the sense that if
+2:40 you invest something you do this on your
+2:43 own risk so we're not experts
+2:45 here and um yeah so we're not certified
+2:49 experts in the field so um yeah we
+2:53 cannot clim that this is U like I don't
+2:56 know if I there is a disclosure that
+2:58 disclaimer I need to to probably read
+3:00 your B so I'll just do that it sounds
+3:02 boring but I just to be on the safe
+3:05 side so given that we are going to
+3:07 discuss financial matters we want to add
+3:09 that we are not certified experts in the
+3:11 field we do not claim that the matter
+3:14 material discussed in this podcast is
+3:16 complete nor correct not at full
+3:18 disclosure of all risks neither should
+3:20 anything discussed in this podcast be
+3:22 considered as
+3:23 solicitation recommendation or offer to
+3:26 buy or sell any Security Financial
+3:28 product or instrument
+3:30 okay there is one more sentence so
+3:33 private advisers should be consultant
+3:35 before entering in any transaction
+3:39 so I had to say that thanks johana for
+3:43 actually thinking about that and
+3:45 preparing um yeah anyways so this is a
+3:48 serious topic but also quite
+3:51 interesting and uh before we actually go
+3:54 and discuss this topic I want to know
+3:57 about your background can you tell us
+3:59 about about your career Journey how did
+4:01 you yeah so what did you do in your
+4:05 life uh probably I thought a little bit
+4:08 earlier I I finished two universities
+4:10 one was about computer science and
+4:13 another one was master of arts and
+4:15 economics specializing in finance and
+4:18 data analysis so and since then I I
+4:21 always worked between analytics
+4:23 programming and real business and uh I
+4:27 started my professional um experience uh
+4:31 while working for four years as a
+4:33 financial analyst at in in a big
+4:36 Commercial Bank there I learned how to
+4:39 deal with SQL um server how to write
+4:44 queries and I built a few profitability
+4:48 models for um banking products like U
+4:52 loans
+4:53 mortgages
+4:55 Etc uh then I I joined Google uh in in
+4:59 Moscow and I worked there for two and a
+5:01 half years and the position was called
+5:03 industry analyst I worked with a large
+5:07 um sales team that covered only Russian
+5:11 Market but um the position was
+5:13 International straight away so there are
+5:15 many similar analysts in any country in
+5:18 the world and uh we shared our
+5:21 experience um very often uh I worked
+5:24 there for two and a half years and then
+5:27 I decided to to move uh to Ireland and
+5:30 in Ireland I also changed my position uh
+5:34 from an analyst to to consultant and
+5:38 this consultancy job was focused on
+5:40 mobile web uh I learned how to optimize
+5:45 ux and speed for a mobile website how to
+5:49 pit new technologies like Progressive
+5:52 web apps accelerate mobile Pages best
+5:55 user experience in filling lengthy forms
+5:59 and and after two more years I changed
+6:02 my position to my current role um I
+6:05 returned to to the analytical role I
+6:09 work for a um large sales team again
+6:13 covering slightly different um product
+6:17 but now the role uh is about European um
+6:21 All European markets Middle East and
+6:24 Africa and it's um it's even more Global
+6:29 so we we do participate in global
+6:32 product managers meetings and
+6:35 planning that's that's it that's a my
+6:37 short um
+6:40 experience professional
+6:42 experience so you mostly worked at
+6:44 Google BR your career yeah for almost 10
+6:48 years now n n 10 years it's really
+6:52 that's really impressive I'm feeling
+6:53 like a dinosaur here many many new
+6:56 people come in and uh Le in but I'm
+7:00 still here it's amazing if you can find
+7:03 a place where you can constantly grow so
+7:07 it's it's impressive and grow and not
+7:10 feel do not feel
+7:12 bored yeah it's a lot of opportunities
+7:15 and changing positions uh three
+7:19 positions at Google it helps as well
+7:21 because it's all different
+7:23 roles and now as analytical team lead
+7:26 you probably also manage people you work
+7:28 as a manager
+7:29 uh not not really so it it was an
+7:32 experiment for half year I prefer to be
+7:35 like an IC what we called individual
+7:38 contributor and for me it is easier to
+7:40 focus on a complex projects while a
+7:43 people manager is a very different
+7:46 Ro so I'm trying to stay away I was
+7:50 offered for a few times but I I want to
+7:53 to drive I see projects for now you
+7:57 didn't like
+7:58 it it it is very different I think I'm
+8:01 I'm losing focus uh so if you need to to
+8:04 talk with uh 10 people and um it's a
+8:09 weekly catch UPS you you just can't
+8:11 drive any individual projects and I'm I
+8:14 have so many things that I want to do um
+8:18 like
+8:20 uh complicated U ml projects or just
+8:24 analysis so I I prefer to to drive
+8:28 Direct business in
+8:31 as an analyst you can do machine
+8:34 learning
+8:35 projects uh I can though so it's it's
+8:38 not very often here uh for a business
+8:43 intelligence analyst and they they are
+8:45 hard to to do but there are no
+8:48 restrictions if you really want to do
+8:50 this you can do
+8:52 it okay that's cool I see why you stayed
+8:56 there for so long because like there's
+8:58 such a variety like you don't really
+9:00 have any limits you can if you want to
+9:02 do machine learning nobody will tell you
+9:03 hey your analyst you're not supposed to
+9:05 do that you just go and do right if you
+9:07 can prove that there is a business
+9:09 impact if you can simplify and make your
+9:12 stakeholders interested and this is
+9:14 actually something that is very valued
+9:17 by direct clients and you bring
+9:20 incremental Revenue so they will be
+9:22 happy to have
+9:24 this yeah and how did you become
+9:27 interested in investing
+9:29 was it related to your education in
+9:32 economics or was something else yeah I'd
+9:35 say it started while I I had a few
+9:39 courses on banking financial markets
+9:42 asset pricing I read a lot of U research
+9:46 papers about it I think it was a good
+9:49 and a bad thing um a Bad Thing be uh it
+9:53 was because we had an idea that all
+9:56 markets are efficient and you can't get
+9:58 any arbit trash so I didn't use any of
+10:02 that knowledge for for some time but I
+10:05 continued reading um some books may stop
+10:09 you so what you said all markets are
+10:11 efficient and you cannot use any
+10:13 Arbitrage yes what do sorry yeah what
+10:18 does it mean like what is it arbit is
+10:23 like cheaper
+10:25 sell yeah kind RIS riskless Revenue
+10:29 so that's uh if you want to trade um and
+10:34 if you want to make any any gains uh so
+10:38 if you do it uh without any risk and
+10:41 with a 100% uh
+10:43 probability that may be considered as an
+10:47 Arbitrage so that's there are scientific
+10:51 papers that say that markets are weakly
+10:54 or strongly efficient that all Arbitrage
+10:57 is taken away by big hedge funds big
+11:01 companies and as an individual investor
+11:03 there is no or very small opportunity to
+11:07 do
+11:08 that
+11:10 okay but still there are many people who
+11:13 are trading for their personal
+11:16 Investments and they can do some profits
+11:19 uh like five 7% yearly profits in S&P
+11:23 500 in the last 20 years which is
+11:26 probably much higher than you can get
+11:28 zero to
+11:29 1% just having uh your money in a
+11:34 bank okay so you were interested in that
+11:37 uh but he thought that uh markets are
+11:40 efficient there is no Arbitrage so you
+11:41 didn't
+11:42 do any investing but then he figured out
+11:45 that it's actually possible right yeah
+11:49 and at some point I I wanted to have a
+11:51 pad project so like I I wanted to test
+11:54 new technologies and wanted to have
+11:57 something in in the internet like create
+12:00 a
+12:01 website um publish some articles record
+12:06 videos and my natural selection of this
+12:10 bad project was to create a block about
+12:14 investing and after writing articles for
+12:18 a year or so I started doing real
+12:22 investing ah so you weren't investing so
+12:25 first you were learning you were
+12:27 blogging about that and then you
+12:29 understood okay now I know enough let's
+12:32 actually try that I I had some theoretic
+12:36 Knowledge from from the University but
+12:38 then I wanted to check all of that so I
+12:40 wrote uh programs in Python I I managed
+12:44 to get the data I could see within
+12:47 simulations that I can have some profits
+12:51 even expected profits so I I I said to
+12:54 myself now I I should do this I should
+12:57 try it and actually this works as a self
+13:01 enforcement and self commitment so that
+13:04 if I invest my own money I will spend
+13:07 time on this even if I don't have time
+13:09 left or no power left after my normal
+13:14 workday can you tell us more about this
+13:17 so you said like you figured out how to
+13:19 get data and how to do
+13:22 simulations and maybe you can tell us
+13:25 more about like where did you get that
+13:26 data from and maybe
+13:29 where people can get data now today and
+13:33 how to do perform these
+13:36 simulations yeah sure um I can say that
+13:39 uh my early article about getting data
+13:42 that out two years ago is still the the
+13:45 most popular article on the website so
+13:48 um please check it out on on python
+13:51 west.com uh I think the the main data
+13:54 source the name of the
+13:55 article uh it's it's something about
+13:59 um let me check one
+14:06 second um exploring Finance apis with
+14:10 python yes yes that's that's
+14:13 right yes so I will add the link now
+14:18 to
+14:20 um and and the very first link uh Yahoo
+14:24 finance API it's it's the most important
+14:27 one so you you can get um daily stats or
+14:31 even hourly stats about many stocks and
+14:35 not only stocks on the market and in
+14:38 most cases this is enough to start you
+14:41 can add on top of that some other uh
+14:44 apis uh like wandal API or pandas data
+14:48 reader or paid apis like polygon do doio
+14:52 if you need this um but I can say that
+14:55 uh it's quite hard to combine all of the
+14:59 data sources into the one data set and
+15:02 normally I have a fragmented ideas where
+15:06 I use just a few uh data sources and I
+15:09 want to build some strategy on
+15:12 that so what is this yaho Finance API do
+15:16 they give like for each uh stock do they
+15:19 give your time series or what exactly
+15:22 yes yes there is a
+15:24 websitei finance. yahoo.com and this API
+15:28 I I think this is not even an official
+15:32 one so someone uh is managing that for a
+15:36 number of years um the the data looks
+15:40 like um daily or hourly or minutes time
+15:45 series and it is called
+15:47 oh clv open high close low and volume so
+15:54 these five numbers they perfectly
+15:57 indicate um any time period it can be a
+16:02 minute or an hour or a day uh sometimes
+16:05 if if you're really professional you
+16:07 will need to connect to real time stream
+16:10 and have uh trades uh in in your data
+16:14 but it's not easily available for a
+16:16 retail investor and probably you don't
+16:18 need it because it's it's a lot of data
+16:21 it's it's quite hard to get realtime
+16:23 decisions on
+16:26 that and you said this is
+16:29 kind of an official data
+16:31 source what do yeah I'm not sure that
+16:34 supported by by Yahoo
+16:36 finance maybe it is scrapped uh but you
+16:40 you can check uh in
+16:42 pie um there is a GitHub report and
+16:45 2,000
+16:47 stars and someone who is not directly
+16:50 related to
+16:52 Y thei is supported by Yahoo but the
+16:57 python package is not right so the pyth
+17:00 package talks to probably probably
+17:02 you're right yes I I don't know for sure
+17:05 what I saw that sometimes it is not
+17:07 stable and it has uh uh limitations that
+17:11 you you can't do more than 2,000 calls
+17:14 in one hour so if you want to scale your
+17:17 algorithm or if you want to have it
+17:20 updated automatically every hour or
+17:22 every minute probably you will have to
+17:25 move at some point to pay data
+17:27 sources but this is enough to get
+17:29 started like this I just I just checked
+17:33 um it's a web page so there is date
+17:37 there is open high low close yes
+17:41 volume I have no idea what this things
+17:44 mean open high low close I guess like
+17:47 how much background do I actually need
+17:49 to to get started here to make sense of
+17:52 this data I think now it it it's like a
+17:56 commodity that you can download an app
+17:58 you can invest
+18:00 501 whatever you can buy and you will
+18:03 quickly understand so open it's an open
+18:07 um price when uh trade day begins close
+18:11 is a close price high is a highest price
+18:15 during the day low is at lowest uh price
+18:18 and volume it just volume of
+18:20 transactions or it can be volume um of
+18:24 money that were traded So within these
+18:27 five numbers won't reflect the whole
+18:29 time series that's it can be millions of
+18:32 trades for one stock in a day with just
+18:35 five numbers but generally they are
+18:37 quite good and there is this adjusted
+18:40 close does it
+18:44 mean I I do not know it can be it's like
+18:48 actually the same as close like I don't
+18:50 see any difference most of yeah just if
+18:53 you see adjusted you always use adjusted
+18:56 uh okay I I think that's uh for our
+18:59 purposes when when you do analysis and
+19:01 trade not one second before um previous
+19:05 data receiv received it it doesn't it's
+19:08 not um very important because there will
+19:11 be sometime past like few minutes few
+19:15 seconds and the price will be different
+19:16 for sure so whether it is adjusted or
+19:19 not it's not that important okay so
+19:21 right now I opened your article and in
+19:23 this article there is a section about
+19:25 Yahoo finance API and then there is a
+19:27 link to finance. yahoo.com and quote
+19:32 from piser Inc and I see all this
+19:36 numbers open high low close volume right
+19:40 yes what kind of analytics what kind of
+19:42 analysis can I do on this data how can I
+19:45 use
+19:47 it so for example you're interested in
+19:51 some stock or in some vertical that you
+19:53 have following few stocks and you can
+19:56 treat it as a Time serious that's um
+20:00 that can be growing neutral or declining
+20:03 and you can try to make profits from any
+20:06 Trend that that you can see the probably
+20:09 the simplest um strategy can be like
+20:12 mean reversion strategy that if you see
+20:15 that your stock is going down and uh at
+20:19 some point you will expected to to be
+20:23 back again to to the previous historical
+20:26 mean which not always happens but often
+20:29 times it happens and you can build some
+20:32 simple or not that simple strategy on
+20:35 this time serious so that you want to
+20:39 predict when it goes back and you want
+20:41 to buy lower and sell higher that's how
+20:44 you make some
+20:46 profits so if I understood correctly the
+20:49 strategy so what I do is I look
+20:52 for so I have this data right so I have
+20:55 high and low I probably need some sort
+20:57 of aage for the day so maybe it's just
+20:59 the the the average between high and low
+21:02 right so I have that for each
+21:04 day and then I see what is the overall
+21:09 mean of the time series right and then I
+21:11 see okay right now it's going back so
+21:14 then I can expect with certain
+21:16 probability that it will go back to the
+21:19 mean right so it's SL right now it's
+21:22 below the mean it will go back to the uh
+21:25 mean so now I can buy the stock right
+21:28 and expect that it probably should go
+21:31 back yes that's that's correct and while
+21:35 an individual stock might not go back
+21:37 overall if you apply to I don't know 10
+21:39 20
+21:40 stocks then like it will kind of average
+21:44 out and the overall effect will be
+21:47 that most of them go back to the mean
+21:50 some of them don't yeah that's that's
+21:52 why you need simulation and that's why
+21:54 you need predictions so that you can't
+21:56 guarantee 100% that it will go back back
+21:58 but if you're correcting 60 70% of
+22:01 chances and your uh winning uh deals are
+22:06 actually covering your losses then you
+22:10 make some
+22:13 profits so I have two questions right
+22:15 now so I'll
+22:16 just so first of all first the question
+22:19 is like okay now I see losses what do I
+22:22 do with
+22:23 them that's a that's a very good
+22:25 question so I I did uh I started with
+22:29 the m trading and I didn't have any risk
+22:31 management system implemented risk
+22:34 management means that if normally if you
+22:38 see any losses you you need to have some
+22:41 tolerance for for losses it can be 5%
+22:44 15% 50 50% losses if you trade crypto so
+22:49 that's uh you shouldn't be trade trading
+22:52 with your guts feeling but if there is
+22:54 any losses higher than your threshold
+22:57 probably
+22:58 you need to sell your position straight
+23:00 away and fix the losses but it it again
+23:03 depends on your strategy so if you you
+23:06 need to simulate and test that if you
+23:08 trade with this uh losses fixing
+23:12 strategy or not it should show you that
+23:16 uh you have better returns overall
+23:20 because you may sell when it went just
+23:23 below uh 10% drop and then it came back
+23:26 so maybe sometimes it is better to sell
+23:29 sometimes it is better to wait so um
+23:33 there is no real answer but what I can
+23:35 say that many Traders or professional
+23:38 Market participants who treat this as a
+23:41 as a full-time job they have this uh
+23:44 risk systems integrated so that they
+23:46 don't need to think when uh and how to
+23:50 trade it it's all
+23:53 algorithmic what if I don't sell what if
+23:55 I don't recover the losses it means I
+23:58 will not be able to use the money from
+24:01 selling the stock to buy something new
+24:04 right you will you will receive uh just
+24:07 less money um you you probably you will
+24:11 be able to sell it and if markets are
+24:14 not uh closed sometimes uh when it's a
+24:17 big volatility uh markets are closed and
+24:21 you can't do anything um but uh in 99%
+24:25 of cases especially if it's a big
+24:27 markets like American Stock Exchange
+24:30 they are always open you you just you
+24:33 will receive less less money and um it
+24:36 will be much harder to to return to the
+24:41 sum that you had
+24:45 previously and I've just heard
+24:48 somewhere that uh I think it was a
+24:50 podcast I was listening to they were
+24:53 talking about investment too and they
+24:55 said that the best strategy is always
+24:57 hold like okay you have like some shares
+25:01 you see they dropping just don't sell
+25:05 them so they will come back in two years
+25:08 maybe and you will still earn money from
+25:11 them um yeah that's that's um generally
+25:16 it's a good recommendation if you're not
+25:18 a professional Trader or if you do not
+25:21 have uh uh daily Robo trading bots so if
+25:26 you are a long-term investor you
+25:28 shouldn't be looking in a short
+25:31 fluctuations um that can be irrational
+25:34 that can be connected to some news
+25:36 published so if you're doing these um
+25:40 accidental behavioral moves generally
+25:42 they are bad so that uh if you're just
+25:46 an average person um it's always better
+25:50 to to have a longterm strategy and
+25:53 that's what I did when I didn't have a u
+25:56 risk um um
+25:58 management system and when I didn't sell
+26:01 some of the stocks that started to to
+26:04 drop and I had to sell them at some
+26:08 point of time and um I had losses I
+26:12 changed my strategy into a passive uh
+26:15 strategy where I have a few funds uh
+26:19 large exchange traded funds um that I
+26:23 invest in and I do not rebalance them I
+26:26 decided once
+26:28 uh what should be a portfolio allocation
+26:30 and now every time I have uh free money
+26:34 that I want to invest I just buy exactly
+26:37 the same um weights for for a small
+26:41 number of stocks and they are long um
+26:45 very very long so I hold
+26:47 them okay I actually got lost a bit so
+26:52 you said many things like long stocks
+26:55 rebalancing strategy portfolio
+26:58 location we probably should talk about
+27:00 that later sure one question I still
+27:03 have is um so we know how to get data
+27:07 from for example um yaho Finance
+27:11 right then um we talked about doing some
+27:15 analytics on that and the easiest
+27:17 analytic is this mean reversion strategy
+27:21 right so we can see if something is
+27:23 below historical bin we expect that it
+27:26 would recover
+27:28 and then we also talked about risk
+27:30 management strategies like for example
+27:32 if we
+27:33 go how much can we cerate the price
+27:37 going down right okay we have all these
+27:41 components which is probably enough
+27:43 to get started right and then there is
+27:47 this important thing you mentioned is
+27:48 simulation right so I have
+27:51 some you know pieces in place I think
+27:54 overall it would work so I have the
+27:56 strategy I have this risk management
+27:59 strategy uh how do I actually test it
+28:02 how do I verify that if I put real money
+28:05 this thing it will not um deplete my
+28:09 bank
+28:10 account yeah that's a usual thing when
+28:14 when you deal with the train test
+28:16 validation data sets the only thing is
+28:19 that you you can't to uh as a data
+28:23 engineer data scientist you can't uh um
+28:27 have the um sorted in a random order so
+28:30 I always have a validation data set it's
+28:33 the latest data that is seen um and the
+28:37 model never sees this data so if you do
+28:40 simulation you need to make sure that
+28:44 the model didn't see not only those
+28:47 numbers but numbers around it one hour
+28:50 or one day before and one day after
+28:53 because it it can quickly learn and it
+28:56 will be a data Di
+28:58 so can you say it again so like you
+29:00 mentioned that there is some model some
+29:02 strategy right so it can be simple
+29:04 analytical strategy it can be a
+29:06 model and we use the data for example
+29:11 from Yahoo finance
+29:14 to come up with an algorithm come up
+29:17 with to train a model and what you said
+29:19 is like we leave the last few days or
+29:22 the last couple of
+29:24 Records aside we don't train the model
+29:27 on them
+29:28 right and then so this is I guess like
+29:30 the usual kind of time serious
+29:34 validation yes strategy right and then
+29:37 what do you do with these uh last two
+29:40 records you test your model on them or
+29:43 yes so it's a I I can give an example of
+29:46 of the exact thing that I had so I
+29:49 started from 100 largest US stocks and I
+29:53 made predictions for one week ahead so I
+29:56 tried to pred predict and historically
+29:59 you can calculate future growth uh from
+30:01 from the data when you don't know the
+30:03 future growth but you have 20 years of
+30:06 history or so so uh I built an ml model
+30:10 I predicted growth for uh every uh stock
+30:14 I combined some of the predictions with
+30:16 some rules like thresholds that
+30:18 predictions should be strong enough I
+30:20 picked top three and invested with equal
+30:25 shares and then but I didn't use last
+30:30 one two years data for training and
+30:33 testing when I had that model um
+30:38 I um I used that model to to predict and
+30:42 simulate on the last two years of data
+30:45 and see whether this strategy actually
+30:48 delivers me profits and what I wanted to
+30:51 see I I saw some variations so there
+30:53 were profits and losses but I calculated
+30:56 rolling um
+30:58 Financial um uh profit and loss um sum
+31:03 and I wanted to see this rolling like in
+31:05 the last six months that they that I can
+31:09 consistently earn some money it can be
+31:12 like 5% or 10% on my Capital that even
+31:17 in one day I I I can be plus 20% in
+31:21 another day I can be minus 10 10%
+31:24 overall on average um I can consistently
+31:28 earn every single month and that's the
+31:31 that's an ideal picture to
+31:33 have okay so I'm just trying to picture
+31:36 this in my head so let's say we have
+31:39 this largest US Stocks we have data for
+31:42 them for I don't know for how long 10
+31:44 years right so what we do is let's say
+31:47 we train our model
+31:49 for I don't know six years right so we
+31:53 take the last six years not all 10 years
+31:55 we train our model and we predict what
+31:58 would be the performance for the next
+32:00 week yes right on historical data so six
+32:05 like four years ago or whatever right
+32:07 and
+32:07 then we retrain our model we maybe move
+32:11 one
+32:12 day up or I don't know one week and we
+32:15 kind of slide this window throughout the
+32:17 entire history of the data that we have
+32:20 right and every time we see okay for the
+32:23 next uh week for the next week for the
+32:25 next week how the model would perform in
+32:27 history with all the historical data we
+32:29 get from Yahoo
+32:31 right you need to separate the data
+32:34 you're training on and everything that
+32:36 you're simulate on so that's like in the
+32:40 real setting if if you have some model
+32:42 that you need to trade on so it it just
+32:46 never saw this data you can't simulate
+32:49 on the historical data if you try to
+32:51 apply that you trained the model one
+32:54 week ago or one months ago and you show
+32:56 it
+32:58 uh the the newest data so that's why I
+33:01 just uh leave one or two years data uh
+33:06 away and I do not use it for model
+33:09 training or for hyperparameters tun
+33:12 tuning or for anything else and after I
+33:16 train the model I I use this model to
+33:18 predict for the last one or two years
+33:22 and I simulate that I trade with this
+33:25 model within some strategy
+33:27 that I have in in my head um and I can
+33:31 check if it if it gives me some um
+33:35 profits uh then I would expect that um
+33:39 it it will continue working now so let's
+33:43 say today is
+33:45 2023 right and you want to train a model
+33:48 right now or come up with some strategy
+33:50 so you take some data for the last 10
+33:52 years and let's say you train only from
+33:56 20
+33:57 2013 till
+33:59 2021 right yes and then your applier
+34:02 model for the rest of the years for the
+34:05 rest of like 2022 and 2023 right and
+34:10 then on um daily basis you see how much
+34:15 this strategy would yield right or lose
+34:19 yes and then you also see like
+34:22 overall what's the yield of this like is
+34:24 it positive negative how much you would
+34:26 earn
+34:28 that's that's why you need to compare
+34:29 like it it should be higher than any
+34:32 other alternative Investments that you
+34:35 can get if you can get 3% in the bank
+34:38 then there is no point to do any
+34:40 investment trading if you can get less
+34:43 than that so need to have five or 10% or
+34:47 whatever you get and that the another
+34:50 thing is that it's it's uh it can be 100
+34:53 different strategies to trade on the
+34:55 exactly the same predictions so you need
+34:57 to to run actually several simulations
+35:01 and you need to be very deep uh in in
+35:05 the stock markets and improve those
+35:08 strategies so they are equally important
+35:10 as uh to build a good
+35:14 model and um how do we actually do this
+35:17 simulation because we also need to think
+35:20 like what what is a strategy right
+35:22 strategy is we have some algorithm right
+35:24 and then also what exactly we do
+35:27 with the out output of this algorithm so
+35:29 in your case you said we take 100
+35:32 largest US stocks and we pick the three
+35:35 most performing one right then we have
+35:37 some sum of money and we allocate evenly
+35:41 the sum of money with split to all these
+35:43 three stocks that's a strategy right yes
+35:46 and that was uh actually um there are
+35:50 five trading days for stocks from Monday
+35:52 to Friday at a specific time and late in
+35:55 the evening of a pre previous day I got
+35:58 all the data on the closed uh markets um
+36:02 and I could predict on the latest
+36:04 available day what is the returns for
+36:06 the next uh week and uh on the very
+36:10 beginning of the next day when the
+36:12 market just opened I bought some shares
+36:17 uh that that were predicted to grow but
+36:20 before buying the shares I actually sold
+36:23 shares that I bought one week ago so it
+36:26 was was like a split that every
+36:30 day um out of five days I I would trade
+36:34 20% of my Capital like I had, Euros to
+36:38 invest I would trade every every day
+36:41 €200 EUR on on a number of predictions
+36:45 that I have and if my previous month
+36:49 previous week uh Investments actually
+36:53 delivered some gain it will be not to
+36:55 200 but it can be 210 or
+36:58 190 that is available for me just today
+37:03 so that was the exact strategy that it's
+37:05 I did predictions actually every single
+37:09 day and so what is not clear is uh do
+37:13 you allocate like at the beginning you
+37:16 allocate only let's say
+37:18 $1,000 and it's a part of the strategy
+37:21 how exactly you split this
+37:23 1,000 right yeah yes at the beginning
+37:27 you can maybe take all this thousand and
+37:29 invest in these three companies and then
+37:31 see after one week how exactly it
+37:32 performs sell something and on the money
+37:36 you get from that buy something new
+37:41 right yes that that that can be the
+37:43 strategy if you if you invest only once
+37:46 uh in in a week so if you just invest on
+37:49 Friday and you wait until next Friday
+37:52 that's a can be a good strategy but if
+37:55 you want to trade every single day
+37:57 and you you have different predictions
+37:59 and you hope that more predictions you
+38:02 have um more trades and expected uh
+38:08 return is higher from from more trades
+38:11 then you want to trade more often so if
+38:13 you trade every single day then you need
+38:15 to invest not 1,000 but 200 because you
+38:20 don't have more
+38:23 money so let's say I'm getting started
+38:26 and I have my data scientist salary so I
+38:30 think okay like if I leave aite 50 every
+38:35 day then uh yeah my strategy can be like
+38:40 for every day when the market is open I
+38:43 see how can I invest this 50 or $50 and
+38:47 then also in addition to that the stocks
+38:50 somehow are performing so I can do maybe
+38:53 sell the ones that are doing quite well
+38:55 and invest the money yeah so that's
+38:59 that's not a very good thing because you
+39:02 start to to look at oh whether they are
+39:06 performing or not if they are not
+39:08 performing you are hoping that they will
+39:10 be back that's why you need a risk
+39:14 management system that's you're selling
+39:17 even if it's if it is a loss because you
+39:19 have money then available to invest for
+39:23 the next predictions and also your
+39:26 limiting your down size of of your
+39:29 strategy so you can't lose like 50% or
+39:32 20% you can lose only 10% that you
+39:36 identified but on the winning part
+39:39 that's exactly the same if you see that
+39:41 the stock is growing in in one month in
+39:43 one week and you're thinking oh it it
+39:46 will grow again why should I sell but
+39:49 your algorithm says you need to sell in
+39:52 one week the only exception and it can
+39:54 be an adjustment to to your strategy is
+39:57 that if exactly one week after your your
+40:01 algorithm predicts again that this stock
+40:04 is selected out of 100 and it has a very
+40:07 high chance of growth maybe you don't
+40:10 need to sell it and hold it for another
+40:12 week but you need to have these
+40:14 predictions so by default you you're
+40:16 selling no matter what in in one
+40:19 week okay I see so you're not holding to
+40:23 the you just whatever you have you sell
+40:25 and you reinvest
+40:26 yeah that's that's if you DOL prediction
+40:29 yeah that's that's what people call day
+40:31 trading or short-term trading or like
+40:34 arbitr trading whatever uh if you if you
+40:38 have another strategy that's like a
+40:41 passive investment that you allocate
+40:43 once and you hold for a number of years
+40:47 that's a totally different
+40:49 area and there's a question about
+40:51 metrics so one so let's say we do the
+40:55 simulation
+40:57 and I guess for us what we care about
+40:59 mostly is the money return on investment
+41:02 right yes so it's positive negative and
+41:04 if it's positive how much right that's
+41:06 what we care about is there anything
+41:09 else we look at when doing simulation or
+41:12 when actually
+41:15 trading uh yes
+41:19 so I think um there are metrics like a
+41:23 usual metrics for ML scientist like uh
+41:28 accuracy precision and Au if it's a
+41:32 binary model you can you can make a
+41:35 regression prediction and bads for not
+41:38 just a market movement up or down but
+41:41 for
+41:42 exact um Revenue that you will get 10%
+41:45 or 5% or 20% and this is much harder
+41:49 thing to do so um but I would say if you
+41:53 think only about binary models and and
+41:57 this is what is different in finance
+41:59 that I care more about Precision rather
+42:02 than accuracy so I need to guess uh I
+42:06 need to make my predictions right and
+42:09 only half of the predictions are very
+42:11 important for me that's those that are
+42:14 predicted to grow so that's why I Target
+42:17 precision and another another thing that
+42:20 you need to consider is a trading fees
+42:23 that is like every time you trade you
+42:26 give away some fees for buying and
+42:29 selling so actually you you need to
+42:33 minimize the number of Trades uh because
+42:36 those fees can eat up all of your
+42:40 Revenue that that is a big consideration
+42:44 for a
+42:45 simulation piece of
+42:47 work okay so when simulating we also
+42:50 need
+42:52 to minimize to take into account the
+42:55 price of
+42:57 the fees right the fees so when we
+43:00 calculate the total return on investment
+43:02 it includes the fees yes it it can be as
+43:05 simple as that if you trade €200 every
+43:09 every day um fees can be normally 1% so
+43:13 it is two for a buy two EUR for for sell
+43:17 so it is four Euro and you need to make
+43:21 at least four EUR in profits in one week
+43:25 and to cover your trading fee so you
+43:27 just need to be not on not just positive
+43:32 but positive uh higher than a specific
+43:38 threshold and you spoke we talked about
+43:41 machine learning models and specifically
+43:44 binary classification models so what is
+43:47 uh typically the variable the outcome we
+43:51 try to predict is it if the stock is
+43:53 going to
+43:55 grow yes it's um I I calculate a growth
+44:00 rate in in one week for for the next
+44:03 week or for the next months it depends
+44:05 on the time period that you're trading
+44:07 let's assume it's one week and um I can
+44:10 see that if it is growing uh more than
+44:13 zero or like more than 5% then I uh
+44:18 Define this outcome as one as a positive
+44:21 growth and I have a different
+44:23 definitions if it's just a
+44:26 growing up or down it is a very balanced
+44:29 classes 5050 more or less um it is
+44:33 better to easier to predict but probably
+44:36 you your financial result W won't be
+44:40 that perfect because sometimes you will
+44:43 guess correctly on the stock movements
+44:45 but your trading fees will eat all of
+44:47 your Revenue that's why I Tred to
+44:50 predict uh um growth that is higher than
+44:55 5% for example in a week so that's it's
+44:59 now it's unbalanced problem that
+45:01 probably it's only 20% of cases that
+45:05 have this uh thing it's harder to to
+45:08 build a model to predict this and maybe
+45:11 even different features are important
+45:13 but now I'm um having hopefully a better
+45:18 Financial result but it's all need to be
+45:21 simulated MH and you mentioned features
+45:25 I assume
+45:26 everything we talk about is based on the
+45:30 data we saw we talked about right which
+45:33 is um let me open it again open high low
+45:37 close and volume right yes that this is
+45:41 the the most fundamental data set it can
+45:43 be like 100 stocks it can be some other
+45:48 data sources but this one is maybe 70%
+45:52 of all features that are the most
+45:54 important ones how do you
+45:57 build like let's say we want to build
+46:00 the simplest possible model for that but
+46:02 still use machine learning like GC
+46:05 regession or something else so how
+46:07 exactly would we
+46:10 design the problem right in order to
+46:13 predict um this growth of 5% or more
+46:18 like what kind of features we would use
+46:20 how exactly what kind of model we would
+46:22 use how would we prepare the data
+46:27 yeah so we get all the historical data
+46:31 available we generate um some features
+46:37 like um whether the stock is growing 10
+46:40 days in a row whether there are some
+46:43 patterns like a huge drop or anything
+46:48 else based on on the historical time
+46:51 series and then you treat every
+46:54 observation like on only one observation
+46:58 that that you have just for today what
+47:01 information um do I have based on
+47:04 today's data and all previous
+47:06 information from a number of days weeks
+47:09 or years so I get like 200 features
+47:13 whatever I can come up uh with and um I
+47:18 um try to predict the the growth more
+47:22 than 5% in a week and I can generate
+47:25 this uh from from the data because I see
+47:29 what happened in five days but I I do
+47:32 not show this to the model it's it's
+47:34 something that I want to predict what
+47:35 will happen in the future in the nearest
+47:39 Future and I treat this observations as
+47:42 independent which is not correct like
+47:44 stocks are generally dependent to each
+47:48 other and also depend on dayto day so it
+47:51 it is a
+47:53 simplification but it it works Works
+47:56 somehow and um you you can have some
+48:00 profitable
+48:01 strategies so with these features that
+48:03 we generate we can train logistic
+48:06 regression or XG boost or like
+48:10 classical um models right we don't even
+48:13 need to use any time series uh specific
+48:16 time series models
+48:17 here you don't um and I think um like I
+48:23 have plans to to use LTC M or recurrent
+48:27 neural networks but I really doubt that
+48:30 they are much better um so that's you
+48:34 you can tune simple neural networks with
+48:38 so many parameters or each boost so that
+48:41 you will be probably of a good Baseline
+48:46 model quality uh so that you can apply
+48:49 for a number of
+48:52 strategies when it comes to time series
+48:54 uh some time ago I think it was very
+48:57 long time ago but I was quite actively
+49:01 following kagle competitions and to
+49:03 remember so it was before like lstms
+49:06 really took off uh but back then like
+49:10 still the models that were winning were
+49:13 ex boost and so on like for time series
+49:16 still the same models on on K and that
+49:19 was a a good Revelation for me that uh
+49:24 actually you need to work a lot on your
+49:27 features and uh area understanding
+49:30 rather than a very complicated model
+49:32 that you you can't debug and you can't
+49:34 understand what happens inside that's
+49:36 why I spent a lot of time on features
+49:39 explainability and trying to really feel
+49:42 that connections why this or that
+49:44 feature is the most important one uh
+49:48 what are the examples uh that this
+49:51 feature actually influenced on on the
+49:54 stock market
+49:57 move okay so the features are I assume
+50:01 from what I understood from our
+50:03 discussion they are simple statistics
+50:06 but calculated over a period of time so
+50:09 let's
+50:10 say was the stock growing in the last 5
+50:14 days 10 days 20 days 30 days right then
+50:17 you can calculate like I don't know many
+50:19 different features like that or could be
+50:23 the percentage of stock growing could be
+50:27 I don't know Average stock price could
+50:30 be the trend right all these features
+50:32 and then you just throw all these
+50:34 features into your model and then you
+50:36 see what is important what is not and
+50:38 then you figure out like which features
+50:40 are useful which are not and then you
+50:42 said explainability is important so then
+50:45 you can analyze all the features
+50:46 yourself and H okay it makes sense that
+50:49 the model goes for that feature because
+50:52 reasons right you can understand like
+50:54 okay this feature
+50:56 cuz you handcrafted this feature
+50:57 yourself you understand how it's built
+51:00 what it's doing and you can relate to
+51:03 why igus decided to go with this
+51:05 particular feature is the most important
+51:07 one right yes and that's why simpler
+51:10 model are better because for the uh
+51:13 logistic regression you have features
+51:16 important straight away or for a
+51:18 decision trees you can you can see the
+51:21 steps that it takes and uh if if the
+51:24 especially if the model is wrong you can
+51:27 see why it is relying too much on this
+51:30 or that feature probably you need to
+51:32 generate five additional features and
+51:34 you have some bias you are missing
+51:36 something that uh the model is not
+51:39 capturing this big movement and thus
+51:42 predicting
+51:45 incorrectly I'm also curious about
+51:47 deployment so we discussed all the
+51:48 strategies we discuss simulation for
+51:50 simulation you don't need anything but
+51:53 for the actual Trading
+51:56 like let's say if now we have a strategy
+51:58 we tested it with
+52:00 simulations it's showing good Roi how do
+52:03 I actually start using
+52:06 this like do I just simply have a Chown
+52:08 job on my laptop do I rent an instance
+52:11 on AES where I have this chrome job what
+52:14 are the possible options so that's uh
+52:17 that's exactly why I inrolled into your
+52:20 course so about all these deployments
+52:23 and Crown jobs and lamp the functions
+52:26 and running a web service for me it was
+52:29 a just a trained model and I I clicked
+52:32 the button every day and had some
+52:34 predictions and tried to think about it
+52:36 read some news so I do not feel very uh
+52:41 confident on fully automated trading so
+52:44 I would like to have some step a manual
+52:47 step of checking while there are not
+52:49 many trades to to be made um but ideally
+52:53 yes it should be a data flow
+52:56 um ETL or whatever and Crown job or
+53:00 airflow to launch this uh Crown jobs and
+53:04 um recalculate uh get all the new data
+53:08 that you have make the predictions um
+53:11 use it for different strategies or one
+53:14 strategy that you have uh gets the the
+53:17 trades descriptions and you can even
+53:19 have an um API connection that can place
+53:23 trades for you
+53:25 and that that is also very convenient
+53:27 because you can make you can add
+53:30 additional things uh like stop loss that
+53:33 you can place a TR straight away that
+53:36 buy me a stock for $100 but if it goes
+53:39 beyond 90 sell automatically so when you
+53:43 place that trade you don't think more
+53:46 about it um and that's what I'm hoping
+53:50 to achieve in a few months from now yes
+53:54 so now since you do this this manually
+53:56 with the help of algor you have to be
+53:58 really how to say you have to stick to
+54:02 your uh strategy right cuz like you see
+54:06 okay the model says I need to sell it
+54:08 then like you maybe start questioning
+54:11 it and that's uh that's not not correct
+54:15 that many many books prove that you
+54:17 shouldn't be doing this if if you
+54:20 participate in Daily weekly regular
+54:23 stocks Trading
+54:25 so you just have to follow the
+54:27 recommendations consistently because
+54:29 this exact strategy is what you used for
+54:32 simulations you know that Roi of this
+54:36 strategy is that number right so you
+54:39 have to stick to that like you really
+54:41 have to be consistent you can select
+54:43 some some period like three months or
+54:45 six months and if your strategy is not
+54:48 delivering that Roi anymore probably you
+54:50 need to come up with another strategy or
+54:52 you may have different strategy I like
+54:56 two three five strategies and you can
+54:58 see which strategies are working better
+55:01 in the current market
+55:04 conditions and you mentioned the course
+55:07 from theox Club I assume it was emops
+55:10 course or which one H I followed mlops
+55:13 but now you have ml Zoom cam which has a
+55:17 little bit of mlops things inside as
+55:20 well so yeah I used to have only binary
+55:24 and
+55:25 logistic regression model now I have
+55:28 decision trees and ex boost and neural
+55:31 network so now I have many more models
+55:34 and now I can say okay if I hypertune
+55:36 them how important is this hypert tuning
+55:40 uh how it influences not only on
+55:43 accuracy but also on the final
+55:46 simulation results um yeah but melops
+55:51 it's it's an important thing and you
+55:53 have another course in in jary I will
+55:55 sign up for it too yeah that's dat
+55:58 engineer one yeah that's amazing to hear
+56:00 that you find this useful yeah
+56:03 that's it's very pleasant to hear to um
+56:06 yeah so since we talk about the course
+56:08 right now the students of machine
+56:10 learning Zoom Camp are doing project
+56:13 project and then there is another
+56:15 project uh we will have in January maybe
+56:18 you have some recommendations if
+56:20 somebody some students some of the
+56:23 students want to use
+56:25 to build a model on financial data
+56:28 what's the simplest thing they can do
+56:29 just go to
+56:31 Yahoo data get CVS and go ahead and try
+56:35 that yeah sure or just install this this
+56:39 app don't think too much don't read uh
+56:42 100 different books but try to to design
+56:46 if you're an analyst you will see
+56:48 opportunity straight away if you follow
+56:51 one or two companies or a specific
+56:53 vertical you will think about it but you
+56:56 need to to do a simple step and start
+56:59 actual trading and then you will have
+57:01 plenty of ideas of what needs to be done
+57:04 and then all of the materials with the
+57:07 simplest but working models ml models
+57:10 actually are a very good Feit for for
+57:13 this task the what is interesting with
+57:15 this problem is that you probably won't
+57:19 reach 80 or 90% accuracy never so this
+57:22 is a real world problem it is hard to
+57:25 solve and this is a
+57:28 challenge and probably we have in this
+57:30 episode we have talked enough about
+57:33 different things that for them for the
+57:35 students it's efficient just from
+57:37 listening from this this episode to go
+57:40 and build the first model right but if
+57:44 you want to learn more would you say
+57:46 that your website python invest is a
+57:49 good source and what actually people can
+57:51 find there on your website so it it it
+57:54 actually follows the the same path that
+57:57 I was exploring um so I started with the
+58:01 financial apis then I thought okay
+58:04 probably news are important and I I
+58:07 added news API but it was kind of messy
+58:10 and it's very hard to trade on it and it
+58:12 sentiment analysis which is not
+58:14 necessarily connected with the real
+58:17 returns then I had
+58:19 um um earnings per shed which is a
+58:23 fundamental matter which you can't get
+58:26 through the free apis and I had to to
+58:28 build to write a scrapper and actually
+58:31 from Yahoo finance website um then I
+58:35 said okay I built some model I need to
+58:38 allocate between different stocks not um
+58:42 equally on top three predictions but
+58:45 maybe like you can't differentiate those
+58:47 three predictions your model predicted
+58:49 that they will grow but what is
+58:51 important that sometimes uh you can
+58:54 limit your your down movement just by
+58:57 investing 10% in one stock 50 in another
+59:00 and 40 in in the third one rather than
+59:02 invest in 30 3030 so that came portfolio
+59:06 locations um so that that's a natural
+59:09 flow and so I have 13 different stories
+59:13 uh and I try to construct them with tldr
+59:16 and with a major results first so that
+59:20 you don't need to go very deep into code
+59:23 and data sources and you can understand
+59:25 the idea before you read the whole
+59:27 article I just included the link to our
+59:31 description and the live chat andan if
+59:33 you have a few more minutes sure there's
+59:36 one more question I wanted to ask
+59:39 because I now check on your
+59:42 website I check your website and I see
+59:44 that there is a thing called
+59:46 course yes and it's a six weeks boot
+59:50 camp can you tell us more about that
+59:53 yeah I have this link for for for a year
+59:56 or more and and it's my hope that I can
+1:00:00 launch it uh soon uh for now it's just
+1:00:04 an email subscription and I get people
+1:00:08 interested um it's a constant tradeoff
+1:00:12 for me and that's whether I should wrap
+1:00:15 up everything that I learned and package
+1:00:17 into some course and spend a few months
+1:00:19 doing that or should I go and write a
+1:00:22 new article apply new model
+1:00:25 for my personal trading and what was
+1:00:27 working so far in the last two years for
+1:00:30 me it's it's a personal trading so for
+1:00:33 for a course probably I need some
+1:00:35 collaborators or I just need to
+1:00:38 replicate your mechanism of a peer
+1:00:42 reviewed uh um things so I really liked
+1:00:47 your course or collaborate with with
+1:00:50 someone else with some platform um to to
+1:00:53 design and that so I want to to think
+1:00:57 only about the content but not about
+1:00:59 everything else and it turns out that
+1:01:01 you need to to think about many things
+1:01:03 while doing the
+1:01:06 course that's why I have and probably I
+1:01:10 wait until 500 people are subscribed so
+1:01:14 that now I say okay next next year from
+1:01:17 January I I run it not there yet but I
+1:01:21 hope somay so if anyone wants to learn
+1:01:25 more about that there is a course sign
+1:01:28 up and then when there are 500 people
+1:01:31 we'll have a course it's already 200
+1:01:34 around yes okay so we just need 300
+1:01:37 more
+1:01:38 thanks okay thanks a lot uh yeah it's
+1:01:41 unfortunately time to wrap up for day so
+1:01:44 it was amazing I learned many new things
+1:01:47 hopefully everyone else also learned new
+1:01:49 things so thanks for joining us today
+1:01:50 for sharing remember this was not a
+1:01:54 financial
+1:01:55 advice yeah I'm just saying that in case
+1:01:59 somebody didn't hear the disclaimer at
+1:02:00 the beginning but I personally learned a
+1:02:03 lot and yeah it looks actually like a
+1:02:06 good project for the students of the
+1:02:09 course um so yeah yeah thanks again and
+1:02:13 thanks everyone for joining us today too
+1:02:15 thanks for having me thank you Alex yeah
+1:02:18 yeah

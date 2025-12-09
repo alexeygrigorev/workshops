@@ -1,0 +1,1417 @@
+Pragmatic and Standardized MLOps
+
+0:00 everyone Welcome to our event this event
+0:02 is brought to you by datadox club which
+0:04 is a community of people who love data
+0:06 we have weekly events we usually have
+0:09 like summer was pretty slow but now it's
+0:11 September it's back to school days so
+0:15 now we will try to resume all our weekly
+0:19 events and today is one of such events
+0:22 and if you want to find out more about
+0:24 the events we have there is a link in
+0:26 the description click on that link and
+0:28 you will see what we have in our
+0:30 pipeline which is not a lot right now in
+0:32 addition to this event we have one
+0:34 Workshop so check it out it will be a
+0:36 pretty interesting Workshop it's
+0:37 happening this month
+0:39 so the link is in this this in the
+0:41 description and very important if you
+0:44 don't want to miss out on future streams
+0:47 future interviews future events like the
+0:49 one we have today do not forget to
+0:51 subscribe to our YouTube channel I know
+0:53 interface looks different now and we
+0:55 have a lot more subscribers
+0:57 but I'm sure you will find the Subscribe
+0:59 button and yeah we have an amazing slack
+1:02 community
+1:03 join the two and during today's
+1:05 interview you can ask any question you
+1:07 want there is a paint Link in the live
+1:09 chat click on that link and ask your
+1:12 questions and we will be covering these
+1:13 questions during the interview
+1:16 oh
+1:17 so this is the usual introduction error
+1:22 and now
+1:25 I need to open
+1:28 the document
+1:30 with the questions
+1:32 well yeah I have it now
+1:35 and if you're ready we can start yes
+1:38 yeah I'm ready
+1:40 okay this week we'll talk about
+1:44 envelopes we will talk about
+1:47 um pragmatic and standardized developes
+1:49 and actually we just finished our
+1:52 envelopes course and for the students
+1:55 who just graduated this will be a very
+1:58 interesting and relevant interview so in
+2:01 addition to what we learned what we
+2:03 covered in the course
+2:04 we will see how to actually Implement
+2:06 some of these things we talked about and
+2:09 we have a very special guest today Maria
+2:10 Maria is a machine learning engineer she
+2:13 is Bridging the Gap between data
+2:15 scientists uh
+2:17 infrastructure and ID teams at different
+2:20 brands and she is focused on
+2:22 standardization of machine learning Ops
+2:25 um and yeah it's pleasure to have you
+2:28 here welcome to the show
+2:30 thank you I'm very happy to be here and
+2:33 I love you of course by the way it's
+2:34 amazing I've never fully did that but I
+2:37 looked through it I recommend it to
+2:39 every everyone and I'm planning to do it
+2:41 too at some point
+2:43 I'm not sure how much you will learn but
+2:45 hopefully maybe you will learn something
+2:47 so yeah
+2:49 please let me know to see how others do
+2:52 the courses so it's uh that's what I
+2:55 like about it
+2:57 yeah
+2:58 thanks so the questions for today's
+3:00 interview are prepared by johannabire as
+3:03 always thanks Johanna for help
+3:05 so now let's start and before we go into
+3:08 the main topic of our Android today
+3:10 which is envelopes let's start with your
+3:13 background can you tell us about your
+3:15 career Journey so far
+3:16 yes it's it's been a while already I'm
+3:20 almost 10 years late in the I feel I
+3:22 started as a data analyst and I studied
+3:25 economics and metrics so doing something
+3:29 in data was logical I guess and data
+3:34 science wasn't there yet there were some
+3:36 data in this job and I got one
+3:38 so I did a lot of things in R built some
+3:41 models chart and acquisition models for
+3:44 Telecom company and did some automation
+3:47 on some from some Chrome jobs running on
+3:50 some servers standing in the room it was
+3:52 funny so no it was like so physical
+3:55 machine yeah
+4:01 yes
+4:03 room right yeah open like I don't know
+4:06 there was probably like a screen right
+4:08 and then you would
+4:10 USB stick with your program or no no
+4:14 there was a shared drive
+4:16 system we could schedule things it was
+4:20 fun
+4:21 um so I really liked automation already
+4:24 back then and then I moved to another
+4:26 team and that was my position already to
+4:29 formally data scientists and I learned
+4:32 python back then and fully switched to
+4:35 python
+4:36 um so I did some models for the fraud
+4:39 detection for mobile subscriptions
+4:43 um and also was busy with it without
+4:45 being and the main project I was working
+4:48 on was model Factory
+4:49 which is basically an mlops project was
+4:53 seven years ago and miloops was not a
+4:55 thing but we already standardized the
+4:59 process of machine learning model
+5:00 deployments across different departments
+5:03 and that company it was KPM Telecom
+5:05 company in the Netherlands and um that
+5:09 was really thinking very forward back
+5:11 then I was when busy with this
+5:14 um and we had a governance on top of
+5:16 that with stera data
+5:18 uh so yeah it was interesting and we
+5:21 rebuilt that system multiple times
+5:22 because two stack was changing over time
+5:25 and uh the last version of it was using
+5:29 kubernetes and Alex Tech monitoring and
+5:32 we have been bucket and Jenkins we had
+5:35 orchestration and then we also did the
+5:39 situation with AWS the native tools with
+5:42 Stage maker step functions and all of
+5:44 that do you remember that it was the
+5:46 first stack how did it look like
+5:49 yeah so uh kpn both Aster I don't know
+5:54 whether anyone knows what that there is
+5:56 but it was something from now it's it's
+5:59 good it's horrible but it was a product
+6:02 from teradata and it was
+6:05 a distributed computing something like
+6:07 kind of spark but worse
+6:10 um you could do machine learning in SQL
+6:13 you could do around the forest the
+6:15 sequel and stuff like that it had also
+6:17 it doesn't sound terrible though
+6:20 um well it didn't work very well it
+6:22 wasn't very user friendly
+6:24 um so we built some representative that
+6:26 he basically triggered execution
+6:29 um on those servers
+6:31 and we used a bit bucket and we had
+6:35 stereo data and some
+6:38 um I'm not sure what kind of dashboard
+6:39 that was back then some some python
+6:42 dashboards we had
+6:44 um with the history about the rounds and
+6:47 you could do interactive search across
+6:50 multiple model runs and all metadata
+6:53 about the models about experimentation
+6:55 restoring interrogated database and if
+6:59 you look at the mail flow what the mass
+7:01 flow does now it's pretty much kind of
+7:03 what we did about the back end was
+7:05 different
+7:06 and we had our own wrappers like
+7:09 um
+7:10 store metadata store RC with our storage
+7:15 presentation results I don't remember
+7:17 the function names anymore it's probably
+7:19 still somewhere on GitHub
+7:21 so it is it is funny
+7:24 um and now I'm kind of doing the same
+7:27 the mailbox framework but tools are
+7:29 different in every company it was a
+7:30 different and I think you have to go
+7:32 with what you've got because fighting
+7:34 for getting new tools it's
+7:38 not always a good idea it will take you
+7:41 a long time and not sure you'll gain
+7:43 anything from it so here we have GitHub
+7:46 GitHub actions we use databricks
+7:50 for pretty much everything and we have
+7:52 kubernetes
+7:54 um
+7:55 well I am I think I have quite good
+7:57 experience building it with this tool
+7:59 stack
+8:01 yeah okay interesting so you started
+8:05 doing envelopes before it was I think
+8:07 when you were a data scientist and now
+8:11 your title is ml engineer right
+8:13 uh well I I guess I'm a my Lobster Clips
+8:18 I don't I don't have a title my official
+8:21 title is manager machine learning
+8:22 engineering something but
+8:25 um I guess I combined three different
+8:27 roles in myself it's more like a product
+8:29 manager also advertising what we do and
+8:31 talking to different departments
+8:34 across the organization and trying to
+8:37 promote what we do get budgets
+8:39 also developing and creating the roadmap
+8:44 mm-hmm
+8:46 that sounds like a lot do you still have
+8:49 do you still get to do Hands-On stuff
+8:52 not that much as I used to before
+8:57 um but I still try to
+8:59 to do something myself I think I was
+9:03 doing something quite similar to what
+9:06 you're doing right now and I did not
+9:08 have time to do Hands-On stuff at all in
+9:11 the evenings yeah in the evenings yeah
+9:15 well I guess now I spend a lot of
+9:18 evenings on marvelous envelopes
+9:21 and it
+9:23 I think we write about
+9:24 about work related because we write a
+9:28 lot about the specific tool Stacks we
+9:30 also use and the best practices we
+9:32 Implement in our organization
+9:34 so
+9:35 um yeah I I also code work related in
+9:39 the evenings yeah and the weekends
+9:41 occasionally
+9:45 what's marvelous uh you mentioned this
+9:48 yeah our most marvelous melops is a Blog
+9:51 that we started in April this year
+9:52 together with my colleague
+9:55 we work together at Hazen at this moment
+9:58 and we wanted to share our knowledge
+10:01 with the world
+10:02 and we started with a medium blog and it
+10:06 created the company page on LinkedIn and
+10:09 later Raphael joined us
+10:12 um and we worked with three of us now on
+10:14 creating the Articles we post an article
+10:17 every week and we create content three
+10:19 times per week we have a meme and we
+10:21 have a Post-It or teach it something
+10:24 like that and we also have a newsletter
+10:28 so I I really like doing that it's
+10:31 really fun and uh I'm also now post
+10:34 every day on LinkedIn
+10:36 um yeah it's you know I really like it I
+10:39 enjoy doing that
+10:40 yeah I think I come across your posts
+10:44 quite often or when I do I of course
+10:46 like them so you can see like yeah
+10:48 what's the like then I saw it
+10:50 okay so yeah if somebody wants to find
+10:53 out more about that
+10:55 they should follow you right yeah of
+10:58 course you should follow marvelous and I
+11:00 love we we do post a lot of useful
+11:03 information about how to become better
+11:05 in the mailbox and how to think
+11:07 pragmatically about it yeah
+11:10 which is the topic not today right so
+11:14 maybe we take a step back
+11:16 I'm curious to know
+11:18 your definition of envelopes what in
+11:21 your opinion envelopes
+11:23 I am a mailbox is a set of practices
+11:25 that allows data scientists to bring
+11:28 models to production in an efficient way
+11:31 and I really see envelopes as enablement
+11:35 tool that you don't have another team
+11:38 that helps you to deploy things but the
+11:40 data scientists need to be given freedom
+11:43 to do it themselves
+11:44 but the goal of a mailbox team is not
+11:47 just a naval but also to teach data
+11:49 scientists how to use it in a correct
+11:51 way because if you just give it to and
+11:53 don't explain how it works and how it
+11:56 should be used it goes wrong
+11:59 um so that's how I see it
+12:01 so
+12:04 almost the same definition I use in the
+12:06 course I think for me I think I use
+12:09 something like it's a set of practices
+12:10 and tools to enable
+12:14 to bring the data science machine
+12:16 learning to production I think this uh I
+12:19 don't remember the exact definition but
+12:21 I think no we're like it's almost the
+12:24 same one yeah you mentioned envelope's
+12:27 team
+12:28 so I'm wondering so
+12:31 what kind of setup do you have in mind
+12:33 is there a central envelopes team that
+12:36 helps other teams with uh deployment of
+12:40 their machine learning models yeah so
+12:43 how I see that my lips team is a team
+12:45 that provides envelopes infrastructure
+12:48 so it deploys the tools that are being
+12:50 used for analogs they also provide
+12:53 things like maybe reusable cicd
+12:55 pipelines the autification mechanisms uh
+12:59 it's almost done entire standardized way
+13:02 so that this product teams don't have to
+13:06 figure it out on their own because
+13:08 pretty much everything that is done
+13:09 within the organization is kind of
+13:11 everyone is repeating themselves so to
+13:14 avoid that most of these workload should
+13:18 be on a central team but you still need
+13:20 data science if you still need machine
+13:21 learning Engineers so machine learning
+13:23 Engineers will be working on optimizing
+13:26 the code the data scientists tried
+13:28 working really closely to them and for
+13:31 example if there are certain
+13:32 requirements from latency point of view
+13:35 those are machine learning Engineers
+13:37 that are helping with it but the mailbox
+13:39 is more like an infrastructure team
+13:41 really I would say
+13:43 rather than the machine learning
+13:44 engineering team but it's very related
+13:48 so would you say that there are
+13:51 teams we can call them I don't know
+13:53 feature teams or product teams that work
+13:56 on specific parts of the product so they
+13:58 have data Unleashed data scientists ml
+14:00 engineers
+14:01 and then there is a central envelopes
+14:03 team that provides the infrastructure
+14:05 that enables other teams to deploy
+14:09 machine learning to production and then
+14:10 with the central team also teaches the
+14:13 ml engineers and data scientists from
+14:14 other teams how to use this set of tools
+14:18 this set of practices
+14:20 to be able to achieve what they want
+14:23 right yeah that's how I see it and
+14:26 monitoring is also one of the important
+14:28 things and that's also the central team
+14:31 needs to be providing and I think this
+14:34 this works well in this setup I don't
+14:37 know whether other people have different
+14:38 experiences but from from our experience
+14:42 it works quite well
+14:45 yeah I'm also curious to know if there
+14:47 is any
+14:49 other kind of setup where there is no
+14:52 centralized team
+14:53 for envelopes and the teams are still
+14:56 kind of doing
+14:57 still doing this because in my case it
+15:00 was a very similar setup there was a
+15:01 centralized envelop Sim and then there
+15:03 were other teams who would use
+15:06 for the best practices and tools
+15:09 use the tools provided by the team
+15:11 interesting
+15:13 okay and yeah so today I wanted to talk
+15:16 about pragmatic hemologues
+15:18 and I'm curious to know like why is it
+15:22 even I think like how is there like a
+15:26 non-pragmatic analogs and what's the
+15:28 difference between like non pragmatic
+15:30 and pragmatic envelopes yeah so I think
+15:33 uh everyone knows travel about this mad
+15:36 landscape this mad landscape uh it it
+15:39 grows every year if you compare the Mad
+15:42 landscape from two years ago to what it
+15:45 is now
+15:47 um it's just blown up it's it's crazy so
+15:50 basically that's a map that shows what
+15:53 kind of tools are there for different
+15:55 parts of mlops so what are there for
+15:58 machine learning model deployments for
+16:00 feature stores for
+16:02 monitoring you name it like literally
+16:05 all aspects of AI and
+16:09 this picture with like a lot of logos
+16:13 and recently like it's like tiny logos
+16:16 you really need to zoom in to see any
+16:17 individual ones it's just like a a huge
+16:20 set of Focus right yeah they think
+16:23 you're referring to yeah I think I saw
+16:24 them these pictures
+16:27 it's it's uh it's a Madness ago it's
+16:30 really Madness
+16:32 um and it's not helping anyone I think
+16:34 it creates
+16:36 um like the Imposter syndrome that
+16:39 people think they don't know anything
+16:41 and then there are so many tools but the
+16:44 fact is that
+16:45 um buying any tool we won't really solve
+16:48 your problems
+16:49 typically the main problem that I see is
+16:52 an organizational problem
+16:54 the teams are organized in the wrong way
+16:56 and the tools are already there actually
+16:59 if you look at the tools within any
+17:01 large organization you already have
+17:03 kubernetes you already have something
+17:05 for orchestration something for Version
+17:07 Control something for cicd pipelines
+17:09 pretty much something for everything you
+17:12 need for mlops
+17:13 and it doesn't make any sense to buy any
+17:16 new tools because it will it will be
+17:19 first of all hard to convince people why
+17:21 you need that in the first place but
+17:23 secondly if you even buy it you would
+17:25 spend possibly years on integrating it
+17:28 with the rest of organization
+17:30 it may work very well I believe for
+17:33 small companies
+17:35 so if there are many tools that claim to
+17:38 do end to end and I guess if you don't
+17:39 have anything it's your startup then
+17:42 maybe for time being it's a good idea to
+17:45 have something like that
+17:46 but in large organization it's not gonna
+17:50 help that's what I really believe in
+17:55 so that's the pragmatic part the
+17:57 non-promatic part is trying to look at
+18:01 this landscape and have this fear of
+18:04 missing out like oh I need to have all
+18:06 these tools
+18:09 by learning the grade spent like I don't
+18:11 know five years trying to do that all
+18:13 instead of using the tools that are
+18:16 already there
+18:17 and focus on thinking like how can we
+18:20 use these tools that we already have
+18:23 yeah to deploy our projects right yeah
+18:26 because tools are changing all the time
+18:28 you by the end by the time that you
+18:31 integrated everything is already
+18:32 outdated
+18:34 um because every two years there is in
+18:36 this new cycle I believe
+18:38 um in the tooling
+18:41 and what is like a must-have set of
+18:43 tools that we need to have like what are
+18:45 the categories I imagine like maybe
+18:47 there are some categories that we can
+18:49 introduce later but at the beginning we
+18:50 just need like a yeah just the the basic
+18:53 one that cover exactly from 80 of cases
+18:56 yeah we have this article on The
+18:58 Marvelous developed sub stack it's in
+19:00 the featured article at this moment so
+19:03 this covers really minimal setup so you
+19:06 really need the Version Control you
+19:08 really need to see ICD
+19:10 um pipeline cicd2 like Jenkins or GitHub
+19:15 actions or gitlab Pipelines
+19:18 you need to have something for
+19:21 Docker registry you need to have
+19:23 something for model registry
+19:25 you need to have something for deploying
+19:28 the models so it's probably kubernetes
+19:31 or maybe some tools like Azure ml or
+19:34 databricks they provide managed services
+19:37 for deploying things that may work as
+19:40 well
+19:41 feature stores I wouldn't consider um as
+19:44 a minimal because you could I guess have
+19:47 some work around
+19:49 and monitoring monitoring is crucial you
+19:52 must have monitoring that's also a part
+19:55 of absolute minimum I I guess I
+19:57 mentioned them all maybe I forgot
+20:00 something but I think that's that's it
+20:02 yeah well I imagine any software company
+20:05 already has
+20:07 a person control system like you can get
+20:09 yeah gitlab or GitHub or whatever then
+20:12 crcd 2 right and then probably some sort
+20:16 of Docker registry could be from gitlab
+20:18 or I don't know Amazon whatever
+20:22 and then probably there is a way to
+20:24 deploy things like maybe there's
+20:25 kubernetes or some some other
+20:29 container registration platform
+20:31 but when it comes to model registry and
+20:34 monitoring
+20:35 um like maybe there is nothing or maybe
+20:38 there is something
+20:39 so and at KPM where we worked before we
+20:42 had
+20:43 um we basically used artifactory from
+20:46 g-frog you can um
+20:49 artifactory it's like a package package
+20:52 registry or any any object registry
+20:55 really you can you can have pie pie
+20:58 hosts in there maybe even
+21:00 um you can also upload any any files
+21:03 there and you can assign attributes to
+21:05 those files so they become searchable
+21:06 they also have nice python integration
+21:08 uh you can just store files in S3
+21:12 buckets you can also assign attributes
+21:15 to them and search through them you have
+21:17 to build something around it but I mean
+21:19 it wouldn't be a total nightmare right
+21:21 if you if you don't have ml for specific
+21:23 which I love a mouthful though
+21:26 um but for minimum setup something like
+21:30 that would also be okay if you don't
+21:32 really don't have anything you don't
+21:33 have a team to support anything like
+21:35 that then it's also gonna be okay
+21:38 um the idea is just things are traceable
+21:40 and reproducible and that's the main key
+21:42 idea we also have this list on the mall
+21:46 of maturity assessment
+21:49 um I I think I had a post about it two
+21:52 days ago I will also put it in featured
+21:55 on my LinkedIn so people can see
+21:57 um that's an Excel sheet with 60
+21:59 Questions that goes through all aspects
+22:02 of envelops or at least main aspects
+22:04 that we see is more important and that's
+22:07 how you can see how mature you are
+22:10 um
+22:11 and what you do and I think that's a
+22:13 great start to see what things are
+22:15 structurally missing so that you can act
+22:18 on them
+22:19 um in a strategic way
+22:23 what is uh you said there are 60
+22:26 Questions in this spreadsheet right
+22:29 do you remember what kind of well maybe
+22:31 we will not go into all 60 but maybe you
+22:34 remember what kind of categories of
+22:36 course so there yeah of course so there
+22:38 is a documentation piece which I find
+22:40 very important documentation is always
+22:42 missing
+22:43 um but we really need to pay attention
+22:45 to documentation uh then there are
+22:48 expect to get interestability and
+22:50 reproducibility that for every round of
+22:52 machine learning project you need to be
+22:53 able to find what code was responsible
+22:56 for the Ram uh what compute was
+22:58 responsible for the Run what model uh
+23:02 was responsible for certain deployment
+23:04 where it was stored all of that and that
+23:07 you can always roll back easily because
+23:09 if you if you don't have this in place
+23:11 then rolling back process would be very
+23:14 tedious you don't really don't want to
+23:16 go there then also code quality is
+23:19 important piece of this assessment that
+23:21 you need to ensure that there there are
+23:24 if things have changed there are full
+23:27 requests created there are multiple
+23:28 people
+23:29 looking at your pull request and then
+23:32 there are also the merge is blocked
+23:34 unless you have certain tasks to be run
+23:37 there is also test coverage maybe
+23:40 assessment on how how well your testing
+23:43 is covered integration testing all that
+23:45 stuff so those are important pieces
+23:48 um
+23:49 that that I guess uh mentioned there
+23:52 there are many more but feature stores
+23:54 monitoring as well
+23:56 um but yeah this this uh some examples
+24:01 well I imagine if you work at a startup
+24:03 and you already let's say have your
+24:06 first model or maybe First Multiple
+24:08 models often at least my experience is
+24:12 you kindly deploy them in you only live
+24:15 once mode like okay let's just deploy
+24:17 deploy it roll them out and um yeah keep
+24:21 our fingers crossed nothing will break
+24:24 but then at some point uh this starts up
+24:27 this organization becomes more mature
+24:29 and they actually realize that
+24:31 they need these things
+24:33 in which order should they introduce
+24:35 like should they start with
+24:37 documentation should they start with
+24:38 disability should they start with code
+24:40 quality should they start with feature
+24:41 stores because like this there are six
+24:44 60 questions right but then as a startup
+24:47 you cannot just stop everything you do
+24:50 and then yeah let's cover all these 60
+24:52 questions and then two years later we
+24:54 come back and continue working
+24:56 now well documentation is of course
+24:59 important but um I guess it's less
+25:02 critical than having proper Version
+25:04 Control and code quality guidelines and
+25:07 the traceability and reproducibility so
+25:09 if that is covered at least that would
+25:11 save you from a lot of headache later
+25:15 um other things are of course also
+25:17 important but that that is really
+25:18 crucial because if you don't have that
+25:20 it's gonna be a mess
+25:22 a lot of mess yeah
+25:26 and all these things
+25:29 this is how it sounded
+25:31 all these questions they they're more
+25:33 about processes right so it's like okay
+25:36 how do you
+25:38 deploy in such a way that we have
+25:40 disability and disability and we can
+25:44 easily roll back right so it's about
+25:46 having these guidelines right and
+25:49 teaching people like I don't know
+25:50 machine learning Engineers from other
+25:52 teams
+25:53 if this happens what do you do right if
+25:57 there is a bug how do you roll back
+25:59 right yeah but it depends it depends on
+26:02 the tools right so this assessment is a
+26:05 very high level one it doesn't go into
+26:07 tools but what we do right in our blog
+26:10 we have some article interestability and
+26:13 reportability how we use it with
+26:14 databricks specifically
+26:18 um but you can think about similar setup
+26:21 for Community deployments right it's
+26:23 just about
+26:25 it it really you have to really look at
+26:27 the tools you have to implement that
+26:30 um but for us
+26:31 um I think it's important to see this
+26:33 definition of them which is not really
+26:36 present that's my feeling for data
+26:38 science projects
+26:40 um so if the model is just deployed then
+26:42 it's good we don't really look at all
+26:44 those things that must be there before
+26:47 you can consider something is in
+26:49 production I've seen scheduled notebooks
+26:52 and data books without any Version
+26:53 Control and they claim to be in
+26:55 production
+26:56 um I I wouldn't call it introduction if
+26:59 if almost zero percent of the whole list
+27:02 is covered right mm-hmm
+27:06 so if
+27:08 we come back to our discussion about
+27:09 pragmatic analogs maybe we can somehow
+27:11 summarize what exactly is pragmatic and
+27:14 how how can we be we
+27:17 how can we be pragmatic about mlops
+27:20 yeah so I think it depends whether
+27:23 you're in large organization maybe and
+27:25 startup in need so from my experience I
+27:28 only worked in large corporate companies
+27:30 so from corporate companies perspective
+27:33 you shouldn't look into buying tools in
+27:36 the first place but more into looking
+27:39 what tools you already have and how you
+27:41 can use them so that
+27:44 you score high in this envelops maturity
+27:47 based on the assessment as an example
+27:49 and also how do you structure the team
+27:51 so that data scientists can actually
+27:54 deploy themselves with proper guides
+27:57 rails in place but not blocking data
+27:58 scientists from doing the deployments
+28:00 what they've seen so often is that there
+28:03 are data science teams which are totally
+28:05 separate from the I.T department and the
+28:08 NIT department has their own devops
+28:10 engineers and Cloud engineers and other
+28:12 engineers and data scientists just have
+28:15 no permissions to do anything and it's
+28:18 just throwing over the wall kind of
+28:19 situation happening so you really want
+28:23 to avoid that and see how you can
+28:25 structure team in a way that it's
+28:27 sustainable for everyone
+28:30 so I think those two aspects the Chiefs
+28:33 organization and the choice of the
+28:36 tooling
+28:37 um
+28:38 main components I guess of this
+28:40 pragmatic analog so you probably already
+28:43 have all the tools you need to start
+28:45 with those right and then think about
+28:48 the structure of your teams how exactly
+28:50 it's organized like are you helping data
+28:52 scientists or you're just blocking them
+28:54 and you are annoying them
+28:56 so I remember when I was a data
+28:59 scientist I needed to deploy something
+29:01 but then somebody from the Ops Team
+29:04 needed to I don't know do something and
+29:07 then they're of course almost always
+29:10 busy
+29:11 right and then I'm just sitting and
+29:13 waiting okay should I go check YouTube
+29:15 which cat videos what should I do now
+29:19 okay so that's pragmatic on all of us
+29:22 and three also I think we covered that a
+29:26 little bit we also wanted to talk about
+29:28 standardized hemalopes
+29:30 and from what I understood from our
+29:32 discussion we already talked about this
+29:35 maturity assessment questions
+29:38 and some things that we covered there
+29:40 like okay how do you go about
+29:42 reproducibility how do you go about you
+29:45 know rolling back and so on
+29:48 um is this something that
+29:51 related to standardization
+29:55 um yeah I guess so so I think the choice
+29:59 of the tooling is is related to
+30:01 standardization so we work in a large
+30:03 corporate organization with 19 Brands
+30:05 all over the world
+30:07 um a lot in Europe and Greece Serbia
+30:09 Romanian Czech Republic we also have
+30:11 brands in the U.S but pretty much
+30:13 everyone has the same tool stack with
+30:15 slight variations
+30:16 so we basically bring it to the same
+30:19 structure everywhere and we provide
+30:22 reusable cicd pipelines for everyone
+30:25 that everyone can use and those CD
+30:27 pipelines go beyond just CSD pipelines
+30:30 so we introduced the cookie cutter
+30:32 repository well data scientists
+30:35 typically hate cookie cutter templates
+30:37 because it's not always clear how to use
+30:39 them so we made it simpler it's just a
+30:42 simple action in the repository where
+30:45 people can trigger and your name of your
+30:48 repository should follow some
+30:49 conventions otherwise it won't be able
+30:51 to deploy and it checks whether you are
+30:53 you have permissions to create this
+30:55 repository because you need to belong to
+30:56 shortened GitHub group to be able to
+30:59 deploy create a certain repository
+31:01 naming convention so and then that
+31:04 person triggers the workflow and it also
+31:06 applies so we are on Azure so we use
+31:09 service principles it applies service
+31:11 principles credentials which are
+31:13 organizational secrets to those
+31:15 repositories which means that
+31:18 um after this cookie cutter template
+31:20 runs the data scientist has a working
+31:22 repository with main.pi that can already
+31:25 be deployed in databricks
+31:27 which is tagged for the cost management
+31:30 point but
+31:32 um point of view and basically
+31:35 everything is is covered they don't have
+31:37 to think about it at all and we don't
+31:41 have a proper guardrails yet but we're
+31:44 working on it too
+31:46 um for example say that certain branches
+31:49 are blocked and you can just push there
+31:52 so they have to implement it now by hand
+31:54 but we're working on it actually to also
+31:57 and this allowed to push to master to
+32:01 create default branches and all that
+32:02 stuff it's also possible to automate all
+32:04 of that as part of this cookie cutter
+32:07 yeah so that's that's how that's quite
+32:10 impressive
+32:11 so if I'm a data scientist and let's say
+32:13 I need to create a model for
+32:16 I don't know fraught detection or I
+32:20 don't know customer score whatever
+32:22 um so this is a model that needs to be
+32:24 served online I want to serve it as a
+32:27 web service so then there is a cooker
+32:28 cutter template that is specifically for
+32:32 that I go as I understood like all I
+32:34 need to do is some click some sort of
+32:36 button right and then fill in some
+32:39 information or I don't know maybe run
+32:41 something in common line right that will
+32:44 ask me that was the project
+32:46 the team I guess because you mentioned
+32:48 tax
+32:51 um
+32:52 and then I do that execute and attend I
+32:55 have a
+32:57 a working project in my repo
+33:00 with a cicd pipeline for deployment like
+33:05 there's already main.biofile that I can
+33:07 deploy using this ICD pipeline and like
+33:11 all
+33:13 the texts are assigned like right now
+33:16 with this project what I can do is
+33:19 already get the model from a model
+33:22 registry and start serving right so how
+33:26 we see this that well mainly buying to
+33:28 be replaced with your actual Logics you
+33:30 still need to create a package so we are
+33:32 on laser bricks to data scientists like
+33:34 all data scientists lab using old books
+33:36 but likely databricks nodes are not just
+33:39 a few better notebooks they're quite
+33:41 nice for Version Control at least but we
+33:44 have also an article on how to how for
+33:47 data scientists to move from a notebook
+33:48 to actual working production code so we
+33:52 um encourage data scientists to create
+33:55 functions and classes and modules and
+33:57 move the Logics outside of the of the
+34:00 notebooks to keep notebooks really short
+34:02 and clean and that that's the main
+34:05 execution file then you also create the
+34:07 pets and packaging logic so if you need
+34:09 to have either poetry term or setup that
+34:13 by
+34:14 and with that uh so our pipelines take
+34:18 care of that they know that there is a
+34:20 package that that package has to be
+34:21 moved to dbfs and it's all gonna work so
+34:24 they don't have to think about that even
+34:28 amazing how long did it take to
+34:30 implement this
+34:31 well implementation wasn't long I think
+34:35 it's well less than half a year to
+34:37 implement them but one year to tell
+34:40 everyone that we are doing that and
+34:42 agree with the
+34:43 devops Engineers to give us permissions
+34:45 to do things
+34:47 yeah
+34:48 so because devops folks do not like when
+34:52 data scientists can mess up with their
+34:54 kubernetes clusters right
+34:55 yeah well we have now dedicated machine
+34:59 learning environments which only we use
+35:01 so them basically don't care that much I
+35:05 guess
+35:06 I see
+35:08 so it took six months to implement but
+35:11 before that you needed to do all this
+35:15 uh
+35:17 how is it like preparation convincing
+35:20 did you do this yourself
+35:24 do you have any tips how to address that
+35:27 like if somebody is also facing some
+35:31 accusation from the devopsy yeah so
+35:35 um two years ago we the first thing we
+35:38 did we went through all the brands and
+35:40 uh gave them the questionnaires the
+35:43 questionnaire that I was talking about
+35:44 it exists already for a while
+35:46 and that's how we started so we gave it
+35:48 to everyone we did this assessment to
+35:50 all the machine learning models we could
+35:52 find and we showed them that we are
+35:55 pretty much at zero so you can't say you
+35:57 are doing things in the right way and we
+36:00 were also in situation the devops
+36:02 engineers that were deploying Machinery
+36:04 models they have zero understanding of
+36:06 machine learning but they were
+36:08 responsible for for the deployment and
+36:11 if there were errors they would send the
+36:13 errors of the email to the data
+36:15 scientists that would try it out in a
+36:17 different environment than where that
+36:19 production is running and couldn't
+36:20 reproduce the errors so this kind of
+36:22 loop can go on and on and on and so no
+36:25 one was happy so that was already pain
+36:27 so that was pain we made the pain
+36:29 visible by doing the assessments and
+36:32 showing look there is clearly something
+36:33 wrong going on we wrote the whole
+36:37 um the whole document document on how to
+36:40 do data science projects so data science
+36:43 framework we call it and we created
+36:47 um
+36:47 a set of standards and a lot of
+36:49 standards that actually now become
+36:51 official document within the our
+36:53 organization that
+36:54 well internal audit can check whether
+36:57 you actually following those rules
+37:01 um so these three things helped a lot
+37:04 and then I think there was also trust
+37:07 already between our departments a bit
+37:11 um and it allowed us to to move further
+37:15 oh
+37:16 so I guess my main takeaway from that is
+37:19 you wanted to them to feel the pain like
+37:23 maybe make the pain visible so then they
+37:26 realize okay we actually have this
+37:27 problem and maybe there's a way to
+37:30 solve this problem right and then you
+37:33 say Yeah we actually want to solve this
+37:35 problem yeah we know how to solve the
+37:37 problem yeah
+37:39 and these people that helped you
+37:42 convince the devops engineers or it was
+37:44 the devops engineers who no I was I was
+37:47 convincing uh the lead of it platform
+37:50 and also devops engineers and that's how
+37:54 we at least got our own service
+37:56 principles with the right permission to
+37:58 deploy things ourselves
+38:01 okay and how large is the team for you
+38:05 like who was on that team
+38:07 um
+38:09 because like in order to implement
+38:10 something like that like this cookie
+38:12 cutter template uh reusable cicd
+38:14 pipelines you need Engineers right
+38:16 somebody who implements that it's a
+38:18 whole and how many people you had on the
+38:21 team yeah it's crazy we basically did it
+38:24 with with three people
+38:28 impressive
+38:29 yeah including you right
+38:34 so who are
+38:37 so that was me but me bashack who is my
+38:40 colleague that we work together
+38:41 marvelous nellops and also our colleague
+38:44 from another department but he kind of
+38:46 works on the mail-ups
+38:48 um he doesn't have LinkedIn so we can't
+38:51 forget him hopefully he creates it
+38:54 he should yeah I'm more interested in in
+39:00 the also in the profiles in the roles
+39:02 like are they more Engineers are they
+39:05 data scientists what kind of background
+39:07 do they have to they already know like
+39:08 kubernetes ml Engineers we all know
+39:13 kubernetes
+39:14 um we all know something about databrick
+39:17 so it's not like we started from zero
+39:19 right we didn't have any Juniors it was
+39:22 all
+39:23 up media senior profiles
+39:28 and what is also interesting and the
+39:30 reason I'm asking that is because in our
+39:32 course in the envelopes course we try to
+39:34 cover the fundamentals right so we break
+39:37 down what we think ml Ops is into
+39:39 multiple areas
+39:41 um which is like
+39:43 an experiment tracking
+39:46 pipeline machine learning pipelines then
+39:50 what else deployment then monitoring and
+39:53 then best practices I think this is what
+39:56 we focus on and then like instead of
+39:59 exploring all possible tools we just
+40:01 pick one and try to learn how to use
+40:03 that one
+40:05 and
+40:06 yeah of course like when people who
+40:08 gradiate join a company probably the
+40:11 tools will be different instead of
+40:13 prefect it will be probably I don't know
+40:15 uh airflow or rankings or whatever like
+40:19 instead of evidently maybe there will be
+40:21 you know plastic surgeon kibana instead
+40:24 of
+40:26 ml flow that will be nothing right so
+40:29 what I'm trying to ask you is what kind
+40:32 of profile people need to have to what
+40:35 kind of things they need to know to be
+40:37 able to join a company and start
+40:39 implementing things like that yeah so
+40:43 that's what I think tools of course it's
+40:45 nice to know some some of the tools but
+40:47 I think the most important thing is
+40:49 understanding the idea behind it right
+40:52 so that there are tools that fall within
+40:54 different uh pieces so there are
+40:57 different tools for strategy doesn't
+40:58 matter what you use I really believe it
+41:01 doesn't matter that much a Version
+41:02 Control would use doesn't matter for
+41:04 orchestration for registry doesn't
+41:06 matter what you use you just have to be
+41:08 tied together in a way that follows
+41:11 those principles which are written in
+41:13 the assessment so if you understand that
+41:16 and already try to do it at least once
+41:18 with it doesn't matter what tools
+41:21 then you are good
+41:22 if you just try to do it once to combine
+41:25 all the species together
+41:27 using whatever tools
+41:29 you're fine I think you're prepared to
+41:32 do it with anything else
+41:36 somebody the project in our course
+41:40 because the purpose of this project is
+41:42 actually take all these tools and Stitch
+41:44 them together in something that doesn't
+41:46 fall apart and works yeah
+41:49 exactly which is probably the most
+41:50 difficult part right
+41:52 it is it is super difficult to knit it
+41:55 is super difficult
+41:56 yeah
+41:58 and then from what I heard from you a
+42:01 good idea would be to actually go ahead
+42:03 and check the assessment we talked about
+42:05 right and understand how much
+42:08 you can make sense of things there right
+42:11 and if some things are not clear then
+42:15 this is something that they can
+42:18 read about because for example we don't
+42:21 really talk about documentation in the
+42:22 course
+42:23 and I know we talk we don't talk about
+42:26 feature stores right
+42:29 um because like it's not possible to put
+42:31 everything like every possible thing in
+42:34 six weeks right so then going to this
+42:37 maturity assessment I don't know when
+42:39 for example they already joined the
+42:40 workplace then going through this thing
+42:43 and understanding okay this is what we
+42:45 should focus on will help right
+42:47 yeah definitely definitely
+42:50 yeah okay
+42:53 what is your what do you have
+42:55 [Music]
+42:57 like what I'm trying to ask okay what
+42:59 are your plans what do you want to do
+43:01 next because you you already told us
+43:03 that you have this amazing cookie cutter
+43:05 template for standardization which makes
+43:07 it super easy for the feature teams for
+43:10 the product teams to deploy their models
+43:14 so you already have cookie Cuttery
+43:16 reusable cicd pipelines it's automatic
+43:19 deployment what do you want to work on
+43:21 next
+43:23 so the next things that are important
+43:26 for us we can do things like a b testing
+43:28 and monitoring but those are quite ad
+43:31 hoc so which means that we don't have
+43:33 standardized monitoring and standardized
+43:34 a b testing yet
+43:37 um so those are extremely important to
+43:39 get standardized
+43:41 um and the main thing is here is that we
+43:44 are basically relying decisions that
+43:47 other teams are taking for monitoring
+43:49 because monitoring goes beyond the
+43:51 mailbox monitoring goes for anything and
+43:54 I think it's a bad idea for us to choose
+43:56 another to two different than devops
+43:58 Engineers used and because they are
+44:01 still in the process of deciding on the
+44:03 tool we are waiting for it
+44:05 um
+44:07 I suppose it's a tool for
+44:11 um Eric what's traditional
+44:13 monitoring I don't know it's like New
+44:15 Relic data doc elk this kind of stuff
+44:18 right yeah yeah indeed and I think it's
+44:21 good enough for pretty much everything
+44:23 so looking at our use cases our use
+44:26 cases and demand forecast and if you can
+44:29 various recommendation engines so uh for
+44:33 those specific use cases we can fit
+44:35 whatever needs to be fit for monitoring
+44:37 of those use cases in these tools
+44:40 um so if you don't need to talk about
+44:42 evaluating monitoring other lamps and
+44:44 all of that stuff probably you need to
+44:46 have something else
+44:48 um but for what we have
+44:51 like them really like 99 of the use
+44:54 cases that's probably enough
+44:59 what about use cases that do not fit
+45:01 into like this traditional demand for
+45:03 customer or axis because I imagine that
+45:06 maybe one of the teams decides to use
+45:08 another lamp
+45:10 yeah now we are working on it also for
+45:14 internal use case internal surge base
+45:17 that's uh the first project we are
+45:20 trying out with llms
+45:22 so because it's not customer facing it's
+45:24 not I guess that important
+45:28 um yeah we are still in approach to
+45:30 figuring it out
+45:32 um I guess by end of the year I will be
+45:35 able to tell more about this specific
+45:37 use case but
+45:39 right now I'm too focused with other
+45:41 things
+45:43 um on other things we'll have to
+45:45 interview you again I guess
+45:47 yes but
+45:48 for others I'm pretty sure you will
+45:51 probably cover it to some extent
+45:53 somewhere on LinkedIn or maybe yeah
+45:58 yeah okay and uh since you mentioned
+46:01 telems
+46:02 I see now that
+46:05 it's kind of trendy this new thing LM
+46:08 Ops and many students from our course
+46:11 are asking hey when do you plan to do an
+46:15 llm Ops course and
+46:18 uh once I got a message like okay how
+46:21 can I enroll into your llm Ops course
+46:23 which we don't even have so it's
+46:27 apparently like there is a kind of
+46:29 demand but I'm I'm just wondering what
+46:31 do you think about that like is it even
+46:32 I think like should people really worry
+46:35 about that or maybe it's just one of the
+46:38 hype things that come and go
+46:40 oh I believe that's largely a hype thing
+46:44 because having a customer facing llm
+46:48 which is not going to cost you a fortune
+46:51 is is a is a real problem especially if
+46:53 you're talking about other languages in
+46:55 English so in our in our use case
+46:59 um well I mentioned we have grants in
+47:01 Czech Republic in Serbia Romania in
+47:03 Greece so in English lamps may work well
+47:07 but what about those countries like I'm
+47:11 not so sure and also the use cases for
+47:15 um for the retailers what are the use
+47:17 cases so I guess maybe search will
+47:19 change in the future will be more like a
+47:22 lampowered search that would be very
+47:24 cool
+47:25 um and another one is maybe recipes for
+47:28 the food retailers that's something that
+47:30 is very popular there was a scandal with
+47:32 this New Zealand grocery retailer that
+47:36 suggests some recipes which are not very
+47:39 appealing
+47:41 um but yeah you shouldn't input some
+47:43 crazy stuff into it obviously but still
+47:45 um people people may
+47:48 so I don't know it's just very little
+47:51 value I think it's very hard to measure
+47:53 the value from this little lens but the
+47:56 costs uh to get it running are quite
+47:59 High you can't even ensure to enough
+48:02 gpus because if you're in Europe uh if
+48:06 you're on Azure you you have a waiting
+48:09 list even for large customers like like
+48:11 we are you wait for four months before
+48:13 you get a machine that you need to train
+48:16 your signal
+48:17 so it's an actual problem you cannot
+48:20 secure
+48:21 Fosters with an average gpus for
+48:24 yourself
+48:24 so because of of the high demand
+48:30 and also even with um like of course for
+48:34 English probably many of these alarms
+48:36 work especially well I only I mostly use
+48:41 gpt4 GPT 3.5 from open AI
+48:46 but even when it comes to like other big
+48:48 languages like I don't know Russian for
+48:51 example there are quite many people who
+48:52 use Russia in this world sometimes like
+48:57 the grammar is kind of funny it uses
+48:59 words that I wouldn't typically use like
+49:01 it's kind of weird so imagine if we talk
+49:05 about like I don't know the Czech
+49:06 language where there are fewer people
+49:09 who use this language so then the model
+49:11 probably saw less data right for this
+49:13 language of course even
+49:16 it can lead to even stranger results
+49:19 right
+49:20 yeah or Greek or Romanian yeah exactly
+49:24 indeed yeah
+49:25 so and it's because the brands on those
+49:29 countries are also relatively small
+49:31 comparing to well all other brands
+49:34 together doesn't even make any sense to
+49:36 invest into it
+49:39 because the value is small so you work
+49:43 mostly work with retail all right
+49:46 is one of the largest retail companies
+49:49 in the world and we have it's not very
+49:53 no name for some reason yeah because
+49:55 maybe I should Google it right now yeah
+49:58 yeah
+50:00 so we we are quite large
+50:04 uh yeah and it's food retail mostly yeah
+50:07 we also have ball.com which is like
+50:09 Dutch and Belgian Amazon ah I know that
+50:13 one
+50:14 yeah it's also part of Buffalo Bill case
+50:16 so it's not only food retailers but also
+50:18 other details
+50:21 but retail is like groceries this kind
+50:24 of retail right or yeah
+50:27 so boulderscom is fully online
+50:29 um so that's I guess an exception but
+50:32 mostly it's a grocery grocery stores or
+50:35 drugstores
+50:38 okay
+50:41 you know what kind of company work like
+50:43 I was thinking like how do I ask that
+50:45 it's kind of like yes we almost finished
+50:48 the interview and like okay what does
+50:51 the company actually do okay I saw the
+50:54 numbers now online it's a pretty large
+50:58 [Music]
+51:01 select a huge corporation right
+51:03 yes indeed yeah see and also the same
+51:08 yeah because it's all food retailers in
+51:11 different countries but overall the type
+51:14 of problems that everyone has is just
+51:16 the same everywhere everyone will search
+51:18 demand forecast demand forecast is like
+51:20 a big thing
+51:21 personalization
+51:23 loyalty programs
+51:25 does each of these Brands
+51:28 um do they have like each of them a
+51:32 separate
+51:33 I don't know separate team a separate a
+51:36 bunch of teams for data science and they
+51:38 do data science separately from the rest
+51:41 of the
+51:42 organization yeah well some some local
+51:46 data scientists
+51:47 [Music]
+51:50 um some even have machine learning
+51:51 Engineers some don't have
+51:53 almost anyone doing anything like that
+51:57 that our team so in our team tender team
+52:00 we have machine learning Engineers more
+52:01 like analogs and we also have some data
+52:04 scientists that work on creating this
+52:07 sanitized solutions for number of brands
+52:13 so if a brand does not have their own
+52:16 data science team or department they
+52:19 come to you or maybe they have but like
+52:21 the team is small they come to you they
+52:24 say hey we have these use cases uh
+52:27 um
+52:28 can you help us right
+52:29 yeah and I imagine for example ball they
+52:34 already have like a huge team they
+52:36 probably already have their own
+52:38 envelopes processes right they react
+52:40 your help and the tool stack is also
+52:42 different and the two step is different
+52:45 which makes it harder for us to work
+52:47 together on certain things but we try to
+52:50 cooperate more with them and they have a
+52:53 lot of knowledge so it's always
+52:54 interesting this question because I know
+52:58 about them from conferences so in Berlin
+53:01 there is a conference that I really like
+53:03 it's called Berlin buzzwords I try to
+53:05 attend to go there every year
+53:08 and it's quite common that somebody from
+53:11 Bo
+53:12 goes their attempts and presents
+53:14 something
+53:15 so maybe I should too I didn't know
+53:18 about this conference but I love Berlin
+53:20 Berlin is so cool yeah um for you maybe
+53:24 the more relevant one will be my data by
+53:27 con which happens
+53:29 yeah billion buzzwords I think they are
+53:33 also covering the mail engineering but
+53:35 it's more like
+53:36 so they talk about search they talk
+53:38 about data engineering but recently they
+53:42 also talk about ml Ops managing and this
+53:44 kind of stuff so it's it's on topic of
+53:46 course so you definitely should submit
+53:48 something cool
+53:51 so this year sadly I did not attend but
+53:53 I plan to do it next year
+53:57 um yeah we should be wrapping up for
+53:59 maybe I just let me check if we
+54:02 have any questions yeah so there is one
+54:06 question what is the course that you
+54:08 take to become an envelopes engineer
+54:14 but I guess this is like this would be
+54:17 your suggestion right but in your case
+54:19 because the ground was econometrics
+54:22 economics like how did you become
+54:24 somebody
+54:25 who's doing what you do but by doing so
+54:29 I just talked a lot to software
+54:31 engineers and together we kind of figure
+54:34 out how to deploy things no but uh we
+54:37 actually I'm going to deploy to create
+54:39 our own course
+54:41 um I can't say when exactly it's gonna
+54:43 come out but we aim for March next year
+54:46 and this will be specifically for data
+54:48 scientists aiming to be machine learning
+54:50 engineers
+54:52 um
+54:53 so stay tuned I would say and if you
+54:56 subscribe to all our media you will not
+54:59 miss it please please send us the links
+55:02 and we will include them in the
+55:03 description
+55:04 and so this person
+55:07 um is saying that they have a software
+55:11 engineering background and then I think
+55:13 you already did the plug so I don't need
+55:15 to promote our own course yeah because
+55:17 this course is actually for somebody who
+55:20 has the same background as you but from
+55:24 what you said like you learned by doing
+55:26 and I think this is probably the best
+55:28 way
+55:29 to learn things
+55:30 yeah definitely but for software
+55:33 Engineers I would recommend them the
+55:34 same team up with data scientists they
+55:36 definitely need some perspective from
+55:38 software Engineers how to write better
+55:40 code and there are some nice courses I
+55:43 used to do a lot of you Destiny degrees
+55:45 before
+55:47 um I also used to be a mentor there in
+55:49 university at some point of time and
+55:52 they have some machine learning
+55:54 engineering courses maybe it's
+55:57 interesting to check that out and there
+55:59 are of course a lot of data scientists
+56:01 courses in in general
+56:04 um so it's always good to check those
+56:06 out
+56:07 in your opinion how much
+56:10 uh
+56:12 machine learning should machine learning
+56:14 Engineers know
+56:17 yeah so I think there is a Google paper
+56:19 I believe that says only five percent of
+56:22 the whole ml system is machine learning
+56:25 it's actually this famous figure right
+56:28 this famous diagram
+56:31 very fine and like very tiny part
+56:33 exactly I think it's about right so I
+56:37 think machine learning Engineers
+56:38 definitely need to know something about
+56:40 machine learning so
+56:43 I would suggest to do data science
+56:45 course and understand with what tools
+56:48 data scientists work
+56:50 and how what type of things they produce
+56:53 and how do they think about that so I
+56:55 think it's very important because it
+56:57 really influences the deployment
+57:00 um but because they're coming from
+57:03 software engineering background they
+57:04 probably know a lot about the rest of 95
+57:07 so I'm guessing the advantage
+57:11 mm-hmm
+57:12 okay
+57:14 um do you think ml Engineers need to
+57:16 know some data engineering
+57:19 yeah actually I I also now interested in
+57:22 dating engineering there is a course
+57:24 from Zach Wilson he created a boot camp
+57:28 from data engineering that's actually a
+57:29 very nice one I'm following it at the
+57:31 moment I'm a bit slower than others I
+57:34 guess
+57:35 um but I I am following it it's really
+57:38 nice
+57:39 because a large part of the machine
+57:42 learning pipelines actually related to
+57:43 engineering because it's always the
+57:46 first step and the most challenging one
+57:49 quite often yeah if you don't have data
+57:52 like you just have science right yeah
+57:54 yeah definitely but also you need to
+57:58 construct your data engineering data
+58:00 engineering pipelines which are part of
+58:02 your machine learning platforms or in a
+58:04 smart way because often those pipelines
+58:07 tend to run for a long time
+58:10 um so you really need to spend time on
+58:12 optimizing those
+58:14 mm-hmm
+58:16 okay and actually the question I was
+58:18 going to ask at the end is any resource
+58:21 recommendation but I think we covered
+58:22 that and I look at the time and I think
+58:25 we should be wrapping up so I want to
+58:27 thank you Maria for joining us today uh
+58:31 it was very nice talking to you so maybe
+58:33 we should repeat this because you said
+58:35 you will let us know about something I
+58:37 don't remember what but try the course
+58:40 yeah but there was some other thing too
+58:44 that we are busy with the lens yeah
+58:46 right right so
+58:48 there are multiple things we will need
+58:50 to talk about so yeah thanks for joining
+58:52 us today and thanks everyone for joining
+58:54 us today too and yeah have a great rest
+58:57 of your week yes for you too bye

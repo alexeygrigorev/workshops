@@ -1,0 +1,1269 @@
+Technical Writing and Data Journalism
+
+0:00 everyone Welcome to our event this event
+0:02 is brought to you by datadox club which
+0:04 is a community of people who love data
+0:07 we have quick events this is one of such
+0:09 events today we actually had two events
+0:11 but simply because last week we didn't
+0:13 have any so yeah this is the second
+0:15 event for today
+0:17 and yeah you can always check our
+0:19 YouTube channel and you can see the
+0:21 interview we had today I don't know it
+0:23 was five here or five hours ago
+0:25 so yeah go check it out and if you want
+0:28 to find out more about the events we
+0:29 have there is a link in the description
+0:31 go there click on this link and you'll
+0:34 see all the events we have in our
+0:35 pipeline
+0:36 then it's very important to subscribe to
+0:38 our YouTube channel this way you will
+0:40 get notified about all our events or all
+0:43 the streams like that one like the one
+0:44 we had five year five hours ago they all
+0:48 are all in our YouTube channel so you
+0:51 will be missing out if you don't
+0:52 subscribe and of course we have an
+0:55 amazing slack Community Angelica will
+0:57 confirm that yeah if you want to hang
+1:00 out with other data enthusiasts join the
+1:02 channel
+1:03 and then finally if you have any
+1:06 questions during the interview please
+1:08 use the pink pinned Link in the live
+1:11 chat so click on that link ask your
+1:13 question and then I will be covering
+1:14 your questions during the interview
+1:16 that's all the slides I have and I just
+1:19 want to make sure I pronounce your name
+1:21 correctly was it Angelica
+1:23 Angelica Angelica I apologize Angelica
+1:26 yes so yes no problem it's good that I
+1:30 asked because now I feel a little bit
+1:32 but but now I know how to pronounce your
+1:35 name and yeah in Europe it's always
+1:37 difficult to know right so yeah you
+1:39 never know how to exactly pronounce uh a
+1:42 name I always have to ask
+1:44 yes
+1:46 okay and the intro is over we can start
+1:50 right I really
+1:52 and this week we'll talk about technical
+1:55 writing and data journalism we have a
+1:57 special guest today Angelica Angelica is
+2:00 a researcher at The Institute of
+2:01 informatics and telematics in Italy your
+2:04 research interests include data science
+2:06 machine learning text analytics
+2:08 datability visualization data journalism
+2:12 web applications and recently she became
+2:14 also interested in data engineering she
+2:16 is also a professor at the University of
+2:18 Pisa where she teaches data journalism
+2:21 welcome Angelica hi nice to meet you is
+2:25 for me it's a pleasure to be here with
+2:27 you today yeah likewise thanks for
+2:30 accepting the invite to be here I also
+2:32 want to mention that the question for
+2:34 today's interview are prepared by
+2:36 Johanna Bayer thanks Johanna for
+2:38 preparing the questions and Angelica
+2:40 before we go into our main topic of
+2:43 writing and data journalism
+2:45 I wanted to ask you
+2:47 about your background can you tell us
+2:50 about your career Journey so far yes
+2:53 indeed since I was a teenager my big
+2:56 dream was to become a computer scientist
+2:59 because I had a computer this was the
+3:03 late 90 period And I decided to
+3:08 understand how her computer works and so
+3:11 my dream continued and at the University
+3:14 I studied the computer science
+3:17 and then I devoted the old my career to
+3:21 the research field and in fact now I'm a
+3:24 researcher at the beginning I worked on
+3:27 inex in network security with the focus
+3:31 on cryptography reputation similar stuff
+3:34 I got my PhD on this field but after my
+3:40 PhD I realized that web applications
+3:44 were more appealing to me than computer
+3:47 security so I moved to this field next I
+3:53 landed in data science and I worked on
+3:56 data science projects for many years
+4:00 only recently I'm moving to data
+4:03 engineering because I like to explore
+4:06 new things and as you can see my career
+4:11 is slightly different than that of other
+4:14 people because I'm always I always
+4:17 remained in the research field I changed
+4:21 the only the topic which I studied and
+4:26 for me the I can see I'm a privileged
+4:28 person because I can decide the topic to
+4:33 study and this is a very a very
+4:37 interesting aspect of Academia and
+4:40 research
+4:41 what are you just curious what are you
+4:43 researching now in data engineering
+4:45 because to me like it looks like an
+4:47 engineering topic they're more like
+4:50 I don't know practical you know it's
+4:53 more like about know-how less about
+4:55 research yes uh but yeah I'm
+4:58 maybe I'm a bit far from that so I'm
+5:00 really curious what kind of research
+5:01 stuff is out there yes indeed I'm
+5:04 studying the topic and so I don't know
+5:07 if I will have an idea how to improve
+5:10 something but given my expertise the
+5:14 possible idea could be to
+5:17 um to add some security aspects to this
+5:20 uh to data Maybe how to
+5:25 um to recognize if data are
+5:30 manipulated or something like this I
+5:34 don't know I'm studying the topic and at
+5:37 the moment I'm also writing a book about
+5:42 this topic and so uh
+5:46 we will see okay and that's quite on
+5:49 topic to today's conversation right
+5:50 writing so you are learning data
+5:53 engineering by writing a book about that
+5:56 yes that's uh that's quite a good way to
+6:00 learn something
+6:02 um
+6:03 yeah and you already have a few books
+6:05 right so you have at least one that I
+6:07 know of yes Comet which is Comet for
+6:09 data science yes well do you do you have
+6:12 you written any other books
+6:15 I've written some novice but there was a
+6:18 very young some novice short Tales but
+6:23 you know think interesting and now I'm
+6:27 writing a book about
+6:31 Presto the database the very famous
+6:34 database used by also by meta yes
+6:41 I think they changed the name recently
+6:43 right so it's not pressed anymore but uh
+6:44 no no no there are select there are two
+6:49 the original name was Presto then they
+6:53 forked into two two
+6:56 different databases which are pressed to
+7:00 DB and the tree now there are two
+7:02 different projects supported by two
+7:05 different foundations ah okay because I
+7:09 know it's our company to elix we use
+7:12 Presto we used to use Presto and then
+7:14 one day
+7:15 I connect to presto and it says trino
+7:18 and then okay what happened
+7:20 yes and then it's our data Engineers the
+7:24 updated the version and then this yeah
+7:25 they are quite similar but they derive
+7:28 from two different uh organizations I
+7:32 guess it's like LibreOffice and open
+7:34 office right so they have the same
+7:37 history but then at some point yeah
+7:40 yeah I think so
+7:43 one of the topics I wanted to talk to
+7:45 you about is data journalism so in order
+7:48 to this is one of the things you one of
+7:51 your research interests and you're also
+7:53 a professor at the University of Pizza
+7:56 Hut where you teach this so what is data
+8:00 journalism
+8:01 yes data journalism is a data-driven
+8:05 journalism in sense that similar to any
+8:10 data science projects it collects
+8:13 analysis filters data to create
+8:17 interesting stories data journalism is a
+8:21 slightly different from data
+8:23 storytelling or data narrative which are
+8:26 rather
+8:27 Fields
+8:29 because data store detailing for example
+8:32 is the our top-telling stories from data
+8:36 and they could seem the same thing but
+8:39 they are not because the objective of
+8:42 data journalism is to to
+8:46 um to tell news and to use
+8:50 store to use data to confirm the story
+8:55 they are telling so for example you can
+8:58 see long articles
+9:02 which talk about something and then they
+9:06 use
+9:07 data to confirm the the story which is
+9:12 narrated
+9:14 um in addition with respect to for
+9:17 example to uh data science
+9:20 which is another aspect in a data
+9:24 journalism journalism story you usually
+9:27 you don't have the analysis part which
+9:32 is the big part in data science usually
+9:35 you don't use machine learning or in
+9:39 general data analytic analysis models
+9:42 you don't train a model in data
+9:43 journalism the huge part is to build the
+9:48 storyboard and to collect data and then
+9:52 while in data science you use Big Data
+9:57 yes you in data science usually you use
+10:01 a bit data in data journalism will focus
+10:04 also on small data sets because the idea
+10:08 is to have accurate information
+10:11 and then
+10:14 um you have to tell the truth and you
+10:16 cannot approximate the things
+10:19 um for example if you train a model in
+10:23 data science
+10:25 um or in machine learning this model has
+10:28 an accuracy for example of 80 percent
+10:31 while in a data journalism you have to
+10:34 say a True News you you cannot have an
+10:39 accuracy of 80 percent it should be a 50
+10:42 percent
+10:43 and this is the the main difference
+10:46 there are also other differences but to
+10:51 give an overview this is the first
+10:54 aspect
+10:55 can you give an example like I don't
+10:58 know like the Articles I'm reading in uh
+11:01 I don't know Economist or like these
+11:04 journals or newspapers are they doing
+11:07 data journalism or is just visual
+11:10 journalism
+11:11 no I'm not
+11:13 um in general I teach my I say my
+11:16 students to to build data journalism
+11:19 stories but in practice I I don't write
+11:24 my data journalism stories
+11:27 um I help my students to build their
+11:30 stories today to collect their datas
+11:33 there are their data sorry there are
+11:36 many websites for example one
+11:39 interesting website is a The Washington
+11:44 Post
+11:45 website if you go search on the on the
+11:50 web on Google for Washington Post data
+11:54 journalism you you find the the group
+11:58 their Laboratory
+12:00 they write wonderful stories and you can
+12:04 learn how to organize a story
+12:09 um for example other there are my but
+12:13 usually all the almost all the
+12:16 newspapers have a dedicated data
+12:20 journalism laboratory
+12:23 a very specific yes
+12:27 I'm sorry
+12:28 it's not about fact checking right so
+12:31 it's different so it's more like
+12:32 supporting your agreements with data yes
+12:35 so I'm just trying to think of an
+12:37 example can you can you think of
+12:38 anything like something you read maybe
+12:40 recently like I don't know I know that
+12:42 mask bought Twitter like have you seen
+12:44 any
+12:45 stories about that that are good
+12:47 examples of data journalism
+12:50 yes
+12:51 um for example there was an article by
+12:55 The Washington Post which
+12:59 um talked about the barriers that the
+13:03 wars that were were built in 2015.
+13:09 to avoid that migrants
+13:13 went from the southwest Asia to the
+13:20 Europe
+13:22 and they used some data
+13:26 to show how the to some graphs also in
+13:30 visualizations to show how to how this
+13:34 process
+13:36 um
+13:40 this process happened across the years
+13:44 and I don't know if you want then after
+13:47 I can send you the link but at the
+13:49 moment I don't have it but it's very
+13:53 very impressive story other expected
+13:58 okay and then a lot of other stories
+14:00 analyzed for example the the coffee the
+14:06 how
+14:08 um the
+14:10 oppressors in some lands
+14:13 you see the lens to um
+14:18 to uh to operate to oppress the local
+14:21 people to build a coffee plants and
+14:25 similar stuff and they use the
+14:28 data to approve their stories
+14:32 mm-hmm
+14:34 yeah interesting so yeah please do send
+14:36 the link it would be quite interesting
+14:38 to take a look so what I understood
+14:42 um the main difference between the usual
+14:43 journalism and data journalism is in the
+14:47 usual journalism you have a story but
+14:50 it's not necessarily
+14:51 based on the data right so you just
+14:55 present some facts but you don't show
+14:57 diagrams you don't show graphs you don't
+14:59 show any things to support the story
+15:01 right by while in data journalism you
+15:04 have some data source you have some data
+15:06 visualization and then you
+15:09 raise your story on this data yes I
+15:13 think that the the bigger the most
+15:16 challenging aspect in data journalism is
+15:18 to search for data uh because the data
+15:23 are hidden in the on the web and the the
+15:29 data journalist must say a must discover
+15:34 them
+15:35 instead for example in data science so
+15:38 you already have data your company
+15:41 provides you with your data and so you
+15:45 have to analyze them in data journalism
+15:47 you have to search for new data also
+15:50 small data is not it's not important to
+15:52 have big data and the most important
+15:55 aspect is to have as many the data
+15:59 should be a accurate as much as possible
+16:04 otherwise you you
+16:09 deliver fake news
+16:13 and
+16:16 how did you get into Data journalism is
+16:18 it something that you started your
+16:20 career with or is this something that
+16:22 accidentally happened to you because I
+16:23 think you mentioned that you actually
+16:25 research cryptography right yeah then
+16:29 from doing cryptography how did you and
+16:32 ended up doing data they are quite
+16:35 unrelated right or are they no no they
+16:38 are not related when I moved to web
+16:41 applications
+16:43 my boss
+16:45 um asked give me it to uh to start a
+16:48 course about
+16:50 um
+16:50 web applications
+16:53 and we started this corset University
+16:56 but then he had this smart idea to
+17:01 change the course to data journalism I
+17:03 don't know why
+17:05 not related right
+17:08 you just said okay let's let's change
+17:10 like to a completely random different
+17:13 topic yes because he understood that web
+17:19 applications became too
+17:22 too old I don't know and they decided to
+17:26 involve me in this new uh topic
+17:30 I accepted yes I accepted but I was
+17:34 surprised by his choice but usually
+17:37 he does good choices and I accepted I I
+17:43 think that he was right
+17:46 look because it I like this course over
+17:50 there said the course
+17:52 has improved also thanks to the thanks
+17:56 to the uh the feedback by by students
+18:02 provided by students because here at the
+18:05 University of Pisa there is a mechanism
+18:07 where every year
+18:10 students get a feedback provide the
+18:13 feedback about it
+18:16 its professor and how the course must be
+18:21 improved and over the years we have
+18:23 improved this we we still we are still
+18:27 improving it but I think now it's quite
+18:31 mature
+18:33 and who are the students for which kind
+18:36 of students this course is is it for
+18:37 technical students for students who
+18:39 study computer science and want to learn
+18:42 more about journalism or it's for those
+18:44 like for those who are studying I don't
+18:46 know less technical topics and want to
+18:48 get into Data this is a party they are
+18:51 in a particular area because they are
+18:54 humanists
+18:57 with a
+18:59 background in computer science they are
+19:02 they study digital Humanities and they
+19:06 have a knowledge both of the humanities
+19:09 and the computer science is a it's a new
+19:12 course which is not everywhere in the OR
+19:16 at least in Italy it's not everywhere
+19:20 the name is
+19:24 humanistic informatics something uh it's
+19:27 pretty interesting that's the to be
+19:29 honest this is the first time I hear
+19:30 about such eggs
+19:32 this profile is very required for um in
+19:37 the digital Humanities field for example
+19:40 to build to work on archives on cultural
+19:44 heritage
+19:46 digital Collections and similar stuff
+19:50 how technical is this like do you need
+19:54 because I think from your description
+19:57 you have to be you need to be a good
+19:58 writer to write the story like the story
+20:03 has have to be there it has to be there
+20:05 right but how technical should you be in
+20:09 addition to you know being a good writer
+20:11 to be a data journalist
+20:13 yes you need you could not there are two
+20:17 options
+20:18 you cannot know anything about
+20:22 programming languages and you can use
+20:25 tools like Tableau and in this case you
+20:29 don't know you you don't use anything
+20:31 it's okay or if you have a technical
+20:35 background
+20:36 usually the most popular programming
+20:39 language that you use is the python but
+20:42 it's at a high level you don't know to
+20:46 uh you don't Focus for example on a
+20:50 heavy programming just you need to know
+20:53 how to clean some data the how to
+20:58 manipulate them it's very easy everyone
+21:03 can do this yes
+21:06 but the alternative could be double O
+21:09 and so you don't need it at all of
+21:13 course is the courses in Italian or it's
+21:16 in English in Italian
+21:19 unfortunately it's in Italian
+21:22 um do you know any other
+21:24 courses that are in English that are
+21:26 open so let's say if I want to go and
+21:30 understand learn more about data
+21:32 journalism
+21:33 do you know any open courses that I can
+21:37 check I don't know if it's open but
+21:39 there is I think one course on Coursera
+21:47 um I can send you the link maybe you can
+21:49 share it with the community uh but I
+21:53 don't know if it's still available
+21:56 um and but it describes
+22:00 um
+22:01 the aspects from a more from a data a
+22:06 journalism point of view it's also the
+22:09 books that I have read on data
+22:12 journalism
+22:14 focus on journalism and then they
+22:18 describe a little data
+22:22 um maybe a next book could be on data
+22:25 but it's a very strict sector very Niche
+22:29 sector so maybe there will not be a an
+22:35 audience for this book I don't know but
+22:38 as I understood the audience
+22:40 that you write for in data journalism is
+22:44 general public right so let's say you
+22:45 write an article for Washington Post so
+22:49 then the readers for this article are
+22:52 just usual people right so they don't
+22:54 have to have a background in a specific
+22:56 area
+22:57 it depends on the topic of your article
+23:01 because if you write an article for
+23:05 Washington Post yes probably the general
+23:07 user is okay but if you write an article
+23:11 for
+23:12 um I don't know
+23:14 um
+23:15 a children
+23:18 magazine
+23:20 the audience are children and so you
+23:24 have to think about your audience before
+23:27 writing your article but this is true
+23:31 also when you write a book a technical
+23:33 book because if you write or an article
+23:36 everything you write before writing you
+23:39 have to think about the audience I think
+23:42 this is the first step
+23:45 what does it mean it means that
+23:49 you have to focus on the audience need
+23:54 do you know who will read your book you
+23:57 will read your article
+24:00 um which is with what are their
+24:03 interests which which skills
+24:06 do you they have and then are you
+24:11 writing for a technical audience or not
+24:14 and this is a very important aspect
+24:17 before writing everything
+24:20 yeah because the reason I ask this
+24:22 question is I know that you do a lot of
+24:24 um technical writing so you I don't know
+24:27 how many articles you wrote on medium
+24:29 like must be hundreds by now right
+24:32 um
+24:32 1970 maybe yeah you're quite a prolific
+24:36 writer and this uh so the articles I
+24:39 know that are from you they are
+24:42 technical articles so there's technical
+24:44 writing which I guess is uh quite
+24:47 different from the Articles we've been
+24:49 talking so far like data journalism
+24:51 right so would you say that data
+24:53 journalism is not technical writing yes
+24:56 it's not the technical writing it's for
+24:58 a general
+24:59 audience and also the language you use
+25:02 is different but there is a a variety of
+25:08 languages that you have to use for
+25:10 example if you write a scientific paper
+25:12 you need to write in a certain way if we
+25:16 write a technical book you have to use
+25:19 another language if you write for a data
+25:23 journalism you have to write another way
+25:25 and so you you should focus on your
+25:28 audience this is a the the
+25:32 the problem
+25:33 so since we have kind of two topics
+25:37 right we have data journalism and we
+25:38 have technical writing so we talked
+25:40 about data journalism what is technical
+25:43 writing so what makes writing technical
+25:46 if we just add the code does it become
+25:48 technical or there is more to that
+25:51 I think that's a writing to be technical
+25:55 should be should talk about something
+25:57 technical uh for example how to set up
+26:01 something
+26:02 how to perform a task how to do
+26:06 something a technical writing is differs
+26:10 from for example a research article
+26:13 because a research article
+26:15 discusses some Concepts and more from a
+26:20 theoretical point of view you can still
+26:23 have some implementation Parts but they
+26:26 demonstrate how you uh your ideas in a
+26:31 technical writing instead I think that
+26:34 you describe how to solve a problem for
+26:38 example if you write a technical book
+26:41 this book can be a reference in manual
+26:44 where you teach something and also the
+26:49 the language you use
+26:51 should be sure in a sense in a sense
+26:55 that if you
+26:57 say something you cannot say
+27:01 for example you can do this you have to
+27:05 say do this because you have you are
+27:10 you are sure of what are you uh saying
+27:14 and there are these differences yes so
+27:18 let's let's say how to install
+27:21 um I don't know how to prepare
+27:23 environment for GPU that would be a very
+27:26 technical uh article right because you
+27:28 have a sequence of steps
+27:30 and you have some screenshots you have
+27:31 pieces of code and then you just follow
+27:33 this yes that's uh
+27:36 um I guess this one is easy
+27:39 um but uh like let's say
+27:42 if we talk about I don't know how to do
+27:46 data visualization this is also
+27:48 technical right because you walk the
+27:50 editor through yes uh like some guide
+27:54 right some how to yes
+27:56 is it always like that
+27:58 like you you just walk The Reader
+28:01 through a sequence of things and show
+28:03 how to get to the result they need well
+28:05 no you can also describe you can report
+28:09 some things I think you can provide some
+28:13 examples about it about something
+28:17 [Music]
+28:19 in my book I also this comment for data
+28:22 science I also describe some general
+28:24 concepts to give to introduce the reader
+28:28 to some concepts for example like what
+28:31 is machine learning for example right or
+28:33 yes for example the general an overview
+28:38 but it's different from
+28:41 research article where you have to
+28:44 explain the details about Concepts
+28:49 okay
+28:51 and
+28:52 and then sorry another thing the most I
+28:55 think that the the main difference
+28:57 between research articles and also
+29:00 technical articles is that in research
+29:04 articles you discover some something new
+29:08 you describe something new in technical
+29:12 articles instead you describe existing
+29:16 things
+29:18 so maybe you know there are companies
+29:21 like stack Overflow that run surveys
+29:24 like every year they ask people who are
+29:28 members of stack Overflow about their
+29:31 interests like about the tools they use
+29:32 about the tools they want to use they
+29:34 want to learn the tools they hate like
+29:36 languages they hate languages they love
+29:38 their salary and like it's quite a
+29:41 massive questionnaire I don't know if
+29:43 you ever took part but maybe you took
+29:45 part in similar ones I think O'Reilly is
+29:47 doing this there are quite a few
+29:49 companies that are doing this and then
+29:51 at the end so they collect this data and
+29:53 then I don't know one two months later
+29:55 they release a report like a PDF so how
+29:59 would you classify this report is it
+30:00 data journalism is it technical writing
+30:03 is it a I don't know
+30:07 story data storytelling or what is that
+30:10 it depends on how the report is written
+30:15 um if you transform your report to a
+30:19 story sorry if you start if you only
+30:23 report uh data SDR it's a report
+30:29 if you extract a story from your data it
+30:34 can become become a data storytelling or
+30:39 also a data journalism story recently I
+30:43 have also read read a book about which
+30:48 um about data storytelling which used
+30:51 this example of this report of
+30:56 obstacle workflow and
+30:59 they described how to transform this raw
+31:04 data into a story
+31:06 this was very interesting this was a
+31:10 case of a self-published book
+31:14 um because there are the results of the
+31:16 option to
+31:18 to self-publish a book and it was very
+31:22 very
+31:23 um interesting uh book maybe I can send
+31:26 you the the title and so you can share
+31:28 it with the community
+31:32 so I am so let's say we have this report
+31:35 right so if we just do I don't know
+31:38 basic data analysis we aggregate data we
+31:42 showed all these pie charts pie charts
+31:44 bar charts and all these things and then
+31:47 we put them in a PDF
+31:49 and we say that okay this is the most
+31:51 popular language this is the most hated
+31:53 language this is how data scientists
+31:55 earn this is just a report yes it is but
+31:59 if we let's say write an article about
+32:01 different programming languages and we
+32:05 say that okay Java and C are the most
+32:07 popular programming languages and then
+32:10 we add a chart that displays that shows
+32:13 that that proves that okay this is based
+32:16 on this data set right and then we maybe
+32:18 talk about I don't know the story behind
+32:20 some of these programming languages then
+32:22 it would be more like data and
+32:24 journalism right yes
+32:27 also in addition to that you to
+32:30 transform a report into a data
+32:32 journaling story for example you um you
+32:36 can add the context to your data
+32:40 um for example in the case of of
+32:44 programming languages you can group data
+32:47 by
+32:48 um by the year the how old are people
+32:54 re answering to the questions and you'll
+32:58 you'll see for example that the the
+33:03 I don't know at the ninth the eight 18
+33:05 18 Generation
+33:11 Um I don't know likes Java and now you
+33:15 can start
+33:17 searching why this this category of
+33:21 people likes like like more Java than
+33:25 the other languages maybe they studied
+33:28 the job at University and so on and here
+33:32 you transform your uh your simple Road
+33:36 data into a story to extract to add the
+33:39 context and finally the main objective
+33:42 when you transform when you want to
+33:46 transform your data into a story is to
+33:49 add what we say what it's called is
+33:54 called wisdom which is to um
+33:58 to attach to your data in ethics a
+34:03 message a call to action to your
+34:06 audience because the final objective of
+34:10 a data storytelling or in general the
+34:13 data journalism story is to call the
+34:16 audience to action and this is not a
+34:21 report anymore it's a story and in the
+34:24 report in the report do we have call to
+34:27 action
+34:28 or could be right I could share it with
+34:31 your friends
+34:32 it's not sufficient okay
+34:36 because I guess companies they usually
+34:38 do this to get some exposure right so
+34:40 the uh the real reason they are doing
+34:43 this is uh you know like people start
+34:45 sharing it they link to their website so
+34:47 that there are more users maybe in this
+34:51 case the the promo the take off to
+34:54 action in the previous example of java
+34:56 people could be
+34:58 um
+34:59 try to these people who like Java to
+35:04 Learn Python invite these people to
+35:06 Learn Python because python is more
+35:09 recent I don't know okay I see a comment
+35:14 in live chat from Adonis so reports to
+35:16 your stakeholders can be classified as
+35:19 technical writing too
+35:21 so Angelica what do you think about this
+35:24 is it a character reservation I I don't
+35:27 I think that it depends how to the the
+35:31 the store the report is built because
+35:34 I'm currently studying a data
+35:37 storytelling there are many books about
+35:40 them one of the most popular is the
+35:44 storytelling with that by calling
+35:48 and it's very famous book which says
+35:52 that when you talk to your stakeholders
+35:55 you have to tell them stories and not
+35:58 just reports because you have to invite
+36:01 them to take some decisions based on the
+36:06 data obviously so I strongly encourage
+36:10 you to transform your
+36:13 said and boring reports to data stories
+36:18 thank you
+36:19 yeah we have a question so how
+36:23 um to make sure that an article that
+36:26 you're writing has the right amount of
+36:28 data visualization so it's not too much
+36:30 not too little just the right amount
+36:33 I think that
+36:35 um the uh to explain the concept uh to
+36:39 explain the concept maybe one graph is
+36:44 enough so
+36:46 um you can you you have to use one
+36:50 graph for it one sorry one concept per
+36:55 graph so don't show many Concepts in the
+36:58 same graph it it's very confusing and
+37:02 then if you have to say many uh many
+37:07 Concepts
+37:09 um you have to you need many charts but
+37:14 um I think that's the
+37:16 the audience will get confused because
+37:19 the idea is to transmit just a single
+37:22 message and all the graphs that you put
+37:25 in your report must
+37:29 um
+37:30 must be in accordance with this message
+37:34 so
+37:35 um don't feel that your graphs are
+37:40 there are two there are few
+37:44 um graphs because the the most important
+37:48 aspect of your report is not the
+37:51 quantity the amount of graphs but the
+37:54 message that you want to turn that's it
+37:56 I instead I think that in some cases
+37:59 it's better a table than a graph because
+38:03 it's clearer
+38:04 uh if you ever feel just two or three
+38:08 data it's not uh it's a useless to use a
+38:13 graph usage Yeah by chart no no you can
+38:19 buy bar chart like if you only have
+38:21 three data points like it's no a chart
+38:24 will take simply too much space right I
+38:27 fight by charts with all my heart
+38:30 because I think that the pie chart if
+38:34 there are many
+38:36 um many slices in the pie chart you
+38:40 don't understand anything if there are
+38:43 only two uh two slices in your pie chart
+38:48 it gives you the Pacman idea I don't
+38:51 know if you know Pac-Man this is the
+38:53 character of some video games it seems
+38:56 that the degree the great the greater
+38:59 part the slice wants to eat this this
+39:03 small one and this is a this has a
+39:06 negative effect on the audience so don't
+39:09 use pie chart
+39:11 so you mentioned one interesting thing
+39:13 so a purpose
+39:16 for an article should be to convey a
+39:19 single message and all the
+39:21 visualizations you use all the charts
+39:23 should support this single message and
+39:26 since you wrote so many articles so many
+39:28 different articles did you say 170 yes
+39:32 so how long are these articles that you
+39:35 wrote usually like are they six minutes
+39:38 yes five six minutes
+39:41 yes there are also a medium or some very
+39:45 long articles about 15 minutes to tell
+39:49 the truth I don't have the time to write
+39:52 this long articles so I keep them short
+39:57 um I always I also have started the
+40:00 a publication on on medium which is a
+40:05 very which is called the syntax error
+40:09 but at the moment it's very small where
+40:13 the main objective is to solve some
+40:17 problems very shortly like a stake
+40:20 overflow of in medium
+40:23 if you maybe in the in the slack
+40:26 Community if someone wants to to write
+40:30 to participate to
+40:32 this publication they could drop me a
+40:36 message and I will be happy to watch
+40:38 them to share the link just share the
+40:42 link and we will include this in the
+40:43 emails in the description yeah that's an
+40:46 interesting idea can I can you walk us
+40:48 through the process of creating an
+40:50 article so you said that your articles
+40:52 are usually five six minutes long so
+40:54 we're super focused on conveying a
+40:57 single message
+40:58 and I guess this is what you start
+40:59 correct me if I'm mistaken this is what
+41:02 you start your article with right
+41:04 thinking of what this message could be
+41:06 right yes so an overview of the topic
+41:09 you start by giving an overview of the
+41:11 topic then you uh describe how you
+41:15 solved your problem usually I write the
+41:18 technical articles which
+41:21 um solve some problems some common
+41:25 programming problems and so I describe
+41:29 an example which
+41:32 solves the problem and then I give some
+41:35 red structure is very very simple
+41:39 you could write sing something
+41:43 more complex but in my case it's very
+41:46 simple I also provide I usually provide
+41:50 the code of the of the the article in
+41:55 the separate repository which is well
+41:59 appreciated on GitHub small but it's
+42:03 appreciated yes so then the format As I
+42:07 understood see you first you have a
+42:10 problem and then you show the solution
+42:12 and at the end we talk about the result
+42:14 right and then in this format you kind
+42:17 of come up with outline
+42:19 [Music]
+42:21 so you have this outline in this form
+42:23 and then you add text some code yes
+42:27 illustrations right how many
+42:29 illustrations do you usually add uh I
+42:33 generally illustration at the beginning
+42:35 to capture the tensor of attention of
+42:40 the reader and then maybe technical
+42:42 illustrations related to the problem too
+42:47 sorry to be solved for example if I need
+42:51 to draw a graph I show the graph
+42:56 so when do you think about illustrations
+42:58 when uh you have an outline but you
+43:02 haven't started writing the article or
+43:04 at the end you see okay there is just
+43:06 too much text I need to add an article
+43:08 or how does it work usually for you
+43:11 no I when I finish the the topic I
+43:16 um I stopped the article if but if the
+43:20 article is too short I try to extend it
+43:24 for example by sending the example or
+43:27 or I think a new
+43:31 um our extending the overview
+43:34 adding some general concepts and similar
+43:38 things
+43:39 how do you find topics like you said
+43:42 usually you focus on a specific problem
+43:44 and then sure
+43:46 sorry to show how to solve this specific
+43:48 problem
+43:49 right how where do you find these
+43:51 problems is it something let's say you
+43:53 are working on a particular thing and
+43:56 then you have this error yes and this is
+43:59 is this your main source of inspiration
+44:01 or how do you find usually I write on
+44:04 the problems that I I personally have
+44:08 because I think that maybe they could be
+44:11 useful for the community
+44:14 um and but some other times I read on
+44:19 social networks like LinkedIn or Twitter
+44:25 for new libraries for example I try to
+44:28 test them and then I write you know it's
+44:31 called an article about the topic but
+44:34 most of the time I take note of my
+44:37 problems and how I solve them this is
+44:41 also for me
+44:42 a way to keep track of how I solve my
+44:47 problems in fact I I'd like to suggest
+44:51 the community also to take note of how
+44:55 they solve their problems because we are
+44:59 used to
+45:00 to search on Google but maybe if a
+45:04 problem
+45:05 comes again twice or three times we need
+45:11 to search again Google on the same
+45:13 problem instead if you keep track of of
+45:16 the problem by writing an article we
+45:20 have the solution already available and
+45:23 this is my strategy maybe after I don't
+45:27 know after 10 months I have the same
+45:30 problem I exactly know how to solve it
+45:33 mm-hmm
+45:35 so these articles that you write they
+45:38 are very focused very short to the point
+45:41 and then you also wrote a book right and
+45:44 the book is not a five minute Series
+45:47 right so it's something more
+45:48 comprehensive
+45:49 so maybe like I have a lot of questions
+45:51 about the book but maybe you can tell us
+45:53 like how did you end up writing a book
+45:55 so you said you were writing uh some
+45:58 novels right but then at some point you
+46:02 decided to write a technical so how did
+46:04 this happen
+46:06 um instead the the the the
+46:09 situation was this like to different
+46:12 because
+46:16 uh I didn't choose to to write a book
+46:20 because somebody forced you
+46:23 no no no no no no uh my in my idea my
+46:28 dream was since I was a child to write a
+46:31 book okay but
+46:34 [Music]
+46:34 um
+46:35 is about at some point I received the an
+46:39 email by an acquisition editor who asked
+46:43 me to write a book I was surprised by
+46:47 this maybe he watched my I read my
+46:52 articles and they contacted me and at
+46:56 the beginning well I didn't know if it
+47:00 was the best thing to do but then I
+47:04 decided to accept and then I wrote this
+47:08 book also he proposed me the topic and
+47:12 so uh
+47:13 instead the topic was proposed by them
+47:17 by the publisher I accepted that the
+47:21 story is this but it wasn't like coming
+47:25 out of the blue right it was something
+47:28 just related to some of the Articles you
+47:31 wrote you probably you must have written
+47:33 an article about Comet for data science
+47:35 that's why they thought of you yes I
+47:37 wrote an article about Comet and
+47:40 overview of comet I also
+47:44 um uh is a master contributor of the
+47:48 heartbeat
+47:49 publication which is the
+47:52 um which is the publication by Comet and
+47:56 so maybe they contacted me for the for
+47:58 these reasons
+48:01 okay interesting so basically the recipe
+48:03 is you're right
+48:05 uh you publish your articles on medium
+48:08 some other uh some other platforms and
+48:12 then
+48:13 people from the publisher like
+48:16 Publishers might reach out to you right
+48:18 so at least this is how it happened to
+48:19 you yeah yes I think that yeah that
+48:21 you'll be a great stroke strategy if you
+48:23 want to write something to build a
+48:25 portfolio of Articles and and then
+48:30 which show your capabilities and your
+48:34 writing skills there may be someone from
+48:37 the acquisition team of of a publisher
+48:42 can contact you an alternative could be
+48:46 to contact directly a an acquisition
+48:50 editor for example I don't know you go
+48:55 on LinkedIn you search for the publisher
+48:57 and you you search for the acquisition
+49:02 editor
+49:03 in the company in the publisher and you
+49:07 ask them if you if you are interested in
+49:11 some books do you approach them with a
+49:16 topic so you find I don't know in maybe
+49:19 you go to LinkedIn and you write packed
+49:21 acquisition editors or mining
+49:23 acquisition editors and then you see
+49:25 some people and then you send them a
+49:26 connection request and you write okay
+49:28 I'm interested in writing a book about
+49:31 comment or I'm interested in writing a
+49:33 book about some specific topic and then
+49:36 they might say okay yeah you know what
+49:38 let's actually write it right
+49:40 yes because I think that if you send
+49:43 them if you the alternative is the
+49:45 official way is to uh send them to
+49:49 fulfill a form and sell the The Proposal
+49:52 but in this case I don't know but you
+49:55 have a
+49:57 less chance to be accepted because you
+50:00 are one of the thousands of people who
+50:03 send the book proposal if you are
+50:05 responsored by in a position editorial
+50:08 instead
+50:10 um I think that you have a more a great
+50:12 greater probability to be a higher
+50:15 probability to be accepted
+50:17 mm-hmm
+50:18 and it's not an easy process I know that
+50:21 because I also have written a couple of
+50:23 books so I'm curious like how did it
+50:26 actually happen what was the process
+50:27 from the time from the moment you got
+50:29 contacted by an acquisition editor to
+50:33 the point when it was actually out in
+50:36 print
+50:39 it was a long journey it's you know very
+50:44 long time it's another job and from this
+50:48 first book I learned many things
+50:51 and I'd like to share with you this the
+50:55 first thing is to read carefully the
+51:00 contract before signing it and I think
+51:04 that the the first step is to read in
+51:08 particular
+51:09 the timeline where the delivering
+51:13 process is defined the the editor shares
+51:17 the publisher shares with you a possible
+51:20 timetable where you timeline where um
+51:24 where he said he says exactly when you
+51:28 have to deliver a chapter and usually
+51:31 due to time to market the reasons the
+51:35 publisher
+51:36 expects a chapter every two weeks
+51:41 schedule
+51:43 yes I have done this for the book
+51:46 comment for data science but I don't do
+51:50 this
+51:52 never no okay that's just okay but when
+51:56 when to sleep right yes and so if you uh
+52:01 um if you can if you can ask the the
+52:05 publisher to extend this period at least
+52:08 four weeks a chapter and if your chapter
+52:11 requires more times more time before
+52:15 maybe because it's
+52:18 um it's it requires many uh codings and
+52:23 so on ask them also for six weeks
+52:27 also add
+52:30 I think that you should also add some
+52:33 holidays periods some vacations period
+52:36 because the contract has a section where
+52:40 you can insert this aspect and then when
+52:44 everything is okay for you you can start
+52:48 writing assuming that you have already a
+52:52 table or contents and so on it's a list
+52:55 of chapters if you uh have to write a
+52:59 chapter every four weeks
+53:02 um in practice you need to write a page
+53:05 a day you have a 24 28 days for each
+53:11 chapter
+53:14 um
+53:15 if you remove weekends maybe you have I
+53:19 don't know 20 days you can write 20 a
+53:23 chapter of 20 Pages only approaching one
+53:27 page per day which is very
+53:30 easy
+53:31 but even before that even before you
+53:34 have a contract so for a contract and
+53:36 the timeline is you mentioned you need
+53:39 to have
+53:40 you know to actually feel the timeline
+53:42 you need to know what are the uh
+53:45 Milestones right what are the chapters
+53:46 what are the sections so I guess there
+53:48 is also a lot of work before this
+53:51 context says like because uh I don't
+53:54 know how it happened with you I guess
+53:56 usually the this Talent this acquisition
+53:59 managers they come
+54:01 with I don't know a title they say okay
+54:05 I have these titles which of them is
+54:07 interesting for you right and then you
+54:09 need to actually
+54:10 work out work on a proposal right
+54:15 or how does it happen firstly you need
+54:18 to download the Publishers template you
+54:20 have to fill it but the main question
+54:24 you have to ask
+54:26 uh to you have to tell the truth you
+54:29 have to answer this question do I know
+54:32 the topic if because if you don't know
+54:37 the topic at least in general
+54:40 don't write the book
+54:43 um valid point but I guess like I was
+54:46 kind of under assumption that if you
+54:48 want to write a book then you know it
+54:50 but it could be that you don't know the
+54:54 topic because maybe you work on machine
+54:57 learning and you want something about I
+55:00 don't know tensorflow but if you don't
+55:02 write on things that don't work on
+55:04 tensorflow don't write a book on
+55:06 tensorflow at least you you must need
+55:10 and you must know and overall
+55:13 overview of the topic then you I think
+55:18 that before writing everything you need
+55:21 to
+55:22 um to perform to search for other book
+55:24 other similar books this is called in
+55:28 the same in the research field the state
+55:31 of the art you need to
+55:33 um
+55:34 to see which is or what is already
+55:37 available in the market because if your
+55:41 book does the add anything about with
+55:45 respect to the previous books it's it
+55:49 has no there is no sense to write it and
+55:52 your books are not market research right
+55:55 yes it could be I think I I came across
+55:59 this I don't know how Publishers code
+56:01 uh so but like your point is that you
+56:05 the book should be unique at least in
+56:08 one aspect right so it shouldn't be just
+56:10 a copy of another book yes when it comes
+56:12 to table of content right sorry
+56:16 and then once you have the topic
+56:21 sorry you have to think about it
+56:24 the audience of your book
+56:27 and this is
+56:29 um
+56:30 similar to the previous
+56:34 sorry for this cough
+56:36 yeah maybe take a moment okay
+56:46 okay sorry
+56:48 um you have to think about the audience
+56:50 and then I think you can start
+56:53 writing on a paper everything about this
+56:58 topic
+56:59 I don't know everything comes in your
+57:02 mind is in your brain it's the
+57:06 brainstorm phase
+57:08 where you decide what to include and
+57:12 what not to include in your book
+57:15 I think what I did was I created a mind
+57:19 map so you know like the in the center
+57:21 so I took a page like that like uh just
+57:25 a blank page and in the center I put the
+57:28 topic okay let's machine learning
+57:31 engineering right and then there could
+57:33 be branches okay what I can talk about
+57:34 this topic I can talk about machine
+57:36 learning I can talk about engineering
+57:38 and then I kind of Branch out from each
+57:40 of these things right and then
+57:43 you convert that into a proposal
+57:46 eventually
+57:47 yes then I think that you can group the
+57:50 similar topics that you have found into
+57:54 micro areas for example if you have
+57:57 found
+57:59 I don't know 40 arguments you can group
+58:03 in 10 12 macro areas and this will
+58:07 become the chapter of
+58:09 your book
+58:12 um this is a general
+58:14 process in instead in to tell the truth
+58:18 I didn't follow this step I try I am for
+58:24 the book comment for data science I had
+58:27 everything clear in my mind I said I
+58:30 start saying this then this then this
+58:33 and finally this
+58:35 okay
+58:37 and the editor uh slightly changed
+58:42 something but they accepted the proposal
+58:47 as it was
+58:50 so then you you have this proposal right
+58:53 so he works sometime on the proposal and
+58:55 then the result The Proposal is
+58:57 basically the table of contents right so
+59:00 you have the what are the sections what
+59:02 are the chapters and then I think
+59:05 um you also describe the target audience
+59:07 yes
+59:08 and also in some Publishers see you also
+59:13 have to provide the state of the art
+59:15 similar words
+59:18 um and the the potential yes the
+59:22 audience but you have to you must be
+59:25 very very specific for the audience for
+59:29 example you you must say if the audience
+59:33 is the entry level
+59:35 intermediate
+59:38 engineering for example if there are
+59:42 some requirements for the audience
+59:45 because an entry-level book is simpler
+59:49 you tell about the basics and so on for
+59:54 an intermediate level Studios you have
+59:57 to know the topic very well because
+1:00:00 you you assume some that the audience
+1:00:05 already knows the same things
+1:00:08 okay so then there is a proposal which
+1:00:11 is hopefully accepted by the publisher
+1:00:13 then uh you sign the contract and then
+1:00:16 um you should watch out for the things
+1:00:17 you described right so yes make sure
+1:00:20 it's manageable and you have time to
+1:00:23 actually enjoy life and sleep and other
+1:00:26 things
+1:00:27 and then like if it's one chapter per
+1:00:31 month then you need to write around one
+1:00:34 two pages per day to finish it right
+1:00:37 uh yes but the process is not simpler as
+1:00:42 it seems because uh when you submit the
+1:00:46 first chapter you you write the second
+1:00:50 chapter but after for example two weeks
+1:00:53 you get the first chapter back with the
+1:00:57 reviews and you have firstly back from
+1:01:01 your Editor to to change some editing
+1:01:06 aspects and then from reviewers if you
+1:01:11 or your research your topic was you if
+1:01:16 you
+1:01:18 wrote quite well this is a a is this is
+1:01:23 easy because the reviewers say say
+1:01:26 simply okay
+1:01:28 but if you did some mistakes then you
+1:01:33 need to write to to work on chapter one
+1:01:36 and chapter with Captain chapter 2 and
+1:01:40 these this process overlaps with all the
+1:01:43 chapters we can see how it can Snowball
+1:01:46 right like like when you write chapter
+1:01:48 four you still have some uh unfinished
+1:01:51 comments from chapter one and chapter
+1:01:52 two and then it's like you go math
+1:01:55 yes but the idea is to keep you
+1:01:58 organized I think that um to if you
+1:02:03 leave at least I don't know
+1:02:08 per day or one hour per day it could be
+1:02:13 sufficient to deliver everything in time
+1:02:16 but one hour is is many times
+1:02:22 yeah I just noticed that actually we run
+1:02:25 out of time so this is a very exciting
+1:02:27 topic and then time flies
+1:02:30 um
+1:02:30 maybe very quick question before we
+1:02:32 finish so there's a question from funkan
+1:02:35 and the question is can a very routine
+1:02:38 200 stroke uh
+1:02:41 article on for example Italy's inflation
+1:02:44 rate in November 2022 can it be
+1:02:48 considered data journalism
+1:02:50 or it's more like a report I I didn't
+1:02:53 get the point stroke a stroke sorry like
+1:02:56 200 stroke I think this is like 200
+1:02:59 maybe Pages uh reports from Reuters on
+1:03:04 Italy's inflation rate in November 2022.
+1:03:08 can it be considered data journalism are
+1:03:11 you familiar with Reuters like I think
+1:03:13 they are some sort of published in
+1:03:17 actually I did I don't so I don't know
+1:03:20 the topic I maybe I can investigate this
+1:03:24 again uh give a better answer
+1:03:28 Maybe
+1:03:29 yeah let's
+1:03:31 um maybe we can find this article share
+1:03:34 it with you and then yes in the notes it
+1:03:37 will be published in a couple of weeks
+1:03:39 anyways so there is some time okay
+1:03:43 um that's um
+1:03:45 that was fun talking to you
+1:03:48 thanks for joining us today
+1:03:51 uh thanks everyone for asking questions
+1:03:53 and uh
+1:03:55 yeah I think
+1:03:57 we can wrap it up and everyone enjoy
+1:04:00 your weekend okay

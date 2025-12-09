@@ -1,0 +1,1625 @@
+Machine Learning and Personalization in Healthcare
+
+0:01 now hello everyone this week we'll talk
+0:03 about machine learning in healthcare
+0:05 and in particular about personalities
+0:08 personalization in healthcare and we
+0:10 have a special guest today stefan is it
+0:12 stefan right not stefan yeah stefan or
+0:15 stefan if you want to be uh
+0:18 stefan
+0:19 stefan okay
+0:20 um so stefan is from iceland at some
+0:24 point he moved to sweden where he worked
+0:25 at king and h m then he moved back
+0:28 from
+0:30 to iceland and joined sidekick health as
+0:32 a director of data science and ai so
+0:35 welcome stefan thank you
+0:39 so before we go into our main topic of
+0:41 machine learning in healthcare and
+0:44 personalization in healthcare let's
+0:46 start with your background can you tell
+0:48 us about your career journey so far
+0:50 yes absolutely but i i think i better be
+0:54 sort of shorten it a little bit i think
+0:56 i have my first job but the age of 12 in
+0:59 last century so i'll just do
+1:02 very short snapshots of the early career
+1:04 and then focus on the
+1:06 more relevant stuff so
+1:09 i started working as a developer rather
+1:11 young like 18 with in a part-time job
+1:16 in high school
+1:17 then that was in 96
+1:21 in 99 i was able to build my first or i
+1:24 was given a task of building my first
+1:26 data pipeline for the notorious y2k
+1:29 problem that was very interesting
+1:32 and much of my
+1:34 sort of early developing work was around
+1:37 [Music]
+1:38 building programs that could control the
+1:41 graphics and tv programs like uh live
+1:44 sports shows and election programs and
+1:46 things like that
+1:47 so i i still today think i've written
+1:50 most of my
+1:52 lines in a programming language called
+1:54 delphi that nobody uses anymore
+1:56 um
+1:58 that's that was my first language oh
+2:00 really
+2:01 yeah very nice
+2:03 yeah it's a nice one
+2:05 nobody cares about it anymore but it was
+2:07 nice
+2:08 i think she shot took over at some point
+2:10 uh in 2006 and seven i had a great
+2:14 experience where i was building an
+2:17 enterprise state of eros from scratch
+2:19 with a great team at uh the largest
+2:21 telecom company in iceland and uh that
+2:24 experience has sort of helped me a lot
+2:26 in the in my current
+2:28 and recent years but if i fast forward
+2:30 over these snapshots and then
+2:33 sort of start being more current
+2:36 uh i i think i'll start in 2015 where i
+2:40 left took a very good decision but a
+2:42 difficult one i left a
+2:44 very nice and cozy job as a director of
+2:47 analytics and modeling and one of the
+2:49 main three major banks in iceland
+2:52 and
+2:52 moved with my family to stockholm
+2:56 where i joined king the makers of
+2:58 canticross
+3:00 and that was
+3:02 a great experience most of the time
+3:04 there i spent building the ai team there
+3:06 and the a research sort of part of that
+3:09 team also where we
+3:11 did a lot of collaboration with
+3:13 universities and i supervised
+3:16 quite a few master students and we were
+3:17 building
+3:18 some nice products some failed some were
+3:21 successful
+3:23 so maybe maybe we discussed that a
+3:25 little bit later
+3:28 in 2019 i decided to move over to h m
+3:31 still in stockholm uh they were in the
+3:34 very early phase of building up a
+3:36 machine learning function machine
+3:38 learning team
+3:39 and as you can imagine one of the
+3:40 biggest retailers in the world with
+3:42 awesome data and sort of few images text
+3:45 recognition and all of these things
+3:47 come together
+3:49 so i learned a lot there and just
+3:51 we were focusing a lot on okay what's
+3:53 the best team structure how do we build
+3:54 what's the best practices and solving
+3:56 all of these problems
+3:58 so that was the early part of that job
+3:59 when we got more people in i moved more
+4:01 into a similar part that i had
+4:04 been doing at king before so this
+4:06 research collaboration
+4:09 with universities master students
+4:11 sort of trying to be the translator
+4:13 between the state of the art and
+4:15 academia that we're only focusing on the
+4:18 latest methods and then the business
+4:20 people that are only focusing on money
+4:21 and don't care about the methods so
+4:23 you're trying to
+4:24 sort of merge these two and then be in
+4:26 between there too to sort of create some
+4:29 value out of that collaboration
+4:31 uh
+4:33 late 2020
+4:35 i was offered
+4:38 this position at
+4:39 sidekick health
+4:41 a startup scale up
+4:45 living in with the main office in
+4:47 iceland but we have offices both in
+4:49 berlin and boston and stockholm
+4:52 but
+4:53 the job there was basically to build up
+4:56 the data science and ai team uh in the
+4:59 company and
+5:01 sort of
+5:02 to
+5:03 contribute to making this uh
+5:06 what i hope it will become a
+5:09 fantastic data-driven company with
+5:11 world-class machine learning solutions
+5:13 and digital therapeutics solutions so
+5:16 that's that's something i had to
+5:17 basically jump on and started there in
+5:19 early 2021
+5:22 so this is a completely off topic but i
+5:25 can't help but answer but ask you
+5:28 how islamic and swedish different are
+5:30 they very different languages or they're
+5:32 similar
+5:34 well i i sometimes explain this as sort
+5:36 of 1000 years ago it was the same
+5:38 language
+5:40 and then sweden and denmark and norway
+5:43 decided to evolve but we did not
+5:45 so we can still read the icelandic sagas
+5:47 from 1200
+5:49 something
+5:51 yeah i think that's the main difference
+5:53 so we still have more inflections more
+5:56 sort of nuances
+5:58 that usually
+5:59 evolve out of languages
+6:01 through vikings right
+6:04 i don't know about that okay so like
+6:07 coming back to our topic main topic of
+6:09 machine learning in healthcare
+6:11 usually when i hear machine learning in
+6:14 healthcare i think about
+6:17 well in general in healthcare usually i
+6:19 think about clinical trials but when in
+6:21 particular people talk about machine
+6:23 learning then i imagine all these x-ray
+6:25 images or some images
+6:28 and then people would run deep learning
+6:30 on top of these images
+6:32 so this is mostly about processing
+6:34 medical images
+6:36 exactly is this correct or there are
+6:38 more applications of machine learning in
+6:40 healthcare there are
+6:43 of course i
+6:44 myself i i this is what comes first to
+6:47 mind i mean a typical
+6:48 sort of vision you have is there's an
+6:51 x-ray of some broken arm or or whatnot
+6:54 and and then you have a deep learning
+6:56 emits recognition to tell you okay this
+6:58 is wrong to this
+7:00 that is a use case of course but there
+7:02 are many more and uh
+7:04 to name a few i mean disease diagnosis
+7:07 where you where you maybe have symptoms
+7:10 and measurements but it's not obvious
+7:12 okay what disease is this so trying to
+7:15 automatically
+7:16 uh distinguish or or sort of recognize
+7:19 that
+7:21 there's a lot of
+7:22 work in of course through the pharmacy
+7:24 companies and
+7:25 things related to that drug discovery
+7:28 okay
+7:28 what kind of drugs can you have are they
+7:30 related
+7:32 can they be tailored to your gene
+7:34 settings or something like that
+7:36 uh i think we've all probably heard
+7:38 about deep mind and the alpha fault
+7:40 where they are trying to predict the
+7:42 folding of proteins which can be uh
+7:47 turned out to be a very big sort of game
+7:49 changer in this sort of to understand
+7:51 the biology
+7:53 behind all of this and and then you can
+7:55 move into more sort of personalized
+7:56 medicine uh where
+7:59 you get different drugs and slightly
+8:02 different treatments for example for for
+8:03 your cancer treatment based on your
+8:05 background and medical history and
+8:06 things like that
+8:08 and there are probably many more that
+8:09 i'm not mentioning but just to name a
+8:12 few
+8:14 do you know anything about this alpha
+8:16 for alpha fault i heard that it exists
+8:18 but my knowledge of biology is so
+8:20 non-existent that i couldn't appreciate
+8:23 the
+8:25 the well i heard that it's there was a
+8:27 breakthrough in biology because of deep
+8:29 learning but i don't know anything about
+8:31 the biology to really appreciate this
+8:34 i'm a little bit ashamed to say that
+8:36 today uh when i was younger i i thought
+8:39 that biology was a little bit inferior
+8:42 we didn't have enough numbers
+8:44 so
+8:45 i'm probably the same i'm sort of not
+8:47 very good with biology but i i read the
+8:49 paper uh on alphavolt from deepmind and
+8:53 it seems very interesting but i i
+8:56 i'm on the same page as you are i'm not
+8:58 an expert on this at all
+9:01 so did you understand a lot in that
+9:03 paper or your lack of knowledge in
+9:05 biology
+9:07 no i think well it's
+9:10 been some time since i read it also i
+9:12 couldn't really quote it but i i
+9:14 in my memory i
+9:16 thought i interested
+9:18 but
+9:19 that's probably also
+9:20 uh because deepmind puts a lot of effort
+9:23 into making uh their
+9:25 sort of content
+9:27 uh accessible by by the public so i've
+9:30 read and
+9:32 taken much more deep dive on the uh
+9:35 earlier stuff they did they did on the
+9:37 alphago and
+9:39 alpha zero
+9:40 and that's very accessible or can be
+9:44 yeah i guess the target audience of this
+9:46 paper
+9:47 are machine learning researchers not
+9:50 biologists right or maybe both uh
+9:53 probably both but then then they are
+9:55 usually
+9:56 they usually uh get to publish in nature
+9:59 as well so that's where they
+10:01 uh so everyone is basically every
+10:03 scientist is becomes the target audience
+10:06 so and before this episode i was
+10:09 doing a little bit research about the
+10:10 company where you work at right now
+10:12 sidekick health
+10:14 and i know that this is in healthcare
+10:16 domain
+10:17 and
+10:18 yeah i thought maybe you're doing these
+10:20 medical images like other healthcare
+10:22 companies so i went to the website i
+10:25 checked the description and it was
+10:27 saying that you're doing gamified
+10:29 digital therapeutics built on science
+10:32 rooted in behavioral economics and
+10:34 scalable across multiple therapeutic
+10:36 areas i must admit that most of these
+10:39 words do not tell me anything
+10:42 so i'm not sure i really understood what
+10:44 you do so maybe can you
+10:47 decipher what it actually means i i can
+10:50 try
+10:52 no no it should be very simple but you
+10:54 know how sometimes the language and web
+10:56 pages are
+10:58 sort of uh putting a
+11:02 specific customer
+11:03 uh
+11:04 yes so i mean that that's another field
+11:07 in
+11:08 sort of uh
+11:10 machine learning and ai in healthcare is
+11:14 sort of the treatment itself can we
+11:16 personalize the treatment more can we
+11:18 get more out of the treatment if you we
+11:19 take a step back and think about okay
+11:22 we have streamlined healthcare in many
+11:24 ways and
+11:26 which is great we i mean we know you
+11:28 come into a doctor you meet them for
+11:30 five minutes they diagnose you
+11:32 you get a treatment or medicine and
+11:34 you're out
+11:35 nothing more to be done i mean this is
+11:38 a lot of our experience of of health
+11:41 and often this is just enough
+11:44 but all this streamlining also means
+11:46 that if you have multiple diseases you
+11:49 you're not really getting that
+11:51 communication you just go to an expert
+11:53 they treat one thing
+11:56 and
+11:57 you you're not you're really losing the
+11:59 empathy right because it's been
+12:02 streamlined so much
+12:04 so and and there are studies showing
+12:06 that empathy is a big factor in and
+12:08 often sort of better outcomes or
+12:10 treatments and all of that
+12:12 so our goal is basically
+12:14 so
+12:14 we want to maximize the quality life
+12:16 years of a person's life
+12:19 so that sometimes means we can try to
+12:21 cure a disease or help them live longer
+12:24 it also means there are a lot of people
+12:26 that have chronic diseases which they
+12:28 have to live with for decades but just
+12:30 being able to educate them and help them
+12:33 taking the right steps developing their
+12:36 sort of uh daily habits in a better way
+12:40 can actually increase the quality of
+12:42 life
+12:43 substantially
+12:44 so that that's what we're trying to
+12:46 build these sort of we have more touch
+12:48 points with the
+12:49 users and patients than you would do in
+12:52 normal healthcare because you have this
+12:53 through an app
+12:55 but
+12:56 in the app but also trying to
+12:57 personalize so you feel better you are
+12:59 better engaged we try to personalize all
+13:01 the content you you get you we take into
+13:03 account if you have more than one
+13:05 disease and then we try to merge this
+13:07 together in a in a nice way but that
+13:09 that is a huge task and of course work
+13:12 in progress
+13:13 uh
+13:14 and at the same time we're trying to add
+13:17 this gamification level on top of it
+13:18 because
+13:19 a big factor in
+13:21 changing behavior of people criteria
+13:24 over time is the engagement so we need
+13:26 to engage and
+13:28 need to feel excited about what you're
+13:30 doing
+13:32 so what we do there is that we we have
+13:35 collaboration with uh
+13:37 sort of charity uh and we create uh an
+13:40 incentive in the app so every time you
+13:42 finish a task we give you
+13:44 you are handed out this altruistic
+13:46 reward so you collect water drops and
+13:49 then you can donate the water drops to
+13:50 people in need of fresh water and then
+13:52 in the background we are collaborating
+13:54 with a charity that
+13:55 takes care of that
+13:57 so that's the sort of setup of this
+13:59 we're trying to merge this and sort of
+14:01 three main factors of people in the
+14:04 company are medical doctors so we have
+14:05 all the background and expert knowledge
+14:08 of the diseases then behavioral
+14:10 psychologists that know everything that
+14:12 is
+14:13 that you should know about sort of how
+14:15 do you get people to
+14:17 take the steps towards change how can
+14:18 you not stand towards the right change
+14:20 and then people like myself and more
+14:22 people in the company with a background
+14:24 in the gaming industry so we're trying
+14:26 to merge these three together to create
+14:28 this kind of uh
+14:29 engaging solution that can help you
+14:32 improve your life
+14:34 yeah so when you mentioned
+14:36 gamification and
+14:38 creating more engagement i
+14:40 um
+14:41 since you worked at king
+14:42 so i played some
+14:44 games from king like bubble which for
+14:46 example and
+14:48 king
+14:49 does it really well like to getting
+14:52 people on the hook
+14:53 yes so i think you really mastered that
+14:57 king so i guess this is one of the
+14:59 things that is quite useful now from
+15:01 your past experience right that you know
+15:03 can apply
+15:04 yes yes but at the same time there are
+15:06 critical differences i mean we don't
+15:09 want to
+15:10 want to keep you in the app four hours
+15:13 because most of the activity you need to
+15:14 do is outside of the app so that is a
+15:17 very interesting
+15:18 difference between the two
+15:20 use cases
+15:21 yeah
+15:22 and as i understood correctly your the
+15:25 main target audience of the app are
+15:27 patients not the doctors or both
+15:29 uh no the main target is the patient but
+15:31 we are collaborating with
+15:34 sort of pharmacy companies or insurance
+15:36 providers
+15:37 [Music]
+15:39 not doctors who take patients every day
+15:43 not at the moment
+15:45 yeah because i imagine that they don't
+15:47 really care much about gamification they
+15:49 just have so many patients to deal with
+15:51 so they just probably don't have time
+15:54 so if i understood correctly
+15:57 what you do is let's say a person has
+16:00 some disease some chronic disease
+16:02 and
+16:03 they need to enter this details right
+16:06 and up and then the up would they tell
+16:08 you okay you need to i don't know drink
+16:11 more water drink less coffee exercise
+16:13 more this is what my doctor tells me
+16:15 every day
+16:17 yes but i
+16:19 there's a little bit more than that but
+16:22 but you you are
+16:24 today you are given a specific pin code
+16:27 where that you can go in and that and
+16:30 that you enter the right program right
+16:32 away
+16:33 uh but
+16:34 a big big part of
+16:37 take
+16:38 i mean typical diabetes patient for
+16:41 example
+16:42 uh
+16:43 a big proportion of people dealing with
+16:46 diabetes uh
+16:48 are dealing with problems that come from
+16:50 lack of health literacy
+16:52 so just having very accessible content
+16:55 on
+16:56 okay you have this disease because of
+16:59 this you can control it with this just
+17:02 having that in a very clear way because
+17:05 speaking to a doctor that can be
+17:06 difficult as i said they have five
+17:08 minutes they speak talk their language
+17:11 and are often very proud of that
+17:13 language so you don't understand half of
+17:15 what they say
+17:16 so that's the first step just to get
+17:19 closer to the people so they feel okay
+17:21 there is empathy here you you really
+17:23 care about me you can't speak to me and
+17:25 so educate people about okay
+17:27 maybe your diet isn't the best this is
+17:29 your disease you need to think about the
+17:31 diet and how you're asked and how you
+17:32 exercise
+17:34 but that's just the starting part and
+17:36 then we
+17:37 you need to create a program where you
+17:39 sort of step by step with your behavior
+17:41 psychology you you nuts people towards
+17:44 creating habits i mean that's the
+17:46 non-trivial task
+17:47 to do i mean you know how often you you
+17:50 start something you have great hopes and
+17:52 and then you've maybe failed so
+17:56 every january
+17:58 every january
+18:01 and then like maybe first week i'm
+18:04 so adamant about doing exercises and
+18:06 then oh it's winter i don't really want
+18:08 to run uh maybe i'll wait summer but
+18:10 when it's summer
+18:13 a big part of that is this behavioral
+18:15 psychology i mean the goal setting is
+18:17 maybe not the best you you aim too high
+18:19 or
+18:20 you don't have sort of small steps to
+18:22 gradually push you towards something you
+18:24 don't have someone constantly reminding
+18:26 you as a like a friendly ass where it's
+18:28 just it's okay don't worry continue
+18:31 we all forget one day continue let's try
+18:34 to do 3000 steps today something like
+18:37 that
+18:38 ah interesting
+18:40 i really wanted to try it you know
+18:45 yeah so um we already talked a bit about
+18:48 um how your previous background was
+18:50 useful like
+18:52 and keep for example
+18:54 where you knew how to
+18:56 attract or keep people engaged but there
+18:59 is a difference yeah but it also seems
+19:02 like it's quite different from your
+19:03 previous jobs right so previously you
+19:05 were working more like uh
+19:08 although now when i think about this so
+19:10 actually this is an app and what you
+19:12 were doing before it was also enough so
+19:14 to some extent there are some
+19:15 similarities right
+19:16 so maybe can you tell us about the
+19:18 differences
+19:19 between what you do now and what you do
+19:22 you're doing before as a data scientist
+19:24 let's say
+19:27 exactly i i think
+19:29 uh i think it's much more similar than
+19:31 you would think in the beginning
+19:33 so
+19:34 you are you are basically you have a
+19:36 program some kind of solution
+19:39 and you're in a company where you really
+19:41 want to create this data-driven culture
+19:43 from the data science sort of
+19:45 perspective
+19:46 and you want decisions to be data-driven
+19:49 if you're going to change features in
+19:50 the app you want them to be backed by
+19:52 data
+19:54 and you want some kind of machine
+19:55 learning part of it as well
+19:58 so
+19:58 on a very high level it's actually very
+20:01 similar
+20:02 so just
+20:03 you you need to create this culture you
+20:04 need to build up the infrastructure
+20:08 and have the buy-in from the business
+20:09 people that
+20:10 okay don't just shoot from the hip we
+20:13 need to be data-driven so that's
+20:16 exactly the same in both places
+20:19 but as i
+20:20 sort of hinted earlier there is a big
+20:23 big and very interesting difference in
+20:25 because we have social media we have
+20:28 gaming apps
+20:30 that are optimizing
+20:32 for just keeping you in the app forever
+20:34 or whatever platform they're working on
+20:36 they give you content they give you
+20:40 they they play on your
+20:42 feelings and that's all the debate about
+20:45 facebook that is dividing people into
+20:47 because it's it's always optimized to
+20:49 give you more and more sort of people
+20:51 that you get more emotional about
+20:54 we are we're not trying this we don't
+20:56 care if you're just 10 minutes a day and
+20:58 yeah just reading the educational
+21:00 content seeing okay these are my tasks
+21:02 i'll do them then you come in again okay
+21:04 i finished this
+21:06 something like that that's that's fine
+21:08 if you just follow the path and and sort
+21:10 of get better
+21:12 so that's the main main difference there
+21:14 uh and there is a main metric for you so
+21:19 let's say
+21:20 games like that like candy crush bubble
+21:22 which they aim at optimizing maximizing
+21:26 the time you spend
+21:27 in the app
+21:28 right so time you spend playing i guess
+21:31 for you or the money you spend
+21:33 well but the money yes uh depends on how
+21:36 exactly you monetize this particular
+21:37 user
+21:38 but then when we talk about
+21:40 your application that you work on right
+21:42 now
+21:44 something that comes to my mind is how
+21:46 often people return right so how often
+21:48 they like how many days let's say they
+21:51 open so probably what you want to to
+21:53 have is like people open the up every
+21:55 day it doesn't matter if it's five
+21:57 minutes or
+21:58 so
+21:59 is it the metric you want to optimize or
+22:00 there's something else yes no exactly so
+22:03 creating a habit is exactly this you
+22:04 need to just okay if we can make you
+22:07 open three o'clock in the afternoon the
+22:09 app for 10 minutes every day
+22:11 i mean that would be awesome for us then
+22:13 you're probably following i mean it's
+22:15 only a proxy
+22:16 but it's probably highly correlated with
+22:18 you following the therapy that for the
+22:20 program we give you and you are
+22:22 gradually building up a habit building
+22:24 up a habit takes weeks or months so just
+22:28 just being able to have this
+22:31 happening repeatedly is more important
+22:34 than you staying in the app for hours or
+22:37 much more importantly we absolutely
+22:38 don't want you to spend time in the app
+22:40 and you should be out working
+22:44 yes but there is another
+22:45 difference also with with sort of
+22:48 an environment like cantacross you you
+22:50 are with patients in treatment so you
+22:53 have to be much more careful about
+22:55 i mean if you're if you're changing a
+22:56 feature in candy crush okay should
+22:59 should this level be slightly more
+23:01 difficult or slightly easier
+23:03 than it is today i mean you just do it
+23:06 and see what happens in the health care
+23:09 and eb test right yes in the healthcare
+23:11 app you you really need to be careful
+23:13 okay let's
+23:15 make sure that this is this is okay
+23:17 we're going to be not jeopardizing
+23:19 anyone's health
+23:21 and that the experiment in this uh
+23:23 scenario could be like let's ask people
+23:25 instead of walking three thousand steps
+23:28 per day
+23:29 let's ask them to walk four thousand
+23:32 steps and then we see if it changes the
+23:34 habit right no exactly and that's
+23:37 i mean that's why
+23:39 companies like
+23:40 king and sort of the games like candy
+23:42 crush and the social media are so good
+23:45 that
+23:46 retaining you is that they are
+23:48 constantly experimenting and doing maybe
+23:50 tests giving giving the audience two or
+23:53 three different versions and then okay
+23:55 you pick up internet of that and then
+23:56 you could actually build that to a
+23:58 better better or more engaging solution
+24:00 so we are definitely
+24:02 doing that ap testing a lot but the the
+24:05 metric we are optimizing for is not
+24:07 necessarily click through rate or
+24:09 or time spent
+24:11 have you ever used duolingo
+24:14 yes
+24:15 yeah so for those who haven't so this is
+24:18 a tool an app for
+24:20 learning languages and they have
+24:23 gamification gamification inside to keep
+24:25 you motivated to learn my wife is
+24:27 actually using it to learn french right
+24:29 now
+24:30 and
+24:31 i can see that
+24:33 they did quite a good job of
+24:35 keeping people
+24:36 engaged and
+24:39 also making sure that they come back
+24:42 and
+24:43 yeah so the question we have from gregor
+24:46 is
+24:46 i'm wondering how much of difficulty it
+24:49 is to enforce such behavior that you can
+24:51 push using approaches like like that um
+24:56 like duolingo
+24:57 by adding gamification um like
+25:01 does this reward that you get help
+25:05 yes so and we do a lot of ux research of
+25:08 course where we interview people
+25:10 afterwards and ask them okay what is
+25:12 working what is not working what needs
+25:14 improvement and people are
+25:16 sort of
+25:18 generally very happy with the reward
+25:20 system
+25:21 uh and they are
+25:23 sort of
+25:24 especially probably the
+25:26 strongest part is this kind of empathy
+25:29 and the the companionship you feel with
+25:32 it talk about the reward system right uh
+25:35 did we maybe you can also mention
+25:37 a few words say a few words what kind of
+25:39 reward they get for i not working 4 000
+25:42 steps yes so we we give them a task uh
+25:46 every day according to our program so
+25:47 and every time they they finish the task
+25:49 they collect water drops at the moment
+25:52 all right we did but
+25:55 that can be extended then you're looking
+25:56 into sort of okay maybe
+25:59 we want to offer them
+26:00 through different kind of charity
+26:02 collaboration uh a different kind of
+26:03 reward so it's closer to your heart i
+26:05 mean planting trees in the amazon or
+26:09 some something else so
+26:12 it's it's more engaging you're more
+26:14 enthusiastic about okay i really want to
+26:17 do this donation
+26:21 because in duolingo the reward system
+26:23 that they have is
+26:25 just made out of thin air right yes like
+26:28 it's basically you have a leaderboard
+26:29 and you compete against people you don't
+26:31 know
+26:32 and uh somehow it works right and then
+26:34 obviously it works
+26:36 you see in many games uh where you have
+26:38 this vanity items that people really
+26:42 respond to that
+26:43 uh we just thought that
+26:45 for
+26:46 this kind of app that we are building
+26:48 you need a little bit more
+26:52 okay maybe can you tell what kind of
+26:55 problems does your team solve
+26:57 maybe you can also mention a few last
+26:59 projects that you worked on
+27:02 yes so
+27:05 we have been putting a lot of effort
+27:06 into
+27:08 just building the foundation
+27:10 i mean i started
+27:12 a little over a year ago
+27:14 and then we were
+27:16 sort of a much smaller company and two
+27:18 data scientists and it was nothing in
+27:20 place basically
+27:21 so we needed to build up
+27:24 all the foundation and
+27:26 infrastructure so build data pipelines
+27:29 dashboards
+27:30 uh
+27:31 just as first steps to make everyone
+27:34 data driven and i have a very sort of
+27:36 personally probably a strong opinion
+27:38 about okay we want to go into machine
+27:40 learning and personalization but
+27:42 every machine learning project you start
+27:45 with our proper analytics and then
+27:48 proper data is bound to fail
+27:50 and sort of so that's why we have been
+27:53 putting a lot of effort in into the
+27:54 foundation
+27:55 and building up a b testing capabilities
+27:59 and
+28:00 things like that but that's it we have
+28:04 done a lot of that so we are able to
+28:06 start and have have started working on
+28:09 uh
+28:11 what we think are pretty exciting
+28:14 projects i mean the personalization is
+28:16 going to be a key part in this
+28:18 uh so we have some simple uh some simple
+28:22 logic today but we want to make that
+28:24 so much much more advanced so the
+28:27 treatment personalization the the task
+28:29 we give you
+28:30 the
+28:31 sort of the modules you get
+28:33 at each given point in time is the
+28:36 correct one the one you need at the
+28:37 moment i mean people are very different
+28:40 with a chronic disease you might want to
+28:42 be
+28:43 quite depressed
+28:44 then we need to sort of slow down okay
+28:46 let's
+28:47 not put two demanding tasks on you let's
+28:50 give you content where you can do more
+28:52 mindfulness and things like that so we
+28:54 need to be
+28:55 very adapted to this and then just all
+28:57 the tasks you're giving given okay we
+28:59 know that people are that are similar to
+29:01 you they they like these kind of tasks
+29:04 uh we have cops
+29:06 interrupt you sorry i'm really curious
+29:08 about this slowing down do you have a
+29:10 model that says okay this user seems
+29:13 like
+29:13 not in a good mood so like you have a
+29:16 model that detects that and then based
+29:17 on that you
+29:20 at the moment we have uh
+29:22 rather frequent questionnaires so you
+29:24 can
+29:25 self-assess how you are yeah like if you
+29:27 can if you can solve something without
+29:29 machine learning
+29:31 just ask the user
+29:33 yeah i mean you should start there
+29:36 so i think that should always be the
+29:38 approach i mean start with something
+29:39 simple and then you have data then you
+29:40 have everything in place to automate it
+29:42 don't try to automate others in there
+29:46 but we also have just we see the
+29:48 activity in the app is it dropping and
+29:50 we have started and want to go much more
+29:52 into that direction where we have
+29:54 your variables where you can sort of
+29:56 measure your heart rate variability or
+29:58 your sort of the number of steps
+30:01 we already have that of course but but
+30:03 more and more and more of this
+30:09 yeah i see that so usually when i think
+30:11 of healthcare healthcare industry i
+30:14 might be wrong don't judge me i never
+30:16 worked in healthcare
+30:17 but usually when i think about this it's
+30:19 regulated it's quite slow there is a lot
+30:21 of legacy software
+30:23 a lot of outdated software
+30:27 but what you describe me is pretty much
+30:30 different from that right so you're you
+30:32 realize the importance about having
+30:34 proper analytics data pipelines having
+30:36 all these a b tests
+30:38 is it because you're like a you said
+30:40 it's a scale up so you it's uh recently
+30:44 um it's a rather fresh company right so
+30:46 you now realize of the importance of
+30:49 being data driven and all that right
+30:52 no i i i think
+30:54 i mean usually innovation is at its best
+30:58 when you have
+30:59 experts from different fields coming
+31:01 together and somehow the space between
+31:03 them that makes all the magic and i i
+31:05 think that's what we have so having the
+31:07 medical doctors and the behavioral
+31:08 psychologists that come with all of the
+31:10 theory and everything around the uh
+31:13 of disease and
+31:15 psychology
+31:16 but then you have a lot of people coming
+31:18 from gaming industry not only myself the
+31:20 cto and uh many of the developers that
+31:23 developed
+31:24 sort of
+31:25 the whole solution from the beginning
+31:26 they all come from the gaming industry
+31:28 so you have this kind of uh dynamic
+31:30 there that i think is is very important
+31:32 i mean the gaming industry is very data
+31:34 driven in general and people are always
+31:36 testing out their hypotheses
+31:40 and yeah we have a question so i
+31:42 mentioned that healthcare is quite a
+31:44 regulated area
+31:46 and
+31:47 usually in healthcare people take it
+31:50 very seriously
+31:52 questions about data privacy and this
+31:54 kind of stuff
+31:56 does it change the way you work
+31:58 having in mind that you have to to to
+32:01 keep these things in mind like data
+32:03 privacy and all that and how difficult
+32:06 it becomes that you need to deal with
+32:08 yeah all these kind of things
+32:10 i
+32:11 absolutely love the question
+32:13 i think i think it's the other way
+32:15 around i think all the other industries
+32:18 need to pick up with data privacy and
+32:20 they are
+32:21 gradually but we have seen so many
+32:24 instances of
+32:25 data abuse
+32:27 so i i don't see this as a problem i see
+32:29 this is a sort of
+32:31 great then i'm starting at the right
+32:34 right hand i'm not starting with
+32:36 everything messed up and then
+32:38 gradually trying to clean it up i start
+32:39 just okay this has to be
+32:41 good
+32:42 so i i think that's just where we are
+32:45 moving with every every solution i mean
+32:47 apple has for example completely changed
+32:50 their policies so you know now your the
+32:52 default settings are usually opt-in
+32:53 instead of opt-out and i mean there's a
+32:56 huge change happening in this
+32:59 you basically need to do a lot of uh
+33:01 prior work
+33:03 um
+33:04 to prepare for that and then once you
+33:05 have a framework in place that can take
+33:07 care of all this data privacy issues
+33:10 then you can move as fast as in let's
+33:12 say a traditional
+33:15 company id company so we just make sure
+33:18 that
+33:18 we're using the best possible solutions
+33:22 and we make sure that okay first there
+33:24 is a
+33:25 personally identifiable
+33:27 data
+33:28 and and that's very sort of locked
+33:31 locked away but then we just
+33:33 de-personalize all the data and then the
+33:35 data scientists and data analysts come
+33:37 in and they can do
+33:39 all of the same work as before they just
+33:40 never see the personalized data
+33:44 and how do we so there is a question
+33:46 from nelson how do we in general deal
+33:49 with issues of ethics in
+33:51 healthcare when it comes to machine
+33:52 learning
+33:54 sorry can you repeat i didn't yeah the
+33:56 question is how do we deal with issues
+33:58 of ethics and machine learning in health
+33:59 care like i guess you mentioned one of
+34:01 these things is making sure that uh you
+34:03 know following the apple suggestions
+34:06 opt in instead of opt-out right and then
+34:10 now
+34:11 keeping track of all personalized data
+34:13 and unless we really need it we don't
+34:14 use it right things like this
+34:16 how else we can deal with all this uh
+34:19 ethical issues that uh
+34:21 that come together with
+34:24 you know medical data
+34:26 yeah i think
+34:28 well
+34:29 first of all ethics means that you need
+34:32 people to think sort of
+34:35 independently
+34:36 because ethics is different from just
+34:38 the rules
+34:40 right i think that's an important fact
+34:42 you you need to
+34:43 have people that are
+34:45 sort of really care about this so they
+34:48 care about the patient okay we're trying
+34:50 to do the best for them but i mean we
+34:53 can be hurting them if we don't do this
+34:55 the best way we can i think you
+34:56 mentioned right so yes empathetic
+34:59 and and you have in i mean we have of
+35:02 course then rules like ggbr and apa
+35:05 in the us where you they are quite
+35:08 strict and very very useful and should
+35:10 be used everywhere
+35:13 of course
+35:15 but i
+35:17 think you also always need this kind of
+35:19 independent thinking because then you're
+35:22 you're always
+35:23 gonna end up on a
+35:26 crossroad okay am i crossing a
+35:28 gray line here or not where the rules
+35:30 are not cutting up with you i mean they
+35:32 always come afterwards
+35:35 so i i think that's needed as well
+35:38 okay
+35:40 yeah so
+35:41 i wanted to go back to what we were
+35:43 talking about and then
+35:46 so you said that the app based on the
+35:48 customer profile question profile makes
+35:51 different recommendations and then
+35:52 personalized recommendations based on
+35:54 that maybe can you tell us a bit more
+35:56 about that like how does this
+35:58 personalization work
+36:01 yes so
+36:02 again this is of course work in progress
+36:05 but
+36:05 uh
+36:06 i think it's
+36:08 quite interesting i mean think
+36:10 about spotify and netflix
+36:14 there you have recommended systems are
+36:17 are always giving you more and more
+36:19 content similar to what you like before
+36:21 you have this collaborative filtering
+36:23 where you are sort of through some nice
+36:26 technique matrix factorization or
+36:28 something more advanced
+36:29 uh you're sort of you know how people
+36:32 similar to you
+36:33 how they watch content that you haven't
+36:35 seen before
+36:38 but
+36:39 i think what we are trying to do i
+36:41 sometimes explain this internally as
+36:43 sort of
+36:44 imagine spotify where you come in and
+36:46 you have
+36:47 you have a
+36:48 heavy metal profile you you listen to
+36:51 rock music and but spotify has an agenda
+36:54 they want you to listen to country music
+36:57 so they're trying to nudge you towards
+36:58 that so first they give you occasional
+37:00 johnny cast songs
+37:02 but after two months you're just
+37:04 listening to dolly pastor so that's kind
+37:07 of the recommended system we are trying
+37:09 to build we're trying to move you
+37:11 gradually towards uh better behavior and
+37:14 and maybe it's not as difficult as
+37:16 making you listen to dolly parton but
+37:18 it's still a very interesting task it's
+37:20 sort of recommend the system with with
+37:22 an agenda
+37:24 does a spotify actually do that
+37:28 to make you listen to telepathic
+37:30 i i don't know
+37:33 well when it comes to podcasts um i
+37:35 think they are trying to make me listen
+37:37 to joe rogan
+37:40 maybe maybe
+37:41 but
+37:42 that's probably just coming from
+37:43 marketing then i don't think i'm working
+37:46 for them
+37:50 it's one of their but this is uh like
+37:53 spotify
+37:55 jose well this is their podcast right so
+37:57 they
+37:58 that's why they advertise it everywhere
+38:01 okay interesting and in this case in
+38:03 your case country music would be
+38:07 better
+38:08 habits
+38:09 yes kind of of course it's an analogy so
+38:12 it's it's not perfect analogy i just
+38:14 thought it was funny to bring in country
+38:16 i'm not a big fan of them
+38:20 the country is music is
+38:22 good for your health right
+38:25 yeah okay and now i see where the
+38:26 analysis is breaking
+38:27 [Laughter]
+38:31 uh i'm wondering so you you say you have
+38:34 this collaborative filtering
+38:36 and in this case
+38:39 um well we have the rows that are users
+38:41 or columns whatever so users are users
+38:44 right but what are the items that you're
+38:46 recommending are they articles
+38:48 or are they particular
+38:50 you know tasks or things people need to
+38:52 do or both yes so we are building up a
+38:54 library of content sort of
+38:58 i mean from educational content
+39:01 sort of
+39:02 uh
+39:03 videos explaining something
+39:05 some
+39:06 content cards that you can read
+39:08 and then to exercises and then all of
+39:10 these things so you we are building up
+39:12 this this catalog so we have we'll
+39:15 eventually have a large list of of
+39:18 products basically to offer you so you
+39:20 are ending up with a typical uh
+39:23 sort of
+39:24 recommended system from that
+39:26 but then there is this added flavor in
+39:29 the end
+39:31 yeah because i imagine if you start
+39:33 with recommendations of
+39:35 i don't know you need to do 10 push-ups
+39:38 per day or something like this
+39:39 then for an average person like me oh
+39:42 okay i know it's good
+39:44 for my health but i'm not going to do
+39:46 that
+39:47 and you probably want to start slowly
+39:49 right
+39:50 and push me gradually towards listening
+39:52 to country music rather than okay like
+39:55 here's the country music listen to it
+39:57 yes and exactly and but this touches a
+39:59 little bit in on the
+40:01 facts of how you approach machine
+40:04 learning
+40:05 uh
+40:06 i i think sort of
+40:08 just jumping into a a
+40:11 complicated collaborative filtering is
+40:13 not the right way
+40:14 the first step is maybe just set up on a
+40:17 b test and see how two different
+40:19 versions of a content work
+40:21 i mean then you have asked the
+40:23 developers to develop the program in
+40:24 such a way that you can actually show
+40:26 two different
+40:27 contents and that's a key request
+40:30 [Music]
+40:32 key
+40:33 thing you need to have i can't speak
+40:36 english anymore sorry uh
+40:38 for building up more
+40:40 uh sort of more and more advanced
+40:42 features i mean just having the
+40:45 variant availability
+40:47 so you need to start very simple and
+40:49 then even if you if you have a variant
+40:51 that beats
+40:52 on average everything else you can start
+40:54 there okay offer that to everyone but
+40:57 karate you're building up knowledge and
+40:58 data sets that you you can actually
+41:00 train on later
+41:02 so there are people
+41:04 jumping ahead of themselves and then
+41:05 sort of okay i know i have the vision of
+41:07 this awesome model
+41:09 but i have to sort of hold my houses
+41:11 it's
+41:11 it's not time for the other
+41:13 when it comes to a b test there it feels
+41:15 to me maybe i'm wrong but they're less
+41:17 personalized right so you're trying to
+41:20 test the same piece of content or two
+41:22 pieces of content in this case if we're
+41:24 talking about a b test on the entire
+41:26 population or maybe on one segment of
+41:28 your users right but this is not the
+41:29 same as personalized recommendation but
+41:32 it is very
+41:33 very
+41:34 sort of
+41:36 linked
+41:37 because
+41:38 if if you if you offer everyone unhip
+41:40 tests
+41:41 to begin with
+41:43 uh you
+41:45 there are so many low hanging fruits
+41:46 that you're just improving your program
+41:48 easily if you just take the winner of
+41:50 two in every
+41:52 test
+41:53 but then you gradually reach a point
+41:55 where you see okay now i'm increasing
+41:57 this but decreasing this or this is good
+41:59 for this part of the population but not
+42:01 this one okay now you're starting to
+42:03 think okay what's the difference between
+42:05 these groups and then you maybe see for
+42:07 for a mobile game for example you see
+42:09 okay these are the payers these are not
+42:11 the payers
+42:12 okay now you can start to personalize
+42:14 you offer this to the players and and
+42:16 not to the non-payers
+42:19 and then okay this is this is smart how
+42:21 about more segments
+42:22 and you add a few more segments and now
+42:24 you have four or five segments that make
+42:26 sense
+42:28 but it's starting to get complicated to
+42:30 maintain all of these different
+42:32 questions so that's where you move into
+42:34 okay
+42:35 now i actually have a lot of training
+42:36 data from all of this testing to see
+42:38 okay can i just optimize the calibrated
+42:41 filtering or or just clustering to begin
+42:43 with okay and i'll just look at the 100
+42:46 nearest neighbors of you okay that's uh
+42:49 that's the first approach okay there you
+42:51 would behave similar to them
+42:54 so i think i think this is important so
+42:56 the people sort of gradually take the
+42:58 baby steps
+43:00 and
+43:01 here the
+43:02 fundamentally important thing is having
+43:04 this
+43:05 platform for experimenting right if you
+43:07 don't have this
+43:08 and if you directly jump into
+43:10 collaborative filtering or i don't know
+43:12 the latest deep learning model for
+43:14 recommender systems without having that
+43:17 um
+43:18 yeah you're moving in the dark right
+43:21 yeah exactly so i think
+43:22 in my mind the two most important input
+43:25 into
+43:26 starting a machine learning
+43:28 is to have strong analytics you need to
+43:30 be able to analyze what is happening you
+43:32 need to break down the ap test and
+43:34 understand the
+43:35 data that you have and then of course
+43:36 you need good data
+43:38 if either of this is missing uh in my
+43:41 experience this is usually the deciding
+43:43 factor if you have to have both of them
+43:45 the machine learning project will go
+43:47 well
+43:47 if you are ignoring either of them you
+43:50 will probably fail
+43:53 or and you fail quite
+43:56 late after spending many months right
+43:58 exactly that's that's which is even
+44:00 worse than just trading right just
+44:02 trying to train a model and finding out
+44:04 that it's not working on your offline
+44:06 data it's one thing but then spending
+44:08 many many months trying to build the
+44:11 perfect model only to find out that
+44:13 users actually don't like it
+44:15 exactly and that's what you gain with
+44:17 taking the baby steps you'll you're
+44:19 always creating value so you know you
+44:22 have sort of you know where you stand
+44:24 today so you're going from a to b
+44:27 and you know where you want to be
+44:28 approximately
+44:30 and if you just jump to building that b
+44:33 part
+44:34 you're doing exactly what you explained
+44:36 but if you if you try to form a path
+44:38 from a to b that gives you the most
+44:40 value along the way
+44:41 you you will learn much faster and you
+44:43 will create value along the way to and
+44:45 then get a much better buy-in from
+44:46 everyone around you because often when
+44:48 you're starting a machine learning
+44:49 project there is one person doing
+44:51 something so you really need buy-in to
+44:53 have more resources more compute power
+44:56 and all of these things that you
+44:57 actually need
+44:59 and i think companies like gaming
+45:02 companies and i.t
+45:04 tech companies
+45:05 e-commerce companies they learned that
+45:08 that it's important to have analytics to
+45:10 have experimentation platform and all
+45:12 that but what do you think is the state
+45:14 in the healthcare industry
+45:17 do companies that work uh operate
+45:19 vendors that operate in this industry do
+45:22 they also realize the importance of
+45:24 these things
+45:25 or
+45:25 [Music]
+45:27 it's a bit behind
+45:29 depending on where you are i mean the
+45:33 all
+45:34 full pharmacy world
+45:36 has been doing this for for decades yeah
+45:37 clinical trials they didn't work that
+45:40 existed right
+45:41 so there is definitely a question for
+45:43 this so people are aware of this i mean
+45:46 all the kind of biases that you create
+45:47 when you don't really have an ap test or
+45:49 rct which is the
+45:51 some clinical trial uh lingo for it
+45:55 uh
+45:56 so
+45:57 there's a question for all of that and
+45:58 they know that okay if you're not not
+46:00 doing perfect split in a and b and then
+46:03 even c
+46:04 you will create biases you you're always
+46:08 there's a survival bias when you're only
+46:09 measuring the people that actually do
+46:12 something
+46:13 and all the people that didn't do
+46:14 something they just left your platform
+46:17 i mean there are so many
+46:19 pitfalls in there so there's definitely
+46:22 knowledge about this
+46:24 but
+46:25 maybe
+46:26 i'm not knowledgeable enough but there
+46:29 might be a difference
+46:31 between okay how do you transform that
+46:32 to feature improvement in an app
+46:35 so that's slightly different because
+46:38 typical clinical trials are huge
+46:40 they cost terrible amount of money
+46:44 and they take years which is when you're
+46:46 developing an ah this is no good
+46:51 i think general population learned about
+46:52 clinical trials
+46:54 and now when uh covet uh vaccinations
+46:57 were tested right and everyone was
+46:59 asking why it takes so long to develop a
+47:01 vaccine actually
+47:02 because of this thing right so they need
+47:04 to test that this thing actually works
+47:06 yeah and
+47:07 yeah
+47:08 why it takes a long it was yeah then of
+47:11 course a record time in one year when it
+47:14 should have taken time
+47:15 yeah usually it takes a lot more right
+47:17 to actually run all these tests
+47:21 well hopefully they worked
+47:24 we'll find out soon
+47:31 so if i want to work in the healthcare
+47:34 industry as a machine learning engineer
+47:36 or data scientist or data engineer
+47:38 how much do i need to know about
+47:40 healthcare in general do i need to have
+47:42 like
+47:43 md
+47:45 puddles to work there
+47:48 i think it differs a lot between what
+47:51 exactly you're doing
+47:53 probably in some
+47:56 parts of it you you really need to not
+47:58 have uh domain expert knowledge
+48:01 but my experience in in just data
+48:04 science is it's more important just to
+48:07 have the right approach
+48:09 so you come to a problem and you know
+48:12 okay
+48:13 this is the kind of approach i need to
+48:15 have i need to take this as we
+48:17 talked about earlier take these baby
+48:18 steps build up the knowledge
+48:20 be humble about okay maybe max
+48:22 williamson is wrong maybe there's
+48:23 something wrong here and there
+48:25 and just this
+48:27 way of working is probably more
+48:29 important than the domain
+48:31 knowledge in many cases but there are
+48:34 definitely some cases where
+48:36 that's probably not enough
+48:40 in your case you mentioned that you have
+48:43 medical doctors
+48:45 or who are domain experts in your case
+48:47 then behavioral scientists who are also
+48:50 domain experts and then
+48:52 the engineers the data scientists who do
+48:54 the
+48:56 who take care of the way of working as
+48:58 you mentioned right and then what you do
+49:01 is basically get everyone in the same
+49:02 room virtual room i guess because you're
+49:05 in different countries and then we
+49:06 figure out okay how do we use this
+49:08 knowledge from these people and to put
+49:11 this knowledge on their
+49:13 you know way of working when it comes to
+49:15 data building these analytical platforms
+49:18 data pipelines and so on
+49:21 was it difficult for you to actually
+49:23 learn this
+49:24 no not at all i mean all of these people
+49:27 are very data driven just by nature
+49:31 the
+49:32 sort of the biggest challenges may be to
+49:34 tell a medical doctor
+49:36 okay now we're testing a feature in the
+49:38 app let's just test it
+49:40 what no no wait
+49:42 when we do medical things that's taking
+49:44 much more we were much more careful but
+49:47 it's all about
+49:49 the risk involved if you're testing a
+49:51 feature that doesn't have any risk
+49:52 involved then i think you should take
+49:54 the sort of gaming uh
+49:57 industry uh approach
+49:59 just test it i mean you your gut feeling
+50:01 is
+50:02 maybe correct half of the time at best
+50:04 just test test ask the users they will
+50:07 tell you what much faster and more
+50:09 accurately what they like and what they
+50:11 don't like
+50:12 so but that was a little bit of a
+50:15 sort of change
+50:16 uh also when you're when you're building
+50:18 up a question company you want to build
+50:21 sort of our one of our main objectives
+50:23 to build a
+50:25 data driven company
+50:28 and that means
+50:29 you you have to be quick enough with the
+50:31 answers so the business is making a
+50:34 decision now
+50:35 so but many data scientists want to sort
+50:37 of okay they've studied through
+50:40 university okay i need to be perfect in
+50:41 what i do
+50:43 and if you are
+50:45 you are basically
+50:46 killing the the objective of being data
+50:49 driven you need to be able to act fast
+50:51 give
+50:52 sort of somewhat accurate numbers but
+50:55 they're not perfect
+50:56 so that's there's a little bit of
+50:58 contradiction in that and that's also
+50:59 something that sort of
+51:02 needed a lot of communication around so
+51:05 if we want to be data-driven we need to
+51:07 act fast we need to iterate we start
+51:09 with data pipelines that are just
+51:11 spaghetti codes just to get something
+51:13 out and then you gradually make a proper
+51:15 pipeline out of it and they're blowing
+51:18 everything you need but if you start
+51:19 with no i want to build this in airflow
+51:22 let's just rate your silence for months
+51:24 for the business
+51:27 yeah right
+51:28 and you mentioned risk
+51:32 and as i understood so for your case
+51:34 risk is not that high because you're not
+51:36 recommending
+51:37 medicine right you're not saying you
+51:39 have to take these pills
+51:41 it depends i mean some some parts of the
+51:44 program can be very sensitive i mean
+51:46 okay
+51:47 so there is
+51:48 some risks
+51:49 yes so we cannot recommend it in swedes
+51:52 to people with diabetes right
+51:55 no no i mean
+51:55 [Music]
+51:56 an example we often use to remind us
+51:59 ourselves of this is i mean if you have
+52:01 heart failure problems
+52:03 it's not good to drink too much water
+52:05 water because your lungs cannot process
+52:07 uh
+52:09 all of that so you end up with uh liquid
+52:11 in your in your lungs
+52:13 now but in most other programs it's good
+52:14 to drink more water
+52:16 so we we could not just create an ap
+52:18 test uh let's suggest 10 classes of work
+52:22 okay so we always need to have this
+52:24 discussion with the medical totals to
+52:26 see okay we want to test this does it
+52:28 make sense is it safe
+52:31 and when it's safe we can be sort of
+52:33 very agile about it when it's not safe
+52:35 we need to be much more careful
+52:38 yeah makes sense makes a lot of sense
+52:40 but you don't recommend medicine right
+52:42 so you only take it's more like about
+52:44 lifestyle rather than
+52:47 taking this
+52:49 well we are collaborating with
+52:52 pharmacy companies but then there is a
+52:54 specific medicine that they have been
+52:56 prescribed from a doctor before
+52:59 yeah so you still need to go to a doctor
+53:00 and then say okay this up recommended me
+53:02 to take a pill yes we cannot give me a
+53:04 clip
+53:07 sometimes it's annoying i know i need to
+53:09 to have this medicine but i just need to
+53:12 go to a doctor and the doctor
+53:18 little processors also
+53:20 yeah but it's better this way rather
+53:22 than i just go to the pharmacy
+53:25 by doing self diagnosis right and then
+53:27 buy
+53:28 i don't know something that can well
+53:31 cause more
+53:35 so i've heard you're hiring right can
+53:37 you tell us more about that
+53:39 um yes we've been growing
+53:40 very rapidly
+53:43 when i started we were
+53:45 maybe 30 something or a year ago i think
+53:48 we're 130 40 today and we'll probably be
+53:51 250 by the end of the year
+53:53 so and we are
+53:54 rapidly growing the
+53:56 data science and ai team
+53:58 we are about 10 at the moment i think
+54:01 we'll double in size
+54:02 until the end of the year and that's
+54:04 counting everyone all the data engineers
+54:07 all the machine learning engineers data
+54:08 analysts data scientists
+54:11 everyone included that so yes
+54:14 we are looking
+54:17 for good people and
+54:19 we know that i mean this is a domain
+54:22 where it's a fierce competition so we
+54:25 are fully aware of that that we we need
+54:26 to build the world class solution there
+54:29 is no middle ground either you're a
+54:30 top-class app or you're dead
+54:32 there's nothing in between so we need to
+54:34 hire uh
+54:36 great people for them
+54:39 so you're hiring in germany in sweden
+54:41 and in iceland right yeah yes
+54:44 that's the focus now so as i said we
+54:46 have offices in these countries but also
+54:48 in boston but we're focusing on our
+54:50 efforts in and
+54:53 mostly berlin and stockholm but uh also
+54:57 reykjavik but they're just
+54:59 as you might know there are fewer people
+55:00 in iceland than most other countries
+55:03 you're the first guest i we had from
+55:07 iceland
+55:09 yeah i'm not surprised that many people
+55:12 i don't think i know anyone apart from
+55:14 you
+55:18 i noticed that we have a question uh
+55:20 from slider so the question is
+55:22 i don't know if you know about this what
+55:24 are your thoughts on brain computer
+55:25 interfaces like neural link
+55:28 do you know anything about this
+55:30 oh i i
+55:33 i don't know enough to say anything
+55:36 intelligent about that i'm afraid
+55:40 sorry about that
+55:42 do you think ai could be used to treat
+55:44 or cure
+55:47 psychiatric disorders like bipolar
+55:50 disorders
+55:52 that's a very interesting question
+55:54 of course i'm not sure
+55:56 but it could probably
+55:59 help
+56:00 at least i mean
+56:03 this is like
+56:05 bipolar diseases
+56:08 i mean you're affected a lot by just
+56:10 okay now the now there's more brightness
+56:12 now there's more darkness so you
+56:14 you get more swings than
+56:18 so if you can predict that know about
+56:20 that in advance and try to if you for
+56:22 example could monitor
+56:25 the heart rate variability or something
+56:27 like that that is okay this is usually
+56:30 indication that you're going too high
+56:32 it's
+56:32 it's been
+56:34 raising
+56:35 or increasing over the past week
+56:38 yeah it could definitely help but but
+56:40 cure is that's a different thing
+56:42 probably more like learning how to like
+56:46 you said with chronic diseases
+56:48 um it's more about learning educating
+56:51 people how to
+56:52 live a better life with these diseases
+56:54 right other than
+56:56 completely and this is what you do right
+56:58 so you
+56:59 educate people how to
+57:01 to form habits such that
+57:04 they can lead a better life
+57:07 okay i think on that note we
+57:10 can wrap up maybe is there anything is
+57:12 there anything you want to mention
+57:14 before we finish
+57:16 um
+57:17 no can't really think of anything just
+57:20 thanks a lot for the talk it was very
+57:22 very nice talk to you and
+57:23 always nice to talk about this this kind
+57:25 of subject
+57:28 if somebody has questions what's the
+57:30 best way to reach out to you linkedin or
+57:33 yes
+57:36 okay then that's all from me so thanks
+57:39 again for joining us today for sharing
+57:41 your expertise with us and thanks
+57:43 everyone for joining us as well thanks
+57:45 for asking questions
+57:46 and have a great weekend
+57:49 yep like us thanks bye-bye
+57:51 goodbye

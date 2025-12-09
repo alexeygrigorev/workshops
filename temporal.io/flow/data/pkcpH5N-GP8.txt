@@ -1,0 +1,1474 @@
+From Simulation Algorithms to Production-Grade Data Systems
+
+0:00 Hi everyone, welcome to our event. This
+0:02 event is brought to you by data talks
+0:04 club which is a community of people who
+0:05 love data. We have weekly events and
+0:08 today is one of such events. Well,
+0:10 weekly ideally now it's summer we have
+0:13 uh these events less open but actually
+0:15 today we have two events. Tomorrow we
+0:18 have one. So yeah, we have plenty of
+0:21 these things. If you're interested in
+0:23 learning more about the events we have,
+0:25 there is a link in the description.
+0:26 Check it out. you'll see the events we
+0:28 have in our pipeline. And by the way,
+0:30 this uh thing needs to be updated cuz
+0:34 right now it's 62,000 subscribers. And
+0:37 if you're not one of them yet, u
+0:40 consider changing your mind and
+0:42 subscribing right now cuz this way you
+0:44 will stay uptodated with all our events
+0:47 streams like we want the one we have
+0:48 today and the other one we have today is
+0:51 going to be a workshop and then tomorrow
+0:53 it's also going to be a workshop when I
+0:55 will be talking about agents. So cool
+0:58 stuff. Don't forget to subscribe. And
+1:00 then finally, uh, last but not least, we
+1:03 have an amazing community where you can
+1:04 hang out with other 18 users. Um, join
+1:08 our Slack and yeah, check it out. During
+1:12 today's interview, you can ask any
+1:14 question you want. There is a pinned
+1:15 link in the live live chat. Click on
+1:17 that link, ask your questions, and we
+1:20 will be covering these questions during
+1:21 the interview.
+1:23 Um, so I improvised a little with the
+1:26 intro cuz usually I say the same things
+1:29 every time and it's get it's getting a
+1:31 bit boring.
+1:34 Anyways, uh, let me open the questions.
+1:45 Okay, I have the questions and now we
+1:49 can start.
+1:53 Um so this week we'll talk about uh many
+1:57 different things. We'll talk about our
+1:59 guests career and we will cover
+2:02 simulation algorithms and production
+2:04 grade data systems. And we have a
+2:06 special guest today, Orel. Orel
+2:08 graduated in 2018 with a degree in
+2:11 electrical engineering where he he
+2:13 focused on simulation algorithms. Then
+2:16 he became a PhD. Then COVID arrived. he
+2:20 decided to leave academia and look for
+2:21 new challenges. After that he joined a
+2:24 startup program to explore how to turn
+2:25 scientific research into real problem
+2:27 pro products sorry into real products
+2:31 and um he learned many things and today
+2:34 he's a freelancer uh in software and
+2:37 data engineering and we will talk about
+2:39 that today how he uses his deep
+2:42 experience in simulation to build custom
+2:45 data infrastructure.
+2:47 Um so before we start I want to thank
+2:50 Valeria uh who prepared the questions
+2:52 for today's interview. So usually
+2:54 Johanna is doing that. Johanna has been
+2:57 busy with summer school. Um so Valeria
+3:01 our content manager helped. So thanks
+3:03 Valeria for your help and welcome Oral.
+3:07 Let's start with interview. Yeah. Hi
+3:09 Alex say um thanks for having me. I'm
+3:11 excited to be here. Yeah. Uh my
+3:13 pleasure. So before we go into our topic
+3:18 of building um custom data
+3:22 infrastructures,
+3:23 let's talk about your career career. I
+3:26 briefly outlined but maybe you can just
+3:28 give us a little more details um about
+3:31 your career journey so far. Sure. Um so
+3:34 when uh like the final years in high
+3:37 school, I was unsure what to do. I knew
+3:39 that I wanted to do something technical
+3:41 like all of us. Yeah, I did. It's very
+3:43 hard when in Germany. When do you
+3:46 graduate? Like 17 or later? Uh 18. I was
+3:49 like 19 at the time. So I was but still
+3:52 very young. Like no idea what you want
+3:54 to do. Yeah. I'm originally from Russia.
+3:56 So in Russia we graduate
+3:58 around 17. And when you're 17 you have
+4:01 no idea what are you going to have for
+4:04 breakfast like let alone your future
+4:06 career. It's difficult to decide. Yeah.
+4:09 That's also that you have no idea what
+4:11 the like daily work looks like. You
+4:13 you're thinking about a engineering or
+4:16 computer science, but at the end you
+4:18 have no idea what it might look like. So
+4:20 since I was already coding a bit in my
+4:22 like spare time, I decided to go to
+4:24 electrical engineering because they were
+4:26 like, "Okay, um if you want to code, go
+4:28 to electrical engineering. If you want
+4:30 to do like um theoretical computer
+4:33 science, go to computer science." And I
+4:36 also like dabbled a bit with embedded
+4:38 systems like 8bit microcontrollers back
+4:41 in the day. So I was fairly keen on
+4:44 learning more about that. And yeah
+4:48 during my studies I I realized that
+4:50 coding and building systems is kind of
+4:52 what I like to do. And then I turned
+4:55 towards like simulation engineering,
+4:58 developing custom simulation algorithms
+5:00 for like RF propagation, wave
+5:03 propagation kind of um problems. Um what
+5:06 is that? I remember we also had some so
+5:09 I studied computer science u but um
+5:12 because this is um we are prepared to be
+5:15 engineers. studied some engineering
+5:17 things and one of those things were I
+5:20 think we call it simulations but we
+5:22 simulated different things like we've
+5:23 for example simulated a um a supermarket
+5:28 to see how to make it more optimal like
+5:31 how many customers come in uh how long
+5:34 does it take each customer so you define
+5:36 some distributions and then you run your
+5:38 simulation and then you like let's say
+5:40 your goal is to define what's the best
+5:42 queuing strategy like should there be a
+5:44 queue for the for each cashier or there
+5:47 should be one queue and then they it
+5:49 should split right and the optimal
+5:50 strategy is to have one queue right so
+5:52 we uh study things like that is it uh
+5:55 what you studied too as simulation as a
+5:58 simulation engineer or something else uh
+6:00 I think it's a little bit different I
+6:03 think the problem with um simulation
+6:04 general is is like one of these words
+6:06 that can mean anything
+6:08 everything right um yeah so what I what
+6:11 I did is basically wave propagations
+6:13 like audio waves or electro magnetic
+6:16 waves as in radar or mobile
+6:19 communications that kind of stuff. So I
+6:22 had physical equations coming from the
+6:24 physics from from theory and then we
+6:27 tried to simulate
+6:30 like what it would look like in certain
+6:32 like real life scenarios and that's
+6:34 actually quite a hard problem because it
+6:36 takes a very very long time usually
+6:38 especially for large scenarios like um
+6:42 for example mobile propagation within a
+6:45 city lot of different places where waves
+6:48 can bounce off and interact with the
+6:50 environment and therefore it takes quite
+6:51 a long time. So for me it was
+6:54 challenging in a way that it's like
+6:56 physical uh physics um also um math but
+7:00 also the coding side because you have to
+7:03 optimize um your your code your
+7:05 strategies your data formats and all
+7:08 that kind of stuff which made it quite
+7:10 interesting. Um that's kind of why I
+7:13 chose it.
+7:17 Yeah. Interesting. And uh
+7:21 well you are not doing this now right?
+7:24 No I I like yeah after after I finished
+7:27 my studies um I decided to start a PhD
+7:31 but then quit when I realized that this
+7:33 is not like what I want to do in
+7:35 electrical engineering too right? Yes
+7:38 also in like the simulation field. Um
+7:40 and then after I quit that there was
+7:43 like peak co in Germany. Mhm. Um I like
+7:48 me and a friend friend and I um we
+7:51 decided let's try to make this a
+7:53 startup. Um let's figure out how to how
+7:57 to like monetize simulations and all the
+8:00 systems around that. We did not succeed
+8:03 in that but that taught me a lot about
+8:06 like data engineering economics
+8:09 um how to approach um the startup
+8:13 thing how to talk to customers and like
+8:16 figure out what people actually need. So
+8:18 that's kind of how I became a freelancer
+8:21 too because one day like we quit doing
+8:23 the startup I was like okay what do I
+8:25 want to do now? And I was like, okay, I
+8:27 don't see myself doing a 9 to5. Um, and
+8:31 I want to work for myself kind of and
+8:33 experiment with different Yeah.
+8:35 opportunities. And so freelancing is
+8:38 kind of what came naturally. Mhm.
+8:42 Can you tell us more about this startup?
+8:44 What exactly did you want to build?
+8:46 Because like for me uh it's very still
+8:49 very abstract when you say okay like you
+8:51 have a city and then you have mobile
+8:54 network and then there are waves they
+8:55 bounce off the buildings so you need to
+8:58 simulate that. Was it something you did
+9:00 for your startup too? Like what kind of
+9:02 problem do you want? Uh no we had a
+9:04 different problem. We figured that for
+9:07 medical imaging like MRI, X-ray, that
+9:10 kind of stuff, you want to have some
+9:12 kind of AI uh algorithms to analyze the
+9:16 images because it's quite a let's say a
+9:19 boring repetitive work. And what we did,
+9:23 we simulated the physics of these
+9:25 imaging machines or imaging processes
+9:29 and created basically synthetic data for
+9:32 AI training purposes. Mhm. And that's
+9:36 what we tried to monetize. Um, but the
+9:38 like it didn't work out for several
+9:40 reasons, but I think two of the main
+9:43 issues were we started with a
+9:45 technology, not a problem.
+9:48 And later we we um realized it's not
+9:51 really a problem um in that sense
+9:53 because at least it was not seen as a
+9:56 problem back then. This was before like
+9:58 chat GPT and everything. So there was no
+10:01 sense of generative like simulations or
+10:03 AI or anything and a lot of these
+10:06 medical companies they work um solely on
+10:10 like based on like hospitals come to
+10:13 them and tell them I want an MRI and it
+10:16 needs these functionalities and then
+10:18 they start building that. So there's no
+10:20 or very little in-house
+10:24 like research being done and thus we had
+10:27 not really a chance to monetize uh much
+10:30 there. Yeah. Interesting. I have very
+10:32 funny experience with MRI. So I had some
+10:36 problems with my back. So I went there.
+10:38 So they did the MRI and they then the
+10:40 doctors look at MRI and say how are you
+10:42 not in constant agonizing pain all the
+10:44 time?
+10:45 It's like they found something on the
+10:47 MRI and it's like super bad according to
+10:50 them. So I had to have pain all the time
+10:54 according to that but I did not and it's
+10:56 like h okay but be careful. Yeah.
+11:01 Sometimes that the body works in a funny
+11:03 way. it's compensating and then probably
+11:06 there was some injury that I had like I
+11:07 don't know 20 years ago and they saw it
+11:10 on the MRI that is supposed to cause
+11:12 some pain but it wasn't cuz the body
+11:16 just learned how to live with it. Yeah,
+11:18 I I think that could be it. But I'm not
+11:21 a medical professional so I have no
+11:22 idea. Uh but you learned a few things
+11:26 about MRI, right? Yes, about MRI but
+11:29 also a lot about the medical market and
+11:31 especially in Germany. Um I think the
+11:34 main problem for startups is it's like a
+11:37 cap market. It's basically kept
+11:39 financially by um how much money people
+11:43 pay into the system and that's the money
+11:45 that is available. So if you make some
+11:47 money, you take it away from someone
+11:49 else in that market and it's not a
+11:51 win-win situation because someone else
+11:54 is have is going to have to lose in
+11:56 order for you to make money which is not
+11:59 kind of what you want in a startup. If
+12:02 if it's like fun and successful,
+12:05 doesn't it always work like that? So
+12:07 there is only well in the ideal world
+12:10 there's a finite uh finite amount of
+12:12 money assuming that governments are not
+12:15 printing money, right? So you're always
+12:17 competing for for money. So if somebody
+12:20 spends money on your product that they
+12:22 cannot spend it on somebody else.
+12:25 Yeah, to some extent I think that's
+12:27 true. But you still at least it's my
+12:29 belief you still like governments are
+12:31 printing money. So that's one thing and
+12:34 and the other thing is we learned that
+12:35 from co times right? Yes. And the other
+12:38 thing is that um like even though
+12:41 there's there might be a finite amount
+12:42 of money it can still move around. So if
+12:45 you spend it on something they can spend
+12:47 it on something else and it might come
+12:49 back to you. And so there's some some
+12:52 kind of win-win that's possible. And
+12:54 sure, someone is is always going to lose
+12:58 in some way, but the less obvious it is
+13:02 or the less um
+13:05 the less scary it is for your direct
+13:07 competitors, for example, or for other
+13:08 players in the market, the more willing
+13:11 they are to help you um because they're
+13:13 not seeing themselves being challenged
+13:14 even though they might be in like
+13:17 future.
+13:20 What kind of stuff did you build uh at
+13:22 the startup?
+13:24 what kind of what things you build? So
+13:26 you you said you learned a lot of things
+13:28 about data engineering economics uh um
+13:32 talking to customers and I was wondering
+13:35 what did you actually need to do for the
+13:38 startup when it comes to for example
+13:40 data engineering you probably had to
+13:42 have some sort of platform right
+13:45 um yes but also to just start small um
+13:48 so in a startup you have no idea what
+13:50 you're doing in the beginning you have
+13:51 no idea what people need um I think a
+13:54 lot of companies also bigger ones are in
+13:56 the same space they have, they still are
+13:58 not sure what they actually need. Um, so
+14:01 starting small, seeing what is actually
+14:04 needed, doing the minimum amount of work
+14:07 to make your data work for this moment.
+14:10 For example, if you have no customers,
+14:12 it doesn't matter if there's any data
+14:14 pipeline in the company because it's not
+14:16 being used anyway.
+14:18 Um, so keeping it simple and maybe even
+14:21 doing some stuff manually like
+14:23 triggering data pipelines.
+14:26 um might be the way to go because
+14:27 because you have more control in the
+14:29 beginning. So what we did is basically
+14:32 we had simulation algorithms. This is
+14:34 something that could also be AI machine
+14:37 learning kind of kernel like building
+14:39 block and then we had some data
+14:41 infrastructure around it kind of moving
+14:44 data to the simulation because it
+14:46 usually runs on some kind of high
+14:47 performance computing cluster but also
+14:51 um moving the results in a in a good way
+14:55 out of the cluster again to have it in a
+14:59 in a way that you can work with it
+15:01 because what you don't want is that like
+15:03 simulation model from client A is like
+15:07 being simulated and the results are
+15:08 given to client B because they might
+15:11 even be competitors. So that's something
+15:12 you have to like make sure and that's
+15:16 basically data management at the end of
+15:17 the day. It's not magic but uh you still
+15:20 have to do it and keeping it as simple
+15:22 as possible is is the way to go in a
+15:24 startup in my opinion. Mhm. Is it
+15:26 something you needed to learn or is
+15:28 something you were already doing before
+15:31 in your PhD? Uh, no. We had to learn
+15:34 that in the PhD. It's all like science.
+15:37 Um, it's all about the algorithms and
+15:39 not even about the implementation. It's
+15:41 just about what trade-offs are there in
+15:43 the like equations, what can you leave
+15:45 out in certain cases, that kind of
+15:47 stuff. And that's also one of the
+15:50 reasons why I left academia because
+15:52 nobody really cared about the
+15:54 implementation and what it actually
+15:57 can do. It's all about okay, do you have
+16:00 the right formatting in your equations
+16:02 kind of situation.
+16:05 But I also assume the iterations you
+16:07 make in PhD, they are very different
+16:10 from iterations you make at a startup.
+16:12 Because at a startup you need to quickly
+16:15 test ideas and then I don't know you get
+16:17 a customer potential customer say we
+16:19 want this thing but you have nothing
+16:20 about that and you quickly think okay
+16:22 like how can we build an MVP as fast as
+16:24 possible to get this customer while in
+16:27 academia you're just okay we have a
+16:30 grant for 5 years the grant is for
+16:33 making this particular thing so let's
+16:35 spend this 5 years making this thing
+16:37 right yes uh that's that's true that is
+16:41 uh like you have longer planning
+16:43 horizons in academia. Um at least on a
+16:47 project level um on like personal level
+16:49 it's usually different story but um at
+16:51 least on the project you have some kind
+16:52 of very specific thing you got the money
+16:55 for and that's kind of what you have to
+16:57 do. Um I think the overall process isn't
+17:01 that different because in startups you
+17:03 also can like have a very scientific
+17:06 approach. you're testing hypothesis at
+17:09 the end of the day, but the hypothesis
+17:11 are about the market, the clients, the
+17:13 problem you think you're going to solve.
+17:17 Um in in academia it's quite similar but
+17:22 the value like the cost function of the
+17:24 whole process is different because in
+17:25 academia papers are being is like having
+17:28 a paper being published is the value
+17:32 being generated and in in startups it's
+17:35 basically you're selling a product or at
+17:37 least a service at the beginning to make
+17:39 it work. So very like different cost
+17:41 functions but the process is quite
+17:44 similar in my opinion. Mhm. Can you tell
+17:46 us more about the scientific approach?
+17:49 What is it? How do you formulate
+17:51 hypothesis and how do you use it as a
+17:53 data engineer?
+17:55 Um yes, as for startups, I think um just
+18:00 asking questions in a very like very
+18:03 narrow focus. Can you give an example?
+18:06 Um
+18:10 is like is this a problem for customers
+18:14 uh with less than 10 employees for
+18:16 example and you have to specify the like
+18:19 the problem the specific problem too.
+18:22 Yeah. And then you can go out and see
+18:23 okay I need to find companies that are
+18:26 like less than 10 people and then I have
+18:29 to talk to them or talk to as many of
+18:31 them to learn something new and then I
+18:35 can kind of validate or invalidate my
+18:38 hypothesis.
+18:40 Mhm. So that's the idea behind the
+18:42 approach. Um data engineering I think
+18:44 it's just more complicated because it's
+18:47 like very behind the back work. Usually
+18:49 you don't like behind the scenes. you
+18:51 don't see it. You only see it when it
+18:54 breaks. There's uh little to show. There
+18:58 are no fancy dashboards or fancy um
+19:01 fancy um yeah algorithms, results that
+19:05 you can show. It's a lot of plumbing
+19:06 basically. It like makes data flow and
+19:11 I think you have to talk to a lot of
+19:14 people and kind of find out what the
+19:16 like problems are. Um, but it's for me
+19:20 at least it's much more difficult than
+19:22 in these behind thes scenes problems to
+19:25 find out what companies actually need
+19:27 because they're also very different.
+19:30 Mhm. Uh yeah, it's actually very
+19:34 interesting. I'm just taking a note what
+19:37 companies need. Uh cuz I want to come
+19:40 back to this. But I think before we
+19:43 actually do this, I wanted to talk about
+19:45 your transition from uh building a
+19:49 startup to becoming a freelancer in data
+19:52 engineering cuz you said you had a
+19:54 startup. Um you tried to make it work
+19:56 but at the end it didn't uh but you
+19:59 really enjoyed the data engineering part
+20:02 of that and you decided to uh focus on
+20:05 that and become a freelancer because you
+20:07 enjoyed also being independent. So can
+20:09 you tell us more about this? how did it
+20:10 actually happen and how did you uh start
+20:15 your journey in into freelancing?
+20:18 Yeah. So this kind of came naturally
+20:20 because um when I was at like when we
+20:23 were at the end of our startup journey,
+20:25 I um got a request by someone on
+20:28 LinkedIn and was like okay someone would
+20:32 like to pay me for having like
+20:34 consulting for them which is extremely
+20:37 cool. But I I just wonder okay so you
+20:40 did a startup you were a co-founder I
+20:43 don't know what was your role was it the
+20:45 CTO or yeah it was mostly like CTOish I
+20:49 mean there are no like very defined
+20:51 roles at that stage everyone is doing
+20:53 everything I understand but um how did
+20:57 this your experience translate to this
+20:59 particular request? Was it something you
+21:02 uh had on your profile that you can
+21:05 build a data platform or uh what was the
+21:08 exactly what was exactly the ask from
+21:10 the customer? Um so for those who also
+21:15 want to uh one day open LinkedIn and
+21:18 find a request for service uh what did
+21:21 they what did you do to make it happen?
+21:24 Yeah. Um it happened through a contact
+21:26 we acquired during the startup phase. We
+21:29 talked to them about problems and like
+21:30 the problem space to get a better
+21:32 understanding and then they had a
+21:34 problem at some time and came back to me
+21:36 and were like okay would you like to
+21:38 work on this with me it's like a very
+21:40 small thing it's like maybe a week worth
+21:43 of work but it's still like I had this
+21:45 moment where I was like okay someone is
+21:47 paying for my skills and I'm like very
+21:50 very grateful um that that happened
+21:52 because that made me realize that um
+21:55 even after all the like startup where
+21:57 you didn't make money or that kind of
+22:00 stuff. People wanted to pay me for what
+22:02 I can do and this is something that
+22:04 might be feasible in the long longer
+22:06 run. And from there um I kind of took it
+22:10 and was like okay going to work on this
+22:12 as good as well as I can making the best
+22:15 of it and also reaching out to all kinds
+22:19 of people doing LinkedIn content and
+22:21 that kind of stuff. and also during the
+22:23 startup already that helped very much
+22:25 during the transition. We um decided to
+22:28 like connect with many people, talk to
+22:30 many people and then once you have this
+22:34 like initial network going, you can more
+22:37 easily like reconnect with people, make
+22:41 connections through these people,
+22:43 sometimes meet them in real life because
+22:45 COVID was not as pressing anymore. And
+22:48 from there it just um kind of keeps
+22:50 growing and then you have to obviously
+22:52 show up and do the work like there's no
+22:54 way around that but that's not the
+22:56 problem usually.
+22:59 Yeah. Yeah. Uh can you tell us more
+23:01 about this? So you said you were doing
+23:04 customer interviews and then you
+23:06 identified a problem with one of the
+23:07 customers but then at some point you
+23:10 decided to close the business. They
+23:11 found out right that you're close to the
+23:14 business and they thought okay like but
+23:16 we still have this problem that we
+23:19 talked to you about right and they said
+23:22 okay can you actually help us cuz this
+23:24 is an important problem what was the
+23:26 problem if you can if you can share um
+23:29 it was basically a prototype for a um
+23:32 data engineering um IoT related project
+23:35 um I think that's all I can say about it
+23:39 how did you have the skills to
+23:42 This was it already your something you
+23:45 were doing in your startup?
+23:48 Yes, it was very close at least like we
+23:51 after the simulations didn't work out we
+23:53 kind of switched around a bit and then
+23:55 tried different things. Um I the
+23:57 electrical engineering background helps
+23:59 in kind of showing that you can do IoT
+24:02 that you are not afraid of embedded
+24:04 systems and that kind of stuff. We also
+24:07 tried out a lot of different cloud
+24:09 platforms and had um like tried
+24:11 different services what they offered um
+24:14 what we might be able to build upon
+24:17 and so I kind of got the skills and
+24:21 during that like year before I was asked
+24:24 to to do this and
+24:28 often it's not like the system view is
+24:31 much more important I think than the
+24:33 technology so if you're on AWS as GCP or
+24:37 Azure doesn't matter usually that much.
+24:39 I'm sure in the details it might matter
+24:41 but the system design and the trade-offs
+24:44 that you have to make is uh something
+24:47 that is much more relevant in my opinion
+24:50 than the very specific technology that
+24:53 you're using. Mhm. Did this project
+24:55 actually take only one week or was it
+24:57 longer? Uh no, it took roughly one week.
+25:01 um we kind of got the prototype out and
+25:03 then it was um on the client to decide
+25:06 what's going to happen to it and then it
+25:07 kind of like fizzled out and maybe
+25:09 didn't solve the problem they thought it
+25:11 would be helpful for or something like
+25:14 that but that is not not something I can
+25:17 can really talk about. Mhm. But for you
+25:20 the important part was the realization
+25:22 that okay somebody needs my skills and
+25:25 they're willing to pay money for that.
+25:28 Uh and what happened next?
+25:31 Um then a tough time came. Then I was
+25:33 like in an in a three to four month um
+25:36 drought. There was like
+25:39 very little um project work. Um I barely
+25:43 kept like the baseline going so I could
+25:46 pay the the bills that I had to. Um
+25:50 I think there were multiple reasons for
+25:53 that. The like the whole economy and the
+25:55 market itself kind of turned turned
+25:57 sour. So there are not too many projects
+25:59 out there anyway. Then I did not have 20
+26:02 22 23 or what? Yeah, like summer 23. Um
+26:07 so there's a lot of um like especially
+26:10 in Germany a lot of companies just kind
+26:12 of not deciding anything. There are no
+26:14 budgets. Um yeah. Yeah. So projects got
+26:18 cancelled and that kind of um stuff. I
+26:20 mean it just happens. That's basically
+26:22 what can happen all the time. Many
+26:24 companies went bankrupt during this
+26:26 time. Yeah, that too. So,
+26:30 um, what I didn't do was like time box
+26:33 myself, which in hindsight I probably
+26:35 should have done, like give me one year
+26:37 to figure out if that's something I can
+26:38 do. Um, so I had no clear
+26:43 timeline on when I would stop doing
+26:45 freelancing when it's not feasible
+26:47 anymore. Mhm. Because like you can't do
+26:50 it until you run out of money because
+26:51 that would be kind of stupid and you
+26:55 still have to have some buffer. If you
+26:57 run out of money then what's next?
+26:59 Living under a bridge, right? Yeah.
+27:01 Exactly. I mean in Germany you have
+27:02 options but not every country has such
+27:06 strong social benefit system. Yeah. So,
+27:10 so um starting as lean as possible is
+27:12 always a good idea to keep your fixed
+27:14 costs down as as much as possible and
+27:17 then um try to make the money uh stretch
+27:20 as as long as possible. I would say at
+27:24 least for any startup at least like six
+27:27 months of your operating expenses should
+27:30 be in your bank account otherwise it's
+27:33 extremely high risk in my opinion.
+27:37 But uh if if you're a freelancer, what
+27:39 kind of expenses can you have except for
+27:41 the bank account?
+27:43 Bank account um like tax accountant
+27:46 maybe um depending on taxes. Yeah, like
+27:52 your tech maybe your computer, your um
+27:57 some accounts in different platforms
+27:59 sometimes cost money. Um your IDE maybe.
+28:04 Mhm. So there there are things that you
+28:06 can spend money on. Then maybe you need
+28:08 to travel to make uh like acquire
+28:10 customers
+28:12 that kind of stuff. And then even if you
+28:14 get a project or a customer like you
+28:16 work for them, then you invoice them at
+28:19 the end of the month and a lot of times
+28:21 they have like 30 or 45 day payment
+28:25 window. So even if everything is ideal,
+28:29 you at least have 30 to 40 50 days that
+28:35 you are not making any money even though
+28:37 you're working. So that even that is a
+28:40 time that you have to
+28:42 make sure you can like handle and
+28:45 obviously you still have to pay your
+28:46 rent and food and all that kind of stuff
+28:49 like your normal life stuff.
+28:51 Yeah. I heard leptic becoming is
+28:53 becoming more and more expensive, right?
+28:56 Yeah, I mean it's probably still um
+28:58 quite good compared to Berlin or
+29:00 Hamburg, Munich, but it's also getting
+29:02 more expensive here for sure cuz I I
+29:04 heard that Lip is uh like Berlin but 10
+29:06 years ago. So the prices are actually
+29:09 going up and everyone is investing in
+29:12 properties in properties in Leic which
+29:14 is driving prices even higher. So good
+29:18 if you have some property but bad if
+29:21 you're just a person trying to survive.
+29:24 Yeah, that's for sure. Like the same
+29:26 problem all over Germany. Too little
+29:28 housing um for too many people,
+29:30 especially in cities. So that's a
+29:35 German problem, maybe even bigger than
+29:37 that, but certainly a problem in
+29:39 Germany. Yeah. So what should be a
+29:42 runway
+29:44 for me to consider freelancing? Like
+29:47 half a year? I think half a year is a
+29:50 good good time. Um, the longer the
+29:52 better, but half a year to one year is
+29:56 is I think a good like benchmark.
+29:59 Mhm.
+30:01 You never know like when you sometimes
+30:03 you get lucky and you have like a full
+30:05 you're fully booked from day one but um
+30:08 usually that's only reserved for people
+30:11 who are who've been in the industry very
+30:13 long have a lot of connections
+30:15 and can just kind of like send a message
+30:18 to 20 of their connections and they're
+30:21 like okay I got 18 projects from that
+30:23 kind of situation but let's be realistic
+30:26 a lot of people especially in the
+30:28 beginning of their careers do not have
+30:29 anything like that at all. They they are
+30:31 lucky uh to go through a couple of
+30:33 recruiters maybe uh nothing wrong with
+30:36 that but um takes longer much higher
+30:39 competition.
+30:41 So yeah. How how did you solve this
+30:44 problem for you?
+30:46 I did a lot of networking. Um I kind of
+30:50 mentioned that I'm self-employed at
+30:52 every chance I have. Um, I mean
+30:54 obviously being sensible about it, but
+30:56 um, in general like when it makes sense
+30:58 and I'm like, "Okay, concert."
+31:01 Ah, maybe not on concerts. Yeah, I'm
+31:03 self-employed. Like, do you need a date
+31:05 engineer? I mean, you never know. But,
+31:08 uh, no, that's something I wouldn't do.
+31:10 But in You probably means, right? Yes,
+31:13 meetups. Um, all like business context,
+31:17 um, tech context. I mean the question
+31:21 what you do for a living is almost
+31:24 always coming up in these situations and
+31:26 why not tell them that I'm self-employed
+31:28 because sometimes they might they might
+31:30 need someone um to solve a problem for
+31:32 them and they don't have the capacity
+31:34 for it or the skills
+31:36 and if you don't tell anyone that you're
+31:38 self-employed nobody will know. Yeah.
+31:42 Right. Like if if if you're local
+31:45 um like how do I tell them? Yeah, I
+31:50 usually just say I'm like self-employed
+31:52 data engineer solving like problems like
+31:55 XYZ for um like small to mediumsiz
+31:59 companies and that's usually kind of
+32:02 gets the conversation going and I'm also
+32:05 very like open to them not caring at all
+32:08 like I'm not trying to push it onto them
+32:10 but I'm just trying to like being
+32:13 available at the end of the day.
+32:16 Okay. So, and you said after the first
+32:21 project uh was difficult, you needed a
+32:24 couple of months uh to actually find
+32:27 something. Um so you said you were
+32:30 networking. Uh what else helped or was
+32:33 it just going to meetups uh professional
+32:35 conferences and talking to people and
+32:38 mentioning that you're a freelancer and
+32:40 then eventually that helped to close the
+32:43 next client? Um no that helped me now
+32:47 now like maybe like almost two years
+32:49 later but in the beginning uh that's
+32:51 what I did and then I also applied to
+32:54 like these freelance projects via
+32:56 recruiting companies at least in Germany
+32:58 that that's a thing I don't think it's
+33:00 much of a thing in the rest of the world
+33:02 like going through these recruiting
+33:03 companies for projects but that what
+33:06 landed me my like biggest client um for
+33:10 last year and then once you once Once
+33:13 you're in the game and you have a
+33:15 project, people also come to you with
+33:17 other projects. It's kind of like these
+33:19 like when you have something, people
+33:21 still want to give you more. If you have
+33:23 a lot of money, people are trying to
+33:24 give you more money kind of situation.
+33:27 Um, not the best problem. Yeah. So, um,
+33:32 I think it becomes harder the longer you
+33:34 don't have anything. Once you got the
+33:36 momentum going, it's easier to keep it
+33:38 going. You're also not as pressured to
+33:41 find something. You can always say,
+33:43 "Okay, mom." If that doesn't work for
+33:45 you, that's fine. Let's talk to someone
+33:48 else. If you have no project at all,
+33:50 you're in the situation where you're
+33:52 like, you kind of have to take whatever
+33:54 comes along. And that's something you
+33:58 don't want to like have because that
+34:01 makes you
+34:03 like scared in some way. And also people
+34:08 realize that they can push your rate
+34:11 down and Yeah. That's just not a fun
+34:14 like environment to work in. Yeah.
+34:16 Right. Um what do you actually do like
+34:21 as a freelancer? So we talked about data
+34:24 engineering but data engineering is such
+34:26 a broad term. Is there anything specific
+34:28 you help uh with or
+34:31 I do data engineering more closely
+34:35 related to software engineering. So what
+34:36 I don't do is like dashboarding,
+34:38 PowerBI, this kind of stuff usually. Um
+34:41 what I do is like a lot of data
+34:44 pipelines. So everything between data
+34:46 source and the like consumption of the
+34:48 data. So I don't do much machine
+34:52 learning or AI is more like preparing
+34:55 data to be analyzed. um kind of data
+34:58 management
+35:00 data warehousing in some sense. Um and I
+35:03 do a lot of custom work because a lot of
+35:05 my clients are um like industrial
+35:09 companies. They have very like
+35:11 heterogeneous systems. Um a lot of
+35:14 different like machines sending LO files
+35:16 for example. Mh. Um, and that requires a
+35:21 lot of custom like data integration
+35:23 that's not available for
+35:26 like just buying that because like even
+35:29 like two different machines from the
+35:31 same um manufacturer, they still often
+35:34 produce different like lock files,
+35:36 different versions because like
+35:38 different teams worked on them and then
+35:40 they have different formats and you have
+35:42 to kind of transform it to make sense.
+35:46 uh do your clients usually already have
+35:49 something in mind. Okay, we want a
+35:51 dashboard with these metrics and then
+35:54 you help them uh actually implement
+35:56 this. Somebody else is building the
+35:58 dashboards but you help with the making
+36:01 sure the data is in the right place,
+36:02 right format, right shape or you also
+36:05 help them identify what kind of
+36:08 dashboards. So they maybe think okay now
+36:10 we actually need to have some visibility
+36:12 in what into what's happening. Um but
+36:15 you talk to them and help them realize
+36:18 what they actually want. Uh it's
+36:20 different. It depends on the client.
+36:22 Some clients have a very um like
+36:24 specific idea what they like to see and
+36:27 then it's more helping them implement
+36:28 it. Although I always try to also
+36:31 consult on what makes sense um what else
+36:33 might make sense given the data they
+36:35 have. Um but it's not always what they
+36:39 want. And then some clients they have
+36:42 just the idea okay we we do have this
+36:44 data here or these machines here we want
+36:47 to like analyze what's in there and then
+36:50 usually it starts out with um some kind
+36:52 of explorative data analysis. You're
+36:56 kind of trying to figure out what the
+36:57 data even looks like. What are the edge
+36:59 cases? How clean is the data? And
+37:02 usually in this like environment it's
+37:04 not clean at all. Like they're very like
+37:07 non-standard ways of doing stuff. in in
+37:09 that field. Um Mhm. So then you kind of
+37:13 keep working on that and providing like
+37:16 dashboards in
+37:19 like a CSV file might be good enough in
+37:23 the beginning for example to kind of
+37:24 show okay this is what we can uh can can
+37:27 do right now and if we like keep going
+37:30 we can do more than you identify
+37:33 problems in the data and then the idea
+37:35 what they have but you always have to
+37:38 understand what the like final goal for
+37:41 them as the businesses because at the
+37:43 end of the day, you want to or need to
+37:46 provide value.
+37:48 Even as a like full-time employee,
+37:50 you're not being paid for like coding.
+37:52 You're being paid for solving problems.
+37:55 And as a freelancer or just any third
+37:59 party business um in a B2B relationship,
+38:01 if you're not providing value,
+38:04 you'll be kicked um quite quickly. So
+38:07 you have to have to do everything you
+38:09 can to provide value early on. Mhm. And
+38:14 on your LinkedIn you say you help
+38:16 clients start small, target immediate
+38:18 value and then scale. And I think this
+38:21 is what we are talking about right now.
+38:23 We have been talking last 5 minutes. U
+38:27 can you walk us through a project where
+38:29 you do something like less than that. uh
+38:33 maybe I don't know if you can if you
+38:34 cannot talk about real project we can
+38:36 just come up with imaginary one but you
+38:39 mentioned that sometimes u you speak
+38:41 with a client and they describe what
+38:43 they want or maybe they don't really
+38:46 know what they want and then you show
+38:48 you come up with this CSV file and then
+38:51 you build a simple dashboard on that and
+38:53 that would be the MVP right so how how
+38:56 do you approach that and uh how do you
+38:59 do these things yeah so the first um
+39:02 thing I always do is kind of look at the
+39:04 data what what's in the data what look
+39:07 does it look like what's the schema
+39:08 because that's usually not um clear and
+39:12 even just providing the documentation
+39:14 around that is all is like already
+39:16 something that provides value for a lot
+39:18 of companies and I imagine this are from
+39:21 what we've been talking about what I
+39:23 have in mind is like you have some piece
+39:25 of equipment sitting in a factory right
+39:29 some industrial machine and then the
+39:32 goal is to understand
+39:36 how this machine is performing, right?
+39:38 And then you have no idea what kind of
+39:39 sensors the this machine has uh what
+39:43 kind of data is sending, what is the
+39:45 schema of this data, what is the format,
+39:47 like is it binary or JSON or whatever.
+39:50 I'm just making this up. I have no idea
+39:52 how this uh machines work. But this is
+39:54 what you need to figure out, right?
+39:56 I mean that would be like the worst case
+39:58 I think if you have no idea what's like
+40:00 what the data situation is at all.
+40:02 Usually you have some kind of idea what
+40:04 sensors are in there um what the values
+40:07 should mean at least often times though
+40:10 documentation what actually is happening
+40:12 in the data is different. So that's the
+40:15 first problem. Um but also what you want
+40:19 to know is kind of see okay we we get an
+40:23 error every like 12 hours on that
+40:25 machine what is happening there and then
+40:28 you want to try to see if there are any
+40:30 patterns or um any problems that you can
+40:34 identify and that's I think before you
+40:37 do any automation at all you have to
+40:39 kind of find out what the
+40:42 looks like what it like what are the
+40:45 like how it works together, how
+40:47 different machines might work together
+40:49 in the same manufacturing line, that
+40:51 kind of um thing. Um, a lot of machines
+40:55 are now very like intelligent or very
+40:58 connected at least. Uh, not a not a lot
+41:00 of machines anymore that are not
+41:02 connected to some kind of internet or
+41:05 internet. So, the data is usually
+41:08 available. Um sometimes you need some
+41:10 custom um
+41:14 provided
+41:15 software to decode it for example but
+41:17 often times it's very simil like simple
+41:20 like just log files that are like your
+41:23 terminal output or some JSON that keep
+41:26 has sensor values in them and then you
+41:29 have all the different technologies
+41:31 sometimes it's like a rest API sometimes
+41:33 it's MQTT sometimes they're very focused
+41:36 on CFKA so it's
+41:39 like all over the place. Um that makes
+41:41 it fun, also challenging in some aspect
+41:45 and unfortunately requires quite a bit
+41:47 of infrastructure to integrate all of
+41:49 the different data processes. Mhm. But
+41:53 uh you probably don't immediately start
+41:56 with the info part. You first figure out
+41:59 what kind of data is there, how to
+42:00 access this data, how to get this data,
+42:03 and then you build the first MVP which
+42:05 is okay. Now the data is in the CSV
+42:07 file. Here's a dashboard that I we can
+42:10 build. Does it work for you? Right. This
+42:12 is what you do. Yeah, basically I mostly
+42:15 just it sounds really stupid but it
+42:17 works quite well. You just pull like
+42:19 files for one day or like depending on
+42:21 how big they are for a certain time on
+42:23 your computer and then you just analyze
+42:26 them locally and then you have okay on
+42:28 this day in this hour you can see this
+42:32 problem or this is uh what we can see
+42:34 here and then you start to build your um
+42:38 scripts that kind of transform the data
+42:40 that makes some sense of it and after
+42:43 you've done that you can go to a more
+42:46 like automated approach where you like
+42:48 ingest the data automatically kind of go
+42:50 through it every hour or stream
+42:53 processing depending on what you want.
+42:55 So this is when you start building the
+42:57 infra part. Yes, you first like if you
+43:01 start investing into the infrastructure
+43:02 before you have any idea what you want
+43:04 to do, your infrastructure is probably
+43:06 not what you need and it's also most
+43:09 likely um overgineered
+43:12 because you have to make sure it's
+43:15 kind of supporting all the use cases
+43:17 that are out there. But in in like
+43:21 realistically you only need a few few of
+43:24 them. Mhm. So, how do you keep yourself
+43:27 in check and not overengineer when it's
+43:30 not necessary?
+43:32 A good question. It's also a tough
+43:34 question. It's um kind of reminding
+43:37 oneself all the time to keep it simple
+43:40 and also having like regular meetings.
+43:42 It doesn't have to be daily or even
+43:45 weekly, but having
+43:47 a like tight feedback loop with your
+43:49 clients is a good way to keep it simple
+43:52 because when you have a tight like let's
+43:54 say weekly meetings, you can't implement
+43:57 like crazily complex solutions in one
+44:00 week. So if you show them like or tell
+44:02 talk about what you did and what kind of
+44:04 results you have every week, you're kind
+44:07 of forced to keep it simple in order to
+44:09 deliver uh during that week. And then
+44:11 you can improve uh or increase
+44:14 complexity when it's required.
+44:17 Isn't it an idea behind Scrum because
+44:20 you have this you have this did demo
+44:23 days or whatever it's called where
+44:25 you're focused to you you're forced to
+44:27 focus on a demo. In order to build a
+44:30 demo, you need to have like a minimal
+44:32 working pipeline, let's say, right? And
+44:35 you do the demo and then okay, this is
+44:37 seems this seems to be what we need to
+44:40 do. And then you just keep working on
+44:42 this pipeline making it a little bit
+44:44 more complicated maybe to handle corner
+44:46 cases and then you show this, right? And
+44:48 then you iterate. Yeah. Uh I like that's
+44:51 what like scrum or agile um kind of
+44:54 would look like in the ideal world, but
+44:56 a lot of companies are not doing like
+44:58 any of that. They're they're naming it
+45:01 scrum, but it's more or less
+45:02 micromanaging. So um it's
+45:07 it's similar, but it's not like driven
+45:11 by like some outside force. It's not
+45:13 someone telling me to be agile or doing
+45:15 scrum.
+45:17 It's kind of me figuring out together
+45:19 with my clients what mode of working
+45:22 works best for everyone. And that's
+45:25 usually kind of what it ends up with
+45:27 because you have to have this like
+45:29 feedback. I can't go down into my uh
+45:32 basement and be there for the next 6
+45:35 months and then come up with the perfect
+45:36 solution just to realize that no one
+45:39 needed that at all. um that would be
+45:43 very expensive for everyone and would
+45:45 not like be good for a reputation of a
+45:49 business. So yeah and I guess your
+45:51 experience at the startup helped with
+45:53 being more pragmatic and focused. Yes.
+45:56 Yes. Very much. That is one thing that I
+45:58 learned in the startup. Be pragmatic,
+46:00 keep it simple, um deliver quickly and
+46:03 then kind of go from there. Mhm. Cuz I
+46:07 imagine if you work at the company, you
+46:09 have you always know when the next
+46:11 paycheck comes, right? So then you are
+46:13 kind of more relaxed then you can think
+46:16 okay this is the problem and you start
+46:21 yeah being you're an engineer right and
+46:24 then you think okay like I can now build
+46:26 a perfect solution um cuz I have all
+46:29 this time but when you're a startup you
+46:32 don't have like a year you have a next
+46:36 month and then if you don't do something
+46:37 within the next month you're you're out
+46:40 right Yeah. Yeah. You have to think more
+46:43 like a business a like engineer. Sure.
+46:46 From the engineering perspective, you
+46:48 would like to build all the cool things,
+46:50 the newest technology because it's just
+46:51 much more fun. You learn a lot, but it
+46:54 doesn't like deliver value like what is
+46:58 what is the value behind what you do is
+47:00 a good question. Even in full-time
+47:02 employment, I think um sure there's more
+47:05 time maybe for experiments and um like
+47:08 tech demos and kind of looking into
+47:10 that, but
+47:12 at least being paid for that. Uh as a
+47:15 freelancer, I still have to like
+47:17 experiment with the newest technology
+47:19 and kind of see what the potential is.
+47:21 But I don't usually get paid for that.
+47:24 That's kind of on my own time.
+47:26 So how do you set aside aside this time
+47:29 to also uh grow as an engineer and play
+47:32 with all these different technologies?
+47:35 um just kind of make a blocker in your
+47:38 calendar like Friday afternoon or the
+47:41 weekend or
+47:43 depending on your life um kind of but
+47:46 you have to block time for that
+47:48 otherwise you won't do it and even if
+47:50 you if you block time you still won't do
+47:53 it all time because sometimes other
+47:55 things are more important but
+47:58 even just staying up to date on what's
+48:00 happening like following
+48:02 people on LinkedIn who talk about the
+48:04 develop velopment or being part of
+48:07 communities, listening to podcasts, that
+48:09 kind of stuff, just to kind of stay in
+48:12 the game even if you don't know the
+48:14 details you have heard of. Oh, there's
+48:16 this new technology. Um, and supposedly
+48:20 it can do this. So when you come across
+48:23 a problem that would require that you
+48:25 can kind of okay, I've heard about this.
+48:27 I'm going to investigate like half a day
+48:29 if that's feasible for the solution. And
+48:32 then you might think yes it is or it's
+48:36 not. Both are fine but you have at least
+48:39 had the idea that this is something you
+48:41 can do.
+48:43 So you have to have a broad overview of
+48:46 things that are possible to accomplish
+48:48 within your domain. Yes, I think that is
+48:51 that is always um a good thing because
+48:54 that enables you to make better
+48:56 decisions and have a better um process
+49:02 also of making decisions because you you
+49:04 know your options even though you might
+49:06 not know the details and more often than
+49:09 not you will fall back to what you know
+49:11 best but that is okay. Yeah. Um, do you
+49:15 have I'm just wondering how you
+49:17 structure this uh Friday afternoons or
+49:20 whatever time you block for yourself.
+49:22 Um, because this is a problem I also
+49:23 have because there are um I'm running
+49:26 this community and I always have things
+49:28 to do but I also don't want to stay
+49:31 become outdated of things that are
+49:33 happening. Um, so I have to find balance
+49:36 and also work on the community stuff but
+49:38 also try to stay technical and work on
+49:40 some technical things too and not just
+49:42 maintaining I don't know our website but
+49:44 also discover new things and this is
+49:46 tricky cuz like there are always things
+49:48 to do. Uh so I wonder how do you
+49:51 structure this uh this learning process?
+49:54 Let's say there is a new technology that
+49:55 you heard that is cool. I don't know.
+49:57 Let's take Doug DB. I don't know if you
+49:59 experimented. People say that this is
+50:01 super cool technology because right now
+50:03 you don't need a cloud uh breakhouse
+50:05 anymore. All you you can do things
+50:07 locally and even some companies what
+50:10 they did is they built a cluster like
+50:13 the be which became faster than spark
+50:16 right and you know wow this is so cool.
+50:19 Uh but then how do you find time to
+50:20 actually try these things and uh
+50:23 actually build something uh to also
+50:26 learn from this and uh perhaps later use
+50:30 it. Yeah. So um Dr. B is awesome by the
+50:33 way. I can only recommend that. But um
+50:37 what I try to do is um do the get
+50:39 started tutorial. There's almost always
+50:41 some kind of get started um tutorial,
+50:44 some starting guide, something like
+50:45 that, which usually shows you at least
+50:49 the basic ideas behind it. Also
+50:50 introduces the way of thinking about
+50:53 this um specific technology
+50:56 and the less you need for that, the
+50:59 easier it gets to like try it out. So
+51:01 ductb for example, you basically need a
+51:04 computer and that's it. You don't need a
+51:08 server. you they even have like set like
+51:11 example data um in in their tutorial. So
+51:14 you don't need anything at all really to
+51:17 get started. And it this is makes it
+51:18 very easy to get started and to like
+51:21 make something.
+51:24 And sometimes I do struggle with um like
+51:27 what to make. But the tutorials usually
+51:30 give me at least an idea of what I can
+51:32 do with it. And then I when I come
+51:35 across problems that might benefit from
+51:38 that, I'm at least trying it. And then
+51:40 I'm sometimes it's also like just
+51:43 solving problems you have solved before
+51:45 with the new technology
+51:48 um because then you also uh can compare
+51:51 the different approaches for the same
+51:53 problem. Maybe you can even benchmark um
+51:56 performance or
+51:59 uh like lines of code or whatever you
+52:02 want to uh do. Um so that is I think a
+52:06 good approach because it also frees you
+52:08 from thinking about what to code because
+52:11 I know sometimes uh it's blocking yeah
+52:14 it's blocking you when you have think
+52:18 about okay what do I actually want to
+52:20 like do with that and like okay do what
+52:22 I did before yeah cuz I want to learn
+52:25 something but then how do I select a
+52:27 project and this is uh probably the most
+52:29 difficult part cuz if you let's say
+52:31 you're working right now with a customer
+52:33 and they have this problem and you want
+52:35 to learn a new technology and then one
+52:38 of the things you can potentially do I
+52:39 don't say you should but you can try to
+52:42 solve this particular problem with this
+52:44 particular technology but
+52:47 if they match if this is a perfect match
+52:50 between the problem and the solution
+52:52 great but sometimes you're
+52:54 not using the most optimal tool for that
+52:56 right yeah but that's also always part
+53:01 of the deal like it's better to have
+53:03 something that works even if it's not
+53:06 the perfect solution than like looking
+53:09 for the perfect solution that might not
+53:10 be even out there for a year. So,
+53:16 it's it's always possible to like
+53:18 exchange tools later on. It's not fun.
+53:21 It's not what you would like to do. But
+53:23 at the end of the day, um, I'd say if
+53:27 the tool works, it works probably well
+53:30 enough unless you're in the very top 5%
+53:34 of like performance you need. Mhm. Okay.
+53:39 Uh, we have some questions, quite a few
+53:41 actually. You said you don't work with
+53:43 AI or ML but still Ramsey is asking if
+53:48 you came across any examples of LLMs
+53:50 being used for data cleaning or
+53:52 ingestion.
+53:54 Um I see this um like idea floating
+53:57 around quite often but for me
+54:00 the main problem with data cleaning is
+54:03 domain knowledge. So it's if you work
+54:06 for some industrial company for example,
+54:09 you have to understand what these values
+54:11 mean because data cleaning changes the
+54:14 data like that's it. It changes the
+54:17 data. It's not raw data anymore. And to
+54:22 to change it in a way that makes sense
+54:23 for the business and the problem, you
+54:26 have to understand what the data
+54:27 actually means. And I think that is very
+54:30 hard to um tell an LLM to do or
+54:34 understand because it would require an
+54:38 like immense amount of like time and
+54:41 information because what I usually do I
+54:44 talk to these clients like for hours
+54:46 before I got an understanding of their
+54:49 like business.
+54:51 That is something the LLM would have to
+54:52 do in this case.
+54:54 I'm probably sure you can do like once
+54:58 you derived some information on what
+55:01 good quality data looks like, you
+55:04 probably can do something like yeah this
+55:06 is good data.
+55:08 If something is looking very different
+55:11 from this, please like flag it
+55:15 uh or like move it somewhere else for
+55:18 manual processing or whatever you want
+55:20 to do.
+55:22 But I don't think it's the best solution
+55:25 there.
+55:28 Yeah. Okay. Uh we have quite a few
+55:30 questions about AI ML and so on. But
+55:32 since you said you didn't have a lot of
+55:34 experience, there are some other ones.
+55:36 Now one question is what was the biggest
+55:38 challenge about going freelance?
+55:41 I think the biggest challenge is
+55:44 acquiring clients. If you solve this
+55:46 problem, you can have a very flexible um
+55:51 lifestyle. You can have a very like
+55:54 rewarding work, but you have to solve
+55:58 the client acquisition problem.
+56:02 If you haven't solved that like at all,
+56:04 it's going to be painful. If you have
+56:06 solved it, okayish, it's at least like
+56:09 you have clients continuously. If you
+56:12 really solved it, clients come to you to
+56:14 like have you have them have you work
+56:18 for them. Um, but that is something very
+56:21 few people can can say from themselves,
+56:24 I think. Yeah. Okay. Makes sense. Uh,
+56:27 and probably most people who already
+56:31 work as full-time employees, they
+56:33 already have the skills of doing
+56:34 freelance work, right? cuz they at work
+56:37 they solve some problems they can also
+56:39 solve the same problems or similar
+56:41 problems being a freelancer but the
+56:44 challenge is uh okay you have the skills
+56:46 but how about getting the clients and
+56:47 that's a different skill set right
+56:50 and like translating your data
+56:51 engineering knowledge into customer
+56:53 acquisition skills is a tough thing to
+56:56 do right yeah yeah freelancing is at the
+56:59 end of the day running a business um
+57:01 it's not always seen as that but at the
+57:03 end of the day you run a business you
+57:05 clients that pay your bills. Um, and
+57:09 getting these clients is what you have
+57:10 to figure out how to do. Um, and that's
+57:12 different for everyone. Um, some people
+57:14 are just born networkers. They they go
+57:18 anywhere, have 20 new contacts
+57:21 afterwards. Then there are people who
+57:23 are very introverted or shy or whatever
+57:26 you want to call that. They have very
+57:28 hard time networking in real life, but
+57:31 they might be crushing it on LinkedIn or
+57:34 on Blue Sky or whatever other networking
+57:37 there is. Mhm. I think everyone has to
+57:39 kind of find their own way. Curious um
+57:43 are you introvert or an extrovert? How
+57:45 do you I'm an introvert. I I can uh
+57:50 for networking events I I know it's like
+57:53 going to be hard.
+57:54 It's going to be exhausting, but um I'm
+57:56 not shy in that sense. I'm just mh it's
+57:59 just exhausting to do networking all the
+58:01 time. But I can obviously for that and
+58:04 after networking events I
+58:07 may have to like relax for a day or at
+58:10 least not do anything too social for the
+58:13 next day. So that is
+58:15 the way it is. But you have to do it
+58:18 right otherwise you wouldn't be getting
+58:20 any clients. Yeah. If you don't want to
+58:22 talk to people, you're not getting
+58:24 clients. Mhm. And do you have time for
+58:27 one more question?
+58:29 Yeah, sure. Okay. Uh, can you suggest a
+58:32 tech stack or skills used in your daily
+58:34 life?
+58:37 Uh, what I usually use is Python and
+58:40 C++, although Python nowadays is
+58:42 probably 90% of that. Um
+58:47 just comes from the fact that it's uh
+58:49 industrial uh devices and it's hardware
+58:54 right uh it's you have to be closer to
+58:58 hardware that's why C++ right um yes
+59:02 also like coming from the simulations
+59:04 there was a lot of high performance
+59:05 computing so it's C++ um it's more
+59:08 something I do when it's required to for
+59:11 performance reasons for example but it's
+59:13 not something I'm like actively looking
+59:15 for although I don't have a problem with
+59:17 it um but a lot of the like data work is
+59:21 just being done in Python and then
+59:24 currently I'm using a lot of duct DB now
+59:26 it's it's awesome so you can just
+59:28 basically kind of run your SQL um
+59:31 statements in in your Python code and
+59:34 then the results you can extract to like
+59:37 data frames um or zero copy it's it's
+59:41 super super cool um for prototyping it's
+59:45 super useful right yeah it's for
+59:46 prototyping but also for like pipelines
+59:49 I do a lot of transformation data
+59:51 transformation with um duct DB and and
+59:55 in in practice too in production and
+59:58 yeah I think then it's just a lot of I
+1:00:00 mean Linux and Mhm
+1:00:05 DBT but that also depends on the client
+1:00:08 docker if you want to be in this field
+1:00:11 it helps to have some like software
+1:00:14 engineering knowledge for sure. But Mhm.
+1:00:19 if I like my main advice would be not to
+1:00:23 focus too much on your text, but focus
+1:00:25 more on the problems you're solving
+1:00:27 because at the end of the day, I
+1:00:29 wouldn't mind doing something in Go or
+1:00:31 Rust or whatever other language if
+1:00:34 that's what the company uses and
+1:00:36 requires like in their in their systems.
+1:00:39 My main focus is on on solving problems
+1:00:42 and not so much on on the tech that I
+1:00:44 use for that even though I'm obviously
+1:00:46 have a preferred text ST for the work I
+1:00:49 I do but this is more like preference
+1:00:53 and not requirement. Mhm. So the main
+1:00:56 skill you use in your uh work life is
+1:00:59 problem solving. Yeah. Uh I think that's
+1:01:03 the tech part comes later when you
+1:01:05 actually figure out what is the problem
+1:01:07 and what's the best solution for this
+1:01:08 problem or what's what's an okay
+1:01:10 solution that works for this problem.
+1:01:12 Yeah. Yeah. Sometimes it's also a lot of
+1:01:15 just manual work just doing you know
+1:01:17 filtering by hand. Sometimes that's uh
+1:01:21 sure it takes 20 30 minutes first time
+1:01:24 but then it takes much longer to code
+1:01:27 something that works for all the edge
+1:01:30 cases and then you can show your client
+1:01:32 here this is what it would look like and
+1:01:33 then you can automate if that's kind of
+1:01:35 the ballpark at least what they're
+1:01:37 expecting. You learn so much about data
+1:01:39 when you do this manual things.
+1:01:42 Yeah, that is also true. You you get a
+1:01:45 better feeling for what the edge cases
+1:01:47 might look like. Um some sometimes
+1:01:49 that's also very hard to put into code.
+1:01:52 Like as a as a human, you sometimes have
+1:01:55 this like intuition about what the data
+1:01:57 should look like. What what kind of is
+1:02:00 good data and what probably isn't good
+1:02:02 data. And it's very hard to
+1:02:05 tell a machine to yeah if the data looks
+1:02:08 like this um it might not be too good.
+1:02:11 So that might be where the LLM part
+1:02:13 could come in again from the question we
+1:02:16 had earlier. Yeah. So for me uh as
+1:02:19 somebody with the data science
+1:02:21 background uh doing this manual work was
+1:02:24 super useful like you just look at the
+1:02:26 data and then you do uh I don't know
+1:02:28 manual labeling classification before
+1:02:30 you actually build a model cuz this way
+1:02:32 you learn so much about data and this is
+1:02:35 like if you spend 30 minutes or 60
+1:02:37 minutes on that on that uh this may
+1:02:40 sound boring but this is totally worth
+1:02:41 it and you learn so much doing this.
+1:02:44 Okay, Oral, thanks a lot um for joining
+1:02:48 us today, for sharing your experience
+1:02:50 and expertise with us. I hope what you
+1:02:54 shared will motivate some people to
+1:02:56 consider freelancing cuz I know this is
+1:02:59 something that people some people are
+1:03:01 interested and want to try. So, if you
+1:03:03 give them this final push uh that that
+1:03:08 would be really great. Uh but anyways,
+1:03:10 uh thanks for sharing your story. Um so
+1:03:14 I wish you a lot of clients, good
+1:03:15 clients uh that you do not need to
+1:03:19 actively
+1:03:20 uh chase. They come to you. So thank you
+1:03:25 and also thank you for for your time. I
+1:03:27 had a I had a great time here. So um was
+1:03:29 a lot of fun for me too.
+1:03:31 Thanks and thanks everyone for joining
+1:03:33 us today for asking questions for being
+1:03:34 active and don't forget we have two more
+1:03:38 events uh today and tomorrow and then
+1:03:41 with podcast interviews we're taking it
+1:03:43 a bit slower uh but if somebody of you
+1:03:46 who is listening have a guest in mind
+1:03:50 just contact me and say okay like I want
+1:03:53 you to interview this person um it will
+1:03:55 help us to get back on track probably we
+1:03:57 will do this somewhere in September cuz
+1:03:59 right Now in Germany, people are
+1:04:02 preparing to summer holidays and it's
+1:04:04 super hot right now. Anyway, yeah,
+1:04:08 enough uh talking. So thanks everyone
+1:04:11 again and see you

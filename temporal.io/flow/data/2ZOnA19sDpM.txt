@@ -1,0 +1,1401 @@
+Roles in a Data Team
+
+0:00 First of all, thank you very much for uh
+0:02 for joining the event. This is the first
+0:04 event we ever have. Uh so this is a new
+0:07 experience for us as well. So I hope
+0:10 everything um goes smoothly
+0:13 and this is the first event but not the
+0:16 last one. We already have uh a few
+0:18 events planned. So the first one, this
+0:20 one is about deploying models with
+0:22 SageMaker. But u we want to meet every
+0:26 Tuesday
+0:27 at u 5:00 p.m. uh European time to talk
+0:31 about different uh technical topics. So
+0:33 the next week we will have a topic about
+0:35 customer segmentation. Then we will have
+0:37 a topic about uh fighting uh fraud uh
+0:41 with triplet loss about neural nets and
+0:43 then um slightly different topic more on
+0:46 the soft side of skills about
+0:49 communication skills for um data
+0:52 scientists and other data professionals.
+0:56 In addition to that, we also want to
+0:57 have something uh like a lighter format
+1:00 without slides, just u QA Q&A um just a
+1:04 conversation that we want to also put as
+1:07 a podcast later. Um so we haven't
+1:11 officially planned one yet but the first
+1:14 we want to run uh next week on Friday
+1:17 and we'll talk about roles in a data
+1:20 team
+1:22 and um yeah so you if you want to if you
+1:26 found this uh event elsewhere like on
+1:29 LinkedIn or somewhere else but you
+1:31 haven't joined the community yet so this
+1:33 is the link you can use for joining it's
+1:35 a slack community
+1:37 so it's very simple just join join data
+1:40 talks.cl up and this is this will give
+1:43 you directly an invite invite link to
+1:46 Slack
+1:47 and then finally for today we will use
+1:49 slider for questions.
+1:52 Uh let me actually uh just put this to
+1:55 chat
+1:57 and if you have any questions during the
+1:59 presentation just use slider to put your
+2:01 question there and if you see a question
+2:04 somebody
+2:06 asked already a question you wanted to
+2:07 ask just up it. So I will just share
+2:11 this link in chat
+2:15 and then VI can start.
+2:25 So thank you uh Dimmitri the floor is
+2:29 yours.
+2:30 Hi there.
+2:32 So um thank you all for
+2:36 um for coming uh to this webinar. So let
+2:41 me start. I will share my screen then.
+2:44 Um
+2:47 so can you please uh indicate in the
+2:49 chat that you can see the screen?
+2:54 Everything is good.
+2:55 Maybe with plus sign or something thumbs
+2:58 up.
+3:00 Okay cool.
+3:20 Okay. So let me start. Um so basically
+3:26 uh let's start with the uh with our
+3:30 first topic for our u data talks club.
+3:34 Um so basically we will discuss today
+3:36 deployment of uh dockerized ML models in
+3:39 AWS Sage Maker. So first of all I would
+3:42 like you once I would like once again to
+3:45 uh say thank you that uh you have come
+3:48 and uh like for for showing the interest
+3:51 in the topic and in the community
+3:53 itself. Um and uh secondly would like to
+3:57 um introduce myself. So my name is Mitri
+3:59 Muzaleki and I'm working as a lead data
+4:02 scientist in um Audi. So it's okay.
+4:07 Um so actually we are uh Berlin based uh
+4:12 company which is uh working on the
+4:15 fields of um uh helping the people with
+4:18 the hearing loss. So working with the
+4:20 hearing aids. So and our um goal uh as a
+4:25 data team as a basically data science
+4:27 team is to um help the people with the
+4:31 hearing loss. Uh so um to have the
+4:35 better hearing uh device and also like
+4:38 uh to to be able to identify um these
+4:42 people yeah who have this uh hearing
+4:44 loss. Yeah. So uh why I have selected
+4:49 this topic? So basically uh in Odena we
+4:52 have the data platform which was hosted
+4:56 uh which is hosted on AWS. So we have um
+5:01 a lot of resources there. So when our uh
+5:03 database is hosted there so our other
+5:06 resources hosted there and basically all
+5:07 our stack for the uh data science is
+5:10 also uh based there. So we are using AWS
+5:15 SageMaker for training and deployment
+5:18 deployment of our models. Um therefore
+5:21 basically this is our let's say standard
+5:23 platform
+5:25 uh for the research and for the
+5:27 deployment of the models. Yeah. And uh
+5:29 basically the topic that I would like to
+5:31 discuss today uh we also um you know use
+5:36 extensively in our work. So we uh create
+5:40 the dockerized ML models and uh uh push
+5:45 them to the AWS and then uh deploy using
+5:49 AWS SageMaker.
+5:51 So uh what will be the let's say the
+5:53 topic and the uh let's say the content
+5:56 of our uh today meeting. So I prepared
+6:02 the uh small repository for this
+6:04 meeting. So afterwards you can have the
+6:06 uh link and uh have an access to that
+6:09 and uh um also um trying to use that and
+6:14 play a bit with the data and use it for
+6:17 your own data for your own projects. Um
+6:20 so what will be the uh contents of this
+6:23 meeting? So we will um discuss regarding
+6:27 the docker itself. So what it is in a
+6:31 quick words. So how um how men um can
+6:35 use that and u um so how you can use
+6:39 that also in the uh AWS hagemaker
+6:42 um infrastructure. Then we basically
+6:44 talk we'll talk about the um ML model
+6:48 structure. So and how basically we can
+6:50 combine the uh docker itself with the ML
+6:54 model structure. We talk a bit about um
+6:57 basically flask application and rest uh
+7:01 API services that we can basically use
+7:04 for u building our web models. Uh then
+7:08 afterwards we will talk a bit about the
+7:11 execution stack. So how exactly
+7:14 SageMaker will execute your docker
+7:16 container with your code. Then a couple
+7:19 words about ECG. So um regarding the web
+7:23 server gateway interface. So basically
+7:25 the interface that will help us uh in
+7:28 our application to connect our server
+7:31 side and our model site. So um then a
+7:36 couple of words about the structure of
+7:38 this repositories about the main
+7:40 components and the structure of our uh
+7:43 container application of our code. Um
+7:45 basically yeah so um let's start
+7:51 um let's start with the introduc
+7:53 introduction of uh AWS SageMaker uh
+7:56 estimator itself. So uh basically to use
+8:01 uh AWS uh SageMaker uh estimator you
+8:05 need to understand that uh basically
+8:07 this is they use the different approach
+8:09 for example that skyit learn using yeah
+8:11 or some other um well-known data science
+8:14 library. So uh every estimator in
+8:17 SageMaker even it's um basically uh
+8:21 official and um um designed by AWS such
+8:26 as lineer learner org boost um or custom
+8:31 estimators they are all having the same
+8:34 structure. So basically each estimator
+8:36 in Sage Maker this is the dockerized uh
+8:40 web service. Yeah. So docerized web
+8:43 service and um basically this web
+8:46 service provides the rest API
+8:49 infrastructure and uh you can think of
+8:52 it as a a combination of uh training and
+8:57 uh predict scripts. Yeah. Which uh uh
+9:01 wrapped up in the uh flask application
+9:04 that is providing this recipe uh
+9:07 infrastructure.
+9:09 Um so basically if you uh for some
+9:13 reason uh would like to use your custom
+9:17 estimators
+9:18 um you should be able to know the
+9:20 structure of how to uh organize this
+9:23 estimator and how to combine them and
+9:25 how to orchestrate it with the docker.
+9:28 Yeah. So therefore for us for example in
+9:32 audibin it's very important uh because
+9:33 we have a variety of tasks that we need
+9:36 to combine the certain algorithms for
+9:40 example we need to do um not uh uh not
+9:45 just using for example HG boost for uh
+9:48 classification but for example combine
+9:50 the different uh ensembles doing some uh
+9:53 stacking procedure or uh voting
+9:56 procedure both for classification or
+9:58 regression. Therefore, um it's not um
+10:01 allowed yet. Maybe that would be that
+10:05 will be the support uh later on in Sage
+10:08 Maker about that. Uh but right now there
+10:10 is no support doing some uh voting uh
+10:14 procedure for example taking the
+10:16 different ensembles. Um therefore if you
+10:19 would like to use this uh approach and
+10:22 this procedure uh more deeper ones yeah
+10:25 then you need to go to the custom models
+10:27 and do it um yourself. Yeah. And of
+10:31 course um basically you uh doing your
+10:34 custom models you are not strictly uh
+10:37 stayed with one um library such as skyit
+10:41 learn you can use variety of the
+10:43 frameworks. So for example if you work
+10:45 with the images you can uh easily use
+10:47 tensorflow or kas or mxnet so there is a
+10:51 possibility of the ways what frameworks
+10:53 and for what type of tasks you can use
+10:57 um so let's start with the docker so
+11:00 here I put the uh picture um of course I
+11:05 uh think that there are a lot of people
+11:06 who and um I hope that there are a lot
+11:09 of people who already know the docker
+11:11 but we'll put uh some words about that.
+11:14 Um so basically Docker provides the um
+11:19 simplistic way how to uh package your
+11:21 code. Yeah. So by building the images.
+11:25 So uh Docker um give you the possibility
+11:29 to build the image based on so-called
+11:32 Docker file which is basically the text
+11:34 document where all of the commands are
+11:38 located. Yeah. So and this commands are
+11:40 using by docker during the uh building
+11:44 creation of the uh image itself. Yeah.
+11:47 And after creation of this image, this
+11:50 image can be uh running. Yeah. So and u
+11:54 running in the docker container.
+11:57 Um so basically if we're comparing this
+12:01 one uh this approach the dockerized
+12:03 approach with the other approach like
+12:06 using cond or using virtual enth yeah
+12:09 yeah like some other um virtual n
+12:13 approaches in python. Yeah. So we can
+12:14 see that u docker um is like a fully
+12:19 independent
+12:20 regarding the langu the language that
+12:22 you can use and it's also help you to
+12:25 create the whole um infrastructure the
+12:28 whole environment with the starting with
+12:30 the assigning environmental variables
+12:32 etc and in that way so you can think of
+12:36 a docker as a basically kind of
+12:38 lightweight version of uh virtual
+12:41 machine then you can use for packaging
+12:44 and then running your codes on the
+12:47 different services. So as in our case on
+12:50 AWS
+12:53 um so let's uh speak a bit regarding the
+12:58 uh structure of ML Docker for Sage
+13:02 Maker. So basically uh if you use docker
+13:07 so you cannot use it like um basically
+13:10 how you like yeah you should uh combine
+13:13 this with the uh with the predefined
+13:15 settings for um docker images in sage
+13:19 maker. So therefore on this picture you
+13:22 can see the structure
+13:25 uh which is using in sage maker which
+13:27 sagemaker estimator is using when it's
+13:30 uh working with the docker images. So
+13:33 here is the
+13:35 uh main folder called opt ml and
+13:38 basically it has three main folders
+13:41 three main channels it's uh input output
+13:45 and model. So what it is let's discuss
+13:48 it um let's discuss it uh right now. So
+13:53 regarding the input so regarding the
+13:55 input so we have here the information
+13:58 about the config. So for example here we
+14:01 can store the information about the
+14:02 hyperparameters of our ML model for
+14:05 example in the JSON format and then this
+14:08 information can be uh downloaded and
+14:12 using in the uh SageMaker estimator also
+14:16 we can store here information about the
+14:18 resource config also for example in JSON
+14:21 format if it's differs from the standard
+14:23 variant
+14:25 um also here you can uh store the
+14:28 information that is um basically
+14:33 um that is going to your model. For
+14:35 example, u the results of the training
+14:38 when you train your model and receive
+14:41 the uh basically
+14:43 the results. Yeah. So, uh fitted
+14:46 estimator. So and then afterwards you
+14:49 can uh save the weights for example
+14:52 using some uh frameworks as a pickle or
+14:56 job lip um and use this weights after
+14:59 afterwards
+15:01 uh for the prediction. So this
+15:03 information for example can be stored
+15:04 here uh under uh folder model. Yeah. And
+15:09 the output is basically the folder the
+15:12 channel um which is designed for storing
+15:16 uh such
+15:18 data as a status data for example the
+15:20 failure data or the success data of uh
+15:24 training your algorithm. Yeah. So this
+15:27 is the major structure which you need to
+15:30 follow to basically construct your
+15:33 dockerized model and uh that it will be
+15:38 um easily run uh with sage maker.
+15:44 So now a bit regarding the overall
+15:46 structure regarding the execution stack
+15:48 for the container. So on this picture so
+15:52 there is displayed basically the whole
+15:55 uh procedure of how uh SageMaker
+15:57 estimator uh is working. Yeah. So
+16:01 basically uh it all starts with the
+16:03 client. So the client send the requests.
+16:06 So it's like usually it's a post
+16:08 requests in ML models. We're interesting
+16:10 in post requests sending the uh x
+16:14 feature vector uh in the body.
+16:18 um and this request going directly to
+16:21 the server. In this um configuration we
+16:24 use in Jinx as a server. So but it's
+16:28 possible also to use some other
+16:30 alternatives such as Apache. Yeah. Then
+16:33 afterwards um using reverse proxy this
+16:37 information goes to the VCGI. In this
+16:41 configuration we use unicorn and unicorn
+16:44 is basically uh used as a load balancer
+16:48 let's say as a bridge between the uh
+16:52 server side from one side and between
+16:54 the application side from another as an
+16:58 application we using uh flask
+17:01 application above uh our code. Yeah. And
+17:05 we uh do it in a way there are like a
+17:08 couple ways how to do that. So of course
+17:09 you can do it um inside uh let's say uh
+17:14 one entity one file um but here we do it
+17:18 in a way that uh will be easy for
+17:20 SageMaker to understand. We will u
+17:23 separate it in the train file for the
+17:26 training and predict file for the
+17:28 prediction. Of course, if you would like
+17:30 to make it more complex,
+17:32 um let's imagine that you would like to
+17:34 have the um prep-processing steps in a
+17:38 different other files or you would like
+17:40 to have the scripts that would uh
+17:43 contains of some helper functions. Of
+17:45 course, you can do that and organize it
+17:48 in a way of kind of like a modules uh of
+17:51 um uh kind of production code in Python.
+17:55 Yeah. So, it's also possible. It's al
+17:58 depending on your task which you are
+17:59 solving
+18:01 um the results after so you um you were
+18:08 working with the models you receive two
+18:10 endpoints which you can use basically.
+18:12 So the first endpoint is called ping. Uh
+18:16 pink is just a simple uh health check
+18:19 for your web service which is basically
+18:22 uh you sending the u get request and uh
+18:29 if the service is alive and is working
+18:32 so you receive back the uh success
+18:36 status uh status code equal uh 200.
+18:40 Yeah. If there is some problem with your
+18:42 service. So you receive 404 error code.
+18:47 Um this is basically uh as in the
+18:50 majority of uh flask application uh you
+18:53 have this kind of so-called ping or
+18:56 health or health check endpoint which
+18:58 you're using for um basically checking
+19:02 whether your service is working is
+19:04 operating or not. And the second
+19:06 endpoint which is the most interesting
+19:09 for us which is basically the core of
+19:12 our work is called invocations. So
+19:14 invocations is the endpoint that
+19:17 receives uh post request from the
+19:19 client. So post request uh contains body
+19:23 and body contains uh x feature vector
+19:27 that uh client side sent to the uh to
+19:31 the model and then basically uh receive
+19:34 back uh the results of the prediction as
+19:37 a response either for example
+19:39 information about the class and the
+19:42 probability of the class in the
+19:44 classification tasks or uh basically the
+19:48 continuous uh variable le um when doing
+19:52 the regression tasks. Yeah.
+19:55 Um to basically um summarize this point,
+20:01 let us check a bit regarding um VCG. So
+20:06 this is basically u so-called web server
+20:09 gateway interface and you can think of
+20:12 it as a bridge as I told. Yeah. So be uh
+20:15 between the u server side and between
+20:18 the application side which in our case
+20:21 would be flask web service. Yeah. Um so
+20:27 basically it works like that. So the
+20:29 server executes the web app and uh sends
+20:33 uh information and a callback function
+20:35 to the app. Yeah. So this is the start.
+20:38 Then the request is uh proceeded on the
+20:42 website and response is sent back uh to
+20:45 the server. Yeah. Utilizing uh uh
+20:48 callback function. So this is basically
+20:51 the basic principle how the uh how the
+20:54 VCGI is working.
+20:56 Um so basically example of the
+20:59 frameworks that is using VCGI um that
+21:03 supports VCGI there are a lot of them.
+21:05 Yeah. So for example we already uh
+21:08 spoken about flask we can also include
+21:12 um tornado to that the lightweight
+21:15 framework and also um something else
+21:18 like for example jungle yeah that is
+21:21 using for python web development mostly.
+21:26 Yeah. So uh basically right now uh we
+21:31 are ready to go to the content itself to
+21:34 the content of our repositories
+21:37 and before that let's um briefly discuss
+21:41 what we will have there and then we will
+21:43 go deeper and check the code of our
+21:47 files in the repository. So regarding
+21:49 the main components uh so the main
+21:51 components which we have in the root of
+21:53 our repository. So we have here docker
+21:56 file which we already mentioned that is
+21:59 uh text document file that contains all
+22:01 the required operations uh that docker
+22:05 use for uh producing the image via
+22:09 docker build command.
+22:11 Um then basically we have uh this age
+22:14 maker estimator folder. So basically
+22:16 this is our main working directory where
+22:20 all of our files are stored and we have
+22:23 also shell file. So this shell file
+22:26 shell script uh is basically helping us
+22:31 to create to achieve two uh two aims
+22:35 yeah two goals. So the first uh we use
+22:39 this file to take the information about
+22:42 the account and about the region of our
+22:45 AWS service that we are using. Yeah. So
+22:48 that meaning that um before using this
+22:53 shell script we need to uh install
+22:55 pre-install AWS clement
+22:58 line interface in AWS and run comment
+23:02 AWS configure this comment. uh after you
+23:05 run it in your terminal after you have
+23:07 installed uh AWS cle so you will receive
+23:10 four questions. So the first one will be
+23:14 uh please provide your public access key
+23:17 then please provide your private uh
+23:19 access key then please provide the
+23:21 region in which you are working uh on
+23:25 AWS and the fourth would be please
+23:27 provide the desirable format of the uh
+23:30 of the output. Yeah. So when you answer
+23:32 of all of these four questions so you
+23:34 can basically start using AWS cle and uh
+23:38 doing some operations let's say uh
+23:41 creating repositories yeah uh or
+23:44 creating some buckets on S3 yeah or
+23:48 listing the uh the um list of the EC2
+23:53 instances that is available on your
+23:55 account. This is basically the first
+23:58 goal which we are achieving using this
+24:01 uh shell script and um the second goal
+24:05 is basically the docker goal. So we need
+24:07 to uh build our docker and this shell
+24:11 script will actually help us to do that.
+24:12 So we will uh make we should make a
+24:15 docker build. Yeah, basically create our
+24:19 image. Then we need to make a docker
+24:21 tag. Put the uh tag uh with the
+24:25 information about the account and region
+24:28 uh and the name of the image and the tag
+24:31 latest to the image so that we would
+24:35 understand um what it is and what is
+24:38 basically the latest image that
+24:40 SageMaker need to use and need to
+24:42 execute. Uh and uh the last step is
+24:45 basically docker push. So after creating
+24:48 the uh image after tagging so we are
+24:51 ready basically to make a docker push
+24:53 and afterwards uh this image is uh being
+24:58 pushed to the uh ECR uh repository. ECR
+25:03 is basically the service on AWS. It's um
+25:06 so-called elastic container registry the
+25:09 place in AWS where you can store your
+25:12 docker images in the repositories. Uh
+25:16 basically this is the main uh let's say
+25:18 lending zone for SageMaker estimators.
+25:22 Doesn't matter what kind of estimators
+25:23 you use in SageMaker either it's native
+25:26 estimators uh from SageMaker from AWS
+25:30 team for example XG boost or lineer
+25:33 learner or um uh K means etc in in their
+25:38 realization. Yeah. Or this is the custom
+25:41 estimators that you would like to
+25:43 produce yourself.
+25:45 uh all of this estimators uh will land
+25:49 on this ECR um landing zone on this in
+25:52 this repositories. Therefore, you just
+25:54 need to have the information about the
+25:57 image URI, which is basically the um the
+26:01 um let's say the location where you can
+26:04 find your uh image that you would like
+26:06 to use and you just uh can use this u
+26:10 image u for um working with the
+26:15 SageMaker estimator.
+26:18 Yeah. And regarding the uh container, so
+26:22 container application what is basically
+26:24 stored in our main folder of SageMaker
+26:26 estimator. So this is the uh two scripts
+26:30 which I told you before train and
+26:32 predictor. So train is the main scripts
+26:34 that you're using for training your ML
+26:36 models. Um so it also can be combined
+26:39 with the additional steps such as uh the
+26:42 procedure of feature selection or
+26:45 prep-processing. Uh so there are variety
+26:49 of ways how to do that and the variety
+26:51 ways of how to um use different
+26:54 frameworks. Yeah. So for example you can
+26:56 in our current uh webinar we will
+26:59 discuss regarding using skyit learn but
+27:03 uh nothing stops you from using some
+27:05 other frameworks like tensorflow or kas.
+27:08 Um in the predictor scripts the model
+27:11 prediction basically happening. Yeah. So
+27:14 the model prediction which is basically
+27:16 uh combined with a flask application. So
+27:19 flask um wrapper application. Yeah. And
+27:24 uh um so we can imagine this as a bottom
+27:28 layer. So the train and predict which is
+27:30 wrapped in the flask application
+27:32 combining uh this to the u flask web
+27:36 services and then afterwards u the uh
+27:41 top layer and the top layer basically
+27:43 would be u as we discussed our server
+27:46 and jinx and our uh load balancer
+27:49 unicorn.
+27:51 Um therefore we need a couple more files
+27:55 to actually start the server and this is
+27:58 happening in the serve file which we
+27:59 starting the server and specify the
+28:01 parameters uh and start the unicorn
+28:04 which is happening in the vcgi umpi
+28:09 script. And finally we need the uh
+28:12 configuration file for the engin which
+28:14 we can set up the settings for jinx
+28:17 master. Usually uh it um help us working
+28:22 with the multiply workers in terms of
+28:24 multip uh prep processing.
+28:27 Um so let's dive into the codes go
+28:32 deeper to that. So uh let's start with
+28:34 the SageMaker estimator itself or this
+28:37 folder where we have our code. So uh we
+28:41 start from the bottom going to the top.
+28:43 So from the bottom. So this is our train
+28:47 uh scripts. So basically we here um
+28:51 making the simplistic way. So the
+28:53 simplistic way of um writing ML code in
+28:57 Python. So meaning that we need to uh be
+29:01 aware of having a lot of entities in uh
+29:04 one script, a lot of classes or a lot of
+29:06 functions. So and we trying to make the
+29:09 model structure uh simplistic model
+29:12 structure with uh not many entities
+29:15 inside of each of the structure. So for
+29:18 example here we for the training just
+29:20 use one uh function. So for example if
+29:24 we would like to introduce something
+29:25 more specific like a preprocessing here
+29:28 uh so it would be better to have the
+29:30 another script uh that we can combine
+29:33 with this one. So we import the
+29:35 libraries
+29:37 And here as I already mentioned we will
+29:39 work with the skyitle learn as our go-to
+29:41 framework. Um first of all and very
+29:45 important we need to specify the
+29:46 prefixes and the path paths for sage
+29:50 maker. This is uh basically uh we need
+29:54 to uh to be able to help sage maker to
+29:57 understand the channels that he should
+30:01 use uh while running our ML Docker
+30:04 application. Yeah. So we need to
+30:06 identify the prefix which will be opt ML
+30:09 and we need to identify the main three
+30:12 paths. Yeah. So uh the main three
+30:15 channels which I described uh above. So
+30:18 it's like input output and the model
+30:21 path. Um then we basically select the
+30:24 channel name training. Um and uh select
+30:28 the training path. So then is basically
+30:31 the function train which is uh quite
+30:34 simple in this case. Um in this example
+30:39 I use the um
+30:42 uh standard kegle data set regarding
+30:45 hard failures. So this is the question
+30:47 of the the task of binary classification
+30:50 problem whether it will be hard failure
+30:52 or not. Um therefore
+30:55 basically it's quite um um
+31:00 quite uh toy data sets. So quite a small
+31:03 one. So but you are free to use your own
+31:06 data sets. I can applying this code to
+31:09 your existing problems. Yeah. So we
+31:12 start basically with the uh checking the
+31:15 input file directory and uh checking
+31:18 whether are like files
+31:21 u existing there or not. Yeah. So uh
+31:23 basically if there are no files we're
+31:25 raising the error. If there are some
+31:26 files we just read them and prepare the
+31:29 x and y uh vectors for our training.
+31:34 Yeah. So um afterwards basically uh here
+31:38 is the example of why we actually need
+31:42 to use this custom approach. For example
+31:45 here we decided to use uh so-called
+31:48 voting classifier. Yeah. which is
+31:50 basically not introduced in Sage Maker
+31:53 uh from the scratch. Therefore, we uh
+31:56 use the custom approach. Yeah. So,
+31:58 voting classifier um we combine three
+32:01 models which is basically support vector
+32:03 machine with the probabilistic
+32:05 classifier. Yeah. Logistic regression
+32:07 and random forest classifier with a
+32:10 voting type equals soft meaning that we
+32:12 would uh not the predict classes itself.
+32:15 We will predict the probabilities and
+32:16 then based on the probabilities of these
+32:19 three models, three estimators. We will
+32:23 um understand the
+32:25 uh final probability uh by uh using mean
+32:29 of all of this average of all of this
+32:32 probabilities of all of this estimators.
+32:35 Then after defining the voting
+32:37 classifier, we need to um specify for
+32:40 example the grid search procedure
+32:42 because I mean um if you start with the
+32:46 this approach, it would be also nice to
+32:48 have um the um desirable parameters.
+32:53 Yeah, that's the the uh fitted
+32:55 parameters for your model. And basically
+32:57 we can do that in simplistic uh way
+33:02 using uh skyit learn grid search. Of
+33:05 course there are also other ways um
+33:08 possible but we keep it uh skyit learn
+33:11 style today. So therefore we actually
+33:14 after creating the voting classifier
+33:16 create the params grid uh and specifying
+33:19 the parameters and the range of the
+33:22 values that we need to check and we need
+33:24 to uh compare and then basically uh
+33:27 using grid search CV putting the
+33:29 estimators parameters and the desirable
+33:32 number of the uh cross validation steps.
+33:35 Then we feed the model and the result of
+33:37 this fitted model we just uh save um as
+33:41 a pickle dump
+33:44 um in the u uh in the file then this
+33:48 file we will use for the exact
+33:50 prediction. So this is also one very
+33:53 important uh point that uh sagemaker
+33:56 estimator is designed like that you need
+33:59 to use the main function without having
+34:02 the main function it won't work. Um so
+34:04 this is basically the uh the idea and
+34:07 the inner design of SageMaker that you
+34:10 need to put uh the main function and
+34:12 then put the function which you would
+34:14 like to execute uh during the run. So
+34:17 here for example we will execute only
+34:19 this uh function that we have the train
+34:21 function. This is regarding train
+34:24 scripts. Now we go to the uh predictor.
+34:27 Yeah. And the predictor in our case
+34:29 would be combined with the flask flask
+34:31 application. So first of all we also
+34:34 specifying the prefixes for the
+34:36 SageMaker ML Docker execution opt ML and
+34:40 uh setting the path to the model because
+34:43 we would like to um we would like to use
+34:47 the predefined weights for that. So
+34:50 basically take the weights and then use
+34:52 it for the prediction. And um after that
+34:55 we define the simple class
+34:59 um with the helper function let's say
+35:01 get model and predict. So why do we need
+35:04 that? So basically get model will help
+35:06 us to understand whether uh the model is
+35:09 exists whether we already having the uh
+35:12 fitted and saved uh information about
+35:14 our weights in a pickle format that we
+35:17 can take and if it's there we can just
+35:20 evoke the predict method and making the
+35:23 prediction against our endpoint. Yeah.
+35:27 So afterwards we just um specify the uh
+35:31 flask uh flask application and then
+35:34 basically uh the things has started.
+35:36 Yeah. So basically we identifying the
+35:40 roots the endpoints uh which we
+35:43 discussed uh before. So uh the endpoint
+35:46 called pink which u supports get method
+35:51 uh and uh endpoint invocation which
+35:53 supports uh post method. Yeah. So
+35:56 regarding ping so basically we check
+35:58 whether uh if our get model is not none
+36:03 then basically we receive status equal
+36:05 to 200 in case of success. If it's okay
+36:09 if it's none uh then we basically
+36:11 receive 404 in case of an error and send
+36:15 it as a flask response back to the
+36:17 client. uh then basically the main for
+36:20 us
+36:22 uh endpoint this invocation which is
+36:24 working with the
+36:26 with the post method. So we first of all
+36:30 checking our request from the flask
+36:33 regarding content type. This we do
+36:36 because the major of the SageMaker estim
+36:39 estimators are working with the uh text
+36:42 um / CSV format. Therefore, we need to
+36:46 check that prior to use it. Yeah. So, if
+36:49 it's text/ CSV, then we basically take
+36:52 this data uh using bytes and then
+36:56 basically read it as a CSV file and
+36:58 create the data. Otherwise, so if it's
+37:02 not a CSV format, then we uh send in the
+37:05 response that our predictor only
+37:08 supports CSV data. If it's go fine and
+37:11 we receive the data, so we can actually
+37:14 use it in the predict method of our
+37:17 scoring service class
+37:20 afterwards after creating the
+37:22 predictions. So we basically can um
+37:25 prepare them before actually send it
+37:28 back in the flask response to the
+37:30 client. So this is basically will be the
+37:32 response the results the success code
+37:34 and the type text CSV. So this is
+37:38 basically two scripts that uh creating
+37:40 the let's say the core of our program.
+37:43 So this is the major script that we
+37:45 always will be um will change you know
+37:48 during our work. Yeah. So this is the
+37:50 train procedure and predict with the
+37:53 flask application above. Yeah. So this
+37:55 is this combination creates the um web
+38:00 uh flask application. Yeah. So with the
+38:02 rest API
+38:04 structure. So then basically uh going to
+38:08 the top
+38:10 um and uh let's quickly look at the
+38:14 serve file. So the surf file uh I have
+38:17 to admit that is basically uh kind of
+38:20 going through the projects. Yeah. From
+38:22 one project to another project because
+38:24 uh usually there are not many things
+38:27 that you would um change on the server
+38:29 side. So of course you can change for
+38:31 example the timeout variable. Yeah. to
+38:35 be able to understand uh when you should
+38:38 uh kill the process for example kill the
+38:40 server uh or for example you should also
+38:44 be able to specify you can specify the
+38:46 number of workers that's uh um can
+38:50 execute for example defining the number
+38:53 of workers based on the multipprocessing
+38:55 CPU count yeah but uh otherwise it's
+38:59 pretty standard so the idea that here
+39:01 we're just starting the server uh which
+39:04 is starting the engine server and uh
+39:08 unicorn basically and it's after uh
+39:11 running it. So your server has started
+39:13 and uh is ready for receiving requests
+39:17 and sending back the u responses
+39:22 and uh basically the configuration of
+39:25 engin uh usually this is also say
+39:29 predefined and there's not many things
+39:31 that you would um change uh from project
+39:35 to project. Yeah. So of course you can
+39:37 change some things like uh worker
+39:39 processes. Yeah. But the main things or
+39:42 for example timeouts. Yeah. But the main
+39:44 things for example where the logs stored
+39:47 where the access logs or error logs are
+39:49 stored they mostly state the same from
+39:52 one project to another one. Um so this
+39:56 is basically the major um structure of
+40:00 the um of our folder with our code
+40:03 SageMaker estimator. Then basically we
+40:06 go back to the root directory and here
+40:09 we can see the uh basically the two
+40:12 files that would help us actually to
+40:15 build and deploy build and push sorry
+40:18 the um docker image to AWS. So let's
+40:23 start with the docker file. So the
+40:25 docker files look like that. So
+40:27 basically uh we using here operating
+40:31 system Ubuntu with certain version. Then
+40:34 basically we using run command for
+40:37 updating
+40:39 uh the packages on it and uh install the
+40:42 packages that we would uh like to use in
+40:45 this current uh orchestration. So for us
+40:48 um will be important to have our top
+40:51 four numpy pi panda skitler and uh so
+40:55 this is for the bottom layer and for the
+40:58 top layer we need to have n jinx uh
+41:00 flask and unicorn with gent afterwards
+41:04 we identifying the environment variables
+41:08 copy the main folder to the opt program
+41:11 and set it as a work directory. Then
+41:14 basically after this uh step all of the
+41:19 further on operation will be uh
+41:21 proceeding in this directory opt program
+41:24 uh as a work directory.
+41:27 Uh so this basically file will be used
+41:29 by docker build when we when we started
+41:33 and then basically the shell script
+41:35 docker to ECR. So how it's look like? So
+41:39 um as I already told it consist of two
+41:41 parts two logical parts. So the first
+41:43 part we working with the uh information
+41:47 of our um AWS account. So first of all
+41:51 we need to specify the name for our
+41:53 image which we would like to use and
+41:55 also afterwards we need to specify to
+41:58 get the information about the account u
+42:01 that we will use and the region. Yeah.
+42:04 So basically we here using AWS configure
+42:08 comment to get region for example.
+42:10 Therefore, it should be um identified
+42:12 beforehand to be able to use it um use
+42:16 it as it is because you need to specify
+42:17 your for example public and private key
+42:20 uh to be able to run this command. Um
+42:24 afterwards
+42:25 you create AWS ECR describe repository
+42:29 commands and if there is uh existing
+42:32 repository you just put it there. If
+42:34 it's not exist, you just create the
+42:36 repository in ECR
+42:39 u and take all this information. So this
+42:41 is basically the end of the part one.
+42:43 Then it's part two which is basically
+42:46 docker part. Then you go to the docker
+42:49 build. So you execute docker build
+42:51 command uh creating the image. Then you
+42:54 basically tag this image with the full
+42:57 name. So which is the information about
+42:59 your account, about your region, about
+43:02 the image name and about the uh tag
+43:05 latest which will help SageMaker
+43:07 understand uh what exact uh image uh it
+43:12 should use you know for production um
+43:15 the outcome and then the final step is
+43:18 docker push full name. So basically take
+43:21 the uh docker image and push it to the
+43:25 uh to this uh location to the full name
+43:27 account region uh image tag. Yeah. So
+43:32 and this is basically how it goes after
+43:36 we um run shell docker tor.shell
+43:41 and the name of our image. So for
+43:45 example here I use name called modeling.
+43:47 So we received this data uh this docker
+43:50 image in our ECR repository on AWS and
+43:54 afterwards basically we can start
+43:56 working with that. So let's go to the um
+43:59 AWS itself and uh I will show you how
+44:01 you can work with that. So um here is
+44:06 basically AWS HMaker. I think everybody
+44:09 or most of uh people has the experience
+44:14 with that seen that. So here is
+44:15 basically the uh notebook instances
+44:18 which you can use for which is basically
+44:20 the main uh thing for SageMaker. So and
+44:23 you can think of it as a let's say EC2
+44:26 instances like a virtual machine which
+44:28 has the predefined um installation such
+44:32 as Python such as Anaconda different
+44:35 versions yeah for example different
+44:37 other uh specific frameworks such as
+44:40 TensorFlow PyTorch
+44:43 um etc. Yeah. Uh so and basically um you
+44:47 can use uper notebooks there for running
+44:52 uh for doing research and doing the
+44:54 deployment. So usually this is the
+44:56 common procedure when you work on the
+45:00 Amazon SageMaker that you creating the
+45:02 notebook notebook on the instance and uh
+45:06 run your comments there. So let's go to
+45:08 the uh notebook and uh we'll see how it
+45:13 how we can work with that. So this is
+45:15 basically our notebook SageMaker
+45:18 estimator.
+45:20 So how it's uh how we should work with
+45:22 that. So basically um we should use the
+45:26 following libraries for us will be
+45:28 important also to use SageMaker
+45:30 libraries. Um this is the two important
+45:33 steps that we need to um identify our
+45:36 role. So get execution role um because
+45:39 the different roles in AWS have the
+45:41 different rights and accesses uh and
+45:44 then identify the SageMaker session.
+45:47 This will help us to uh run certain
+45:50 estimators. Yeah. So which we will do
+45:53 later on. So um beforehand we can
+45:56 actually connect to the S3 uh to the
+45:59 bucket which I prepared for this
+46:01 presentation and look at the data which
+46:03 we will using in this um in this uh code
+46:08 session. Yeah. So we read it and then
+46:11 basically can look at it with the head
+46:14 command. Yeah. So we have here is the u
+46:18 target variable binary uh hardware hard
+46:21 failure and also the other features that
+46:25 we will use in um in terms of our uh
+46:29 training. Yeah. So here is the info
+46:33 commands. So it's quite small data set
+46:35 for presentational
+46:38 um purposes and then basically we go to
+46:41 the uh to the most interesting part.
+46:44 Yeah. So right now we uh using both 3
+46:47 which is basically the library that's
+46:49 enabling uh programming API between
+46:52 Python 3 from one side and AWS from
+46:55 another side. We uh using STS uh having
+46:59 the information about the account which
+47:02 we are using and about the region uh in
+47:05 which the model will be hosted. Then uh
+47:09 we specify uh image URI. This is
+47:12 basically the location where uh we can
+47:16 find our docker image yeah with our
+47:20 voting classifier that we prepared for
+47:22 this session. So it called uh modeling
+47:26 latest and uh take the all u information
+47:30 regarding account and region from there.
+47:34 After we specify it we are ready to
+47:36 actually
+47:38 uh make our skyitle learn estimator uh
+47:42 sagemaker estimator transform it to
+47:44 sagemaker estimator and for that we
+47:46 actually use this command. So we specify
+47:49 estimator.estimator estimator and put
+47:51 the um certain parameters inside. So we
+47:54 put image uri as an input parameter role
+47:57 which we use for the execution the
+47:59 number of instances for the training and
+48:02 the um and the instance alias which um
+48:08 which telling us the amount of uh cores
+48:11 and uh memory that is using on this
+48:14 instance. The output path is basically
+48:16 the three path location where SageMaker
+48:19 will store all the artifacts after the
+48:23 training and SageMaker session which is
+48:26 which we'll be using for uh for enabling
+48:29 it. Afterwards we just run fit command
+48:32 on the data location where our train and
+48:35 test data store uh stores. So and then
+48:39 basically you have the variables so the
+48:41 information the output of how it goes.
+48:43 So it's starting the training job
+48:45 launching the services prepared and
+48:48 basically do the training. So after it's
+48:50 finished you receive the information the
+48:52 training completes uh and uh information
+48:55 regarding how much time uh does it take
+48:58 for training uh the uh SageMaker
+49:00 estimator. So now we are basically uh
+49:03 ready. So we transformed from skankit
+49:06 learn custom estimator which was in the
+49:09 docker container.
+49:11 um we transformed it to the SageMaker
+49:13 estimator. Now all that we have in
+49:15 SkyitLarn
+49:17 estimator. Uh we have right now also on
+49:21 SageMaker estimator. And basically we
+49:24 can deploy it very easily with one line
+49:26 of code using the deploy method and
+49:29 specifying once again the number of
+49:32 instances, the uh type of instances and
+49:36 the type of serializer. Yeah, due to the
+49:39 fact that we are working with CSV data.
+49:41 So we select CSV serializer here. So
+49:44 when we um receive the output that it's
+49:49 ready. So when then actually we can
+49:51 start using it. So and for that
+49:54 basically we can uh do it right here in
+49:56 the notebook and u check whether it's
+49:58 working or not. So uh we take the
+50:01 predictor and use the method predict
+50:04 against uh the certain values. So
+50:06 afterwards it uh provides us the output
+50:11 which will be in the bytes format.
+50:12 Therefore we have to make some
+50:15 preparations via string to CSV and then
+50:19 uh receive the uh receive the output of
+50:22 our of our classification here. Yeah.
+50:27 So here is the output of our binary
+50:29 classification.
+50:31 And basically of course we can procedure
+50:34 with the following research. We can
+50:36 calculate the metrics for example for
+50:38 classification can calculate accuracy
+50:41 score uh precision recall F1 score for
+50:45 regression we can calculate RMSSE or
+50:48 Maya score um so um this is very
+50:53 interesting but for us would be also
+50:55 very important question what to do next
+50:57 how we can basically deploy it in terms
+51:00 of using it yeah how we can basically
+51:02 make this model um used with our clients
+51:07 or without or with our uh departments.
+51:11 Yeah. And for that basically it's not
+51:14 many works to do. So this is actually
+51:16 two steps that we need to make. We need
+51:19 to specify the so-called lambda function
+51:21 and we need to specify AP gateway for uh
+51:25 being let's say front end for this uh
+51:28 AWS model.
+51:30 Um and then basically this is the
+51:33 example of payload which I will be using
+51:36 for um sending to our um endpoint and uh
+51:42 hopefully receiving the output result.
+51:45 So let's first go to the lambda
+51:47 function. It's called sagemaker invoke.
+51:50 Um and basically here is the um is the
+51:56 information. So
+52:00 um here we can see the lambda function
+52:02 itself. So the lambda handler
+52:06 um but uh for us it's um important to
+52:10 start from this part. Yeah. So we're
+52:12 starting with the identifying the
+52:14 endpoint name. The endpoint name uh will
+52:17 be added as an environmental variable.
+52:20 uh that would basically help our Lambda
+52:24 um connect with the SageMaker and make
+52:26 some operation and for that we need to
+52:29 establish runtime using both 3 uh for
+52:32 connection uh Python to AWS. So for the
+52:37 B3 for the client we use runtime
+52:38 SageMaker and afterwards we can invoke
+52:40 the things.
+52:42 So a couple of words regarding Lambda
+52:45 function. Lambda function is a very very
+52:47 lightweight and uh event based function
+52:49 on AWS which is triggered by some events
+52:52 and you can write in here in the
+52:54 different languages such as for example
+52:56 node uh gs or python so here we use the
+52:59 python version 3.8 eight
+53:03 um and of course for example there is
+53:05 super lightweight so you don't have an
+53:07 access um from the scratch for example
+53:10 to pandas or to numpy libraries which
+53:13 are essential for example for some uh
+53:15 scientific packages in python such as
+53:17 anaconda so and you can see it here so
+53:20 we use pretty standard pythonic models
+53:23 here so how is the uh lambda is
+53:27 structured yeah so we get the data from
+53:29 the um from our request or JSON request
+53:33 and put it to the uh payload. So we take
+53:37 the data from uh so it's like coming in
+53:40 the key value u format. So we take the
+53:43 data from uh key data take the values
+53:46 which will be our x feature vector and
+53:50 uh that would be our payload that we
+53:52 will send later on to the model. So for
+53:54 doing that we need to uh make the
+53:56 runtime SageMaker invoke endpoint to
+53:59 actually you know um uh start uh invoke
+54:03 the endpoint and specifying the name of
+54:06 this endpoint which we're specifying in
+54:08 the environment variables here uh
+54:11 content type text CSV and the body which
+54:14 will be our payload the information
+54:15 about the features that we will be
+54:17 using. So and also some information
+54:20 whether it will be zero which is not
+54:22 failure and if it's like a one then it
+54:24 will be a failure.
+54:26 Um and the final step is actually uh
+54:31 implementing the AP gateway. So creating
+54:34 the AP gateway in our sense we will be
+54:36 using REST API service because it's a
+54:38 REST API um web model. Um and we need to
+54:43 identify the post request the post
+54:45 request because we need to use the
+54:47 invocation endpoint and receive the
+54:49 information about that about our
+54:52 predicted variable. Uh this post methods
+54:55 we need to align we need to combine with
+54:57 the uh with the lambda function that we
+55:00 uh talked before.
+55:02 Um and basically that's it. So the for
+55:05 the u major of operations. Afterwards we
+55:10 just can use uh request body for the
+55:13 testing
+55:14 uh and put for example our
+55:18 uh our data here. So for the request
+55:21 body and receive the test.
+55:26 Yeah. So here it's working. So we
+55:27 receive the uh status called 200 which
+55:30 is success. So which is latency and
+55:33 response body. So failure in our case
+55:36 it's uh basically class number one. So
+55:40 so we have the not failure and failure
+55:43 for example.
+55:44 So and um the AP gateway also provide
+55:48 the information from the Python code
+55:50 regarding errors. You can make the error
+55:52 handling to make it more uh smoother.
+55:55 For example, we can also like create
+55:57 some let's say error here. Um
+56:02 yeah and it creates uh and it creates
+56:04 the error message that you can uh later
+56:06 on uh later on handle. Yeah.
+56:13 Yeah. So and uh basically to summarize
+56:16 this part um we have talked about so how
+56:22 the uh custom algorithm on the certain
+56:26 framework such as skyit learn in our
+56:28 example should be look like how we
+56:31 should uh train the model and how we
+56:34 should combine it with the top level
+56:37 features as web server and uh vcgi and
+56:41 how we should uh packets into the docker
+56:45 image and push it to AWS. Yeah. Then we
+56:49 basically um discuss regarding SageMaker
+56:52 how the exact um how exact
+56:58 um
+57:00 framework is transforming to the um
+57:05 SageMaker estimator. how we deploy the
+57:07 model and how we actually make it live
+57:10 using lambda and AP gateway.
+57:13 So and for example in the end so how it
+57:16 will work as a final step um so client
+57:20 can send the post request with the x
+57:21 feature vector on the uh public uh uh
+57:27 DNS. Yeah. Uh and uh um receiving the
+57:33 output. So the uh using AP uh gateway
+57:37 and using lambda for um invocation of
+57:40 sage maker estimator.
+57:43 So after the session I will send you the
+57:46 um link to the repository that you can
+57:48 use for reading and for uh practical
+57:52 work for your um examples for your use
+57:56 cases and also we have a plan uh if it
+57:59 will be interesting for you. So please
+58:01 also share your opinion uh in the data
+58:04 talks club uh regarding u the next um
+58:09 the next uh webinars regarding SageMaker
+58:12 because we had the idea to have at least
+58:14 two webinars uh for the SageMaker. So
+58:17 the second webinar should cover the
+58:19 topics of proper data prep-processing
+58:22 uh using pipelines and using
+58:24 transformers and how to combine these
+58:26 things with the SageMaker. And the third
+58:29 um event should cover the topics uh
+58:33 regarding uh automation of the um of the
+58:38 sage maker. So uh we will discuss we
+58:42 plan to discuss regarding step functions
+58:44 there regarding uh combination airflow
+58:48 plus sage maker there. So feel free to u
+58:52 put your opinion.
+58:54 Um and I think that is u more or less it
+58:58 from my side. So if you have questions
+58:59 so let's discuss.
+59:02 Yeah thanks Mitri. Uh yes we do have a
+59:04 couple of questions. So um have them on
+59:07 slider. Um so I think we can pick top
+59:10 three and then u maybe you can answer
+59:13 the rest in in Slack.
+59:15 Yeah.
+59:15 So first the most popular question is
+59:18 how models are updated. Sage Maker
+59:20 doesn't allow redeploying models with
+59:22 the same endpoint name.
+59:23 Um Do you have a separate service
+59:26 tracking endpoints or how do you do
+59:27 this?
+59:28 Uh basically this are couple of things
+59:30 how uh there's a couple of ways how you
+59:32 can do that. So before the um um
+59:35 existing of step functions uh basically
+59:38 the only way how you can do that it was
+59:40 the using uh extensive using of lambda
+59:44 functions. So you use lambda function
+59:45 for um let's say retraining and adding
+59:49 this in the end of retraining job to
+59:51 update the uh certain certain endpoint
+59:55 that was like a uh was a big problem big
+59:58 issue. Therefore uh recently so around
+1:00:02 one year um ago so the step function for
+1:00:06 Sage Maker were announced and basically
+1:00:09 this is uh also from AWS considered to
+1:00:13 be as a main approach. So you use step
+1:00:16 functions and uh you use them for
+1:00:19 basically creating the retraining uh of
+1:00:23 your model that will be also updating
+1:00:25 your um endpoint because I also know
+1:00:28 that this is the very important
+1:00:29 questions uh because there are lots of
+1:00:32 question on the forums on the uh stock
+1:00:34 overflow regarding that and not many
+1:00:36 answers about that. Yeah. So actually
+1:00:38 the principle right now that is um that
+1:00:41 you can use step functions for doing
+1:00:43 that and for
+1:00:46 uh to make the process automate to
+1:00:49 automate the process you can uh use
+1:00:52 either lambda functions or uh basically
+1:00:55 cloudatch to make uh kind of
+1:00:58 scheduleuler scheduleuler to make it um
+1:01:01 automate. Yeah. So this is basically um
+1:01:06 the main process and the second way how
+1:01:10 you can do that it's using airflow for
+1:01:13 example and this is basically the our
+1:01:15 idea of the next talk so if it's this
+1:01:18 point I guess uh will be interesting for
+1:01:21 many of you so we can basically uh cover
+1:01:23 it in the next session and discuss
+1:01:26 regarding step function as a main
+1:01:28 approach and uh cover a bit uh airflow
+1:01:31 topic
+1:01:33 Okay.
+1:01:34 Can I further clarify on this? Um, so
+1:01:37 when you're changing when you update the
+1:01:39 model and endpoint, do you control the
+1:01:42 endpoint uh and the swapping of the
+1:01:43 endpoint on your SageMaker end or does
+1:01:46 your app have to know which endpoint to
+1:01:50 call every time you update a model? I'm
+1:01:52 just wondering where you put the
+1:01:53 endpoint handling logic. Does SageMaker
+1:01:55 allow you for that or you have to build
+1:01:57 it outside of it? So basically right now
+1:01:59 so once again so basically beforehand it
+1:02:03 was really a big issue. Yeah it's just
+1:02:06 like you need to use a lot of lambda
+1:02:08 function together to um to basically
+1:02:11 handle the training and uh endpoints
+1:02:14 right now it's basically constructed all
+1:02:16 all constructed in the step function. So
+1:02:18 the step function if you can check that
+1:02:20 it's basically having the very also nice
+1:02:23 visual graph uh regarding the process
+1:02:25 how it starts from the creation of the
+1:02:28 training job. Yeah. So like updating the
+1:02:30 create uh the training job creating the
+1:02:33 model creating the endpoint
+1:02:34 configuration and creating the endpoint
+1:02:37 itself. And of course if you would like
+1:02:39 to use your uh existing model so you
+1:02:42 don't need to create the endpoint itself
+1:02:45 once again and once again. So you just
+1:02:48 specify it in the step function u
+1:02:51 graphical interface u that you would
+1:02:53 like to use it uh with a certain
+1:02:56 endpoint that that you need to only
+1:02:58 retrain the model do another training
+1:03:01 job and put this training job in the um
+1:03:05 in the existing endpoint and uh it also
+1:03:08 provides even uh more complex um
+1:03:12 opportunities. Therefore you can also
+1:03:15 trigger and u uh make evaluation based
+1:03:18 on the parameters of the model. Yeah. So
+1:03:20 you can check how the parameters are
+1:03:23 doing how the model are doing and
+1:03:24 basically define whether if the
+1:03:27 parameters for example your F1 score is
+1:03:29 lower than the previous one you're not
+1:03:32 updating the endpoint and updating only
+1:03:34 if it's will be above.
+1:03:39 Okay. Thank you.
+1:03:41 Mhm.
+1:03:43 Um thank you. So um we have another
+1:03:46 question is uh whether you tried sage
+1:03:49 maker inference toolkit toolkit or not.
+1:03:53 Uh and if yes u how is it different from
+1:03:57 what you did? Yeah, I tried. But
+1:04:00 basically this is in my opinion I mean
+1:04:02 of course this is also the good idea to
+1:04:04 use it but in my opinion um to use it in
+1:04:08 the way how I described giving you more
+1:04:11 opportunities and more flexibility.
+1:04:13 Yeah. So um in terms that you having the
+1:04:17 access to every component of the ML
+1:04:21 model starting from the bottom from the
+1:04:22 core from the training code and u
+1:04:26 finishing with the configuration of the
+1:04:28 web server. So you can basically uh get
+1:04:31 the hand on pulse you know for the every
+1:04:34 point of the things which is really
+1:04:37 really cool. So and for for example for
+1:04:39 us for ODBN it's very important to um to
+1:04:42 be able to be flexible in terms of
+1:04:44 tasks. Yeah. Therefore for us is one of
+1:04:47 the um preferable variants how to how to
+1:04:51 do.
+1:04:52 So basically more control and more
+1:04:54 flexibility.
+1:04:54 Yeah. Yeah.
+1:04:56 Okay. Yes. And also I would say that
+1:04:58 basically if we um go in deeper to that
+1:05:02 so for example this shell script we can
+1:05:04 easily um for example we can create
+1:05:08 CI/CD pipeline for this repository let's
+1:05:12 say we can use genkins or other tool
+1:05:14 like circle CI and uh for example for
+1:05:17 every uh operations for every action
+1:05:21 inside of the master. Yeah. So for
+1:05:23 example for commits or um merging the
+1:05:26 pull requests. So it will send the
+1:05:29 information via web hook yeah to the um
+1:05:32 to the uh CI/CD platform and then
+1:05:36 basically uh it would run uh your shell
+1:05:39 script and automatically rebuild and
+1:05:40 push the um the whole um the whole
+1:05:44 system which is super cool which is
+1:05:46 super um easy and um uh really nice to
+1:05:50 work with.
+1:05:53 Thanks.
+1:05:55 And um yeah, so we have uh one uh more
+1:05:59 question that we will answer now and the
+1:06:01 rest we'll take uh in Slack. So a
+1:06:04 question from Eugen is uh did you
+1:06:06 observe a latency difference between
+1:06:08 calling the predictor object directly
+1:06:10 like you did in the notebook and calling
+1:06:13 it through API gateway through the rest
+1:06:15 API? Did you notice any difference
+1:06:17 between these two?
+1:06:18 No, of course there is some difference.
+1:06:20 So of course there is uh really um it's
+1:06:23 really depending on the structure of the
+1:06:26 lambda that we have. Yeah. So for
+1:06:29 example um we use lambda um in a couple
+1:06:32 of ways. So we use it in as a like a
+1:06:35 lightweight evenbased function and we
+1:06:38 also use a bit u
+1:06:42 heavyweight lambdas meaning that we
+1:06:44 apply layer to this lambda for getting
+1:06:48 access to the packages and do some uh
+1:06:51 kind of preprocessing inside of the
+1:06:53 lambda. For example, uh using like would
+1:06:56 say label encoder um not to train them
+1:07:00 there but just to load uh pre-trained
+1:07:04 label encoder load the weights of this
+1:07:06 label encoder and uh transform the data
+1:07:10 inside of the of the lambda. Of course,
+1:07:13 basically if you have this uh on the
+1:07:16 standard instances, you would with more
+1:07:19 and more preprocessing steps that you
+1:07:21 can do in the lambda, you will see a lot
+1:07:24 of problems and a lot of um you can see
+1:07:27 the gaps in the latency. So you need to
+1:07:29 have the balance either with the
+1:07:31 preprocessing or with the uh or with the
+1:07:35 machine that you are using for uh for
+1:07:38 that. U so you put this prep-processing
+1:07:42 into lambda because it's cheaper in
+1:07:45 lambda than in SageMaker or
+1:07:47 yeah uh it's cheaper and usually
+1:07:50 basically if it's um uh I'm talking
+1:07:52 about the kind of like a simple things
+1:07:54 about the simple preprocessing when it's
+1:07:56 um for example you receiving in the um
+1:08:00 in the uh requests it's like a string
+1:08:03 value yeah therefore you can easily do
+1:08:06 that inside of the lambda immediately
+1:08:08 because You also have the pre uh fitted
+1:08:12 prayer trains uh encoder that you can
+1:08:14 just load and uh uh use it. You even can
+1:08:19 create couple of lambdas that would you
+1:08:21 know uh create a chain. For example, the
+1:08:24 first um uh the first request are coming
+1:08:28 to the first lambda creating the uh
+1:08:31 transformation.
+1:08:33 For example, like some simplistic
+1:08:34 prep-processing stuff with the strings
+1:08:36 and then the prep-processed results
+1:08:38 going to the um core lambda that would
+1:08:41 create the invoke endpoint procedure.
+1:08:46 Okay, thank you. So uh with that we will
+1:08:50 write uh we will wrap up. So thank you
+1:08:52 very much for presenting in this. Thank
+1:08:53 you very much for attending and for your
+1:08:56 questions. We will make sure to answer
+1:08:58 all the remaining questions in Slack and
+1:09:02 uh please come to our next events. Thank
+1:09:05 you.
+1:09:06 Mhm.
+1:09:06 So thank you very much. Yes. So see you
+1:09:08 soon. Chowo chiao.
+1:09:10 Goodbye.

@@ -1,0 +1,1414 @@
+Why Machine Learning Design is Broken
+
+0:00 hi everyone Welcome to our event this
+0:02 event is brought to you by datadox club
+0:04 which is a community of people who have
+0:05 data we have weekly events and today is
+0:08 one of such events if you want to find
+0:10 out more about the events we have there
+0:12 is a link in the description go there
+0:14 check it out and you'll see all the
+0:16 events we have in our pipeline
+0:18 then important do not forget if you want
+0:21 to see
+0:22 amazing streams like we have today do
+0:24 not forget to subscribe to our YouTube
+0:26 channel and we have an amazing slack
+0:29 Community if you join it you can hang
+0:31 out with other dating results
+0:34 during today's interview you can ask any
+0:36 question you want there is a link paint
+0:39 Link in the live chat go there click on
+0:41 that link and ask your questions and we
+0:43 will be covering these questions during
+0:45 the interview
+0:46 that's all the introduction I have
+0:49 been
+0:51 shame screen then I open the questions
+0:55 we prepared for you
+0:58 um
+0:59 just one second yeah I'm ready
+1:03 oops
+1:11 uh meanwhile I can see that people are
+1:14 asking how long it will take I assume
+1:18 how long it will take the stream to to
+1:20 end any ideas
+1:23 one hour
+1:25 one hour yeah
+1:28 so it depends on how many questions we
+1:30 will have in the chat right we we can't
+1:32 leave uh questions being unanswered
+1:36 um
+1:38 can we kind of we can it depends on the
+1:41 amount of questions right and depends on
+1:43 how it goes with us because anyways we
+1:47 just start and then we see how it goes
+1:49 if you have some time
+1:51 in addition to the hour we planned
+1:53 that's cool we can spend okay more time
+1:55 but we should be getting started Alex
+1:58 it's always a pleasure to hang out with
+1:59 you so I always have an extra time
+2:03 uh that's really nice to hear so this
+2:06 week we'll talk about why machine
+2:08 learning design is broken it's a very
+2:10 proactive topic and we have a special
+2:12 very special guest today to talk about
+2:14 that Valerie it's not the first time we
+2:17 have a lady in this podcast some time
+2:19 ago I
+2:20 already had the pleasure of speaking
+2:22 with Valeri and it was also about ml
+2:24 system design I think it was one or one
+2:27 and a half years ago some time ago
+2:30 yeah I think it was a year ago or
+2:32 something like that but uh I mean and
+2:34 maybe you're right of time flies time
+2:37 flies yeah so for those who don't know
+2:40 anything about Valeria yet he is the VP
+2:43 of data science and blockchain where he
+2:46 is responsible for leading the company's
+2:48 data driven initiatives before that
+2:51 before to before joining blockchain he
+2:55 worked at different leading tech
+2:57 companies like Facebook Alibaba X5
+2:59 Retail Group so welcome again welcome
+3:02 back to our podcast
+3:04 uh thank you very much Alex uh by the
+3:06 way I I'm actually joining a new company
+3:09 uh pretty soon I haven't yet disclosed
+3:12 the name of the company so it remains a
+3:14 mystery uh but will be a significant
+3:19 shift in the industry but maybe it will
+3:23 be a reason for you to invite me for a
+3:25 third time right who knows of course of
+3:29 course so yeah have fun at your new
+3:31 place and yeah so before we go into our
+3:35 main topic of a mail system design
+3:37 and why it's broken let's start with
+3:39 your background so for those who did not
+3:41 hear the previous interview maybe you
+3:44 can briefly walk us through the career
+3:46 Journey you had so far
+3:48 foreign well
+3:52 that's not an easy question because it
+3:53 depends how how deep we want to dig not
+3:57 so deep because we want to talk about
+3:59 them all designers yeah that makes sense
+4:01 okay let's focus on why I think I am the
+4:06 person who can talk about machine
+4:08 Learning System design uh as you already
+4:11 mentioned I worked in uh many different
+4:14 companies most of them are quite
+4:16 prominent Alibaba Facebook or company
+4:19 for company formula known as Facebook uh
+4:22 known as Mata at the moment
+4:24 um blockchain.com X5 Retail Group so uh
+4:28 I was leading both uh
+4:32 small leash like 10 20 40 people teams
+4:35 and biggish like 100 200 people teams in
+4:40 different countries in different
+4:42 Industries but my error was almost
+4:48 always the same it was data analytics
+4:51 and machine learning
+4:54 um and they then software engineering
+4:56 computer science but yeah I I'd say that
+4:59 probably machine learning is my is my
+5:02 photo and I've seen many different
+5:07 projects
+5:09 uh succeeded and failed for various
+5:14 reasons and that's why I and a friend of
+5:19 mine asking me we decided to write a
+5:21 book
+5:22 which already can die by the way uh it
+5:26 is called machine Learning System design
+5:28 with Anton examples and to be honest I
+5:31 didn't know the name of the book by the
+5:32 very end because uh publisher was
+5:35 pushing the chain change of the title
+5:37 the original title was principles of
+5:39 machine Learning System design
+5:41 so I was writing the book which name
+5:43 which title I didn't know
+5:46 and this book basically is a meta
+5:50 document well a person from the person
+5:53 who works on admata which document this
+5:55 person which book this person could
+5:57 write of course a matter book and not a
+5:58 document
+5:59 and this document describes and tells
+6:02 you how to tackle the problem of system
+6:06 machine Learning System design uh from a
+6:10 let's say from a manual uh or like um
+6:15 instruction point of view so like what
+6:19 are the chapters what are the Milestones
+6:22 what are the cornerstones what do you
+6:25 have to cover what do you have to think
+6:28 about and how to create the single
+6:32 coherent uh and easy to understand
+6:37 document which will help you to to
+6:40 succeed and to be honest I was thinking
+6:43 why do we do machine learning machine
+6:46 learning design documents
+6:48 and uh
+6:50 they're provocative and you probably
+6:52 already noticed that unlike provocative
+6:54 titles would be that the goal of machine
+6:58 Learning System design uh document is
+7:02 for your project to fail
+7:05 what to fail to to fail
+7:09 as soon as possible because it's much
+7:11 better for your project to fail if you
+7:13 invested two or three weeks then if you
+7:17 invested six or nine months so you
+7:20 probably do want to know before
+7:23 than after right if you think about that
+7:25 let's say let's say
+7:27 doing the design dog either increases
+7:30 the chances of your project to succeed
+7:32 or you know that it will fail six months
+7:35 prior to that that makes sense right if
+7:37 you know something six months prior to
+7:38 that that makes sense but you asked me
+7:41 for introduction I already started to go
+7:46 maybe that's something I should
+7:49 take a step back and so you already said
+7:53 that you're writing a book and the book
+7:55 is about ml system design and the goal
+7:59 of the book and in general when we
+8:01 create a machine Learning System before
+8:04 we actually start working on this
+8:06 actively with implementing and getting
+8:08 data and all that we need to create an
+8:11 easy to understand document a meta
+8:13 document about
+8:15 I don't know about the system we want to
+8:17 create right so this is an easy and to
+8:19 understand document that is coherent
+8:22 that is not
+8:24 so big Maybe
+8:25 and then you said that the goal of this
+8:30 document
+8:31 is
+8:32 to make project fail as soon as possible
+8:34 and this is when I got confused it's
+8:36 okay
+8:38 okay okay let let's let's try to to to
+8:42 clear that uh when you do machine
+8:45 learning projects uh there is a lot of
+8:48 uncertainty right I like well well that
+8:52 obviously depends what do you do but if
+8:54 you think about that software projects
+8:57 are not
+8:58 well they're a relative relatively
+9:01 deterministics like you can estimate how
+9:04 long would it take to complete something
+9:07 uh whom do you need for the team Etc
+9:10 however even for software engineering
+9:13 projects it's it's like 9 out of 10
+9:17 times you would find out that you
+9:19 actually spent uh 100 more time and you
+9:23 need it like twice as many people as you
+9:26 thought at the very beginning and those
+9:28 are very very let's say not very but
+9:31 much easier to estimate projects
+9:33 compared to machine learning projects
+9:35 because machine learning projects at the
+9:37 very beginning there are less they're
+9:39 much more stochastic you you don't know
+9:42 what exactly would you expect I mean of
+9:44 course if it's like a recommended system
+9:46 you've done then recommend the systems
+9:48 in the same domain it's like 11th
+9:49 recommend the system you might say you
+9:51 have some understanding what to expect
+9:54 but what I'm saying is that in in
+9:57 machine learning uh them the amount of
+10:02 things which might affect the outcome uh
+10:06 severely is much higher than in any
+10:08 other projects now uh what is an idea of
+10:12 designed okay think about that it is
+10:15 ridiculous to imagine uh the crew of the
+10:19 constructors
+10:20 creating a building without the
+10:23 blueprint right let's say let's say a
+10:26 hundred Constructors gathered and he
+10:28 said okay guys let's build a skill okay
+10:30 and they just started to dig Lane are
+10:33 the foundational work etc without any
+10:36 blueprints that you can't imagine that
+10:38 right like that's that's impossible like
+10:39 nobody will give them any permission to
+10:42 do that nobody would give them anything
+10:44 to do until they have a proper blueprint
+10:47 now you you worked in many different
+10:50 companies right and you have a plenty of
+10:53 experience Alex I have a question for
+10:55 you how many times you've seen the
+10:57 projects project been started without a
+11:01 proper design documentation like let's
+11:04 say out of 10 times how many times would
+11:06 you see the project without a proper
+11:08 design documentation well if I'm being
+11:10 honest like nine and a half
+11:13 nine and a half but crazy right it it
+11:16 isn't that crazy now it depends like
+11:19 what you mean by a proper document but
+11:21 sometimes yeah without any document
+11:25 whatsoever yeah let's say if you don't
+11:27 have any document documentation surely
+11:30 you don't have a proper documentation
+11:32 like 100 yeah but but you see a lot
+11:35 right
+11:36 nine and a half hours or maybe eight
+11:38 whatever but it's like a majority which
+11:41 is ridiculous so and when I'm saying
+11:44 that the goal of design dog to fail
+11:46 imagine every time there is a building
+11:49 to be constructed uh people uh or
+11:53 Engineers architectures they conduct
+11:56 some calculations like Is it feasible to
+11:58 do let's say someone will come to you
+12:00 and tell hey guys I want 10 kilometers
+12:03 tall building
+12:05 uh right and and then they'll they'll
+12:08 try to outline that they'll try to do
+12:10 the blueprint I will tell you sorry we
+12:12 can't do that that's impossible it is
+12:15 much better to find out on the blueprint
+12:17 stage then right after you already built
+12:20 like 500 meters and then you say oh by
+12:23 the way we can't do that so in that in
+12:27 that case if you if you have a proper
+12:29 documentation and you outline all the
+12:33 most of the things Corner cases Etc you
+12:37 already have information which will help
+12:40 you to understand if a can we do that
+12:44 right and in that sense the goal is to
+12:47 fail
+12:48 because you want to understand that this
+12:50 is impossible before you invested too
+12:54 much time efforts resources whatever but
+12:59 if it's not impossible if it's let's say
+13:01 you don't need a 10 kilometers hard
+13:03 building
+13:05 uh if you need a school but you probably
+13:07 still would like to have a blueprint of
+13:09 the school because my idea of school
+13:11 your idea of school it's still a school
+13:14 right it might be very different what
+13:16 does this the school need like uh so
+13:19 that that that's what design document
+13:21 tries to to outline to solve what do we
+13:26 want to have at the end what do we need
+13:30 to have at the end right you see there
+13:32 is a difference between want and need
+13:34 and can we can we have it or not
+13:38 so uh that's the thing because the
+13:41 situation uh both I and apparently based
+13:45 on what you just told me you saw in the
+13:47 industry is like uh it's absurd nah
+13:51 people are trying to build an extremely
+13:53 complex Solutions uh without the proper
+13:56 without laying a proper groundwork
+14:00 hmm yeah so one of the goals of the
+14:04 design document is to think of all the
+14:07 possible ways
+14:09 that how it can go wrong
+14:12 right so you just think okay this is
+14:14 what I want to do this is what I need to
+14:15 do like these two things are already
+14:17 quite difficult and then they think okay
+14:19 in order to achieve that in order to
+14:21 build that we need to do this this and
+14:24 this and what can go wrong when we try
+14:26 to do this okay maybe the data is
+14:28 missing right or maybe like uh there is
+14:30 a like a lot of traffic comes in and
+14:32 then I don't know our system breaks
+14:34 things like that right
+14:36 yes I I I'd say so uh not only what can
+14:39 go wrong but also based on our decision
+14:43 on the early stage it it definitely
+14:46 affects the next stage right
+14:48 let's say let's say again let's take the
+14:51 analogy of uh building uh
+14:55 um school if you need a five-story
+14:57 school or 50 stores because I don't I I
+15:00 never seen 50 story schools but you
+15:02 probably need a very different things to
+15:04 be done at the very beginning right you
+15:05 probably need a very different
+15:07 fundamentals for this school the same
+15:09 goes for machine learning let's say uh
+15:13 if it's if it's a real-time system or if
+15:16 it's a batch processing system which you
+15:18 might decide at the very beginning
+15:21 it might really affect
+15:24 uh the outcome and what what do you need
+15:27 so it's not only the problems
+15:30 it's only that the possible let's say
+15:35 split criteria
+15:37 but another thing is that uh like as a
+15:41 single person or even a small team it's
+15:43 very hard to
+15:45 to think about everything again depends
+15:47 on your experience and how typical the
+15:49 project is
+15:50 but
+15:52 the good thing is that if you have some
+15:57 kind of Ideal blueprint in your head it
+16:00 is very hard to share it with other
+16:03 people like you can even come to other
+16:06 people look into their eyes they still
+16:07 can't download it from your uh from your
+16:10 head right it doesn't work that way
+16:12 unfortunately maybe Elon Musk and his
+16:14 technology and the neural link will
+16:18 solve it but you can't do that so that's
+16:20 why we had to upload uh this information
+16:23 on on the paper or digital paper or like
+16:26 a Google doc and then you can share it
+16:30 with many different people and so let's
+16:33 even forget about that you the the
+16:35 vision you you have on the day one and
+16:39 the vision you might have within day
+16:40 hundred you might think they're the same
+16:43 but you might you might have forgotten
+16:45 some some stuff and and if you imagine
+16:48 you have now three people on the team
+16:49 are you sure you have the same vision if
+16:52 it's all in your head right so how
+16:55 synchronized are you I don't think
+16:57 you're very much synchronized so so
+16:59 having that on the paper uh it helps you
+17:03 to a remember be outline see share with
+17:08 other people who will provide a feedback
+17:10 and there are many different ways there
+17:12 are many different possible feedbacks
+17:14 from a actually guys you don't need the
+17:16 ml system to do that which is the best
+17:18 because like you know the best code the
+17:20 code which is never written
+17:22 or right as last code as possible uh so
+17:27 the same applies to the systems if you
+17:28 can't do something simple do something
+17:30 very simple uh if statement is always
+17:34 better than linear regression linear
+17:36 regression is always better than
+17:37 non-linear model non-linear model like a
+17:40 boosting is usually better than neural
+17:43 network
+17:43 Etc so if it's simple it's good
+17:46 but then
+17:49 yeah the last thing yeah you you can
+17:51 receive all these uh feedback from a
+17:54 people and they can highlight the things
+17:57 you could miss and also if you think
+18:00 about that you could if you've done that
+18:03 and you have this culture in the company
+18:06 that means you could also read others
+18:09 people Docs
+18:11 and and hence and widen you experience
+18:15 by at least reading it
+18:20 um yeah that's uh that's really great
+18:22 and one of the things that you mentioned
+18:24 was that we have a we want to have a
+18:27 shareable document where we write what
+18:30 we need and what we want and these are
+18:32 different things and I think this is one
+18:34 of the
+18:35 like common challenges or that we have
+18:38 when we actually design a system right
+18:40 because
+18:41 in advance we don't always know what we
+18:44 need we only know what we want to have
+18:45 and these things could be different and
+18:48 maybe I wanted to talk a bit more about
+18:51 these differences and in general the
+18:53 common challenges that we have in
+18:55 addition to that when Building Systems
+19:00 well you
+19:02 you have a well of experience and you
+19:06 know that the hardest one of the hardest
+19:09 thing is to maintain right like let's
+19:12 say that you could say oh I need to do
+19:15 things right I will create a proper
+19:19 document and let's say you've done that
+19:22 on the next day the document you created
+19:25 is an obsolete it's outdated because you
+19:30 might oh we need they actually we need
+19:32 to change something or actually that's
+19:34 not what we needed actually we had a new
+19:37 input and then a week later a month
+19:40 later six months later you would see the
+19:43 document a reality diverge
+19:46 and so it is it is very hard to maintain
+19:50 the document right because oh yeah like
+19:53 I'll do that late I'll just it's a small
+19:55 thing I won't I won't put that into the
+19:58 document because that that's what you
+20:00 said is 100 right it all life will
+20:04 change
+20:05 software is never done that's why you
+20:08 still have uh uh tens of thousands of
+20:10 people working on Facebook at Google Etc
+20:12 you might say yeah but Facebook is
+20:14 already already exists as an app right
+20:16 what do these people do or like Google
+20:19 it's already it already exists as a
+20:21 search but no you you always need have a
+20:24 people right and obviously if you think
+20:27 about product like Google search and
+20:30 probably it had a design dock how many
+20:34 times it it had been updated uh many and
+20:38 probably still it has been updated still
+20:41 so that's why it's you have to keep your
+20:45 design dog design dog is a living thing
+20:47 and this is actually if we come back to
+20:50 the original title while design is is
+20:53 broken because people think about design
+20:56 dock as just some like artifact right
+21:00 okay it's done
+21:03 let's mark the Box
+21:05 and go to the next stage
+21:08 it is never done
+21:10 it's it's navigation system is
+21:12 constantly not changing so the one thing
+21:16 which is broken is that even if people
+21:18 prepare the documentation which we
+21:21 already discussed with you is a very
+21:23 rare thing
+21:24 like very rare already it
+21:28 it is it becomes outdated pretty soon if
+21:32 it's not a living thing but
+21:35 I mean so I remember when I was working
+21:38 at Yandex uh and yeah and yannick's
+21:42 advisor the the one thing I was
+21:44 astonished is the quality of
+21:47 documentation
+21:48 the documentation there was extremely
+21:51 good and well so and instead of
+21:55 um
+21:57 taking all these people well technically
+21:59 you can use a verb molesting but now my
+22:02 list has a different uh context so
+22:04 problems but you still can use like if
+22:06 you're noisy or taking someone's time
+22:08 yes or no use the the well technically
+22:12 if you take a look in the dictionary you
+22:13 can you can still use molesting like oh
+22:15 I'm molested my co-workers like I took
+22:18 all a lot of their time and like I would
+22:20 noisy but yeah so it's probably uh my
+22:23 credit so yeah we need to count this but
+22:27 I'm not a native speaker right uh anyway
+22:30 so you're taking you're taking the time
+22:33 of your co-workers you
+22:37 um
+22:38 let's say spending a lot of your time
+22:40 you're spending a lot of time of doing
+22:42 no no proper thing instead of which you
+22:47 can just go read read the docs
+22:51 and that's perfect right that that works
+22:53 that's actually why stack Overflow or
+22:55 stack Overflow is is such a great thing
+22:58 which is basically to some extent it's
+23:01 not a living dock right but it's
+23:03 basically you can go there you can find
+23:04 the answer for your questions you leave
+23:06 it immediately everything is good yeah I
+23:08 just I just checked the dictionary you
+23:10 can use the mollusk uh like if you just
+23:13 noise you're trying to get like
+23:15 information from from someone like stop
+23:18 stop doing that so yeah very good at the
+23:21 tasking
+23:23 yeah I I have to
+23:26 um but anyway
+23:28 um that's a problem that we don't do
+23:30 that and that's why it's broken we we
+23:32 don't we don't maintain we think oh it's
+23:35 done however to some extent it's a
+23:38 design document it's like a code
+23:41 a code is never done code is never
+23:43 finished the same applies for a design
+23:45 document it's never finished uh we which
+23:48 which is in in in that in this sense it
+23:52 is very different than the blueprints
+23:54 right you probably won't expect the
+23:57 blueprints of the buildings to change
+23:59 over the time I mean I mean you might
+24:01 have some additions right but usually
+24:04 they remain the same
+24:06 I hopefully so like if it changes like
+24:09 Midway through the building like it's
+24:12 already half done and then ah by the way
+24:14 we decided to go to add 30 more stores
+24:16 30 more levels okay surprise yeah let's
+24:19 let's do that yeah yeah let's do that
+24:22 actually now it's not as cool it's not a
+24:23 helicopter Park what is a helicopter
+24:26 like doesn't matter now it's a
+24:27 helicopter Park
+24:29 yeah good that we work in the software
+24:31 industry right
+24:38 one of the reasons why machine learning
+24:41 design documents might fail or why a
+24:44 project might fail is that we assume
+24:47 that the design document is a static
+24:48 thing so we finished it and it's not
+24:52 going to change
+24:54 while it's actually a dynamic thing it's
+24:56 changing like code it's never done it's
+24:59 never finished it requires maintenance
+25:01 cause requirements change life changes
+25:04 things will be different tomorrow right
+25:06 and we need to account for these things
+25:08 and we need to go back to our document
+25:10 and update some things
+25:13 so
+25:15 yeah what are the consequences for that
+25:17 like let's say we're working on a
+25:19 project we have a design document we
+25:21 already started implementing this and
+25:23 then the new piece of requirement comes
+25:25 and then we need to update the document
+25:27 what happens
+25:30 so
+25:31 here's the problem for that it's very
+25:34 hard to imagine one person working
+25:37 throughout the the whole system
+25:40 especially if it's a big project let's
+25:42 say it's a if it's one project it's a
+25:45 one-person project
+25:47 well probably you even don't need well
+25:49 I'd say you still need a document
+25:52 but it's a different thing however
+25:54 if it's a teamwork
+25:56 uh that means you probably have a
+25:58 different people
+26:00 who responsible for different things
+26:03 um and again I will appeal to your
+26:06 experience
+26:07 uh have you ever noticed that let's say
+26:11 if you have 10 people team
+26:14 every person in this team might have a
+26:18 slightly different or very different
+26:20 understanding
+26:21 on who is responsible for what
+26:26 quite often most of the time yeah why
+26:28 unless
+26:30 explicitly written somewhere
+26:32 right that's exactly the key unless it's
+26:35 extremely written so first question it
+26:39 has to be written somewhere right like
+26:41 uh person a Alice is responsible for
+26:44 this uh person be above is responsible
+26:47 for that Etc you probably would like to
+26:49 have some overlap because you don't want
+26:52 only one person like you don't want to
+26:53 have a bus Factor being equal to one
+26:56 but why not to have a design dog as a
+27:00 place of like uh accountability and
+27:02 areas of responsibility now as soon as
+27:06 you know who is accountable for Ward who
+27:09 owns what uh those people are now
+27:12 responsible for updating uh
+27:15 they're part of the document
+27:18 which makes sense right because they
+27:20 know they're part of the system the best
+27:22 uh
+27:24 probably nobody else knows it better
+27:26 than them
+27:27 and since there is something new which
+27:30 might pop up quite often
+27:32 they go to the dock they update it uh
+27:36 sometimes it's also nice to notify other
+27:38 people that oh by the way there are a
+27:41 new change coming
+27:43 uh and now it's much more feasible than
+27:45 having one person
+27:47 uh running around the 10 different team
+27:50 members or sometimes 10 different teams
+27:52 right because well again depends how big
+27:54 is the project sometimes the project
+27:56 might be really big so you might have 10
+27:58 people might have uh 10 teams you might
+28:01 have 10 teams with 100 people each with
+28:04 10 sub teams each now so you probably
+28:07 would like to to have these uh
+28:10 accountability uh ownership and then
+28:13 those people are in let's say
+28:16 distributed way can maintain the
+28:19 document because otherwise it's it's
+28:22 very hard to have it's almost impossible
+28:24 to have a keeper maybe you can hire a
+28:29 full-time job person whose goal will be
+28:32 to keep the document updated and living
+28:34 thing but I I still don't think well we
+28:38 usually call these people project
+28:39 managers right
+28:41 or yeah
+28:43 sometimes no I I'd say no product is
+28:47 like yeah like uh whatever sometimes
+28:50 their responsibility so like when a team
+28:53 does not have a project manager then
+28:54 somebody needs to write it and it's like
+28:56 I don't know Elite or a project manager
+28:59 or engineering manager
+29:01 somebody has to do this right like to
+29:03 your point it's
+29:06 um
+29:06 like it's there's not always a person
+29:08 whose full-time job is only that like
+29:11 this there is not that person who's full
+29:13 no I never seen that never
+29:16 I think I remember him when I worked at
+29:19 one of the companies it was quite some
+29:22 time ago there was actually a person
+29:24 responsible for documentation only but
+29:27 it was customer face and recommendation
+29:28 okay well yeah that's no that makes
+29:32 sense but that's a bit different right
+29:33 yeah yeah that's different that's very
+29:35 very different
+29:38 so it's very hard for me to be mentioned
+29:40 well I mean if it does make some sense
+29:43 because it's always you know I've been
+29:46 thinking about that for for a while
+29:48 there is always
+29:50 um a equilibrium a balance uh between
+29:53 efficiency and redundancy obviously
+29:57 having a person whose full-time job is
+30:00 only maintaining and keeping their
+30:02 documentation
+30:05 seems like
+30:07 a thing which not every company can't
+30:11 afford uh it doesn't look like a very
+30:14 efficient way of spending your money on
+30:16 the other hand if you need a redundancy
+30:18 and you know right there is always
+30:19 redundancy or efficiency like uh if you
+30:23 build a system which has to be reliable
+30:24 you probably think about a lot of
+30:26 redundancy because if one machine will
+30:28 go down you don't want the whole system
+30:30 to go down so that's why you'd like
+30:32 something to be double checked and been
+30:35 abundance
+30:37 so but it's it's always there that the
+30:39 question is what is more important for
+30:41 your efficiency or redundancy
+30:44 okay so that's again uh that that's I
+30:49 guess another reason why we're another
+30:51 kind of uh challenge or flow that we
+30:55 have in the machine Learning System
+30:56 design practice is that we don't have
+30:59 accountability included in the design
+31:02 doc we don't know who is doing what
+31:05 right and then if we don't have that
+31:08 then who is going to maintain different
+31:10 parts of the system or different parts
+31:12 of the design document and that's
+31:13 another reason why things might go wrong
+31:16 because there's a change maybe and
+31:19 nobody documents this change people just
+31:22 talk about this on a meeting on a daily
+31:24 saying hey like there is a piece of
+31:27 feedback coming from customer and then
+31:28 we need to account for that we need to
+31:30 do something and then somebody says okay
+31:32 I'll just go don't do ethics a
+31:35 workaround I'll fix that thing but it
+31:38 does not update it doesn't get updated
+31:40 in the condition right and then we have
+31:42 a problem
+31:43 and then a solution to that would be the
+31:46 person
+31:47 who's responsible for that area make
+31:49 sure that like the code and the
+31:53 documentation are kept in sync right so
+31:57 they are synchronized
+31:59 uh so
+32:01 you probably have heard about this
+32:03 Horror Story from a Twitter they
+32:05 recently were built by the Extravaganza
+32:08 billionaire
+32:10 who decided
+32:12 yeah that's the best idea is to lay off
+32:16 most of your engineers
+32:18 which is okay which is okay because
+32:20 Twitter was very well known was
+32:23 Notorious for being a place where you
+32:25 can chill out
+32:27 and not to work at all however the the
+32:32 thing is that
+32:35 two weeks later they had to rehire
+32:38 hundreds of those people because it
+32:40 turned out that some of these people
+32:42 were Irreplaceable well it's not like
+32:46 people are replaceable depends how many
+32:48 people you have with a given set of
+32:50 knowledge right which is basically a bus
+32:53 Factor how many people have to be in the
+32:55 bus or have been like in a car accident
+32:58 uh for your project to close
+33:02 so if you if you have this
+33:04 accountability written in the document
+33:07 you it's very easy for you to understand
+33:09 what are your choking points what are
+33:13 the bottlenecks what are the risk areas
+33:16 let's say you'll find out that there is
+33:18 only one person who knows about a b and
+33:21 c in your system that's probably not the
+33:26 the thing you'd like to have
+33:29 right how often does it and also in
+33:31 practice
+33:33 I think like what you say makes total
+33:36 sense but I'm just wondering how often
+33:38 does it actually
+33:40 get implemented like how often you can
+33:43 open a document and see okay we have a
+33:45 these three carriers like this part of
+33:48 the project depends only on this person
+33:49 okay I tell you what
+33:54 every prop and dream manager implements
+33:57 that at least in their heads okay
+33:59 because they want to understand a lot
+34:03 because like they need to appreciate the
+34:06 possibility of some people living or not
+34:08 performing like how fragile their
+34:11 project is now I have an idea for
+34:13 startup uh I'll tell you so the startup
+34:17 is like no layoffs.com or dot AI over
+34:20 already propose a name so how it works
+34:22 you create the design dock right
+34:26 and this design dock you'd like to have
+34:29 uh people a list of people accountable
+34:33 for specific areas and you know that you
+34:35 have to have at least one person or
+34:37 probably two right now you you try to
+34:41 make a combination so to have a maximum
+34:45 amount of people being only one or two
+34:49 in this area so you can't lay them off
+34:52 because you understand right because
+34:54 let's say if you have three people let's
+34:57 say you have six areas or let's say the
+35:00 three areas and three people and each
+35:03 person knows every area right so that
+35:06 means that your boss factor is free you
+35:08 basically can fire one person right you
+35:11 still have two people knowing each area
+35:13 but instead of that now imagine one
+35:16 person knows only one area now suddenly
+35:18 your boss factor is one and you can't
+35:20 fire anyone so these startup will
+35:23 provide you a design dock assigning
+35:26 allocating people to specific areas so
+35:28 you can't fire them that's like an idea
+35:30 I I just give to the world
+35:34 do you need actually a startup for that
+35:36 because you can just assign a single
+35:38 person to
+35:39 yeah if they can't do that you would be
+35:43 surprised how bad how bad are people
+35:45 with combinatorics
+35:47 okay
+35:49 you know you know there is like a threat
+35:51 for travel salesman's problem right
+35:53 which is a very well started problem in
+35:57 uh how you say discrete math and there
+36:00 are some people who just created the
+36:02 libraries and they sell them for money
+36:04 for companies which need this kind of
+36:06 optimization because they can just do
+36:08 that data so how much are you willing to
+36:11 pay to for not for being sure that you
+36:13 won't be laid off
+36:16 this is a very good startup idea think
+36:18 about it yeah so I guess the main idea
+36:21 here is you want to be redundant like
+36:25 you want to have multiple people knowing
+36:27 at least multiple areas right but then
+36:30 yeah yeah so it's like it's like hire
+36:33 anyone
+36:34 it's like a toolbar right like what do
+36:37 you want efficiency or redundancy
+36:41 obviously probably if it's like a
+36:42 critical component you'd like to have
+36:44 more redundancy right
+36:46 okay interesting well it's always a try
+36:50 though
+36:50 okay
+36:51 [Music]
+36:52 um
+36:53 so I think here one of the things we
+36:56 talked about quite extensively here is
+36:59 that things change life will change and
+37:01 we need to account for that
+37:03 and our design document does not need to
+37:06 be it has to be non-static it has to be
+37:09 a dynamic thing so how to do we build
+37:13 how do we design a machine Learning
+37:15 System in such a way that it's lean it's
+37:18 maintainable it's extensible when a new
+37:21 piece of requirement comes we can
+37:22 actually go there we know who owns it
+37:25 and then this person can just go and
+37:26 update it how do we do this
+37:29 so
+37:31 the answer is very simple right you go
+37:33 you buy our book you have a design dog
+37:37 outline as an example for two different
+37:40 things probably later we will create a
+37:43 course which people can buy and learn
+37:45 how to do that however the answer for
+37:50 that if you well obviously you'd like to
+37:52 to incorporate the meaningful things
+37:55 into your design right you might want to
+37:57 have charges you you'd like to have a
+37:59 modular structure module number one
+38:03 module number two module number three so
+38:06 like uh if something is adding it's not
+38:09 a monolith
+38:10 it is just another module you can add
+38:12 and then you know who again who is
+38:15 responsible for what and nobody prevents
+38:18 you from even writing a specific test to
+38:20 see what are the last time specific
+38:22 chapter was updated
+38:26 and I I have some some kind of alarms uh
+38:30 maybe well again it depends on how how
+38:32 far how far you'd like to go uh because
+38:36 well you know that you can link uh
+38:38 tickets uh in jira for example on any
+38:40 other task tracker and your GitHub or
+38:43 whatever you have as a code uh Version
+38:46 Control System uh they say it might be
+38:48 done because actually like as any meta
+38:51 document you you can do whatever you
+38:53 want but you can review the piece of
+38:55 code you you you you can see let's say
+38:58 if you know that the last time the code
+39:01 for this chapter was updated was um a
+39:04 week ago but the last time the chapter
+39:06 was updated was a year ago something is
+39:09 wrong
+39:12 again it always depends how how
+39:16 important that's that's for you
+39:18 basically what I prefer is just to have
+39:20 a clear structure a clear outline of
+39:22 design dock uh the design dog being
+39:24 split by chapters
+39:26 each chapter or sub chapter
+39:29 has its own
+39:32 a maintainer or person accountable for
+39:35 that and uh and at the end you you have
+39:38 a list of people working on the project
+39:39 what areas do they cover and what is the
+39:43 coverage factor for each area like how
+39:45 many people can cover the specific area
+39:50 and the the one of the most important
+39:52 one of one of the most important thing
+39:54 is that you know in some companies uh
+39:56 for engineers they review how many uh
+39:59 diffs how many PR we call them divs in
+40:04 uh in meta or pull requests you probably
+40:08 call them usually how many code changes
+40:12 the person has done the engineer Has
+40:14 Done Right sometimes that's a metric I
+40:16 think that's another important metric is
+40:18 how many times the design dock has been
+40:21 updated if this metric will be
+40:24 incorporated uh basically if you have an
+40:27 engineering Excellency
+40:28 as your performance review Acts
+40:32 uh that makes sense to incorporate uh
+40:35 the design dock there as well because
+40:37 what usually is incorporated is uh code
+40:40 divs code reviews right
+40:43 but but if you think about that design
+40:45 dock reviews are even well it's hard to
+40:47 say more important right because it's
+40:49 it's very hard to assess water is more
+40:52 important but they're also very
+40:54 important
+40:56 well because like you have to say entire
+40:59 system
+41:01 yeah it's impact of the full system but
+41:03 again you can't say oh I've dated like
+41:05 uh three three lines it is ten times one
+41:08 fossil that like uh actual code which is
+41:11 doing that you see it's you let's say as
+41:15 soon as metrics becomes a goal it cease
+41:19 to be a good metric but we we need to
+41:23 incorporate something like that in the
+41:24 performance review because as soon as it
+41:26 Incorporated people will start chasing
+41:28 it but if they have to have some
+41:30 incentive to do that
+41:34 so what you're saying is in order to be
+41:38 able to maintain our documents in a good
+41:42 shape and in order to make them
+41:44 extensible it's not enough to just have
+41:46 a clear structure we also need to give a
+41:49 bit of an extra incentive to people to
+41:51 do that
+41:52 for example make sure that their
+41:55 performance review depends on how good
+41:57 they do this
+42:00 which is good because you know because
+42:02 if you only have a code that's only a
+42:05 part of the job right and you know that
+42:07 in some companies they don't even do
+42:08 proper code review which is bad and so
+42:11 and people trying to oh how how can we
+42:14 incorporate that how can we work on that
+42:16 so like code reviews make sense right
+42:18 nobody asks oh why do we spend time and
+42:21 extra efforts on code review so you do
+42:23 that to check if the code is correct to
+42:25 increase your bus Factor right because
+42:27 you want to have more people have at
+42:29 least some knowledge of the code base
+42:32 why doesn't that the same applies for a
+42:36 design actually doesn't matter if it's
+42:39 machine Learning System design or just a
+42:41 system design you'd like as many people
+42:43 being there as you could knowing and
+42:46 working on that it also gives them an
+42:48 extra let's say opportunity for growth
+42:55 okay and we have a question that is
+42:57 quite on topic to what we discussed the
+42:59 questions is there a universal template
+43:02 of a machine Learning System design
+43:04 document and I think it's related
+43:06 because you mentioned that a design
+43:08 document should be modular so there
+43:11 should be chapters uh it should follow a
+43:13 clear structure so maybe you could give
+43:16 us an example of how such a design
+43:20 document can look like what are the
+43:22 things there
+43:23 um
+43:24 maybe using some example not to make it
+43:27 too abstract
+43:30 uh so I think that it's very hard to see
+43:34 there's very one template which likes
+43:36 the best well apparently the the this
+43:39 template existed yeah our book right
+43:41 it's like it has the best uh overall you
+43:44 can't find anything
+43:45 yeah no there are two design dogs two
+43:48 design dogs examples but they're
+43:49 following the same template okay so uh
+43:54 if you don't want to spend like uh uh 30
+43:58 bucks on our book which is actually a
+44:01 very
+44:03 um
+44:04 it brings me a lot of Sorrow to to find
+44:09 that out you can just if you can share
+44:11 the link to our book what people can do
+44:13 they can just read the outline because
+44:16 our book
+44:17 structure is built as a design dock
+44:21 itself so every chapter is basically
+44:23 describes a chapter you would expect to
+44:27 have in the real design dock so we
+44:30 discuss why it's important what has to
+44:33 be there what can't be there and then we
+44:36 provide two examples but basically you
+44:39 take an outline it's already kinda an
+44:41 example of the design dock itself so it
+44:45 has
+44:46 um well again it depends so for example
+44:48 we were thinking about having 16
+44:51 chapters and then appendix
+44:54 but then turn out that appendix would be
+44:58 as big as the book itself so we decided
+45:01 to keep it for a second book but
+45:03 basically you can go there you you can
+45:05 you can find out
+45:07 you can find out an outline like is
+45:09 there a problem
+45:11 preliminary research design document
+45:13 lost function and Magic Gathering data
+45:16 sets validation schemas Baseline
+45:18 solution error analysis training
+45:20 pipeline features and feature
+45:21 engineering reporting integration
+45:24 reliability and monitoring solving and
+45:26 inference optimization ownership and
+45:29 maintenance so you see like all
+45:30 basically the thing some of these things
+45:33 were already discussed like even
+45:34 ownership and maintenance is a
+45:38 maintenance and maintenance maintenance
+45:40 I guess uh the part of
+45:43 whatever uh other part of this design
+45:46 document right integration but so and uh
+45:49 basically There are 16 chapters uh every
+45:52 four chapters
+45:54 um grouped into aggregated Parts like
+45:57 part one preparations part two only
+46:00 stage part three intermediate steps part
+46:04 four integration grows but obviously you
+46:07 can add another chapters for example
+46:10 like you could say oh we need add a
+46:12 module on the fairness
+46:17 it's actually something we were hoping
+46:20 to to to cover in in appendix but it
+46:24 turned out we already wrote too many
+46:26 words
+46:28 and uh or because the book has to be
+46:30 between 100 to 120 000 words and it's
+46:34 already
+46:34 too too too big for for appendix but
+46:38 maybe if the book will be a successful
+46:40 one
+46:42 uh then
+46:44 um
+46:45 we'll see we'll see uh if the second
+46:48 will come
+46:50 okay so keeping my fingers crossed and
+46:54 yeah but
+46:56 um so my question was also a bit of uh
+46:59 so what I was struggling with sometimes
+47:01 is maybe having some examples I guess
+47:04 right now like if somebody wants to have
+47:06 an example you mentioned that in the
+47:08 book there are two examples and I think
+47:11 we also talked about that with usaini
+47:13 who is Valerie's co-author
+47:15 like a month ago slightly more
+47:18 um
+47:19 so
+47:20 yeah maybe we can talk about an example
+47:24 but also think like
+47:27 how things could go wrong and like do
+47:31 you have maybe in your practice things
+47:35 went wrong I assume they did right and
+47:38 maybe
+47:40 um like what was the reasons like
+47:43 was there
+47:44 yeah
+47:46 100 so in our book we covered that in
+47:49 the Trump tape on reliability and
+47:52 monitoring and and the fallbacks so
+47:56 basically
+47:58 it doesn't matter how good your system
+48:00 is
+48:01 it will go down you know later
+48:05 Google went down
+48:07 Facebook went down
+48:09 AWS went down Twitter uh is going down
+48:15 uh Twitter went down okay
+48:18 yeah but you know like just this weekend
+48:21 Twitter has a lot of issues with a rate
+48:24 limiting and uh apparently it did those
+48:27 itself
+48:29 so well you there I'm let's say that
+48:34 there are many things which might go
+48:37 wrong in
+48:39 ml system
+48:41 so there are two things you can do
+48:43 you can monitor what's going on is it a
+48:47 data drift is it a error in the data is
+48:50 it a concept drift is it a prediction
+48:52 drift or whatever
+48:55 and the second question is how could you
+48:57 react to that right you might have a
+49:00 fallback which basically let's say
+49:03 your model went crazy
+49:05 but you have some other solution which
+49:09 which is
+49:10 worse than model but better than nothing
+49:14 uh so and and if you have it you can you
+49:19 can fall back to that solution but you
+49:21 can only do that if you know that your
+49:23 model went crazy
+49:25 in the first part right if you don't
+49:26 know that something's wrong you can't
+49:28 react so uh so basically we we covered
+49:32 uh we spent 30 pages writing what might
+49:36 go wrong
+49:38 how to detect that
+49:42 and uh how to react to that
+49:45 what I can another thing I can suggest
+49:48 to people who are interested to this
+49:50 topic there is a website uh called
+49:54 evidently AI I'm just writing it to you
+49:58 in the chat uh basically uh
+50:02 it's a startup or a company which
+50:08 ah no I I let let me find it evidently
+50:13 so evidently i.com I think
+50:15 yeah oh yeah evidently AI That's gonna
+50:18 okay yeah yeah you're right so evidently
+50:21 ai.com
+50:23 so basically what they have they have a
+50:26 library framework for monitoring and uh
+50:31 for monitoring so model quality data
+50:33 grief Target drift uh data qualities so
+50:38 and they have a very comprehensive set
+50:41 of blog posts and articles which you can
+50:44 read because well they they can tell you
+50:46 what might go wrong how to detect that
+50:49 and some basic stuff you can do to react
+50:52 to that
+50:54 detection is the first step because if
+50:57 you can't detect that that's that's that
+50:58 that's it finish
+51:00 reminds me that we had Helena one of the
+51:03 co-founders from evidently like two
+51:06 years ago and the title of your talk was
+51:09 why your machine project will fail where
+51:12 she
+51:13 outlines pretty much describes pretty
+51:15 much what you said
+51:17 I'm wondering so monitoring is important
+51:19 and we have heard most of us have heard
+51:22 that probably
+51:24 and I'm wondering okay we know that we
+51:28 need to monitor so we need to have a
+51:30 fallback solution and we need to know
+51:31 that our machine learning model goes
+51:33 crazy so we can actually fall back to
+51:36 our let's say that it it might it might
+51:38 be a model problem it might because we
+51:41 mentioned four things so data quality
+51:42 model quality concentrate prediction
+51:45 like there are many different things so
+51:47 how do we account for that in the design
+51:50 phase
+51:51 what place should these things have in
+51:55 our design document and how do we
+51:57 actually structure them
+51:59 so I think that well we we we think
+52:04 that accounting for that
+52:06 is a part of it's It's let's say if we
+52:10 split the design into four parts like
+52:12 preparation early stage intermediate
+52:14 steps and integration growth we think
+52:17 that
+52:19 reliability monitoring fallback is the
+52:21 integration and growth right because
+52:23 like it's definitely not a preparation
+52:26 is that not an early stages
+52:29 uh it's even not an intermediate steps
+52:31 it's like something you already have a
+52:33 system it works it has a pipelines now
+52:36 you'd like that to be reliable and you'd
+52:39 like to have a full book so it's
+52:40 basically the the you you your whole
+52:43 focus at the end isn't reliability like
+52:47 remember efficiency redundancy right
+52:50 reliability to some extent is redundancy
+52:53 uh because like you might have three
+52:56 different fallbacks
+52:58 depending what is broken right because
+53:00 maybe some data is damaged but you have
+53:03 like a set of three critical features
+53:05 and they are not affected we still might
+53:08 have a model which is uh much less
+53:12 sophisticated but still better than
+53:14 let's say two if statement if data is
+53:18 completely affected or corrupted let's
+53:20 use three or two if statements if even
+53:24 that doesn't work let's use a constant
+53:26 uh
+53:28 um placeholder right so and you see you
+53:31 have four Solutions you use only one so
+53:33 a lot of redundancy
+53:35 but a lot of stability and reliability
+53:37 but yes that's something it has to be
+53:39 addressed and which becomes if you think
+53:42 about that like the whole uh if you take
+53:45 a look well at least in our part for
+53:47 outline reliability and monitoring and
+53:50 ownership and maintenance
+53:52 is all about this uh fallbacks what
+53:56 might go wrong because it might run from
+53:57 technical side it might go wrong from
+54:00 people's side uh how to take this into
+54:03 account
+54:06 okay so I want to summarize everything
+54:09 we talked so far
+54:11 so we started by discussing a design
+54:15 document a machine learning design
+54:17 document saying that we need to
+54:21 document there what we need what we want
+54:25 right and then we started talking about
+54:27 why some things might go wrong and one
+54:31 of the things one of the things we need
+54:35 to keep in mind is that it has to be a
+54:39 dynamic dynamic thing a dynamic document
+54:41 it's not a static thing then another
+54:43 thing we mentioned was that
+54:46 we should know who is accountable for
+54:48 what so if there is not going to be
+54:50 outcome to accountability mentioned in
+54:53 the design document that nobody knows
+54:55 what they're responsible for and then
+54:58 nobody who will keep the document
+55:00 updated right worse than that worse than
+55:03 that it's not like nobody knows people
+55:06 think wrong somebody people think oh
+55:08 somebody is responsible and this person
+55:10 thinks so this is even worse than that
+55:13 right okay then we need to think about
+55:17 that and explicitly
+55:20 mention explicitly document who is
+55:23 accountable for what then another thing
+55:26 that we need to keep in mind is that it
+55:30 should be
+55:31 it should have the document should have
+55:33 some sort of modular structure it should
+55:35 have chapters and we should know when
+55:38 each chapter when each model was updated
+55:40 last time so we know how outdated the
+55:44 document is in general and how much
+55:46 effort we put into maintaining it right
+55:48 so that's another thing and then at the
+55:50 end towards the end we discussed that we
+55:54 forget to sometimes forget to think
+55:57 about monitoring and there are many
+55:59 things that might happen so we need to
+56:02 account for that too but maybe at a
+56:04 later stage
+56:06 right growth stage or I don't remember
+56:08 the one before that like integration
+56:11 stage right like
+56:12 basically at some point we will need to
+56:14 think about that and we need to keep
+56:16 that in mind
+56:17 did we not talk about something else
+56:20 something that is equally important to
+56:21 these four things
+56:24 look um it's a hot everything is
+56:27 important right because every project is
+56:29 quite unique uh so for example one
+56:32 common Pitfall uh probably both you and
+56:36 I saw is that people trying to do
+56:38 something complex and sophisticated
+56:39 instead of working with a simple
+56:41 Baseline solution which can help them to
+56:44 test their hypothesis to iterate very
+56:47 quickly and to see uh what is like an
+56:51 extra mile can bring right and you know
+56:54 that people not that many people do that
+56:57 and that's extremely important to build
+56:58 a baseline solution but if you don't
+57:01 build a bad language it doesn't mean
+57:03 that your project will fail but you
+57:06 might spend an extra three months of
+57:09 work which is probably not great so hard
+57:14 to say like what is uh let's say that
+57:18 we decided to focus on these 16 chapters
+57:21 uh because the we think they have
+57:23 importance and uh it's not like someone
+57:27 we obviously haven't gone through
+57:30 through all of them because it'll take
+57:33 longer than an hour
+57:35 uh but what I suggest you guys just uh
+57:40 take a look at an outline it's free to
+57:42 look at uh you can then further dive
+57:46 into a any specific topic you'd like uh
+57:49 we always have spoken about evidently
+57:51 ai.com where you can dive into the
+57:55 specific topic of uh reliability and
+57:57 monitoring uh and uh just as soon as you
+58:02 have this idea of these chapters being
+58:04 important
+58:05 then you can start digging further into
+58:08 them and discuss them in your own design
+58:12 documents
+58:14 and by the way so while we were speaking
+58:17 I went to our previous conversation with
+58:20 arseni who is the co-author of the book
+58:22 and I found out that we have a discount
+58:24 code for the book so I included the
+58:27 discount code in the description of this
+58:29 episode so I think it's like 35 percent
+58:32 so
+58:33 feel free to use it if you want to buy
+58:35 the book
+58:36 and then I want to ask you one last
+58:39 thing
+58:40 about resources so one resource if
+58:43 somebody wants to learn more about
+58:45 ml system design is obviously your book
+58:48 the other resource is evidently's
+58:51 website is there anything else you would
+58:53 recommend for the listeners to check if
+58:56 they want to learn more about this topic
+58:59 look I know that there is a channel on a
+59:02 telegram Channel but it's in Russian
+59:04 it's it's called reliable ml which
+59:08 and those people are working as well on
+59:11 the machine Learning System design
+59:13 course they have a template
+59:16 I don't remember if it's in Russian or
+59:19 in English because if it's in Russian
+59:21 then people who speaks Uh Russian people
+59:23 who speak Russian how would you know
+59:26 about them and it doesn't it doesn't
+59:28 make sense to
+59:30 tell about this to other people because
+59:32 it's in Russia right if it's in English
+59:33 then let me check now let me just check
+59:37 uh which which language do they use
+59:40 because
+59:41 um just
+59:43 don't don't remember
+59:46 ah
+59:49 [Music]
+59:53 is it reliable and reproducible well
+59:55 something like this
+59:57 well don't ask too much they just call
+1:00:01 themselves reliable and then they don't
+1:00:02 call themselves reproducible
+1:00:08 okay okay so okay there is a template
+1:00:11 some GitHub and it's in Russian from
+1:00:15 from
+1:00:16 yeah so no
+1:00:19 uh uh
+1:00:21 oh but oh by the way they have some
+1:00:24 materials uh at the bottom and uh they
+1:00:27 have some links to like ml design
+1:00:29 template from ml NGO interview so maybe
+1:00:33 and and an article design document for
+1:00:36 ML models uh on the medium in English
+1:00:39 Okay so yeah you can add some of these
+1:00:41 links uh I can share it with you please
+1:00:45 send we will include them in the in the
+1:00:47 description
+1:00:48 and if somebody wants to get in touch
+1:00:51 with you and ask something what's the
+1:00:53 best way of doing that I think that the
+1:00:55 best way is go to LinkedIn
+1:00:57 and
+1:00:59 um ping me there
+1:01:01 and I'm always happy to chat
+1:01:05 uh well depending what do you want to
+1:01:07 ask me right but in general
+1:01:09 I'm
+1:01:12 I'm very opened
+1:01:14 for
+1:01:15 chatting
+1:01:17 okay thanks Valerie for joining us for
+1:01:20 the second time it's always uh pleasure
+1:01:22 speaking with you and maybe as you
+1:01:24 mentioned at the beginning as you join a
+1:01:27 new company and you encounter you will
+1:01:29 solve new challenges
+1:01:31 it will be pretty interesting
+1:01:33 to talk about to discuss these
+1:01:35 challenges with you at some point in the
+1:01:37 future so you're always hopefully
+1:01:39 hopefully I hope so thank you thank you
+1:01:41 so much for invitation and have a nice
+1:01:44 day
+1:01:45 yeah and thanks everyone for joining us
+1:01:47 today too and have a nice day and the
+1:01:50 rest of the week and yeah see you soon

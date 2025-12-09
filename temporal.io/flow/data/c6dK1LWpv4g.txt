@@ -1,0 +1,1788 @@
+What Data Scientists Don’t Mention in Their LinkedIn Profiles
+
+0:00 um hi everyone thanks for joining us
+0:02 today so this event is brought to you by
+0:04 data talks club which is a community of
+0:05 people who love data
+0:08 and we have weekly events this event is
+0:10 one of such events so
+0:12 if you want to find out more about the
+0:14 events we have you can go to the
+0:15 description
+0:16 and find the link with our events
+0:20 and yeah you can click there and see
+0:23 what
+0:23 are the events we have so for example
+0:25 for the next week
+0:27 on tuesday we'll talk about chat bots
+0:29 and on friday we will talk about data
+0:31 governance
+0:32 and one thing i want to mention is we
+0:36 are going to have a conference and right
+0:38 now you can
+0:39 get you can register for the conference
+0:42 on our website as well
+0:44 so we will have two tracks we will have
+0:46 a track about career and data
+0:48 and we will have a track about machine
+0:49 learning production so
+0:51 um do check out then um
+0:56 to stay up to date with our events you
+0:57 can subscribe to
+0:59 our youtube channel and join our slack
+1:02 to talk to
+1:04 people about data to ask
+1:07 questions uh you can use the slider link
+1:11 so there is a link
+1:12 pin link in the live chat so just click
+1:14 on this link
+1:15 and feel free to ask any question you
+1:17 want
+1:18 and we will cover it today
+1:22 so that's all for the introduction and
+1:26 i already start yep
+1:31 and i'm ready to start as well
+1:36 so this week this week we will talk
+1:39 about failures
+1:40 and things in our cvs that we typically
+1:43 don't talk about
+1:45 and we have a special guest today yuri
+1:47 yuri is currently working as a senior
+1:49 machine learning scientist at elsevier
+1:51 his main focus at work is natural
+1:53 language processing
+1:55 and you might already know urine from ml
+1:58 course
+1:58 dot ai which is an awesome machine
+2:01 learning course
+2:02 it's open and you can go check it out
+2:05 and
+2:06 for those who don't know yuri is the
+2:08 mastermind behind this
+2:10 course and funny thing a couple of
+2:12 months ago we had an interview with
+2:14 xenia about transitioning from
+2:16 project management to data science and
+2:19 she mentioned that course and on that
+2:21 day i thought it's a very good idea to
+2:23 actually write to yuri
+2:24 and invite him to this podcast and
+2:26 finally
+2:27 uh this day happened so we have yuri
+2:30 today
+2:30 hi yuri welcome hi alexa yep thanks
+2:35 it's very cheerful here in the hague and
+2:37 um
+2:38 uh i'm pretty pretty happy to join you
+2:40 with this friday
+2:41 afternoon and uh yeah i'm always uh
+2:44 fond of talking about career and all
+2:47 this stuff so i'm
+2:48 happy to share this experience although
+2:50 the topic is a bit controversial so it
+2:51 might
+2:52 hurt some marketing interest of some of
+2:54 the companies but yeah
+2:56 i was pretty careful here so
+2:59 i don't promise that i'll answer all of
+3:01 the questions but uh
+3:02 i'm yeah as open as possible yeah let's
+3:05 start
+3:06 so uh and we'll start with your
+3:08 background um can you tell us
+3:10 about your career journey so far um
+3:13 yeah so yeah even earlier than that
+3:16 while i
+3:16 lived in israel for four years then a
+3:18 year and a half in canada
+3:20 and then went back to russia so i made
+3:22 world
+3:23 around in childhood and then i was
+3:26 growing up in in russia and
+3:29 i was fond of aviation and then thus i
+3:32 joined the best russian technical
+3:33 university moscow institute of physics
+3:35 and technology the aviation department
+3:38 uh and meanwhile i realized i'm fond of
+3:42 programming and then well andrew in was
+3:44 of course the main
+3:46 charismatic guy the evangelist of the
+3:48 machine learning
+3:49 for me and then i switched from uh
+3:52 business intelligence so i was working
+3:54 for some
+3:55 okay i'll tell about the project but
+3:56 then i switched to phd studies and i was
+3:59 full-time in academia
+4:01 that was a crazy time but i don't regret
+4:05 and then i joined russian i.t giant male
+4:08 the true group
+4:09 as a data scientist and
+4:13 but i always search for some better
+4:15 work-life balance
+4:16 and that's why we moved to the
+4:18 netherlands and
+4:19 uh through a telco operator i've
+4:23 further joined elsevier and it's a good
+4:25 place to combine
+4:26 research and so it's a nice uh
+4:29 compromise between academy and industry
+4:32 uh and yeah so also
+4:35 fond of quantum computing and quantum
+4:38 machine learning so i'm really a nerd
+4:40 in a good sense and yeah uh
+4:44 i think that's it i've got a small child
+4:46 a a
+4:47 daughter who'll turn a year and a half
+4:49 soon so
+4:50 she replaced all of my hobbies so i
+4:53 cannot
+4:54 do the hobbies anymore
+4:57 so this is something you need to remove
+5:00 from your city
+5:01 if you had this section about this right
+5:04 yeah yeah no more
+5:05 no more hobbies yeah okay yeah and
+5:08 uh if we ever have uh an episode about
+5:11 quantum computing i know who to invite
+5:13 to talk about this now
+5:15 okay i'll invite some more serious guys
+5:19 okay you're here yeah
+5:22 interesting yeah so did you find the
+5:24 work-life balance you were looking for
+5:27 yeah absolutely so here in netherlands
+5:29 yeah they don't uh
+5:31 die at work and uh i enjoy that
+5:35 yeah so the topic today is things we
+5:37 don't share
+5:38 in our cvs and we all have stories about
+5:41 fail projects i certainly
+5:42 have a couple and maybe i'll i will even
+5:46 tell one or two during today
+5:49 but yeah since you're uh you are the
+5:52 guest today so probably
+5:55 i will ask you for a couple of stories
+5:58 one pattern i observed in my career that
+6:01 we as data scientists tend to spend a
+6:05 lot of time on
+6:06 things on projects that didn't know
+6:07 where so we
+6:09 work for a couple of months or something
+6:11 even more
+6:12 and then the project turns out to be
+6:14 useless
+6:15 and then we just waste time so do you
+6:17 have
+6:18 any stories like that in your in your
+6:21 experience
+6:22 yeah yeah for sure one of the recent
+6:24 stories is a
+6:26 side project for for a proofreading
+6:29 service
+6:30 so so basically if you want to improve
+6:32 the english language
+6:34 in your paper you can you can order this
+6:36 service which is
+6:37 pretty expensive i guess and uh
+6:41 the question was to to automatically
+6:44 assess yeah at least preliminary the
+6:46 quality of the language quality in a
+6:48 given document
+6:50 uh and uh so it's
+6:53 kind of grammarly if you think about it
+6:56 but more
+6:56 into scientific domain so it's like
+7:00 some sort of scientifically fine-tuned
+7:02 grammarly
+7:03 and uh in our company we already had
+7:06 some solution
+7:07 and uh uh when i just joined
+7:10 uh i just i realized that oh well it's
+7:14 the classifier that we that my
+7:17 colleagues build was
+7:18 very close to noise this the the signal
+7:21 that it produced the binary
+7:22 classification of whether
+7:23 an article is well written or badly
+7:25 written that was really close to noise
+7:27 when
+7:27 accurately measured and then i spent a
+7:30 couple of weeks
+7:31 of course i tried a couple of ideas so
+7:34 the task was
+7:34 so the proofreading service had a really
+7:37 large data set with
+7:38 some original paragraphs and then
+7:41 rewritten paragraphs
+7:42 uh so yeah these services are typically
+7:45 outsourced to
+7:46 philippines or india and so i can't say
+7:50 that it's a golden data set but still
+7:52 some clumsy phrases are typically well
+7:54 corrected
+7:55 and then yeah if you think about it you
+7:57 can train in sequence to sequence model
+7:59 that would just
+8:00 rewrite the original sentence but it's
+8:02 um it's
+8:03 rocket science in this sense you cannot
+8:04 really expect
+8:06 such a sequence to sequence model to
+8:07 produce well
+8:09 um as uh yeah structured language
+8:12 so my colleagues uh uh worked on a
+8:16 binary classification task so i turned
+8:18 these into into regression problems so
+8:20 you can measure
+8:21 distance some distance between the
+8:22 pre-edited and the edited version of the
+8:24 text so let's say a leverage time
+8:26 distance
+8:26 and then you can predict this uh
+8:28 levenshtein distance with a with a beard
+8:30 model so
+8:32 they provided some four or five
+8:34 fine-tuned language models
+8:36 i don't know why so many and i run a
+8:39 couple of experiments
+8:40 so yeah with bird regressor to predict
+8:42 this distance so basically how much a
+8:44 paragraph needs to be edited
+8:46 and uh we we organized a couple of
+8:49 experiments so just an annotation
+8:51 experiment between me and my
+8:52 uh american you know so
+8:56 native native speaker so we we went
+8:59 through
+9:00 uh 50 examples each and then the
+9:02 conclusion was that
+9:03 our model is uh about 60
+9:06 uh accurate so in terms of precision so
+9:09 the idea was that it would highlight a
+9:10 piece of text for for the customer
+9:12 uh flagging that hey this paragraph is
+9:15 badly written so maybe you would like to
+9:17 use our profiting service
+9:18 and then such a highlight would be just
+9:21 60
+9:22 precise and considering that it's a
+9:24 beard model which is just a black box
+9:27 i insisted on closing the project and
+9:29 the problem with the project was that it
+9:31 it was pretty um yeah prematurely
+9:35 advertised very heavily so like the
+9:38 company was
+9:38 waiting for a solution so hard and even
+9:41 data scientists my colleagues
+9:42 promoted this model like lacroix
+9:45 language quality assessment they called
+9:47 it
+9:47 lacqua brain like introducing ai to your
+9:50 project blah blah and this
+9:52 and uh well that was a silly thing to do
+9:54 honestly because uh well you
+9:56 you don't you you wouldn't actually
+9:59 advertise your model so hard unless you
+10:02 know that it's
+10:03 brilliantly good so it's just you know
+10:05 hitting up this ai
+10:06 hype uh and yeah it's a story about yeah
+10:10 failing fast so i
+10:11 um summoned all our product owners my
+10:14 boss and then just recommended to drop
+10:16 any attempts to build such a such a
+10:19 service
+10:20 uh because it's these are the things
+10:21 that are not done with uh one middle one
+10:24 junior data scientist and maybe one
+10:25 senior
+10:26 so for for this task you need a group of
+10:29 linguists and a grammarly team is pretty
+10:32 large
+10:32 and they they've built their service in
+10:34 several years
+10:35 so um yeah my recommendation was to
+10:39 to use third-party tools from from the
+10:41 moment
+10:42 yeah so this actually was the opposite
+10:44 example so this is
+10:46 uh an example when instead of spending a
+10:48 lot of time
+10:49 on uh working on something uh like i
+10:52 don't know
+10:52 four or six months you notice it pretty
+10:54 earlier than you collected all day
+10:56 you got all the stakeholders and you
+10:58 told them hey uh
+11:00 folks this is not going anywhere let's
+11:02 uh let's
+11:03 stop it yeah yeah
+11:06 exactly so that that was a pretty hard
+11:09 decision today because it was my first
+11:11 months in the company so
+11:13 no one knows me and and then at some
+11:16 point i just show up and say hey guys we
+11:17 need to close this
+11:18 project it leads nowhere but yeah i i
+11:21 had to
+11:22 think this presentation through i think
+11:24 i spent the whole day actually creating
+11:25 this presentation
+11:27 because it was pretty important at that
+11:29 point
+11:30 yeah we have a comment from pierre
+11:32 pierre saying that that's why
+11:34 having a data product manager is so
+11:36 important so these are
+11:38 the kind of people who actually who can
+11:40 say
+11:41 no yeah so this is not useful for for us
+11:44 we shouldn't spend time uh doing this
+11:46 and the story i mentioned i also have a
+11:48 story a similar story and actually back
+11:50 then we didn't have a data product
+11:51 manager
+11:53 and probably if we had things would have
+11:55 worked out
+11:56 differently but the story was i worked
+11:59 at the ceo company ceo stands for search
+12:01 engine optimization
+12:03 and so for ceo
+12:06 the main idea is let's say you have a
+12:09 website
+12:10 and for this website you want to
+12:13 uh rank for certain keywords so let's
+12:15 say if you're selling monitors
+12:17 if you're selling some hardware so you
+12:19 want to run for to rank on google when
+12:21 somebody enters
+12:23 in google monitors berlin you want to to
+12:26 be first there so that's the idea
+12:29 behind zero and yeah
+12:32 so this was a sale company
+12:35 and we wanted to build a keyword
+12:36 recommended project so let's say we have
+12:38 customer
+12:39 who uses some keywords um and we say
+12:43 okay
+12:43 you seem to be writing about monitors
+12:45 how about
+12:46 writing an article that would compare 4k
+12:49 monitors
+12:50 versus i don't know 8k monitors
+12:52 something like this like basically
+12:54 giving suggestions for keywords to rank
+12:57 right and um yeah so and if you think
+13:01 if you think about this this is a
+13:03 classic recommender system
+13:05 so in a collaborative filtering approach
+13:08 so you have like this huge matrix and in
+13:11 this matrix you have
+13:12 rows which are your users right you have
+13:16 in our case it was clients then you have
+13:18 columns which are items
+13:20 um like an e-commerce that could be like
+13:22 fonts or
+13:23 whatever uh in our case it was keywords
+13:26 and let's say you put one
+13:28 if this customer uses this keyboard
+13:30 right so you have this huge matrix
+13:33 and then you use things like alternative
+13:35 uh
+13:36 least squares or things like this to
+13:39 [Music]
+13:40 to basically to factorize this matrix
+13:42 and
+13:43 this way you encode your users and your
+13:46 items in certain vector space and then
+13:48 you can compute similarity and find
+13:51 and suggest for this user what are the
+13:54 items that
+13:54 could be interesting for this user so
+13:57 this is all great
+13:58 in theory and we thought okay this is
+14:00 straightforward we should follow this
+14:02 approach
+14:03 and we spend a couple of months training
+14:05 this model so
+14:07 collecting the data cleaning data
+14:09 preparing it in the right format
+14:11 then evaluating it tuning it trying
+14:14 different libraries
+14:15 it was a lot of fun work right so this
+14:16 is what data scientists love to do
+14:18 so we really love doing this kind of
+14:20 work like kaggle like
+14:22 especially when there is a good data set
+14:24 and we had a good data set
+14:26 and we had really great evaluation
+14:29 metrics
+14:29 so after a couple of months we go to we
+14:32 present it we say
+14:34 this is so cool let's implement this we
+14:37 go to
+14:38 the engineers who are supposed to help
+14:40 us they look at this and they say
+14:42 no there is no way we are going to
+14:44 integrate this into the
+14:46 existing existing in architecture
+14:50 so the problem there was that
+14:51 architecture was based on edward stamda
+14:54 and for those who don't know like a
+14:56 couple of years ago
+14:58 there was a very strict limitation on
+15:00 the size of the
+15:02 uh on the size of your projects because
+15:06 it should be
+15:07 below 50 megabytes or something like
+15:09 this which is a pretty tough case
+15:11 considering how many different libraries
+15:13 we
+15:13 tried to put there so it was it was very
+15:16 difficult so we would spend
+15:18 like there we spent a couple of months
+15:20 more working with engineers to
+15:22 actually to reduce the size of this
+15:24 package we
+15:26 evenly implemented some things from
+15:27 scratch because we didn't want to depend
+15:29 on some libraries
+15:30 because they were too heavy and
+15:33 finally we did it and nobody wanted to
+15:37 use it
+15:39 so that was uh like it was a great
+15:41 project great idea then
+15:43 uh some engineering challenge which we
+15:45 overcame but then
+15:46 nobody needed it and that was
+15:50 very sad right uh because
+15:53 yeah simply clients didn't care about
+15:55 this customers didn't
+15:56 need these recommendations and um
+16:00 yeah so in retrospect now uh maybe what
+16:04 i've
+16:04 done what i would have done instead is
+16:07 just i would spend a few days
+16:09 to manually come up with these
+16:11 recommendations so i would select a
+16:13 sample of her clients
+16:14 and i would work with the domain expert
+16:16 with some sales specialist
+16:18 to suggest some keywords for these
+16:20 clients
+16:21 and then maybe just send them emails or
+16:25 something like this just
+16:26 test if the customers are interested in
+16:28 these two words
+16:29 if we see that they are interested okay
+16:31 yes we spent a couple of days verifying
+16:33 it
+16:34 but if we see that they aren't we spent
+16:37 uh
+16:38 only a couple of days doing this manual
+16:39 work but it saved us four months of uh
+16:42 of work so this is so we just over
+16:46 engineered
+16:47 having some hypothesis that customers
+16:48 would like a feature but they
+16:50 turned out not to like it well it
+16:52 resonates yeah 100 correlates with the
+16:54 book that i'm currently reading
+16:56 four steps to epiphany so it's on
+16:58 startups and their business models
+17:00 and they describe exactly this problem
+17:02 that some startups
+17:04 yeah they cherish this product
+17:08 model product development model which
+17:10 doesn't work really well for startups
+17:12 often
+17:13 and it's better to switch to customer
+17:15 development model and they describe
+17:16 exactly this approach where you start
+17:18 with a trial group we you make sure that
+17:20 you cr
+17:21 you are creating a feature that uh
+17:22 customers need and they are you are
+17:24 solving their
+17:25 pain in the next and um then you you
+17:28 keep iterating in the agile approach
+17:30 and yeah exactly this is a story where
+17:32 you've all over engineered
+17:34 and there is actually a very important
+17:35 skill not to use machine learning
+17:38 that you are acquiring yeah i think uh i
+17:41 haven't read this book but i
+17:43 heard about this thing called design
+17:45 thinking maybe you heard about this
+17:47 uh it's about what you mentioned it's
+17:50 about uh
+17:50 thinking of the customer first and then
+17:52 going from the problem they have
+17:55 validating things as fast as possible
+17:58 okay
+17:59 and one of the things i mentioned in my
+18:01 story was about
+18:02 uh this engineering part about this
+18:05 infrastructure part when engineers said
+18:07 hey
+18:07 no and this is also
+18:11 for us data scientists this is what we
+18:13 don't like so
+18:14 what we like is going to kaggle uh
+18:17 trying different models tuning
+18:18 parameters coming up with
+18:20 nice features with smart features this
+18:23 is fun
+18:23 right but when it comes to deploying
+18:25 models when it comes to the engineering
+18:27 part behind machine learning
+18:28 then for many uh it's not as fun as that
+18:32 part
+18:33 and so for me when i was uh interested
+18:36 in getting into machine learning i was
+18:38 actually thinking not about the
+18:39 engineering part but about this fun
+18:42 part right yeah and uh yeah i know i
+18:46 watched your talk
+18:47 which you gave a couple of years ago
+18:50 when you worked in some adventist
+18:51 dirt is not advertising company and you
+18:55 had some issues with the serving layer
+18:57 and yeah so maybe you can uh talk about
+19:00 this story you can
+19:01 uh tell us in more details what happened
+19:04 there
+19:04 yeah yeah indeed i had exactly the same
+19:06 problem where you i kept
+19:08 iterating on improving the model while
+19:10 the problem was
+19:11 was lying actually in a different place
+19:13 and as you can guess it was
+19:15 in the infrastructure around the model
+19:17 so
+19:18 uh yeah that happened when i switched
+19:21 from my phd studies and joined
+19:23 the male the true group so it's a
+19:25 russian 80 giant
+19:27 so well everyone knows google in russia
+19:29 we have a
+19:30 great google competitor yandex and male
+19:33 the true group
+19:34 is maybe the greatest yandex competitor
+19:37 in russia
+19:38 so they also have a search system and i
+19:40 think in russia
+19:41 uh due to morphology and all the
+19:44 different
+19:44 challenges of the russian language so
+19:46 yandex is still leading i guess it owes
+19:48 something like 50
+19:49 of the search market well google is very
+19:51 close with something like
+19:53 47 and then male the true group had
+19:56 these three percent
+19:58 but these three percent were already
+19:59 yeah huge revenue or something like
+20:02 billions of rebels so maybe dozens or
+20:04 maybe hundreds of millions
+20:06 of dollars per year and uh we had
+20:09 grading boosting uh for this search
+20:11 system so it's highly optimized c plus
+20:13 plus implementation of
+20:14 grading boosting and well you know
+20:16 boosting can do
+20:17 classification regression and ranking
+20:19 with with some specific losses it's it's
+20:21 very good for ranking problem
+20:23 and then we had the task of content
+20:24 recommendations so we had several
+20:26 partners so uh websites with uh
+20:29 different news so
+20:30 with different content like yeah
+20:32 commerce and hacker
+20:33 and things like that and then you you
+20:36 know these uh
+20:38 recommendations like more like this or c
+20:40 also and then you show some uh
+20:42 four or five further yeah related pieces
+20:45 of content and then
+20:46 there is an easy monetization scheme you
+20:48 just replace one of the recommendations
+20:50 your conditions with an ad and then here
+20:52 here is clear
+20:53 monetization and we had a problem that
+20:56 in offline experiments
+20:57 in cross validation uh we grading
+21:00 boosting and all the three based methods
+21:01 like
+21:02 random forest we are very good but then
+21:05 in
+21:05 when we deployed it in production in in
+21:07 the online experiment we noticed that a
+21:09 heuristic was actually beating
+21:11 the gradient booster model and a
+21:12 heuristic was very simple so in this
+21:15 recommend content recommendation tasks
+21:17 there is a very strong baseline
+21:19 uh just three letters yeah ctr so click
+21:22 through rate so you
+21:24 um you show some ad or maybe some
+21:27 content
+21:27 a hundred times you measure how many
+21:29 times it was clicked let's say seven and
+21:31 then
+21:31 you've got this seven percent ctr and uh
+21:34 for ads ctrs are pretty low about
+21:36 typically one to three percent uh but if
+21:39 you just rank all your content by ctr
+21:41 uh in reality you have to take care of
+21:44 excluding some
+21:45 nudity some content which cannot be
+21:47 shown but we worked with partners we
+21:49 were pretty sure that
+21:50 this content can be shown and just
+21:53 ranking by cdr is very
+21:54 is a very good baseline and we our
+21:56 feature our heuristic was a
+21:59 base mostly based on ctr so it's like
+22:01 weekly ctr
+22:02 with some trend we added a monthly ctr
+22:04 with some small coefficient
+22:06 and then it was only beamed into 10 uh
+22:09 age and gender groups so that was a
+22:12 fairly simple solution and
+22:15 and then i iterated on improving the
+22:17 model so i applied active learning i
+22:20 created different features
+22:22 i tried to to improve the model itself
+22:24 its architecture hypermeters and so on
+22:26 so i just yeah i was still in my phd
+22:28 program so i
+22:29 approached the problem as a machine
+22:31 learning researcher
+22:32 uh and then in some three or four months
+22:35 i was
+22:35 actually realized that it's a high
+22:36 loaded system and the model was limited
+22:39 to
+22:40 some 80 milliseconds to create to make a
+22:42 prediction
+22:43 and if it fails if it times out you
+22:45 cannot show just a blank you have to
+22:47 replace it with some
+22:48 uh quick and dirty solution and in such
+22:51 serious uh
+22:52 production systems they typically have
+22:54 uh last hope solution so at least in
+22:56 search systems they
+22:57 called it last hope solution typically
+22:59 it's a very very reliable heuristics
+23:01 like in this case just
+23:03 sorting by ctr and in the weekend when
+23:06 everyone's off
+23:07 you know and the main production system
+23:09 failed
+23:10 this this solution should work all the
+23:13 time
+23:13 and i guess there's there were only two
+23:16 cases when
+23:17 this last hope solution also failed uh
+23:20 not in my practice but
+23:21 uh it's yeah this these things should
+23:23 work 100 reliably
+23:26 uh and so what turned out actually is
+23:28 what that
+23:29 our grading boosting solution was timing
+23:32 out
+23:33 at some points in some 10 percent of
+23:35 cases and
+23:36 it was replaced with this last hope
+23:38 solution and in the end we i tested not
+23:41 purely a grading boosting solution but
+23:43 this mixture of grading boosting
+23:44 predictions with these
+23:45 with this heuristics and so when i fixed
+23:49 this uh
+23:50 it it just rocketed so uh and the fix
+23:53 was pretty simple so
+23:54 uh initially we also started all the
+23:56 content by ctr and reading boosting
+23:58 would just re-rank top thousand
+24:00 documents
+24:01 and i we just replaced it with 300 so
+24:04 just re-ranking 300
+24:06 document uh was working
+24:09 exactly the same in terms of precision
+24:11 and recall and things like
+24:12 all the metrics and it was much faster
+24:14 and uh yeah now
+24:15 the project is is bringing money and
+24:18 all is good uh but well the lessons that
+24:22 i learned there is that uh
+24:24 well first of all i spoiled my
+24:26 relationships with a manager
+24:28 at this point so four months was too
+24:29 much for such a project
+24:32 where we already had a working solution
+24:34 a nice grading boosting model
+24:36 and there was a bit of pressure to
+24:38 deliver it earlier
+24:40 and at the time i launched
+24:43 a side project this open machine
+24:44 learning course and i was maybe
+24:46 distracted and
+24:47 so my personal lesson learned was that
+24:49 hey
+24:50 sometimes you need to earn reputation
+24:52 and you need to work really hard
+24:53 on focused on a single problem and
+24:56 another conclusion was that
+24:58 uh yeah it's just going beyond your
+25:00 jupiter notebook so in a project just go
+25:02 to your
+25:03 developers backenders ml ops dev dev ops
+25:06 just make sure what's happening to the
+25:08 model at each stage so from data
+25:10 collection to
+25:10 training deployment then all the way to
+25:13 model life cycle management
+25:14 and just yeah it's good to understand
+25:16 all the specific technical details
+25:18 uh just to avoid such problems which are
+25:21 more related to infrastructure
+25:23 rather than to machine learning itself
+25:25 yeah interesting
+25:26 so basically uh so you had a smart model
+25:29 but most of the time it was replaced
+25:31 by this basic basic by a simple
+25:34 heuristic and you found out
+25:36 about that uh only later or only after
+25:39 running these experiments and
+25:41 i guess you spent quite a few time
+25:43 trying to figure out what's going on
+25:44 right
+25:44 yeah exactly yeah i imagine going
+25:48 through all these slopes and then trying
+25:50 to
+25:51 uh to figure out what's uh what's going
+25:53 on there
+25:54 yeah and uh but these things for
+25:57 data scientists they are not easy um and
+26:00 i remember
+26:00 um so when working with data science
+26:04 uh uh like even though i had some
+26:07 engineering experience
+26:08 before so i was previously a java
+26:10 developer i think he also had some java
+26:12 experience before
+26:13 doing uh doing machine learning anyways
+26:17 so uh i remember that the way i was
+26:19 doing things
+26:21 was not far from you know best practices
+26:24 so
+26:25 i would uh just ssh to the server to the
+26:28 production
+26:29 server records uh so i would just ssh
+26:33 there and i would do
+26:34 git pull and then it would go like i
+26:37 would have a special branch called
+26:39 production
+26:40 in my git so everything that is in this
+26:42 branch
+26:43 is this is the production code and then
+26:46 i would ssh to the machine
+26:47 to the production server and then i
+26:49 would
+26:51 basically do git pull and it
+26:54 would pull the the latest changes and i
+26:56 eventually even set up a crown tab like
+26:58 it would
+26:59 it would pull automatically every minute
+27:01 so i wouldn't need to
+27:02 actually ssh to the machine it would
+27:04 just do this automatically and of course
+27:06 every time there is a sum back
+27:08 i don't know even simple things like uh
+27:10 syntactic mistake
+27:11 of course i didn't have any integration
+27:13 tests there to
+27:14 to check before uh put in there so let's
+27:18 say in python i forgot to put this
+27:20 column right and then basically the
+27:21 thing crashes and so i would need to as
+27:23 i said to the machine
+27:25 revert it or do something to fix it yeah
+27:28 it was annoying
+27:30 and then at some point i left the
+27:31 company and somebody
+27:33 unfortunately needed to deal with all
+27:35 this mess uh
+27:37 and i heard many complaints but
+27:39 eventually like real engineers
+27:41 uh took over and redid everything with
+27:44 uh
+27:45 proper techniques like cicd yeah you
+27:48 know
+27:48 all that and you a couple of times
+27:52 oh i don't think it was just a couple i
+27:54 think it was
+27:56 because i had i still have lunches with
+27:58 my colleagues from there
+27:59 and um yes they still do
+28:05 yeah uh yeah so did you have uh
+28:08 anything similar in your experience yeah
+28:11 yeah exactly so
+28:12 when i switched teams in mail the true
+28:14 group
+28:15 i joined a predictive analytics group
+28:18 and
+28:20 overall that was a very successful
+28:22 project because it dealt with marketing
+28:24 and
+28:25 so we had a business intelligence
+28:27 solution so
+28:29 an app which would uh create
+28:32 nice dashboards with key marketing uh
+28:34 metrics
+28:35 like ltv retention monthly users
+28:39 large payments and it was related to
+28:41 mobile games and
+28:43 some of the tasks were to identify uh
+28:46 whales we call them so those players who
+28:48 would pay
+28:49 yeah uh dozens of thousands
+28:52 of dollars per month so just identifying
+28:55 highly paying
+28:56 users and so they had a nice
+29:00 app creating reports on these metrics
+29:02 and i was the first guy to introduce
+29:04 predictions so just as you create ltv
+29:07 reports
+29:08 we we would then create reports with ltv
+29:11 predictions
+29:13 and uh it's a funny experience because
+29:15 we had this
+29:16 start startup vibe in a giant company so
+29:19 although
+29:19 there was a very large company though in
+29:22 this small team i was the first guy to
+29:24 to set up machine learning and pipelines
+29:26 to basically say
+29:27 i was setting up the production i just
+29:29 yeah you know just starting with a
+29:31 jupiter notebook
+29:32 again yeah just creating some snippets
+29:34 then switching to pycharm to create some
+29:36 nice project with you know
+29:37 object-oriented programming some
+29:38 basic tests and so on uh but then i
+29:41 would drop
+29:42 these predictions in a csv file and
+29:44 another guy at the ender would
+29:45 pick them up and rsync so just copy them
+29:48 to another server
+29:49 and then we have very similar issues
+29:51 here without any ci cd
+29:53 we you know just if ids wouldn't match
+29:56 we would go on ssh and fix problems in
+29:59 in this production and
+30:00 this backhander didn't like us so he was
+30:02 cursing us
+30:03 data scientists because i guess we
+30:04 earned 50 more than him
+30:07 and that's that was very annoying that
+30:09 he had to deal with all these issues
+30:11 uh and yeah indeed so um
+30:14 then at some point i migrated to the
+30:16 netherlands and um
+30:18 uh i dropped the project but uh i think
+30:21 now it's successful so it's the
+30:23 it's in active development and now guys
+30:26 actually developed the best practices
+30:28 there with all the ci cds code reviews
+30:30 and so on but i indeed had this
+30:32 startup vibe even in a large company
+30:36 you you have to go through this
+30:37 experience right you have to
+30:40 try to do things incorrectly before you
+30:42 learn to to do things correctly
+30:44 yeah yeah and uh yeah just going on with
+30:48 this idea of startups so
+30:49 at the same time i i joined a fintech
+30:53 startup
+30:54 so one one of the huge advantages of
+30:56 companies like
+30:57 well google facebook linkedin uber and
+30:59 all the others and in russia these are
+31:01 yandex
+31:02 mail the true group and um maybe spare
+31:05 okay so one of the advantages is uh
+31:08 the network so there are many many smart
+31:11 guys and
+31:12 at some point one of the yeah
+31:15 pretty important directors of a huge
+31:18 department
+31:18 he for some reason he he passed my
+31:21 course
+31:22 which i gave at mail the drew group so
+31:23 machine learning and he invited me to
+31:25 join a fintech startup
+31:27 uh so the guys were actually
+31:30 they came up with an idea to sell
+31:32 bitcoin in a mobile app
+31:34 yeah pretty simple uh well actually
+31:38 uh yeah such applications such banks
+31:41 already existed in
+31:42 in europe and but in russia i guess they
+31:44 had to solve many legal issues
+31:46 and uh revolut actually existed at that
+31:48 point already so it was also built by
+31:50 russians but then moved to
+31:51 great britain and they already solved
+31:53 these legal issues to sell
+31:55 uh bitcoin in the mobile app okay so
+31:58 they were doing the same in russia but
+32:00 and they also bought something like four
+32:03 and a half thousand gpus to mine bitcoin
+32:06 uh but then at some point they realized
+32:08 that well you need special hardware
+32:10 to mine bitcoin and then gpus are not
+32:12 cool anymore and they had this
+32:14 factory somewhere in the center of
+32:15 moscow while yeah you need cheaper
+32:17 electricity you need you need to
+32:18 outsource
+32:19 these factories somewhere to you know to
+32:21 hydra electro station somewhere
+32:23 far away and
+32:26 so at some point they realized they have
+32:28 they had
+32:30 uh four and a half thousand gpus uh and
+32:33 then they
+32:34 they needed to sell better so that
+32:36 that's why they included
+32:37 ai in their pitch decks and uh
+32:40 that's why i was the first guy uh doing
+32:43 some ai
+32:44 for their startup well from day one i
+32:48 told no i'm not going to predict bitcoin
+32:50 prices i just don't believe in that
+32:52 okay maybe again maybe maybe if you have
+32:54 if you have a huge team of garrett smart
+32:56 guys
+32:56 and you you can do something like that
+32:58 in five years but uh i
+33:00 i refuse to do that alone and uh i was
+33:03 solving the task of uh
+33:04 yeah sentiment analysis of yeah on
+33:07 bitcoin
+33:08 news well the idea was that was to
+33:10 create
+33:11 something like sentiment barometer which
+33:14 would daily
+33:15 yeah show you the sentiment around
+33:17 bitcoin
+33:18 uh and well i was simply playing around
+33:21 with some state-of-the-art
+33:22 the art solutions in nlp so that was
+33:25 before
+33:25 hug and face released their uh easy to
+33:28 use api so i would
+33:30 fetch some github repo spent almost
+33:34 all day just trying to launch something
+33:36 and then eventually i i bet i i've
+33:38 beaten
+33:38 tfif and logistics regression by some
+33:40 three percent
+33:42 uh and uh yeah and then at some point
+33:45 they
+33:46 the startup had troubles raising money
+33:48 and they
+33:49 decided to that they don't need ai
+33:51 anymore
+33:53 so yeah a solution well um yeah
+33:56 eventually my solution
+33:57 didn't end up in in production or at
+33:59 least uh yeah
+34:00 it was not bringing money uh but that
+34:03 was actually a great experience and
+34:05 uh on the go i also learned that
+34:08 sometimes yeah labeling can be
+34:10 prohibitively expensive so we had some
+34:12 australian financial experts we had a
+34:14 special telegram chat with some 15 guys
+34:16 uh that was a fun that was fun just
+34:19 talking to them but
+34:21 they were labeling this data and that
+34:23 was prohibitively expensive so
+34:25 at some point i switched to a mechanical
+34:27 turk i was also labeling some of the
+34:29 data
+34:29 myself and we also learned this lesson
+34:31 like hey you can spend
+34:33 too much money just labeling data
+34:36 yeah and it will still not be good
+34:38 enough right yeah
+34:40 do you know what happened with the gpus
+34:42 with all these gpus
+34:45 at some point they explored the problem
+34:47 the idea to to sell it to
+34:49 to deep learning researchers so
+34:53 yeah you on one side you you've got
+34:55 these all these miners
+34:57 with uh many gpus and on another side
+34:59 you've got deep learning researchers who
+35:01 need
+35:01 cheap compute and then you can build
+35:03 this bridge
+35:04 uh i know one startup already did that
+35:08 and i think this this startup also came
+35:11 to an idea to
+35:12 just rent gpus i don't know how they get
+35:16 rid got rid of all these gpus
+35:18 yeah it'd be probably not so easy to get
+35:21 did you say four and a half uh thousands
+35:23 yeah
+35:24 forty five forty five hundred yeah yeah
+35:27 yeah that's
+35:28 uh that's a lot of gpus yeah you need to
+35:30 get
+35:31 so so many and then you move to the
+35:33 netherlands right after working at this
+35:35 startup
+35:36 yeah yeah exactly and i think uh so
+35:39 did you have this uh startup uh on your
+35:43 linkedin profile did you include it in
+35:44 the linkedin
+35:46 um no not actually so there was some
+35:50 maybe four or five months experience and
+35:52 well i didn't mention them because i
+35:54 don't want
+35:55 any marketing interests to be heard uh
+35:58 yeah so uh yeah i don't want to mention
+36:01 this startup
+36:02 okay so that's uh one of the things he
+36:05 data scientists don't mention on the acp
+36:07 like small startups that uh
+36:09 mining bitcoins right yeah exactly
+36:13 and then you move to the netherlands and
+36:15 uh
+36:16 yeah so and he worked at a telecom
+36:18 company can you tell us
+36:19 more about that what did you do there
+36:21 yeah yeah so then i
+36:23 yeah i switched to nlp and uh in this
+36:26 telecom company
+36:27 i also worked on a huge data well not
+36:30 huge but there is a
+36:32 actually a data mining test so you think
+36:34 of data mining as
+36:35 according to its definition so you've
+36:37 got a large data set and you want to
+36:39 find some useful signal
+36:40 somewhere there and so we had exactly
+36:42 these problems so
+36:44 at the telco operator we had many chats
+36:47 calls emails
+36:48 with different complaints and actually
+36:50 there is a
+36:51 huge signal there so there are all the
+36:53 different problems reported by a chats
+36:55 calls emails
+36:57 well it was all in dutch so i used
+36:58 google translate a lot
+37:00 but you can imagine people mentioned
+37:03 that they are pissed off by some of
+37:04 these services they
+37:06 they have some technical problems and so
+37:07 on and so i
+37:09 i built a service that would just
+37:10 classify this into different
+37:13 uh broad groups like yeah billing
+37:15 general service
+37:16 uh churn so anything related to yes
+37:19 customer satisfaction and things like
+37:21 that
+37:22 um that was also fun uh i had to work
+37:25 with dutch language
+37:26 at that time there were no good
+37:28 pre-trained uh
+37:29 transformer models in dutch
+37:33 and so we explored how we can how we can
+37:37 train a model in english and then run it
+37:39 with dutch and so all this multi-lingual
+37:41 linguality and well in the end we
+37:45 um i worked in a data science department
+37:49 and
+37:50 it was not properly managed so that was
+37:53 in general data science for such a
+37:54 company was like a
+37:56 luxurious car like lamborghini uh it's
+37:59 cool expensive but what if you don't
+38:01 know how to drive it
+38:03 so i think for for these managers of
+38:04 this uh very old company
+38:06 that it was a challenge how to manage us
+38:08 so we we had one project which uh
+38:10 yielded revenue and there was also a
+38:12 small cool story about
+38:13 about this project so it's uh
+38:17 called bad debt so it's very similar to
+38:19 credit scoring so when you when you go
+38:21 to
+38:21 to a shop and you'd like to take a loan
+38:24 for a mobile phone
+38:25 they yeah they run a model which is
+38:28 akin to credit scoring and so i went in
+38:31 my first days in the netherlands i went
+38:33 to the to kpn store to
+38:35 to buy a mobile phone for my wife and
+38:37 iphone of course
+38:38 uh and then their system rejected my
+38:42 application for the loan
+38:43 uh and well the model was built by my
+38:46 colleagues so i went to them like hey
+38:48 guys
+38:48 why why was i refused so i was literally
+38:51 able to go
+38:52 through through the learned coefficients
+38:54 with a shep or
+38:56 just visualize coefficients and
+38:57 understand why i was rejected uh and the
+39:00 killer feature was
+39:01 uh residents per meter i had only a
+39:03 temporary permit for
+39:05 less than one year and well typically
+39:08 what scammers would do they
+39:10 uh they just come to the netherlands
+39:13 from
+39:13 some other uh country they they take
+39:16 hundreds of
+39:16 mobile phones in loans and then they
+39:19 would escape and sell these
+39:20 phones uh elsewhere and uh so if you
+39:24 if your residence per meet is shorter
+39:25 than one year you can be
+39:28 rejected so that was a
+39:31 project yielding revenue some several
+39:33 millions per year
+39:34 and that was a card blanche for for us
+39:36 to do research to explore ideas so that
+39:39 was cool so
+39:39 this so first of all i had a perfect
+39:41 team there so just
+39:43 all the guys around me they were so nice
+39:46 and
+39:46 uh it was the yeah the working style was
+39:49 so
+39:49 relaxed especially after russia so
+39:52 friday's
+39:52 uh working from home you were looking
+39:54 for work-life balance right
+39:56 yeah yeah so i moved to netherlands for
+39:58 some work-life balance yeah and um
+40:00 um but we had too much freedom
+40:04 uh so i i used this time to do research
+40:06 i
+40:07 with amsterdam data science i launched
+40:08 an initiative on exploring transfer
+40:10 learning in nlp
+40:12 and that was nice because it led me to
+40:14 to and to my new job so
+40:17 yeah my would-be boss just wrote an
+40:20 email to me like hey i know you from
+40:21 amsterdam date science would you like to
+40:22 join as a senior machine learning
+40:24 scientist
+40:25 uh but um yeah in the end
+40:28 if you maybe it's a bit philosophical
+40:30 but if if you've got too much
+40:32 freedom and you you you are lacking some
+40:35 sense of impact that's also not good for
+40:37 your motivation
+40:38 and with all these lockdowns i yeah i
+40:41 switched to another company
+40:45 and uh as a conclusion here from that
+40:47 part so i i've got one more
+40:49 good question during the interview so i
+40:52 the question is
+40:53 as simple as how many projects
+40:56 yielding revenue do you actually have
+40:58 running right now in production
+41:00 you mean questions to the potential
+41:03 employer right
+41:08 [Music]
+41:10 so then it's uh like a red flag
+41:14 well maybe yeah yeah so yeah then you
+41:17 know
+41:17 well i i like coming up with pocs with
+41:20 these
+41:20 proof of concepts and doing research but
+41:22 uh at the same time i don't want you
+41:24 to feel this lack of impact
+41:28 okay yeah that's uh interesting story i
+41:31 liked your metaphor about a luxurious
+41:33 car
+41:34 that is cool but expensive and it's
+41:36 probably not easy to find
+41:38 people management who knows how to
+41:40 actually drive this car
+41:42 especially in more traditional companies
+41:45 like telecom companies
+41:47 and uh yeah so what i often saw
+41:50 is uh these companies they work with
+41:53 consultants like mckinsey
+41:54 bcg or whatever so they talk to them and
+41:58 the consultants say
+42:00 you don't seem to be doing ai but you
+42:03 should be
+42:04 like hire us and we will tell you how so
+42:07 they of course hire
+42:08 and these consultants are saying hey you
+42:10 need to hire like two three data
+42:12 scientists so they start hiring them
+42:14 and then of course consultants are very
+42:16 expensive so companies
+42:19 and their contracts with them and so now
+42:21 a company has
+42:22 two three data scientists and needs to
+42:24 figure out what to actually do with them
+42:26 and uh yeah that's i i didn't
+42:30 uh personally experience that but uh i
+42:32 heard
+42:33 these stories from other people that at
+42:36 the end
+42:36 most of these projects weren't
+42:37 successful and then people would just
+42:40 be left alone like having too much
+42:43 freedom so they would spend some time
+42:45 playing kaggle
+42:47 but you can play kaggle only so much
+42:49 like you can play
+42:50 like for two months three months but
+42:53 then uh
+42:54 like you start feeling bad about doing
+42:57 this at work
+43:02 [Laughter]
+43:08 so just want to remind that if you want
+43:10 to ask any question about anything you
+43:12 can um
+43:13 go to your live chat and there is a link
+43:16 to slider
+43:17 which is where you can put a question
+43:19 and we actually have a question from
+43:22 it's not related to our topic today but
+43:25 i'm curious to
+43:26 to know what is your take on that we
+43:28 already talked about
+43:29 kaggle a bit although like doing this
+43:32 at work when your company doesn't know
+43:35 how to keep you busy
+43:36 so the question is how important is it
+43:39 to have a digital
+43:40 presence for landing a data science job
+43:42 something like github pages personal
+43:45 data science blog active twitter account
+43:47 kaggle and things like this
+43:49 yeah i wouldn't say it's of critical
+43:51 importance but it's a good additional
+43:53 feature so
+43:54 uh i would say the most important part
+43:57 in an interview is
+43:58 just being able to describe your
+44:00 projects your in
+44:02 impact in that project in a disciplined
+44:04 way and
+44:05 as i tend to see it gets more and more
+44:07 important as you
+44:09 your role matures so when you're a
+44:10 junior you might be
+44:12 challenged to you know to write a
+44:13 fibonacci generator or
+44:15 take a derivative of some crazy function
+44:17 but as you mature yeah they
+44:19 they get more interested in how can you
+44:22 actually change the company and the
+44:23 processes
+44:24 and that's why it's good to show uh your
+44:27 experience from other projects
+44:28 especially if you
+44:30 changed the way the company runs some
+44:32 processes
+44:33 that's very important to to describe it
+44:37 and um so the first exercise that i
+44:39 would recommend to everyone again is
+44:40 just to go through your linkedin profile
+44:42 and just analyzing your
+44:44 past experience and being able to
+44:45 describe your
+44:47 all of your projects in detail
+44:50 and using active verbs uh i think google
+44:54 has a nice instruction on how to
+44:56 to reflect these in your cv so
+44:59 really stating what you what was your
+45:01 role in the project so things like that
+45:04 and all the rest i still think this is
+45:06 uh this is important
+45:07 of course yeah my um yeah public
+45:10 uh activities helped me a lot so like
+45:12 even having
+45:13 a open machine learning course and
+45:16 having a guitar prepo with uh 7 000
+45:19 stars
+45:20 wouldn't hurt i cannot imagine the
+45:23 scenario there
+45:25 it would hurt well maybe i actually can
+45:27 i think you mentioned that
+45:28 one of your managers didn't really i
+45:30 wasn't really happy about that
+45:32 when you had this important project i
+45:34 think yeah yeah indeed so there's a very
+45:36 subtle trade-off so
+45:37 uh i always kept some couple of hours
+45:39 per day
+45:40 for for any creativity reading blogs
+45:43 uh writing blogs and things like that so
+45:46 uh maybe it's also a way for me to to
+45:49 avoid burnouts
+45:50 and so honestly i just i'm
+45:53 not fascinating with an idea to work
+45:55 really hard for the company
+45:57 why would you right so well let's hope
+46:01 nobody
+46:01 from your current managers oh your
+46:04 current managers are from the
+46:05 netherlands they
+46:06 take these things uh easier right i mean
+46:09 yeah yeah absolutely
+46:10 in europe usually work life balances
+46:13 maybe some of my colleagues i will also
+46:15 listen to this but well anyway
+46:17 uh anyway i understand that if you if
+46:20 you work
+46:21 12 14 hours per day for your own startup
+46:23 if you believe in that
+46:24 if you think it's revolutionary you
+46:26 actually have still little chance to
+46:30 to to rocket with this startup but but
+46:32 still
+46:33 i understand that you can live at work
+46:36 working for your own startup but i
+46:38 honestly don't understand
+46:40 putting so much effort into someone
+46:41 else's company
+46:43 unless of course you are motivated with
+46:45 some stocks and it makes sense
+46:47 that's why i always left a couple of
+46:49 hours per day knowing knowing that i
+46:51 i would be distracted some cool stuff
+46:53 like you know reading about causal
+46:55 inference or quantum machine learning
+46:56 or things like that i yeah i i just
+47:00 found this well for me the trade-off was
+47:03 to
+47:04 so just one more one more hack yeah just
+47:08 arrange a meeting with yourself it's
+47:10 every day from nine
+47:12 to one pm uh you just create a meeting
+47:15 with yourself and it's your focus time
+47:17 uh you you'll likely you won't be
+47:19 distracted so sometimes of course you
+47:21 have important meetings and
+47:22 you are asked to reschedule but most of
+47:24 the time yeah you can do your stuff
+47:26 well as a data scientist you can go into
+47:28 code
+47:29 and i used the time also to to work a
+47:31 bit on my site projects on my public
+47:33 activities
+47:34 blogging shooting videos and so on well
+47:37 indeed uh indeed i had some negative
+47:39 experience with that as well so this
+47:41 mailed a true project the first one i
+47:44 was maybe a bit uh
+47:45 too involved in running this open
+47:48 machine learning course and uh yeah
+47:50 the yeah my my main task at work
+47:54 suffered so yeah there there's a very
+47:56 subtle
+47:57 trade-off here but i certainly recommend
+47:59 having some public activities some nice
+48:01 talks so if you
+48:03 uh if you have solved some problem with
+48:05 a b tests and you can share your
+48:06 experience and you can describe all the
+48:08 nitty-gritty details and the caveats and
+48:10 how you resolve the issues
+48:12 that might be already available yeah
+48:14 piece of information for someone else
+48:16 and if you
+48:17 create five six seven talks like that
+48:19 you can already be recognized within
+48:21 closed circles and that would uh
+48:24 definitely help
+48:26 but it's really hard to put a label on
+48:28 it how valuable that is
+48:30 in terms of spending your money so it's
+48:32 a very personal uh
+48:34 so it's just indeed against subtle
+48:36 trade-off here
+48:37 yeah well i think it is uh like it just
+48:40 gives you a lot more opportunities that
+48:42 you
+48:42 otherwise would have right so one way
+48:45 let's say uh if you want to measure this
+48:49 in terms of money so then you can see
+48:51 this the next time you change a job
+48:53 you can get a higher bump for your
+48:55 salary right
+48:57 so how much you can get so you can maybe
+49:00 just apply for a job and then you'll get
+49:02 a job
+49:03 uh but if you have some online presence
+49:05 then people will recognize you and then
+49:07 maybe you can just ask for
+49:08 more money and then this is how you can
+49:10 measure of course like
+49:12 uh to do a proper statement you would
+49:14 need to run it properly because you need
+49:16 to to take a group of people who do not
+49:18 have public activity
+49:19 then take a group of people who have
+49:21 public activity and then
+49:22 make them change the job and then see
+49:26 that would probably takes quite
+49:29 some time to run this experiment but
+49:31 yeah my gut feeling is that it helps
+49:34 one thing you mentioned is um at the
+49:36 beginning like when you were answering
+49:38 this question
+49:39 that uh when you describe here when you
+49:41 go through your linkedin profile
+49:44 you take your experience your job and
+49:46 then you
+49:47 need to to measure somehow to quantify
+49:51 the impact you had on your projects
+49:53 but what if these projects had negative
+49:55 impact you basically wasted six months
+49:57 of
+49:58 your uh time working on something that
+50:00 resulted in nothing
+50:02 and uh yeah and you decided okay you
+50:04 want to look for a new job
+50:06 like how do you like because this is the
+50:08 kind of thing we don't mention in our
+50:10 cities right so i wouldn't say
+50:12 on my cd that i invested wasted so much
+50:15 time of
+50:16 my company working on this project that
+50:19 resulted in nothing right so
+50:21 like it doesn't really put me into a
+50:24 good
+50:26 how to say light so it's not i don't
+50:29 become attractive by saying that
+50:31 uh so do you have any recommendations
+50:33 how we can actually
+50:35 have this uh i don't know active verbs
+50:38 and
+50:39 measurable impact on our cvs when
+50:42 our projects aren't that great
+50:46 yeah that's a very good question and so
+50:48 all the stories that they share here
+50:49 they are
+50:50 about this inconvenient truth that you
+50:53 actually exactly yeah you're you're it's
+50:55 self-promotion and it's uh your linkedin
+50:57 profiles
+50:58 uh yeah it pursued some marking
+51:01 goals actually uh which is a euphemism
+51:05 for
+51:05 just lying you know
+51:08 yeah so yeah this marking self-promotion
+51:11 yeah these are
+51:12 yeah put it putting it a bit more
+51:16 politically correctly it's not 100
+51:18 truthful
+51:19 and um well i still think it's worth it
+51:22 so
+51:22 yeah even if you have a negative
+51:25 experience so you can still
+51:26 sell it so i would i think next time i
+51:29 am in
+51:29 an interview i would describe this
+51:32 language quality project where i
+51:33 actually took a decision to
+51:35 close the project until it's not too
+51:37 late so yeah failing fast
+51:38 so i think it's uh first of all i
+51:42 i i've got a gut feeling that no not so
+51:45 many candidates describe
+51:46 such negative experiences and these can
+51:49 uh actually underline this this
+51:52 difference so i can
+51:53 well maybe a bit show off just
+51:55 describing my
+51:56 negative project but i also think it's
+51:58 more about the decision making
+52:00 so i i think next time i can actually
+52:02 describe
+52:04 such a project uh well but
+52:07 if you just want to put it on linkedin i
+52:09 would say
+52:10 yeah then then probably you you don't
+52:13 need to be very specific about all the
+52:14 financial goals in the projects and
+52:16 things like that so just describe it in
+52:18 general
+52:19 um yeah i have some on my linkedin
+52:22 profile i also have some pretty general
+52:24 descriptions because
+52:25 well because of all the issues discussed
+52:27 here uh yeah just be
+52:29 sure that um talking to her to to your
+52:32 next potential employee employer you can
+52:35 you can defend this project and you can
+52:37 also share some lessons learned from the
+52:39 project
+52:41 yeah nice suggestion so we still have uh
+52:44 some time left um
+52:46 and maybe you have uh one or two stories
+52:49 you want to share
+52:50 yeah of course yeah i have or maybe just
+52:52 general tips uh i don't know
+52:53 up to you i have a couple more funny
+52:56 projects uh
+52:57 well yeah they
+53:01 uh yeah get us back to my youth probably
+53:05 um well
+53:09 also i'm also not very comfortable about
+53:12 business trips and maybe i can share a
+53:14 story about
+53:16 russian system integrator so um
+53:19 in my master's i i switched to
+53:22 yeah i joined a company while it's in
+53:25 russia and its name wouldn't tell you
+53:27 anything but it's um it's an oracle
+53:29 partner in russia and they had a very
+53:32 primitive monetization scheme they well
+53:35 half of all their revenue was coming
+53:37 came from reselling oracle licenses
+53:40 so for all small different companies
+53:43 across russia
+53:44 who want to cooperate collaborate with
+53:46 oracle they just go through
+53:48 this system integrator and then they buy
+53:50 the licenses so it's
+53:51 half of the whole revenue another 49 was
+53:55 the revenue coming from a corporate uh
+53:57 studying center so they just gave
+53:59 courses on
+54:00 uh databases uh management
+54:04 java and so on and now only
+54:07 one percent of all the revenue came from
+54:09 the actual development
+54:10 and uh that's approximately the role of
+54:13 data science in general in business just
+54:15 one percent of the whole revenue
+54:17 uh yeah very simple heuristic yeah
+54:20 and uh and uh well i spent i was still a
+54:24 student so i spent uh
+54:26 more than a year in a corporate center
+54:27 so i need to be grateful to this
+54:29 employer so yeah they invested a lot in
+54:31 into me so i studied all the yeah even
+54:34 even hadoop
+54:35 at that point uh but then when i joined
+54:38 the actual projects i went to
+54:40 to russian city perm it's well it's
+54:42 almost siberia it's very close to
+54:44 ural mountains so yeah you've got this
+54:47 euro mountains separating
+54:48 europe from asia and so pyramids just a
+54:51 bit to the west from euro mountains and
+54:52 to the east
+54:53 yeah it goes siberia starts basically
+54:56 oh well so so i went in to a business
+55:00 trip where i needed to so at the time i
+55:02 worked as a business intelligence
+55:04 architect so the work itself was
+55:07 actually pretty
+55:08 pretty good so uh uh at some times
+55:11 challenging so you
+55:12 you work with a corporate data warehouse
+55:15 then you need to build some logic around
+55:17 the warehouse and then you also have a
+55:19 presentation layer and the final go is
+55:21 to
+55:21 to make creating reports very easy so
+55:24 that you
+55:24 just with a couple of clicks you create
+55:26 a nice dashboard with which you can
+55:28 show to your manager ceo or anyone
+55:32 so sometimes it was challenging i needed
+55:33 to to think
+55:35 well but uh think
+55:38 at work sometimes uh but at the same
+55:42 time this
+55:42 business trip was it was really crazy so
+55:45 uh they sent us in in winter in
+55:47 perm it's minus 30 and
+55:50 project manager did not take into
+55:52 account that we actually
+55:53 live in a hotel in the weekend so uh
+55:56 their
+55:57 term their financial wasn't
+55:59 actually
+56:00 thought through well and they just made
+56:02 us work
+56:03 uh in the weekends as well uh and
+56:07 there was uh yeah that taxi would pick
+56:10 up
+56:10 uh us up at uh some 7 30
+56:14 a.m uh and then uh yeah again at minus
+56:17 30.
+56:18 it was windy so we just jump into the
+56:20 taxi so the taxi drives us to the
+56:22 company
+56:23 and then we sit there till 8 pm and then
+56:26 back another taxi back to the hotel and
+56:29 then you don't see
+56:30 the sun at all uh and
+56:34 well yeah and i had three business trips
+56:38 like that one of them was just three
+56:40 weeks in a row with with weekends so
+56:43 just 21
+56:44 days in a row at some point i said no
+56:48 i don't care i after working after this
+56:50 old saturday at work i just said no
+56:52 i brought an um i played ice hockey
+56:56 with uh with permian with guys from perm
+56:59 i i just said no i'm i'm not working on
+57:01 sunday but of course it
+57:03 it's i i could have been fired i don't
+57:05 know uh
+57:06 so now i'm maybe a lesson learned from
+57:09 this story is that you
+57:11 you need to be careful actually with the
+57:12 business trips um
+57:14 and well i also have a feeling that you
+57:18 you have to work more
+57:20 in a business trip and to satisfy your
+57:22 customer and i to be honest i just don't
+57:24 enjoy this business model where you have
+57:26 to satisfy your customers
+57:28 so because well these data science
+57:29 projects at least at least data science
+57:31 projects they are
+57:33 very risky so you you always have a have
+57:35 a risk that you
+57:36 that the project is not profitable and
+57:38 then you you gradually turn into your
+57:41 customers
+57:41 slave i don't like the this that feeling
+57:44 and as for business trips maybe someone
+57:46 would
+57:46 argue maybe well of course it's a way to
+57:48 explore uh the country
+57:50 the world but what i also see in naspers
+57:53 let's say yeah i know
+57:55 your company belongs to naspers
+57:58 we have its headquarters here in
+58:00 amsterdam and i know the guy
+58:01 from this company it's it's a crazy
+58:03 lifestyle so this week you're one week
+58:05 you're in brazil another week you're in
+58:08 guinea than to russia and
+58:11 of course it's very challenging for your
+58:14 work-life balance
+58:15 yeah well now things are different now
+58:19 they don't need to travel that much
+58:21 because well things are
+58:22 in zoom anyways but maybe next year
+58:25 the life will get back to normal and
+58:28 they will be back to
+58:29 on the plane again yeah we'll get back
+58:32 to their
+58:34 normal or
+58:36 maybe somebody uh some maybe somebody
+58:40 will not
+58:41 yeah so um it's time to wrap up do you
+58:43 have any
+58:44 last words before we finish yeah i just
+58:47 wanted to say that
+58:47 well these um failures are
+58:51 fine to some to some point well unless
+58:53 you're fired
+58:54 and i think it's a very nice experience
+58:57 and it's it's good to understand that
+58:59 well all the people around you are there
+59:00 not actually not all of them are much
+59:02 better than you
+59:03 so there's only one well maybe
+59:06 0.3 percent of people are of course
+59:09 smarter than you but
+59:10 all the people all your colleagues they
+59:11 are not robots they they're
+59:13 they're not bringing millions every
+59:17 every year to their companies and so
+59:19 it's well important to understand that
+59:20 they also have their failures so it's a
+59:22 i think it's
+59:23 it's good for your self-esteem uh but at
+59:26 the same time these failure failures are
+59:28 very
+59:28 important i think to to live through so
+59:32 it's okay to
+59:33 to make mistakes and uh so you can
+59:35 listen to talks like like this one but
+59:37 it's still
+59:38 important to to just uh feel it on you
+59:41 with your own skin
+59:42 uh and uh whatever
+59:46 doesn't kill you makes you stronger
+59:49 yeah right so you have to try doing
+59:51 these things ssh into your production
+59:54 environment and then deploying things
+59:56 through github
+59:57 to feel like how good things can be
+1:00:00 like when you do it properly yeah well
+1:00:03 i'm not recommending to do this actually
+1:00:05 but it's
+1:00:06 something that by doing this you see
+1:00:11 the benefits of doing things normally
+1:00:14 like the right way yeah so far
+1:00:17 yeah finally i can only wish you all the
+1:00:20 good failures that don't make you leave
+1:00:23 the company
+1:00:24 yeah thanks how can people find you
+1:00:29 uh twitter whoa i have to
+1:00:33 to recall my my nick there i think it's
+1:00:35 i'll put this in the description okay
+1:00:36 okay
+1:00:37 yeah twitter linkedin what are they yeah
+1:00:40 i've got a youtube channel yeah so i'm
+1:00:42 mostly
+1:00:42 active i guess on twitter yeah okay so
+1:00:46 i'll put your twitter in
+1:00:47 the in the description if people want to
+1:00:49 reach out to you
+1:00:50 they can use twitter thanks for finding
+1:00:52 time to
+1:00:54 to join us today i know you have a tight
+1:00:56 schedule this is the first
+1:00:58 talk you give today so i imagine that
+1:01:00 now you want to
+1:01:01 take some rest from talking maybe drink
+1:01:03 some hot tea
+1:01:04 i don't know yeah so thanks for joining
+1:01:08 us today for sharing your experience
+1:01:09 with us
+1:01:10 thanks for talking about things that um
+1:01:14 then like not everyone would be
+1:01:16 comfortable talking about
+1:01:17 things like this so thanks for uh for
+1:01:20 doing this
+1:01:21 and also thanks for everybody for
+1:01:24 joining us today and for watching
+1:01:25 our chat with yuri yep my pleasure yeah
+1:01:28 thanks for having me

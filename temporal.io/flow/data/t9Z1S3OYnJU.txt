@@ -1,0 +1,1710 @@
+Making Sense of Data Engineering Acronyms and Buzzwords
+
+0:00 hi everyone thanks for joining us today
+0:02 this event is brought to you by data
+0:04 talks club which is a community of
+0:05 people who love data
+0:07 we have weekly events
+0:09 this event is one of such events
+0:11 so to find out more about the events we
+0:14 have there is a link in the description
+0:16 just click on this and you'll see all
+0:17 the events we have
+0:19 in our schedule there are two types of
+0:21 events so today we have a live interview
+0:24 which is more like a podcast live
+0:26 conversation and then we also have
+0:28 webinars on tuesday so check them out
+0:32 and if you like our events you can
+0:34 subscribe to all our events at the same
+0:36 time by just subscribing to a google
+0:39 calendar
+0:40 and then don't forget to click this red
+0:42 button
+0:43 this will subscribe
+0:44 to our amazing channel and you will not
+0:47 miss any event
+0:48 and join our slack because
+0:51 we
+0:52 talk
+0:53 a lot about interesting things there
+0:55 about all data related things so do join
+0:58 it if you haven't
+0:59 and during today's conversation you can
+1:02 ask any question you want so there is a
+1:04 link
+1:05 pinned in the live chat so just click on
+1:07 this link
+1:08 ask a question and we will be covering
+1:11 these questions
+1:12 during the interview today
+1:14 so that's all
+1:16 and
+1:17 yes now i just need to pull
+1:20 the questions and
+1:22 i ready
+1:25 yep
+1:26 okay and i am almost ready
+1:30 so okay
+1:32 so
+1:33 this week we'll um
+1:36 we'll try to make sense of common
+1:38 engineering acronyms and buzzwords
+1:41 with help of our special guest today
+1:43 natalie natalie works at airbyte
+1:45 focusing on building user experience and
+1:47 overseeing analytics here experience
+1:50 expertise in scaling analytics teams and
+1:53 systems from the ground up welcome
+1:56 thank you happy beer
+1:58 before we go into our main topic of
+2:01 understanding these acronyms and
+2:03 buzzwords let's start with your
+2:05 background can you tell us about your
+2:07 career journey so far
+2:08 yeah sure so
+2:10 uh i've been in startup tech for my
+2:13 entire career uh i actually started out
+2:16 in the bay area at box uh doing
+2:18 marketing operations uh then moved into
+2:20 marketing analytics at a company called
+2:22 admiral
+2:23 really went uh deeper into analytics
+2:25 there uh learning r sql with python
+2:30 and really ended up becoming an
+2:32 acquisition analyst so looking at both
+2:34 marketing and sales and how they
+2:35 interacted and so building out
+2:37 multi-touch attribution models and
+2:39 things like that
+2:40 uh so after that i moved a little bit
+2:41 more into operations uh called app
+2:43 dynamics uh which ended up being
+2:45 acquired by cisco and then uh moved to
+2:48 actually manage my own team at a company
+2:49 called keeptruckin uh which was focused
+2:52 on more that iot space filling out
+2:54 dashcams
+2:56 elds for trucking the trucking industry
+2:59 uh and so there i built out a team of
+3:01 about 11 analysts already from marketing
+3:04 sales to a customer success and product
+3:06 uh and then moved on to harness uh doing
+3:10 a customer success ops role so it really
+3:12 just kind of straddled that analytics
+3:14 and operation space and now i'm in
+3:16 airway doing growth and analytics yeah
+3:18 thanks so what does airbite do
+3:22 yeah so airbyte is an extracting load or
+3:25 elt uh with the transform being the t uh
+3:29 platform that essentially allows you to
+3:31 ingest a lot of different data from
+3:34 sources like uh maybe apis like adwords
+3:37 or facebook ads or even data data
+3:40 warehouses uh like snowflake and bring
+3:42 them into your data warehouse
+3:46 yes we mentioned the few things
+3:47 transform ingest and elt and explain
+3:50 what we wanted to talk today about is uh
+3:53 actually this is a question i get
+3:54 sometimes not super often but this pops
+3:57 up
+3:58 is like what's the difference between
+4:00 elt etl all these acronyms what they
+4:03 actually mean and that's why we um have
+4:06 a conversation today to finally um
+4:10 figure out that and help everyone else
+4:12 with that so let's start with etl so
+4:15 which is probably the oldest concept
+4:17 from data engineering and i think it was
+4:19 used even before
+4:20 the term data engineering existed i
+4:22 think it's pretty old like from coming
+4:24 from business intelligence times or even
+4:27 older i don't know so what is etl
+4:30 yeah so
+4:31 etl
+4:32 exactly what they stand for is e is the
+4:35 extract t is the transform and l is the
+4:37 load so when we think about eto we're
+4:40 really thinking about extracting is the
+4:43 source-specific routines where you pull
+4:45 selected data out of an external system
+4:47 uh the transform layer is kind of like
+4:49 your specific business logic so your
+4:51 organization is going to have some sort
+4:54 of logic that really defines uh maybe
+4:56 how you pull the data or certain use
+4:59 cases that you have that are operational
+5:01 and then the loading piece is where you
+5:03 have
+5:04 destination specific routines to push
+5:06 data into a place where it's going to be
+5:08 consumed
+5:10 and so that's kind of the traditional
+5:11 way you think about it
+5:13 can you think of an example like let's
+5:15 say so there are some sources right so
+5:18 we extract data from these sources
+5:20 we transform this data somehow and then
+5:22 put in a
+5:24 literary house right this is what you
+5:26 said so can you think of an example like
+5:28 you mentioned something like facebook
+5:30 ads or something like this
+5:32 yeah so uh generally you might see uh
+5:35 if you're working in maybe the marketing
+5:37 space you'll be dealing with uh you're
+5:39 like your data is kind of stored in
+5:40 google adwords because you're running
+5:42 data uh or you're running ads on google
+5:45 or maybe same thing with facebook uh if
+5:48 you're working in sales your data might
+5:50 be stored in salesforce your crm
+5:52 if you're working in finance it might be
+5:54 stored in maybe netsuite and so all of
+5:56 these different uh api sources all house
+5:59 some data that your business needs to
+6:02 build some sort of picture of how the
+6:04 business is doing and so that would
+6:06 those sources would be the places that
+6:08 we would extract from
+6:10 and then so we extract this from let's
+6:12 say yeah so your background is more
+6:14 marketing as i understood so
+6:17 you would
+6:18 you would want to extract some things
+6:20 from google adwords from facebook right
+6:22 and then there is something interesting
+6:24 in this data that you want to
+6:27 then uh
+6:28 do some transformation let's extract you
+6:30 call google adwords it returns you some
+6:33 data and then you want to transform this
+6:36 data right
+6:37 yeah exactly so one really good use case
+6:40 that we could speak to here uh just to
+6:42 be a little bit more concrete is
+6:44 what is your cost to acquire a customer
+6:46 and the acronym cap so in order to get
+6:49 to that you need to know how many
+6:50 customers that you've actually acquired
+6:52 from let's say google adwords and you
+6:54 also need to know how much is he
+6:56 actually being spent to acquire those
+6:57 customers and the only way to really uh
+7:00 concretely bridge those things
+7:02 uh is to actually pull out data from
+7:04 your crm which stores all of your
+7:06 revenue information and also where they
+7:08 came from and then also pull out the
+7:10 spend data from from that more upper
+7:12 funnel source and then merge those
+7:14 together using that transform capability
+7:18 and then everything eventually goes to a
+7:19 data warehouse
+7:21 which you use for building reports and
+7:22 then you see what is the
+7:25 how much money you spend right and all
+7:27 this exactly
+7:28 yep and so the way that you'd kind of
+7:31 finish out the process is once it's
+7:33 loaded into data warehouse then
+7:36 in this traditional etl model you'd have
+7:38 essentially have sort of like a data
+7:40 mart specifically saying hey this is the
+7:43 data mart that answers that question and
+7:46 then you would have maybe a
+7:47 visualization tool like looker or
+7:49 superset in order to show you from a
+7:51 visualization perspective bring it out
+7:53 to the business so that they can
+7:54 actually consume the insights
+7:57 okay and what is uh elt then
+8:00 why like why do we want to switch this
+8:02 to
+8:03 yeah so i think the the traditional way
+8:06 to think about this is a little bit just
+8:07 more inflexible so
+8:09 you know business logic changes a lot of
+8:11 the time and
+8:12 you're going to receive friction
+8:14 whenever you need to change part of this
+8:16 pipeline so because you're transforming
+8:19 it before you load it into data
+8:20 warehouse
+8:22 it's actually difficult to actually
+8:24 bring in new data if let's say there's a
+8:26 new table or a new field that gets added
+8:29 to let's say salesforce uh new data that
+8:31 you're collecting or a new data source
+8:34 it's fairly inflexible to essentially
+8:36 just go ahead and add those things in
+8:39 it often will actually force data to
+8:42 just completely be re-extracted
+8:43 completely which is much more compute
+8:46 and much more time than than really
+8:48 necessary for small changes like this
+8:50 uh
+8:51 you also have this lack of autonomy so
+8:53 what we've seen is generally these elt
+8:56 tools are actually managed by
+8:59 engineering teams
+9:00 and so when analysts who are working
+9:02 more so with the business have these
+9:04 needs they actually have a dependency on
+9:07 an external team to actually go and
+9:09 complete those which of course uh
+9:11 creates more cycles uh it's more time to
+9:14 to really make these changes and really
+9:17 the the crux of it is it requires
+9:19 engineering to be actually involved
+9:22 so
+9:24 yeah
+9:25 so elt
+9:28 is is really generalizing the e and the
+9:31 out so instead of having the transform
+9:34 be in the middle there elt is the t is
+9:37 at the end so instead of having a tool
+9:39 to actually manage the transformation
+9:42 for you you're actually
+9:44 bifurcating the el and the t so
+9:47 everything is loaded into your data
+9:49 warehouse and then the transformation
+9:51 the transformation happens after uh the
+9:54 data is loaded and the transformation
+9:55 actually happens within the data
+9:57 warehouse itself the destination
+9:59 yeah thanks
+10:01 yeah we already have a comment about uh
+10:04 transform so
+10:05 the question is um
+10:08 can we
+10:09 like
+10:11 can we
+10:12 like when you say transform can you say
+10:14 more to understand what is happening
+10:16 here like kind of yeah maybe like what
+10:18 kind of transformations do we
+10:20 do we run
+10:22 yeah yeah so definitely can be more
+10:23 specific about that so uh it can go from
+10:26 the very basic
+10:27 the most simple uh transformation i can
+10:30 think of is something like changing a a
+10:33 column type from a let's say a numeric
+10:36 to a character so that's like a very
+10:38 basic transformation it's it's almost
+10:40 like it's a casting of a column to a
+10:42 different data date type or data type uh
+10:44 the more complex transformations
+10:46 generally will join across different
+10:48 data sources and so you'll say i want to
+10:51 grab
+10:52 adwords data and salesforce data
+10:54 join them using some kind of unique
+10:56 identifier and then figure out how to
+10:59 show these data sources alongside each
+11:01 other in some sort of finalized data
+11:03 model
+11:04 so
+11:05 generally we think of these as
+11:07 transformations that you're running in
+11:08 sql so these are can be very simple sql
+11:11 statements or pretty complex ones
+11:13 but those are from the two uh two ways
+11:16 that i see transformation being done
+11:18 and when you swap
+11:20 t and l so t comes at the end so you set
+11:24 the reason for this is when t is in the
+11:26 middle in the etl it's not flexible
+11:30 because business logic changes right and
+11:32 then you also depend on engineering
+11:34 teams and i imagine let's say
+11:37 if the data we extract from the source
+11:41 we don't need the entire
+11:43 response from the the like we were
+11:45 talking about ads
+11:47 so if we like about marketing
+11:50 so
+11:51 this service gives us some response and
+11:53 let's say we keep only one part of this
+11:55 response right so if we're interested in
+11:57 how much money we spend right
+12:00 so we keep only this we
+12:02 transform it and we load it to our data
+12:04 very house only this specific part right
+12:07 and if later somebody comes and says hey
+12:09 what about
+12:11 some other thing from you know google
+12:13 adwords and then you okay sorry because
+12:16 our t was only keeping this part and we
+12:18 don't have the rest of the data right
+12:21 and
+12:21 by keeping the entire thing
+12:24 and then doing the transformation later
+12:26 if somebody comes to us and asks for
+12:28 something extra then the data is there
+12:30 we just
+12:31 write another transformation on top of
+12:34 the data that we already extracted right
+12:36 exactly
+12:39 and uh yeah and this depending on
+12:42 engineering teams uh
+12:44 i'm curious how does it help analysts to
+12:47 be more independent now why do they know
+12:49 do they not depend on engineers now
+12:52 yeah so generally analysts do operate uh
+12:55 within the our analytics teams operate
+12:58 within the data warehouse itself uh and
+13:01 so i know you recently had a
+13:03 interview with victorian analytics
+13:05 engineer so there's this kind of rise of
+13:07 this role of the analytics engineer
+13:09 which is a role that's generally found
+13:11 on the analytics team which essentially
+13:13 is uh managing the the process from the
+13:16 pipelines to the data warehouse and
+13:18 building out that transformation layer
+13:20 so instead of business analysts or
+13:23 product analysts going to the
+13:24 engineering team which generally is kind
+13:26 of more focused on maybe data platform
+13:29 or data infrastructure it's actually
+13:31 this kind of rise of this role of the
+13:32 analytics engineer that allows there to
+13:34 be autonomy within the analytics team
+13:36 itself and that allows them to
+13:39 not only understand the business and the
+13:40 business need and impact but also be
+13:42 able to make their changes very quickly
+13:45 so basically now
+13:46 every like analysts were not necessarily
+13:50 strong engineers we have an analytic
+13:52 engineer who can help them if something
+13:54 in there
+13:55 if something is more complex than the
+13:57 usual just right in the usual sql career
+13:59 right yeah and i think a lot of these uh
+14:02 transformations can honestly be be done
+14:05 using uh using sql and that's just very
+14:08 ubiquitous it's very well understood
+14:10 it's very much very common language and
+14:12 so
+14:13 the the act though i guess the the level
+14:16 of access or the level of ability to
+14:18 kind of access and build your own
+14:20 transformations is that that barrier is
+14:22 much lower and so
+14:24 uh you know even if let's say the team
+14:26 is so small that you don't have an
+14:28 analytics engineer you're essentially
+14:29 empowering your analysts to essentially
+14:31 be much more full stack and say now that
+14:34 the data is in the data warehouse all i
+14:36 have to do is write sql using something
+14:38 like dbt and then i can essentially
+14:41 service any any kind of requests or or
+14:45 generate any insights autonomously and
+14:47 that reduces my time to be able to
+14:50 make uh
+14:51 positive relationships with my
+14:52 stakeholders
+14:54 yeah and also because the data is
+14:56 already extracted so i guess you have
+14:58 fewer steps to run right
+15:00 or if it's already extracted right yeah
+15:03 and honestly a big part of it is also
+15:05 speed so because it's already there and
+15:08 because these data warehouses have
+15:10 really scaled out how much time it takes
+15:13 to really do the compute and uh the cost
+15:16 of storage is also uh way less uh and
+15:19 has has reduced a ton over time uh the
+15:23 the amount of speed it takes to actually
+15:25 just even do these compute calculations
+15:27 is much lower
+15:30 and you also mentioned one thing when
+15:32 talking about etl is this thing called
+15:35 data mart
+15:36 and we also talked about the data
+15:38 greenhouse so what are those so what is
+15:41 the data mark what is the data warehouse
+15:43 what is the difference between this
+15:45 yeah absolutely so i think of uh data
+15:48 warehouses as a place also to
+15:52 store data marts so when i think about
+15:54 data warehouses there's an ingestion
+15:57 layer and so
+15:58 uh some
+16:00 users of ours they'll call it a
+16:02 ingestion db and so maybe you in within
+16:04 your data warehouse you have multiple
+16:06 databases and that first layer is almost
+16:09 like that kind of the raised form that
+16:12 comes from
+16:13 thereby so you hook it right up to let's
+16:15 say snowflake your data warehouse and
+16:17 you have a database called ingestion db
+16:20 and that's essentially you don't touch
+16:22 it but
+16:24 that is where your next kind of layer
+16:26 comes from which could be maybe a common
+16:28 layer which is uh something that maybe
+16:30 several teams can draw from in order to
+16:33 build out the data bars so data marts
+16:35 are very specific to us like maybe as a
+16:38 use case like uh maybe
+16:41 let's we can use marketing again in this
+16:43 case
+16:44 you could say i'm going to build a data
+16:46 mart to serve
+16:47 maybe a dashboard that i'm going to
+16:50 build in like superset or looker
+16:52 and so that data mart specifically
+16:54 contains the uh
+16:56 the adwords spend the facebook spend
+16:58 kind of aggregates all expense together
+17:00 builds out how many leads came in from
+17:02 those how many customers actually
+17:04 converted from those and actually serves
+17:06 a marketing use case you can
+17:09 on the same level uh produce marketing
+17:11 or produce data marks for sales or
+17:13 finance or products as well but they'll
+17:15 kind of serve a certain use case for the
+17:17 business
+17:19 so data mart is basically a bunch of
+17:21 tables within a database right if i
+17:24 understood it correctly
+17:25 yeah it's post transformation and and so
+17:28 i think you can have a lot of different
+17:30 types of data tables but the ones that i
+17:33 uh
+17:34 i would
+17:35 consider a data mart it's kind of like a
+17:37 finalized table it's almost like a
+17:40 production ready a business user can
+17:42 take this and there are enough kind of
+17:45 guardrails in place so that they when
+17:47 they do pull metrics out of it they're
+17:49 sanitized they're ready to use and and
+17:52 the business user can trust the data
+17:54 that comes out of there
+17:55 and this ingestion database is
+17:57 everything that comes before
+17:59 uh data mart right so this is where the
+18:01 data that is maybe dirty or not cleaned
+18:04 or
+18:05 like that is not
+18:06 aggregate this is not something that
+18:08 business users
+18:09 can use right
+18:11 exactly it's the browsed form so we
+18:14 generally wouldn't want uh business
+18:16 users to be pulling off the raw's
+18:18 formula data because they'll probably
+18:19 have to do some transformation that
+18:22 transformation might not be consistent
+18:23 across different users in the business
+18:25 and so in order to reduce
+18:28 uh the potential mistakes or different
+18:31 interpretations of the data down the
+18:33 line in analytics team or generally
+18:35 that's why that transformation layer
+18:37 exists to kind of separate and bifurcate
+18:39 the ingestion from the actual business
+18:42 users and the data marks that they use
+18:46 okay
+18:47 so
+18:48 previously like in etl so we would
+18:51 extract some data we would immediately
+18:53 do the transformation on the fly without
+18:54 perhaps saving it and then put it into a
+18:57 data warehouse or a data mart so now the
+19:00 data that we extract we first put it to
+19:02 the ingestion layer where we
+19:04 injection database sorry where we keep
+19:07 it right and then we run transformation
+19:09 on top of this and then we
+19:12 put it again to
+19:14 to some tables that we call a data mart
+19:16 right this this is where the data that
+19:19 is
+19:20 used by the final users by the business
+19:22 users this is where we keep it right
+19:26 yeah exactly and so
+19:27 does this going back to this elt versus
+19:30 etl
+19:31 previously these transformations might
+19:33 have been done outside the data
+19:34 warehouse now that we're bringing it
+19:36 into the data warehouse that's the
+19:38 biggest difference here is that
+19:39 transform layer is is essentially
+19:41 operating within the destination and
+19:43 then does the transformation creating
+19:46 new tables within the desk this exact
+19:48 same destination
+19:50 and what is a data lake
+19:53 yeah i mean
+19:54 it's interesting because uh like a data
+19:56 lake is
+19:57 has some similarities to data warehouses
+20:00 but uh you know the data lake is much
+20:03 more unstructured so when we think about
+20:04 data warehouses they're they're all
+20:07 relational tables they all just set
+20:09 schemas uh and so
+20:11 you can very easily pull from them using
+20:14 sql
+20:16 um and so when we think about data lakes
+20:18 they're a little bit more unstructured
+20:20 and i'd say they're
+20:22 um the place that i've seen it be very
+20:24 be very useful is when as i keep
+20:26 tracking and we were in the iot business
+20:29 so we had a data warehouse we had
+20:31 snowflake but
+20:33 the uh
+20:34 the data that we had on all of our
+20:36 customers wasn't always in the table
+20:39 format we would sometimes be collecting
+20:42 videos using our hardware and those are
+20:44 files and those files are not things
+20:47 that data warehouses can store and read
+20:50 that's something that really belongs in
+20:52 a data lake which is a lot more
+20:55 unstructured and can support these
+20:56 different file types
+20:59 so okay basically we just dump
+21:01 everything into a lake
+21:03 and then later figure out how to
+21:05 actually
+21:07 say make it cleaner more organized more
+21:09 structured right
+21:11 yeah it's it's definitely ingestion at a
+21:13 very raw level uh and i know there's
+21:15 there's certain other terms like uh data
+21:18 swamp or things that where you know yeah
+21:20 actually
+21:21 about this what is a data swamp
+21:25 yeah
+21:26 so how can a lake become a swamp
+21:29 yeah i think uh when i've heard that
+21:31 term it's generally because there's
+21:33 maybe low quality or maybe very
+21:36 unrefined data i've also heard this term
+21:39 gonna refer to uh places that are like
+21:42 data lakes that have essentially become
+21:44 large places of just unused data so you
+21:47 put so much in there and then maybe
+21:50 there's so little organization that's
+21:52 very difficult to actually be able to
+21:54 utilize what is in there and maybe over
+21:56 time especially as maybe new people come
+21:59 in all people could leave the team it's
+22:01 it becomes harder and harder to manage
+22:04 what is there and what is usable
+22:06 and so
+22:07 i i think that yeah i've heard that term
+22:10 being used um just as a generic term to
+22:13 kind of refer to uh
+22:15 data lakes that essentially have just
+22:17 low quality maybe on
+22:19 data that that people can't trust yeah
+22:21 so basically when there is another
+22:23 buzzword data governance but i guess
+22:26 this is about you know making sure that
+22:28 your data lake doesn't become uh
+22:33 i mean
+22:37 like when you make sure that you know
+22:38 the data is clean you know what kind of
+22:40 data is there everything is accounted
+22:42 for
+22:43 [Music]
+22:44 like yeah so just keep it more organized
+22:47 i guess
+22:48 the data governance term also definitely
+22:50 applies to data warehouses you most
+22:51 definitely can have
+22:53 uh like i and one company i worked at we
+22:55 had this schema called ad hoc and of
+22:58 course you know
+22:59 people are going to throw things into ad
+23:01 hoc
+23:02 whenever they want there are no rules
+23:03 around it and so part of the governance
+23:06 that we did was how do we ensure that
+23:09 you know certain databases or schemas
+23:12 always are it's always clear what
+23:14 they're used for it's always clear how
+23:16 long things will stay there uh because
+23:18 that's kind of in
+23:20 married into the definition of how is
+23:21 this useful and of course there's always
+23:24 kind of this continual uh
+23:26 inspection of what is there to ensure
+23:29 that it is still relevant or still will
+23:32 be used rather than you know just having
+23:34 kind of like a almost like a trash bin
+23:36 that never gets emptied you want to make
+23:38 sure that your data warehouse or your
+23:40 data lake has that
+23:42 level of
+23:44 quality and relevance
+23:46 maybe not a trash bin but i am thinking
+23:48 about the basement my basement
+23:52 all the things that i don't need right
+23:54 now and i don't know what to do with
+23:56 them so it's like i don't want to throw
+23:58 them out away yet so what to do with
+24:01 them i'll just put
+24:02 them in my basement and figure out what
+24:04 to do with them later so you do you can
+24:06 do the same with data right do i need to
+24:08 track this data
+24:10 maybe i do let's track it let's keep
+24:12 this data and then
+24:14 one year later you have this uh
+24:16 huge data source that nobody uses right
+24:19 and
+24:20 so it becomes
+24:22 yeah
+24:23 exactly
+24:24 yeah yeah so and we also talked about
+24:27 this ingestion layer and ingestion
+24:29 database and we talked about the data
+24:31 lake and i'm wondering like to me they
+24:34 look similar like are they
+24:38 like first of all are they similar and
+24:40 uh
+24:41 are they the same or
+24:43 those are different things
+24:45 yeah i think uh and airbag actually came
+24:47 out with a good article on this too and
+24:49 maybe we can put in the links on maybe
+24:51 the the difference and how they might be
+24:53 converging in some ways i would say
+24:55 there's still relevance for both right
+24:57 so uh data lakes are obviously going to
+25:00 be more flexible they're going to be
+25:01 able to support a lot of
+25:03 a lot more different file types and
+25:05 structures and so that's the thing that
+25:08 data warehouses
+25:10 don't do and so
+25:12 there's a kind of a purpose for both i'd
+25:15 say that
+25:16 from what i've noticed that
+25:18 data warehouses are generally very
+25:21 helpful for maybe small or intermediate
+25:23 sized teams and as your needs grow and
+25:26 become more complex maybe your
+25:28 organization gets larger you may need to
+25:30 move to the data lake structure
+25:32 that offers the flexibility and uh
+25:35 it might be something that you know as
+25:37 your as your team organization grows you
+25:39 might have to kind of weigh the pros and
+25:40 cons of of even having uh adding a data
+25:44 link in addition or potentially
+25:45 migrating fully
+25:47 but
+25:48 a lot of the functionalities of the
+25:50 industry are i think allowing for the
+25:52 flexibility to choose between a data
+25:54 lake and a data warehouse
+25:56 so basically ingestion database is a
+25:58 part of a data warehouse right so maybe
+26:01 this is one of the tables in uh
+26:03 in the data warehouse let's say if we
+26:05 talk about snowflake this can be one of
+26:07 the tables there already in a snowflake
+26:09 it's just that the end users the
+26:11 business users or analysts they don't
+26:13 use this particular table right but it's
+26:15 still a part of the warehouse is it
+26:18 right
+26:19 or uh
+26:21 yeah so
+26:22 yeah we were talking about this
+26:24 ingestion layer ingestion database this
+26:26 is where we keep intermediate results
+26:28 right
+26:29 and yeah and to me data lake also seems
+26:31 to me like a place where we keep
+26:33 intermediate results
+26:35 and yeah so i was wondering like first
+26:38 of all like
+26:40 are ingestion these suggestion layers
+26:42 are they a part of a data warehouse
+26:45 or not
+26:46 i i think in the analytics team
+26:49 framework it generally is ingesting into
+26:51 a data warehouse not a data lake because
+26:54 uh they're generally dealing with
+26:56 different apis different sources and
+26:58 then doing that transformation there and
+26:59 of course doing the visualization tool
+27:01 on top so from an analytics team
+27:03 perspective i think the data warehouse
+27:05 is the most relevant
+27:06 where it may not be as relevant as maybe
+27:09 for engineering teams who need uh data
+27:12 lakes to power maybe parts of their
+27:13 application or maybe data science teams
+27:16 who need to parse through lots of data
+27:18 that isn't necessarily in a structured
+27:20 format in order to do their analysis
+27:23 so i think depending on your business
+27:24 use case and sort of like what team
+27:26 you're on and what is helpful for you
+27:29 you you have to make that call of what
+27:31 are the capabilities that you really
+27:32 need to get your work done and and and
+27:35 essentially choose the solution from
+27:37 there
+27:38 yeah and we have a question about do we
+27:42 need to have both a data lake and a data
+27:44 warehouse and i think uh so from what i
+27:46 understood the answer is yes right
+27:49 and
+27:50 so we have the raw data in the lake we
+27:52 have prepared data
+27:54 in a data mart in a data warehouse right
+27:57 and then if somebody like you said in
+28:00 your example was data scientists if they
+28:02 need to pass through raw data they can
+28:04 just go ahead
+28:05 and do this
+28:06 right yeah i think you don't need to
+28:09 have both like
+28:10 we we don't need necessarily in our
+28:12 business to have both it really depends
+28:14 on the complexity of your business uh
+28:16 but like from an analytics perspective
+28:19 generally if i'm on an analytics team i
+28:21 i probably will never touch a data lake
+28:23 i'll probably operate within the data
+28:25 warehouse
+28:26 but i know that there are teams within
+28:28 the organization that might rely on more
+28:30 of a data-like structure instead
+28:33 so
+28:34 yeah i think it really depends on the
+28:35 complexity of the business and what
+28:37 different teams need
+28:38 yeah so i prepared a question but i
+28:41 think you already answered that so let
+28:43 me ask the question and
+28:45 maybe i can answer this and then you'll
+28:48 tell me if i'm
+28:49 right or not
+28:50 so
+28:51 the question is let's say we have an
+28:53 e-commerce online shop
+28:56 and we want to track some events there
+28:58 so clicks so every time user comes to
+29:00 our online shop and selects a product
+29:03 clicks on this product we track this
+29:05 event
+29:06 so these events these clicks they end up
+29:09 in the data lake where we keep the
+29:12 tracks and the clicks
+29:14 and
+29:15 i have a bunch of sql queries to
+29:18 transform these clicks into something
+29:20 else so aggregate calculate some
+29:22 statistics
+29:24 and so i have that and then i'm a data
+29:27 scientist so what i do is i run some
+29:29 machine learning on top of these clicks
+29:31 so for example i have a model that wants
+29:33 to predict
+29:34 for each product how many clicks there
+29:36 will be right so i need to use this
+29:38 information about clicks
+29:40 so
+29:41 i
+29:42 write some sql queries i extract these
+29:44 clicks and i build a model for that
+29:47 and
+29:48 yeah or maybe instead of building a
+29:50 model i just put clicks to into a
+29:52 dashboard and then
+29:54 the top management sees okay in this
+29:56 category we have that many clicks in
+29:58 that category we have that many clicks
+30:00 right
+30:03 and then for orchestrating everything so
+30:06 in our company at least we use airflow
+30:08 typically for this for all these things
+30:12 so is it
+30:13 the question is is it etl or
+30:16 elt and i think let me answer that and
+30:19 you'll correct me i think this is elt
+30:22 because first
+30:23 we
+30:24 dump everything into a data lake right
+30:28 so we don't change the raw events
+30:30 so they we leave them be in the data
+30:33 lake
+30:34 and then there are other jobs other
+30:35 transformation jobs that take the raw
+30:37 data transform and then eventually put
+30:39 this in the model or in the dashboard
+30:42 right
+30:44 exactly yeah like you're not using a
+30:46 tool to do that transformation you
+30:48 yourself are taking all the
+30:51 the data that has been loaded into your
+30:54 your area and then doing something with
+30:57 it exactly yeah all this time i was
+31:00 i thought that airflow is an etl tool
+31:03 but actually it's an elt tool right
+31:07 airflow
+31:09 yeah
+31:10 uh
+31:11 yeah i think it's very much like an
+31:13 orchestrator and it helps to like just
+31:16 schedule but ultimately yeah like
+31:18 airbite has a very good integration with
+31:19 airflow that essentially runs your air
+31:23 uh airbite jobs
+31:25 using airflow and so uh yeah so we also
+31:29 use airflow here
+31:30 i think you mentioned at the beginning
+31:32 what uh airbite is doing so it's uh
+31:35 it's about transformation right so it's
+31:37 about ingesting and then i don't
+31:40 remember something putting into their
+31:42 data warehouse yeah maybe now we
+31:44 uh we try to make sense from all these
+31:46 passwords so we know what the
+31:48 transformation means right so this is uh
+31:51 take data and change it a little bit
+31:53 then ingestion is about putting
+31:56 something into a databare house right
+31:59 and then the databare house is basically
+32:02 the database that we use for all these
+32:04 analytical purposes
+32:06 all right so yeah maybe you can tell us
+32:08 now what airbyte is doing
+32:10 yeah so everybody tackles the el part
+32:13 and that's our uh main goal is to ensure
+32:17 that the el is as seamless reliable as
+32:20 uh you know
+32:21 any other
+32:22 project or market and that you uh you
+32:25 know have a great ex like understanding
+32:27 and expectation of what that output in
+32:29 your like that data warehouse is going
+32:31 to be
+32:32 uh and so we also uh you know integrate
+32:35 really well with dbt right within the
+32:37 product so we're not handling the
+32:39 transformation for say ourselves but we
+32:42 are relying on dbt as a part of our
+32:44 product to ensure that
+32:46 uh analysts can use dbt to do those sql
+32:49 transformations once that data is there
+32:51 so we're we're not uh
+32:54 like a transformer transform product
+32:56 necessarily but we just integrated
+32:57 really well uh with that and have
+32:59 embedded that into our product
+33:01 uh and so one thing i i didn't actually
+33:04 mention earlier is that uh airbite is
+33:07 also open source and so you know we are
+33:10 really focused on building our out our
+33:12 community uh enabling
+33:14 users uh people out there who are you
+33:17 know uh excited to contribute back to
+33:19 our project to enable those people to
+33:22 actually uh build out potentially new
+33:24 connectors or maybe even amend existing
+33:27 ones and contribute back to our project
+33:30 and dbt is also open source right
+33:32 yes exactly so dbt is also open source
+33:35 and it's part of that
+33:36 like modern data stack you could say for
+33:38 uh the evolution towards more open
+33:40 source tools they also have a cloud
+33:42 product
+33:44 yeah so speaking about this modern uh
+33:47 stack so
+33:48 i've heard many times and actually we
+33:50 have to talk about this quite soon it's
+33:52 about this modern stacked for an idea
+33:55 analytics and actually the talk we have
+33:57 is
+33:58 modern data stack for analytics
+34:00 engineering i don't know if there is any
+34:02 like if there is if there are different
+34:04 uh
+34:06 stacks for analytics and for analytic
+34:10 engineering probably that's the same one
+34:12 right
+34:12 so what is that can you tell us a bit
+34:15 about that like which tools are there
+34:17 and uh yeah so why do we even talk about
+34:20 this why it's a thing
+34:22 yeah so
+34:23 why it's a thing is because essentially
+34:26 you are now able to choose each piece of
+34:31 the uh stack individually instead of
+34:34 having a platform approach where one
+34:36 fits all where you have a lot of vendor
+34:38 lock-in you now essentially get to
+34:39 choose best of breed for each of the
+34:41 pieces of the data
+34:42 puzzle so extracted load obviously
+34:45 there's airbright there's also incomes
+34:47 like five trend that have been around
+34:49 for for quite a bit longer from a data
+34:51 warehousing perspective
+34:53 uh you will you have snowflake uh you
+34:55 have databricks bigquery uh amazon
+34:58 redshift uh and then for transformation
+35:00 dbt you could also
+35:02 pretty uh pretty much outside of dbt and
+35:05 all the features it provides you could
+35:07 just write sql uh and and that would
+35:09 also work as well and then from a
+35:11 visualization perspective we see new
+35:13 tools like superset uh being adopted
+35:17 fairly uh uh fairly well and then
+35:19 obviously incumbents like looker or even
+35:21 a tableau
+35:23 and so the
+35:25 yes
+35:26 the idea of the modern data stack is
+35:28 that instead of having one solution that
+35:31 tries to do it all you're essentially
+35:33 picking and choosing the one that really
+35:35 fits what you need the best
+35:37 so basically it's a bunch of tools that
+35:39 work really well together
+35:42 yeah and of course can't forget airflow
+35:44 which does a lot of the orchestration
+35:46 and then there's also this emerging uh
+35:49 this merging space of reverse etl where
+35:52 you'll have tools like um like high
+35:54 touch or census and uh you know even
+35:57 airbright is is thinking about going
+35:59 into the space as well
+36:01 yeah so can you tell us a bit more about
+36:04 this diversity
+36:05 or should it be reverse etl or reverse
+36:08 elt or
+36:09 what is that anyways why it's reverse
+36:11 why do we want to reverse it
+36:13 yeah so reverse ctl is definitely
+36:16 something that uh you know a lot of data
+36:18 teams are trying to already solve today
+36:20 using maybe custom scripts that
+36:22 essentially bring a lot of that analysis
+36:25 that maybe analytics teams do and brings
+36:27 that back into the operational systems
+36:29 that business users actually
+36:33 need that data in so one good example is
+36:36 let's say that an analytics team
+36:39 works on a lead scoring
+36:41 model and essentially it says
+36:44 i have 100 leads i've essentially ranked
+36:46 them using maybe
+36:48 behavioral data demographic data and
+36:51 this information is now they've ranked
+36:53 these leads from one to 100 on how
+36:57 what the priority is on where who you
+36:59 should reach out to but of course
+37:01 traditionally that data would just live
+37:03 in the data warehouse and maybe in a
+37:05 visualization tool too if i'm a sales
+37:07 person i need that data in the system
+37:09 i'm using to actually action on it and
+37:12 in the past what i've seen is data teams
+37:14 will use maybe a python wrapper to
+37:16 essentially push data back into maybe a
+37:19 sales force
+37:21 and so these reverse etl tools they're
+37:23 actually enabling really low code
+37:25 solutions for sales people are or
+37:27 marketers to actually come and
+37:30 essentially just
+37:31 uh
+37:32 kind of like point and click and say i
+37:34 want to copy this table and the output
+37:36 of this table is data warehouse and
+37:38 bring it back into my source system to
+37:40 be able to action on it and you don't
+37:42 have to be technical it's it's pretty
+37:44 loco no code and so that's really
+37:47 something that's very powerful because
+37:49 it essentially allows
+37:51 analytics to be
+37:53 really a function within the
+37:55 organization itself and analysts to
+37:57 really be very aligned with what the
+37:58 business needs
+38:00 so basically before engineers would need
+38:02 to write a bunch of uh scripts for doing
+38:05 this um this is simpson they have their
+38:08 apis that allow to push the data there
+38:11 but
+38:13 i guess it's not easy to maintain these
+38:14 clips and then it's also not the core
+38:17 uh
+38:18 business of the companies to do that so
+38:20 then there are some
+38:22 tools that actually allow you to have
+38:24 this drug and drop experience to say
+38:26 okay
+38:27 this data from this table in my big
+38:29 query on snowflake should go in my sales
+38:33 force or something else right
+38:35 exactly yeah and so i would still call
+38:38 this reverse etl not elt because the
+38:41 transformation is not happening in that
+38:43 source where you're pushing it back to
+38:45 the transformation's still happening
+38:47 before you move it out of the database
+38:50 and so really it's it's actually like a
+38:52 porting uh of the kind of more finalized
+38:55 maybe you could even call it a data mart
+38:57 and bring it back into the source so no
+38:59 transformation is actually happening in
+39:02 like the source system itself
+39:03 uh yeah
+39:05 okay so
+39:06 to make sure i understood the whole
+39:08 picture
+39:09 um so we have some of these tools i
+39:12 don't know like google analytics maybe
+39:14 or no you said google what was that
+39:18 adwords right so like all these systems
+39:20 like google adwords or facebook ads or
+39:22 whatever
+39:23 so we first need to
+39:25 take the data from there and import put
+39:28 it into our data warehouse or ingest
+39:30 that's right right so we kind of
+39:33 import and then we do something and then
+39:35 we expel back right
+39:37 or
+39:39 using the terminology we just
+39:41 learned so first we
+39:44 extract then do something and then we do
+39:46 this reverse extract right and then put
+39:48 them
+39:49 put that back okay and
+39:52 yeah so speaking of this low code no
+39:55 code so we all we have a question
+39:57 related to that
+39:59 okay
+40:00 is the data engineering job dyn with all
+40:03 these tools that give a duck and drop
+40:05 experience like that you can do this
+40:08 drag and drop data pipelines with all
+40:10 these build integrations
+40:13 yeah i would i would not say dying i
+40:15 think it is very much evolving
+40:17 and so uh i think data engineering is
+40:22 definitely
+40:23 like where essentially these tools are
+40:26 essentially allowing
+40:28 the
+40:29 uh the more
+40:31 uh
+40:32 mundane i can say parts of like a data
+40:34 engineer's job to disappear and allow
+40:36 for the data engineer to focus on uh
+40:39 like for example in my team at keep
+40:41 trucking our data engineer was very much
+40:43 focused on uh a lot more uh data
+40:46 infrastructure pieces so instead of
+40:49 being focused on managing pipelines and
+40:52 waking up in the morning and feeling
+40:53 like oh these these pipelines have
+40:55 broken and i need to go fix that this
+40:56 field was deleted it was more around
+40:59 tooling for the analytics team uh
+41:01 ensuring that we have proper data
+41:04 governance pieces in place there are a
+41:06 lot of things that really are
+41:09 beyond the technical scope of even and
+41:11 maybe any analytics engineer or an
+41:13 analyst that a data engineer most
+41:15 definitely can essentially
+41:17 enable the data team to be operating
+41:19 very efficiently and uh like something
+41:22 like common code standards being able to
+41:24 bring kind of like uh
+41:26 the analytics team to a place where they
+41:28 can be pushing out uh in almost like a
+41:30 continuous delivery or
+41:32 process uh instead of ensuring that
+41:34 there's validation of the code that that
+41:37 pipelines aren't breaking from actually
+41:39 the data team and what they're producing
+41:42 and so there's a lot of pieces that
+41:45 i think the the data engineer can now
+41:48 actually go and tackle that you know the
+41:51 analytics team might not necessarily be
+41:53 very um focused on but without these
+41:55 things they they actually like can't be
+41:57 successful
+41:59 and
+42:00 we spoke we talked about this uh scripts
+42:03 that
+42:04 before reversitious tools existed that
+42:07 people would write and i imagine that
+42:10 maintaining these scripts was nightmare
+42:13 because they break in unpredictable ways
+42:16 like api changes and then all your
+42:18 scripts are
+42:19 not working
+42:20 and then having to deal all these
+42:22 synthesis i guess this is not fun at all
+42:26 like
+42:27 as a data engineer like a data engineer
+42:29 would rather
+42:31 probably focus on other things so i i'm
+42:34 not a data engineer but i don't really
+42:36 want to
+42:38 even think about maintaining these
+42:39 scripts
+42:40 for talking to some third party
+42:44 tools like salesforce and trying to
+42:46 maintain that
+42:47 yeah rather focus on something else
+42:48 right and that's uh i guess
+42:51 this is why these tools are quite
+42:54 useful and people love them and data
+42:56 engineers are still happy
+42:58 nobody is going to fire them anytime
+43:00 soon yeah
+43:02 okay thanks
+43:05 um yeah we have more questions so um
+43:09 let's say yeah the question is 70
+43:12 from 70 to 90 percent of data in many
+43:15 organizations
+43:16 is collected but never is used so
+43:20 who is responsible for
+43:22 taking care of that and for
+43:25 noticing that
+43:26 data engineers or
+43:28 like and how we actually should go about
+43:31 uh
+43:32 you know noticing things like that
+43:36 yeah
+43:37 uh if i could think back to my time
+43:40 being on
+43:41 more of that analytics manager role i
+43:44 would say
+43:45 it's
+43:46 it's definitely a very much a team
+43:48 effort so it's hard to know what is not
+43:51 being used if
+43:53 uh you don't have the business analysts
+43:54 there trying to speak to like uh
+43:58 you know what are the what are the use
+44:00 cases that we're solving for in that
+44:01 business today and then tracing that
+44:03 back to what is actually if we go back
+44:05 to the ingestion layer what actually is
+44:09 uh is essentially like a dependency of
+44:11 those use cases
+44:12 and
+44:13 in order to figure out you know what
+44:15 isn't being used i remember you know how
+44:18 we would try to do this on a kind of a
+44:20 quarterly or monthly cleanup level where
+44:22 we really try to take a critical look as
+44:24 a team and it wouldn't be on a single
+44:27 person to really be responsible to know
+44:29 everything because that's impossible but
+44:31 we would really rely a lot on the
+44:33 business analyst understanding and i
+44:35 guess the analytics engineers have them
+44:38 to understand and back trace back to
+44:40 what is actually being used and what are
+44:43 things that may not be used today but
+44:45 might be used in the future and so
+44:48 you always want to kind of have that
+44:50 forward-looking piece too because of
+44:52 course this whole idea of like elt is
+44:54 that you have all the data there and
+44:57 maybe enough it might not be used now
+44:58 but potentially if there's a use case
+45:00 for that in the future someone should
+45:01 speak to that
+45:03 and so yeah i don't think it should ever
+45:05 be on one person uh and i think that
+45:08 would be
+45:09 a a pretty difficult role to have if it
+45:12 was because that person would be missing
+45:14 the context of the actual business
+45:17 so and the person who
+45:20 who doesn't miss this context who has
+45:22 the
+45:22 context would be an analytics engineer
+45:25 perhaps or an analyst right
+45:27 i think it's both the analytics the
+45:30 business analyst and the analytics
+45:31 engineer because the business analyst
+45:34 might be really focused in working with
+45:35 the business but they might not know as
+45:37 much about the pipelining and so they
+45:39 need to work together to ensure that
+45:41 they both have a mutual understanding
+45:43 and then whoever is kind of in charge of
+45:45 managing the data governance that the
+45:47 cleanliness of the database then then
+45:49 they need to communicate with them that
+45:51 hey this is data that's not currently
+45:52 being used uh and then execute on on
+45:56 cleaning it up from there
+45:59 thank you
+46:00 so another question we have is uh
+46:03 i have no idea what cdc is do you know
+46:05 what cdc is
+46:07 do you have this acronym
+46:10 yeah so it's it's uh change data capture
+46:13 and so
+46:14 okay
+46:15 yep
+46:16 and so that's a feature that is
+46:19 available in our uh
+46:22 in our
+46:23 connectors so and some
+46:25 so cbc is essentially a way to be able
+46:28 to uh capture only changed records and
+46:31 so uh change that's yeah that's where
+46:33 the american prime comes from um so
+46:36 essentially what it allows you to do is
+46:38 not have to fully replicate your
+46:39 database every time instead let's say i
+46:42 sync my database today tomorrow only 10
+46:45 of those rows have changed i only want
+46:47 to sync those 10
+46:48 and i will only want to capture insi and
+46:51 capture that those 10 have changed and
+46:53 then only update those 10 percent in my
+46:55 destination
+46:56 uh without change data capture you might
+46:58 have to be doing a whole replication
+47:00 every day
+47:01 and that isn't uh really the optimal way
+47:05 to
+47:06 manage like cloud resources because
+47:08 essentially your you're consuming more
+47:10 resources to do that full replication
+47:12 and essentially by doing cdc you
+47:15 actually have the ability to reduce your
+47:17 own cloud costs if you're self-hosting
+47:19 uh but also it's just much faster
+47:22 because you're moving less data
+47:25 so i'm just trying to think of an
+47:27 example so
+47:28 um
+47:29 i work at twiligs and this is an online
+47:31 marketplace this is a place let's say if
+47:34 you want to sell your phone you go you
+47:36 create a listing and yeah this is
+47:38 like online marketplace basically
+47:41 and sometimes people users the sellers
+47:44 they can go and change the title or they
+47:46 can go and change the price
+47:49 and i guess this
+47:51 cdc changed data capture will allow us
+47:54 to see
+47:55 let's say
+47:57 if we have 30 million listings active
+48:00 right now on the website right we don't
+48:02 want to look at
+48:03 you know at the entire database of these
+48:06 things right
+48:07 if something changes if the price is it
+48:09 changes or the title changes we just
+48:11 want to see that and
+48:13 kind of keep the delta right the
+48:15 difference between the old version or
+48:17 just keep only the the new thing right
+48:20 uh instead of taking all the 30 million
+48:23 records and you know keeping them
+48:26 over and over again
+48:28 right yeah
+48:29 exactly and then yeah so it essentially
+48:32 is a performance consideration and also
+48:35 allows you to capture deleted rows so
+48:38 that's another another benefit as well
+48:40 so
+48:41 yeah i think that uh that we don't offer
+48:44 it on all of our
+48:46 data
+48:47 warehouse sources yet but we are
+48:49 actively working on building out cbc
+48:50 capabilities for all the sources that
+48:52 essentially um
+48:54 allow for that
+48:57 and do you know what is slowly changing
+48:59 dimensions i've heard this thing a few
+49:02 times i'm curious what this is
+49:04 yeah i i i can speak to what i think it
+49:07 means
+49:09 so i'm also not 100 sure what it
+49:12 actually is but i heard this term used
+49:15 many times
+49:16 yeah and i think in the business you
+49:20 essentially will probably start a
+49:22 pipeline process with maybe 10 columns
+49:25 that you know you need and maybe over
+49:28 time if let's say a salesperson says oh
+49:30 i'm actually going to collect now
+49:32 information on whether or not they'd be
+49:34 interested in this new product feature
+49:36 we just launched and they added maybe a
+49:38 checkbox or like maybe a picklist and
+49:41 salesforce the slowly changing dimension
+49:43 to me when when i hear that term means
+49:46 your dimensions may change over time as
+49:48 your business changes so because now the
+49:51 sales team is collecting new information
+49:53 you also want to ingest that new
+49:55 information into your data warehouse and
+49:57 that will mean that your dimensions
+49:59 change and that you will actually want
+50:01 to adjust not just 10 fields but now 11
+50:04 and then maybe next week it's 12 because
+50:06 now they're collecting something else or
+50:07 there's another piece of data that's
+50:09 relevant to what you need so that's what
+50:11 i think of when i hear that but uh
+50:14 yeah i hope that answers
+50:16 the question yeah well i think like the
+50:18 example you gave about like a new
+50:21 product feature that the user is
+50:23 interested in i guess this user
+50:26 is interested now in this feature but
+50:28 maybe in one year the user is no longer
+50:31 interested right and then
+50:33 yeah i guess this is it doesn't change
+50:36 quickly changes slowly right well i i
+50:39 think when i think about dimensions it's
+50:41 to me in a table structure it's like
+50:42 adding a new column
+50:44 the value of that
+50:45 column that field might change
+50:48 and so that's kind of like capturing the
+50:50 history of the field but ultimately
+50:53 you're it's kind of the way that i think
+50:55 about it is you're actually capturing
+50:57 an additional dimension of data that you
+50:59 weren't capturing before and so
+51:02 uh
+51:03 i don't think that that happens all at
+51:05 once ever in a business a business is
+51:07 constantly evolving and changing
+51:08 especially if you're small and you're
+51:10 kind of in that growth phase
+51:11 constantly trying to think of new things
+51:13 to track maybe
+51:15 launching new products or new product
+51:16 features and so there's always going to
+51:18 be this ever-changing and growing set of
+51:20 dimensions that you'll want to track and
+51:23 that's where that slowly changing
+51:25 dimensions aspect comes into place
+51:29 do you know of any examples when we
+51:32 still would prefer etl over
+51:34 elt
+51:37 uh
+51:39 i would say there's
+51:43 if there's maybe a large enterprise need
+51:46 for it
+51:47 i
+51:48 you know i personally can't speak to
+51:51 you know
+51:52 being in a major enterprise company and
+51:54 having kind of a need for for this but
+51:57 it might
+51:58 it might be something that maybe much
+52:01 larger enterprises
+52:02 might want to adopt
+52:04 and ultimately uh
+52:06 i think that is kind of the play where
+52:09 etl has really been successful is in
+52:11 these large enterprises where you're
+52:13 potentially kind of combining multiple
+52:16 data warehouses or data sources and
+52:19 bring them together and then maybe
+52:20 pushing them out to multiple data
+52:22 warehouses or lakes and so maybe if
+52:24 there's a need for this kind of
+52:25 intermediary place
+52:28 maybe a staging area essentially where
+52:30 you need to ingest from a lot and then
+52:32 you need to propagate out a lot
+52:35 [Music]
+52:37 yeah i think i worked at an enterprise
+52:39 and we had all these tools like oracle
+52:41 informatica and all this
+52:44 so i am pretty sure if i come back now
+52:47 and see what they use it's still oracle
+52:49 informatica and
+52:52 yeah
+52:53 and it's been working for them pretty
+52:55 well so i remember like it was uh the
+52:58 bank where i worked
+53:00 we were processing a lot of data there
+53:03 so yeah
+53:05 so if there's a certain use case for it
+53:08 i think that that's
+53:09 yeah the place that i could see really a
+53:11 use case for that kind of staging area
+53:13 and that really complex model is
+53:15 that intermediary is essentially
+53:18 allowing you to
+53:19 message things from many places to one
+53:22 and then from one to many again
+53:25 and
+53:26 i think smaller companies don't
+53:27 generally have that need as strongly but
+53:30 much more complex organizations might be
+53:32 using a different warehouse for every
+53:34 business unit or a different a different
+53:36 data lake to service different teams and
+53:39 so that might be something that where
+53:41 they need some sort of sort of
+53:42 intermediary solution
+53:44 thank you
+53:46 so and uh yeah the last question i
+53:48 prepared for you was about um so we
+53:51 talked about open source so that airbyte
+53:53 is open source and we also talked about
+53:54 dbt and being open source
+53:57 so why
+53:59 um
+54:00 do you know why air byte is open source
+54:02 so why
+54:03 why to make it open source aren't you
+54:06 afraid that somebody
+54:07 comes and just steal support
+54:11 yeah so on your first question of why
+54:13 open source
+54:14 uh i really think that this is kind of a
+54:17 way forward for
+54:18 the this this space so when you look at
+54:21 incumbents in the place like maybe a
+54:23 five train they're never going to be
+54:25 able to support the long tail of
+54:27 connectors that really exist out there
+54:29 this explosion of tools that we're
+54:31 seeing in pretty much every space means
+54:33 that every tool has an api they're all
+54:36 housing date your business data that and
+54:39 all of that data is really relevant but
+54:40 this kind of long tail of connectors
+54:42 that may not be
+54:44 like the netsuite or the the like
+54:47 adwords like these really popular ones
+54:49 but maybe less popular ones that you
+54:52 know people are still using and
+54:53 experimenting with and trying and um and
+54:56 growing with those need to be supported
+54:58 too and right now what we're dealing
+55:00 with what we're seeing in this space and
+55:02 this is how like like airbite actually
+55:04 came to be is we um our founders did a
+55:07 bunch of interviews what they heard was
+55:10 yeah we're using five train or stitch
+55:12 but
+55:13 we're still writing our own pipelines
+55:14 we're still building things kind of on
+55:16 the side we're still managing
+55:19 these number of scripts that essentially
+55:21 tackle that long tail because the
+55:22 business does still need that data
+55:24 and that's not the future that we see we
+55:26 want our community and uh like us to
+55:30 enable that community to really be able
+55:32 to support
+55:34 the actual uh
+55:35 like uh
+55:36 many connectors that that should exist
+55:39 out there
+55:40 and we don't see something like a closed
+55:41 source project uh being able to support
+55:44 that and so being a open source enables
+55:47 us to essentially bring uh kind of like
+55:50 make make like work of many hands you
+55:53 could say is when people contribute we
+55:57 accelerate at such a higher velocity
+55:59 that that we can actually become the the
+56:02 standard for data integration
+56:05 so basically let's say if i use
+56:08 some proprietary tool
+56:10 and i use this tool
+56:12 that this proprietary tool doesn't
+56:15 support i don't know there's some
+56:17 very unpopular system that for some
+56:20 reasons we use at work right and we need
+56:22 to be able to extract data from there
+56:24 right and uh
+56:25 if i use something like python for
+56:27 example you mentioned or stitch right
+56:30 so they can say yeah we will consider
+56:33 implementing this uh
+56:35 well i don't know in five years or never
+56:38 right yeah and
+56:40 but if you use an open source tool that
+56:43 a developer can actually just go ahead
+56:44 and implement and then plug this thing
+56:47 in an existing infrastructure and it
+56:49 just works right
+56:50 yes
+56:52 and we do see a lot of people actually
+56:56 plugging in their custom connectors we
+56:58 essentially have a place in the ui where
+57:00 you say just add a new source
+57:02 we have a cdk the connector development
+57:04 kit to essentially enable people to
+57:06 build things themselves uh and it's very
+57:08 flexible people can
+57:10 bring in uh they can essentially fork
+57:12 our project and essentially um bring in
+57:15 custom connectors that they
+57:18 that they have maybe custom business
+57:20 logic or things that they they want to
+57:22 engrain into their connector and they
+57:25 use airbright that way
+57:26 to your second question though i think
+57:28 um
+57:29 you know we are uh open source and we
+57:31 always want to and essentially enable
+57:33 our long tail connectors to be available
+57:35 to anyone to use so we want to make it
+57:38 super easy for our small or medium-sized
+57:40 team to just kind of get that basic
+57:42 functionality of being able to be
+57:43 supported by connectors uh anytime and
+57:47 and so we'll always have
+57:49 our connectors be open source where we
+57:52 are coming to the market with a cloud
+57:54 offering is more that enterprise set of
+57:56 features like sso
+57:58 uh certain things around security like
+58:00 uh role-based action uh sorry our back
+58:03 so role-based access control um and
+58:05 other features that
+58:06 generally larger enterprise teams will
+58:09 want but for a small team or a small
+58:11 develop like a developer uh single
+58:13 developer
+58:14 they don't really have a need for
+58:15 necessarily these but they just want to
+58:17 get up and running very quickly with
+58:19 connectors and moving data and that's
+58:21 the part that will always uh
+58:23 be a part of our our mission and goal
+58:26 yeah have you heard about this story of
+58:29 about elasticsearch and aws
+58:32 i think everyone who is whose model is
+58:34 open sourcing the code probably heard
+58:36 about this story
+58:37 but for those who don't know it's
+58:39 basically so elastic search had their
+58:42 own have their own cloud offering right
+58:44 so if you don't want to maintain your
+58:46 own
+58:47 cluster of plastic search servers so you
+58:50 just go to elasticsearch and you
+58:54 use a managed solution right and then
+58:56 one day aws decided that they also
+58:58 provide a
+59:00 managed solution of elasticsearch now
+59:02 elasticsearch has a problem right
+59:05 because aws just took their code
+59:07 and
+59:10 deployed so now
+59:11 people would go to aws for example
+59:13 instead of going to elasticsearch for a
+59:15 managed solution
+59:17 so are are you not afraid that something
+59:20 like this can happen then
+59:22 somebody will um
+59:24 basically
+59:25 do the same thing and because you're
+59:27 open source then they can actually just
+59:30 do this
+59:31 yeah i mean it's it's uh it's definitely
+59:34 something that that we think very
+59:35 carefully about and so you know the
+59:38 things that we talk about internally is
+59:40 you know are we under the right license
+59:42 are these uh are these we're currently
+59:44 under mit is this the right license for
+59:47 us moving forward especially as we
+59:48 launch cloud and so these are definitely
+59:50 things that that we consider very
+59:52 carefully uh but yeah i think uh
+59:54 probably more to come soon in the coming
+59:57 months on that on whether you know like
+59:59 we have to make any changes or not but
+1:00:00 that's definitely something that we we
+1:00:02 actively discuss internally
+1:00:04 yeah i guess uh like many open source
+1:00:06 companies uh start to think about this
+1:00:09 because uh
+1:00:10 like this story of aws and elasticsearch
+1:00:13 like it keeps uh
+1:00:15 you know new things keep appearing and
+1:00:17 now all of us i don't like six or eight
+1:00:19 other bad people
+1:00:21 right because they're starting to hide
+1:00:22 things they're starting to close or
+1:00:25 something right
+1:00:27 yeah yeah
+1:00:28 i'm curious to see how it ends ends and
+1:00:30 i hope that elasticsearch figures it out
+1:00:33 yeah
+1:00:35 yeah
+1:00:36 do you
+1:00:37 have any last words before we finish
+1:00:40 uh yeah it was it's such a pleasure to
+1:00:42 be on this i love talking about
+1:00:45 these uh acronyms and i hope it helped
+1:00:47 uh some of your your listeners get more
+1:00:50 clarity um but yeah i mean
+1:00:52 everybody uh check us out uh we are also
+1:00:55 hiring on a lot of different fronts not
+1:00:58 just on the engineering front but also
+1:01:00 within the go to market side as well so
+1:01:02 check us out our entire handbook is
+1:01:04 listed on our company
+1:01:06 docs page of barry public and if you
+1:01:09 want to contribute back or you know try
+1:01:11 us out you definitely can do that very
+1:01:13 easily um while information is on our
+1:01:15 website
+1:01:16 thank you how can people find you if
+1:01:18 they have a question
+1:01:20 yeah
+1:01:21 primarily just on linkedin so i think
+1:01:23 it's linkedin
+1:01:25 natalie kwang and uh that is the best
+1:01:27 place to find it
+1:01:28 okay thanks a lot thanks for joining us
+1:01:30 today and thanks for
+1:01:32 telling us about all these acronym
+1:01:34 acronyms so now i can make sense of them
+1:01:37 and hopefully everyone else as well and
+1:01:40 thanks everyone for joining us and for
+1:01:42 asking questions and for watching us
+1:01:45 and uh i guess that's all for today have
+1:01:48 a great rest of your day and
+1:01:50 a nice weekend
+1:01:51 yeah have a great weekend bye
+1:01:53 goodbye

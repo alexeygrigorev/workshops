@@ -1,0 +1,1411 @@
+From Data Manager to Data Architect
+
+0:00 hi everyone Welcome to our event this
+0:02 event is brought to you by data Delux
+0:04 club which is a community of people who
+0:05 love data we have weekly events and
+0:08 today is one of such events there are
+0:10 more events in on the on our side you
+0:14 can go check it out there is a link in
+0:16 the description yeah click on that link
+0:17 and you'll see the events we have in our
+0:20 pipeline most of the events we have
+0:22 actually are for this week but tomorrow
+0:25 we have an amazing Workshop where you'll
+0:28 learn some Hands-On data engineering
+0:30 stuff so make sure to check it out
+0:32 then if for some reasons you have not
+0:35 subscribed yet to our YouTube channel
+0:37 you need to do it now or not need but
+0:40 shoot I advise you to uh to subscribe
+0:43 because if you do you will not miss out
+0:45 on any future streams like the one we
+0:48 have right now
+0:49 and I know that this is an old interface
+0:52 and by the way we already have more than
+0:54 30
+0:56 000 subscribers so thanks a lot for yeah
+0:59 for subscribing and we have an amazing
+1:02 slack Community where you can hang out
+1:04 with other data enthusiasts so check it
+1:07 out too and last but not least during
+1:10 today's interview you can ask any
+1:12 question you want there is a link in the
+1:15 live chat it's pinned click on that link
+1:17 ask your questions and we will be
+1:19 covering these questions during the
+1:20 interview
+1:22 so that's cool
+1:25 screen
+1:27 I will open the questions that
+1:30 we have for you
+1:33 or you prepare it for yourself
+1:37 okay and
+1:39 yeah if you're ready we can start
+1:42 already
+1:43 okay important lady
+1:45 this week we'll talk about
+1:47 the journey from being a data manager
+1:52 and and transitioning to data architect
+1:55 and to discuss it from both Technical
+1:57 and Leadership perspective and today we
+1:59 have a very special guest today Luke
+2:01 it's not the first time you see look
+2:04 here previously he gave a talk about
+2:08 building a data lake house and he
+2:10 mentioned many interesting things like
+2:13 being a data architect being a data
+2:16 manager
+2:17 and during that stream during that talk
+2:20 we thought that it would be a really
+2:23 awesome idea to have look again on our
+2:25 show but
+2:27 as a podcast guest where we can talk
+2:30 more in details about his career what
+2:33 he's doing what he was doing and how he
+2:35 made the transition
+2:37 so look is the data lead at my light 150
+2:40 that's the name of company right
+2:43 so he'll probably tell us more what you
+2:45 do there and he has more than 10 years
+2:48 of experience in the data space in
+2:50 various roles from
+2:52 being a data manager uh doing database
+2:57 management doing data engineering being
+2:59 a product owner being a tech lead being
+3:01 a data architect and being a data lead
+3:03 so a lot of stuff
+3:05 so yeah thanks a lot for finding time to
+3:08 join us today for this interview look
+3:11 forward
+3:13 so let's start and before we go into our
+3:17 main topic
+3:18 let's begin with your background can you
+3:20 tell us about your career Journey so far
+3:24 yeah so in a very
+3:27 let's say in a nutshell as we say uh
+3:30 status as a data manager back in 2013
+3:33 working in the UK in a company called
+3:35 six cents by now
+3:37 and I was doing a lot of data management
+3:40 so Gathering data and just making
+3:43 reporting available for other people
+3:46 like stakeholders
+3:47 mainly dealing into in the with civil
+3:51 engineers and the civil engineering
+3:53 industry in general the construction
+3:54 industry
+3:56 um then I become interested into the
+3:59 data engineering side of things just
+4:01 because I was maybe frustrated a little
+4:04 bit with this uh
+4:06 uh Gathering all data together and like
+4:09 mix and matching csvs XML and whatever
+4:13 the formats it could be together
+4:16 uh became a data engineer and then
+4:22 so it was really technical part of that
+4:25 engineering like ETL crude operations
+4:27 and so on and then I was
+4:30 Time Goes By You focus more on what
+4:33 other people are requiring in terms of
+4:35 data and needs what are their needs and
+4:38 so I took positions as a data consultant
+4:41 at CGI back in France and then
+4:44 I was a project owner a technical lead
+4:48 in a sort of data Factory team and right
+4:51 now I'm the
+4:53 lead data data League at uh
+4:57 uh my lights 150 and what do I do there
+5:01 it's a mix of two hats maybe a bit more
+5:04 first one is very technical so we put
+5:07 together as uh you may see it in the
+5:10 previous talk we gave the data lake
+5:12 house this was a very operational uh
+5:16 side of things let's say and the second
+5:19 hat is about the management of the team
+5:23 so I guess the week about a bit of a
+5:28 series of questions just to transition
+5:30 through the career and through those
+5:33 really technical to
+5:36 um somehow more of a leadership
+5:41 so that's it with my background I guess
+5:44 so when I heard the term data management
+5:48 so what I had in mind is more like
+5:50 managing a team that's what you do now
+5:52 but from what you described I I
+5:56 understood that it's um a different role
+5:59 right so it's more like an analyst role
+6:03 in a non-tech company where you would
+6:05 get like a lot of different
+6:08 like a lot of different data from
+6:10 different data sources and your job was
+6:11 to prepare reports
+6:13 yeah this was exactly this my customers
+6:17 that were
+6:18 basically civil engineers they required
+6:21 a lot of data to analyze the
+6:24 the good health for their structure and
+6:27 by the way the practice is called the
+6:28 social health monitoring where you look
+6:31 at the structure and you check for cars
+6:34 settlements and so on and my role was
+6:36 just to take data from a lot of sensors
+6:39 we were installing in the city and
+6:42 buildings and just mix and matching them
+6:45 together to provide Trends and Analysis
+6:47 so in the two days nomenclature I would
+6:50 say or that are rules this looks more
+6:53 like a data analyst role but at that
+6:55 time it was
+6:57 called data management because it
+6:59 involved a little bit more than just
+7:01 analysis like
+7:03 putting data together and just saving it
+7:06 and sharing it and alsoil there was all
+7:08 of these data discovery of site you know
+7:11 so that's why it was called at imaginary
+7:14 at that time it's like a combination of
+7:17 data analyst and data engineer
+7:25 because I
+7:27 I was spending like
+7:29 days hours of my days just mixing
+7:33 matching this data and
+7:35 also yeah I have a civil engineering
+7:38 degree uh nothing to deal with that's
+7:42 our I.T or whatever but I was always
+7:46 taking the the
+7:49 the computer science oriented uh
+7:53 Specialties you know in school so I was
+7:55 very aware of how to program and how to
+7:58 deal with databases and one so naturally
+8:01 I wanted to automate my work of binding
+8:06 all of these data together and
+8:08 I remember I was spending uh probably
+8:12 8 to 10 12 hours a day mix and matching
+8:16 data
+8:17 and in the end you I was saying uh like
+8:21 one two more hours just to automate a
+8:24 bit of it and then the next day one two
+8:26 more hours you automate another bit of
+8:28 it and in the end you work extra hours
+8:31 at the beginning but you have a fully
+8:34 automated process a few weeks later so
+8:39 this was what basically got me into that
+8:42 engineering automating that analyst work
+8:44 got me into that engineering there was
+8:48 okay if I automated the the the the end
+8:52 of the process
+8:54 maybe it's going to be interesting to
+8:56 automate the the homeless data source to
+9:00 the consumption of the data and
+9:03 I really enjoyed automating the the end
+9:07 result and so
+9:08 I was like okay
+9:10 I could basically do this for a living
+9:13 like automating the data processes so
+9:16 this is how I got into uh data
+9:19 engineering
+9:20 so you became a data engineer within the
+9:23 same company right yeah exactly
+9:26 um the data management at six cents was
+9:29 very Broad in terms of practice
+9:33 um you could have so we would understand
+9:35 iot devices and you had to configure all
+9:38 the the data loggers for example to
+9:40 reach a data from sites uh the ETL
+9:43 process to load it into database and
+9:46 then the reporting process as well from
+9:49 database to the software solution we
+9:52 were providing
+9:53 and all of this required
+9:56 call to maintain the full data pipeline
+10:01 so yeah the world was very so there were
+10:04 a lot of different aspects to the data
+10:06 manager position it was a very broad uh
+10:10 role but you could do most data analysts
+10:13 a bit of data engineering and sometimes
+10:16 when you add through those statistics on
+10:19 your latter to understand the trends and
+10:20 so on it was that I slashed a bit of
+10:23 data scientists to understand what was
+10:25 causing the trend or whatever
+10:27 so very bold role data management and I
+10:33 really liked the the engineering side of
+10:36 this which was
+10:38 maybe the
+10:41 when I think about it it was maybe
+10:43 linked to the fact that I really liked
+10:45 software programming and this was the
+10:47 the parts that I could have the more
+10:50 control over
+10:51 uh maybe this is just maybe
+10:55 liking the controlling side of it
+10:59 but also as you mentioned you have a
+11:01 degree in civil engineering so for you
+11:03 all these data from sensors that was
+11:06 coming from sensors about cracks
+11:08 settlements and all this stuff you could
+11:10 really make sense from this data right
+11:12 you could make sense of this data you
+11:14 could understand what's happening there
+11:16 you have all you had all this the main
+11:17 knowledge so for you maybe
+11:21 did it actually help you with the
+11:23 transitioning from being a data manager
+11:25 to data engineering so what helped with
+11:29 the transitioning was
+11:31 been spending a lot of time on my spare
+11:34 time learning about software engineering
+11:36 good practices uh
+11:40 reading about all the database
+11:43 management and create operations and all
+11:47 of this you know more like investing my
+11:50 personal time on learning the data
+11:52 engineering fields but this is true that
+11:56 as I knew Wu was going to consume the
+11:59 data we were producing
+12:01 it was a big
+12:03 big plus because I knew when something
+12:06 was wrong I could diagnose where the the
+12:10 data quality problem started to happen
+12:13 or whatever you know
+12:14 so in the end his first job as a data
+12:19 manager transitioning into Data
+12:20 engineering was really the perfect job
+12:23 because it was in the civil engineering
+12:25 industry I was reporting to civil
+12:27 engineer construction managers uh
+12:30 um but I got a two fits inside the data
+12:35 space straight away
+12:37 so
+12:39 it was a perfect transition from my
+12:43 degree so we are talking about the
+12:46 condition from data manager to that
+12:48 architect of course the other
+12:49 engineering but the solution was
+12:51 actually from civil engineering
+12:53 background to the data space
+12:56 and if you look today in the market
+13:00 a lot of people are switching carriers
+13:04 and usually it's they do it after a few
+13:08 years in the work like they do I don't
+13:10 know they work in finance for every year
+13:12 and then they realize okay what I really
+13:14 liked was the data whatever
+13:16 but in my case uh just straight after my
+13:21 diploma like the graduation I knew I
+13:25 wanted to
+13:26 to do something else than civil
+13:29 engineering and it's very fun because at
+13:31 the in the school where I was studied
+13:33 there was always these
+13:36 shocked about what the people in the
+13:39 school are becoming like 10 years down
+13:40 the road you know and there was this
+13:42 category of 15 to 20 percent of the
+13:45 students they do they work in a field
+13:48 that is in no way related to what they
+13:51 studied so I because I'm in this
+13:54 category right now
+13:57 yeah life is interesting right you never
+13:59 know like at the I don't know you
+14:02 graduated from school you have no idea
+14:04 what you'll do in 10 years because like
+14:06 it's very difficult to know sometimes
+14:09 and my parents say like yeah become a
+14:11 civil engineer because it's a well-paid
+14:13 job right and then you go there you
+14:15 study only to find out that you like
+14:17 other things more right yeah but it's a
+14:19 journey right exactly and
+14:22 sometimes you know when you look for a
+14:25 new job or you are interviewing and
+14:27 interviewing for testing
+14:29 you always have this classical HR
+14:32 question coming in like where do you see
+14:34 yourself five years down the line ten
+14:36 years I wish I knew I wish I knew for me
+14:40 my discipline did not really existed and
+14:44 10 years ago I was a civilian I was
+14:46 destined to be a civil engineer so who
+14:49 knows
+14:51 so for you what what was the most
+14:54 difficult part when you did the
+14:55 transition I guess so like as a civil
+14:58 engineer you did not study software
+15:00 engineering and you needed to invest a
+15:03 lot of time in learning that right
+15:05 learning all this data engineering
+15:07 fundamentals yeah apart from that like
+15:10 what were the most significant
+15:12 challenges that you faced there and how
+15:14 did you overcome them
+15:16 yeah the
+15:17 [Music]
+15:19 the
+15:20 thing is when during the last decade a
+15:23 lot of things happened in that space uh
+15:27 as you know iot became a thing so it
+15:31 produced a lot of data I was in the iot
+15:33 slash civil engineering industry I
+15:35 couldn't testify about it the
+15:38 of course you are the the classical
+15:41 business intelligence practice which was
+15:44 somewhat well established you know
+15:45 people uh doing their uh ssis packages
+15:50 building their data pipeline business
+15:52 databases reporting about SS margin
+15:55 whatever ssis is these two from
+15:58 Microsoft this is like the integration
+16:00 service where you drag a drop things you
+16:02 connect with the mouse right so like
+16:04 different squares and then this thing
+16:07 somehow works at the end right somehow
+16:09 it works because you do your high level
+16:13 data pipeline sort of low code no code
+16:15 fashion but then three we need to call
+16:18 like store procedures and you need still
+16:20 to build those
+16:22 tsql transact SQL you need to but anyway
+16:25 you are just having a nice interface to
+16:28 architect your code somehow okay
+16:32 um yeah it's built into the been a while
+16:35 since I saw this thing yeah I've been
+16:37 away as well right now it's data Factory
+16:40 airflow whatever those things are
+16:41 basically uh the ssis Legacy environment
+16:45 so we have these these days and
+16:48 everything is cloud-based so yeah the
+16:50 iot the volume of data the the fact that
+16:54 the cloud was somewhat booming as well
+16:59 uh if I remember all the transition uh
+17:02 happened around 2018 for us and I'm sure
+17:08 if you go like uh Azure adoption graphs
+17:11 or whatever if you are at home just do
+17:13 this and probably you will see a big
+17:16 spike
+17:17 2017 to 2020 this is where a lot of
+17:20 companies just shifted to the cloud
+17:22 so this happened in addition to the big
+17:25 volume of data uh
+17:29 and this became somewhat of a new Wild
+17:32 West you know because you had those new
+17:34 Azure and you those new cloud services
+17:37 and a lot of data to deal with and
+17:42 your classic documentation or resources
+17:45 like how to build the ssis package and
+17:47 whatever was not really relevant for
+17:49 yourself anymore
+17:51 and you had to find all the communities
+17:54 uh
+17:56 and so on and
+17:59 so this was the challenge actually to
+18:01 transition from the place where the
+18:04 volume is increasing and the people are
+18:08 shifting to Cloud to the cloud and you
+18:10 are arriving into this new space where
+18:12 you have
+18:13 everything to somewhat reveal but you
+18:16 have the
+18:17 good practices and Concepts and you need
+18:20 to have strong Basics if I may
+18:23 so the best thing to overcome this
+18:27 challenge was to just keep yourself
+18:29 updated on how people will do things
+18:32 usually was filled with questions about
+18:35 people having problems with those new
+18:38 technologies with those new services
+18:40 and a lot of communities have been built
+18:43 around those platforms
+18:47 so on my case I took a few notes just to
+18:51 make sure I did not forget anything it's
+18:53 uh
+18:54 uh I tried a lot of
+18:57 scripting languages I ended up using
+19:00 python because it was the most used in
+19:03 the industry just I didn't think more
+19:06 about it uh
+19:09 it's being used I'm gonna use this okay
+19:12 same for the cloud you are the the
+19:18 AWS at that time the Google Cloud was
+19:22 somewhat there and the Azure was just
+19:24 investing a lot of it in it so save a
+19:28 lot of my company was using the Azure
+19:31 cloud of course and
+19:33 um
+19:34 a lot of jobs posts postings anyway
+19:36 there were recruiting for people using
+19:40 Python and the Azure Cloud so for me it
+19:43 was the let's say a very data driven and
+19:46 practical choice to
+19:48 to just go for this but in the end as a
+19:51 feedback all the clouds they are really
+19:53 more similar and dissimilar what you
+19:57 will find in a platform will look mostly
+19:59 the same into another cloud provider
+20:02 don't focus on
+20:05 I would say Do not focus on getting
+20:07 certifications to prove that you know
+20:09 the cloud or whatever because what is
+20:12 the most important is the
+20:15 is the to grasp the very strong basics
+20:18 of what is a trade operation what are
+20:20 the types of services you have access to
+20:22 to store your data what are your
+20:26 options to build what are your tools
+20:28 available in this platform and if you
+20:30 know that you need a hammer to just uh
+20:34 uh insert a nail into a wood blank you
+20:37 will find your wood plank you will find
+20:39 your nail you will find your Hammer into
+20:41 this new platform no worries this is
+20:44 what I will provide and that's uh
+20:48 advice you share as a data manager right
+20:50 now I mean a data engineering manager
+20:53 because you heard the engineers
+20:54 currently right
+20:56 say it again do you hire data Engineers
+20:59 currently at your current role yeah yeah
+21:01 I actually I had one that I didn't know
+21:05 which has the guy has more experience
+21:07 than my cell phone the lot of bi and
+21:11 that architecture side of things you
+21:12 know but still when it comes to uh big
+21:15 data and using spark and new platform
+21:19 like the the data bricks and whatever
+21:22 there's still a transition to do but
+21:24 when I hired basically the interview
+21:28 was more focused on
+21:31 for me you have some scars about about
+21:34 doing data pipeline projects you know
+21:36 and tell me how it's going to go wrong
+21:38 and what did you do uh
+21:41 uh somewhat changing the
+21:44 the strong opinions on good practices
+21:48 versus reality uh
+21:51 Etc so
+21:52 uh yeah when I hire for data engineering
+21:56 role I don't look for perfect
+21:59 certifications I look for experience and
+22:03 I look for the scale of the projects
+22:05 people have been working on the scale of
+22:07 the teams that I've been working on
+22:10 the
+22:12 in general the attitude towards solving
+22:15 the problem with the tools you have you
+22:17 know
+22:18 if people are afraid for example when I
+22:22 say yeah we are on the Azure Cloud if
+22:24 they are afraid or they are like I I
+22:26 only know AWS for this somewhat of a red
+22:30 flag because uh I would prefer an answer
+22:34 the clouds are more similar and
+22:36 dissimilar I know AWS but I will adapt
+22:38 you know
+22:39 this is just about the mindset of
+22:42 answering the question more than the
+22:44 answer itself
+22:46 okay fair enough
+22:48 so I just looked at the time and I see
+22:51 that we spent most of the time talking
+22:53 about that data engineering your
+22:54 transition from data manager to data
+22:57 engineer but we also wanted to talk
+22:59 about
+23:00 your other transition the other
+23:02 transition you did from a data engineer
+23:04 to a data architect but before we talk
+23:07 about the details of your transition
+23:09 I was wondering what actually is a data
+23:12 architect who actually is a data
+23:14 architect what do they do now what kind
+23:16 of stuff what kind of responsibilities
+23:19 they have
+23:21 yeah that's a very good question and
+23:25 actually I had a couple of students a
+23:27 few weeks ago interviewing me just on
+23:31 this
+23:32 particular question because they are to
+23:33 fill a film about what is that architect
+23:36 to have this new position in their
+23:38 school you know and actually the the
+23:42 first ones were the first bit of the
+23:44 answer that was that that architect is
+23:47 not a junior position like you do not be
+23:49 graduate as a data architect
+23:53 this is a role that you acquire when you
+23:55 have been probably walking into the
+23:59 different areas of that management from
+24:02 hand to end
+24:04 this was the first bit so it's a
+24:06 experienced role because you need to be
+24:10 aware that you need to architect data so
+24:13 it's like
+24:13 from the data source to the
+24:17 to the staging area to your data
+24:20 warehousing path and then building data
+24:22 marks for the people to consume the data
+24:24 and at each stage you need to understand
+24:28 for example the
+24:30 how the data is being produced and how
+24:34 data is being consumed and most of the
+24:36 time there are automated systems like
+24:39 iot producing data in that case it's
+24:41 actually the easiest part of the of the
+24:45 data engineering but when there are
+24:47 people producing data you need to
+24:48 understand the processes and then when
+24:51 there are people consuming data you also
+24:54 need to understand the use case and what
+24:57 is the final result of the analysis and
+24:59 how they are binding the data and so on
+25:01 and I think that Architects it's about
+25:04 Bridging the Gap between the this
+25:09 ETL cool operations very technical and
+25:12 the people
+25:13 using data like producing and consuming
+25:16 it
+25:17 so there are a lot of definition of that
+25:20 Architects but mostly what is important
+25:23 is not a junior position you need to
+25:25 have experience on the full chain
+25:28 two
+25:30 you need to focus on the processes and
+25:34 the people and the use cases of data
+25:37 more than the technical side of the
+25:39 things
+25:39 and that will be the two main points I
+25:42 would say a describe
+25:45 and you need to know about modeling of
+25:47 the data because people are going to
+25:50 use the data that you have
+25:52 somehow created a
+25:56 pre-prepared for them so you need to
+25:58 make sure that your technical process of
+26:01 extracting collecting and managing
+26:03 modern data matches is good technically
+26:07 but it's also good business-wise
+26:10 mm-hmm
+26:11 okay so it's about bringing Bridget the
+26:14 Gap you set between the requirements and
+26:17 the implementation right exactly yeah
+26:20 and for that you need to understand
+26:22 processors use cases what the final
+26:25 results more or less should be right and
+26:28 it's a very technical role so you need
+26:30 to be to have experience
+26:32 in you know doing things end to end from
+26:35 you said Source staging very housing
+26:38 data Mart like all these things need to
+26:40 make sense and then finally you
+26:43 mentioned that you need to have a good
+26:45 understanding of modeling data right so
+26:47 like
+26:49 how exactly data looks like in a station
+26:51 area how exactly data looks in the
+26:53 independent house how the data looks
+26:55 like in the data Mark right but at the
+26:58 end of the day okay you spent a lot of
+26:59 time talking to different stakeholders
+27:02 you spent a lot of time talking to
+27:04 Engineers who are going to implement
+27:05 that but what is it do you do what is
+27:08 the main let's say outcome is it like a
+27:10 document that describes that at this
+27:12 step you do that like there are some
+27:14 diagrams with arrows showing how the
+27:17 data flows or or something else
+27:19 yeah yeah what is the output of my work
+27:24 uh the most important thing is
+27:28 I would say team alignment because when
+27:31 you are you have a data project it's not
+27:33 only one team uh
+27:36 uh creating data managing it selling it
+27:39 and analyzing it this would be the
+27:41 perfect scenario of course but usually
+27:43 you are a team that is creating data
+27:47 another team analyzing the data and
+27:50 another team processing the letter and
+27:52 the outcome of uh good data architecture
+27:56 I would say is an Optimizer type of
+27:58 sense of course but this is only
+28:00 technical the
+28:02 the most important output of that
+28:05 architect is a team alignment when it
+28:09 comes to uh producing radar in a way
+28:12 that is uh usable then by the pipeline
+28:16 in a way that
+28:18 um story data in a way that is then
+28:19 usable for the business and of course
+28:22 you will have a lot of tools to help you
+28:24 to do this most of the time as I showed
+28:28 in the previous talk it looks like a a
+28:31 massive bowl of spaghettis you know we
+28:33 have all of your data pipe processes in
+28:36 and all the flows of data from A to B to
+28:41 C Etc but these are only tools the the
+28:44 most important outcome is to have the
+28:46 the alignment on
+28:49 the teams that are producing extracting
+28:52 transforming and consuming data this is
+28:55 the number one
+28:57 output over that architect I would say
+28:59 making sure it's smooth
+29:03 usually I guess in order to have this
+29:05 alignment there needs to be some
+29:07 documentation so there needs to be some
+29:09 written piece or like this bowl of
+29:13 spaghetti diagram as you said like there
+29:15 should be some something
+29:17 not physical but something like in your
+29:20 documentation right that describes okay
+29:23 these are the requirements now these are
+29:26 the limitations uh I don't know it's our
+29:29 um
+29:31 yeah I don't know the stakeholders these
+29:34 are users these are requirements and
+29:36 this is how you want to implement this
+29:37 and all these teams like the team that
+29:40 creates data the team that processes
+29:41 data the team that analyzes data all
+29:43 have access to this document and they
+29:45 say okay this is what we want indeed
+29:47 right
+29:48 yeah usually if you have a dream project
+29:52 where you live in theory land entering
+29:55 project okay this is perfect to do like
+29:58 you can spend a lot of time like
+30:02 doing a specification about really
+30:04 detailed about all data process it will
+30:07 go like this from this Source connected
+30:10 with this protocol you will get the data
+30:13 and you will store it in this way into
+30:15 disable them that way with those columns
+30:17 and blah blah blah blah
+30:19 but reality
+30:21 has shown that whatever you plan
+30:26 don't plan to detail because uh there
+30:30 are a lot of things that are going to uh
+30:34 derail you from the from your plans and
+30:38 you need to have the most important is
+30:40 to have common good practices and
+30:42 Concepts like what is the
+30:46 quality level of data expected to arrive
+30:49 in the bronze level you know like you
+30:51 don't you can't accept a lot of new
+30:53 values or things like this and then if
+30:56 you ingest for the first time you're
+30:57 attacking you realize with the quick
+30:59 analysis that this is garbage you
+31:02 probably have a data process to to
+31:05 improve like the way people are entering
+31:08 data in forms or whatever so that they
+31:10 do not skip the question or they do not
+31:13 select the default null value or
+31:15 whatever you know make sure that
+31:17 your applicative or like your UI or
+31:22 whatever
+31:22 helps you to make oh God that it's safe
+31:27 uh
+31:29 so yeah this is more about common sense
+31:32 and good practices like make sure you
+31:34 have a good data arriving in your mom's
+31:37 level you know uh
+31:39 uh and then understand how people are
+31:41 going to use it so that you say okay you
+31:45 will need to analyze those analytical
+31:47 metrics let's say so I don't know you
+31:50 have you want to analyze stores data for
+31:53 example so you have the the name of the
+31:55 store the region where it is located the
+31:57 period where the cells happens the
+32:02 the margin of the sales and so on and
+32:05 all of this gives you your dimensions of
+32:07 analysis
+32:08 like geography time stores
+32:12 article do you all you are selling for
+32:15 example and then you have your Matrix
+32:17 which are the turnover margin uh number
+32:22 of sales I don't know you need to
+32:25 basically build stakeholders give you
+32:28 this information they say okay we care
+32:29 about these things right so at the end
+32:31 when we analyze the data this is a
+32:33 dashboard or this is what we want to see
+32:35 in the dashboard right so we want to see
+32:37 this kind of metrics right they they
+32:40 tell you that and then you need to
+32:42 Define talk to other teams who create
+32:44 data who analyze data or process data
+32:46 and you work this out like you need to
+32:49 understand what kind of dimensions are
+32:50 there what kind of metrics are there
+32:52 like all these bronze things you
+32:56 mentioned bronze is like the staging
+32:57 area right or whatever
+32:59 then you have silver and gold and what
+33:02 you are discussing with the stakeholders
+33:04 which are going to consume that are is
+33:07 more of what should the gold layer look
+33:10 like so I can
+33:12 and then what you are discussing with
+33:14 the people that are producing data is
+33:17 more about the what should be the
+33:20 acceptable quality level that you can
+33:23 drop into the bones you can dump into
+33:26 the bonus layer you know and then with
+33:29 the your data engineering team that
+33:32 analyst team you discuss okay I got this
+33:35 I need that how do I mix and match how
+33:40 do I bind it how do I transform it so
+33:43 it's the appropriate level of quality
+33:45 for my analysis
+33:49 so the most important is you need to
+33:52 discuss with people then usually
+33:53 stakeholders they don't say I have
+33:56 analytical Dimension that is the
+33:58 geography and I have a metric that is my
+34:01 turnover never
+34:03 okay maybe with very unlucky people you
+34:06 will add the discussions but usually it
+34:09 goes like
+34:12 I need to analyze the
+34:15 the margin
+34:17 uh in this region so nowhere in this
+34:21 sentence like I need to analyze the
+34:23 margin in this region of the world
+34:26 nowhere in this sentence they mentioned
+34:28 the dimensions and the metrics you need
+34:32 to discuss and say okay your metric is
+34:35 the margin and your dimension is the
+34:38 geography
+34:39 and maybe this analysis if I do this and
+34:42 if I manage to store my data in the
+34:44 proper way you could be able to scale
+34:46 this analysis and have your margin in
+34:49 all the region of the world and so your
+34:51 analysis is not only for this area that
+34:54 you want right now this is your quick
+34:55 win what you need to Output to your CEO
+34:57 for next week but maybe what you want is
+35:00 a more scalable process to be able to
+35:02 reproduce very quickly your analysis on
+35:06 another region at another time whatever
+35:08 and this is the kind of discussions you
+35:11 have with your stakeholders just to make
+35:13 sure that you are going to store the
+35:15 data in the proper way like you will
+35:17 have your facts table and then you will
+35:19 have your geographical Dimension and
+35:21 your store the dimension and your
+35:23 article Dimension and your fact table
+35:25 will have all of those columns that help
+35:27 you to build those metrics and so on
+35:34 is really understanding what to build
+35:38 why this is the the keyhole like how
+35:42 exactly they will use it once it's built
+35:45 right so what exactly what kind of
+35:46 questions they want to have answers for
+35:50 right like what kind of analysis uh how
+35:53 exactly they will use it and maybe also
+35:55 what sort of decisions they will make
+35:57 based on whatever they want right yeah
+36:00 exactly and usually what happens in a
+36:03 company is you have different
+36:04 departments so in our case for example
+36:07 we will have supply chain finance and
+36:10 sales
+36:11 they will all analyze the quantity of
+36:14 stocks we have but for very different
+36:16 reasons
+36:18 and you will end up building a report
+36:21 for the sales another for the uh
+36:24 finance and other for the supply chain
+36:26 but still the data that you use at the
+36:29 origin is the same for all of them so if
+36:32 you as that architect you need also to
+36:34 be aware of this so that you can uh
+36:38 put together all those all of those
+36:40 developments to build a sort of core at
+36:43 a model or strong Foundation to build
+36:45 all of those different uses use cases
+36:49 so it's not only uh
+36:54 from source to Consumer but also you
+36:56 will have a lot of consumers and there
+36:58 is another dimension that is the
+37:00 transversal dimension of the work
+37:05 if it makes sense
+37:09 um like to me it sounds that this work
+37:12 involves mostly communication right so
+37:14 you need to first of all speak with
+37:16 stakeholders understand what the
+37:18 requirements are how it's going to be
+37:20 used and then you need to spend a lot of
+37:22 time talking to teams to understand how
+37:25 maybe what is the current status how
+37:26 this can be implemented and then come up
+37:29 with this design document to ensure that
+37:31 all these teams align right yeah so what
+37:35 do you say that most of the time
+37:37 as a data architect you spend most of
+37:39 your time talking with other people or
+37:43 what's the breakdown like how exactly it
+37:44 looks like what do you say it's like 80
+37:46 communication 12 like documentation
+37:49 writing or like do you do any Hands-On
+37:52 stuff like how does a typical day look
+37:54 like yeah so it really depends I would
+37:59 say of your of the company if I talk for
+38:03 myself
+38:04 the previous year has been really
+38:06 focused on the technical side of things
+38:08 so I was mostly ends on
+38:12 somehow building the platform with the
+38:14 rest of the team so making sure all data
+38:16 was flowing from the sources to the data
+38:20 lake house you know and
+38:23 right now we are in this process where
+38:26 the team knows how to do all this
+38:30 we have the common set of practic of
+38:33 practices
+38:34 and the next stage is to finally have
+38:37 time to discuss with the stakeholders
+38:42 about what is that I need and build
+38:45 those uh
+38:47 a better gold layer I would say focus on
+38:49 the gold layer of the data map of the
+38:52 data warehouse so balls and silver sold
+38:54 and now we are focusing the on gold
+38:56 so
+38:58 the role has been shifting from like 80
+39:01 percent maybe of dealing with technical
+39:04 people and maybe 20 percent of dealing
+39:07 with stakeholders to the actual opposite
+39:11 where you once you have a data you can
+39:14 just spend more time focusing on the on
+39:17 discussing what you want and so it's
+39:18 going to be 80 stakeholder 20 percent
+39:21 technical for example so it really
+39:24 depends on the phase of the project
+39:25 where you are I would say
+39:28 but my one advice is people they really
+39:33 want to see stakeholder they really want
+39:35 to see that you are
+39:36 focusing on the project on the data they
+39:39 they want so you should focus more on
+39:44 the stakeholders uh as a priority you
+39:47 should focus more on stakeholder
+39:49 management then really the your team
+39:52 measurements once the good practices has
+39:54 been set up has been uh agreed within
+39:58 your team so the first thing is going to
+40:00 be to agree on the good practices build
+40:02 end-to-end use case say okay this is how
+40:05 we do this this is our standard and then
+40:07 you can free time for yourself to deal
+40:10 with the stakeholders and right now this
+40:12 is where I'm in into the if I talk for
+40:16 myself so
+40:19 from what I understood from you this is
+40:21 a quiet at least what you do this is
+40:23 quite technical role so you are still
+40:26 pretty Hands-On with building things
+40:28 with the rest of the team
+40:30 but still there is this component of
+40:33 talking with stakeholders and it's your
+40:35 job as a data architect to actually
+40:37 inform them what is the progress which
+40:39 stage is it currently and of course if
+40:43 there are
+40:44 any questions if something is not clear
+40:46 it's your job to approach the
+40:47 stakeholders and clarify the
+40:49 requirements like when you said that you
+40:52 need to have I don't know analyze
+40:54 margins in these regions of the world
+40:56 did you mean country level or did you
+40:58 mean maybe I don't know county level
+40:59 right so you need to go to them and ask
+41:02 that right yeah so
+41:06 I don't believe that if I I'm here in
+41:10 all the meetings where we are specifying
+41:12 things uh the data team can scale
+41:15 basically so the the transition is about
+41:20 somehow empowering your team so that
+41:23 they can then once they know the good
+41:26 practices and how to do things uh do it
+41:29 for themselves like the panelists going
+41:31 with the business discussing what they
+41:34 need and then discussing with data
+41:37 engineer and data engineering practice
+41:39 they are going to know how to do things
+41:41 in an optimized fashion and the analysts
+41:44 they are going to know what the
+41:48 what the business requires you know and
+41:51 I think a role as a data part of the
+41:54 world as an architect
+41:56 is to help both practices to communicate
+42:01 well together make sure that
+42:02 communication is smooth between that
+42:04 engineering and analysts and also that
+42:07 you have the communication is smooth
+42:09 between the DAT analysts and the
+42:10 stakeholders
+42:13 it's more of a
+42:15 gen goal is like it looks more like a
+42:20 auditorial slash like data
+42:24 metabolic manager you know if I use like
+42:28 techie
+42:30 so it looks like you want to teach
+42:34 people how to to speak so you can
+42:38 kind of go
+42:39 get out of the team and so they work
+42:42 without you right so what I what I mean
+42:45 by this is like if you're involved in
+42:48 everything then you become the
+42:49 bottleneck and nothing is moving right
+42:51 so what you want to do is set up this
+42:54 best practices so they know how to talk
+42:56 who to talk when to talk
+42:58 so then you can like step away and watch
+43:00 this thing work without your
+43:02 participation right yes so stepping away
+43:06 and just watching it go it's a Jeep
+43:08 level you know where you know what the
+43:11 company is going to look like in three
+43:14 months six months whatever and you need
+43:17 to make sure that the efforts of your
+43:18 teams in terms of
+43:20 priority more about the the time they
+43:23 are spending doing things it's aligned
+43:26 with the short mid and long-term
+43:30 objective of your company
+43:31 and I think this is also a part of the
+43:36 that uh project manager or that
+43:39 architect you know depending on the size
+43:40 or the typology of your team or whatever
+43:42 but the the most important thing is you
+43:46 go from you know how technically how to
+43:49 do things you make sure communication is
+43:51 smooth and then you Empower your team so
+43:54 that they are they know how to do
+43:56 individually so you can scale
+43:58 transversary your work you can just then
+44:01 focus on prioritizing the work of the
+44:05 team so that it aligns with the
+44:07 company's objectives
+44:09 it doesn't make sense
+44:11 it does hit us yeah and then I see a
+44:15 question about handling
+44:17 how you adapt and stay relevant in the
+44:20 field because my experience I was kind
+44:22 of doing uh also working in
+44:26 architectural role and what I noticed
+44:29 even though it wasn't related to date
+44:30 engineering it was related more to
+44:32 machine learning but doesn't matter so
+44:34 what I noticed is the more I spent time
+44:36 work working with stakeholders
+44:38 communicating aligning teams the less
+44:40 time I have on the Korean side on the
+44:42 technical side and what happened after
+44:45 half a year of me doing this thing is I
+44:48 became very not Hands-On right so I
+44:51 stopped coding and then a similar thing
+44:54 I spoke with other people doing like
+44:57 working in I don't know as principal
+44:59 Engineers or architects
+45:03 all of them confirmed that yeah they
+45:06 went through something similar right so
+45:07 the similar process to where they
+45:10 started doing more high level stuff
+45:12 and then with time they became candles
+45:16 Hands-On right and with time because new
+45:18 tools come out like I don't know DPT
+45:20 exists now and it's very popular five
+45:23 years ago it wasn't there and like if
+45:25 you're data engineering experience comes
+45:27 from five years ago you might not even
+45:30 know like how to use DBT you just know
+45:31 that it exists right and the same with
+45:33 machine learning like these new tools
+45:35 keep appearing there's some Buzz about
+45:36 them but if you kind of lose touch with
+45:39 the ground if you come to high level
+45:42 right you
+45:44 risk staying irrelevant right so your
+45:46 risks yeah yeah forgetting things so how
+45:49 do you do that so in your case you said
+45:51 like you still try to be Hands-On but
+45:53 not my question is like how do you find
+45:55 time to do all that it's it's very
+46:00 um
+46:01 actually because this is exactly what is
+46:04 happening to the data stack and another
+46:05 team and myself here but my light is
+46:10 I we are working on this gold level you
+46:14 know gold letter level and so I have
+46:17 this new data engineer in the team which
+46:18 is like a very good individual
+46:21 contributor like this is what he he
+46:25 likes and is meant to do
+46:28 and
+46:29 um
+46:33 and fortivity So speaking about DBT uh e
+46:37 is coming from a very SQL based
+46:40 background and the data stack we had was
+46:44 not really manageable in terms of uh the
+46:48 the goal level and DVT like it's perfect
+46:51 for this uh area there where it's
+46:54 building automatically your acyclic
+46:56 diagram and your pipeline and scaling
+46:59 everything for you and so on
+47:02 but as I was spending a lot of time uh
+47:06 doing specifications or stakeholder
+47:09 management
+47:10 I couldn't uh
+47:14 like install DBT myself uh set up the
+47:17 pipeline build all of those Ginger
+47:19 routines and so on uh Etc and actually
+47:25 I did not touched DBT at all and uh the
+47:33 data engineer was the only one dealing
+47:34 with this but we were doing those one
+47:36 ones so every week I have a 30 minute uh
+47:42 meeting with all of the team members
+47:46 and doing doing those one once there is
+47:49 of course the synchronization of the
+47:51 world that has been done in stock but
+47:53 part of it was okay
+47:55 for me what you have done and go into
+47:57 details because I want to see that you
+48:00 know what you did and I want to
+48:02 understand it and
+48:05 of course you have other high-level
+48:08 things to do but those one ones when you
+48:11 are managing a team of very technical
+48:13 individual contributors they are your
+48:16 perfect occasions to stay relevant on
+48:19 the Technologies you or tools you are
+48:22 implementing on your data stack for
+48:24 example so this is the first place where
+48:27 you learn as questions try share your
+48:30 screen you show the code you show how it
+48:33 works you run a pipeline end-to-end Etc
+48:35 Xterra
+48:37 of course you you were not doing the
+48:39 answer but
+48:41 you know that uh if happens
+48:45 basically uh you will be able to be a
+48:48 second set of highs or on the work of
+48:51 the person and be able to debug together
+48:53 the pipeline or whatever
+48:56 and you can help the team on building
+49:00 good practices on new tools even though
+49:02 you have not
+49:04 implemented yourself you just share the
+49:06 knowledge about what you did in the past
+49:08 what works and what doesn't so the team
+49:10 then uh
+49:13 is somehow employed as we say and just
+49:16 take the decision for themselves but
+49:18 this is your very good as very good way
+49:21 to stay up to date and relevantage
+49:23 there's one one with your individual
+49:25 technical confidence
+49:26 and the second thing is stay up to date
+49:30 like you read the blogs you subscribe to
+49:33 very good seminars podcasts like the
+49:35 data talks or any other like that you
+49:39 like into your Fields you know
+49:41 stay in stay up to date with watching
+49:43 webinars and when you have something
+49:45 that sparked your
+49:47 attentions or excitement you know you
+49:50 just
+49:51 maybe spend a couple of words during
+49:54 your work week or your evening just
+49:56 trying to make it work for a little
+49:59 project or a sub box of your project as
+50:02 a proof of concept you know build a
+50:04 proof of concept at work that will
+50:05 include this new technology and see if
+50:08 it's worth it if it's not worth it good
+50:10 you add the end zone experience maybe
+50:13 and you tried it you benchmarked it and
+50:16 no good not for you next but at least
+50:20 you are aware of what listening and how
+50:22 to use it
+50:23 so basically if I try to summarize what
+50:25 you said is uh
+50:27 look at the trends like what is exactly
+50:30 is kind of hot what people talk about
+50:32 and second try to squeeze in sometime in
+50:36 your week in your calendar where you
+50:39 actually get some of these tools that
+50:40 people talk about and Implement some
+50:42 sort of proof of concept right yeah yeah
+50:45 techno technology watching you know this
+50:48 is uh the term yeah just
+50:52 uh give yourself a community on LinkedIn
+50:55 so you can be aware of like find an
+50:58 expert but probably I find an expert
+51:00 about that engineering find the next bad
+51:02 news later about data science find a
+51:05 data talk about machine learning
+51:07 whatever you know and
+51:09 just have a lot of streams of input that
+51:12 you can keep aware of the trends of the
+51:15 new things and have a lot like not only
+51:17 one have a lot of them so you can see
+51:19 things that are repeating and you see
+51:21 Trends and you see okay this one talked
+51:23 about this technology DBT DBT DBT like
+51:25 if everybody is talking about DVT you
+51:28 should be trying it otherwise you are
+51:30 missing out on an industry fan that
+51:33 could be bad for you in the long run
+51:36 mm-hmm
+51:38 so this is how I missed out personally
+51:40 with all these GPT stuff
+51:44 so now I have no idea how it works like
+51:46 like it feels like all the data
+51:48 scientists know what exactly is
+51:50 happening with all these LMS but I have
+51:53 no idea I just I can just use them same
+51:55 with DBT though it's similar that's okay
+51:58 GPT is quite present and a lot of people
+52:00 are just diving into the hybrid you know
+52:04 good for them
+52:08 but the
+52:10 I think
+52:12 we are in a very busy world you know and
+52:14 at some point you will find the time to
+52:16 just uh take a deep breath go out of the
+52:20 water you know and just have a look at
+52:23 this GPT thing and by them everything
+52:26 will have somehow Consolidated you know
+52:28 like this is good GPT stuff this is bike
+52:30 GPT stuff this is about the LGBT stuff
+52:33 and whatever and you will have some more
+52:35 insights uh than just like trying
+52:39 everything straight away as it goes out
+52:41 you will lose a lot of energy if you
+52:42 focus on GPT right now you know just
+52:44 know it's know what you can do people
+52:48 thinking about what it can do and
+52:50 uh at some point just consolidate
+52:53 everything you know and do a deep dive
+52:57 at that time I guess when it's somehow
+52:59 much of even if yeah at the speed at
+53:01 which things are just yeah in these days
+53:04 it's maturity it's very obsolete concept
+53:07 right and the problem is like apart from
+53:10 GPT there are so many other things that
+53:12 are also like trending like you open
+53:14 Twitter or LinkedIn and then people talk
+53:16 about like I don't know all these other
+53:19 things and then it's like okay
+53:23 how do I find extra 24 hours in my day
+53:26 right
+53:27 we have a few questions so Muhammad is
+53:31 asking how do you manage data
+53:34 specifications while setting up a data
+53:36 architecture pipeline for a project is
+53:39 it something you do in parallel or you
+53:40 first come up with data specs done by
+53:44 plan first Pipeline and specs or how
+53:46 does it look like
+53:47 I live in a planet near a black hole and
+53:50 they are when I spend one hour here it's
+53:53 like seven years on Earth you know
+53:58 complicated I I think the
+54:02 a bit touched on this earlier but the
+54:05 only way to escape
+54:07 the fact that you can't clone yourself
+54:10 or you can't work 48 hours a day
+54:14 is to scale your knowledge by giving it
+54:17 to your team so then you can
+54:20 do a bit of both and once the work you
+54:23 have done in terms of specification is
+54:25 mature enough
+54:27 introduce that analyst and what user
+54:29 data engineer and then start your
+54:33 the work you know
+54:35 it's the first X and then pipeline
+54:38 but like then I guess drafty specs right
+54:42 you don't want to have like a super
+54:43 detailed uh specification where
+54:46 everything is like perfect and then when
+54:48 you try to implement this nothing works
+54:50 right well this does not work if you do
+54:52 uh very like waterfall project while you
+54:55 design do a technical design the
+54:58 detailed technical specification and so
+55:00 on and then you build
+55:03 what you will build will not be relevant
+55:06 when you will have built it so just try
+55:09 to
+55:10 uh sketch end-to-end what it should look
+55:13 like how to get the customer feedback
+55:16 your stakeholder feedback as soon as
+55:18 possible so you know if you have been
+55:20 doing something wrong you have some
+55:22 insights from the from the domain
+55:25 experts you know
+55:26 and I will tell you yeah but look at
+55:30 this the turnover is not good at all on
+55:32 this uh you should not take into account
+55:34 those kind of Articles because uh they
+55:37 are conspiration cost and this is
+55:39 nothing that we include into the the
+55:43 codes that we send to our clients or
+55:44 whatever anyway you can have those
+55:47 domain
+55:49 insights expertise knowledge very fast
+55:53 if you just draft quickly end to end and
+55:56 then you refine with them you bring more
+55:58 data you specify and you iterate this is
+56:01 the most important concept we are I
+56:04 think in a world that is
+56:07 I don't know if it's largely agile but
+56:09 in the tech industry at least we push
+56:12 those agility Concepts more and more you
+56:15 know and I think the the
+56:18 do not over specify do not over optimize
+56:22 as well your code or when you are doing
+56:24 things straight away but try to get the
+56:27 client feedbacks your kind feedback
+56:30 straight away so you can iterate very
+56:31 quickly on getting the 80 of the results
+56:35 the fastest way possible
+56:39 so in summary so you're scratching and
+56:41 specification very drafting you get
+56:44 feedback on that then incorporate the
+56:46 feedback implement the POC pipeline then
+56:50 again get feedback because this POC
+56:52 probably produces something right so
+56:54 then get feedback incorporate that
+56:56 perhaps into specification adaptive
+56:59 specification
+57:01 change the POC and repeat right at some
+57:04 point PVC becomes like a proper project
+57:06 where you like you know fix all the
+57:08 technical debt but like it shouldn't
+57:10 happen immediately right yeah yeah so
+57:13 usually this is a trap you are going to
+57:14 build a book and you will end up with a
+57:16 lot of technical debt and a big impact
+57:18 of your code so you can make it scalable
+57:22 if you have built previously projects
+57:24 you have somehow templates about how to
+57:27 do things like ingestion template
+57:29 transformation template uh creation of
+57:32 data marks template power bi templates
+57:35 with the appropriate colors and whatever
+57:37 you know
+57:38 make sure you template things that are
+57:43 that have shown result at scale in other
+57:47 areas of your projects you know on other
+57:50 projects make sure you reuse what you
+57:52 know how to do uh because then you just
+57:56 gonna go fast you need a new source okay
+57:57 I got my template from the data source
+57:59 ingestion Bim API okay
+58:02 API ingestion function I get it straight
+58:05 into bones merging to Silver then okay
+58:08 they need a geographical Dimension okay
+58:12 I know that I have my postal code or my
+58:15 country database somewhere you know I'm
+58:18 just going to use this for the proof of
+58:19 concept and then as you are reusing bits
+58:22 and pieces that you built on previous
+58:24 projects
+58:25 these are the things that are already
+58:27 used in production by other projects so
+58:30 you have a
+58:33 basis of elements that are reusable and
+58:37 you go from proof of concept which is
+58:39 somehow already scalable uh modulo the
+58:43 the differences and the species and the
+58:46 specificities of your profit concept
+58:48 but you can go you will go fast into the
+58:51 in this relation phase if you reuse
+58:53 templates
+58:54 build templates this is the so it's also
+58:58 a part of your job as a data architect
+59:00 to
+59:02 know which templates are already there
+59:04 which templates exist which templates
+59:06 you need to build update Etc right so
+59:09 and you need to think about
+59:12 you know things you build in terms of
+59:14 templates like okay like I see multiple
+59:16 projects and this thing here kind of
+59:19 repeats right so there's some
+59:22 redundancies so let's make a template
+59:24 out of this right yeah if it was a data
+59:26 Architects need to book after you need
+59:29 to watch this out right so you need to
+59:32 look for this yes another you so you
+59:36 need to be aware of the templates you
+59:38 need to be aware as a so you have your
+59:41 data engineering Hut you know where you
+59:44 know that you have this somehow software
+59:46 engineer side of you that tells you okay
+59:48 if I'm repeating something three times
+59:51 I may want to build something common for
+59:55 that I'm going to reuse you know like in
+59:57 just one month this is my function I
+59:59 will put it somewhere and then I will
+1:00:01 use it in this project in this project
+1:00:03 in this project but I will call the same
+1:00:06 code base that I will reuse into the
+1:00:08 different projects and the data
+1:00:11 architect
+1:00:12 and data engineer and software engineer
+1:00:14 side of the of the personality you are
+1:00:17 you know should be aware that
+1:00:19 you can't build the perfect generic
+1:00:23 function to solve it all you know
+1:00:25 otherwise we'll be out of work since a
+1:00:28 long time ago but you need to balance
+1:00:31 what is generic and reusable and
+1:00:33 scalable with what is specific on every
+1:00:37 project
+1:00:38 you can't build a key that is going to
+1:00:40 open all of the doors in the world you
+1:00:42 know but 80 of the doors is good enough
+1:00:45 I will open 20 remaining with my
+1:00:48 specific keys I will build
+1:00:50 you'll pick the lock screen
+1:00:54 okay uh we should be wrapping up uh and
+1:00:57 I see that we still have quite a few
+1:00:59 unanswered questions so would it be okay
+1:01:02 if uh Muhammad and other people would
+1:01:04 reach out to you on LinkedIn with these
+1:01:07 questions
+1:01:08 sure sure
+1:01:12 the link will be in the description as
+1:01:14 you will say yes exactly there will be
+1:01:17 my LinkedIn profile in the description
+1:01:20 if you have questions I didn't answer
+1:01:22 because I'm very verbos when I speak uh
+1:01:26 reach out it'll be a pleasure to answer
+1:01:30 thanks slick it was as always great to
+1:01:33 talk to you and yeah time flies like we
+1:01:37 are already over time so yes really big
+1:01:39 pleasure pleasure to speak with you
+1:01:41 again so maybe we should repeat because
+1:01:44 we actually finally think we did not
+1:01:46 discuss what exactly it did for the
+1:01:48 transition we talked mostly about like
+1:01:50 your transition from data management to
+1:01:53 data engineering and then we talked
+1:01:55 about the role of the data headache but
+1:01:57 we kind of missed the actual transition
+1:01:59 but I for me it was interesting I hope
+1:02:03 for everyone else it was also
+1:02:04 interesting and yeah thanks again for
+1:02:07 your time thanks everyone for joining us
+1:02:09 today and have a great week
+1:02:11 all right thanks see ya

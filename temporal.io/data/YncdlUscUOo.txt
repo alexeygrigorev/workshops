@@ -1,0 +1,1328 @@
+Knowledge Graphs and LLMs Across Academia and Industry
+
+0:00 everyone Welcome to our event this event
+0:03 is brought to you by dat do club which
+0:04 is a community of people who love data
+0:07 we have weekly events and today is one
+0:09 of such events if you want to find out
+0:12 more about the events we have there is a
+0:14 link in the description click on that
+0:16 link and you'll see what we have in our
+0:19 pipeline which I don't think is a lot
+0:23 right now but we will be adding more
+0:25 events in future so keep an eye on that
+0:28 link do not forget to subscribe to our
+0:31 YouTube channel this way you will stay
+0:34 up toate you will get notified with all
+0:37 the future streams we have and do not
+0:40 forget to join our data community in
+0:43 slack where you can hang out with other
+0:45 data inas during today's interview you
+0:48 can ask any question you want there is a
+0:50 pinned Link in the live chat click on
+0:53 that link ask your questions and we will
+0:55 be covering these questions during the
+0:58 interview
+1:00 I will stop my screen
+1:02 now I will open the questions and I want
+1:07 to make sure I pronounce your name
+1:09 correctly is it
+1:10 anahita
+1:12 yes
+1:14 great so the emphasis is right yep also
+1:20 make it shorter if it's hard but yeah
+1:21 it's
+1:22 Anita
+1:25 okay so then um okay let me
+1:30 open the document okay I have the
+1:33 document and if you are ready we can
+1:37 start yeah let's go shoot yeah let's go
+1:42 so this week we will talk about
+1:43 knowledge graphs and TMS and how they
+1:46 are used and research in Academia and
+1:49 Industry and we have a very special
+1:51 guest today anahita anahita is
+1:53 originally from Iran she transitioned
+1:55 from mechanical engineering and
+1:58 specialized in applied mechanic in
+2:00 Sweden then worked in automotive
+2:03 industry for 5 years then she shifted
+2:06 Focus to pursuing a PhD in applied AI in
+2:09 Germany and yeah she combined her love
+2:13 for life and learning with a passion for
+2:15 cognitive
+2:16 sciences and she likes dancing painting
+2:20 [Music]
+2:22 running
+2:25 yeah that is a summary of CH so yeah um
+2:30 I think it's doing a relatively good job
+2:33 in summarizing and yeah as always the
+2:36 questions for today's interview are
+2:39 prepared by Johanna berer thanks Johanna
+2:41 for your help and Welcome anahita to our
+2:47 interview
+2:49 hello thanks for the invite and hope and
+2:53 also thanks for the intro was covering
+2:56 great yeah and before we go into to our
+3:00 main topic of knowledge graphs LS and
+3:04 all that um let's start with yourr I
+3:07 briefly mentioned your background but
+3:08 probably you can go a little bit more
+3:11 details so can you tell us about your
+3:13 career Journey so
+3:15 far yeah it was always a bit tricky to
+3:19 know what is the next step but I could
+3:21 as a summary you said it perfect as um
+3:24 studying mechanical engineering it was I
+3:27 think I really loved math but I wanted
+3:30 to be a practical so that's like how you
+3:32 end up to being engineer I would say
+3:35 basically and then I moved to Sweden
+3:38 because I was really curious to to study
+3:41 a bit more and be a because in The
+3:43 Bachelor I really felt I didn't learn
+3:45 much I didn't really feel to be an
+3:48 engineer and that's like why I went into
+3:50 the applied uh mechanics to really
+3:53 feeling it that it's you can use it in
+3:57 the in the different analysis and then
+4:01 started working and being living in
+4:02 Guttenberg is a bit hard to be out of
+4:05 automotive industry so he started
+4:07 everything was quite random I would say
+4:09 with a bit of higher probability and um
+4:13 and then uh starting at the automotive
+4:16 industry it's a lot of Demand on
+4:19 Automation and I was really lucky to be
+4:21 in this um company because it was a lot
+4:25 of
+4:26 unestablished uh uh coding and
+4:29 automation
+4:30 so usually you don't get this chance of
+4:33 doing a lot of coding in companies as a
+4:36 start graduate a fresh graduate and then
+4:40 a lot of cod and also the plan was that
+4:42 after a couple of years I would pick the
+4:45 topic that is interesting for my PhD but
+4:48 I thought it would be two years but
+4:50 after two years I had no clue what PhD I
+4:52 want to do it and then after four years
+4:54 I figure okay maybe I'm looking in the
+4:57 wrong domain because I spend most of my
+4:59 time optimization in uh Automation and a
+5:04 lot of semantic reporting for the
+5:05 company then I dare to feel that okay
+5:08 maybe I should move toward computer
+5:09 science and data science and that's when
+5:13 I started to shape my PhD proposal and I
+5:17 had a tough time to get funding in
+5:18 Sweden and that's why it took me to
+5:21 Germany to work in frontop sky in the
+5:24 topic I like to do my
+5:26 PhD and of course semantic reporting The
+5:30 Next Step was it for that to have a
+5:33 knowledge graph for CR
+5:36 simulations what do actually mechanical
+5:39 engineers
+5:40 do in applied
+5:43 mechanics the program is so focused on
+5:46 finite element analysis and com and cfd
+5:50 and so it's like you uh small um break
+5:55 break down the physics into small
+5:57 elements and then try to find the
+5:59 behavior of them I mean in a really
+6:01 basic explanation so you have a lot of
+6:05 different physics that you want to
+6:06 predict the behavior and then um you try
+6:11 to use different um um equations to find
+6:16 what is the response to that change to a
+6:18 force to a um vibration to a flow of
+6:23 fluids or uh to De formation of a crash
+6:26 as
+6:27 well I guess the um application of
+6:31 this uh would be in automotive industry
+6:35 like the designing of a car right yeah
+6:38 for sure so like before in the past it
+6:41 was making a lot of prototypes physical
+6:43 prototypes and doing the test and since
+6:46 they were really wanted to shorten the
+6:48 development and also save a lot of money
+6:50 because making prototype is a lot more
+6:53 expensive than build building in real
+6:55 car and then they really they are one of
+6:59 the leading industry in using fet
+7:02 element analysis so like for example
+7:05 truck uh development or any other
+7:08 developments they are far far behind
+7:10 compared to Automotive because of the
+7:13 high demand of these kind of
+7:15 analysis there's a system with I don't
+7:19 know different moving parts and then you
+7:21 want to change one of the parts of the
+7:24 system and you would you want to predict
+7:27 the behavior after this change right
+7:30 and this is what you it's usually not
+7:32 like that so you come with a design so
+7:34 you say Okay I want to have a car
+7:36 looking like this and then you say that
+7:38 I want to have these performances and
+7:41 then you try to for for example ourself
+7:43 to see how we could fulfill all the
+7:45 requirements so the usually the the the
+7:49 surface or the target of the market
+7:52 really defining uh how we should do the
+7:57 improvements and so usually comes with a
+8:00 targeted Direction uh of the
+8:04 performance so this finite element
+8:07 analysis is it in any way related to
+8:11 machine learning or it's a totally
+8:14 different thing we could say it's not
+8:17 that you H you could say it's there
+8:21 still numerical analysis so it's not
+8:24 unrelated to uh differential equations
+8:27 but you are not solving based on uh uh
+8:32 cost functions and data so that's the
+8:35 different thing so you try to model the
+8:37 behavior and predict it uh so you really
+8:40 a lot of um investment a lot of focus is
+8:44 on developing good material model to do
+8:47 the
+8:49 prediction so this is what you studied
+8:51 and then you you said there was no way
+8:55 for you to avoid the automotive industry
+8:57 and you were doing optimization
+8:59 and semantic
+9:02 reporting what are these things like
+9:04 what kind of optimization you were doing
+9:05 what kind of what is semantic
+9:08 reporting so so in which one could I
+9:11 start for with the semantic reporting
+9:13 what I'm referring to is that like they
+9:15 are it's it's an interesting topic to
+9:18 have like Fair data I mean to to have to
+9:21 be able to uh regenerate the analysis
+9:25 because what is seen in ahead of these
+9:28 all of test and crash test is that you
+9:31 don't need to do any physical test
+9:33 anymore so it's kind of that on on a
+9:37 release of vehicle maybe you release a
+9:39 model of finite elements and then all
+9:42 the tests will be done and I don't know
+9:44 if you know for example of these test
+9:46 are you rank cap so when a vehicle comes
+9:48 to the market you really need to rate
+9:50 the vehicle or you need to pass some
+9:52 legal requirements to have it sellable
+9:54 on the market so videos where they put
+9:57 manans inside a car and then the car
+10:01 drives to wall to the wall yeah a lot of
+10:05 different yeah exactly so like a lot of
+10:08 sensor measurements looking at the
+10:09 injuries on the occupant on the driver
+10:12 and so on so the main measure is
+10:13 actually the injuries
+10:15 exactly and um I forgot the question
+10:20 what was it that I end up here I was
+10:22 asking about optimization and semantic
+10:24 reporting yeah
+10:27 and so from the reporting so was in this
+10:30 point that we need to re be able to
+10:32 reevaluate or regenerate the results
+10:34 that we are reporting and uh for that
+10:37 aspect it was like also within analysis
+10:40 we generate a lot of simulations like
+10:42 for example for one vehicle it could be
+10:44 more than 500 simulations and with this
+10:46 semantic reporting was main focus on
+10:49 reusing the data and the long run to be
+10:51 able to regenerate the results because
+10:55 like one CR simulation could have like
+10:57 12 million elements and then it could
+11:00 take around uh overnight andal like 17
+11:04 hours on like
+11:06 1992 CPU so it's really costly analysis
+11:10 and with that with these semantics was
+11:12 like really classifying all the measures
+11:15 we have like the sensor data and
+11:17 barriers and so on to be able to compare
+11:21 the results so like to instead of and in
+11:23 the past it was like generating
+11:25 PowerPoint and Excel sheet so it was a
+11:27 lot of scripts that were Auto generating
+11:29 the Powerpoints but still you really
+11:32 couldn't compare and with the comparison
+11:34 I have seen say Engineers putting two
+11:36 PowerPoint that are generated with
+11:38 scripts and try to compare curves so
+11:41 that's a like one of the real change was
+11:43 that you you can click analysis and you
+11:45 can overlay all the sensor datas and
+11:48 after that within Knowledge Graph coming
+11:51 from the semantic reporting is to find
+11:53 the patterns in those and within
+11:55 optimization is like a lot of time
+11:58 within engineer you Tred to change
+12:01 thicknesses or adding holes and so on so
+12:03 it was like trying to use these
+12:06 geometrical changes to be optimize the
+12:09 behavior we required what will be so
+12:11 it's like a lot of topology optimization
+12:14 and the
+12:15 designs so for
+12:17 example uh for pedestrian analysis one
+12:20 of the main uh components that is really
+12:23 important is the inner hood that because
+12:25 you hit the head there and then it's
+12:27 like how to cut the mass and have still
+12:29 a good stiffness uh but not so hard for
+12:33 if you crash to a
+12:35 pedestrian and um that's the target of
+12:38 the
+12:39 optimization and all of that happens on
+12:42 a computer right yes so you don't do
+12:45 like I assume you don't actually crash
+12:48 into pedestrians to to
+12:49 see no luckily not but but it's all of
+12:53 these are also a bit of try to model it
+12:57 so also in a computer we don't really
+13:00 hit on a pedestrian so we have a head or
+13:02 we have a leg impact and then there are
+13:04 there are sensors in them to measures
+13:06 the accelerations to see if this is okay
+13:08 or not and then after a while we still
+13:11 do a really physical test but not on a
+13:13 real pedestrian so on this model of head
+13:15 or leg to to do to evaluate how good our
+13:18 modelings
+13:20 are oh white called I understand why
+13:23 it's called reporting but why it's
+13:25 semantic reporting because you define
+13:28 like with the is defining all these
+13:30 measures so it's kind of uh modeling of
+13:33 data uh behind it so like before that is
+13:37 just it's also a bit of semantics on
+13:40 those generating the Powerpoints but
+13:42 still to to be able to compare these
+13:44 simulations you need to have semantics
+13:47 to connect different analysis
+13:50 together okay yeah I think I more or
+13:54 less have a picture in mind so yeah
+13:57 there are different experiments
+13:59 and um yeah so these experiments could
+14:02 be
+14:03 related so for example there could be
+14:06 like I don't know maybe can you give an
+14:08 example of two experiments that are
+14:12 related could be like we are in a car
+14:16 and there is a we want to see like we
+14:19 want to hit the wall and see how much
+14:21 the driver is injured but another
+14:23 experiment is how much the uh the person
+14:26 who is sitting near by is injured right
+14:30 so this could be two different
+14:31 experiments that
+14:32 relas no I mean it's like it's really
+14:36 sensitive analysis I would say so we I
+14:40 with this relations with small staying
+14:43 really really much much smaller changes
+14:45 so it could be that for example when you
+14:49 for example we make a lot of impact
+14:51 points in the hoods and to see how uh uh
+14:56 good the performance of the whole
+14:57 vehicles and they are usually usually
+14:59 for example with distance of 100 mm so
+15:02 quite small still and then one of these
+15:05 relations could be that like uh how much
+15:09 the area around it like for example if
+15:11 it's small slide a bit on the impact how
+15:14 much robust is that and how much they
+15:16 are still staying with the same behavior
+15:19 of uh of the acceleration because
+15:21 acceleration curves they are really
+15:22 sensitive they could it's also hard hard
+15:25 to model them to get the correct
+15:27 acceleration curve and uh so I would say
+15:31 from driver to passenger it's a lot of
+15:34 change to to say how much they relay
+15:37 because most of vehicles are not really
+15:39 symmetric either like you have an engine
+15:41 there and you have like a cooler there
+15:43 so it's a lot of we try to have a
+15:46 symmetric impact I mean symmetric uh
+15:49 intrusion but it's really tricky still
+15:51 to have it and in a real life most of
+15:54 the impacts are not symmetric
+15:57 either so
+16:00 do I understand correctly that this is
+16:01 something you started doing while still
+16:04 working at uh the automotive industry
+16:07 and then this is what led you to do
+16:10 graphs
+16:11 now researchs because uh like you were
+16:15 talking that uh about these impact
+16:17 points that are close uh to each other
+16:20 right and this this means that you can
+16:23 build a graph of all these sensors right
+16:26 or impact points somehow yeah yeah and
+16:29 this is how you arrive at the graph yes
+16:32 exactly I mean this is also like when I
+16:34 was trying to develop this webbase
+16:36 reporting or semantic
+16:38 reporting uh since it was many analysis
+16:41 it was really oldfashioned old web
+16:44 technology and then it was quite
+16:46 necessary to have a backend and a
+16:48 database to improve the performance and
+16:51 also front end and at that time when we
+16:53 started to decide what kind of database
+16:56 we need to use and we decided to skip uh
+17:00 relational databases and that's like I
+17:03 would say when looking into graph
+17:05 databases started because automotive
+17:08 industry has so many changes that if you
+17:10 want to have a relational database it's
+17:13 really time consuming to maintain it
+17:16 it's like when I started with my company
+17:18 we were looking into implementing um
+17:22 data management systems because this is
+17:24 like an old topic with an automotive to
+17:27 maintain the part because like one uh
+17:30 vehicle has a lot of different parts a
+17:32 lot of different models how to connect
+17:34 these like the input data how to be
+17:36 related and um and they are looking into
+17:41 relational databases and like to really
+17:43 establish it it's time consuming so
+17:46 that's why uh my mentor advis to use
+17:50 this um NE 4J or any other uh graph
+17:55 databases and that is very started but
+17:58 it's not also easy to just store crash
+18:01 simulations or any Fe analysis in a
+18:03 graph database because you can't store
+18:06 all all of them all the
+18:10 data I'm trying to visualize this
+18:13 graph and yeah I don't think I can like
+18:17 what could what are the notes what are
+18:19 the ages in this graph what kind of
+18:21 relationships do we can we model
+18:24 there if we talk about semantic
+18:26 reporting yeah so like one of Basics
+18:29 start is like that you you we follow the
+18:33 R&D development so like from a vehicle
+18:37 that is supposed to be on the market and
+18:38 if you stay with crash because it could
+18:40 be any different analysis and
+18:42 requirements like durability and so on
+18:44 within the crash we know what is the
+18:47 year of the release of the vehicle and
+18:50 then what are the required performance
+18:52 so this is like some kind of kind of
+18:54 semantics to connect the current vehicle
+18:57 to the V on the markets and be able to
+19:01 aim to compare the performance of the uh
+19:06 this um so kind of benchmarking to see
+19:09 how we could perform so like from the
+19:11 weight of the vehicle size of the
+19:13 vehicle and so on and then coming from
+19:16 Vehicles then one vehicle that has it
+19:18 has like a
+19:20 platform and uh and also um upper body
+19:24 of like how the vehicle looks like and
+19:27 then in this so it's like really
+19:28 capturing the the structure of the
+19:31 company how they are developing because
+19:33 these relations also help to relay the
+19:37 the analysis and the behaviors so what
+19:40 why for example this platform an upper
+19:42 upper body is important is because you
+19:45 could compare the siblings vehicle so
+19:47 you see the cars that look like the same
+19:49 but they have different right height or
+19:51 a bit bigger trunk size or stuff these
+19:54 vehicles are still could be related and
+19:57 it was a topical of interest to see if
+19:59 we could predict uh simulations based on
+20:02 one platform and upper body to another
+20:06 platform and upper body and if we go a
+20:08 bit more detail between simulation was
+20:11 like to con
+20:13 convert the physics of the problem to a
+20:16 graph so like what is really important
+20:19 from a CR simulation Engineers to detect
+20:22 a behavior of a crash to say this
+20:24 simulation is similar to another
+20:26 simulations from this
+20:29 analysis con
+20:31 Concepts so while you were talking I was
+20:35 taking notes and then I drew a graph so
+20:38 in this graph I have a note with year
+20:41 when the car was made let's say
+20:43 2020 right so this is the car U this is
+20:47 the year and then we can have notes of
+20:50 individual cars and the connection
+20:51 between the car and 2020 could be the
+20:54 year when it's made then the how do I
+20:58 say correctly the body type or upper
+20:59 body type yeah exactly mhm and then I
+21:03 guess there are other different
+21:04 characteristics of a car right and all
+21:06 the of these are nodes and each car is
+21:09 also a node and the relationship
+21:11 between the no stages is like okay made
+21:15 in type of the body or I don't know
+21:18 engine type like different
+21:20 characteristics different features mhm
+21:23 okay and why is it a useful
+21:26 representation CU if I think about about
+21:28 machine learning so in machine learning
+21:30 quite of when we have table data right
+21:33 and then it could be uh we can have row
+21:37 each row would be an experiment and then
+21:40 we can have uh
+21:43 different features right features could
+21:45 be year type of the body upper body type
+21:50 of the engine other things and result
+21:53 like the target the the thing we want to
+21:56 predict could be I don't know what do we
+21:59 usually predict like impact on the
+22:01 person or on The Pedestrian or whatever
+22:04 right so like why do we actually need
+22:07 graphs here what can express with
+22:11 table I mean a lot of things that you
+22:14 have it as a graph you can express it
+22:15 with table but then it's mostly on
+22:18 abstraction that is nice and also in in
+22:22 to finding a a bit more complex
+22:25 relations between them so for example
+22:27 one of the main gains I have in my PhD
+22:30 is to have a visualization that you can
+22:33 uh have a look over 300 simulations so
+22:36 if you want to compare 300 simulations
+22:40 in a table with visual look I think it
+22:43 would be a bit tricky and uh and we like
+22:46 using weighted graph and uh visualizing
+22:50 the simulations and then their parts
+22:53 that have been involved mostly in the
+22:55 crash it's um was simply clustering the
+23:00 simulations and also showing what are
+23:02 the important parts for those crash
+23:05 simulation or what is the common parts
+23:07 in those and uh and also like for
+23:10 example to detect a load pass uh so it's
+23:13 like when you really transfer the
+23:16 physics of the problem into the graph
+23:18 you can also answer different questions
+23:21 like load pass detection so it's like
+23:24 load pass is like where is that if you
+23:27 walk if you trans a structure of the
+23:29 vehicle to a graph and like each part is
+23:32 one node and then if they're connected
+23:34 they have a edge between them so
+23:36 connected to another parts and then you
+23:38 try to get the how much each part has
+23:41 absorbed or been involved in a crash and
+23:44 then you try to find what is the main
+23:46 path of the load transfer within the
+23:48 structure so kind of the longest path
+23:50 use and that is also a highlight that I
+23:54 don't know of a way to really see in a
+23:57 table
+23:59 so that's what you do in uh your PhD
+24:02 research right yeah
+24:04 exactly and as I understood so you have
+24:07 a system it's based on NE forj and then
+24:10 you have different graphs and then oh
+24:12 like you have a graph different notes
+24:14 and then it allows you to do this
+24:17 exploration so you can click on the note
+24:20 and then okay like let's say we want to
+24:22 look at cars that were made in 2020 then
+24:25 you can maybe click on the 2020 though
+24:28 and then like explore different models
+24:31 and how they perform in experiments
+24:33 right yeah and see like all this lot
+24:35 path passess or paths
+24:39 um and other things right that's a bit
+24:42 of I would say a lot of some part of
+24:45 this knowledge graph is in uh data
+24:48 engineering and I think most of the
+24:50 thing you can do within Knowledge Graph
+24:53 maybe I am not really that experienced
+24:55 to comment it but I feel you can also do
+24:58 it with relational database it's just a
+25:00 lot of overhead of Maintenance and so on
+25:03 between these two but what is quite
+25:05 interesting for myself is that when you
+25:07 can extract a computational graph from a
+25:10 Knowledge Graph and then do further
+25:12 analysis on that and these that I
+25:15 referred to they are mostly on graph
+25:18 data science specifically compared to
+25:20 Knowledge
+25:21 Graph so Knowledge Graph is um so we
+25:25 have a car and the car so the parts of
+25:29 the car they have different
+25:31 relationships between each other so they
+25:33 are connected and then all this uh
+25:37 sensors um like then also different
+25:40 characteristics of a car like here uh
+25:43 type of the upper body all these things
+25:45 so this is the knowledge graph right yes
+25:47 exactly and and then you have the node
+25:50 degrees there so you can do a query
+25:52 there so what are the car other cards
+25:54 related to this one what are the parts
+25:56 and so on so you can do a lot of query
+25:58 in that level so this is how we express
+26:01 what we know about the cars but then we
+26:04 do this stimul simulation right crash
+26:08 simulation and somehow also record the
+26:11 results in this graph or exactly yeah MH
+26:15 and this is the computational graph that
+26:17 we have like I think I don't understand
+26:20 what yeah Sor so for the no that's not
+26:23 the I mean this is so we have the
+26:25 knowledge graph that includes a lot of
+26:26 simulations so it's like it hold the
+26:29 market different costs but then it also
+26:32 have a lot of simulations of that
+26:34 vehicle included and then we pick for
+26:37 example simulations and parts as the
+26:41 input data and then we make like a graph
+26:44 like networkx graph or whatever of graph
+26:47 data science and then that is the one
+26:49 I'm calling the computational graph so
+26:52 then it's not related to Fe analysis
+26:55 directly anymore so it's just graph data
+26:57 science or machine
+27:00 learning yeah and what do you actually
+27:02 mean by gra data graph data science or
+27:04 machine learning what kind of things you
+27:05 can do with these graphs so you
+27:07 mentioned networkx which is a library in
+27:09 Python right which can work with graphs
+27:12 so once we express this graph and
+27:14 network what can we do with this one is
+27:17 like predicting a similarity of the
+27:20 simulations or like this longest pass
+27:22 analysis I told you or a lot of uh
+27:26 visualizations with the as a uh because
+27:30 like when you load the whole Knowledge
+27:32 Graph to for example having this um uh
+27:36 weight as a weighted graph and
+27:37 especially it's also not easy to have
+27:39 weight on all the edges then it will be
+27:42 a bit tricky to have a good
+27:44 visualization so that's why I call it
+27:46 like a computational that you always
+27:48 look at the part of your whole Knowledge
+27:50 Graph to visualize it and find the
+27:53 pattern but it's a still the whole um
+27:56 data is coming from the knowledge graph
+27:59 mhm I'm curious so so you mentioned that
+28:02 graph data you mentioned two terms graph
+28:04 data science and graph machine
+28:06 learning so if I understand correctly
+28:09 the distinction here is like in one case
+28:12 it's more like doing some sort of
+28:13 analytics right or doing this analysis
+28:16 exploring the graph and in the other
+28:18 case making predictions what's the
+28:21 difference between these two I think
+28:22 graph data science and graph machine
+28:24 learning are the same so it's like
+28:25 saying what's the difference of data
+28:26 science and machine learning yeah same
+28:28 same different I would say okay so what
+28:32 kind of things you can like okay we you
+28:35 you mentioned actually things that we
+28:36 can do but I'm curious when it comes to
+28:39 machine learning like when it comes to
+28:40 predicting
+28:42 something yeah we can see if two things
+28:45 are similar using different similarity
+28:46 metrics they are more like graph
+28:49 similarity
+28:50 metrics yeah I don't remember like I
+28:52 remember that there are different
+28:54 measures it's like Sim rank is the
+28:57 method iuse used so that's like items
+28:59 that are referred by similar items are
+29:03 similar and uh so that's like how you
+29:06 predict the similarities of items
+29:10 because you really don't have any
+29:12 ranking uh for the simulation similar so
+29:17 you give us the input for example one
+29:18 simulations and rank what are the
+29:21 related other analysis to to that so
+29:24 it's more like unsupervised machine
+29:26 learning so here you don't really have
+29:27 exactly Target okay I see and then like
+29:30 your task is to understand the
+29:32 similarity and you use different uh in
+29:35 your case it's simr to understand how
+29:38 similar to experiments are two
+29:40 simulations are yeah do you use any
+29:45 supervised machine
+29:47 learning I tried uh a part of it and
+29:51 that was on a really really small uh Toy
+29:54 example uh so not really on a complete
+29:57 vehicle and that was what I relate to
+29:59 siblings vehicle so when you have the
+30:01 same the idea was that for example when
+30:04 we have
+30:06 um uh a one platform but two different
+30:09 vehicles to be able to predict the uh
+30:13 the behavior of them and that was like
+30:16 uh that I had a toy Fe model and then I
+30:19 was trying to see if I have a set of uh
+30:23 data uh like a development tree that
+30:26 means that you simulate ations are
+30:28 related based on the changes because you
+30:30 always do a small change so for example
+30:32 you pick one part and do a thickness
+30:34 change you pick another part and do a
+30:36 whole adding a hole in that so
+30:38 considering this uh three and then the
+30:41 physical changes relation to see if we
+30:44 could um uh transfer these uh behaviors
+30:49 to another uh uh sipling vehicle and
+30:54 with that it means that the design
+30:55 changes are the same it's just the
+30:58 impact mass is
+30:59 different so and that means we have more
+31:02 kinetic energy in in that one and uh and
+31:06 like uh since we are in a high
+31:09 nonlinearity with crash deformations
+31:12 it's like when you add a lot of more uh
+31:16 um mass in that you increase the
+31:19 deformations and it's really get hard
+31:21 and are harder when the difference of
+31:24 this mass is huge but in the smaller
+31:27 level it was quite uh interesting
+31:29 results but still since we had limited
+31:33 number of simulations because I wanted
+31:34 to have it like connected to reality
+31:36 maybe you have Max 300 simulations that
+31:39 you want to transfer it and uh so what I
+31:42 was doing and was quite interesting it
+31:44 was pair learning so I was trying to
+31:48 connect my uh use the connection of
+31:52 simulations and use the relation of the
+31:55 edges between the relations to predict
+31:58 the level of absorption in
+32:02 them you understand correctly that
+32:04 graphs give us not only the way of
+32:09 expressing knowledge storing knowledge
+32:11 in them but also when it comes to
+32:14 actually making the
+32:16 simulations we can also Express like a
+32:20 note could be a different
+32:21 experiment and the connection between
+32:23 them and H would be the change that we
+32:26 make right somehow cuz like if you make
+32:28 small change these two experiments are
+32:32 quite related and then you can observe
+32:34 you can also Express that you can
+32:36 express that in a graph database that
+32:37 these are very related there was only
+32:40 one small change between these two
+32:42 experiments and also you can record the
+32:45 outcome yeah the this change which would
+32:49 be quite difficult in a table N I guess
+32:53 yes
+32:55 yes yeah it would be like like I imagine
+32:58 if I again talk about um table format it
+33:02 would be I guess changing one of the
+33:04 features and then seeing what happens at
+33:06 the
+33:07 end I think in this scenario it could
+33:10 also be that uh you because we we were
+33:14 looking at simulations where compared to
+33:16 all of the simulations so you can still
+33:18 think you have it kind of table or in
+33:20 the in the in the that framework but I
+33:24 think what was quite um interesting is
+33:26 that when the SIM ations have a edge
+33:29 real connection we know they are closer
+33:31 than the one so like um it's kind of
+33:34 additional information in uh in having a
+33:39 development tree
+33:41 included and you also work on the LMS
+33:44 right and you see how these knowledge
+33:48 graphs or graphs are andms can work
+33:53 together so can you tell us more about
+33:55 that I think it's it's a quite the niche
+33:58 topic now with llms and knowledge graphs
+34:00 and that's that's really focus in Text
+34:03 data and with my PhD I really didn't
+34:06 Focus much on text Data NLP uh so that's
+34:10 like start it's a quite New Journey for
+34:12 me it started from Summer after the boot
+34:15 camp that I did some more of LMS and and
+34:19 within LMS and knowledge graph a lot of
+34:22 uh focus is on grounding dancer so it's
+34:25 like really in this part of
+34:28 hallucination of uh llms and to see how
+34:31 you could feed in um uh indexes that
+34:36 will make more reliable
+34:40 answers and also I I am like um it's
+34:44 also I think a quite fun uh domain
+34:47 because I think they a lot of people
+34:49 again say Knowledge Graph and lenss but
+34:52 it's also a lot I feel graph data
+34:55 science is also uh could support it
+34:57 because on this uh selecting what is the
+35:00 most similar note to feed in from a
+35:03 Knowledge Graph to a LMS it could be
+35:05 also relations uh that comes from um uh
+35:10 graph data science on ede predictions
+35:12 and so
+35:15 on well to be honest I still didn't
+35:18 really understand the connection so LMS
+35:22 work on Text data and graphs work on
+35:26 graph data on notes and
+35:28 edges right and does it mean that um
+35:32 okay we have different features or
+35:34 characteristics of our experiments of
+35:37 cars or whatever which are text based
+35:40 and we can use LMS for these features or
+35:43 how does exactly the connection look
+35:45 like yeah I mean one of the funny
+35:47 example was that like this the questions
+35:50 that LMS can't answer so one of them is
+35:53 like I think was like uh person a give
+35:56 birth to her child in can Canada and uh
+35:59 and then what was it uh and then the
+36:02 father was there no what was it I don't
+36:05 remember the example really
+36:08 good but uh the the thing is what I
+36:12 wanted to I now should come up with my
+36:14 own example because I don't remember
+36:16 that would be a bit fun but the the
+36:18 thing is that like within the relations
+36:20 you have within the because when when we
+36:22 do LMS we have a part of text like we do
+36:25 a chunks in them and then based on these
+36:28 chunks you don't have
+36:31 um uh you don't have all the data
+36:34 connections to each other and then and
+36:37 since also LMS are not good into having
+36:40 huge amount of input together then we
+36:43 would miss some of these relations of
+36:46 data to each other and the thing is that
+36:49 when we build Knowledge Graph based on a
+36:51 text data we are transferring we are
+36:54 generating semantics and add those
+36:56 relations in the knowledge graph
+36:58 so and based on that you could feed into
+37:01 llm so it's a bit more of prompt
+37:03 Engineering in that direction that what
+37:05 you should feed in to get the good
+37:07 answers from llm So within knowledge
+37:10 graphs you feed in some more of relation
+37:13 so for example with this example that I
+37:15 was trying to say is that for example
+37:17 you don't know about uh who is the
+37:21 mother of a child for example but when
+37:24 you have the relations of the people in
+37:26 a graph and transfer that and get all
+37:28 the chunks of information about the
+37:30 mother and the father and the child
+37:32 itself you you enrich the data to answer
+37:35 the
+37:37 questions do I understand it correctly
+37:40 that we have a piece of text that
+37:42 expresses different
+37:44 relationships between entities and what
+37:47 we use an llm for is actually extracting
+37:51 these relationships from the text and
+37:54 then once these relationships are
+37:56 extracted we can put them in the graph
+37:59 and then use a graph database or
+38:03 graph library to further analyze the
+38:08 relationship we extract no this is just
+38:11 use of LM with Vector datab basis so you
+38:14 make chunks and for each chunks you use
+38:17 llm to do embedding to extract features
+38:19 and then you store them in the vector
+38:22 database I see and then and this is like
+38:25 you have the Chun base so like you don't
+38:27 don't have much of you don't have any
+38:29 knowledge graph on that but when when
+38:31 it's a one of the basic one is that for
+38:34 example to build a knowledge graph on
+38:35 that is that for example you are getting
+38:37 a book and instead of having uh just
+38:41 this for example 400 tokens store in a
+38:45 note you also have what are the what are
+38:48 the chapters of the book so you store
+38:51 the chapters as extra nodes and then you
+38:53 say for example chapter two owns this ch
+38:58 and then you you also add the relation
+39:01 that these chapters come after the other
+39:03 chapter so you when you are just having
+39:06 chunks in a vector database you are
+39:08 missing the
+39:11 relations and also you are missing the
+39:13 semantics so these two are coming these
+39:17 Rel extra relations and semantics are
+39:19 coming with Knowledge
+39:20 Graph yeah
+39:23 so now I think I understood what you
+39:26 said so you mentioned prompt engineering
+39:28 and when we come up with a prompt and we
+39:31 want an LM to answer a question about
+39:34 something we want to include
+39:36 also some semantic information about
+39:38 that like in your example about the book
+39:42 you can say that okay this paragraph
+39:44 comes from this page this page comes
+39:47 from this chapter this chapter comes
+39:48 from this section right so sort of extra
+39:51 semantic information that will help LM
+39:54 to to give a better answer right yeah
+39:56 and and like for example when you do a
+39:59 template for your prompt you can Define
+40:01 the relations that are important so and
+40:04 then since it for example and you can
+40:05 for example put it like a cipher query
+40:08 as a example for one of the use case and
+40:10 since it has access to whole of
+40:12 Knowledge Graph it could make similar uh
+40:16 Cipher query to find information about
+40:19 its own use
+40:22 case so there is a question from Ros in
+40:26 Chestnut that's it's a very interesting
+40:28 nickname so the Roos in Chestnut is
+40:31 asking or yeah this is a question it
+40:34 sounds like transfer learning is it the
+40:37 same idea used on
+40:40 relationship and which content he's
+40:42 asking is it about the because the only
+40:44 transer learning I have been doing it's
+40:47 about the predictions on automotive and
+40:50 I I'm not sure if that's the question
+40:52 here but I guess like uh so you
+40:53 mentioned embeddings making embeddings
+40:56 from using llm right so we kind of use
+41:00 the knowledge that is already in llm to
+41:02 make
+41:03 embeddings maybe this is it I don't
+41:06 think so because like in transfer
+41:08 learning is a lot of time when you are
+41:10 uh having some layers so because like
+41:13 with these llms content it's not any
+41:16 it's more of Rog I would say retrieval
+41:20 augmented Generations that you use the
+41:23 embedding you use a model that exist and
+41:25 you try to do the edding on them and
+41:28 within the transfer learning I I think
+41:31 it's if I look at it from window of deep
+41:33 learning is always that you have a model
+41:36 an architecture and you try to transfer
+41:38 it from uh one data set to another data
+41:41 set and uh and that's in more of level
+41:45 of fine tuning I would
+41:49 say so the reason I thought about the
+41:52 example I mentioned like when there is a
+41:54 piece of
+41:55 text and uh
+41:58 know an example could be that this is
+42:00 the mother or different I don't know
+42:03 relationship between things in text and
+42:05 we want to ask anlm to extract this
+42:07 graph cuz recently I was doing something
+42:09 a little bit similar I was not I I had a
+42:12 piece of text and I needed to create
+42:16 Json from this text so I needed to
+42:19 structure to give it some structure and
+42:21 then of course instead of doing it
+42:23 myself I just ask nlm to do this and
+42:26 chat PT did it pretty well so that's why
+42:30 I thought maybe we can actually also use
+42:32 it
+42:33 for in not just only extracting Json
+42:37 from that but also extracting
+42:39 relationship from
+42:41 text yeah it's uh it's quite I have
+42:45 tested it a bit uh also it's like with a
+42:49 lang chain I would say that it's kind of
+42:53 a tree of thoughts that you ask it
+42:55 question it give you some item and you
+42:57 go further down the only tricky thing in
+43:00 that is a bit like um you need a setups
+43:05 to work because uh because if it is just
+43:08 couple of
+43:09 uh
+43:11 um a limited amount of questions and
+43:15 depth to walk I would say it's easy to
+43:17 check it but when you want to extract a
+43:20 lot of uh content from your text is
+43:24 quite tricky to trust it and a lot of of
+43:27 time that knowledge graphs come with
+43:29 llms it's exactly the opposite you want
+43:32 to have something that you can trust and
+43:35 that's why I think it's still the the
+43:37 old process of building Knowledge Graph
+43:40 is more is required because if you have
+43:43 it with llm you are in a loop you you
+43:45 can never validate it maybe it can help
+43:47 you but still to verify it is quite
+43:50 tricky and U with GPT you can also see
+43:54 that if you ask it for an output today
+43:57 it could have different kind of results
+44:00 uh after a while or with a bit different
+44:03 uh content before uh of uh so the
+44:07 history of it is affecting on the answer
+44:09 that it's
+44:12 providing and right now I'm looking at
+44:15 one of your GitHub projects so this
+44:17 project is called
+44:19 adpt l r n f h y c s s I guess it's
+44:28 adaptive learning physics right yes
+44:32 yeah quite tricky name yeah so can you
+44:36 tell us more about this project that's
+44:40 uh okay that's actually it's interesting
+44:42 because it's quite connected to what we
+44:43 just discussed because this was a boot
+44:46 camp project so like first time that I
+44:48 uh we tried to kind of for myself also
+44:51 to connect Knowledge Graph with a lens
+44:53 and that was the idea of thinking that
+44:56 like nowaday you can ask a lot of
+45:00 question from GPT and how it could be to
+45:03 have a platform or a code piece of codes
+45:06 that you can it can make you uh learning
+45:09 material so and our first Target was to
+45:13 have it on
+45:14 physics and uh but as it is with a lot
+45:17 of projects you aim for something and
+45:19 you end up on something else so and that
+45:22 was exactly because we had just two
+45:24 weeks to finish this project and uh and
+45:28 then a lot of hallucination and
+45:31 untrustworthy of the GPT on generating
+45:34 the con so like how we were uh doing it
+45:37 it was saying that okay um so we had the
+45:40 Lang chain with breaking down a topic
+45:44 and we wanted to make a knowledge graph
+45:47 for physics that you can uh uh uh
+45:53 provide material to users so like first
+45:56 users comes and then you ask some
+45:58 questions about the interest the levels
+46:01 and so on and then it provide you
+46:03 stepbystep uh content question and
+46:06 answer that supports you to learn a new
+46:08 domain and that was the initial idea but
+46:11 since it was building the knowledge
+46:13 graph really hard and really not good
+46:15 results out of chat GPT 3.5 turbo and
+46:20 that's like when we decided to change
+46:23 the project a bit and instead of having
+46:26 um um learning platform for uh for
+46:30 physics uh we moved it to support still
+46:33 in a learning Direction but like
+46:35 supporting people to read papers so like
+46:39 uh if you are not a researcher or if you
+46:41 are a researcher how we could have a
+46:43 platform that you give in a paper and it
+46:45 break it down to you and it could
+46:47 support you with the same consequence
+46:50 that you feel comfortable to read paper
+46:53 in domains you have never read and uh
+46:56 that was like breaking down uh the paper
+47:00 to the sections find the relation of
+47:02 them and also connect it to other papers
+47:05 and the references and so on So like um
+47:08 that was the final result of it I I'm
+47:11 looking right now at visualization so
+47:14 what happens there is that uh there's
+47:17 this um part where you upload a
+47:22 file is all you need in this example so
+47:24 you you DR or you upload
+47:27 this and then what it's doing it's
+47:29 extracting text from the PDF and looks
+47:33 at different uh terms there different
+47:36 words right yeah and then it builds a
+47:39 graph from these words and explains each
+47:42 of them right or how that does work it
+47:44 has we have two tracks so first tracks
+47:46 it's like uh doing semantics so it's
+47:49 like extract each sections of the paper
+47:53 and then doing bedding on them and
+47:55 finding the relations between them and
+47:58 another track is that it get each
+48:00 section and use in a some steps with GPT
+48:04 that what are the keywords for these
+48:06 sections and then defining the keywords
+48:09 of them so it's independent of the graph
+48:11 so it's with a several proms to extract
+48:14 more knowledge so then I think at the
+48:17 end of this you see that when you Hoover
+48:20 over some keyword it show show you a
+48:22 small uh um box that is describing that
+48:28 so it's more of having all in one place
+48:30 that you don't need to move around to uh
+48:33 to read a paper and uh and also with
+48:37 these uh sections and this graph and you
+48:41 like click on the edges of them you can
+48:44 explode it and see what is common
+48:46 between two sections and what are the
+48:48 differences and this is more interesting
+48:50 when you have two different papers
+48:52 because for example you want to compare
+48:54 their method development and then uh
+48:57 when you click on the edge it explodes
+48:59 and summarizes the differences and
+49:02 similarities of those ones and this work
+49:06 is working only on archive papers
+49:09 because really extracting semantic with
+49:12 PDF and getting these sections it's not
+49:14 so simple so because it could really
+49:17 defer how people are publishing and
+49:19 generating their PDF and with archive is
+49:21 good that they always get in the text
+49:24 and generate it themselves so it's a
+49:26 more more trustworthy to extract the PDF
+49:29 from them and then what you do we do is
+49:32 that like when you also upload the paper
+49:34 we could uh get all the references out
+49:37 and then uh make a summary of the paper
+49:40 and its references and show what is for
+49:43 example the most relevant reference to
+49:45 that because also on visualization we
+49:46 are using page rank that like this size
+49:50 of the nodes are referring on how
+49:52 important that Noe is in the whole uh n
+49:56 workk that you see and then we could see
+49:59 that okay what is the m most important
+50:02 reference within this domain and this is
+50:05 a help a bit more for people who used to
+50:08 read papers because for them it's quite
+50:12 uh timesaving to find the most relevant
+50:15 related work to look in to dive
+50:18 in I wish I had a tool like that when I
+50:22 was doing my
+50:24 masters so like
+50:27 I was doing information retrieval on
+50:29 mathematics on mathematical
+50:31 formula and um yeah just like reading uh
+50:35 especially at the beginning like doing
+50:37 the uh state-ofthe-art
+50:40 research understanding what is there and
+50:43 like reading just random papers that are
+50:46 potentially about the topic and then
+50:47 feeling completely lost there uh yeah
+50:51 that uh like I think I would have been
+50:55 more effective with a tool like that and
+50:57 I I I I wished I had something like
+51:00 that also more
+51:04 yeah yeah sorry please go didn't hear
+51:06 you
+51:09 sorry I just didn't hear you so I just
+51:11 asked what did you
+51:13 say so like all everything I was saying
+51:16 you didn't hear no just the last part
+51:18 because I started to talk and then yeah
+51:20 so I also wanted to mention that like I
+51:23 was I was taking a German test last week
+51:28 and I Was preparing for this German test
+51:31 and there are so like there are so many
+51:34 grammar Concepts that they
+51:37 related example connectors right so
+51:40 there can be um I know connectors that
+51:43 connect sentences then there could be I
+51:46 don't know how much German you know like
+51:49 some connectors there for how do you
+51:52 call them dependent sentences sometimes
+51:54 these two sentences are independent
+51:57 and sometimes the connectors are
+51:59 actually adverbs not real connectors
+52:02 right there are different sorts of
+52:04 connectors and there are different sorts
+52:05 of different grammar grammatical
+52:08 things and for me like when I try to
+52:11 comprehend all that this is just my mind
+52:14 blows and having this graph structure
+52:18 where you know some sort of Mind map
+52:21 where you can zoom in different concept
+52:23 and see how they are connected could be
+52:26 quite useful and I think like with a
+52:28 little bit of tweaking if I understand
+52:32 correctly this project can also do that
+52:35 right
+52:36 yes I think I mean it's a lot of time
+52:40 with this finding relation is if it's
+52:42 rely on llm then it's like how well it's
+52:46 described and so on but I think chunking
+52:50 all grammatic pieces into a node and
+52:54 then finding the relations between them
+52:56 it could be a great start and for me
+53:00 this the same all the time it's like uh
+53:03 learning new things needs to find the
+53:06 relations between them and that helps to
+53:09 so okay this is the same as this one and
+53:11 and when you have no clue and just walk
+53:13 around it's hard to summarize everything
+53:16 and learn
+53:17 it and exactly and and that's like uh
+53:21 the main reason I think we want we came
+53:24 here but what was the first goal of the
+53:27 project was I think even more
+53:29 interesting in this direction that you
+53:31 can have a a chain of questions going
+53:35 down that really uh uh make a teaching
+53:41 material I would say and then and the
+53:44 reason we call we were calling it
+53:45 adaptive is that based on how is your
+53:47 past of learning these paths will defer
+53:51 because I think uh peoples have
+53:53 different
+53:54 um uh technique or different preferences
+53:58 and that like in this direction of
+54:00 instead of having one for all teaching
+54:03 uh processes that the platform can learn
+54:06 you uh while providing more content uh
+54:10 content for you but the scope was too
+54:13 big for two weeks I would
+54:15 say maybe later on we could work more on
+54:18 that what was the most difficult part in
+54:20 this
+54:22 project I think that we couldn't
+54:24 automate generating the graph that was
+54:27 the more biggest challenge and then
+54:31 also uh to find to change the project
+54:35 topic to something that it's
+54:38 really tangible so it's like not domain
+54:41 specific that it will be interesting uh
+54:44 for people with no background of
+54:46 research and so on um because that was
+54:50 one of the demands to find a problem
+54:52 that matter for a lot of
+54:55 people
+54:56 like for example if I think about
+54:59 something that is not related to
+55:01 research and has a lot of different
+55:03 complex
+55:04 relationships relations between things I
+55:07 think of Game of Thrones have you
+55:09 watched
+55:09 it yes and like all these people who do
+55:14 different things they're like they
+55:16 belong to different houses and uh
+55:18 whatnot right and like when you watch
+55:22 this and you think like what's happening
+55:24 there it's a having a graph there that
+55:27 explains what's going on would really be
+55:30 helpful yeah yeah or which people are in
+55:33 which chapters and like things like that
+55:36 yeah
+55:39 exactly okay was the deployment part uh
+55:43 also difficult I see you used fly I or
+55:47 it was something that extremely it's um
+55:51 we had fun on the demo day stream L
+55:53 didn't work so it's like if we deployed
+55:55 it on a streamly then exactly at the
+55:57 time we started to show our demo live
+56:01 streamly crashed and I would say it's
+56:04 hard to to develop with stream L when
+56:07 you go to more complex visualization so
+56:10 I think if we go back right the graph
+56:13 was still okay but like when you have a
+56:16 sequence of uh Dynamics so you click
+56:19 here and so it's like mostly of State
+56:21 Management and front end development
+56:23 because when you have a lot of Dynamics
+56:25 and inter connections then it's getting
+56:28 quite uh so much time consuming to solve
+56:32 this uh State uh within stream list it
+56:35 still is great that it supports it so
+56:37 you can do still quite uh
+56:41 complicated the visualizations but it
+56:44 will take
+56:46 time but yeah it's the interface is
+56:49 still pretty Advanced from what I see
+56:52 like there is a a piece of text and then
+56:55 you hover over a term and then it
+56:58 explains what this term is and I also
+57:00 see this graph structure and then you
+57:03 can explore it which is pretty
+57:06 impressive for a two we project super
+57:09 impressive I think was where two so it
+57:13 was I wasn't alone and we were both
+57:15 having experience in web
+57:17 development and uh and also my other uh
+57:21 the other team member yatan he had a
+57:24 great web development experience
+57:27 and uh so together it was a lot to do
+57:31 say even though we failed on the first
+57:34 topic so we lost some time still I would
+57:37 say and it's a part of the process right
+57:42 yeah um if um maybe do you know any
+57:49 books or other resources for people to
+57:51 learn more about uh graph machine
+57:54 learning knowledge graphs and how LMS
+57:57 can be used for that I don't know if
+57:59 there are many books about LMS yet maybe
+58:02 not but like in general maybe there are
+58:04 some cool resources that you can
+58:06 recommend I never learn with books so
+58:09 that's like I that's quite a tricky
+58:12 things to recommend really but uh I
+58:15 could recommend courses so I really
+58:17 enjoyed the courses from
+58:20 Stanford uh for graph data science and
+58:25 also
+58:26 uh recently deep learning AI they had a
+58:29 really cool short course for Knowledge
+58:32 Graph and LM so I I really find it
+58:36 inspiring and uh within llm to be honest
+58:40 I think it's a still I mean to to to
+58:43 learn the basics I assume I think I I
+58:46 like the course of
+58:48 Sebastian um it's not also yet complete
+58:51 I think because I I really like the
+58:54 content his uh uh
+58:57 contributing I also don't remember his
+59:00 last name sorry my memory is never super
+59:05 duper um I'm just trying
+59:08 to uh find the last name but maybe I
+59:13 could give the full name later on and
+59:17 yeah and I think that's uh quite looking
+59:21 uh interesting I think uh the the
+59:24 material because the repo is not
+59:25 complete at for
+59:28 either and um more than that it's always
+59:33 digging in and finding new content so
+59:36 tricky to have it as a old uh fashion
+59:40 domain like mechanical engineering that
+59:42 you read a book and you know it's all in
+59:44 because it's uh I think it's part of
+59:47 learning is in this domain is to always
+59:49 have a head or ear out to look for new
+59:52 things and um and also learning how to
+59:57 navigate with all of these informations
+59:59 not to feel overwhelmed and still moving
+1:00:02 forward and the course from Stanford um
+1:00:06 that you mentioned is called machine
+1:00:07 learning with graphs right yes so by Ure
+1:00:11 leovit yes okay he's quite a wellknown
+1:00:15 person in the graph Community right yeah
+1:00:19 yeah and I really also recommend to
+1:00:21 follow uh the graph conference uh that
+1:00:25 is uh
+1:00:27 uh he's taking care of
+1:00:30 it and I think it's it has been so far a
+1:00:33 Free Conference to attend because the
+1:00:35 the research exchange there is really
+1:00:39 great okay yeah that's um we should be
+1:00:43 wrapping up that's all we have time for
+1:00:45 today so thanks a lot anahita for
+1:00:47 joining us today for sharing your
+1:00:49 experience um with us answering all the
+1:00:53 questions um and thanks everyone for
+1:00:55 joining us today too being active asking
+1:00:58 questions too so yeah it was fun thanks
+1:01:01 a lot it was fun yeah okay see you
+1:01:05 around and

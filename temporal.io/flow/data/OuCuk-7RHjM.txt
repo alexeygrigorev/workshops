@@ -1,0 +1,1842 @@
+Visualising Machine Learning
+
+0:00 hello everyone welcome to our event this
+0:02 event is brought to you by data talks
+0:04 club which is a community of people who
+0:05 love data we have weekly events this
+0:08 event is one of such events
+0:10 if you want to find out more about the
+0:12 events we have in our schedule there is
+0:14 a link in the description go there click
+0:16 on this link and check out everything we
+0:18 have in our pipeline we have quite a few
+0:21 events lined up so check them out
+0:22 especially we have
+0:24 quite a few
+0:25 workshops that will be quite interesting
+0:28 so do check it out
+0:30 then if you for whatever reason haven't
+0:32 subscribed yet to our youtube channel
+0:34 now is the best time to do this just
+0:36 click on this red button and then you
+0:38 will
+0:39 know about all the videos we have on our
+0:42 channel and then finally last night but
+0:45 not least we have an amazing slack
+0:47 community where you can talk to other
+0:50 dating with us so check it out register
+0:52 there
+0:53 and during today's interview you can ask
+0:55 any question you want there is a pin
+0:57 linked in the live chat click on this
+0:59 link ask your question and i will be
+1:01 covering these questions during the
+1:03 interview
+1:05 so that's all for the introduction now
+1:07 let me stop sharing my screen
+1:09 and
+1:11 by the way i forgot to do i usually do a
+1:14 picture
+1:16 make a picture and then share this
+1:17 picture on twitter
+1:18 so maybe you can
+1:20 can you smile and then i'll take a
+1:22 picture
+1:24 okay oops
+1:30 cool
+1:31 so i took a picture now i will share it
+1:33 on twitter
+1:38 are you active on twitter or not so much
+1:42 yeah i just started but i've not been
+1:44 really active there
+1:46 hoping to do more hopefully
+1:50 okay
+1:51 so
+1:52 let's start
+1:56 okay so this week we'll talk about
+1:57 visualizing machine learning and we have
+1:59 a special guest today mellor you
+2:01 probably saw me or on linkedin where he
+2:03 shares amazing visualization about
+2:05 different machine learning concepts
+2:08 one of the last ones i remember well
+2:10 about
+2:11 was about
+2:12 drift in machine learning right that was
+2:15 a pretty cool one so
+2:18 how often do you actually post things i
+2:20 see quite regularly there like quickly
+2:22 right
+2:23 yeah so i used to so i started
+2:26 sometime media last year
+2:28 so i was doing almost one visual every
+2:31 day
+2:32 but now because of other commitments i'm
+2:34 starting to a little bit less but hoping
+2:36 to
+2:37 put more uh visuals soon and go back to
+2:40 my earlier cadence so hopefully that
+2:42 will come soon yeah you also wrote a
+2:45 book about neural networks where you use
+2:48 this visualization so do check it out so
+2:51 yeah welcome to our event
+2:53 thank you for having me alexia it's a
+2:55 pleasure to be here
+2:56 yeah before we go into our main topic of
+2:59 visualization visualizing machine
+3:01 learning let's start with your
+3:02 background can you tell us about your
+3:04 career journey so far
+3:06 yeah sure so
+3:08 um i was introduced to machine learning
+3:10 quite some time ago almost 10 years ago
+3:12 now
+3:13 so back then i was interested in doing
+3:15 research in limb prosthetics
+3:18 and i decided to
+3:19 stop whatever i was doing in my career
+3:21 and
+3:22 do a master's degree doing research in
+3:24 that and that was when i was introduced
+3:26 to machine learning which is the
+3:28 technology or the algorithm that's
+3:29 powering the
+3:30 whole industry so i did this master's in
+3:33 bioengineering
+3:34 with a view of doing
+3:36 a phd but i stopped after the masters
+3:39 and they didn't continue with a phd
+3:41 because
+3:42 uh one of the reasons is that back then
+3:44 the
+3:45 the
+3:46 excitement around ai and machine
+3:48 learning was totally not like what it is
+3:50 today so the research was relatively
+3:53 slow there was
+3:55 not
+3:56 much breakthrough and one of the reasons
+3:58 that i didn't really
+4:00 see the application in the in the real
+4:02 world at the time
+4:04 so i decided to go
+4:06 back into
+4:07 working so i i
+4:09 joined a company
+4:11 in the telecommunications industry that
+4:13 does
+4:14 um data platforms
+4:17 doing data engineering for
+4:19 telecommunications data
+4:21 and doing analytics on top of it so i
+4:23 did that for
+4:24 around six seven years
+4:26 but what i've always wanted to do for
+4:29 quite some time was in education be in
+4:31 an adult or even childhood education
+4:34 so in 2019 around two years back i
+4:36 decided that i wanted to do something
+4:38 else so i went into self-employment mode
+4:42 so i became an independent consultant
+4:45 initially i was doing
+4:48 training consultancy in the area i was
+4:51 related to back then which is
+4:52 telecommunications analytics
+4:55 and slowly i move into
+4:58 education in a childhood space which is
+5:01 tying back to what i've also the other
+5:03 area that i wanted i've always wanted to
+5:05 do with jci and machine learning which i
+5:08 revived my interest in the past couple
+5:10 of years so i did um ai educational
+5:13 resources for middle schools and high
+5:14 schools
+5:16 uh under the name of ed square so it's
+5:17 still there
+5:19 and
+5:20 that was happening
+5:21 right until middle of last year when i
+5:24 encountered this way of uh
+5:27 i mean a fun way of of
+5:29 creating educational materials
+5:32 for adults which is using visuals so i
+5:34 came upon this
+5:36 this approach and i just uh without any
+5:38 background in design at all so i was
+5:40 just trying to
+5:42 apply uh visuals into uh explaining the
+5:46 concept of machine learning so that's
+5:47 when i started to create these visuals
+5:50 under the name of k dimensions so it has
+5:52 been going on for
+5:54 for
+5:55 almost yeah nine eight nine months now
+5:57 so that's that's where i'm at currently
+6:00 so
+6:00 while i was doing other things i'm still
+6:02 doing the other things that i started uh
+6:04 before but slowly my focus is
+6:06 is now in uh decay dimensions
+6:10 so why this name
+6:12 oh so yeah
+6:13 so
+6:14 when you know it's quite obvious because
+6:16 um in borders from the concept of
+6:18 machine learning
+6:19 dimensionally dimensionality reduction
+6:22 so
+6:23 for example if you talk about
+6:25 a machine learning problem right so you
+6:26 have a data that is very big
+6:29 let's say a thousand of uh thousands of
+6:31 features so what you can do is that you
+6:32 can compress it into
+6:35 a
+6:37 number of features that's much less than
+6:39 what it is before while maintaining the
+6:41 same amount of information so that's the
+6:44 concept behind pca and
+6:46 all the different algorithms that that
+6:48 falls under dimensionality reduction
+6:50 so that's the same idea that i had with
+6:52 visual as well and i think that's where
+6:54 the power of visuals come in is that
+6:56 with just a visual you'll be able to
+6:58 compress a lot of information that you
+7:00 would otherwise have to write it down
+7:02 and a bit harder for people to
+7:04 comprehend and for people to digest with
+7:06 a visual you
+7:08 of course won't retain the same
+7:09 information as what you can explain with
+7:11 the text but you can
+7:14 go straight to the essence and people
+7:16 can get it immediately so that's the
+7:17 idea so k is uh
+7:20 the common
+7:21 the common um uh alphabet that people
+7:24 use
+7:25 uh
+7:26 while
+7:27 while reducing the dimensions from n
+7:29 dimensions to k dimensions
+7:31 when people do do pca so so that's where
+7:34 the name came well i suspected yeah
+7:36 that's uh
+7:37 idea like to name it it makes total
+7:40 sense you take a complex idea then you
+7:44 simplify it and you reduce sort of
+7:45 dimensionality of this idea
+7:47 right that's cool
+7:49 and
+7:50 yeah so in 2019 you became
+7:53 self-employed and you started being an
+7:56 independent consultant right and you
+7:57 started also working on these visuals
+7:59 was it scary for you to
+8:01 um you know go solo
+8:04 yeah it was but i
+8:05 it was because i've always wanted to do
+8:07 it for a long time even after i
+8:09 completed my my muscles because i
+8:12 from then then on i
+8:15 i wanted to do something in new
+8:16 education space and throughout
+8:19 my career with with the company i was in
+8:21 before i was doing some other small
+8:22 ventures in education especially
+8:24 childhood education but of course with
+8:27 the
+8:28 question of having a job you you don't
+8:31 really put the full commitment because
+8:33 somehow you have this something that you
+8:35 can fall back on but i thought
+8:38 the time was just right for me to do it
+8:40 fully so i didn't really have a clear
+8:42 plan i do have some idea
+8:44 so i just went into it and
+8:46 yeah luckily i'm i'm managing well so
+8:49 far
+8:51 yeah i know that there is a guy called
+8:54 check butcher and he has i think he is
+9:00 he has a twitter
+9:02 profile called visualize value probably
+9:04 a website as well
+9:05 and i see some similarities in what you
+9:07 do and what jack is doing
+9:10 did you get the inspiration from him
+9:12 with coming up with all these visuals or
+9:15 well what kind of sources of
+9:17 inspirations did you have when you
+9:18 decide okay i want to follow this format
+9:21 and i want to create visuals in such a
+9:24 way that you create right now so how did
+9:26 it start for you
+9:28 yeah in fact it started with with him
+9:30 because i was
+9:32 browsing through
+9:34 my feed and came upon this
+9:36 very
+9:37 simple and minimal visual
+9:39 but that that gives a big weight in
+9:42 terms of the the the if i mean the
+9:45 the perspective or the message that he
+9:47 wants to bring
+9:48 so i've never seen such visuals
+9:51 and i started to dig deep into his
+9:54 approach and his his way of doing things
+9:56 i enrolled in his course called how to
+9:59 visualize value
+10:00 which explains how he goes through
+10:03 this process of making visuals and the
+10:05 idea being behind it the philosophy
+10:07 behind it i was mind blown because it's
+10:10 a concept that
+10:11 even though it looks it looks i wouldn't
+10:14 say i wouldn't say he's the first one
+10:15 who have done it but he has definitely
+10:16 is the one that has broad mainstream and
+10:18 he's the one that really
+10:20 can relate to a lot of people
+10:22 um
+10:23 i i still haven't figured out the right
+10:25 term for
+10:27 for this whole category yet but the
+10:29 closest i can find is i think visual
+10:30 engineering so of course it's not
+10:32 engineering in the technical sense but
+10:34 it's about using visuals for you to
+10:37 convey a message
+10:38 that's
+10:39 that's
+10:40 unlike a normal way for you to that you
+10:43 normally do for for you to create
+10:45 visuals or i can put it this way
+10:48 um
+10:49 there is a way of for you to create
+10:51 visuals
+10:52 that attach
+10:53 to a text or a message that you are
+10:55 trying to say but there is a way for you
+10:57 to create a visual that amplifies or
+11:01 make better what you are trying to to
+11:04 convey and jack's uh visuals false uh
+11:08 false under this letter category
+11:10 so i was i was uh amazed so that's when
+11:13 uh it all started for me i started to
+11:16 try to uh yeah so i thought that might
+11:18 as well because i was already doing um
+11:22 machine learning educational materials
+11:24 back then
+11:26 primarily with ad square for childhood
+11:28 education but i thought that
+11:30 i could apply the same thing so
+11:32 simply simplifying machining concepts
+11:35 and applying it using visuals
+11:37 and of course there are many many
+11:38 reasons uh to do it and one of the
+11:40 reasons is that i think at the moment
+11:42 there's just
+11:43 uh
+11:45 more information that we need
+11:47 when it comes to learning machine
+11:48 learning because yeah there are so many
+11:50 resources there are courses there are
+11:52 books
+11:53 there are blog posts
+11:55 code examples
+11:56 it goes on
+11:57 so the question now is not about how you
+12:00 um how you create additional material i
+12:03 think the question now is how do you
+12:05 curate this content
+12:07 or maybe more accurately how do you
+12:08 condense this content into something
+12:10 that is digestible for people and i mean
+12:13 it's really
+12:14 an interesting industry to be to be in
+12:17 right now because a lot of people are
+12:18 interested in this subject and area
+12:21 people are really
+12:23 motivated to learn and i hope to be able
+12:25 to to give them a way for them to learn
+12:28 at least
+12:29 to enter to give an entry
+12:32 for them to be able to to get in get get
+12:35 into the door for them before they
+12:36 explore things in more detail for them
+12:38 to be able to grasp the concepts
+12:40 in a simple way to get it in terms of at
+12:42 the intuition level before they go
+12:44 further into
+12:46 um into
+12:47 into what they are doing but of course
+12:49 it's not just jack there are many other
+12:51 people i look up to and even in the
+12:53 machine learning space there are already
+12:55 a lot of
+12:56 uh very talented people who are already
+12:59 creating visuals that explain consensus
+13:01 machine learning so first and foremost
+13:02 for me is j
+13:04 j alamar who has this blog that explains
+13:07 uh concept
+13:10 around
+13:11 mostly
+13:12 um
+13:13 neural networks so for example word to
+13:16 vag
+13:17 transformers who has this famous blog
+13:19 post illustrated transformers and has a
+13:21 lot of other
+13:22 kinds of materials as well so
+13:25 yeah so that's a resource that i i go to
+13:28 for me to understand these concepts
+13:30 myself and i found it really relatable
+13:32 for me to
+13:33 visually look at the concepts and get
+13:35 the intuition before going into the math
+13:37 before going to the code
+13:39 and there are other i mean the list goes
+13:41 on for example stat quest uh josh
+13:43 starmer that that really
+13:45 simplifies the understanding of machine
+13:47 learning and data science using visuals
+13:49 by way of video
+13:51 uh luis serrano as well so he has this
+13:53 book blocking machine learning i'm sure
+13:55 you know
+13:57 yeah he he also provide creates
+13:59 wonderful videos that explains these
+14:01 concepts so i think with visuals then
+14:03 you pair that with with code and math i
+14:06 think
+14:07 it will make sense when you go deeper
+14:09 into into any subject in this field
+14:12 so yeah so you were already
+14:14 in education so you were already
+14:18 in this education space and then you
+14:19 were browsing through your feed and then
+14:21 you saw a visual from jack butcher right
+14:24 and you thought okay this is so cool i
+14:26 want to do something similar and then
+14:27 this is how it started right and
+14:29 actually when i saw
+14:31 also
+14:33 images from jack i thought
+14:35 it could would be cool if somebody does
+14:38 something similar for machine learning
+14:40 and then
+14:41 a few months after that
+14:43 i saw you on linkedin and that was it i
+14:46 thought okay like this is uh it's like a
+14:48 zip check
+14:50 was doing this thing
+14:51 cool and i remember i was listening to a
+14:54 podcast with him i didn't take a course
+14:56 i was listening to a podcast
+14:58 and he said that he on purpose
+15:01 restricts himself so he restricts
+15:03 himself he only
+15:06 uses
+15:07 i don't know one two colors right he
+15:09 only uses simple shapes
+15:12 what else is there
+15:14 yeah exactly so he there are i mean
+15:16 other than visuals
+15:18 he also have a lot of very interesting
+15:20 perspectives
+15:21 about visuals and beyond visuals and one
+15:23 one of the things that you mentioned is
+15:24 exactly
+15:25 one of the things that i took away from
+15:26 him is that
+15:29 basically you have to introduce
+15:30 constraints in in the work that you do i
+15:33 think it's true for visuals and i think
+15:34 it's true for anything that you do in
+15:36 life as well so whenever especially when
+15:38 you're creating something um for him is
+15:41 intrude yeah exactly like you see so
+15:43 these two colors black and white
+15:45 geometrical shapes
+15:47 uh abstract concepts that's it
+15:49 so there are there is this thing that uh
+15:52 that created constraints breed
+15:53 creativity
+15:55 so it's like
+15:56 it's it said it is ironical that that uh
+16:00 that that is the case because people
+16:02 would think that for you to be able to
+16:04 be creative you have to have a lot of
+16:05 resource with you you have to have for
+16:07 example talent you have to have a lot of
+16:09 you have to know tools you have to know
+16:11 a lot of um
+16:12 ideas so that is true but
+16:15 looking
+16:16 at it from the other the other
+16:17 perspective is that when you introduce
+16:19 constraints you are forced to work with
+16:21 only what you have so that's when you
+16:23 get focused and you're not really
+16:25 worried about the other things that you
+16:26 can do the other things that that is
+16:28 also
+16:30 beneficial to you for you to create
+16:31 something you don't you don't worry
+16:33 about it you just work on what you have
+16:35 and yeah like what you see with the
+16:37 visual that jack this
+16:39 you can do amazing things uh with with
+16:41 the constraint that you impose on
+16:43 yourself
+16:44 okay i think for you you use only three
+16:46 colors right so the background is always
+16:50 so yeah so for me because
+16:53 for me it's about explaining a technical
+16:55 concept and you you're talking about
+16:58 sometimes concepts that are very
+17:01 deep in terms of the things that you
+17:02 want to explain there are a lot more
+17:04 there so i tried to use as
+17:06 like two two colors it didn't work so
+17:08 yeah so i used three colors so the
+17:10 background is dark and
+17:11 just three main colors uh so red white
+17:13 and uh blue
+17:16 so so yeah i found that that is the
+17:18 right equilibrium for me to to to work
+17:20 on
+17:21 even though there are times when i think
+17:23 i still need to have some other shapes
+17:25 but i try to keep myself to do that and
+17:27 yeah
+17:29 it has really
+17:30 served me well so far
+17:33 how do you come up with these ideas
+17:36 like to where do you see them
+17:39 so
+17:41 so i think there are
+17:43 i think there are many ways to do it so
+17:44 my approach that i found to be working
+17:47 well is
+17:48 first to introduce the constraint and
+17:50 the constraint can be
+17:52 can be
+17:53 coming from different there are
+17:55 different types so one is the style
+17:57 constraint that we have just
+17:58 discussed about the other thing is that
+18:01 for you to introduce constraints in
+18:03 terms of the time so maybe you set the
+18:04 time
+18:06 okay before that you have to introduce
+18:07 questions of the topic so let's say
+18:09 there's a topic that you want to
+18:10 visualize even though you are not sure
+18:12 how you're going to make it
+18:14 you don't go into the next topic let's
+18:16 say brief like what you mentioned just
+18:17 now so i will stick with just brief i
+18:19 i'll make sure that i will be able to
+18:21 create some kind of visual related to
+18:23 drift before going on to other topics
+18:25 and once you have the topic you
+18:26 introduce a time constraint which is
+18:28 within just like a few minutes for
+18:30 example you just put it down on paper
+18:31 whatever you have in your mind and
+18:33 that's i think when the magic happens
+18:35 because the moment you have something
+18:37 written or sketch that's when you can
+18:39 improve it on it because you cannot
+18:41 improve on things that is blank but you
+18:43 can definitely improve on things that
+18:45 are that are already there no matter how
+18:47 how ugly it looks and no matter how how
+18:50 different it looks from what you you
+18:52 would imagine in in in the end
+18:55 the other thing that um
+18:57 you
+18:58 can do is for you to
+19:00 um
+19:02 so yeah so the other thing so so so
+19:04 confidence is one thing the other thing
+19:05 that i found it
+19:07 uh to be
+19:08 to be working for me is for uh
+19:11 to try to visualize
+19:13 how do i say this to try to visualize um
+19:18 things
+19:19 not
+19:20 what it is but what it means
+19:23 so so let me try to rephrase that so
+19:26 when you try to visualize a concept
+19:29 um
+19:30 what i learned from jack is that from
+19:32 his visual is that
+19:34 you don't try to visualize the noun
+19:36 which is what it is
+19:38 but visualize or try to extract what is
+19:41 the verb or the adjective
+19:44 so that's when you
+19:46 are able to accept the message that you
+19:48 want to to
+19:49 to to
+19:50 to deliver again using this brief
+19:52 example
+19:54 uh so i was using this this visual of um
+19:57 a catapult throwing throwing this ball
+19:59 into into basket right
+20:00 so so the idea that i had at the time is
+20:03 that it's about accuracy so it's not
+20:05 about model because if you are thinking
+20:07 about models you're talking about
+20:08 algorithms then you're stuck with maybe
+20:10 boxes and squares rectangles and arrows
+20:13 so that's that's that's one way of doing
+20:15 things but i think that is looking from
+20:18 the logical uh point of view which is
+20:21 what it is the noun of what you're
+20:22 trying to
+20:23 represent but if you try to understand
+20:25 what he's trying to do which is trying
+20:26 to
+20:27 uh
+20:29 to be accurate then
+20:31 then that's when you start to think
+20:32 about what kind of metaphors what kind
+20:33 of
+20:34 objects that you can also use to
+20:36 represent
+20:38 and that brings another another
+20:40 benefit which is
+20:42 um
+20:44 using metaphors using objects
+20:46 that people can relate with makes it
+20:48 very very less intimidating for people
+20:50 to understand a concept because the
+20:52 moment for example you start to use
+20:53 rectangles and arrows
+20:55 people can get the idea but not quite
+20:57 they they feel like they are not
+21:00 yet attached to the idea but the moment
+21:02 you uh you start to show everyday
+21:04 objects everyday things ah at least they
+21:06 get the object and then
+21:08 that becomes the bridge for them to
+21:10 understand the real concept that you
+21:11 want to
+21:12 you want to represent
+21:14 so metaphors and abstract concepts uh
+21:17 yeah probably are the the two
+21:20 uh things that you may want to look into
+21:22 if you are trying to visualize things
+21:24 okay so
+21:26 first you think okay i want to create
+21:28 something on let's say drift and then
+21:30 you give yourself a bit of time i know
+21:32 to use a timer maybe
+21:34 set it to 5-10 minutes something like
+21:36 this right and then you start
+21:38 brainstorming
+21:39 how exactly what kind of how can i show
+21:41 the action what is the action there what
+21:43 is the verb in this uh in this direct
+21:46 because it is a noun as you said right
+21:48 but what is an action and the action is
+21:51 i think the
+21:52 catapult he used it's missing right it's
+21:55 not
+21:56 it cannot hit
+21:58 the what was there like a baseball yeah
+22:02 yeah so for the original model is just a
+22:05 basket
+22:06 uh with data drift your you are i mean
+22:09 you're looking at the catapult not
+22:10 really functioning well or the ball have
+22:12 changed its shape for example which
+22:14 caused the catapult not really hitting
+22:16 the target so that's about the data
+22:18 itself the source
+22:19 uh whereas concept grief is about the
+22:22 target itself that you are changing so
+22:24 from a basket you are changing it to a
+22:26 to a basketball game for example which
+22:27 is a higher
+22:29 in this case a higher higher target so
+22:32 you need to adapt
+22:33 your source to to match to match
+22:36 the target that you have just changed
+22:38 so i can give another example um
+22:41 that i found i think really
+22:43 uh uh interesting as well to me is that
+22:46 because i was trying to to to understand
+22:48 and internalize the concept of this data
+22:50 center ai
+22:52 which is also uh being popularized these
+22:55 days
+22:56 uh so when people talk about data center
+22:58 ai
+22:59 it does not mean that
+23:00 we are
+23:03 being
+23:04 relaxed on the model development itself
+23:06 what are saying here is that we have
+23:08 focused
+23:09 so much on the model development fine
+23:12 tuning and all that but not so much
+23:14 focusing on the data so the moment we
+23:16 talk about data central ai by the time
+23:18 maybe people can think will think that
+23:21 it is about um
+23:24 primarily about the data but not so much
+23:26 of the model the model is there as it is
+23:27 but the fact is that you need to have
+23:29 both you need to have balance so that's
+23:31 when i thought about the the adjective
+23:33 that that represents the ideas about
+23:35 balance so that's when i i
+23:38 figured out this idea to draw the
+23:40 concept of aeroplane
+23:41 uh whereby one side of the wing is
+23:44 of a modern aircraft and the other side
+23:46 is less developed which is like the
+23:48 wings from the 50s for example
+23:50 so the idea is that for the aircraft to
+23:53 function well you need to develop both
+23:54 sides to have balance so that i just put
+23:57 like yeah algorithms on one side and
+23:58 data on the other side so it's not like
+24:00 one over the other but both
+24:02 at the same time
+24:04 and people seem to be able to relate to
+24:06 that yeah yeah can you walk us through
+24:08 the process so let's say about uh i
+24:11 don't know catapult or the airplane
+24:13 like how
+24:15 from the moment you got an idea i don't
+24:17 know
+24:18 how it appear like first did you want to
+24:20 create something on data centric ai or
+24:23 first you had an image of your plane in
+24:25 your head and then you did this like
+24:28 maybe you can walk us through the entire
+24:29 process from the very beginning before
+24:32 you even started working on this to the
+24:33 end where you publish this on linkedin
+24:36 how does it yeah so so to be honest i
+24:38 don't have any like a very rigid idea
+24:41 but what
+24:42 i normally do is that i mean whatever
+24:45 i'm learning whatever i'm reading on
+24:46 that day
+24:47 uh whatever that's interesting i will
+24:49 list down
+24:50 the concepts and especially because um i
+24:53 mentioned about me starting machine
+24:55 learning quite some time ago but the
+24:56 fact is that i have left the field
+24:58 for quite some time and in only in the
+25:00 past couple of years i started to revive
+25:02 my interests so all this is also first
+25:04 and foremost is for me uh is part of my
+25:07 real learning journey so whenever i'm
+25:09 reading a new concept whenever i'm
+25:10 trying to understand a new
+25:12 um a new yeah a new material
+25:15 uh first and foremost for me to be able
+25:17 to understand the concept and for me to
+25:18 be able to get to the core of the
+25:20 message
+25:20 um i'll just list down the concepts
+25:22 without without i mean adding any
+25:24 visuals i'll just list down things that
+25:26 i find interesting that i read um new
+25:28 concepts that i've learned and
+25:30 put in put them in in a long list
+25:33 because not always the idea will come
+25:34 immediately so so the moment you you
+25:37 start to have the list you can i mean i
+25:40 would for example review it uh on a
+25:42 weekly basis uh if i found something i
+25:45 mean
+25:46 a team that is always occurring from
+25:48 what i'm learning and reading during
+25:50 that week i uh that i thought would be
+25:52 interesting for me to to nail my
+25:54 understanding i would put it like in the
+25:57 short list for me to visualize
+25:59 so once i i've got the shortlist then
+26:01 only i try to figure out the
+26:03 the way for me to visualize these
+26:05 concepts and like what i mentioned just
+26:07 now i just try to elaborate a bit more
+26:08 now is that for now what's been working
+26:11 for me is that
+26:12 for me to understand visuals uh for me
+26:15 to be able to create visuals that is
+26:17 understandable it can fall under these
+26:18 two main categories one is metaphors the
+26:21 other one is abstract concepts
+26:23 abstract means
+26:25 like what jack butch is doing like just
+26:26 basic shapes basic basic arrows and
+26:30 lines
+26:30 um you you you try to create something
+26:33 out of it
+26:35 so that's when i start to think about uh
+26:39 back to work what i was saying just now
+26:40 like for each concept i want to
+26:42 visualize what is the
+26:43 the key message so i think that's also
+26:45 part of the
+26:47 um
+26:48 learning aspect that
+26:49 when you're trying to learning something
+26:51 uh to learn something what you
+26:53 want to try to
+26:55 get to is that what is the essence of
+26:57 the concept that you're trying to learn
+26:58 for example uh yeah back to drift
+27:02 the essence what you're trying to learn
+27:03 is that things are changing uh whether
+27:06 from a source or from a target and
+27:07 you're trying to
+27:09 trying to adapt to that so that's that's
+27:11 the the the
+27:12 the concept that you try to
+27:14 get to the bottom two and from there
+27:16 um yeah you decide on how you want to be
+27:19 you decide on what kind i mean you try
+27:20 to figure out what's the verb what the
+27:22 message what's the key message what it
+27:24 means and then you try to
+27:26 to
+27:27 translate it into a visual
+27:31 so there are there are there are
+27:33 i would say different kinds of
+27:35 categories of the kinds of visuals that
+27:37 i find
+27:38 interesting for me to make one is
+27:40 concept
+27:41 uh like a concept machine learning like
+27:43 data center ai and
+27:45 drifts
+27:46 and all this
+27:47 but the other thing is that it's also
+27:49 very interesting to
+27:50 to
+27:51 to visualize is the emotional aspect
+27:54 when i say emotionally i'm talking about
+27:56 the realities in the field um for
+27:58 example what people say
+28:00 uh machine learning is and what it
+28:02 really is in the field because people
+28:03 can relate to that uh for example when
+28:06 we talk about um creating a data science
+28:08 project and data science solutions right
+28:10 um so normally what you want to do is
+28:12 you start with a problem then you walk
+28:14 your way towards the solution but
+28:17 a lot of people
+28:18 me first and foremost are always guilty
+28:20 to to start with a solution first and be
+28:22 able to and work backwards to try to
+28:25 find a problem that can be solved by
+28:27 solution because you're so invested and
+28:28 they're so interested in the algorithm
+28:31 or the solution that you are you're
+28:32 building
+28:34 so yeah what if you can visualize that
+28:36 what if you can just show that actually
+28:38 the arrow should be from the left to
+28:39 right but what you're doing is from the
+28:41 left to right so you try to touch these
+28:43 emotional points in uh
+28:45 from from the the viewer then they can
+28:48 totally relate and they can totally
+28:49 understand where where you're coming
+28:51 from so that's also something that is
+28:52 interesting for me for me for for me to
+28:54 explore as i do this i remember this
+28:57 visual as well so i think it's uh
+29:00 you have on one side you have
+29:02 the the way it should be and then others
+29:04 the other side the way we do it right
+29:07 then i think it got quite
+29:09 some engagement right people could
+29:11 relate to this thing and uh
+29:13 okay yeah so if i summarize uh so what
+29:16 you do is like every day you read things
+29:18 you consume content and then you keep a
+29:21 long list of things
+29:23 where
+29:24 like okay i read today let's say about
+29:27 uh
+29:28 um drift right and then you take a note
+29:30 and then some things they
+29:34 you know they you see that they are more
+29:36 important you read more about them they
+29:38 are interesting for you then you start
+29:40 spending more time
+29:41 learning about them and then you move
+29:43 them from the long list with ideas to
+29:46 the short list of ideas and then from
+29:48 that shortlist you take some ideas there
+29:51 and you start
+29:52 trying to elaborate this idea try to
+29:55 think about uh you know how can you see
+29:58 the action there how you extract the
+29:59 verb
+30:00 from there right and then you also
+30:02 mentioned that there are two categories
+30:05 uh
+30:06 categories
+30:07 like two kinds of visuals categories
+30:12 like up concepts right and then this
+30:14 they also try to convey emotional aspect
+30:17 did they summarize it correctly so long
+30:19 list shortlist
+30:20 getting some inspiration
+30:22 uh brainstorming and then actually
+30:24 sitting down and creating the visual
+30:26 yeah but to be frank it doesn't always
+30:27 work that way for example while you're
+30:29 in the shower or while you're driving so
+30:31 that's when the idea come to you and
+30:33 that's why it's handy for you to
+30:34 to have a sketchbook that is dedicated
+30:36 like for me i have like just dedicated
+30:38 for the visuals whenever i have the idea
+30:41 no matter
+30:42 i have figured out the concept yet i
+30:44 just draw what what i i i think and it's
+30:47 also useful for you to have like an app
+30:49 that you can immediately write down the
+30:51 ideas for example is that you don't have
+30:53 ideas for visuals yet but you have
+30:55 something in mind you just write it down
+30:57 an app that is like for you to very
+30:59 quickly
+31:00 log in what you have uh
+31:03 you have thought uh in your mind so that
+31:05 that has been handy for me so
+31:07 do you use like a voice recorder or you
+31:09 type
+31:10 so i i type
+31:12 okay
+31:13 yeah so what do you use for creating the
+31:16 actual visuals
+31:17 so i use figma
+31:20 so like i said i don't have any
+31:22 background in in design at all so i'm a
+31:24 pure engineer so
+31:26 i have been an
+31:27 engineer for many years so i also don't
+31:30 i mean i wouldn't say i'm
+31:33 anywhere near the category of people who
+31:35 have this artistic skills nothing like
+31:37 that
+31:38 so uh
+31:40 i've tried canva before
+31:42 when during my days with
+31:44 creating contents for for add square so
+31:46 i use a lot of canvas so that's when i i
+31:49 export
+31:50 that tool
+31:51 but
+31:52 it doesn't have that much flexibility so
+31:55 i've also tried illustrator adobe
+31:57 illustrator so that's way too advanced
+31:59 for me because it has all this learning
+32:01 curve that you have to go through before
+32:03 you
+32:04 can become comfortable in in the in the
+32:06 with using the tool but when i was
+32:08 introduced with figma and that again
+32:10 came from from jack that he explains in
+32:13 his course that he was using this
+32:15 it's like a sweet spot between canva and
+32:17 illustrator so it's not that hard to
+32:20 operate but you have a lot of
+32:22 flexibility for you to be able to
+32:25 to
+32:26 to create designs that that is exactly
+32:28 like what you want so the learning curve
+32:30 is very
+32:31 not steep at all uh you can get up and
+32:34 running in couple of days uh if i can do
+32:36 it then i think most of other people can
+32:38 do it as well because um yeah i mean
+32:40 i've only been exposed to canva before a
+32:42 little bit of illustrator not much
+32:45 then i went to fema and i found like wow
+32:47 it's really something that uh that
+32:50 that that is interesting to me there are
+32:52 other tools as well
+32:53 for example if you are because for me my
+32:56 my approach is more on
+32:58 again being an engineer more on the
+33:00 geometric geometric shapes uh
+33:03 vectors vector images but there are
+33:05 other apps that if you are more artistic
+33:08 that you you prefer hand sketch there
+33:10 are other tools as well i can remember
+33:12 the name now um even figma but there are
+33:14 other
+33:16 uh sorry i can remember the name now but
+33:18 there are if you are more into hand
+33:19 sketch there are other tools that is not
+33:21 as hard as photoshop illustrator that
+33:23 you can get up and running
+33:25 very quickly so i've been using that
+33:28 since the beginning
+33:30 yeah so you have a sketch node where you
+33:33 take sketches the moment you have an
+33:35 idea or sometimes just uh notes right
+33:38 and then you use figma to
+33:40 actually
+33:42 create the visual right yeah
+33:45 do you always first create a draft like
+33:47 on uh on a piece of paper before moving
+33:50 to figma yeah yeah so most of the time
+33:54 uh i will write down on the paper first
+33:56 because
+33:57 um
+33:58 because
+33:59 yeah because the idea is not really
+34:01 fully developed yet you have
+34:04 a basic concept of what you want to do
+34:05 but for example you haven't figured out
+34:06 what kind of object you're going to put
+34:08 but you only for example have figured
+34:10 out the relationships yeah like
+34:12 one thing is here the other thing is
+34:13 there you want to make an arrow you want
+34:14 to
+34:16 create a contrast or something like that
+34:18 but you haven't figured out the the end
+34:20 product yet so once you put it down
+34:23 somehow
+34:24 it's uh ingrained in your mind when it
+34:27 comes to for you to to start processing
+34:30 in the back of your mind so like after a
+34:32 couple of days you start to get
+34:35 or to figure out what you want to do
+34:36 that's when i transferred to to feed
+34:38 more but of course again it isn't always
+34:41 um
+34:42 it's not always the case because
+34:43 sometimes you immediately get the idea
+34:45 and immediately i jump on my end for me
+34:47 to do to do it uh immediately and i
+34:49 think more and more now because the
+34:52 amount of visuals that i've made
+34:54 has grown so what i'm able to do now is
+34:57 that i have a lot of these existing
+34:59 assets that i can immediately just copy
+35:01 and paste from different concepts for me
+35:03 to to create something new because it's
+35:05 not always the case that you're creating
+35:07 something from scratch so you can
+35:08 utilize the kinds of objects the kinds
+35:10 of i mean high-level concepts that that
+35:12 you have from other
+35:14 visuals that you made and you reuse it
+35:17 and you modify it according to to the
+35:19 new thing that you want to create
+35:21 so if you need a catapult or a basket
+35:23 you just go to the drift
+35:26 visual right you copy the catapult and
+35:28 paste to the new image and use it yeah
+35:30 that's cool
+35:31 that's handy
+35:33 yeah so how
+35:35 for somebody who is uh
+35:37 who is like you who is an engineer who
+35:39 hasn't uh
+35:41 who
+35:41 have never worked with anything like
+35:44 figma who maybe doesn't even know what
+35:46 figma is how can they start
+35:50 creating visuals
+35:52 how can they learn this
+35:53 so
+35:55 first take jack's course so i cannot
+35:57 recommend it highly enough but yeah yeah
+36:00 so again it's very irony because uh jack
+36:03 butcher he's someone who
+36:05 who has been a designer for many years
+36:06 like 10 years
+36:08 but what he has taught me is that you
+36:09 don't have to be designer to be able to
+36:12 create such visuals
+36:13 in fact i found that the
+36:16 the the bug that you have which is not
+36:18 being able to
+36:19 to
+36:21 you don't have the designer brain is is
+36:23 that it can turn into your biggest
+36:25 feature because the thing is that
+36:27 if you are focused on the design part
+36:29 you are
+36:30 losing or you're not focusing as much on
+36:32 the message or the perspective that you
+36:34 want to convey because for me that's the
+36:36 most important thing because what you
+36:38 want to do is you want to focus on the
+36:39 perspective
+36:40 uh over the aesthetics because if you're
+36:43 focusing more on the aesthetics like how
+36:44 does it look like uh how would it turn
+36:46 out
+36:47 you don't spend as much time in terms of
+36:50 what you really want to
+36:52 uh for what you really want the people
+36:54 who look at your visuals to be able to
+36:56 to get so the moment you again back to
+36:58 constraints the moment you put this
+37:00 constraint the moment you
+37:02 uh understand that this is the the level
+37:04 of aesthetic that you
+37:07 can go and not be on that that's when
+37:08 you spend all your energy
+37:10 in trying to uh deliver the perspective
+37:13 that you want to
+37:14 to convey i found it very uh
+37:18 yeah very interesting to be able to get
+37:19 that perspective uh
+37:21 that is actually something that will
+37:24 empower you
+37:25 so that's that so that's from the i
+37:27 guess philosophical aspect but from the
+37:29 practical aspect
+37:30 you just have to
+37:32 start uh playing with things because the
+37:35 moment you start to put things down
+37:38 that's when you will develop and
+37:40 of course it comes with practice so
+37:42 [Music]
+37:43 like for me i remember in the beginning
+37:45 i was very
+37:47 pumped up to start creating such visuals
+37:49 because i got some like
+37:50 seven or ten ideas that just came the
+37:52 moment i i look at this this other
+37:54 content from jack and other creators
+37:56 like him
+37:57 so i start to write down i start to
+37:59 to create these visuals
+38:01 around 10 of them
+38:03 and then i was ready to start posting
+38:05 but then i thought to myself
+38:07 after that what's next i don't have any
+38:09 idea for for the rest of what i'm
+38:11 supposed to do i only have this 10 but i
+38:13 totally don't have any idea
+38:15 beyond that so i did i just started
+38:17 posting
+38:18 and that's when it's slowly developed
+38:20 and that's when more ideas start to come
+38:21 in uh that's when i think you start to
+38:24 try to be able to to relate to what
+38:26 you're learning instead of for example
+38:28 before when you're reading consuming a
+38:30 content you're just
+38:31 doing it
+38:33 just for consuming but when you approach
+38:35 or when you start to consume a content
+38:37 with the intention for you to create
+38:39 something for you to learn and for you
+38:41 to explain to others using visuals
+38:43 that's when
+38:44 that's when you you start to to get
+38:46 ideas coming in and yeah um it will it
+38:49 will
+38:50 uh yeah it will not stop
+38:52 [Music]
+38:54 yeah
+38:54 you mentioned uh think that having a
+38:57 designer brain is helpful because you
+38:59 can focus on the message not on
+39:01 aesthetics and i remember
+39:03 well even though i am not a designer
+39:05 let's say when i need to create a
+39:07 presentation
+39:09 i sometimes spend too much time on you
+39:12 know making the like i don't know moving
+39:15 things there making it look perfect
+39:18 while what i should be doing instead is
+39:20 instead of you know creating a great
+39:22 slide i should just focus on what i'm
+39:24 going to say
+39:25 in this slide and maybe this light can
+39:27 be just empty right
+39:29 so focusing on the message instead of
+39:31 focusing on how your slide looks like
+39:32 and here i think it's similar like you
+39:34 really focus on
+39:36 what you want to draw instead of
+39:38 how
+39:39 nice it looks and yeah and i saw i also
+39:42 realized that the other thing that the
+39:44 men you create such visuals that are
+39:46 minimal that are not really focusing on
+39:47 the aesthetics what you're doing really
+39:49 is you're respecting people's time
+39:51 um because i mean yeah there are people
+39:54 are busy they have so many things to to
+39:56 do in work and also to i mean for them
+39:59 to to what if they are learning for them
+40:01 to consume content for them to
+40:03 understand concern and the other thing
+40:04 again this this other
+40:06 quote from jack that i really for
+40:07 interesting is that what he's doing is
+40:09 that he's doing uh he's working hard to
+40:11 give people less
+40:13 so yeah so i think that's the whole
+40:15 point i mean you're respecting people's
+40:16 time because you are
+40:18 giving it as it is immediately what
+40:20 people want to
+40:23 receive probably what people want to
+40:24 consume and
+40:26 convert i mean also on the other side
+40:28 you are help i mean you are
+40:32 is being easy to yourself that means you
+40:34 are i mean
+40:35 you
+40:36 make your life easier because you're not
+40:38 really worried about things that you're
+40:40 not supposed to be worried you're just
+40:41 worried about things that you need to
+40:42 focus on which is again the message and
+40:45 the perspective and yeah so it seems to
+40:47 be a great combination
+40:49 and other thing you mentioned is
+40:51 consumed with intention to create
+40:53 something so can you tell us how it
+40:56 works
+40:57 so
+40:58 [Music]
+41:00 so the same way i think it's true for
+41:02 visuals and other
+41:03 other ways as well so the moment you
+41:06 consume a content with a view for you to
+41:09 explain or teach to others your
+41:11 perspective becomes different because
+41:13 the moment you have the intention to
+41:14 teach i mean you're more invested
+41:16 because you're not really looking at the
+41:18 material on the surface you're trying to
+41:20 dig deep and if need be you will look at
+41:22 other materials that are supplementing
+41:24 what you're trying to understand
+41:26 and what happens to you is that you get
+41:28 to the bottom of
+41:29 what you want to know and compare that
+41:32 with
+41:33 learning just for you to
+41:36 for you to consume
+41:37 your understanding first and foremost is
+41:39 totally different you get a much deeper
+41:41 understanding so let alone the the fact
+41:43 that you are going to create something
+41:45 with visuals or anything the fact that
+41:47 you have the intention of explaining it
+41:49 to others
+41:50 while you're questioning something makes
+41:52 it like at least 10 times more impact
+41:55 compared to without it
+41:58 it's like the the best way to learn
+42:00 something is to teach it right drive
+42:02 and
+42:03 practically the way it works is let's
+42:05 say when you read an article you think
+42:08 okay this is a cool article if i wanted
+42:10 to explain this article in a single
+42:13 image what this image would be right or
+42:16 what's the main idea in this article
+42:18 that they can take away and turn this
+42:19 into a visual
+42:21 is it does it work like that yeah
+42:23 because because when you're reading like
+42:26 we're consuming content
+42:29 i mean on the surface level what you are
+42:31 getting is what what it is that's it
+42:34 what it is
+42:35 but if you're
+42:38 learning it with the intention of
+42:39 explaining it to others what you
+42:42 try to get to the bottom is also
+42:45 like what it is not
+42:47 or what can go wrong what if you did
+42:49 that instead of what you have been shown
+42:51 so you start to look at other
+42:52 perspective and angle
+42:54 and not just be one dimensional when you
+42:56 consume content so
+42:58 that's when you start to
+43:00 to to to try to to
+43:03 to think how to instead of um sorry
+43:07 think of what if instead of instead of
+43:08 how to
+43:10 so yeah so if you are given a step right
+43:12 how to do
+43:13 abc how to train a machine learning
+43:15 algorithm so you have these steps
+43:17 yeah that's fine but the moment you
+43:19 start to think about what can go wrong
+43:21 what else is missing what if i do
+43:22 another what if i do it without machine
+43:24 learning so those are normally things
+43:26 that you don't think about if you're
+43:27 just consuming but if you are planning
+43:29 to teach it to others
+43:31 definitely those are the things that you
+43:32 will definitely need to keep in mind
+43:34 that you will explore and try to
+43:35 discover
+43:37 how do you find
+43:39 how do you come up with this what if
+43:41 things
+43:42 or
+43:43 what can go wrong like if you have
+43:46 practical experience then maybe you can
+43:48 use this practical experience but if
+43:50 you're just learning this thing how can
+43:51 you know about these things so
+43:55 i guess if you are talking about i mean
+43:57 coding for
+43:58 for for machine learning right you just
+44:00 explore
+44:01 ways how to break uh
+44:03 break
+44:04 a code for example you take someone
+44:06 something that someone else has done for
+44:08 example he shares a code on a medium
+44:10 block for example right with with other
+44:12 person shares something that over there
+44:14 and with a code example so you try not
+44:16 just to run the code but also try to
+44:18 make changes and see what if i you were
+44:20 to change this parameter what if you
+44:21 were to change this even algorithm and
+44:25 i mean the many thousand things that you
+44:26 can change and see what happens so you
+44:29 start to think about
+44:30 because your goal now is
+44:33 to be able to understand in totality not
+44:35 just how it's being presented to you so
+44:38 you're forcing yourself to
+44:40 look at it from from different ways and
+44:41 try to really
+44:43 nail down your understanding
+44:47 yeah thanks so since 2019 you said you
+44:52 you're self-employed so you don't work
+44:54 for you don't have uh like you don't
+44:56 work for a company you work for yourself
+44:58 and
+44:59 i think you mentioned you were doing
+45:00 some sort of consulting training but
+45:02 also i guess
+45:04 making visuals is part of what you do so
+45:07 you're making some money with your
+45:09 visualization skills can you tell us
+45:11 more how you earn money with this
+45:14 yeah so now it's slowly becoming one of
+45:16 the main things that i'm doing these
+45:17 days
+45:18 so starting early this year i've started
+45:20 to introduce this visual design service
+45:24 that helps
+45:26 companies content creators who has a
+45:29 message
+45:30 that want to turn that message into
+45:32 visual so that they can uh uh so then so
+45:36 that the audience that they that that uh
+45:38 i mean consuming their content and
+45:39 trying to understand their products and
+45:41 services be able to get immediately what
+45:44 uh they are trying to uh to serve and
+45:47 the value proposition and so on and so
+45:49 forth so currently i'm working mostly
+45:51 with um
+45:53 machine learning and data platform
+45:55 startups
+45:56 that are looking to
+45:57 to grow their business and even content
+46:00 creators who are trying to uh that are
+46:02 currently mostly
+46:04 creating text based content who also
+46:06 wants to
+46:07 to
+46:08 to
+46:09 to expand that into visual content for
+46:12 them to be able to to deliver what they
+46:14 uh their message in a more more clear
+46:16 way so that's something that i've been
+46:18 doing
+46:18 uh since the beginning of the year so
+46:20 it's something that is very enjoyable
+46:22 for me because not just from
+46:24 my own perspective but also from
+46:26 what the other party wants to convey
+46:29 from from what what uh what they have
+46:32 and in a way it's also a challenge for
+46:33 me as well because there are
+46:35 there are
+46:36 there are new things that i need to
+46:37 explore that i need to force myself to
+46:39 understand because i mean different
+46:40 company for example if you're talking
+46:42 about machine learning companies so
+46:44 there are companies that are doing data
+46:45 platforms there are companies that do
+46:47 explainability there are companies that
+46:49 do
+46:50 um
+46:51 ml ops end-to-end
+46:54 so yeah so before i can help them with
+46:57 creating visuals i need to be able to
+46:59 understand their product offering as
+47:00 first and foremost so of course that
+47:03 takes
+47:04 some wrapping up for me to to
+47:07 do
+47:07 for me to ramp up my understanding first
+47:10 and foremost
+47:11 but of course it's a rewarding journey
+47:12 as well because i get to understand
+47:14 in a more intimate way compared to just
+47:16 looking at it from from from outside so
+47:19 yeah so that's something that i've been
+47:20 doing a lot more these days compared to
+47:23 what i used to do before
+47:25 so you first started publishing these
+47:27 visualizations
+47:28 on social media on linkedin twitter
+47:32 and then did companies start to reach
+47:34 out to you or how did you
+47:36 make it clear that you're
+47:38 this is something you can offer and they
+47:40 can't come to you for these kind of
+47:42 services yeah so it started with um
+47:45 people i mean companies and people
+47:47 starting to reach out to me to to ask if
+47:50 i do such surgeries
+47:52 initially i didn't do any because i was
+47:54 just doing it for for myself
+47:56 so i started to see interests so i took
+47:58 my as well for me to to work together
+48:00 with them so that yeah
+48:01 what i've been doing in the past few
+48:03 months is that i've started to do some
+48:05 kind of outbound
+48:07 uh reach out to people and companies
+48:09 that might be interested and yeah so
+48:11 slowly uh building that service side of
+48:15 of the business
+48:16 yeah that's interesting so basically
+48:18 first you started you didn't start with
+48:20 intention of earning money but you
+48:22 started with the intention of
+48:24 you know exploring this area using this
+48:26 skill trying to convey your message and
+48:28 you mentioned that you're also learning
+48:30 or relearning machine learning so for
+48:32 you it was just a way to
+48:35 consume and sort of regurgitate the
+48:36 content right and then show this is my
+48:39 vision this is my take on these things
+48:41 and then you did this regularly and then
+48:43 at some point companies noticed this and
+48:45 thought okay this is so cool we also
+48:48 want to have something similar we wanted
+48:49 somebody to come to us listen to what we
+48:52 do and explain it in a simple visual
+48:55 right
+48:57 oh cool
+49:00 one thing you mentioned that sometimes
+49:01 there is a bunch of text based
+49:04 information i imagine an article
+49:06 and then you think how to add visuals to
+49:08 this article right did they understand
+49:10 correctly that companies sometimes come
+49:12 to you
+49:13 with uh for this service
+49:16 for example there are companies that
+49:18 have blog posts
+49:19 that explains a concept that they want
+49:22 to convey or product or service
+49:24 so yeah so to add a visual to that
+49:27 basically to summarize whatever that
+49:29 they are trying to
+49:30 deliver in their in that blog blog
+49:32 content so there are also companies that
+49:35 want to create
+49:36 like marketing material as well
+49:39 there are companies want to who are
+49:40 creating ebooks
+49:42 like downloadable ebooks that explain
+49:44 concept so adding visuals will really
+49:47 uh give a greater impact into what what
+49:50 um what they want to to to explain in in
+49:53 that material what people for example
+49:56 and there are a few other ways as well
+49:58 that i'm i'm currently working on
+50:01 cool and this is all without having a
+50:03 designer background
+50:06 can you maybe tell us a bit about this
+50:09 so you get an article which is just text
+50:11 the wall of text and nothing i imagine
+50:14 that for me as a reader this is probably
+50:16 a boring article because i cannot scheme
+50:18 it i have no idea what it is and then it
+50:21 must be quite interesting for me to
+50:23 actually convince myself
+50:25 and invest time in reading this article
+50:27 and when i create content
+50:29 i understand that i need to make it
+50:32 easier to
+50:33 to scheme to understand what this is
+50:36 but i always have problems
+50:38 with okay i have this piece of text how
+50:41 do i add visuals there how do i add
+50:43 instructions there or illustrations
+50:45 there
+50:46 do you have some suggestions for people
+50:48 like me
+50:49 who can come up with text
+50:52 but struggle with coming up with
+50:54 illustrations
+50:56 so what has worked well for me
+50:58 and it's also the same way like if i
+51:00 were to consume the content myself is
+51:02 that
+51:03 so first you take a first pass on on the
+51:05 text and what you do is you
+51:07 try to extract the keywords like the top
+51:10 four or five keywords that is always
+51:12 appearing and the keyword that you you
+51:14 think
+51:15 um the
+51:17 is the key message of
+51:19 let's say a blog post for example so
+51:21 once you have listed down all the
+51:23 keywords
+51:24 back to
+51:25 the idea that i was
+51:27 explaining about just now is that you
+51:28 try to understand not just
+51:30 what they are but what they mean what
+51:32 they're trying to convey and more often
+51:34 than not you'll be able to find a team
+51:36 of what
+51:37 they're trying to do let's say for
+51:38 example
+51:39 um you're talking about the solution and
+51:41 data platform that is trying to reduce
+51:43 the number of steps for for some and i
+51:46 mean a non-technical
+51:48 person to be able to access the data
+51:50 from four steps into two steps
+51:53 so what you can probably do is something
+51:55 like uh
+51:57 a comparison of like the number of hooks
+51:59 the number of
+52:00 uh steps that the person needs to take
+52:03 with
+52:04 without the solution for example you
+52:06 just draw it like that and then on the
+52:08 other side it's like yo just take two
+52:09 steps as simple as that so that's a
+52:11 simple example but you can always play
+52:13 around with many different different
+52:15 kinds of concepts for example
+52:17 is it a cycle
+52:18 is it
+52:19 about contrast between a concept and the
+52:22 other concept so you can
+52:24 for contrast you can talk about like
+52:26 um
+52:27 you can talk about like black and white
+52:29 so you can imagine you can immediately
+52:31 tell that one concept is totally
+52:32 different from the other while being in
+52:34 the same
+52:36 space for example and there are other
+52:38 things like balance dimension is now you
+52:40 can imagine a scale that talks about one
+52:42 concept that is more important than the
+52:43 others or even if they are the same
+52:47 many many objects that you can think of
+52:49 like slider if you're talking about a
+52:51 spectrum of different ways for you to do
+52:53 things and you want to convey that
+52:55 actually you need to put the slider
+52:57 somewhere in the middle or somewhere to
+52:59 the right to convey that yeah that's the
+53:02 kind of emphasis that you need to put
+53:04 whenever you're considering the two
+53:05 concepts so there are a number of ways
+53:07 um
+53:08 that you can you can play around and
+53:11 yeah with error you will normally be
+53:13 able to find it eventually
+53:16 and so
+53:18 pass over an article extract four or
+53:20 five keywords and then try to understand
+53:22 what is the key message uh what is uh
+53:25 what is the main takeaway from the
+53:27 article for the reader right and then
+53:29 you try to visualize it um follow
+53:32 through
+53:32 and i guess follow the same process as
+53:34 we discussed like half an hour ago right
+53:37 okay and this is this way you create a
+53:40 visual for the entire article right but
+53:42 what uh
+53:43 let's say you have one paragraph that
+53:46 explains some something else one section
+53:48 then another section that is maybe
+53:50 talking about a little bit different
+53:52 thing i guess you apply the same process
+53:54 right you take a section you try to
+53:56 understand what is the key message of
+53:58 this section and then you try to come up
+54:00 with a visual that illustrates this key
+54:02 concept is it correct yeah so
+54:05 i mean
+54:06 there is a point where you can
+54:09 create
+54:10 like what you mentioned is a long-form
+54:12 kind of visual instead of just one
+54:13 visual like maybe five or more visuals
+54:16 that that are in the same
+54:18 same
+54:19 article or content so there is a point
+54:21 where you can relate these visuals but
+54:23 there is a point exactly what you say
+54:25 that the concepts are totally different
+54:26 that you cannot really relate them
+54:28 yeah i mean in that case you cannot push
+54:30 yourself and try to create something
+54:32 because now you're diluting the value
+54:34 i think the most important is for you to
+54:35 be able number number one is for you to
+54:38 be able to deliver the message
+54:39 efficiently
+54:40 and the bonus if you can be able to
+54:42 relate different concepts
+54:44 like if you were to split different
+54:46 visuals into different concepts i think
+54:48 that would be a bonus i think one
+54:49 example that i
+54:51 managed to do it is by by talking about
+54:54 this concept about uh data science or
+54:56 machine learning that essentially it
+54:58 boils down to just five kinds of
+54:59 questions or five kinds of problems that
+55:02 it wants to solve like classification
+55:03 regression anomaly detection clustering
+55:06 and also reinforcement learning so just
+55:09 i mean any machine learning problem you
+55:11 can boil or categorize them into this
+55:13 these different categories so these are
+55:15 the
+55:16 this this article from microsoft so i
+55:18 figured out a way for me to be able to
+55:20 really relate this this
+55:22 these different five concepts using the
+55:24 same base visuals which is like the same
+55:27 kinds of data points
+55:29 and
+55:30 imposing different
+55:32 perspectives according to
+55:34 each of the five concepts
+55:36 so that people can relate it because if
+55:38 you
+55:39 have the visual
+55:40 but different visuals for different
+55:41 concepts it doesn't give as much impact
+55:44 but
+55:45 but yeah if you can somehow relate them
+55:47 because there is a logical connection
+55:49 over there even though yeah it's not
+55:51 that easy to come up with that
+55:53 immediately but if you think through
+55:54 about it
+55:56 yeah if you can manage to relate them i
+55:58 think that's a bonus
+56:00 yeah thanks uh i also know that you
+56:03 wrote a book because you recently came
+56:04 to data talks club slack and you
+56:07 answered questions about your book so
+56:09 can you tell us
+56:11 about your book and how did you come up
+56:12 with
+56:13 the idea behind the book
+56:16 so
+56:18 same thing is first and foremost for me
+56:19 to be able to nail my understanding of
+56:22 the concept
+56:23 so by writing the book it forces me to
+56:26 really get to the
+56:29 the bottom in terms of understanding the
+56:31 concept from the ground up
+56:33 for example um not relying on frameworks
+56:35 such as tensorflow or by torch but
+56:37 instead
+56:38 building
+56:39 a simple neural network from scratch
+56:42 including doing all this back
+56:43 propagation and all the
+56:45 the i mean the materials from scratch
+56:48 and
+56:49 that's
+56:50 is forcing me to i mean i mean the fact
+56:52 that i i'm looking to to create the book
+56:55 forces me to to do all these uh steps
+56:59 and
+57:00 that of course gave me the idea of of
+57:02 creating content that is based on the
+57:04 journey that i went through by learning
+57:07 the the material
+57:10 because
+57:11 i find that deep learning and neural
+57:13 networks is especially interesting
+57:14 because
+57:16 it's a is
+57:17 compared to other algorithms of course
+57:19 you're talking if you're talking about
+57:20 applications if you're talking about the
+57:22 kinds of um excitement that is that is
+57:24 that is here today there's something
+57:25 else but i'm talking more about
+57:28 like how it's very modular it's
+57:30 something that you can start simple that
+57:32 you can build upon so i thought that it
+57:34 would be an interesting idea for me to
+57:36 try to create like a book that explains
+57:38 the concept from ground up because
+57:41 you can you can expand from as much as
+57:43 you can from a very
+57:45 simple neural network which is a single
+57:46 neuron so how do you start from a single
+57:48 neuron
+57:50 to like a neural network with just one
+57:52 hidden layer to an even bigger neural
+57:54 network so it all starts with a single
+57:57 neuron and you're basically having these
+57:59 lego bricks that you can build and make
+58:01 a big a big a big lego structure
+58:03 so
+58:04 yeah i thought that that would be a
+58:05 natural wave a natural subject for me to
+58:08 convert that into a visual way of
+58:10 explaining things
+58:12 and
+58:13 and yeah by writing the book i
+58:16 i mean of course it forms up my
+58:18 understanding as well but i think the
+58:19 other part that is interesting to me is
+58:21 that i i i
+58:23 i can
+58:24 i was i was able to to connect the
+58:27 different concepts together
+58:28 and
+58:29 [Music]
+58:31 be able to come up with this business uh
+58:33 and to end so-called story because the
+58:34 other thing that i've also
+58:37 tried to do and whenever i'm creating
+58:39 content or any material is that i try to
+58:43 tie together the whole thing into a
+58:45 story that people can navigate and
+58:46 people can have a logical flow from
+58:49 start to finish
+58:50 so that's what i've uh i've tried to do
+58:52 with this book
+58:56 yeah did you first come up with text and
+58:58 then created illustrations or you first
+59:00 came up with illustrations and then
+59:02 wrote some text around them
+59:07 so
+59:08 so i started with the concepts the big
+59:10 concepts
+59:11 and then
+59:12 i
+59:15 start to create visuals i start to for
+59:17 example imagine the number of pages the
+59:19 number of sections
+59:20 then i make this
+59:22 placeholders for me to draw these
+59:24 visuals and then i start to fill in
+59:25 based on the concept
+59:27 then only i add the
+59:30 the text that explains explain the each
+59:32 of the visual because if you look at the
+59:34 book the text is actually very minimal
+59:35 so it is
+59:39 i'm hoping for people who don't have
+59:41 that much time for them to digest the
+59:42 content but
+59:44 can get enough value to understand the
+59:46 concept so it's visuals first and
+59:48 supplemented by just concise uh tags so
+59:51 so that's the text part is something
+59:52 that i do
+59:53 after i've i've filmed up the logical
+59:56 steps on on
+59:57 creating creating the content
+1:00:01 and i think we forgot to mention the
+1:00:03 name of the book so the name is a visual
+1:00:04 introduction to deep learning right
+1:00:08 i think we should be wrapping up
+1:00:10 do you want to
+1:00:12 say anything before we finish
+1:00:15 i think that's it so i think
+1:00:18 of course i want to thank you for for
+1:00:19 having me here it's really a pleasure
+1:00:21 thanks for trying this talk so yeah
+1:00:25 i also follow data talks club for for
+1:00:27 some time already and i really admire
+1:00:28 the work that you're doing
+1:00:30 with the community with the
+1:00:33 the effort that you have
+1:00:34 and the kind of content that you are
+1:00:37 creating is really helping a lot of
+1:00:38 people to ramp up in this in this
+1:00:40 industry so yeah thanks also to you for
+1:00:43 for creating all this stuff
+1:00:46 thanks so how can people find you
+1:00:48 linkedin twitter right yeah people can
+1:00:50 find me on linkedin uh meow me or if
+1:00:54 if if you want to look at the visuals
+1:00:56 that i've made you can easily go to the
+1:00:58 website
+1:00:59 okaydimensions.com so there i've fully
+1:01:02 created the
+1:01:04 not all but most of the visuals that
+1:01:05 i've done
+1:01:06 and if you like to also find out about
+1:01:08 the book as well as the
+1:01:10 the visual design service that i i i
+1:01:13 have there's also more information there
+1:01:15 on the website
+1:01:18 skatedimensions.com right yeah i just
+1:01:21 put it in but you'll also share all the
+1:01:23 links with me and then i'll put them in
+1:01:25 the description
+1:01:26 sure okay i think that's uh all for
+1:01:29 today so thanks again for joining us for
+1:01:31 sharing uh your
+1:01:33 expertise with us and thanks everyone
+1:01:35 for joining us as well for watching us
+1:01:37 and
+1:01:38 have a great weekend everyone
+1:01:41 thank you goodbye

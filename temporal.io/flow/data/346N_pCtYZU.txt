@@ -1,0 +1,1732 @@
+Data Mesh 101
+
+0:00 hi everyone welcome to our event this
+0:01 event is brought to you by the detox
+0:03 club which is a community of people who
+0:04 love data we have weekly events and this
+0:07 is one of such events
+0:09 so if you want to find out more about
+0:10 the events we have
+0:12 there is a link in the description check
+0:13 it out and you will see all the events
+0:15 we have in our schedule
+0:18 um also if you haven't subscribed to our
+0:20 youtube channel now it's the best time
+0:21 to do this you can go
+0:23 it's below the video there is this big
+0:25 red button click on this button and you
+0:27 will
+0:28 get notified about all our awesome
+0:30 videos we have a great slack community
+0:33 too so if you want to hang out with
+0:35 other data enthusiasts check it out
+0:37 and yeah we have we are going to have
+0:41 a free machine learning engineering
+0:43 course soon it starts in september so if
+0:46 any of you i know data mentioned data
+0:48 and machinery engineering are not always
+0:51 you know there is not a lot of overlap
+0:52 between these topics but if it happens
+0:55 that you're also interested in this
+0:57 check the link in the description
+0:59 and then finally you can ask any
+1:01 question you want during today's
+1:03 interview there is a pinned link in the
+1:05 live chat so click on this link ask your
+1:07 question and i will be covering these
+1:09 questions during the interview
+1:13 okay
+1:14 maybe maybe one topic is to talk about
+1:16 the overlap of machine in learning
+1:18 engineering and
+1:20 let me
+1:21 but we won't start with that
+1:23 we will not start with that
+1:30 yeah i took a note
+1:32 i assume you're ready oh by the way
+1:35 actually i also usually do a picture for
+1:38 twitter announcement so if you
+1:40 want you can smile if you don't mind of
+1:42 course taking your picture
+1:45 so i
+1:46 took a picture
+1:49 and
+1:50 i will now
+1:52 put it to twitter
+1:56 cool
+1:58 so
+2:00 yeah i think
+2:02 i am ready are you ready
+2:07 i think it means yes yeah because you're
+2:09 only it
+2:10 um
+2:11 so
+2:13 say
+2:14 i am totally ready but again apologies
+2:17 i'll be sipping my coffee throughout the
+2:19 interview
+2:21 okay
+2:22 okay so let's start this week we'll talk
+2:24 about data mesh we have a special guest
+2:26 today jaymac jamac is a principal
+2:28 technology consultant at thoughtwork
+2:31 thought works and she's the inventor of
+2:33 datamesh they think we will talk to
+2:36 about today so welcome
+2:38 thank you alex day thank you for having
+2:40 me i have to just make a quick
+2:42 adjustment late last night i did
+2:44 actually make an announcement that i
+2:46 have left all works and i have started a
+2:49 textbook around this image so but we
+2:51 didn't get a chance to sync up
+2:53 but yes right i was uh i was a
+2:56 consultant at powers for small
+2:58 adjustments
+3:01 so yeah the next question i have for you
+3:04 the first question is uh to tell us
+3:06 about your career journey you
+3:09 briefly mentioned the part of your
+3:10 career journey just now but maybe we can
+3:13 go a little back and you can tell us how
+3:15 it started
+3:16 yeah absolutely i mean it has been a
+3:19 journey as in i haven't stopped in one
+3:21 place in one country or in one industry
+3:23 segment
+3:26 and i have moved a lot i have moved
+3:28 around so i started as a
+3:30 software engineer and i think i remember
+3:32 i was 14 uh i'm going too far back but
+3:35 very quickly
+3:37 uh i was 14 i lived in iran and it was a
+3:40 time of war between iran and iraq and
+3:43 there were sanctions so you know we
+3:45 weren't getting much into the country
+3:47 not much getting out and my my dad went
+3:50 to uk on a work trip and bought bought a
+3:52 commodore 64. and he came back with two
+3:54 basic programming books and on top of
+3:57 one of them had a
+3:58 you know a picture of a computer that
+4:00 was hanging out handing out coffee or
+4:02 something and i thought oh my god you
+4:05 know computers can do that and um
+4:08 yeah so since then i fell in love with
+4:10 programming i became a software engineer
+4:12 later on and
+4:14 i for the first i've been in the tech
+4:16 industry for 20 24 something years and
+4:19 the first half more than the first half
+4:21 of that was dedicated to deep tech
+4:23 products and r d
+4:25 so i've done everything from firmware
+4:27 level
+4:28 producing custom hardware in in-house to
+4:33 large-scale kind of distributed systems
+4:36 with where data was
+4:38 you know very important ingredient of
+4:40 the solution we did larger scale
+4:43 critical infrastructure monitoring
+4:44 before streaming was a thing or
+4:46 analytics on streaming was the thing we
+4:47 had a full stack system building it
+4:50 and
+4:51 for the last 10 years i've worked
+4:53 i came out of deep tech i went i guess
+4:55 across the board i went to thoughtworks
+4:57 and worked with
+4:58 many largest skill kind of companies
+5:01 that run the real world you know
+5:03 infrastructure communications healthcare
+5:06 and so on and and my focus has been
+5:08 mostly on
+5:09 distributed systems initially on the
+5:12 microservices and how to scale computing
+5:15 and
+5:16 solutions i guess applications for
+5:19 organizations are complex and for the
+5:21 last
+5:22 five years again i made a transition
+5:24 came this time to solve with data mesh
+5:27 work with organizations to solve
+5:30 um the complexity that surrounds data
+5:33 and surrounds getting value from data
+5:35 and surrounds empowering people
+5:37 autonomously to get value from data and
+5:39 that led to kind of the hypothesis of
+5:41 data mission
+5:42 building solutions around that and as of
+5:45 a couple of weeks ago i've decided to
+5:47 leave thoughtworks i realized there is a
+5:49 gap really in the technology mostly
+5:51 around
+5:53 enabling the experience of data folks
+5:57 whether they're data producers or data
+5:59 consumers to have a very peer-to-peer
+6:03 analytical data sharing model and i've
+6:05 now started it very very early days the
+6:08 tech startup here in the bay area too
+6:11 uh to build that you know new reimagine
+6:14 the developer experience and build the
+6:15 platform for it
+6:17 sounds like a lot of fun
+6:19 it has been
+6:22 so i think you mentioned
+6:24 what you did as a principal technology
+6:27 consultant so it was mostly consulting
+6:29 other companies consulting companies how
+6:31 to
+6:33 extract value from their data
+6:36 right how they should design their
+6:37 systems
+6:38 in order to make it easier for
+6:40 to extract value for them right
+6:43 yes and and that involved all layers of
+6:45 stack so
+6:47 um sometimes people think consultants
+6:49 are those people that go and build a
+6:51 bunch of you know slide decks and wave
+6:53 their arms and leave the company with it
+6:55 with it with a pretty sliding but that's
+6:57 not the case for thought work so with
+6:59 thoughtworks we did execution where
+7:02 companies needed to either introduce new
+7:04 capabilities or didn't have enough
+7:06 people and and so on so yes i worked on
+7:09 with my teams
+7:11 on building ground up
+7:14 data infrastructure kind of data
+7:16 platform and then on top of it data
+7:18 products and uh mlai use cases to take
+7:22 advantage of those data
+7:24 data products so you can imagine it as a
+7:27 more vertical
+7:28 slicing of
+7:31 all the layers of stack involved
+7:35 so a customer would come to you saying
+7:37 hey
+7:38 it's a bit of a mess here we cannot make
+7:40 any sense of data and what's going on
+7:42 can you please uh help us
+7:45 introduce some order right and then usa
+7:47 okay just use data mesh here is a book
+7:51 it doesn't usually i hope it worked that
+7:52 way it doesn't it doesn't work that way
+7:54 um
+7:55 you know we if you customers usually
+7:58 come say look we've been trying this for
+8:00 a year a lot of actually the hypothesis
+8:02 around data mesh came with these very
+8:04 specific questions these are
+8:06 technologically very advanced companies
+8:09 here on the west coast of us that's
+8:10 where i was located that's where i was
+8:12 meeting clients and they will come and
+8:15 say look we've had a data strategy we've
+8:17 we've done
+8:18 all of the on-prem you know past
+8:20 generation of hadoop and so on and then
+8:22 we went to cloud and we had a data
+8:24 strategy we moved all of our data to
+8:26 some sort of you know big data warehouse
+8:28 on the cloud and we're still and we
+8:30 hired all of these
+8:31 new kind of data scientists the head of
+8:34 um
+8:35 i don't know personalization using ai
+8:38 and these people are waiting and still
+8:41 not getting access to the data they want
+8:42 or if they build something we can't
+8:44 really deploy so it was the process of
+8:47 data to value and the value whether
+8:49 being an applied ml model or being
+8:52 um
+8:53 reports and dashboards that people can
+8:54 act upon that process was full of
+8:57 friction broken and very very long so
+9:01 then the customers usually look for
+9:03 people are looking for always for silver
+9:05 bullets right what can you sell me so
+9:06 that
+9:07 you can solve all my problems
+9:09 and then usually really the the process
+9:12 of engaging is getting involved seeing
+9:14 okay what are the use kits do you have
+9:16 in your organization what are the
+9:18 friction points where are you in your
+9:20 maturity of technology
+9:23 do you have technical people in your
+9:25 organization to afford
+9:27 you know building some of these
+9:28 solutions and so on and so on and after
+9:30 that discovering assessment you
+9:32 basically get entrenches with
+9:34 organization to deliver use cases and
+9:37 value while
+9:38 building their infrastructure or
+9:41 the team structure restructuring and so
+9:43 on and it's always a very very tight
+9:45 collaboration
+9:49 so is it uh does it have anything to do
+9:52 with data mesh and what actually data
+9:54 meshes
+9:56 well maybe uh well the only i guess
+9:58 connection of that past is that
+10:01 once you work at a level that you see a
+10:04 lot of similar problems repeat you
+10:07 become a great pattern matcher
+10:10 and the patterns of problems and then
+10:12 patterns of solutions
+10:14 emerge from these many touch points
+10:16 right so i think that's the hypothesis
+10:19 of data mesh came from seeing these
+10:22 repeating problems and
+10:25 what data mesh is is really an answer to
+10:28 some of the core challenges that we've
+10:30 had for a really long time but
+10:33 they're they're becoming more pronounced
+10:36 because now we're talking about
+10:38 application of data beyond a bunch of bi
+10:41 reports in a bi team right we're talking
+10:43 about application of data in every
+10:46 function of our
+10:47 products or services so
+10:50 so the data mesh was really
+10:53 an alternative way to
+10:55 to get value from data involving how we
+10:59 structure
+11:00 our teams
+11:01 how we even imagine or
+11:04 you know
+11:05 share data
+11:07 um the infrastructure and then the
+11:09 governance so all of those pillars and
+11:11 it's a
+11:12 it's really a um
+11:14 it's a decentralized approach so it's
+11:16 based on giving autonomy to independent
+11:19 teams without compromising
+11:22 quality or integrity or connectivity so
+11:24 it's a decentralized kind of
+11:26 socio-technical approach in
+11:28 managing sharing accessing data
+11:32 particularly for analytical use cases
+11:35 at scale
+11:36 within in an organization between
+11:38 different business units or tech units
+11:40 or across organizations
+11:43 and we can go into
+11:44 um you know and it attempts to what it
+11:47 attempts to do is to remove this
+11:49 pipeline thinking that data constantly
+11:52 needs to move to a pipeline gets put in
+11:54 a pile thrown processing or metadata and
+11:58 semantic and so on added and then
+12:01 you know throw a processing edit to get
+12:03 value from it it really challenges that
+12:05 paradigm because that paradigm is
+12:07 the the time from data to value is very
+12:10 long and it says okay how can we
+12:12 decouple these pipelines into smaller
+12:16 self-contained
+12:17 units that
+12:19 encapsulate
+12:21 whether it's a tiny pipeline or some
+12:22 sort of computation and data
+12:24 and metadata with data sharing apis
+12:28 that allows you as a data user the ml
+12:31 engineer or
+12:33 data analyst
+12:34 to analyze this in directly peer-to-peer
+12:37 without a middle layer of a data team
+12:40 directly
+12:42 access this data and run your analytical
+12:45 workloads distributedly and have a
+12:48 direct relationship with the people who
+12:50 are actual producers of the data without
+12:53 a middleman
+12:56 yeah so
+12:57 like you mentioned quite a few things
+12:58 and i think
+13:00 most of these things
+13:02 did not involve like tools it's more
+13:04 about like how exactly you structure
+13:07 your team how you structure your process
+13:10 and how you
+13:11 build things rather than okay use this
+13:14 this this tool and you'll be good right
+13:15 so it's about more like how you exactly
+13:17 plan your work how you organize work
+13:20 and how you are going to absolutely
+13:22 absolutely but also how you organize
+13:24 your architecture right like what is um
+13:28 it honestly it pains me when people say
+13:30 oh here is a database like here's a
+13:32 bunch of tables in the warehouse go
+13:34 knock yourself out and get value from
+13:36 data because that's a very
+13:38 tightly coupled fragile way of using
+13:42 data that data cannot change cannot you
+13:45 know the the the contracts that exist
+13:48 today for data sharing with a giant you
+13:51 know pile of files or tables in a lake
+13:54 is a very
+13:56 tightly coupled and fragile contract
+13:58 between a data producer and a user so
+14:00 when you think about this autonomous
+14:03 independently moving teams building
+14:05 sharing data then
+14:07 it goes beyond just a team to say okay
+14:09 what is a future of data sharing
+14:11 contracts between these entities
+14:14 what is the future of
+14:16 data computation what is the future of
+14:18 governor so then it really very quickly
+14:20 leaks into your architectural thinking
+14:23 and very quickly leaks into okay what
+14:25 kind of tool can i reintegrate in this
+14:27 new model
+14:29 so it's not
+14:30 only about every team doing things
+14:33 independently
+14:34 but also keeping like the big picture in
+14:36 mind and also introducing some standards
+14:39 like okay like if you want to
+14:41 use data like you have to have some sort
+14:43 of documentation it's not it shouldn't
+14:45 be just a bunch of tables
+14:47 that nobody knows how to use but like a
+14:49 proper
+14:50 uh i don't know set of documents that
+14:52 describe what is there how to use it and
+14:54 so on right
+14:55 absolutely i mean you said a key word
+14:57 there that i want to double click on
+14:59 which is big picture thinking
+15:01 um
+15:02 we we are very
+15:04 i in data world we are fairly isolated
+15:07 and every one of us
+15:09 think uh
+15:10 oops sorry
+15:12 um not sure why my phone did that um
+15:15 sometimes we get this alerts if a kid
+15:17 gets reported as kidnapped or something
+15:19 uh we get these special alerts on our
+15:21 phones
+15:22 um
+15:22 yeah so if you think about
+15:26 that big picture thinking
+15:29 right now the big picture that i see
+15:33 over and over
+15:34 put on diagrams whether it's the
+15:36 architecture item technology vendor
+15:38 diagram
+15:39 is about a big picture that is organized
+15:43 with this pipeline thinking
+15:45 so
+15:47 so the big picture we want to shift to
+15:49 is a mesh model is a kind of a graph
+15:52 model in a way that value is generated
+15:55 through the links between these data
+15:58 products through the interactions and
+16:00 exchange of value between
+16:02 these
+16:03 data
+16:04 data products and unless we be able to
+16:07 see that big picture
+16:08 we can't really make any changes it's
+16:11 you can't say like i'll just make a
+16:12 change in one team and that would give
+16:14 out because no value is you know the
+16:16 formula is like n times n minus 1 over 2
+16:19 is a number of interconnectivity and
+16:22 exchange of information between the
+16:24 nodes and those of course their
+16:26 architectural concepts and and people
+16:29 um
+16:30 yeah so that's that's super key
+16:33 and yeah i took a look at the table of
+16:35 contents of your book i don't think i
+16:37 actually mentioned that
+16:40 you wrote a book about data mesh
+16:42 but anyway so yeah i took a look at the
+16:44 book
+16:45 and uh
+16:47 like at the table of contents and yeah
+16:49 it's organized like what kind of data
+16:51 mesh principles are there
+16:53 and the first principle was the main
+16:55 ownership and i think it's related to
+16:57 the thing we discussed that teams
+17:00 work independently so there are
+17:02 units maybe domain units
+17:04 so can you tell us what is a domain and
+17:08 what is this principle about
+17:10 sure just just so just
+17:13 before answering that question step back
+17:15 for a minute i
+17:16 i started writing and talking about data
+17:19 mesh by first principles by stating
+17:22 first principles and that was very key
+17:24 because to the in today's world we are
+17:27 thrown at so many tools and technologies
+17:30 that remove the ability for us to think
+17:33 for ourselves
+17:34 uh and constantly being reshaped by you
+17:37 know hand-fed
+17:39 use this tool and magic will happen and
+17:41 i really wanted to take a different
+17:42 approach
+17:43 so you're right that i started with this
+17:45 first principle and said okay if we
+17:46 agreed on these first principles
+17:49 then
+17:50 you know each organization can come up
+17:52 with a novel and new way of bringing
+17:54 these principles to to life
+17:57 and the implementations of database may
+17:59 look very different and through that you
+18:02 know generation of ideas in terms of
+18:04 implementation we can
+18:06 the great ones bubble up right so that
+18:08 was the purpose of it um
+18:11 there are four principles and the very
+18:14 and all of them work together and there
+18:15 is a reason there are four and we can
+18:17 talk about that after
+18:18 the domain ownership principle is about
+18:23 um aligning
+18:24 data work
+18:26 data generation data consume consumption
+18:29 with
+18:31 you groups of people with a team of
+18:34 you know autonomous
+18:36 group of people so it's like the domain
+18:39 is one and the domain is often is an
+18:42 aspect of your business that some
+18:45 business person is thinking about
+18:48 has a specific set of languages words
+18:51 vocabulary and an outcome
+18:54 so that we want to do we want to
+18:56 organize the data sharing model or data
+18:58 generation model
+19:00 uh in a way
+19:02 that each of these business units that
+19:05 are the direct producers or direct
+19:07 consumers of the data can work
+19:09 independently and yet interoperate so
+19:12 let's let's describe that with an
+19:13 example so in in the book i use a
+19:16 hypothetical hypothetical
+19:18 um digital streaming company call it def
+19:21 but you can imagine this spotify you
+19:23 know
+19:24 soundcloud apple music so if you have a
+19:28 business team and a tech team aligned
+19:30 with it
+19:31 that their job is generating playlists
+19:36 curated automatically curated playlist
+19:39 the outcome of that team that business
+19:42 domain of
+19:44 you know playlists
+19:46 is to really give an immersive
+19:48 experience and personalized experience
+19:51 to the listener
+19:53 so then that team with that outcome
+19:56 has a set of data that it's generating
+19:58 which is automatic classified
+20:00 personalized
+20:02 targeted playlist of music and that team
+20:05 to do that and that's it as a machine
+20:07 learning model to do that requires data
+20:09 from
+20:10 other business domains so there is a
+20:12 business team that is thinking about
+20:14 the you know the best class digital
+20:16 experience so they're building the music
+20:18 players so they're a source of data
+20:21 which is their play events or play
+20:23 sessions how a user is interacting with
+20:26 that player device there is a team
+20:28 business team that is objective is
+20:31 onboarding more
+20:32 listeners so they have as part of their
+20:35 onboarding process they have more
+20:37 information about the profile of their
+20:39 listener maybe their age maybe not
+20:41 exactly individuals that gets too creepy
+20:43 but as the
+20:45 classes distribution of the listeners
+20:47 like what what are where each country
+20:50 and
+20:51 geographical location so all of this
+20:53 information can be directly consumed by
+20:55 this uh business team so so people get
+20:58 confused when i talk about domain i
+21:00 really domain is just if you zoom out
+21:02 and look at your business and that
+21:04 various objectives of your business and
+21:06 if you're a modern digital business you
+21:08 probably have
+21:09 technical teams aligned with those
+21:12 business objectives and business units
+21:14 right so in case of like dafting let's
+21:16 go through a few of those so you have
+21:18 your listener probably listener team
+21:20 that's onboarding customers you have
+21:21 your artists management so people that
+21:23 are managing the artists that are coming
+21:25 on the platform you have your artist
+21:26 payment people that pay so these are all
+21:29 business function domains
+21:31 um and they all generate data and they
+21:34 all generate tag
+21:36 and they consume data so we want to
+21:40 yeah make the model data production
+21:41 related sharing model aligned with this
+21:43 unit and the reason for it is that this
+21:46 model then scales out
+21:49 as you create more business functions or
+21:52 you know you expand your you grow your
+21:55 business into new areas
+21:57 well i'm gonna create a new domain
+22:00 uh we are let's say we decided to work
+22:03 with partners as this company we're
+22:05 gonna work with i don't know these yoga
+22:07 studios to play their music or this
+22:09 politano cycling you know
+22:12 so then you bring a partner team and
+22:14 then they have data capabilities
+22:16 internally and they're responsible again
+22:18 for sharing their data and consume data
+22:20 from others
+22:22 for further data-driven solutions
+22:25 i'm jumping a bit ahead because i
+22:27 haven't heard the other principles but
+22:29 uh
+22:30 so you mentioned all these different
+22:32 teams like
+22:33 music player team artist management team
+22:35 on boarding team
+22:37 i know what was there also partners team
+22:39 right yes so let's say each of these
+22:42 teams has a schema in our data very
+22:44 house and they just publish data there
+22:47 in this schema
+22:48 would it be a data measure it's too
+22:49 early to call it that
+22:51 um so there are i guess levels of
+22:53 maturity in terms of you know getting
+22:56 there so you might start with saying
+22:58 look we're gonna you know still have a
+23:00 centralized warehouse but we're gonna
+23:02 try to give some organization to
+23:05 how we structure the files or the tables
+23:07 within this warehouse and
+23:09 structure the schemas and that might be
+23:11 a good start but it's not going to give
+23:13 you the outcome that you want the
+23:14 outcome that you want is a very loosely
+23:17 coupled model of data sharing that
+23:20 um you know that can
+23:23 so that the
+23:24 the um you know that the play listing
+23:27 can change their schema that can change
+23:29 their data that that it can almost be a
+23:32 real time in sharing this information
+23:34 without really breaking anybody else so
+23:37 the data warehousing
+23:39 model of
+23:41 data modeling
+23:43 interconnecting data so that
+23:45 correlations can be discovered and
+23:48 queries over multiple data sets can be
+23:52 executed it's a very fragile again it's
+23:56 a tightly coupled model so you exactly
+23:58 know what table and what columns and if
+24:01 that if you change that column change
+24:03 that schema
+24:04 you know your solutions that are doing
+24:06 cross crest
+24:08 team across you know schema correlations
+24:10 become uh become broken and in addition
+24:13 to that if you we want to remove
+24:16 any sort of friction in terms of
+24:18 discovery in terms of understanding
+24:21 there's a lot more involved in data
+24:23 sharing than a schema and a bunch of
+24:25 tables you've got to share
+24:28 you know all of the other real-time when
+24:31 i say real time i don't really mean
+24:32 events but things that are real time can
+24:35 change and we want to share that which
+24:37 is okay
+24:38 these are the guarantees of my data
+24:41 product like i update this
+24:44 monthly or every second or every
+24:46 millisecond or i i you know the the
+24:48 integrity of it i this is a you know
+24:51 near real-time data product but it's
+24:53 actually has low integrity it has
+24:55 missing
+24:56 information it has um duplicates oh
+24:59 versus no this is this actually gets
+25:02 reconciled nightly so there's a level of
+25:05 additional information that need to be
+25:07 provided and i'm frankly i'm not sure a
+25:11 data data warehouse data technologies
+25:14 the way we had is the best way
+25:16 um to to share that information because
+25:19 they're built with a very different set
+25:20 of assumptions
+25:22 but they can that what you just
+25:23 described could be a good starting point
+25:26 because i was thinking about this
+25:27 scenario so the playlist team needs to
+25:29 access data from the music player team
+25:32 and then from
+25:33 uh
+25:34 onboarding team right
+25:36 and if it's just one data very house
+25:38 then it's just a join right so then you
+25:40 have this data here sitting in this
+25:43 stable in this schema then you have
+25:45 another table sitting in this schema you
+25:47 just do join and then you have your data
+25:49 but in case it's distributed and
+25:51 everyone has their own
+25:53 tools you have data very houses whatever
+25:55 they have
+25:56 then making these joints become a lot
+25:59 more difficult right so how
+26:01 how do they do this do they pull data
+26:03 first
+26:04 to their intermediate storage from this
+26:07 team then from this team and then they
+26:08 do join and then they also need to make
+26:11 sure that they actually have something
+26:12 to join on like there is a common key
+26:15 yeah exactly how does it happen in
+26:17 practice yeah so so there are different
+26:20 layers again different levels of
+26:21 complexity and and
+26:23 optimum we have to decide what are we
+26:26 optimizing for
+26:28 so far what i'm seeing with our
+26:30 solutions and our mind and the biases
+26:32 that we have is mostly about optimizing
+26:36 for machine performance right
+26:38 so but if you're a really complex
+26:41 organization
+26:42 and
+26:43 in fact you lose a lot of cycles to
+26:46 deliver value because you optimize too
+26:48 much for the machine so you have this
+26:49 very tightly integrated
+26:51 keys that you can't forever change
+26:55 then um
+26:56 no matter how fast your machine is your
+26:59 final outcome is up so optimal because
+27:01 you can actually those joints are not
+27:03 really delivering much value like you
+27:04 can't even build new use cases so so
+27:07 just to start by saying there is a
+27:10 you know a spectrum of where are we
+27:12 optimizing for
+27:13 and in the case that you just described
+27:16 one might say
+27:18 look i'm doing data match within an
+27:20 organization we happen to have
+27:22 standardized on some
+27:24 warehouse uh and for
+27:28 maybe all of our data users are happy to
+27:29 use the warehouse which i find hard to
+27:31 believe but let's let's assume that and
+27:34 then you would say okay you know at the
+27:36 physical layer this
+27:38 one way of getting access to this data
+27:40 from different domains is warehousing
+27:42 but at a logical layer when people
+27:44 request access when they discover even
+27:47 which table to go to there is a dynamic
+27:48 set of apis that they have to call so we
+27:51 can put a layer of indirection on top
+27:54 before you get even to the joint to say
+27:57 if you say i want playlist actually you
+27:59 call a different api that then would
+28:00 decide based on your version of the play
+28:03 you know playlist you're requesting for
+28:05 which event table to go to so that is um
+28:08 that is a possibility
+28:10 on the other end of the spectrum you're
+28:12 actually working with organizations that
+28:14 haven't standardized on one platform one
+28:16 take or even maybe sharing take it to
+28:18 the next level sharing data across
+28:20 organizations just it'd be crazy to say
+28:23 hey everyone install this you know go on
+28:26 the same platform same cloud it doesn't
+28:28 make sense so we have to solve for that
+28:29 some solution so today what we have
+28:32 which is not
+28:33 great but it's a stepping stone we have
+28:35 like federated query engines right you
+28:37 can have tables in different data
+28:39 warehouses and let's say you have that
+28:41 first layer apis to redirect you to the
+28:44 right
+28:45 table and database and schema and then
+28:47 you can run your query fedora in a
+28:49 federated way and do your joins and do
+28:52 all of the things that you want to do
+28:54 yes you are probably sacrificing some
+28:57 performance even though those federated
+28:59 queer engines are getting faster and
+29:00 faster you're sacrificing some
+29:03 you know sub millisecond or some second
+29:05 performance but
+29:07 that is giving you a level of freedom
+29:10 and scale
+29:12 from the human perspective that you
+29:14 couldn't have before if everyone had to
+29:16 comply with the same right everyone had
+29:18 to go on the same platform so um and
+29:21 then there are there are modes of
+29:22 consuming data that has nothing to do
+29:24 with sql right they're modes of
+29:25 consuming data that you are i don't know
+29:27 you're reading
+29:29 structured streaming of data frames yes
+29:31 you push some of your competition up
+29:33 front to just pick the bits of the data
+29:35 that you want but you're bringing data
+29:38 to do downstream processing um and if
+29:40 you want to get really futuristic that
+29:42 that feature doesn't exist today but i
+29:44 think that's where the animation needs
+29:46 to head and that's why like i thought
+29:48 you know somebody need to start a
+29:50 company to to solve these problems is
+29:52 the future that
+29:55 we put a stop in this kind of data
+29:57 movement model and say okay if if if
+30:00 where we want to get to is
+30:03 um
+30:03 independent
+30:05 you know rightful owners of the data
+30:09 independently changing independently
+30:11 evolving but yes we want to have
+30:12 cross-cutting analytics and machine
+30:14 learning model
+30:15 we have to define new data sharing apis
+30:18 that in fact are about
+30:20 receiving the computation pushing the
+30:22 computation further and further up
+30:24 into those data products right if i'm
+30:26 training a machine learning model and
+30:28 i'm doing you know kind of matrices
+30:30 operations
+30:32 can i do this distributedly on the right
+30:34 source of the data no matter what
+30:36 platform they come from
+30:38 uh and i think
+30:39 that goes beyond just having a type of
+30:42 sequel type that is about sucking data
+30:44 out it's about pushing the competition
+30:46 onward and only sucking the bits that
+30:47 are really valuable to the outcome that
+30:49 you're generating and i don't think
+30:51 we're there i know there are a few
+30:52 startups that
+30:53 are getting thinking about this kind of
+30:55 federated machine learning training
+30:57 model and so on but i think it's a
+30:58 movement
+30:59 um that needs to happen right for this
+31:02 model to be practical
+31:04 but i guess
+31:05 the simplest way of implementing this
+31:08 like every team has
+31:10 some way of accessing data and you as
+31:12 the playlist team you just pull it to
+31:14 your to your place and then crunch it
+31:17 and then create your product
+31:19 right yes yes and then you have to think
+31:21 about
+31:22 the simplest way what is the minimal set
+31:24 of
+31:26 guarantees and information that i need
+31:28 to publish and provide to other
+31:31 teams
+31:32 so that they can discover
+31:35 so that they can understand
+31:38 you know it was fine maybe to go to one
+31:40 centralized data team and say hey knock
+31:42 on the data team can you run this
+31:43 analytics can you find this data can you
+31:45 create this data but that
+31:47 model won't work
+31:49 when you are in this distributed way so
+31:51 standardizing
+31:53 those apis
+31:55 that describe and
+31:58 provide metadata and someone is it's
+32:00 also key in in addition to the data
+32:03 itself
+32:04 so
+32:05 it's decentralized but there are some
+32:07 sort of central parts is this api that
+32:10 you mentioned this layer of interaction
+32:12 so we should define this in advance so
+32:14 teams know how to communicate to each
+32:16 other and we when we create a new domain
+32:18 a new team it follows the same api so if
+32:21 somebody needs to consume data from this
+32:23 new team they already know how to do
+32:25 this because it's the same across all
+32:27 the entire
+32:28 i mean absolutely decentralization and
+32:31 centralizations are two sides of the
+32:33 same coin
+32:34 so if you and i are on two separate
+32:37 computers two different time zones but
+32:39 we managed to have this conversation
+32:41 with all of those folks on the q a and
+32:43 on the chat the reason for it is that we
+32:46 didn't say oh hang on everyone we shall
+32:48 be all on the same server to talk to
+32:50 each other no the reason was it because
+32:52 that we've got tcp stack that
+32:55 communicates and standardizes the seams
+32:57 the interconnectivities
+32:59 and then it gives us autonomy to be in
+33:02 whatever stack that we want to be
+33:03 locally so yeah absolutely the same
+33:05 thing exists with datamesh that
+33:08 we've got to standardize some
+33:10 cross-cutting concerns and and
+33:13 one place to start with anything that is
+33:15 about interconnectivity so
+33:17 interconnectivity of these nodes so you
+33:19 can imagine them as you said like
+33:20 discovering them and joining them
+33:22 involves um
+33:24 you know information about
+33:26 discovering this thing like what
+33:28 information it shares to say what it is
+33:30 in a standardized way like
+33:32 what language or what modeling
+33:34 language it uses to describe its data
+33:37 it's the
+33:38 interfaces for the data sharing that you
+33:40 mentioned or computation sharing
+33:42 um it's identity management the thing
+33:45 that
+33:46 sucks most frankly right now in data
+33:49 world is the security
+33:51 authentication authorization and just
+33:53 modes of accessing validating access to
+33:55 data every every technology has its own
+33:57 and just even on a single cloud provider
+34:01 even that is not you know sort of that
+34:03 so so that you can from independent
+34:06 services independent accounts access
+34:08 resources so we've got to
+34:11 come to an agreement around that and you
+34:13 know there's a ton of learning i mean
+34:15 we've done internet so we can always go
+34:18 back and see
+34:19 what were the key
+34:21 innovations a small number of
+34:23 innovations that allowed this federated
+34:26 model of
+34:27 capability sharing right um and apply
+34:30 that to data but
+34:33 yeah
+34:36 yeah that that's an interesting metaphor
+34:38 with uh
+34:39 tcpip and you i think you mentioned this
+34:42 set of guarantees multiple times and i
+34:46 suspect it's related to the second
+34:47 principle right so the second principle
+34:50 is data as a product
+34:53 right and uh yeah maybe can you tell us
+34:56 more about this also yeah absolutely
+34:58 i mean absolutely so that what drove
+35:01 data measures was autonomy was
+35:03 independence was move about moving
+35:07 be able to have infinite scale of
+35:09 different domains different parts of the
+35:12 business and um you know this domain
+35:14 oriented ownership but
+35:16 very quickly that can turn into a
+35:19 siloing problem right well i'm in
+35:22 playlist domain and i have the data that
+35:23 i want and i would like suck in somehow
+35:26 the data from other prices and keep it
+35:27 for myself and
+35:29 what how are we any better than the
+35:32 siloing of application databases that we
+35:34 have today
+35:35 so
+35:35 data as a product was to invert a
+35:38 relationship
+35:40 with data
+35:42 and
+35:44 think about data as a product that we
+35:46 share
+35:48 and we
+35:49 measure the delight and happiness of the
+35:52 data user
+35:54 and that's different from a relationship
+35:56 we have today which is data is an asset
+35:59 that we collect and it's precious and we
+36:01 don't necessarily want to share with
+36:03 anybody right so data as a product is a
+36:05 set of sort of underpinning
+36:08 practices and again technology
+36:11 that really focuses on the consumer
+36:13 first
+36:14 um so this
+36:16 let's say i am a listener onboarding
+36:18 like i build a religion registration
+36:21 apps and
+36:22 whether through call center whether
+36:24 through you know web or mobile i receive
+36:26 listeners and i capture information
+36:28 about them
+36:30 my job is really optimize that process
+36:32 or the conversion from oh i'm interested
+36:34 in this app to no i want to get a free
+36:36 access and then try it and then pay for
+36:38 it it's very smooth so if i'm that
+36:41 you know team
+36:42 then
+36:43 i'm generating a ton of data right the
+36:46 touch points with the user at the time
+36:47 of interest or registration
+36:50 so then if i just collected that data
+36:52 let's say i got events from the play you
+36:54 know players or applications or web
+36:56 pages and then i put them in some
+36:58 database or stream them and maybe some
+37:01 someone downstream started kind of using
+37:03 them with difficulty
+37:05 uh we want to change that and say hey
+37:08 you listener team
+37:10 of course your responsibility is
+37:11 optimizing the process of you know
+37:13 engaging with listeners through
+37:15 registration but also you're responsible
+37:18 for the data that you generate
+37:20 because you know generating
+37:23 uh to share that data with the rest of
+37:25 the organization based on their needs
+37:28 and then very quickly you realize that
+37:30 and you get measured as a product you
+37:32 have a set of kpis that that measures
+37:35 the success of your role as as as a data
+37:38 product owner
+37:40 and then from that then you can think
+37:42 about okay if i'm
+37:45 giving a product or sharing a product or
+37:47 selling a product like i'm building a
+37:49 product
+37:50 what are the
+37:53 what are the characteristics that i need
+37:55 to
+37:56 be able to articulate and share
+37:59 for the audience to do a self-assessment
+38:01 whether it's the right product for me or
+38:03 not and one of those characteristics is
+38:06 about
+38:07 all of the information that you need to
+38:09 share for a consumer to trust your data
+38:12 and then self-assess its usability
+38:15 and when you think about establishing
+38:18 trust
+38:20 there are
+38:21 a set of it's about bridging the gap
+38:23 between
+38:25 what you know and what the customer
+38:27 needs to know and to bridge that gap a
+38:30 set of information that need to share
+38:32 are
+38:33 guarantees of your product or for your
+38:36 data products
+38:37 and then you can you know think about
+38:39 the guarantees as quality and timeliness
+38:41 and integrity and completeness and a
+38:42 whole set of um
+38:45 information that that changes all the
+38:46 time right it's not a static oh i shall
+38:48 have you know this level of completeness
+38:51 no in fact that constantly changes
+38:53 and allow for that and then measure
+38:55 whether you are meeting those guarantees
+38:57 or not an adjust right your
+38:58 implementation
+39:02 i guess if we come back again to that
+39:04 example of the playlist team consuming
+39:06 clicks from the player team so as the
+39:09 playlist team want to be certain that
+39:12 like there are no big problems
+39:15 with
+39:16 the quality of this data and this is one
+39:17 of the guarantees we
+39:19 um kind of expect from the player team
+39:21 or if there are problems we also expect
+39:23 this team to tell us about this and this
+39:25 is like the contract between us our
+39:28 domain and their domain right and this
+39:30 is
+39:31 if we have this then
+39:33 their data the clicks is the product
+39:35 that we consume right exactly that's
+39:37 exactly it and and that conversation
+39:40 that that that assessment is really a
+39:42 conversation so data
+39:44 product owner or data product manager is
+39:46 like a role that data mesh introduces
+39:49 job is to have that conversation with
+39:52 users that are domains that are
+39:54 interested in that data and say okay
+39:56 look today you know 80 of us consumers
+39:59 are happy with kind of low integrity but
+40:02 but real time because they've been
+40:04 building dashboards about anomaly
+40:06 detection in how the player is failing
+40:08 or working but now we have this playlist
+40:12 folks so they're actually not interested
+40:14 in
+40:14 every single event or every single click
+40:16 what they're interested in is a bit more
+40:18 high integrity
+40:20 um
+40:21 sessions of a interaction so from the
+40:25 moment that somebody starts playing the
+40:27 application what what music they listen
+40:30 to in what order which ones they escape
+40:32 which ones they listen so they're only
+40:33 interested in
+40:35 a holistic view of maybe all of the
+40:37 listeners or they listen they look for
+40:40 aggregates they don't even look for
+40:42 um you know every single kind of
+40:44 customer they want to see all of the
+40:46 customers on all of the tracks the
+40:48 relationship between those so um
+40:51 so then in those conversations you go
+40:53 okay actually i have a data product
+40:55 about play you know
+40:57 player click stream but i need to now
+41:00 create another data product or i need to
+41:03 create a new way of accessing this data
+41:06 product that gives the aggregate views
+41:08 that they're looking for and yes it's
+41:10 going to be less real time now the
+41:12 guarantee becomes maybe
+41:14 this hourly whatever the
+41:16 um processing window that makes sense
+41:19 for that aggregate
+41:20 but the integrity is higher quality so
+41:23 through that conversation then you
+41:25 decide
+41:26 who should be building this product is
+41:27 it really the player team that should be
+41:30 building it or is it someone in the
+41:31 middle or
+41:32 the consumers themselves and then you
+41:34 kind of you you manage your product
+41:36 ecosystem in that way
+41:38 and uh then each team has this uh data
+41:41 product managers that you mentioned and
+41:43 it's their job to agree who is doing
+41:45 what right
+41:47 yeah exactly their job is managing their
+41:49 data as a product
+41:52 for
+41:53 for all of the spectrum of consumers
+41:55 right
+41:56 yeah
+41:57 okay so what's the next principle i
+41:59 think it's uh i have it in the notes
+42:01 it's principle of self-serve data
+42:04 platform so can you unpack it so what
+42:06 does it mean yes self-serve what is data
+42:09 platform
+42:10 all of it uh yeah so probably i must say
+42:13 the platform by definition should be
+42:15 self-serve so self-serve is almost a
+42:18 redundant word in that phrase but i
+42:20 wanted to kind of really emphasize and
+42:22 make it bold um so we don't forget it i
+42:25 think if you think about this model of
+42:28 okay autonomous business focus so i take
+42:32 people that are focusing on a particular
+42:34 domain
+42:35 uh teams are now
+42:37 you know accountable for
+42:40 data products and their data computation
+42:42 pipeline their data apis that's a lot of
+42:45 responsibility
+42:46 and the way the data systems or data
+42:49 platforms or data infrastructure is
+42:51 provided today that requires a high
+42:53 level of expertise and that almost makes
+42:56 data machine possible from day one
+42:58 because we can't recruit all of these
+43:00 people what does that even mean
+43:02 so i put that there as a placeholder to
+43:05 say
+43:06 if we really want to empower and enable
+43:09 these embedded data people in
+43:12 the domains
+43:14 we need to rethink and re-imagine our
+43:16 data platforms to make
+43:19 life of it i don't know vanilla
+43:21 developer really easy to generate data
+43:24 products to use data products or the
+43:25 life of an analyst really easy to
+43:28 consume that data and and be able to
+43:30 play with it so we don't have to
+43:32 constantly introduce this intermediary
+43:34 role of or analysis engineer or analysis
+43:37 as an engineer and or ml engineer maybe
+43:40 maybe we can make that a little bit
+43:41 smoother and that requires really
+43:43 rethinking
+43:45 our approach to data technology
+43:48 um uh in a way that removes that high
+43:51 degree of specialization but of course
+43:53 you still need to have you know
+43:55 development experience and so on and
+43:57 understand like
+43:59 you know the characteristics of data
+44:01 statistical modeling like of course
+44:02 there's capabilities that depending on
+44:04 your role producer or consumer need to
+44:06 have
+44:07 but that
+44:09 proprietary tech expertise that you need
+44:12 today
+44:13 need to get
+44:14 reduced and then you know the surface of
+44:17 this platform needs to kind of go up a
+44:19 little bit in terms of abstraction so it
+44:22 was really a place for learning in the
+44:23 book you know i give examples of
+44:26 um
+44:27 value stream like a working model
+44:30 the day in the life of a data card
+44:32 developer the day in a life of a data
+44:34 product consumer and how what is their
+44:37 level of abstraction that they can
+44:39 expect from the platform uh to do their
+44:41 job easy to do the job fast the job
+44:44 right um
+44:46 and i think that's missing right so
+44:48 that's a lot of organizations are
+44:50 building that right now because it just
+44:51 doesn't exist
+44:53 um
+44:54 yeah and it's my mission is kind of
+44:57 the next next next mission is build a
+44:59 technology that delights the experience
+45:02 of data developers whether they're
+45:04 consuming or not just using umbrella
+45:07 term data developers but um consuming or
+45:11 producing
+45:12 that's that's the third principle
+45:15 okay so data platform if i can attempt
+45:17 to summarize
+45:19 is
+45:20 a place where somebody who is not
+45:23 necessarily a data engineer who doesn't
+45:24 know how spark works who doesn't know
+45:26 how kafka works who doesn't know all
+45:28 these things
+45:30 they can just come find the data they
+45:32 need query it
+45:33 and do some analysis and then maybe pull
+45:36 this data and start
+45:37 using it for their for their team for
+45:40 their products right so they don't
+45:42 need to hire a team of data engineers to
+45:45 be able to do this
+45:47 yeah and i think i mean we've got to be
+45:49 careful with that because that soon very
+45:51 quickly becomes oh i need to have a no
+45:54 code local platform that nobody can test
+45:56 and understand after a while so i'm
+45:58 definitely not advocating for that i
+46:00 think
+46:01 you know software engineering practices
+46:04 or good engineering practices are
+46:05 evergreen and has to be built but i
+46:07 think you know there's there is a set of
+46:10 services so someone might say look i am
+46:13 producing a data product or i'm
+46:15 consuming a data product and i'm and i
+46:17 want to work with data frames or that so
+46:19 they might still use
+46:22 spark as part of their work
+46:24 but
+46:25 they don't have to worry about
+46:28 scaling it or
+46:30 running it or scheduling it and they
+46:32 don't and they don't have to worry about
+46:34 oh this is just a vertical i'm just
+46:36 writing a pipeline and then i have to
+46:38 worry about the storage part of it and
+46:40 then i have to worry about i mean you
+46:42 know say security part of it there is a
+46:44 new experience generated that says look
+46:47 if you ask for
+46:49 initialize the data product i will give
+46:51 you all of the aspects involved in a
+46:53 data product and you just focus on that
+46:56 little part spark code that you have to
+46:58 write for your data processing or that
+47:00 sequel that you have to do you don't
+47:02 have to worry about anything else so you
+47:03 we might still
+47:04 code and know some have have an ex
+47:07 visibility to these tools but um your
+47:10 experience using those tools changes
+47:12 quite a lot
+47:14 and when you said that we need to
+47:16 reimagine our data platforms it was
+47:18 plural platforms right so it each team
+47:20 has its own platform or we have a one
+47:23 big global one or how does it work
+47:25 usually yeah i think i i think it's
+47:27 everybody wants one giant big data
+47:29 platform that serves everybody's needs
+47:31 right but yeah that sounds cool right
+47:34 you have one is that reality i don't
+47:37 think so i think
+47:38 again it comes to
+47:41 you see like this
+47:43 by
+47:44 it at its heart
+47:46 embraces chaos and complexity so then if
+47:49 you embrace chaos and complexity then
+47:51 your solution has to be able to
+47:55 deliver value fast reliably and
+47:58 responsibility despite the human chaos
+48:01 and complexity
+48:02 uh and if i right now say oh you
+48:05 decentralized all of teams and one
+48:07 platform to reel them all that is
+48:09 against
+48:11 that that that principle that i just
+48:12 mentioned so i think again with the
+48:14 platform what what reality that is
+48:16 happening is that large organizations
+48:18 where data makes sense complex
+48:20 organizations
+48:21 each almost each country sometimes each
+48:24 business is like they have their own
+48:26 technology and tooling and they don't
+48:27 want to standardize so then the parts of
+48:30 the platform again we talked about this
+48:31 right that you standardized and you have
+48:33 common capabilities
+48:35 or what interconnects these platforms in
+48:38 terms of data sharing and the parts that
+48:40 you probably don't care like if i don't
+48:43 know if one team wanted to use
+48:47 prefect or airflow whatever for their
+48:49 data processing so be it another team
+48:51 might be using some
+48:53 of serverless technology for their data
+48:55 data product like the computation with a
+48:57 data person that's okay but as long as
+49:00 those two can share data discover
+49:02 understand
+49:04 share and use and connect data
+49:06 um then have as many problems as you
+49:08 want right um
+49:11 yeah
+49:12 is it related by any chance to the next
+49:14 principle of data governance or what was
+49:17 actually i don't remember
+49:18 yeah yes
+49:20 right
+49:21 exactly yeah is it related
+49:24 absolutely i mean all of these
+49:25 principles they i have a diagram in the
+49:27 book that describes
+49:29 the inter relation of like relation of
+49:32 these things together
+49:33 and why there's four and not three and
+49:36 in fact i didn't have the first one for
+49:37 a while and then i added it because
+49:39 based on experience i realized oh god
+49:41 like if you don't get this right where
+49:42 we're doomed
+49:44 it is the cross-cutting concerns
+49:47 that we need to
+49:48 agree upon as an ecosystem of
+49:51 independent nodes on the mesh and need
+49:53 to be able to implement in automated
+49:55 computational fashion so um governance
+49:58 is a word that we use a lot in the data
+50:00 space in fact it's a word that is not as
+50:03 much used in the
+50:04 kind of microservices operational world
+50:06 we just call them policies or across
+50:08 cutting concerns so i use the same
+50:10 language that data data
+50:13 um community uses uses the word
+50:15 governance and it's to me it's one of
+50:16 those kind of scary
+50:18 words that
+50:20 is very hard to implement without
+50:23 putting controls that slow people down
+50:25 so to add the federated and computation
+50:27 to it to
+50:28 to fitted this model but yes so so you
+50:31 know the problem that can arise from
+50:34 diversity of the platforms or diversity
+50:37 of the data products and independence of
+50:38 those is again
+50:40 lack of
+50:42 trust at a global level right
+50:45 how do i know
+50:47 that um
+50:49 now that every team is doing its own
+50:51 thing in terms of data sharing the
+50:53 privacy is policies are co that is
+50:56 important to the company not just to one
+50:58 team but important to the company are
+51:00 implemented how do we know that we are
+51:02 all talking the standard language when
+51:04 we're
+51:05 exposing data so those are those common
+51:07 cross-cutting concerns around
+51:10 all of the existing governance concerns
+51:12 like privacy security
+51:14 um
+51:15 various policies as well as a
+51:17 standardization for intercommunication
+51:20 need to be implemented but need to be
+51:22 implemented in a way that again it
+51:24 embraces the complexity and chaos of the
+51:25 organization
+51:28 um embraces that moving moving fast
+51:31 moving fast but responsibly not breaking
+51:33 things so
+51:34 uh so then it says okay if we again
+51:37 apply engineering to the problem i i did
+51:40 come from a very software engineering
+51:41 heavy view of the world and i admit that
+51:44 how did we solve this before again go
+51:46 back to the internet or go back to
+51:48 microsoft how did we solve that before
+51:50 we solve that with
+51:52 computational heavy as in automated
+51:55 heavily automated
+51:57 capabilities that gets embedded into
+52:00 every individual
+52:02 service in the microservices or in the
+52:04 individual data product
+52:06 uh and there are many examples of that
+52:07 then the architectural
+52:09 ways of doing that so that's that's the
+52:11 computation part um for example like if
+52:14 a team says oh i want to share this
+52:16 product on this mesh i'm gonna run this
+52:18 command and get all of the things that i
+52:20 need to have standard way one of those
+52:22 things would be a way of configuring
+52:25 your privacy level and have the platform
+52:27 or the computation part take care of
+52:30 encryption at the right level um access
+52:32 control at the right level so um and
+52:35 then the question of
+52:37 who defines these policies is is that's
+52:40 a federated operating model so that you
+52:42 know these domain data product teams
+52:44 need to be part of that global
+52:46 conversation
+52:48 and i guess this is
+52:50 related or actually we talked about data
+52:52 sharing api it's actually
+52:54 having this api belongs to this
+52:56 principle right now not belongs but like
+52:58 this principle says that you should have
+53:00 one right
+53:01 yeah this principle influences the
+53:04 common pieces uh across all of your data
+53:07 so api is one of those common pieces but
+53:10 there are other common pieces such as
+53:12 um you know the the policies that impact
+53:14 the data itself like what's the
+53:16 retention policy what's that
+53:18 and and what's common is not that
+53:21 everybody has the same retention policy
+53:23 but everybody has a retention policy
+53:25 with different values right some data
+53:26 can be kept forever some data had
+53:29 because of its sensitivity has to be
+53:30 kept only temporarily like temporarily
+53:33 i don't know for for a few hours so
+53:36 having
+53:38 a thing that it says every data product
+53:41 shall have a retention policy
+53:43 is the
+53:45 is a common characteristic but then
+53:48 automating
+53:50 configuration and enforcement and
+53:51 validation of that policy
+53:54 is the platform piece
+53:56 um and then giving autonomy to the teams
+53:59 to define what the
+54:01 value for that research policy is is the
+54:03 domain oriented
+54:05 um
+54:06 piece of it and then
+54:08 exposing that policy as part of your
+54:10 data product
+54:11 discovery or understanding information
+54:13 is the data part part of it so it just
+54:15 it does impact all of these pieces
+54:18 okay
+54:19 and
+54:20 i apologize that i forgot about
+54:22 questions and we have a couple of them
+54:24 and i think this could be related to
+54:26 what we just discussed all these four
+54:28 principles the first one
+54:29 is what is the most important thing
+54:31 about data mesh for us to understand
+54:33 learn and adopt
+54:36 what is the most important thing to
+54:38 learn is that the question
+54:41 to understand learn and adopt so we can
+54:43 start with the understand part probably
+54:46 first
+54:47 yeah i mean um
+54:50 i had a lot to do last year but i
+54:52 decided to sit down and write this book
+54:54 so that i can put every information that
+54:57 you need to know to understand it but i
+54:59 would and and i and i think if you just
+55:01 i'm not trying to sell my book there we
+55:03 can share a link that you can freely
+55:05 access with a short period of time on
+55:07 o'reilly that's what o'reilly offers but
+55:09 but i think when i wrote this book from
+55:11 the perspective of what people need to
+55:14 know to understand
+55:17 before this concept completely
+55:19 bastardized by the industry into
+55:21 something unrecognizable
+55:23 was first you need to understand why as
+55:27 in
+55:27 what what conditions have led us to
+55:30 think about data mission in first place
+55:32 and if those conditions don't apply to
+55:34 you don't even bother about the rest
+55:36 and then second is the what like what
+55:39 are the first principles that drive this
+55:41 definition so that you can you can think
+55:43 for yourself how to apply those first
+55:46 principles to your exact implementation
+55:48 and then the third is how
+55:51 right and the how involves but both from
+55:54 technology architecture and
+55:56 organizational change there is an
+55:58 organizational change and
+56:00 and yeah i think you've got to kind of
+56:03 top down
+56:04 understand it
+56:07 today
+56:08 if we were five years in future and data
+56:11 mesh was just bau like everybody did
+56:12 data mesh and there are so many tools
+56:14 that help you bootstrap
+56:16 maybe
+56:17 as an as a practitioner
+56:19 the question around why and and what has
+56:23 been answered and you only need to focus
+56:25 on how and even then there is a platform
+56:28 that serves you you don't need to like
+56:29 get too philosophical about it you can
+56:31 just like run a command and get data
+56:33 products and that's just just how the
+56:34 life is implemented so then database
+56:37 really moves into the background it
+56:39 becomes just the way we do things right
+56:41 we don't even talk about it but if you
+56:43 ask me that question today
+56:45 we still need to be informed about
+56:49 why and how because there is
+56:51 so much misinformation
+56:53 and
+56:55 opportunistically published
+56:58 incorrect in many cases
+57:01 content out there that i would as a
+57:03 learner want to protect myself against
+57:05 that and have a way
+57:07 to think and judge for myself
+57:10 and then there was another part like
+57:12 what is the most important thing about
+57:14 data mesh for us to adopt
+57:17 and i think it's related to question
+57:18 from jeffrey
+57:20 which is what is the best way to start
+57:21 implementing data mesh from scratch
+57:24 we don't have a lot of time maybe you
+57:25 can uh yeah i mean
+57:28 yeah so the part i think it's part five
+57:31 of the book it's actually just that i
+57:33 introduced a whole model around
+57:36 kind of iterative end-to-end you know
+57:38 kind of business-driven again use
+57:40 case-driven way of implementing this uh
+57:43 so and and i give a ton of tools around
+57:45 even how to measure you doing the right
+57:47 thing how to select the first domains
+57:49 how to select the first capabilities of
+57:51 your data product so there's a lot of
+57:52 content in the book that i recommend for
+57:54 you if you're interested to have a look
+57:56 but in short i would say start with the
+57:58 first self-assessment are you ready
+58:00 there's a spider graph in the book that
+58:02 says like if you want to apply a data
+58:04 image today you really need to have you
+58:06 know top-down support because you're
+58:09 talking about the transformation it's
+58:10 not like a little skunk work project you
+58:12 can do in the corner of somewhere and
+58:14 say i've got this i should say scale
+58:15 problem so yeah do we do you have your
+58:18 executive support do you have um
+58:20 you know the type of technologies you
+58:22 need to have do you have the right you
+58:24 know data apps or devops practices
+58:26 there's a lot of software engineering
+58:27 involved in
+58:29 engineering involved in in in doing the
+58:31 intimate so so start with the
+58:32 self-assessments
+58:34 find allies find parts of organization
+58:36 that lend themselves to this model first
+58:37 and start small
+58:39 uh with with use cases that touch you
+58:41 know one or two domains don't start with
+58:43 a marketing use case because they need
+58:44 data from all of the domains to do the
+58:46 smallest you know kind of a piece of
+58:48 value um yeah and you build your
+58:50 platform um iteratively and smart don't
+58:54 start with completely decentralized
+58:56 models start with a team of
+58:58 that different disciplines that come
+59:00 together like different domains or
+59:02 platform team or governance team come
+59:04 together but they work very quick
+59:06 collaboratively initially and then once
+59:09 you establish your ways of working and
+59:10 your
+59:12 interoperability layers then you can
+59:14 kind of become fully automated
+59:16 autonomous and decentralized
+59:19 we have a couple of more minutes
+59:22 i have to check
+59:23 i think i
+59:24 i do but let me just be responsible and
+59:27 check my calendar quickly
+59:30 um
+59:32 all right i don't know where my calendar
+59:33 is hiding
+59:35 um
+59:36 it takes a couple of minutes to find my
+59:37 calendar huh so let's let's read out the
+59:39 next question and then um
+59:45 yeah yes are you ready okay yes let's go
+59:48 okay
+59:49 okay
+59:50 yeah
+59:51 that should be a short one um do you
+59:54 know of any good reference
+59:55 implementation for data mesh where we
+59:58 can
+59:59 learn from this look at this and learn
+1:00:01 from this
+1:00:02 so super good question um
+1:00:06 there are not many
+1:00:08 there are i don't so short question
+1:00:11 nothing that's publicly
+1:00:13 available that i can point to say go
+1:00:15 look at that implementation that's a
+1:00:16 good one but there are um
+1:00:20 there is a talk that a colleague of mine
+1:00:23 and i gave
+1:00:25 a while back on thought where star wars
+1:00:27 has data mesh website and there is one
+1:00:28 around i think lessons learned and in
+1:00:31 that one we share a little bit about the
+1:00:33 technology
+1:00:35 that we use
+1:00:36 um
+1:00:39 but there isn't a git repo that i can
+1:00:41 point to and say go have a look at what
+1:00:43 this guy's done looks pretty good
+1:00:46 unfortunately people one other place i
+1:00:48 would say go and have a look is the data
+1:00:51 mesh learning
+1:00:53 slack channel and the image learning
+1:00:55 meet up there are a bunch of case
+1:00:57 studies um people have shared in terms
+1:01:00 of their implementation every
+1:01:01 implementation is slightly different and
+1:01:03 nothing
+1:01:04 nothing looks like this future that i'm
+1:01:06 painting for you here so we are really
+1:01:09 released the early stages i went through
+1:01:11 the microservices kind of api revolution
+1:01:14 in my you know career and it was like
+1:01:17 2011 2012 we were excited about this but
+1:01:20 nothing existed containerization didn't
+1:01:22 exist embedded web services didn't exist
+1:01:24 none of it exists so we're doing these
+1:01:26 kind of
+1:01:27 fogly micro services on top of big giant
+1:01:29 web applications so that's that's where
+1:01:31 we are right now we are
+1:01:33 kind of band-aiding and hacking together
+1:01:35 so
+1:01:37 but those two places should give you
+1:01:39 some
+1:01:40 some ways of thinking about how how
+1:01:42 people have started with the technology
+1:01:44 we have today
+1:01:45 yeah i started imagining how it would
+1:01:47 look like how it will look like in 10
+1:01:50 years
+1:01:50 probably will be quite exciting with
+1:01:52 some special occurrences
+1:01:55 absolutely
+1:01:57 okay yeah thanks a lot for
+1:01:59 sticking around for a couple of more
+1:02:01 minutes with us and in general for
+1:02:03 sharing your experience experience
+1:02:04 expertise your knowledge with us for
+1:02:06 answering questions that was a fun chat
+1:02:09 i learned a lot i
+1:02:11 think also everyone who was listening in
+1:02:13 also learned
+1:02:15 a couple of new things so yeah thanks
+1:02:17 for joining us today
+1:02:18 thank you for having me and thank you
+1:02:20 for the questions and sorry we didn't
+1:02:21 get to all of them
+1:02:23 yeah okay well yeah goodbye bye-bye
+1:02:27 goodbye everyone

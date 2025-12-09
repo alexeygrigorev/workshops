@@ -1,0 +1,1515 @@
+SE4ML - Software Engineering for Machine Learning
+
+0:00 hi everyone Welcome to our event this
+0:02 event is brought to you by datadox club
+0:03 which is a community of people who have
+0:05 data we have weekly events and today is
+0:07 one of such events and if you want to
+0:09 find out more about the events we have
+0:11 there is a link in the description go
+0:13 there under the video click on this link
+0:16 and you'll see all the events we have in
+0:18 our schedule
+0:19 it's important to subscribe to our
+0:22 YouTube channel if you do that you will
+0:24 get notified about all the amazing talks
+0:26 we will have like the one today and last
+0:29 but not least do not forget to join our
+0:31 amazing slack Community where you can
+0:34 hang out with other data enthusiasts
+0:36 during today's interview you can ask any
+0:38 question you want there is a link in the
+0:41 live chat it's pinned click on this link
+0:42 ask your questions and we will be
+0:45 covering these questions during the
+0:46 interview
+0:48 so that's all for me
+0:52 did you hear the sound right now
+0:55 no
+0:56 I think my headphones
+0:59 are making the sound because they ask to
+1:03 uh for the battery so just one second
+1:11 now they made a happy sound
+1:14 so they they did some energy
+1:19 okay
+1:21 so just a couple of things I want to
+1:24 open the questions we prepared for you
+1:28 and after that if you're ready we can
+1:32 start
+1:35 okay
+1:36 so this week we'll talk about software
+1:38 engineering for machine learning and we
+1:40 have special guests today Nadia neither
+1:42 is a software engineering PhD student at
+1:45 The Institute for software research
+1:46 which is at the Carnegie Mellon
+1:48 University welcome
+1:51 thank you so
+1:55 um the students has changed a bit it's
+1:57 now Called Quest just recent movies
+2:00 how is it called though is
+2:04 software systems and societal
+2:07 um
+2:09 questions for today's interview were
+2:11 prepared by Johanna Beyer thanks Johanna
+2:13 for your help so let's start before we
+2:16 go into our main topic of software
+2:18 engineering for machine learning let's
+2:19 start with your background can you can
+2:22 you tell us about your career Journey so
+2:23 far
+2:24 yeah so I have been in the research
+2:27 field for like a long time now about a
+2:31 decade or so so I started off uh my
+2:34 journey in software and Engineering when
+2:36 I was doing my math bachelors and
+2:37 Masters what were
+2:39 and I'm originally from Bangladesh so I
+2:42 was doing those in you know
+2:46 and after that I did some industry jobs
+2:51 for a couple of years then joined the
+2:54 Academia in your University of Dhaka
+2:56 again in the software engineering
+2:58 department and then in 2020 I started
+3:02 doing my PhD here uh you know taking a
+3:05 steadily from my University and yeah I
+3:08 have been working on software
+3:10 engineering information right now but
+3:11 originally I started um research in 2014
+3:15 also in software engineering so I have
+3:17 done research many of different building
+3:20 supported in
+3:22 testing design
+3:24 um
+3:26 and then I have started recently working
+3:29 on software engine information yeah we
+3:31 started in 2020
+3:33 everything
+3:35 okay when I hear software engineering
+3:39 and Academia so for me this is a bit two
+3:43 different worlds uh pardon my ignorance
+3:45 you will probably now tell me how wrong
+3:48 I am but I'm just curious so I was
+3:51 mostly a practitioner so I've been I
+3:53 started my career as a Java developer so
+3:55 I've been doing software engineering for
+3:57 some time
+3:57 and the job I was doing was very
+4:00 different from what I learned at
+4:02 University so I'm wondering how
+4:05 how is it connected like how what
+4:06 exactly do researchers research
+4:09 in Academia when it comes to software
+4:11 engineering
+4:14 um so I'll say like from yes looking at
+4:19 this from different domains also
+4:21 software engineering is more connected
+4:23 to Industry than the other fields that
+4:25 they should just work on so it's my
+4:27 experience so previously as well when I
+4:29 was working in Bangladesh in software
+4:31 engineering we have like industry
+4:33 collaborations
+4:36 provide us with the problems that were
+4:38 they were having and being researched
+4:40 against we would try to solve the
+4:42 problems by using our students or
+4:43 resources and also people from the
+4:46 company will work together with us
+4:48 and even after coming here in PhD the
+4:52 first um the work that I did was uh
+4:54 interview study which was again
+4:55 connected to Industry trying to
+4:57 understand the problems that people have
+4:59 in the industry and trying to come up
+5:01 with ideas also from them that what
+5:03 would they requirement of uh solving
+5:05 these kind of issues well for me I feel
+5:08 that it's really connected
+5:09 um maybe there is uh some differences
+5:12 when we like grew with the book studies
+5:15 like for example we're learning a lot of
+5:17 theories maybe but that's not
+5:18 practically implemented in the industry
+5:21 which also happens a lot of times but my
+5:25 impression so far has been that it's
+5:27 really if we are working in the field of
+5:29 software engineering in research then we
+5:31 have to think about the industry the
+5:34 industry is not being completed by the
+5:36 research that we're doing then it
+5:38 doesn't make sense to like make a lot of
+5:40 theories and businesses or not being
+5:42 so yeah that's my
+5:46 and I think now when I think about this
+5:48 so there is a famous book I don't
+5:51 remember how it's called usually people
+5:52 referred by the gank of War Book which
+5:55 is about design patterns and if I
+5:58 remember correctly this uh this book is
+6:02 a result of research that these four
+6:04 people did so they did the research to
+6:07 different design patterns so they did
+6:09 this uh in Academia and then they
+6:12 published a book right so that's
+6:14 probably a good example of uh research
+6:17 actually it then being applied to
+6:20 Industry
+6:25 but I'm back in my university for like I
+6:28 said I I thought that three four times
+6:30 and that that book was really good when
+6:33 I was trying to explain about these
+6:37 repairs and everything so yeah it was a
+6:40 good example and you have to somehow
+6:43 okay and if you find a problem like this
+6:45 how do you approach
+6:48 that's a good thing
+6:50 being in the Academy I can also look at
+6:54 that from that
+6:58 um so the topic for today's interview is
+7:01 software engineering for machine
+7:02 learning systems
+7:03 and I think it's a relatively new thing
+7:06 so data science is maybe only 10 years
+7:09 old or maybe slightly more uh and then
+7:13 at the beginning I remember that data
+7:15 scientists didn't really care much about
+7:17 software engineering but then at some
+7:19 point we in the industry realize that
+7:23 this is not how things should be done
+7:24 and then like a neural appeared like a
+7:28 machine learning engineer where who
+7:31 needed to actually take care of software
+7:33 engineering for machine learning systems
+7:35 so can you describe this field for us
+7:37 what is exactly software engineering for
+7:39 ML systems
+7:45 about it why is that when as I said when
+7:48 data science first came in the industry
+7:52 so we really thought about it as a
+7:55 model-centric thing so people will just
+7:57 create a model train it with Greta it
+8:00 will perform really well yes in terms of
+8:02 accuracy and then we're done but then
+8:06 like as you said we slowly realized that
+8:08 it's not what we want we want this to be
+8:11 used by end users and if we want that
+8:14 there have to be a software system which
+8:17 the machine learning component will be
+8:18 part of it so that the end users can use
+8:21 it they don't have to like train their
+8:22 models with the notebook or anything it
+8:24 have to be a part of a bigger software
+8:27 um and then it have to be have an UI
+8:30 where they will be able to use the
+8:32 predictions or they'll be able to feed
+8:34 it to some different components so
+8:36 that's why like the Software System
+8:38 comes in the picture in machine learning
+8:41 uh that Dimension learning have to be in
+8:43 a personal part of a system and then if
+8:45 you look from the other decide that in
+8:47 software engineering the traditional
+8:49 software engineering processes that we
+8:51 have we are not really flexible enough
+8:54 to improve this kind of Machinery
+8:57 components in the system so machine
+8:59 learning comes with its own different
+9:02 properties like it's really uncertain uh
+9:05 you don't you cannot really think about
+9:06 a timeline ahead that how much time it
+9:08 will take for having a certain accuracy
+9:11 for this kind of question algorithm and
+9:13 there's also like different kinds of
+9:15 working pattern uh we which in software
+9:19 engine we didn't have before like we
+9:20 have to provide with data and the data
+9:22 scientists will export the data and then
+9:25 come up with the algorithm and then
+9:26 we'll have to incorporate those so we
+9:28 didn't really have that and there's also
+9:30 some parts of monitoring where in
+9:32 software engineering we didn't need to
+9:33 like retrain the model again and again
+9:37 um when it's uh in the deployment step
+9:38 so it's which is also really different
+9:40 in software engineering so this is when
+9:42 we realized that the tradition software
+9:43 engineering processes and the Traditions
+9:45 software engineering Impressions that we
+9:47 have it doesn't really apply to machine
+9:50 learning components so we have to come
+9:52 up with some solutions to like bridge
+9:54 the gap between these different
+9:56 components and then make it easy for
+9:59 this for replying this kind of
+10:01 Engineering Systems so this is where
+10:03 suffering information when it comes it's
+10:04 really trying to facilitate how the
+10:07 models can be used as a part of a
+10:09 software you know
+10:11 I guess that there is this uh famous
+10:14 paper from Google
+10:15 the hidden depth of question learning
+10:18 something like that right so with this
+10:20 diagram that uh is uh that went quite
+10:23 well and I think it I even have it in my
+10:26 Twitter header
+10:29 um which is like it has the tiny ml part
+10:32 in the middle and then the rest is
+10:33 software right so this paper is a good
+10:35 example of software engineering for ML
+10:38 systems research right
+10:40 yeah that's actually the kind of the
+10:42 beginning when people really started
+10:44 okay yeah this is a really small part we
+10:46 have to think about the whole system
+10:49 one was published
+10:51 I think it was 17 or 17 okay
+10:56 so yeah it was uh
+10:57 long ago right in uh considering how
+11:01 young the field of data science is right
+11:07 see and
+11:10 in your research I think you mentioned
+11:13 that
+11:13 you needed to do a lot of interviews you
+11:17 needed to study what kind of problems
+11:19 people in the industry have
+11:21 and I'm wondering what these problems
+11:23 are can you tell us about these problems
+11:25 okay so yeah the paper that you just
+11:28 referred is yeah I was an interview
+11:29 study with 45 practitioners in the
+11:31 industry
+11:32 um it takes small companies and the
+11:34 Midstate companies we really wanted to
+11:36 focus on the Memphis companies because
+11:38 we have the most of the problems in
+11:40 industry and there have been a lot of
+11:42 complaints about many different stuff or
+11:45 for example if I give you a few that uh
+11:47 when people start working on these
+11:49 systems um and they build something they
+11:52 don't really think about the
+11:53 requirements up front uh and uh after
+11:57 building this kind of system sometimes
+11:58 it seems that the client doesn't really
+12:01 care about the properties that we're
+12:03 trying to build for example if you need
+12:05 a system that needs to respond really
+12:07 quickly and we're really thinking about
+12:09 accuracy not the response time then it
+12:12 it will not be useful for the clients so
+12:15 there was this kind of stuff and then
+12:17 there is also problems of unrealistic
+12:19 requirements where the managers the
+12:22 clients even the software Engineers will
+12:23 think about machine learning as a magic
+12:26 box where it will they will provide some
+12:29 inputs and it will just provide them
+12:31 with 100 accurate outputs for that which
+12:33 is it doesn't happen so that was uh
+12:35 problem of unrealistic expectations from
+12:38 different type of people there is issues
+12:41 of gating data there was problems of
+12:44 getting good quality data there was
+12:46 problems of getting access to data
+12:48 getting access to the domain experts
+12:51 there's also issues of um integrating
+12:55 the different components together the
+12:57 machine learning component the software
+12:58 engineering component and people will
+13:00 really complain about whose
+13:01 responsibility is or what and which is
+13:04 not really a sign up front again so the
+13:07 data scientist doesn't know that they'll
+13:08 have to deploy the model sometimes the
+13:10 software Engineers will deploy the model
+13:12 and they'll complain about the code
+13:13 quality of those models that they cannot
+13:15 understand the code they cannot deploy
+13:17 it well enough and then they will also
+13:20 data scientist will complain about okay
+13:21 then this and it's changed something in
+13:23 the code and now my code doesn't work so
+13:25 there have been really many
+13:27 unsatisfactions between all of these
+13:30 people yeah just a few examples
+13:35 foreign okay so fiction between people
+13:38 because data scientists are not trained
+13:40 to productionize their models I guess
+13:43 and data issues and then requirement
+13:45 issues so I guess requirement date and
+13:48 people three main parts right
+13:58 of communication and you'll say that
+14:01 people don't so in this kind of system
+14:03 it's really important that you have
+14:06 something in retail so in software
+14:09 engineering as well we uh we don't want
+14:11 to document right like being software
+14:13 Engineers we don't want to talk about
+14:14 anything that we have but when you have
+14:16 a system like this which is risk prone
+14:18 and which have different expectations
+14:20 from different sites it's really also an
+14:21 important part to have proper
+14:23 documentation so that all the people are
+14:26 in the same page you know like they have
+14:28 really like different vocabularies as
+14:30 well so people talk in different
+14:33 languages because it's a very common
+14:35 issue that we have based so I can give
+14:37 you even an example of a term that the
+14:40 term performance so if you talk about
+14:43 performance the software engineering
+14:44 they'll think about response time and if
+14:47 you talk about performance they'll think
+14:50 about accuracy
+14:51 so it's really that about performance
+14:54 both you're thinking about your talking
+14:55 about the one that you understand and
+14:58 then the Splash in front of you
+14:59 understanding something completely
+15:00 different so this is all the problems
+15:05 mm-hmm
+15:06 are you focusing on any specific issue
+15:10 from all this in your research or you're
+15:13 trying to understand all these issues at
+15:16 the same time so that was one part of
+15:19 the research where I was trying to
+15:20 understand what's happening and right
+15:22 now as well I'm working on another
+15:24 project which is also trying to
+15:25 understand but also analyze some
+15:27 artifacts so for this project I'm
+15:29 working on right now we are trying to
+15:31 gather some a data set for the uh for
+15:36 the researchers so they can analyze the
+15:37 artifacts for example we have uh all all
+15:40 we know from the research side is from
+15:43 people like what people tell us what are
+15:45 the problems that they have so we have
+15:47 no way to really look into the artifacts
+15:49 ourselves and figure out that what's
+15:52 actually happening what are they
+15:53 actually documenting on what are the
+15:55 code actually look like what are the
+15:57 collaboration actually look like from
+15:59 the government history and everything so
+16:01 uh the way that this has been uh done in
+16:05 the past is like as I said from
+16:06 interview study service and sometimes we
+16:08 have industry collaborations where
+16:10 they'll let us do a case study on a
+16:12 product but which is also not
+16:14 generalizable for all the different
+16:16 universities out there so right now what
+16:18 I'm doing is try to gather a data set
+16:20 from the open source so we're trying to
+16:22 figure out the missionary products that
+16:24 exists in the open source and analyze
+16:27 those uh to the different artifacts to
+16:30 understand what is actually happening in
+16:31 those kind of products in open source so
+16:34 that's an ongoing project I'm yeah
+16:36 working still working on that trying to
+16:37 wrap that up I do have a data set a
+16:40 small uh data that I say which I'll
+16:42 publish soon I I hope that will be
+16:45 useful but yeah that's a different
+16:47 research that's going on and I also I
+16:50 have been working on some um about this
+16:54 data set I'm just curious before we go
+16:56 to the other part of your research I'm
+17:00 just curious what is exactly in this
+17:02 data set so I understand that the goal
+17:04 is to understand how different people
+17:08 collaborate and then you selected open
+17:11 source because it's easy to get data
+17:15 right or I got it completely wrong
+17:22 so it's not just about collaboration
+17:24 it's also about the product itself so
+17:28 the products as I say the products that
+17:31 we build in software engineering are
+17:32 slightly different from the products
+17:34 that we have in machine learning
+17:36 so uh we only try to uh so we only have
+17:42 information about these products from
+17:44 people but what we want and that we want
+17:47 to study it ourselves we want to look at
+17:50 the project look at the project for
+17:52 ourselves we want to look at the uh how
+17:54 people are from different backgrounds
+17:56 are working with different parts
+17:57 ourselves what are the good qualities
+17:59 are same one one part of it and then
+18:03 um so for this kind of artifacts we uh
+18:06 either we need access to uh industry
+18:08 products or we can do the interviews as
+18:10 I said so that's why we want to
+18:13 um collect data set from the open source
+18:15 and provide it to the researchers and
+18:18 publish it somewhere where people can
+18:20 really have their different research
+18:22 questions and try to analyze those
+18:24 through those data sets so those data
+18:27 said will have the products the uh the
+18:30 GitHub because where they have some
+18:32 machine learning products which is again
+18:34 not we're not looking for the like toy
+18:36 projects like the maybe small notebook
+18:39 course or something we're looking at
+18:40 industry level products and those
+18:42 products will have some machine learning
+18:44 components so that it can be called a
+18:46 missionary system so yeah we're trying
+18:48 to find a list of those in open source
+18:50 especially I'm working on in GitHub
+18:52 right now trying to figure out what are
+18:54 the products that GitHub have
+18:56 um yes I'll uh it's still ongoing but to
+19:00 give you a brief hint that it's not
+19:03 really much out there in open source so
+19:05 yeah I was going to ask you that because
+19:07 in our community uh I quite often see a
+19:11 question like I want to understand learn
+19:15 more about machine learning are there
+19:17 good open source projects from which I
+19:19 can learn and usually I don't have good
+19:22 examples because everything I've worked
+19:25 so far was Coast code in the industry so
+19:28 the code belongs to company and then
+19:30 they typically don't release this code
+19:32 so I'm wondering how many projects did
+19:34 you actually find to have you found so
+19:36 far
+19:41 well that's uh
+19:44 that's good well considering that like
+19:48 for the uh for this question that people
+19:52 ask for them 300 is probably enough for
+19:54 doing research I don't know yeah exactly
+19:57 so that's I'd say that that's something
+19:59 that's not completely nothing but also
+20:01 it's not a lot if you want to conduct
+20:03 research on that and it was a bit
+20:06 disappointing for me as well when I
+20:08 started off I I also had that idea in
+20:10 mind okay I'll bring gather a lot of
+20:12 products and it will be really useful
+20:14 for all the researchers and things and I
+20:16 have invested a lot of time uh from my
+20:18 PhD life and it seems that people really
+20:21 think about it as like I'd say
+20:24 intellectual property uh so if you just
+20:28 publish a software engineering code it's
+20:30 not a huge issue that okay everyone can
+20:33 do those kind of things that's
+20:34 engineering but when you uh create a
+20:37 model when you invest a lot of maybe
+20:39 gpus uh you uh do a lot of model
+20:42 training architectural days and you have
+20:45 explored a lot to come up with this
+20:47 model so it's really not that common for
+20:50 people to uh like publish those in
+20:53 GitHub so you can see products in
+20:56 hugging face in different platforms but
+20:58 those are again just the model course
+21:00 not the not the product that it's built
+21:02 around that so if you want to look for a
+21:05 product for example I can give you an
+21:06 example of um the default the Facebook
+21:09 uh product that was really controversial
+21:12 um in the industry and Academia for its
+21:15 ethical issues but yeah that is the kind
+21:18 of product that we're looking for that
+21:19 has uh that has ey that people can
+21:22 greatly install in their computer or
+21:24 mobile and use it and it's also have a
+21:26 big machine learning Chunk in it so
+21:29 we'll put products like this it might it
+21:32 doesn't have to be a big machine
+21:34 learning but it all it can be a small
+21:36 jump but it have to be a product that
+21:38 can be used by the end users not just a
+21:40 research project or some toy project
+21:42 that people are trying to learn like for
+21:45 a tutorial
+21:47 so yeah that that kind of product that
+21:49 we were searching it's really a small
+21:52 data set right now so
+21:54 so in order to call it a product it
+21:58 should be some sort of application or an
+22:01 API like maybe in a mobile application
+22:03 maybe in a web service or something like
+22:06 this that you can actually interact with
+22:08 and it gives you some predictions not
+22:10 just the model uh right not just a
+22:13 pytorch code
+22:15 pytorch model in a Jupiter notebook but
+22:18 actually all the things around that that
+22:20 make this model useful right
+22:23 yeah yeah for being a product it cannot
+22:25 be just a framework or a library even
+22:28 not cannot be an API because apis also
+22:30 like we software Engineers or data
+22:32 centers can use the API to make a
+22:33 product so it's not a product in itself
+22:35 so it have to be a complete product that
+22:38 can be used by the end use that that is
+22:40 using that API maybe and having some
+22:43 other features and functionality the the
+22:46 end users can you um yeah it can be a
+22:48 home feed web application it can be a
+22:51 mobile application it can be a desktop
+22:53 application any kind of application
+22:55 it has to be uh like um the end users
+22:59 can be able to use it if you want to
+23:01 like um have a product that the industry
+23:03 people build if you want to have like
+23:05 something that is comparable to the
+23:06 industry so that that's the kind of
+23:08 product that we we need we want we want
+23:11 to analyze so yeah that's the product
+23:13 that we I have been looking for in the
+23:14 open source
+23:16 yeah maybe in data talks club we should
+23:19 start a project like that should be
+23:22 useful
+23:23 yeah I was thinking of doing a
+23:25 recommender system maybe at some point
+23:27 that because we have all the data so for
+23:30 people who come to today's interview
+23:34 in Eventbrite they think we use
+23:36 registrations we actually have the
+23:38 emails right so based on that we can
+23:41 identify like we can create user IDs
+23:44 then we have item IDs which are the
+23:46 events right and based on that we can
+23:48 probably build the recommender system
+23:50 so that would be a nice uh product I
+23:52 guess right
+23:53 [Music]
+23:56 if we use it right yeah
+24:02 okay so what is in your data set so as I
+24:06 understood this is a tabular data set
+24:07 there you have uh like links to GitHub I
+24:11 guess then some code quality
+24:12 characteristics uh what else do you have
+24:15 there
+24:17 um so uh we have we actually have uh six
+24:19 research questions right now which we're
+24:22 trying to answer from this data set so
+24:24 the whole data set just have the repo uh
+24:27 the names the description the links the
+24:30 Stars the contributors everything that
+24:32 the API provides
+24:35 um and right now uh we don't we uh so we
+24:39 are pro thinking about providing with
+24:42 some ideas of how these users can be
+24:45 analyzed so we're doing it ourselves for
+24:48 uh six research questions so we have
+24:50 sampled this data set for just 30
+24:52 projects right now and we are analyzing
+24:55 those uh analyzing those products to get
+24:58 the answers of those six research
+24:59 questions and then we will publish that
+25:01 what we found in those 30 projects and
+25:04 the bigger dealership is there in the
+25:05 300 projects which which have the wheat
+25:08 links and the give um the regular git
+25:11 API properties are sale
+25:14 can you tell us about these six research
+25:16 questions or it's too early
+25:19 um yeah I can't share it so we're trying
+25:22 to think about it from different
+25:25 um also different phases uh of the
+25:28 product building so one thing that we're
+25:30 thinking about the developing order of
+25:32 it
+25:32 um whether the model is being developed
+25:35 first or the product is being developed
+25:37 first was the order of the development
+25:39 in this kind of products then we are
+25:41 also looking at the collaborations for
+25:43 different people the how the
+25:45 contributors of those GitHub products
+25:47 are collaborating with each other which
+25:49 modules they're working on
+25:51 um are those models connected with each
+25:53 other are they working on the same uh
+25:56 model file together or a software
+25:58 together so this kind of things from the
+26:02 commit history right because see you see
+26:04 who exactly are you doing this manually
+26:07 or there is some semi-automatic process
+26:09 that so for this energy policy it's
+26:12 mostly manual but we have some small
+26:15 scripts which helps us to look at some
+26:18 specific Parts but uh it's again the
+26:22 manual it have to be confirmed manually
+26:23 so it's some helps that yeah
+26:29 then they were more like they're about
+26:31 uh the testings uh if that is the model
+26:34 the system
+26:36 um the data this kind of things and then
+26:38 there's operations uh are there
+26:41 collecting the telemetries are there
+26:43 planning for uh models evaluation
+26:46 um evaluation and
+26:49 um there's also parts for responsible AI
+26:51 if there's any practices of those uh
+26:53 seen in the repositories and there is a
+26:57 big chunk for understanding the core
+26:58 structure so
+27:01 um in the course structure we have
+27:03 different things like uh what's the
+27:06 um so uh how are they using the models
+27:10 at these libraries or API or they are
+27:13 retraining them all themselves do they
+27:15 have a pipeline uh how is it automated
+27:18 so this kind of post-structured kind of
+27:20 questions
+27:22 so yeah
+27:26 anything interesting that you found by
+27:29 analyzing this 30 products
+27:37 let's yeah I'm still working on that
+27:41 okay because I imagine like in any of
+27:45 these six points especially for
+27:47 collaboration how exactly people
+27:49 collaborate now there are many ways in
+27:53 which things might go wrong right
+27:55 I'm not sure how prominent it is in
+27:58 software uh in open source software in
+28:01 usual industry
+28:04 behind the closed doors right so things
+28:07 do go wrong quite often and I'm
+28:09 wondering to what extent you can see all
+28:11 these problems with open source too
+28:18 already have in the artifact and then
+28:20 speculate what how it has been there so
+28:24 there's some indicators that we look at
+28:26 to understand that okay why is it like
+28:29 this but we cannot answer the whys yet
+28:31 so the why can we only answered by
+28:33 talking to the contributors there that
+28:36 can be also another part of the research
+28:38 I'm doing now I'm not uh I'm not doing
+28:40 that yet but yeah when I release it as a
+28:42 people might want to uh like when
+28:45 they're analyzing the reset they might
+28:47 see patterns that they're not familiar
+28:49 with and then they might want to talk to
+28:50 the contributors themselves I don't know
+28:52 how GitHub feels about this uh like uh
+28:55 bringing their contributors and trying
+28:56 to talk to them uh it might not be a
+28:58 good approach so all right let's see
+29:01 we're not that yet but yeah it might
+29:03 have to be doing this an open source
+29:05 then or this projects are internal
+29:10 this one is that when open source yeah
+29:12 so that's why we are doing this in open
+29:14 source anyways then they are kind of
+29:17 opening themselves to this possibility
+29:19 when they decide to do it in open source
+29:21 I guess it's fine I mean if anyone I
+29:25 have a few open source projects and I'm
+29:27 actually quite happy when somebody
+29:29 reaches out to me asking about these
+29:31 projects
+29:32 so probably they also I find that
+29:42 okay and um I'm wondering
+29:44 um
+29:45 so I know that a lot of machine learning
+29:47 projects fail right so I'm wondering in
+29:50 this data set do you have any cases when
+29:53 the project is failed or it's mostly
+29:56 successful projects
+29:59 um I can answer this from the interview
+30:01 study that I did before from this data
+30:04 set
+30:05 um
+30:06 I have seen reports where there were
+30:08 some machine learning pairs before which
+30:10 is not there right now so it I don't
+30:12 know if it India's Trails or they just
+30:14 decided to not build it so that's a
+30:16 separate question that's
+30:18 um we cannot answer that from these
+30:20 failure right so if we understand that
+30:23 the project is not going to be
+30:24 successful and we stop it is it a
+30:26 failure maybe it's not right
+30:28 yeah yeah so yeah we cannot answer that
+30:31 from that one but from the interview
+30:33 study that did we have seen a lot of
+30:35 failures because of a lot of different
+30:37 parameters that I say that they don't
+30:39 people don't really
+30:41 um set the expectations up front at the
+30:44 beginning so the software engineer might
+30:47 have a completely different expectations
+30:48 from the machine learning models and the
+30:51 the people who are building the machine
+30:52 learning have different expectations on
+30:54 how that model will be used they don't
+30:56 really understand the business context
+30:58 of the use of the models so that is one
+31:00 issue that I have found
+31:02 um that comes up very often from people
+31:04 there is like also that unrealistic
+31:06 expectation part where people want 100
+31:08 accuracy that the model people cannot
+31:11 provide and from the model side they
+31:13 have faced a lot of problems from data
+31:15 as well so at first it will seem that um
+31:18 they want to build a model they want to
+31:20 be the product and then they'll uh
+31:23 they'll try to figure out the data and
+31:24 they'll see that okay they don't have
+31:26 good data so be like a mall like that
+31:28 and it's often because of the AI
+31:30 literacy issue as well so the people who
+31:32 are deciding on building the model don't
+31:33 really know what kind of data they need
+31:35 uh and if they can gather it or even if
+31:39 they have it so that's one issue that
+31:41 the data scientists really face when
+31:42 they're told to build a model they don't
+31:45 really get the data that need that they
+31:47 need to be that model that's one issue
+31:50 um and there is one uh problem that I
+31:52 find out that people uh when after they
+31:55 build the model they don't really think
+31:57 about how it's going to be deployed so
+32:00 if um if the what are the end users
+32:03 trying to
+32:05 um what what are the end users need for
+32:07 from those products how will we will
+32:10 they be able to use that model I already
+32:12 told you about the problems of accuracy
+32:14 and response time if you were like it
+32:16 doesn't matter if you're providing the
+32:17 model with 100 accuracy like it's not
+32:19 possible maybe 99 of USA it doesn't
+32:21 matter to the end user if they cannot
+32:23 use it if the response time is really
+32:25 slow or if the UI that you have provided
+32:28 them they cannot use it efficiently to
+32:30 use that model so these are all the
+32:32 problems that we don't really think
+32:34 about upfront when building your models
+32:36 uh we don't think I think about the
+32:38 product that we are going to provide to
+32:40 the end users at the end of the day so
+32:42 that's a big issue that I have seen in
+32:44 the industry
+32:46 hmm
+32:47 did you do anything after analyzing all
+32:50 these interviews so you understood that
+32:52 there are these issues data problems
+32:55 expectations problems uh deployment
+32:57 problems uh
+33:00 so you know that this problem problems
+33:02 exist
+33:03 uh there are some solutions for that did
+33:06 you work on any solution for any of
+33:08 these problems
+33:09 I haven't but when I was talking to the
+33:12 people in the industry I figured it out
+33:14 that some teams are doing better than
+33:16 the others so they themselves have
+33:19 applied some practices to fix this kind
+33:22 of issues so in my paper that's why I
+33:24 also provide some recommendations that
+33:26 what you can do in certain situations we
+33:29 don't have solutions to all the problems
+33:31 that we have but as like somebody teams
+33:33 are doing better they have some
+33:35 practices that they have built on and I
+33:37 try to pass that on as well so
+33:40 um yeah but yeah we didn't work on the
+33:43 solutions yet we just provided with some
+33:45 open questions the researchers can look
+33:48 at right now to feed stores
+33:50 yeah I guess the the main uh or most of
+33:55 these Solutions are based on setting up
+33:57 some processes like for example one of
+33:59 the processes is crisp DM which is quite
+34:01 convenient in my opinion even though
+34:03 it's like hundreds hundred years olds
+34:05 the alt or like it's from 90s like these
+34:09 design patterns that we discussed but I
+34:11 think this process is quite helpful like
+34:13 if you follow this then you probably
+34:15 will reduce the chances that your
+34:17 project fails uh did you see anything
+34:20 like that
+34:22 to be honest
+34:24 process is the biggest biggest problem
+34:26 that people have right now so the Chris
+34:29 DM and also like the other machine
+34:32 learning
+34:33 um pipelines that we have seen in the
+34:35 research and also that people following
+34:37 the industry it does not really then
+34:38 well with the software engineering
+34:40 process so there's like two different
+34:42 process going on one is for the
+34:44 Machinery pipeline how would they get
+34:46 the data and the modeling part and then
+34:48 the deployment and everything and there
+34:49 is another parallel going on the
+34:51 software engineering process which is
+34:52 again maybe the agile process or some
+34:55 other processes the iterative process
+34:57 that they're building on the whole
+34:59 product on so what happens is that um
+35:01 that whole machine learning process is
+35:04 being seen as one a process for one
+35:07 component and we don't really know that
+35:09 how these small
+35:11 component can fit in the bigger product
+35:13 and how we can bring these two processes
+35:16 together uh to build a whole product
+35:19 thing so you know like the it seems
+35:22 currently that the model is a completely
+35:24 different part and the product is a
+35:25 completely different bar and we don't
+35:27 know how to incorporate these two
+35:29 together so all the processes are also
+35:31 like that and as I told you that the
+35:33 software engineering processes the
+35:35 traditional processes it's not really
+35:36 flexible to get that process into that
+35:39 system even if you think about agile
+35:41 which is really flexible but again not
+35:43 flexible enough to think about data
+35:45 upfront so they think about the
+35:47 exploration parts of the models up front
+35:49 so this is really an issue in Industry
+35:51 right now which is why I in the paper
+35:53 also I say that we need to come up with
+35:56 some processes which we don't have right
+35:58 now as researchers we can keep proposing
+36:02 some but we still have to see the
+36:04 feasibility in the industry that whether
+36:06 this process can be followed by the
+36:07 industry at all so currently people are
+36:10 proposing stuff but it's not being
+36:11 useful and again industry people are
+36:13 trying to figure out their their own
+36:14 stuff but we haven't yet reached to
+36:17 one's process that is really useful for
+36:20 this kind of products which we need to
+36:21 build which is a which is a research
+36:24 problem we have and we don't have a
+36:25 solution to that yeah
+36:27 yeah interesting that you mentioned that
+36:29 that there are two different processes
+36:31 and from what I see sometimes we just
+36:35 these two processes just coexist and
+36:38 then we just need to figure out uh like
+36:41 data scientists and well Engineers work
+36:43 with one process and then software
+36:45 Engineers work with other process we
+36:47 somehow try to work in the same team and
+36:49 then there are some sort of connection
+36:51 points right so like maybe there's an
+36:54 API and then software Engineers call
+36:56 this API
+36:57 from the with the model right get back
+37:00 predictions and then they use it somehow
+37:03 um
+37:03 is this how this problem is typically
+37:05 solved in the industry
+37:11 so one is like very
+37:14 like very siloing the data science is
+37:15 completely and they do their own stuff
+37:18 and provide them with some either as a
+37:21 model code or some apis that the the
+37:24 software engine people can use so this
+37:26 time to increase a lot of problems like
+37:28 because of
+37:30 how many ways how many ways it can go
+37:32 wrong right
+37:35 ways that it can go wrong people don't
+37:36 really understand each other in this
+37:38 kind of system so it's really hard to
+37:40 like make it consistent even and when
+37:43 they uh so we have seen team structures
+37:45 uh how they're trying to blend these two
+37:47 in like from where from the model and
+37:50 product integration part so there is
+37:52 this again a lot of problems based on
+37:55 different team structures so we have
+37:57 seen themes which uh where they just
+37:59 share the model code to the software
+38:01 engineers and want them to productionize
+38:04 it want them to deploy it somehow and as
+38:07 I said uh that this has problems of food
+38:10 quality suffering is not understanding
+38:12 the code from the data scientists not
+38:14 being able to productionalize it well
+38:16 and again the data center is complaining
+38:18 about losing a performance that they had
+38:20 from their core when the software
+38:21 Engineers are touching it so that's one
+38:24 team that is failing like that and
+38:26 there's a different kind of team which
+38:27 where it's modeled as apis so the data
+38:31 scientist team will provide the software
+38:33 Engineers as an API and the software
+38:35 Engineers will use that API to get the
+38:37 prediction and use it so this also
+38:39 there's also problems of um dividing
+38:42 these two uh Parts um as like they have
+38:45 again different kind of expectations
+38:46 from those apis uh how to use it and
+38:49 also there's another issue of you have
+38:51 to have a background or skill to deploy
+38:54 the API here from the data science bar
+38:56 so they have to have some engineering
+38:58 skills if they don't have it they don't
+39:00 really want to do this kind of stuff
+39:01 they say that okay
+39:04 exactly so they have to like we have to
+39:08 incorporate some engineers in the team
+39:09 so that the person can help the data
+39:11 scientists deploy this product
+39:13 and this is one uh structure and there's
+39:15 one another structure which didn't
+39:17 really scale but was like doing kind of
+39:20 well was all in one so they have one
+39:22 team with the data scientists and soft
+39:24 friends and everyone who are working
+39:25 together to build the product uh the
+39:27 Complete product so this we saw that it
+39:30 can be useful in small teams
+39:32 um maybe people with four five six
+39:34 people but if we increase the number
+39:37 then again it's not really like scalable
+39:39 so that's a problem of this pattern
+39:42 so yeah there have been like a lot of uh
+39:45 different structures the industry people
+39:47 are trying out different structures how
+39:49 it can work but uh all the structures as
+39:52 far I saw has some problems of itself so
+39:55 mostly what we have uh identified from
+39:58 here that it's not really on the
+40:00 structure it's on some of the artifacts
+40:01 that we don't really care about for
+40:04 example as I told you that we really
+40:05 need to figure out the communication
+40:07 part that how these people are
+40:09 communicating with each other they they
+40:11 really talk different languages they
+40:13 have different vocabularies so how we
+40:15 can figure that out how we can solve
+40:17 this issue uh so for it um some teams
+40:20 are doing well when they try to like
+40:23 have workshops with these people to this
+40:26 different people and try to share the
+40:28 knowledge that they have to each other
+40:29 so that's one possible ways to figure
+40:32 out the communication part and also like
+40:34 figuring out um explicit vocabularies
+40:37 for themselves that okay we will not use
+40:39 performance we will use either accuracy
+40:42 or response time not let's not use the
+40:44 words that are really ambiguous for this
+40:46 domain and this we um so we have also
+40:50 recommended documentation as I told you
+40:52 earlier that documentation is the key in
+40:54 this kind of projects because you will
+40:56 really have people from different
+40:57 backgrounds trying to work on different
+40:59 stuff you cannot really all the time
+41:00 communicate with each other you cannot
+41:02 sit with each other very often so if we
+41:05 just document everything that we're
+41:07 doing in the soft prepared and the model
+41:09 part the requirements that we set the
+41:11 expectations that we have and if we
+41:13 share those documents it's going to be a
+41:15 bit easier to communicate about that
+41:18 later on so you cannot really we cannot
+41:20 really play the blame game so we cannot
+41:22 really say okay we I wanted these that
+41:24 and this person didn't provide me with
+41:25 this API it will all be document that we
+41:28 can okay uh look at the documentation
+41:29 okay this is what we expected and now we
+41:32 have this we can really compare uh from
+41:34 that and another thing we recommended
+41:36 was engineering so right now in this
+41:39 processes we don't really appreciate it
+41:41 the injuring Air Force March so this
+41:45 kind of products uh can be really
+41:47 benefited from a small engineering work
+41:50 so for example if the data scientists
+41:52 are really struggling with data data
+41:54 validation and everything there can be
+41:57 help from the engineering side like the
+41:59 tools some scripts that can really be
+42:02 beneficial for those kind of thing and
+42:05 right now we you can see that there's a
+42:07 lot of help from engineering from the
+42:08 email Oxford so when we were really
+42:10 struggling with how to deploy this kind
+42:12 of model and then came the email Ops now
+42:14 where we have some many tools different
+42:17 ways to use this pipeline automate this
+42:19 pipeline uh based on those engineering
+42:22 tools and efforts that we have so that's
+42:24 really one thing that we recommended
+42:26 here as well and the fourth thing was
+42:28 process as I said we really have to have
+42:30 a good process
+42:32 um so that all these different kinds of
+42:34 components can act work together can be
+42:37 incorporated together which we don't
+42:39 have yet which is still as I say an open
+42:41 question that how can we figure out a
+42:43 process for this kind of applications
+42:47 so this is communication documentation I
+42:50 guess maybe documentation is a part of
+42:52 communication too then engineering and
+42:55 good processes right these four
+43:00 I'm really curious about documentation
+43:01 because I am an engineer at least in the
+43:05 past I was
+43:06 and for me this was the most difficult
+43:08 part and when I became a data scientist
+43:10 I still hated documentation like um so
+43:13 for me it was always difficult and I
+43:16 needed to do this post uh I would say
+43:19 after like my code is done the model is
+43:21 done and then I need to sit down and
+43:24 document everything and then it's like a
+43:27 work for a week right which is probably
+43:30 should not happen right I should
+43:32 document piece by piece throughout the
+43:35 entire project so I'm wondering do you
+43:38 have any suggestions any processes for
+43:41 documentation any templates to make life
+43:44 for people like me easier so I don't
+43:46 have to force myself procrastinate on
+43:50 that and and so on maybe there are some
+43:53 good tips a good like best practices for
+43:56 that
+43:58 um so I haven't worked on documentation
+44:00 but there are papers there are research
+44:02 going on on documentations itself where
+44:05 people have provided different kinds of
+44:07 templates or checklists for different
+44:09 type different parts of the uh this kind
+44:12 of application for example model cards
+44:14 really got famous because for
+44:16 documenting the models how the models
+44:18 are ethically so this came from an
+44:20 ethical perspective but it provides you
+44:22 with the what are the context of the
+44:24 model what are the context of the data
+44:25 that's being used and um how this model
+44:28 can be used for different different
+44:31 products so document model code was one
+44:34 kind of documentation then
+44:36 right yeah yeah and then we have seen
+44:41 data sheets for data fact sheets so
+44:44 these are all like people in research
+44:46 resources as well are trying to figure
+44:48 out what can be a good documentation
+44:49 template and people are coming up with
+44:52 different documentation uh templates
+44:54 check leads for different parts of this
+44:57 kind of photos but I would say still
+44:59 yeah ongoing process that um we're still
+45:02 trying to figure out what will be the
+45:04 best minimal and optimal way to document
+45:07 stuff but we don't have it yet sorry to
+45:10 say that but we don't have anything yeah
+45:11 but people are trying
+45:13 so yeah for a silver bullet now that you
+45:17 will tell me just do this and it'll be
+45:19 fine and I would do this for the rest of
+45:21 my life
+45:22 yeah four uh for Machinery models small
+45:26 cars are really good you can try using
+45:28 that so yeah I have uh we have also
+45:30 another research where we are trying to
+45:32 see uh how people are using the model
+45:34 cares
+45:35 um and uh it seems that people are not
+45:37 using it much yet but I think it can be
+45:40 a potential thing um if you start using
+45:43 uh this kind of documentation
+45:46 yeah have you thought about machine
+45:48 learning canva because it's a document
+45:51 or like a piece of paper a four or
+45:54 whatever with different areas and then I
+45:57 don't remember what these areas are but
+45:59 it kind of forces you to think about
+46:01 different aspects of the model before
+46:03 you start working on this model
+46:12 maybe don't provide you what you need to
+46:15 document everything just providing you
+46:17 maybe some hints that okay think about
+46:19 this think about we have
+46:22 so yeah this is
+46:25 of stuff that okay check check I have I
+46:28 don't have I have these in this document
+46:30 base those kind of things
+46:32 these checklists are usually super
+46:35 useful especially for data scientists
+46:38 um like when we start a project uh we
+46:41 often forget about many things I don't
+46:43 know simply creating the
+46:46 a page in our documentation solution
+46:49 like for example confidence or whatever
+46:51 sometimes we just forget about this
+46:53 thing not because I hate going to
+46:55 Confluence which I don't enjoy but like
+46:59 I just forget about these things so I'm
+47:01 wondering maybe you have you can send us
+47:04 a few checklists that you came across
+47:05 that you think are useful and then we
+47:07 can include them in additional notes I
+47:09 think many listeners will find it quite
+47:11 quite handy
+47:13 yeah this is you
+47:15 okay and when we were talking about the
+47:18 data set you were preparing this data
+47:21 set with repositories
+47:23 you were about to start talking about
+47:25 something else and then I interrupted
+47:27 you so I wanted to go back there because
+47:30 I think that you wanted to tell us about
+47:32 the other
+47:34 research Direction you have
+47:36 so yeah maybe we can go back and then
+47:39 finish where we started
+47:42 so other projects that I'm working on
+47:45 are mostly from the responsible AI
+47:47 perspective so one thing with is ongoing
+47:51 is uh trying to figure out the
+47:53 explanations that one what kind of
+47:55 explanations people really want uh in
+47:58 health care applications so I'm
+48:01 collaborating with Yale University for
+48:02 that uh there is um we have people from
+48:04 the medical background people from
+48:07 social backgrounds and we're trying to
+48:09 um figure out the different kinds of
+48:12 explanations that people want in this
+48:14 kind of Medical Systems so we had one
+48:16 use case use case in hand I don't
+48:19 interrupt you I'm just wondering what
+48:21 kind of what do you mean by explanation
+48:23 explanation is when we have a model and
+48:25 then the model gives some results like
+48:27 for example uh
+48:30 I don't know we think we were talking
+48:32 about Healthcare what's the most typical
+48:34 example like I don't know is this a
+48:37 cancer or not right or
+48:40 it's a bad example I don't like it but
+48:42 maybe have a better one right but there
+48:45 is some prediction right based on some
+48:47 input and then we want to understand how
+48:51 exactly the model arrived to this
+48:52 prediction to this conclusion
+48:54 right so this is what you mean by
+48:56 explanation
+49:03 we try to understand what are the how
+49:05 are people
+49:06 uh like taking the outputs like um how
+49:09 are people thinking about that do they
+49:11 think about any concerns about uh safety
+49:13 any concerns um about trust uh so this
+49:17 kind of things that when we were doing
+49:19 that we figured it out that uh there is
+49:21 a like a trade-off that people have on
+49:24 accuracy versus explainability so or in
+49:27 some medical cases you're really you
+49:29 don't want to have a wrong answer but in
+49:32 some cases you can uh like leave with
+49:34 the wrong answer as long as that it
+49:35 provides you some explanations so there
+49:38 is where there is one application that
+49:40 we were working on is where in the
+49:43 schools there is one app at 14 agers
+49:46 where they try to think about the smoke
+49:48 scores that people the teenagers will
+49:50 have so are they willing to do smoking
+49:54 are they will they smoke in the future
+49:56 so this kind of um things that they're
+49:58 trying to figure out based on some game
+50:01 data so they have been one game the game
+50:06 important
+50:09 a mobile game an Android or
+50:15 in that uh the classroom said the
+50:17 teacher asked the teenagers to play a
+50:19 game and based on that uh they try to
+50:22 figure it out that who are the students
+50:24 who are prone to smoke and then uh
+50:27 provide them with some consultances
+50:28 provide them with Consultants will help
+50:30 them to figure out how they should not
+50:32 go that to that like route if I'm really
+50:36 wondering what this game is like does
+50:39 somebody suggest to smoke in the game
+50:41 then if they agree then they are prone
+50:43 to smoking
+50:45 there's really many different ways that
+50:48 they're figuring out so this is supposed
+50:49 to be a psychological part which I don't
+50:51 understand myself well so uh they're
+50:53 like they will provide you with uh
+50:55 different initiatives to uh talk to
+50:58 people about they'll give provide use a
+51:01 group of people who who you are trying
+51:03 to be friends with uh who are you being
+51:06 friends with how what are you talking
+51:07 about with people how are you responding
+51:08 to different questions uh so this kind
+51:11 of like many small place throughout the
+51:14 game which is a it's a real long game
+51:16 like I think eight chapters or so it's
+51:18 more subtle than what I mentioned right
+51:21 yes it's very subtle like you're trying
+51:23 to build the character you're trying to
+51:25 figure out your friends and through all
+51:27 these that they'll have uh later on
+51:29 they'll have some uh scores based on
+51:31 which you'll understand that okay is
+51:34 this person uh maybe prone to smoking in
+51:36 the future so this is how they figure it
+51:39 out and um the thing that we're trying
+51:41 to uh do right now though so this is
+51:43 really based on some survey data and we
+51:47 were thinking about put like providing
+51:49 one machine and a component we will
+51:50 predict based on this this most small
+51:52 score will be predicted by the mission
+51:54 and component so if we do that what are
+51:56 the concerns that people have what are
+51:58 the concerns from the students from the
+52:00 teachers from the parents from the
+52:02 Consultants um so what are those these
+52:05 people thinking about this score and uh
+52:08 we what we figured out that that they
+52:11 will be needing some kind of
+52:12 explanations if the Machine model
+52:14 provides them with some scores they'll
+52:15 have to understand that how this score
+52:17 was derived what are the students doing
+52:19 based on what activity please uh did
+52:22 this score generated
+52:25 a student gets the model predicts that
+52:28 this student smokes and then their
+52:30 parents want to know why
+52:32 like how did you arrive at this
+52:34 conclusion right so why uh their son or
+52:37 daughter is
+52:39 the level uh he asks like they ask
+52:43 questions really
+52:46 so they'll be like oh my God no my
+52:48 channel child will never do that so how
+52:50 are you telling that to me so okay there
+52:53 can be many
+52:54 you have to have some kind of background
+52:56 explanations that okay this story is
+52:59 Jaded because of this is this activity
+53:01 so if you don't have that then you might
+53:04 be in like trouble so this is where we
+53:07 were trying to figure out that what what
+53:09 kind of explanations that they're
+53:11 looking for what kind of expansion the
+53:12 teacher wants what kind of experiencing
+53:14 the students or the parents what kind of
+53:16 Expressions the Consultants wants if
+53:18 they want to consult this student so
+53:20 this is where this is uh ongoing work
+53:22 right now which also we are doing some
+53:24 interview studies with these kind of
+53:26 people and we're also uh thinking about
+53:28 um our regulatory perspective on that so
+53:31 uh as you see that this kind of medical
+53:33 software is really critical and uh what
+53:36 kind of regulations we would want in
+53:38 this uh softwares if we want to want
+53:41 this to get published um yeah in in the
+53:43 like wow so yeah this is also like that
+53:47 that wasn't like the main concern when
+53:49 we started with this project that what
+53:51 will be the ideal regulations to provide
+53:55 with this kind of applications so this
+53:57 is just a part expression is just a part
+54:00 of this whole uh thing that is going on
+54:02 right now
+54:03 is it related to all these things we
+54:05 discussed so far in this episode like uh
+54:08 um problems that people in this industry
+54:12 have and all these things
+54:15 so this is a slightly rooted not
+54:18 entirely so the relation will be of the
+54:21 the responsible AI Parts where we in the
+54:25 industry we were trying to figure out
+54:27 that uh whether the data scientist and
+54:30 the people from the um the software
+54:32 engine repairs are really concerned
+54:33 about responsible Ai and we really got a
+54:36 negative answer that uh in the apart
+54:39 from the big takes the mid size and the
+54:41 um the small companies doesn't really
+54:44 care about responsible AI that much
+54:45 which was a bit of alarming for us so
+54:48 this is why we were trying to go to that
+54:50 direction and see that okay what's
+54:52 actually people looking for what people
+54:54 actually want and how we can make this
+54:57 kind of industry applications have uh
+55:00 have certain checks the for releasing
+55:03 this kind of application so that's
+55:05 that's why we went to this direction and
+55:08 currently as well I'm working on another
+55:10 project on responsible AI as well trying
+55:12 to figure out the teams how the teams
+55:14 work together to come up with
+55:16 responsible AI concerns how to check
+55:19 this results so this is not actually
+55:21 just from the data science point of view
+55:23 you know so people really think about
+55:25 responsible AI duty of the data science
+55:27 okay they will make some model which
+55:29 will be like perfect which will not have
+55:31 any bias no fairness issues which will
+55:33 be completely risk-free and everything
+55:35 but we don't really think about the
+55:37 product so
+55:39 you have to uh it's not just the duty of
+55:43 that model because the model cannot be
+55:45 unsafe what's unsafe is the product
+55:47 because the product is providing with
+55:48 the predictions or the actions uh that
+55:51 you were being harmed uh from so that's
+55:54 why we have to like come out again from
+55:56 the moral Center perspective that okay
+55:58 the moral can cannot be unbiased the
+56:00 product have to be how we can make the
+56:02 product unbiased how what what are the
+56:04 other software components that can help
+56:05 the model to come out with from this
+56:07 biased view what are the other team
+56:09 members role in this so right now the uh
+56:12 the roles of uh team in this responsible
+56:15 a concert is really hazy no one really
+56:17 knows uh who wants to do that no one
+56:19 really wants to do that they just uh
+56:21 like try to blame the data science part
+56:23 or the moral for that but we were trying
+56:26 to think about what can be the parts of
+56:28 the team members what can be the
+56:30 discussions of the team members how we
+56:33 can think of a responsible AI from the
+56:34 very beginning uh from the maybe the
+56:36 requirements uh part where that okay we
+56:38 have a requirement that we have to make
+56:40 this uh product unfair
+56:42 um sorry fair so of this kind of uh this
+56:46 kind of concerns so yeah that's another
+56:48 work I'm doing right now thinking about
+56:50 the team boundaries for responsible air
+56:52 practices
+56:54 yeah interesting I noticed we have a
+56:57 question question from
+56:58 um Adonis and I know we don't have a lot
+57:01 of time but maybe you can recommend this
+57:03 resource where there is a question there
+57:06 is an answer to this question so the
+57:08 question is how would you advise a
+57:10 machine learning engineer or data
+57:11 scientist to participate in a project
+57:12 that runs in an agile way maybe they use
+57:16 jira maybe it's like scrum or kanban and
+57:19 yeah maybe there are some resources that
+57:22 you can recommend that actually talk
+57:24 about like how exactly machine learning
+57:26 Engineers or data scientists should
+57:28 participate in traditional software
+57:31 engineering processes
+57:35 one
+57:38 life expected
+57:40 thank you
+57:42 yeah one thing uh I think that um so no
+57:46 matter if it's a data scientist or
+57:47 software engine they should be involved
+57:48 with the product from the really
+57:49 beginning so from the requirements phase
+57:52 so if you look at my paper one big issue
+57:54 was that
+57:56 um the anniversary requirements that
+57:58 have to have some moral people with them
+58:00 when they're providing the requirements
+58:01 when they're coming up with the
+58:03 requirements if the model person is not
+58:05 there if the machine learning person is
+58:06 not there then it's really hard for them
+58:09 to set some realistic requirements from
+58:12 the model part so I say that the
+58:14 descendants or the missionary should be
+58:16 involved from the really beginning so
+58:18 they should uh be in the requirements
+58:21 meeting they should uh give inputs on
+58:24 how what what are the goals that they
+58:25 can achieve not just that
+58:28 not just from the activity perspective
+58:31 from also like the data perspective like
+58:33 what are the data they want for winning
+58:35 this kind of application if this data is
+58:36 available if not then how can we make
+58:38 this model or what are the achievables
+58:41 from from this bars and the the
+58:44 deployments deployments and Integrations
+58:45 comes really in the late part but this
+58:48 is really important to start from the
+58:49 really beginning and there's also parts
+58:51 of testing later on so once the model is
+58:54 evaluated you also have to test it
+58:56 whether it's compatible with the system
+58:57 itself how are you going to integrate
+59:00 that model to the system and how are you
+59:01 going to test it if you if you don't
+59:04 have the expectation from the beginning
+59:05 so you have to have those at the first
+59:07 and then go to the next purse so I'd say
+59:10 that uh I never think about the data
+59:12 scientist to be completely separated
+59:14 from the whole team from the zero board
+59:16 and everything they should be in that
+59:18 from the really beginning they should at
+59:19 least observe everyone what they're
+59:21 doing what are the system parts that
+59:23 they're making how can they make the how
+59:25 can they understand the context of that
+59:26 and make the model based on that context
+59:28 that's being developed in the product so
+59:31 yeah that's the shortest I could say
+59:33 yeah I think you mentioned your paper
+59:36 which probably has some answers to this
+59:38 question too which you should send us to
+59:40 and we will definitely include this in
+59:42 the show notes in the description and
+59:45 that's all we have time for today so
+59:47 thanks Nadia for joining us today for
+59:50 taking uh for sharing all your knowledge
+59:53 experience with us and thanks everyone
+59:55 for joining us too and yeah I guess
+59:58 that's that's it
+1:00:00 yeah thank you so much for having me I
+1:00:02 really like to have this conversation so
+1:00:04 it's really
+1:00:06 um
+1:00:07 oh yeah
+1:00:09 thank you and goodbye everyone

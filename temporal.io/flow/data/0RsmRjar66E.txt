@@ -1,0 +1,1520 @@
+Machine Learning System Design Interview
+
+0:00 Hello everyone, welcome to our event.
+0:02 This event is brought to you by data
+0:04 talks club which is a community of
+0:06 people who love data. We have weekly
+0:08 events. This is one of such events. And
+0:10 by the way, I still have the old logo
+0:12 here. I need to update it if you're
+0:15 watching it from YouTube. So now we have
+0:17 a new logo for one month already.
+0:20 Anyways, there is a link in the
+0:21 description. Click on this link and you
+0:23 will see all the events we have in our
+0:25 schedule. Of course, if you haven't
+0:27 subscribed to our channel, now it's the
+0:29 best time to do it. Go u below the
+0:31 video, click on this button, and you
+0:33 will get notified about all our future
+0:35 events. And then finally, the most
+0:37 important thing, join our amazing Slack
+0:40 where you will get to talk to other data
+0:42 enthusiasts. During today's interview,
+0:44 you can ask any question you want. There
+0:46 is a pinned link in the live channel in
+0:48 the live chat. So, click on this link
+0:50 and ask your question and I will be
+0:52 covering these questions during the
+0:54 interview. That is all from me. So let
+0:57 me stop sharing my screen
+1:01 and also let me take a look at the
+1:04 questions I prepared for you. So now I
+1:07 have them and I'm ready to start. Are
+1:10 you ready to start?
+1:12 I'm ready. I actually I I I just done
+1:15 the most important thing. I shared the
+1:18 link to this uh I don't know webinar uh
+1:22 to this lesson to this discussion my
+1:24 telegram channel.
+1:25 Ah that's awesome.
+1:26 Yeah. So somehow I forgot about doing
+1:28 that and you didn't tell me to do that.
+1:30 That's why it's it's your fault.
+1:32 Yeah it is totally my fault. But now I
+1:36 hope you too YouTube it's 60 people
+1:38 watching now. So I don't know how many
+1:40 we will see a search 66. Okay let's
+1:43 Yeah. So that's coming from your
+1:44 channel. So hi everyone uh and anyways
+1:48 so I think we should start right so this
+1:51 week we will talk about machine learning
+1:53 system design interviews and we have a
+1:55 special guest today Valeri Valeri works
+1:58 at blockchain.com as a head of data
+2:00 science before that he worked in quite a
+2:03 few places more recently at Facebook at
+2:06 in WhatsApp as a user data privacy tech
+2:10 le and then before that he worked in
+2:13 Alibaba as the VP of machine learning at
+2:16 X5 retail group as senior director of
+2:18 data science and quite a few other
+2:21 places Yandex I think as well then also
+2:24 Valeri is a Kaggle competition
+2:26 grandmaster and you are ranked globally
+2:30 in the top 30 that's amazing
+2:32 was was wrong because I mean you see
+2:36 and I don't know I I'm trying not to
+2:38 take a look because there is an
+2:39 exponential decay and if you don't
+2:40 compete and what is even more important
+2:42 you don't win your core is deca decaying
+2:46 and the as kegle kegle is an addiction.
+2:50 So the best way is not to go there
+2:52 because you can't be suddenly find
+2:55 yourself doing the kaggle again.
+2:57 Yeah. So I got my masters and then for
+3:00 me it was enough. I thought it's just
+3:01 too much time.
+3:02 I think you made a very very wise
+3:04 choice.
+3:06 Okay. So I briefly already told everyone
+3:09 about your background but before we go
+3:11 into our main topic of machine learning
+3:14 system design maybe let's talk a bit
+3:16 more in details about your career
+3:18 journey can you tell us a bit uh
+3:20 well that sure let's start from the
+3:23 existing time from from the current time
+3:26 as you said I'm head of data science and
+3:28 blockchain so a bit about blockchain
+3:32 first it's it's a very old crypto
+3:34 company uh then I say very old it is
+3:36 very very old. It was founded in 2011.
+3:39 So imagine now try to come back in your
+3:43 head to 2011 and imagine you are the
+3:46 person creating the company called
+3:48 blockchain. I mean come on it's like to
+3:51 create the company named Amazon in 1997
+3:55 to sell the books online and you're
+3:57 still alive like it's Amazon eBay. So
+4:00 the companies uh like work with a
+4:03 cryptocurrency but in a very to some
+4:05 extent classical way because it
+4:08 initially they there were two friends
+4:11 they were working on company named
+4:13 Coinbase. So the one guy uh was saying
+4:17 that uh the money has to they have to be
+4:20 in the custody of the company. Another
+4:23 guy was saying no no no the money has to
+4:25 be in the custody of the people. So it
+4:26 has to be non-custodial wallet which
+4:28 means that nobody except you has an has
+4:31 an access to the wallet and so they
+4:33 parted their ways and another guy he
+4:36 founded blockchain and it started as a
+4:38 as a wallet then it turned to be also an
+4:42 analytical platform providing onchain
+4:44 analysis then an exchanger and trading
+4:48 so basically it's a very to some extent
+4:51 very classic business exchange wallet
+4:53 analytics but for a non-traditional
+4:56 assets as we can say crypto currencies
+4:59 is non-traditional. So as a head of data
+5:02 science it's a it's a awful it's a
+5:04 terrible job title because it's a very
+5:07 broad definition because the head of
+5:09 data science who who is that person. So
+5:11 in blockchain head of data science is a
+5:13 person who's responsible for a data
+5:15 engineering
+5:16 uh machine learning operational
+5:18 engineering machine learning itself
+5:20 makes sense data analytics uh BI
+5:24 business intelligence uh product
+5:26 analytics however the difference between
+5:28 product analytics and data analytics is
+5:30 so thin that I don't see it I see no
+5:33 difference almost and I I even I have
+5:35 spoken about that with couple of people
+5:36 and I said I don't know so and and like
+5:41 business analytics uh before that
+5:43 it's more like head of data rather than
+5:45 head of data science
+5:46 to some extent yes because it's
+5:48 everything related to data from
+5:49 infrastructure to applications from
+5:52 analytics to visualization before that I
+5:55 was working in well I joined Facebook
+5:58 left matter and I will just uh rotate my
+6:02 screen a bit you see those two buildings
+6:05 this is a new Facebook office on the
+6:06 king's cross so that's partly the reason
+6:09 why I moved to the King's Cross.
+6:12 However, I had no opportunity to attend
+6:14 this office which still I I like the
+6:17 area. So I started to work in a WhatsApp
+6:22 to create and found the team called user
+6:25 data privacy
+6:27 uh which is kind of very important team
+6:29 for Facebook because uh only for user
+6:33 data privacy issues Facebook being fined
+6:36 for like5 billion dollars. So you can
+6:39 imagine Facebook does not want that to
+6:42 happen again.
+6:43 Um it it was a very interesting change
+6:46 uh because when I was in Russia I was
+6:49 working Alibaba retail company X5 retail
+6:53 group retail company Yandex market as
+6:56 you can imagine also retail company and
+6:58 I switched to let's say to some extent
+7:01 security or integrity I was very
+7:04 interesting and so yes I I I spent some
+7:08 time in a in a in a Facebook and then in
+7:10 matter then I was thinking what to do
+7:13 next and I received this offer from
+7:16 people in blockchain. I thought the
+7:19 company is doing great. So the mission
+7:20 is is make sense. Uh we can speak about
+7:23 that later about the mission but I don't
+7:25 think it's like uh this webinar how you
+7:28 call it. Is it webinar? Is it like
+7:30 life interview?
+7:31 Life interview. Okay. I don't think it's
+7:33 about like blockchain mission but like
+7:35 the mission. Um that's it. So what else?
+7:39 I was leading quite a big team in my
+7:41 time like the biggest team I was leading
+7:43 was almost 150 people machine learning
+7:46 engineers data analysts etc. I was
+7:49 conducting many interviews
+7:52 uh I don't know how many definitely
+7:54 hundreds maybe even more maybe maybe
+7:57 already in thousands I don't know it
+7:58 depends because like for example right
+8:00 now I have an average 30 40 interviews
+8:03 per week so
+8:05 it's like it takes entire week right
+8:08 it t it takes a lot of time and uh it's
+8:12 not the unfortunately it's not the only
+8:14 thing I'm doing but having an interview
+8:17 even if you are the one who ask the
+8:19 questions is very energy consuming but
+8:21 very rewarding and very interesting. So
+8:24 my main area is machine learning. I also
+8:27 uh knows a bit about data analytics AB
+8:30 testing and I I had to teach myself some
+8:35 data engineering and ML but this is not
+8:37 my strong side. So that that's it and I
+8:40 had a privilege and opportunity to
+8:44 design and implement systems on a large
+8:48 scale and we say large scale it might be
+8:50 billions of users per day and hundred of
+8:55 billions events per day.
+8:57 So there are only a few companies that
+8:59 Yeah, there are you know that right?
+9:01 Not that hard to uh understand what
+9:03 company that was.
+9:05 Mhm. X5 X5. Uh,
+9:07 of course, of course, of course. Which
+9:10 which else?
+9:12 Okay. So, let's talk about machine
+9:14 learning system design. So, this is a
+9:16 part of the interview process and uh you
+9:19 said you did a lot of interviews as a
+9:21 interviewer and I imagine also like when
+9:24 you were um joining Facebook before that
+9:27 you also had to take this interview. So,
+9:29 can you tell us about that? So what is
+9:31 machine learning system design and why
+9:33 is it an important step in the interview
+9:35 process?
+9:36 Okay, before doing that let's try to
+9:39 review uh who needs to go through
+9:42 machine learning interview.
+9:43 Yeah,
+9:44 first of all in Facebook if you are
+9:46 applying or or Amazon or Google and I
+9:50 think other big tech companies as well
+9:53 because like uh these three are largest
+9:55 ones in terms of amount of people
+9:58 working there and market cap. So if
+10:00 you're applying for a data scientist
+10:01 position uh what would you do? You would
+10:04 write a SQL code work with metrics and
+10:07 dashboards. So if you expect that data
+10:09 scientist has some relations to machine
+10:11 learning in these companies you are
+10:14 mistaken.
+10:15 People who does m who does machine
+10:18 learning they are called machine
+10:21 learning engineers right?
+10:23 And these people have to pass through
+10:26 software engineer loop in the Facebook
+10:29 and some additional rounds of interview.
+10:32 So for machine learning and again for
+10:34 machine learning for software engineer
+10:36 uh there are different stages but there
+10:38 are I would say
+10:41 couple of interviews which are very
+10:44 important in terms of assessing your
+10:46 level. These interviews are of course
+10:49 behavioral
+10:51 project impact but that that makes sense
+10:54 right and two very important thing is
+10:57 system design interview which is how to
+11:00 design the system overall and machine
+11:02 learning system design. This interview
+11:06 is usually conducted for people starting
+11:08 from level five. Of course at the very
+11:12 beginning nobody knows what level you
+11:14 are. It might be between four and five.
+11:15 So you might end up being level four
+11:18 still coming for this interview.
+11:20 Level five is like senior right?
+11:22 Yeah. Level yeah to to good good catch.
+11:26 Yes. Level five is a senior. Level five
+11:28 is a senior. is a terminal level on
+11:29 Facebook which means that if you're on
+11:31 this level it is a honorary thing to be
+11:34 on this level forever
+11:37 and then so if you ended on level four
+11:40 probably it it was because a mail system
+11:43 design interview
+11:46 and so this interview tells uh the
+11:49 interviewer tells the Facebook or Google
+11:51 whatever company uh your ability to have
+11:56 a
+11:57 overview of the system and in 45 minutes
+12:01 being able to tell the story almost a
+12:05 monologue of yours about how you will
+12:07 build this system and touch very
+12:10 different points and also why I know I I
+12:14 I've seen some questions you prepared we
+12:16 will discuss that how deep you should go
+12:17 but it's tricky thing because you have
+12:19 to to do that it's like you're solo
+12:24 in front of the person who is silent and
+12:26 you're under pressure and and it might
+12:29 be you've never done that before.
+12:30 There's not that many people in the real
+12:32 world who has the privilege and
+12:34 opportunity to build the system from the
+12:36 scratch. Even if you've done that, who
+12:40 who can promise you that the system that
+12:43 they will ask you to build is the system
+12:46 you really has an experience with.
+12:50 Okay. So if I summarize this, so
+12:52 basically this is one of the steps that
+12:56 machine learning engineers get when they
+12:57 interview at Facebook or probably now I
+13:00 should call it meta at Meta, Google and
+13:04 similar companies. U so machine learning
+13:07 engineers get that and this is a way to
+13:09 assess how well they can design machine
+13:12 learning systems. So these are the
+13:13 systems that need to uh do something
+13:16 with machine learning, right?
+13:18 That's true. And not also that uh the
+13:20 thing is that it's one of the most
+13:22 important. So let's say you can fail
+13:24 code interview well to some extent right
+13:26 you can fail it on a different scale and
+13:29 still they can push you further.
+13:34 So it's it's it's one of the critical
+13:36 what happened to me but maybe this is
+13:38 something I prepared for for later and
+13:41 yeah so you said that important
+13:43 interviews for um detecting for
+13:46 assessing your level is behavioral
+13:48 behavioral interview system design
+13:49 interview and machine learning system
+13:51 design interview. So maybe can you tell
+13:53 us in um what is the difference between
+13:56 system design and machine learning
+13:58 system design? Okay, let's try to see
+14:01 what is disparity between those two.
+14:03 First of all, when you ask to do a
+14:05 system design interview, you usually ask
+14:08 about data structures, about different
+14:11 server side components like what are the
+14:14 databases, what is the amount of data
+14:17 will be processed, uh what is the right
+14:21 throughput, what is a read throughput,
+14:24 uh how you would work with the cache,
+14:26 how would you work with the load
+14:28 balancing, sharding, uh splitting and
+14:32 etc etc et so it's bas basically the
+14:34 software engineering while on machine
+14:36 learning design the usually the thing is
+14:39 to understand how you will build it from
+14:41 machine learning pro perspective let
+14:43 let's let's let's give an example right
+14:45 okay let let's take for example uh the
+14:48 thing is that one of the question how
+14:50 would you build a model which has to
+14:55 catch a fraud on the platform
+14:58 so for example let's imagine the best
+15:01 way if I had the crystal crystal ball
+15:04 which tells me with a 100% accuracy if
+15:07 this transaction is a fraudulent or not
+15:09 then the problem is solved right I just
+15:11 I just take the ball I just run the
+15:14 transaction through the ball bowl tells
+15:15 me one or zero so that's done however we
+15:18 understand it will never happen there
+15:20 will be some discrepancy always so now
+15:23 we can say we know that we have to
+15:26 output not zero or one but some score
+15:30 between zero of one when we have a
+15:32 transaction. Now when we have a
+15:34 transaction now that probably means we
+15:36 would like to to to be have the system
+15:39 real time. Okay, we have okay let's
+15:41 let's put it in mind real time system
+15:43 score between zero and one. Okay, it's a
+15:45 fraud. Uh does it mean that let's say
+15:48 we're speaking about the money does it
+15:50 mean that 10 bucks is of the same
+15:52 importance as a 100,000 bucks? Probably
+15:55 not. meaning that we need to have a
+15:58 probability of this transaction being
+16:01 fraudulent and not just a score between
+16:03 zero and one. As soon as we have a
+16:05 probability, we can calculate the
+16:07 expected fraud which already leads us to
+16:09 the first metric to assess the quality
+16:12 of the model which is an expected
+16:14 calibration error or weighted expected
+16:17 calibration error. Okay, we've got that.
+16:19 We also know that the ideal solution
+16:21 would be a binary classification task
+16:24 one and zero the crystal ball right we
+16:26 know that we this will never happen
+16:28 however we know that it's binary
+16:29 question and the um output has to be
+16:32 between zero and one and it has to be
+16:34 probability so that also tells us what
+16:37 should be our loss function the loss
+16:39 function should be from a family of a
+16:40 proper scoring function
+16:43 fortunately the very basic log loss is
+16:47 good here so we know that We might start
+16:49 from a log loss. We also know that we
+16:52 might start from a very basic linear
+16:54 regression model. Why is that? Because
+16:56 we know that it has to be very fast in
+16:59 real time, right? We also know that uh
+17:03 fraud coming from people, people are
+17:06 very creative creatures, very creative
+17:08 and they are notorious for being very
+17:10 adaptive. So we we know that suddenly
+17:14 the pattern might change. So with a
+17:17 linear linear regression, we can retrain
+17:19 the model in online fashion and adapt as
+17:22 well for these changes. However, it
+17:24 depends on how fast we will receive our
+17:26 labels. And so you see we're coming to
+17:28 completely different question. How can
+17:31 we gather the labels? Okay, what is
+17:34 fraud and what is not? Are these labels
+17:36 100% sure or there is some noise there?
+17:39 Because well there is there there might
+17:41 be some noise. How would we fight it?
+17:43 Oh, let's have the first assumption.
+17:45 There is no noise. We come later to
+17:47 that. Good. Now, how we uh just gather
+17:50 our labels. How much time will pass
+17:55 until the transaction will be labeled?
+17:58 Is it is it immediately? Probably not.
+18:00 Day, 2 days, 3 days, 30 days. Given that
+18:04 do we need to update our model in real
+18:07 time? So, we're coming back. You see?
+18:09 Okay. But let's say just we'll make a
+18:10 very simple design by by the definition.
+18:15 linear linear regression we have a log
+18:17 loss. We know that one of the metric
+18:18 would be expected calibration error and
+18:20 would be just maybe weighted expected
+18:23 calibration also. What else should we
+18:26 should we take a look into other metrics
+18:28 probably? Yes. But we know that the
+18:31 fraud is very class im
+18:35 class class balance skewed. So we know
+18:37 that class imbalance is extremely high
+18:40 there. We also know that it might
+18:42 change. So that means that if we would
+18:44 like to take a look into the matrix this
+18:47 matrix they have to be class balance
+18:50 insensitive probably because otherwise
+18:51 just class balance change metric change
+18:53 but models model is the same. Okay. So
+18:56 what are the most favorite metrics is a
+18:57 precision and recall. Recall is class
+19:00 balance insensitive while precision is
+19:02 class balance sensitive. So forget about
+19:05 precision. Can we replace precision with
+19:07 something? Why not? Specificity also not
+19:10 bad. Okay. something else maybe we know
+19:12 that there is some threshold of expected
+19:15 fraud level which we can just go with
+19:18 and then we can't do we need to
+19:20 introduce some ways okay good what data
+19:23 we will use is it amount of transaction
+19:25 is it just history of the user how fast
+19:27 we will update them now let's say we
+19:29 have a model how can we assume that
+19:31 model is better than the previous of
+19:33 course we have some offline metrics we
+19:35 have an expected calibration error
+19:37 weighted expected calibration error
+19:38 precision we don't have precision forget
+19:40 It's bad metric because it's client
+19:41 balance sensitive. We have specificity.
+19:44 We have recall what now we can run an AB
+19:48 test to see the online performance right
+19:53 how would we see that how long we need
+19:55 to run AB test etc. So all these things
+19:58 have to become okay now let's say I told
+20:00 you about the basic features what about
+20:02 feature engineering how can like I said
+20:05 linear regression it doesn't take
+20:07 nonlinearity into account can I do that
+20:09 with the basic feature engineering
+20:11 probably if you have enough data just
+20:13 having a polom of the second degree
+20:17 which shows you an in overlap between
+20:20 features how they interact with each
+20:22 other is enough because if you have
+20:23 trillions of data points you can do that
+20:26 your sparity is not an issue here and so
+20:29 on and so on and so on and so on.
+20:32 Yeah, that's quite a lot of information.
+20:34 I was trying to process this. I also
+20:37 realized that I forgot to to press this
+20:40 button.
+20:40 No, no, there is no but there is will be
+20:42 but there is a stream. Yes, there there
+20:45 was a separate uh recording. Anyways,
+20:48 yeah, that's quite a lot of things and
+20:49 so this is this was an example of
+20:51 machine learning system design. So you
+20:54 the interview starts and then the person
+20:56 the interviewer asks you let's design a
+20:59 system for detecting throat and then you
+21:03 probably ask uh this person a few
+21:04 questions and then you do this uh
+21:08 information dump on that person right
+21:10 in in in a best way is even not to ask
+21:14 but let's say my assumption is that do
+21:17 you agree with that or not
+21:19 like you see you asked the question but
+21:22 actually you made an assumption say are
+21:23 you okay with that? Let well because
+21:25 look you you've been you've been given
+21:27 some information okay then of course in
+21:31 real world you would gather the context
+21:34 because context can make everything very
+21:37 different because imagine like in the
+21:38 case in the fraud if you receive a label
+21:41 within a minutes
+21:43 it's very different to if you receive
+21:45 the label within months it's affects
+21:48 everything uh so but you could make an
+21:51 assumption you say like my assumption is
+21:53 that and to be honest I made might be
+21:55 many assumptions and nobody prevents you
+21:58 from making assumptions which will make
+22:01 your life easier.
+22:02 Mhm.
+22:05 Yeah. And uh while you were talking so
+22:08 the the original question I actually
+22:09 asked you was about the difference
+22:10 between system design and machine
+22:12 learning system design and I think it's
+22:13 very clear what machine learning system
+22:15 design is. So it requires some domain
+22:18 knowledge right uh to some extent or
+22:20 making some assumptions and then you
+22:22 need to uh walk uh through the process
+22:25 of solving a particular problem and I
+22:27 have an example that I from my personal
+22:30 experience of u being interviewed uh at
+22:33 one of these uh companies. So on system
+22:36 design I had a question to design a
+22:38 system for um finding places of
+22:42 interests. So let's say I go to London,
+22:45 right? So I I go to whatever central
+22:50 square you have in London and then um
+22:53 the system would need to give me all the
+22:56 points of interest, all the interesting
+22:58 places within let's say the closest
+23:00 ones, right?
+23:01 It was a system design, right?
+23:02 It was a system design.
+23:04 I had almost the same question on my
+23:05 interview in the Facebook.
+23:07 Yes. And then so that was the system
+23:09 design part. So there I needed to think
+23:11 how exactly I store these things like
+23:13 how I retrieve them fast uh how I do you
+23:17 know sharding load balancing all that
+23:20 and then on machine learning system
+23:22 design it was a very related question so
+23:24 the question I got there was okay now we
+23:27 have this system that returns uh the
+23:30 closest points of interest now let's
+23:32 have a recommener system there so let us
+23:34 uh let this system return the closest
+23:37 the the most interesting 15 the most
+23:39 interesting in places that are
+23:40 interesting to this specific user. So I
+23:43 think this is a nice example to show the
+23:46 the difference between the two. So in
+23:47 one you need to design a system you
+23:49 don't think about machine learning at
+23:50 all and then on the second you don't
+23:52 need to think about the scalability load
+23:55 balancing sharding all that you have a
+23:57 specific problem machine learning
+23:59 problem that you need to solve and then
+24:01 you go through the solution. Right.
+24:04 Exactly. Exactly. Yes. like that you
+24:06 could you could also take the make the
+24:08 same example of the fraud system. Now
+24:10 the system design question would be can
+24:11 you build the system which will handle
+24:14 three transactions per day and these
+24:16 transa transactions are coming from
+24:18 this. So you see
+24:19 Mhm. Mhm. Yeah. And then if on the ML
+24:24 system design you would talk through
+24:26 this log loss and things like this. But
+24:28 where does system design actually come
+24:30 into into picture here? Because here we
+24:33 talked about you know selecting the
+24:36 right metric right so that is the
+24:38 important thing was right so you said it
+24:41 was log loss for uh this specific case
+24:44 or even before log loss I think it was I
+24:48 don't actually remember what you said
+24:49 expected calibration error yeah that I
+24:52 said that I need a loss which comes from
+24:54 a family of the proper scoring
+24:56 functions.
+24:57 Yeah. So you you you need to
+25:01 say all these things right and then once
+25:02 you say okay this is the thing we are
+25:04 measuring u this is the baseline model
+25:07 you set like a linear regression right
+25:09 or logistic regression and then you
+25:12 start building on top of that right
+25:13 yeah and for example I remember that I
+25:15 was doing that for a Facebook uh
+25:17 suddenly the guy asked me okay you said
+25:19 that the metric would be a what is a why
+25:22 you said it's a ranking metric and I
+25:24 said well that's because it's like what
+25:25 it does that and I said Okay. Okay. You
+25:27 know what you're talking about.
+25:29 Mhm. Yeah. But where do we actually
+25:31 design systems or this is what you mean
+25:35 by like do we need to say that this
+25:37 system is doing this and then there is
+25:39 another system or it's more about
+25:40 designing the
+25:41 I don't get the question by by itself
+25:43 it's a system every machine learning
+25:44 model it's not like a model it's the
+25:46 whole system because you you have a
+25:48 features coming to the model model
+25:50 output something these outputs also have
+25:53 take to be taken into account there
+25:55 might be AB testing here there might be
+25:56 feature preparation here so it's like
+25:58 it's a whole system.
+26:00 I mean look there are companies creating
+26:02 just a parts components for these
+26:05 systems like you can take as a feature
+26:06 store a feast right it's like closer to
+26:09 the system design so it might be that
+26:12 you can call that engineering software
+26:14 engineering system design and machine
+26:16 learning system design because in both
+26:18 you have to design a system just you
+26:20 designing systems with the different
+26:22 goals.
+26:24 Mhm. Okay. Yeah. And uh so I was already
+26:28 talking about my experience of
+26:30 interviews. Uh u so there I was
+26:33 interviewed for a tech lead position and
+26:35 this question was about uh designing a
+26:37 recommended system for a point of
+26:39 interest for points of interest and the
+26:41 way I approached it. So first I proposed
+26:44 a metric. I don't remember what was the
+26:46 metric. uh I think probably like when
+26:49 let's say you have a recommener system
+26:51 looking at what user clicks and actually
+26:54 uh you know maybe goes there u to this
+26:56 place could be a nice metric to measure
+26:59 then I suggested some heristics um I
+27:02 don't remember like maybe suggesting um
+27:05 clustering people by interest and then
+27:07 suggesting like just selecting the most
+27:09 popular uh points of interest for each
+27:12 cluster specifically and then
+27:13 recommending this to this user and And
+27:16 yeah, I suggested then some other
+27:18 heristics on top of that and then at the
+27:20 end I had a bit of time to talk about
+27:22 actual machine learning and then I
+27:24 thought I really nailed it. So I thought
+27:26 I really did very well in this
+27:28 interview. I and the interviewer was
+27:31 nodding all the time and like okay like
+27:35 yeah keep keep going. Uh so I really
+27:38 didn't think that something could be
+27:41 wrong there. So I was really afraid of
+27:43 the coding parts. I was also not super
+27:47 sure about system design part. And then
+27:49 a few weeks after that I got feedback.
+27:52 So that feedback said like the recruiter
+27:55 told me that I did well in coding parts.
+27:58 I also did well in system design but I
+28:01 completely failed the machine learning
+28:02 system design part.
+28:03 Completely failed.
+28:05 Yeah. Well, not completely but they
+28:06 didn't like me and I guess for for a
+28:08 tech position.
+28:09 British British HR
+28:12 would never write you that. The British
+28:14 would write you, Alex. It was wonderful.
+28:16 It was brilliant. There was just a
+28:19 slight miscommunication
+28:22 or something like that. I'll never tell
+28:23 you. Completely fail. Never. Yeah.
+28:25 Unbelievable.
+28:26 Yeah, I
+28:28 I might be wrong with using the words.
+28:31 Uh so I think the recruiter I probably
+28:35 she used different words but the reason
+28:37 for me to failing the process the whole
+28:40 interview was machine learning system
+28:42 design not the others because I was uh I
+28:45 was afraid of others but others I did
+28:47 well but I failed that one and the
+28:49 reason there was that the interviewer
+28:52 expected me to talk about actual machine
+28:54 learning instead we talked about metrics
+28:56 heristics and then I didn't like have
+28:58 time to actually cover machine learning
+29:01 And uh yeah, what do you think about
+29:03 this? Is it a typical process? Is it
+29:06 expected or um
+29:08 let's be honest, the interviewer was a
+29:11 human
+29:12 and human are subjective. Might be a bad
+29:16 day. However, I mean I'm to be to some
+29:18 extent I'm surprised because that that's
+29:21 hard to say if the interviewer was
+29:23 noting maybe maybe again the way you
+29:26 remember it and the way it was like it's
+29:30 like a natural thing for human beings to
+29:32 remember while so there is even the
+29:35 saying lies like a witness.
+29:39 So that's hard to say. However, usually
+29:42 you could tell like you could try to
+29:44 secure yourself and during intro you
+29:47 could ask do you want me to focus on
+29:50 that or let's go also another good way
+29:52 would be just to sketch look what we've
+29:55 done right now in five minutes we almost
+29:57 finished a very very very basic design
+29:59 of the fraud system right because we
+30:01 already spoke about loss function the
+30:03 model the feature interaction the
+30:05 metrics even mentioned AB test so Now we
+30:10 could go, okay, we outlined it. Do you
+30:14 want me to focus on something else? I'll
+30:16 go step by step diving deeper and deeper
+30:19 and and so I'll make a second iteration
+30:22 the third iteration because usually so
+30:24 how I was doing that I told to the
+30:25 interviewer like like I will build a
+30:28 baseline and then having a baseline
+30:31 because usually what you do in a machine
+30:33 real machine learning right you either
+30:35 you take as a baseline a heristic or you
+30:38 take a very simple model you're not
+30:40 trying to build the spaceship from the
+30:42 very beginning but again it's hard to to
+30:45 say maybe there was some signals uh very
+30:48 very
+30:49 gentle signals
+30:52 you you you were unable to read maybe it
+30:55 was just a bad day for interviewer try
+30:58 yeah it's you see it's it's hard to to
+31:00 some extent interview has a at least
+31:03 part of luck
+31:06 it so but you can try to be to secure
+31:08 yourself
+31:09 yeah so what um my question was more
+31:13 about uh what do you think not about
+31:16 this particular interviewer but about
+31:18 the way I approached it right so like
+31:21 because I approached with um um coming
+31:24 up with a metric and heristic heristic I
+31:27 think what I should have done probably
+31:29 instead is perhaps I spent too much time
+31:31 on that right and of course the
+31:33 interviewer could have stopped me saying
+31:35 okay let's actually talk about machine
+31:37 learning part he didn't do that but yeah
+31:40 maybe this is my fault because I should
+31:41 have asked as you
+31:43 But I'm wondering how much time exactly
+31:45 should I spend on talking about
+31:48 heristics and how soon should I jump
+31:50 into machine learning and then maybe
+31:52 deep learning talking about uh you know
+31:55 uh ways uh more like more advanced
+31:57 things.
+31:58 Well, it's it's an interesting question
+32:00 for which there is no single answer. It
+32:02 depends. So my my opinion is that the
+32:06 interview has to be as close to the real
+32:09 job to the real work as it can be. So uh
+32:14 to be honest an applied machine learning
+32:17 you don't usually dive very deep you
+32:18 need to understand why and what if you
+32:21 apply for a machine learning research
+32:23 position that's a different topic right
+32:25 so but whatever usually you you you set
+32:29 a monitoring you you you pick the loss
+32:32 uh the model the metrics and then uh
+32:36 then you you dive deeper you you you you
+32:38 have to be able to just
+32:42 Let's say provide some arguments. Why
+32:46 did you pick this model? Why did you
+32:48 pick this loss function? Why did you
+32:49 pick this matrix? However, I don't think
+32:52 that it makes sense something deeper.
+32:54 What does it mean? Just write how
+32:56 gradients flow through the convolutional
+32:59 layer in the neural network. What for?
+33:02 Mhm.
+33:02 But that you see it's my attitude.
+33:05 Yeah. or maybe how to do back
+33:09 propagation for batch norm right
+33:11 yeah well I've been asked this
+33:12 let's derive that
+33:14 yeah by the way I had this question
+33:15 interview once
+33:17 okay
+33:17 so did you remember how to do this
+33:19 yeah I I was able to some extent I think
+33:22 yes I I managed this
+33:24 because look I mean oh come on bor okay
+33:26 so there is normalization some okay
+33:30 okay but uh yeah so how do we actually
+33:32 prepare for such interviews so for
+33:34 machine learning system design
+33:36 interviews cuz it feels just being a
+33:38 practitioner is not enough because you
+33:40 never know first uh what exactly is
+33:43 expected. Um I guess you need to ask
+33:45 that and also you might get a question
+33:48 that is outside of uh your domain
+33:51 expertise. Let's say I work in
+33:53 e-commerce and then then I get a
+33:54 question in uh recommended systems,
+33:58 right? So maybe I'm not working with
+33:59 recommended systems right now. So how
+34:01 how can we prepare for such interviews?
+34:05 There are many ways how you can prepare.
+34:07 There are many services on the web at
+34:08 which people from a Facebook really
+34:10 conduct these kind of interviews can do
+34:13 that for you for a for a small fee of
+34:16 200 bucks and then they will give you a
+34:18 review. Uh however I haven't seen any
+34:23 any credible course on that on machine
+34:26 learning design. Well, you could also
+34:28 try you could try to ask for feedback.
+34:30 That's that's difficult. Actually I have
+34:33 an idea to to make the course on machine
+34:37 learning design
+34:39 but we decided to start from just system
+34:42 design because system design covers more
+34:46 people and it's easier obviously it's
+34:48 easier to sell because audience
+34:51 is bigger.
+34:52 Mhm. Okay. Because it also not just
+34:55 machine learning engineer
+34:56 everybody. Yeah. Like everybody from a
+34:58 software engineer to machine learning
+34:59 engineer. Yeah. these people go through
+35:02 system design. So that's why the
+35:04 audience by definition is higher.
+35:09 Yeah. And uh so one way of course you
+35:11 you do this at work other way you find
+35:14 people who can help you with that. Is
+35:17 there anything else you can do? I don't
+35:19 know watching some
+35:21 well maybe on the web conference talks
+35:23 there are some uh ML system design
+35:26 overviews on YouTube.
+35:28 Mhm. I've done my fair share uh however
+35:31 in Russian so only people who speaks
+35:34 Russian or understands Russian
+35:38 can do them but there is information so
+35:41 look uh process to get hired in the
+35:44 Facebook is standardized
+35:47 I also you can have an extensive
+35:49 experience so to be honest I I've made
+35:51 no preparation for a mail system design
+35:54 like I was sure in that part because
+35:58 that's the only thing I can do probably
+36:01 design the system on the paper
+36:04 but uh but well extensive experience and
+36:08 being uh there are talk talks about that
+36:11 paper so
+36:14 I don't know to be honest because that's
+36:16 hard for me to answer because I I made
+36:18 no preparation by myself for that okay
+36:20 yeah because uh if we take an e-commerce
+36:24 company a small one then we and think
+36:28 what kind of questions they may ask us u
+36:32 candidates that could be about you know
+36:34 designing a search system design and uh
+36:37 I don't know recommener system so the
+36:40 typical things that they do however when
+36:42 it comes to Facebook in Facebook
+36:45 Facebook does so many different things
+36:47 you never know what exactly what kind of
+36:49 domain you might get so they may ask you
+36:51 to design a feed news feed for example
+36:54 or they might ask you to design a point
+36:57 of interest recommener system or a fraud
+37:00 detection system for WhatsApp right
+37:02 could be
+37:03 they will they will I mean actually it's
+37:04 my favorite part because
+37:07 you you you've seen the ML design
+37:09 interview I I conducted right
+37:12 so you you you you notice that my
+37:14 favorite thing is just uh person is
+37:16 coming I know this person background I
+37:18 ask the question which is completely
+37:21 outside of the area of this person and
+37:23 that's fun that's hilarious
+37:25 that's That's what you did with me,
+37:27 right?
+37:28 Of course.
+37:29 Yeah,
+37:29 of course. I mean, I've been preparing
+37:31 just trying to for everybody that makes
+37:34 sense. Uh, however, there are still some
+37:37 patterns. There are still some stages
+37:39 which are common for everything. You
+37:41 still need to gather data. You still
+37:42 need to understand what should be the
+37:43 metric, the loss function, what's the
+37:45 model, why is the model, what is online
+37:47 versus offline, should it be uh adjusted
+37:50 on the fly, etc. And you see to be
+37:53 honest not that many steps
+37:55 right and then come back come back come
+37:57 back come back.
+37:58 Mhm. Yeah. So speaking about this mock
+38:00 interview. So a while ago um I had a
+38:03 mock interview with Valeri. So Valeri
+38:05 interviewed me. Uh the question was
+38:08 about detecting a fraud designing a
+38:11 fraud detection system.
+38:13 You could imagine that.
+38:14 Yeah. uh and um yeah there on this
+38:18 interview you showed a machine learning
+38:21 project checklist and can you talk a bit
+38:23 about that document so what is there and
+38:26 why it's helpful for designing ML
+38:28 systems
+38:29 back in the days of the Facebook uh a
+38:31 number of practitioners they decided
+38:33 that well we have many machine learning
+38:35 services probably we need to write some
+38:40 comprehensive uh uh a comprehensive list
+38:43 of checks
+38:44 we need to pass the service through and
+38:46 it's actually a very good uh preparation
+38:50 guide for system design because it
+38:51 covers exactly these points. Well, it's
+38:54 very comprehensive like 16 pages
+38:56 document. However, you could also go and
+38:59 find the book u from O'Reilly uh written
+39:04 by people from Google by googers about
+39:06 ML design practices something like that.
+39:09 Let me take
+39:10 machine learning u design patterns.
+39:13 Yeah, something like that. So you see
+39:14 it's to some to some extension you might
+39:18 have this checklist you might just
+39:20 extend it to the whole book but the it
+39:24 remains the same. So again model
+39:27 coupling decoupling AB test features
+39:31 losses model types online offline batch
+39:36 processing whatever. So it's
+39:39 it's kind of you if you know the basic
+39:41 points then you go it's like uh from A
+39:44 to B from B to C from C to D. the same
+39:47 for a system design. It's like to some
+39:48 extent solving the cases for a
+39:51 consulting company, you know, like uh
+39:53 and they train you to solve any case
+39:55 even if like you've never been working
+39:57 in the aircraft to create a company.
+40:03 But somehow now now you're an expert and
+40:05 you can suggest a CEO of this company
+40:07 how to run his or her business.
+40:10 Mhm. And uh yeah so in this checklist so
+40:13 let's say we need to design a system not
+40:15 necessarily for an interview but just
+40:17 design a system. So what is the first
+40:19 thing we need to do? Do you remember
+40:20 what is in this checklist?
+40:21 Well I don't remember the first thing
+40:23 there but I think that the first thing
+40:24 is what you really would like to do what
+40:27 is your goal.
+40:29 Uh so for example and is it really
+40:32 achievable? So why are you doing that?
+40:34 Uh because uh what is your end goal in
+40:38 this fraud? What is your end goal and
+40:40 recommending
+40:42 people some interesting place? Is the
+40:45 goal that they will find it as quick as
+40:47 possible? Is the goal they will ramage
+40:49 through your app? Is the goal that
+40:51 they'll have to spend more time on the
+40:53 platform? Which mind you is the goal for
+40:55 many companies?
+40:57 Like their main network is how how many
+40:59 minutes how much time the person spent
+41:02 on the platform. Now understanding the
+41:04 goal you have to think okay can I
+41:08 directly run for this goal or I can I
+41:12 can't for for for many reasons and I
+41:15 have to approximate it so I have to use
+41:19 a proxy goal to that
+41:20 like for measuring if you're moving
+41:23 towards this goal or not right
+41:24 yeah so for example let's say you need
+41:26 to create a system
+41:29 like
+41:30 an ads on the Facebook right So why do
+41:33 you need to do that? You probably would
+41:34 like to increase your total income,
+41:38 total revenue, right? Okay. However,
+41:40 what can you do? Is the click so you can
+41:43 you can train your system on the clicks
+41:45 is it good enough? Well, probably not
+41:46 because the person who just uh
+41:50 bought an ad, this person expect that
+41:53 the person who clicked will buy, right?
+41:57 So click by itself leads to clickbait.
+42:01 Mhm. So now okay can I can I train the
+42:04 system on buys? Well that's to some
+42:07 extent more difficult because uh clicks
+42:11 are rare events. However purchases to p
+42:15 purchase something is even it's it's
+42:18 it's even less frequent.
+42:21 So then you try okay make I can try to
+42:24 take a combined loss. However I'll never
+42:26 be able to assess it freely in offline.
+42:29 So only what I can do is just just to
+42:31 assess it in real time uh in a like in
+42:35 AB test. But if I'll do that in AB test
+42:37 and I have the old system on 95% and the
+42:40 new system on 5%. Is it still they're
+42:42 not affected or if I will run this on
+42:47 the whole traffic the money will somehow
+42:50 just move from one pocket to another
+42:54 like are they really independent?
+42:56 Sometimes it happens like a market
+42:58 budget allocation problems. So there are
+43:00 many things which might show you the
+43:02 lag.
+43:03 Okay. So we need to define the goal
+43:06 right could be people spend more time on
+43:08 the platform or we earn more money and
+43:11 then we need to find a way to measure if
+43:14 we're moving towards achieving this
+43:15 goal. So define a metric
+43:17 to approximate your okay can you move
+43:20 directly to your goal or can you
+43:22 approximate moving to your goal also the
+43:24 thing is that if metric
+43:27 becomes your goal with some time it
+43:31 usually ceased to be a good metric
+43:34 [Music]
+43:35 I imagine in this case of more money you
+43:38 can just fill your entire feed with ads
+43:41 right
+43:41 yeah for some time it will work but
+43:43 again as you see in the long run
+43:45 Mhm. So you need also to have some other
+43:47 metrics right not just the main one but
+43:49 also like are people still spending time
+43:51 on our feet or not
+43:53 right like spending time uh their
+43:55 attrition rate their churn rate
+43:58 retention what many many things many
+44:00 many things
+44:01 okay so we do this and then you also
+44:03 mentioned AB test so this is u so we
+44:05 define a metic then we say how exactly
+44:07 we are going to measure this metic and
+44:09 what do we do next what is
+44:10 well let's say we we know let's say we
+44:13 know what we would like to do. We know
+44:16 how we can try to optimize in this way.
+44:19 So what does mean optimize in this way?
+44:22 Meaning that if my model improved
+44:25 uh there is a high chance that my metric
+44:29 of interest will be better. Now okay I
+44:33 need to think uh uh
+44:36 about the labels but it's obvious right
+44:38 this proxy metric you can say it's a
+44:40 label. I will construct my labels. Now
+44:43 we know that you can say that labels is
+44:47 are y's. Now we need to think about axis
+44:50 about the features. Okay, what features
+44:52 we have? Okay, this this and that
+44:54 features they might make sense, right?
+44:57 Uh now what we have x and y we need a
+45:00 model. What kind of model? We have uh
+45:04 target we have labels. What about the
+45:06 loss function? Can we put it just
+45:08 directly in the loss function or not? Uh
+45:10 okay now come back to the features we
+45:13 have a basic features do we need to make
+45:14 anything like do we do we think they
+45:16 interact with each other we need to do
+45:18 some pre-processing okay think about
+45:20 that now let's say we can put the model
+45:24 uh we have x we have y we can train it
+45:26 right so what happens here uh let's
+45:29 let's do that now we've done that we
+45:33 receive some output okay how do we know
+45:35 if this output is a good let's think
+45:37 about validation right validation
+45:39 because we didn't speak about that on
+45:42 off of on fraud system but actually we
+45:44 we spoke about uh offline metrics for
+45:47 offline metrics you need to have
+45:48 probably a data set in which you
+45:50 evaluate it that a test how would you
+45:53 run a test how long how many samples you
+45:56 need what metrics of of interest
+46:00 etc etc etc
+46:02 and perhaps if you cover all these parts
+46:05 during your system design interview
+46:06 you're already in quite a good position
+46:08 right
+46:08 yeah but that's Not to be honest if we
+46:10 speak about the real system and more
+46:12 because let's say you have an AB test
+46:14 output paral everything is good but in
+46:16 real system
+46:18 many things might appear uh distribution
+46:22 shift for a features might appear and we
+46:24 need to be able to detect that target or
+46:27 class imbalance might appear model might
+46:30 might be broken do we need to have a
+46:31 fall back we need to monitor the model
+46:33 model performance what we will do if the
+46:35 performance is much lower do we have a
+46:37 fall back.
+46:39 So like you see like a system because
+46:41 there are many more checks for real
+46:43 system because real system let's say we
+46:45 have a perfect model for our ads ranking
+46:48 and the model for some somehow is broken
+46:51 or
+46:51 or turn to be crazy or turn to be crazy.
+46:54 So it's not bad crazy do we have
+46:57 crazy you mean outputs uh random stuff
+47:00 or
+47:00 yeah yeah yeah for example or because
+47:02 there is feature shift distribution so
+47:04 we need to detect we need to detect
+47:05 feature shift distribution target
+47:07 distribution uh model performance right
+47:10 and have a plan B to switch to that but
+47:12 look I need to take a look into this
+47:14 document if I can tell you that's why
+47:16 smart people were doing that for for
+47:19 quite some time it's not like I can pull
+47:22 it from my head immediately but there
+47:23 are many things which might uh shoot you
+47:25 in a lag.
+47:26 But
+47:26 yeah, maybe before you do this, I
+47:28 realize we don't have a lot of time and
+47:30 there are quite a few questions.
+47:32 But uh before we go to these questions,
+47:34 so we talked about this distribution
+47:36 shift, class imbalance, uh model breaks,
+47:38 fallbacks. We should also mention that
+47:41 during the interview, right? It also
+47:42 shows our u experience exposure to these
+47:46 things breaking in production.
+47:48 Yeah. You see, if you'll do that, you'll
+47:49 be ahead of 95% or 99%.
+47:52 Okay. Okay. Got it. Yeah. So let's go to
+47:55 questions. We have um quite a few of
+47:57 them. So the first question we have is
+47:58 what are the typical components of a
+48:01 machine learning system and what
+48:02 percentage of it is machine learning
+48:05 algorithms?
+48:06 Algorithm is just uh I think one of the
+48:08 smallest part is one five%.
+48:11 Because well I was speaking with a
+48:14 candidate recently and I told him look
+48:17 imagine you're a machine learning
+48:18 engineer in the company for two years
+48:20 right? You say okay okay I can imagine
+48:22 that. Imagine that you you spend an
+48:26 immense amount of time creating an
+48:27 algorithm finding the best algorithm
+48:29 setting up the loss function all the
+48:31 rest and metrics. It took you a
+48:34 humongous amount of time, two weeks
+48:38 and you own a company for two years.
+48:40 What do you do? Right? So, so you
+48:43 probably So that's an answer. Let's say
+48:46 um the most important I would say so if
+48:50 you have right output and right input
+48:53 then the model is not that important. if
+48:55 the model can handle that like of course
+48:57 you probably wouldn't use linear
+48:59 regression for
+49:03 images
+49:05 but look you might you might argue okay
+49:09 should it be reset should it be visual
+49:11 transformer should it be whatever I
+49:14 don't care but if your features are very
+49:19 good and your labels make sense
+49:23 uh then
+49:24 It's it's a second order of improvement.
+49:27 But if you have a best model and your
+49:30 features are mediocre or bad and your
+49:32 labels are wrong, you are screwed.
+49:35 So that's
+49:35 so the the typical components of m
+49:38 machine learning system this is the
+49:39 first part of the question are so things
+49:41 that I I guess data pipelines data
+49:43 preparation things that calculate
+49:44 features
+49:45 features label features and labels of
+49:47 course
+49:48 uh and that's the most important
+49:51 features. So I think features are very
+49:53 important
+49:54 and then the things that monitor this
+49:57 look let's let's make let's make a
+49:59 mental exercise let's have a mental
+50:01 exercise let's imagine you have a
+50:04 computer vision deep learning model
+50:07 right very sophisticated 175 layers and
+50:11 then this is a classification model and
+50:13 on top of on on this model you have what
+50:16 you have a linear classificator
+50:20 what does it Mean it means that actually
+50:23 this model classifies with a linear
+50:26 model and all what is done before is
+50:30 just representational learning
+50:33 transforming the original features to
+50:36 the features which might be fed to
+50:39 linear model very successfully. So see
+50:43 your features just just dismantle
+50:45 exercise you can see that uh so that's
+50:47 why you can take embeddings put them in
+50:50 whatever model would like to and you
+50:52 have a a proper output.
+50:57 Thank you. So let's go to the next one.
+50:59 How to make machine learning algorithms
+51:02 work with other parts of systems uh to
+51:05 solve real world problems. So I guess
+51:07 the question is more about like okay we
+51:09 have this um model that we just
+51:12 discussed we talked about so this model
+51:14 for classifying images so how do we
+51:17 integrate it with the rest of the system
+51:19 and what
+51:19 model is nothing by itself that's why
+51:21 you have a machine learning engineer
+51:22 that's why I I don't like the job title
+51:25 data scientist because what is data
+51:26 science the person who who who does
+51:28 something Jupyter notebook
+51:31 who who needs that
+51:34 yeah people need model integrated in the
+51:37 system. That's why they need machine
+51:38 learning engineer. That's why in
+51:39 Facebook you're machine learning
+51:40 engineer. You engineer you you're coming
+51:43 for the software engineer plus machine
+51:46 learning.
+51:47 So yes, the company needs machine
+51:49 learning engineer. And then again what
+51:51 was the first task for us? Understand
+51:54 what we want to achieve. As soon as you
+51:57 understand what you would like to
+51:59 achieve,
+52:00 it's much easier to achieve that
+52:03 without understanding. Of course,
+52:06 randomly
+52:08 you might achieve a desired goal, but
+52:10 the chances are not high.
+52:14 Yeah. So the most important thing when
+52:16 we start with building a machine
+52:18 learning system is to think about the
+52:20 goal. So this is something that was
+52:22 first in your checklist, right? And then
+52:24 the rest
+52:24 is do we really do we really need a
+52:26 machine learning?
+52:26 Yeah, exactly.
+52:27 Maybe might maybe might maybe might
+52:28 maybe we can be lucky and we can just
+52:30 avoid it. here that's I think that there
+52:33 is this article or more like a mini book
+52:36 from Google which is called the rules of
+52:38 machine learning right and I think
+52:40 there's the first rule is uh what was
+52:43 that you don't need machine learning or
+52:44 something like that
+52:45 I don't know I have read this book you
+52:47 see I passed the ML design interview so
+52:49 that's why I can just now uh lay uh on
+52:53 my back and do nothing
+52:55 that's cool and yeah the question is
+52:58 about the book you mentioned the book
+53:00 was machine learning design patterns,
+53:02 right?
+53:02 Something like something like that from
+53:04 the Google. Yes, but I mean it's a good
+53:06 book. Unfortunately, it it didn't reveal
+53:09 me anything. But still, it's it's okay.
+53:12 It's it's a good book. It's it makes
+53:14 sense.
+53:14 Mhm. Yeah. I guess for practitioners who
+53:16 work with machine learning, they they
+53:18 would think, okay, I knew all that. But
+53:21 what they did the authors is they
+53:22 categorize the
+53:24 it's a good taxonomy. It's a good
+53:26 taxonomy. It's a good book. So if you
+53:29 didn't reveal me anything doesn't mean
+53:30 it's a bad book. It just uh uh means
+53:33 that it's my problem.
+53:37 But I think uh for many people it will
+53:39 be useful because for each pattern there
+53:41 they talk when exactly you need to apply
+53:43 this and how to apply this. So there are
+53:45 they also discuss uh they talk about uh
+53:48 what kind of tools are there and since
+53:50 this is a book from Google there is a
+53:53 lot of focus on Google cloud but they
+53:55 also talk about open source solutions
+53:57 like for example
+53:59 well of course Google cloud is is not
+54:02 the worst cloud definitely we use Google
+54:03 cloud in blockchain for example.
+54:06 Mhm.
+54:06 Yeah. So another question from Alvaro is
+54:09 Alvaro is graduating soon and he is a
+54:12 machine learning intern at a startup and
+54:14 he's starting a job hunt
+54:18 hopefully at Funk. So how much system
+54:20 design should he expect as a new grat?
+54:23 I think no system design at all probably
+54:25 I mean look who would expect from fresh
+54:28 grat to design highly complicated
+54:30 distributed system high load with a uh
+54:34 standard machine learning. I mean it's
+54:36 it's ridiculous and as far as I know
+54:38 well again I didn't apply the fresh grad
+54:40 to the Facebook but as far as I
+54:42 understand there would be no system
+54:43 design at all.
+54:44 Mhm. What do do they ask coding like
+54:47 lead style coding?
+54:49 Lit code style coding behavioral
+54:52 probably that's it like two or three
+54:54 coding and one or two behavioral
+54:57 that's not much to ask from a maybe for
+55:00 a machine learning they might ask about
+55:02 algorithm how do they work inside it? It
+55:04 makes sense, right?
+55:06 Mhm. And then at what level? Uh I think
+55:08 you were saying level four which is a
+55:10 little middle middle level and then
+55:12 level five. So level five but there is
+55:14 no clear like no we'll tell you you're
+55:15 level five you'll be interviewing for
+55:17 level five. Of course it's always some
+55:19 some margin. So you you might end up
+55:21 being level four but still uh go through
+55:24 this interview because you go on the
+55:26 brink between four and five.
+55:29 Mhm. Yeah. So basically when you
+55:31 interview um so they automatically
+55:34 probably add this round and then they
+55:36 use this round to assess which level to
+55:38 put yes this is one of the most
+55:41 important stages to estimate the level I
+55:44 mean you can't estimate okay you solve
+55:46 the lip code medium so does it mean you
+55:49 level four or level eight come on it's
+55:52 it's not a lip code lead code just to to
+55:55 show that to some extent you can write a
+55:56 code which is to be honest in my opinion
+55:59 These solid code style interviews are
+56:02 not very much correlated with the real
+56:04 ability to write the code.
+56:06 Mhm.
+56:07 I mean I
+56:08 show how you can solve puzzles.
+56:09 Yes. Ask how you can just train yourself
+56:11 because well uh to my surprise I've seen
+56:14 people who just told me look look I've
+56:16 done this 400 lead code exercises but I
+56:19 failed on interview because they asked
+56:20 me a new task I've never solved before.
+56:23 So now I'm doing 500 more. And I think
+56:25 wow come on. I mean there are just six
+56:27 or seven patterns even even less like
+56:30 what is that dynamic programming
+56:32 backtracking uh what else uh divide and
+56:36 concquire uh and there are a couple of
+56:38 algorithms you have to know in data
+56:40 structures and and and that that's it go
+56:44 yeah and uh
+56:46 but still that means that you can uh you
+56:49 can just train yourself this lead code
+56:51 style and still you can't be very weak
+56:53 in writing a real code and vice versa
+56:58 it also might happen.
+57:01 So if you're a fresh graduate and you're
+57:04 interviewing for a junior position, you
+57:06 will not have this. But if you apply for
+57:09 a regular let's say machine learning
+57:11 engineer doesn't even have to be senior,
+57:14 you will have this and then there they
+57:16 will decide design decide decide what
+57:18 kind of level to put you.
+57:20 I believe so.
+57:22 Mhm. Okay. I don't think we have a lot
+57:24 of time for more questions. There there
+57:26 is an interesting question from Vijay is
+57:28 about u what is the best way to validate
+57:31 the model performance in production. Do
+57:33 we need humans for that or there are
+57:35 other ways of
+57:36 I mean the best way is to have an AB
+57:38 testing AB test. However, if you need
+57:42 human to have labels then yes you then
+57:45 label it and then receive you. If you
+57:46 don't need human to label the output
+57:50 then you don't need human. So but maybe
+57:51 taste and that's a co coial inference
+57:55 right.
+57:56 Mhm. Yeah. So let's say in this example
+57:58 that we talked about point of interest.
+58:01 So there we can validate based on the
+58:04 feedback how exactly people use our
+58:07 system.
+58:07 But yeah we run we run AB test there and
+58:10 what is the metric of interest? Again
+58:12 you see this question pops up every
+58:15 time. What is the metric of interest?
+58:17 What we actually trying to achieve?
+58:20 Mhm. Yeah. And in some cases, I guess in
+58:23 this fraud systems, it's trickier. Then
+58:26 sometimes you need people fraud
+58:28 specialists to look at the transactions
+58:30 and say,
+58:30 well, that that's Yeah. How how fast you
+58:32 can receive labels.
+58:34 Yeah, exactly. Okay. Uh maybe one last
+58:39 uh question. So, it seems like you have
+58:41 a very solid data science profile.
+58:44 Grandmaster at Kaggle. I hope so.
+58:46 That's pretty solid. Did did you did you
+58:48 use the data scientist profile because I
+58:50 told you that I don't like data
+58:52 scientist as a job title. I find it
+58:54 awful and terrible, right? So you just
+58:57 you're just nudging me in my pain point.
+59:00 Mhm. Yeah. So the question is so with
+59:02 this profile, you're very good at doing
+59:05 data science stuff. How did you
+59:06 transition from data science to being
+59:09 good at system design?
+59:11 I mean never was an issue to be honest
+59:14 because I was in the right place in the
+59:16 right time having this opportunity to to
+59:18 do that
+59:20 but it's again it's it's system design
+59:23 very simple we have these uh uh pieces
+59:27 not that many pieces to be honest and
+59:28 you just
+59:31 and that's it
+59:33 okay
+59:34 don't have don't have a good answer
+59:36 okay yeah I guess uh the answer may be
+59:39 just being a practitioner So because
+59:41 models don't live in isolation, right?
+59:43 Yeah. Look, in fact, if you know how to
+59:45 do that and you've been hired, you feel
+59:47 yourself very good. I felt myself very
+59:50 good in Facebook. Very easy. Had a great
+59:52 result of performance review. Me and my
+59:55 team. So it was easy left in the right
+59:58 time. If you take a look into this talk
+1:00:00 right now.
+1:00:02 Okay.
+1:00:03 Okay. I think that's all we have time
+1:00:05 for. So maybe last one. How can people
+1:00:08 find you?
+1:00:09 Uh, well, we can find me on LinkedIn.
+1:00:11 Just type in my name. Uh, I see you just
+1:00:14 use a Y instead of I I with the new uh
+1:00:17 rules. It should be I I on the end, but
+1:00:20 I copied it from Slack.
+1:00:21 Well, I think I think that people can
+1:00:24 can still find me on the LinkedIn and
+1:00:27 and find some questions there.
+1:00:30 Yeah, there are so many different ways
+1:00:32 of spelling Valeri.
+1:00:33 Oh, yeah. Well, not not that many
+1:00:35 different, but there are definitely some
+1:00:36 ways.
+1:00:37 More than one.
+1:00:38 Yeah, true. True. More than one. Some
+1:00:40 ways.
+1:00:41 Okay. And then you can also use W,
+1:00:42 right? Maybe for Germany.
+1:00:44 For for Germany, right?
+1:00:46 Yeah. Okay. Thanks a lot. Thanks for
+1:00:48 joining us today.
+1:00:49 Thank you very much, Alex. And you have
+1:00:51 a great evening and great weekend. Take
+1:00:53 care and see you.
+1:00:55 Yeah. Goodbye. And thanks so

@@ -1,0 +1,1645 @@
+Predicting Financial Time-Series
+
+0:00 hi everyone thanks everyone for joining
+0:02 us today so today we have a workshop on
+0:05 using machine learning for time series
+0:08 data in particular we're going to
+0:11 predict um say so we're go going to
+0:15 predict this the stock market movements
+0:17 right is it correct yes that's that's
+0:20 right one of the most traded exchange
+0:22 traded
+0:24 funds and this Workshop is a part of the
+0:26 course uh the course is on stock market
+0:29 Analytics
+0:30 and
+0:31 um right now I think um I'll just give
+0:35 the floor to you Ian please uh go ahead
+0:38 and um share your screen and let's
+0:40 start um and maybe sorry before that um
+0:45 there are I there are a few links that
+0:47 are important for this Workshop I'm
+0:49 going to share my screen super quickly
+0:51 um to show you where you can find them
+0:54 so these links are in the description so
+0:57 the GitHub repo and stream lead up if
+0:59 you just go
+1:00 below the video click here on the
+1:02 description you will find these two
+1:04 links there okay so now you want the
+1:06 floor is
+1:08 yours thank
+1:10 you I'll share
+1:13 my desktop now you should be able to see
+1:18 it so this is a GitHub repository um for
+1:23 this uh project is it's very similar to
+1:26 what we had um just three uh months ago
+1:29 in in
+1:31 December um here is a screenshot for the
+1:35 dashboard the dashboard is live and it
+1:37 is updated every day and hopefully we
+1:40 will see um how you can do uh similar
+1:46 dashboard um if I click um on the
+1:50 link um so this is this is a stream lead
+1:55 um dashboard you can see here that um
+1:58 we're about to to predict um Financial
+2:01 time series it's a daily time series
+2:03 daily close price for a um TI for a
+2:09 um um for the for the market um stock uh
+2:14 ticker called QQQ which is a NASDAQ 100
+2:19 um um stock price uh replicated in The
+2:23 Exchange Trade fund that that means that
+2:25 you can buy and sell it um if if you
+2:29 want to invest
+2:30 and here uh if we think about
+2:33 the about the analytical stuff uh we
+2:37 will use more than 25 years of data
+2:40 starting from somewhere
+2:42 1999 um and we will split the the whole
+2:46 history into three parts which is a
+2:47 train set validation set and a test set
+2:51 so uh train and validation it's used for
+2:55 uh for training and validation of models
+2:58 and test set we will will predict using
+3:01 different models um the next one to 3
+3:05 days uh close price and we will compare
+3:09 the predictions against this um test set
+3:13 and um so you can see that we uh we have
+3:17 around 70% of data on a train 20% of
+3:21 data on validation set and 10% of data
+3:23 on test
+3:25 set um that's uh how we will uh see the
+3:29 predictions if we remove uh confidence
+3:34 intervals and
+3:37 uh zoom in a a little bit so that's
+3:40 that's the actual um close price and
+3:44 there are three predictions from three
+3:46 different models um and then all these
+3:49 predictions can be higher or lower and
+3:52 uh they are um they always have some
+3:56 some error um then
+4:00 if if we want to compare those
+4:03 predictions in terms of model Matrix and
+4:06 I will explain in more detail when we
+4:08 will build these models what are the
+4:10 Matrix um I I created this tab which is
+4:14 called Model performance Matrix and one
+4:17 thing uh which is particularly important
+4:19 and it's it's not very classic uh in
+4:22 terms of metrix performance one thing is
+4:25 how um our models are predicted better
+4:30 than the Market's growth unconditional
+4:33 that is if you flip a coin and decide
+4:36 where whether you want to invest or not
+4:39 to buy that um ETF uh how we we are over
+4:45 predicting this and that that's what you
+4:47 see in unconditional win rate around
+4:50 54% um and um our win win rate sometimes
+4:56 it's higher sometimes it's lower it is
+4:58 6650 4 56% so the uh the superiority of
+5:05 of our models uh is somewhere between
+5:09 minus one to 2 to 10% so models are
+5:14 slightly over predicting the market but
+5:16 that's not the most complicated models
+5:19 we we're just here want to discuss um
+5:22 how you can start from from the scratch
+5:24 and how you can um compare um no code
+5:30 Solutions or almost no code solution
+5:32 than statistical approaches and more
+5:34 recent uh deep learning approaches so
+5:38 let's um let's begin I will show my
+5:43 visual studio code that's uh
+5:47 the um that's the rapper um you can also
+5:53 clone it and try to run it all the
+5:55 instructions are there it should be
+5:57 relatively straightforward with
+6:00 just a few um commands to run one second
+6:05 I will show you how to do
+6:07 this so if you scroll down after you
+6:12 clone this this um repo uh you need to
+6:16 set up a virtual environment install the
+6:19 activate the environment install the
+6:22 dependencies and then um after after you
+6:26 do this you run a few scripts first
+6:29 script will initialize a database
+6:31 essentially it will create a a database
+6:35 file with with a data um you already
+6:38 have that that database with with the
+6:41 data it will just
+6:43 recreate uh things you can um remove it
+6:47 locally and check how it's working uh
+6:50 second um script will update the market
+6:53 data um it will update incrementally so
+6:57 it will look at the new dat
+7:00 uh from from the API provider and um
+7:04 write it to to the database or to the
+7:06 file and then the next script will um
+7:09 train all the models um we'll do splits
+7:14 we'll train uh those models and make
+7:18 predictions so it's it's not uh ideal
+7:22 because sometimes when you have a big
+7:24 model you need to um train it somewhere
+7:28 uh on a powerful machine Mach and then
+7:30 save the model and then use uh that
+7:33 saved model for realtime predictions in
+7:36 our case um we we can allow doing this
+7:41 um every day retraining all the models
+7:43 and then um when we do all of that um
+7:48 you will see locally in in your database
+7:51 so there is a uh folder data and this is
+7:54 a database with a few tables um first uh
+7:59 raw Market data it's um created when you
+8:03 download data and you can use any ticker
+8:06 you want so I encourage you to clone the
+8:10 repository and use your favorite stock
+8:12 or ETF or traded instrument and see how
+8:15 it's working so that's the orinal data
+8:18 um then after the models are trained and
+8:22 after Fe feature engineering is finished
+8:25 you will see a few more tables created
+8:28 uh so we have three models which is a
+8:31 profit um almost no code model it's uh
+8:35 not not many parameters uh used there um
+8:39 then ARA which is a statistical model
+8:41 and DNN it's a deep neural network and
+8:44 for each model uh you will see a table
+8:48 um features so that's some additional
+8:51 feature engineering which is uh done on
+8:54 top of the raw data and here um we don't
+8:57 have many it just uh uh we copy the
+9:01 close price one column and uh name it y
+9:05 um so um later when we do the training
+9:10 We join Market data with uh these profit
+9:14 features and we have a bigger table so
+9:16 that uh uh you can use it as a as a data
+9:19 frame for everything for example for uh
+9:22 for DNN we have more features which is
+9:26 returns volatility moving average RSI so
+9:31 um we have more features here and uh
+9:34 after um um the models are trained and
+9:39 and uh we have the predictions uh you
+9:42 will see tables for for the predictions
+9:45 and here predictions are not for all 20
+9:48 uh 25 years but only for the test data
+9:51 set which is approximately 3 years 10%
+9:53 of the data um and you will see here um
+9:58 the predict value confidence interval
+10:01 lower and higher and um we will discuss
+10:05 later what does it mean and why do you
+10:07 need to have a confidence interval so
+10:10 that's uh what what we have in in our
+10:13 database and the the last thing uh which
+10:16 we also store um in a table it's a
+10:19 models comparison we have three three
+10:21 models it can be different versions of
+10:24 of models or different types of models
+10:27 and metrics to compare um those models
+10:30 and that's exactly what you see in the
+10:32 dashboard so all data uh which is used
+10:36 in the dashboard is uh uh queried from
+10:39 from this local
+10:41 database and now let's uh begin um from
+10:46 the very start uh you can read about all
+10:49 the steps of for reproduction
+10:52 here um so um
+11:00 I I Tred to highlight uh how I started
+11:03 to do the the project so that you can
+11:05 try to do the same if you want uh to
+11:08 recreate the whole um structure first
+11:13 thing I I started from the manual unor
+11:17 start um notebook I try to download the
+11:20 data try to build some visualizations on
+11:23 the data and made sure that we have a
+11:26 valid raw data then I started to build
+11:31 uh models in a different um notebook um
+11:36 first model was a profit model it's a
+11:39 metas um outof thee Box model um you can
+11:43 see that um there are different
+11:47 parameters but essentially if you want
+11:49 to use this you just need to read the
+11:50 documentation and try to call the
+11:54 prediction um function with the
+11:57 different parameters and see how how it
+12:00 it works then I worked on the ARA model
+12:03 uh that's another notebook and you can
+12:05 see all the details there um finally it
+12:08 was a deep neural network model and
+12:11 that's uh the the last notebook so after
+12:15 um trying all those predictions uh in uh
+12:18 in three
+12:20 notebooks I I was satisfied with the
+12:24 models that I have and um with the um
+12:29 statistics and I wanted to move to the
+12:33 production phase so
+12:36 um if uh and and also I used everything
+12:41 uh I I used a assisted
+12:45 um client um V vs code plugin which
+12:50 looks like this client and you can write
+12:53 something and uh there are two modes
+12:56 plan which gives you answers here and
+12:58 act which
+12:59 uh will change files on your system and
+13:03 um first I I wrote in a plan mode that I
+13:07 have this these uh models I want to
+13:09 productionize my model um and uh I
+13:12 showed uh my previous uh Workshop um so
+13:17 that um the AI assistant can learn um on
+13:22 the on the data structure and uh it
+13:25 immediately created um additional
+13:28 folders
+13:29 files and um everything looked nice but
+13:33 it it took me about two days to to debug
+13:36 that without AI it would be probably one
+13:38 month so first thing for for the
+13:40 production sorry
+13:42 for interrupting you so I just shared
+13:46 the link to the previous Workshop in the
+13:48 live chat so if you want to see this
+13:50 client in action youone actually was
+13:52 showing how to use it in the previous
+13:54 Workshop so I included the link and I
+13:56 will also put this in the description of
+13:58 this video
+14:00 okay thanks Alex uh we can we can try it
+14:04 uh I think in the end um if we have
+14:08 time so first thing it created the the
+14:12 database um it's a just one um one file
+14:17 python file um uh which makes sure that
+14:21 um we have a SQL light uh database with
+14:26 the necessary tables created and um
+14:30 here we we can see um we can look into
+14:33 this file it's uh it just um if if you
+14:37 are doing any analytical stuff you know
+14:40 there is a SQL language and with this
+14:42 SQL language um you can create or
+14:46 replace uh or delete uh any data or
+14:51 database um tables in in your uh
+14:54 database so this uh this code just
+14:57 creates uh all necessary uh tables which
+15:00 I showed uh you before and adds
+15:04 additional constraints like you can't
+15:06 create you can't add uh two um entries
+15:10 for one ticker um for one date say if
+15:14 you run it twice your your data
+15:16 generation code it it just won't allow
+15:20 you to to submit uh that that starts so
+15:24 first thing first we created um that um
+15:28 database with few tables then
+15:32 um the AI assistant created uh different
+15:36 scripts on the data creation on the on
+15:40 the data upload and on on the model gen
+15:45 training and predictions so data upload
+15:48 is uh easy and it is uh almost um the
+15:53 same function that you can see in three
+15:56 experiments um it just done loads data
+15:59 from Yahoo finance recently it was
+16:02 broken yaho Finance is a free data
+16:05 provider with with more than 300,000
+16:08 users but sometimes it breaks and I had
+16:11 to use another free provider which is
+16:13 called stook um so that's um if one data
+16:19 API is not working I could uh call
+16:21 another one and then um when the data is
+16:25 downloaded um we populate uh the table
+16:28 row data and uh create uh some technical
+16:32 indicators and populate um features or
+16:37 tables needed for each um model and a
+16:42 assistant could know which features I
+16:45 wanted to use from those experiment
+16:47 notebooks um then um there are um
+16:53 different
+16:54 [Music]
+16:56 um uh okay uh after after we uh we
+17:02 populated the data the next thing um we
+17:07 created three model files and um all
+17:11 those uh modeling files are stored in
+17:15 models folder um so I think now it's
+17:19 called ARA uncore model profit uncore
+17:22 model and DNN uncore model uh these
+17:25 model files they actually use improve
+17:29 um coding Style with classes it's
+17:33 slightly more advanced uh but it's um
+17:37 nice to read um you can you can do both
+17:40 versions what you see in experiment
+17:43 notebooks and and here and after uh
+17:46 three three models were created uh there
+17:49 there was one script which is a train
+17:52 underscore models which uh took the data
+17:55 with the features from from the tables
+17:58 and and uh used um three models um
+18:03 scripts functionality to train the model
+18:05 and predict the data and saved all the
+18:09 predictions to the to the database to
+18:12 the same database so at this point uh we
+18:15 had everything working fine for us and
+18:18 uh final two final steps were um to
+18:22 create stream stream L dashboard it was
+18:26 relatively easy because I used uh plotly
+18:29 Express Dynamic grass visualization
+18:31 straight away in the experiment
+18:33 notebooks so
+18:36 um the AI assistant could copy that code
+18:40 straight away uh to to the streamlet
+18:43 library and you can see it uh in in the
+18:46 web and um um last step was to automate
+18:52 everything um the idea here is that um
+18:55 you saw there are four um scripts that
+18:59 you need to run um to to see how it's
+19:03 working locally um we can wrap up those
+19:07 scripts um to the uh file which is
+19:10 called daore
+19:12 update. yaml and uh we can call uh we
+19:17 can ask GitHub to to do this for us
+19:20 every day and GitHub gives uh 2,000
+19:23 minutes every months for free um this
+19:28 this work flow used at maximum 3 minutes
+19:31 so I can do it every day and I will use
+19:34 only less than 10% of my quot so now
+19:39 let's
+19:40 uh dive deeper into the um notebooks
+19:47 which is the most interesting part first
+19:49 thing um on on the data on the manual
+19:53 start you can see um that here I I used
+19:57 uh yaho Finance
+19:59 and it worked uh two weeks
+20:02 ago this week if you run it again it
+20:05 might not work and you can check in in
+20:08 other notebooks that's I used stook um
+20:12 for downloading the data when we have
+20:15 the data everything is stored in a
+20:17 pandas data frame like this just a few
+20:19 columns open uh open price high low
+20:23 close volume of trade dividend stock
+20:27 splits and capital gains and it's a
+20:29 daily data it's not
+20:32 um for every day it's only when the
+20:35 market is open and you need to be aware
+20:38 of
+20:39 that um normally it's um from Monday to
+20:43 Friday but sometimes markets are closed
+20:45 for uh for the holidays um then I did
+20:50 some data Transformations um like
+20:52 created uh additional columns like uh
+20:56 growth which is um the we divided a
+21:00 close price uh today on a close price uh
+21:04 shifted on one day ago 3 days ago or 90
+21:09 days ago or
+21:11 252 and that's one exactly one year ago
+21:15 because in uh one year usually it's 252
+21:18 trading days and um there are some more
+21:23 um additional features and generated at
+21:28 that step and you can see that the
+21:30 pandas data frame our main data is now
+21:35 looks looking like this um so features
+21:39 are
+21:40 generated uh I checked um the the data
+21:45 here is the dynamic visualization graph
+21:48 uh exactly the same graph that you see
+21:51 um on the
+21:52 website um three different colors train
+21:56 validation tests uh
+21:59 then um there is a um different trading
+22:04 volume um and usually around um stock
+22:10 crashes uh or some significant events
+22:13 this trading volume goes um up and that
+22:17 means that it's it becomes incredibly
+22:19 hard to predict any data uh then I added
+22:22 uh growth year onye um stats and some
+22:26 additional uh metric like um growth
+22:30 distribution um actually this one is is
+22:35 a better view growth uh represents um
+22:40 our potential outcome from buying and
+22:44 holding this this asset if if we buy and
+22:48 hold for one day usually it's it's no
+22:51 growth so you final your next day price
+22:54 is is about the same like 100% that's uh
+22:58 why you see this U bell-shaped curve uh
+23:02 which is quite narrow and if you um hold
+23:06 for 30 days it's also B shaped curve but
+23:10 it it can be 20% or 10% change in a
+23:14 positive or negative um uh way uh but
+23:19 also from from this picture if you think
+23:22 what of what you want to predict and for
+23:25 how long you want to to hold this um
+23:29 you you want to predict uh longer
+23:31 periods growth 30 days because um with a
+23:36 fewer uh trades or fewer uh Investments
+23:40 you you can get uh better um Returns the
+23:44 problem is that it's uh usually it's
+23:46 harder to do this because it's it's a
+23:49 further way uh and uh last thing from
+23:53 from the initial data which uh you want
+23:56 to think about it's um
+23:59 um some idea of uh of the volatility of
+24:03 of the time series that means that when
+24:07 um there is a rapid movement or big um
+24:11 amount of volume traded on the market uh
+24:15 you will see that um the graph uh goes
+24:19 up or down quickly and those um upper
+24:24 confidence interval and lower confidence
+24:26 interval uh that that band is is
+24:29 becoming wider so I I showed it here
+24:33 that's uh standard deviation of of that
+24:35 metric goes from 34 to 10 or even 15
+24:42 20 we will see later uh that um in in
+24:46 this period of time um our predictions
+24:49 are not are even less accurate and let's
+24:54 start from from the first um model which
+24:57 is a profit
+24:59 um this is a metas um model out of the
+25:04 box um you import uh the dependencies uh
+25:09 you don't need to know much about what's
+25:12 inside what's the theoretical Foundation
+25:16 it's it's just some library and you need
+25:18 to prepare the data uh in a specific
+25:21 format that is a um data time stamp
+25:26 without time zone and what you want to
+25:28 predict which is a y um column I also
+25:34 have some additional features generated
+25:36 because uh later you can use those
+25:39 features as additional regressors or
+25:42 additional parameters to help uh that um
+25:46 model to work better so we downloaded
+25:49 the the stock data and transformed the
+25:52 data um same thing which you saw in the
+25:56 manual start um pandas data frame or
+26:00 table with a few um
+26:05 columns and that's um available features
+26:09 just 10 columns and uh first um we we
+26:16 want to to do the simplest predictions I
+26:18 I built a um wrapper function predict uh
+26:22 underscore WID underscore profit to try
+26:26 different um
+26:29 different mod modes for um for those
+26:33 predictions here you see profit and
+26:35 sometimes I had seasonality mode
+26:37 sometimes I had change Point sometimes I
+26:39 had
+26:41 um country
+26:43 holidays um but you you can do without
+26:46 it it just uh not to copy the codes uh
+26:50 many many times and first thing is that
+26:53 I just feed in the the data and ask it
+26:56 ask it to to pred predict so that's um
+27:00 our time series from 1999 to
+27:04 2022 so I remove test data and um here
+27:09 you can see how the data fits uh the the
+27:12 real um time series and um the model
+27:18 can't fit perfectly the um Real Time
+27:22 series and from the component from like
+27:27 the there are
+27:28 standard um plots that you can see from
+27:32 from that um Library first thing is that
+27:37 it tries to extract the trend we see a
+27:40 constantly growing um time serious and
+27:45 um it's um quite hard to to predict uh
+27:49 when time serious are exponentially or
+27:52 or
+27:53 growing um constantly growing so you
+27:55 need to deduct um that that Trend and
+28:00 that's why profit tries to extract this
+28:02 this
+28:03 trend then there is um uh monthly
+28:08 seasonality so you can see um the higher
+28:13 growth in January and February and lower
+28:16 growth in in March April May um and then
+28:20 uh there there is a daily seasonality
+28:22 it's not much of the seasonality on
+28:24 Monday it's 43 so it doesn't matter uh
+28:28 what's the exact number is here it just
+28:31 to to compare uh those numbers between
+28:34 each other visually uh we know that
+28:37 Sundays and Saturdays markets are closed
+28:39 and you we can look only from Monday to
+28:41 Friday and uh the only thing is that on
+28:45 Friday the the seasonality is quite
+28:47 lower and it's a well-known fact that on
+28:51 on Friday uh markets can go uh lower and
+28:55 uh there is a lower volume
+28:59 um next thing is we try to improve um
+29:02 our predictions uh or our model uh
+29:07 fitting uh we just add uh additional um
+29:12 parameter which is a seasonality mode
+29:14 multiplicative and you can see that
+29:16 instead of a almost straight line um we
+29:21 see now how this um model is trying to
+29:25 impat uh monthly and weekly
+29:28 um and daily
+29:30 seasonality and it's kind of um working
+29:35 in not in the addictive uh way but uh
+29:38 into multiplicative it essentially
+29:42 increases the the range of of the graph
+29:46 uh around the
+29:48 trend next thing is uh we we we can add
+29:53 country holidays it's not uh exactly uh
+29:57 the the thing which we need to have
+30:01 because um there are some holidays when
+30:03 markets are closed um and they are not
+30:06 covered in this country holidays but
+30:08 some holidays like New Year's Eve are
+30:11 covered with this
+30:13 um approach and uh under the hood the
+30:19 this um data tries to um create
+30:23 additional columns for each holiday and
+30:26 tries to get those uh F effects uh
+30:29 whether um the the price uh change is
+30:33 higher or lower around that holiday and
+30:37 you can see here it's it's not that
+30:39 visible in in this particular view but
+30:42 here you can see uh there is an
+30:44 additional graph um or component which
+30:47 is called holidays and
+30:51 um I would say only New Year's Day Has
+30:56 uh the biggest uh impact here over the
+31:00 years uh and Independence Day in the
+31:05 US next thing um is um we know that um
+31:11 sometimes markets are experiencing um
+31:14 crashes or um uh big volume of Trades
+31:18 and um the model uses a lot of data it
+31:22 uses 25 years of data and we can assume
+31:26 that uh probably we can create three
+31:29 different models or whatever number of
+31:31 models we need around specific um ranges
+31:36 of dates say um I checked on Wikipedia
+31:41 the um um most impactful days and it was
+31:46 2008 and
+31:47 2020 when uh markets moved uh uh more
+31:51 than 10% up or down and it was S&P 500
+31:57 which was a very big move and I asked
+32:00 the model to add these change points
+32:02 these these dates you can see visually
+32:05 that uh there are three different models
+32:07 one model is uh everything before 90
+32:11 before
+32:12 2008 and it was declining um in in Trend
+32:17 despite the fact that uh the real data
+32:21 was up and down second model uh was
+32:24 between 2008 and 2020
+32:28 and last Model was between 2020 and 2025
+32:32 and uh actually the important thing for
+32:34 us is is that it learns better the the
+32:37 on the last period of time um and it can
+32:41 predict better what will happen
+32:44 next uh last thing uh actually you can
+32:48 see from here there are three ranges of
+32:52 of
+32:53 dates last thing that which we want to
+32:55 add uh we want to add additional regret
+32:57 pressors which um is essentially um some
+33:02 parameters which are available on the
+33:05 date of prediction here I have
+33:08 volatility range which is a difference
+33:11 between close and open price moving
+33:13 average 20 days move average 50 days and
+33:17 uh you can see that now the model
+33:20 performs even better because um there is
+33:24 no big gap between actual data and PR
+33:27 addicted data because those regressors
+33:30 are actually quite powerful uh and
+33:33 previous stats are very
+33:35 important um that's uh what we have on
+33:38 profits we do not um discuss what's
+33:42 going on inside the model we just call
+33:45 one simple function and add uh or
+33:49 provide uh the data and see how it
+33:52 predicts um next thing after we we
+33:56 trained or we checked
+33:59 the the best model we try to to make to
+34:02 verify how it's prediced that I created
+34:05 additional functionality and uh now I
+34:08 showed um the last period of data from
+34:11 2022 to
+34:13 2025 and uh that was a very
+34:17 successful uh period of time of a yearly
+34:20 growth of more than 20 25% for that
+34:24 particular ETF QQQ which is a heavily
+34:27 Tech focused it was a a rapid growth um
+34:33 and here you can also see that uh I show
+34:38 um real data in um as a points and
+34:42 predictions as a line uh one natural
+34:46 thing which we want to do we want to
+34:49 understand how um it uh predicts
+34:54 the um the the actual data
+34:58 and the easiest thing to do is to
+35:01 calculate residuals which is a
+35:02 difference between actual data which is
+35:05 y minus y hat underscore hat which is a
+35:09 prediction and that's what you what you
+35:12 see in in the residuals which is a error
+35:16 uh term so here um at the train data the
+35:21 difference was quite small but it was
+35:24 not growing that fast at the validation
+35:26 data the difference is is getting bigger
+35:30 um and at the test data the difference
+35:33 is getting even bigger and one thing
+35:36 which we want to to see we want to see
+35:39 those um points uh distributed around
+35:42 zero so that model sometimes goes uh
+35:45 over predicts some sometimes under
+35:47 predicts and here generally we see this
+35:50 picture but there is a dependency or
+35:53 correlation of uh of Errors that's an
+35:57 additional thing which we need to think
+36:00 of uh that's a Time series and we want
+36:03 to work with that correlation
+36:07 somehow and uh so that's a like a
+36:11 statistical or approximate estimation of
+36:14 um quality of uh of our model uh if if
+36:19 we want to um to do the the trade um so
+36:25 I I did some check on on the
+36:29 residuals
+36:30 um the distribution of
+36:33 residuals um
+36:36 so um before before trading Matrix uh I
+36:40 want to introduce classic statistical
+36:43 Matrix which is mean absolute error and
+36:46 root mean square error uh mean absolute
+36:49 percentage error it's also used
+36:52 sometimes but not that often one metric
+36:54 which we use most mostly in in this um
+36:59 Workshop is root mean square
+37:02 error uh and uh it says um one thing if
+37:07 we um take the difference or actually uh
+37:12 residual for every single point at the
+37:15 test um interval and um some um the
+37:22 those differences and take a square root
+37:26 and divide on on N that's an average um
+37:30 square root uh that's that's a square
+37:33 root of an average uh error uh and
+37:36 that's the one number which says uh
+37:38 whether model is good or bad and ideally
+37:41 this these number should go down if your
+37:44 model is uh is BET is getting better and
+37:46 better but if you do uh specific um
+37:50 strategy based on on the prediction say
+37:54 you want to buy at some moment of time
+37:57 and and cell um you might want to to
+38:01 look at the other metrics um and we can
+38:07 look at this uh metrics they they are
+38:10 introduced
+38:12 here
+38:13 um so first thing is a win rate that's a
+38:18 percentage um of
+38:21 um points when our uh model guesses the
+38:25 direction correctly say our our strategy
+38:28 is to buy when model predicts uh that uh
+38:32 time series will go up in um uh in one
+38:35 or three days and we buy immediately and
+38:39 win rate here shows us um that um we
+38:44 this model can predict 58 to
+38:48 63% correctly that's a high win rate um
+38:52 then we can calculate returns that's a
+38:55 average um
+38:58 um monetary value uh average growth of
+39:01 of your Investments uh based on the
+39:04 dates when you decide to tra to to trade
+39:07 and it's also positive that that's good
+39:09 trading
+39:11 activity uh this model decided to to
+39:13 trade 146 times in in the last three
+39:17 years on the test set so here I have tra
+39:20 uh train validation and test sets and
+39:24 mostly We compare all models on the test
+39:26 set because we we never use this ass Set
+39:30 uh for model training um and validation
+39:33 so it's out of the sample prediction and
+39:36 that that's how we can understand what
+39:38 the model is is good or bad and last in
+39:41 Risk metric uh that's a profit divided
+39:44 on loss ratio so um our profits is
+39:50 approximately 60% higher than than
+39:53 losses um you see all those um threat
+39:57 M trading strategy metrix uh
+40:00 explanations here you can read um about
+40:05 them and so uh the the thing is that we
+40:09 use exactly the same um graphs uh to
+40:12 calculate the residual and to calculate
+40:14 the trading Matrix for all uh models and
+40:17 then we compare those models so here um
+40:21 one thing that's that I want to
+40:23 highlight here and this is actually the
+40:26 most important thing uh first uh firstly
+40:29 I saw that win rate is 58
+40:32 63% it's quite high but historically
+40:35 last three years were very successful
+40:39 for American Stock markets um and for
+40:42 tax stocks overall so I wanted to to to
+40:45 see how model outperforms the market um
+40:50 and uh I just calculated the
+40:53 unconditional win rate that's what what
+40:55 you saw in in the dashboard and this
+40:57 model
+40:58 outperformed better on the train and
+41:01 validation set and this is a natural
+41:03 thing because we are training the model
+41:06 we are fitting with the many parameters
+41:08 and we're trying to improve this model
+41:12 uh so that it can fits the data it can
+41:15 see perfectly um but the last thing
+41:18 which is outperformance on the test side
+41:21 it's still positive it still says that
+41:23 this model is better um than um random
+41:28 coin um so you can use it without any
+41:31 mathematics um just feed Feit the model
+41:35 so that's uh one um one notebook uh for
+41:39 the first model it I call it almost no
+41:42 code but if you remove uh all fancy
+41:46 graphs uh it's it's actually not not
+41:48 that
+41:50 hard question about some of these
+41:52 metrics so when you have the Baseline so
+41:56 you said okay like last three years were
+41:58 quite good for the market and then you
+42:01 introduced the Baseline um can you
+42:03 scroll a bit
+42:05 up so this unconditional um yes so the
+42:10 Baseline you compare to is just flipping
+42:12 a com coin to decide if we should invest
+42:15 into the stock or not yeah it's like uh
+42:18 number of if we predict for uh for the
+42:21 next one day or three days ahead it's a
+42:24 percentage of days when uh
+42:27 uh stock price or ETF price was higher
+42:31 uh in one or three days uh than um today
+42:36 that's yeah fing a coin but more like
+42:39 constant prediction so we always assume
+42:41 it's going to go up so we always decide
+42:44 to buy that's the strategy right yeah
+42:46 speaking a coin it's essentially the
+42:49 same if you if you do this many many
+42:50 times but um yes you you can think uh
+42:54 like this as well
+42:57 thank you um okay and now let's move to
+43:01 ARA so I was um trained to be a
+43:05 statistician I took many uh courses on
+43:09 statistics uh when I was studying 15
+43:11 years ago and I always um try to compare
+43:16 modern blackbox approaches or deep
+43:19 neural networks against um classic uh
+43:23 statistics and here you will see uh why
+43:27 the the main reason is that um we see
+43:32 more explainability so we see what is
+43:35 important what is not what is working
+43:37 why the model is working and we try to
+43:40 understand the model limitations whether
+43:42 the model is linear or not um so let's
+43:46 let's check this uh ARA
+43:49 model um I took one particular type of a
+43:54 model uh which is ARA 21 two so there
+43:58 are three parameters first parameter is
+44:01 um Auto regressive component it says
+44:04 that we try to predict uh the next uh
+44:09 close price uh using uh two previous uh
+44:13 data points that's uh What uh what you
+44:16 see to here uh you can you can have um
+44:20 10 or you can have 20 and I tried that
+44:23 as well and all those uh uh metrics are
+44:29 sign are still significant but you need
+44:32 to be cautious on when you um do this
+44:36 because it may overfeed the model so it
+44:39 it can focus uh too much on the um
+44:43 previous data and you want the model to
+44:45 be relatively simple or generalized
+44:48 model so next parameter is I um so when
+44:53 it is zero it means that we predict um
+44:57 absolute price or close price straight
+44:59 away um that's not good for this type of
+45:03 a model because it it won't converge
+45:06 essentially it won't show you any
+45:09 anything when the time series are not
+45:11 stationary when it is growing fast and
+45:13 we saw that the trend is is quite big so
+45:18 what the model can do it can uh do the
+45:21 the difference in instead of prediction
+45:24 of the next price we try to predict um
+45:27 the the change uh which happens between
+45:30 today and
+45:32 tomorrow um and the difference uh is
+45:36 more stationary sometimes you need to to
+45:38 take two second order differen in and
+45:42 ma2 uh that's a moving average component
+45:45 with with two laks that's what you've
+45:48 seen that um uh residuals are correlated
+45:51 and we try to work on on this and adjust
+45:56 uh on the correlated
+45:58 errors so you here you can see uh the
+46:01 description of of the model and on top
+46:04 of that model I try to um uh combine uh
+46:10 this approach with a classic regression
+46:13 uh in in uh this Library it's called
+46:17 Exogen exogenous regressor so I
+46:20 submitted uh same um features like
+46:24 volume price range moving averages
+46:28 volatility day of week um to to the
+46:31 model so it can take into account those
+46:34 numbers and predict better so that's
+46:36 that's the model equation a lot of
+46:40 um letters here if you see this uh for
+46:44 the first time it it may be hard uh to
+46:48 understand uh I'll try to explain uh so
+46:51 first uh thing this model is linear you
+46:54 don't um see any complex
+46:58 functions um and it's just a
+47:02 multiplication and sum of uh of columns
+47:06 or of or like um data points um and some
+47:12 of the data points like uh Y is is our
+47:15 data or close price Delta Y is it's uh
+47:20 what happened with the close price and
+47:22 Delta YT what happened at the moment T
+47:26 um and uh usually uh we have those
+47:30 regressors like Del Delta YT minus one
+47:33 and that's the difference one period ago
+47:36 Delta YT uh minus two difference uh of
+47:41 price two periods ago that uh
+47:44 corresponds to AO regression too and
+47:47 there are some some other parameters
+47:49 which you want to estimate the thing is
+47:52 uh that we we want to find Optimal um
+47:56 parameters here it's a
+47:58 constant um these Auto regressive
+48:01 coefficients ma coefficients and
+48:04 regressor coefficients that's what we
+48:06 essentially do when we feed the model so
+48:09 we um find uh best um values and uh
+48:15 after doing this we can predict what
+48:17 what will happen next uh the the flow is
+48:21 the same we download the data we
+48:23 transform the data to get a good
+48:25 question about what you just presented
+48:28 so in ARA you had three components right
+48:31 r e and Ma right and you selected 2 one2
+48:36 like what was the logic like did you do
+48:39 some sort of cross some sort of
+48:41 validation to come up with the best
+48:43 parameters you used common sense or what
+48:47 um so I I knew that um I I want to
+48:51 include I which is more than zero
+48:54 because uh the time serious uh um was
+48:57 was growing and the the model won't work
+49:00 without it then I I used from my this is
+49:03 what you sorry for interrupting again so
+49:05 you meant that there is station so you
+49:08 need to take the difference because
+49:09 there is stationarity right in the yeah
+49:12 yes like
+49:13 visually there's a trend right yes that
+49:16 that there is a trend and uh um
+49:20 especially when when the market when the
+49:23 price is visually going always going up
+49:28 it's it's hard to to predict what we
+49:30 want to see like returns it's
+49:32 distributed around zero that that means
+49:35 that returns can be plus 5% minus 5% or
+49:40 plus 10% minus 10% but they are not
+49:42 growing every every day to to the
+49:46 infinity it's it's a mathematical thing
+49:49 that's um when when you try to to
+49:51 estimate the the optimal coefficients
+49:54 here it it just won't work for the
+49:56 constantly working uh constantly growing
+49:59 uh uh time series then I knew that uh
+50:03 previous data is is very important
+50:06 that's why I included some number of AR
+50:09 uh I wanted it to be relatively small
+50:13 and same for for Ma I tried uh to to
+50:17 find the optimal model and there is an
+50:20 implementation which is called autore
+50:22 ARA um and but then I need to introduce
+50:26 a lot of additional statistical tests
+50:29 and it becomes more complicated like uh
+50:33 the answer is that that's
+50:35 um just a common sense model which is
+50:39 not very complex but if you want to do
+50:41 it properly you need to spend more time
+50:44 on it yeah and there's also a question
+50:46 about Cima Cima I think it's seasonally
+50:49 adjusted yes uh now the State ofth art
+50:55 uh implementation it's called s Max uh
+50:58 which also includes seasonal component
+51:02 and something else um I used classic but
+51:06 it it just adds more parameters um you
+51:10 you can try Sara as well so in this
+51:13 linear equation we would have two more
+51:16 uh parameters right in case of yes yes
+51:19 it can be I already have uh with
+51:22 exogenic exogenic regressors I already
+51:25 have some season
+51:27 parameters so I'm kind of replicating
+51:29 this SX but maybe it is something
+51:34 else
+51:36 um okay let's uh let's proceed so um I
+51:41 won't spend time on time uh on
+51:46 converting um
+51:49 the features you can see here that there
+51:53 is a one um one function
+51:57 when I create the model and I Feit the
+52:01 model or train the model uh submitting
+52:04 it um my data
+52:08 frame
+52:10 and uh one thing what I want to show you
+52:13 and uh actually it shows here s marks
+52:17 results so maybe my uh classical it uses
+52:22 this uh um updated or latest version of
+52:26 a model model um so um that's uh what
+52:30 you see normally when when you run the
+52:33 statistical model it's a lot of data you
+52:36 see that um there are some
+52:39 um tests on the quality of the model A
+52:43 AIC Bic or some numbers which you try to
+52:47 um to make it lower or higher depending
+52:50 on the model um then there are some
+52:53 tests on the uh
+52:57 um say skew and curtois and uh quality
+53:02 of residuals but what's the most
+53:06 important thing here is that we have our
+53:09 aggressors which is uh range ma 20 ma 50
+53:12 volatility day of week and um
+53:17 arl1 which is auto regressive uh one
+53:20 period ago
+53:22 arl2 ma. L1 ma. L2 and uh these are
+53:28 coefficients um so bigger coefficient in
+53:31 our model uh in in our linear model will
+53:35 mean that this this metric is more
+53:38 important and when um this um um
+53:44 coefficient is big and also um the
+53:49 confidence interval for for the
+53:50 coefficient which is not just one
+53:53 estimate 83 but the model says that
+53:56 coefficient should be somewhere between
+53:57 0 83 and 84 Which is higher than zero
+54:02 which means that this parameter is
+54:04 statistically significant and we want to
+54:06 have all all parameters which are
+54:09 significant that means that the adds uh
+54:12 to the to the quality of the of the
+54:15 model and uh if you add more and more um
+54:19 parameters you may see some of the
+54:21 parameters that are not significant or
+54:23 you may see absolute values of
+54:24 parameters which are small so with this
+54:28 um description uh with this uh table you
+54:31 can learn what is important what is not
+54:34 and um here you can see the the findings
+54:38 uh and U some uh description of of the
+54:42 coefficients the these findings were
+54:44 generated by by the AI assistant I just
+54:46 showed the model output and it's created
+54:50 for for you um essentially it's it's
+54:53 exactly the same graph we have uh test
+54:57 uh prediction what we see here uh that's
+55:01 uh the feature of this model it's it's
+55:04 quite simple and uh it it's uh learned
+55:10 um on the period of of a um quick growth
+55:15 recently and that's how it's all always
+55:18 over predicting here so um if you think
+55:22 as a statistician that's not very good
+55:25 that's uh predict IED uh line is always
+55:28 almost always uh is higher so it's it's
+55:32 it's very optimistic but um in in case
+55:36 of this successful two three years it's
+55:39 actually a good thing and that's how
+55:41 this model could um get a better
+55:44 performance so when we compare
+55:46 statistical metrics like overall mean
+55:49 square error we will see that for the
+55:51 test set it's it's always um over
+55:55 predicting and it it can be quite a
+55:58 significant root mean square error so
+56:00 statistical error is is bigger but um
+56:05 it's it behaves better uh in in our
+56:08 returns in our environment that may not
+56:10 be always the case so here residuals are
+56:14 still correlated maybe I need to add
+56:17 more ma parameters but I still don't see
+56:20 those residual which are um um
+56:23 distributed randomly around zero it it's
+56:26 not a very good sign um and same thing
+56:32 on on the out performance so it was not
+56:35 outperforming uh on
+56:37 the um train and validation set but um
+56:42 it turned out on the last three years
+56:45 that this simple model like bullish
+56:48 model which is always trying to to buy
+56:51 and over predicting growth it's
+56:54 overperforming the market on 4%
+56:58 why do you think it's the was it just
+57:01 lucky yeah I think it it was it was like
+57:04 it just uh um trains on a period of uh
+57:10 high growth and those coefficients they
+57:14 they
+57:15 incentivize um like they they're quite
+57:17 big and and they show that when moving
+57:20 average starts to grow or when previous
+57:24 um growth is high it's immediately shows
+57:28 if if you see from here that um say if
+57:33 one day movement was I don't know uh
+57:37 10% um it shows that next day movement
+57:41 will be 8% so this coefficient is 8
+57:46 83 uh it it's quite quite big weight on
+57:50 the movements of one day ago and two
+57:53 days ago so that's why it's predict in
+57:56 big numbers so what effectively it says
+57:59 if it was growing last two days it will
+58:02 continue growing on third day yeah I
+58:05 mean there there are many other
+58:07 parameters here and some of them the way
+58:10 I interpret these two coefficients yes
+58:12 yes if if we had only those outo
+58:15 regressive parameters yes but it says
+58:17 that if it's growing two days in a row
+58:20 actually let's take U 80% of growth one
+58:24 day ago but let's
+58:26 uh reduce the predicted growth on 14%
+58:30 which was two days ago so it it shows
+58:35 not like
+58:37 an uh it it's it punishes the the the
+58:41 growth but also you have volatility
+58:43 which is minus .9 so when volatility is
+58:46 high it's it also shows that probably
+58:49 growth won't be there
+58:51 forever um so it it punishes as well and
+58:55 the end prediction can be uh anything it
+58:58 just the combination of all parameters
+59:00 but stand alone if nothing else matters
+59:03 you can understand which features are
+59:05 more important and try to understand why
+59:07 it's predicting things like
+59:09 that and just a quick question if
+59:12 actually by the way I forgot that at the
+59:14 beginning we should have said that we
+59:16 are not giv any Financial advice that
+59:18 but just your opinion so I just want to
+59:20 ask your opinion um so when we look at
+59:23 the prediction uh at the statistics
+59:26 like if at the metric if you scroll down
+59:29 so we saw that in test and validation it
+59:31 was negative uh but for test it was
+59:35 actually positive uh this been
+59:37 outperform like would you actually use
+59:39 this sort of model in um let's say
+59:41 production for actual trading or it's
+59:45 suspicious it it is suspicious for me so
+59:49 I expect that uh train and validation
+59:52 will be like
+59:54 slightly uh um positive or slightly
+59:58 better than conditional win rate so I
+1:00:00 will try to improve the model with
+1:00:03 automatic parameter generation with more
+1:00:05 regressors to make these um like
+1:00:10 outperformance be consistently higher
+1:00:13 than zero when when I see that there is
+1:00:15 some value in in the model because here
+1:00:19 it's it just a chance the model is too
+1:00:21 simple to predict real things I would
+1:00:24 say so but it's very illustrative uh
+1:00:27 just to understand why you need to
+1:00:29 compare this as a as a baseline to
+1:00:31 understand why we have these predictions
+1:00:34 okay thank you um and last thing so we
+1:00:36 need to accelerate a bit it's it's a lot
+1:00:40 of uh experimentation here so the last
+1:00:43 thing um it's a deep neural
+1:00:46 network um I also have some um
+1:00:50 description of the model uh why you need
+1:00:54 to have these uh new Network what's the
+1:00:57 architecture I tried different
+1:00:59 architectures um and I will see um I
+1:01:03 will show you um complex and medium and
+1:01:07 in the end I ended up in a simple
+1:01:10 architecture uh when you need to
+1:01:12 estimate um less parameters but still
+1:01:16 here when we have two hidden layers with
+1:01:18 eight units we estimate at least 64
+1:01:21 parameters while for ARA we were
+1:01:23 estimating 10 parameters so so the the
+1:01:26 general philosophy is that um deep
+1:01:29 neural network uh is a nonlinear model
+1:01:32 so that that it can capture um very
+1:01:36 complex effects and you can prove that
+1:01:40 um some data or some uh time series you
+1:01:43 you just can't predict with um um ARA
+1:01:47 models and probably with profit as well
+1:01:50 um the then the learning was that uh it
+1:01:53 needs a lot of data and it was not
+1:01:56 enough data for for my case it it was
+1:01:59 not learning as I expected um for this
+1:02:03 case I could submit like longer period
+1:02:06 of time or not just one ticker I could
+1:02:09 send data for 100 tickers or I could
+1:02:12 generate more features so I need to show
+1:02:14 more data so that it can train more
+1:02:17 efficiently
+1:02:19 um essentially I tried to do this so I I
+1:02:22 did slightly different feature
+1:02:24 engineering I provided
+1:02:26 more um columns like price returns
+1:02:30 moving average returns volatility
+1:02:32 features volume
+1:02:33 indicators and that's uh time serious
+1:02:37 that that um um data frame has say 30
+1:02:43 different
+1:02:44 features and um yeah I also wanted to to
+1:02:49 go even further with the sequence
+1:02:51 modeling so they Advanced uh deep neural
+1:02:54 networks which are designed spe
+1:02:55 specifically to predict uh time serious
+1:02:59 I won't show it here uh it just um if
+1:03:02 you want to to do this just uh try to
+1:03:06 copy the the repo submit more data and
+1:03:10 send a pull request if if you succeed in
+1:03:13 this
+1:03:15 um so uh let's see what we have um same
+1:03:21 data Pro Data download and data
+1:03:24 preparation process actually here here I
+1:03:26 have two data sources uh one is stook
+1:03:29 and another is W finance and uh the the
+1:03:33 thing with these data sources is that
+1:03:36 they have different tickers in wi
+1:03:39 Finance uh this ETF is called QQQ and in
+1:03:43 STO it's QQQ do us so I had to provide
+1:03:46 different uh ticker ticker names and I
+1:03:50 don't know how to do it automatically uh
+1:03:52 so it's it's quite hard to make to make
+1:03:54 a like 100%
+1:03:57 reliable um program for for your uh
+1:04:01 needs um that's the data generation
+1:04:05 process I have more um more columns you
+1:04:09 can see it's 35
+1:04:12 columns okay that's that are the The
+1:04:15 Columns um I tried different
+1:04:18 architectures if you see this uh first
+1:04:21 time um the the thing is that um when uh
+1:04:26 you create hidden layers or number of
+1:04:29 neurons uh you you can create different
+1:04:31 number of layers whether it is one layer
+1:04:34 two layers or three layers and you can
+1:04:36 increase number of neurons here it's 32
+1:04:39 or 16 uh my ends configuration was just
+1:04:43 two layers with eight and eight neurons
+1:04:46 which which is simpler um I had even a
+1:04:51 more complex architecture with 128
+1:04:55 neurons
+1:04:56 um and different additional parameters
+1:04:59 so you need to know not only about the
+1:05:02 neural configuration but how you want to
+1:05:04 train it um what's the optimization step
+1:05:08 so try different parameters and see
+1:05:11 whether it's working or not but uh in in
+1:05:13 the end you see many um many
+1:05:16 architectures are just commented uh just
+1:05:18 for you to to see that it's it's a
+1:05:21 harder uh thing to do to find something
+1:05:24 which which works
+1:05:26 uh that's the final architecture just
+1:05:28 two layers with the eight uh neurons and
+1:05:32 eight
+1:05:33 neurons activation function re which is
+1:05:36 a nonlinear so that's why the model is
+1:05:40 nonlinear and uh that's important and
+1:05:43 also drop out
+1:05:46 3.25 so we add random uh disturbance to
+1:05:51 to the model so we we remove uh the
+1:05:54 connections between layers randomly so
+1:05:58 that it can behave um better in terms of
+1:06:03 learning
+1:06:04 some
+1:06:08 um I I don't know how to say this uh
+1:06:12 random dependencies the the problem is
+1:06:15 that uh when I run it next time and next
+1:06:18 time it shows different over performance
+1:06:21 Matrix and this test model actually
+1:06:23 showed 3% over performance from the
+1:06:25 market and in the dashboard you can see
+1:06:27 that it's minus 1% over performance um
+1:06:30 same thing with the training
+1:06:33 model you can see that now there are EO
+1:06:37 there are many parameters and we try to
+1:06:40 to optimize and to minimize the loss and
+1:06:44 the training loss it was big and then it
+1:06:47 it optimized until a certain level and
+1:06:51 this is a validation loss uh it it's um
+1:06:54 optimized uh it's it's going down that
+1:06:57 means that the model is training and but
+1:07:01 it's training not very long so it's less
+1:07:04 than 10 EPO it's it's if it's more data
+1:07:07 it can be like much longer training and
+1:07:09 it can be time consuming
+1:07:11 process uh so I trained the model I
+1:07:14 found some uh parameters that's what you
+1:07:17 see um the predictions and residuals
+1:07:23 and um I think
+1:07:26 um this this model actually showed
+1:07:30 better results for me because residuals
+1:07:33 were less correlated but the confidence
+1:07:35 interval the the band or the error um
+1:07:40 was quite big uh in a positive or
+1:07:42 negative
+1:07:44 Direction uh here we scroll down and
+1:07:47 again we check out performance it's
+1:07:50 slightly positive on tests uh it's
+1:07:54 negative on validation and slightly
+1:07:56 positive uh on on test sorry it's it's a
+1:08:01 uh it it looks like ARA uh it's it's
+1:08:04 behaving better on the test uh than on
+1:08:07 two other time uh time frames maybe it's
+1:08:11 also because uh time series are very
+1:08:13 different recently so it's it's hard to
+1:08:17 to behave uh con constantly good um then
+1:08:21 there is a some comparison of of the of
+1:08:25 the models also Cent generated it I just
+1:08:28 said here here are my graphs three
+1:08:31 notebooks um give me the comparison and
+1:08:34 um it says uh look profit is good for
+1:08:38 long-term uh prediction and I read later
+1:08:41 that a profit is is used often times for
+1:08:45 the um say sales prediction something
+1:08:48 which is uh not that
+1:08:51 unpredictable uh and growing year over
+1:08:54 year months over months with some um
+1:08:58 rate um ARA says that it it's it's the
+1:09:02 best model lucky lucky model um and most
+1:09:06 consistent performance across splits I I
+1:09:08 would disagree with this and uh DNN also
+1:09:12 shows uh some
+1:09:16 outperformance uh it also shows slower
+1:09:19 trading frequency that that means that
+1:09:22 it's often not correct uh um and it it's
+1:09:26 not um predicting that you need to to
+1:09:29 buy that many times so it it shows lower
+1:09:32 number of uh days when when it's uh
+1:09:36 positive on the
+1:09:37 growth so um yes that's that were the
+1:09:41 initial notebooks um then um I moved to
+1:09:47 the uh production version you saw that
+1:09:51 um created all those scripts and and
+1:09:55 models uh we can check say one uh one
+1:10:00 production model ARA underscore
+1:10:04 model.py um one thing is here that it's
+1:10:12 um it it has um the the same um
+1:10:16 functions described and uh everything is
+1:10:19 stored in a in a class now AR Rema
+1:10:23 predictor um it gets the data from from
+1:10:26 the database uh it we have a query
+1:10:31 sometimes we join with with the some
+1:10:34 tables and GA the data um so it uses
+1:10:38 persistent storage and it has some
+1:10:40 functionality like uh train predict
+1:10:43 update um and so this
+1:10:47 um um model class um it provides an
+1:10:51 interface and when I use this uh in in a
+1:10:54 function in in um script uh train
+1:10:58 underscore models it actually says uh I
+1:11:02 have three models ARA profit and DNN
+1:11:04 here are three classes what I need to do
+1:11:07 I need to download the data I need to
+1:11:09 transform the data and I need to um
+1:11:13 train the every every model and make
+1:11:17 predictions that's essentially what what
+1:11:19 we do with this script um uh so last
+1:11:25 first thing or uh was to create the the
+1:11:29 dashboard um again I said um clein here
+1:11:34 is my uh notebook I want a few tabs um
+1:11:39 just uh download the data from from the
+1:11:42 database and show in a standardized way
+1:11:46 um the the output it created this
+1:11:48 main.py it's a stream leads
+1:11:52 um code so so um the beauty of it is
+1:11:57 that all graphs are actually copied from
+1:12:01 from the um notebooks you can see that
+1:12:04 it's a plotly expressed graph so it it
+1:12:07 can show it straight away and uh finally
+1:12:11 when I could run it locally um I made
+1:12:15 sure that I can update it um via GitHub
+1:12:19 um that's um what I added in in the to
+1:12:24 to the first Workshop as well but I
+1:12:26 didn't have uh time to cover that I had
+1:12:28 it later um that's the script um the the
+1:12:33 the routine that um says that we need to
+1:12:37 download the data uh Monday to Friday we
+1:12:40 need to do this these jobs and install
+1:12:45 uh in in those jobs we install
+1:12:48 dependencies we run um this uh script
+1:12:53 initialized database which recreates the
+1:12:56 tables if we don't have it update Market
+1:12:58 data it will download all data if there
+1:13:02 is no database file or it will uh update
+1:13:05 the data with the latest stats available
+1:13:09 and then we do the model training and
+1:13:12 predictions when we complete all of that
+1:13:16 uh one file is updated and this file is
+1:13:18 a market dat. DP and that's uh what we
+1:13:22 need to commit and push changes uh um I
+1:13:25 will show um
+1:13:28 [Music]
+1:13:32 so you can see that's
+1:13:35 uh that's the the workflow that's the
+1:13:40 the actions uh it was not working
+1:13:43 straight away I manually tried it uh
+1:13:46 running twice and there were some
+1:13:49 mistakes um it has some visualization I
+1:13:53 can go deeper I can see the the output
+1:13:56 everything uh what is done dependencies
+1:14:00 database Market data train so I have a
+1:14:03 logger in information and I see
+1:14:06 everything that's happening on a remote
+1:14:08 machine and finally so it's it's all
+1:14:11 green so finally uh it it worked well
+1:14:14 and uh I think you can see from from the
+1:14:18 code uh that this this data um is is
+1:14:23 updated uh from from the
+1:14:28 bot so it's it's not my update it's a
+1:14:32 GitHub actions
+1:14:34 bot um now you schedule it to run every
+1:14:38 day right uh yes I scheduled it to run
+1:14:41 it every day I
+1:14:43 scheduled uh my previous uh dashboard
+1:14:47 um um to run every day as well but now I
+1:14:51 run previous one once a week I think
+1:14:55 probably I'll try to save my three
+1:14:56 minutes and to run this uh weekly uh as
+1:15:00 well after some time I think I want to
+1:15:03 add um better models more more tickers
+1:15:07 more companies that I want to follow and
+1:15:11 uh see what's uh what's going on what
+1:15:15 predictions do I have because uh right
+1:15:18 now we
+1:15:19 only uh we have a model only for QQ TI
+1:15:23 right yes uhuh and if we wanted to do it
+1:15:26 um let's say we wanted to do it for
+1:15:29 other uh stocks should we create an
+1:15:33 individual model for each of the stocks
+1:15:35 or should we create one model for all
+1:15:37 the
+1:15:38 stocks that's a 100 million question
+1:15:41 okay uh the fair answer I don't know I I
+1:15:44 think it's uh slightly easier uh to
+1:15:48 learn deep neural network when you have
+1:15:50 more data and when you have more tickers
+1:15:53 like 100 tickers 50 tickers so it can
+1:15:56 generalize better and it has not 6,000
+1:16:00 rows but 1 million rows um and um yeah
+1:16:06 um but if you train a specific model for
+1:16:09 for one stock um it may work better
+1:16:14 specifically on that
+1:16:16 stock and in this uh Workshop we
+1:16:18 included quite all data from
+1:16:22 90 uh 99 is it a common practice to use
+1:16:26 this old data or should we just look at
+1:16:28 last I don't know two years three
+1:16:31 years it's always a tradeoff uh and a
+1:16:35 matter of your belief uh so if you think
+1:16:37 that
+1:16:39 um markets um uh didn't change um
+1:16:43 significantly over years so what you see
+1:16:46 say in before um 1999 and after or
+1:16:51 before 2008 uh market crash and after
+1:16:55 then you include uh more data because
+1:17:00 it's easier to train and to see that
+1:17:02 something is is learning if uh say for a
+1:17:06 cryptocurrencies you just don't have
+1:17:08 that history or if I try to include some
+1:17:12 Micra factors and uh I I don't have uh
+1:17:16 that data um before say
+1:17:20 2010 and um I I need to think whether uh
+1:17:24 it's fine when one feature or 10
+1:17:26 features is is not filled properly or I
+1:17:29 need to cut the the whole
+1:17:32 um uh data uh data frame I think the
+1:17:37 real answer is just try both and see
+1:17:40 what's working better in terms of
+1:17:42 statistical metrix root mean square
+1:17:44 error if you're predicting regression uh
+1:17:48 uh or uh trading uh metrix if if you
+1:17:51 have some strategy MH yeah makes sense
+1:17:54 and and uh another more practical
+1:17:57 question so let's say I'm going to use
+1:18:01 these models for trading um so the setup
+1:18:05 I may have is uh using GitHub actions to
+1:18:09 fetch the
+1:18:11 data and apply the model that is already
+1:18:13 trained let's say I can keep this model
+1:18:16 S3 or get or GitHub or whatever so then
+1:18:20 this GitHub action uh task would just
+1:18:23 get the models get latest data apply and
+1:18:26 then probably display I don't know the
+1:18:28 tickers I'm following uh on the screen
+1:18:30 to say okay buy this one sell these ones
+1:18:34 right yeah so it can be like like this
+1:18:38 it just uh I need to um to change uh
+1:18:45 things a little bit because I uh remove
+1:18:48 uh any records that have unfilled data
+1:18:51 and in in this case um I don't have uh
+1:18:56 field data for for the next three days
+1:18:58 so I'm not predicting on on the last uh
+1:19:01 one to three days uh because I can't
+1:19:03 verify against actual data but here it's
+1:19:07 like I see actual data and when when I
+1:19:11 run uh it today or tomorrow I will I
+1:19:14 will have more data points here um when
+1:19:16 I run all the procedures for the
+1:19:19 estimation and I ask uh to um to for
+1:19:25 even um if I um don't have anything to
+1:19:29 compare against if I don't have actual
+1:19:31 so I can ask those models to forecast
+1:19:34 even after actual what will happen in
+1:19:37 one to three days that's how I will see
+1:19:39 this on on the graph and uh you can
+1:19:42 create uh say um some filter here that
+1:19:48 select the specific stock and uh you
+1:19:51 will see the
+1:19:53 prediction thank you and there was one
+1:19:56 of the comments that was interesting um
+1:19:59 the the question was about embl and uh
+1:20:03 uh like I was wondering what would what
+1:20:07 would happen if you combine all three
+1:20:09 models all three predictions let's say
+1:20:12 take the
+1:20:13 arage
+1:20:14 um how would it actually uh improve or
+1:20:18 change the
+1:20:20 metrix yeah I think uh there are a lot
+1:20:23 of studies that embl generally work and
+1:20:27 they they improve the stability of the
+1:20:32 model and prediction accuracy so that if
+1:20:35 you have uh several models and you know
+1:20:38 that say um one model uh is predicting
+1:20:43 better um for some period of time uh
+1:20:47 when this confidence interval is is low
+1:20:50 but another model is predicting better
+1:20:53 for another period of time uh you can
+1:20:55 see from from the graph so here that the
+1:20:59 errors of of these models behave
+1:21:02 differently from time to time if you
+1:21:04 combine those prediction in some way it
+1:21:06 can be maximum of of a prediction or an
+1:21:09 average of a prediction or some other
+1:21:11 way um uh you can create a super model
+1:21:15 um which will combine three predictions
+1:21:18 and here it will be just uh this fourth
+1:21:21 line of a super model and you can um
+1:21:25 calculate those Matrix in in the exactly
+1:21:28 the same way what's the root mean square
+1:21:32 error what's the win rate what's Market
+1:21:35 over performance and check whether it's
+1:21:38 performing
+1:21:40 better and uh one more time the way we
+1:21:43 use these models is if the model
+1:21:46 predicts that the stock uh value the
+1:21:49 stock price will grow we buy right yes
+1:21:54 mhm
+1:21:56 what uh could we just uh so what we do
+1:22:00 here is we train regression model and
+1:22:01 then use it kind of sort of a
+1:22:04 classification uh can we directly train
+1:22:07 a model that would say buyer I don't
+1:22:10 know not by yes we we can and last year
+1:22:13 we we focused on uh classification
+1:22:16 models in in the course um I just wanted
+1:22:20 to to show a different type of models in
+1:22:23 this Workshop I think generally it's
+1:22:26 easier um to build a classification
+1:22:29 model and to explain that that model
+1:22:33 with the regression model you can do uh
+1:22:36 more stuff for example if it predicts um
+1:22:40 that it will grow on 1% or on 5% or on
+1:22:44 10% that are three different scenarios
+1:22:46 and our strategy can be not buy
+1:22:49 everything which is uh which will grow
+1:22:52 more than zero we can say we we consider
+1:22:55 as a white noise some small predu
+1:22:57 predictions and we want to buy only the
+1:23:00 if the growth is higher than 5% or maybe
+1:23:05 with our confidence intervals uh say
+1:23:08 next day uh it it predicts uh that it
+1:23:11 will grow from two% to 10% so you can
+1:23:17 base your strategy not on the one point
+1:23:19 estimate one one data point but on the
+1:23:22 whole confidence interval whether
+1:23:24 confidence interval is is positive or a
+1:23:27 considerable considerable part of this
+1:23:30 interval is positive so that's uh that's
+1:23:33 why uh regression like models are more
+1:23:36 more powerful in some way it it just uh
+1:23:40 more options that you can do with with
+1:23:43 this okay thank you and then there was
+1:23:46 another comment that was suggesting that
+1:23:49 XG boost with lged uh uh features with
+1:23:53 ls is uh one of the best models for time
+1:23:57 series did you try that I I what's your
+1:24:02 opinion on that yeah I I think I've seen
+1:24:04 that on kagle EXO won a lot of
+1:24:08 competitions um I tried it
+1:24:12 once uh I think I'm not very experienced
+1:24:15 uh in in this type of uh models because
+1:24:19 you you need to know how to uh set up
+1:24:23 the parameters um and have some
+1:24:26 experience with the auto ml with the um
+1:24:29 model parameters generation so if uh uh
+1:24:34 you can uh find a working model just
+1:24:37 send a pool request and show show me in
+1:24:40 in a similar notebook how you build a
+1:24:43 boost model and how it overperforms
+1:24:45 these three models I think it's
+1:24:48 definitely very powerful and it should
+1:24:51 be easier than to train this deep neural
+1:24:54 network where you you have even more
+1:24:57 parameters uh that you need to know
+1:24:58 about mhm cuz I guess uh one of the
+1:25:02 disadvantages of FG boost it's uh it is
+1:25:06 a blackbox model right so compared to uh
+1:25:09 ARA where you can interpret the
+1:25:11 coefficients with exus like in the same
+1:25:14 way as with u deep neural
+1:25:17 network it's kind of you just throw in
+1:25:19 some numbers and you get predictions and
+1:25:21 you don't necessarily understand how
+1:25:23 this prediction was made
+1:25:25 yes or no uh yes that's it's it's no
+1:25:29 explainability by default and no it just
+1:25:32 their additional um libraries like
+1:25:34 shapely and other integrated gradients
+1:25:38 that's even for neural networks and I
+1:25:40 think for each boost as well you can
+1:25:43 build some explainability you just need
+1:25:46 to add uh more uh um functionality and
+1:25:51 build similar thing and then questions
+1:25:54 if whether you tried certain tools so I
+1:25:57 saw question whether you tried I time
+1:26:00 question if you tried time GPT and
+1:26:02 question if you tried lstm so have you
+1:26:05 tried any of
+1:26:07 those I think I I only tried lstm um but
+1:26:11 not first two tools so that's why it's
+1:26:15 really great all of you listen into this
+1:26:18 workshop and I hope that you will try
+1:26:22 those things on the same relatively
+1:26:25 simple time time serious I think um in
+1:26:30 in in my case the tool that you use is
+1:26:34 not that important the real thing is
+1:26:37 that there are many external factors um
+1:26:41 that affect uh any stock market moves
+1:26:45 and you need to add more regressors you
+1:26:48 need to understand those connections so
+1:26:50 I think feature engineering is the most
+1:26:52 important thing and uh your visual
+1:26:55 understanding what's the market State
+1:26:58 whether it is volatile or not what's
+1:27:00 happening with the US economy overall so
+1:27:02 that's more important but uh of course
+1:27:06 um if we have like 10 different
+1:27:10 experimental notebooks that will be a
+1:27:12 great thing for for this repo just try
+1:27:16 and send us an update or comment to the
+1:27:20 YouTube thank you and I see a comment
+1:27:22 from Constantine he was able to to uh
+1:27:25 get the repo running on his end so
+1:27:28 everything works so thanks for checking
+1:27:31 this out and uh reproducing it great
+1:27:35 well I guess that's it do you want to
+1:27:37 say anything else before we wrap
+1:27:39 up yes so you can see here that um after
+1:27:45 um successful um Zoom comp last year um
+1:27:49 it was 18800
+1:27:51 registrations um we we said we will uh
+1:27:54 run two workshops to prepare better uh
+1:27:57 and to show that how final project can
+1:28:01 look like um so we we did this um so if
+1:28:05 you're are interested to to learn more
+1:28:07 to join uh the the course it will start
+1:28:10 somewhere around may we hope that this
+1:28:13 this time it will be even more
+1:28:15 registrations and what is important more
+1:28:17 people who can finish it um so that you
+1:28:21 can start preparing early please sign up
+1:28:24 up and send us um comments there is a
+1:28:27 slack Channel and telegram group uh and
+1:28:32 also uh all the materials uh videos and
+1:28:35 uh Capstone projects of those who
+1:28:38 finished uh are in the GitHub rep for
+1:28:41 for the last year you can check them out
+1:28:45 and see whether you're interested in
+1:28:47 this okay and I will also include the
+1:28:51 report to the course in the description
+1:28:53 again uh in addition to all the other
+1:28:55 links and with that I guess we finish
+1:28:59 right so thanks a lotan for doing the
+1:29:02 workshop uh was very interesting
+1:29:04 Workshop thanks a lot um do we plan to
+1:29:07 do any other workshops no I think we
+1:29:11 will have a
+1:29:13 pre-opening yeah call before the course
+1:29:16 and we we will ask uh to submit details
+1:29:21 uh in the same way what that we had La
+1:29:23 last here and we will answer all the
+1:29:26 questions for from people who are
+1:29:28 interested in the course so we will do
+1:29:30 that before a few weeks before the
+1:29:32 course starts we will do like a
+1:29:34 precourse Q&A but apart from that yeah
+1:29:37 just keep an eye on our newsletter on
+1:29:40 the telegram group and on the course
+1:29:43 Channel yes that's
+1:29:45 correct okay thanks a lot and thanks
+1:29:48 everyone for joining us uh do not forget
+1:29:50 to like the video see you around
+1:29:54 see you

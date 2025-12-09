@@ -1,0 +1,1786 @@
+From Data Science to Data Engineering
+
+0:00 hello everyone welcome to our event this
+0:03 event is brought to you by data talks
+0:04 club which is a community of people who
+0:06 love data we have weekly events this
+0:09 event is one of such events if you want
+0:11 to find out more about the events we
+0:12 have there is a link in the description
+0:15 go there click on this link and you will
+0:16 see all the events we have in our
+0:18 pipeline
+0:20 and of course now you're watching this
+0:22 on youtube please subscribe to our
+0:24 youtube channel this way you will stay
+0:26 up to date with all the videos all the
+0:28 streams we have on our channel last but
+0:30 not least we have an amazing slack
+0:32 community if you haven't joined it yet
+0:34 it's time to do this
+0:36 you will get a chance to talk to other
+0:38 data enthusiasts there
+0:41 during today's interview you can ask any
+0:43 question you want there is a pinned link
+0:45 in the live chat click on this link ask
+0:47 your question and i will be covering
+0:49 these questions during the interview
+0:53 so i think that's all i have
+0:56 so now i will need to open the questions
+1:01 okay i have the questions now
+1:05 um
+1:07 i think i'm ready are you
+1:09 yeah i am
+1:11 let's go
+1:12 okay
+1:13 uh this week we'll talk about
+1:15 transitioning from data science to data
+1:17 engineering and we have a special guest
+1:19 today ellen ellen is the head of data
+1:22 engineer at where is my transport which
+1:24 is a company that provides mobility and
+1:26 location data for emerging markets
+1:29 she has been working in software
+1:30 engineering data science and data
+1:32 engineering
+1:33 roles
+1:34 over for over a decade
+1:37 and a common theme across your career is
+1:39 her passion for building high quality
+1:41 technology of which data is a core
+1:42 component she also enjoys teaching
+1:45 speaking and writing about data topics
+1:47 welcome ellen
+1:48 thank you i'm happy to be here
+1:51 i'm happy to have you so before we go
+1:53 into our main topic of transitioning to
+1:55 data engineering let's start with your
+1:57 background can us can you tell us about
+1:59 your career journey so far
+2:01 of course i can so
+2:03 um i studied computer science when i
+2:05 yeah in uni that was my first degree and
+2:08 i really enjoyed it
+2:10 and i specialized in software
+2:11 engineering and what's called in german
+2:13 virtual informatic which translates to
+2:15 like business applications of computer
+2:17 science
+2:18 and
+2:19 then i
+2:21 worked as a backer as a software
+2:22 engineer for a bit
+2:24 in different countries and then i but
+2:27 then i got really bored with backend
+2:29 engineering because i felt i was doing
+2:30 this to building the same kind of
+2:32 read data from a database show it some
+2:35 put it into an api and get data from an
+2:37 api and put it back into the database
+2:39 thing for
+2:40 over and over and
+2:42 i at the same time i started a
+2:43 psychology part-time degree and
+2:46 i didn't really enjoy the psychology
+2:48 part that much but i was really
+2:49 surprised that i really enjoyed the
+2:50 statistics course
+2:52 that was obligatory for psychologists
+2:54 and then i at that time that was when
+2:56 data science became a bit of a hype
+2:58 topic and i thought hey maybe that's a
+3:00 cool way to combine my interest in
+3:02 technology and then they
+3:04 and in statistics and so i
+3:07 i i set out on the power to become a
+3:09 data scientist i did a udacity nano
+3:11 degree as which is kind of an online
+3:13 boot camp
+3:14 to a level up in machine learning and a
+3:16 bunch of other online courses
+3:18 and then i
+3:19 went then i got a job in in a data team
+3:22 in the insights team at the soundcloud
+3:25 and yeah i did i i had a pretty wild
+3:29 broad range of things that i did
+3:30 everything from data pipelines and
+3:33 scheduling
+3:34 software at the time had its own data
+3:36 scheduler
+3:38 and but also i did a lot of predictive
+3:40 analytics stuff and
+3:42 plain old dashboarding and everything
+3:44 that's in between there and that's where
+3:46 i officially earned the title of this
+3:48 data scientists or senior data
+3:49 scientists
+3:51 and then soundcloud had a massive round
+3:53 of layoffs that was quite painful to me
+3:55 because i really enjoyed working there
+3:57 in 2017 and then i worked as a data
+3:59 scientist and a few other companies
+4:03 doing again predictive analytics
+4:05 dashboarding but also doing
+4:08 product production level modeling
+4:11 so everything in between
+4:13 uh but i realized
+4:14 i didn't really enjoy data science as
+4:16 much because it was very black box it
+4:18 fell to me because i never was felt like
+4:20 i was feeding some model but i didn't
+4:22 really understand what's going on which
+4:23 is partially due to the fact that my
+4:24 mathematics background isn't that strong
+4:27 so i didn't never really got the theory
+4:29 behind it
+4:30 but also i realized i kind of miss more
+4:32 the engineering parts of it and
+4:34 that was also the time when data
+4:36 engineering became more of a thing
+4:37 because companies realized that they
+4:38 need not just data scientists but also
+4:40 people that actually before come before
+4:42 them and
+4:43 make data available for data science
+4:45 because that's at the time was a common
+4:47 frustration for data scientists to not
+4:48 have data
+4:51 great ambitions but no data
+4:54 and then i went
+4:56 got an offer at native instruments to be
+4:58 one of their first data engineers
+5:01 i did that for a while um i still had
+5:04 the ambition back then to transition
+5:05 back into data science but i left native
+5:07 instruments for unrelated reasons before
+5:10 that happened
+5:12 then i got another job at another
+5:13 company as a bi developer
+5:18 my title was data scientists but really
+5:19 what i did was
+5:21 develop custom
+5:23 with data visualizations
+5:26 and i realized eventually that this was
+5:28 kind of a dead end for me
+5:30 and so i
+5:32 i remembered my software engineering
+5:34 background which i actually enjoyed
+5:36 except it was a repetitive and then
+5:38 at the time i was speaking to somebody
+5:40 at thoughtworks she was the first data
+5:42 scientist at the thoughtworks in germany
+5:44 at the time and she told me that
+5:46 thoughtworks was planning to expand its
+5:48 data engineering offering and what i'd
+5:49 be interested in
+5:52 in becoming the solidworks germany's
+5:54 first data engineer and help her expand
+5:56 that offering and i thought it was
+5:58 really exciting and
+5:59 especially since southwark is a great
+6:01 place for really learning good software
+6:03 engineering practices which as a data
+6:05 engineer is always frustrated as a data
+6:07 scientist that always frustrated me that
+6:09 the quality of the code and the
+6:11 collaboration wasn't as good as i was i
+6:13 remembered it from my back in
+6:14 engineering days
+6:16 and so i jumped on that and that's when
+6:17 i finally decided to stay in data
+6:19 engineering which i had done on and off
+6:21 before
+6:23 and then then yeah after that was i went
+6:26 to where i'm now it was my transfers and
+6:28 built up data engineering there which
+6:29 way i'm now heading a team
+6:32 that's quite a story and thanks for
+6:33 sharing so uh what i also wanted to ask
+6:36 you the next question i prepared is that
+6:38 you were a data scientist and then you
+6:40 switched to data engineering and i
+6:41 wanted to ask why i think you partly
+6:43 answered that so you said that
+6:47 data science was a bit too black boxy
+6:50 for you right so you wanted to
+6:52 to understand the theory right behind
+6:54 this
+6:55 you also mentioned uh
+6:57 i mean at work you don't really need to
+6:59 know this theory right so you have an
+7:00 algorithm you feed some data
+7:02 you get out of the model and then you
+7:04 spend most of the time i guess doing
+7:06 other things so you don't really focus
+7:07 on that uh
+7:09 the ml part machine learning part
+7:11 then he also mentioned another thing
+7:13 that as a data scientist the code that
+7:16 you were writing wasn't
+7:18 really high quality right this is
+7:20 something that uh
+7:22 maybe because this is not the focus for
+7:24 data scientists yeah so you focus on
+7:27 other things where there are there other
+7:29 reasons why you
+7:31 for you it was clear okay data science
+7:33 is not for me i want to go more in data
+7:36 engineering
+7:38 yeah
+7:39 those were two of the main reasons but
+7:41 there was another reason which i
+7:42 realized is at least at the time i was
+7:45 trying to be a data scientist
+7:47 if you didn't work in a large company
+7:48 like maybe all exos orlando or one of
+7:50 the big really big bullet companies the
+7:53 world of data scientists were pretty
+7:54 frustrating i'd never wanted to work in
+7:56 such a large company and then i
+7:58 if you start up a data science
+8:00 department you usually just stuck doing
+8:02 a lot of really drudgery work
+8:04 and i got tired of that and
+8:06 i i
+8:08 in a lot of companies and that's the sad
+8:10 route engineering is more respected than
+8:12 data science except for those that
+8:14 really focus on data science and so i
+8:16 realized that whenever i did more data
+8:18 engineering work i got a lot more i had
+8:20 a more comfortable working environment
+8:23 and i got
+8:24 my skills were more on demand and i
+8:26 didn't have to fight so much for getting
+8:27 anything
+8:28 for proposing ideas and things like that
+8:31 and so it was also
+8:33 a question of kind of professional
+8:34 respect for me too that i was more
+8:36 comfortable with the environment that i
+8:38 was experiencing as a data engineer then
+8:40 as a data scientist
+8:41 now that's that's an interesting point i
+8:44 didn't hear about this in the london or
+8:47 uh oil leaks or other companies here in
+8:49 berlin but i did hear that a lot
+8:52 from big tech companies like
+8:55 you know this funk
+8:56 like amazon facebook which is meta now
+8:59 google that the data scientist there is
+9:04 well as you said that
+9:07 engineers are more respected so to say
+9:10 that's uh
+9:11 also i heard only only anecdotal uh
+9:14 evidence of that so people tell me that
+9:17 engineers are like first-class citizens
+9:19 well data scientists aren't
+9:20 so i i'm
+9:22 i'm quite surprised to hear that to be
+9:24 honest uh
+9:25 but
+9:26 yeah i guess uh since many people
+9:28 mentioned that this is uh this becomes a
+9:31 pattern which is pretty sad it is sad
+9:33 yeah i don't think it should be led that
+9:35 way at all but it is unfortunately i've
+9:37 experienced it in quite a few places
+9:41 and uh but as a data engineer i guess as
+9:44 a data scientist you already needed to
+9:46 do some things that data engineers would
+9:48 do right so you mentioned that at
+9:50 soundcloud so you not only did modeling
+9:54 but also everything that it was before
+9:55 modeling like building data pipelines
+9:58 and after modeling i guess deploying the
+10:00 model so how does it overlap with what
+10:04 data engineers usually do what you did
+10:05 as a data scientist yes there's a lot of
+10:07 overlap and
+10:09 so there as the data scientists usually
+10:12 are often you you don't work with
+10:14 perfectly clean and perfectly delivered
+10:16 data you will still build up your own
+10:18 pipelines to make the data accessible
+10:20 and especially if you move into more
+10:23 production level
+10:25 and
+10:26 i mean the
+10:27 data size is a very loose title and what
+10:29 you do under this role can be very
+10:30 different but there's often a lot of
+10:33 pipelining work that you do on yourself
+10:35 and i think
+10:36 it's a good thing that data scientists
+10:38 do that and don't just rely on data
+10:40 engineers to kind of do handhold them
+10:42 through these steps
+10:45 and so there's a lot of transferable
+10:46 skills it also depends great and also
+10:48 data engineering is a very broad topic
+10:51 and i never did the more kafka real-time
+10:53 data engineering kind of stuff i've
+10:54 carefully navigated myself around that
+10:57 i've always done more what is now
+10:58 considered analytics engineering maybe
+11:01 which is more like the preparing data
+11:03 for vi and data warehouses and
+11:06 scheduling batch processing and all
+11:08 these kind of things
+11:10 so that was more my realm of data
+11:12 engineering
+11:13 and there's there's a this whole other
+11:15 universe of data engineering that i've
+11:16 never really touched and that i don't
+11:18 feel i think where you need a better
+11:20 understanding of distributed system and
+11:21 things like that which i don't have
+11:23 and so that is that's often more the
+11:25 playground for people with a really
+11:27 strong distributed computer science
+11:29 background
+11:31 and that isn't just not my round but in
+11:33 for another for anything that's more in
+11:35 the world of what is now analytics
+11:36 engineering that kind of branch of data
+11:38 engineering i think data scientists are
+11:40 very well prepared there's obviously
+11:42 things we need to learn but it there's a
+11:44 lot
+11:45 i've seen of i've often found that
+11:47 people that come from peers of
+11:49 engineering don't have a feeling for
+11:50 data that they struggle more to move
+11:52 into that space than people that come
+11:54 that have a data science background and
+11:56 just need to level up on
+11:58 software engineering and collaboration
+12:00 skills
+12:01 what is this feeling of data in your
+12:04 opinion what is that
+12:06 yeah that that means understanding
+12:08 it's a lot of things about data so data
+12:10 as you know i don't have to tell you is
+12:12 very complex so it has all these how
+12:14 it's produced all the quality the
+12:16 statistical aspects of it understanding
+12:18 what the data actually means how it's
+12:20 structured how it how it evolves
+12:23 and for a software engineer and i
+12:25 remember that from my software
+12:26 engineering latest often just something
+12:27 that we don't really worry about just
+12:29 something we type in and out but we
+12:30 don't really worry what it is
+12:32 some json right so some json or xml file
+12:36 you just get it
+12:37 you do something with this and then you
+12:39 spit it out and then something happens
+12:41 after that right
+12:42 but the big part of data engineering is
+12:44 really worrying about the quality of
+12:45 your data that's probably the biggest
+12:47 challenge for that data data science
+12:49 that's something that data scientists
+12:50 are very familiar with data quality
+12:52 issues and how to deal with them and
+12:55 what to do about them and
+12:57 having these conversations around with
+12:59 the people that collect the data produce
+13:00 the data and all these kind of things
+13:03 [Music]
+13:04 but he also mentioned that you were
+13:06 doing more work of what is called today
+13:08 analytics engineer
+13:10 rather than
+13:11 uh you know kafka distributed system
+13:14 kind of data engineer so do you think
+13:16 this uh worrying about data quality
+13:18 applies to all data engineers regardless
+13:20 of whether they work with distributed
+13:22 system or more like with
+13:25 dpt kind of tools
+13:27 it
+13:28 i think it applies to everyone because
+13:30 data quality are just a thing of data i
+13:32 mean data always has quality issues you
+13:34 can't avoid that i think it's just the
+13:36 extent of that people worry about it
+13:38 it's different so i hear less and maybe
+13:40 it's because i'm not that in tune with
+13:42 that community but i hear less concerns
+13:43 about data quality from the distributed
+13:45 systems crowd than i hear from the
+13:47 analytics engineering crowd but
+13:49 data quality are just issues are just an
+13:52 effect of life you have to deal with
+13:54 them
+13:55 so if uh to summarize the skills that
+13:58 are transferable from data science to
+14:00 data engineering are you know this
+14:03 pipeline building thing so you need to
+14:05 prepare your model all the data that
+14:07 before you can put it in the model so
+14:09 you need to have a data pipeline so that
+14:11 part
+14:13 then
+14:14 also this feeling of data
+14:16 right knowing uh the data is not just a
+14:18 simple json
+14:21 is there something more
+14:23 um
+14:25 yeah generally the
+14:27 the whole um
+14:30 explorative and communicative approach
+14:32 so data scientists have to work really
+14:33 closely with their stakeholders usually
+14:35 it isn't various business domains and
+14:37 that is super important as a data
+14:39 engineer as well because you may you
+14:42 always you never produce the data for
+14:43 yourself and you never produce it for
+14:46 you always get it from somewhere you put
+14:48 you get produced for somebody and
+14:50 talking with both the producers and the
+14:51 data consumers is really key and being
+14:54 able to understand what they need and
+14:56 even if they don't know exactly what
+14:58 they need or why they're producing the
+14:59 data and how they're producing the data
+15:02 okay so
+15:03 uh
+15:05 pipeline building uh understanding the
+15:07 feeling getting the feeling of data and
+15:09 then the stakeholder management and
+15:12 communication
+15:13 but what were the things that you needed
+15:15 to upskill yourself or learn
+15:18 um for making the transition so one
+15:20 thing you mentioned is as a data
+15:21 scientist
+15:22 you didn't care that much it wasn't the
+15:25 focus for you
+15:26 and for most of the data scientists it's
+15:29 not the focus to produce good
+15:31 quality code right so i guess that was
+15:34 one of the areas that you needed to
+15:37 upskill yourself right were there other
+15:39 areas
+15:40 yeah there were two other areas that i
+15:43 think is really important one is to the
+15:45 whole idea of collaborating with other
+15:47 engineers there so there's a there's a
+15:49 whole
+15:50 amount of tooling like like version
+15:52 control and
+15:54 cdci pipelines and all these kind of
+15:56 tools that software engineers usually
+15:57 use to collaborate together to make sure
+15:59 that and when they work in larger teams
+16:01 that the code
+16:02 still runs still is tested properly and
+16:06 it doesn't break and can be restored if
+16:09 one of them makes a mistake and that the
+16:10 catch mistakes and all these kind of
+16:12 things so there's a hole that usually is
+16:14 a data scientist it's very common for us
+16:16 to work alone and our own jupiter
+16:18 notebooks or whatever we may be using
+16:20 and this whole collaboration around like
+16:22 making sure that your team and that you
+16:24 can work with your team members in a
+16:25 reliable and confession way that's
+16:27 something i have to learn so that the
+16:29 whole choose youtube but also a
+16:30 mentality around pairing and code
+16:33 reviews and things that data scientists
+16:36 sometimes talk about and sometimes are
+16:37 aspirational but aren't that much part
+16:39 of the daily practice
+16:42 and that's also where the whole
+16:44 to me the whole clean code and quality
+16:46 code is just an aspect of that because
+16:48 you don't write it as an end to itself
+16:50 just to make your code really beautiful
+16:52 so you can put it in a frame on the wall
+16:54 but it's really
+16:55 to help your colleagues understand what
+16:56 you've been thinking about when you
+16:58 wrote that code
+17:00 and the other thing is the whole
+17:02 how to deploy things the whole devops
+17:05 aspect of data engineering which is
+17:06 pretty strong actually
+17:08 how to how to deploy things how to how
+17:11 to spin up and shut down servers or
+17:13 airflow clusters or
+17:16 whatever you might need to cook to
+17:17 another spot
+17:19 to dealing with the whole cloud
+17:20 infrastructure and
+17:21 in an efficient way and not just by
+17:23 poking around in the ui but also by
+17:24 automating things efficiently that is
+17:26 the other thing that
+17:28 i really had to learn and that was my
+17:30 least favorite part initially but no i
+17:32 enjoy it
+17:33 yeah this spokane the ui part is
+17:37 very close to my heart as a data
+17:39 scientist because what we are trying to
+17:41 do is we actually are trying to educate
+17:44 data scientists to use things like
+17:45 terraform
+17:47 um right and
+17:49 yeah it's always easier just to go there
+17:51 click buttons in aws console and then
+17:54 you have
+17:55 i don't know your lambda function or
+17:56 whatever yeah but then people who need
+17:59 to look after the infrastructure after
+18:01 the aws account they always come and say
+18:04 hey
+18:04 what are you doing here why do you do
+18:06 this because like they don't have any
+18:08 visibility in what's going on
+18:10 so do do you think for data scientists
+18:13 people who do not plan to switch to data
+18:15 engineering in the nearest future do you
+18:17 think it's also useful to learn the
+18:19 skills like ci cd
+18:21 testing
+18:22 you know infrastructure is called
+18:25 automation and all these things they
+18:27 think it's useful for them or it's not
+18:29 there
+18:30 it shouldn't be their focus i mean
+18:32 as i think the data scientist role is a
+18:35 bit
+18:36 bifurcating right now and so there's
+18:38 more the ml engineering and the mlaps
+18:40 and all these new fancy tiles that are
+18:42 springing up and for everybody who wants
+18:43 to work more in this building production
+18:45 service ml
+18:47 that is definitely really important to
+18:49 understand how to do monitoring how to
+18:50 do infrastructure automation and
+18:53 testable infrastructure and all these
+18:55 kind of things are really really really
+18:56 important if you want to have anything
+18:58 in production because
+19:00 if it's in production it has to meet the
+19:01 quality standards of everything that
+19:03 else it's in production that kind of ml
+19:05 service can be the weak link in your
+19:08 in your e-commerce or whatever
+19:09 infrastructure you have
+19:11 and but if you
+19:14 if you if you really want to stay in the
+19:16 more research focusing where all you do
+19:17 is prototyping which i guess still
+19:19 exists i'm not sure it's becoming less
+19:21 and less common to have these kind of
+19:22 data science roles we're really just
+19:24 putting prototypes or visualizations
+19:27 and i guess you don't need to but i
+19:29 think the trend is moving more into the
+19:31 it's it's really valuable to have these
+19:34 skills kind of direction
+19:36 yeah what we see that data science like
+19:39 this part of modeling is only a small
+19:41 part right but you have like a vast
+19:43 uh
+19:44 vast thing before that okay how do you
+19:46 prepare data and then last thing after
+19:49 you train the model like how do you go
+19:50 about deploying this and the the
+19:53 modeling part is only like a couple of
+19:54 percent of the actual work so that's why
+19:57 we have ml engineers and data engineers
+19:59 to
+20:02 to help data scientists take care of
+20:03 that
+20:04 yeah interesting and
+20:08 um like how did you actually pick up the
+20:11 skills did you just
+20:13 learn by doing projects or did you learn
+20:16 it at work or you needed to take some
+20:18 courses how did you learn the ci cd
+20:20 and other things
+20:22 i mostly learned at work i was lucky to
+20:25 uh at the both of native instruments and
+20:26 that thought folks were really talented
+20:29 people and thoughts in particular has a
+20:31 really strong culture on the engineering
+20:32 practices that i picked up a lot there
+20:35 but
+20:36 also it any and native instruments
+20:38 hydrocolica was really dedicated to
+20:40 these kind of practices and brought a
+20:41 lot of this into our team
+20:43 and so
+20:45 yeah i was fortunate to learn this but i
+20:47 think if
+20:49 back then also when i moved into data
+20:51 engineering there weren't many courses
+20:53 around these topics so
+20:55 it was also kind of a necessity to learn
+20:57 it at work
+20:59 but i think nowadays it's if you have
+21:01 the chance to take one of those courses
+21:03 so i know um our data engineer my team
+21:05 she's currently taking the data
+21:07 engineering bootcamp that you're
+21:09 organizing
+21:10 and i think that's really
+21:13 opportunities like that are really
+21:14 helpful actually for people to
+21:16 to pick up these skills in a more
+21:18 organized fashion and not just and not
+21:20 just rely on the lucky or unlucky code
+21:22 incident that your colleagues can help
+21:23 you
+21:25 but do you know how does it usually
+21:27 happen so yes indeed we don't have a lot
+21:29 of materials like for data science for
+21:32 data science we've had courses for quite
+21:35 a while right for five or more years for
+21:37 data engineering this is still emerging
+21:39 so do you think if data scientist wants
+21:42 to become a data engineer
+21:44 they already have enough skills to
+21:47 get a job as a data engineer or they
+21:49 need to upskill themselves before they
+21:52 can
+21:53 get a job
+21:55 it's very individual i would
+21:58 i've seen data scientists that are
+22:00 brilliant at and really pick up software
+22:02 engineering and devops really quickly
+22:03 and i've seen people that really
+22:05 struggle with that and i think that's
+22:06 highly individual
+22:08 and that's i think it's also i would
+22:10 always recommend to try it first also
+22:12 before you make a big career transition
+22:14 to figure out if you really want to go
+22:15 in that direction so i think it's always
+22:17 helpful to
+22:18 do a side project or try it out at work
+22:21 in a small context
+22:23 where you can before you decide that you
+22:25 really want to change your career that's
+22:27 a mistake i've made actually sometimes
+22:28 to
+22:30 switch roles too quickly and then
+22:31 realize it wasn't for me
+22:33 was it the data science
+22:35 yeah exactly that was for me a bit of a
+22:37 dead end and
+22:39 i probably could have figured that out
+22:41 earlier but i didn't and so i would
+22:42 recommend for people to
+22:44 to try out if they consider a new role
+22:47 more attractive to really jump into it
+22:49 without maybe switching their their
+22:51 entire job
+22:54 probably for data scientists
+22:56 at least for most data scientists
+22:59 you have a way to actually try this
+23:02 because you need to take care of data
+23:04 preparation right
+23:05 even if you have data engineers in your
+23:08 team you still need like this still
+23:10 needs to happen right and maybe you can
+23:12 just work closer with data engineers and
+23:15 learn from them and then realize that
+23:18 this is indeed for you
+23:20 and only then then decide to transition
+23:23 to the engineer full-time exactly and
+23:25 maybe then also invest more fully into
+23:27 like formalized training or courses or
+23:29 something like that i think that's the
+23:31 best part to just try it out by
+23:33 expanding your scope at work a little
+23:34 bit and seeing if it's for you and how
+23:36 comfortable you are and how much joy it
+23:38 brings you
+23:40 i see two major
+23:43 ways and to major let's say
+23:47 like for people who want to get into
+23:49 data science they usually either come
+23:50 from a more mathematical background so
+23:53 maybe they have a phd in physics
+23:56 or
+23:57 you know what i'm talking about like
+23:58 they are maybe coming from academia and
+24:00 then there is another oh
+24:03 another kind of way
+24:05 is people who are software engineers and
+24:07 they get into data science
+24:09 and i guess if well there is also a
+24:12 third way now people who graduate from
+24:14 universities and become data scientists
+24:17 immediately right yeah i think this is
+24:19 also a thing right now so many people
+24:21 for them data science is the first job i
+24:24 guess for
+24:25 for those who are software engineers and
+24:27 they become became data scientists it's
+24:30 not
+24:30 that difficult to then transition to
+24:32 data engineering because they already
+24:34 have all the skills they know how to use
+24:36 um
+24:37 terminal properly they know barcelona
+24:39 linux and icd all these things that i
+24:42 needed for
+24:44 data engineer right but what about
+24:47 this who are coming from academia or
+24:49 this who for who
+24:51 data science is their first job like how
+24:54 can they actually level up their
+24:55 software engineering skills do you know
+24:59 if there is a good course about that
+25:01 somewhere
+25:04 yeah
+25:05 there are good courses about this
+25:09 i
+25:10 i mean data camp is not really
+25:12 recommended anymore for for various
+25:14 reasons but that used to be my go-to
+25:16 place to because they had a really good
+25:17 um engineering track
+25:19 um
+25:21 but there are other place there are
+25:23 online courses that focus and i would
+25:25 always recommend for data scientists who
+25:27 want to live up on on
+25:29 programming skills to take one of those
+25:31 intro to software engineering courses
+25:32 and even if it's web development or
+25:34 something totally unrelated that they're
+25:35 not really that interested in but
+25:38 something that's not ideal that data
+25:40 scientists because that in the
+25:41 programming for data scientist courses
+25:43 they usually don't learn the software
+25:44 engineering fundamentals but
+25:46 something that's more of a track to
+25:48 become a web developer or an android
+25:50 developer even or something like that
+25:52 they usually teach you the software
+25:54 engineering fundamentals in those
+25:55 courses so i would recommend to try that
+25:57 and it's always useful if you can build
+25:59 a small web app or you can build a small
+26:01 android app it's not a wasted skill
+26:04 and and that's maybe a better way to
+26:06 find out if you're interested in these
+26:07 kind of things than to figure out than
+26:09 to
+26:11 purely focus on the on your python
+26:13 skills and
+26:15 learning yet another
+26:17 deep learning library
+26:20 yeah so what do you think a good
+26:22 course should contain what kind of
+26:24 things so i guess uh build tools right
+26:27 like how exactly you build your
+26:29 uh
+26:30 your software right and testing ci cd
+26:34 command line basics like how do you
+26:37 navigate
+26:39 i don't know linux how do you use linux
+26:41 right
+26:42 is there something else that you would
+26:45 say is fundamental for all software
+26:48 engineers two things yeah git which you
+26:51 probably included somewhere in bluetooth
+26:53 but it's worth pointing out separately
+26:56 um docker is really
+26:58 really really useful
+27:00 and that may be a separate cause in many
+27:02 cases but it's definitely a really
+27:03 valuable skill and then the the whole
+27:06 idea of
+27:07 just collaborative coding or clean
+27:09 coding so so what are the best practices
+27:12 on how you how you structure do you
+27:13 structure code with functions and and
+27:15 objects or modules these kind of things
+27:17 how do you comment how much do you
+27:19 comment all these things that software
+27:21 engineers like to pull their hair out
+27:22 and get into magic into
+27:25 into holy walls about but that was
+27:28 understanding
+27:30 how many lines of code should be in the
+27:31 function all these kind of questions
+27:33 that are really useful to get a sense
+27:35 for even if you're never engaged in the
+27:36 holy wars
+27:38 yeah so how many lines of code should be
+27:40 there in a function
+27:42 less than a screen that's my answer
+27:45 okay so i remember reading this clean
+27:47 code book from robert martin yeah i
+27:50 think his recommendation was like eight
+27:52 lines or something like this yeah
+27:55 exactly just enough to have a full
+27:57 if-then-else statement and that was his
+28:00 recommendation so basically you have a
+28:03 function declaration then just a few
+28:05 lines and then you have return and then
+28:08 i mean yeah he proposes doing heavy
+28:10 nesting of your functions so that every
+28:12 line is pretty much a function call
+28:14 until you have your really small
+28:15 function
+28:16 really strongly position
+28:18 which has its benefits and drawbacks but
+28:21 yeah
+28:22 do you think it's a good book nowadays
+28:25 to read it's pretty old right it's more
+28:27 than it's videos and it's very java
+28:29 centric unfortunately i have not found a
+28:31 better book i still keep thinking
+28:32 somebody should write a better book a
+28:34 new more modern book about it and maybe
+28:36 also something with maybe a person
+28:38 that's less controversial nowadays for
+28:40 their politics but
+28:42 the book unfortunately there's still
+28:44 nothing really that i still recommend it
+28:46 even even though i have a lot of pains
+28:47 about it
+28:49 because it's still unfortunately as far
+28:51 as i'm aware the best thing we have
+28:54 even though it's java i remember for me
+28:57 i started as a java developer and for me
+29:00 it was eye-opening
+29:02 so i also recommend these books
+29:04 this book to people but i realized that
+29:06 uh now for
+29:08 well i guess maybe that's another
+29:10 question do you think so what kind of
+29:12 languages do we need for data
+29:14 engineering is python enough where we
+29:16 need to go with java and scala and
+29:19 i don't know perhaps other languages
+29:22 so
+29:23 again it really depends on what kind of
+29:25 branch of data engineering you want to
+29:26 go into if you go into the more
+29:28 analytics engineer which i would
+29:30 recommend to data scientists to at least
+29:32 try out first then sql and python is
+29:34 often enough sometimes you may need java
+29:37 depending on what scheduler you're using
+29:40 so but usually you can get go very far
+29:42 with python ninja and java
+29:45 stops python and
+29:47 sql and maybe javascript but javascript
+29:50 as its own
+29:52 low ranking third option
+29:54 but if you want to go into the whole
+29:56 kafka and real-time streaming and
+29:58 distributed systems range of data
+30:00 engineering then yeah scala and java i
+30:02 guess are unavoidable
+30:04 and i'm not saying they're terrible even
+30:06 though i don't really don't really like
+30:08 both languages but it's just my personal
+30:10 preferences they're actually really good
+30:11 languages for if you think to give to
+30:13 them i've done a lot of java development
+30:16 and a fair amount of scala development
+30:18 in my life but
+30:20 i'm kind of glad i don't do either right
+30:21 now
+30:26 also same for me well at least for scala
+30:28 i don't know like
+30:29 two
+30:30 too many ways of doing the same thing
+30:32 and
+30:33 not all of them are
+30:35 obvious let's say to read at least
+30:38 yeah why javascript though like why you
+30:41 recommend to learn javascript
+30:44 it's it's becoming more than
+30:47 it's back in the language as well and so
+30:49 it's javascript is kind of emerging as
+30:51 the general purpose language in a way
+30:53 that python always aspires to be but
+30:55 never quite related because it's not it
+30:57 doesn't have a fronted component really
+30:58 to the same degree
+31:00 and so
+31:02 there is tooling also in the no code
+31:04 space and so for instance
+31:07 that that relies on javascript as a
+31:09 scripting language so it's useful to
+31:11 know
+31:13 but as a really low ranking thought
+31:15 cousin i wouldn't give it a high
+31:16 priority that the other languages have
+31:18 but it's useful to know just to be able
+31:20 to read it and say writer
+31:22 we did an obscure number lambda function
+31:24 that was written in javascript that your
+31:25 colleagues wrote and be able to
+31:27 to see where you have to maybe modify it
+31:29 or at least talk to them where you need
+31:30 to modify your hand
+31:33 yeah and i guess the reasons that these
+31:35 obscure javascript functions exist is
+31:37 because when you google something when
+31:39 you try to look something up often the
+31:41 examples are in python or javascript
+31:44 and then when i see an example in
+31:46 javascript and i need to do something
+31:48 quickly i just copy paste i check that
+31:49 it works and then i forget about this
+31:52 until it stops working exactly
+31:55 yeah i think even in bigquery for
+31:57 instance the
+31:58 there's a
+31:59 the udf default udf language so user
+32:02 defined function i'm going to just
+32:03 javascript so
+32:05 there is no python support is there we
+32:07 haven't seen it no i think i think
+32:09 i think we have to have to write all our
+32:11 udfs in javascript for some so it's it's
+32:14 probably it's javascript pops up at the
+32:16 weirdest places and that's why it's
+32:18 useful to know
+32:20 yeah probably google wanted to have
+32:23 broader
+32:24 coverage right and uh yeah
+32:27 i don't know what's the latest uh
+32:29 status but i think if you take software
+32:32 engineers in general people who know how
+32:35 to code
+32:36 uh probably there are more people who
+32:38 know javascript than python right
+32:40 definitely yeah perhaps then just give
+32:43 some wider coverage
+32:44 to google to bigquery yeah okay
+32:48 what do you think was the easiest part
+32:50 of your transition
+32:52 the easiest part of the transition the
+32:54 easiest part of the transition was how
+32:56 much demand there was for data
+32:58 engineering and i think that still holds
+33:00 so even if you're not the greatest data
+33:02 engineer when you're starting out people
+33:03 will still get really excited about the
+33:05 fact that you exist and that you apply
+33:06 to their company
+33:08 and it's very easy to find a job in data
+33:10 engineering so
+33:12 it's not it's not super competitive
+33:14 which is a good thing when you're
+33:15 starting out because
+33:17 it also has its drawbacks because you
+33:19 can easily find yourself in a situation
+33:20 where you're way overwhelmed and
+33:22 expected to do things that you aren't
+33:23 ready for and where you don't have
+33:25 good mentoring in place
+33:27 that can help you in your job because
+33:29 there may not be enough senior or
+33:31 experienced people around that can help
+33:32 you with what you're doing
+33:34 but the easiest part is definitely yeah
+33:37 just give yourself the title of data
+33:39 engineer and your linkedin profile the
+33:42 olympia inbox will explode so
+33:45 interesting i observed a similar thing
+33:47 not with data engineers though
+33:49 with
+33:50 infrastructure engineers so we call them
+33:52 site reliability engineers what other
+33:54 names are devops engineers so people who
+33:57 take care of infrastructure
+33:59 and it's super difficult to find these
+34:01 people so when we open a position for
+34:03 data science in one day we have 100 200
+34:06 applications 300
+34:08 like in a week it's a lot
+34:10 so
+34:11 our
+34:12 recruiters just close the position after
+34:14 a couple of days
+34:16 but when it comes to site availability
+34:18 engineers
+34:19 we open a position and nobody applies
+34:22 the second day maybe one person applies
+34:23 and the third day again nobody so they
+34:26 need to reach out to people they need to
+34:28 actively reach out to people on linkedin
+34:32 and ask them hey like consider our
+34:35 position
+34:36 so i guess to some extent it also
+34:38 applies to data engineers right it's not
+34:40 just
+34:41 because i think uh still data science is
+34:44 uh
+34:45 has this marketing thing like you know
+34:48 the success job of the 21st century and
+34:51 people get excited and everyone wants to
+34:53 to do that
+34:55 but i think data engineering is also
+34:56 getting some traction right so now
+34:58 people like you they
+35:00 realize that it's not what they want to
+35:02 do then the people see the demand for
+35:05 data engineers there are also quite i
+35:07 saw quite a few posts on the internet
+35:10 like on hacker news on reddit also that
+35:13 are quite
+35:14 so the title is you don't need data
+35:16 scientists you need data engineers
+35:18 you probably saw them as well right no i
+35:20 did not actually but
+35:22 but uh yeah this is the type of contact
+35:25 content that people on hiker news really
+35:27 like
+35:28 it's very controversial and uh yeah yeah
+35:32 so that's that's interesting
+35:33 what was the most difficult part for you
+35:36 of the transition
+35:39 yeah the most difficult part for me was
+35:44 some of the autonomy i had as a data
+35:46 scientist and then having to work in
+35:48 these really
+35:49 close
+35:50 tight-knit software engineering teams
+35:53 and so i was very used to having a lot
+35:55 of space and working the way i wanted to
+35:57 and not worrying too much about
+35:59 other people in my space other than my
+36:01 stakeholders and i i knew how to work
+36:03 with them but i was not familiar with
+36:05 working with other software engineers
+36:06 that much anymore at least i hadn't done
+36:08 it in a long time and so
+36:10 when i got hired as a senior data
+36:11 engineer things were expected of me that
+36:14 i had never done before in terms of
+36:15 collaboration and in terms of leadership
+36:18 and
+36:19 leveling up on those was quite hard
+36:21 because that's not something that you
+36:22 just pick up by reading a blog post
+36:24 but that was really
+36:26 a different very different way of
+36:28 working and not even understanding what
+36:29 was expected for me of me because the
+36:31 people i worked with weren't used to
+36:33 working with data scientists so they
+36:35 didn't know what to expect of me either
+36:37 and then there was this whole mismatch
+36:39 of expectations on both sides and i
+36:41 figured it out but it was hard
+36:44 can you maybe give an example is it like
+36:46 i don't know
+36:47 setting some
+36:49 like the way you do things uh picking up
+36:51 some frameworks or how exactly what
+36:53 exactly do you mean by this leadership
+36:56 yeah it wasn't technical skills at all
+36:59 so i could pick up the tooling i had
+37:01 worked most of it with it before and i
+37:03 could pick up what was missing easily it
+37:05 was more around like how do i
+37:07 communicate when do i communicate how do
+37:09 i pair with people pairing was probably
+37:11 the hardest part for me to learn because
+37:13 i had never done that before and so it
+37:14 works well like pair programming right
+37:16 yeah programming yes
+37:19 my work was really heavy on emphasizing
+37:21 their programming but also this whole
+37:23 yeah sharing
+37:24 it mainly just boiled down to sharing my
+37:27 thoughts and asking when to ask for help
+37:28 asking when to offer help and all these
+37:31 kind of small things that i wasn't used
+37:33 to working mostly by myself before
+37:36 so really how to work very closely with
+37:39 people on a day to day level
+37:40 keeping them in the loop
+37:43 knowing when to figure out when i need
+37:44 to get myself into the loop and all
+37:46 these kind of questions
+37:49 so you would say that that engineering
+37:50 is more
+37:51 of a team sport than data science
+37:53 exactly exactly and engineering in
+37:55 general i guess right because usually
+37:57 you have a lot more engineers than data
+37:59 scientists
+38:00 so maybe for a team you
+38:03 maybe you have one data scientist and
+38:04 then a bunch of back-end engineers right
+38:07 exactly exactly and you use it yeah and
+38:10 you usually have
+38:12 also more data engineers than data
+38:13 scientists and so there's a whole
+38:16 different approach to working together
+38:19 in your experience
+38:21 do data engineers usually work like in
+38:24 one team so maybe there is one platform
+38:26 or data engineering team or they
+38:29 are spread across different teams
+38:32 i've seen both i prefer the model where
+38:34 they're not where there's not a data
+38:36 engineering platform team i think unless
+38:38 you have a really large company where
+38:40 you where you really need a data
+38:41 platform infrastructure and you need
+38:43 people dedicated to that i think in in
+38:45 the smaller companies i've usually
+38:46 worked with i
+38:48 i think it works better if the data
+38:49 engineers are embedded with the other
+38:51 either with the other data faults or
+38:52 also is part of the date of a wider
+38:55 platform team
+38:56 but for what i've usually worked with is
+38:58 just kind of embedded into the more
+39:00 general data teams
+39:02 that are consisting of analysts and data
+39:04 engineers and data scientists and maybe
+39:07 ml engineers and all sorts of data
+39:09 specialists
+39:11 and in this setup you usually see more
+39:14 engineers than data scientists right
+39:16 more than just yes usually but
+39:20 there can also be a lot of
+39:21 a lot of analysts for example that it's
+39:23 common that's common to see so it
+39:26 depends on the setup
+39:29 okay now there is a question
+39:31 so do you know if there is a name for
+39:33 the role for people who are both data
+39:36 engineers and data scientists
+39:39 is such a thing does such a thing exist
+39:42 at all
+39:43 um
+39:44 [Music]
+39:46 i have not encountered it as such but i
+39:48 think the closest i've seen is really
+39:50 analytics engineer this this particular
+39:53 and it
+39:54 again it depends on what you consider
+39:56 data scientists being a data engineer
+39:58 because the overlap might be all sorts
+39:59 of things it could also be
+40:01 it could if it goes to the end it could
+40:04 also be an mlops engineer for example
+40:06 that could also be an intersection
+40:08 between the data engineer and the data
+40:09 scientists so there there is a bunch of
+40:11 title but it really depends and maybe
+40:13 the person could clarify a bit
+40:15 it really depends on what you're doing
+40:18 as in this intersection
+40:21 i think
+40:22 as a data scientist you at least i i
+40:25 needed to do a lot of data engineering
+40:27 because
+40:28 now the data is not just the magically a
+40:30 cc file that you can use that is clean
+40:33 you need to
+40:34 do a lot of work before you can put this
+40:37 into a machine learning model and train
+40:39 your model and
+40:41 for me i
+40:43 even needed to set up
+40:45 like a workflow scheduler and to do all
+40:48 that
+40:49 i think in startups it's pretty common
+40:51 that they hire a data scientist and then
+40:54 it turns out that this data scientist
+40:56 actually needs to do data engineering
+40:57 work before they can start with
+41:00 data science
+41:01 yeah i i also saw a title in linkedin
+41:04 some people put this title with the
+41:07 title is data science engineer i don't
+41:09 know how common it is and if it's a
+41:12 thing or they just decided to you know
+41:15 because this is how they felt
+41:17 and they put it there i don't think it's
+41:20 a common thing right
+41:23 like data science engineer
+41:25 i've seen that too but yeah also i
+41:27 haven't seen it in job description i've
+41:28 only seen it in people's profiles yeah
+41:31 so probably people who ended up doing
+41:34 data stuff even though they were hired
+41:36 as data scientists yeah that's probably
+41:42 okay and
+41:43 so chetna is asking if
+41:45 you have any tips for people who do not
+41:48 have development experience how can they
+41:51 transition to
+41:52 data engineering i think we talked about
+41:54 that already like picking up all these
+41:56 skills
+41:59 like general engineering skills i think
+42:02 it was uh
+42:03 build tools testings icd git docker
+42:06 clean coding command line testing
+42:11 is there anything else
+42:13 um yeah i would i would rec if
+42:15 especially if you don't have soft
+42:16 engineering experience i would recommend
+42:18 just doing toy projects on the side so
+42:20 that's very common for software
+42:22 engineers to do that they just build
+42:23 something random that they just think is
+42:26 fun or useful or
+42:27 and do it with
+42:29 do it find some friends to do it
+42:30 together with because that makes a big
+42:32 difference if you're not just working by
+42:33 yourself but if you're only working with
+42:35 two three other people
+42:37 it can be something yeah pick something
+42:39 that you really find fun so for instance
+42:41 i build a lot of twitter
+42:43 twitter um
+42:45 automation thingies
+42:46 back when i was trying to get into data
+42:48 engineering ended
+42:49 and i didn't use any of the skills i
+42:51 learned about twitter and twitter
+42:52 analysis at the time but it was really
+42:54 useful to
+42:56 learn to deal with annoying things like
+42:57 ors and figuring out how that works and
+43:01 using git properly and all these kind of
+43:03 things so
+43:05 if you have the time and not everybody
+43:07 has the luxury to have that kind of time
+43:09 but if you do it's really helpful
+43:11 what was the one of the tools maybe can
+43:13 you give us an example is it like
+43:15 pulling data from twitter for doing some
+43:17 analytics or something else
+43:19 um yeah i back then that was a while ago
+43:22 and that was when
+43:24 before cambridge analytica but i read
+43:25 the papers that temperature analytica
+43:27 was based on because because mihawk
+43:30 consid kosinski papers from the
+43:32 cambridge university
+43:34 and he did a lot of identifying big five
+43:37 profiles out of twitter data and since i
+43:39 was a psychology student at the time i
+43:41 was i wanted to see if i could replicate
+43:43 that so i think so i
+43:45 pulled data from twitter and
+43:48 turned it into a
+43:49 visualization i was supposed to turn
+43:51 into a visualization of the big fire
+43:53 features as a web app we never finished
+43:55 that thing but that's kind of the
+43:56 direction we wanted to be going
+44:00 okay yeah thanks
+44:05 so question from khari i am currently in
+44:07 the same situation
+44:09 i am a data scientist i want to move
+44:10 into data engineering
+44:12 would you recommend doing projects
+44:14 depicting real life data engineering
+44:16 tasks
+44:18 and do you think it would help in
+44:20 getting jobs yeah i think the short
+44:23 answer is yes but
+44:24 maybe you can also give a longer answer
+44:27 like what kind of projects in addition
+44:29 to what we just discussed
+44:31 like pulling data from twitter what else
+44:33 can data scientists do to move into data
+44:36 engineering what kind of tech projects
+44:38 that they can do
+44:40 yeah generally
+44:42 especially if you do side browser i
+44:44 think it's really helpful to think not
+44:45 think what is the most marketable but
+44:47 really what is the most fun to you
+44:48 because you need some you need to keep
+44:50 up your motivation for a while and
+44:52 usually that comes if you do build
+44:53 something that's interesting to you even
+44:55 if it may not be the most marketable
+44:57 thing
+44:58 but for instance what i've seen a friend
+44:59 to build is uh he builder
+45:02 that was when the pandemic was fairly
+45:03 fresh he and he had a
+45:05 biology and computational biology
+45:07 background he's he he wanted to help
+45:10 with identifying
+45:12 genetic markers for vaccines so that as
+45:14 you can see that was a while ago and so
+45:16 he built a whole he got some data sets
+45:18 around with the covert genome and some
+45:20 other genomes and then he built a whole
+45:22 ml pipeline and data engineering
+45:24 pipeline around extracting that data and
+45:25 building it up with cdci tools
+45:28 and
+45:30 and and understanding data translating
+45:32 it into different formats and extracting
+45:34 the genome data and re-encoding it
+45:37 i i didn't understand the biology part
+45:39 of it so i can only give a very bad
+45:41 representation but that was kind of what
+45:43 he did and i thought that was pretty
+45:44 cool
+45:46 one recommendation i usually give when
+45:49 people ask me like how can i learn more
+45:52 about building data pipelines so if i am
+45:54 a data scientist
+45:56 and i usually suggest to build um
+46:00 scraper like let's say
+46:02 um yeah let's say we want to build a
+46:04 model for predicting the price of uh i
+46:07 know an apartment or a car right we have
+46:10 a lot of websites
+46:11 um that sell cars or that where you can
+46:14 find apartments
+46:16 so you can set a scraper that every day
+46:19 goes to these websites pulls the data
+46:22 from there puts them in a i don't know a
+46:24 csv file and then puts them in a cloud
+46:27 and then you can schedule it with
+46:29 airflow so you can have multiple steps
+46:31 there and the first step
+46:33 textual scraper that would go there
+46:35 pull the data there then the other step
+46:38 is okay now you have the pages like now
+46:40 you need to process these pages somehow
+46:42 right and then you extract you parse
+46:44 this
+46:45 uh parse this data and then the other
+46:47 step would maybe put this in a csv
+46:50 file right so then you have a csv file
+46:52 in your s3 or google cloud or whatever
+46:56 cloud you use and i think it's important
+46:58 here to use a cloud and to use tools
+47:00 like airflow or other schedulers
+47:03 and then one of the steps there could be
+47:05 taking all this data and then training
+47:07 your model
+47:09 so then here it's not just a cc file
+47:12 that you download from kaggle and train
+47:13 your model but you have a
+47:17 well still it's a toy pipeline but you
+47:19 have a pipeline that you schedule that
+47:21 you run every day and that you can use
+47:24 to actually
+47:25 you know learn all these things learn
+47:27 airflow or whatever other schedule
+47:33 do you know many other similar projects
+47:39 something comes to mind
+47:41 not really no but again it i think it's
+47:44 the
+47:45 i think the general approach that you
+47:46 just got is really good about like
+47:48 building a real life pipeline with
+47:50 following
+47:51 whatever best practices are but really i
+47:53 would reiterate the point pick some data
+47:54 that you find interesting that was
+47:56 probably the best advice i've been given
+47:58 by us and the experienced data scientist
+48:00 when i when i got into interested in the
+48:03 space was
+48:04 and i asked her about recommendation for
+48:06 the toy products you really recommended
+48:07 me to pick a data set that i really
+48:09 wanted to find something out about
+48:11 and i think the same applies to if you
+48:13 build a data engineering pilot and build
+48:14 it for something the way you actually
+48:16 care about the outcome
+48:18 you won't always have the luxury at work
+48:20 sometimes you build data problem for
+48:21 data you're really not interested in so
+48:23 at least when you're doing it in your
+48:24 spare time care about the data
+48:28 and this example um
+48:31 of um
+48:32 i saw a blog post on linkedin about
+48:35 somebody who was looking for a flat in
+48:37 berlin which is not very easy these days
+48:40 so what they did is uh
+48:42 they also built a scraper yeah and they
+48:45 they would look uh they will find okay
+48:47 where uh where are the flats that
+48:49 you know
+48:50 basically first they get all the data
+48:52 and then they see the floods with the
+48:54 price they are interested in the areas
+48:56 the neighborhoods they are interested in
+48:58 and they look at this at flats that stay
+49:00 there for a while
+49:02 and this way like they used this need so
+49:05 they had a need
+49:06 to find a flat
+49:08 and based on that they built this
+49:09 pipeline uh
+49:11 for scraping pipeline and it helped them
+49:14 to find a flat in brilliant that's
+49:16 awesome
+49:17 that's really cool
+49:21 um
+49:22 yeah
+49:23 i don't know maybe it's a bit of topic
+49:25 the question from ram
+49:27 is
+49:28 most cloud platforms data processing
+49:30 cost structures are not really
+49:31 transparent
+49:33 do you have any suggestion to manage
+49:34 data processing costs i guess this is
+49:37 also important when you learn to use
+49:39 these things so do you do you have any
+49:42 suggestions i'm not i'm not sure i would
+49:45 agree that they're not transparent
+49:46 because usually the cloud providers
+49:47 provide very very detailed billing
+49:49 information if you dig into the building
+49:51 console and yeah that's definitely
+49:53 especially if you if you start let's
+49:55 have your side project you can easily
+49:57 burn a lot of money if you don't shut up
+49:58 your your your ec2 instances and they
+50:01 keep running or whatever you might be
+50:03 doing
+50:05 so
+50:06 yeah my recommendation is most most
+50:08 cloud programmatic recommendation is
+50:11 most plug or all cloud platforms have a
+50:13 budgeting alert which functions so if
+50:14 you want to manage your cost find out
+50:17 where you can get your email and get a
+50:18 warning for whenever whatever half of
+50:20 the money that you're willing to spend
+50:22 or a quarter of the money that you want
+50:23 to spend so that you get it get pink on
+50:26 email
+50:28 and other than that really dig into the
+50:30 billing console because there's a wealth
+50:31 of information in there and
+50:34 you can get you can roll it down to
+50:36 really nearly good details of what
+50:37 exactly you're spending on on each
+50:39 processing cycle of your afl cluster
+50:42 and that information is there
+50:45 it but yeah it's
+50:47 it's a bit of a science in itself to dig
+50:49 into that information and maybe a good
+50:51 data analysis project just to figure out
+50:54 how to extract what you're interested in
+50:56 from your app from your billing report
+50:58 yeah
+50:59 you can pull this data right and
+51:02 then you have another pipeline to
+51:03 practice right exactly you can build a
+51:05 pipeline it's very matter you can put a
+51:08 pipeline about your pipeline costs
+51:12 and in i don't
+51:14 think this is a thing in aws but in
+51:16 google cloud you have this trial period
+51:19 where
+51:20 they are not charging you any money in
+51:22 the first couple of months so they give
+51:23 you some money some free credits
+51:25 and then you can do whatever you want
+51:28 and if you run out of these free credits
+51:31 they do not start charging you so they
+51:33 send you um email saying hey you run out
+51:36 of credits um yeah do you want to
+51:38 upgrade or not so yeah it's a pretty
+51:41 safe environment to learn things there
+51:43 inedible yes i don't think it's the case
+51:45 they have free tier
+51:47 but
+51:48 yeah some things are part of free tier
+51:50 some things are not and then if
+51:51 something is not a part of free tier
+51:53 then you need to spend money on that and
+51:55 then you need to be careful let's say if
+51:57 you spin up a kubernetes cluster or
+52:00 something like that and you need to be
+52:02 careful that once you're done you've
+52:04 done
+52:04 whatever you wanted
+52:07 turn it
+52:08 turn it off right else you'll get a bill
+52:11 at the end of the month which you will
+52:13 not like
+52:14 exactly
+52:16 i think the support is support is pretty
+52:18 good so some of the students had these
+52:20 problems so they forgot to to shut down
+52:23 a sagemaker instance with a gpu which is
+52:26 quite expensive yeah and then they just
+52:28 wrote support saying hey i accidentally
+52:30 forgot to do this or would you be so
+52:33 kind to just
+52:34 you know remove that and then they
+52:37 actually did so they said okay
+52:39 yeah things happen
+52:43 okay
+52:44 um other questions uh
+52:47 in your perspective what amount of
+52:48 project experience would we need or
+52:51 should we get to start applying for
+52:53 entry-level roles in the industry
+52:56 that's a very generic question it would
+52:58 have helped if it was a bit what so for
+53:00 data engineering
+53:02 yeah let's uh let's imagine that a
+53:04 student is
+53:07 a general
+53:10 you know software engineering
+53:13 so they probably learn data structure
+53:14 algorithms programming so they know that
+53:17 i i think now gradients also know sql
+53:20 uh they learn sql at university
+53:23 um
+53:24 yeah yeah so now they want to to start
+53:27 working as data engineers what do they
+53:29 need to do
+53:31 especially if you have a relate relevant
+53:33 background in in studies i would always
+53:36 recommend to go directly for the
+53:37 entry-level positions because
+53:39 i'm not a fan of people who have a full
+53:41 full degree and then starting to get get
+53:43 into unpaid internships or doing a lot
+53:45 of side projects just to get in
+53:47 and it's and that that may happen to
+53:49 career changes unfortunately quite a bit
+53:52 but
+53:52 if you have a relevant degree then
+53:55 definitely try aim try for the
+53:57 entry-level positions directly and
+53:59 you you will have done enough course
+54:01 work and enough projects in university
+54:03 to
+54:04 to be to be employable and
+54:06 not not every company has offers
+54:08 entry-level positioning in data
+54:10 engineering but those that do they they
+54:12 will be prepared for graduates or if you
+54:15 graduate from a boot camp or something
+54:17 like that then it's a i would also
+54:18 directly aim for
+54:20 trying to get
+54:22 and if you
+54:23 and if you're if you don't have a
+54:25 relevant degree but you have some other
+54:26 degree then
+54:28 try to
+54:29 not do so much projects in your spare
+54:32 time but try to get get internships
+54:35 because that will give me a lot more
+54:37 relevant in terms of the experience you
+54:39 get quickly rather than
+54:42 then just do trying to motivate yourself
+54:44 i've seen people that have purely
+54:46 graduated from
+54:48 from from their own projects but those
+54:50 were usually unusually driven i've seen
+54:52 a lot more people fail with that
+54:53 approach and i've seen people succeed
+54:57 yeah you mentioned one thing that there
+54:59 are not so many entry-level positions
+55:02 for data engineering and i think it's
+55:03 true because usually
+55:05 at least this is my perception that for
+55:07 data engineering companies want
+55:10 to see experienced people
+55:12 so people who are perhaps as you
+55:14 mentioned especially this is if like if
+55:16 you're talking about kafka and things
+55:18 like that so they already need to have
+55:20 solid software engineering experience
+55:22 yeah no bit of distributing system
+55:24 before they can
+55:26 be hired in these positions do you think
+55:28 it's the case
+55:29 like let's say
+55:32 there are not so many
+55:33 entry-level positions
+55:35 would it be a good idea for people who
+55:37 graduate from university to first work
+55:39 as a back-end engineer before they start
+55:42 working as a data engineer
+55:45 that's a really good question so i think
+55:47 there's yeah it used to be that pretty
+55:49 much every position that i've seen for
+55:51 data engineering it was at least
+55:53 mid-level if not senior because that's
+55:55 when companies started out with building
+55:57 their data engineering teams i think
+55:59 that's changing now i think they're
+56:01 increasingly more enter level positions
+56:03 but
+56:04 it depends on the type of company so
+56:07 as an entry level i would always
+56:08 recommend
+56:10 if you if you unless you're really
+56:12 confident in your skills or you maybe
+56:13 you want to find your own thing that's
+56:15 an exception but otherwise i would
+56:16 really recommend to start up in either a
+56:18 consultancy or a larger company that
+56:20 already has an established data
+56:21 engineering department
+56:24 so for instance i started in i worked a
+56:26 lot in my life in agencies and
+56:27 consultancies and that those were always
+56:30 really career accelerated from me and
+56:32 i've seen the same things happen for
+56:33 people that work in the big in the big
+56:35 tech companies and say the london or
+56:38 delivery hero or these big building
+56:40 companies or whatever the local
+56:42 equivalent might be
+56:44 those are those tend to be career
+56:45 accelerators because you have a really
+56:47 well-structured learning environment
+56:49 usually those they have enough seniors
+56:50 when they're prepared to take on juniors
+56:54 and they they're prepared to
+56:56 mentor and develop their juniors
+56:58 it's very hard if you're starting out
+57:00 and you're the and i've seen that also
+57:02 quite frequently
+57:04 if you're a junior and you get tired as
+57:06 the first junior somewhere and there may
+57:08 not be a senior around and they just
+57:10 expect you to start it sounds really
+57:11 exciting and
+57:13 but in most cases i've seen i've seen
+57:15 that happen it was a recipe for
+57:16 frustration on all sides and not in a
+57:19 stalled career
+57:21 interesting so
+57:23 these consultancies are career
+57:24 accelerators uh just because they want
+57:27 uh to have a lot of um
+57:30 like let's say you have a client right
+57:31 and
+57:32 i imagine that there are not enough
+57:34 seniors to work with all these clients
+57:36 right so that's why they have this
+57:37 training in place to
+57:40 take this load of seniors
+57:43 and put them on juniors that's why they
+57:45 want the juniors to be
+57:48 ready to do the work as fast as possible
+57:50 right and then you have many projects
+57:53 you need to move between one project to
+57:55 another that's why you get to see a lot
+57:57 of different things right
+57:59 that and also it's it's a very financial
+58:01 thing so junior simply costs less but
+58:05 to the consultancy so there's a big
+58:06 financial incentive for them to have
+58:08 this pyramid structure where they have a
+58:09 few seniors that that do the the
+58:12 architectural work and enter the juniors
+58:14 or but then the bread and butter work is
+58:17 is usually done by juniors and so
+58:18 consultancies are that most of them are
+58:20 have their business model around up
+58:22 leveling junior so that's
+58:25 that is actually a very so a lot of them
+58:27 have structured entry-level programs and
+58:29 then there's a lot of expectations
+58:31 around mentoring and that's ingrained
+58:33 into the
+58:34 culture yeah thanks maybe the last one
+58:37 so if somebody wants to learn cloud
+58:40 should they go with aws google cloud
+58:42 platform or azure or something else
+58:48 i don't think there's a real i don't
+58:50 think it matters that much
+58:52 because they're all very similar
+58:54 actually and if you know in your way
+58:56 around one cloud you easily find your
+58:57 way around the next cloud that has at
+58:59 least been my experience so
+59:01 find one
+59:03 either find the one that's worked that's
+59:05 that's used at your company and get
+59:07 really comfortable with it and dig deep
+59:08 into it and learn all the functions that
+59:10 you can get a hold of
+59:13 or i'll find the one that has the best
+59:15 free tier option that's relevant to you
+59:17 and just learn that one
+59:19 okay i guess another option would be in
+59:22 your city or in your country look at
+59:24 what is the most common one most popular
+59:26 one so for example in berlin i think if
+59:28 i look at job
+59:29 descriptions i think aws is more popular
+59:32 than google cloud so maybe if you're in
+59:34 berlin then going with aws uh makes more
+59:37 sense but
+59:39 i've heard that in other cities in
+59:41 germany
+59:42 maybe azure is more popular than aws it
+59:45 depends on the sector of the industry
+59:47 you're working against a lot of startups
+59:49 use gcp because that they have very
+59:51 generous startups offering so for
+59:53 instance we hardly pay anything for our
+59:55 google cloud offerings
+59:57 a lot of
+59:59 larger tech companies so
+1:00:01 more established tech companies that are
+1:00:03 not not traditional enterprises but have
+1:00:07 grown in mature startups a lot of them
+1:00:09 use aws
+1:00:10 and in germany a lot of the enterprise
+1:00:13 companies use azure so it really depends
+1:00:15 on which
+1:00:16 which branch of the industry you want to
+1:00:18 be or you have to be working it
+1:00:21 okay thanks
+1:00:22 so before we finish how can people find
+1:00:25 you if they
+1:00:26 have questions linkedin twitter
+1:00:29 yeah either way works so
+1:00:31 i don't know can you put is there a way
+1:00:33 you can share my contacts with them yes
+1:00:35 i will i will put this in the
+1:00:36 description
+1:00:37 cool yeah so
+1:00:39 i can just share my my twitter and my
+1:00:41 linkedin profile with you and then again
+1:00:43 i'm happy to if people want to get in
+1:00:45 touch
+1:00:46 okay then i guess that's it so thanks a
+1:00:49 lot for joining us today thanks a lot
+1:00:51 for sharing your experience thanks
+1:00:53 everyone for joining us and watching
+1:00:55 this for asking questions
+1:00:56 and yeah that would be it
+1:00:59 thank you that was really fun i really
+1:01:00 enjoyed this conversation

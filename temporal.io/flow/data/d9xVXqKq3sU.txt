@@ -1,0 +1,1973 @@
+What Researchers and Engineers Can Learn from Each Other
+
+0:00 so hi everyone so this event is brought
+0:02 to you by data docs club which is a
+0:04 community of people who love data we
+0:06 have weekly events this event of uh one
+0:09 of such events
+0:10 and i think this
+0:12 205k is no longer true so there's more
+0:15 but anyway so there's a link in the
+0:17 description you can click on this link
+0:19 and check all the events we have uh in
+0:21 our pipeline and there is also a link to
+0:24 our google calendar so if you want to
+0:26 get notified about all our events you
+0:28 can subscribe to that and then of course
+0:30 there is this big red button with
+0:33 subscribe on it
+0:34 if it's still red for you click on this
+0:36 and then you'll subscribe to our channel
+0:38 and you will know about all the videos
+0:40 we have and we have an amazing slack
+0:42 community where we talk about
+0:44 data things so join that if you haven't
+0:48 and
+0:49 during today's conversation you can ask
+0:51 any question you want there is a link in
+0:53 the live channel so it should be pinned
+0:56 so click on this
+0:57 and ask any question you want and i'll
+0:59 be covering this question during our
+1:02 interview today so
+1:04 i think that's it from me
+1:08 um so let me pull my notes and are you
+1:11 ready yeah absolutely
+1:13 okay
+1:14 so and i'm ready as well
+1:18 so this week we'll talk about machine
+1:20 learning researchers and machine
+1:22 learning engineers and we will talk
+1:23 about what they can learn from each
+1:25 other so we have a special guest today
+1:27 mikhail mchale is a double funder so
+1:30 he's a founder of a machine learning
+1:31 consultancy company this company helps
+1:34 with solving tough business problems he
+1:36 is also founder of confetti
+1:39 ai ai which is an educational platform
+1:43 for learning data science and
+1:44 engineering before that mihail was
+1:47 worked as a senior machine learning
+1:48 scientist at amazon alexa so welcome
+1:51 thank you thank you it's really great to
+1:53 be here i'm a huge fan of uh your work
+1:56 alexis and also the data talks club so
+1:58 really happy to be here
+2:00 yeah thanks for for your words so before
+2:02 we go into our main topic of
+2:05 machine learning researchers and machine
+2:06 learning engineers let's start with your
+2:09 background so can you tell us
+2:11 a few words about your career so far
+2:13 sure
+2:14 so i've been in machine learning about
+2:16 close to a decade now and my entry point
+2:19 into machine learning was more from the
+2:21 academic standpoint
+2:22 so i studied computer science and ai at
+2:25 stanford
+2:26 and in addition to just ordinary course
+2:28 work that i did while i was there
+2:30 i had the
+2:31 really great
+2:33 pleasure and fortune of working in the
+2:35 nlp group so i worked with a lot of the
+2:37 really
+2:38 big names in nlp in the world including
+2:40 chris manning priscilliang chris potts
+2:43 and dan giraffsky
+2:45 and one of the first real entry points
+2:47 the machine learning research that i had
+2:49 was actually
+2:50 helping to lead a project in
+2:52 collaboration with ford which is the big
+2:54 car automaker where we were
+2:56 investigating
+2:58 new methods and neural network
+3:00 primarily neural network based
+3:01 techniques to conversational systems
+3:04 and so we were building a lot of new art
+3:06 architectures and building our new data
+3:08 sets and resources to really tackle this
+3:10 problem of
+3:11 deep learning for
+3:13 conversational systems
+3:15 after stanford i actually joined the
+3:17 self-driving car startup in san
+3:18 francisco called right os
+3:21 where you know i was there as one of the
+3:23 very early employees and got to get that
+3:25 first taste of what startup life is like
+3:27 and
+3:28 the focus of the company was actually a
+3:30 lot more on
+3:31 building a real-time data platform
+3:34 for optimizing and coordinating the
+3:37 movements of fleets of vehicles on the
+3:38 road
+3:39 and so it was really fundamentally a
+3:42 problem about engineering and and really
+3:44 how can we do things very efficiently
+3:47 um and so i was there you know for a
+3:49 while and when i left i i went actually
+3:53 helped start a new team that amazon
+3:54 alexa
+3:55 which i've often described as
+3:57 a bit of like a google brain-esque
+3:59 effort within alexa so it um it was
+4:02 similar in that way in that the charter
+4:04 of the team was really kind of to sit at
+4:06 this intersection between research and
+4:09 engineering and so we did a lot of
+4:11 thinking about what is
+4:13 research and conversational systems look
+4:15 like today and how can we contribute to
+4:17 the research but we also we're always
+4:20 constantly thinking about how can a lot
+4:22 of these advances make their way into
+4:24 the alexa platform and how can we do
+4:26 that effectively so that we can deliver
+4:28 customer value
+4:30 so really that was this nice hybrid of
+4:32 both the engineering and the research
+4:34 that came together in this nice way
+4:36 while i was there
+4:37 and then along the way as you've
+4:39 described i've always been interested in
+4:40 education so building tools and
+4:42 platforms to help people learn things
+4:44 um confetti being the most recent
+4:46 example of that and then yeah nowadays
+4:48 i'm doing a lot of consulting working
+4:50 with a lot of companies across different
+4:52 verticals to help them solve their
+4:54 toughest business problems using data
+4:56 driven and machine learning techniques
+5:00 yeah that's that's pretty cool and so
+5:02 you worked at stanford in the nlp group
+5:04 and then you went to
+5:06 a self-driving company so i'm wondering
+5:09 how did it happen
+5:10 what doesn't rupee have in common with
+5:13 self-driving so how did you convince
+5:15 them to actually hire you
+5:16 [Applause]
+5:18 uh
+5:19 that's uh that bad question they would
+5:20 maybe have to answer how how they picked
+5:23 me i don't know but uh you know from a
+5:25 problem domain standpoint i think you're
+5:27 right in that there is maybe there
+5:29 doesn't seem to be as much overlap
+5:31 in some ways i would agree that
+5:33 there's
+5:34 fundamentally you know they're very
+5:36 different problems though i would say
+5:38 that they're like when you think of
+5:39 self-driving compared to nlp
+5:41 the difficulty of the problems they do
+5:43 have a very similar characteristics i
+5:44 mean they're both very long tail
+5:46 problems right where a lot of the
+5:48 complexity comes in everything that
+5:50 happens after you've achieved 80
+5:52 accuracy i think that in nlp as in as in
+5:56 self-driving vehicles
+5:57 it's we can do pretty well on 80 of the
+6:00 phenomena but
+6:01 really the hardest part is everything
+6:03 that happens in that long tail and so
+6:05 those characteristics make them very
+6:07 similar
+6:08 but i think that for me a lot of what
+6:10 drew me to uh going into
+6:13 you know this particular company was
+6:14 that there was a really high
+6:16 like the the team was really just
+6:18 phenomenal i mean it was a very high
+6:20 performance engineering team of people
+6:21 that had built
+6:22 a lot of amazing systems of uber and
+6:25 tesla and and different and apple in
+6:28 fact and so
+6:30 you know we can we'll i'm sure we'll get
+6:31 into this but a lot of what i've been
+6:33 thinking about coming out of research
+6:35 was like how do i become a better
+6:36 engineer and so i felt like i should
+6:38 just throw myself into some really hard
+6:39 engineering problems and work with some
+6:41 really good engineers to become a better
+6:43 engineer so that was a lot of motivation
+6:45 there
+6:46 was it your biggest problem uh when you
+6:49 were transitioning from uh academia
+6:52 world to
+6:53 uh you know industry world uh like this
+6:55 engineering aspect or what was it yeah
+6:57 yes that's right that's right so i think
+6:59 that when i was at stanford we were we
+7:02 were solving a lot of interesting
+7:03 problems and i think we did do a lot of
+7:05 interesting research um you know that
+7:07 i'm really happy with but
+7:09 a lot of the times when i was working on
+7:11 things i felt that
+7:12 my engineering chops were maybe at the
+7:14 not the level where i felt i was doing
+7:16 things as effectively as efficiently as
+7:18 i could and so there was an element of
+7:21 you know like
+7:22 you're doing things and you're building
+7:24 things but maybe at times i felt like
+7:26 even as i was
+7:27 setting up some infrastructure i was
+7:29 kind of fumbling through it a little bit
+7:31 and
+7:32 that felt
+7:33 it it's it's not just that you know
+7:35 maybe the code wasn't the cleanest which
+7:37 research code tends not to be the
+7:38 cleanest i mean it's not known to be the
+7:40 cleanest and you know that's maybe not
+7:42 appealing from an aesthetic standpoint
+7:45 i think that the bigger problem for me
+7:47 was that i was
+7:48 i'm a very relentless optimizer of time
+7:50 i like to do things very efficiently and
+7:52 effectively and
+7:54 when you're when you see that like
+7:56 there's maybe deficiencies in how you're
+7:57 doing something i thought okay i need to
+7:59 i need to spend the time to really build
+8:00 that foundation
+8:02 and get better in those engineering
+8:04 things and start to ask yourself these
+8:05 questions about okay how do i go from a
+8:08 proof of concept model or something to
+8:10 something that can interact with you
+8:12 know tens of thousands hundreds of
+8:13 thousands of people in a scalable way
+8:15 and that's something that you don't
+8:16 really get to see in research uh too
+8:18 often because that's not really the
+8:19 problems that researchers think about
+8:21 and so
+8:22 i think you know making that transition
+8:24 going from a very research-minded way of
+8:27 thinking about things to now hey
+8:29 build something that works as robust uh
+8:31 is was really one of the bigger
+8:33 challenges
+8:34 and you you mentioned he was setting
+8:36 some infra as a researcher i think
+8:38 that's uh quite uncommon for researcher
+8:41 to
+8:42 set up infrared to begin with right
+8:44 so yeah
+8:46 uh something
+8:47 i think that's right yeah i mean you
+8:48 know when i say infrared it's probably
+8:51 not in fray in the most robust sense i
+8:53 meant even just like standing up web
+8:54 services and you know if you're setting
+8:56 up an annotation task and you have to
+8:58 interface with amazon mechanical turk or
+9:01 you have to you know do any of these
+9:02 things uh we were collecting audio data
+9:06 and so being able to stream audio data
+9:08 over the web was difficult at times and
+9:10 so
+9:11 you know eventually got done and and it
+9:13 worked but it was it was not the
+9:15 cleanest and prettiest when it did work
+9:17 and so i thought there's got to be a
+9:19 better way than this
+9:21 yeah so basically you worked first as a
+9:23 researcher then you worked more as an
+9:25 engineer in the self-driving startup and
+9:28 then you joined amazon
+9:30 to work in a hybrid mode right so your
+9:33 your official position was
+9:35 ml researcher right yeah it was it was a
+9:37 scientist by title and like
+9:39 but scientists at amazon can mean a lot
+9:41 of things i mean there's there's
+9:42 scientists that really focus primarily
+9:44 on engineering and they're scientists
+9:45 that are
+9:46 literally just researchers and the way
+9:49 my role was set up is there was a lot of
+9:51 flexibility in the stuff that i was
+9:52 working on especially because it was a
+9:54 new team i mean it was really just my
+9:55 manager and i started so i got to almost
+9:59 actually by necessity i had to do a lot
+10:00 more engineering because
+10:02 when we started there was just two of us
+10:04 by the time i left there was maybe 20 or
+10:06 so people on the team so a lot of the
+10:08 engineering and setting up of
+10:10 infrastructure and setting up the code
+10:12 bases and all these things kind of fell
+10:14 on me by default um i mean which i liked
+10:16 i i did actually like doing those things
+10:18 i mean because of my prior experience in
+10:20 engineering i thought well this is super
+10:21 fun anyway i mean research is fun but
+10:23 this is also fun um and so fundamentally
+10:26 i ended up doing a lot of both i wrote a
+10:29 lot of papers but i also
+10:30 built systems that ended up found their
+10:32 way into the alexa platform yeah that's
+10:34 pretty cool so basically you managed to
+10:36 look at uh both to be in the both
+10:40 worlds so you you saw how things are
+10:42 done from the researchers point of view
+10:44 and how things are done from engineering
+10:46 point of view and then at amazon you
+10:48 were doing both right
+10:51 and maybe you can tell us um
+10:54 what actually
+10:55 a machine learning researchers do so
+10:57 what kind of problems do they solve and
+10:59 what what do they use for solving these
+11:01 problems absolutely
+11:03 yes so machine learning researchers tend
+11:05 to focus a lot more on open-ended
+11:07 problems and these are open-ended
+11:09 problems from the scientific standpoint
+11:11 so there's
+11:12 a way of thinking about things where you
+11:14 don't really know if something is going
+11:16 to work right researchers tend to be
+11:18 very hypothesis driven they will look at
+11:20 something and say all right how can i
+11:22 improve this through some
+11:24 modeling advancement or some
+11:26 architectural change or something
+11:28 how can i do that and a lot of it does
+11:30 tend to be driven by hypothesis so you
+11:32 don't know if it's going to work up
+11:33 front but you are you know you run
+11:35 experiments and you run experiments
+11:37 deliberately and sort of methodically to
+11:40 try and validate those those hypotheses
+11:42 and so there's a lot of reading of
+11:44 papers you know seeing what other people
+11:45 are doing and then writing of papers
+11:47 when you maybe discover something
+11:49 interesting
+11:50 and i think as far as tooling is
+11:51 concerned there's a lot of the tools
+11:54 that researchers machine learning
+11:55 primarily use
+11:57 are ones that enable really fast
+11:58 prototyping and really fast validating
+12:00 or invalidating of hypotheses
+12:02 so a lot of the usual suspects come up
+12:05 things like jupiter hub notebooks they
+12:07 come up a lot
+12:08 and then tools like platforms upgrades
+12:11 and biases you know things that allow
+12:12 you to keep a very detailed experimental
+12:14 log that allows you to invalidate or or
+12:17 confirm your hypotheses
+12:20 can you think of an example of such a
+12:22 hypothesis like what could it be an
+12:25 open-ended and scientific uh
+12:27 yeah absolutely so so a lot of uh you
+12:30 know the nature of machine learning
+12:32 research today is it's a lot about
+12:34 benchmarks right there's like benchmark
+12:35 data sets and
+12:37 something where you know you
+12:39 uh
+12:40 there's leaderboards in some cases but
+12:42 you know so those are like formal
+12:43 leaderboards that come up but really
+12:45 there's some
+12:46 community agreed upon data set that
+12:48 people are trying to improve okay that's
+12:49 right yeah game imagenet is a good one
+12:52 for computer vision but you know you can
+12:53 think of like squad in the case of
+12:55 question answering for nlp uh and
+12:57 there's like so many i mean
+12:59 but that's really how machine learning
+13:00 research has evolved is
+13:02 centering around these different
+13:03 benchmarks because it's a way of
+13:05 standardizing and making sure everyone's
+13:06 talking the same language in some sense
+13:08 and uh and you can imagine that when
+13:10 you're trying to improve the performance
+13:12 on these these data sets sometimes even
+13:14 just by really really small amounts you
+13:16 might say okay this existing
+13:17 architecture uses you know this one
+13:19 particular um you know this model uses
+13:21 one particular kind of architecture what
+13:23 if i use a special kind of cross
+13:25 attention between maybe the encoder and
+13:27 the decoder or something does that allow
+13:29 you to maybe propagate some information
+13:31 from the encoder to the decoder so that
+13:34 then downstream you have an increase in
+13:36 performance and so you might you know
+13:38 try that you might build your model in
+13:40 such a way that you try and capture some
+13:42 of that signal
+13:44 and then see if it works i mean it's a
+13:45 lot of this kind of thinking through uh
+13:48 about these different architectures
+13:50 so if it works you publish a paper and
+13:52 if it doesn't what happens then
+13:54 well then you're back to square one then
+13:55 you're then you're back to the drawing
+13:57 board a lot of the times but but i mean
+13:58 i think that there's
+14:00 uh you know it doesn't always have to be
+14:02 just the it doesn't always just have to
+14:04 be squeezing out like a half a
+14:06 percentage points um by getting that
+14:07 perfect architecture there was there's
+14:10 some papers that i've written in the
+14:11 past um
+14:12 where we were just showing that you can
+14:14 use very simple things
+14:16 to do maybe comparably well as much more
+14:19 difficult architectures and so there's
+14:22 even a line of work that's about how do
+14:23 i reduce the complexity of something
+14:26 without giving up on you know without
+14:28 giving up on performance and that can be
+14:30 reducing complexity in terms of the
+14:31 architecture or reducing complexity in
+14:33 terms of the model size or anything like
+14:35 that um but yeah fundamentally if you if
+14:37 you can squeeze out percentage points of
+14:40 improvements and you write a good story
+14:42 that ends up being a paper most of the
+14:43 time yeah
+14:45 and how do you need to
+14:47 uh
+14:48 like where do these open-ended questions
+14:50 come from so do you have to come up with
+14:54 them yourself does your professor tell
+14:56 you about them or you work with i don't
+14:58 know companies from the industry
+15:01 how how do you come up with these
+15:03 problems
+15:04 yeah there's there's different uh
+15:05 there's different ways i think
+15:07 in the early
+15:08 parts of a researcher's career i think
+15:11 it's it's always very common to start by
+15:13 just serving what's out in a field right
+15:16 so so nowadays i think
+15:18 a lot of researchers have done good jobs
+15:20 of literally producing survey papers
+15:22 where they talk about the high level
+15:24 problems that that a certain field is
+15:26 talking about and that's you know and
+15:27 they'll include all the relevant
+15:28 citations uh and then you'll end up
+15:31 doing i mean if you read these surveys
+15:33 uh especially when you know early in my
+15:35 research career is you just do what it
+15:37 is effectively like depth first search
+15:39 through the citation landscape right
+15:41 where you're like okay here's a paper
+15:42 here's a bunch of links
+15:44 i understand this i don't understand
+15:46 this okay but this links to something
+15:47 else and you just kind of go down this
+15:48 rabbit hole of how are people thinking
+15:50 about problems and what have they
+15:52 thought about before
+15:53 and if you do this enough and then you
+15:55 keep kind of going down this rabbit hole
+15:57 eventually you get a really good
+15:59 sense for how our you know what's what's
+16:01 the state of the art look like today
+16:03 um and sometimes you'll discover
+16:06 that something that maybe you're
+16:08 hypothesizing or thinking about doesn't
+16:10 yet exist or maybe you'll see that
+16:12 someone sort of thought about something
+16:14 similar in the past but they never maybe
+16:15 didn't flesh out this one particular
+16:17 detail and so then you think maybe what
+16:19 if i combine what i'm thinking with
+16:20 maybe what they're thinking can be you
+16:21 know there's something new to come out
+16:22 of there excuse me
+16:24 section right yeah exactly future works
+16:26 a lot of the times i think that's one
+16:28 fantastic aspect of research is if you
+16:30 go right down to the you know typically
+16:31 the end of a paper they'll have a
+16:33 conclusion and they'll have like three
+16:35 or four open questions we'll just say
+16:36 like hey we did really awesome work but
+16:38 there's like a few things we're not so
+16:40 sure about so maybe you guys can like
+16:42 think about this in the future and and
+16:43 so then that's actually a good place to
+16:45 find motivation as well um but then you
+16:47 know also depending on how hands-on your
+16:49 your your the researchers that you're
+16:51 working with are they can also just give
+16:52 you ideas um especially early in the
+16:55 researchers careers
+16:56 you know a lot of professors will have
+16:58 their own agendas and and kind of a
+17:00 broad class of things that they're
+17:02 thinking about and so they'll they
+17:04 they're happy to share that um because
+17:06 that's why they hired you right in some
+17:07 sense was to pursue a lot of their own
+17:09 research questions yeah so basically you
+17:11 are there
+17:13 on your own right so maybe there are
+17:14 some tips coming from your supervisor
+17:16 from the professor but you're doing this
+17:19 breadth first research yourself right
+17:21 you're reading these papers you're
+17:22 trying to
+17:24 have a picture in your mind what is the
+17:25 state of the art right so it's all on
+17:27 you that's right so you have a lot of
+17:30 independence
+17:32 there
+17:32 is a blessing
+17:33 a blessing and a curse for sure
+17:35 okay and
+17:37 so you did this for some time and then
+17:39 you joined this startup
+17:41 self-driving startup and you worked as
+17:43 an engineer so what do
+17:45 machine learning engineers do what kind
+17:47 of problems do they solve and what do
+17:49 you do what do they use for that
+17:52 yeah
+17:53 so
+17:54 unlike the the sort of open-ended
+17:55 questions that researchers tend to think
+17:57 about machine learning engineers tend to
+17:59 be more focused on the full machine
+18:02 learning life cycle
+18:04 so a lot of what they think about is
+18:06 whereas a researcher might train a model
+18:08 and their work is done they might say
+18:10 okay i have my pickle file i have my
+18:12 binary whatever you know that's it and
+18:14 maybe i've confirmed or invalidated
+18:15 hypothesis an engineer is really
+18:17 responsible for maybe going the next
+18:19 step and saying okay now that i have the
+18:21 model how do i handle all the other
+18:23 aspects of making a fully fledged system
+18:25 that uses machine learning and so you
+18:27 know that systematic aspect has a lot of
+18:30 things that fall under under the curve
+18:32 including deployment right how do i
+18:34 scalably deploy something how do i make
+18:35 sure that there's uptime
+18:37 how do i monitor that something is
+18:39 working all the time and so a lot of it
+18:41 really does have to do
+18:43 with those engineering aspects and
+18:44 machine learning engineer of course
+18:46 there's engineering that has to
+18:47 that it's involved in that but i think
+18:50 that in some sense the machine learning
+18:52 is the way the field has progressed the
+18:53 machine learning aspect of it has become
+18:55 actually an even smaller part of the
+18:57 role
+18:58 nowadays you might only have to do 20
+19:00 percent of your time on machine learning
+19:02 if even that and really 80 percent of
+19:04 heavy lifting is the engineering
+19:06 so when i think about tooling that falls
+19:09 into uh ml engineers toolkit there's
+19:13 some of the usual suspects around
+19:14 modeling i mean you're almost certainly
+19:16 going to be using pi torch or tensorflow
+19:18 or some high level modeling library
+19:20 but a lot of your toolkit is also going
+19:22 to involve these more traditional
+19:24 engineering tools right docker to help
+19:26 with reproducibility or um being very
+19:29 comfortable with the cloud provider to
+19:31 deal with cloud infrastructure whether
+19:33 that's aws or gcp or xero or whatever
+19:36 and then being very comfortable with the
+19:37 web framework right something like fast
+19:39 api or flask depending on the language
+19:41 that you're using for your backend
+19:42 services and so it's really this
+19:44 combination of some machine learning
+19:47 maybe not as much now as it was before
+19:48 but then a lot a lot of engineering
+19:52 so researchers they ask themselves open
+19:55 ended questions they come up with
+19:56 hypotheses they test them and then maybe
+19:59 if it works out they come up with a
+20:01 better architecture they have this pico
+20:03 file or model file by torch module file
+20:05 whatever
+20:06 and then
+20:07 yeah if it happens in a company i don't
+20:10 know about university but in the company
+20:12 they can go to their fellow machine
+20:14 learning engineers their colleagues and
+20:16 say okay we have this
+20:18 file
+20:18 uh let's now figure out how to actually
+20:21 deploy this right
+20:22 yeah that's right
+20:24 and uh what about data science uh
+20:28 what is it is it more engineering or is
+20:29 it more research
+20:31 yeah uh it's it's a really good question
+20:33 i think it's one that um
+20:35 data science has changed a lot i think
+20:36 in the last you know kind of eight to
+20:39 ten years maybe five to ten years i
+20:41 think that at a high level uh data
+20:43 science has really gone through
+20:44 different phases
+20:45 when data science really began as a
+20:47 field
+20:48 uh i think it was this like huge
+20:49 umbrella term i mean it still is an
+20:50 umbrella term but especially then you
+20:53 know what i think of is like data
+20:54 science 1.0 which is when all of a
+20:56 sudden companies and and different
+20:58 groups realized there was a lot of data
+21:00 that was coming in that had to be
+21:01 processed in some way
+21:03 that was being combined with the fact
+21:04 that there were new modeling
+21:05 advancements where now people were
+21:07 trying to see how can you know maybe i
+21:10 extract some insight from those those
+21:12 new data sources that were that we have
+21:14 but what ended up happening i think is
+21:16 that people just you know went on hiring
+21:18 splurges and they just hired a bunch of
+21:20 data scientists to do data whatever that
+21:21 meant
+21:22 and uh there wasn't really like a clear
+21:24 strategy about how what does it mean to
+21:26 extract insight from data and how do you
+21:28 do that in a way that actually helps a
+21:29 company as an example
+21:31 and so that was really data sense 1.0 i
+21:34 think that now we're really living
+21:35 through what i consider data science 2.0
+21:37 which is where we are starting to
+21:39 realize and develop systems for going
+21:42 from you know extracting of data
+21:44 insights to then something that's
+21:45 commercially viable and that can deliver
+21:47 value to people
+21:48 and kind of building out that pipeline
+21:50 and building up that system is something
+21:52 that we're really refining nowadays um
+21:54 so that it is really
+21:56 a lot of times more engineering than it
+21:57 is science but you know that's not to
+21:59 say that science isn't there they're
+22:00 absolutely a science there but it's
+22:02 something where
+22:03 uh
+22:04 the tools have become so good on the
+22:05 scientific standpoint that now there's
+22:07 really just a lot more of an emphasis on
+22:09 improving the tooling on engineering
+22:10 standpoint to make that transition from
+22:12 science to engineering or seamless
+22:16 and really just setting yourself up for
+22:17 success to do that
+22:19 i also think in data science often you
+22:21 also like in research you often don't
+22:23 know if your idea is going to work right
+22:26 like in research so you still have this
+22:28 experimentation
+22:30 aspect you still have
+22:31 you need to come up with a hypothesis
+22:33 then you need to prove yourself
+22:35 to prove this that this hypothesis work
+22:38 uh maybe come up with a poc
+22:40 and then deploy it right so then also
+22:42 have the engineering part there to show
+22:45 that okay these hypotheses work now
+22:47 let's roll it out to all the user sides
+22:49 so it's kind of combination of of both
+22:51 worlds
+22:52 yeah i think that i don't think there's
+22:54 a single
+22:55 data science or machine learning team
+22:57 out there even if they're doing
+22:58 something that doesn't seem like it's
+22:59 very novel from a research standpoint
+23:01 that doesn't have some experimentation
+23:03 like just the nature of doing data
+23:05 driven and machine learning work is such
+23:07 that even if you're just reproducing a
+23:09 paper you have to run experiments you're
+23:11 going to have to you know deal with
+23:12 issues of reproducibility building proof
+23:14 of concepts you know oh they say one
+23:16 thing on the paper
+23:18 i'm not seeing the same results here i
+23:19 mean there's always this disconnect that
+23:21 happens there and so you're absolutely
+23:22 right i think that data science just
+23:24 anywhere regardless of the level of
+23:26 sophistication in organization will
+23:28 involve some level of science
+23:31 so what do you think machine learning
+23:33 engineers and researchers can learn from
+23:36 each other
+23:38 the core that's the core of the talk
+23:42 i think it's a i think it's a really
+23:44 it's a very interesting question
+23:45 honestly because
+23:47 i've worn a lot of different hats in in
+23:49 my career and
+23:51 depending on the room that i'm in and
+23:53 that i've been in
+23:55 you deal with like people that think
+23:56 very very differently there is actually
+23:58 this this pretty big disconnect between
+24:00 how scientists and researchers think
+24:02 about things and how engineers tend to
+24:04 think about things
+24:05 and and i think some of the problem you
+24:07 know these actual problems that i've
+24:08 seen is
+24:09 sometimes these two roles don't really
+24:11 appreciate each other or what the other
+24:13 contribute to one another
+24:15 but i really do believe that in the best
+24:17 of all possible worlds and the best of
+24:19 all possible organizations are ones
+24:20 where they
+24:21 see that really the best things happen
+24:23 when they work together very closely and
+24:25 they collaborate very closely that's
+24:27 where i've seen the best work the
+24:29 fastest work being done
+24:31 and so concretely speaking i think that
+24:34 when i look at like a researcher what
+24:36 does a researcher have to learn from an
+24:37 engineer i think that you know engineers
+24:40 tend to think about things in terms of
+24:42 very deterministic systems right they
+24:44 build systems that are very robust and
+24:46 that's better they have this very kind
+24:48 of like expected predictable sort of
+24:50 path through there's a lot of rigor in
+24:52 how engineers build systems
+24:54 and that's not something that we
+24:55 typically think of when we think of
+24:57 researchers i mean researchers are sort
+24:58 of like
+24:59 more like exploratory they think about
+25:01 these ad hoc problems you know they
+25:03 think about hey what happens if i do
+25:05 this and maybe it doesn't have the same
+25:07 level of structure that an engineer will
+25:09 have but
+25:10 uh i think that if you adopt some of the
+25:12 practices around engineering even at
+25:14 just like a low level around
+25:16 programmatic aspects you know about how
+25:18 you code something that's
+25:20 testing more thoroughly if that's using
+25:22 things like static typing one i think
+25:25 that'll make you much more effective
+25:27 but then i think that engineers are also
+25:29 really good at
+25:30 a very scrappy way of doing things right
+25:32 when an engineer
+25:34 faces a problem they are very good about
+25:36 just sort of saying like all right roll
+25:38 up your sleeves like let's dive into any
+25:40 part of the stack we need to to solve
+25:42 the problem and so they really are
+25:43 comfortable going across
+25:45 the full stack whereas researchers a lot
+25:47 of researchers that i've worked with in
+25:49 the past
+25:50 they sometimes have this
+25:52 mentality of well you know certain
+25:53 problems are beneath me and then maybe
+25:56 like i really just think about science i
+25:58 really just think about research i don't
+25:59 really think about
+26:00 you know how i don't want to think about
+26:02 how to spin up an ec2 instance or
+26:04 something like that that's just not
+26:05 something they concern themselves with
+26:07 or even or want to concern themselves
+26:10 with
+26:10 but i think it's a pretty destructive
+26:12 mindset honestly because if you
+26:14 don't think about things and you aren't
+26:16 comfortable with some of these
+26:17 engineering aspects
+26:18 then you're going to introduce
+26:20 dependencies your dependencies on your
+26:22 own work right like if you want to do
+26:24 something i mean even if you're a
+26:26 researcher if you want to do something
+26:27 you're going to have to use a cloud
+26:28 provider and so if you don't know how to
+26:30 use that then you're going to have to
+26:31 depend on someone else just to even do
+26:33 the most basic things and that's just
+26:35 something you know that'll slow you down
+26:36 i don't think that's the best way to do
+26:38 things and so i think adopting some of
+26:40 that scrappiness is really useful for
+26:42 researchers
+26:44 and then i think on the the other like
+26:46 the counter side i think that
+26:48 researchers have a lot of things they
+26:50 can offer to engineers as well i think
+26:52 that researchers are really good at
+26:54 handling uncertainty
+26:56 um and really dealing with with
+26:58 situations of uncertainty
+27:00 this is something that happens in
+27:01 machine learning all the time right i
+27:03 mean we talked about
+27:04 uncertainty in hypothesis-driven
+27:06 research but even for any company that's
+27:09 doing any machine learning there's a
+27:10 whole lot of uncertainty that that
+27:12 building machine learning model is
+27:13 reintroduces like will it work will it
+27:15 work as good as i think it will i don't
+27:17 know it's hard to say
+27:19 but uh but researchers are incredibly
+27:20 comfortable with that way of thinking
+27:22 about things because that's all they do
+27:24 is they think about things in in kind of
+27:25 probabilities right like there's some
+27:27 chance this work in some cases it
+27:28 doesn't work
+27:30 but engineers especially ones that are
+27:31 classically trained are maybe not super
+27:33 comfortable with that you know that
+27:35 level of uncertainty in their work they
+27:37 really want if then like that kind of
+27:40 strict you know if then sort of
+27:41 relationship um because it makes sense
+27:44 right i mean if you've written if you
+27:46 deal with engineered systems you've
+27:49 never asked yourself will i be able to
+27:51 query my database or will i be able to
+27:52 write to my database i mean you just
+27:54 expect these things will happen
+27:56 so i think researchers can certainly you
+27:58 know engineers can adopt some of that
+28:00 uncertainty different way of thinking
+28:02 and and then i do also think there's
+28:03 researchers
+28:04 tend to be better running experiments
+28:06 than engineers do i've definitely worked
+28:08 with engineers in the past where
+28:10 you know they'll build something
+28:12 and they'll sort of run some experiments
+28:14 or maybe they'll conclude that maybe a
+28:16 model isn't as good as they think it is
+28:18 and really it's just because they're
+28:20 coming to those conclusions because they
+28:21 haven't maybe been as deliberate about
+28:23 hyper parameter tuning or refining you
+28:26 know some aspect of the model which
+28:28 researchers are super good about doing
+28:30 that i mean they you know maintain very
+28:32 clear experimental logs they'll make
+28:34 sure that when when i say that this
+28:35 hypothesis doesn't work like you can be
+28:37 pretty certain that there's confidence
+28:39 intervals you know we've calculated p
+28:40 values all these things uh so
+28:42 researchers are just really good about
+28:44 being rigorous in those aspects of
+28:47 machine learning work
+28:50 yeah i remember when i was going from
+28:52 being a software engineer to being a
+28:54 data scientist i really struggled with
+28:57 maintaining this experimentation look i
+28:59 had such a mess and it was just too
+29:01 difficult to find out what's going on
+29:03 so
+29:04 so you said that
+29:06 what researchers can learn from
+29:08 engineers is
+29:10 infrastructure in your projects also
+29:12 including code like uh have some
+29:14 structure there and not
+29:17 like it will help you have less mass in
+29:19 your in your code then be comfortable
+29:22 with uh stepping outside of your comfort
+29:24 zone comfort zone so you
+29:28 you don't say okay i don't know how to
+29:30 do this you can just try different
+29:32 things and this way you don't depend on
+29:35 others you don't wait till somebody
+29:37 comes up comes to you and helps you to
+29:40 press this uh create instance button on
+29:42 elbow yes right right that's uh that's
+29:45 two things that they can learn
+29:49 and then what engineers can learn from
+29:51 researchers is how to handle uncertainty
+29:54 uncertainty how to be comfortable with
+29:57 uncertainty um so it's not always if
+30:00 then right it's not always a set of
+30:02 stick rules
+30:03 there are sometimes uncertainty
+30:06 and they can learn how to be good with
+30:08 experiments how to
+30:11 maintain this experimentation right did
+30:13 they miss anything i think that's right
+30:16 and you you also said that
+30:18 so there is a lot of disconnect between
+30:19 researchers and engineers and i imagine
+30:22 that especially if you're at university
+30:24 you don't don't always have industry
+30:26 partners
+30:27 and it's also very like you're you're
+30:30 working independently you
+30:32 you know you have like 100 papers you're
+30:36 doing this bread search breadth first
+30:38 search there right so you're kind of you
+30:41 start living in your bubble
+30:43 right and you don't necessarily have
+30:45 this connection with the real world like
+30:47 how things are done
+30:49 in the industry and then when it comes
+30:51 to engineers they also don't always work
+30:53 with data scientists
+30:55 and then you said yes they don't
+30:57 necessarily appreciate what each other
+31:00 are doing what the others are doing
+31:02 and
+31:03 the
+31:03 great things happen when you put them in
+31:06 one room right so maybe can we talk
+31:08 about that a bit so how
+31:10 how can we
+31:12 put them together in one room so how can
+31:15 businesses and organizations uh
+31:17 you know
+31:18 take them and
+31:22 take
+31:23 best from from their efforts
+31:25 yeah yeah i mean i think it's it's a
+31:27 hard problem
+31:29 uh and it's not one that i think any
+31:30 organization has really solved
+31:32 completely because part of the work you
+31:35 know part of the work and doing that
+31:37 comes from a cultural aspect right i
+31:40 mean if you imagine that
+31:42 researchers are custom being with
+31:44 researchers in the same room or maybe by
+31:46 themselves in their own room
+31:48 and then you have engineers that are so
+31:49 accustomed to working with other
+31:50 engineers i mean they're really just
+31:52 fundamentally different ways of thinking
+31:54 about things
+31:55 and
+31:56 i do think that there's a certain aspect
+31:58 where leaders that oversee these kinds
+32:00 of hybrid organizations
+32:02 do have to make an effort to to
+32:04 encourage you know this
+32:05 cross-pollination right and
+32:08 making sure that that
+32:10 people do understand that there is value
+32:12 that that comes from each of the other
+32:14 organizations i mean i i've definitely
+32:16 been in teams and work with teams where
+32:19 where
+32:20 there really is like almost i wouldn't
+32:22 say like strong resentment but there is
+32:23 like a resentment where like oh an
+32:26 engineer talking about like a data
+32:27 scientist or data scientist talking
+32:28 about an engineer and they're just like
+32:29 oh like what are they even doing like i
+32:31 don't they don't really know what
+32:32 they're talking about or you know
+32:33 they're all they do is that you know
+32:35 they don't even like write their code
+32:36 you know so there's really that kind of
+32:37 level of uh
+32:39 those types of attitudes sometimes i
+32:41 mean they're not always that toxic but
+32:43 but you know
+32:44 at a more kind of
+32:46 lower level sometimes they're just yeah
+32:47 i don't really get what they do and i
+32:49 don't know how to do it so i think part
+32:51 of it is cultural and i think that you
+32:52 have to encourage cross-pollination
+32:54 within your organization where you've
+32:56 put people in situations where they work
+32:58 together i think that different
+33:00 organizations have tried over the last
+33:02 you know five ten years of the
+33:04 progression of data science and machine
+33:05 learning they've tried different models
+33:07 for how to
+33:08 how to integrate machine learning into
+33:10 an engineering organization
+33:12 and i think there's a few models that
+33:13 i'm pretty i i feel like i have never
+33:15 seen really work i mean i've seen a
+33:16 number of different models places where
+33:18 i've worked a few models that i haven't
+33:20 seen work really well are
+33:21 where you just like silo off like the
+33:23 researchers from the uh you know sell
+33:26 them off from the engineers and they
+33:28 literally create this almost separate
+33:30 units
+33:31 and you know you kind of think all right
+33:33 well maybe they're doing this because on
+33:35 a lot of places having the strict lines
+33:37 make it clear what the responsibilities
+33:39 are and that's great but
+33:41 i think that in practice what that ends
+33:42 up doing is you get this
+33:44 like throw the model over the wall kind
+33:46 of approach right where you have a
+33:48 researcher that builds something and
+33:51 they you know they built it and they're
+33:53 like hey engineer go go handle this
+33:55 engineer gets the model
+33:57 they write some inference code on top of
+33:59 the model they deploy it model isn't
+34:01 doing well someone starts dealing with
+34:02 the engineer the engineer says oh well i
+34:05 i didn't i don't know what's going on
+34:06 here i already know what the model is
+34:07 doing goes back to research your
+34:09 researchers says like well your
+34:10 inference code is wrong or did i even
+34:12 give you the right pickle file i mean
+34:14 you know so there's like there's all
+34:15 kinds of latency and just like bad stuff
+34:17 that happens when you really separate
+34:19 these two what's worse uh engineers
+34:22 sometimes want to instead of using let's
+34:24 say
+34:24 if researchers wrote the code in r they
+34:27 want to rewrite it in java right and
+34:29 when you rewrite the code from r to java
+34:33 uh break right and then
+34:35 it's in production and then the
+34:36 researcher says okay but you know what
+34:39 like this piece of our code is actually
+34:41 i have no idea what your java code is
+34:43 doing but
+34:44 it seems like maybe this part is not
+34:46 correct right and then there is the
+34:48 engineers think you know like
+34:49 what is that even that like why do you
+34:51 use this
+34:53 funny language all true i i've i've seen
+34:56 these things happen
+34:58 i mean honestly some of the funny stuff
+34:59 i've seen is i remember being in like a
+35:01 debugging session where
+35:03 we're literally we were trying to we
+35:05 were taking like the we were hashing
+35:07 model files to make sure that we were
+35:09 passing the right model files you know
+35:10 from one place to the next and so you're
+35:12 literally looking at like the byte
+35:14 representations of something to make
+35:15 sure that there wasn't that somebody had
+35:17 maybe used an earlier version of a model
+35:19 or something and so uh you know even
+35:21 funnier stuff like that but um yes i
+35:24 think that you know this kind of siloed
+35:25 off approach is really bad i mean
+35:27 because it reinforces the exact
+35:29 disconnects that tend to happen
+35:32 i think that the far better approach
+35:34 that i've seen in organizations is one
+35:35 where they are especially from a
+35:37 business standpoint when they do are
+35:38 just like embedded right next to each
+35:40 other where you have engineers and
+35:42 researchers working together hand in
+35:44 hand uh i think that you know so
+35:47 literally like this is typically in the
+35:48 context of like a product you'll have
+35:50 the scientist and the researcher
+35:51 literally in the same room or in the
+35:53 same kind of office space working on
+35:55 things and so you can imagine that
+35:56 introduces a lot of speed i mean there's
+35:58 not as much of a communication latency
+36:01 there's also a lot more of a uh you know
+36:03 there's diffusion of knowledge where all
+36:05 of a sudden researchers are seeing what
+36:08 does it mean to actually put something
+36:09 into production what are the things that
+36:10 engineers are doing and vice versa the
+36:12 engineers are saying oh you know they're
+36:14 getting more insight into what the model
+36:15 is doing and so you really this like
+36:17 hand-in-hand kind of collaboration is
+36:18 great
+36:19 i've honestly seen you know in the
+36:21 extreme case i've even seen
+36:22 organizations where even the researchers
+36:24 have on-call rotations so so you know
+36:27 on-call being something that engineers
+36:29 hate i mean like no one really likes it
+36:31 in some sense but you know you can
+36:33 imagine uh a researcher who's like so
+36:35 accustomed to working on papers getting
+36:37 a call at 3am in the morning because the
+36:38 service is down they probably are
+36:40 developing a good appreciation for like
+36:42 what engineers have to go through if
+36:44 they're if they're you know sleepy eye
+36:46 trying to debug a model that is now down
+36:48 and someone's complaining in blah blah
+36:50 part of the world you know
+36:52 that's a little extreme but but i've
+36:54 seen it happen and it's maybe not the
+36:56 craziest thing in the world
+36:57 yeah i do agree that uh
+36:59 the approach with different teams works
+37:02 a lot uh
+37:03 uh worse than uh embedded approach when
+37:06 yes one team
+37:07 what i also saw is if you have an
+37:09 embedded team
+37:11 you still have tasks that are done by
+37:12 researcher tasks that are done by the
+37:14 engineers and they kind of still form
+37:17 this you know little silos in the team
+37:21 uh does that happen uh usually on how to
+37:24 actually
+37:25 make them work uh together
+37:28 yeah yeah i mean i think i think it can
+37:30 happen uh and i think it really is a
+37:32 function of sometimes it's a function of
+37:34 like the leadership as well there right
+37:35 i mean how much are the people that are
+37:37 either the product managers or or the
+37:40 technical managers that are making sure
+37:42 that that there is active collaboration
+37:44 going on i think that
+37:46 yeah i mean people will always
+37:49 people always
+37:50 default to the things they're
+37:51 comfortable with i think that's just a
+37:53 human characteristic i mean people like
+37:55 to do things they're comfortable with
+37:57 but
+37:58 i think that that's where
+38:00 a lot of the times uh if you're like
+38:01 good leaders that might step in and say
+38:03 all right if something is getting too
+38:04 styled off making sure that there is
+38:06 very active flow of communication all
+38:08 the time and that you know there's
+38:10 updates happening and uh you're kind of
+38:12 fostering that collaboration as much as
+38:14 you can
+38:15 then that's i think where things get
+38:17 things are most productive honestly um
+38:19 and i think it can be done well i i
+38:21 really have seen it work i've seen the
+38:22 embedded model work incredibly well and
+38:25 incredibly high performance teams that
+38:27 have come out of the embedded model that
+38:29 i've been involved with
+38:30 um and it's just it does require
+38:33 deliberate effort on the part of whoever
+38:35 oversees the team yeah i imagine that uh
+38:38 if a team is working in sprints so let's
+38:40 say a sprint is two weeks and
+38:43 they say okay for the next two weeks the
+38:45 entire team is working on
+38:47 checking a hypothesis right and then the
+38:50 engineers okay now i have to you know
+38:52 open this jupiter that i don't like and
+38:55 experiment with other side and then the
+38:56 week after okay now that we have this
+38:59 pickle file let's everyone to get the
+39:01 deployed right and then data scientists
+39:03 oops like what is this terraform thing
+39:05 right
+39:08 yeah that's i mean you we joke about it
+39:10 but i think that's that's absolutely
+39:11 right um it's funny because there's
+39:13 organizations that they don't even
+39:15 really specify the roles that uh like
+39:17 doordash apparently doesn't specify the
+39:19 exact roles that each of their science
+39:21 you know they don't like specifically
+39:22 pigeonhole people into roles they really
+39:24 just encourage fluidity and the kind of
+39:26 responsibilities that people have and so
+39:28 you know you can imagine in that
+39:29 situation people end up working on
+39:31 things they like to work on but they
+39:32 also are forced to learn a lot of new
+39:34 things like the data scientists dressed
+39:35 around terraform or or you know the
+39:37 researcher that has to open up a jupiter
+39:39 hub notebook
+39:41 yeah interesting how in in case of
+39:44 doordash how do they call
+39:46 do they just call everyone engineers or
+39:48 do they call it like stuff uh yeah
+39:51 or
+39:52 that i don't know i actually don't know
+39:53 what the title is but i know that they
+39:57 are
+39:58 they're very flexible about for example
+40:00 what a data scientist works on and also
+40:03 an engineer works on you know they
+40:04 they're very
+40:06 there's a lot of fluidity in how they
+40:07 actually uh
+40:09 you know like i said they don't
+40:10 pigeonhole people into those
+40:11 responsibilities they literally just say
+40:13 yeah if you wanna if you're the data
+40:14 scientist and you wanna be touching on
+40:15 some production code you know go ahead
+40:17 um you're gonna feel i mean you're gonna
+40:19 feel more motivated doing it and you
+40:20 probably should even take you know take
+40:22 a look at it because it'll help you i
+40:24 think that you know when you do that
+40:26 you get much more
+40:28 diverse and
+40:30 well-balanced ml practitioners
+40:33 and we already have a question from raw
+40:35 about full stack data scientists and i
+40:38 think this is something we actually also
+40:39 wanted to cover
+40:41 uh so maybe we can talk uh a bit about
+40:44 that
+40:45 so
+40:46 uh what are your thoughts about this
+40:48 full stack data scientists like what
+40:50 they what do they do yeah yeah
+40:53 and
+40:53 it's an interesting term because uh
+40:56 i i subscribe to it a lot but i think
+40:57 that in some ways a full stack data
+40:59 scientist is
+41:00 similar to an ml engineer in some ways i
+41:02 think the responsibilities can be very
+41:04 similar uh i think that for a lot of
+41:08 especially for young machine learning
+41:09 organizations
+41:10 it's
+41:11 the or ones that are really just getting
+41:13 their machine learning effort started i
+41:14 think it's important to have someone who
+41:16 can really span
+41:17 the full stack of responsibilities so
+41:21 sometimes
+41:22 a you know teams that i that i've worked
+41:24 with and collaborated with is they'll
+41:26 say hey we're looking to get into data
+41:27 science and so we should just hire data
+41:29 scientists and i always am like saying
+41:31 well yes you should have a data
+41:33 scientist but be careful of the kind of
+41:34 person that you're picking because you
+41:36 don't want someone who you're just going
+41:37 to say hey here's some data
+41:40 go deal with some data right and that
+41:41 data science one point our way of
+41:43 thinking about things you really do want
+41:45 someone who can just feels comfortable
+41:47 going from you know the data science
+41:49 work the actual analyzing and building
+41:51 of models to then also ultimately either
+41:54 doing the deployment and the engineering
+41:56 themselves or is very comfortable
+41:58 interfacing with engineers
+42:00 and so i think that you know uh my
+42:02 friends and i think he's been on this on
+42:04 the podcast well eugene wrote about the
+42:05 full-stack data scientist i think i very
+42:08 much subscribe to that way of thinking
+42:09 about things i think that the a lot of
+42:11 the best people i've known are ones that
+42:13 are kind of a jack-of-all-trades in some
+42:15 sense um you know that has obviously has
+42:17 pros and cons but being able to make
+42:20 that full
+42:21 transition from one to the other i think
+42:22 makes you
+42:23 way well way better versed in all the
+42:26 problems that come up in deploying a
+42:28 fully fledged data product
+42:30 um and so i think the full stack data
+42:32 science is this new role or new role i
+42:34 mean it's like relatively it's been a
+42:36 few years now but
+42:38 um somebody who can just like handle all
+42:39 those tasks from the deployment as well
+42:41 as the sort of machine learning the pure
+42:44 machine learning aspect
+42:45 so they are more engineers because they
+42:47 can just you know go ahead and
+42:50 do whatever
+42:51 it takes to yeah i don't know to deploy
+42:53 or to test something but they're still
+42:56 also data scientists they still need to
+42:57 experiment uh
+42:59 with different things and maybe be able
+43:01 to train a model be it regression model
+43:03 be it a classification model be it i
+43:06 don't know image classification or you
+43:08 know visual classification so they can
+43:11 do that maybe they will not
+43:13 train an nlp model as good as nlp
+43:16 researcher would do this
+43:18 but maybe they will have
+43:20 a model that is 80 accurate right
+43:24 that
+43:25 and then spend the time deploying it and
+43:26 uh
+43:28 and uh yeah you you mentioned this nlp
+43:30 is a long tail uh
+43:33 problem so you you don't spend a lot of
+43:35 time to get it to 80 of accuracy and
+43:38 then you spend immense amount of time to
+43:40 you know
+43:42 to cover the remaining 20. so for the
+43:44 first 20 for the first 80 percent you
+43:46 need a full stake data scientist right
+43:48 and then yes
+43:50 and honestly i think there's a lot of
+43:51 business problems where
+43:53 you maybe don't even need the full
+43:54 hundred percent uh a lot of
+43:57 products that i've seen people work on
+43:59 is ones where they
+44:01 they build assistive ai technology right
+44:04 they build assistive data science
+44:05 technology ones where they anticipate
+44:07 that we're never going to get 100
+44:09 so if we can at least handle 90 really
+44:11 well then we can always find some smart
+44:14 way of doing a humanoid loop type of
+44:15 thing where we can defer the stuff that
+44:17 we're not as confident about uh in a
+44:19 good way and so you're absolutely right
+44:21 i think that for actually you know i
+44:23 would go with this as far as to say for
+44:24 a lot of business use cases you don't
+44:26 even need
+44:27 99.9 you know exact state of the art we
+44:29 need maybe 90
+44:31 but then something robust around it to
+44:33 make it better and that really does take
+44:35 you most of the way there
+44:37 yeah right
+44:39 so
+44:40 if
+44:41 um a machine learning
+44:43 researcher's
+44:45 harm is listening to this conversation
+44:48 would you give them any advice to
+44:50 improve uh their engineering skills yeah
+44:52 yeah
+44:53 i think that uh absolutely and i think
+44:55 that
+44:57 i i always encourage diffusion i mean
+44:59 you know i've i've gone from one to the
+45:01 other and and back in some sense like
+45:03 i've gone both directions and
+45:05 i've always felt that when i came back i
+45:08 was i just was so much more confident
+45:10 than a lot of things um you know even
+45:12 like i said when i came back to amazon
+45:14 and was more of this machine learning
+45:15 engineer role i just felt so much more
+45:17 productive at what i was doing so much
+45:19 faster about iterating on ideas even
+45:21 from a research standpoint so i do think
+45:23 that researchers should be deliberate
+45:25 about
+45:26 learning to engineer systems well i
+45:28 think they should take the time to build
+45:30 out those engineering fundamentals
+45:32 and so you know that means from an
+45:35 exercise standpoint i think that even if
+45:38 you just do it for yourself it doesn't
+45:40 have to be in the business context i
+45:41 mean it's great it's in the business
+45:42 context but even if you're just trying
+45:43 to learn on your own
+45:45 going through that full pipeline
+45:47 yourself
+45:48 will be very informative right so don't
+45:50 just
+45:51 train the model in jupiter hub
+45:54 go to the next step right actually do
+45:56 try and deploy it do do try and put it
+45:57 onto aws or whatever cloud provider
+46:00 using really go through those those
+46:02 steps
+46:02 uh so i think that's one thing you can
+46:04 do is just force yourself to
+46:07 come to appreciate a lot of those
+46:08 aspects
+46:09 and then i think the other thing is
+46:11 that i found incredibly useful in my
+46:13 time in in different contexts uh if you
+46:16 can get if you're a researcher who can
+46:18 get an engineer or someone else to to do
+46:21 you know kind of code reviews on your
+46:22 code i think that's one of the fastest
+46:24 ways to learn a lot about how to
+46:26 engineer systems uh when you have
+46:28 someone especially that's more
+46:29 experienced than you looking at the
+46:32 stuff that you're writing and telling
+46:33 you hey this is not great or maybe you
+46:35 can do this a little bit better or
+46:37 something like that
+46:38 it's the the time you know the time to
+46:40 how much you learn is immense i mean
+46:43 it's really immense uh i remember
+46:46 you know
+46:46 i've gone through so many
+46:48 code reviews in my time and each time i
+46:50 just felt like i was getting so much
+46:51 better like oh well i didn't even think
+46:53 about how to do that and a lot of
+46:54 engineering lessons will learn that way
+46:57 so it's basically asking somebody to sit
+46:59 with you together and go through
+47:01 uh
+47:02 the quote line by line not just okay uh
+47:05 check my pull request and uh looks good
+47:08 to me right okay
+47:11 yeah not not like when you're uh when
+47:13 you have your friends who you just want
+47:15 to merge something into master and you
+47:17 say hey can you just you know just okay
+47:19 fine yeah here goes no literally someone
+47:21 who will
+47:22 destroy your code in some sense you know
+47:24 really i mean like you know
+47:26 not literally but i'm saying someone who
+47:27 will constructively help you you build
+47:29 it out yeah okay so first you said be
+47:33 deliberate about learning engineering so
+47:35 it's not like uh don't treat it as a
+47:38 thought okay let me first you know do
+47:40 this hiki think and then let's see if i
+47:42 ever need engineering
+47:44 uh and then the second is uh get
+47:46 somebody
+47:47 to sit with you and review your code
+47:50 okay and likewise uh
+47:53 if there is a an engineer listening for
+47:55 this um podcast right now what advice
+47:58 would you give to them to improve their
+48:01 um to be i don't know more research
+48:03 minded
+48:04 yeah
+48:05 yeah i think that part of the the
+48:06 building of the empathy there also comes
+48:08 down to understanding how researchers
+48:09 think so i think that for engineers if
+48:12 you can take the time to even just you
+48:14 know read some papers and start to see
+48:16 how researchers think about problems
+48:18 you'll immediately start seeing what you
+48:20 know what is like a research
+48:22 responsibility will involve i mean how
+48:24 do how do researchers think about
+48:25 problems and how do they think about
+48:27 approaches to problems and even if you
+48:29 just understand the structure of a paper
+48:31 you can see why experiments are done in
+48:33 certain ways and what does it mean to
+48:35 really
+48:36 very deliberately and and methodically
+48:39 run an experiment to validate a
+48:40 hypothesis right and that's something
+48:42 that engineers
+48:43 that have never read a paper don't
+48:44 really understand like what does it even
+48:46 mean to really do research i think
+48:48 papers are a fantastic way to do that
+48:50 and i think if you really want to go the
+48:51 next step
+48:52 to really understand how you know how to
+48:55 run and how to build uh how to do good
+48:57 research and how to be more research
+48:59 minded is if you do go through the
+49:01 exercise of trying to
+49:03 try to improve on the state of the art
+49:04 of something right i mean even if
+49:06 unsuccessfully if you take
+49:08 a state-of-the-art model and you say
+49:10 well i'm going to try and improve this a
+49:11 little bit better
+49:12 going through that exercise of trying to
+49:15 add something new to the architecture or
+49:17 or you know or try x y or z thing and
+49:21 you know not it's not just about adding
+49:22 the modeling aspect but then going
+49:24 through the process of like setting up
+49:26 your system so you can run experiments
+49:28 and then keeping track of those
+49:29 experiments and going back and saying
+49:31 well maybe this didn't work how can it
+49:32 do something else going through i think
+49:34 that exercise you know in the same way
+49:36 that for researchers doing the
+49:37 engineering exercise will teach you a
+49:39 lot and going through the research
+49:40 exercise will also teach you a lot about
+49:42 uncertainty and work and uh
+49:45 you know how you can do things in a way
+49:47 we keep track of things very well and
+49:49 and iterate on things constructively
+49:52 and by improving state-of-the-art uh i
+49:54 don't think you mean like going there
+49:56 and beating the you know first position
+49:58 in image net
+50:00 improvement yeah i mean accuracy that
+50:01 would be great i mean if you can do that
+50:03 then more power to you um
+50:06 uh but yeah i mean i think like just
+50:08 just trying to get to the point where
+50:09 you're even just taking a
+50:10 state-of-the-art system and even like
+50:12 fiddling with that a little bit right to
+50:13 see what does it mean like how hard is
+50:15 this really if i took
+50:17 something off of the transformers
+50:19 library or something which is supposed
+50:21 to be state-of-the-art i mean first can
+50:22 i reproduce the state of the art and two
+50:24 what happens if i start like adding a
+50:25 thing here and there i mean great if you
+50:27 can build that you know if you can train
+50:29 state-of-the-art systems and that's
+50:30 fantastic then then you maybe have
+50:32 another job waiting for you somewhere
+50:34 else you know deepmind or whatever but
+50:36 uh but you know even just trying to pull
+50:38 it and see what does it mean to have a
+50:39 state-of-the-art system is also
+50:41 informative
+50:42 and it probably maybe doesn't have to be
+50:45 state-of-the-art worldwide it can be
+50:47 just the state of uh
+50:49 within your company right so there is
+50:51 maybe a model i don't know a recommender
+50:53 system or some classification
+50:56 now you can try to figure out what's
+50:58 going on there
+50:59 and
+51:00 how the
+51:01 this thing is working and
+51:04 maybe you'll notice some things that
+51:05 could be improved and then you can come
+51:07 up with a suggestion
+51:09 and then try to improve it and this way
+51:11 of course you need to track everything
+51:13 track your experiments and then to be
+51:15 able to show later to others that okay
+51:17 yeah i actually tried this and it works
+51:20 here is the experiment let's now
+51:22 integrate this in tower into our system
+51:24 let's improve it right okay
+51:28 and your first point was about reading
+51:30 papers
+51:30 uh but i remember how for me like i was
+51:34 a java developer and then i
+51:36 got into masters
+51:38 and then
+51:39 like i was doing my master thesis
+51:42 and then i needed to read papers and
+51:44 then i opened this paper and it's a lot
+51:46 of math the language is so boring like
+51:48 it puts me to sleep because academics
+51:51 like to
+51:51 [Music]
+51:53 that was my impression i don't know if
+51:55 it's true but sometimes they're written
+51:58 in a language that make it sound more
+52:00 complex than it it should be right so
+52:02 how do you actually go about reading
+52:04 these papers when uh
+52:06 you know half of the symbols on the
+52:08 paper you don't understand so maybe you
+52:10 recognize sigma for
+52:12 uh
+52:13 you know for some but for others yeah
+52:16 so how do you do that that's right yeah
+52:19 uh
+52:21 your
+52:22 researchers are definitely guilty of
+52:23 that
+52:24 not even from a joke that's actually
+52:26 very true i think because
+52:28 you know this is like a whole separate
+52:29 topic a conversation around how how you
+52:32 get something accepted into a conference
+52:34 and how do you maybe inflate something
+52:36 so that it's a little bit so it sounds
+52:38 cooler when you add the map to make it
+52:40 seem cooler and more sophisticated than
+52:41 it is that's a whole separate topic of
+52:43 discussion but uh but you're right i
+52:45 mean i think that that especially if you
+52:47 don't come from that world these papers
+52:49 can be very dense and very difficult to
+52:51 read
+52:52 uh i think that there's there's
+52:53 alternatives i think the one thing that
+52:55 is really good that has happened because
+52:58 of
+52:59 how popular machine learning has become
+53:01 is people have gotten really good at
+53:02 summarizing and trying to you know
+53:04 create their own understandings of
+53:06 papers and so
+53:08 you have a lot of great tutorials
+53:10 sometimes they're interactive even
+53:11 tutorials that people have written for
+53:13 for a lot of models and papers about
+53:16 models so if something is too dense for
+53:19 you on the in its raw form like in first
+53:21 the primary source then there's
+53:23 certainly secondary sources that people
+53:25 that are there well they're getting done
+53:27 well and it's going well
+53:28 and then i think that the other thing
+53:29 that can help is
+53:31 you know if you if you're committed to
+53:32 going through that exercise
+53:34 then i would collaborate with the
+53:36 researcher i mean i would pull in a
+53:37 researcher to say like hey if something
+53:39 doesn't make sense
+53:40 uh
+53:41 why what does this mean like i get the
+53:43 sigma but like can you explain what this
+53:45 is doing um and you know kind of
+53:48 adding that layer of collaboration will
+53:50 also just be good for for team building
+53:52 and and you know that's what researchers
+53:53 are supposed to be good at they should
+53:55 be able to give you insights um
+53:57 as far as the boredom is concerned that
+53:59 question
+54:00 that aspect is a bit harder to solve
+54:02 okay whether or not you find it boring
+54:07 yeah so basically like the same advice
+54:10 for uh
+54:12 for researchers to pull in machinery
+54:14 engineers or engineers to do code review
+54:16 you can actually apply here the other
+54:18 way so just get a researcher and try to
+54:21 read the paper together and ask them to
+54:24 translate
+54:25 this thing for you right and
+54:28 ask questions
+54:30 okay cool and also i think now many
+54:32 papers have actually have code either
+54:35 from the authors or somebody try to
+54:37 reproduce the results and
+54:39 put the code
+54:40 somewhere so i think that for engineers
+54:43 could also be helpful maybe engineers
+54:45 understand
+54:46 code better although i'm not sure if
+54:48 this call is written by researchers if
+54:50 it's actually the case could be
+54:53 difficult to understand maybe but i
+54:55 think yeah so probably going through the
+54:56 court is could be even easier
+54:59 uh then
+55:00 if you find a good codebase absolutely
+55:02 but a big caveat to the people that are
+55:05 listening is you know and this is
+55:07 something i've seen in my career and
+55:08 i've always whenever i've worked
+55:09 researchers tried to get them out of its
+55:10 mindset is research code is not the best
+55:12 in the world uh it can be stale not
+55:15 updated very frequently
+55:17 and yeah you're gonna good luck so if it
+55:20 like it's almost like if it doesn't work
+55:21 from the first go good luck diving into
+55:24 it and trying to understand what the
+55:25 matrices are doing and you know what
+55:27 each represents the translation is a
+55:29 whole separate issue
+55:31 yeah right
+55:32 so let's say somebody is listening for
+55:34 this podcast but they're i don't know
+55:36 doing the bachelor and they're thinking
+55:38 okay should i go to industry uh
+55:41 and work as an engineer or should i go
+55:43 to
+55:44 get a master's and then do a phd and do
+55:46 research so
+55:49 do you have any advice for people who
+55:52 need to decide what they like more and
+55:54 how they choose basically
+55:56 yeah yeah i think it's it's something
+55:58 where
+55:59 one of the most important things is
+56:00 really to be introspective i mean you
+56:02 really have to ask yourself like what
+56:05 what parts
+56:06 of these problems am i most interested
+56:08 in so
+56:09 if you understand what each of the roles
+56:12 is doing right if you understand that
+56:13 machine learning engineer you'll be
+56:15 handling a lot more engineering nowadays
+56:16 or you know if you're doing full-stack
+56:18 data gonna be a lot of engineering if
+56:20 you're aware of those responsibilities
+56:22 then that's important right so you first
+56:24 have to understand what are you getting
+56:25 what is what are you getting yourself
+56:26 into in either situation
+56:28 one is you're going to want deployments
+56:30 monitoring you know handling all these
+56:32 engineering aspects maybe a little bit
+56:33 of modeling but not really as much
+56:35 nowadays
+56:36 and then on the science aspect you're
+56:37 really just going to be working in
+56:38 typically open-ended problems a lot of
+56:40 experiments you know the tooling might
+56:42 be a little bit different really if you
+56:44 have to you know if you understand that
+56:46 base level here's what each role entails
+56:49 then you can ask yourself well okay this
+56:52 is something that is one feel to me more
+56:54 than the other i think in the ideal
+56:56 situation if you're really early on in
+56:57 your career
+56:58 i would say go and try you know try and
+57:02 do a little bit of both honestly if you
+57:03 can
+57:04 i think that one of the really great
+57:06 things about
+57:07 being early in your career is you have
+57:08 the flexibility to work on internships
+57:11 where you can you know do things that
+57:13 maybe you will never do in your career
+57:14 but that at least you can see what it's
+57:16 like to do that uh like i remember very
+57:18 early in my career i did
+57:20 i did you know
+57:22 nano fabrication work in an electrical
+57:24 engineering lab where i was literally
+57:26 you know wearing like a breaking bad
+57:28 bunny suit um you know you know
+57:30 literally growing carbon nanotubes and i
+57:33 spent a good like four or five months
+57:34 doing that and i was like this is cool
+57:36 but it's not something that i can see
+57:38 myself doing long term uh and so giving
+57:41 yourself the opportunity to to try that
+57:43 even just for a little bit it's a pretty
+57:45 low risk way
+57:47 to see if something really resonates
+57:49 with you and then you can see yourself
+57:50 doing that you know farther on long in
+57:52 your career yeah i don't know if
+57:55 this is good advice but what worked for
+57:57 me
+57:58 was i did a masters and in germany
+58:00 master suffering i know that in the
+58:02 states it's not the case but i needed to
+58:05 write my master thesis
+58:07 and for that i needed to read a lot of
+58:08 papers and i needed to experiment a lot
+58:11 and
+58:12 by doing this for half a year i realized
+58:15 that
+58:16 maybe this is not the thing i enjoy
+58:18 doing most
+58:19 so could be a way of checking as well
+58:21 just
+58:22 go and do something like you don't have
+58:24 to do musters for that especially
+58:26 like if it costs an arm and a deck
+58:29 but
+58:30 yeah
+58:31 yeah if you're at an institution that
+58:32 has a research labs then um i always
+58:34 recommend for undergrads to do research
+58:36 um even just to try i mean most places
+58:39 have really good research professors and
+58:42 you know they're always
+58:43 you know if you're working with a phd
+58:44 student they're always happy to have
+58:46 someone to help so if you just go and
+58:48 knock on a phd student store and say hey
+58:50 i can code pretty well can i just
+58:52 research with you i've rarely seen
+58:54 someone say no
+58:56 yeah okay i know we should be wrapping
+58:58 up but i have one more question which
+59:00 you will probably like i wanted to ask
+59:02 you a few words about your project
+59:04 confetti
+59:06 yeah what is it and
+59:08 yeah what is it for and what is there
+59:12 yeah yeah so so it's a project that a
+59:14 friend of mine mine and i started about
+59:16 a year and a half ago and
+59:18 a lot of the the motivation
+59:21 you know it kind of it was born over
+59:23 like a dinner conversation once in the
+59:25 bay area and
+59:27 really we came to this conclusion that
+59:28 we had been doing so much you know
+59:30 interviewing and we've gone through so
+59:32 many different parts of our career
+59:34 thinking about machine learning and the
+59:37 right machine learning role and data
+59:38 science and
+59:40 and
+59:41 we found ourselves
+59:42 sort of
+59:43 recreating and reinventing ways of doing
+59:46 things and ways of preparing for these
+59:48 things so we've done maybe between the
+59:50 two of us like hundreds of interviews
+59:52 and
+59:54 every time we found ourselves kind of
+59:56 patching together different resources to
+59:58 understand how do i prepare for this
+1:00:00 what's what are the kind of questions
+1:00:01 they're going to be asked and so when it
+1:00:03 comes to data science and machine
+1:00:04 learning roles there's really not
+1:00:06 as easy of a way you know it's not like
+1:00:08 the uh that you know there's not a
+1:00:10 standardized of a process for preparing
+1:00:12 for these goals and not just from the
+1:00:14 interview standpoint i mean i think the
+1:00:16 interview standpoint is really important
+1:00:17 and that's something that people you
+1:00:18 know there's not good tools to do that
+1:00:20 but then even just from your career
+1:00:21 standpoint right we talked about
+1:00:23 furthering the conversation about data
+1:00:24 science one point we'll do the sense 2.0
+1:00:26 i mean i saw that transition of course
+1:00:28 in my career about how the role evolved
+1:00:31 and so confetti was really our
+1:00:34 kind it's like a tool that we built to
+1:00:35 really kind of scratch our own itch and
+1:00:37 say well if i were starting today
+1:00:40 what would i want someone to tell me
+1:00:42 about not only how i get a job in these
+1:00:44 fields but what i should be thinking
+1:00:46 about going into a career in this field
+1:00:49 and how do i
+1:00:50 you know dispel and share that knowledge
+1:00:52 with other people um so that others
+1:00:54 don't make you know others can learn
+1:00:56 from my mistakes which i've made more
+1:00:58 than more than my fair share of and so
+1:01:00 confetti was really this this platform
+1:01:02 that we built to try and
+1:01:03 codify a lot of these best practices
+1:01:06 that we have learned over the course of
+1:01:07 our time around how do i prepare to be a
+1:01:09 machine learning engineer how do i
+1:01:11 prepare to be a data engineer what are
+1:01:12 the kinds of things i should be thinking
+1:01:14 about what are the kind of resources i
+1:01:15 should be thinking about and using to
+1:01:17 learn
+1:01:18 uh and and so far like the reception has
+1:01:20 been very warm people have found it very
+1:01:22 useful and people have gotten jobs using
+1:01:25 this platform which we're really happy
+1:01:26 to see but you know a lot of it is
+1:01:28 really just about getting people to
+1:01:30 learn from some of the stuff that we
+1:01:31 learned and uh and and then just start
+1:01:34 ahead of us in some sense than when we
+1:01:36 were when we were just bumbling through
+1:01:38 it in the early days
+1:01:40 that's very nice of you to put this
+1:01:42 together and make it available for
+1:01:43 others
+1:01:44 yeah thanks so um how can people find
+1:01:47 you
+1:01:49 me personally yeah if they want to ask a
+1:01:51 question like follow up questions yeah
+1:01:54 uh i'm pretty active on twitter so by
+1:01:56 all means you know direct message me on
+1:01:58 twitter relatively active on linkedin
+1:02:00 but uh yeah i mean so those are two
+1:02:03 platforms come to mind uh
+1:02:05 i have a personal site where i think
+1:02:07 it's easy to get in touch with me so i'm
+1:02:10 always happy to help people i really
+1:02:12 i'm very deliberate about when i get
+1:02:13 emails or messages i really try to
+1:02:15 answer all of them because i do believe
+1:02:17 in paying things forward i mean so much
+1:02:19 of where where i've come in my career is
+1:02:21 just because of the generosity of
+1:02:22 people's time and
+1:02:24 the things that people have taught me so
+1:02:26 i'm always happy to talk to people that
+1:02:28 are just getting started that you know
+1:02:30 want to bounce ideas off of or have
+1:02:31 questions about how to do something i'm
+1:02:34 always happy to talk
+1:02:36 yeah thanks a lot thanks uh for coming
+1:02:38 today thanks for sharing your experience
+1:02:40 uh
+1:02:41 that was really great and thanks
+1:02:42 everyone for joining us today for
+1:02:44 watching for asking questions and
+1:02:47 yeah i think that's all for today
+1:02:50 thank you alex i really appreciate being
+1:02:51 here it's a great conversation yeah so
+1:02:54 i guess that's it then so goodbye have a
+1:02:57 great rest of the day and have a great
+1:02:59 weekend

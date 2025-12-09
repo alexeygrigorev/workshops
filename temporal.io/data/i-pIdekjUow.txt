@@ -1,0 +1,1339 @@
+Building Scalable and Reliable Machine Learning Systems
+
+0:00 hey everyone Welcome to our event this
+0:02 event is brought to you by datadox club
+0:04 which is a community of people who love
+0:06 data we have weekly events today as I
+0:08 said this invent is rather unusual it's
+0:11 not in our usual time
+0:13 but if you want to find out more about
+0:15 the events we have we have a link in the
+0:17 description go there check it out and
+0:20 today we have one more event
+0:22 in a couple of hours we'll have a
+0:24 session about keep flow pipelines it
+0:26 will be a workshop so check it out keep
+0:28 flow and keep Follow by plants in
+0:30 general and we have other awesome
+0:32 their events so check the link out and
+0:35 of course if you have not subscribed to
+0:36 our YouTube channel now it's the best
+0:38 time to do this this way you will not
+0:39 miss our future events that will be as
+0:42 awesome as this one we have a slack
+0:44 community so you should join it if you
+0:46 want to hang out with other data
+0:48 enthusiasts
+0:49 and during today's interview you can ask
+0:51 any question you want there is a pint
+0:53 Link in the live chat
+0:55 so go there click on that link ask your
+0:57 question and I will be covering these
+0:59 questions during the interview
+1:02 just in case I will also open
+1:05 now now this theme on YouTube
+1:09 on my phone so if you ask questions
+1:11 there I will also see that
+1:14 okay with that I think I should just
+1:17 stop sharing my screen
+1:20 open the questions we prepared for you
+1:22 see me
+1:27 I think I'm ready are you ready
+1:30 of course
+1:31 okay you ready so this week we'll talk
+1:34 about building scalable and reliable
+1:37 machine learning systems or we can call
+1:39 it machine Learning System design we
+1:41 have a special guest today arseni arseni
+1:44 is a machine learning engineer who is
+1:46 working on machine learning projects
+1:47 since 2015. he mainly focuses on deep
+1:50 learning and envelopes related problems
+1:53 this is not the first time arsenia
+1:54 appears here so he previously gave a
+1:57 talk maybe one year ago about software
+2:00 testing for machine learning Pipelines
+2:02 it was actually quite well received so
+2:04 thanks a lot uh arseni for doing that
+2:06 and uh it's great pleasure to have you a
+2:08 second time here and also like this one
+2:10 yeah for those who don't know are saying
+2:14 for some time has been working on a new
+2:17 book about machine Learning System
+2:18 design so we wanted to invite him to
+2:21 talk more about that so welcome to our
+2:23 event
+2:25 thanks let's see
+2:27 red pledge to be here
+2:28 the questions for today's interview were
+2:31 prepared by Johanna thanks Johanna for
+2:33 your help
+2:34 and before we go into our main topic of
+2:37 machine Learning System design
+2:39 ing let's start with your background can
+2:42 you tell us about your career career
+2:43 judges for
+2:45 uh yeah sure I've been doing a machine
+2:48 learning for a while and I I usually
+2:52 work for startups I used to work in some
+2:55 good companies as well but I realized
+2:58 that startups is more preferable area
+3:01 for me because that's
+3:05 usually places where I can have a
+3:08 reasonable impact with my skills and my
+3:11 personality
+3:13 so for the last year I've been working
+3:16 for the company named entropy entropy
+3:18 has been applying machine learning
+3:21 and language models for
+3:25 Financial transactions
+3:27 and extracting some information from it
+3:30 before it I've been working for
+3:32 instrumental instrumental easy
+3:33 manufacturing optimization company as I
+3:35 said in our pre-show
+3:38 before instrumental I've been uh
+3:42 working for AR company that has been
+3:45 recently acquired by farfetch
+3:48 and even before I've been doing machine
+3:51 learning for a ride sharing company that
+3:54 was required by Lyft so many startups
+4:00 and uh
+4:01 that's
+4:03 kind of
+4:05 background that I wanted to express in
+4:08 the book
+4:10 and this AR company that you mentioned I
+4:14 think there is a quite an interesting
+4:16 application there so it's about trying
+4:19 like how
+4:21 shoes will would look like on you right
+4:23 yeah it was a virtual try on we started
+4:27 with a very small niche of a nail polish
+4:31 try on and later we started working on
+4:34 jewelry
+4:36 like creeps and at some point we
+4:39 understood that well Rings is probably a
+4:43 very specific niche as well like uh what
+4:46 was the problem with nail polish this is
+4:49 a very small market and there are not
+4:53 many companies who are ready to pay
+4:55 Weaver we're going to have a B2B
+4:58 application like selling SDK to
+5:01 companies who are interested to embed it
+5:03 to their
+5:05 applications to improve conduction rates
+5:08 and stuff
+5:09 so didn't really work out and at some
+5:13 point we have found a company who tries
+5:17 to build it for virtual try on of shoes
+5:22 and their Tech was actually far from
+5:25 perfect and
+5:28 we as a company decided that we can do
+5:30 better and we did better
+5:33 so the idea is that you take your form
+5:36 uh then point it to your legs and then
+5:39 you see how your legs would look like
+5:41 with
+5:42 shoes yeah with various sneakers like uh
+5:47 if you consider buying some fancy new
+5:51 collection by Nike but you are not sure
+5:54 if it fits your style or not that's what
+5:57 you can do
+5:58 so uh we had a consumer app just for
+6:03 personal try on and we had an SDK that
+6:06 was integrated by big companies
+6:11 and as a machine learning engineer who
+6:13 has worked
+6:15 in many different startups I guess for
+6:18 you it was pretty typical that in all
+6:20 these companies you don't really have
+6:23 anything for machine learning models
+6:25 right so you have I know a data
+6:27 scientist who comes up with the model
+6:28 but for them what to do with this model
+6:30 right so how would you solve this model
+6:33 how do you design the whole thing like
+6:36 how do you actually productionize the
+6:38 models right was it something that he
+6:40 observed in all these companies
+6:43 yes that's right uh sometimes people
+6:45 when working in big companies they
+6:48 already have some kind of template uh
+6:50 they have a relatively small space to
+6:54 explore like well you just do what
+6:57 people do
+6:58 uh you don't need to make many design
+7:03 decisions like you don't need to choose
+7:06 tech for everything from scratch when in
+7:09 startup you have to make all the
+7:11 decisions on your own
+7:13 and or with your small team and you have
+7:18 to find
+7:19 some kind of trade-off between uh
+7:23 building reliable scalable stuff with
+7:27 all the bells and whistles and
+7:29 [Music]
+7:30 from other perspective you need to make
+7:32 everything ready ASAP like yesterday
+7:36 you don't have much time
+7:38 so uh both ends are not very healthy
+7:43 and you need to choose something
+7:46 reasonably good orcish acceptable or an
+7:50 acceptable time and resources
+7:54 is this what you would call machine
+7:56 Learning System design like you have a
+7:58 machine learning
+7:59 problem or I don't know system and then
+8:02 you need to design it in such a way that
+8:04 it's both reliable but ready as soon as
+8:07 possible so you kind of satisfy
+8:09 what you just mentioned right because
+8:11 like in a startup you need to move fast
+8:13 you don't want to spend a year building
+8:15 a machine learning platform right or
+8:17 machine Learning System design is about
+8:19 something else
+8:21 I would say machine Learning System
+8:22 design is about making decisions how to
+8:26 build a system given some constraints
+8:28 and while saying given constraints
+8:32 they exist but you don't know them in
+8:34 advance
+8:36 so when you are some kind of Junior
+8:39 engineer you usually receive your tasks
+8:43 in your task cracker or directly by your
+8:47 lead or manager
+8:48 and you are being said you need to
+8:51 implement this message you need to write
+8:53 this class you need to train this model
+8:55 very straightforward when you are like
+8:58 some middle level engineer you have more
+9:01 freedom and you start making your own
+9:04 decisions but
+9:06 your area of decisions is still
+9:08 relatively small
+9:10 but when you are in charge of bigger
+9:13 systems
+9:15 and when working in startups you become
+9:18 in charge of these systems very early
+9:21 you don't have a senior principal data
+9:24 architect who will take care of
+9:26 everything uh you just have this problem
+9:29 you have a co-founder who says well we
+9:32 need to build it we have some ideas blah
+9:35 blah blah but you need to build it
+9:38 and it means that you have to make many
+9:41 decisions and you need to explore the
+9:44 world trying to find all these
+9:46 constraints or at least the most
+9:48 important constraints
+9:50 and make your decisions what you should
+9:53 do uh how much effort should be
+9:55 dedicated to this ourselves stage
+9:58 given these constraints and requirements
+10:01 when saying requirements I don't mean
+10:03 something like very formal because in
+10:07 huge Enterprises when we talk
+10:09 requirements it's a big document written
+10:12 by a business analyst or system analyst
+10:15 or product manager or whatever
+10:17 there is a chance you work in the
+10:20 company where there is no product
+10:21 managerical
+10:23 but
+10:24 requirements still exist and constraints
+10:27 still exist you just need to catch them
+10:29 out of error
+10:33 and I'm just wondering what are these
+10:35 constraints and requirements like do you
+10:37 have an example because you mentioned
+10:39 that
+10:40 you don't necessarily know them in
+10:42 advance because I imagine that if you
+10:43 work in a startup then maybe there are
+10:46 some requirements coming from your
+10:48 product manager or CEO whatever like
+10:51 that we need to ship this thing in two
+10:53 weeks right that's kind of one of the
+10:55 requirements I assume but what are the
+10:58 other constraints and requirements that
+11:00 you don't necessarily know in advance
+11:03 okay uh some of them are purely
+11:07 Technical and some are product related
+11:10 when we are talking about purely
+11:12 technical stuff you can expect that uh
+11:15 your stuff is gonna be run on specific
+11:19 Hardware so for example we were talking
+11:21 about this AR company and I think I can
+11:24 bring many examples from uh this one
+11:26 because I was
+11:28 an early engineer there and many
+11:31 decisions were made
+11:34 with me and my peers at this earlier
+11:38 stage so for example we decided that it
+11:41 is a mobile application and for mobile
+11:44 application uh work in real time on
+11:47 video stream we definitely cannot afford
+11:50 to have some heavy machine learning
+11:53 models and we cannot afford calculating
+11:57 them in the cloud so it should be on
+12:01 edge on edge device and it
+12:04 a significant constraint you cannot run
+12:07 like one gigabyte uh convolutional
+12:10 neural network on this device but from
+12:13 other perspective we decided that we
+12:15 start with iOS devices and apple
+12:17 infrastructure is ml friendly and it was
+12:21 ml friendly back in days when we started
+12:23 this project because there is called Mac
+12:26 or Mel is fairly optimized for this
+12:28 Hardware we were working with iPhones
+12:31 like I think 10 like iPhone x
+12:36 and it was good uh 14 hour software
+12:41 later for the Android was a huge pain
+12:44 but for the beginning to build some demo
+12:49 app
+12:50 iPhone is good enough so we understand
+12:54 uh given you know the hardware you can
+12:57 understand what you can do like okay two
+12:59 big networks is no no but diploma in
+13:02 general is fine because well uh this
+13:05 ecosystem is a deep learning friendly
+13:08 foreign
+13:12 there are some requirements about
+13:16 how we expect users to perceive this
+13:19 product
+13:20 like it's in at the very beginning we
+13:24 realized that if this rendered shoe that
+13:28 we draw on a screen is shaking because
+13:31 of some instability of our model
+13:35 that's not good uh it annoys people and
+13:38 users gonna say that that's not
+13:42 acceptable at all
+13:43 and we also realize that if our models
+13:48 are heavy and consume all the CPU and
+13:52 all the HBO it also means it consumes a
+13:56 lot of energy a lot of battery and users
+13:59 definitely will not be happy about
+14:01 sucking all their energy element
+14:05 so there's another constraint and it
+14:08 means even if the phone can provide can
+14:12 run this neural network with
+14:15 30 FPS it doesn't mean you should do it
+14:18 maybe you should do something like run
+14:21 it 10 FPS and interpolate it with
+14:24 simpler algorithm in between frames just
+14:28 to save some energy and
+14:30 this is the phone will not get in hot
+14:34 so that's not uh very well like
+14:39 straightforward requirement but when you
+14:42 start working with mobile inference you
+14:45 understand it relatively quick
+14:48 I wonder for all these things like you
+14:52 cannot afford to send in data over the
+14:55 network because you need to really to
+14:56 have this real time like you need to
+14:59 know about these things in advance
+15:00 before you even start
+15:02 training your model before you start I
+15:04 don't know collecting your data
+15:05 because otherwise like if you don't know
+15:08 this then you end up having a heavy
+15:11 model that doesn't really work on edge
+15:15 right it always has to be like that I
+15:18 don't know maybe there's this design
+15:19 phase of a machine learning project
+15:22 where you don't
+15:24 do anything but just think about the
+15:27 problem right or how is it done in
+15:29 practice usually
+15:31 yeah well that's as people say there are
+15:35 known unknowns and unknown unknowns yeah
+15:37 right so you can you can uh maybe try to
+15:42 mitigate the first one
+15:45 you talk to people who have been doing
+15:47 something similar like uh we had uh
+15:51 bodies who have been doing very
+15:54 complicated deep Tech ml based project
+15:57 for mobile platform and we talked with
+16:01 them a lot
+16:03 and they warned us about many things
+16:06 like both high level and low level high
+16:09 level as I mentioned about these FPS
+16:13 stuff and that users care about
+16:16 stability of the rendered object and
+16:19 about low level like when designing your
+16:22 model and be careful about this
+16:25 particular layer because this particular
+16:26 layer is not optimized for these
+16:28 architecture or these activation
+16:31 function is not optimized as well but if
+16:34 you do this one and this one you can
+16:37 merge them together and it is run by a
+16:40 single pass on GPU and so it is very
+16:43 effective so these are tricks uh you can
+16:46 learn in advance if you have people to
+16:52 discuss it and you can do some early
+16:56 tests with a very dirty Baseline and so
+16:59 on so forth so
+17:01 um it makes sense to make something with
+17:05 a simple bass line and try this simple
+17:08 bass line on your own maybe with you
+17:10 within your team within some of your
+17:13 friends to understand how it can be used
+17:17 and it reveals more and more hidden
+17:22 knowledge more more unknowns become uh
+17:25 things that are known unknowns like well
+17:28 you are not particularly sure what's
+17:30 going on here but you reveal some parts
+17:33 of it
+17:34 and with this application for example
+17:38 we
+17:39 released one of our earliest versions
+17:42 and
+17:44 we have found
+17:46 the problem related to reflecting
+17:49 surfaces
+17:52 we expected that users will have just
+17:55 several legs
+17:57 but sometimes
+17:58 they did a photo or shoot a video near
+18:03 the mirror and this we had four legs
+18:06 instead of two and we did not expect it
+18:08 at all and the algorithm was not
+18:11 supporting on multiple heads and there
+18:13 was Sometimes some crazy show of a shoe
+18:16 jumping from uh the real leg to the
+18:21 reflection of it
+18:23 it was hard to catch
+18:28 so like in this case uh you said there
+18:31 are non-announced you can get them you
+18:34 can learn about them by talking to
+18:36 people with experience or doing some
+18:39 simple bass line and check how users
+18:41 react but then there are unknown
+18:42 unknowns that the only way to find them
+18:45 out is just to roll this thing out and
+18:46 see what happens right
+18:49 yes and actually uh writing a design
+18:53 document or something is a way to
+18:57 transform some unknown unknowns to no
+19:00 unknowns because well you cannot predict
+19:04 everything
+19:05 especially when you are doing something
+19:07 uh pretty new
+19:09 which is common thing for startup but
+19:12 when you try to write down what you're
+19:14 going to do it often reveals
+19:17 what you don't know about the thing you
+19:20 are going to build it reveals some legs
+19:23 between components legs of understanding
+19:27 of the domain and solunch of course so
+19:30 even for startups that often work in a
+19:35 manner ah screw it we should just build
+19:37 it at some point I realized well it
+19:40 makes sense to spend a bit of time for
+19:43 planning not too much but at least
+19:45 something and that's not because you
+19:49 have to follow this plan like exactly
+19:51 line by line
+19:53 as people say plan is nothing planning
+19:56 is everything and that's exactly what I
+20:00 like about uh design phase well okay
+20:03 maybe you will not follow these uh
+20:07 design document exactly but it will
+20:10 reveal many things and understanding how
+20:13 you're going to build I think is more
+20:15 important than actually uh following
+20:18 this exact paragraph
+20:20 yeah I guess because it kind of forces
+20:22 you to learn more about the problem it
+20:24 forces you to think about different
+20:26 situations
+20:28 um otherwise you wouldn't just think
+20:29 about them when just blindly
+20:33 thinking let's just do it and see what
+20:35 happens
+20:35 So speaking about this design document
+20:37 how does it look what kind of sections
+20:39 are there is there any structure like
+20:41 let's say I
+20:43 um let's suppose I'm a machine learning
+20:45 engineer I'm joining the startup and
+20:47 they don't have anything there before me
+20:49 and I want to
+20:51 make things right
+20:53 right so there is a new project and I
+20:56 want to make sure I follow you know best
+20:59 practices
+21:00 so what do I do how do I approach this
+21:03 design phase how do I structure this
+21:04 design document
+21:07 right
+21:09 it's a tricky question because uh in big
+21:11 companies they're usually
+21:15 something like a template but for
+21:17 startups so it's definitely not a thing
+21:21 like template and in this case I prefer
+21:24 to say
+21:26 template doesn't really matter you just
+21:30 start with whatever you take a
+21:35 which is the sheet of paper and start
+21:37 writing stuff or you start you open a
+21:41 Google doc and you start writing stuff
+21:43 one more
+21:45 one heuristic that
+21:48 I have in my mind that
+21:53 inexperienced people
+21:55 tend to start with solution but you
+21:58 should start with a problem
+22:00 and if you would like to spend I don't
+22:02 know
+22:04 or I was writing a design document
+22:06 because you don't have more time and you
+22:09 would like to make a two-page document
+22:12 or even one page document because your
+22:15 system is very simple dedicate 50 for
+22:20 the problem and the rest for solution
+22:22 because
+22:24 solution is usually more straightforward
+22:26 when you know the problem but it is a
+22:30 very easy
+22:33 mistake to ignore the real problem
+22:38 which is complicated and start building
+22:40 a very good solution that does not
+22:43 address a problem itself
+22:48 is there any framework that can help me
+22:50 approach
+22:51 let's take the first part so you said
+22:53 like spend 50 of the time two hours on
+22:57 defining the problem and then the rest
+23:00 of the time the other two hours on
+23:01 describing the solution so what can help
+23:04 us
+23:05 describe the problem because to me it
+23:07 seems like it's kind of straightforward
+23:08 you just go there spend 10 minutes
+23:10 describing what exactly this product
+23:12 people want from us okay they want to
+23:16 build a system for automating this or
+23:18 they want to build the system for trying
+23:20 uh sneakers on right so that's the whole
+23:24 problem right so why do I need to spend
+23:25 two hours on that like what kind of
+23:27 questions I need to ask myself to help
+23:29 me
+23:30 come up with a good problem description
+23:34 well as we discussed earlier
+23:38 there are things that are purely
+23:41 Technical and there are things that are
+23:43 more product wise and you can split the
+23:46 two so definitely uh some things
+23:50 are about
+23:53 appearance here and you can talk to
+23:55 product people like how do you expect uh
+24:01 users to what is like what is the user
+24:05 scenario what users care and what they
+24:09 do not care about we are talking about
+24:11 hypothetical users so it's all not set
+24:15 install you should take everything here
+24:19 with a huge grain of salt but still
+24:22 and you can get some first inside like
+24:25 do you want it for example in this AR
+24:29 problem there is often a trade-off do
+24:32 you want it to look realistic or you
+24:35 would like to
+24:36 look just I don't know
+24:39 a billion
+24:40 and they're not the same
+24:43 and if you are going to build a virtual
+24:47 try on
+24:48 which is exactly try on with a goal to
+24:53 help users understand if this particular
+24:56 item fits
+24:58 you should uh prefer realistic system
+25:03 but if you just want to make an
+25:06 entertainment application like these
+25:10 videos will be posted to tick tock at
+25:12 Snapchat definitely you don't care about
+25:14 them being realistic and you want them
+25:17 to be fun so this is a trade-off you
+25:22 don't know about usually and it takes
+25:25 some time to reveal uh this problem
+25:29 some conversations and so on and so
+25:32 forth
+25:33 so uh you ask questions you do
+25:36 assumptions you verify these assumptions
+25:39 and given some more
+25:43 how does it given this pure product
+25:47 related thing you should uh make some
+25:51 connection to Pure technical things like
+25:54 okay ah
+25:55 they say we would like to have it real
+25:58 time what does it mean real time because
+26:01 well something that is
+26:05 felt like real time
+26:07 for a user as I said
+26:11 it could be eyes or like 30 FPS in
+26:14 reality or it could be like 10 FPS with
+26:18 interpolation over 20 FPS with
+26:20 interpolation and what are the devices
+26:24 we are going to run
+26:26 what are the
+26:29 for example how many models we would
+26:32 like to embed I mean models of shoes
+26:35 that can be tried on and so on so
+26:38 definitely
+26:40 or any complicated problem uh you can
+26:45 always spend a couple hours trying to
+26:47 understand what you need to build
+26:50 what is good what is not good
+26:52 uh I don't say I don't know some good
+26:56 framework and as part of this book we
+26:58 are trying to build one
+27:00 it it always matters uh what is the
+27:05 problem and I don't think we can build
+27:07 something that holistic that covers
+27:09 everything but we try to cover uh many
+27:13 situations and
+27:15 describe what you can do in different
+27:18 scenarios one of a more heuristic that
+27:21 is uh included in our book is that I
+27:23 would like to mention here given the
+27:26 question is 13 non-goals is a good
+27:31 technique as well like uh it's always
+27:34 tempting to say well we need to do
+27:37 everything perfect but you cannot do
+27:39 everything perfect
+27:40 and you cannot say this is important and
+27:43 that is important and also this one is
+27:46 important like uh if you'd like to have
+27:49 a model that is
+27:51 um fast and accurate and also uh it's
+27:57 easy to build during two weeks that's
+28:00 not very realistic so you can choose
+28:04 what you don't care about and you can
+28:07 choose uh what to sacrifice because most
+28:10 decisions are actually trade-offs and
+28:13 you need to understand what is the
+28:16 surface of this landscape uh what are
+28:20 the spectrums where you need to put this
+28:23 uh single point on this trade-off and
+28:26 say well okay
+28:28 um if we are going real time we care
+28:31 about performance modes and just time to
+28:34 develop this thing because definitely
+28:36 you cannot build real-time too fast and
+28:39 if we are going to be realistic we
+28:41 should care about uh
+28:45 exact matching of this photo to other
+28:48 photo and later it will be reflected in
+28:51 our metrics and losses but we do not uh
+28:54 really care about these images being
+28:56 just aesthetically appealing
+29:00 okay so in summary in this design
+29:03 document for the
+29:06 um
+29:07 non-technical parts for the problem
+29:09 description part we should include goals
+29:11 and non-goals then we should include all
+29:14 the assumptions we have
+29:16 um I had a guest like assumptions could
+29:18 be how exactly users will use it right
+29:20 or like other things then technical
+29:23 limitations
+29:25 and also the user experience like what
+29:29 the part of the flow where it will be
+29:32 used like for example
+29:34 um user will uh take a phone and point
+29:38 to towards the legs and then what should
+29:41 happen exactly right so this is all like
+29:43 problem description
+29:44 am I right I yes
+29:47 um I would also add that
+29:49 there should be some
+29:52 points about some points that later will
+29:55 be transformed to metrics like how do we
+29:58 decide what's good what's not
+30:01 because when you draft the solution part
+30:03 uh you definitely would like to have
+30:05 some metrics so what is a good solution
+30:07 what is not and uh when you have no uh
+30:12 objectives that you can measure or at
+30:14 least imagine how you can measure it
+30:16 maybe not right now because for example
+30:18 this aesthetic appealing is not a thing
+30:21 that is easy to measure but when you
+30:23 just write down well we would like it to
+30:26 be aesthetically a billion
+30:29 that's a problem and in the solution
+30:31 part you can think about how you going
+30:35 to measure it
+30:36 that could be simple things like I don't
+30:39 know we add a feedback button to the
+30:42 screen and if something goes wrong users
+30:44 can give us feedback and then we see how
+30:46 many
+30:47 uh how much negative feedback we get
+30:50 right could be one of the metrics
+30:52 yeah definitely so it's a very very
+30:55 earlier stage you measure aesthetically
+30:58 this static property of your pipeline
+31:02 on your own you just look at it and say
+31:05 no I don't like it that's my metric
+31:09 later you introduce some human feedback
+31:12 you introduce
+31:14 um
+31:15 platform for a b testing like you
+31:19 instead of just you looking at these
+31:22 images you ask your peers to look at
+31:24 them and later you ask some external
+31:26 evaluators to look at them and later uh
+31:29 you receive some feedback from end users
+31:33 of your platform
+31:35 but uh it's still a Cascade of very
+31:39 similar things
+31:42 okay so for the design document that we
+31:45 talked about there are two parts the
+31:48 problem description part and the
+31:51 solution description part so for the
+31:52 problem description part we more or less
+31:54 already talked about this so here I
+31:57 guess we need to sit down with product
+31:59 managers and try to get as much
+32:01 information from them as possible also
+32:03 perhaps we need to spend some time with
+32:05 our engineers
+32:06 no I don't know mobile Engineers for
+32:08 example in this case or I don't know
+32:10 some other Engineers who can help us
+32:12 identify all these technical limitations
+32:14 and we write down all the assumptions so
+32:18 we come up with one page of the document
+32:20 and then there is the second page or the
+32:22 second half of the document which is the
+32:24 solution
+32:25 right right so what do we write there
+32:28 how do we approach
+32:31 um
+32:32 coming up with the content for that part
+32:37 okay so uh one thing is you start with
+32:42 uh
+32:43 very typical Primitives that are related
+32:47 to machine learning like what is your
+32:50 Baseline what is your metrics uh those
+32:54 are two things that we already covered
+32:57 and uh you cannot really build something
+33:00 without having a solid Baseline because
+33:03 otherwise you don't know uh what to
+33:06 compare with
+33:08 once you have it uh you can draft what
+33:12 is your next solution your minimum uh
+33:17 solutions that is better than Baseline
+33:20 and you are actually going to build
+33:24 it's very likely that it it is not just
+33:27 a single model it's
+33:30 um some kind of pipeline of things uh
+33:34 interconnected blocks components and so
+33:37 on so forth
+33:39 what of these components are your
+33:41 responsibility and what components you
+33:44 are expecting from some other people how
+33:48 they are interconnected what is their
+33:50 API I do not say you should directly
+33:56 describe that your microservice is going
+34:00 to query that microservice with this
+34:04 request payload up
+34:06 it can be written later but that's not a
+34:10 goal of design document you need to
+34:13 understand well do we send data to these
+34:18 guys in a batch or you do it on a third
+34:23 request in real time do you have some
+34:25 kind of cue for this data or not so very
+34:29 high level uh interaction with external
+34:32 components
+34:33 you definitely should uh mention some
+34:37 data related aspects of the problem I do
+34:41 already have it uh how are you going to
+34:45 if you have data you are lucky of course
+34:47 if not how you're going to get this data
+34:50 and getting the data itself it can be
+34:54 like the biggest problem and it can be
+34:56 like 90 of solution but if you are lucky
+34:59 and everything is in place like how you
+35:02 going to process the data is it ready to
+35:04 go does it need some preparation
+35:06 filtering uh some feature engineering if
+35:10 you are working with a classical machine
+35:12 learning or sometimes in deep learning
+35:15 you can have feature engineering as well
+35:17 does it need some specific
+35:20 transformation like well we have this
+35:22 data but it lies
+35:23 somewhere in data Lake which is barely
+35:28 accessible and we have many problems
+35:30 related to uh fetching this data both
+35:33 Technical and organizational so uh do we
+35:37 need to address them
+35:38 as well
+35:40 and
+35:42 how you are going to make this whole
+35:47 system work like okay we have some
+35:50 baseline we have some uh solution like
+35:52 we will trade model X and we will
+35:55 interconnect it with database uh why and
+35:58 it will be connected uh on some protocol
+36:03 and uh we are going to evaluate it with
+36:06 some internal metrics and some external
+36:11 like a b or something amps this is our
+36:14 criteria of success and if things do not
+36:17 go like we expected we are going to look
+36:21 here here here like error analysis stuff
+36:24 again in startups it's very rare that
+36:28 you have everything in place in your
+36:31 first uh run of the design document it
+36:35 happens sometimes but that's not about
+36:38 two-page document we were discussing
+36:41 Instagram again if you have that many
+36:43 sections it means the document is
+36:46 already like 20 pages and usually it
+36:50 evolves uh design document doesn't have
+36:53 to be a static sync certain Stone you
+36:56 start with something small and later you
+36:59 add missing parts uh you collaborate
+37:02 with your peers you discuss stuff you're
+37:05 revealing New pieces of this uh hidden
+37:07 information of unknown unknowns and you
+37:10 feel the get
+37:14 okay so from what I understood like it's
+37:17 a short summary
+37:19 um there should be
+37:21 first we start with describing the
+37:23 Baseline what is already there there or
+37:26 what we can build super quickly to have
+37:29 a number to relate to right because we
+37:31 want to build something and we want to
+37:32 understand
+37:33 uh if we actually manage to improve uh
+37:37 or like build something useful and for
+37:39 that we always need to have a metric and
+37:41 Baseline We compare to right that's the
+37:44 first step then you start creating a
+37:47 diagram in this diagram you outline
+37:51 um all the things and how they are
+37:53 connected like how the data flows like
+37:55 for example there is a mobile device
+37:56 from this mobile device the data like
+37:59 these pictures come to I don't know this
+38:01 big box that we call model right the
+38:03 model is doing something and then sends
+38:05 back something else like maybe a frame
+38:07 with a shoe on that right
+38:09 and then there are some other things
+38:11 like you mentioned extrapolation or like
+38:13 when you don't put the shoe like in
+38:16 every frame but maybe like to save
+38:18 battery like you do something right so
+38:19 there could be some components that you
+38:21 know one component is actually put in
+38:23 the shoe the other component is doing
+38:25 the extrapolation then maybe there is a
+38:27 third component that uh I know is doing
+38:29 something else so you put all these
+38:31 things in a diagram like using Google
+38:33 Document or mirror or whatever
+38:34 diagramming tool
+38:36 and then there you see what kind of data
+38:39 you need right so what kind of data
+38:41 flows in through your system and what
+38:43 kind of data you need I guess for
+38:45 training the model too because like
+38:46 maybe that's a separate diagram that
+38:48 describes model
+38:51 um and then when you do this you see
+38:53 like all the dependencies and you see
+38:56 what are your dependencies you see what
+38:57 are the other dependencies you see what
+38:58 kind of data you need and based on that
+39:00 you can understand do we have data is
+39:03 this data easy to access and then I
+39:05 guess this is like continuation you can
+39:07 have a section in the solution that
+39:08 describes all the data issues and all
+39:10 the challenges that might arise
+39:12 right and that's more or less the
+39:14 solution right do we did I miss anything
+39:16 else
+39:21 nothing significant uh always there are
+39:24 details and uh I'm pretty sure I missed
+39:27 some details when answering your
+39:30 original question uh but uh
+39:33 that's why we are writing this book to
+39:38 try to catch as more details as We Know
+39:41 yeah so I bought this book what actually
+39:45 motivated you to write this what kind of
+39:48 problems did you see in the industry
+39:49 that you thought of them and understood
+39:52 okay like there is no
+39:54 good description of this I need to write
+39:56 a book about that so how did you how did
+39:59 it happen to you what motivated you
+40:02 actually I think there are many people
+40:05 in the industry who are smarter than
+40:08 myself better engineers and myself
+40:11 but who do not
+40:14 always see the force behind the trees
+40:17 like you can find a person who writes
+40:19 better code less bugs twice faster than
+40:23 myself
+40:24 now all the algorithms in the world
+40:27 reads fresh papers every day like
+40:31 perfect candidate but when you delegate
+40:35 a big system to this person
+40:38 they fail for some reason and
+40:42 that sucks that's unfair this person
+40:45 should build something twice better than
+40:47 myself 10 times better than myself but
+40:49 sometimes they do not so we would like
+40:52 to convert people who know a lot of
+40:53 stuff but they don't have this holistic
+40:56 overview to people who can build nice
+41:00 reliable systems
+41:02 so that was your main motivation so you
+41:05 saw that this thing is happening in
+41:07 practice there are people who are very
+41:09 smart but they don't have maybe the
+41:10 framework or knowledge of all the things
+41:13 we just discussed maybe like for example
+41:15 if I work as a data scientist or a ml
+41:17 engineer
+41:18 I am as an engineer I am more solution
+41:20 driven right so for me
+41:22 okay there is this problem
+41:24 like I spent five minutes talking to a
+41:27 product manager it seems I understood it
+41:29 like but simply I just need to put shoes
+41:31 on the frame right and then that's it so
+41:35 let's start coding and then two weeks
+41:37 later one month later or half a year
+41:39 later it turns out that I misunderstood
+41:41 some parts and then I built something
+41:42 completely useless
+41:44 right it happens uh it happened to me as
+41:47 well uh in the past and again we
+41:51 described it in the book and it's very
+41:55 often that experienced people are
+41:58 valuable for organizations exactly
+42:00 because of their bad experience
+42:02 like they did some bad job a while ago
+42:07 and they will not do it again they don't
+42:11 want to repeat their own mistakes
+42:14 and generalizing this experience is what
+42:18 make these people uh valuable like okay
+42:21 I know it doesn't work for me and it
+42:24 didn't work for my friend in other
+42:26 organization and those people can make
+42:29 better decisions uh when building uh
+42:32 complicated systems and that's a
+42:37 generalized experience
+42:39 crystallized one
+42:41 actually while writing this book
+42:45 I had to generalize a lot of my
+42:48 experience as well
+42:49 because
+42:52 let's say I'm writing a chapter about
+42:56 data sets and
+42:59 I definitely understand that
+43:01 there's always a question how much data
+43:04 do we need for this particular problem
+43:07 and usually I'm saying
+43:10 I have some intuition how much data I
+43:14 should have for this or that problem but
+43:18 I don't know how it works in my head
+43:21 I need to try to generalize it I need to
+43:24 try to give some voting that can be
+43:29 transmitted from me to other person
+43:31 and at this point I realized that I
+43:34 don't really know
+43:35 there are some heuristics but they are
+43:38 not Universal and very often I don't
+43:41 have a significant ground to say why we
+43:43 need X data for this problem
+43:48 it's painful to be honest
+43:50 but it was uh valuable for me and I hope
+43:55 it will be valuable for readers because
+43:57 I had to think a lot about my own
+44:00 experience and asking
+44:02 about this around like okay
+44:05 when you have this problem how do you
+44:07 approach it and I realized that well I
+44:10 had one perspective and natural
+44:12 perspective and I have seen some
+44:14 additional one but maybe that's not
+44:16 everything it still doesn't fit like a
+44:19 food picture I'm definitely missing
+44:22 something so I go read Internet I annoy
+44:27 other experienced people and I realized
+44:29 that all that I missed a lot that's
+44:33 definitely just my very very narrow
+44:36 perspective and people do it in a
+44:38 completely different way
+44:40 and I need to learn from them discuss
+44:42 with them and later that's just like two
+44:45 sentences of uh crystallized experience
+44:48 that hurts but I believe it is useful
+44:52 okay yeah and I was going to ask you if
+44:56 you know any good examples of a design
+44:58 document but then I opened the table of
+45:02 contents of your book and I see that the
+45:03 chapter four is called design document
+45:08 um can I assume that there is an example
+45:10 in this chapter
+45:12 so at some point we decided to do two
+45:17 examples of two systems
+45:20 both imaginary systems non-existent ones
+45:23 and we split them chapter by chapter so
+45:26 our book is structured in the following
+45:28 way we have 16 chapters and first
+45:33 four chapters are introductionary more
+45:36 about problem statement and how
+45:39 important it is to understand the
+45:40 problem and how to do this preliminary
+45:43 research on the problem
+45:45 and starting from the chapter 4
+45:49 we effectively introduce two systems one
+45:53 is about dynamic
+45:57 [Music]
+45:58 pricing for uh the retail
+46:03 company imagineer company yes super mega
+46:07 retail and another one is about
+46:10 imaginary company named photo stock that
+46:12 needs to build a church engine for their
+46:17 photos
+46:19 and for every chapter later we write a
+46:27 small piece of this design dock related
+46:29 to this chapter like we have a chapter
+46:31 on data sets and this uh we write a
+46:35 small piece like half page or page what
+46:38 should we do to gather relevant data to
+46:43 build a search engine for for the stock
+46:45 Incorporated power the next chapter is
+46:47 metrics and losses and here we write
+46:49 down how would we approach the problem
+46:52 of uh building uh the metrics and losses
+46:57 for search engine in the imaginary
+47:00 company Data stock Incorporated
+47:04 and is that still still severe and
+47:08 okay so then at the end I guess the main
+47:11 outcome uh for me as a reader I will
+47:15 learn how to build how to write this
+47:18 design Docs
+47:19 right
+47:21 uh that's again a tricky question from
+47:24 what we have seen among our earlier
+47:26 readers
+47:28 about uh um maybe
+47:31 the Rock 2 different patterns two
+47:36 different modes of readers some people
+47:38 say as cruises examples they are boring
+47:40 and not relevant I don't really care I
+47:43 don't want to read it I don't like it
+47:45 but the rest of material is nice I enjoy
+47:49 it it is interesting it's going to bring
+47:52 a lot of value for me
+47:54 and another people said well this is
+47:56 boring
+47:57 uh all this theoretic stuff and co-stars
+48:01 from your uh experience is not any
+48:04 relevant it does not help at all but
+48:07 these design document on super mega
+48:09 retail is nice it brings a lot for me
+48:14 so I cannot say it is universal but for
+48:19 for some people it works
+48:22 I guess it's hard to satisfy everyone
+48:24 right so everyone oh yeah indeed
+48:27 and maybe this is another challenge for
+48:29 you because you're writing with a
+48:30 co-author right and then you might not
+48:33 necessarily agree on everything right
+48:34 and then maybe you also have a similar
+48:37 station when you need to decide what to
+48:39 include what not to include
+48:41 right
+48:42 or you always agreed on everything oh
+48:45 definitely not but our experience is
+48:47 very different so my cursor is a person
+48:51 with very successful
+48:54 corporate card here and uh he's like his
+48:59 last position is VP of data science so
+49:02 he's a big guy
+49:03 uh I'm not a big guy at all um I'm also
+49:07 I pref I prefer
+49:09 um granting stuff Hands-On
+49:11 and there's our perspectives are very
+49:14 different and those are things I don't
+49:17 really know
+49:18 and
+49:19 uh here I definitely don't want to lead
+49:23 I don't want to uh be a driver for this
+49:28 chapter maybe I will bring two cents of
+49:30 my own here and there and definitely
+49:33 that's not something where I'm an expert
+49:36 is this
+49:37 all yours dude
+49:39 at the same time there are some subsets
+49:42 where I feel expertful like I have
+49:45 written many training pipelines in my
+49:47 life and it makes sense that the chapter
+49:50 about training pipelines is written
+49:52 mostly by myself
+49:55 and that's how we find the balance
+49:58 um between different perspectives and
+50:01 with this design talk examples again
+50:05 we write Sam
+50:08 we split them between us like I am
+50:12 writing about this uh for the stock and
+50:15 Valerie is writing about the super mega
+50:17 retail because he has some concerns in
+50:19 retail and I decided to choose something
+50:22 uh closer to
+50:25 my experience I never built a search
+50:28 engine but I think I understand how it
+50:32 could be built even
+50:34 some other experience in small companies
+50:38 related to computer region and natural
+50:41 language
+50:42 so for you it's also like a kind of a
+50:46 situation where you need to deal a
+50:48 problem that you don't necessarily know
+50:49 in like all these unknown unknowns and
+50:52 known unknowns but you approach it with
+50:55 this uh you know as an engineer who
+50:57 needs to solve this problem right and
+50:59 then you show how exactly to build this
+51:01 design document
+51:03 yes that's right I think first of all it
+51:06 is uh not really possible to uh write
+51:10 down about stuff that I built in my
+51:13 previous experience because of NDA and
+51:15 stuff and from other perspective we
+51:18 would like to I would like to write a
+51:21 document
+51:22 how I would have written it
+51:25 on my own without a deep understanding
+51:28 of situation
+51:31 because uh well that's what I would
+51:34 expect from my British as well
+51:38 and I am a book author myself and for me
+51:41 the most difficult part was to decide
+51:43 what I should include in the book and
+51:45 what I should exclude from the book what
+51:47 I shot definitely not include
+51:49 and also that the challenge was that
+51:51 this thing was changing as I was writing
+51:54 the book so at the beginning I thought I
+51:56 should definitely include this but as I
+51:58 was writing them and realized okay I
+52:00 actually need to split this chapter and
+52:03 then I need to remove this chapter
+52:04 because nobody cares about that actually
+52:06 so how did this process go for you like
+52:10 how did you understand what exactly you
+52:12 want to put in the table of contents how
+52:14 did you come up with this outline what
+52:17 did you use in making these decisions
+52:20 managing changed
+52:22 so first of all we wanted to cover like
+52:24 everything
+52:25 related and at some point
+52:30 we
+52:31 realized that if we include everything
+52:34 first everything that we planned first
+52:36 this book will be twice bigger than
+52:39 expected by its publisher and it will
+52:41 take four times longer sat inspector by
+52:44 the publisher so that's constraints
+52:46 again actually you can treat write in a
+52:50 book as a project of its own with all
+52:54 the stuff and outline of the book is
+52:56 kind of design dog Frozen
+53:00 so uh
+53:01 we got some regularization some
+53:04 constraints uh driven by its publisher
+53:08 and
+53:09 while
+53:11 writing the text we had some early
+53:14 feedback
+53:15 some feedback from our
+53:19 France we sometimes share this or that
+53:22 chapter with a domain expert like if
+53:26 there is an expert in some particular
+53:28 area and that would be definitely useful
+53:31 to share in the very raw draft resume to
+53:35 get some high level feedback also we
+53:38 have some feedback from earlier
+53:40 reviewers
+53:41 and it is informative as well sometimes
+53:45 it's kind of controversial like you can
+53:48 have one paragraph with two comments one
+53:51 person said wow that's nice that's
+53:53 mind-blowing very interesting very
+53:54 valuable and another what the hell is it
+53:57 that's definitely not interesting just
+54:00 piece of why did you even write it
+54:03 and was it the Accord
+54:07 like was it a quote Oh almost almost
+54:10 okay we had One reviewer who should it
+54:14 all hours a book like uh let's see
+54:18 chapter number three zero like well
+54:20 after this uh
+54:22 three chapters I tried to do my best to
+54:25 read through this writing but I cannot
+54:28 do it anymore it's too boring and
+54:30 useless
+54:34 because like with video I've seen you
+54:36 just made air quotes around writing for
+54:39 those who don't who just hear this as in
+54:42 audio only version yeah so writing was
+54:44 in air quotes
+54:45 yeah that's uh that's that must be tough
+54:48 like how do you deal with this sort of
+54:50 feedback like do you
+54:52 it's hard not to take this personally
+54:54 right so then you start questioning
+54:55 yourself for or not really actually I
+54:58 started I'm not too confident person in
+55:03 especially when we are talking about
+55:05 this kind of work but after some
+55:09 discussions uh with Michael author and
+55:12 with our publisher
+55:13 I realized that it is actually good if
+55:16 you have like more than 10 early
+55:18 reviewers for this stage and there is
+55:22 one person who is not happy and the rest
+55:25 of people are happy and most of
+55:28 criticism is not related to our writing
+55:31 but more related to how stuff is
+55:34 formatted or how illustrations are made
+55:37 well this is good feedback and I'm not a
+55:41 dollar bill to be loved by everyone
+55:46 yeah
+55:48 so that's a good way of approaching any
+55:52 criticism I guess just think of about
+55:56 other things and we still have time like
+55:59 four minutes
+56:00 um
+56:01 so in this four minutes maybe I want to
+56:04 ask you pick any chapter that you liked
+56:07 most working on and tell us about this
+56:10 chapter and then second so we're mindful
+56:13 of time is uh maybe you can give us some
+56:15 extra recommendations apart from your
+56:17 book that people can read or listen or
+56:21 watch to improve their system design
+56:23 knowledge so let's start with the first
+56:24 one
+56:26 um tell us about the chapter you liked
+56:28 working on
+56:31 I think I so far I enjoyed chapter
+56:35 writing chapter number three about
+56:37 preliminary research
+56:39 is that not something that is widely
+56:42 covered by existing literature I believe
+56:45 because master of textbooks are related
+56:48 to machine learning they are about
+56:51 uh
+56:53 how to build models how to run models
+56:57 how to embed them into your inference
+57:00 pipeline whatever and there are some
+57:03 problems as there are some materials
+57:05 about how to
+57:09 frames the initial problem how to
+57:13 scope the project like all this project
+57:16 and product manager stuff but not many
+57:20 materials
+57:22 how do you start working with it
+57:25 uh what where should you find your
+57:27 inspiration you definitely don't want to
+57:30 build everything from the very scratch
+57:31 you need to understand what you reuse
+57:36 what you
+57:37 built from scratch what you buy as an
+57:41 existing maybe it's a solution what you
+57:43 buy as a data set
+57:47 where you see how people approach this
+57:51 problem
+57:52 this was a chapter where I had to think
+57:54 a lot because well I definitely have
+57:57 been doing uh this stuff for previous
+57:59 projects in my career but I never
+58:03 generalized them so a while ago in this
+58:05 podcast I've been uh wiring how hard it
+58:08 is to generalizing and I think this
+58:11 chapter was the most complicated trying
+58:14 to understand yeah well I know what I
+58:18 would do for any specific project I
+58:21 don't know how would I approach this
+58:23 project I don't know
+58:26 so it's kind of meta
+58:28 yeah and the other thing so can you give
+58:32 us any recommendation on any resource
+58:35 that could also be useful if you want to
+58:38 learn more about machine Learning System
+58:39 design do you know of anything
+58:43 well
+58:44 um there are some things that are
+58:47 transferable from regular software
+58:50 system designed to machine Learning
+58:52 System design and it's less about
+58:56 technical stuff but more about the
+58:58 mindset how you should frame the problem
+59:00 and how you should approach the problem
+59:02 I totally love the guide by the
+59:06 interviewing IO guys
+59:08 I think I can post the link later
+59:11 yeah
+59:13 this guide is about regular system
+59:16 design but first of all you cannot build
+59:18 a machine Learning System design if you
+59:20 are not able to build at some point a
+59:23 software system they are interconnected
+59:25 in our book we focus more on machine
+59:27 learning aspect of things but good much
+59:29 learning engineer is definitely a good
+59:31 software engineer as well
+59:33 and there's at least some surface level
+59:37 uh skill in building regular Software
+59:40 System is essential we do not focus on
+59:44 it in the book because definitely we are
+59:46 not experts there we have some knowledge
+59:49 but it's not the level of knowledge we
+59:52 can teach other people
+59:54 and that's why I would recommend uh this
+59:58 guide
+1:00:00 thank you and before we wrap up I want
+1:00:03 to mention a few things so we did we run
+1:00:06 a giveaway uh on Twitter so for those
+1:00:11 who took part I will announce that the
+1:00:13 winners right now after we finish this
+1:00:16 conversation I will click the Tweet
+1:00:18 button so there are three winners you
+1:00:20 will get a free copy of the book
+1:00:22 and also for those who are interested in
+1:00:25 the book I put the link in the
+1:00:26 description and also mining was kind
+1:00:27 enough to give us our podcast the
+1:00:30 discount 35 off so there is a coupon
+1:00:33 code there for the discount so if you're
+1:00:35 interested check it out
+1:00:37 and I think with that uh that's all we
+1:00:39 have time for today so seni thanks a lot
+1:00:42 for joining us today for sharing your
+1:00:44 knowledge for talking about the book
+1:00:47 um and thanks everyone too for joining
+1:00:49 us today for listening in and yeah I
+1:00:52 guess that's all for the
+1:00:54 thanks it was a really fun podcast
+1:00:58 yeah I'm happy to hear that okay well
+1:01:00 enjoy the rest

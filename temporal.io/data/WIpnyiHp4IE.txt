@@ -1,0 +1,1619 @@
+Building an Open-Source NLP Tool
+
+0:00 everyone Welcome to our event this event
+0:02 is brought to you by data talks club
+0:03 which is a community of people who have
+0:04 data we have weekly events and today is
+0:07 one of such events if you want to find
+0:08 out more about the events we have there
+0:10 is a link in the description go there
+0:12 click on this link and you'll find all
+0:14 the events we have on our schedule
+0:16 do not forget to subscribe to our
+0:18 YouTube channel this way you will stay
+0:20 up to date and receive uh notifications
+0:22 about all our future streams like the
+0:25 one today and we have an amazing slack
+0:27 Community where you can go where you can
+0:29 hang out with other data people
+0:31 during today's interview you can ask any
+0:33 question you want so there is a pinned
+0:36 Link in the live chat click on this link
+0:38 ask your questions and we will be
+0:39 covering these questions during the
+0:41 interview
+0:42 so that's the intro
+0:45 now I will open the questions we
+0:47 prepared for you
+0:50 and
+0:54 I think I'm ready so maybe you're ready
+0:57 too yes
+0:59 exactly
+1:01 so today we will talk about open source
+1:04 and creating startups in open source and
+1:06 we have a special guest today Johannes
+1:08 so Johannes is a data scientist and
+1:10 engineer and he is a co-founder of Kern
+1:12 he likes machine learning data
+1:14 management and all the things that
+1:16 people built with these things and at
+1:18 work at Kern
+1:20 um
+1:21 the help data scientist with labeling
+1:23 and managing data effectively on large
+1:25 scale so welcome to our show
+1:28 hi thanks for inviting me
+1:31 the questions for today's interview were
+1:33 prepared by Johanna as always thanks
+1:35 Johanna for your help
+1:36 and before we start before we go into
+1:39 our main topic of starting a open source
+1:42 startup let's start with your background
+1:44 can you tell us about your career
+1:45 Journey so far
+1:47 sure happy to do so so
+1:49 um yeah I've had this typical technical
+1:52 background so I studied business
+1:54 computer science and data engineering I
+1:57 worked as a data migration consultant
+1:59 also during the the undergraduate
+2:01 studies I have already been quite early
+2:04 in my career and so data path so to say
+2:08 and I've been in the field of AI for
+2:12 roughly now eight years but not
+2:13 professionally but I started eight years
+2:15 ago with my very first touch point which
+2:17 back then was this little web app called
+2:19 style transfer you could like upload an
+2:22 image of a doc and then choose an image
+2:23 of Picasso and it was merged
+2:26 and from there basically it was super
+2:29 curious how of this works and in my
+2:32 master stick bi at first started the
+2:34 consultancy this was like the first time
+2:36 I did something on my own and this
+2:38 consultancy at some point kind of
+2:41 kind of term of the plan so we did a
+2:44 couple of consultancy projects and found
+2:47 interesting topics that were repeating
+2:48 and we started building software for
+2:50 that
+2:53 well so you mentioned that you studied
+2:55 data engineering so it was actually a
+2:57 part of your degree
+2:58 yes yeah so data engineering basically
+3:02 um
+3:03 with like the name of the the course is
+3:05 data engineering and that's
+3:08 it's like a mixture of data engineering
+3:10 and other data science so um yeah both
+3:13 Fields basically which university was it
+3:21 yeah that's where I did my my masters in
+3:24 The Bachelors I did the smaller
+3:27 University
+3:30 I used to uh inputs down or you moved no
+3:33 I'm I actually I moved back to Bonn so I
+3:36 studied in Pakistan but I moved back to
+3:38 one close to my family okay because I'm
+3:42 surprised that there are actually
+3:44 courses for data engineering it's
+3:45 usually universities are
+3:48 um
+3:49 it's not always possible for them to
+3:51 catch up to
+3:52 these things so that's pretty cool that
+3:54 you had this already
+3:57 yeah okay so it started with style
+4:00 transfer exactly
+4:02 exactly and it was kind of this
+4:06 yeah it was this curiosity for me right
+4:08 it was basically I I just started
+4:10 generally programming like roughly eight
+4:12 years ago a little bit more than eight
+4:13 years ago
+4:15 um and I was just like still in the
+4:17 mindset of okay the thing I can program
+4:19 is like if else and so on like I was
+4:22 thinking in that sense and then
+4:24 realizing that you could do something
+4:25 like Star transfer was just too
+4:28 interesting for me not to dive into
+4:30 so that was cool
+4:33 so Johannes you were already in it's not
+4:37 the first time you appear on our YouTube
+4:38 channel so you appeared twice before
+4:41 that right so we have this thing called
+4:43 open source Spotlight where we invite
+4:45 open source authors to and ask them to
+4:48 demo their tools and you already did two
+4:52 demos so can you tell us about these
+4:53 demos and by the way we will of course
+4:55 make sure that we add links to the shown
+4:58 also you can also check them
+5:00 yeah sure so um I've been a big fan of
+5:04 the series myself so I I have already
+5:06 known it before and when we did our
+5:08 first open source launch movie finally
+5:10 which is our like Flagship project that
+5:13 we're working on
+5:14 um I reached out to you guys and and
+5:17 asked if you can show it and we finally
+5:19 is basically
+5:20 um uh yeah data visualization labeling
+5:24 through specifically designed for
+5:25 engineers so if your friends want to
+5:28 build a really cool natural language
+5:29 processing application and you have just
+5:31 web script a ton of data and you know I
+5:34 want to look into how you can we find it
+5:36 that's also where the name is coming
+5:38 from
+5:39 um that's a really cool tool for it and
+5:42 one of the few also to say the drivers
+5:45 of Refinery is
+5:47 um automated heuristics and for this we
+5:49 have the second open source project
+5:51 which is bricks so like the bricks with
+5:53 which you can build your project which
+5:55 is basically yeah Content Library so to
+5:58 say
+5:59 um where we are collecting for like
+6:02 abstract things like sentiment analysis
+6:04 multiplayer algorithms
+6:06 um both open source and both machine
+6:10 learning and working out programming and
+6:12 so on so those are like the two open
+6:16 source projects that are the bigger ones
+6:18 we have so far
+6:20 can you tell us a bit more about
+6:21 Refinery so you said that it's a
+6:24 databilization labeling tool and it kind
+6:26 of refines your labels right or refines
+6:29 your data so how does it do this what
+6:32 does that exactly ending yes so we
+6:34 basically had two questions in mind
+6:37 um and also when we previously to the to
+6:40 the launch we also already worked with a
+6:42 dozen of data science teams so
+6:45 um one idea was basically what can I do
+6:48 if I just have the raw data and I want
+6:51 to quickly label a lot of it that was
+6:54 like the first idea and we we saw that
+6:57 for instance you want to do something
+6:58 like sentiment analysis you typically
+7:01 can
+7:02 use some techniques like Active Learning
+7:05 or integrating something like GPT or
+7:09 other tools
+7:10 um to to use a single sticks so to say
+7:13 that can label data automatically but in
+7:17 a noisy way so to say
+7:19 um and how can you combine that so that
+7:21 you basically have a framework which is
+7:23 called mixed supervision which we did
+7:24 not in band but we make use of it
+7:27 um and
+7:28 um basically to to relatively quickly
+7:31 get training data instead of raw data
+7:34 that was like it's like one of the the
+7:37 cool things about Refinery because it
+7:40 really shortens the gap between I have
+7:42 an idea for some kind of project I want
+7:44 to do and I have the basal
+7:45 implementation so that's like the the
+7:47 first thing
+7:48 and the second thing about Refinery is
+7:50 that as soon as you have some automated
+7:53 labels and you now want to dive deeper
+7:55 into you maybe also already have lots of
+7:57 manual labels but you typically have
+8:00 seen then in the real world is that even
+8:02 the manual labels are extremely messy
+8:05 right so um
+8:08 even if they are called Ground truths
+8:10 oftentimes they're not the truth right
+8:12 so um it's also super super valuable to
+8:15 dive deeper into for the existing labels
+8:17 that they have which of those are most
+8:19 likely one or where are like the subsets
+8:21 in my data set where I'm really having
+8:23 headaches because there's so much mess
+8:25 going on
+8:26 um and you can actually use those
+8:27 heuristics
+8:29 that fences are part of bricks um
+8:32 to to quickly dive deeper into something
+8:34 like for instance let's say we have a
+8:36 sentiment analysis and we see that the
+8:40 sentiment analysis
+8:41 um is performing really well for short
+8:43 texts but it's like very very difficult
+8:47 for texts that are
+8:49 complicated to read for instance or that
+8:51 have like a long long text that's where
+8:53 you want to dive into and see what you
+8:55 can do there for this you can usually
+8:57 finally perfectly
+9:00 I'm wondering why so so this problem is
+9:03 not new to me personally and I think for
+9:06 many data scientists and like ever ever
+9:09 since I started doing data science I
+9:12 think even before my first
+9:14 um like real full-time job it was
+9:16 already like a problem and I remember
+9:18 solving this problem with uh uh this
+9:22 IPython notebook widgets like it was
+9:24 back then it was called high python
+9:26 notebooks like this
+9:29 like this little tools one of them is
+9:32 called pigeon right so it allows you to
+9:34 quickly create uh like a simple
+9:37 annotation tool with high python with
+9:39 decide by widgets
+9:41 but it never occurred to me to actually
+9:43 you know make a proper tool from this so
+9:46 I I would use this widgets label data
+9:49 quickly and then forget about this so
+9:51 how did it happen for you that your isdk
+9:53 there is some potential there are no
+9:54 really good tools for that let us make a
+9:57 tool and then people in the in the
+9:59 community will benefit from this so how
+10:01 did it happen to you yes so one of the
+10:04 things is basically that it's mainly
+10:06 designed for natural language and for
+10:08 natural language it was a bit more
+10:10 difficult
+10:11 um than than what we see so this widgets
+10:14 didn't really work right for NLP it's
+10:16 much harder yeah it's it's much much
+10:18 more designed in many ways oftentimes
+10:21 for structured data right when you find
+10:22 yourself already something like an
+10:24 excess spreadsheet but if you have like
+10:26 a txt file which only contains textual
+10:28 data something that we've seen is that
+10:31 oftentimes people are missing those very
+10:33 metadata insights right so for instance
+10:35 the language and so on and so forth
+10:37 and we have been coming from a research
+10:40 perspective mainly so we were studying
+10:44 and we're looking into what kind of new
+10:46 interesting Technologies are coming up
+10:48 and I think one of the big things that
+10:51 also made this product possible is like
+10:53 generally the pace that there currently
+10:56 is a natural language processing because
+10:58 there are so many new techniques that
+10:59 you can use that make this through not
+11:03 not just nice but really strong I did
+11:06 maybe for instance a decade ago would
+11:08 not have been possible
+11:10 um so I think it's like the two factors
+11:12 so basically that the general interest
+11:13 in natural language processing is rising
+11:15 so much especially in the last month
+11:18 um and also like what's possible in
+11:19 there and watch
+11:21 special pain points that your language
+11:22 processing have
+11:24 yeah especially these tools that like
+11:27 chat GPT I remember having a lot of fun
+11:29 so I would ask it to summarize an
+11:31 article and then I would ask it hey can
+11:33 you rewrite it please as if Donald Trump
+11:35 wrote this article
+11:37 it's so much more entertaining
+11:40 unfortunately right now they changed
+11:43 something so when I asked cha GPT to
+11:45 rewrite an article as Donald Trump would
+11:47 say I'm sorry I'm not going to do this
+11:49 so that's very unfortunate but um I
+11:53 guess indeed NLP is
+11:55 um quite a nice place to be right now
+11:57 right
+11:58 with tools
+12:01 it's super super interesting because
+12:05 um I remember like
+12:06 we've been in this field like we've been
+12:09 focusing on natural language processing
+12:10 purely for a bit more than three years
+12:12 and pre-november 2022 people were always
+12:17 asking us why the hell are you focusing
+12:19 on natural language processing like why
+12:21 this this is like too complicated
+12:25 um and we had like already of course we
+12:28 didn't know the church GPT would help
+12:29 but we already saw because of the the
+12:32 being so close to research that things
+12:34 like hugging face were happening right
+12:36 Transformers becoming more strong
+12:38 and ever since then like ever since the
+12:41 GPT
+12:42 um it feels like the the whole
+12:44 perspective shifted by 180 degrees now
+12:47 they are saying okay of course you're
+12:48 focusing in naturally it's processing
+12:50 right so that's that's interesting um
+12:53 like it was uh you were before it was
+12:56 kind of popular right
+12:58 you started yeah I I I
+13:01 yeah I was I was um also really hoping
+13:04 for something like this to happen but of
+13:06 course I didn't know that it would
+13:07 happen I mean a naturalist processing
+13:09 became already more popular even before
+13:12 TPT but I think mainly for the developer
+13:15 space where developers were seeing that
+13:17 something like this was happening but
+13:18 not for the broader for the foreign
+13:22 so gpt3 was around for quite some time
+13:25 already when uh exactly charge GPT was
+13:28 released yeah so your research was about
+13:30 to not be right and then you probably
+13:31 for this you needed to label data right
+13:34 and that's how it Refinery period or
+13:37 yeah we were working basically in the
+13:39 consultancy we saw this quite often that
+13:41 we were trying to to figure out with
+13:44 people in workshops what kind of use
+13:46 cases would be helpful and you could
+13:48 ever have like this completely data
+13:50 Centric perspective in the sense okay
+13:52 what kind of data do we already have and
+13:54 what kind of use case can we build on
+13:56 that or you could take the other
+13:57 approach thinking okay what kind of use
+13:59 cases would be valuable
+14:01 but do we have the data for that and we
+14:03 typically went for the second approach
+14:04 when we fall okay what would be helpful
+14:06 and then try to figure out how we can
+14:08 build the data for that and
+14:11 um
+14:11 at the same time we did this basically
+14:14 we were in a research project at the
+14:16 University where we also already saw
+14:18 create some things are happening this
+14:20 weak supervision approach
+14:22 um it's not
+14:23 absolutely magical so it's it's I think
+14:26 it was hyped a bit more than like what
+14:29 it actually offers but it's a really
+14:31 strong framework to bring together any
+14:34 kind of a risk that you can imagine
+14:36 so Prince is also a chat GPT is an
+14:39 amazing heuristic that you can use right
+14:40 so
+14:42 um and we saw it back then and um
+14:44 realized that very very quickly it could
+14:47 like not only bring interesting research
+14:49 insights but it would actually be hyper
+14:51 and business applications so that's
+14:53 where where we came from
+14:57 I recently came across a paper that says
+15:01 that uh so I think what researchers did
+15:03 is they compared
+15:05 um chat GPT with mechanical torque a
+15:07 crowdsourcing platform did you see this
+15:09 system and then yeah GPT basically was
+15:13 better at labeling the data than
+15:17 crowdsourcing and I'm wondering for you
+15:20 does this does it possess any
+15:23 risks that you know people will not use
+15:26 let's say finally they will just go
+15:27 directly to chatgpt to label I don't
+15:30 know to extract sentiment from their
+15:32 data and use it for labels
+15:34 yeah honestly I love it I love it
+15:36 because I think
+15:37 um
+15:38 that
+15:39 um I rather see it as as one kind of
+15:42 heuristic right so basically
+15:45 um I know from business that there are
+15:47 there are many applications where it's
+15:49 not that easy to just plug in charge GPT
+15:50 and profile and by heuristic you mean um
+15:53 so you can use it to create an initial
+15:55 set of labels and then refine them yeah
+15:59 so for instance let's say
+16:01 um very simply let's say we want to
+16:04 build an Intel classifier so we have an
+16:06 email inbox emails are coming in and we
+16:08 want to understand are they about uh
+16:11 cancellations are they about feedback
+16:13 whatever so we want to understand the
+16:14 intent and um one really good approach
+16:19 if you like once a bit and classifier
+16:20 now would be to say I want to use the
+16:22 power of jet GPT so the first
+16:26 10 000 examples I have I will just ask
+16:28 gpp to label them for me and then I will
+16:30 train a model on top of that level data
+16:32 that is one very solid approach
+16:35 um
+16:36 and with that I think you can already
+16:39 gain something like
+16:41 this is like a random number of course
+16:43 but something like an 80 position let's
+16:45 say and if you now say well I have the
+16:48 stretchy because when he was sick and I
+16:50 also use negative learner like hugging
+16:53 face model for instance that I train on
+16:55 a few days manually and maybe I also use
+16:59 a crowd labeler then I will achieve a 90
+17:02 Precision I did something that I rather
+17:04 so I think it's like one ingredient in a
+17:06 complete dish and I think it's like an
+17:09 incredibly cool ingredient and in many
+17:12 cases it will already be super helpful
+17:14 to just use that GPT
+17:17 um
+17:18 but but I'm thinking that's um it
+17:21 becomes even stronger when you combine
+17:22 it with with other techniques
+17:25 okay so it's not like a competitor it's
+17:28 uh one of the things you can take
+17:31 advantage of and use it together with
+17:35 I think so I mean for instance what I
+17:38 mentioned initially is
+17:40 um I think we finally would not exist if
+17:43 for instance hugging face would not
+17:44 exist because that's something that we
+17:46 already see is one of the key uh
+17:49 foundations of Refinery is that we can
+17:51 build really strong embeddings and the
+17:53 embeddings have in the data management
+17:54 part and
+17:56 um of course you could already also say
+17:58 I have the hugging face models I want to
+18:00 fine-tune them and that's good and
+18:02 that's a super valid approach right so
+18:05 um I think if we finally it just makes
+18:07 it a bit easier to to get there faster
+18:11 and especially for business users to get
+18:13 there much faster that's kind of so I
+18:14 think that
+18:17 um GPT is like something that we
+18:20 actively make use of honestly right so I
+18:22 think that's it's already a brick
+18:25 um so we use gpts a couple of bricks
+18:28 um and it just have so much of
+18:30 prototyping and everything so that's
+18:31 that's amazing
+18:33 and by bricks you mean this other
+18:34 project that you mentioned at the
+18:36 beginning and the other project is also
+18:37 demoed at open source Spotlight is this
+18:40 collection of different recipes right
+18:41 that people can just grab and use
+18:44 exactly exactly so for instance one just
+18:47 to give an example
+18:49 um we have a brick or sentiment analysis
+18:52 analytics and one implementation could
+18:55 be for instance using text block so
+18:57 we're very
+19:01 and another implementation could be a
+19:03 prompt that we have prepared for GPT
+19:06 which basically says the following
+19:09 examples are positive negative what is
+19:11 this example right and
+19:14 um that's kind of again the idea like if
+19:17 you want to implement the sentiment
+19:18 analysis for your own project
+19:21 um one idea could be to say okay let's
+19:23 look into what kind of brick
+19:24 implementations I have let's just take
+19:27 all of them let's just see how good they
+19:29 perform because if each of them performs
+19:31 at an 80 Precision together they will
+19:33 perform at a 90 position that's the very
+19:36 simple idea but it works that's the idea
+19:39 behind that sampling methods right
+19:41 Ensemble methods and machine learning so
+19:43 you have like a bunch of quick
+19:44 classifiers and then when you put them
+19:45 together they perform a lot stronger
+19:48 exactly and the thing with quick
+19:49 supervision mainly is that of course
+19:51 mixing provision has different kind of
+19:53 implementation so you can have different
+19:54 kind of strategies how you want to make
+19:56 use of those single voters but the idea
+20:00 roughly is if you have a random Forest
+20:02 but instead of decision trees you have
+20:05 concrete
+20:07 implementations concrete heuristics like
+20:09 one decision three can be GPT one can be
+20:11 text block one can be Veda and so on and
+20:14 so forth and one could even be crowd
+20:16 labeling right so um that's kind of the
+20:19 the big idea behind weak supervision
+20:22 okay you have this uh cool projects
+20:25 multiple cool projects and at some point
+20:28 you decided that uh
+20:30 you should start a company to actually
+20:32 focus on this project so how how did
+20:34 this happen can you walk us through the
+20:36 process
+20:37 yeah exactly
+20:39 um first actually it was the other way
+20:40 around we um we already knew what we
+20:43 were building
+20:44 exactly we we
+20:46 um
+20:47 we started with the consultancy and we
+20:50 started the consultancy you already
+20:51 knowing that at some point we want to
+20:53 build products but we didn't know what
+20:55 yet we didn't know whether Henrik and I
+20:57 we are the co-founders whether we would
+20:59 get along well or not
+21:01 um and we also needed some initial
+21:03 Capital that was kind of the three
+21:05 reasons why we started the consultancy
+21:07 and it quickly turned out that Henrik
+21:09 and I work along really really well
+21:11 together which already was a cool thing
+21:14 um and we initially started building a
+21:17 software that completely failed so the
+21:20 first product that we that we built was
+21:22 uh really bad and it was a complete no
+21:27 code machine learning
+21:29 um Builder basically so the idea was we
+21:32 were working with business units quite a
+21:33 lot and we wanted to help them basically
+21:36 say
+21:37 um just label a bit of data and then you
+21:39 have the model and you can use it and
+21:41 that didn't work for two reasons
+21:43 basically one of course the training
+21:45 data the training data that business you
+21:47 have put into the Autumn air was really
+21:50 bad
+21:52 um and the second thing was and I don't
+21:54 know if this is now shifting or not but
+21:56 it was back then the reason that they
+21:58 had a big fear of building AI themselves
+22:01 because they were not the experts they
+22:03 didn't want to have the responsibility
+22:05 for building something like an AI
+22:07 um
+22:08 which was not a technical problem but
+22:10 one rather like from a mindset or like a
+22:13 perspective just as I don't want to
+22:15 I want to read a legal document but I
+22:18 don't want to write a legal document
+22:20 myself right that's kind of how I how I
+22:22 like to put it that way
+22:24 um and so what we did was basically we
+22:27 had back then uh still the consultancy
+22:30 so everything was going well
+22:32 um and we realized that we had this
+22:34 researched a project and we just said
+22:36 okay let's shift the user from the
+22:38 non-technical user to the technical user
+22:41 and that's tackle this specific problem
+22:43 that we realized is causing bad prob bad
+22:45 models which is training data
+22:48 and so from there basically we started
+22:51 building Refinery like in the very first
+22:52 version and
+22:54 um
+22:55 we had a specifically designed
+22:58 everything for engineers right we
+23:00 already knew there are already labeling
+23:02 tools that already are really good
+23:04 but what we were missing was something
+23:06 that gives Engineers more and more
+23:08 control right that's kind of also the
+23:09 idea of refining my Engineers why I
+23:12 specifically focus on them
+23:13 because that's what we saw they were the
+23:16 ones that were
+23:17 um
+23:20 yeah confident to build AI models right
+23:23 that's something very cited because here
+23:26 first product was focusing uh on
+23:29 business people and they burn confident
+23:31 exactly they wanted they wanted to use
+23:33 the model in a process so they wanted to
+23:36 say I have the following problem
+23:39 um I have incoming emails and I want to
+23:41 classify them and I want to like you
+23:43 have them draft the response for me
+23:46 but they don't want to build the AI so
+23:49 then they they actually ask Engineers to
+23:52 do this right and then Engineers would
+23:54 discover definitely for example and just
+23:57 go ahead and use it in building their
+23:59 solution right exactly that's that's
+24:01 kind of like the the shift that we would
+24:03 like one of the insights that we had
+24:05 with the first product is we didn't yet
+24:08 understand we understood what our users
+24:10 wanted but not that they didn't want to
+24:12 build it themselves right and so we we
+24:14 took that inside and tried to shift the
+24:17 user perspective to the people where we
+24:18 said okay can we help you build those
+24:21 models in a better way and it was
+24:23 interesting because we then realized
+24:25 that Engineers had problems with
+24:27 training data in the sense that the
+24:29 first team that we went to
+24:31 um
+24:32 which we are still actively working with
+24:34 together basically they had a process in
+24:37 which they were to post to build this
+24:39 very AI
+24:41 um and it was a key process something
+24:44 that the company has been working on for
+24:46 more than a decade the training data has
+24:48 been an excellent spreadsheet with ten
+24:50 thousand throws and two columns that was
+24:52 the foundation for their work right and
+24:55 so we asked them
+24:56 this is for real like this is actually
+24:58 your training database
+25:00 and it was and so um that was basically
+25:03 how you realize okay there are there are
+25:04 teams that uh have like almost no
+25:08 control over the training data that they
+25:10 have so they have no insights and they
+25:13 are also teams that quickly want to
+25:15 prototype things so that they can
+25:16 discuss with the business unit if it
+25:18 makes sense to follow along like if they
+25:19 want to look deeper into it and
+25:22 um it's also why Refinery is not a
+25:24 product that it is it's because we tried
+25:27 helping those teams that quickly want to
+25:29 set up something like as a prototype but
+25:32 it also is specifically designed to help
+25:34 Engineers who already have a label data
+25:36 set and I want to dive deeper into what
+25:38 is going on in there this is also where
+25:40 like a heuristic I suppose because you
+25:43 can do things in data management like
+25:45 looking for those records with two
+25:48 heuristics that your domain experts gave
+25:50 you where they like Collide where they
+25:53 say different things right so um
+25:56 that's basically that's how we got to
+25:59 the product and
+26:01 um we've been going to develop a
+26:03 conferences and developer conferences
+26:05 and developer conferences right so
+26:07 basically many of them and just try to
+26:10 be super close to the to the users of it
+26:12 and at some point we realize okay this
+26:14 product that we've built we have to open
+26:17 source it that's the best way for us to
+26:19 get more and more feedback to distribute
+26:21 it faster
+26:22 and I'm going to ask you how exactly you
+26:24 make this decision so it was you
+26:26 attended the conferences and uh was it
+26:29 your realization that he needed to open
+26:31 source so then more people try it or
+26:33 this is something you heard what
+26:35 from other people on conferences
+26:38 it was a combination honestly so it was
+26:40 basically that we already had the
+26:42 feeling that
+26:43 um open source could be an interesting
+26:45 approach but I also have to say
+26:48 um
+26:48 I was a bit afraid of open sourcing at
+26:51 first because I thought we now have this
+26:53 really cool products
+26:55 um it has been coming from research so
+26:57 we did a lot of cool things and if we
+26:59 now open source it we basically
+27:02 yeah showing how it works exactly right
+27:05 and it's something that was my initial
+27:07 mindset and I was realizing it more and
+27:10 why as we spoke with more users and I
+27:13 also had uh kind of the help in the
+27:17 sense of a discussion with the
+27:21 um befriended co-founder who was also
+27:23 going through that phase and was
+27:24 thinking uh should I open source and we
+27:26 just had a beer together and talk a lot
+27:29 about it and at the end of the
+27:31 discussion course that we have to open
+27:32 source and what we what we're building
+27:34 who is this other founder what's the
+27:38 product they have
+27:40 and it's actually a product specifically
+27:42 designed for
+27:44 um other developer toolings which is
+27:46 called crowd so it's basically
+27:49 um the Twitter tabs open source projects
+27:52 for developers to measure like where's
+27:54 my community how big is my community
+27:56 where are the people that are most
+27:58 engaged with my product
+28:00 um and he's basically the one I uh who
+28:04 who convinced me to uh to take the
+28:07 inside so that we had some users and say
+28:08 okay let's open source it so you had
+28:12 some fears of going of opening all the
+28:15 code did any of these spheres actually
+28:18 you know realize like did any of the
+28:21 things you were afraid happened
+28:24 cool
+28:26 um how everyone can we just go and open
+28:27 the code right and yeah yeah get the
+28:30 Insight in your research
+28:32 I mean I think it's it's
+28:34 um
+28:36 it comes with both advantages and
+28:38 disadvantages honestly so
+28:40 um and I think open source itself is not
+28:43 a business model but open source it
+28:46 changes your business model right so as
+28:48 I already mentioned we were coming from
+28:49 first the company then the open source
+28:52 perspective so we already knew
+28:56 um we at some point if we want to live
+28:58 as a startup we at some point have to
+29:00 make money if we find a way right
+29:02 um
+29:03 so um
+29:06 the what what we basically realize is
+29:10 um
+29:11 yeah you're you're losing some customers
+29:15 in a sense
+29:16 and you're winning some customers and
+29:18 you have to get an understanding of
+29:20 what's bigger it's like the losing
+29:22 customer figure or is there gaining
+29:23 customers bigger how to do how do you
+29:25 mean uh how exactly you lose customers
+29:28 by opening the code yes that's that's
+29:32 precisely um so basically
+29:35 um we were we kind of know that instead
+29:38 of working with really small teams like
+29:40 I would say other startups in many cases
+29:44 the open source version is everything
+29:47 that they need right they're basically
+29:48 just saying okay
+29:50 they remain customers but they don't pay
+29:52 you right exactly right
+29:55 yeah exactly right so exactly exactly
+29:59 and the open source version I really
+30:01 must say is a really good product right
+30:03 it's basically already offering so so
+30:05 many things like there are
+30:07 um
+30:08 because we really try to make it a big
+30:11 open source we didn't want to make this
+30:13 as like a marketing gig so to say we
+30:14 really wanted to commit to this episode
+30:16 yeah so
+30:18 um yes we already have lost Revenue in
+30:20 that segment because uh people who would
+30:23 otherwise have paid for the software
+30:25 just
+30:27 took it and use it and that's perfectly
+30:28 fine that's that's cool because
+30:31 they use it and we get much more
+30:32 feedback and everything and I think what
+30:35 we see more is that
+30:39 making money from the business unit side
+30:42 right so um when we are working for
+30:45 instance with Enterprises we try to
+30:47 discuss okay what kind of use cases are
+30:49 you working on and what kind of use
+30:51 cases do you want to implement
+30:53 um and then we talk about very specific
+30:55 details like for instance what kind of
+30:56 use cases are there in the insurance
+30:58 industry
+31:00 and
+31:01 um it's much more that we are like
+31:04 now selling to the business units but we
+31:07 get like the biggest support you can
+31:09 imagine from the developers insiders
+31:11 business units insiders companies
+31:13 because they say okay I downloaded the
+31:15 open source version I played around with
+31:16 it it's much more better than what we
+31:19 had before
+31:20 so we as developers we say yes that's
+31:23 good right and then
+31:25 the business students typically pays for
+31:27 something different they pay for some
+31:29 things like support or like the
+31:30 knowledge that you have from certain use
+31:32 cases
+31:33 and that's something that we see
+31:35 um so we still have smaller companies
+31:37 also paying for the product but I would
+31:39 say
+31:41 um the the distribution shifted for sure
+31:44 that's that's so we we lost some and we
+31:46 gained some so what's your business
+31:49 model because from what I understood
+31:50 what you just said is that you have the
+31:54 open source library and then there are
+31:55 some Enterprises
+31:57 who use this library and you support
+31:59 them and share the knowledge you already
+32:00 have so that's again I guess one of the
+32:04 income sources right so you consult on
+32:06 how to use your product is it correct
+32:09 yes so mainly it's we have
+32:13 um at the moment we have the refinery
+32:17 open source version as a single user
+32:19 manager that's at the moment just the
+32:21 case
+32:21 um
+32:22 and just basically
+32:24 oh yeah please continue yeah it's been
+32:27 specifically if you want to implement a
+32:29 project
+32:30 then you can just download it and use
+32:32 every feature but you can just like
+32:36 work in a single user setting right so
+32:38 if you want to say for instance that you
+32:40 want to invite me so that I can label
+32:42 your data
+32:43 that's not happening in the open source
+32:46 version at the moment
+32:47 and the commercial one is basically
+32:51 um that the engineers they they don't
+32:53 want to label themselves they rather
+32:55 want to say I want to have the control
+32:56 over my project so what I'm rather doing
+32:59 is I'm setting those things up and then
+33:02 I'm asking my colleagues to label in the
+33:04 the subject where I really have
+33:05 headaches so that's what I meant so far
+33:09 basically for instance precede that I
+33:11 thought I started to just like started
+33:14 where they have one or two Engineers
+33:16 that's fine that's okay they don't need
+33:18 that
+33:20 um
+33:20 and they sometimes find workarounds that
+33:23 we didn't know existed to to work with
+33:26 the the product
+33:28 um and then you're on the other side
+33:30 have the the teams that try to think of
+33:33 like the opportunity costs right so
+33:36 basically that they say okay if I now
+33:38 pay
+33:39 150 Euros per month for this like set up
+33:43 infrastructure for the multi-user
+33:45 setting and everything for the knowledge
+33:47 we're basically saving a lot of money
+33:49 that they've ever pick that option
+33:52 so you do not do Consulting the income
+33:55 you have your business model is this
+33:58 extra thing
+34:00 a calibration
+34:02 yeah it's both it's both honestly
+34:04 because because
+34:06 um for
+34:08 um
+34:09 I would say developers it's mostly like
+34:11 if they if they contact us and they say
+34:15 I want to build a following then it's
+34:16 mostly just like giving them the
+34:18 software and doing support because then
+34:21 they like reach out to us of use cases
+34:23 that we've never heard of or we can give
+34:25 little like process knowledge so to say
+34:28 but when it's more in the Enterprise
+34:30 segment and we reach out to clients
+34:32 ourselves then we reach out to them with
+34:34 very specific
+34:35 pain points very specific industry use
+34:38 cases so how you can focus automate
+34:41 certain high value
+34:44 um underwriting and insurance
+34:46 right and then we basically say okay
+34:48 we're going to work very closely with
+34:50 your developer teams we're going to give
+34:52 you like the the software basically the
+34:54 whole platform
+34:56 but we're also going to
+34:58 yeah then do things like Corruptions and
+35:00 the likes of you to basically dive
+35:02 deeper into it and make sure that
+35:03 everything works exactly as you want
+35:05 because the business units that's what I
+35:07 mentioned initially uh the business
+35:09 units they want solutions they don't
+35:11 like in the end they wouldn't care if
+35:13 it's
+35:14 um maybe they care a little bit but they
+35:16 they
+35:17 don't mind too much of its AI or not
+35:19 they want a solution for their use case
+35:21 so you really have to make sure that
+35:23 that works and for developers they get
+35:25 super creative but they play a lot of
+35:27 things they want to implement their own
+35:28 things so that's more it's a bit
+35:31 different on the segments that's what
+35:33 I'm trying to say right and I think open
+35:34 source pushes you more and more and more
+35:36 into understanding what kind of segments
+35:39 there are so that's that's something I
+35:41 definitely see impacted us
+35:43 and the workarounds you mentioned that
+35:45 the engineers find these are workarounds
+35:49 uh not to pay you right
+35:51 yeah yeah
+35:54 what do you do with these workarounds
+35:57 when the developers share them with you
+35:59 do honestly no honestly when they when
+36:03 they share with us on Discord and I'm
+36:06 not kidding you can look into our
+36:07 Discord we help them with that with that
+36:09 work around so
+36:11 um basically we had one I'm going to
+36:15 share because you can look into our
+36:16 discard and see it anyway so one way
+36:18 basically to work around it is that you
+36:20 can create a smooth user setup if you
+36:25 have multiple users every one of them
+36:27 downloads the open source version of
+36:28 refinery
+36:29 and if user a starts enabling
+36:32 what they can do is they can create a
+36:34 project backup like a snapshot of the
+36:37 whole project
+36:38 export that and like not not the regular
+36:42 export the regular export looks a bit
+36:43 different but you can create something
+36:45 like a backup if you import that backup
+36:47 into the other machine like of the other
+36:50 user they can like continue labeling
+36:53 right so that's basically one work I
+36:54 want that you cannot use anytime right
+36:57 so they cannot play at the same time
+37:02 exactly it's not convenient I mean for
+37:04 some uh for for
+37:06 very early startups
+37:09 um it's rather that you can say okay I
+37:11 will work two more hours today and will
+37:13 save 100 viewers that sounds better so
+37:17 I'm going to do it even if it's not
+37:19 convenient right that's something
+37:21 different than a corporate saying we
+37:23 have way too little resources but we
+37:25 have money
+37:27 right so it's it's like two different
+37:29 pain points two different perspectives
+37:30 the startup like has a lack of money the
+37:33 corporate has a lack of time and so it
+37:35 makes perfect sense and we want to like
+37:37 help people using our software and in
+37:39 this like in the end
+37:41 um they give us like even the people
+37:43 that find worker ones they give us
+37:44 interesting insights right so we want
+37:46 them to use our software we want them to
+37:48 find the worker ones and we will help
+37:51 them
+37:52 okay
+37:55 um you mentioned the the Discord channel
+37:57 do you have uh the link to this Discord
+37:59 is in your uh GitHub right
+38:04 yes
+38:06 yes in the description is about
+38:07 basically our software but we also like
+38:10 like to share things around generally
+38:13 data Centric AI so for people that are
+38:15 also just getting started don't feel shy
+38:17 super super uh Happy team and uh need to
+38:21 have
+38:23 and to mentioned that you like for this
+38:25 second income Source Consulting you find
+38:29 Enterprises well let's say insurance
+38:31 companies and then you come to them with
+38:34 already a use case as you say okay we
+38:37 think that the company like yours will
+38:39 benefit from this use case because we
+38:41 saw that you know other companies
+38:44 already you know use this and they get a
+38:48 lot of money or save a lot of time right
+38:49 this is how you would do this yes
+38:52 and how do you find this clients or you
+38:55 just take a segment let's say Insurance
+38:56 in Germany and then you just start
+38:59 calling them
+39:00 I think that's kind of the part where
+39:02 the differences between the commercial
+39:04 open source software and then purely
+39:06 open source project I think because you
+39:09 really have to try to understand how you
+39:12 can get in contact with them because
+39:13 it's not as simple as building a really
+39:15 great product than just calling and
+39:17 everyone will say yes that's not the
+39:19 case sadly
+39:21 um so it's it's honestly it's a lot of
+39:24 trial and error
+39:25 um and we see that different approaches
+39:27 work for different
+39:29 um segments so one example for insurance
+39:32 is in Insurance especially in Germany
+39:34 it's a lot about really like who you
+39:36 already know
+39:38 um what kind of networks they are and we
+39:40 are located in Bonn and many many
+39:42 insurers in Germany are located in
+39:45 Cologne which is very close to to dubon
+39:48 so what we basically did they are try to
+39:50 like go to meet ups or get in contact
+39:54 with with
+39:56 people that have a good Network and can
+39:58 help us so that's one approach and then
+40:02 other approaches like other segments
+40:04 completely different things work so um
+40:06 it feels a little bit like not only
+40:07 building a product but you also have to
+40:10 build some kind of
+40:12 Machinery to get in contact with people
+40:14 that could like find this interesting
+40:16 and um there are many approaches that
+40:19 you just have to try out I guess do you
+40:22 do this
+40:23 the sales part yourself or there are
+40:25 people in your team who take care of
+40:28 that
+40:28 it's both so basically
+40:31 um up until March it was completely on
+40:32 my own uh and we now basically expanded
+40:36 the team a little bit so we didn't grow
+40:38 like crazy but we hired a few more
+40:40 people and um and I think like also with
+40:44 more people into this but um it's still
+40:46 100 a very big part of my job to do that
+40:51 I was an engineer how did you learn
+40:54 sales like for me it's so unnatural it's
+40:57 so different it's like a totally
+40:59 different world
+41:01 I think this this the soil sales thing
+41:04 has for engineers a bad connotation and
+41:06 I understand it but I think it's not
+41:10 much true honestly so let me give you
+41:13 like one analogy where I currently see
+41:16 something super interesting happening
+41:18 um
+41:19 we have in our team also called
+41:21 developer relations team for people that
+41:24 very much focus on creating really good
+41:25 content on YouTube that also help people
+41:29 on Discord that go to meetups and
+41:32 everything
+41:32 and um those are developers that do
+41:36 marketing right so
+41:38 um there's like this joke for developer
+41:41 Advocates that you should never tell
+41:43 them that they were doing marketing but
+41:45 they are doing marketing right because
+41:46 that's some approach that helps
+41:48 developers a lot right where developers
+41:51 they they love they hate being so it's
+41:53 something but they love learning new
+41:54 things so what you try to do is you go
+41:57 to conferences talk with them try to
+41:58 educate the new things and talk about
+42:00 your really cool open source project
+42:02 that they should check out because they
+42:04 will learn something from it and that
+42:05 makes sense and um I like to think of
+42:09 sales very similarly right so if you
+42:12 have a really interesting product and
+42:14 you see that it's helping people then
+42:16 you can feel confident about it and then
+42:18 we don't feel like Shane trying to sell
+42:20 something that they don't want to but
+42:21 you actually want to try to help right
+42:23 so you get in contact with them like
+42:26 I would say big chest like happy face
+42:30 and try to help them and try to
+42:32 understand what are like their their
+42:34 problems and how can you help them and
+42:38 um I think then then it's practice and
+42:42 I'm also not perfect yet in that field I
+42:44 used to make many excuses and we
+42:46 continue to do so for the hour of my
+42:48 career but um I think it's it's uh the
+42:52 moment you try to shift the perspective
+42:54 of trying to be like someone who sells
+42:57 something that people don't
+42:59 need to something like okay I'm trying
+43:01 to
+43:02 first understand what the problems are
+43:04 and how I could potentially help you and
+43:07 then I think it's a whole different
+43:09 whole different topic
+43:11 okay that's interesting
+43:14 um but right now you have people who
+43:16 help you with that so who do you
+43:18 actually have on the team what kind of
+43:20 uh roles do you already have yes so we
+43:23 have I think at this moment we have 11
+43:26 full-time people
+43:28 and two working students
+43:31 um so it's a small team can fit everyone
+43:33 at one table
+43:35 um and we kind of have three
+43:39 um this term so it's way too big for the
+43:41 teams as it react but we have three
+43:43 departments so to say so
+43:46 um one being the development product
+43:49 team the people that page we finally
+43:52 mainly and
+43:54 bricks and the products that we have
+43:57 so those are like
+43:59 very engineering people right they can
+44:03 build stuff
+44:05 um that's that's kind of one one
+44:06 Department
+44:08 um they are very very close to like the
+44:10 developers so
+44:12 um that's that's one Department the
+44:13 other department is a developer
+44:15 advocation Department
+44:17 um we're just basically just trying to
+44:20 focus on okay how can we spread the word
+44:22 and how can we engage with people and
+44:23 how can we be helpful to them
+44:25 um and how is what we're offering bigger
+44:27 than our product
+44:29 so um
+44:30 for instance they focus more on the
+44:32 topic of data Centric NLP instead of
+44:34 just refinery
+44:36 um and then we have to I would say go to
+44:38 market team
+44:40 um which is basically a team that's
+44:43 um is very close to sales but instead of
+44:45 just doing like sales in the sense of
+44:48 calling people and selling the product
+44:51 um this team whoever tries to understand
+44:53 what kind of segments do we have what
+44:55 kind of use cases are they currently
+44:57 what kind of things are people currently
+44:59 seeing what kind of trend do we have so
+45:01 to give you an idea
+45:03 something that we are seeing since
+45:05 November is that trilogy and Innovation
+45:07 departments and companies they all have
+45:09 the same task which is basically
+45:11 understanding what chat GPT means for
+45:12 the business right and it's people that
+45:15 previously haven't worked with NLP so
+45:18 what we are the go to market team doing
+45:20 is trying to understand how can we help
+45:22 them like what kind of
+45:24 knowledge do they have need to have and
+45:26 how can we help them and they're
+45:28 basically a part of the go to market
+45:29 team is
+45:31 setting up campaigns trying to reach out
+45:33 with them having conversations with them
+45:36 and so forth so um
+45:38 that's that's kind of the how it
+45:40 currently looks like and something that
+45:41 I think we are really good at is to have
+45:44 the teams work and I think that's
+45:46 super critical for a startup but we have
+45:48 the teams work together really really
+45:50 well so for instance if uh go to market
+45:53 team identifies that
+45:55 um logistics companies are all
+45:58 struggling with email communication
+46:00 because vendors are telling them what
+46:02 kind of shipment they need to send to
+46:03 Sweden the next day and they need to
+46:06 pass it email data then the death rail
+46:09 team will have set up some brick the
+46:11 next day and the dev team will make sure
+46:13 that this use case that the go to market
+46:15 team wants to to Showcase as part of the
+46:18 playground right so um that's how they
+46:21 work together at the moment really well
+46:23 so then for the next logistics company
+46:25 you can already showcase it right you
+46:28 can say okay this is what we do with
+46:29 other logistics companies do you want to
+46:31 have it too and then you cover them
+46:33 yeah basically did kind of that way um
+46:36 very often like depending on the
+46:38 Enterprise size like if it's a smaller
+46:40 Enterprise and can have like recurring
+46:42 exact templates so to say we kind of
+46:45 pre-build AI models because
+46:48 most logistics companies are struggling
+46:50 with identifying unit dimensions in the
+46:53 emails but if it's for instance going
+46:55 into like bigger Enterprise they
+46:57 typically have very Niche problems and
+46:59 then you need to take an example
+47:01 reference in this case and try to narrow
+47:04 it down to what exactly they are facing
+47:06 so I would say the bigger the client the
+47:08 more you need to really
+47:10 I mean you should always understand what
+47:11 you planned like is facing but the
+47:14 bigger the clients the more issue the
+47:16 proper so it comes typically there's
+47:17 something that we're seeing
+47:18 yeah interesting and what exactly do you
+47:22 do all three
+47:23 and more
+47:25 me I'm personally yes
+47:28 I'm jumping in between now I think my my
+47:31 main task is mainly in the go to market
+47:33 side
+47:35 um but I'm still eventually programming
+47:39 uh my side of the programming as well
+47:41 but the prototyping part right so for
+47:44 instance if I'm in the go to market area
+47:47 and I'm trying to
+47:49 talk with potential clients like what
+47:51 kind of problems they are facing and I'm
+47:54 hearing more and more certain things
+47:55 then I'm trying to very quickly set up
+47:58 some kind of prototype that I can demo
+48:01 to our developer team trying to
+48:02 understand it like discuss with them
+48:04 what kind of problems they are facing uh
+48:07 the potential clients and how we could
+48:08 build something for that or how we can
+48:10 nudge our features
+48:11 but I'm rarely
+48:15 doing like fixing stuff or building PRS
+48:19 for refinery right we finally something
+48:21 that sadly I don't touch like anymore at
+48:24 all but it wasn't like that uh all the
+48:27 time right so I guess at the beginning
+48:28 maybe you focused more on the
+48:31 engineering side of things than maybe I
+48:34 don't know developer advocacy now uh
+48:36 yeah the coach apart yeah North Dakota
+48:39 the coding part is becoming less and
+48:41 less but it's still there but I'm also
+48:43 perfectly fine with that because
+48:46 um I see that the overall speed in which
+48:49 we had developers just growing a lot and
+48:52 we just see that more and more cool
+48:54 things are happening so um this is still
+48:57 like this
+48:58 um this this happiness of a developer
+49:00 seeing stuff becoming reality that's
+49:03 still completely true and it's becoming
+49:04 more and more even though I am myself
+49:06 encoding less and less
+49:09 what's actually your title I don't think
+49:11 I asked you iOS the CEO CTO or yeah but
+49:15 I'm also the person that's cleaning the
+49:17 office so uh yeah so
+49:20 um many roads no I'm I'm just I'm just
+49:22 one of the co-founders and um just for
+49:25 like the facility and I'm the CEO and my
+49:27 other co-founder and I guess the CEO
+49:29 because we kind of have like this
+49:32 um words that he's working more on the
+49:34 stuff that's happening internally like
+49:36 uh processes that need to set up
+49:38 security stuff and I'm rather under like
+49:41 outside uh position so I have another
+49:45 talking more with clients but um yeah
+49:49 that's that's just about it how did you
+49:51 come up with the separation of
+49:53 responsibilities was it something
+49:55 natural or you just I know decided to
+49:57 sit down and discuss it
+49:59 no we didn't know that oh yeah so when
+50:02 we basically
+50:03 um started the consultancy we didn't
+50:04 know that our strengths and weaknesses
+50:06 would be because we didn't know too much
+50:08 of each other yet so um I think before
+50:11 Heinrich and I so so the setting
+50:13 basically was that um I was looking for
+50:16 a co-founder for many months already for
+50:18 the consultancy and found no one so I
+50:22 started at first myself the consultancy
+50:25 um
+50:26 and I met Henry during University and
+50:28 was talking about a project that I just
+50:30 landed that I realized I couldn't do
+50:32 myself but I already excited the
+50:35 contract so I was kind of in a in a
+50:37 difficult situation and
+50:40 um we were talking talking a bit and I
+50:42 just asked hey do you want to join for
+50:43 this project and you see if that works
+50:45 then you can can potentially work
+50:46 together until you are super
+50:48 enthusiastic and
+50:50 I'm so so happy that that he worked that
+50:53 project with me but we didn't know like
+50:55 our strengths and weaknesses and we
+50:56 figured that out I think over more than
+50:58 half a year later right so that took a
+51:01 lot of time and at some point we
+51:03 realized that um I'm a messy person I
+51:09 um I I jump around between different
+51:11 things and Henrik is super calm so he's
+51:14 super structured
+51:15 um and he's monolithicated I'm I'm more
+51:18 like
+51:19 um
+51:20 I'm also an introvert but I'm still
+51:24 um trying to
+51:25 talk with people to to like validate
+51:29 ideas a bit quicker right and that's
+51:31 something that we at some point realize
+51:33 okay that's kind of good that we are
+51:35 different in that sense and so handling
+51:37 is focusing more on the internet stuff
+51:39 and I'm focusing more on the external
+51:41 stuff but that took us a lot of time to
+51:43 realize and both of you are coming from
+51:47 the technical background right so both
+51:49 of people yes exactly
+51:52 and
+51:53 neither of you do any coding right now
+51:56 right
+51:58 it doesn't coach since the beginning
+52:00 anymore so um yeah basically since the
+52:03 beginning of our software Asylum
+52:05 consultancy is still recorded
+52:07 um and I code very eventually like if I
+52:09 want to prototype something to Showcase
+52:11 to the developer team
+52:12 um so at the moment I'm working on a
+52:15 prototype for a native PDF labeling so
+52:19 basically extending Refinery which is
+52:21 currently Financial language processing
+52:23 I'm currently prototyping and don't know
+52:27 it whether we're going to continue on it
+52:29 but I just see that it's something that
+52:31 I want to discuss with the dev team so
+52:33 I'm working a bit on that prototype but
+52:35 it's not like my definitely not my main
+52:37 focus but um
+52:40 that does sound like a cool project I
+52:43 guess one of your clients have uh has
+52:46 this uh use case right or maybe multiple
+52:48 clients that they have a bunch of PDFs
+52:50 and they need to do some NLP on these
+52:52 PDFs right yeah it's it's many many many
+52:55 many clients that have this PDF problems
+52:58 but it's just also so difficult but
+53:00 we're we're seeing already that we're
+53:02 making incredibly good progress and it's
+53:04 not the person that I'm touching this
+53:05 prototype I've touched the Prototype I
+53:07 think already five times and I think
+53:09 this time I hope let's see I think this
+53:12 time I uh cracked the code how we can
+53:15 can use our weak supervision approaches
+53:18 um because in the past I already also
+53:19 looked into it and couldn't figure out
+53:22 any good way
+53:24 but um I think yeah basically that's
+53:26 something I'm gonna developed yeah there
+53:28 are companies who just specialize on
+53:31 that and not just on PDFs but on PDFs in
+53:34 a specific Niche for example I remember
+53:36 I know five years ago I spoke with a
+53:38 company in Berlin who
+53:41 um they're doing so they were processing
+53:44 PDFs for real estate in Germany so it's
+53:47 a very specific Niche right so like I
+53:49 don't know uh real estate developers
+53:51 right they have specific processes
+53:53 specific documents and it was enough
+53:55 just to you know have a company yes this
+53:58 is an easy another simple problem right
+54:01 yeah and but that's also like something
+54:03 that I find extremely interesting
+54:04 because something that we're seeing is
+54:06 when we're working with clients is
+54:08 you're working with the developer teams
+54:10 so they typically try to think about
+54:13 what helps the company a lot and you see
+54:16 that there's like different sets of use
+54:19 cases in a company and
+54:22 um I like to think of like a long tail
+54:23 so to say so we have very repeating use
+54:25 cases so every company is processing
+54:27 invoices every company right and so of
+54:32 course the total Market if you look at
+54:33 it from from a company perspective the
+54:36 total market for General invoices is
+54:38 huge and so of course there are like
+54:40 many vertical solutions for General
+54:42 invoices
+54:44 but
+54:45 there are also dozens of
+54:47 like documents that as you already
+54:51 mentioned that they have different
+54:52 categories and from a total Market
+54:54 perspective they are tiny but for the
+54:58 very specific company they are huge so
+55:00 for instance just to give like one
+55:02 example
+55:03 it could be that the certain type of
+55:04 invoices like for instance the ones that
+55:08 like are made by doctors or clerks or
+55:11 whatever that they are like a huge
+55:13 volume of the general invoices that the
+55:15 company needs to process and so what
+55:16 they're doing is the data science teams
+55:18 are working on
+55:19 building internal solutions for that
+55:22 Nishi kind of documents and so there's
+55:25 no vertical solution that has this out
+55:27 of the box but we can have those data
+55:29 science teams come up with the niche
+55:31 solution much quicker that's kind of I
+55:34 think also where we at current many
+55:36 times see that
+55:38 so if I understood you correctly there
+55:40 is a company an Enterprise already
+55:43 um who have a data team and they have
+55:46 this problem with processing invoices so
+55:49 they have a lot of PDFs and then what
+55:51 you do is you help them set up or
+55:54 improve the processes right by using
+55:56 Refinery to label data so then they can
+55:59 train models and optimize these
+56:01 processes
+56:02 exactly that's that's not just for like
+56:04 documents or for documents it's what
+56:06 we're currently trying to figure out a
+56:07 bit but it's something
+56:09 um also Financial language processing is
+56:11 that very often you go into the
+56:13 companies and you see that there are
+56:15 already data science teams working on
+56:17 like a long list of use cases it's not
+56:20 just one use case but basically internal
+56:22 processes that are like higher in value
+56:25 so if you optimize them it's like
+56:27 beneficial for the company and
+56:30 um what we typically try to do is just
+56:32 we are together very closely with the
+56:34 developer team to figure out ways to
+56:36 improve that and the reason that we have
+56:39 an open source project is helping us so
+56:41 much to like start at a good base line
+56:44 basically with the like on a human to
+56:47 human level with the dev team because
+56:50 they already know that we are
+56:51 contributing to the open source
+56:53 Community every developer likes that
+56:56 um so that's that's like one of the big
+56:58 advantages of our open source launch
+57:01 and I just realized that I did not ask
+57:05 you well first of all congratulations on
+57:07 getting findings so it's uh 2.7 yes
+57:10 congrats I wanted to ask you how did you
+57:14 like how did you actually get what was
+57:17 the process I don't think we have a lot
+57:18 of time but maybe you can quickly tell
+57:20 us like was it difficult or because he
+57:22 already had a good product uh it was
+57:25 only natural for you that like investors
+57:29 just wanted to give you money
+57:32 I tried to give the shot answer even
+57:34 though there would be like a long long
+57:36 answer possibly
+57:38 so in short I think we had a relatively
+57:40 good standing because
+57:43 um we were interesting for a very nichy
+57:45 kind of investor so if you think of 100
+57:48 investors maybe and it's just also when
+57:52 a number but just to tell the story 10
+57:54 of them are specifically interested in
+57:56 open source for machine learning and
+57:59 maybe five of them are also specifically
+58:01 interested in developer tooling so we
+58:04 had a couple of like the number of
+58:07 investors we talked to was relatively
+58:08 small
+58:10 um but for those that we talked to they
+58:12 were they were
+58:14 you had the benefit that they were very
+58:16 interested and a big part of this
+58:19 basically was also that not all of them
+58:21 but many of those versus basically
+58:23 contacted us because of the open source
+58:26 launch
+58:27 um so that's basically
+58:30 um in a very short way how the funding
+58:33 happened
+58:34 I just realized that actually I
+58:37 completely forgot about that so after we
+58:39 did this open source Spotlight I got a
+58:41 message in LinkedIn from one of the
+58:43 investor families so they're actually
+58:45 families who do invest in surprisingly
+58:48 in open source ml tools and they told me
+58:51 that look we are big fans of your open
+58:54 source Spotlight and we want to invest
+58:56 in invest into this company called Karen
+58:59 so what do you know about it really
+59:02 I hope it actually went through so I
+59:04 don't know what happened after that but
+59:06 they were also asking about other
+59:08 startups um and they said they are big
+59:11 fans of this open source Spotlight which
+59:13 I never realized it was never the
+59:14 intention to do these things for
+59:17 investors and it was just very
+59:20 surprising so maybe we need to get one
+59:23 of these investors on the podcast it'd
+59:25 be quite interesting to see how they
+59:27 make decisions
+59:28 that would be super interesting I guess
+59:30 because it's something that you see like
+59:32 so much in the in the last I would say
+59:35 five years or something is that open
+59:36 source is becoming some like funds are
+59:39 building the investment pieces
+59:41 like not all of them but many of them
+59:43 are building investment thesis
+59:45 specifically for open source so I think
+59:47 that the the the time of commercial open
+59:50 source companies basically is just going
+59:53 to go bigger and bigger and bigger so
+59:55 yes that's a good idea
+59:58 okay maybe last question before we wrap
+1:00:00 up do you know any resources or books or
+1:00:03 anything that you recommend to our
+1:00:06 listeners about the topic of I don't
+1:00:07 know starting an open source startup
+1:00:10 so um not on that precisely but one
+1:00:13 topic that I like one book that I would
+1:00:15 recommend people to read when talking
+1:00:18 about machine learning natural language
+1:00:20 processing more from this economic
+1:00:21 perspective is a book that's called I
+1:00:24 need to check it again because I write
+1:00:25 it down
+1:00:27 um prediction machines I guess yeah I
+1:00:30 think it's prediction machines um which
+1:00:32 is basically a book I think it's like
+1:00:34 five years old or something but it's
+1:00:36 looking at machine learning from a very
+1:00:37 dry economic perspective and it's still
+1:00:41 fun to read but it just gives you so
+1:00:42 much of understanding what kind of
+1:00:45 business implications machine learning
+1:00:46 has and try to view this topic from the
+1:00:50 not just technical perspective but also
+1:00:53 um but for instance automatic one parts
+1:00:55 of a task means for the other tasks in
+1:00:57 the process and that just have so much
+1:00:59 to get a better overview of of Applied
+1:01:02 AI basically
+1:01:04 yeah I I I'm checking it uh on Amazon
+1:01:07 it's called prediction machines updated
+1:01:09 and explained the simple economics of
+1:01:10 artificial intelligence
+1:01:12 yes exactly that one cool that's good
+1:01:15 okay thanks Johannes for joining us
+1:01:17 today for sharing your experience uh
+1:01:20 with us that was really nice talking to
+1:01:22 you and thanks everyone also for joining
+1:01:24 us today and uh listening
+1:01:27 thanks for the invitation
+1:01:30 okay well
+1:01:31 speak soon and have

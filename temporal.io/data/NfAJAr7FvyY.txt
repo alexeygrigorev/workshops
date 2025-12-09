@@ -1,0 +1,1379 @@
+Competitive Machine Learning and Teaching
+
+0:03 when it loads okay hi everyone Welcome
+0:06 to our event this event is brought to
+0:08 you by dat do club which is a community
+0:11 of people who love data we have weekly
+0:13 events and today is one of such events
+0:14 if you want to find out more about the
+0:16 EV we have there is a link in the
+0:18 description so go there uh click on the
+0:21 link check it out um I think right now
+0:24 there is only one event this one uh but
+0:27 there is going to be a workshop which
+0:29 will add soon to this link so keep an
+0:31 eye on that then very important do don't
+0:34 forget to subscribe to our YouTube
+0:35 channel if you have not subscribed yet
+0:37 this way you'll stay up to dat with all
+0:39 our future streams and then we have an
+0:41 amazing slack Community where you can
+0:43 hang out with other dating enus
+0:45 USS during today's interview you can ask
+0:48 any question you want there is a pinned
+0:49 Link in live chat click on that link ask
+0:52 your questions and we will be covering
+0:54 these questions during the
+0:56 interview and I think my nose is blocked
+0:58 a little bit I hope it's okay
+1:00 it will not interfere with our
+1:03 interview uh but anyways um everything
+1:07 is great right now I'm going yeah I'm
+1:09 going to open the
+1:12 document with questions that we prepared
+1:15 for
+1:18 you and if you're ready we can
+1:22 start ready awesome y let's
+1:26 start this week we'll talk about
+1:28 competitive machine learning and
+1:29 teaching and we have a special guest
+1:31 today Alexander Alexander is a machine
+1:33 learning engineer with 10 plus years of
+1:35 experience he's also a k kago Grant
+1:38 Master ranked fifth globally and the
+1:41 teacher to more than 100,000 students
+1:46 It's amazing And as a teacher myself I
+1:48 can really appreciate the like the
+1:52 number and also the effort so it will be
+1:54 very interesting for me to talk about
+1:55 that personally okay and Alexander also
+1:58 leads data science and software
+2:00 engineering teams and contributes to
+2:02 open source machine learning tools so
+2:04 welcome to the interview Alexander yeah
+2:06 hi uh thank you for having me really
+2:09 great to talk to you today and uh I just
+2:12 want to also say thank uh I want to
+2:15 thank uh Marina uh I don't know if she's
+2:18 watching right now for making sure we
+2:20 get in touch so for me actually I've
+2:23 been following your work for quite some
+2:26 time and uh more than 10 years actually
+2:29 so
+2:30 long time because like when you were
+2:32 active on kagle I was also active on
+2:33 kagle so for me it's actually a good
+2:36 moment to be able to talk to you so
+2:38 thanks Marina and also the questions for
+2:41 today's interview are as always prepared
+2:43 by Johanna Bay thanks Johanna for your
+2:45 help so before we go into talking about
+2:49 teaching and competitive machine
+2:50 learning let's start with your
+2:52 background can you tell us about your
+2:54 career Journey so far yeah sure so uh my
+2:57 career started I guess about 10 years
+3:00 ago uh when I was like a student at the
+3:03 University here in Moscow and uh I was
+3:07 looking for an opportunity to learn
+3:08 machine learning because I thought it's
+3:10 kind of exciting New Field was pretty
+3:13 new I guess years ago and uh I found
+3:18 that opportunity on Kegel then I moved
+3:20 to Industry I worked as data analyst uh
+3:23 at some ad classifier company then is
+3:26 data scientist and uh right handling
+3:28 right sharing services
+3:30 uh in Yandex then at mechanic AI which
+3:34 was startup focused on bringing machine
+3:37 learning to Industrial Enterprises like
+3:39 factories plants uh like we flew to like
+3:43 some small cities in Siberia to find
+3:46 like prod engineers and plans to figure
+3:48 out whether they need our machine
+3:50 learning or not and eventually I was I
+3:54 worked at iterative uh which is like
+3:57 company Venture startup uh San Francisco
+4:01 they create open source uh tools for
+4:03 machine learning engineers and data
+4:05 scientists and after that I moved uh
+4:09 here back in Moscow to work at Central
+4:11 University it's a new uh kind of
+4:14 University here which I me is
+4:17 interesting because uh always education
+4:20 was my hobby I was teaching like for
+4:22 almost 10 years now uh and uh finally
+4:26 that H became uh like my my career
+4:30 full-time
+4:33 job and since you mentioned iterative so
+4:35 I just wanted I don't know if your
+4:37 colleagues or ex- colleagues from
+4:38 iterative are watching this now or will
+4:40 be just want to say I just want to thank
+4:42 you thank them uh CU at some point
+4:45 iterative was supporting this community
+4:47 and uh um because of their support it
+4:51 was possible to grow the community to
+4:53 bring it to the place where it is right
+4:55 now so if they're watching it right now
+4:57 so I want to say thank you so and I
+5:00 think when we collaborated you were
+5:02 actually a part of the team right yeah
+5:04 yeah there was a talk uh another like
+5:08 one friend of mine melnikov was giv a
+5:10 talk at your podcast or like some other
+5:14 event you were hosting on a tool we were
+5:17 building we were building MLM like a
+5:19 tool for deploy ml models yeah
+5:22 yeah yeah it was right so it's a sound
+5:27 that a cat mix or what like I think that
+5:28 is like a weird
+5:30 uh uh it's an interesting uh origin for
+5:34 the name right yeah yeah yeah so there
+5:36 is an internet map meme when a dog
+5:39 sticks his tongue out it does like this
+5:41 with with his tongue or or a cat and
+5:44 that that's called m
+5:47 y yeah we were trying to be
+5:53 funny um are you still doing anything um
+5:57 when it comes to open source uh uh not
+6:00 right now yeah mostly I did that when I
+6:03 was working at
+6:06 iterative okay okay and you mentioned
+6:10 you started your career as a student 10
+6:12 years ago and it was with kagle so for
+6:15 me personally kagle was a place I don't
+6:17 know if I actually pronounce it
+6:18 correctly kagle or kle anyways so this
+6:21 this is the platform for competitive
+6:23 machine learning uh which yeah which
+6:26 hosts machine learning competition so
+6:27 there is like uh it is
+6:30 and you prepare a model and the model
+6:33 needs to be as good as possible so for
+6:35 me it was actually the way in data
+6:38 science too and um I was already working
+6:42 as a data
+6:43 scientist and then I uh was lucky to
+6:47 work with also a person who was active
+6:51 on kagle who introduced me abishek um
+6:55 and yeah for me this opened like a new
+6:58 world of kagle and was like Wow awesome
+7:01 uh and for me the first thing was
+7:04 like I thought I'm good at machine
+7:07 learning I was good at machine learning
+7:10 but when I attempted my first kaggle
+7:12 competition I found out that I don't
+7:14 know anything and for me it was like
+7:18 um I don't know refreshing cuz like I my
+7:21 model like I studied two years I studied
+7:24 machine learning and things like that
+7:26 and then I take part in my first
+7:28 competition and then like uh I
+7:31 overfit a lot and my model was like
+7:34 somewhere on the bottom of the
+7:35 leaderboard and it was like okay that's
+7:39 interesting and then I started doing
+7:41 more and more and then of course your
+7:42 name at some point started to appear cuz
+7:45 you were doing very well there like you
+7:48 were ranking quite high in these
+7:50 competitions you were getting a lot of
+7:52 gold
+7:52 medals
+7:54 so I I can really appreciate like I know
+7:57 it's not easy it's very difficult to be
+8:00 uh to get good positions there so tell
+8:02 us how it actually started and how did
+8:04 you manage to be quite good at
+8:08 that uh yeah so like it started um I was
+8:15 I was studying at University and I was
+8:18 required to select uh like Scientific
+8:20 Advisor and a lab where I can like write
+8:25 my bachelor diploma and I just selected
+8:28 machine learning lab because
+8:30 it was really kind of fascinating for me
+8:32 among everything I saw uh so I decided
+8:36 to to try but I quickly figured out that
+8:40 uh it's it's pretty
+8:42 hard and we we we had uh like amazing
+8:47 lecturers uh amazing teachers but the
+8:50 problem was that uh they taught like
+8:52 theory of machine learning and it was
+8:55 really hard for me to understand
+8:57 everything there are like a lot of
+8:58 mathematics a lot of of like everything
+9:00 going on and I was trying to find out
+9:05 some place where I can uh test my
+9:07 practical skills learn something I
+9:09 didn't uh didn't know anything at that
+9:11 point so I found kagle and then we had a
+9:15 great uh like keggle community in Moscow
+9:19 you you should recall like a kle club
+9:22 like M training at Yandex uh then there
+9:25 was like great Alexander diakonov who
+9:28 Tau us uh you had
+9:32 weekly uhuh I think you had weekly uh
+9:36 sessions where you talked about
+9:38 Solutions like how somebody approached
+9:41 the problem so they would share the
+9:42 solution uh with everyone right and this
+9:45 way you uh had some ideas of what to do
+9:49 right I I think I watched a few of them
+9:52 in the recording back then yeah yeah so
+9:55 there were like weekly sessions and uh
+9:58 it was really
+10:00 important that some people that won this
+10:02 competition that came and explain how
+10:04 they did that and how they approach the
+10:06 problem sometimes someone just uh like
+10:10 wants to tell about new I don't know
+10:12 framework on GitHub so he comes and
+10:15 explain it and it was really really
+10:17 interesting and really
+10:20 insightful yeah and it just uh I just
+10:25 spent a lot of time on that so uh I
+10:28 guess uh it was my third year or fourth
+10:31 year in University and I ski I was
+10:34 skipping most of my lectures and uh
+10:36 classes at University I was just so
+10:40 competitions so there is there is
+10:42 actually one secret you need to put a
+10:44 lot of time in
+10:47 something yeah so skipping lectures
+10:52 H that's the
+10:55 secret okay like but you didn't get
+10:58 kicked out of the University right I was
+11:01 lucky you managed to stay yep you was so
+11:06 what's the secret like how did you
+11:07 manage to both compete on kagle and stay
+11:11 at University without getting kicked out
+11:15 I guess uh it was like it it was due to
+11:19 the educational system we have uh here
+11:22 in in in my University you headed so
+11:24 when you can skip most of your your work
+11:27 during semester and then you need to
+11:29 hard like really hard prepare prepare to
+11:33 your exams and then go and just pass
+11:36 them yeah that was okay yeah in Germany
+11:40 it's actually similar uh so when I was
+11:43 doing my masters uh so what matters is
+11:46 how well you pass the exam it doesn't
+11:47 matter how well you studied uh during
+11:50 the semester right mhm yeah yeah yeah
+11:53 it's mostly doesn't matter like maybe
+11:55 now it's changing actually the
+11:57 educational system here is changing so
+11:59 it makes sense uh when like it matters
+12:03 for you to to do something during the
+12:07 semester sorry I need to quot this
+12:09 because yeah
+12:17 yeah okay so now you're not um becoming
+12:21 blind because of the right mhm
+12:26 good um so you said the secret was uh
+12:30 putting a lot of time in these
+12:32 competitions and actually I can confirm
+12:34 that like uh I did well in one of um in
+12:37 one competition it was competition about
+12:40 duplicated DET
+12:41 action Y and this competition uh was by
+12:46 Vita yes exactly and so this competition
+12:49 was
+12:50 uh for three months so the duration was
+12:54 3 months and um so I started almost like
+12:58 on the first
+13:00 week and continue taking part in these
+13:03 competitions like for all three months
+13:06 and like every week I would put a lot of
+13:08 effort in this and only this way I
+13:10 manage to stay on top cuz like if I
+13:13 don't put in any effort then somebody
+13:15 you know takes
+13:17 over so only by consistently putting I
+13:22 don't know five plus uh or even more 10
+13:25 plus uh hours of work per week I only
+13:29 managed to do this and this is super
+13:31 difficult and like but the amount of
+13:33 things I learned there was insane like I
+13:36 think you can confirm right yeah yeah I
+13:39 think this is one of the great benefits
+13:41 of kagal yeah like if you put aside like
+13:45 winning gold
+13:47 medals like to it just makes your kind
+13:50 of your understanding of machine
+13:51 learning feel broad you learned a lot of
+13:53 new Frameworks domains tasks and I think
+13:56 it's something really really helpful
+13:58 that Keo gives to
+14:02 mhm for how long did you do this cuz
+14:04 like for me only one competition I could
+14:07 I could do only one competition this way
+14:09 cuz I was exhausted and I thought like I
+14:11 don't want to see kagle again yeah yeah
+14:13 but you had the job but you you you
+14:14 managed to continue
+14:17 yeah yeah I I didn't and uh I I think it
+14:22 was around a year about a year of this
+14:27 so that was a lot yeah eventually I
+14:29 managed to find my first job and still
+14:32 participate in kagle but it was much
+14:34 harder and my first job was like 3 days
+14:37 a week H so I still had
+14:41 time okay was it the data analyst
+14:44 position or something else yeah yeah
+14:45 yeah at Avita actually at Avita yeah and
+14:51 this duplicates actually like it it
+14:53 helped
+14:54 me throughout my career so like I was uh
+14:59 doing some site Consulting because
+15:00 people found me on kagle on this
+15:03 competition then at work I was working
+15:05 at oix which is um which at some point
+15:08 uh was the mother company of avito where
+15:11 I also had to deal with the duplicates
+15:13 so it was like super uh just one
+15:16 competition was so useful um do you
+15:19 remember your first
+15:21 competition uh I guess my like very
+15:24 first competition was something like
+15:26 Titanic or first C type prediction know
+15:29 those competitions when you know the
+15:30 ground proof you can just download it
+15:32 from the Internet it's just kind of for
+15:35 playground um I I so let's say your
+15:38 first serious competition yeah my one of
+15:42 the first competitions I mean maybe it
+15:44 wasn't first but uh at all like first
+15:48 serious one but the first I won at it
+15:51 was half year after I started actually
+15:54 so it was first but it was at crowd
+15:57 analytics platform the were this there
+16:00 was this platform inan platform uh the
+16:03 quality of competitions wasn't as high
+16:06 as on kagal but there were a lot of them
+16:09 and uh the like they were less uh like
+16:15 cool people participating it was easier
+16:18 and uh that competition I remember uh
+16:21 the training set was pretty small so it
+16:23 it's a kind of weird competition when
+16:25 you are given just like 300 points in
+16:28 training data and maybe 100 points and
+16:30 test data so it's
+16:32 really luck a matter of luck and I
+16:35 managed to train like 300 models like
+16:38 you know in live and out
+16:40 fashion and then uh make a staking uh
+16:43 over it and I thought it was really cool
+16:48 but I don't think it
+16:50 was no yeah but it was fun so like three
+16:55 300 points data points and 300 models
+16:58 yeah yep
+17:00 yep
+17:02 amazing speaking of like I remember so
+17:05 that my solution was also not something
+17:06 you can easily put to production cuz it
+17:08 was like
+17:10 uh two layers or three layers of
+17:13 stacking which is not really um useful
+17:17 let's say
+17:19 uh but still you learn a lot from
+17:23 competing right yeah yeah you do you do
+17:26 and eventually you you are getting
+17:28 usually you're getting bored to it's
+17:30 getting boring to build this teing so
+17:32 you trying to find simpler solutions
+17:34 that
+17:36 work yeah at some point and like do you
+17:38 have any yeah sorry please continue ah
+17:41 yeah at some point I remember uh there
+17:43 were some competitions where like top
+17:45 places were taken by people with huge
+17:48 ensembles uh like a lot of Sten layers
+17:51 but there were some there always was
+17:53 some uh smart guy on the like I know
+17:56 let's say 10th Place who like trying the
+17:59 single model and still managed to be the
+18:02 10th and that was really awesome to to
+18:04 read these solutions to understand how
+18:06 people think uh what they
+18:10 Doh did you do anything special to
+18:12 prepare for this like you mentioned tal
+18:15 trainings you mentioned reading
+18:17 Solutions um did you do anything
+18:20 else uh in general uh I guess uh you
+18:24 just need to iterate I mean I just was
+18:26 iterating when you like solve one dozen
+18:29 of competitions it's much easier to
+18:31 solve the next dozen U yeah it's uh I I
+18:35 don't think you really need to prepare
+18:37 to K competitions like in advance
+18:40 because they they as you said they can
+18:43 take like three months so you have
+18:45 plenty of time uh during the competition
+18:49 but it's always like useful to prepare
+18:51 for let's say hacks when you have just
+18:53 two days and uh it worth to set up like
+18:56 infrastructure I know rent a server
+18:59 baselines learn from organizers what
+19:01 type of problem uh there will be if you
+19:04 can and uh just I don't know read some
+19:06 tutorials about the
+19:09 problem do you take part in
+19:12 hakon uh I did yeah earlier but now I'm
+19:16 mostly on on the other part on the part
+19:18 of
+19:22 organizers yeah we will talk about that
+19:24 too like I'll take a note um but so you
+19:30 took part in Gaggle competitions you
+19:32 were pretty successful
+19:34 there and um yeah you also put a lot of
+19:38 effort there and at some point you move
+19:41 to
+19:42 Industry um so how exactly kagle was
+19:46 helpful cuz we also talked about you
+19:48 know all these ensembles that are not
+19:50 realistic people in real life don't do
+19:52 that uh people sometimes like there's
+19:54 other um there are other things like
+19:57 people use leaks people use you know
+20:00 other things that you're not supposed to
+20:02 use and you cannot use in
+20:04 production uh yet despite all these
+20:06 critics there are still a lot of useful
+20:08 things that you get off kagle from kagle
+20:12 what were for you these useful things
+20:14 and how exactly it help you get your
+20:17 first
+20:18 job uh I guess uh like there are few
+20:22 things that uh K will help help you with
+20:25 the first is uh like really broadening
+20:28 your perspective on machine learning
+20:29 like when you solve dozen or maybe
+20:32 couple of dozen competitions then you
+20:35 know like different domains different
+20:37 models different Frameworks and that's
+20:40 that's really great because when you
+20:41 come to your job and you see some
+20:43 problem you already know how to how to
+20:45 try to tackle
+20:46 it and uh that also helps you to choose
+20:49 your first job so for example when you
+20:51 come to interview they ask you okay did
+20:53 you solve any camp like any practical
+20:56 task and uh for example we are having
+20:59 such kind of task at the company and
+21:02 then you can tell yeah I I was holding
+21:04 this kind of task already on G it's not
+21:08 like yeah as important but still and uh
+21:12 the other thing I think kle is helpful
+21:14 uh is kind of trying to learn some
+21:18 special things about the data for
+21:19 example as leaks you said leaks aren't
+21:21 useful in production but you do these
+21:24 kind of mistakes yourself so when you
+21:26 build your solution sometimes you just
+21:28 uh add like ground truth somehow to your
+21:31 training set and then you push this to
+21:33 production and you see it doesn't work
+21:36 and you're trying to debug it and uh
+21:38 when you're on kegle you're solving
+21:39 competitions you find these leaks uh you
+21:42 really kind of trying to understand how
+21:44 people on the other side can do
+21:47 them so this is helpful and of course
+21:50 kegle is great place to kind of talk to
+21:53 other people learn something from them
+21:55 maybe build your public profile this
+21:56 also helps and
+22:00 um I got to Avita thanks to competitions
+22:02 as well so I had some uh like friends in
+22:06 this ml Community like M trov who
+22:10 invited me to get an interview to avito
+22:12 and uh well uh I was successful and I I
+22:16 started internship
+22:20 there yeah interesting and do you think
+22:22 it's still useful today so compared to
+22:27 10 uh eight years ago when we were
+22:31 starting our data science career
+22:33 compared to those times do you think
+22:34 it's still useful to take part in
+22:36 competitions and specifically kagle uh
+22:38 or there are other better ways of you
+22:42 know kickstarting your data science
+22:45 career I think it's it's a great
+22:47 question and it really as you said it
+22:49 just depends on I mean as you said there
+22:52 are different ways there are always
+22:54 alternative right and it really depends
+22:56 on what what alternatives are available
+22:59 for you so uh if you are from I don't
+23:03 know for example from Kazakhstan I'm
+23:05 initially from Kazakhstan and there is
+23:08 uh not a lot of uh not many places you
+23:11 can get great education machine learning
+23:14 so kegle is still valuable and uh also
+23:18 Kegel has another plus it's
+23:20 International so if you participate in
+23:22 Kel if you win it's great you can get a
+23:25 job in another country so it's something
+23:28 uh something that shows your level but
+23:31 if you are like I don't know starting
+23:33 your career in USA or Europe maybe
+23:35 keegle is not the best option you have
+23:38 actually we had like small talk with um
+23:42 I know the one of the people who
+23:45 organized kle Club at Oxford in UK and
+23:50 he was like he he told me that there are
+23:52 now a lot of interest I mean there are
+23:54 people who are interested in kagle but I
+23:56 I got the feeling that in Russia and
+23:58 then some other countries you have more
+24:01 interest in kle and I think it's because
+24:04 of opportunities so if you study in
+24:07 Oxford you can get I don't know to some
+24:09 top AI Labs you can get to internship to
+24:12 in a top company uh so why you need
+24:18 K oh but also I think uh in Eastern
+24:22 Europe we just like competitions like
+24:25 all these olympiads uh competitions like
+24:28 things like that cuz also you know there
+24:30 are this programming competitions uh um
+24:34 I know there are there are math
+24:35 competitions and for some reasons people
+24:38 in Russia and people in the neighboring
+24:40 countries uh in e in in general in E
+24:44 Easter Europe like those kind of things
+24:47 maybe in the UK not so
+24:49 much or the US yeah maybe it's because
+24:52 of like strong
+24:54 mathematical mathematics in school I
+24:56 think
+24:58 like uh it can be
+25:02 correlated MH but also when studying in
+25:05 Germany I noticed that uh here there was
+25:09 a lot of focus on group work compared to
+25:13 Russia when it was more individual maybe
+25:16 it's also it also plays roles role yeah
+25:20 maybe maybe I didn't think of that
+25:22 that's
+25:24 interesting and and speaking of that so
+25:27 I see a question
+25:28 um from
+25:31 Asin should we do competitive machine
+25:33 learning alone or should we form a team
+25:36 uh I guess it's uh like it's much better
+25:40 to form a team uh but not in the sense
+25:44 that you I don't know you enter kaggle
+25:46 and uh you build a team there uh but
+25:49 rather having a community where you can
+25:51 talk about this you can discuss some
+25:52 ideas and stuff and because it's really
+25:55 helpful um yeah it's just easier to win
+25:59 even to win competition to learn is much
+26:02 easier so that's what I
+26:05 think mhm yeah and also cuz um like at
+26:11 the end you still might need to do
+26:13 stacking right and it's good when there
+26:15 are multiple people in the team everyone
+26:17 has their own model right and then you
+26:19 combine all these models into one yeah
+26:22 yeah because different people like
+26:23 explore different ways different models
+26:25 different solutions and even even you
+26:27 may not go into St but you can just aage
+26:30 predictions for example it may be
+26:32 sometimes
+26:34 yeah MH and I remember this iito
+26:38 duplicates detection competition so the
+26:40 team who won it was
+26:42 um um stas who is also very famous
+26:46 um yep St Sim like he competed St Stan
+26:51 Stanis Simon ofia he competed in a lot
+26:54 of kagle competitions back then uh so he
+26:57 wasn't particularly good at computer
+26:58 vision so he teamed up with a person who
+27:00 was so they kind of cont they knew that
+27:06 like okay I know I'm good at this one
+27:08 I'm good at this thing so they United
+27:10 and then they
+27:12 won yep yep and they found the leak leak
+27:15 agend the data I just I just remember
+27:18 this course yeah now I teach school
+27:22 children to kind of we have now this
+27:25 International Olympiad in Ai and I teach
+27:27 uh like school children in Russia how to
+27:29 participate and I I was trying to create
+27:33 a lesson about leakages and I found that
+27:35 competition and then watched it like the
+27:39 the Min
+27:41 yeah school children um so
+27:45 how how old are them are they uh 15
+27:50 years
+27:51 16 16 17 and 18 like those who are still
+27:56 in school it's like High School right
+27:58 yeah yeah yeah it's like uh yeah yeah if
+28:01 you want to talk about this we can do it
+28:02 now or later because it's it's really
+28:05 interesting yeah there is you know the
+28:09 were like International Olympiad in
+28:11 mathematics uh in informatics and now
+28:14 they're trying to create uh such kind of
+28:16 Olympiad in Ai and it's really
+28:19 interesting because I never thought that
+28:22 there are like some school children that
+28:25 can actually like solve these
+28:26 competitions on such high
+28:28 level so yeah because I I started my
+28:32 career in data science like in 22 maybe
+28:35 and I think you also like maybe a bit
+28:39 later but
+28:41 still yeah yeah it's really interesting
+28:44 when people at 16 can solve competitions
+28:47 and win
+28:49 prizes yeah and I also like I'm trying
+28:52 to remember
+28:54 um what I knew at school so when I was
+28:58 at school I could solve quadratic
+29:01 equations and like some other basic
+29:04 things but like machine learning no like
+29:09 and we also we were learning Pascal and
+29:11 Excel and Word in our classes I guess
+29:15 school children these days are very
+29:17 different so does it mean they learn
+29:20 machine learning like in 10th or 11 gra
+29:25 ah by themselves okay so it's not
+29:28 thought schol yeah yeah it
+29:32 isn't well not yet maybe right yeah
+29:36 maybe okay how did you start your
+29:39 teaching Journey like you were you said
+29:42 I think you were sharing solutions from
+29:45 kagle right yeah yeah so I was when I
+29:49 ended up U at AI lab I was talking about
+29:53 at University uh and understood there
+29:56 are like a lot of theoretical machine
+29:57 learning courses I was trying to find an
+29:59 opportunity to learn some practical
+30:01 things so I uh came up across one class
+30:06 that uh Victor counter held in uh like
+30:10 our University so I just come to the
+30:12 class uh and uh yeah it was just like
+30:16 usual class of machine learning but but
+30:18 from practical perspective I just come
+30:20 there came there and asked if I can join
+30:23 and he told me like uh are you that guy
+30:26 from Kel so you you shouldn't come to
+30:30 these lectures you should teach and I'm
+30:33 decided to try and uh yeah first so you
+30:37 wanted to join as a student yeah yeah
+30:39 yeah I wanted I
+30:40 wanted amazing he said I was over
+30:43 qualified I still
+30:45 attended because I I wasn't over
+30:47 qualified obviously I didn't know a lot
+30:49 of a lot of stuff back then MH um yeah
+30:54 but I I was I I was like yeah teaching
+30:57 how to solve competitions even uh
+31:00 doesn't win them don't win because
+31:03 winning is much harder but just
+31:06 solving MH and I think it also benefits
+31:09 because in order to win you need to
+31:11 exploit all these leaks uh build
+31:13 assembles which does not uh directly
+31:15 translate to you know being good at work
+31:18 but just having an okay solution a good
+31:21 solution that works is already super
+31:24 helpful right so you kind of understand
+31:25 the problem you understand what kind of
+31:27 feature engineering you can do you
+31:28 understand how you can do cross
+31:29 validation right and once you do that
+31:33 that's sufficient to actually you know
+31:35 say okay now I know how to solve this
+31:37 problem let's move on to another one
+31:38 right yep
+31:42 exactly and so it started with
+31:45 you uh with that class and what happened
+31:49 after that like you understood you like
+31:51 teaching or what uh yeah yeah I I found
+31:55 it uh like interesting and and um yeah
+32:00 fulfilling in some sense so I really
+32:02 like explaining people some stuff and I
+32:04 like when they understand this so I was
+32:08 just uh
+32:09 continuing and uh also I learned that I
+32:13 I wasn't good back then I wasn't good at
+32:15 machine learning theory for example and
+32:18 I didn't understand a lot of details
+32:21 about algorithms how they work I I knew
+32:25 a lot of stuff from kegle but I wasn't
+32:27 good at Theory per se and I found out
+32:31 that when you teach you need to figure
+32:33 it out you need to understand it if you
+32:36 want to come and uh explain people so it
+32:40 was really stressful for me but it was
+32:43 uh it was insightful so I like that as
+32:48 well so the best way to learn something
+32:51 is to teach yeah yeah I think that's
+32:54 that's true totally
+32:58 and speaking of theory so I remember so
+33:00 when I had machine learning classes uh
+33:02 as a student I attended them so we were
+33:05 covering things like ban uh machine
+33:08 learning or uh support Vector machines
+33:12 or what else like I remember it was a
+33:14 lot of theory and we would solve all
+33:17 these uh complex equations
+33:37 okay let me try to reconnect
+34:07 yep
+34:10 okay yeah let's wait for Alexa to return
+34:45 yeah meanwhile I'm trying to find your
+34:48 questions if you have some uh
+34:51 but yeah it takes
+34:54 time
+34:56 hi uh
+34:59 awesome uh the stream is still happening
+35:03 good uh so I had to switch to my mobile
+35:05 internet um something happened with my
+35:07 home
+35:09 internet um okay I do not remember the
+35:13 question I asked so maybe you have some
+35:16 memory of
+35:18 it uh yeah you were asking about
+35:21 teaching like um theory and practice
+35:25 right yeah yeah yeah
+35:28 you were actually talking about an
+35:29 example of yours mhm yeah so I was uh I
+35:33 remember studying so first I studied
+35:36 theoretical machine learning and then I
+35:38 attempted to do practical machine
+35:39 learning on kago too and we were
+35:42 learning like ban methods uh we were
+35:45 learning support Vector machines and
+35:47 none of these things were useful uh in
+35:49 practice like when you actually do kugle
+35:53 or when you work as a data scientist uh
+35:55 we didn't learn we didn't study uh
+35:58 gradient
+35:59 boosting um like we didn't study many
+36:02 things um and for you so for me it was
+36:05 first uh Theory and then practice and
+36:07 for you it was first practice and then
+36:08 Theory so I'm wondering how it affected
+36:11 the way you approach Theory and the way
+36:13 you teach uh the this theoretical
+36:18 skills uh yeah it it really uh has an
+36:22 impact because I I I still don't like a
+36:24 lot of theory to be honest so I I really
+36:28 uh believe in that that to to learn
+36:31 something you need to see how you can
+36:33 apply it so what is the eventual
+36:36 application uh and because of that when
+36:38 I teach uh first of all I don't teach uh
+36:41 like classical machine learning classes
+36:43 for example and I I don't know how to
+36:46 actually uh be good at that so I teach
+36:50 mostly something about industry like
+36:52 production machine learning which is s
+36:54 like similar to melops like how to use U
+36:56 I don't know DVC mlflow F API Docker
+37:00 kubernetes how to deploy your models how
+37:02 to monitor them that kind of stuff and
+37:06 when you teach this uh you can just
+37:08 teach on examples you can show the tool
+37:11 you can show the problem that you need
+37:13 to solve with that too and then you can
+37:15 show how you solve it and then give a
+37:18 homework uh so that's really something
+37:21 that uh from the different angle you
+37:23 show some there is a problem let's
+37:25 figure out how to solve it
+37:29 mhm yeah that's uh like for me it's also
+37:32 the best way to learn uh cuz I remember
+37:35 like I think the example uh we used when
+37:39 doing machine learning was like
+37:41 something related to fish I don't know
+37:43 for me it was not relatable at all and I
+37:46 think if we just used even this Titanic
+37:49 data set it would be way better like I
+37:53 don't really like the Titanic data set
+37:55 cuz it's kind of weird
+37:57 right cuz you predict who would survive
+37:59 and who would not like to me
+38:02 yeah like it's a weird like it's a super
+38:05 strange problem but like I don't know
+38:08 like take any other
+38:10 classic data set like Boston Housing
+38:13 right then yeah it's it's very relatable
+38:17 and uh one of the things you mentioned
+38:19 um so you teach practical
+38:21 things and Industry machine learning not
+38:25 classical machine learning and then you
+38:26 said Docker I'm a
+38:27 flow uh DBC kubernetes so this is
+38:32 definitely something or maybe not
+38:34 definitely but I suspect this is not
+38:37 something you picked up on kagle right
+38:40 yeah um so you probably learned these
+38:42 skills elsewhere so how did you actually
+38:47 develop the skills uh and uh yeah like
+38:51 for a person starting a career of kagle
+38:54 like how do you actually go into this
+38:56 direction of production in machine
+38:57 learning and learning more about
+39:00 mlops yeah it's it's actually I think
+39:03 it's very interesting example I
+39:06 mean if like how I moved away from kagle
+39:10 so I moved to I I started my career like
+39:14 industrial career in avito as a data
+39:17 analyst so there uh I I still was
+39:21 participating in kgle but I saw that you
+39:24 cannot like make up for living by GLE
+39:28 competition so I decided to start uh a
+39:32 job in industry and at a vaita I
+39:34 understood pretty quickly that my python
+39:37 skills are lacking and my machine
+39:39 learning theory understanding is lacking
+39:41 it's how it's vice versa compared to
+39:44 your example when you were working at
+39:46 some like job as data scientist then you
+39:48 come to Kel and then you see you can't
+39:51 compete this was like vice versa exactly
+39:54 and uh I understood that there is like a
+39:57 lot on machine learning outside of kagle
+39:59 so that was very interesting for me uh
+40:02 so I decided to continue I started
+40:06 position in Yandex go as a data
+40:08 scientist there I learned a lot of about
+40:11 like let's say statistics I a testing um
+40:15 also I learned something about python as
+40:17 well but there I understood that you
+40:20 know when you work in a big company like
+40:23 uh Yandex or Google or like meta uh your
+40:27 always are like small part of this big
+40:29 machine so there are a lot of people who
+40:31 do this machine learning and the
+40:33 pipeline is pretty big there are maybe
+40:35 dozen of people who are involved in uh
+40:37 rolling out some new model or maybe more
+40:40 than a dozen and uh your skills are
+40:42 pretty narrow and I wanted to learn
+40:46 outside of this so I moved to mechanica
+40:49 where uh I had to learn pyth like Docker
+40:54 python packaging uh kubernetes fast API
+40:58 and it was painful but it was really
+41:01 interesting because yeah I understood
+41:03 there that I'm kind of becoming a full
+41:05 stack in the sense I can talk to
+41:07 business I can understand their problem
+41:09 then I can build a like solution uh then
+41:12 I can put it in production I can conduct
+41:14 AB testing I can measure results I can
+41:16 report this results set up monitoring
+41:18 and that was really fascinating because
+41:20 you are not stay in one like simple I
+41:23 don't know small task but you are owning
+41:25 all of the pipeline
+41:27 and uh that that was really cool and
+41:31 then at well that's how my career
+41:34 developed so some people you know take
+41:38 one one I mean I I have good friends
+41:40 like mesnik we were talking about here
+41:43 right and he is like python developer
+41:46 and machine learning he's a god of
+41:48 python he can do like so so complex so
+41:51 complicated things and he's like python
+41:55 developer in machine learning for five
+41:56 or six years maybe even more and he's
+41:59 like really great at this and I isn't
+42:01 that type of person I'm trying to pick
+42:04 up like different challenges for myself
+42:07 during my
+42:10 career yeah that's
+42:12 interesting well eventually you both you
+42:16 and mikale um ended up doing similar
+42:19 things you just started from different
+42:21 positions I guess yeah exactly that's
+42:25 interesting and speaking of teach so
+42:27 teaching is a topic that is very um
+42:31 close to me personally because I've been
+42:34 doing um I've been teaching for I don't
+42:37 know last four five years um so I'm
+42:40 really curious so we talked about like
+42:42 how you started your teaching uh Journey
+42:45 which is a really interesting story um
+42:48 but how do you approach teaching now so
+42:51 you're working for
+42:52 University with a practical and uh with
+42:56 focus on prac ice and uh industry
+42:59 orientation how do you approach uh
+43:02 coming up with the curriculum with what
+43:04 to include in the courses what to
+43:08 teach um that's a really great question
+43:12 and uh I think there are like different
+43:14 ways uh of doing this but what I found
+43:17 for myself is that I'm trying
+43:19 to
+43:21 um to come up with some problem that's
+43:24 interesting for students to solve during
+43:26 the class uh and then build curriculum
+43:30 around
+43:31 it so for example for like mops class or
+43:35 production machine learning uh I like I
+43:39 want students eventually what I want
+43:41 them to do I want them to learn all of
+43:44 these tools like again mlflow Docker
+43:46 fast API grafana Prometheus whatever and
+43:51 uh it's it's really can be boring if you
+43:53 just give the tool and give the task so
+43:55 I'm design in a competition I mean it's
+43:59 it's again comp comp a competitive
+44:02 background I
+44:03 guess uh I'm I'm designing a problem for
+44:06 the whole semester so they need to build
+44:10 a classifier that can uh like given a
+44:14 dialogue between two people uh the
+44:16 classifier can tell who is the like bot
+44:20 uh AI model whatever llm and who is the
+44:24 real person and we
+44:27 we like we are building a platform where
+44:30 these classifiers can uh like get data
+44:34 from and then we'll have like them
+44:37 competing with each other and during
+44:39 throughout the class uh like students
+44:42 just uh build the same like build upon
+44:45 what they did previously so they start
+44:47 with some dummy classifier that just uh
+44:51 gives a random
+44:52 number random probability then they add
+44:55 like they collect data they use label
+44:58 Studio to label that data then they
+45:00 train model the loog they experiment Cal
+45:03 flow then they wrap it in fast API they
+45:06 deploy a machine learning model and they
+45:08 see metrics on the leaderboard technical
+45:11 metrics not actually machine learning
+45:13 metrics but like technical how well they
+45:16 they classifier is it online like the
+45:18 app time the speed of response uh stuff
+45:21 like that and I think like this is a
+45:25 really good approach just uh find out
+45:28 something interesting for students and
+45:30 build curriculum around
+45:32 it so yeah if you allow me another
+45:35 example we have another class
+45:39 currently okay thank you so we have
+45:42 another class like machine Learning
+45:44 System design and uh it's kind of a
+45:47 broad topic like what what you can teach
+45:49 in machine Learning System design
+45:51 practically how to how to approach any
+45:53 problem in like business problem with
+45:55 machine learning how to like do
+45:57 everything build prototype uh conduct a
+46:00 testing whatever and uh we are
+46:02 suggesting students to find some idea
+46:04 they can work at they want to work at
+46:06 during the semester maybe they want to
+46:08 build a AI startup maybe they want to
+46:12 solve smaller problem and I think when
+46:14 people select something they like they
+46:17 are more like they tend to tend to this
+46:21 to actually uh like this problem and
+46:24 like spending time on it
+46:30 yeah that's really interesting in this
+46:31 in the second example uh sorry my
+46:34 internet is not really good that's why
+46:36 there's a bit of L between yeah yeah
+46:39 but there's a bit of lck so uh for the
+46:43 second uh problem um when uh you
+46:46 encourage students to select the problem
+46:48 to solve
+46:50 themselves do they form teams or they
+46:52 work individually how yeah yeah they
+46:55 form teams yep because
+46:57 well yeah we also want to teach them
+47:01 let's say working with G for example we
+47:04 still want them to build
+47:05 prototype and we also want to learn them
+47:09 how to communicate between themselves
+47:11 because it's really part of your of your
+47:16 job that's amazing and um in the in the
+47:20 first problem you said you want to make
+47:22 it competitive so you design a
+47:24 competition I understood the problem
+47:27 that um okay they need to eventually
+47:29 build a platform for classifying who is
+47:31 bought who is a real person and then you
+47:34 iteratively progress from adamic
+47:36 classifier to like a full platform with
+47:38 metrix and whatnot but where is the
+47:41 competitive aspect yeah yeah I think um
+47:45 I wasn't clear enough so what they built
+47:48 they built a classifier which uh like is
+47:52 just let's say fast pay service which
+47:55 can uh receive requests
+47:57 and then they plug it in into the
+48:00 platform we are building outside of the
+48:02 class so we have some uh like extra
+48:06 project in University we're building
+48:08 this platform and student just deploys a
+48:10 classifier and on the platform when you
+48:13 like different students attach different
+48:15 classifiers they will be able to see
+48:17 some metrics right
+48:20 uh so it's really something okay similar
+48:23 I guess it's a bit similar to production
+48:25 so you can like SML like engineer
+48:28 whatever whoever you just build
+48:30 something you can add I don't know
+48:32 monitoring to it you can add retraining
+48:34 you can add cicd like uh whatever and
+48:38 then there is some system that consume
+48:40 your predictions that gives you data
+48:42 consume your predictions and you need to
+48:44 make your like your classifier work with
+48:46 it pretty
+48:49 well yeah that's interesting and then do
+48:52 you have some sort of
+48:54 leaderboard yeah yeah it's there are
+48:56 like two types of leer board in this
+48:59 there is ml metrix leader board like
+49:02 which classifier is like smarter at the
+49:04 detecting Bots and there is a second
+49:06 leader board like technical leader board
+49:08 with up times uh like uh times of
+49:11 responses error codes and stuff like
+49:14 that and on this class I want to focus
+49:16 on the technical leer board because I
+49:18 don't want like actually kle competition
+49:21 there I want for students to try to
+49:24 build the most reliable solution
+49:30 this is an amazing idea maybe we should
+49:32 also try to do something like that in
+49:34 our classes uh but I I'm wondering so
+49:37 for you and the so these are Master
+49:40 students right so your classes are not
+49:43 large yeah yeah yeah they are not large
+49:46 like currently the university isn't big
+49:48 we have like around 200 uh students uh
+49:52 in master's degree but they are like in
+49:55 different uh Direction like in machine
+49:57 learning we have around one 100 maybe a
+50:02 little more ah 150 students and so on
+50:05 the
+50:06 class there will be like 80 students or
+50:09 something so a lot not but not this is
+50:13 still a lot yeah so it's a significant
+50:17 number compared to like I don't know
+50:19 usual classes at least the one I had but
+50:24 uh it's not like the same cuz you also
+50:26 have experi in teaching uh in uh online
+50:29 courses right
+50:31 yeah right on course this is where the
+50:33 number of 100 okay yeah like you you in
+50:38 your bio it says 100,000 which is
+50:41 obviously not University it's corera was
+50:44 it corera yeah yeah yeah yeah it's
+50:45 corera actually so I think it's uh and
+50:49 corera is totally different format you
+50:51 just build a class uh you just publish
+50:53 it you design like some automatic
+50:56 procedures to check Solutions and then
+50:58 you have some people on the platform who
+51:01 answer questions and maybe you some
+51:03 sometimes answer questions but when
+51:05 there are like uh so many students it's
+51:08 hard to to do something I mean uh
+51:15 otherwise and uh was it a class on how
+51:18 to win kagle how to win M competition
+51:21 something like
+51:24 that I think I remember uh this class uh
+51:28 this this course I didn't take it I
+51:31 remember that you were doing it yeah
+51:34 that's amazing great work thank you okay
+51:38 uh and I I really like the idea of um
+51:42 you know building a platform and then
+51:44 letting students take like plug in their
+51:47 ml models and uh since we're doing
+51:50 online courses maybe it's not as simple
+51:52 to implement this this cuz you have more
+51:55 like closed environment with students so
+51:57 you kind of know the the amount the the
+52:00 number of
+52:01 students but maybe this is something we
+52:03 can uh borrow to in some of our classes
+52:06 that that's really
+52:08 interesting yeah maybe maybe you want to
+52:11 to use this platform we can discuss it
+52:14 as well because ah is it is it is it
+52:16 open source uh it it isn't open source
+52:19 but I think will host it like so anyone
+52:22 can can use it in in this way but it's
+52:25 uh because I I want to like we actually
+52:28 want to reuse it in some other classes
+52:30 outside of the University both in Moscow
+52:33 and in Europe so maybe it will be
+52:37 like good good option to to try it
+52:43 maybe yeah let's talk uh do you actually
+52:46 take part in developing this platform as
+52:49 a developer uh
+52:51 no rather
+52:54 than the one yeah who asked to develop
+52:57 it
+52:59 actually yeah but but yeah I'm I'm still
+53:02 closely connected to yeah
+53:09 this are students developing it or it's
+53:12 like professional software Engineers the
+53:15 students it's just like u in the
+53:17 University we have an idea that students
+53:20 before they find a job they can test
+53:23 their skills and get like close to job
+53:26 experience at some projects at
+53:28 University and some projects are from
+53:31 external like companies and some
+53:33 projects are from internal uh people and
+53:36 this is this kind of project we actually
+53:39 have three students developing it uh and
+53:42 they're really great I mean they are
+53:45 like junior or middle level so I was I
+53:49 was happy to I was lucky to find
+53:55 them do you I'm just curious how it's
+53:58 organized cuz uh students they are not
+54:01 experienced so they need
+54:03 mentors uh and also students maybe do it
+54:06 for half a year but then um I don't know
+54:09 they graduate or they finish the class
+54:11 or whatever so then there is another
+54:13 student who spends again like I don't
+54:16 know another half a year uh so this work
+54:20 needs to be organized in such a way that
+54:22 uh new people can come old people leave
+54:26 uh but the process is still ongoing and
+54:28 then there is somebody who can mentor
+54:29 all the students right yep yep that's
+54:33 true you get somebody from the industry
+54:35 to Mentor or yeah yeah we for for each
+54:39 project we have uh a mentor and in this
+54:42 case we have a mentor from uh like tbank
+54:46 which is kind tin of company and uh he's
+54:50 also like spending a lot of time with
+54:52 students he's reviewing his PO their
+54:54 poll requests he's helping them to fight
+54:57 some challenges there and regarding like
+55:01 uh if some of the students want to move
+55:03 out from this projects and we want to
+55:05 find another one we're trying to kind of
+55:08 again as with any software project we
+55:11 try to document things um
+55:15 like make code like look easy enough to
+55:19 understand and stuff but uh we're only
+55:22 doing this projects for like three
+55:24 months uh I think
+55:27 and we are launching it like launching
+55:29 it one week later I mean in the end of
+55:32 January we actually have uh like five
+55:35 days haathon for master students at
+55:38 University where they'll try to build
+55:41 the best machine learning solution if on
+55:43 the like mops class we want them to
+55:46 build the best technical solution here
+55:48 it will be the best model and we'll test
+55:50 the platform and uh I think it will well
+55:55 we maybe
+55:57 we'll have uh to maybe some of the
+56:00 students will go out of the project in
+56:02 few months but then we'll we'll solve
+56:04 this
+56:07 somehow yeah that's pretty interesting
+56:10 thanks there are a few questions uh do
+56:13 you have uh maybe I see that we should
+56:15 be wrapping up soon do you have like
+56:16 maybe five more minutes yes of course
+56:19 okay okay because there are um there are
+56:23 a few questions that perhaps we should
+56:24 address so one of them is uh pretty
+56:28 interesting uh what is the best way to
+56:31 convince your managers about the value
+56:33 of kagle and ml
+56:35 competitions yeah that's a tricky
+56:38 question
+56:40 um I think uh I think things like that
+56:45 they are easiest
+56:47 to to to go with by using some example
+56:50 maybe you can find someone uh like in in
+56:55 in your compy company who sold kaggle
+56:57 and who is pretty good and uh show this
+57:01 as an example maybe you have someone at
+57:03 industry who's well known for your
+57:06 company or your
+57:07 managers uh maybe some advisor uh who
+57:10 Sol kle competition maybe you can use
+57:13 that as an example otherwise um I saw I
+57:18 mean also it's important to understand
+57:21 what what the value you're trying to get
+57:23 out of this right if the value is just
+57:26 to for example to introduce kagle as a
+57:29 side activity to your company I've seen
+57:33 these examples and it's usually um well
+57:37 you can just show that other data
+57:40 scientists are interested in solving kle
+57:41 competitions on some like uh basis like
+57:45 I don't know kle Club at the company and
+57:49 uh sometimes there is a green light for
+57:51 these initiatives so
+57:54 yeah MH
+57:56 so basically show them a good example
+58:00 right yeah I think I think that's it I
+58:03 don't I don't have a better answer to be
+58:04 honest yeah that's a good answer uh
+58:07 another question uh is there any secret
+58:10 trick that works uh almost always in
+58:15 competitions yeah that's that's also a
+58:18 great question
+58:19 because um you know the competitions are
+58:22 unique I mean in the sense that we are
+58:26 talking about winning competition right
+58:28 and if you take a look at the top
+58:30 Solutions on the leader board they
+58:32 usually unique in some sense and they
+58:35 they really heavily depend on the data
+58:37 on the problem on the information
+58:39 organizers gave you so it's really hard
+58:41 to come up with a single
+58:44 trick um really but what I what I what I
+58:48 can say is that there are some things
+58:51 that almost all of competition winners
+58:54 do they explore data they do that
+58:57 carefully they try to do Eda they try to
+59:00 understand the domain and uh build a
+59:03 careful validation let's say all all the
+59:06 usual things but when you put this
+59:08 together and do very carefully it
+59:13 works yeah right so the secret trick is
+59:17 just be careful and the time right yeah
+59:21 yeah invest time that's that's really
+59:23 important yeah
+59:26 okay and uh what is your opinion about
+59:28 generative AI like how does it affect uh
+59:32 competitive machine learning like do you
+59:34 see that people use it more often less
+59:38 often um that's that's a really good
+59:41 question I mean uh if we are talking
+59:43 about I don't know chpt or like kilot
+59:48 csor I think people use it but uh it's
+59:53 not um it give you some H maybe to to
+59:55 your product activity but it
+59:58 really it really can't win competitions
+1:00:01 I mean in after ml sense let's say um
+1:00:07 but I see it's really useful I mean for
+1:00:09 example myself when I solve some problem
+1:00:12 I don't know with scut Boost for example
+1:00:14 I just copy paste the the error lock and
+1:00:17 put it to chpt and it it helps me
+1:00:20 sometime to to fix the problem so in
+1:00:22 this sense it's
+1:00:24 useful MH
+1:00:27 okay um I remember so back in the day
+1:00:30 when I was taking part there were people
+1:00:32 who were doing these outl Solutions um I
+1:00:35 think one of them was kazanova maybe you
+1:00:37 remember this guy yeah yeah so he wrote
+1:00:39 some weird Java code that would just
+1:00:42 take a problem and then train like a lot
+1:00:44 of classifiers and then do emble on top
+1:00:46 of that and that that gave a good basine
+1:00:50 and then eventually he would just
+1:00:51 improve this and he this way he won like
+1:00:53 a lot of competitions or at least he he
+1:00:55 got a gold medal in many competitions do
+1:00:58 you think this approach uh still works
+1:01:01 these days yeah it still works actually
+1:01:04 just recently I was talking to Alexander
+1:01:06 rashkov who is like I think now he's uh
+1:01:10 grandmas in every category on kegal like
+1:01:13 in competitions discussions kernels what
+1:01:16 is the last category and he devop yeah
+1:01:21 data sets thank you and he develops
+1:01:23 optimal solution like Lama
+1:01:26 after well and he told me that it really
+1:01:30 gives you good Baseline you just put it
+1:01:32 you get a baseline then you improve and
+1:01:34 then you can win so it's uh it works but
+1:01:37 it it cannot deliver you winning
+1:01:39 solution
+1:01:40 alone MH okay so it's just like before
+1:01:44 maybe it was some obscure Java code that
+1:01:46 somebody developed and didn't want to
+1:01:48 share with anyone but now these days
+1:01:50 it's CU we have access to this this AI
+1:01:53 Solutions or LS these two become more
+1:01:57 mature and also more complex right yeah
+1:02:00 and open source some of them and open
+1:02:03 source yes yeah lightl is open source so
+1:02:07 that's that's that's pretty cool
+1:02:10 actually what's your current keggle
+1:02:13 rank I don't know it's it's
+1:02:18 bad I just checked mine it's
+1:02:23 9,575 so your probably better yeah but
+1:02:26 but not not not a lot I
+1:02:29 think they have only one gold medal and
+1:02:33 you have like I don't know 10 or how
+1:02:35 many around that don't remember around
+1:02:38 that okay yeah yeah but it it doesn't
+1:02:41 matter anything now I mean it doesn't
+1:02:44 mean anything
+1:02:47 now people still recognize you know yeah
+1:02:50 yeah I mean it it was really useful in
+1:02:52 this sense so and I was really lucky to
+1:02:56 to start competing on Kangle and I think
+1:02:59 it's you see even today's uh today's
+1:03:02 interview it's happening like the title
+1:03:04 is I don't know competitive data science
+1:03:06 although I'm ma engineer now for five
+1:03:09 years or
+1:03:10 so still talking about
+1:03:14 this and you don't actively compete now
+1:03:16 do you uh nope nope nope I I'm teaching
+1:03:22 some of the things I still find valuable
+1:03:25 uh to to students but I don't compete
+1:03:28 actually I have you know maybe you know
+1:03:30 this guy there was I maybe no not there
+1:03:33 was one uh person uh from our like
+1:03:37 community at the time Serge AR he was
+1:03:40 actually from s petburg but what's
+1:03:44 amazing about him he's still competing
+1:03:46 and like eight years p and he's still
+1:03:49 competing and he this is his only
+1:03:51 occupation and he makes enough money to
+1:03:54 to live
+1:03:56 and I find this amazing he wins money
+1:04:00 enough money to actually leave off the
+1:04:05 prizes yeah yeah yeah he does and uh I
+1:04:09 found yeah and I was like I teach um
+1:04:14 Kegel I mean some something about Kegel
+1:04:17 for my students at University and I was
+1:04:19 trying to find a person who actively
+1:04:22 participates and who can teach not just
+1:04:25 outdated thinks about something really
+1:04:28 uh like current and I found him and he's
+1:04:32 really great he's win competitions in
+1:04:34 Kel and uh like here in Russia the like
+1:04:38 the compe competitive level is lower
+1:04:41 then in kago so he makes up for the
+1:04:46 living yeah I checked the current uh
+1:04:49 leaderboard and I recognize only one
+1:04:53 person out of I don't know top
+1:04:56 25 that I checked so everyone is
+1:04:59 different now yeah yeah okay Alexander
+1:05:03 it was uh really great to have you here
+1:05:07 to talk with you to ask you questions
+1:05:10 and get your perspective on things so
+1:05:12 thanks a lot for finding time and
+1:05:14 joining us today and also thanks
+1:05:16 everyone for joining us today asking
+1:05:18 questions being active so yeah it was
+1:05:20 amazing thank you yeah thank you Alexi
+1:05:23 thank you
+1:05:24 everyone bye and sorry for the
+1:05:26 connection problems uh yeah have a great
+1:05:29 week

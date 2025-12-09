@@ -1,0 +1,1468 @@
+Searching Beyond the Surface: Navigating Challenges and Innovations in Search Technologies
+
+0:00 hi everyone Welcome to our event this
+0:02 event is brought to you by data do club
+0:03 which is a community of people who love
+0:05 data we have weekly events and today is
+0:08 one of such events today we actually
+0:10 have two events and there is more of the
+0:14 events um so we have quite a bunch of
+0:16 them so there is a link in the
+0:17 description so if you go there click on
+0:19 that link you'll see all the events we
+0:21 have in our pipeline so check it out
+0:24 today we have also quite an interesting
+0:27 Workshop about using terraform and click
+0:31 house so yeah check it out then do not
+0:34 forget to subscribe to our YouTube
+0:35 channel this way you will not miss out
+0:38 amazing streams like the one we have
+0:41 today and finally we have an amazing
+0:43 slack Community where you can hang out
+0:46 with data with other data into and I
+0:48 think I say amazing too many times I
+0:50 need to work on that intro anyway so
+0:53 during the inter during the interview
+0:56 you can ask any question you want there
+0:58 is a link pin in in the live chat click
+1:01 on that link ask your question and we
+1:03 will be covering these questions during
+1:05 the interview now I will stop sharing my
+1:09 screen I will open the document with
+1:13 questions it's AA right do I the name
+1:18 that's correct it's
+1:20 always difficult with um
+1:24 International such an International
+1:26 Community you never know how to
+1:29 pronounce the name corly where to put
+1:30 the emphasis so it's a TAA right that is
+1:36 correct hopefully I should to say
+1:40 it correctly
+1:44 in just second
+1:47 okay
+1:49 so I'm ready if you're ready we can
+1:52 start yep I'm good this week we'll talk
+1:56 about search and we have a very special
+1:58 guest today hatita at is an expert in
+2:01 information retrieval also known as
+2:03 search she has she has contributed to
+2:06 projects like Apache and open NLP and
+2:09 she advocates for using Centric
+2:10 approaches she's very passionate about
+2:13 promoting diversity in Tech through
+2:15 groups like women of search and
+2:17 currently she's researching roxs we'll
+2:20 talk about what it is for those who
+2:22 don't know what this this is
+2:23 abbreviation not like
+2:26 rxs welcome to the
+2:28 interview thank you so the questions for
+2:32 today's interview are prepared by
+2:34 Johanna Bayer thanks Johanna for your
+2:36 help and let's start before we go into
+2:39 our main topic of search let's start
+2:42 with your background can you tell us
+2:44 about your career Journey so far for
+2:47 sure so thanks for having me I think I
+2:49 would definitely like to say uh at least
+2:51 one line before we begin that I've
+2:53 always you know followed data talk club
+2:55 uh since I think very beginning I think
+2:57 it's an honor to be here on uh the live
+3:00 interview definitely the the first for
+3:02 myself and uh because we were talking
+3:04 about my name earlier I think that's
+3:06 where I'm going to start so I'm not sure
+3:09 if a lot of people already noticed that
+3:12 my name is actually a palindrome name as
+3:14 well as my last name it's a
+3:16 pendro and uh I can both of them yes is
+3:21 it the
+3:22 coincidence uh I think it was a pure
+3:24 coincidence because I definitely checked
+3:26 with my mom and uh she told me that it
+3:29 wasn't really intended the way and it's
+3:31 also very surprising that my name that
+3:33 the meaning U is um I mean it's a it's a
+3:37 um Hindi driven name because I come from
+3:39 India and it it is derived from the word
+3:42 atit which means past so anything or the
+3:45 events that are driven by the past
+3:48 events and I think our listeners would
+3:51 be very very uh smart enough if they can
+3:54 uh you know guess that what exactly is
+3:56 driven by the past events because that's
+3:59 uh probably what my mainstream job is as
+4:02 well like a machine learning model
+4:03 because it uses the past data to predict
+4:06 the future events so I think it's uh
+4:09 it's a mere coincidence that uh my name
+4:12 definitely uh kind of you know falls
+4:14 into the similar stream as of my career
+4:17 and I'm pretty thankful to my parents as
+4:19 well for naming me this way so that was
+4:23 a short background of of my name and I
+4:25 hope uh we can now U say it correctly
+4:28 it's it's atita Aurora
+4:30 and uh I have no connection with the
+4:32 Northern Lights just to
+4:35 clarify yeah about uh Aurora right yeah
+4:39 yeah Aurora B yeah that's correct so a
+4:43 lot of people think that my first name
+4:45 is Aurora because that's definitely the
+4:47 case in Europe but my but my first name
+4:49 is aam Aurora is my last name so about
+4:53 the career Journey as obviously you
+4:55 already have in the introduction so yes
+4:57 I started in 2008 it's been 15 years and
+4:59 if we count like the time before my Ms
+5:02 um it would be actually 2007 and I would
+5:06 say that now I'm feeling fortunate that
+5:09 I started very early on with the
+5:10 information retrieval uh space uh pretty
+5:13 early on in my career but at that point
+5:16 in time like U as a early 20s person
+5:20 definitely wasn't too happy with like
+5:22 why am I you know pushed into this field
+5:24 because I was campus hired by this
+5:26 company which was really big into uh
+5:29 like working on the Revolutionary uh
+5:31 products and uh it was set up by a
+5:33 Stanford uh Professor so I think I was
+5:38 feeling lucky that you know he chose me
+5:39 um out of like the batch of 96 folks so
+5:43 uh but when I joined the company that
+5:45 the first thing that they asked me to do
+5:46 was like you know we want to work on
+5:49 detecting the relationships between two
+5:52 entities so um I obviously realized um
+5:56 you know in the course of the Journey of
+5:58 my career that it's called semantic web
+6:01 so I started working on it in 2007
+6:03 definitely a lot of people did not know
+6:04 about it and the application that I
+6:07 started working on was based on solar
+6:09 and Lucine so solar was pretty early on
+6:12 in like the version 1.2 back then and
+6:15 there was no elastic search people were
+6:17 still struggling to move from databases
+6:18 to solar and they were really pounding
+6:21 on like why they need to move away from
+6:23 database and what is there not present
+6:25 in databases and why they need to have a
+6:27 full Tech search engine so I was born or
+6:31 my career was born between that struggle
+6:33 and uh while lots of my friends you know
+6:36 working on Java jwe applications and net
+6:38 I was battling with this beast called uh
+6:41 you know semantic web so definitely not
+6:44 a very pleasant time to be honest but
+6:47 now I I feel I feel good that it
+6:50 happened to me very early on so got
+6:52 traction later right like remember
+6:56 already like 2015 companies were using
+6:59 elastic search solar it was aot yeah
+7:03 correct even even big data didn't really
+7:05 have the name big data back then I mean
+7:07 when I was working on I think only until
+7:09 2012 is when I really uh understood that
+7:13 oh this is what exactly what I do I mean
+7:15 is it called like big data okay that's
+7:17 that's kind of interesting so yeah I
+7:20 think uh uh in India as well I think we
+7:23 don't really get lot of traction as well
+7:25 um probably if I was in one of the
+7:28 Western countries us or Europe back then
+7:31 probably I would have been uh able to
+7:33 you know work on it more so yes I think
+7:37 uh this was the initial part of the
+7:39 journey and I think back in uh 20101 is
+7:42 when I was approached by this training
+7:44 company um that works the similar way as
+7:46 the corera works and they asked me to
+7:48 develop the course on solar so I think
+7:51 it was happening more and more but it
+7:52 kind of you know sidelined um I also got
+7:55 to work on a lot of you know content
+7:56 Management Systems because search is a
+7:58 very uh kind of backbone uh
+8:01 functionality of any content management
+8:03 system I mean definitely people can put
+8:05 on the content but the major you know um
+8:10 kind of challenge is finding the right
+8:12 content so this was where U I also
+8:14 realized that you know like matching
+8:17 what the person needs like how to match
+8:20 right content with right person and it
+8:22 just grew uh more and more in U as I
+8:25 progressed in my career so I think this
+8:28 definitely kind of you know Tri my brain
+8:30 a lot more than that and that's when NLP
+8:32 happened so I understood that you know
+8:34 natural language definitely has um a lot
+8:37 of prospect so about in 2012-ish is when
+8:40 I was first uh uh you know using the NLP
+8:44 in my in my project and I was very
+8:47 surprised what do you mean by NLP
+8:49 because like I remember so for me NLP
+8:52 started also with search so there is
+8:53 this book introduction to information
+8:55 retrieval I think one of the authors is
+8:57 Ming right last name yeah and like I the
+9:02 book was very nice to read and then I
+9:05 was recommending this book to anyone who
+9:06 was interested in NLP as a good
+9:09 introduction to
+9:10 NLP right so that's why I'm wondering so
+9:13 to me kind of NLP and information theal
+9:16 always came together right I think as of
+9:21 now I would say that it definitely U is
+9:24 like interchangeable sort of a term but
+9:27 I think search in principle because as I
+9:29 said that people were moving from
+9:30 database to a full Tech search engine
+9:33 people were still kind of you know hung
+9:35 up in that token search mode so it was
+9:38 really hard I mean people didn't really
+9:39 realize that they could actually have
+9:41 more than one phrase and they could
+9:43 still have search results so I think
+9:45 this is what you know natural language
+9:47 uh processing kind of you know enabled
+9:50 and uh we realized that with the content
+9:52 management system it became even more
+9:54 and more you know important because
+9:57 people wanted to be sometimes you know
+9:59 know like describe the kind of document
+10:01 that they were looking for sometimes
+10:02 with a Content sometimes with a title so
+10:05 it definitely boiled down to how do we
+10:07 match right content with the right query
+10:11 so I think this is uh kind of where it
+10:14 it went into and uh my curiosity into uh
+10:19 definitely the other factors as to you
+10:20 know um for example what kind of query
+10:23 should match what kind of content based
+10:25 on different kind of business kpis so
+10:28 definitely there were a lot of you know
+10:29 other factors which came into the
+10:31 equation now so that drove me towards uh
+10:34 going for my second Masters in uh
+10:36 strategic business management and I
+10:38 wanted to understand more about like how
+10:40 are these business components uh
+10:43 deducted so I think this this got really
+10:46 interesting because I never took up um
+10:49 management as my as my first career
+10:51 because I was very attached to
+10:52 technology I wanted to you know make
+10:54 things by myself and I think that was
+10:56 very interesting for me so moving on I
+10:59 think um I I would be uh kind of like um
+11:04 not you know overbearing if I say that I
+11:06 got a chance to work with all my dream
+11:08 companies I worked with Lucid Works
+11:10 which was Pioneer in uh the search
+11:12 Consulting and then also open source
+11:14 connections two years ago this is when I
+11:16 realized that uh search quality has more
+11:19 than you know like um matching right
+11:22 content with right user and providing a
+11:24 measurable aspect U behind it as well so
+11:27 it was it was definitely
+11:30 yeah sorry for interrupting you because
+11:31 like I really want to ask you about Li
+11:34 it works and open source connections
+11:37 because these two companies like for
+11:38 everyone who works with search they know
+11:41 these
+11:43 names and uh yeah especially like if you
+11:46 go to conferences like Berlin bwarts you
+11:48 usually see a stand from Lucid works so
+11:51 they're quite present they have their
+11:53 own conference solar Lucine Revolution
+11:55 as well which was later called activate
+11:57 when AI became really things I've
+11:59 attended those as well as an
+12:01 employee yeah so I'm just wondering like
+12:03 how did you manage to get into these
+12:07 companies is it because
+12:09 you like did you need to do anything
+12:11 special or it was kind of obvious and
+12:14 they said okay like we see that you've
+12:16 been doing search with for so much time
+12:19 like come to us work oh it it wasn't
+12:22 that simple actually I mean if I talk
+12:25 about from uh for for Lucid Works um
+12:27 actually one of the support Engineers
+12:30 was in my class the course that I
+12:32 mentioned that the one that I designed
+12:33 and delivered for almost two and a half
+12:35 years so he was in my class and he
+12:37 reached out to me that you know I've
+12:39 joined this company and I feel like you
+12:41 would be a great fit because the way you
+12:42 describe things it would be amazing for
+12:45 our clients to know how things are
+12:47 really happening in the background it
+12:49 was a pretty long process to be honest
+12:51 it was like eight long meetings and they
+12:53 grilled me on um every different aspect
+12:56 of uh solar and Lucine in terms of
+12:58 performance and uh you know like the
+13:01 application Level and everything and
+13:03 then finally I got in definitely was a
+13:05 very accomplishing feeling so just
+13:07 having the credentials of teaching a
+13:09 course is not enough because they really
+13:11 want to test that you know oh yes ins
+13:13 and outs absolutely like they're
+13:15 consultant Consultants right so they
+13:17 need to make that you do that like from
+13:20 what you said it's very helpful to teach
+13:24 courses because your students eventually
+13:27 join companies and then they always
+13:30 remember the the teachers and then they
+13:32 can and I would be I would be candid to
+13:34 tell you that uh when I started teaching
+13:37 the first course u in 2013 or 14 if I
+13:41 remember correctly I mean I started in
+13:44 2008 and when I was teaching in
+13:46 2014 it was really hard because there
+13:49 were people in my class who were like uh
+13:51 pioneers of java applications and they
+13:53 were asking me really low-level
+13:55 questions about okay so you're
+13:57 describing faiting like how exactly
+13:59 would it work I mean can you tell me
+14:01 like the low level of how faiting really
+14:04 works like in a disc or in Ram and what
+14:07 exactly do you mean by doc values for
+14:09 example so it's a cumer index it's
+14:11 something that I cannot get away with so
+14:14 they used to grill me and I used to
+14:15 really feel like oh my God this is like
+14:17 really taking my uh all my energy and I
+14:20 used to prepare for almost like 2 three
+14:23 days before for that three-hour class on
+14:26 on a weekend so definitely I think that
+14:29 really pushed me going too far with what
+14:32 really needed and I was digging into the
+14:34 resources and definitely using Lucid
+14:36 works for a lot of my content
+14:37 preparation because at that point in
+14:39 time there was no stack Overflow or
+14:41 popularity of uh such uh searches and U
+14:45 you know like the reading material so I
+14:47 was always looking up to Lucid works for
+14:49 you know different content and I was
+14:51 like how is it like you know if I could
+14:52 work with such an organization so that
+14:55 definitely had my um you know all my um
+14:58 dreams and uh kind of expectations that
+15:01 I would work with this company so
+15:03 definitely a very accomplishing moment
+15:04 and I think the similar is for the open
+15:06 source connections as well because when
+15:09 I moved on I realized that uh maybe
+15:12 achieving good search isn't enough
+15:13 unless you can explain what is the good
+15:16 I mean you need to describe good in the
+15:19 parameters of the kpis the business kpis
+15:21 and I think that's what I got to know
+15:24 from open source connections and I think
+15:26 I also got uh brilliant opportunity to
+15:29 contribute on a lot of Open Source um
+15:31 tools and projects so I've been
+15:34 contributed on most of their projects
+15:36 that they have and the're very uh
+15:38 welcoming as well and I think the very
+15:40 structured approach to um you know
+15:42 address the relevancy and uh the search
+15:44 quality aspect of the search so I think
+15:48 they are the uh people who coin the term
+15:51 relevancy and the relevancy of Engineers
+15:54 and they have a lot of courses and lot
+15:56 of content around it so again great blog
+15:59 post and I've been contributed on that
+16:01 too so definitely and I think I I am
+16:05 taking that uh Legacy that I learned all
+16:08 of that uh from them and I'm trying to
+16:11 apply some of that as well to my new
+16:12 companies I've started working with
+16:14 quadrant recently as a Dev relations
+16:17 manager and hopefully that I could uh
+16:19 benefit all my learnings um in my new
+16:22 role and uh because we're on the topic
+16:24 of also search I think uh one thing that
+16:27 stood out to me on quadrant is that U if
+16:31 um I have an existing search engine I
+16:33 mean I could still you know experiment
+16:35 with vectors definitely I always say
+16:38 this out um beforehand that don't be
+16:41 Smitten by stuff because it looks cool
+16:43 it has to be very much you know um like
+16:46 implied by your use case so everyone
+16:49 doesn't needs Vector definitely and uh
+16:53 you need to have definitely uh some sort
+16:55 of uh you know investigation into if
+16:57 your use cases is fit for vectors so if
+17:00 yes then and quadrant is a vector
+17:03 database right yes that's a vector
+17:05 database or vector search engine if we
+17:07 can say so I think uh in the word of
+17:11 everything being SAS based I think it's
+17:13 it's pretty uh decent you know
+17:15 proposition to go for they are pretty
+17:18 amazing because I also worked on rust in
+17:20 2017 so have um um basic you know L lot
+17:25 of trust in um
+17:27 rust
+17:29 it's written in Rust right that's
+17:31 correct yes yeah so we had a a demo from
+17:35 CER I think he still at quadrant right
+17:39 yes correct so he gave a demo maybe a
+17:41 year ago and then I asked okay it's like
+17:46 elastic surge but for vectors and then
+17:47 yeah it WR in r i i I would agree
+17:51 actually that was also my first kind of
+17:53 you know like the occurrence when I
+17:55 started using quadrant that um it's uh I
+17:59 mean the apis and uh the console is very
+18:02 driven by elastic search I'll be honest
+18:04 I mean if people love elastic search
+18:05 they would definitely love quadrant only
+18:07 that it's more scalable and because I
+18:10 have been always you know the advocate
+18:12 of Open Source so I mean all all my
+18:15 previous projects um be It Solar Lucine
+18:19 um elastic search or open search even
+18:22 because that was the last projects that
+18:23 I were working on I mean I've been the
+18:25 advocate of Open Source and sometimes
+18:27 you know because we used to work with
+18:30 the clients people used to be confused
+18:32 as to you know if I should be using
+18:33 vectors inside solar because I think if
+18:36 we talk about uh putting vectors in your
+18:39 existing system definitely it comes
+18:40 along with a lot of um pain in terms of
+18:43 uh you know having uh to make changes
+18:46 into your config and then you know um
+18:49 iterations for um ingesting U your um
+18:52 index um items and then obviously
+18:55 configuring like a wrap around how these
+18:58 uh you know results would be served
+19:01 definitely it all starts with like what
+19:03 exactly do you want to achieve with
+19:04 vectors so if that is what you want to
+19:07 do I would recommend that you should
+19:09 check out you know quadrant because you
+19:11 don't need to check touch your existing
+19:13 search engine because it can stand
+19:14 parallel to any existing search engine
+19:17 and it can natively provide you know
+19:19 firstand suppot for vectors only so and
+19:22 then the nature of being scalable and uh
+19:25 very kind of you know plug-and playay
+19:27 sort of uh way of vectors it doesn't
+19:30 really ask you to bring your text search
+19:32 into the stack which is like you can
+19:34 keep using your text search whichever
+19:37 stack you prefer and for vectors use
+19:39 quadrant um in the parallel so that's
+19:43 definitely like uh one of the perks that
+19:45 I feel like your existing application
+19:47 isn't really Disturbed you don't need to
+19:50 process everything else and you can
+19:52 already kind of bifurcate from your uh
+19:54 messaging queue and put your vectors
+19:56 into quadrant
+19:58 so I'm just wondering so I can know that
+20:01 there is support for Vector search in
+20:04 postgress for example then there is
+20:05 support for Vector search in elastic
+20:07 search oh yeah also solar also open
+20:10 search yes all of have the support for
+20:12 vectors we support that and then correct
+20:15 it fans out to all the products that U
+20:18 use Lucine and yeah and then at the end
+20:22 you can also have a standalone Vector
+20:25 database exactly so when should we like
+20:28 let's say we already have an existing
+20:30 solar installation mhm which supports
+20:33 hopefully it's one of the latest
+20:35 versions and it's support Spector search
+20:37 so when do we need to go with solar or
+20:39 elastic search or when do we need to
+20:41 look for a standalone database so I
+20:45 think that's a good question and I think
+20:47 uh because um I've given uh several
+20:50 talks about you know using vectors
+20:52 inside solar elastic search before and
+20:55 um I mean open search also supports L uh
+20:58 vectors as well so that talk was
+21:01 basically oriented behind like people
+21:03 need to dump their existing um systems
+21:05 and you know move to one of these Vector
+21:07 search engines or vector databases so
+21:09 that was not really the case I mean if
+21:11 your case is uh something like for
+21:14 example if you can afford to have
+21:16 reindexing if you uh so because I've
+21:19 worked in some of the projects where
+21:20 reindexing is not really an option like
+21:23 there are businesses who cannot really
+21:25 reindex their data set and I think this
+21:27 is a very classic use case where you
+21:29 could use quadrant because you're not
+21:31 really kind of uh you know disturbing
+21:33 anything that's up and running there
+21:35 would be no downtime for the customers
+21:37 the existing customers they can still
+21:38 keep on using your existing sour
+21:40 solution whereas for the experimentation
+21:43 with vectors and trying to figure out if
+21:45 that is what uh is going to work for
+21:47 your solution you need vectors and I
+21:50 think this is where quadrant kind of
+21:51 comes into the picture and I think there
+21:54 is a new blog post released today I
+21:56 think andreid probably uh you know
+21:58 posted that on LinkedIn um I think it's
+22:01 a very uh sort of U apt uh description
+22:05 about when would you know quadrant kind
+22:08 of you know um comes into the picture
+22:10 and when it is not uh you know relevant
+22:13 so definitely like if you're looking for
+22:15 ease of operations and you cannot
+22:17 reindex um I think quadrant is um one of
+22:20 the solutions to go for because I mean I
+22:23 loved it that uh they're not even
+22:25 pushing customers to like we can do Tech
+22:28 search for you we can do this for you we
+22:30 can you know train models for you or we
+22:32 can do n number of things for you we
+22:34 just do vectors the way focused in I in
+22:36 my understanding when you're focused on
+22:38 one thing because I have been focused on
+22:40 one thing for last 15 years I would say
+22:42 you turn out really
+22:43 good because you're not really
+22:45 distracted by so many different things
+22:47 you're not distracted by you know
+22:49 supporting multiple languages uh Tech
+22:52 search or so on so forth so I would I
+22:56 would say like that's definitely worth
+22:58 try so as somebody who has worked for 15
+23:02 years in this area you probably started
+23:05 with I don't know implementing creating
+23:07 indices for
+23:08 Lucine uh in something similar to m redu
+23:11 without Hadoop being there uh and
+23:15 now it has changed significantly since
+23:17 then so now we talk about lamb Spectre
+23:20 databases and I'm just wondering like
+23:24 for you in these 15 years what were the
+23:26 major
+23:28 things that happen that you saw a lot a
+23:31 lot I mean it's it's it feels sometimes
+23:35 nostalgic sometimes if I look back um at
+23:38 the stuff that I did at my first company
+23:40 it feels like I probably did that in my
+23:42 previous life because it's it's so
+23:45 different now because initially my
+23:47 challenge was I was working with solar
+23:49 1.2 and Lucine 1.7 I think they both
+23:53 were different packages so making sure
+23:57 like they work together together it was
+23:58 heck of a thing because it literally
+24:01 like trained me out that how do I make
+24:03 what kind of configuration uh you know
+24:05 would I put in that these two you know
+24:07 start talking to each other and you know
+24:09 doing the stuff that I really need to do
+24:12 and uh from there on they become they
+24:15 became like one project in GitHub and
+24:17 now they're separate again and from the
+24:20 uh feature point of view if we would see
+24:24 like after the introduction of more of
+24:26 natural language processing sort of uh
+24:29 you know um application features
+24:32 definitely the the focus was more on
+24:34 understanding the queries and then
+24:36 synonyms and stemming and you know
+24:39 lemmatization and then promoted searches
+24:42 um all of these you know came into the
+24:43 picture as well later part of the um
+24:47 kind of era and then personalization was
+24:50 definitely like another thing so
+24:52 initially the personalization was
+24:53 limited to like um you know configured
+24:56 searches or configured brand and inside
+24:58 the configuration they were very uh
+25:00 still stagnant um not changing unless
+25:03 someone changes them from there on
+25:05 people wanted you know them to be
+25:06 changing every week or based on the
+25:09 customer demand based on what's popular
+25:11 so popularity index so things were
+25:13 becoming more kind of you know measure
+25:16 and then apply them into your searches
+25:18 driven and then personalization uh
+25:21 became from like oh what two items were
+25:24 like kind of you know sold together we
+25:26 have to promote this brand we have to
+25:28 have like recommendations which are like
+25:31 if this person is interested in this
+25:32 product what is it that we should
+25:34 recommend more of uh obviously uh
+25:37 machine learning came into the picture
+25:38 then um learning to rank became a thing
+25:41 so the ranking and sorting kind of got
+25:44 affected with that and now we see that
+25:46 it's it's all about large language
+25:48 models and um definitely I mean I've uh
+25:52 if I was to say I mean we're definitely
+25:55 moving towards um more and more Rich
+25:59 features with every passing day and now
+26:02 that U chat GPT um which obviously
+26:05 turned one year old now I think things
+26:08 have um have um you know changed even
+26:11 further because everyone wants a chat
+26:14 bot or a Search bot on their business
+26:17 like people don't want to be limited to
+26:19 token based searches anymore people are
+26:22 not satisfied with the synonyms or you
+26:25 know rules or search management per se
+26:27 people want more people want their
+26:30 search engine to talk like chat GPT and
+26:33 you know action based and then so many
+26:36 other things I mean I don't know I hope
+26:38 I I um was able to answer that cover
+26:41 some of the things I might have you know
+26:43 Miss very difficult to to kind of
+26:45 squeeze 15 years into like five minutes
+26:48 right yeah that's but also like I
+26:51 remember so when War to appeared I was
+26:55 uh at University
+26:58 and uh everyone was like ah have you
+27:01 seen that like you know King minus uh
+27:06 what was that King minus one plus plus
+27:08 woman is Queen oh yeah yeah yeah oh
+27:10 that's a very classic example yes it's
+27:13 it's like one of the example which uh I
+27:16 saw in almost all the presentations that
+27:18 I saw um and even now I think I saw very
+27:22 latest I think presentation which was
+27:25 back then like okay you have this bunch
+27:27 of
+27:28 and then you have this gen
+27:29 implementation right right how do you
+27:31 keep the vectors how do you use it and
+27:33 then like Implement like sensitive
+27:36 hashing or what s l vectors in in
+27:40 principle like if you look at I mean
+27:41 it's it's not something that appeared
+27:43 out thin here recently I mean it's it's
+27:45 been a thing since 1970s and if you look
+27:48 at burn to the basis right so now you
+27:51 just it's so difficult to choose it at
+27:53 the base back then back then like you
+27:55 would hm okay I have vectors h
+27:58 what do they do with them now yeah yeah
+28:00 right
+28:02 exactly but yeah I think they were
+28:05 around for quite some time right like
+28:07 yeah yeah they've been around like since
+28:09 I mean I would say they're older than me
+28:12 if I was to say there I mean the concept
+28:15 is older than me and I think maybe the
+28:17 limitation in terms of the infra was one
+28:20 of the things that kind of held them
+28:22 back and now that we don't have any
+28:23 limitations in terms of you know
+28:25 infrastructure we have um G use and
+28:28 whatnot so I think that has basically
+28:30 enabled made them fast enough that they
+28:32 can be used in production today so
+28:35 that's definitely like something that
+28:37 has enabled it so but the concept has
+28:39 been around and if you look at the
+28:41 inverted uh index is also kind of
+28:43 vectors it's just that it's it's in the
+28:46 manner of zeros and ones so a spars
+28:49 index is also a kind of you know Vector
+28:51 index it's just that the the dimensions
+28:54 are going to be dictated by the number
+28:55 of tokens in your index but it's
+28:58 obviously kind of a vector
+29:01 so I mean if you if you look at it
+29:04 that's that's one way to kind of you
+29:06 know picturize I mean I'm I'm very um
+29:09 photographic in terms of my imagination
+29:12 so it was easier for me to think of like
+29:15 okay it's not a new thing that I'm doing
+29:16 it's just that you know we're putting uh
+29:19 kind of more um emphasis on the vectors
+29:22 being generated through another model
+29:24 that has the understanding of these
+29:26 tokens and you know how the context of
+29:30 uh these um you know tokens together
+29:32 would dictate into a pattern or a
+29:36 vector yeah my master thesis was about
+29:39 search too and I remember reading about
+29:43 reading this paper about Vector spaces
+29:45 which was from 70s I think correct yeah
+29:49 if not earlier I think it was 70s
+29:52 right Vector another paper from '90s
+29:57 from
+29:59 1990 about um applying SVD to correct
+30:06 yes yes absolutely so I have also linked
+30:09 some of these uh papers to my uh
+30:12 presentations so yeah I was also pretty
+30:16 researchy about how did this come into
+30:19 like U existence and what was the early
+30:22 on research about it because definitely
+30:25 I was trying to put on my data scientist
+30:28 or you know kind of researchy had on
+30:31 like what more can I find out about it
+30:34 so I mean I would agree I would confir
+30:37 yeah but now we have these things like
+30:40 rocks that we mentioned that I mentioned
+30:42 at the beginning when I was reading your
+30:45 bio maybe you can tell us what this what
+30:48 this what is rock what is it R yeah rag
+30:53 is the abbreviated form of so R A stands
+30:56 for ret retrieval augmented generation
+30:59 and as the name suggests obviously there
+31:01 are two important pieces in here
+31:03 retrieval and
+31:05 generation so what uh we tried to do and
+31:08 as part of like my previous project with
+31:10 the open source connections uh we were
+31:12 working with the client with um you know
+31:16 um applying U retrieval augmented
+31:18 generation in um production for one of a
+31:21 very big research companies and um the
+31:25 basic idea is because I said before that
+31:27 everyone wants like a chat GPT kind of
+31:29 an assistant on their website now so
+31:31 retrieval augmented generation kind of
+31:33 enables it so what it does is that uh
+31:35 obviously if you're using plain llms in
+31:37 your search Imagine like your question
+31:39 being sent to llm which has very limited
+31:42 knowledge based on the data it was
+31:44 trained on it would respond and
+31:46 sometimes uh you would see that the
+31:48 responses are not correct so it would
+31:50 make up things and uh these are
+31:53 generally uh termed as hallucinations or
+31:57 I would say like in a more black and
+31:58 white term that this response is not
+32:00 correct there are no basis to kind of
+32:02 you know justify that this response was
+32:04 correct so that's when the augmentation
+32:08 of your uh data with the existing llm
+32:11 kind of you know took birth so what we
+32:14 do is that when we are uh sending the
+32:16 query to the llm we provide the context
+32:20 with the uh client data so this was the
+32:24 augmentation of the context of uh the
+32:27 data um and this helps basically the
+32:30 large language model or for example the
+32:32 openi model to have a context of uh this
+32:36 is the question being asked and this is
+32:37 the context I need to answer this
+32:39 question on and there are less chances
+32:41 of uh the answer being a hallucinated
+32:44 answer so that is what I was working on
+32:48 one of the things because um I've had
+32:50 the background of machine learning as
+32:52 well is that uh and and we have measured
+32:55 everything and I think in in my opinion
+32:58 and um this is a kind of something that
+33:01 also you know business folks need is
+33:03 that if there's something that you have
+33:05 worked on and cannot be measured I mean
+33:08 it it doesn't kind of you know uh fits
+33:10 together I mean uh you need to define
+33:13 the good so the good in this case was
+33:16 was really hard the evaluation of such
+33:17 systems are really hard because of the
+33:19 nature of the problem and we need to
+33:22 have evaluation to justify so many
+33:24 different things like a go no-go
+33:26 decision because there is the reputation
+33:27 of the company at stake there's the you
+33:30 know effort of the team at stake and we
+33:32 don't want to spoil all of that so we
+33:34 definitely need to have the evaluation
+33:36 to uh make sure that whatever we're
+33:38 shipping out is worth shipping out so
+33:41 definitely that part evaluation kind of
+33:44 covers and we also need to evaluate
+33:46 Things based on the business kpis
+33:48 because now that we have access to kpis
+33:50 the key performance indicators we need
+33:52 to see that uh if it you know matches
+33:54 with the business um kind of Matrix as
+33:57 well so the evaluation of such system
+34:00 kind of you know becomes really hard
+34:02 because the main I would say the
+34:05 underlying feature of llms is the
+34:08 diversity of the responses so it's not
+34:11 simple as like the search evaluation
+34:13 because we don't know what it would
+34:15 respond so in case of for example um one
+34:18 thing that I did not or probably forgot
+34:20 to mention is that out of these 15 years
+34:23 I've given that to e-commerce search
+34:25 because that's where lot of you know
+34:27 implementations and projects were coming
+34:29 up so U I've had a very rich you know
+34:32 e-commerce experience and things are
+34:34 also you know I I somehow you know love
+34:36 e-commerce uh because the uh you know
+34:39 results are fast you see the you know
+34:42 response and you see the um kind of you
+34:45 know customer adaptability to the new
+34:47 features very quickly and uh it's
+34:50 somehow it's very driven by U if you
+34:53 know certain query needs what kind of
+34:55 you know response so so um what I was
+34:58 trying to say earlier was that uh in
+35:01 case of for example e-commerce we have a
+35:02 very clear structure in terms of this is
+35:05 the query this is the the response or
+35:07 this is the response document and this
+35:09 is how much this is relevant so we had
+35:12 access to the um trios for example so we
+35:16 knew that this query would give certain
+35:18 number of answers there was concept
+35:20 around precision and recall but rag is
+35:23 much more complicated because llm itself
+35:26 s you know need to give you diverse
+35:29 responses like a human being so if you
+35:31 ask a question from a human being
+35:33 there's a good chance that um it would
+35:35 respond back in a different words or in
+35:37 different you know way to the questions
+35:40 so this is what we wanted kind of with
+35:42 LMS as well and if something is not
+35:45 responding with fixed just want
+35:48 to yeah I just want to try to summarize
+35:52 what rck is before we go into cation
+35:56 this is interesting
+35:57 topic so let's
+36:00 say we have a podcast right so there are
+36:03 16 Seasons yeah Nine episodes in each
+36:06 it's quite a lot of information right
+36:07 and for each podcast we have a
+36:10 transcript and let's say if we want to
+36:12 build a chat application based on top of
+36:15 these transcripts right so we have in
+36:18 slack we have a lot of questions about
+36:20 per year and other things and I'm sure
+36:23 for like 90% of questions 95% of
+36:25 questions there is answer somewhere from
+36:28 one of the guests and then it would be
+36:31 cool to build it's actually a nice idea
+36:34 maybe this this is what I actually built
+36:37 I mean oh my God I actually never open
+36:40 sourced it I I open source a very small
+36:42 rag demo um but yeah I think I am
+36:46 cooking definitely something up which
+36:48 would be about rag evaluations and also
+36:50 you know rag application hopefully you
+36:52 could use that so yes uh that also
+36:55 involved um The Whisper um from open AI
+36:59 because that also involved
+37:01 podcast just so not spelling beans about
+37:04 it but yes I mean I was using transcript
+37:07 and storing uh the vectors of uh this
+37:10 podcast transcript into the vector
+37:12 database but the point being that again
+37:15 another I'm just curious like uh with
+37:18 the podcast right so we can do it and
+37:20 then we can build a chatboard on top of
+37:23 that right but the problem with open a
+37:27 it has no idea about this podcast
+37:29 hopefully it has but like if you ask a
+37:32 specific thing like I don't know about
+37:34 search it might reply but not
+37:37 necessarily with the information I want
+37:39 so I want to use for example our
+37:41 conversation right now right right but
+37:43 it might just come up with some answer
+37:48 and we don't know if this answer is good
+37:50 right and also timed it's also timed
+37:52 like it it is timed for the time when it
+37:55 was trained
+37:57 so there is a block there is a cut off
+38:00 from for the information so it doesn't
+38:02 knows about any recent events so for
+38:04 example earlier we used to see with
+38:05 openi that my response uh set is limited
+38:08 until I think June 2021 something of
+38:11 that sort so anything that must have
+38:13 happened after it uh has to be
+38:15 explicitly provided but if you provide
+38:18 that to open or the chat GPT for example
+38:21 it gives marvelous responses so we need
+38:24 to find a way to provide actually tell
+38:26 chat GPT or GPT 34 whatever that look we
+38:32 have this podcast transcripts and this
+38:34 is the question from the user like how
+38:37 can we use the transcript to answer the
+38:40 question and then our our goal becomes
+38:44 uh the problem we solve is like from all
+38:46 these transcripts and from like each
+38:48 transcript has like I don't know 50
+38:50 vision of stuff there yeah like how do
+38:53 we actually find the right thing like
+38:55 how do we find the answer to this
+38:58 question in all in this database and the
+39:00 answer is
+39:03 we somehow voriz them right and this is
+39:06 yeah so I think that's that's what uh
+39:09 yeah so that's what I also figured out
+39:11 that there are different kind of you
+39:13 know I mean I kind of prepared and I
+39:14 wanted to save it for my blog though but
+39:17 it's kind of you know four levels of the
+39:19 evaluation for example we need in the
+39:21 rag evaluation so what happens is
+39:23 obviously depends on the model that
+39:25 you're using so model has to be driven
+39:27 by for example how General it should be
+39:30 or how domain specific it should be the
+39:32 second being obviously on how the data
+39:36 has been ingested there are several
+39:38 different you know statistics around it
+39:40 for example uh how have you um prepared
+39:43 the vectors for um the the podcast for
+39:47 example so what is the chunk L how how
+39:51 do we how would we go about preparing it
+39:53 so like you can ingest the entire
+39:55 article right or you can just ingest
+39:57 every sentence or you can go with
+39:59 paragraphs but how to select correct so
+40:02 depends on like again the user
+40:04 experience so what you want to deliver
+40:06 so if you don't want the user to be
+40:09 redirected to like oh this is the
+40:10 podcast where you would find the answer
+40:13 that's definitely not the approach that
+40:14 you know businesses wants they want
+40:16 exact thing to be given to the user that
+40:19 this is where you answer is like a very
+40:21 specific answer this is where chunking
+40:23 comes into the picture so which is why
+40:25 you need to invest a little bit effort
+40:27 into how you ingest these uh podcast
+40:29 transcript this is where it comes in the
+40:32 picture like the model that you've used
+40:34 what is the context length or the token
+40:35 length that supports so definitely we
+40:38 need to also provide like U when we
+40:41 going to chunk the entire podcast
+40:43 transcript like how much overlap should
+40:46 it have because for example um I may be
+40:49 referring to u a lot of things that I
+40:51 might have introduced initially as bold
+40:54 and then I would be referring to it them
+40:57 they and obviously llm would not really
+41:00 know like what exactly is it what
+41:02 exactly is they what is them so
+41:04 definitely the the overlap is is of very
+41:07 very uh big importance in that case and
+41:10 how much overlap does it needs we need
+41:12 to have an experimentation platform for
+41:14 that similarly we need to have like
+41:16 chunking strategy some of that obviously
+41:18 uh Lang chain has enabled so a small
+41:21 kind of demo chat bot you can build with
+41:23 the Lang chain people have been
+41:25 discussing that all over over LinkedIn
+41:27 if L chain is kind of production ready
+41:29 though what's L chain oh Lang chain is
+41:33 oh that's that's kind of interesting
+41:35 question uh I'm not sure if you've not
+41:38 seen it but
+41:41 Lang hasn't oh okay so um I mean I would
+41:46 say like from my limited view and that's
+41:48 what I've used Lang chain for is that uh
+41:50 it provides you with the different
+41:52 connectors in which your information can
+41:55 be retrieved or information can be um
+41:58 absorbed from your um you know Vector
+42:01 database or your search engine for
+42:03 example and then it also kind of you
+42:06 know sits between your retrieval and
+42:08 your generation kind of you know um
+42:11 stages in the architecture so is when we
+42:17 ask the B something and then it needs to
+42:20 find the answer so this is the retrieval
+42:23 part right so retrieval part retrieval
+42:26 part is more like so for example if you
+42:28 visualize there is a query and there is
+42:31 a you know a search engine in between is
+42:34 what we put in the chat that's the
+42:36 question that's the question yes for
+42:38 example I am a product analyst and I
+42:40 want to become a data scientist what
+42:42 should I do right that's the query
+42:44 that's the question that the user puts
+42:45 in the chat bot correct correct and then
+42:48 next with this so what happens next is
+42:51 obviously this query would either go
+42:53 directly against uh language model or u
+42:57 in our case we would want this query to
+43:00 be sent to the um um our uh Vector
+43:05 search engine so this definitely what
+43:08 this would do is that your query is
+43:09 going to be converted into vector and
+43:12 your entire query is going to be
+43:13 converted into a vector search query and
+43:15 this is going to be sent to the vector
+43:16 search engine of your choice so this
+43:19 Vector uh database would have the chunks
+43:22 based on the chunk strategy based on the
+43:25 length of the chunk that you've used
+43:27 based on how much of the overlap do you
+43:30 need how many chunks do you want to
+43:32 retrieve based on the number of
+43:34 responses you want to have so as you can
+43:36 see that like there are lot of you know
+43:38 different things that you can experiment
+43:40 so we as of now assume that we know
+43:43 whatever we want in this case and we
+43:45 retrieve maybe for example say five
+43:47 chunks five relevant pieces of
+43:49 information that would help chat GPT to
+43:52 answer these questions so what we do is
+43:54 then comes our prompt
+43:56 The Prompt that uh basically is sent to
+43:58 the openi that you are probably a
+44:01 research um analyst or research
+44:03 assistant and this is your context and
+44:06 this is your query now can you answer
+44:08 this question and then you can Define as
+44:10 many guard rails like if you don't know
+44:12 the answer please don't blabber please
+44:14 don't hallucinate you know don't just
+44:16 say that I don't know I I need more
+44:18 context to answer this question and then
+44:21 you basically process an answer a
+44:23 relevant answer which is prepared by
+44:25 summ ization of these chunks and it's
+44:28 given to the any user so obviously you
+44:31 can also provide maybe you can spice it
+44:33 up by providing references to the
+44:35 related documents where this answer was
+44:37 prepared from which is kind of you know
+44:39 addressing to the explainability of uh
+44:41 the response so that uh there's uh
+44:45 something like uh for example people
+44:47 want that the AI responses should be
+44:50 explainable so by attaching the
+44:52 resources we could always you know say
+44:54 that um this is where the relevant
+44:57 information would be found so there
+44:58 would be some sort of like trust from
+45:01 the user that is built into the system
+45:02 in that case but uh as I was saying
+45:06 evaluating such response is very uh kind
+45:09 of difficult because a user could have
+45:11 several different questions U it could
+45:14 be about a particular domain it could
+45:16 not be about particular domain and um
+45:19 obviously we are not blessed that we
+45:21 would have you know access to like the
+45:23 golden set or the Judgment uh data
+45:26 and uh this is where the evaluation kind
+45:29 of you know becomes really important
+45:30 like we we need to break it down into
+45:32 multiple you know layers of evaluation
+45:35 so you could individually evaluate the
+45:37 model that you're using to generate the
+45:40 embeddings that go into the vector
+45:42 database you could individually evaluate
+45:44 the chunking strategy and all the
+45:46 factors that are related to how the
+45:48 content is going to be split and then
+45:50 you can also evaluate like the retrieval
+45:53 strategy like if uh four chunks are are
+45:56 enough or five chunks are enough or we
+45:58 need 10 because the responses are mostly
+46:01 uh from the assistant as like I don't
+46:03 know I need more context so that all
+46:06 kind of you know um drives us into a
+46:09 more metric driven system and then
+46:12 obviously we can have you know end
+46:13 to-end evaluation as well if the
+46:15 responses were correct or not maybe
+46:17 using something like NPS net promoter
+46:19 score thumbs up or thumbs down which
+46:21 could be used to broadly identify if the
+46:23 system um is addressing purpose if
+46:26 you're address and answer uh questions
+46:29 from the users so thumbs up stands for
+46:32 like I was happy with the answer thumbs
+46:34 up I was not happy with the answer uh
+46:37 there are again um ways in which we
+46:40 would want it to be adapted into a
+46:42 pipeline like a chatbot pipeline or we
+46:45 could also do it in an offline way so I
+46:48 think my blog is probably going to cover
+46:50 both of these strategies I'm looking
+46:52 forward to to that so I just want to
+46:54 again go back to the example exle about
+46:57 a chatbot with the podcast so let's say
+47:00 we built that so we somehow split the
+47:04 article into chunks then we ingest each
+47:07 Chunk we create a vector for this Chunk
+47:09 we store it in a database quadrant for
+47:12 example and then the user comes with a
+47:15 question then we turn this question
+47:17 again into a vector and then we use the
+47:21 the vector the query to query the
+47:23 database right correct then comes the
+47:26 retrieval part this is a vector quy then
+47:29 there's the vector that we're going to
+47:31 retrieve the content yes based on the
+47:33 vector similarity we are going to
+47:35 retrieve the content part and this
+47:36 populates the context of the prompt so
+47:40 we include this in the prompt so I I am
+47:43 a data analyst I want to become data
+47:46 scientist and then this is a question
+47:48 and then answer this question using this
+47:51 chunks of yeah based on this context yes
+47:55 so that's the augmentation part right so
+47:56 first theal we retrieve it from the
+47:59 database then we augment our prompt and
+48:01 generation is we send the entire thing
+48:04 to the llm and then it generates the
+48:06 answer right that's that's correct and
+48:09 then we were talking about evaluation
+48:11 because like right now I have this rock
+48:14 system with all the podcast transcripts
+48:18 but now I want to see like if it's
+48:21 working fine I can of course go ahead
+48:23 and test it do like three four five
+48:27 queries and then okay like it kind of
+48:28 makes sense but then there are so many
+48:31 moving parts right so y can use
+48:34 different chunking strategies I can use
+48:36 different llms I can use different
+48:38 databases right so the the number of
+48:42 like the amount of combinations of these
+48:44 parameters is just insane right but I
+48:46 need to somehow come up with an
+48:49 okay think that works right yep Y and
+48:52 then here we were talking about four
+48:54 levels of fation like at each level but
+48:56 like for me like for example if I want
+48:58 to build the same thing what's the
+49:00 easiest way to evaluate that this system
+49:03 is kind of
+49:05 working the easiest way yeah like do I
+49:09 use something like crowdsourcing or like
+49:12 is
+49:13 there I think crowd sourcing could be
+49:15 one depends on like um also like how big
+49:18 is your team definitely that's that's
+49:21 like a major criteria because ultimately
+49:24 um I was actually going to recommend a
+49:25 bir
+49:26 um like human in the loop um because
+49:29 ultimately everything needs to go
+49:31 through a a human because I think the
+49:35 systems aren't really um well equipped
+49:38 enough although there are strategies in
+49:40 which it involves um prompting to
+49:42 evaluate the responses as well so for
+49:46 example what I found was um preparing uh
+49:49 maybe uh 30 questions and the sample
+49:52 responses based on the um different kind
+49:55 of domains my chatbot is going to be
+49:57 used for and all of these 30 questions
+50:00 would have uh one response so what I
+50:03 could use is I mean as as part of like
+50:06 more black and white Matrix the one that
+50:08 we prefer in the search systems like
+50:10 Precision recall necg mrr so on so forth
+50:15 uh we would use Vector similarity like
+50:17 how much of my response was similar
+50:21 again we're using semantic similarity
+50:23 here we can again use um vectors for
+50:26 that so based on these 30 questions and
+50:29 30 questions you know I evaluated
+50:31 against uh my rack pipeline um and also
+50:34 they have the fixed responses already
+50:36 given into the
+50:38 table um how much of my response was uh
+50:42 similar to the response that I had said
+50:44 is the good response to this question so
+50:48 again we are still playing in the word
+50:50 of
+50:51 vectors yeah so there's uh the book
+50:54 mentioned human in the loop it's a book
+50:57 from Manning right yeah Manning yes by
+51:00 Robert monar correct correct that's the
+51:02 one
+51:05 yes yeah like I know about this book and
+51:09 dat do club we have a thing called book
+51:11 of the week where we invite authors to
+51:13 answer questions about the book oh wow
+51:16 back then Robert was busy working on the
+51:19 book and he told me yeah let's get in
+51:21 touch later when the book is published
+51:24 so apparently it has has been published
+51:26 in July
+51:29 2021 quite some time
+51:31 ago indeed indeed I was I was surprised
+51:34 I was surprised when you said like he
+51:36 was working on the book okay interesting
+51:38 yeah it was some time ago yeah so the
+51:41 community is like three years
+51:43 old right yeah maybe it's time we talked
+51:46 with Robert maybe we can invite him to
+51:48 the podcast too sounds like a Fab idea
+51:52 yeah and as rest of the podcast I would
+51:54 definitely be on that one too I would
+51:57 love to interact with him because um I
+52:00 find this this book is like really
+52:01 amazing okay yeah so made a note to
+52:06 contact but um so I noticed that we have
+52:09 a question the question is from tasas is
+52:12 asking is there any application of
+52:14 vector databases for machine learning
+52:16 for instance could it be used for making
+52:21 training of deep learning models faster
+52:23 or maybe there are some other
+52:25 applications of the DAT basis for
+52:26 machine learning that's actually a good
+52:29 question I would say because there's a
+52:31 feature so I'm not sure how much of
+52:33 these SP do you follow but then
+52:35 recommendation is one thing that uh is a
+52:38 machine learning feature and Vector
+52:40 databases are like pretty amazing at
+52:44 addressing this because again we can use
+52:47 vectors in many different forms we can
+52:49 use Persona as a vector and we could
+52:52 have the recommendation and you know
+52:54 have the personas um and uh maybe based
+52:58 on the um Persona similarity of uh two
+53:02 people we could have recommendation of
+53:04 the products one of the other things um
+53:07 that uh I saw is is something that has
+53:10 been a recent kind of uh change is that
+53:13 recommendation itself has a very changed
+53:15 meaning as you were discussing about the
+53:17 changes so um now people are more kind
+53:21 of you know driven towards
+53:23 recommendation in a certain you know
+53:25 session instead of storing the
+53:27 recommendations for each user because a
+53:30 user could have several queries 100
+53:31 queries so these recommendations have to
+53:35 be updated per session and this is where
+53:38 Vector uh database especially quadrant
+53:40 because I know this is supposed to be
+53:42 launched today or maybe in this week um
+53:45 is going to be one of the changes where
+53:47 we can build the um recommendations
+53:51 based on every click that the person
+53:53 provides and this is where vector
+53:55 database is going to be amazing because
+53:58 these uh recommendations would be
+54:00 updated on fly based on every single
+54:02 click of the user that's really yeah so
+54:07 I know there's this classical approach
+54:09 to recommender systems which is
+54:11 collaborative filtering so you take like
+54:14 all the users you take all the items so
+54:16 then you have this large Matrix and you
+54:18 somehow like reduce the dimensionality
+54:21 of this so at the end what you have is
+54:22 like vectors for users vectors for
+54:25 uh items and then what you can do is
+54:28 just take all the items all the vector
+54:30 for items put them in a vector database
+54:33 right and when the user
+54:34 comes or maybe you can pregenerate it
+54:37 like basically for each user you quate
+54:40 the vector that way right and then you
+54:42 get like commanders right right and then
+54:44 like there are many different problems
+54:46 with this approach right because like
+54:48 right so reranking was another way in
+54:50 which Vector databases again could be of
+54:53 help so what what you mentioned is so
+54:57 with coll collaborative filtering so we
+54:59 would need to like redo the whole redo
+55:01 the whole thing right and then the
+55:03 vectors we do from another training will
+55:06 be super different from the first
+55:07 training and what you mentioned right
+55:09 now with clicks updating posessions like
+55:11 there are other right techniques you can
+55:13 use that and it doesn't need any fine
+55:16 tuning it doesn't need so in case of
+55:17 like the cross encoder method as well
+55:19 for the reranking I think you can
+55:21 completely skip that part and you can do
+55:23 it on the fly so that actually reminds
+55:25 me of something really funky from
+55:28 2016 um like the first time when the
+55:31 recommendation was introduced by Amazon
+55:32 and I remember that there was a talk
+55:34 given by someone um from Amazon who
+55:37 apparently bought a toilet seat and he
+55:39 wrote to Amazon that you know I had one
+55:41 toilet in my B in my U apartment I
+55:44 bought one toilet seat I don't need any
+55:45 more toilet seat just get this toilet
+55:47 seat recommendation out of my feed I
+55:49 don't need any more toilet seats so I
+55:51 think the recommendations have also you
+55:53 know come a long way from then and I
+55:56 think the session based so for example
+55:58 like Tik Tok users or any video platform
+56:00 users like the recommendations are
+56:02 basically built on the Flies what what
+56:04 is uh like kind of a next
+56:07 thing so which means uh okay so I bought
+56:11 my toilet seat and now I'm searching for
+56:13 something else yep and then you can see
+56:16 that in my last sessions I was checking
+56:19 I don't know pencils right and then you
+56:21 see okay like I have checked this pencil
+56:24 that pencil so this person is probably
+56:26 interested in pencils let's just show
+56:28 him a ton of pencils right instead of
+56:31 seat that I bought earlier right right
+56:33 right and that's that's very I would say
+56:36 like uh the Sens approach searching for
+56:40 pencils right now right so that's what
+56:42 I'm focused right now so it makes sense
+56:43 to the context actually becomes becomes
+56:46 U the thing yeah makes sense yeah but
+56:50 probably Amazon is doing something
+56:51 smarter so they can know now things are
+56:56 they currently order things that you
+56:58 order and never want to order again like
+57:01 let it right so for example like I like
+57:03 peanut butter and I use Amazon for
+57:07 ordering that and like they know that I
+57:10 might run out of peanut butter so this
+57:12 how about you buy it again so they know
+57:15 when they run out of peanut butter so
+57:17 then they kind of push this
+57:19 recommendation to my face and when I
+57:21 just bought peanut butter I don't see
+57:22 this recommendation there's something
+57:23 else so they they are very smart so they
+57:26 know when I will need so they probably
+57:29 have like a ton of different vctor
+57:30 databases for sure oh there are like lot
+57:33 of different permutation combination
+57:34 which is why I love e-commerce because
+57:36 it's like so happening all the time
+57:39 there's something coming into the um you
+57:42 know existence there's always a new user
+57:44 need and that really pumps me about
+57:47 about the
+57:48 field so if somebody wants to learn
+57:51 about classic information
+57:53 retrieval before like all this vectors
+57:57 would you say this introduction to
+57:59 information Ral is a good starting point
+58:01 or there's something else I I would say
+58:03 so and I would highly recommend you
+58:04 reading a relevant search book as well
+58:08 yeah that's that's definitely like one
+58:10 thing and I think we have tons of blogs
+58:13 and I think whatnot relevant search the
+58:16 relevant search
+58:18 covers is it about elastic search of
+58:20 solar I don't remember it's elastic
+58:21 search I think it's very search engine
+58:23 agnostic um in terms of the book which
+58:25 is why I recommend it so you can use and
+58:29 the there would be examples that come
+58:30 along with the book U hopefully also
+58:32 solar driven as well uh mostly elastic
+58:35 search but I think the idea is to
+58:37 communicate the uh thought process and
+58:39 the analy of the concepts and I think
+58:40 that are delivered pretty well with the
+58:42 relevancy guy himself you know who the
+58:45 relevancy guy is Duke right duck Turnell
+58:48 yeah
+58:50 yeah uh he was he did uh he gave it Talk
+58:55 data talks Club some point at some point
+58:58 so yeah it was very nice to have him
+58:59 actually yeah uh so then uh when it
+59:02 comes to more recent developments like
+59:04 all this rock stuff is there good
+59:07 resource you you mentioned you're
+59:08 working on a blog post yep but is there
+59:12 like is there something else you would
+59:14 recommend to check if somebody wants to
+59:16 learn more about this stuff I think uh
+59:19 from the evaluation point of view or
+59:22 just in general also from like about
+59:24 rock
+59:25 oh well I think
+59:28 um line chain has been like I mean the
+59:31 the the site itself is like plenty of
+59:35 different things that they offer like
+59:37 different ways in which rack could be
+59:38 achieved with different search engines
+59:40 so that's definitely I would I would
+59:42 recommend reading about it plus uh
+59:44 there's a new resource where I would be
+59:46 contributing my blog on Vector Hub so
+59:49 that's like another place that I can
+59:50 recommend uh you're checking out um
+59:53 great content we're working on on a lot
+59:55 more interesting content as well and uh
+59:58 what else I think nothing else comes to
+1:00:00 my mind probably already uh like
+1:00:04 relevant search link chain documentation
+1:00:06 then Vector Hub so please send us the
+1:00:08 links I'll do that like whenever you
+1:00:11 publish something new we're also
+1:00:13 interested to know that and I assume
+1:00:16 every time you publish something you
+1:00:18 also make a post about that on LinkedIn
+1:00:20 right so we can follow you there try to
+1:00:22 do that to dat yeah yes so please make a
+1:00:26 post when we publish that in evaluation
+1:00:28 um
+1:00:30 article and with that I think um yeah
+1:00:34 that's all we have time for today so
+1:00:36 atita thanks a lot for joining us today
+1:00:38 and it was
+1:00:39 pleasure now I know that your name is a
+1:00:42 pend Drome I never it never occurred to
+1:00:44 me to actually think about that you're
+1:00:47 wondering how many guess mission
+1:00:49 accomplished how many guests we had in
+1:00:52 the past with the pandr name I don't
+1:00:54 think we have
+1:00:56 I'll check that okay good that we had
+1:00:59 the first guest with the palindrome
+1:01:01 first and last name and yeah I think
+1:01:04 that's all for today so thanks everyone
+1:01:05 for joining us today and thanks atita
+1:01:07 for sharing your experience with us
+1:01:10 thank you so much for having me and
+1:01:11 thank you everyone who's been listening
+1:01:13 today thanks have a nice day by

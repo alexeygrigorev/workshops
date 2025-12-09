@@ -1,0 +1,950 @@
+Processes in a Data Science Project
+
+0:02 um i'll start with an introduction
+0:04 so thank you very much for coming to
+0:06 this event so this event is brought
+0:08 to you by data talks to the club this is
+0:10 uh
+0:11 one of our weekly events um we
+0:15 um have multiple uh events per week
+0:18 of different kinds so on tuesday we have
+0:21 more technical events so technical in a
+0:23 sense that it's more
+0:24 uh like a workshop a webinar with a
+0:28 presentation so we will soon next week
+0:31 have a talk about serverless machine
+0:33 learning with aws
+0:35 and then the week after that we will
+0:37 have a talk about
+0:38 a new service from aws called aws glue
+0:41 batch
+0:42 data brew
+0:45 also we have uh less technical events
+0:48 like we have today usually we have them
+0:50 on friday
+0:51 last week i had to cancel and move it to
+0:54 today
+0:55 where it's more like a discussion
+0:58 and yeah it doesn't have any slides so
+1:02 it's
+1:02 more like a conversation and then this
+1:05 is something that we put as a podcast
+1:07 so today we'll talk about processes for
+1:09 machine learning projects
+1:11 and tomorrow we'll talk about building a
+1:13 data science team
+1:15 then we have another talk next week
+1:18 is about recruiting processes and how to
+1:21 stand out in this recruiting process
+1:23 as a data scientist
+1:26 and for today we will use slido for
+1:30 questions so first i'll
+1:34 i'll talk about the processes and then
+1:38 you can ask questions during the
+1:40 conversation
+1:42 and then we'll i'll spend some time
+1:44 answering these questions
+1:45 i'll send the link now
+1:52 to chat
+1:59 so please feel free to use slider for
+2:02 asking your questions
+2:06 and
+2:08 um let's start
+2:11 so just let me
+2:15 open my notes
+2:34 so thanks again for joining um so today
+2:37 we'll talk about processes in a machine
+2:38 learning project
+2:40 and by processes i mean how everyone
+2:43 can work together in one team on the
+2:45 same project
+2:46 in order to deliver value um
+2:50 last week we talked about roles in the
+2:53 team
+2:53 and this talk is a bit related so
+2:56 maybe first let's quickly recap what we
+2:59 talked
+3:00 previously previously we talked about
+3:03 roles in the team
+3:04 and we talked about the product manager
+3:06 the main responsibility of a product
+3:07 manager is making sure that the team is
+3:09 doing the right thing
+3:11 then in a team we have a data analyst so
+3:13 the main responsibility of a data
+3:15 analyst is
+3:16 understanding the data and explaining
+3:19 the data
+3:19 then we have a data scientist whose
+3:21 focus is more on predicting
+3:23 than explaining and more engineering
+3:28 than data analysts then we have uh
+3:31 data engineers so data engineers focus
+3:34 that
+3:35 on making sure that both analysts and
+3:37 data scientists and everyone else
+3:39 have access to the data they need to
+3:43 to do their analysis to train their
+3:46 models
+3:46 and they have tools to access it then we
+3:48 have machinery engineers
+3:50 they are working together with data
+3:54 scientists they are taking what
+3:55 the models they build and they make sure
+3:57 the these
+3:59 models are scalable they are built in
+4:00 web services and then finally we have
+4:03 s3 satellite reliability engineers or
+4:06 um now often referred to emma lops
+4:09 engineers
+4:10 they are focused on reliability of the
+4:12 solution they do monitoring and these
+4:14 kind of things
+4:17 and we all in a team need to
+4:21 to work together let's say we have a
+4:23 problem we want to solve
+4:25 and having a process to work is a good
+4:29 idea
+4:29 so if we don't follow a process project
+4:32 may fail
+4:33 and what is worse we first can spend a
+4:35 lot of time working on a project
+4:38 and then it will fail and we would
+4:40 invest a lot of time in this project
+4:42 and it would be all in vain because this
+4:46 project wasn't useful and then having a
+4:47 process
+4:49 we can iterate faster we can make sure
+4:51 that we're actually solving the right
+4:52 problem
+4:54 we can check our assumptions uh we can
+4:57 check our ideas and we can
+4:59 kill uh projects that are not promising
+5:02 earlier
+5:03 and not waste a lot of time on them
+5:06 so for that there are many different
+5:08 methodologies
+5:10 for organizing machine learning projects
+5:12 uh they are all relatively similar
+5:14 and today i'll talk about one of them
+5:16 which is called
+5:17 crisp dm uh which stands for
+5:20 cross-industry standard process in data
+5:22 mining
+5:24 and it's a relatively old
+5:28 methodology it was created by ibm
+5:31 in 90s and back then data science was
+5:34 called data mining
+5:36 things were different back then but
+5:37 surprisingly um
+5:40 the the framework they developed still
+5:42 applies to data science projects today
+5:44 with some corrections but the general
+5:48 process
+5:49 is still about it today and
+5:53 a process in crisp dm consists of six
+5:56 steps
+5:57 six steps the first step is business
+6:00 understanding
+6:01 so we want to understand the the
+6:04 business problem we want to set
+6:05 objective
+6:06 we want to uh really make sure that
+6:09 the problem we're solving is worth
+6:11 solving once we have that we go to the
+6:14 next step which is data understanding
+6:16 and in at this step we analyze the data
+6:20 that is available
+6:21 and we decide if the data is good enough
+6:23 or not and if we need to get some
+6:26 new data then we have a data preparation
+6:28 step
+6:29 so once we analyze the data we uh found
+6:32 out if uh
+6:34 all the data we need is there we need to
+6:37 transform this data in a way that it can
+6:39 be used for a machine learning model
+6:42 now once we have that once the data is
+6:44 transformed and
+6:45 it's in a way that is usable for a model
+6:49 we go to the next step which is modeling
+6:52 and this is actually training the model
+6:54 taking
+6:55 our favorite libraries like scikit-learn
+6:57 or whatever
+6:58 and actually training in the model once
+7:00 we train the model we want to evaluate
+7:02 it
+7:03 so we want to look at the results check
+7:05 it and see
+7:06 if the model performs according to our
+7:08 expectations according to what we
+7:11 defined as an objective at the first
+7:13 business understanding step
+7:15 and finally we have a step of deployment
+7:17 so if our model meets the expectations
+7:19 we roll out the solution to all the
+7:21 users
+7:24 we'll now take a closer look at all the
+7:27 steps
+7:28 and see what exactly happens at each of
+7:30 this tab
+7:31 and to illustrate it better we'll again
+7:34 use
+7:35 the same example we used previously on
+7:36 our previous conversation
+7:39 and that was an example of classifying
+7:42 the category of listing so imagine that
+7:45 we have an online classified website
+7:47 where people come to sell things they
+7:50 don't need and where people
+7:52 come to buy things they need so
+7:55 the website like craigslist
+7:59 ebay or linux avito there are many
+8:02 different websites like that
+8:04 and imagine you have you have an iphone
+8:06 and you want to sell this iphone
+8:08 so what you do is you go to this website
+8:10 you create a listing
+8:12 and people who are interested in this
+8:14 iphone contact you
+8:15 and eventually buy buy this iphone
+8:19 so what we want to do is we want to help
+8:21 these sellers create listings faster
+8:24 so for that we want to develop a model
+8:26 that uh
+8:27 classifies a list link automatically
+8:29 suggests a
+8:30 right category so when you create an
+8:32 iphone it says okay this
+8:34 should belong to the mobile phones
+8:35 category
+8:37 uh yeah and we work in a
+8:39 cross-functional team
+8:40 so we work in a team that is responsible
+8:42 for this posting flow
+8:44 for the forum that uh users use to
+8:47 create listings
+8:48 and we have uh many different
+8:52 team members in this team we have a
+8:53 product manager we have back-end or
+8:55 front-end
+8:56 engineers we have a data analyst a data
+8:58 scientist a data engineer
+9:00 a machine learning engineer and a site
+9:02 reliability engineer so all the people
+9:04 we described previously
+9:06 all work together in this team and they
+9:09 work on all the services related to
+9:11 this posting flow and let's see how we
+9:15 can solve this problem
+9:16 using crisp detail so the first step as
+9:19 i mentioned
+9:19 is business understanding step so this
+9:22 is the step where we want to really
+9:24 understand the problem and we want to
+9:26 decide if we actually want to invest our
+9:28 time in solving this problem
+9:30 so let's say somebody comes to our team
+9:33 usually they come to a product manager
+9:35 and they say okay we have this problem
+9:37 can you please
+9:38 always solve it for us and typically a
+9:42 product manager
+9:43 doesn't immediately agree
+9:46 they don't just say hey yes we will
+9:48 solve it
+9:49 first they need to do some analysis to
+9:52 actually commit to this
+9:54 so typically what they say is okay yeah
+9:56 this
+9:57 sounds like a good problem to solve
+9:59 let's think about this
+10:00 and then together with data and lists
+10:02 they try to quantify the size of the
+10:04 program
+10:05 so what they need to understand
+10:08 here at this step is
+10:12 let's say how many users complain about
+10:13 this problem to how many
+10:15 users this problem of you know
+10:18 automatically suggesting a listing
+10:19 is actually a problem then how many
+10:23 sellers cannot finish posting an item
+10:25 because of that so when they
+10:26 cannot figure out what is the correct
+10:28 category they simply stop
+10:30 and they
+10:33 leave the site so how many users have
+10:35 that problem
+10:37 and how many items end up in in the
+10:39 wrong category
+10:40 so we want to really have a number
+10:43 that explains how big the problem is
+10:45 before solving this before jumping in
+10:48 in solving this problem and then
+10:52 we need to to measure this so measuring
+10:55 and the number of users who cannot
+10:56 finish
+10:58 this process of posting can be tricky
+11:01 because it's not always easy
+11:03 to understand why they decided to stop
+11:05 uh
+11:07 not to drop from posting was it because
+11:10 they couldn't select the right category
+11:11 or was it because there was some other
+11:14 problem
+11:14 so it involves talking to the user
+11:16 understanding what
+11:18 are the difficult steps there in the
+11:20 posting so doing user
+11:21 interviews which is of course a good
+11:23 thing but here maybe it's not so easy to
+11:26 use it as a number as a metric
+11:30 but well then let's say we talk to
+11:31 moderation team and moderation team is
+11:34 somebody who looks at these listings and
+11:37 accepts them because they're good or
+11:40 they
+11:40 do some corrections so these are people
+11:42 who manually inspect all these listings
+11:45 so we go to this team and talk to them
+11:47 and find out that
+11:48 10 of listings actually end up in a
+11:51 wrong category
+11:52 so now we have a number so we know that
+11:54 okay like
+11:56 actually quite big 10 percent and what
+11:59 we also
+12:00 can learn from them that they have to
+12:02 spend a lot of time to actually
+12:04 move this item items to the correct
+12:07 categories so these moderators
+12:08 go there and manually change the
+12:10 category so the listings end up in the
+12:13 in the right place and this is how we
+12:17 can measure
+12:18 the size of the problem we can see okay
+12:20 moderators let's say they spent an
+12:22 average 10 hours per week
+12:23 doing this it means that one quarter of
+12:25 daytime they are spending
+12:28 solving this problem manually and this
+12:30 is a big number
+12:31 right so we immediately can see that
+12:34 this problem is worth solving and then
+12:37 um
+12:38 so we have a number we can quantify the
+12:40 size of the problem
+12:42 and we need to come up with uh with some
+12:45 objective so what what we want to
+12:46 achieve so let's say if we develop a
+12:48 model
+12:49 that automatically suggests a correct
+12:52 category
+12:53 what do we want to see at the end let's
+12:54 say what we want to see is that
+12:56 we reduce the number of hours moderators
+12:59 spent on manually reassigning the
+13:01 category by 50
+13:03 so this is a perfect objective so we can
+13:05 already see the size of the problem
+13:07 and we see what we want to achieve so
+13:10 then moderators will spend
+13:12 four hours less doing this manual work
+13:15 than previously and i can
+13:16 focus on more important things so the
+13:20 problem is important we have a way to
+13:23 measure the size of this problem and we
+13:25 have a way to
+13:27 measure the success so we know if we are
+13:30 moving in the right direction or not
+13:32 so we have the objective uh
+13:35 and also during the this step what we
+13:37 want to do
+13:38 is uh want to understand if machine
+13:42 learning is actually the right tool to
+13:44 solve this problem
+13:45 so typically uh here uh pm
+13:48 and data analysts would talk to data
+13:50 scientists and ask
+13:52 hey what do you think like is it
+13:54 actually like is
+13:55 machine learning is the right tool for
+13:57 solving this problem or not
+13:58 and then for this particular problem
+14:01 like when they talk data scientists
+14:02 would say yes actually machine learning
+14:04 can be used
+14:05 to suggest the right category for a
+14:07 listing so
+14:09 at these steps of to look up so
+14:12 they decide that machine learning is the
+14:15 right tool
+14:16 then they quantify the size of a problem
+14:18 and they set an
+14:19 objective so they want to reduce
+14:23 the number of times moderators spent on
+14:25 manually reassigning the
+14:27 items by 50 percent and
+14:31 as you can imagine business
+14:32 understanding is an important step here
+14:34 so we want
+14:35 to make sure that the problem is
+14:37 actually
+14:38 worth solving so the time we spent on
+14:40 developing this model in time we spent
+14:42 training this model and predictionizing
+14:44 it is worth spending
+14:47 and this is an important step because
+14:49 often uh what happens is we
+14:52 spend time on things that are not
+14:54 important and if we invest more time in
+14:56 understanding and quantifying the
+14:58 problem then
+15:00 is better so once we have that
+15:03 we have the next step which is data
+15:05 understanding step
+15:07 and we want to understand why what kind
+15:10 of data
+15:10 we have available for us so what we can
+15:13 use to solve this problem
+15:15 usually at this step data scientists and
+15:18 data analysts work together together
+15:20 they look at the data they see what is
+15:23 there what is already available
+15:25 and what kind of data is actually needed
+15:27 for solving this problem
+15:29 so let's say for our problem we need to
+15:32 know the
+15:34 title of the listing so let's say for us
+15:37 could be
+15:38 iphone then we need the description uh
+15:41 maybe we'll send neat images
+15:43 um and we need also the correct category
+15:46 so when moderators
+15:47 took a look at the listing and they
+15:50 decided okay
+15:50 this listing actually belongs to the
+15:53 correct category
+15:54 or they say okay it doesn't belong to
+15:56 the to do the correct category
+15:57 the correct category for iphone is
+16:00 mobile phones
+16:02 so we take a look at the data and we
+16:05 find out that we have information about
+16:07 the listing so we have a title the
+16:09 description
+16:10 but access to images is difficult and
+16:13 now we need to decide okay
+16:14 do we really want to now invest time
+16:17 into
+16:18 figuring out how to access images or
+16:21 this information is enough
+16:23 and then we can say okay like title and
+16:25 description is enough we can also talk
+16:27 to the data scientist to see
+16:29 if it's actually possible to um
+16:33 to use this information to solve the
+16:35 problem or we need something extra
+16:37 um and yeah since images maybe are not
+16:41 crucial
+16:41 uh a crucial part here maybe it's
+16:44 actually a good idea to go without
+16:45 images
+16:47 and just use title for solving this
+16:49 problem
+16:51 and if we have all the data
+16:54 in
+16:57 our data lake then data engineers don't
+16:59 need to do anything else
+17:01 but let's say if some of the data is not
+17:03 accessible
+17:05 it needs for example let's say if we
+17:07 want to get
+17:08 decisions from moderators but this data
+17:11 is not easily accessible then data
+17:12 engineers
+17:14 will need to work with other team with
+17:16 the moderation team to actually make
+17:17 sure that
+17:18 the data can be used for our models so
+17:21 the data is there in our data lake
+17:23 and then we can easily access this data
+17:29 so when we make sure that all the data
+17:31 we need is there
+17:33 we go to the next step which is data
+17:35 preparation step
+17:36 and this is the step where we prepare
+17:39 the data so usually the data engineer
+17:43 works on making sure the data is there
+17:45 so
+17:47 they can work with the moderation team
+17:49 to
+17:50 to move the data from the moderation
+17:53 team to our team
+17:54 uh to access it uh so it involves
+17:56 setting up data pipelines and
+17:58 doing things like that and
+18:02 yeah when we're just starting with the
+18:03 project it uh often makes sense to
+18:06 iterate to move fast to iterate quickly
+18:09 um so maybe
+18:10 the version of the pipeline that we have
+18:12 that the data engineer develops doesn't
+18:14 need to be
+18:16 great it doesn't need to be perfect so
+18:19 as long as we
+18:21 can have a way of getting data from the
+18:23 other team and use it for solving our
+18:25 problems
+18:25 it's good the goal at this stage is to
+18:28 have the data we need
+18:30 for a model easily accessible
+18:34 ideally in a single table so we have all
+18:37 the features that we need
+18:39 we have one column with target so in our
+18:42 case
+18:42 the features are title description and
+18:44 the target is the correct category
+18:47 and we have if we have that then we go
+18:49 to the modeling step
+18:50 in the next step and this is actually
+18:52 the step when we
+18:54 train a model so
+18:57 as i said ideally the data is prepared
+18:59 in such a way that we
+19:00 do a simple select from our database and
+19:03 we have the data that we can simply put
+19:05 to our model
+19:06 and do model.fit or maybe do a bit of
+19:09 extra pre-processing
+19:11 um let's say in case if we have text
+19:14 then what we can do is we can
+19:17 do things like count actorizer or tf idf
+19:20 victorizer
+19:21 basically we need to do something with
+19:23 text in order to be
+19:25 able to use uh these things in a model
+19:29 this step we need to define some model
+19:31 evaluation metric
+19:32 so this is typically something like
+19:34 accuracy or precision or recall or f1 or
+19:37 auc like usual performance evaluation
+19:41 metric that we use for training a model
+19:44 for regulating models so these are not
+19:46 business metrics this is something we
+19:48 use internally as data scientists
+19:52 and often at this step it makes sense to
+19:54 come to first come up with a simple
+19:56 baseline
+19:57 uh even with before training the model
+20:00 so it can be simply coming up with rules
+20:04 saying that if iphone is in the title
+20:06 then the category is mobile phones
+20:09 and having a bunch of rules like that
+20:11 maybe this is already good enough for
+20:13 the different situation
+20:15 oh and then we can see okay
+20:19 what is the accuracy of this baseline um
+20:22 if the accuracy is really bad and maybe
+20:24 we need to invest a bit of time in
+20:25 training
+20:27 a slightly more complex model or maybe
+20:30 it's just like
+20:31 having a bunch of simple rules uh east
+20:34 enough at this step
+20:36 but the important thing here is we have
+20:38 some sort of way of measuring
+20:40 it so let's say we have accuracy and we
+20:43 see that this baseline
+20:44 is accurate enough to actually go to the
+20:47 next step
+20:48 and the next step is evaluation step
+20:51 this is when we want to see if the model
+20:54 we developed previously on the previous
+20:56 step
+20:57 actually meets the objective asset and
+21:00 in our example the objective was to
+21:01 reduce the time moderators spent
+21:03 on manually adjusting the category
+21:07 by 50 so what we want to see now is if
+21:10 the heuristic or a model we trained
+21:11 previously
+21:12 actually moves us closer to to this
+21:15 objective
+21:16 or actually it can
+21:19 we can meet this this objective
+21:22 so what we do is we integrate the
+21:24 solution we developed on the previous
+21:26 step
+21:28 and then evaluate it against a small
+21:30 traffic a small part of traffic so let's
+21:32 say
+21:32 we have all the new listings that are
+21:35 coming to us
+21:36 we can take five percent of all this
+21:38 traffic of all the listings
+21:40 and apply the model to them uh and see
+21:44 how users react and actually take a
+21:48 couple of moderators
+21:49 and uh put them on just working with
+21:52 this traffic
+21:53 while the this the rest of the team
+21:55 works with the
+21:57 remaining 90 of the traffic and then we
+22:00 can
+22:00 run it for a week or two and then see if
+22:03 actually
+22:04 this heuristic or this solution from the
+22:05 previous step
+22:07 uh actually meets us meets our
+22:09 expectation
+22:10 we can see that our
+22:13 target our business metric like whether
+22:16 we reduce it by 50
+22:17 by 25 percent or we didn't reduce at all
+22:20 so at this step we really evaluate
+22:24 our model and we see what to do next
+22:26 with this
+22:27 and typically there are a few possible
+22:29 outcomes so one outcome
+22:31 the project the solution meets our
+22:34 expectations
+22:35 so this is great which is deployed but
+22:37 there are other outcomes then
+22:39 one of the outcomes is it doesn't need
+22:42 expectation
+22:42 it doesn't meet the expectations and
+22:46 yes in this case maybe we just didn't
+22:49 know the problem well enough
+22:51 or our model if we
+22:54 first decided to go with a heuristic it
+22:56 wasn't good enough
+22:58 and we actually need to improve our
+23:00 model and then we
+23:01 go there and train a better model let's
+23:04 say using this time
+23:05 uh psychic learn and uh actually
+23:08 training the model
+23:09 and then redeploying it and again um
+23:11 using this uh
+23:13 five percent of traffic to you related
+23:15 or maybe they see
+23:17 we see that um yeah we cannot meet the
+23:19 objective at all
+23:20 like we're not moving it at all and then
+23:22 maybe it's
+23:23 time to say uh to stop working on this
+23:26 project and
+23:27 move on and do something else
+23:30 um and then
+23:34 let's say if it's not the case if we
+23:35 decide that
+23:37 we like the project the solution meets
+23:40 our expectations
+23:41 we go to the next step which is
+23:42 deployment and
+23:44 at this step we roll our solution to all
+23:47 the users
+23:47 so while previously we were doing this
+23:49 for half for part
+23:51 of the traffic now we applied to
+23:53 everything
+23:54 and here the focus is more on
+23:56 engineering part of machine learning so
+23:58 here we really need to make sure that
+24:00 our service is reliably scalable
+24:02 and when it it's hit with a hundred
+24:05 percent of traffic
+24:06 it is reliable it will not die because
+24:09 of that
+24:10 now and usually machine learning
+24:12 engineers uh
+24:13 work on that uh together with site
+24:16 availability engineers so they take care
+24:18 of infrastructure of all these web
+24:20 services
+24:21 of configuring monitoring alerting
+24:24 [Music]
+24:26 making sure it's reliable
+24:30 and yeah so what happens at the end of
+24:33 this step
+24:34 is we can call and we can say that our
+24:36 model is
+24:37 in production so it actually affects all
+24:39 the users
+24:41 of our platform uh and it works reliably
+24:45 and even if it's not a model but a
+24:48 heuristic
+24:49 we can see that it's already available
+24:51 so it's packaged in a web service
+24:53 which is deployed and then we can use
+24:55 this
+24:56 web service and the delayed so we again
+24:59 can go back to the first step which is
+25:02 business understanding
+25:03 and we can see how much we want to
+25:06 improve the model
+25:07 so we again have the numbers then we can
+25:09 have some guess
+25:11 how much we want to improve these
+25:13 numbers
+25:15 set another objective and then iterate
+25:18 this time training a model once we have
+25:21 a simple model
+25:22 let's say logistic regression then we
+25:24 can
+25:25 come back to adding two images and see
+25:27 okay what do we actually need to do
+25:30 to be able to use images in our pipeline
+25:32 in our model
+25:33 and then maybe train an image
+25:35 classification model
+25:36 to make our predictions more accurate
+25:40 so what we always need to keep in mind
+25:43 is a business objective
+25:45 and we uh like when making these
+25:48 decisions
+25:48 like okay do we want to train an image
+25:51 classification model we need to see
+25:54 if adding this extra complexity or
+25:55 fetching the images from somewhere
+25:57 training this deep learning model and
+25:59 productionizing this deep learning model
+26:01 does it really justify the the
+26:04 complexity so what we need to do
+26:06 is uh you know we need to have a way of
+26:10 calculating return on investment
+26:12 and see if if let's say we spent
+26:17 a few extra weeks or maybe a few extra
+26:19 months on developing this solution
+26:22 does it bring enough improvement over
+26:25 what whatever we have
+26:26 and if it doesn't then we can just work
+26:28 on something else because what we
+26:30 already have is valuable enough and it's
+26:32 already
+26:33 uh bringing value to our users
+26:37 yeah so yeah in our exp in my experience
+26:39 what we should do is uh
+26:40 we should start with a simple heuristic
+26:43 first
+26:44 like a rule a set of rules a set of
+26:46 counters uh something
+26:47 simple then we need to validate that
+26:51 this simple heuristic actually works and
+26:53 brings value so we do
+26:55 one iteration over this process
+26:58 and like the full iteration so we end up
+27:02 at least with evaluating phase and we
+27:03 see how it behaves and
+27:05 if the objective is met and then we
+27:10 can start making it more complex let's
+27:13 say adding
+27:14 proper machine learning adding more
+27:16 features
+27:18 perhaps using all these heuristics as
+27:20 features in a model
+27:22 and after we trade it for a couple of
+27:24 times um
+27:25 with a simple model and we see that
+27:27 there is uh room for improvement then we
+27:29 go with
+27:30 more complex models uh maybe we want to
+27:33 try something like
+27:34 uh nlp models uh
+27:37 like something with deep learning uh for
+27:40 nlp
+27:41 or for uh images then it's the right
+27:44 time to do that
+27:45 after we already have a simple baseline
+27:47 work in their introduction
+27:50 and yeah so also what we need to do
+27:54 before deciding to invest in these
+27:56 complex models
+27:57 is calculating this return on the
+27:58 investment we need to imagine how much
+28:00 time
+28:00 we need to spend on this and how much
+28:04 value it will bring and then decide okay
+28:05 does it really make sense to
+28:07 to do that or not and usually apm is
+28:10 doing that um
+28:17 i also wanted to talk a bit about the
+28:18 data collection
+28:20 so when i announced this event on
+28:22 linkedin um
+28:25 julian martinez wrote in comments that
+28:27 one of the hardest part
+28:29 hardest aspects in machine learning is
+28:31 labeling data correctly
+28:34 and he also added that few people talk
+28:36 about this and i think it's indeed the
+28:37 case so that's why i
+28:38 wanted to talk a bit more about
+28:42 data collection process so maybe
+28:46 it doesn't seem that crisp dm emphasizes
+28:49 this data collection but it's actually
+28:50 one of the
+28:51 steps uh this data understanding step
+28:55 includes this it's an important part of
+28:56 the data understanding step
+28:58 so at this step we analyze the data that
+29:01 we have
+29:01 in the company we see if all the data
+29:04 that we need is there or something is
+29:06 missing
+29:07 then if something is missing we need to
+29:10 understand how crucial this missing part
+29:12 is
+29:12 and if it's crucial then we need to
+29:14 invest some time and money in
+29:16 collecting this data set so let's say
+29:19 we we can decide that we need to
+29:22 acquire a new data set somehow maybe by
+29:25 investing
+29:26 uh time in building up a better
+29:29 infrastructure for
+29:31 data collection or maybe working with
+29:33 some third party
+29:34 provider to get the data labeled
+29:38 and uh tracking the quality of data is
+29:41 important so this is
+29:43 also what happens at this step at the
+29:45 data understanding step
+29:47 uh often we need uh usually
+29:50 data analysts do that they look at the
+29:52 quality of data and then they see
+29:54 if it's actually possible to make any
+29:57 sensible model from this data
+29:59 is this data good
+30:02 will our model be accurate if we train
+30:05 it on our data
+30:06 and what often happens here is um
+30:10 we just manually look at this data and
+30:12 see yeah
+30:13 if it's correct or not and if it's not
+30:15 correct maybe we should
+30:17 do something here um one trick that i
+30:20 know
+30:20 to check if data is not correct and
+30:23 actually finding the cases that are not
+30:25 not correct is we can train a model
+30:29 and then apply this model again on the
+30:32 training set
+30:33 and when we do this sometimes models
+30:35 will make
+30:36 a mistake and these mistakes
+30:39 this is usually uh models make
+30:43 mistakes because the data is not correct
+30:45 so then we
+30:47 can see where the model is making
+30:48 mistakes and then
+30:51 go and manually fix this in our training
+30:54 data
+30:57 yes this is all i prepared for today
+31:00 and if you have any questions
+31:04 so you have the link to slider in
+31:07 chat so let me share it again
+31:13 and now i'll share my screen and open
+31:16 slider
+31:26 so vladimir is asking isn't it better to
+31:28 check the relationship between business
+31:30 metric and data science metric before
+31:32 modeling rather than doing a b testing
+31:33 in the end
+31:36 it is indeed the case
+31:39 but so one thing you can do that of
+31:42 course but let's say
+31:43 if you don't have any model at all and
+31:45 you just want to start
+31:46 doing something so there is nothing you
+31:50 can do there
+31:50 except you know rolling out a simple
+31:53 thing to test
+31:54 how users react to this and if business
+31:56 metrics are moving
+31:58 but then of course when you already have
+32:00 a model and you want to improve it
+32:02 then at some point it makes sense to uh
+32:05 to do something uh like uh what vladimir
+32:08 is suggesting so basically
+32:09 let's say if we have a recommender
+32:12 system
+32:13 and then we train this recommender
+32:16 system and
+32:17 we see that the
+32:21 predictive performance of this
+32:22 recommender system in terms of some
+32:24 metric
+32:25 let's say mean average precision is i
+32:28 don't know 60 percent
+32:30 and then we can uh try to see uh
+32:33 to to link this 60 to a business method
+32:36 you can see okay
+32:37 60 uh mean average precision
+32:41 usually means this kind of
+32:44 let's say engagement from the users like
+32:46 as a business metric
+32:49 and this is indeed possible but we need
+32:52 to
+32:53 to have already a running model for that
+32:57 i hope i answered the question
+33:01 so if you want to ask a question so go
+33:04 to slider.com or use this qr code
+33:07 and then put dtc in the
+33:12 event in the code
+33:43 well if you have some questions later
+33:44 it's you can
+33:46 always ask them in slack
+33:50 yeah guess if no one has any questions
+33:52 right now
+33:53 we can um okay
+33:57 yeah thanks vladimir uh so vladimir is
+33:59 asking is
+34:00 crisp dm used in smaller teams i think
+34:03 the size of a team doesn't really matter
+34:06 and you don't have to follow christian
+34:08 by letter so you can adjust it of course
+34:11 by your needs
+34:12 and then if you think that some things
+34:16 maybe you want to have a special step
+34:18 dedicated to data
+34:20 collection you of course you can include
+34:21 this in your process
+34:23 and there are also many other method
+34:26 methodologies
+34:27 like crispy you can just if you google
+34:30 for
+34:31 machine learning processes you'll find
+34:33 many of them i think all of them are
+34:35 similar to crisp m
+34:37 and yeah i don't think the size of a
+34:40 team
+34:40 really matters here but having a process
+34:43 is always a good idea especially having
+34:46 this business understanding step
+34:49 because you don't want to spend a lot of
+34:51 time on
+34:52 solving a problem that is not important
+34:55 and then
+34:56 i think a really good thing in all these
+34:58 processes especially increased dm
+35:00 is emphasis on this business
+35:02 understanding step
+35:09 do we conduct uvs like things yes of
+35:12 course you can conduct vs luck
+35:15 that's probably the best way
+35:28 yeah thanks for coming so i'll make this
+35:31 uh
+35:31 video available on youtube uh i will
+35:35 also put it on
+35:36 anchor as a podcast and
+35:39 thanks for coming and tomorrow we will
+35:42 have another podcast
+35:43 we will talk with dattron about
+35:46 about building data science team so it's
+35:49 tomorrow at 12 o'clock european time
+35:56 see you thanks for coming
+36:03 goodbye

@@ -1,0 +1,1632 @@
+How to Build and Evaluate AI systems in the Age of LLMs
+
+0:00 This week we'll talk about um LLMs and
+0:03 AI like everyone else I guess.
+0:05 >> Uh but the difference between everyone
+0:08 else and us is that we have amazing Hugo
+0:10 joining us. Uh Hugo as you can uh you
+0:14 might have figured it out from our
+0:17 discussion is um returning guest uh also
+0:21 a teacher and um I have a video that
+0:25 I'll just read I guess. So, Hugo is an
+0:28 independent data and AI consultant with
+0:30 extensive expertise in the tech
+0:32 industry. He has advised and taught
+0:33 teams building AI powered systems
+0:35 including engineers from Netflix, Meta,
+0:38 US Air Force. That's quite far from
+0:41 Australia, right? You still
+0:45 can teach online these days, thank
+0:46 goodness, as well. So,
+0:47 >> yeah. So, you don't need to go to US to
+0:50 teach them. That's good. And he is the
+0:52 host of Vanishing Radiance. And I think
+0:54 your background um
+0:57 a hint about that
+0:59 >> uh and high signal I have no idea what
+1:01 high high signal is. That's probably
+1:04 >> you'll tell us. Uh podcast exploring
+1:07 developments and in data science and why
+1:09 do you need two podcasts by the way like
+1:12 how different?
+1:12 >> So one yeah so one vanishing gradients
+1:15 is really for like on the ground
+1:17 builders who want to know what they can
+1:19 learn today to ship product and maintain
+1:21 product. Um, and High Signal is a lot of
+1:23 conversations with people in leadership,
+1:26 um, and that type of stuff. So, we've
+1:28 had Michael Jordan on on High Signal and
+1:30 Fay Lee, Chris Wiggins, who runs uh,
+1:33 data scientists, data science at the New
+1:35 York Times. So, it's really intended for
+1:37 for for leaders um, who are also
+1:40 practitioners, but really thinking at a
+1:42 higher level.
+1:43 >> Which Michael Jordan are you talking
+1:45 about?
+1:46 >> The Michael Jordan of machine learning.
+1:47 So, from Berkeley originally, but lives
+1:50 in in Italy now. So, He has a book about
+1:53 machine learning, right?
+1:54 >> Yeah, exactly. He's done a lot of stuff.
+1:56 >> Is it called machine learning or
+1:58 >> Oh, I'd need I'd need to fact check
+2:00 myself.
+2:01 >> I I remember when I was uh studying
+2:04 machine learning was 2012 13. I was
+2:07 like, "Oh, Michael Jordan interesting."
+2:10 >> So that's how I But at the beginning
+2:12 like now um since um some time has
+2:15 passed since then I was like Michael
+2:17 Jordan what? And then I realized which
+2:20 one you meant.
+2:21 >> Yeah.
+2:23 >> Okay. So tell us about your career
+2:25 journey so far. So we remember um those
+2:29 who watched that you were doing deval.
+2:31 We also talked about um your teaching
+2:34 experience but um can you give give us a
+2:37 full picture?
+2:38 >> Yeah. Yeah. So my background is in uh
+2:41 basic research in biology, mathematics,
+2:43 physics and I was actually I lived in
+2:44 Dresden close to you for for a couple of
+2:46 years. There was a there's a Maxplank
+2:48 Institute for Cell Biology and Genetics
+2:49 there where I did part of my postto um
+2:52 over a decade ago.
+2:53 >> Decade ago. Okay.
+2:55 >> Yeah.
+2:55 >> Over a decade ago. So that's how you
+2:58 >> know a bit of German, right? So when I
+3:00 was eating, you said good and a bit.
+3:02 >> Exactly. Yeah. Um and I was I I I
+3:07 realized I needed to, you know, analyze
+3:10 large scale data that my colleagues were
+3:12 generating. So taught myself some
+3:13 Python. Jumped into what then were
+3:15 called IPython notebooks, not Jupyter
+3:17 notebooks um and the burgeoning PI data
+3:20 stack. So you know your pandas and
+3:22 mapplot lib and um at that point I don't
+3:24 even think pandas had a read CSV when I
+3:27 when I first first used it. It was the
+3:28 read CSV which really like started to
+3:30 superpower us. Um then I moved to the US
+3:33 was living in New York working at Yao
+3:36 University in New Haven. There were so
+3:38 many data science and machine learning
+3:39 meetups 2014 2015 in New York and
+3:42 hackathons. It was so so exciting um
+3:46 that I decided to to join industry and
+3:49 started interviewing and met these data
+3:51 camp guys. Joined as the fifth employee
+3:53 to build out the Python curriculum as an
+3:55 early employee wore many hats. So
+3:57 product data science curriculum
+3:59 marketing started a podcast there the
+4:02 the dataf frame podcast um which was
+4:04 super fun. And then during the pandemic
+4:07 I then worked at several companies PI
+4:10 data adjacent open source tooling turn
+4:12 vendor companies leading developer
+4:14 relations and that type of stuff. Then
+4:17 last year the space became too exciting
+4:20 for me to feel like working on one
+4:23 project was was was enough for me. So I
+4:26 went freelance. I'm doing consulting,
+4:28 advising, teaching, deveil um all across
+4:32 the board. So it's really an exciting
+4:35 time and I get to collaborate and work
+4:37 with so many wonderful people s such as
+4:38 yourself now.
+4:40 >> Yeah, that's really cool. Um so your
+4:43 journey and I think this is something I
+4:44 was asking you about previously from um
+4:51 you know your um experience in academia
+4:53 to doing de is pretty exciting cuz like
+4:56 for me doing deell sounds cool cuz you
+4:59 get to teach people and um receive good
+5:02 money for this cuz I'm originally from
+5:04 Russia and being a teacher there is not
+5:07 always um the most the best paid um
+5:10 profession. So for me uh like it's uh
+5:13 kind of cool that there is this uh
+5:16 opportunity for people to educate and
+5:20 also receive good uh uh money from it
+5:25 right from IC it sector so this is
+5:27 really cool but then since then uh you
+5:29 switched focus to consulting how did it
+5:31 happen so it's been a few years I guess
+5:34 so
+5:34 >> a year and a half no just less than a
+5:36 year and a half yeah
+5:37 >> so you were at de at outer bounds this
+5:39 is the
+5:40 Yeah,
+5:41 >> they are doing um how is it called like
+5:45 this orchestrator platform? Um
+5:46 >> metaflow.
+5:48 >> Flow. Yeah, I I remember it was flow but
+5:50 like with flow
+5:51 >> there are too many flows.
+5:52 >> Yeah, exactly. I was thinking which one
+5:54 of the flows it is. So it was metal
+5:56 flow.
+5:57 >> Metaflow. Exactly.
+5:58 >> Sever deell stuff there. And then what
+6:01 happened after that? Like you just
+6:03 decide okay I want to consult or
+6:05 >> Exactly. Yeah. Um I want to consult. I
+6:08 want to do a lot a lot of podcasting. I
+6:11 want to do education. I want to help
+6:12 people ship and build product in a
+6:14 variety of ways. Um in my consulting as
+6:16 well, I end up doing a lot of internal
+6:19 training. Um both on a technical side um
+6:22 in terms of teaching people how to
+6:24 leverage AI to to build software, but
+6:27 also being bubbled up to the executive,
+6:28 so doing executive advising and that
+6:30 type of stuff as well. So it is I mean
+6:33 it's a it's a really wild time and
+6:35 there's there's more work than you know
+6:38 I I can do myself. So it's it's
+6:39 definitely exciting.
+6:41 >> What kind of work do you do?
+6:44 >> Um so I mean it everything from you know
+6:47 all the consulting stuff to the advising
+6:50 and and the teaching as as well as as
+6:52 well as Devril. So
+6:55 >> consulting teaching I'm just taking
+6:57 notes for you for me to ask you later.
+6:59 consulting teaching uh deval what was um
+7:03 the last thing
+7:04 >> advisory stuff as well
+7:05 >> advisory what's the difference between
+7:07 advisory and consulting
+7:09 >> so in my consulting work I I really help
+7:11 people ship ship product and and build
+7:14 >> right
+7:15 >> yeah um
+7:16 >> so you basically like open your VS code
+7:20 do open AI stuff right so you actually
+7:22 code and consulting is and advisory is
+7:25 more like okay this is how you do this
+7:27 and now you go do it right
+7:28 >> yeah exactly and even advising stuff to
+7:30 nontechnical people about how to
+7:32 restructure your organizations around um
+7:35 AI tools and this type of stuff. Can you
+7:38 give an example like um why would they
+7:40 need to to restructure like to have data
+7:43 engineerings data engineers helping uh
+7:46 ML people or so actually for example
+7:49 let's say
+7:55 think a nontechnical team a marketing
+7:56 team where an individual's using you've
+7:58 got three individuals using chat GBT and
+8:00 they're each writing their own prompts
+8:02 and there are no uh synergistic effects
+8:05 um even something very basic like having
+8:07 a slack channel to begin with where they
+8:10 can share pro prompts or a version
+8:12 controlled system where people on a
+8:14 marketing team can share the prompts
+8:16 that work work the best for them. So
+8:18 even thinking about small technological
+8:20 tools that um allow people to do this
+8:24 stuff and how a team can work together
+8:26 with with AI systems as well. There's
+8:28 actually a lot of interesting research
+8:30 now on
+8:32 >> for example loss aversion. If you frame
+8:34 using um not using AI um as opposed to
+8:38 using AI will give you a win. If you
+8:39 frame it that um you know not using it
+8:42 can result in in in losses. This is
+8:44 something which can incentivize people
+8:46 uh more. One other thing um that is
+8:50 really tough at the moment is
+8:53 the most successful organizations in
+8:55 adopting uh new tooling like AI is when
+8:58 they carve out time and space for people
+9:01 to use it. Right? as opposed to you need
+9:04 to use AI for efficiency gains in
+9:06 addition to your full-time job. Um, so
+9:09 short-term loss in terms of carving out
+9:10 half a day a week uh for an
+9:12 organization's employees to experiment
+9:15 with AI individually and together, but
+9:17 medium to long-term gains. So, so these
+9:19 types of things.
+9:20 >> Are there people who still haven't
+9:22 tried?
+9:24 >> Um, a handful, not many, but okay. Yeah,
+9:28 but most people
+9:28 >> everyone is talking about this like it's
+9:30 amazing in two years two years ago I
+9:33 first was it two years ago around that
+9:35 somebody on our slack channel um shared
+9:39 a screenshot of CH GPT uh writing a poem
+9:43 about our machine learning machine
+9:45 learning engineering course and it was
+9:47 like wow really a poem about the course
+9:50 how cool is that and now everyone is uh
+9:54 using it right I think it was 3 years
+9:56 ago Oh, but like what whenever chat GPT
+9:59 became a thing like I saw this
+10:01 screenshot but now everyone my mom uses
+10:04 it but yeah my mom is pretty advanced uh
+10:07 but everyone
+10:08 >> so my mom uses it my dad hasn't though
+10:10 for example right
+10:11 >> so he he knows about it he's seen the
+10:13 screenshots the other thing is a lot of
+10:14 people who use it think it's just for
+10:17 conversations and I don't think your
+10:18 your audience is is like this of course
+10:21 but um a lot of people don't even
+10:22 realize you can use it for transcript
+10:24 summarization that you can use it for
+10:26 translation that you can use it for
+10:28 content generation that you can use it
+10:29 as a thought partner when generating
+10:31 ideas that you can use it to filter down
+10:34 ideas as as well. Um people don't
+10:37 realize that you can upload a document
+10:38 to it and get it to summarize that
+10:40 although you need to be careful cuz a
+10:42 lot of the time it will pretend to
+10:43 summarize it and not actually do it.
+10:46 >> Yeah, that's how I use it now. not
+10:48 necessarily for consumerization but
+10:50 sometimes let's say I need to do some
+10:52 basic data processing with Excel or for
+10:56 Excel files uh or with CSC files I would
+10:58 just upload and ask JGB hey hey can you
+11:00 do this and that for me and can you plot
+11:02 this graph
+11:04 >> now like I can do this myself but it
+11:06 saves so much time like I don't even
+11:07 need to um write code anymore like for
+11:11 these simple things that's cool
+11:12 >> exactly and getting out different
+11:14 formats I mean a lot of people don't
+11:15 realize you can generate CSV files with
+11:17 it or generate PDFs or whatever it may
+11:20 be. Um, helping people understand um,
+11:23 how to prompt as well. And I know this
+11:24 may seem basic, but a lot of people
+11:27 don't understand that if you give it a
+11:29 role and an objective, say you're a
+11:31 chief marketing officer and we're
+11:33 writing this campaign, which should be
+11:35 X, Y, and Zed, some something like that.
+11:38 Give it few shot examples, give it
+11:40 heruristics, right? All all of these
+11:42 types of things. Incredibly useful.
+11:45 >> Mhm. So let's say I want to create uh
+11:47 time timestamps for YouTube. I guess you
+11:50 also do this. What's the most effective
+11:51 prompt for doing that? So I have a
+11:53 transcript. So today we talk, right? So
+11:56 right now it's uh been seen to YouTube.
+11:58 After that we'll edit it slightly a
+12:01 little bit and then YouTube will
+12:03 generate um subtitles. So what I
+12:05 typically do with these subtitles is I
+12:07 copy them to um CHP and say, "Hey Chity,
+12:11 give me uh YouTube time codes." That's
+12:15 pretty much it. Like I just give it a
+12:16 format. So this should be time code,
+12:18 should be chapter name and that's pretty
+12:20 much it. Like how can I improve this
+12:22 process?
+12:23 >> Yeah, I'd say like specific things. So
+12:26 I'm going to tell you firstly I use
+12:29 Gemini um because Gem and I do it
+12:33 programmatically as well. I mean Gemini
+12:35 can get direct from YouTube and chat GBT
+12:38 cannot Google has blocked chat GPT from
+12:42 being able to uh transcribe
+12:44 >> that's why copy paste uh things
+12:46 >> so Gemini will take it straight in um
+12:49 heruristics like tell it do not
+12:51 hallucinate timestamps double check your
+12:55 work if it's long enough ask it to chunk
+12:57 it the these types of things but with
+13:01 videos I avoid all of that I actually
+13:04 use Descript. I don't know if you know
+13:05 that you of course you know this know
+13:07 this product, right? But it it generates
+13:09 incredible timestamps for me. Um and if
+13:12 it ain't broken, don't don't fix it. So
+13:14 whatever prompt they're using in there
+13:16 is it is so good.
+13:18 >> Mhm. Okay. So I use Loom for recording
+13:21 videos and the prompt they have for
+13:22 timestamps needs improvement. So
+13:24 >> yeah,
+13:25 >> how would you let's say if you're
+13:26 consulting a company like Loom uh where
+13:29 they would need to create time stamps
+13:31 like how would you would suggest them to
+13:33 approach this problem?
+13:35 >> I mean we'd look at the prompt and
+13:37 iterate on it several times and I think
+13:38 with this this type of type of prompting
+13:41 you'd say like have an eye for detail,
+13:44 right? You'd also want it to have
+13:45 timestamps that are relevant to your
+13:47 audience. Uh so for example for this
+13:50 podcast maybe it's data science folk,
+13:53 machine learning engineers, AI engineers
+13:54 and say the timestamps need to be
+13:56 relevant for these people, stuff that
+13:58 will get them interested um and that
+14:01 type of stuff. Then we'd want to make
+14:03 sure we have
+14:05 a subject matter expert in the loop to
+14:06 do some form of evaluation as well. And
+14:10 that's one of the most important things.
+14:12 So whoever used to actually write these
+14:15 timestamps or whatever, you know, get
+14:17 them involved or someone who knows about
+14:19 the content as as well and bootstrap it
+14:23 that way. The other way that we're
+14:24 seeing more and more success, and this
+14:27 will be in our conversation perhaps
+14:28 around agents and workflows is there's
+14:32 an um evaluator optimizer pattern where
+14:34 you can get an LLM to generate
+14:35 timestamps for example um and then you
+14:38 get then you give another one the
+14:39 timestamps and the script and give it a
+14:41 role um and uh tell it to evaluate it
+14:45 and give it a score and if it's less
+14:47 than a certain score uh pass it back.
+14:50 >> Okay. How does it work? Um so we have
+14:53 two um LLMs or two I don't know agents
+14:56 whatever one is you set evaluator the
+14:59 other one is optimizer right so the role
+15:02 of the evaluator is to look at the
+15:05 output and give it a score from I don't
+15:08 know 0 to 10 how good is this uh time
+15:10 stamps are and then we give
+15:11 >> yeah you can actually give it zero or
+15:13 one I I think is probably even better in
+15:15 this example pass or fail and give it
+15:17 feedback
+15:18 >> okay so then evalator should have
+15:20 multiple criteria Right. So let's say 10
+15:22 criteria. Each of them is uh pass or
+15:25 fail, right?
+15:26 >> Yep. Well, no, in the end you want to
+15:27 pass or fail cuz either you'll pass it
+15:29 and it goes to production or fails. Y
+15:32 >> I see. Yeah. So I I was just thinking
+15:35 how to best um do this cuz with time
+15:38 scripts uh timestamps, sorry, with these
+15:41 chapters, it's a little tricky because
+15:43 there are thousand
+15:45 correct answers and like even more.
+15:48 There are so many correct answers. There
+15:49 are so many ways to split um videos into
+15:53 chapters,
+15:54 >> right? And then um like how do you know
+15:56 that this one is better than the other
+15:58 one,
+16:01 >> right?
+16:02 >> Well, but that's the thing. What you
+16:04 want is for it to be aligned with your
+16:05 judg
+16:07 when Alexi sees, he goes, I like that.
+16:10 Right.
+16:11 >> Yeah. So, you can give it few shot
+16:13 examples and huristics around that as
+16:17 well. So Alexi may like Alexi may
+16:20 dislike it when the time stamps are like
+16:24 10 seconds apart.
+16:25 >> Alexi may dislike that. Hugo would hate
+16:27 that, right? So So then you'd give it a
+16:30 huristic make sure the time make sure if
+16:33 it's an hour long there are only 10 to
+16:36 15 time stamps or something like that.
+16:38 Yeah.
+16:38 >> And the thing is that's why you that's
+16:40 why prompt iteration is and prompt in
+16:42 quote unquote engineering is so
+16:44 important because it does something and
+16:45 you see it and you're like oh I don't
+16:47 and and then okay what if it starts
+16:49 using emojis which it probably will at
+16:51 some point then you have another thing
+16:53 you say do not use emojis and so on
+16:55 right
+16:56 >> and then after 15 20 prompts you
+16:58 probably get on something that looks
+17:00 pretty good for a lot of videos.
+17:02 >> But that's how I do this. That's I open
+17:05 uh my charg. I copy the transcript there
+17:09 and I play with the prompt until I see
+17:12 something that I like and then uh
+17:14 hopefully I save the prompt but usually
+17:17 what happens is I forget it and then
+17:19 next time I start the process again,
+17:21 right? Uh and then it's more like wipe
+17:23 check. So I look at the output of this
+17:25 specific time time like uh of this
+17:28 specific transcript. I like the
+17:30 chapters. I copy paste them to YouTube.
+17:33 Okay, my job is done. But um here the
+17:37 problem is if we have I don't know
+17:38 hundred of such transcripts then
+17:41 tweaking the prompt that results in
+17:44 optimizing for this particular
+17:45 transcript may lead to worse results for
+17:48 other transcripts and I alone cannot
+17:51 look at all 100 right that's that's why
+17:53 we need the evalator
+17:56 um as you said I guess everything that
+17:58 comes into prompt I put there too so I
+18:01 don't want I want correct transcripts I
+18:04 want um I don't know day to be at least
+18:08 um five minutes apart. Things like that,
+18:10 right?
+18:12 >> This is amazing, man, because we're
+18:13 actually hitting upon so many things in
+18:16 what it's like to build and iterate on
+18:19 IO powered software. So, the first thing
+18:20 we're talking about is just looking at
+18:22 your data, right? You look at the output
+18:24 and you're like, "Ooh, that doesn't
+18:25 quite work." And you iterate on it.
+18:26 We're talking about iterating on a
+18:27 prompt. That's a great t-shirt, by the
+18:29 way. Um
+18:30 >> Oh, yeah. Thank you. You talk about
+18:32 iterate and we need UV at the start now
+18:35 though I I think um
+18:38 >> UV
+18:40 um but so you iterate on the prompt now
+18:43 if you're building rag maybe you're
+18:45 iterate you see it isn't quite working
+18:46 you're looking you're looking at results
+18:47 so you iterate on chunking or embeddings
+18:50 or retrieval precision recall the these
+18:52 types of things if you're building
+18:54 agentic stuff maybe you're iterating on
+18:55 your tool call description and all of
+18:57 these but you're looking at the data
+18:58 right in order to see see what happens
+19:01 Next. Now, the way you're describing is
+19:02 you iterate, iterate, iterate, and then
+19:04 you kind of throw the prompt away and
+19:06 start again next time. One of the course
+19:08 and then you mentioned you want it to
+19:10 work over a hundred different things,
+19:12 but
+19:12 >> cuz if I build a product like one thing
+19:14 is I do one um of thing and then I throw
+19:18 it away, right? And then another one if
+19:20 I want to keep this prompt and then use
+19:23 it every time and then give it to my
+19:25 assistant so she uses it. And then if we
+19:28 do this then there is some quality um I
+19:32 would say like I can be sure that the
+19:34 quality of the transcript when I hand it
+19:36 uh off is actually good right cuz we
+19:40 have tested it. Well, I I agree you what
+19:42 we're saying is you don't want to
+19:44 overfit to the points that you've
+19:46 actually transcripts you've looked at,
+19:47 right? So, what you want to do then if
+19:49 you think your new transcript will be
+19:52 >> out of sample. So, we do podcasts on
+19:54 machine learning. If you do another one
+19:55 on machine learning, it's probably going
+19:57 to be pretty good if you've iterated
+19:58 several times and tested on 10. If you
+20:00 then do one on carpentry, maybe then you
+20:03 want to because maybe the prompt is
+20:05 actually says make the time stamps
+20:07 interesting for data scientists, ML
+20:09 engineers, and AI engineers. So then if
+20:11 it's out of sample, you want to do
+20:12 something different. But when you
+20:15 iterate on a prompt however many times,
+20:17 actually in the course I teach and
+20:19 through some some clients I work with,
+20:20 I've seen people iterate on a prompt 10
+20:22 times. I've seen people iterate on a
+20:23 prompt 500 times. Seen people iterate on
+20:26 a prompt 2,000 times. Right? But if you
+20:28 iterate on a prompt enough and it
+20:31 performs well over a diverse set of
+20:33 samples, it's likely to perform well on
+20:36 something else if that's not too out of
+20:40 out of distribution and you and it'll be
+20:42 far more efficient for you. particular
+20:43 if you set up you know actually we're
+20:46 building um a pipeline at the moment
+20:48 which takes in transcripts um and
+20:52 uh uses GitHub actions to then generate
+20:56 time stamps and a variety of other
+20:58 different things in order to automate
+20:59 all of this stuff that I do a lot of too
+21:01 much by hand.
+21:03 >> Yeah, that's what I we do too. But like
+21:05 the this GitHub actions is only for
+21:08 processing transcripts. But it's cool
+21:10 cuz it's free, right?
+21:12 >> Yeah.
+21:14 Exactly.
+21:16 >> How do you iterate 500 times on a
+21:18 prompt? You said like some people
+21:20 iterate a few times, some people iterate
+21:21 a few hundred times, some iterate a few
+21:23 thousand times. And for me, so what I
+21:26 do, so the way I come with prompts is
+21:29 first I type myself, then I type I give
+21:33 more and more details and then at some
+21:35 point uh I just ask Chptd, hey, this is
+21:38 the prompt I have. it cannot do this and
+21:42 this and I describe cases that this
+21:44 prompt cannot handle and then CH GPT I
+21:47 like the the GPT5 uh version of the
+21:50 model it's pretty good at creating very
+21:53 specific prompts
+21:55 >> that usually solve my problems so then I
+21:57 have this prompt and then usually I'm
+22:00 okay it kind of works so how do okay
+22:03 maybe it's like 10 15 iterations at top
+22:06 but like how do I go from that to 500
+22:08 like is it humanly possible.
+22:11 >> Yeah, it just can take weeks.
+22:14 >> Okay. Okay.
+22:14 >> But this is I mean this is iterating on
+22:16 prompts that ship SAS software to tens
+22:19 or hundreds of thousands of people as
+22:21 well, right?
+22:22 >> Um
+22:23 >> I also would en encourage that there is
+22:25 a I use LLM to write prompts as well. Um
+22:29 having said that prompts usually perform
+22:31 better when written by humans
+22:34 >> um
+22:34 >> or at least read and edited by humans.
+22:37 Yeah, as I said, LLM will insert emojis
+22:40 into prompts all the time. Um, there is
+22:42 no reason.
+22:44 >> I hate formatting when it searches for
+22:46 like why? It just increases the cost of
+22:47 my prompts.
+22:49 >> Exactly. Maybe that's why they're doing
+22:50 it. Who knows?
+22:51 >> Yeah. Right.
+22:53 >> Demand generation.
+22:55 >> Yeah.
+22:55 >> American man.
+22:57 >> Mhm. Yeah. Uh
+23:00 and if you want to iterate um 500 times
+23:03 on a prompt, you need to have a proper
+23:05 evaluation set, right?
+23:08 H it's actually a good question. Um not
+23:11 necessarily
+23:12 an initially you in the end you you will
+23:16 particularly when shipping what you want
+23:17 to be like reliable consistent uh
+23:20 software. Um but a lot of the time you
+23:23 can kind of vibe check it. They call it
+23:25 vibe checking, right? Where you like
+23:27 look at the result and you're like, "Oh,
+23:29 the the date format's not correct. So
+23:31 I'm going to tell the prompt or use
+23:33 structured outputs or whatever it is to
+23:35 to fix that." A lot of the things you
+23:37 can eyeball in the end though you
+23:40 definitely will um want some sort of
+23:42 gold test set just as in machine
+23:45 learning we have a hold out set right
+23:46 and a test set. So it's the premise the
+23:49 principle isn't different how it plays
+23:51 out because there's lots of rich natural
+23:52 language and tool calls and that type of
+23:54 stuff. It can play out differently in
+23:56 practice but but the premise is the
+23:57 same.
+23:59 >> How large should be this evalation data
+24:01 set goal test set? Because the problem
+24:04 is unlike traditional machine learning
+24:06 where um it might be like a few seconds
+24:10 to evaluate even with deep learning
+24:12 maybe it's like I don't know half a
+24:14 minute but now with prompt evaluation
+24:18 it takes a lot of time like how large
+24:21 should be the data set cuz of course we
+24:23 want to be large this data set to be
+24:25 large but then if it's large it's it
+24:27 costs money and then it takes time so we
+24:29 want to be it to be as small as possible
+24:32 But not too small, right? So we don't
+24:34 overfeit to these five examples.
+24:36 >> Yeah. I mean it it really depends on on
+24:39 what you're working on, but you you want
+24:40 it to be representative of what user
+24:43 interactions will be like, right? Um to
+24:46 your point about the cost, totally
+24:49 agree, but you don't necessarily want to
+24:51 use an LLM judge for everything. And of
+24:53 course, that's where you use an LLM that
+24:54 you prompt. So an LM judge is really
+24:57 just a prompt that you use to judge
+24:59 another one. Um you don't necessarily
+25:01 need to use that for everything. You can
+25:02 test is it structured output? You can
+25:04 use regular expressions, uh string
+25:06 matching, all of these types of things
+25:08 depending on um your particular
+25:11 particular use case. Uh so you can
+25:13 definitely lower and you can use really
+25:15 cheap models um to to I mean far cheaper
+25:19 like flash models and that type of stuff
+25:20 as opposed to you know um the the most
+25:23 most performant ones. But you do want it
+25:25 to be representative. Um the other thing
+25:28 and once again you know when you start
+25:31 looking you know and I've I can share
+25:33 some podcasts I've done with Haml
+25:35 Hussein and Shre Shanker on this and
+25:36 they have the eval course right
+25:38 something they preach is
+25:39 >> look at your data in spreadsheets for
+25:41 example at the start and when you when
+25:43 you do that you start to see um patterns
+25:46 emerge you start to see failure modes
+25:47 emerge and that will give you a sense of
+25:49 how much you really need to um collect
+25:51 and how big your your test set needs to
+25:54 be as well. Yeah. Well, the reason I'm
+25:57 trying to pull as much information from
+25:59 you as possible about this topic is
+26:01 because uh for my course that I'm doing
+26:03 right now, it's the evaluations week.
+26:05 So, I'm thinking what what should I what
+26:09 else should I include there? Cuz what I
+26:11 did is I already included the usual um
+26:14 the usual testing that you were talking
+26:16 about like um does it adhere to a
+26:20 certain format? um like does it include
+26:23 references like this kind of more like
+26:25 unit tests and then there is also more
+26:27 like integration test let's run it for
+26:30 uh this set of uh data and then we see
+26:33 the output right and then there is also
+26:35 this a
+26:36 >> um okay this is how our model performs
+26:39 like out of 100 questions 90% uh got
+26:43 relevant responses right so things like
+26:46 that
+26:47 >> um
+26:47 >> but you use this process to guide your
+26:50 development as well I And once again,
+26:52 this is something I I teach a lot in in
+26:53 my work and in my course to, you know,
+26:55 do failure analysis. And this is
+26:57 something Andrew Wing just wrote about
+26:59 the other day actually to rank order
+27:01 your failures. I mean, um, like
+27:04 formatting issues can be more salient
+27:06 and that means more visible to us,
+27:07 right? Or more obvious to us, right? But
+27:09 if they're only 10% of the issues and
+27:12 the rest has to do with retrieval, like
+27:14 focus on the retrieval. So doing some
+27:16 failure analysis, categorizing your
+27:18 errors in a spreadsheet, then doing a
+27:20 pivot table to rank order, like
+27:22 literally a spreadsheet will be one of
+27:24 your best tools for AI software
+27:27 development. Um, and then you'll see,
+27:28 oh, most of my errors are retrieval
+27:31 errors. And then I need to work on the
+27:32 retrieval part, not even the generative
+27:34 part. Right.
+27:36 >> Yeah. Makes sense. Makes sense. Um, do
+27:38 you what do you think about uh software
+27:41 for evaluation? because we have like so
+27:43 many monitoring uh/ovlating tools that
+27:46 help you with this process. So you set
+27:48 spreadsheet and this is what I use. Uh
+27:50 like I output things to pandas then I
+27:52 would copy them to Google spreadsheet
+27:55 and I would look at this. Uh but there
+27:56 are special tools. All right. Um have
+27:59 you tried any of them? Do you like any
+28:00 of them?
+28:02 >> I like nearly all of them but let me
+28:04 tell you my favorite tool besides
+28:05 spreadsheets is vibe coding man. So
+28:08 let's let's say
+28:12 Let's say
+28:13 >> steal it up, right? Or what?
+28:14 >> Yeah. Or or whatever like some front
+28:16 end, whatever. Whatever it may be.
+28:18 Whatever's the best way to to look at my
+28:20 data. And that won't be a spreadsheet
+28:22 most of the time. So, let's say I've got
+28:23 like an email assistant that I'm
+28:25 building, an agentic email assistant,
+28:27 something like that. Then I can vibe
+28:30 code like what it looks like to interact
+28:32 with this email assistant and look at
+28:35 all the traces and function calls in in
+28:37 there. And that can be incredibly
+28:39 useful. Now, of course, do that
+28:41 alongside tools that make your job
+28:43 easier, whether it be pedantic and
+28:45 logfire or brain trust, right? Or
+28:48 Phoenix Arise. These are all wonderful
+28:50 tools. But because So, stepping back a
+28:54 bit, generative AI, I know I'm biased,
+28:57 but I I think is one of the most
+28:59 civilization changing technologies, way
+29:02 bigger than the internet in in a lot of
+29:03 ways. And it'll take years for us to see
+29:04 this, by the way. We're not going to see
+29:05 this in the next 18 months, right? But
+29:07 it's huge. horizontal technology, loads
+29:10 of people building the application layer
+29:12 on top of it in healthcare, in finance,
+29:14 in edtech, right? People alongside
+29:17 trying to build tools that help people
+29:18 do this, but they can't satisfy
+29:20 everyone. Think about it. Like React
+29:22 came out, the front end React came out
+29:24 like 1015 years after the internet,
+29:26 right? So the tools that will really
+29:28 really help builders in the future may
+29:31 not even be around yet. And the reason I
+29:33 I want to make that clear is these tools
+29:35 are fantastic, but for the entire
+29:37 application layer, finance, as I said,
+29:39 health, edtech, government, we still
+29:41 need other things on top of them. So
+29:44 definitely use these tools. Just know
+29:46 that you'll be superpowered by being
+29:48 able to vibe code stuff alongside and on
+29:51 top of it as well.
+29:52 >> And when you v code these things and you
+29:55 said you include traces and function
+29:56 calls. So basically you ask to create a
+30:00 react app or streamlit app that looks
+30:02 like the end product might look like but
+30:04 you add all these debugging debugging
+30:06 things
+30:07 >> on top like what are the tool calls my
+30:10 thing is doing right uh and
+30:12 >> that's exactly it.
+30:13 >> Okay y
+30:16 >> and something we're speaking to here of
+30:18 course is whenever you build an MVP
+30:20 build logging into it immediate just log
+30:22 everything and then you can vibe code.
+30:24 Um, and once again when vibe coding like
+30:27 chat with it first. Don't build
+30:29 immediately. Give it your database
+30:30 schema. All of these things. Give it as
+30:32 much information as possible. Um, I I
+30:35 really think like AI assistants and
+30:38 other people have said this are very
+30:41 bright like deep like in in incredible
+30:45 amounts of memory. um kind of ADHDesque
+30:48 interns who will go and do all these
+30:50 things immediately and forget things
+30:53 that that you want it to do. So my
+30:55 friend um John Barryman who he he worked
+30:58 on co-pilot back in the day at GitHub he
+31:01 always talks about having empathy for
+31:02 your assistants your AI assistant. So if
+31:05 you understand what it's superpowers are
+31:09 um and what it's not great at that can
+31:11 really help. So having a conversation
+31:12 with it beforehand, developing a product
+31:15 requirement doc just one pager,
+31:17 reminding it what the schema of the
+31:18 database is, all all of these things can
+31:20 be incredibly useful.
+31:22 >> Mhm. Yeah. Sometimes it's stubbornly
+31:25 resistant at doing things or not doing
+31:29 like I ask it, hey, can you edit this
+31:31 file? And it would not edit it like I
+31:34 don't know. So I have to edit it myself
+31:37 and then hey, can you now edit it? And
+31:39 then it edits like Yeah. But sometimes
+31:42 like it's just amazing like uh I just
+31:44 edit this file and then it turns a
+31:46 Jupyter notebook into an awesome
+31:49 markdown file. But sometimes it just
+31:51 doesn't do anything and then Yeah,
+31:53 >> totally. And we talk about um we talk
+31:56 about hallucinations a lot. We don't
+31:58 talk enough about forgetting, right? And
+31:59 state-of-the-art tool calling like an
+32:02 LLM doing something as an agent is like
+32:04 90% accurate. That's state-of-the-art.
+32:06 So if you have six or seven tool calls
+32:07 in a row, it's going to be it's going to
+32:09 happen 50% of the time, man. Um
+32:11 >> Yeah. Yeah.
+32:13 >> Yeah. Just understand what what you're
+32:15 working with.
+32:15 >> What kind of what kind of assistance do
+32:17 you use? So for me, my current favorite
+32:20 is uh Copilot, GitHub Copilot.
+32:22 >> I've tried many tools. So far, I use it.
+32:25 Uh and also because I have an open
+32:28 source license. For me, it's free. So I
+32:29 don't need to pay 20 bucks to Corser.
+32:32 Um, but u I'm curious to know like
+32:34 what's your favorite one right now?
+32:35 >> Yeah,
+32:36 >> it might change in a week, right? I know
+32:38 that.
+32:38 >> Well, kind of I I think it might I I use
+32:41 cursor and I have for for some time.
+32:43 Previously I've used um claude code. I
+32:46 have used copilot. I use wind surf. Um
+32:49 I've played around with amp but cursor
+32:51 the thing with cursor for me it does
+32:54 everything I need need to. Um, it does
+32:57 it well and it's mostly out of inertia
+33:00 that I haven't changed yet. I'm I'm just
+33:03 doing so many things at the there's no
+33:05 strong reason for me to change at the
+33:07 moment, but I should take my own advice
+33:09 and make more time to experiment with
+33:11 with a lot of these different tools. Um,
+33:13 the other thing I'm really excited
+33:14 about, man, is
+33:17 having these tools in normal interfaces.
+33:20 So I mean I know people who like use
+33:23 cursor and devon and these types of
+33:25 things in slack right so you can be in
+33:29 slack with it and say hey this
+33:30 documentation's wrong update it here. So
+33:32 bringing um Agentic Systems into our
+33:35 normal uh environments. Uh Manis,
+33:38 everyone should check out Manis. Um it
+33:41 has an email assistant now where you can
+33:43 tag it in an email to either update
+33:45 documentation or do a variety of other
+33:48 things and it's yeah so having these
+33:50 things which are kind of around more I I
+33:53 think uh is going to become more common
+33:56 place.
+33:59 >> Slack.
+34:00 >> What's that? How can you use cursor from
+34:02 Slack?
+34:03 >> I think there's a Slack integration.
+34:05 Yeah, I'd need to I'd need to look into
+34:06 it, but I'm pretty sure like a Visual
+34:09 Studio clone, right? Uh they have a CLI,
+34:12 right? They have a CLI application.
+34:14 >> So then you can run it somewhere.
+34:16 >> So that's the thing I like about GitHub
+34:18 copilot and that's why I am recently I
+34:21 recently switched to it cuz they have so
+34:24 good GitHub integration. So I can just
+34:26 create an issue, assign this issue to
+34:29 GitHub copilot and then in half an hour
+34:30 have a working thing
+34:32 >> right with Corser I cannot do this or I
+34:34 am not aware of a way of doing this. But
+34:36 now you say there the slack integration
+34:39 which I guess means that I can just
+34:41 write hey Corser can you um fix this bug
+34:46 or fix issue number 124
+34:50 and then it will go pull the issue and
+34:53 solve it. Right. Exactly.
+34:55 >> That's cool. They have I think
+34:58 >> Yeah. Yeah, they do. I haven't I haven't
+35:00 used it a lot and I I think it probably
+35:02 isn't as advanced as you know Claude
+35:06 code or something like that, right?
+35:08 >> Um but I do like if we think about the
+35:10 evolution I I mean like a year or two
+35:13 ago we were like copy and pasting
+35:14 between chat GBT and our IDE, right?
+35:17 >> That's what I was doing
+35:18 >> two years ago. Then we have like code
+35:19 completion. Before that we were coding
+35:21 >> was also crap, right? I mean GPT 3.5
+35:24 wasn't really good at coding.
+35:27 >> Yeah. And also the worst thing was it
+35:28 didn't know its own API. It was GBT had
+35:32 a different um and so then we had code
+35:35 completion. Then we have now have agents
+35:36 in IDEs and terminals. Um then we're
+35:39 just talking about having AI embedded in
+35:41 other tools. Um we're starting to see AI
+35:43 being more proactive. So doing code
+35:45 reviews um in continuous integration and
+35:48 GitHub actions. um seeing more
+35:51 background ages like stuff just
+35:52 operating in the background and I'm
+35:54 actually really excited about proactive
+35:57 AI and I think that's going to be
+35:58 something you know it it seems
+36:01 futuristic but I I I don't think it's
+36:03 too far where AI comes to you and says
+36:07 hey this is happening in production or
+36:10 comes to you on a Monday morning and
+36:11 says you know even coding aside and says
+36:13 hey you've got all these emails why
+36:15 don't I um these are the most important
+36:17 ones you need to respond to And why
+36:19 don't I carve out time on your calendar
+36:20 for you to deep do deep work move these
+36:22 things around on Tuesday afternoon these
+36:24 >> to have this kind of so we are at
+36:27 background agents level right now right
+36:29 so the agents we have like we can ask it
+36:32 to work on the thing uh on something in
+36:34 slack or in my case as anam the example
+36:37 I gave I can create an issue in GitHub I
+36:40 can assign it to copilot and then half a
+36:42 year half a year yeah half an hour later
+36:45 I check the pull request um In the
+36:48 meantime, maybe I drink some tea, then I
+36:50 check the pull request and it's ready.
+36:52 Right? But what if this copilot
+36:55 >> would just send me an an email saying,
+36:57 "Hey, like looks like you can add this
+37:00 feature to your website. Do you want me
+37:02 to work on that?" And I'm like drinking
+37:05 tea and say, "Yeah, yeah, you can work
+37:07 on this." And then it works. And then
+37:10 >> that would be amazing. Okay.
+37:11 >> The the other thing so I think proactive
+37:13 agents and I think multiplayer agents I
+37:15 mentioned um AI in in Slack and Discord
+37:18 wherever. Um but they don't play nicely
+37:22 a lot with lots of people pinging the
+37:24 same one. And so I think agents which we
+37:27 might need to I don't think we need to
+37:29 retrain them from scratch but maybe in
+37:32 like fine-tuning stage postraining you
+37:35 know fine-tune them on multiplayer
+37:37 conversations or something like that.
+37:38 But you could imagine Alexi and and Hugo
+37:41 and a few other people having a
+37:43 conversation with an agent in in Slack.
+37:46 Um, and it's actually a team member. So,
+37:49 at the moment, if you have three or four
+37:50 people, they'll they'll get confused
+37:52 with who's who and memory issues and and
+37:55 that type of stuff. Um, but I think once
+37:57 once we solve that, having them as
+37:59 embedded team members as well. So,
+38:02 proactive agents and multiplayer agents
+38:04 I think are going to be a huge part of
+38:06 the future.
+38:07 I mean if this change that much in three
+38:09 years um yeah I would be really curious
+38:11 to see what will happen in the next
+38:13 three years
+38:15 >> without a doubt.
+38:16 >> Yeah but probably it's like logarithmic
+38:19 right so then we saw the exponential
+38:21 part probably it will slow down with
+38:23 time but still think we will see pretty
+38:26 exciting things.
+38:28 Yeah. And then the application layer. I
+38:29 I mean, look at the '9s, right? And the
+38:33 evolution of the internet and how huge
+38:34 that that was. Then there was the com
+38:37 bust. Not saying that's going to happen.
+38:39 Maybe smaller, maybe bigger. Who knows?
+38:41 But then like you got Google and YouTube
+38:45 and
+38:47 social media for for good and for bad,
+38:49 right? But like we figured out how to
+38:52 how to connect people around the
+38:54 internet, how to index the internet,
+38:56 right? So these types of companies and
+38:58 products will will emerge. Currently we
+39:00 only really have a browser in in a lot
+39:02 of ways, right? How do we connect these
+39:03 things?
+39:04 >> Mhm. Yeah. There's this uh browser from
+39:07 Perplexity. You've heard of it, right?
+39:10 >> Yeah. Comet.
+39:11 >> Comet. Yeah.
+39:12 >> Yeah.
+39:13 >> So for me um like sometimes for example
+39:16 I get an email from my tax um advisor
+39:20 saying hey like you need to prepare
+39:22 these documents. And uh when it comes to
+39:25 taxes, I'm such a procrastinator.
+39:27 Probably you can relate. I don't know
+39:28 like how taxes are in Australia.
+39:31 >> I can't even talk about it right now.
+39:32 Yeah, exactly.
+39:34 >> And I have to do this. And uh she sent
+39:37 this email one month ago and I know like
+39:40 I have to do this. I just have to find
+39:42 like at least half an hour or 1 hour to
+39:44 do that. But this is such a manual work
+39:49 that um like you need to go there, you
+39:52 need to save this document, you need to
+39:54 go there like through this bank, through
+39:56 that bank, save all this in a folder in
+39:58 a zip archive and then send it
+40:01 then I'd like to see to wake up one day
+40:05 to have an agent do that for me.
+40:08 >> Absolutely. That would be amazing cuz I
+40:10 think this uh comment is one step uh
+40:12 towards um this
+40:14 >> definitely and provocative statement but
+40:17 I don't think the future of AI happens
+40:18 in chat to be honest I think we'll be
+40:21 doing a lot of chat and that type of
+40:22 stuff as we do but if you think about
+40:25 the amount of value a conversation can
+40:27 generate is upper bounded by human time
+40:30 and human time is a pretty scarce
+40:31 resource these days. the ability to
+40:34 generate documents or take actions or
+40:36 send emails or whatever it may be. Um
+40:40 and and I think the the agentic stuff is
+40:42 is where the like 99 plus% of the
+40:45 economic value will be delivered.
+40:47 >> Yeah. Let's see. Um
+40:49 so what else do you consult about like
+40:53 what kind of applications do you build?
+40:54 What kind of applications you help uh to
+40:56 build your customers?
+40:58 >> Yeah. So I mean the the main let me tell
+41:02 you a story actually the the lion share
+41:04 is in retrieval to be honest and some
+41:07 aentic stuff now
+41:08 >> but it really comes down to um level
+41:11 setting expectations. So, let me this is
+41:14 kind of an amalgam of of several
+41:17 customers. Um, and it and it's something
+41:20 that we wanted to talk about which is
+41:21 about proof of con what I call proof of
+41:23 concept purgatory. Um, which is where a
+41:26 lot of people get stuck, right? Um, and
+41:29 one thing that keeps you there is just
+41:31 great ideas that don't solve problems.
+41:33 So, um, for example, an edtech company I
+41:37 spoke with that they wanted to create
+41:39 like an all-purpose AI tutor, right?
+41:42 and something which could just teach
+41:44 everyone everything and that that was a
+41:46 moonshot in a lot of ways. Um then we
+41:49 dove into
+41:51 >> but tragically can do this can't it?
+41:53 >> Well I mean it definitely can appear to
+41:57 right but whether it all the time
+42:00 >> um
+42:00 >> yeah but
+42:02 I have used it to learn so many things.
+42:07 Oh yeah. Look, I I think you're right
+42:10 for stuff that it's trained on for the
+42:12 most part.
+42:13 >> Right. Right. But of course, if I go
+42:15 outside of human knowledge, then of
+42:19 course or I mean
+42:20 >> No, but
+42:22 >> yeah, there there is some broad
+42:23 knowledge. Um I don't know basics of
+42:25 chemistry, basics of electronics, basics
+42:27 of uh I don't know German. I was uh
+42:29 learning German with JGBT. Um
+42:34 but uh when it comes to like advanced
+42:37 level PhD stuff then probably it's
+42:38 lacking right it cannot do research on
+42:41 its own or can it but I mean
+42:43 >> well they can they can search search the
+42:46 internet they have they have search
+42:47 tools but a not insignificant proportion
+42:50 of the time they'll say they searched
+42:51 the internet and they actually didn't
+42:53 and they'll hallucinate something um and
+42:55 even on like not basic knowledge but
+42:58 like college third
+43:01 you know, um
+43:04 let's say
+43:06 algebraic representation theory in math
+43:08 or something like that, right? Like it
+43:10 will make things up.
+43:12 >> It will also make things up when you ask
+43:13 it about like Uklid's elements, right?
+43:15 Or platonic solids. It will just you'll
+43:17 say what are the platonic solids? Um
+43:19 >> I have no idea what is it.
+43:21 >> So it's when Plato was like there's a
+43:23 pris there's like a a rectangle
+43:25 triangular pyramid these types of
+43:27 things. So it's like geometric shapes.
+43:29 >> Okay? you know, a not insignificant
+43:31 proportion of the time it will just make
+43:32 one up and say this is another shape,
+43:35 right? So I I don't think chat GBT is at
+43:37 at that level yet.
+43:39 >> Okay. So what you're talking about is
+43:41 visual stuff, right? So it's not there
+43:43 yet when it comes to visual things.
+43:46 >> Oh no. I it can't do arithmetic as well
+43:49 like you know.
+43:49 >> Yeah. Right.
+43:50 >> So I mean you know there are so many
+43:52 things that there are so many failure
+43:54 modes at chat GBT. I wouldn't trust it
+43:56 as an allpurpose tutor.
+43:57 >> Yeah. Okay.
+43:58 >> Yeah.
+43:59 And so anyway, this edtech company
+44:02 creating an allp purpose AI tutor and
+44:05 like total moonshot. Um we jumped into
+44:08 their support tickets and noticed
+44:13 20% of customer tickets were in which
+44:16 class um is this particular lesson or
+44:19 can I learn about this? Right? So, as it
+44:22 turns out, instead of building something
+44:24 super flashy,
+44:26 >> yeah, if if you if you build a simple
+44:28 rag bot, iterated on it on on it several
+44:30 times, have some good chunking
+44:31 embeddings, nice interface, you solve
+44:34 one in five of your customer tickets,
+44:36 right? So, a lot of the things are
+44:38 relatively unshiny and unsexy, but it it
+44:41 delivers business value immediately as
+44:43 opposed to some new generative AI
+44:45 strategy. So helping people understand
+44:48 that they have business problems um that
+44:50 they can solve in the coming weeks and
+44:52 months uh using the these technologies
+44:54 instead of creating s something super
+44:56 flashy.
+44:57 >> Is chunking solved problem or we still
+45:00 have no idea how to chunk documents
+45:01 properly.
+45:03 Um
+45:05 I mean generally you can do it
+45:08 relatively relatively well like there
+45:11 are a lot of problems which you you can
+45:12 but like for a general answer not
+45:15 necessarily think about once again a
+45:16 transcript right um
+45:20 so we're chunking this conversation or
+45:24 or a longer if we were speaking each of
+45:25 us were speaking for somewhat longer
+45:27 maybe we want to chunk it into question
+45:29 and answer pairs right
+45:31 >> um or maybe we want chunk it into
+45:33 question, Alexia's question and Hugo's
+45:36 answer, right? Um, as opposed to if it
+45:39 was a fivep person conversation, um,
+45:41 maybe we want to chunk it into
+45:42 particular topics first or something
+45:44 like that. Um, so I think once again
+45:46 looking just looking at what your um,
+45:49 >> so there's no one size fits all. It's
+45:52 more like okay, what this data is about.
+45:54 Okay, it's a podcast conversation.
+45:56 There's a host, there's a guest. So, how
+45:57 about we chunk it into a Q&A data set as
+46:02 opposed to uh I don't know there is a
+46:03 book Game of Thrones then there you
+46:05 probably want to have a different
+46:07 junking approach.
+46:08 >> Exactly. And and also look at your data
+46:11 as well. So Zoom for example creates
+46:14 gives you two transcripts. One is the
+46:16 closed captions which doesn't have any
+46:19 names. The other is the transcript which
+46:21 will say Alexi
+46:23 D Hugo colon. Right? And if you have the
+46:26 one which has names, suddenly you have a
+46:28 far richer data set and get a lot more
+46:30 information about who said what.
+46:32 >> Oh, funny enough, uh, CHPd can quite
+46:35 often figure this out without this.
+46:39 >> The other thing that we're kind of
+46:41 hinting at like a lot of the time
+46:43 depending how how long it is like maybe
+46:46 you don't even need to chunk. Context
+46:48 windows are getting really large. Of
+46:50 course, there's an issue of context rot.
+46:52 I'd encourage everyone to check out
+46:54 Chroma. Um Jeff Huber and his team at
+46:56 Chroma had a great essay on context rot
+46:59 um and how if like a lot of different
+47:01 things, but the more you give um the
+47:05 less it it it's really able to to get
+47:07 out relevant and precise information all
+47:09 the time. So
+47:10 >> yeah, like I notice it with rather long
+47:13 transcripts that uh at the beginning the
+47:15 chapters are good or like when I ask it
+47:18 to um make it neater to make it
+47:21 readable. So at the beginning it's doing
+47:23 its best but then at the end it's just
+47:25 very sloppy.
+47:26 >> Hey, you want to hear something totally
+47:28 wild? I've definitely in prompt
+47:30 engineering as we were disc that we were
+47:31 talking about before if something's
+47:33 really important use it say it at the
+47:36 start of your prompt and repeat it at
+47:38 the end and you you often get better
+47:40 performance that way.
+47:42 >> Yeah, it's funny when I ask it to
+47:44 improve my prompt and I say hey like
+47:47 even though I asked it to do this
+47:49 certain thing it doesn't. So what chipd
+47:51 is doing is just reinserts this attent.
+47:55 So it's like uh so these are your tasks
+47:58 and you describe the requirements and
+48:00 then the important to remember and then
+48:02 some things are repeated and then it
+48:04 works like
+48:06 >> totally.
+48:07 >> Yeah that's funny. Um so when it comes
+48:10 to chunking uh so which approach did you
+48:13 use for this uh tutor? Like I don't know
+48:15 if you can talk about this. Uh, no. So,
+48:17 that was kind of a amalgam of of
+48:20 different things I've I've worked on.
+48:22 Um, but it I I think you want to use
+48:25 like really look at your data and what
+48:27 makes sense. In the case of um let's say
+48:31 you had,
+48:33 you know, instruction videos that were
+48:36 30 minutes long, you'd want to know what
+48:38 your like how long each subless is in in
+48:41 that sense, right? So if each 5 minutes
+48:44 something changes um you know you want
+48:46 to at least chunk it at that
+48:48 granularity.
+48:50 >> Would you still go with like usual
+48:51 character based chunking or you need
+48:54 section splits and stuff?
+48:57 >> Yeah, I'd start with with fixed
+48:59 character based character lengths and
+49:00 then then move from there.
+49:02 >> To me it seems like it's doing a pretty
+49:04 good job if you just do this character
+49:06 based sliding window. uh because other
+49:10 approaches they're more complicated. Uh
+49:13 but yeah, I was wondering what's the
+49:15 consensus right now in the industry
+49:17 about that.
+49:18 >> Yeah. And also what you want to do is
+49:21 you know there are a bunch of questions
+49:23 that rag is is horrible at, right? Like
+49:26 if you ask a rag system
+49:29 like what's this video about? This whole
+49:31 video about it's and and it's chunked,
+49:34 right? Like it's not going to tell you
+49:35 that it's looking for a particular
+49:37 chunk. or if if you asked rag what are
+49:39 the top three things what are the top
+49:41 three techniques used in this video and
+49:44 how can I learn more about the third one
+49:47 right um so this is one time where I
+49:49 tell people to start you know using
+49:51 agents and I am skeptical of the use of
+49:54 agents when trying to build reliable
+49:56 userfacing software but even if you like
+49:58 have a tool called that's a
+50:00 summarization tool or something like
+50:01 that it can immediately answer the first
+50:03 question what is this whole thing about
+50:05 it can have a summary Um, and if you
+50:08 have, you know, a few other tools, um,
+50:11 and maybe, you know, a couple of sub
+50:14 agents or or something like that, it can
+50:16 it can get very powerful at the types of
+50:19 >> questions humans naturally ask.
+50:21 >> Yeah. But the moment we go from usual
+50:23 rack to agents, our system complexity
+50:26 increases dramatically, right? Uh cuz
+50:29 now we need to make sure that tools are
+50:32 called. The prompts we give they um make
+50:36 agents do what we wanted to do like okay
+50:38 for this task you use this call for this
+50:40 task you use this call and then you
+50:42 repeat it in caps to make sure that it
+50:43 actually uses this tool right or
+50:45 whatever while in rack it always follows
+50:49 the fixed path and it always works right
+50:52 I mean for this part particular purpose.
+50:55 So how would you um suggest like um for
+50:58 me let's say I have a okay B system but
+51:02 I heard that agents are cool and I want
+51:04 to try them like at what point I should
+51:07 actually consider doing this. So I
+51:10 firstly if it's working
+51:13 >> no need to no need to do anything. That
+51:15 isn't to say you it wouldn't be fun to
+51:17 to explore the these things, but I think
+51:20 one forcing function is if if users are
+51:23 asking questions like tell me about this
+51:25 entire corpus or something like that,
+51:26 which it which a lot of people do when
+51:28 they first encounter like what's this
+51:30 all about, right? And then maybe you
+51:33 want to introduce a summarization tool
+51:34 for for example and then
+51:37 >> the way I think about it is you're right
+51:39 introducing tool calls um increases
+51:41 complexity. It also increases power,
+51:44 right? um and and uh scope. So, it is
+51:47 incredibly powerful, but introduce
+51:50 things mindfully and then figure out how
+51:52 you're going to evaluate whether these
+51:54 tool calls are actually working as as
+51:56 you'd expect. Once again, you know,
+51:58 using tools, evaluation tools like Brain
+52:00 Trust, Arise, Logfire, all of these
+52:02 things are great. maybe vibe code some
+52:04 things on on the side as well, but
+52:06 really um get a sense how everything I
+52:09 is is working working there before
+52:11 increasing the complexity too much.
+52:14 >> Brain trust. I have not heard about that
+52:17 one. It's brain trust.deaf. I'm looking
+52:20 it up in Google
+52:21 >> probably. Yeah, if you if you there
+52:23 there are actually two brain trusts, but
+52:24 if you look up brain trust LLM, it'll
+52:26 come up.
+52:28 >> So, it's brain trust.deaf.
+52:30 Um yeah, interesting. And I have not
+52:32 heard about this one. But it's not open
+52:35 source, right? It's uh I don't see any
+52:38 GitHub.
+52:40 >> Um I think they do. Let me just confirm.
+52:44 Yeah, they have a GitHub.
+52:46 >> Okay.
+52:48 Okay, I'll check it out. Thanks. But
+52:50 like these things grow like mushrooms
+52:52 now in Germany in October.
+52:55 So it's it's very hard track of u these
+52:58 things.
+53:00 So
+53:01 >> and all of these tools have like open
+53:04 source and non-open source components
+53:06 for for most
+53:09 >> like uh arise right they have phoenix
+53:11 and they have like the usual
+53:13 >> y
+53:14 >> okay well we should be wrapping up um
+53:16 maybe any advice uh for people who are
+53:20 starting with agents uh what's what
+53:23 would be the like what you would
+53:27 recommend them to do what is the top
+53:29 number one thing that they should think
+53:32 about when building agents.
+53:34 >> Um I think there are a few things. The
+53:36 the first is
+53:39 build something try building something
+53:41 that's important to you, right? Um so
+53:44 for example, if you're overwhelmed by
+53:46 emails, right? Um plug in to your Gmail
+53:52 API and start clustering and classifying
+53:54 your emails and in terms of priority,
+53:57 that type of stuff. Use some basic
+53:58 machine learning to do that. and then
+53:59 perhaps build something that
+54:00 >> is easy to connect to Gmail through API.
+54:03 >> Yeah, absolutely.
+54:05 >> That's cool.
+54:05 >> I have not thought about that.
+54:08 >> Yeah, cluster and classify your emails
+54:11 and then maybe you can even do some fun
+54:13 machine learning stuff where you try to
+54:15 prioritize them and then iterate on
+54:17 that, build up a gold data set of that.
+54:20 then perhaps uh connect it to another
+54:22 LLM which will generate a response that
+54:25 it sends to you to look at to then email
+54:27 email on for example. Um
+54:31 >> so what I would like to have right now
+54:32 as you speak is a system that looks at
+54:35 my unread emails and suggest an answer
+54:37 >> or two three answers to that emails.
+54:40 >> Fantastic. I'd very much encourage you
+54:42 to do that. So, but that's personal.
+54:44 >> Like there are so many emails that I
+54:46 just procrastinate
+54:48 on.
+54:50 >> Uh cuz maybe I saw this email when I was
+54:52 on a bus and I'm from my phone and it's
+54:54 hard to type for me, right? And then if
+54:56 the system knowing me, knowing what I
+54:58 would reply to this would just generate
+55:00 me three options,
+55:02 >> then probably 50% of the time I would
+55:04 already just send these options.
+55:06 >> Yeah, exactly. Um
+55:08 >> yeah, if anyone is building this, please
+55:10 reach out to me. Totally. Um and to to
+55:14 your point as as well uh if you want to
+55:17 generate transcripts or um you know
+55:20 generate creative uh copy all all of
+55:22 these types of things start building
+55:24 things that you want to build and that
+55:26 are important to you and solve problems
+55:27 for you or your your business in terms
+55:30 of building a so that's where to find a
+55:33 problem. There are lots of problems you
+55:34 can try to solve everywhere. Uh then how
+55:37 to do it start small. Start very gently
+55:41 scoped. Use an LLM perhaps. Then
+55:43 introduce some memory if you need it,
+55:45 some tool calls, some retrieval if these
+55:48 things are important. Um, add a few tool
+55:50 calls and then start looking at the
+55:52 results you get and start to get a sense
+55:54 of what's working uh and what isn't and
+55:56 start to build out some sort of
+55:58 evaluation uh data set. Of course, go
+56:01 and play with all the fun frameworks
+56:02 like Crew AI and whatever else it may
+56:05 be. small agents at hugging faces is
+56:08 great, but I think the challenge there
+56:10 is that you don't you can't necessarily
+56:13 introspect into your system and
+56:14 everything that's happening um
+56:17 internally. So the three things I think
+56:21 well let's say four things um find a
+56:23 problem that's meaningful to you. So
+56:25 that could be the email one, right? Um
+56:28 then start small, get an LLM, add some
+56:31 tool calls, maybe add some memory,
+56:32 whatever it may be. Uh three, look at
+56:35 your data. Four, start to build out some
+56:38 sort of basic evaluation set. And the
+56:41 looking at your data and building out
+56:42 the evaluation set. The only intention
+56:44 behind those are to guide how you how
+56:47 you uh iterate on your product. You
+56:49 might be like, "Oh, I should change the
+56:51 description of this tool call. Oh, I
+56:53 should change um how this embedding is
+56:55 working." But by the way, a lot of the
+56:57 time your embeddings and chunking won't
+56:59 be the problem. It'll be like your OCR
+57:01 or how you're like getting the PDF into
+57:03 the system. Um I' I'd be remiss if I
+57:06 didn't also say if you if you want to
+57:08 learn a lot more about these things, I I
+57:09 also teach a course um building AI
+57:12 applications for data scientists and
+57:13 software engineers and I'd love to offer
+57:14 your community 20% off. So I can share
+57:16 the link for that as as well.
+57:18 >> Yeah, please do.
+57:19 >> Yeah, maybe last thing cuz you mentioned
+57:21 something that I want to get a quick
+57:23 reply from you. I don't know if you
+57:24 covered this in your course. You said
+57:27 think of introducing memory and this is
+57:28 something I haven't personally
+57:29 experimented with. So the way I included
+57:33 memory so far was through some sort of
+57:34 rug. Is this how people do this? And
+57:37 what's where can I read more about
+57:39 adding agents?
+57:41 >> It's a great question. Um
+57:45 I I'm sorry. I just I shared the link in
+57:50 YouTube but I shared the wrong link
+57:52 without the discount and I want everyone
+57:55 to
+57:56 >> like the thing is there's this auto
+57:57 moderation so if somebody who's not me
+58:00 shares a link then it's not displayed
+58:01 and this is something I cannot turn off
+58:03 >> yeah fair enough
+58:04 >> YouTube so please send to me in chat
+58:06 >> I can share it with you in in um Zoom
+58:10 >> yeah I'll
+58:12 >> this is actually such such a great
+58:14 question and I think it's un So many
+58:17 people do it horribly and you may notice
+58:18 chat GBT doesn't GBT5 you can't have as
+58:22 long conversations and it preserves the
+58:24 memory in a way that you used to as as
+58:26 well right um so the way I think about
+58:30 it think if you need memory to start
+58:33 okay and one of the first SAS products
+58:36 incorporating LLM which was um
+58:41 uh English to honeycomb query language
+58:44 right so kind of SQL type type stuff.
+58:47 All it was was you say what you want to
+58:49 do um and then um it will give you the
+58:53 query and then you can can execute it.
+58:55 So it was one turn. You don't need
+58:57 memory on that at all. Right.
+58:59 >> Um so memory essentially is when you
+59:01 start wanting to have a conversation
+59:03 with something.
+59:05 >> So for me uh the reason I thought about
+59:07 this memory is I was thinking about this
+59:10 uh email assistant. It would need to
+59:13 know what I replied in certain cases and
+59:16 then probably it's solved by indexing
+59:18 entire all the replies and then look
+59:21 something similar right would it be
+59:23 memory I guess it would be but there are
+59:25 other ways
+59:25 >> yeah funnily not in this specific it is
+59:28 memory but to your point you do that via
+59:30 retrieval okay so that's something
+59:32 already stored when I talk about memory
+59:34 I talk about in a in a specific
+59:36 conversation right
+59:37 >> okay okay
+59:38 >> so remembering when you chat with um
+59:40 let's say a travel assistant You're
+59:42 like, "Hey, I want to book a hotel." And
+59:44 it says, "Here are the options for the
+59:46 hotel." And you say, "Which is the
+59:47 cheapest?"
+59:48 >> It should remember that you're talking
+59:50 about a hotel.
+59:51 >> Right. Right. So, this is uh Okay. I
+59:54 thought memory across conversations.
+59:57 >> No. No. So, there's that. That's that's
+59:59 another challenge as well. But even
+1:00:00 memory within conversations. And one way
+1:00:03 to do that is just to give it the entire
+1:00:05 conversation so far. For short
+1:00:06 conversations,
+1:00:08 >> that's fine. Um but for longer
+1:00:10 conversations then you can start using
+1:00:12 sliding windows for example right um but
+1:00:16 then it doesn't remember you know what
+1:00:18 happened whatever's past the sliding
+1:00:20 window um another way to do it is a
+1:00:22 short sliding window and then have an
+1:00:24 agent actually that controls the memory
+1:00:26 and its job is to make sure um you you
+1:00:29 retain um all the all the relevant
+1:00:33 information for some definition of
+1:00:34 relevance. So there are lots of
+1:00:36 different ways to to work on and think
+1:00:39 about memory in multi-turn conversations
+1:00:41 but it's challenging and on top of that
+1:00:44 evaluating multi-turn conversations is
+1:00:47 gets pretty tough. So the question then
+1:00:49 becomes do you like how long do you want
+1:00:52 these conversations to be in a product?
+1:00:55 >> Yeah. Okay. I think we should be
+1:00:56 wrapping up. Um like I have so many
+1:00:58 questions to ask you but uh
+1:01:01 >> we should chat again soon man. And yeah,
+1:01:04 I'd love to chat about like even doing
+1:01:06 some teaching or running a workshop
+1:01:07 together or something sometime. I think
+1:01:08 that could be super fun.
+1:01:11 >> That could be. My son wants attention
+1:01:13 like he's making sounds. So,
+1:01:14 >> well, you should you should definitely
+1:01:16 definitely go.
+1:01:16 >> Thanks a lot. You go. I like the idea.
+1:01:19 So, let's catch up maybe in year so we
+1:01:21 don't need to wait for three years or
+1:01:23 whatever.
+1:01:23 >> Exactly.
+1:01:25 >> Thanks everyone for watching and
+1:01:26 listening and thanks Alexi and everyone
+1:01:28 at Data Talks as well.
+1:01:30 >> All right. Shaman.

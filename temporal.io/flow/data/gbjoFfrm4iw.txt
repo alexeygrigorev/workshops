@@ -1,0 +1,1561 @@
+Practical Data Privacy
+
+0:00 hey everyone Welcome to our event this
+0:02 event is brought to you by editorox club
+0:04 which is a community of people who have
+0:06 data we have weekly events and today for
+0:09 some reasons it's like fifth event this
+0:12 week so this is an unusual week because
+0:14 we were not doing anything for months
+0:17 and now we are catching up
+0:18 anyways if you want to find out more
+0:21 about the events we have I think right
+0:22 now only one more event is published
+0:25 which is next week but we soon will have
+0:28 a lot more
+0:29 so there is a link in the description go
+0:32 check it out you will see all the events
+0:34 that are already announced
+0:36 but in a few days there will be more so
+0:38 keep an eye on that another way to
+0:42 keep an eye on the things we have is
+0:44 subscribing to our YouTube channel don't
+0:47 forget to do that you will get notified
+0:49 about awesome streams like the one today
+0:51 and finally we have a great slack
+0:54 Community if we want to hang out with
+0:55 other dating disasters
+0:59 during today's interview you can ask any
+1:01 question there is a pinned Link in the
+1:03 live chat click on this link ask your
+1:05 questions and I will be covering these
+1:07 questions during the interview
+1:10 that's all I will stop sharing my screen
+1:13 right now
+1:14 and I will
+1:17 open the questions we prepared for you
+1:23 so maybe you also want to open them I
+1:25 don't know to you
+1:27 I think I think I'll just react yeah
+1:31 so that's probably wiser
+1:34 and
+1:36 we can start if you're ready
+1:38 sounds good
+1:40 this week we'll talk about practical
+1:42 data privacy and we have a special guest
+1:44 today Catherine Catherine is a privacy
+1:47 activist machine learning engineer and a
+1:49 principal data scientist at thoughtworks
+1:51 Germany
+1:52 I was really afraid that I would
+1:54 mispronounce this name
+1:56 perfect yeah previously she helped
+2:01 numerous roles at large companies and
+2:02 startups in the US in Germany where she
+2:05 was in charge of implementing data
+2:06 processing and machine learning systems
+2:08 with the focus on reliability the
+2:10 stability privacy security and she is
+2:12 also a book author she recently
+2:14 published a book about data privacy and
+2:16 we will talk about this book today and
+2:18 in general about data privacy so welcome
+2:20 to our event thank you Alexa I'm really
+2:23 happy to be here
+2:24 yeah and as always the questions for
+2:27 today's interview are prepared by
+2:29 Johanna buyer thanks Johanna for your
+2:31 help
+2:32 so before we go into our main topic of
+2:35 data privacy let's start with your
+2:37 background
+2:38 can you tell us what your career journey
+2:39 is for
+2:41 yeah it was a bit odd I'm not sure if
+2:45 we're um if you and I are contemporaries
+2:47 in age but uh I just reached uh about my
+2:51 40th year in life the virtual privacy
+2:53 plus minus
+2:55 um and uh this means that like when
+2:58 we're first in school and in uni we
+3:00 didn't have a term called data science
+3:03 um I've kind of always been interested
+3:05 in doing data science but I studied math
+3:08 and informatic or computer science and
+3:11 then I switched my major when I ran out
+3:13 of math classes because I really didn't
+3:16 like Java and I just liked math so I did
+3:21 political science
+3:23 um and economics to work on statistical
+3:26 uh reasoning and so forth
+3:29 um then I went and I did Public School
+3:31 teaching for a while I was a school
+3:33 teacher and then I left that to get a
+3:37 degree in journalism and when I got my
+3:39 degree in journalism I got hired as a
+3:42 data journalist or what we would today
+3:43 call a data journalist but then we just
+3:45 called it a News application developer
+3:49 um and I worked at the Washington Post
+3:51 which is a large newspaper in the U.S
+3:53 and it's nice visualizations right yeah
+3:57 yeah yeah they had they were that at
+3:59 that point in time they were the largest
+4:01 Django remember Django the web framework
+4:03 the python-based they were the largest
+4:06 Django installation in the world at that
+4:08 time so I learned python I had never
+4:11 seen python in school they just had us
+4:13 work on Java applets which I did not
+4:15 like
+4:16 um applets yeah yeah
+4:18 so I was like can I just write it in PHP
+4:21 like why am I using an apple
+4:24 um anyways so that kind of got me back
+4:27 into data and then I went and I led
+4:29 another team doing data journalism at a
+4:32 different paper at USA Today which is a
+4:34 large National paper chain
+4:36 and then I got recruited to go do
+4:38 natural language processing back in La
+4:40 where I'm from Los Angeles so I jumped
+4:43 at the opportunity and I we were working
+4:45 on Trend analysis and trendiness using
+4:49 natural language processing and from
+4:51 there on I kind of
+4:53 went that would have been 2010 and then
+4:56 of course word vectors took off a few
+4:58 years later so
+4:59 kind of uh NLP changed greatly which was
+5:02 really fun and exciting to be a part of
+5:04 and around that time I moved to Berlin
+5:06 and I started doing First Independent
+5:09 Consulting when I moved here and I don't
+5:11 know how long you've been in Berlin were
+5:14 you in Berlin then like 2014.
+5:17 since 2014 yeah yeah okay and I don't
+5:21 know how your experience was but I would
+5:24 go talk to companies that I would try to
+5:25 be like oh I could help you with machine
+5:27 learning and data science that they were
+5:28 like what are those things and I was
+5:31 like oh no did I make a wrong choice
+5:33 moving here
+5:35 um but it was just starting to take off
+5:37 I think here then yeah so I so I was at
+5:41 University at that time and then I
+5:43 graduated in 2015 and they were already
+5:47 jobs so like uh I would go to LinkedIn
+5:50 type data scientists and I would find
+5:52 some stuff
+5:54 it was like
+5:56 it took a year to actually for building
+5:59 companies to realize what this role is
+6:00 yeah and I think like I was mainly
+6:03 working with startups and I think it
+6:05 wasn't on the agenda so much so when I
+6:07 first came I consulted some rocket
+6:09 internet companies and so forth starting
+6:12 out like that we're the only companies I
+6:14 guess but yeah
+6:17 exactly and now it's much nicer so now
+6:19 you can everybody knows what you mean
+6:21 when you say data science and machine
+6:22 learning it does yeah so that's that's
+6:25 what I did
+6:27 and then at some point I guess you
+6:29 joined thoughtworks yeah oh yeah so
+6:32 after coming to Berlin doing some
+6:34 independent Consulting for a while I
+6:36 founded a startup here focused on
+6:39 privacy for machine learning where we
+6:42 worked on basically stream encryption
+6:44 mechanisms for studentization for Linked
+6:48 synonymization and so forth with my
+6:50 co-founder here Andreas Davis uh the
+6:52 company is called Ki protect
+6:55 um and then after that after I left that
+7:00 um I worked at an encrypted machine
+7:02 Learning Company uh based mainly in the
+7:04 US but we're kind of all remote and
+7:07 worked with some amazing cryptographers
+7:10 um there and we built a machine
+7:12 encrypted machine learning platform that
+7:15 was used by some folks in finance to do
+7:19 machine learning deep learning primarily
+7:21 on encrypted data but also other types
+7:23 of processing data science processing on
+7:26 encrypted data data we can talk about
+7:28 that more it was very exciting
+7:31 um and then the company chose to go
+7:33 different directions so I left that
+7:35 there and that's when I started at
+7:37 thoughtworks that would have been a
+7:39 January of 2022
+7:44 um and thoughtworks was starting to see
+7:45 an uptick in data privacy interests and
+7:48 advanced privacy and so now I I focus a
+7:52 lot on public sector and finance sector
+7:54 work and Advising even globally on on
+7:57 new privacy initiatives that people are
+7:59 rolling out across the world and then
+8:01 also leading teams here in public sector
+8:03 Germany to uh yeah do things build
+8:06 things with privacy built in
+8:08 yeah wow like there are so many things
+8:11 you have done it's probably easier to
+8:12 list what you have not done right so
+8:14 political science economics uh School
+8:17 teaching journalism
+8:18 NLP crypto
+8:22 it's like everything so it's been a fun
+8:25 Journey right it's been fun yeah
+8:27 keep learning you know right you feel
+8:30 the same way uh have you kept learning
+8:32 you think
+8:34 yeah but like maybe in uh less
+8:36 entertaining way it was just a boring
+8:39 Java developer and then I saw this thing
+8:40 called cold machine learning and then I
+8:43 decided to do this so I did and then I
+8:45 worked since then and now
+8:47 yeah I'm focusing on community so it's
+8:50 just a lot of fewer things when you got
+8:54 you could go to train your career
+8:56 but yeah who knows what happens for me
+8:57 next right I know yeah I think I have
+8:59 about 10 years of career on you so you
+9:01 get some time
+9:03 like seven minutes okay
+9:08 oh yeah so this startup that you
+9:10 mentioned KY protect right that you and
+9:13 your co-founder started yeah so this
+9:15 startup was about
+9:17 privacy in machine learning right so
+9:20 what kind of problem did you see there
+9:23 back then that he decided okay I need to
+9:25 have a startup and why this particular
+9:27 area why this particular domain why
+9:30 privacy
+9:31 yeah I mean so uh so there's numerous
+9:35 things that I think were happening at
+9:37 the time first off it was about to be
+9:39 gdpr was about to be rolled out around
+9:41 that time
+9:43 um and I think that we definitely
+9:44 noticed uh some need in the industry to
+9:48 start to address privacy by Design in
+9:51 machine learning which I think a lot of
+9:52 people didn't know can we even do
+9:55 machine learning uh with privacy how
+9:58 would that look
+9:59 um and then we had some customers that
+10:01 we were working with that wanted to
+10:04 train on data sets where they were going
+10:07 to share data sets either across
+10:09 companies
+10:11 um or even across like pretty
+10:15 highly secure data sets and so what this
+10:19 is also later what I focused on at Cape
+10:21 privacy and Dropout Labs the company
+10:23 encrypted learning but the problem in
+10:25 the industry and I still see it all the
+10:27 time is you have data Partners or you
+10:30 have numerous companies or even within a
+10:32 company you have like a highly secure
+10:34 data Zone and then more widely available
+10:36 data
+10:38 and yet the machine learning problem
+10:39 you're actually trying to solve needs
+10:42 that secure data but if you if you could
+10:45 you'd rather not send the data over or
+10:47 centralize the data and so I think this
+10:50 is a huge problem
+10:52 um it's a problem now I've worked on you
+10:54 know since 2017
+10:56 um and there's numerous ways and that's
+10:59 that's also some of what's covered in
+11:00 the book there's numerous ways so one of
+11:02 it is thinking through linked
+11:04 pseudonymization that's probably the
+11:06 least amount of protection that you can
+11:07 offer
+11:09 um and now there is moving towards
+11:11 encrypted machine learning or Federated
+11:13 machine learning or both
+11:15 and
+11:17 um I think it's like a real need that
+11:19 will only get stronger over time for
+11:22 better or worse so now starting to see
+11:24 those conversations also pop up in the
+11:26 US which is not really known for its
+11:29 privacy first approach um
+11:33 there is like a think that is similar to
+11:36 GT power right
+11:37 there's so there's a few things so the
+11:40 states each of the states themselves
+11:42 have started passing newer privacy
+11:45 regulation in the last few years
+11:49 um some of the newest stuff I haven't
+11:51 even read through like there's so many
+11:53 every day that are proposed and only a
+11:55 few pass but California's new one so
+11:59 first they passed CCPA in California and
+12:03 that's to cover how data is collected
+12:06 and how it's consented to and how it can
+12:08 be shared
+12:09 and then they actually uh passed and
+12:12 essentially I would say an enhancement
+12:14 of it last year and that's called cpra
+12:18 California privacy rights uh agreement I
+12:24 think
+12:24 and uh and this one essentially makes it
+12:28 a lot stronger so the CCPA it was only
+12:31 if you had a data breach did could you
+12:33 be fined or sued but the new one is
+12:36 actually going to set up exciting one of
+12:39 the first regulatory enforcement
+12:41 authorities in the U.S just around
+12:44 privacy and that's um gonna they're
+12:47 hiring now so if you're in California
+12:48 and you want to work on this they're
+12:50 hiring this person right now and you get
+12:53 to lead the first protection authority
+12:55 only on privacy in the US in the state
+12:58 of California so yeah now people now
+13:01 people in California will also need to
+13:03 consent to cookies right
+13:05 yeah they're gonna have to consent to
+13:07 all that collection uh there's certain
+13:11 restrictions on how the data can be
+13:13 shared
+13:14 um so like third-party data sharing
+13:15 becomes a lot more restrictive you can
+13:18 delete your data so you can request
+13:20 deletion
+13:21 um it doesn't really have a lot on
+13:23 portability which we have here in Europe
+13:25 of like taking your data with you
+13:28 um but some some measures around that I
+13:30 think are coming and we'll see we'll see
+13:32 what happens but
+13:33 because before like you didn't really
+13:36 have this pesky
+13:37 banners that you have like over your
+13:41 entire screen saying hey consent to
+13:43 cookies right
+13:45 which now okay by the way since like six
+13:49 to nine months if you don't see like a
+13:52 one click of opting out of of of
+13:55 everything but necessary it's
+13:58 technically not gdpr compliant because
+14:00 the French authorities came down and
+14:03 said absolutely not no more with this
+14:06 like 10 clicks to turn off cookies
+14:14 there should be a one-click reject now
+14:17 and the default should be reject
+14:20 um but yeah it's a long road as you know
+14:23 do you accept cookies or reject them I
+14:26 reject cookies I accept real cookies
+14:29 okay
+14:35 um because I think I've seen how the
+14:37 collected data gets shared and used
+14:41 um in advertising optimization
+14:44 and uh I'm not a big fan of personalized
+14:47 advertising myself I find it to be
+14:51 annoying and and so I'd rather not
+14:56 participate if I can opt out
+14:59 um
+14:59 but I think everybody has to make their
+15:01 personal choice but yeah I think the
+15:04 default should be opt-in only so like if
+15:07 I don't want personalized ads why can't
+15:08 I just tell you cool I'm on this website
+15:11 that sells data engineering books
+15:15 um to show me ads about data engineering
+15:16 like why are you trying to show me ads
+15:18 about choose on a data engineering
+15:21 website like this makes zero sense to me
+15:23 so yeah well now when they say when you
+15:25 say this it does make sense right you
+15:27 just know what this site is about so
+15:29 probably a person who landed on that
+15:31 website is interested in the topic of
+15:34 the website right
+15:35 I did not think about that because I was
+15:38 I also happened to work at some point in
+15:42 um at tech company and we were those
+15:45 people who were doing this nasty stuff
+15:46 of collection
+15:48 and you still opt in for cookies
+15:51 I do yeah
+15:53 you want to feed the algorithm yeah I
+15:57 mean after working with this startup I I
+16:00 removed that blocker from my computer oh
+16:03 yeah yeah
+16:05 I realized how these companies make
+16:07 money and uh
+16:10 yeah it's interesting I'm I'm curious as
+16:14 to what what your decision Matrix was
+16:17 like there but yeah uh it's not like I
+16:19 had a decision
+16:21 okay
+16:23 so what is data privacy so I think we
+16:27 kind of talked about this but you we
+16:29 didn't explicitly Define it so what is
+16:31 it
+16:32 yeah so data privacy I mean it's a huge
+16:35 topic right and so I have this one
+16:37 diagram that I used in the book which by
+16:39 the way you can read you can free
+16:41 preview on Amazon and ebook now and you
+16:44 can see this diagram
+16:47 um and I like to talk about that there's
+16:49 legal definitions of data privacy that's
+16:51 like a large aspect and obviously
+16:53 depending on where you live there might
+16:55 be a different legal definition of what
+16:57 data privacy means
+16:59 um and there might even be like a local
+17:01 level or a contractual level and so
+17:04 forth so there's all those legal
+17:05 definitions and then there's societal
+17:08 definitions and cultural definitions so
+17:10 there's like when I talk to you and I
+17:12 say hey I'd like to make this
+17:14 conversation private like what do you
+17:17 understand of that and what do you
+17:19 understand about the ways that we
+17:21 communicate privately with our families
+17:23 and friends and colleagues and so forth
+17:26 um so there's a whole area of data
+17:28 privacy that's just kind of how we
+17:29 understand it as humans and Humanity
+17:32 um and then there's technical privacy
+17:34 data privacy and that's you know the
+17:36 field that I work in
+17:39 um and it's kind of like how do we
+17:40 rigorously Define privacy how do we
+17:43 measure privacy how do we a reason about
+17:46 privacy
+17:48 um in statistics mathematics and and
+17:50 areas like machine learning and so I
+17:53 think it's cool because all these can
+17:55 intersect and you can you know take a
+17:58 legal interpretation and map it to a
+18:00 social interpretation and map that to a
+18:02 technical interpretation and
+18:04 um I think maybe your individual
+18:06 definition of privacy you know is very
+18:10 much influenced by what sphere you work
+18:11 in so like if you talk to a lawyer who
+18:13 works on privacy rights they have like a
+18:15 very different interpretation of their
+18:17 own personal privacy than if you talk to
+18:20 somebody that's never worked in law so I
+18:24 think it's um and just like I'm working
+18:26 for a while now in in privacy I think I
+18:29 probably have a different definition
+18:31 than a lot of people so it's kind of
+18:33 cool that there's all these different
+18:34 factors and probably people move around
+18:37 over time and in their life you know I
+18:40 think we can see that today with how
+18:42 younger people operate on social media
+18:44 and so forth and like creating fake
+18:46 profiles or or this that and whatever
+18:48 and
+18:50 um and other people who are really open
+18:52 and they share everything they like
+18:54 stream their entire life and
+18:56 so you have these different choices that
+18:58 people make which makes it kind of
+19:00 interesting to think about
+19:02 I have a fake profile on Facebook okay
+19:05 what's your name
+19:07 well my first name is my first name but
+19:10 my last name is different and the reason
+19:11 I did this is I was afraid of FSB like
+19:14 this Russian Security Service taking me
+19:17 yes yep which is a real thing yeah
+19:21 obviously yeah
+19:24 so yeah I don't know if they actually do
+19:26 this maybe they do I have seen it I have
+19:30 seen it with my own two eyes so indeed I
+19:33 can confirm that uh but the interesting
+19:36 thing and since we talk about privacy is
+19:39 people still find me surprisingly there
+19:43 are Services where you can upload a
+19:45 picture
+19:45 of somebody so for example I speak at a
+19:47 conference somebody takes a picture of
+19:49 me
+19:50 they upload to this service and this
+19:52 service finds my profile on Facebook
+19:55 can imagine and then they contact me
+19:57 through Facebook
+19:59 and for me this was like oh wow how is
+20:03 it even possible technically it is there
+20:05 you just scrape all this forbidden
+20:07 profiles or whatever index them
+20:11 uh yeah that was a surprise for me so I
+20:13 guess that's another
+20:16 definition of privacy right so like if I
+20:18 don't want to be discovered
+20:20 uh but people still do this even though
+20:22 I have like a fake profile
+20:25 um
+20:25 interesting yeah this is like um there's
+20:28 this concept that I talk about in the
+20:30 book too and a lot when I talk about
+20:31 these topics is like there's this
+20:33 translation from The Real World into the
+20:36 digital world or technology and I think
+20:39 we haven't been exactly very good at
+20:42 figuring out how to translate privacy
+20:44 from one to another so like I should be
+20:47 able to infer based on you changing your
+20:50 name that maybe you don't want to
+20:52 actually be contacted randomly on
+20:54 Facebook but like there's also know
+20:56 which way for you to kind of tell
+20:58 Facebook hey I'd rather people not find
+21:01 me
+21:02 um using these types of services and the
+21:04 fact that the services even exists like
+21:07 a choice to opt out of them or say like
+21:09 please don't do this like for me at all
+21:13 it's like I want to opt out I want to
+21:16 I don't know opt-in right so I don't I
+21:18 want to be opted out by default like I
+21:21 don't want my profile to be straight
+21:23 like if I want other people to contact
+21:25 me I don't know why did not
+21:28 why it did not occur to them that they
+21:32 could use LinkedIn or something right so
+21:34 that's
+21:35 anyways uh so there is a question I see
+21:38 that uh how can we find this book so the
+21:40 book is called practical data privacy if
+21:42 you just Google it I think the first
+21:44 link will be the book there's only one
+21:47 book with this name right yes yes yes I
+21:49 hope it's the first link if not then
+21:51 find it and click on it so it'll be the
+21:53 first link one day
+21:55 more certain way to find it is also at
+21:58 your first and last name right after
+21:59 yeah yeah yeah yeah
+22:01 I'm pretty sure for sure
+22:05 and the ebook went out yesterday so now
+22:08 it's available ebook and the print copy
+22:10 uh should be available in the next week
+22:12 or two okay so I think we should reach
+22:15 out to O'Reilly and ask them to give us
+22:17 a few copies so maybe yes right now we
+22:19 recorded uh we will record the podcast
+22:22 episode the interview right and then we
+22:24 will publish it in a couple of weeks so
+22:26 by the time we publish the book will be
+22:28 out and we'll probably have a few copies
+22:29 so everyone who is listening keep an eye
+22:32 probably when we release this episode
+22:34 there will be some sort of giveaway
+22:36 where you can get a free copy anyways
+22:39 coming back to data privacy definition
+22:41 so you set that up like a bunch of
+22:42 different definitions
+22:44 and maybe you can give it an example
+22:46 like how would a lawyer Define data
+22:49 privacy and how would a data science
+22:51 manager Define privacy
+22:53 yeah I mean and really we these two need
+22:56 to eventually agree right so like at the
+22:59 end of the day what we want when we're
+23:01 working at a company we're building out
+23:02 data products or services and so forth
+23:04 and they're operating in some sort of
+23:07 regulatory context which is all the time
+23:09 in Europe and and most of the time in
+23:11 other places
+23:12 and uh we want the legal team to agree
+23:17 with the technical team about not only
+23:20 the data we're collecting and processing
+23:22 but how we intend to use that data and
+23:26 the risks that we hold in using that
+23:29 data and the mitigations that we have
+23:31 for that risk and so it's a whole uh
+23:35 whole beautiful uh picture there of all
+23:39 the different things that you need to
+23:40 think about it once and
+23:42 a lot of times the conversation between
+23:45 the legal people and the technical
+23:46 people can get really difficult because
+23:49 both Fields use quite a bit of special
+23:52 words or jargon and that means that
+23:55 being able to translate between those
+23:59 spaces is kind of like a superpower that
+24:01 you can build over time
+24:04 um and I think something that we have to
+24:06 really work on from the technical side
+24:08 of the house as data people because a
+24:12 software engineer
+24:15 um
+24:15 does not have the same depth of
+24:18 knowledge about data and statistical
+24:20 reasoning and I think to fully
+24:23 understand the data privacy problem you
+24:27 have to have some exposure to
+24:28 statistical reasoning and thinking about
+24:31 data in a real way and so I think if
+24:34 you're a data professional you can
+24:37 really actually start leading this
+24:38 conversation because when we think about
+24:40 things like let's think about privacy
+24:42 risk like if you're in the complete
+24:46 middle of a distribution you're at the
+24:49 chunky part and the chance of you being
+24:53 singled out in any way shape or form is
+24:56 almost zero then your privacy risk is
+25:00 much much smaller than somebody that's
+25:03 at a very thin tale somewhere in the
+25:05 distribution can you give an example
+25:07 because for me like
+25:09 it's too abstract okay okay yeah yeah
+25:12 hey we talked about this website about
+25:15 data engineering yeah so maybe you can
+25:18 use the online advertisement as an
+25:19 example I visit the website right and
+25:22 then there is an option to you know have
+25:24 personalized advertisement or
+25:27 genetic right in this example
+25:31 what are the Privacy risks
+25:33 yeah okay
+25:34 um let's go with that so uh Firefox
+25:37 actually studied this and web history so
+25:42 the series of things that you visit in
+25:44 your browser even over the course of a
+25:47 fairly short time span let's say one
+25:49 week are uniquely identifiable most of
+25:52 the time and this is what we can think
+25:54 about
+25:55 um how many times uh do you you know we
+25:59 all use some major Services right so
+26:02 like you log into your email you log in
+26:05 maybe to social media and other websites
+26:08 and you do that every day even like news
+26:09 websites are quite popular right so that
+26:12 would be a large percentage of us just
+26:14 have those and those essentially don't
+26:16 leak very much information because so
+26:19 many people use them every day but then
+26:22 let's say you go and and you click on
+26:25 this book link right and you go look at
+26:28 that book and then let's say later today
+26:30 you look at two or three different
+26:31 YouTube videos and and then let's say
+26:34 later tonight you log into a Fitness
+26:37 website that you use or you go to a
+26:39 gaming portal that you use and then
+26:41 maybe you go to a subreddit that you
+26:43 like to post in and when you start to
+26:46 Trail these they become with all these
+26:49 data points together maybe not any one
+26:51 of them but that timeline of History
+26:53 together starts to become uniquely
+26:56 identifying and that's been studied and
+26:59 proven and I think like yeah as
+27:01 statistical people or people that
+27:03 understand that you can start to see
+27:04 that to remain
+27:08 non-identifiable you would have to
+27:10 really restrict and think about how you
+27:12 use the internet and so it's just not
+27:14 yeah
+27:15 we we call this thing so when I worked
+27:17 in an uptec company so we couldn't
+27:19 monitor the entire internet of course we
+27:21 could only see the apps that users use
+27:24 right but that's enough like it's pretty
+27:26 much the same like it's like I don't
+27:28 know you use Bubble Witch and then you
+27:29 use uh you know some other app and then
+27:32 like it's the same story as you just
+27:34 said
+27:36 and we call this thing a user profile
+27:40 okay and then like for each user we had
+27:43 we saw we have this profile and we
+27:46 basically know everything about this
+27:47 person right including
+27:50 uh geographical coordinates should know
+27:54 that where they live which is like mind
+27:56 blown or mind-blowing right yeah I mean
+27:59 it's um and I think just to go back to
+28:03 like the user experience I think that
+28:05 the average user even those of us that
+28:07 have worked in this space like we don't
+28:09 actually think a lot about
+28:11 uh the Privacy risks that that poses to
+28:14 people and the fact that probably some
+28:17 people would rather not
+28:20 um have that amount of private
+28:22 information exposed or that you know
+28:24 fingerprinting via various mechanisms
+28:26 and you know you could use browser
+28:28 signatures to fingerprint you can use
+28:30 operating system information to
+28:32 fingerprint there's even been people
+28:34 that fingerprint Mouse activity and so
+28:36 forth or typing flow I mean there's a
+28:39 lot of ways to violate somebody's
+28:41 privacy using technology
+28:44 like why do we why do companies use that
+28:49 because don't we like have other ways to
+28:51 identify that you
+28:53 uh are you
+28:55 I mean like yeah yes presuming that we
+28:59 uh that you log in and that you
+29:02 participate right so for sites that
+29:04 don't have login or for sites that want
+29:07 to offer
+29:08 personalized tracking for people that
+29:11 are not logged in and Later login so a
+29:13 lot of shopping cart optimization and so
+29:15 forth uses these types of things as well
+29:17 to link profiles
+29:20 um of logged in and logged out users
+29:23 and I think what I guess like I think
+29:26 the the bigger question here is what
+29:28 value does it actually bring for us to
+29:31 know exactly who somebody is
+29:34 zero most of the time it's just creepy
+29:37 also
+29:42 and so I think that's that's like a lot
+29:46 of what I try to ask is like yeah and
+29:48 the goal would be like for an
+29:49 advertisement company is to serve the ad
+29:52 that the user is more likely to click
+29:54 rather than ignore and the rest is not
+29:57 important we don't really need
+30:00 well I also remember that the use cases
+30:02 for geographical coordinates like for
+30:05 example if there is a store nearby that
+30:07 has some
+30:09 you know some campaigns some discounts
+30:11 then we can promote that
+30:15 yeah I mean I think
+30:17 um one of the things that I'm excited to
+30:19 see is I think there's a lot more
+30:21 thinking through intent based
+30:23 recommendation
+30:25 so what is the intent of the of the user
+30:29 um and how do we improve you see this a
+30:32 lot with I think the first time I
+30:34 noticed it was I think Amazon and
+30:36 Netflix were both starting to talk about
+30:38 this where they wanted to do session
+30:41 driven recommendations where
+30:44 um they don't it's kind of like also a
+30:46 bit of a cold start problem so a user
+30:48 comes they might not have previous
+30:50 information about the user how do we
+30:53 given the way they're interacting with
+30:55 the site right now in this moment
+30:58 um what they're searching for what
+31:00 they're scrolling to what they're
+31:01 clicking on how do we give them
+31:03 something that matches their intent and
+31:05 I think there's ways to design these
+31:07 systems to be extremely privacy
+31:10 preserving particularly if
+31:13 um you use a training group that has
+31:16 fully opted in to being tracked right
+31:20 um and then you use it almost an
+31:23 ephemeral
+31:24 inference that you can just throw away
+31:27 the data when this user leaves the
+31:29 session so you could really design this
+31:32 extremely privacy friendly if you wanted
+31:35 to and I think that they were starting
+31:37 to experiment and showing oh hey it's
+31:39 kind of almost better than
+31:41 personalization if what the person's
+31:44 trying to do we immediately give them
+31:46 what they're looking for
+31:49 okay so in this case
+31:51 um we said privacy preserving methods we
+31:54 do not necessarily need look at this
+31:57 user profile that we mentioned right we
+31:59 don't necessarily need like your five
+32:00 years of browsing history uh we just
+32:03 look at uh your session right so like
+32:06 last 10 minutes yeah what are you trying
+32:09 to do just activity on Amazon or
+32:11 whatever right yeah exactly and like I
+32:14 think people especially it's been shown
+32:16 with research over decades now that if
+32:19 sharing my location right now is going
+32:21 to help improve my experience I I'm
+32:24 willing to do that but I don't want to
+32:26 turn on location sharing forever I just
+32:29 want to say hey look I'm looking for
+32:31 restaurants near me like here's my
+32:32 location right now tell me what choices
+32:35 I have and then let me opt out
+32:37 immediately after I'm done with that
+32:39 search and so I think there's some
+32:42 pretty cool ways if you wanted to to
+32:44 um to build privacy into these things
+32:47 and to also meet users where they're at
+32:49 to let them opt in and out on a
+32:51 case-by-case basis and it could even be
+32:55 something as simple as hey we'd like to
+32:58 use your location to improve the search
+33:00 results like for this search right or
+33:02 something like this and so I think
+33:04 there's ways to to build it in quite
+33:06 easily yeah
+33:07 so thinking about these things and
+33:10 incorporating them in our systems
+33:13 would you call this privacy engineering
+33:15 like uh the term privacy engineering is
+33:18 exactly about these things right yeah
+33:21 and I think like so that could be some
+33:23 of the basics is you look at the data
+33:25 side or you look at the application side
+33:27 what you're trying to do and then you
+33:28 look at the Privacy risks and
+33:30 constraints you try to build out
+33:32 requirements that can meet both this
+33:34 also means learning to talk with legal
+33:36 staff and so forth but then also it can
+33:39 go even further so
+33:42 um some of what I talk about in the book
+33:43 and that I'm really excited about is
+33:45 privacy enhancing Technologies or what I
+33:47 often just call privacy Technologies
+33:49 where there are particular ways that we
+33:52 can architect or particular types of
+33:56 algorithms or cryptography that we can
+33:58 use that can even further so it takes
+34:00 kind of these problems that it takes
+34:03 them to the next level to allow us to do
+34:05 more advanced data science and machine
+34:07 learning but also have an option for
+34:11 rigorous definitions of anonymous
+34:13 committee for keeping data localized so
+34:17 for not centralizing so much data and
+34:21 for doing real data science on encrypted
+34:23 data so where the data was never
+34:25 decrypted and so all of that those I
+34:28 think are the really cool stuff but
+34:31 um it takes a bit of time to integrate
+34:33 them into as you can imagine a data
+34:36 architecture and a data science workflow
+34:38 and so I would almost always advise
+34:40 people start with the simple stuff get
+34:43 that conversation going at their
+34:45 organization and then they can move into
+34:47 more advanced privacy engineering but I
+34:50 I'm a big fan of broadening the
+34:52 definition I think the definition of
+34:54 privacy Engineers is all of that and um
+34:58 I would say use it liberally we need
+35:00 more people talking about privacy
+35:02 engineering so if you're listening to
+35:04 this and you want to be a privacy
+35:06 engineer do it
+35:09 I'm still somewhat skeptical about this
+35:12 so why would I like let's say around the
+35:15 company why would I care about this
+35:18 privacy preserving techniques because
+35:20 for me from what it
+35:24 it feels like that if I use all this
+35:27 information I have about the user then I
+35:30 will be able to
+35:32 I don't know serve them with better ads
+35:34 have better user experience so for
+35:36 example if we take Google because Google
+35:38 knows that me is me
+35:42 when I type something it shows me a
+35:44 stack Overflow article not something
+35:46 else right because it knows me so well
+35:48 it knows what kind of
+35:50 stuff I'm into and then the experience I
+35:53 have as a result is much better for me
+35:56 please
+35:57 if that is personalization and how much
+36:00 is just a very nice search algorithm or
+36:03 Series right
+36:04 well
+36:08 there's a lot of ambiguity right and
+36:11 many things
+36:12 sometimes like for example for me it's a
+36:14 stack Overflow article but for you it
+36:16 could be like I don't know
+36:19 but just an article about something else
+36:22 because I clicked on stacker for links
+36:24 so many times that it knows that I like
+36:27 this site more than other websites
+36:31 yeah I mean I think uh
+36:33 um I mean I think individualized search
+36:36 ranking is probably something that
+36:38 Google moved away from a long time ago
+36:40 but I'm not 100 certain but I'm pretty
+36:43 sure on that one
+36:45 um so I think uh
+36:47 I think that some of the some of that
+36:49 there's also of course like some more
+36:51 real-time generation of results which
+36:53 can change results over time but I do
+36:55 back to like you're running a company
+36:57 like why why integrate privacy
+37:01 um for me that it's better without
+37:02 privacy than with privacy so how do I
+37:05 how do you prove me wrong uh yeah yeah
+37:08 so I mean
+37:14 I mean a ground statement here
+37:16 here like what does it mean about your
+37:18 product and your company if you can't
+37:21 build privacy in
+37:23 and I think there's like there's like a
+37:25 moral and ethical thing that you need to
+37:26 think about where it's like if the
+37:29 entire basis of your company or your
+37:32 product
+37:32 is not going to work if you allow people
+37:36 to opt to out
+37:37 um or to have like share less data then
+37:40 what exactly are you building I think
+37:42 that's like a big question to ask but
+37:45 let's say you say Catherine whatever uh
+37:48 we tested it and it works better with
+37:50 private information I mean what you need
+37:53 to think about is the managed risk that
+37:55 you hold at that point in time so
+37:57 there's I've worked in finance and
+37:59 public sector now for a while and
+38:01 therefore my
+38:02 the risk appetite of the people that I
+38:05 work with is much smaller than a lot of
+38:07 Industries but I think what I'm starting
+38:09 to see also even just thoughtworks
+38:11 Global some of the things that are
+38:13 coming across
+38:14 um my my desk as the Privacy one of the
+38:17 privacy smes of the company is
+38:20 um is that this is a growing concern for
+38:23 a lot of people who hold data and I
+38:25 think there's a lot of companies that
+38:27 you wouldn't expect are thinking and
+38:29 prioritizing this problem that are
+38:31 and I think the reason is is there's
+38:34 Regulatory pushback and there's customer
+38:36 and social blowback and I think both of
+38:39 those are real and if you can do build
+38:43 the product and deliver what you're
+38:45 trying to do by collecting less data and
+38:48 holding less risk it's just a smart
+38:51 financial decision because if something
+38:53 happens and you get sued or if something
+38:55 happens and your insurer drops you
+38:58 that's gonna cost you a lot more than
+39:01 like the half a percentage bump that
+39:04 adding location to the machine learning
+39:06 regressor will give you and so I think
+39:10 you have to actually think the trade-off
+39:12 you're making there is not zero risk uh
+39:15 100 reward it's some balance between
+39:18 those two
+39:19 I guess for me as a company I would say
+39:22 I know CEO or whoever
+39:25 I need to rely on like data Protection
+39:28 Officer or somebody who can or these
+39:30 privacy Engineers that we talked about
+39:32 who can tell me look keeping this data
+39:36 might be dangerous like in terms of like
+39:39 maybe or illegal yeah
+39:43 but just be illegal
+39:45 but like on the kitchen date using
+39:48 location data is not illegal it's legal
+39:50 as long as like you you have a great
+39:52 consented yes yeah
+39:55 yeah okay but we have to provide an
+39:58 option for users to opt out of this
+40:00 right yes and then our website still
+40:03 needs to it still must function without
+40:06 application data
+40:07 yes at least in Europe right for example
+40:11 in Europe and I think in Brazil now with
+40:15 lgpd Chile has a new law coming out
+40:18 China has some the China law that came
+40:21 out last year let's see how it gets
+40:23 enforced I mean increasing amount of
+40:26 places
+40:28 actually recently um
+40:30 I had a this experience that there was
+40:33 one website I will not name it when you
+40:37 reject cookies it stops working
+40:41 yeah obviously if I decided everybody
+40:43 yeah
+40:45 interesting very easier experience
+40:49 so I heard this term called differential
+40:53 privacy
+40:54 like how is it different from like usual
+40:57 data privacy
+40:58 yeah um uh so differential privacy is uh
+41:04 a concept that we use to reason about
+41:07 privacy loss and it's often used to
+41:11 think about
+41:13 um
+41:14 how stringent do we need to be about the
+41:18 amount of privacy or information that we
+41:20 give out about any one individual in the
+41:22 data set to provide them with the
+41:25 highest level of privacy we can offer
+41:27 and so in Europe it's and in a lot of
+41:32 places it's often considered by also by
+41:34 legal experts so if you talk to a
+41:36 privacy lawyer they actually know what
+41:38 differential privacy is which is really
+41:39 cool and it's kind of the highest
+41:42 standard for thinking through the
+41:44 problem of anonymization
+41:46 and um go go briefly through it so I'm
+41:50 not sure if you're familiar with Cynthia
+41:51 dork's work
+41:53 it's India George she was a researcher
+41:55 at Microsoft for a long time and and she
+41:57 developed
+41:59 um some of the fundamental theorems in
+42:01 in a few different hard crypto problems
+42:04 and then also this thing of differential
+42:06 privacy and she was I think working in
+42:08 machine learning at the time this is
+42:10 quite a while ago and she had debunked
+42:12 she and a few of her peers had debunked
+42:14 the idea that data could be released and
+42:18 be anonymous
+42:19 because the problem is is like we work
+42:23 in information Theory so in terms of
+42:26 information Theory you release
+42:27 information the chance of the
+42:30 information being about individuals and
+42:31 the data is quite high right and then
+42:34 the chance that something can be learned
+42:35 about the individuals is quite high too
+42:37 this is kind of like this is a baseline
+42:40 of why data science works you know like
+42:42 you take information from a population
+42:45 you synthesize it you learn right and so
+42:49 um what Cynthia dork did is like after
+42:51 they proved that there was no such real
+42:53 thing as anonymization from a scientific
+42:55 sense of the world if you're going to
+42:57 release data then they were like oh no
+43:00 we we broke it like maybe we should come
+43:02 up with a new definition so that we
+43:05 could so people can still keep doing
+43:07 data right and so what they developed is
+43:11 this reasoning about the probability
+43:13 that somebody can learn something
+43:17 um in the classic definition before and
+43:19 after or a person was added to a data
+43:21 set
+43:22 so you're building like a query
+43:23 mechanism you want to give an analyst
+43:26 access to a query mechanism the analyst
+43:29 queries before a person's added and then
+43:31 after a person's added and we like to
+43:34 hold the probability that they learn
+43:36 something about this person who is added
+43:39 or even that the person was added within
+43:41 a tight bounce and that's the formal
+43:44 definition of differential privacy and
+43:46 then that original definition has been
+43:48 expanded to include a lot of cool
+43:51 Concepts like computational complexity
+43:54 like thinking through the chance of a
+43:58 particular types of error happening in
+44:00 responding and and so forth and there's
+44:03 a chapter on it in the book and I got to
+44:05 work with Damian de Fontaine who's one
+44:08 of the global leading experts on
+44:10 differential privacy and is based um
+44:12 down in Zurich and led the Google
+44:14 differential privacy implementations
+44:16 when they first did theirs and now is
+44:19 that a really cool startup called tumult
+44:21 labs and they they haven't uh they have
+44:24 a spark based open source differential
+44:27 privacy library that you can use at this
+44:29 moment that you can install and I was
+44:31 one of their beta testers this is a
+44:33 really cool Library so yeah
+44:35 can recommend what's the difference
+44:37 between like anonymization and what you
+44:39 just described because I guess we can
+44:42 take a data set with some private
+44:45 information like I don't know emails
+44:46 phone numbers geographical locations
+44:50 so this information that we can use to
+44:52 identify a specific person
+44:54 and we just you know hash the data using
+44:57 some sort of like md5 hash or something
+44:58 okay okay is it not enough like are we
+45:01 not uh
+45:02 like Within These differential privacy I
+45:06 think
+45:07 um so yeah so like those are kind of
+45:10 like the oh what I would call like more
+45:12 old school methods of anonymization and
+45:14 people might have also heard about like
+45:15 hey anonymity is was another kind of
+45:18 what I I call like an older and old
+45:20 school definition of anonymization it's
+45:22 just like oh I dropped all the person uh
+45:25 personally identifiable information so
+45:27 it's anonymized and I think what bork
+45:31 and and numerous folks after were were
+45:33 able to prove is that doesn't actually
+45:36 cover anything about anonymization
+45:39 because yeah if you don't release any
+45:41 data so you don't release any of the
+45:43 attached rows or other information from
+45:46 the data set sure that then you can call
+45:48 it anonymized because no information is
+45:51 released but
+45:53 um depending on how you release your
+45:55 groups and what other information is in
+45:57 there again like we were talking about
+45:58 there's quite a few things that are
+46:00 personal and personally identifiable
+46:02 like what apps do you use what phone you
+46:04 use your browser this and that whatever
+46:07 uh that if you don't remove all those
+46:09 two then that's just more information
+46:11 leakage and this is why people that are
+46:13 outliers are have a special amount of
+46:16 privacy risk because if let's say
+46:19 there's one row in the data set that
+46:21 you're releasing where somebody is
+46:23 singled out so to speak these can lead
+46:25 to all different types of privacy
+46:27 attacks that people can perform one of
+46:30 the great ones
+46:31 um around the anonymization was the
+46:33 Netflix prize in which uh Narayanan and
+46:40 I think I pronounce it right we're able
+46:44 to prove uh that they could they
+46:46 de-anonymize or they re-identified a
+46:49 group that of reviews that Netflix
+46:51 released and they said they were
+46:53 anonymized and they had just done
+46:55 exactly what you said they're just like
+46:57 yeah we totally anonymized it so
+47:00 my candidate looks club we run courses
+47:02 and then as a part of that we like when
+47:06 students submit their homework we ask
+47:09 things like hey how much time did you
+47:10 spend on this homework how much time did
+47:13 you spend on watching lecture so
+47:16 like the answers all that
+47:18 and then at some point we released this
+47:21 data so then others can explore it and
+47:25 what we did is we took the email and
+47:27 just applied
+47:28 one
+47:30 hashing installed emails
+47:32 without
+47:35 okay
+47:36 is this bad bad
+47:41 we can do a privacy analysis later you
+47:44 show me you show me the script to use
+47:46 I'll help you out okay
+47:50 um I mean
+47:51 sorry did you do any other randomization
+47:54 of the data or anything okay
+47:56 um but it was like not so much data so
+47:59 we had a
+48:00 this information how much time they
+48:02 spent on different activities that plus
+48:04 anonymized email so we can identify that
+48:07 this is the same user across different
+48:10 modules of the course
+48:13 yeah yeah yeah and again like I think
+48:15 probably people have opted in for this
+48:18 um by using the site and by submitting
+48:20 the form so I think like I'm not here to
+48:22 try to give you legal advice I'm also
+48:24 not a lawyer
+48:25 um but there's ways that
+48:28 there's we should have stopped this from
+48:30 the very beginning of this interview
+48:32 there's ways that we can offer a bit
+48:35 more
+48:37 um privacy for the users or also like to
+48:40 consent right like people that say like
+48:42 I want my day to use or I want my day to
+48:44 use with anonymization or I only want
+48:46 this day to use or for these things but
+48:49 essentially differential privacy as a
+48:52 mechanism so we use certain algorithms
+48:54 to implement differential privacy and
+48:56 then release data it can help you
+48:59 actually reason like what's the Privacy
+49:01 loss of each individual and it can start
+49:04 to cap individuals at a certain point in
+49:07 time and there's a cool graphic in the
+49:09 book and also in in Damian has a Blog
+49:12 series
+49:13 production to differential privacy but
+49:15 there's a cool graphic where you can
+49:16 actually start to view the probability
+49:18 distribution of the different values of
+49:21 certain parameters we use to tune
+49:22 differential privacy and you can
+49:24 actually then sit there and reason and
+49:26 say like how much privacy are we willing
+49:28 to have so that this data can still have
+49:31 high information High utility
+49:33 but tune it and maybe even you could
+49:37 tune it on an individual level if you
+49:38 ever wanted to give that option for
+49:40 people but I mean if you have a iOS
+49:43 device differential privacy is already
+49:45 running on your phone
+49:47 um so or on whatever iOS device you have
+49:50 so is this something that's been
+49:52 deployed in quite large scale ways that
+49:55 a lot of the larger tech companies and I
+49:57 think it's
+49:58 more usable now for those of us that
+50:01 didn't get phds in differential privacy
+50:03 and kind of how we can experiment and
+50:07 use them so I have a few notebooks for
+50:09 the book too there's a there's a
+50:10 repository it's like if you want to play
+50:12 around
+50:13 um there's I think three or four
+50:14 notebooks on building your own
+50:15 differential privacy mechanism and then
+50:18 one notebook using the tumult analytics
+50:21 Library which I found to be the most
+50:23 user friendly of the ones I reviewed for
+50:25 the book
+50:27 now I'm kind of a bit freaking out right
+50:29 now
+50:35 no no I I sorry I don't want to like
+50:38 scare people but with this information I
+50:40 want people to feel empowered
+50:42 I want people to feel empowered no I
+50:45 think so look like the some of it is
+50:48 about intention and awareness and I
+50:50 think you know folks who participate in
+50:53 the club like understand yeah exactly
+50:55 and I think that it's uh when I try like
+50:59 an FAQ there's an FAQ chapter of the
+51:01 book because I get a lot of questions on
+51:03 this stuff and one of the FAQs is like
+51:05 oh no like we release data and we didn't
+51:08 apply any of this stuff what do I do and
+51:11 it's like just think about it the next
+51:13 time you know it's it's not gonna enough
+51:16 nobody's gonna die hopefully uh no
+51:19 nobody's gonna get arrested hopefully
+51:21 and uh just
+51:24 I meant based on your data release you
+51:27 know
+51:28 um and hopefully you know just the next
+51:31 time like have a think through it and I
+51:33 think honestly if people just
+51:35 started writing up some privacy
+51:37 requirements as part of the normal data
+51:39 science process that in and of itself
+51:42 would solve like 95 percent of the
+51:44 issues we have is just actually sitting
+51:46 there thinking for a second is there
+51:49 more privacy we can offer or should we
+51:51 offer people the chance to opt out or
+51:54 um can we can we try out a cool new
+51:56 library that we heard
+51:58 um I just give it just start to build it
+52:01 in it's the same thing as like everybody
+52:03 talking about you know building CI CD
+52:06 for for data science processes building
+52:09 testing into data science processing
+52:11 building validation I mean these are all
+52:14 Concepts that we can slowly work into
+52:16 our workflow and nobody's gonna
+52:19 nobody's going to report you I'm
+52:21 definitely not going to report you and
+52:24 some of the students listen to this and
+52:26 it's freaking out please just reach out
+52:29 to me and I will remove your data don't
+52:31 see me please
+52:34 um what do you think about chat DPT like
+52:37 how privacy preserving is it
+52:41 it's been interesting so I have a um I
+52:44 have a newsletter on on data privacy and
+52:46 machine learning so I have the past two
+52:48 issues I just only heard about chat GPT
+52:50 and you heard about it it was banned in
+52:52 Italy for a while right
+52:55 um
+52:57 not anymore so cool here is an amazing
+53:00 prior busy story everybody Chad gbt was
+53:04 banned in Italy and I don't know if you
+53:06 remember the big privacy leak that
+53:08 happened but um some users were logged
+53:10 in and they could see other people's
+53:12 chat histories and this happened
+53:15 um I don't know a month and a half ago
+53:18 or something
+53:19 and you could see the chat histories of
+53:22 other people and people started scaring
+53:23 screenshots and then they took it down
+53:26 for they took down history for a while
+53:28 and then they put it back up after they
+53:30 got it fixed but in that time period
+53:33 they actually had to notify people in
+53:36 Europe whose data was exposed if they
+53:39 found that there was private information
+53:40 in the chat histories good job gdpr that
+53:44 it exists right so there's a win and so
+53:48 some people got notified and there was
+53:51 things like email addresses credit card
+53:53 numbers there was all this private data
+53:56 that people were feeding into chat GPT
+53:58 and credit card information in LGBT
+54:02 you're probably copying and pasting from
+54:04 internal emails or something like this
+54:06 right or other stuff and yeah because
+54:09 like you don't care about this like what
+54:12 is yeah
+54:13 but this is the problem is like people
+54:16 are just copying and pasting anything
+54:18 into chat GPT
+54:22 well it is definitely not the user's
+54:26 fault
+54:27 um when privacy comes into question
+54:28 because I think the thing that we have
+54:31 to think through is like if we don't
+54:32 build things so that it's easy for
+54:35 people to do the the you know the
+54:38 easiest path is security easiest path
+54:40 you know is private or at least gives
+54:43 people
+54:44 consent options right this is how we
+54:48 have to design stuff because people are
+54:50 going to use stuff however is easiest
+54:52 for them to use it and if there's a big
+54:54 text box and it says hey I'll help you
+54:57 write email responses people gonna put
+55:00 their email in it that's exactly what
+55:02 they're gonna do and there's even like
+55:04 open AI people being like please do that
+55:07 and so they they have to assume that
+55:10 people are going to do this anyways they
+55:12 got they got notified in Italy and like
+55:14 absolutely not we're shutting this down
+55:15 and so Italy shut it down and said you
+55:18 have until the end of the month to
+55:20 comply to prove you complied and it was
+55:24 literally like a day or two before the
+55:25 end of the month that's when they
+55:28 launched the turn history on and off so
+55:30 now you can turn history off which is
+55:32 what they should have done in the first
+55:34 place but they didn't but at least you
+55:36 can turn history off and that was I
+55:38 think like some of my writing on chat
+55:40 GPT from the start was
+55:42 hey let's not even touch GPT three 3.5
+55:46 M4 and how much private information is
+55:49 in that we're going to leave that for a
+55:50 second that's a that's another ballpark
+55:52 but let's just talk about the interface
+55:54 and how you roll it out and you know I
+55:58 used it a little bit in the beginning to
+56:00 try to see how all of it worked
+56:02 obviously and see if I could get it to
+56:03 tell me interesting things and one of
+56:06 the things I noticed they're like please
+56:07 do not put personal information here in
+56:10 like a tiny little
+56:12 I don't think anybody read that
+56:16 um so some of it is just like how you
+56:19 communicate to the user and I think most
+56:22 people didn't know that it's a re
+56:24 obviously people who work in machine
+56:26 learning know
+56:27 but they don't know it's a reinforcement
+56:29 learning system that's like under active
+56:31 training so any of your chats can be
+56:34 used at any point in time to optimize
+56:36 the reinforcement learning with human
+56:38 feedback right system that's underlying
+56:40 it and the amount of probably like
+56:43 proprietary confidential and personal
+56:45 day data that's now in that
+56:47 reinforcement learning system or several
+56:49 of them
+56:51 um
+56:52 they have probably a big job to figure
+56:56 out and sort that
+56:58 um
+57:00 they will need to identify that in their
+57:03 historical data like in all these logs
+57:06 they have like credit card information
+57:07 addresses email addresses uh you know
+57:10 dates of birth and all this kind of
+57:13 identifiable information they will need
+57:15 to
+57:16 mask it right so like good placeholders
+57:19 there
+57:20 and then only then use it for
+57:22 reinforcement learning yeah that's the
+57:25 ideal like first step right and I think
+57:27 the other thing to question is like do
+57:30 they have under what consent was that
+57:33 collected so is it allowed to be stored
+57:36 for a long time and used for training is
+57:38 there a retention period for that were
+57:41 people informed how can people delete it
+57:43 so like there has to be deletion
+57:45 abilities and then one of the things I
+57:48 don't know if you saw too but Amazon uh
+57:51 corporate lawyers had to send out a big
+57:53 memo to Amazon and start doing uh
+57:56 mitigation with open AI because there
+57:59 was internal proprietary Amazon
+58:01 documents that they found in Chachi PG
+58:04 because people were using it so again I
+58:09 don't blame any users because users want
+58:11 to do what users want to do that's the
+58:13 whole point of offering a service it's
+58:16 open ai's responsibility and now
+58:18 Microsoft's responsibility in a lot of
+58:20 ways too actually build a user interface
+58:24 and machine Learning System where they
+58:26 think about this stuff and they make it
+58:28 a little bit easier to use so that I say
+58:31 like we should respect and protect even
+58:34 the most irresponsible user because
+58:36 that's part of our job that's the
+58:38 responsibility we take on when we give
+58:40 somebody a huge text box that we say go
+58:43 to town so
+58:44 yeah I'm just realized how irresponsible
+58:47 it was on me
+58:48 when I recently got a contract so I had
+58:51 a contract and I'm not a lawyer I
+58:53 thought okay let's ask Chad DPT what he
+58:56 thinks about this contract like are
+58:58 there any
+58:59 uh you know suspicious parts
+59:01 so I took the contract control a control
+59:04 C control e to charge GPT and ask hey
+59:06 like is this a good contract and let's
+59:08 say I'm not a lawyer but this contract
+59:10 looks fine and now when you
+59:14 talk about this people who put credit
+59:17 card information there and I think I can
+59:20 I'm the same like I just took in that
+59:23 contract to put it there without
+59:25 realizing what could actually happen
+59:27 with this information yeah but again
+59:29 like I don't think the responsibility
+59:31 should ever lie on the user you know
+59:34 you're doing exactly the way the product
+59:37 is designed to be used it is not your
+59:40 fault that it's not thought through how
+59:42 you could be like oh hey for this
+59:44 interaction could you just forget
+59:45 everything that I'm gonna tell you
+59:48 um which should be available one of the
+59:50 other cool things I learned
+59:52 um with the Italian stuff uh and
+59:55 everything going on and obviously I've
+59:57 been advising a few different groups of
+1:00:00 folks on how to use chat GPT in a more
+1:00:03 compliant manner
+1:00:05 and I think one of the coolest things is
+1:00:07 that Azure launched the ability to
+1:00:10 localize a chat GPT
+1:00:13 um for you so not only is it localized
+1:00:15 in your whatever your Azure cluster or a
+1:00:18 cloud looks like
+1:00:19 um so the data is not being sent to the
+1:00:21 US which is a part of fulfilling some of
+1:00:24 the gdpr requirements but then also you
+1:00:27 can even do fine tuning and have an
+1:00:30 individual
+1:00:31 um
+1:00:32 reinforcement learning system on top of
+1:00:34 the underlying language model and all of
+1:00:38 that is yours you actually own that
+1:00:40 um so I think that's pretty cool and
+1:00:43 maybe something that for people that are
+1:00:45 using it is worthwhile uh putting
+1:00:47 putting some money into the Azure credit
+1:00:49 machine so that you have your own
+1:00:53 God of course there's like a million
+1:00:54 open source repos where people try to
+1:00:56 recreate some of these things I'm
+1:00:59 excited to see how that develops over
+1:01:01 time
+1:01:03 okay I realized that we're slightly over
+1:01:05 time oh yeah and there's unfortunately
+1:01:08 one question that we did not cover so
+1:01:11 but uh
+1:01:12 yeah maybe next time but one thing I
+1:01:16 wanted to ask you before we finish is if
+1:01:19 I want to learn more about this topic of
+1:01:21 course there is book that I can go and
+1:01:23 read is there anything else you would
+1:01:25 recommend in addition to the book that
+1:01:27 would be useful for me to check if I
+1:01:29 want to learn more about this topic
+1:01:31 yeah I mean obviously I will mention
+1:01:34 that my newsletter is called probably
+1:01:36 private
+1:01:38 um uh probably private.com so you can
+1:01:41 check it out um I'll try to cover things
+1:01:43 there
+1:01:44 um I know I mentioned Damien's work
+1:01:45 early earlier
+1:01:47 um you could find them online if you
+1:01:49 search Ted on privacy or uh Damien Dave
+1:01:53 Fontaine um his work is really amazing
+1:01:56 around differential privacy and there's
+1:01:58 a bunch of cool references in the book
+1:02:00 too like a million other people who
+1:02:02 whose work I I really love and admire so
+1:02:06 um if you go on Amazon right now you
+1:02:08 could preview the book up to the end of
+1:02:10 the first chapter you can also do that
+1:02:12 on ebooks.com and so if you look through
+1:02:16 those you'll see a bunch of references
+1:02:17 to the beginning Concepts and I'll try
+1:02:20 to be I'm thinking of promoting a series
+1:02:22 called what does it mean to be a privacy
+1:02:24 engineer and interviewing some of my
+1:02:27 um my colleagues peers and and also
+1:02:29 folks whose work if I admire so maybe
+1:02:31 stay tuned in and you can see some
+1:02:34 blurbs on what does it mean to work in
+1:02:36 privacy until you've probably announce
+1:02:38 it in your newsletter right yeah there
+1:02:41 and and definitely on social media and
+1:02:43 so forth so okay so keep an eye on all
+1:02:46 social media accounts and the newsletter
+1:02:48 and with that that's all we have time
+1:02:50 for today thanks a lot for joining us
+1:02:52 today for telling about uh all this and
+1:02:56 uh I also realized how responsible I was
+1:02:59 in a few questions which I guess is a
+1:03:01 good outcome
+1:03:03 um yeah
+1:03:04 same thanks everyone for joining us
+1:03:06 today too so thanks so much

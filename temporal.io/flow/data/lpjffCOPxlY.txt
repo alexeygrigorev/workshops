@@ -1,0 +1,1469 @@
+Large-Scale Entity Resolution
+
+0:00 hello everyone Welcome to our event this
+0:02 event is brought to you by data talks
+0:04 lab which is a community of people who
+0:05 love data we have weekly events and this
+0:08 is one of such events if you want to
+0:10 find out more about the events we have
+0:11 go to the description there is a link
+0:14 there click on this link and you'll see
+0:15 all the events we have in our schedule
+0:18 don't forget to subscribe to our YouTube
+0:20 channel if you want to see events and
+0:22 videos like this one and we have an
+0:24 amazing slack Community join it if you
+0:27 want to hang out with other dating
+0:28 enthusiasts
+0:29 during today's interview you can ask any
+0:32 question you want there is a pinned Link
+0:34 in the live chat click on this link ask
+0:36 your question and I will be covering
+0:38 these questions during the interview
+0:41 so that's all for the introduction now I
+0:44 will need to open the document with
+0:47 questions
+0:49 and
+0:51 I think I'm ready to start are you ready
+0:53 to start yeah absolutely
+0:55 just maybe before we start I want to
+0:58 make sure I pronounce your name
+0:59 correctly it's Sono right yeah very well
+1:03 so it's uh the last syllable right so no
+1:07 sooner yes
+1:09 okay so this week we'll talk about
+1:12 identity resolution and we'll also we'll
+1:15 talk about building an open source
+1:17 startup and we have a special guest
+1:19 today so no sonal is the founder of zinc
+1:21 which is a machine learning powered
+1:23 identity resolution framework and it is
+1:26 actually not the first time so now
+1:27 appears in data talk slab a data talks
+1:30 club we have a thing called open source
+1:32 Spotlight where we invite open source
+1:34 authors to demo their tools and this is
+1:37 how sonal and I got to know each other
+1:39 and actually heard demo of zinc is one
+1:43 of the most watched open source
+1:44 Spotlight videos so I thought it's a
+1:46 really good idea to invite sonal to talk
+1:49 about open source here startup and
+1:51 large-scale identity resolution so
+1:53 welcome
+1:55 yeah thank you so much uh Alexi for this
+1:57 and um I think the video that to be shot
+2:00 last time has was very really beneficial
+2:03 for saying and I hope people will enjoy
+2:05 today's talk as well I am pretty sure
+2:07 they will so before we go into our main
+2:09 topic of Open Source and identity
+2:11 resolution let's start with your
+2:13 background can you tell us about your
+2:15 career Journey so far
+2:17 I had a real uh long journey in Korea
+2:22 and all of it has been in Tech uh almost
+2:25 24 years of you know working on various
+2:28 aspects of Technology started as a
+2:32 programmer and an analyst in an
+2:34 investment bank and uh to here I am
+2:37 working on zinc uh had various roles all
+2:42 technical in different kinds of domains
+2:44 like Telecom banking
+2:46 and then last couple of years I was
+2:48 running a data consultancy where we were
+2:50 solving all kinds of warehousing uh data
+2:53 pipelines and machine learning problems
+2:58 and then when you were running your
+3:01 consultancy you probably noticed that
+3:04 there are some problems that most of
+3:08 your customers have and this is how zinc
+3:10 appeared or how did it actually happen
+3:13 yeah very much so uh honestly I started
+3:16 my data consultancy in 2010 which was
+3:18 just you know the booming period the
+3:20 first time all this big data stuff was
+3:22 happening and I uh I have to be honest I
+3:25 saw problems absolutely everywhere you
+3:27 know just setting up Hadoop clusters
+3:29 installing spark getting them to run on
+3:31 easy to what is S3 I think those are
+3:34 fundamental questions at that stage and
+3:36 I remember in back in 2010 11 we were
+3:39 doing like something called cascading
+3:40 for ETL which was a programmatic way for
+3:43 uh to Define retail jobs so there were a
+3:45 ton of problems and uh Zing was
+3:48 something that definitely originated as
+3:51 part of the problems that I saw uh it's
+3:53 a problem I saw uh well well early in
+3:57 2013
+3:58 and it's a problem that kind of flammogs
+4:00 me even at that time
+4:03 um and uh
+4:04 but it's only now that I feel that you
+4:07 know the the base infrastructure for
+4:09 such a problem is ready and for the
+4:12 market to accept this problem so here we
+4:14 are
+4:16 so it means that you don't need to
+4:17 figure out how to set up a Hadoop
+4:19 cluster install spark there uh it's
+4:22 basically a
+4:24 you go to your favorite cloud provider
+4:26 click a button and then you have a spark
+4:28 cluster well at least this is how it
+4:30 happens with AWS more or less I haven't
+4:32 experimented I have always experimented
+4:35 with Google Cloud platform it's pretty
+4:36 much similar right so now you're saying
+4:39 if tools that are built on top of this
+4:42 tools now are easily
+4:46 um
+4:46 let's say it's easier to to deploy them
+4:49 to use them right
+4:51 yeah so I think
+4:54 I think spark it is also about the
+4:58 team has like we've been started we've
+5:00 been calling it as the modern data stack
+5:02 which is a very de facto you know piece
+5:04 of tools for established patterns for
+5:07 extraction for transformation for
+5:08 loading uh having set patterns in a
+5:11 warehouse or your data lake so the data
+5:14 is essentially in one place and when you
+5:16 have the data in one place this is where
+5:18 the data management problems actually
+5:20 start you know appearing more and more
+5:22 because before that you're actually
+5:25 bothered about your extraction your
+5:27 pipelines just running your flows your
+5:30 observability but the moment you have
+5:32 data in one place and you want to glean
+5:34 insights out of it that's where problems
+5:37 like identity resolution actually
+5:39 like kind of just hit you in the face
+5:43 so can you tell us about zinc so what is
+5:46 it
+5:47 so Zynga is as I was mentioning it is
+5:50 identity resolution it's a tool for
+5:52 identity resolution and what I mean by
+5:54 identity is very simple it is
+5:57 establishing whether
+5:59 five different records in your Warehouse
+6:01 actually refer to the same Real World
+6:04 customer
+6:06 these records like when when we do ETL
+6:08 and we connect to different data sources
+6:10 uh Enterprises will have data coming in
+6:13 from different systems and they will
+6:15 have records of the customer from
+6:16 offline channels from online store from
+6:19 you know various kinds of interactions
+6:21 they've had surveys ticketing and what
+6:24 what that leads to is lack of a core a
+6:28 well-defined definition of really who
+6:30 that customer is so if you are counting
+6:33 five records as five different customer
+6:35 identities uh your lifetime value
+6:38 reporting any other kind of
+6:40 personalization that you we want to do
+6:43 um anti-money laundering kyc
+6:45 they all get affected
+6:47 now this is just the customer but when
+6:49 we talk about identity in a more generic
+6:51 sense it is establishing exactly who are
+6:54 all those core things that the
+6:56 Enterprise is dealing with these could
+6:58 be customers but there are there are
+7:00 also suppliers they could be vendor they
+7:03 could be products uh they could be B2B
+7:05 accounts these could be locations and
+7:08 establishing that single source of Truth
+7:10 is essentially identity resolution
+7:13 is there any difference between uh
+7:16 entity resolution and identity
+7:18 resolution
+7:21 identity resolution
+7:22 boost more
+7:25 and like uh but technically I mean
+7:28 they're the same Concepts but when we
+7:31 talk about entity entities a broader
+7:33 term and it can refer to you know just
+7:34 any kind of noun it can even be
+7:36 employees it could be addresses or
+7:37 locations it could be events
+7:40 but when we talk about the customer per
+7:42 se or a person per se I think I would
+7:44 say like a citizen or a healthcare
+7:46 provider that is where people tend to
+7:49 use the term identity resolution more
+7:51 and what about duplicate detection is it
+7:55 uh how is it related the problem of
+7:58 detecting duplicates to this problem of
+8:00 entity resolution
+8:02 so duplicate detection is a sub party I
+8:05 would say it's it's a result it's it's
+8:09 how you consume the results so let's say
+8:11 we have five records with variations in
+8:13 the customer name address location first
+8:17 name last name other details put date of
+8:19 birth let's say and uh we you know say
+8:22 that they belong to the same cars in the
+8:24 same individual so that is resolving and
+8:27 saying identity but now what do we do
+8:30 with this result do we create one single
+8:33 record or or and do we remove the other
+8:36 ones we purge out the other ones that
+8:39 would be deduplication but when we say
+8:41 that no we want all these records to be
+8:43 there we want them to complete the story
+8:45 for us we want to build a customer 360
+8:46 or a supplier 360. that is where we use
+8:50 the term entity resolution or identity
+8:52 resolution so I would say in uh in
+8:55 technical terms probably the treatment
+8:57 is the same uh but in terms of the
+9:00 consumption and the application
+9:02 deduplication is actually an application
+9:04 of identity or entity resolution
+9:07 interesting so the reason I'm asking
+9:09 about this duplicate detection because
+9:11 when I first got to know this problem
+9:13 this was the name of this problem
+9:15 duplicate detection it was a competition
+9:17 on cargo from one of the online
+9:19 classifieds websites so it's called
+9:22 avito and they run a competition on
+9:24 kaggle so the problem they had was
+9:28 so if you want to buy to sell your phone
+9:30 you go to a website online classifieds
+9:32 website like oily right and then you
+9:34 just take a picture of your phone put
+9:36 some title and then sell it on the
+9:39 platform right and then if you really
+9:40 want to sell your phone and then maybe
+9:42 you're not getting a lot of replies what
+9:44 you can do is you can upload it multiple
+9:45 times right so then it creates
+9:47 duplicates so the item the phone is the
+9:50 same one but then you have multiple
+9:52 listings on the platform
+9:54 and they wanted to fight this problem
+9:56 with machine learning so they created a
+9:58 competition and in this competition the
+10:01 task was given a pair of listings you
+10:04 needed to detect if this pair is a
+10:07 duplicate or not and this I took part in
+10:09 this uh problem and actually this
+10:11 problem haunted me to even today because
+10:15 I I took part in that competition then
+10:17 another company contacted me because
+10:19 they had a similar problem and then
+10:21 after Alex I also needed to build a
+10:23 system like that
+10:24 but uh yeah I actually didn't think of
+10:27 this as identity resolution or entity
+10:29 resolution for me it was always like
+10:31 duplicated action but I never thought of
+10:34 taking this knowledge that I or
+10:36 expertise that I built over time by
+10:38 solving these problems and somehow
+10:40 extracting this and putting this into a
+10:42 product like basically what you did so
+10:45 I'm just wondering
+10:47 why or cow it happened to you that you
+10:51 realized okay this is something big and
+10:53 working on the same problem over and
+10:56 over again I need to take all this
+10:58 knowledge that they have and put it into
+11:00 an open source tool and then start a
+11:03 company based of like four working on
+11:06 this tool how did it happen to you
+11:09 oh
+11:11 the journey was definitely planned in
+11:13 terms of me choosing to work on the
+11:15 problem I mean this problem hit me as
+11:17 part of a you know Consulting project
+11:18 that people doing where we were doing a
+11:20 data Lake and we had customer data
+11:22 coming from three different databases
+11:23 and we had to say that you know what is
+11:26 the lifetime value who are the what is
+11:29 the likelihood of churn uh of a
+11:31 particular customer but for that we had
+11:33 to have that solid identity piece built
+11:36 in uh so that was the first time I
+11:39 encountered it and then I think uh like
+11:42 very soon again I hit this problem in in
+11:45 a completely different scenario which
+11:47 was enrichment of data coming from an
+11:49 external source and feeding your
+11:52 internal uh customer data with external
+11:56 external crunch based data and uh so so
+12:01 it was the same flavor of the problem
+12:02 and uh I saw various use cases actually
+12:05 happening so uh that was the reason that
+12:08 I felt confident that if we solve it in
+12:10 a way that is generic we will be able to
+12:13 attack a lot more uh use cases duplicate
+12:17 detection being one and zinc is now
+12:19 applied out products on you know Supply
+12:21 360 customer 360. and all of them
+12:24 leading to different other kinds of use
+12:26 cases uh like grants like donors
+12:30 um patients so uh so I think uh I was
+12:34 just lucky to you know kind of see it in
+12:35 different scenarios for me to say that
+12:37 this is a problem worth solving in a way
+12:40 which is generic uh that was it was
+12:42 tough to honestly solve it in a generic
+12:43 way
+12:44 uh but uh luckily we I kind of kept
+12:49 working at it I think it was just
+12:51 persistence and uh it just yeah a lot of
+12:54 hard work I would say uh that got me ill
+12:57 yeah interesting yeah in my case
+12:59 actually all these three uh three times
+13:02 that I worked on this the solution was
+13:05 quite similar so I think uh like in
+13:07 general if you take well it was in sort
+13:10 of classifieds domain anyways I guess
+13:12 that's why but for you you described a
+13:14 pretty different use cases but still the
+13:16 solution was the same and while you were
+13:19 talking about this I remembered another
+13:21 term called entity matching is it
+13:23 similar to entity resolution 2
+13:29 yeah that you know entity resolution
+13:31 itself has so many duplicates you call
+13:34 it record linkage you call it entity
+13:36 matching in some cases
+13:39 there uh I think there are like at least
+13:41 five or ten terms uh different terms
+13:43 that we talk about it there's entity
+13:45 disambiguation more or in terms of NLP
+13:48 uh entity matching I think is more in
+13:51 terms of uh matching unstructured to
+13:53 structure uh but yes they're all flavors
+13:56 of I think the same problem eventually I
+13:58 think we'd like to solve many more of
+14:00 these kind of problems
+14:02 so we talked about the problem more or
+14:04 less so like we we have data coming from
+14:07 different sources we want to what's the
+14:09 right what reconciliated or join it or
+14:12 we have duplicates because our users
+14:16 generated duplicates so we want to
+14:17 detect these duplicates or there are
+14:20 other use cases you mentioned like
+14:22 patient donor matching and things like
+14:23 this so this is the problem but how do
+14:26 we actually solve it is there a
+14:28 framework that all of these problems
+14:30 follow that you also implemented in zinc
+14:33 so how does it work
+14:35 yeah so uh so while uh because uh I was
+14:39 fortunate to see this problem happening
+14:41 in different scenarios and different
+14:42 entities uh I wanted to create a system
+14:46 which would be able to actually just
+14:48 absolutely work with any kind of data we
+14:50 didn't want to have a system which would
+14:51 just work on you know one specific I
+14:54 mean if you I think if you solve for
+14:55 person that itself is a beginner Market
+14:57 or usage
+14:59 uh but if you solve it for even more
+15:02 entities I think it becomes more
+15:03 powerful so that was a design goal that
+15:05 we set out with uh the Second Challenge
+15:07 uh the second design goal was K so one
+15:11 is being able to handle different kinds
+15:13 of entities second is really how do you
+15:16 scale this problem which I think is at
+15:18 the heart of it one of the toughest
+15:19 challenges
+15:20 um that entity resolution kind of
+15:22 suffers through uh the reason is that if
+15:26 you don't know
+15:27 what to compare you know like if you so
+15:30 then you have to compare every record
+15:32 with every other record and that
+15:34 completely blows up if you have 10 000
+15:36 records you're comparing 10 000 against
+15:38 9999 every single record against every
+15:41 other record and the moment you increase
+15:44 the size of your data 10 times the
+15:46 number of comparisons is going to go 100
+15:48 times and at you know a few million
+15:50 records it absolutely blows up so that's
+15:52 one of the fundamental challenges uh
+15:55 with Identity or so uh these were you
+15:58 know those goals uh in terms of uh
+16:01 solving this problem
+16:02 now in terms of uh so so machine
+16:05 learning kind of became like an
+16:06 automatic uh you know way to kind of do
+16:10 that because uh if if we train on the
+16:12 data that the user gives uh we can
+16:15 actually get it to run on absolutely any
+16:17 kind of entity uh ml although is not
+16:21 really associated with scale but in
+16:23 zinc's case we learn how to distribute
+16:27 and how to really you know do very smart
+16:30 indexing or blocking so that the
+16:33 comparison of every record with every
+16:35 other record doesn't happen so let's say
+16:36 you have you know 10 000 clusters uh 10
+16:39 000 records um Zing based on the
+16:43 training data that is provided and that
+16:45 Zing helps you create the training data
+16:48 zinc would
+16:49 um really break those 10 000 records
+16:53 into maybe buckets of 100 each or 150 or
+16:57 you know larger or smaller sizes based
+16:59 on a combination of fields and that is
+17:04 very powerful because then you know
+17:06 you're not doing all those comparisons
+17:07 and it can be very fast
+17:09 and what we're seeing is like when we
+17:11 released it we we tested with like 15 15
+17:14 million records was the maximum we
+17:16 tested it and our users are able to kind
+17:18 of test it uh running it at 80 million
+17:20 records is the last I heard without
+17:23 absolutely no help from us which is
+17:25 something I'm very proud of that uh it's
+17:28 it's scaling very well so uh so all this
+17:31 is actually completely baked into the
+17:33 product uh if you download zinc uh very
+17:36 simple uh just configure What fields you
+17:39 want the matching to run on and it can
+17:42 be any entity you no need to Define any
+17:45 rules or algorithms you know it's
+17:46 absolutely just you just need to
+17:48 understand what should be a match in
+17:50 your case what do you define what's your
+17:53 business rule for a match uh don't don't
+17:55 bother about scale don't bother about
+17:57 rule definition don't bother if aim
+17:59 matches with B and B matches with C A
+18:02 and C should actually also match so all
+18:05 that internally is completely baked
+18:07 inside the tool and that's that's the
+18:11 open source same for you
+18:13 so maybe can you talk about uh a bit
+18:16 about the implementation details uh I
+18:19 know last time we spoke you showed uh uh
+18:22 a command line interface application
+18:25 then internally it was using spark for
+18:29 computing all these things has it
+18:31 changed and what do you what do you use
+18:34 to actually run it
+18:37 so yeah after
+18:40 get there I think at the end of my
+18:42 answer so fundamentally uh at the heart
+18:45 of it zinc is a machine learning based
+18:48 identity resolution now uh
+18:51 to do machine learning models we need
+18:53 training data and users will not have
+18:55 training data you know sitting around in
+18:57 their offices or their laptops so though
+19:00 the command and utility that I showed
+19:02 you last time was a way in which this
+19:04 training data also can be generated
+19:06 through zinc we configure What fields we
+19:09 want zinc to look at in terms of
+19:10 matching and zinc shows very selectively
+19:14 a few pairs uh to for the user to say
+19:17 whether their matches are non-matches
+19:18 around 40 50 pairs are good enough to
+19:22 train a model uh
+19:25 of you know running to millions of
+19:27 Records uh so so zinc shows you some
+19:31 pairs you label zinc goes back and
+19:33 refines its models and you label a few
+19:36 more and you get a tuned uh in a few
+19:38 iterations you get a few fairly trained
+19:40 accurate model that can scale uh
+19:43 internally uh we use a combination of
+19:45 inbuilt machine learning classification
+19:47 graph processing uh we've been using
+19:50 spark for distribution but we're also
+19:52 building out the snowflake uh Native
+19:55 implementation for some of our users who
+19:58 are users of snowflake but have not been
+20:00 on spark so the compute would be pushed
+20:03 on a snowflake we connect with
+20:06 absolutely everything that has a spa
+20:08 connector so bigquery rdbms flat files
+20:11 flat files and parquet and
+20:14 um in Avro and Json XML or text files uh
+20:18 name it and uh in terms of the interface
+20:23 uh we are we are kind of building out
+20:24 the uh the UI as well for data
+20:27 stewardship and other functions uh but
+20:29 we've also released a python interface
+20:31 so that people can instead of doing a
+20:34 command line Json interface uh they can
+20:37 use sync as part of their data by plans
+20:41 so I guess the command line interface
+20:43 didn't appeal to everyone right
+20:46 it did appeal to everyone but to a lot
+20:50 so I
+20:52 just lack of appeal uh it's it's more
+20:55 about usability so I think the the way
+20:58 we look at zinc is it's not always uh
+21:02 it's not always just Market capture uh
+21:05 you know building the tool in terms of
+21:07 just Market capture it's also what is
+21:09 the best way we think the the user would
+21:12 like to access it I mean as snowflake
+21:15 customers right now running you know
+21:16 those spark uh clusters uh but is there
+21:21 a better leaner architecture for them so
+21:23 that they are not worried about you know
+21:25 two separate infrastructure uh that's
+21:28 that's the prompt uh uh is what I would
+21:31 say again with python it was the same
+21:32 thing and I think with python the power
+21:34 for zinc really increases because now we
+21:37 have the option of you know integrating
+21:39 with uh databricks notebooks easily with
+21:42 uh tools like DBT uh which uh which is
+21:46 where a lot of action is happening for
+21:49 us honestly
+21:51 so you were working as a consultant you
+21:54 were running your own consultancy and
+21:56 then you saw that many of your clients
+21:57 had this problem and then you realized
+21:59 okay now I just want to sit down and
+22:01 solve this problem so
+22:04 did you just you know took some time
+22:06 well of your main work and then just I
+22:10 don't know what a lot of coffee and
+22:12 started coding all these backdrops how
+22:15 did it happen lots and lots of sleepless
+22:17 nights honestly yeah
+22:19 yeah so uh so uh some bits and parts of
+22:23 zinc had already been created as part of
+22:25 my Consulting but they were kind of
+22:28 custom so yes I I stopped Consulting I
+22:33 said I can't do everything I need to
+22:36 focus and uh I definitely have to take
+22:38 the plunge so I absolutely shut myself
+22:42 down from all communication heads down
+22:45 coding uh getting stuff done and uh
+22:49 that's how the open source came out so
+22:53 how long did it take you to actually
+22:55 implement the first proof of concept
+22:59 uh so Zing has been long in the making
+23:02 uh it's taken me at least an hour and
+23:05 more to to build out uh what we released
+23:09 last year and
+23:12 um uh honestly I spent a lot of time
+23:15 tuning like I think all of that uh you
+23:17 know when one and a half years I Must
+23:19 Have Spent at least six months just
+23:21 tuning the algorithms it was uh it was
+23:25 crazy it was uh tough uh it was even
+23:28 tough getting you know uh test data to
+23:31 run to to use to run saying and to test
+23:34 it out
+23:36 um but I
+23:38 I I wanted to call it like a scalable
+23:40 product now I
+23:42 I couldn't do it unless you know I
+23:44 tested it and scared so uh yeah it took
+23:48 a lot of time it I think it's well worth
+23:50 it
+23:51 so you were running like a sound would
+23:54 see then at some point you stopped and
+23:56 it took approximately one year to
+23:58 release the first open version of zinc
+24:01 right
+24:02 that's amazing
+24:04 at least one one and a half yeah I think
+24:07 one and a half would be better one and a
+24:09 half close okay so you weren't working
+24:11 with any clients during this time no
+24:13 absolutely wow that's that's amazing and
+24:16 uh why did you decide to actually do
+24:18 this in open source like after spending
+24:21 one year and a half instead of uh you
+24:24 know doing it closed source and
+24:25 proprietary you decided to do everything
+24:28 in the open why did you make this
+24:30 decision
+24:32 so one is that you know I had personally
+24:34 been consuming my data consultancy was
+24:36 built around open source
+24:38 and I wanted a way to be able to give
+24:40 back uh that was a driver for me it was
+24:43 personally important for me uh and I
+24:45 also wanted to establish
+24:47 you know that community that feeling of
+24:50 people being able to just use it like
+24:52 the the joy I had had in losing so many
+24:54 other products I wanted to kind of give
+24:56 that back uh but just beyond that Beyond
+25:00 those personal reasons for also business
+25:01 decisions uh I feel that Zing is as a
+25:05 product or uh as a technology is
+25:08 something that a lot of companies large
+25:10 and small need uh some flavors of
+25:12 something like zinc like identity
+25:14 resolution are baked into in some ways
+25:18 not as powerful but are baked into
+25:19 products like cdps and ndms uh these are
+25:24 what is that Master data management
+25:26 systems and customer data platforms
+25:29 and um to some extent not as powerful
+25:33 and as full-blown as what we are doing
+25:35 uh but
+25:37 I feel that there are a lot and
+25:40 these tools are very expensive I mean
+25:43 they easily run into six figure plus
+25:46 into multi-million uh annual kind of
+25:49 licenses
+25:50 I feel open sourcing
+25:52 um can really you know uh get to a lot
+25:55 more companies uh than a closed Source
+25:58 version which needs sales which needs a
+26:00 different kind of distribution uh it
+26:03 also has helped us find a lot more use
+26:05 cases compared to you know what I could
+26:08 maybe knock at people's door and have
+26:10 them to look at the product and get them
+26:12 to use it so I feel in terms of adoption
+26:15 in terms of business in terms of market
+26:17 in terms of discoverability of use cases
+26:19 uh especially if you are a team which is
+26:22 not really like based in the heart of
+26:26 you know where all most of the tech is
+26:27 happening like Silicon Valley I think uh
+26:30 it's it's a far better decision for for
+26:34 a company like ours were you afraid that
+26:37 somebody would just you know take all
+26:39 your code and
+26:42 rename the repo and say okay it's not a
+26:44 zinc but I don't think
+26:47 and say okay yeah this is our new
+26:50 product yeah I was worried about that I
+26:53 have to be honest I was worried about so
+26:56 much of my hard work uh one and a half
+26:59 years right yeah it was it was a long uh
+27:02 long uh labor of love
+27:05 as I call it uh I I was afraid of the IP
+27:09 uh being being free to be honest and uh
+27:15 but at the same time I was also very
+27:18 upbeat about the potential uh and uh you
+27:21 know you can control something but then
+27:23 when you open it up you realize there's
+27:25 so much more to to what it is and uh
+27:28 that thesis has worked in our fieldwork
+27:31 I think the kind of uh welcome we've got
+27:33 from the community from the leaders from
+27:36 the practitioners is uh is far far
+27:41 beyond what I had ever expected uh and
+27:45 uh uh I think also
+27:47 um in terms of Ip uh so ours is like an
+27:51 agpl license which is not a classic
+27:53 license that somebody can just bake into
+27:55 their product I mean you can use sync
+27:57 you can
+27:59 um you can do whatever if you're a
+28:01 company you can use it internally and if
+28:03 you're a solution provider you can using
+28:05 and you know give a solution around that
+28:07 but you can't bake zinc into an existing
+28:11 product uh for that you need a different
+28:13 license unless you open source
+28:14 everything
+28:15 so uh
+28:17 so yeah that's that's uh that's one
+28:20 thing that kind of I think is
+28:23 is a protection layer that we have also
+28:26 at the same time I think there's so much
+28:27 knowledge uh and so much code complex
+28:30 code honestly I would love people to
+28:32 contribute even Fork it and you know
+28:34 maybe take it take it further uh that
+28:39 would be great also
+28:40 yeah speaking of licenses for me this is
+28:43 the most difficult part of Open Source
+28:45 there are so many different licenses and
+28:47 what you mentioned GPL license I know
+28:49 that there are Apache licenses which are
+28:52 pretty permissive right so let's say I
+28:55 have a
+28:56 some proprietary code base I have a
+28:59 closed Source solution and then I can
+29:01 just take this Apache License project
+29:04 and then start using it and make money
+29:07 and then I think MIT license is similar
+29:09 to that but GPL is different right with
+29:11 TPL I cannot just take a project
+29:15 and start using it and well you know
+29:18 without open sourcing my entire code
+29:19 base
+29:20 is this right
+29:22 uh no uh no so so the AGP are the one
+29:26 that we use is very permissive it lets
+29:29 you use it internally it yes lets you
+29:31 provide solutions to uh to your customer
+29:34 software like I'm a like a Pharma
+29:36 Solutions uh SI or a Solutions company I
+29:39 can very well uh build out a solution
+29:42 and my client can install it and you
+29:44 know they can use it only if
+29:47 I distribute zinc as part of a product
+29:51 it's only then that the the those
+29:54 permissions kick in which is which isn't
+29:56 any of the users it doesn't really
+29:58 matter to anybody uh in terms of you
+30:01 know usage so I think Apache and MIT is
+30:05 permissive to this to the extent that
+30:07 you can even you know build out a SAS uh
+30:10 uh using the open source and absolutely
+30:13 Fork it and use it uh with with agpl uh
+30:17 providing a network service
+30:19 with something like Zing as part of your
+30:22 product
+30:23 Service uh is is not possible that's the
+30:29 only difference but foreign
+30:36 if a cloud provider
+30:38 decides to
+30:40 uh offer zinc as a service they will not
+30:43 be able to do like I know that there's
+30:45 one provider who decided to offer
+30:48 elasticsearch as a service and then they
+30:51 ended up renaming the whole thing right
+30:53 and call it open search so something
+30:55 like that is not possible with zinc Ray
+30:57 because the license does not permit
+30:58 doing that I think so yes that's my
+31:02 understanding
+31:04 it's like do you need to hire a lawyer
+31:07 to actually make this decision how did
+31:09 you make this decision no I I
+31:13 two of you
+31:15 our you know who are doing who have been
+31:18 doing open source uh honestly the
+31:20 license is not the biggest part of uh
+31:23 you know uh of Open Source I think it's
+31:25 the philosophy uh the the code is all
+31:28 all out there right it's uh the the IPA
+31:31 is in the code it's all out there it's
+31:33 not just a matter of what classes we've
+31:35 written it's it's the algorithms which
+31:37 are there and saying which which are
+31:39 valuable so uh I I wouldn't worry that
+31:42 much about the lessons I would have
+31:44 worried more about you know all that
+31:46 Discovery or innovation uh being open
+31:49 source uh but I think uh it's it's a
+31:53 cool new way to reach a lot of lot more
+31:55 people and to help a lot more people so
+31:57 I think it's well worth it
+32:00 and when I asked you how exactly you
+32:03 started zinc and uh you said that you
+32:06 took some time like one year and a half
+32:08 to release the first public version
+32:10 but he also said we so I'm wondering
+32:12 were you doing this alone or somebody
+32:14 was working with you on the on the first
+32:16 version
+32:18 the first version
+32:22 again I was
+32:24 I honestly needed that
+32:26 so I hired a consultant to help me
+32:30 towards the target
+32:32 now well so I guess before that so
+32:36 mostly your responsibilities were coding
+32:39 then I don't know product Market fee to
+32:41 finding this product Market feed also
+32:43 tuning yourself you said you spent a lot
+32:45 of time tuning the algorithm
+32:48 what do you do now how is it different
+32:49 from you doing this for one year and a
+32:53 half coming up with the initial version
+32:56 and what you're doing now what do you do
+32:59 so now I I think it's a lot of uh so one
+33:04 is definitely I mean I think the coding
+33:06 the product uh yeah a lot of new
+33:09 features uh how we want to play with uh
+33:12 you know how do we do we want to do a
+33:15 title integration with data breaks how
+33:17 do we really do their apis so it's not
+33:19 just seeing alone but seeing in the
+33:21 ecosystem which takes up a lot more of
+33:24 my time compared to just Zing alone and
+33:26 you know this product and this feature
+33:28 this is also now how do we tie in with
+33:31 you know particular Technologies and
+33:34 make a whole solution so that is what uh
+33:37 second is a lot of time goes learning
+33:40 about different users and their
+33:42 experiences and uh what what is their
+33:45 feedback how are they using saying
+33:48 um being being active of the community
+33:49 and you know helping people out
+33:52 um talking to uh talking to people
+33:56 evangelizing saying writing content and
+33:59 getting the word out on saying hiring
+34:01 which is which is uh something that I
+34:05 spend a lot of time on and so it's I
+34:08 think I would say that from a pure Dev
+34:10 role it's more of a company building CEO
+34:13 CTO role uh founder role which is a
+34:16 generalist of various kinds of
+34:18 activities that needs to be done even
+34:19 taxation or uh incorporation or funding
+34:25 so what's your title now are you a CEO
+34:29 or CTO or what
+34:36 but what do you write in LinkedIn is it
+34:38 a Founder I say founder yeah some places
+34:41 I say CEO okay
+34:44 CEO sounds cooler probably yeah
+34:48 but I guess Co to me it implies that
+34:51 this is not a technical role so this
+34:54 person who calls themselves uh CEO they
+34:58 are not coding anymore which is not
+35:00 always the case but uh you know I guess
+35:02 this is like a as a rule of thumb it's
+35:05 usually correct but you steal code right
+35:08 you still create code
+35:10 yeah yeah I write code yes definitely
+35:13 yeah
+35:14 how large is your team now
+35:16 so we have four people right now we are
+35:19 very actively hiring
+35:22 and we also have help on yeah some some
+35:24 we have some Consultants helping us with
+35:26 content and
+35:28 some of the marketing stuff so
+35:30 how did you decide on the first hire so
+35:33 it was you and then freelancer for some
+35:36 time but how did you decide who exactly
+35:39 you needed to hire as a first full-time
+35:41 employee of zinc
+35:44 so I evaluated exactly in what bucket my
+35:49 maximum time was being spent and whether
+35:53 that activity was worth
+35:55 you know a full-time role a good enough
+35:58 fun a good enough role for somebody to
+36:01 be able to do and enjoy and also
+36:04 something that I could kind of you know
+36:05 uh
+36:08 kind of hand over to somebody right so
+36:12 um so I think those were pretty much uh
+36:15 that's that's the way I look at it like
+36:17 I look at my calendar like this is
+36:20 how I'm spending most of my time what is
+36:22 the best way to free up my Cycles
+36:25 and then what is the demand that is
+36:27 coming in from outside who are the best
+36:29 people who can do it because obviously
+36:30 I'm not an expert at everything uh so
+36:33 those are the two parameters by which I
+36:35 look at home fee whom we should hire
+36:38 next
+36:39 who did you hire eventually is the first
+36:42 employee
+36:44 uh it's actually uh yeah a developer
+36:48 so you realize that you spent a lot of
+36:50 time developing and okay so you went
+36:53 through this exercise that you just
+36:54 described and who else do you have on
+36:56 the team so the other two people so we
+36:59 are looking uh so yeah it's actually
+37:01 right now it's all uh development we
+37:03 have one person who's marketing product
+37:05 marketing and writing content and uh
+37:09 again we are looking at more developers
+37:11 because at the heart of it zinc is zinc
+37:14 is a technical product it it needs a lot
+37:17 of engineering so we're hiring for
+37:19 engineering
+37:20 so what is your biggest challenge right
+37:22 now
+37:25 so what's my biggest
+37:27 Channel might be
+37:31 I wouldn't say it's uh it's a time
+37:34 consuming uh I would say process uh you
+37:37 know uh in terms of uh finding the right
+37:40 fit uh you have to be very conscious of
+37:44 the other person's career aspirations I
+37:46 mean basically you are kind of you know
+37:47 uh
+37:48 uh
+37:50 getting somebody to bet on you right so
+37:53 I would say uh that's a responsibility
+37:55 in itself uh and at the same time you
+37:58 also have to evaluate those skills and
+38:00 ensure that that person would be able to
+38:03 deliver in whatever environment or team
+38:05 environment that we have created so uh
+38:08 um those are things that definitely are
+38:12 so challenging that way
+38:14 are you hiring are you fully remote or
+38:16 how do you work
+38:18 we are fully remote but all of our hires
+38:21 are currently in India
+38:23 and uh that's I think uh in terms of
+38:26 Indian salaries I think that's that's
+38:28 working out well for us we do have some
+38:32 interest uh interesting people who've
+38:34 reached out from you know different
+38:35 geographies and I think as we grow we'll
+38:38 probably hire internationally as well
+38:41 okay yeah
+38:43 I realized we have quite a few questions
+38:45 from the audience so I'll start with the
+38:47 first one from us
+38:48 so how can Team avoid dealing
+38:52 with entity identity resolution
+38:54 challenges from the start is it the
+38:57 proper database design uh or like would
+39:00 it be enough if we design our databases
+39:03 in the right way from the start to
+39:06 actually solve this challenge or it's
+39:08 not sufficient
+39:11 so designing proper data governance or
+39:15 ensuring that you know the ensuring that
+39:18 you have the right way to capture the
+39:21 data at all points and to reconcile it
+39:25 with existing data uh is a good first
+39:28 step but I would say that itself that
+39:31 that should be done but that would not
+39:34 solve the problem the problem would
+39:36 still persist because your marketing
+39:38 team would use multiple tools your sales
+39:40 team would use different tools uh your
+39:43 procurement is going to use different
+39:45 tools uh as as the company grows it will
+39:48 not be as simplistic as you know just
+39:50 capturing data from one single form and
+39:53 updating it in your database you're
+39:55 bound to have different channels of
+39:58 customer acquisition of lead generation
+40:02 of customer interaction service
+40:07 support billing ticketing not just for
+40:11 customers same for you know vendors Etc
+40:13 so the problem uh by and large
+40:18 definitely at the you know at the entry
+40:20 level we need to be conscious of of it
+40:22 but the problem would still happen
+40:26 so it's just you can control the extent
+40:28 of this problem but you cannot just
+40:31 completely avoid it right yes absolutely
+40:34 got completely invited
+40:36 and how is an identity resolution
+40:39 different from using basic joints and
+40:42 data fusions I don't know what data
+40:44 Fusion is I assumed some sort of Quasi
+40:48 maybe join or something like this
+40:51 okay yeah even I'm not sure what uh I
+40:55 know that there are tools like um
+40:59 this one from Microsoft which is called
+41:01 integration service I think so what they
+41:04 have is uh like you can just visually
+41:07 drag and drop design your data pipeline
+41:10 your ETL and then you can do a usual
+41:13 join right but there is also a fuzzy
+41:15 join or physi lookup where a record does
+41:18 match exactly but maybe like it looks
+41:20 for top or dipos so it accounts for
+41:22 other irregularities in your data I
+41:26 assume it is maybe I'm not right
+41:29 so uh we'll answer that question and
+41:32 with whatever our limited understanding
+41:33 of
+41:35 let's say is that if the data is simple
+41:37 enough
+41:37 for you to be able to just join on you
+41:40 know like an identifier like an email
+41:42 that you trust which is consistent or a
+41:44 necessary ID or a passport or whatever
+41:45 number that you have and you know that's
+41:47 consistently populated across all your
+41:49 sources I think that's that's a great
+41:51 approach if it works for you uh there's
+41:54 nothing like it uh unfortunately in most
+41:57 of the cases that we see uh the data is
+42:00 is not like that real world data is not
+42:02 like that like even when we put in you
+42:04 know our identifiers we have multiple
+42:07 identifiers our driving license our SSN
+42:09 our passport and even for kyc scenarios
+42:12 we would put in different IDs so uh real
+42:15 world data generally tends to have
+42:18 a lot more variations compared to
+42:22 you know what uh a simple email join or
+42:26 a simple name first name last name uh so
+42:30 uh if it works if the data can be
+42:33 trusted or the probably there is already
+42:34 a curation step and you know your data
+42:37 is like that those joints would
+42:39 definitely work
+42:40 uh otherwise you have to think beyond
+42:44 beyond how do you define those rules how
+42:47 do you manage the scale how do you
+42:49 compare every record with every other
+42:51 record uh what do you choose as the
+42:54 threshold so let's say you do a fuzzy
+42:56 you know although all the databases have
+42:58 a fuzzy uh kind of thing uh even the
+43:01 evilastic search has a fuzzy lookup uh
+43:05 but then really how do you decide at
+43:07 what threshold do you want to consider
+43:10 that as a match how many matches should
+43:12 you look at I mean those are again
+43:13 questions that need to be thought about
+43:16 and while you were speaking I remembered
+43:20 a funny case that happened to me
+43:22 recently so I signed up I signed up for
+43:25 a webinar using my private email so then
+43:28 I attended the webinar and then after
+43:30 the webinar the company who was running
+43:32 the webinar contacted me on my working
+43:35 mail saying hey thanks for attending the
+43:37 webinar and I thought okay they must be
+43:39 doing something uh I don't know smart or
+43:42 but they somehow figured out that okay
+43:45 this person who signed signed up and
+43:48 this person who I don't know they know
+43:51 from somewhere is this the same person
+43:54 right and then it's better to use
+43:56 working for contacting so I thought
+43:58 something is really going on but now I
+44:00 understand what might have happened
+44:02 there so probably maybe they had a
+44:04 record of me uh it well maybe I signed
+44:08 up for another webinar sometime ago
+44:10 right and then they just uh combine this
+44:13 link these two records yeah identity
+44:16 resolution is everywhere I think the
+44:18 moment you see it you just can't stop
+44:20 you
+44:21 noticing it
+44:24 uh what was the uplift from switching
+44:26 from deterministic matching to
+44:28 probabilistic to machine learning
+44:31 stick my stigma is a set of you know
+44:34 rules which say that I'm sure these
+44:37 these are the ones that I care about and
+44:39 these are the ones I'm sure about and
+44:41 this is what it is and then Social
+44:44 Security matches right then yeah but
+44:48 yeah but as I I mentioned in my last
+44:50 answer I mean real world data is not
+44:52 like that especially
+44:53 um customer data uh unless you're in a
+44:56 heavily regulated industry even you know
+44:58 companies even the life sciences and
+45:00 Healthcare companies when they have to
+45:01 do the sunshine act and they have to
+45:03 report how much spent they have done on
+45:06 Healthcare Providers uh their sales
+45:08 Engineers their sales reps have been
+45:11 actually putting records of purchases or
+45:15 spends on Physicians and even that data
+45:17 has to be reconciled and it's a massive
+45:19 year-end you know Sunshine activity that
+45:22 happens in those companies so uh so it
+45:25 ends up you know being being that kind
+45:28 of fun
+45:28 exercise and deterministic Magic uh as
+45:32 as I said right if it works if it's if
+45:34 the data supports it there's no need for
+45:37 probabilistic but uh in a lot of
+45:40 scenarios probabilistic is what you need
+45:43 because
+45:44 there would be variations in the data
+45:47 thanks
+45:50 uh another question we have is oops I
+45:53 just marked it as answered sorry so
+45:55 another question and I am now
+45:58 um reading it from my memory uh what are
+46:01 the applications of identity and entity
+46:05 resolution in fraud detection
+46:08 okay yeah so
+46:11 so what happened
+46:12 the interaction is that you know people
+46:13 will
+46:15 um
+46:15 create different accounts with slightly
+46:18 different uh name and address
+46:21 information and they would give
+46:23 different identifiers for their kyc
+46:26 and when you want to track the flow of
+46:29 money you actually you know would be
+46:31 actually counting them as separate
+46:33 individuals but having that identity is
+46:36 resolved actually gives a very clear
+46:38 picture of how those transactions are
+46:40 happening and uh it is if you if you
+46:43 look at all the graph databases I mean
+46:45 that's one thing that you know they talk
+46:46 so much about because they are primarily
+46:49 used in all these fraud detection
+46:50 detection scenarios and the first thing
+46:53 that they talk about is entity
+46:54 resolution so if you look at all the
+46:56 neo4j or tiger graph and um so when you
+47:00 are establishing those networks
+47:01 um having those nodes
+47:03 the identity is established on those
+47:06 nodes is critical that's where uh
+47:09 identity kind of plays a Central Road
+47:11 there
+47:12 I have another example something from uh
+47:16 something I saw in my experience
+47:18 so I was talking about duplicate
+47:21 detection of listings in online
+47:22 classifieds what sometimes can happen is
+47:25 imagine that maybe you're renting a flat
+47:28 right so you have a flat in an apartment
+47:30 and you want to rent it for somebody to
+47:33 so they can move in and leave it there
+47:35 live there right what can happen is
+47:37 somebody can just take your listing all
+47:40 the pictures all the all the information
+47:42 change it slightly like for example
+47:45 instead of Berlin it could be some other
+47:47 city right then upload it to the website
+47:51 and then pretend that this is like a
+47:53 genuine listing and then people would
+47:55 contact them I want to see the the flood
+47:58 and uh what can happen next is they can
+48:01 write oh sorry I'm not in the city now
+48:04 but we have like a lot of uh people who
+48:07 also want to see the flood we have a lot
+48:09 of people who want to rent the flat if
+48:11 you give us Advanced deposit of I don't
+48:13 know 100 euros we will Reserve this slot
+48:16 for you yeah right and then actually
+48:18 when I was looking for a flat exactly
+48:20 this thing happened to me like I don't
+48:21 know five or ten times and to be able to
+48:24 understand that this is uh this listing
+48:27 is actually a duplicate of another
+48:29 listing then you can see okay like this
+48:31 is Created from different accounts then
+48:33 cities are different okay something is
+48:35 wrong here let's see how we can uh let's
+48:38 let's figure out what's happening there
+48:40 so that's another example yeah that's
+48:42 wow wow that's that's uh that's a new
+48:45 one for me but yes I think it makes
+48:46 absolute sense and we've also seen this
+48:49 in the case of e-commerce coming these
+48:51 were you know sellers because they get
+48:53 sometimes they get it from you know one
+48:55 of these e-commerce companies they would
+48:57 say that they have a promotion on one of
+48:58 these phones and uh you are allowed to
+49:02 sell it at a particular discount and
+49:03 sellers would pose as different buyers
+49:05 themselves and you know buy uh in bulk
+49:08 and then sell it in retail and we had
+49:12 worked with an e-commerce company to
+49:14 identify such sellers so yes various
+49:18 kinds of Florida people are very I think
+49:20 creative about
+49:23 and I know that for fraud detection
+49:26 cases graph machine learning is quite
+49:30 useful so in your experience do graph
+49:33 algorithms outperform classical machine
+49:35 learning models in entity resolution or
+49:37 no
+49:39 so we do use graph algorithms in our
+49:42 case uh we do pairwise matching and then
+49:44 we use graphs to detect the network of
+49:48 Records which actually belong together
+49:50 so we use that combination but the
+49:53 output of zinc is actually if you look
+49:56 at it it's actually a graph that you can
+49:58 consume you can consume it as a table
+50:00 but you can also consume it as a graph
+50:01 and we say that we are like the
+50:03 fundamental building block of
+50:06 your fraud detection algorithm so take
+50:08 this graph which is the your identity is
+50:11 resolved lay over the transaction data
+50:14 and then do your classical processing
+50:19 so what type of data can sync uh use
+50:25 if for example if there is no common
+50:27 fields are present how does the tool
+50:29 know that these are the same how does it
+50:31 work under the hood in this cases
+50:34 okay so right now we don't have a column
+50:37 to column you know just figuring out
+50:39 which columns actually match to each
+50:41 other that's something that we
+50:42 definitely want to build in the longer
+50:44 run uh we we for zinc to work you have
+50:48 to specify really what column maps to
+50:51 another caller it could be spelled
+50:53 differently like f name or first name
+50:55 but there has to be some notion of you
+50:57 know fields that are common in some way
+51:00 for it to figure it out uh if what we
+51:03 see sometimes is that you know people in
+51:04 some cases they will have three address
+51:06 columns in one data set and then full
+51:09 concatenated address in the other and
+51:11 they would mostly concatenate the
+51:14 address in the first data set and then
+51:16 match it with the other but that kind of
+51:18 mapping is something that we don't
+51:20 figure out right now the user has to
+51:22 specify but it's not very complex to
+51:24 kind of specify it's a very simple
+51:26 config so that there is a way in your
+51:29 config you can say okay like this field
+51:31 and these fields are related so go
+51:33 figure out so if they're the same if the
+51:36 data there is the same
+51:38 okay another interesting question is
+51:41 about some success stories of
+51:42 implementing identity resolution in
+51:44 products
+51:46 maybe I can start with fraud detection
+51:50 so we didn't use zinc for that at
+51:53 allicks but there is a nice article at
+51:55 the tech block of Felix it's
+51:57 tech.olix.com where we talk about
+52:00 detecting fraudulent fraudulent rings of
+52:03 uh people who brought different people
+52:07 so that's a good success story we were
+52:10 able to identify that there is a cluster
+52:12 of people who are actually the same
+52:15 person or the same entity and just ban
+52:17 all of them okay so that's one of the
+52:19 success stories but I'm sure you have a
+52:21 lot more
+52:23 I have a lot of
+52:25 very good uh
+52:30 but I will pick up one which is uh
+52:33 really really uh
+52:35 which is really a very public good story
+52:37 uh which is uh which is not a usual
+52:40 Enterprise uh data they say but it's a
+52:44 it's an open data case study where the
+52:48 North Carolina state has come up with
+52:50 open data on their campaigns and you
+52:53 know who is donating how much so who are
+52:56 the donors who are the recipients and
+52:58 what is the flow between recipients and
+53:00 donors and this data is uh has been
+53:03 captured historically and it's also
+53:05 people donate through online channels uh
+53:09 so there has been
+53:11 um this digitization of those records
+53:13 the historical and the existing records
+53:15 but a particular all the donors are
+53:19 actually they don't have identities
+53:20 right the recipients also don't have
+53:21 identities I mean the same recipient has
+53:23 been entered multiple times by multiple
+53:26 donors in different ways and similarly
+53:28 for the donors uh so uh
+53:31 there's a consulting company a
+53:33 non-profit uh and the state who have
+53:37 using to establish really how much spent
+53:40 donors are doing on recipients and there
+53:44 is a there's a case study which has also
+53:46 been published and they have seen that
+53:48 you know there are uh what kind of
+53:50 clusters they have been able to get and
+53:52 do the spend analysis uh for every donor
+53:55 so it's very easy to you know kind of
+53:57 figure out affiliations that it is all
+53:59 open it's a very uh very nice way to
+54:02 educate the voter on really what's
+54:04 happening in their constituency and it's
+54:07 something I'm I'm super happy about
+54:10 okay interesting story thanks for
+54:12 sharing
+54:13 um
+54:14 yeah if you end this again are questions
+54:17 that we prepared so this is not from the
+54:20 audience uh I am pretty curious so if
+54:24 you had to do this over again so let's
+54:27 say you're now working at the
+54:28 consultancy company and you think you
+54:31 want to solve this problem what would
+54:34 you do differently now
+54:38 so I think
+54:40 one thing I would do differently is be
+54:43 on the lookout for a co-founder the day
+54:46 I decided to do it uh it's it's honestly
+54:50 a lot of work to do it all alone uh you
+54:53 know to do all the funding be part of
+54:55 all the conversations be all over right
+54:57 uh so uh I'm and I'm even now I'm
+55:01 actually very open to you know hiring uh
+55:03 and having somebody on board in that
+55:06 capacity or more people or the founding
+55:08 team that way
+55:10 so I think that is definitely something
+55:12 uh that I would have been more open to I
+55:15 just kind of thought that you know this
+55:16 is a problem I need to solve a day I'm a
+55:18 developer let me just get down and I I
+55:21 forgot how much I had spent there so I
+55:25 would do that differently
+55:27 um but yes having said that uh
+55:30 um a co-founder match is you know
+55:33 something you have to be very very
+55:34 comfortable with so I would not I'm not
+55:36 sure whether it would have happened or
+55:37 it would happen uh so no regrets there
+55:40 but yes I would have been definitely
+55:42 more receptive I'm thoughtful about that
+55:44 uh and uh I think secondly I think I may
+55:48 have opened so I could have open sourced
+55:50 it a bit earlier than I did I was too
+55:52 busy polishing things I was too busy
+55:55 getting it to perfect I could have done
+55:57 it a bit bit earlier because I think
+56:00 again not a regret but yes looking back
+56:03 those are two things I could have done
+56:05 differently
+56:07 yeah I didn't spend it a half a year on
+56:09 tuning is impressive but uh probably you
+56:14 indeed could have done this earlier but
+56:16 the demo I saw the demo you did with
+56:19 data talks Club was really amazing so I
+56:21 saw that you put a lot of effort there
+56:23 so it was polished it was really really
+56:25 good so yeah
+56:28 okay and uh
+56:30 so let's say I have a similar problem
+56:33 or a problem idea right similar in a
+56:37 sense that I see that there is a problem
+56:39 and they want to make a product out of
+56:42 this an open source product
+56:44 how would you recommend me to proceed so
+56:46 first thing you said like find a
+56:49 co-founder I guess could be a
+56:50 recommendation uh anything else I should
+56:53 do to actually check if I should you
+56:55 know lock myself in a room for a year
+56:59 and a half uh before you know uh
+57:04 showing something or that there is
+57:06 something I should do before that
+57:09 so I think uh you know experiencing the
+57:12 problem in different scenarios like if
+57:13 you are a data person and you see it
+57:15 multiple times happening as being a
+57:18 professional I think that's very strong
+57:19 sign I you should definitely watch that
+57:21 sign and figure out if there is some
+57:24 potential to that problem
+57:26 um I would say I mean yeah having more
+57:29 people interested in solving that would
+57:31 be a great step also more people uh you
+57:36 could talk to a few people and figure
+57:37 out you know if they would be interested
+57:39 in using it so when we ask for feedback
+57:42 right everybody say hey go for it and
+57:43 you know why don't you do it and uh
+57:47 that's nice but maybe having very
+57:49 pointed questions on really would you
+57:51 use it do you think you would pay for it
+57:54 if you can if you would pay for it
+57:56 really how much do you think you would
+57:57 pay for it uh uh would be would be nice
+58:01 questions I wouldn't say they should be
+58:03 absolute blockers but they would prepare
+58:05 you
+58:06 to you know kind of think ahead and say
+58:09 whether you really want to know it I
+58:11 think it's more about building that
+58:13 inner conviction of whether you are so
+58:16 interested in solving this problem and
+58:17 it's going to be a tough role right
+58:19 building a product
+58:21 um unless it's like a shortest thing
+58:23 right you do over a weekend and then you
+58:25 release and then overnight becomes a
+58:27 success which generally is not the case
+58:28 uh is is a lot of hard work and then you
+58:32 have to really say or feel that this is
+58:35 something that you want to solve that
+58:37 much
+58:39 um so that you know conviction and then
+58:41 really how would you distribute it who
+58:43 are the people you think you would be
+58:45 able to easily reach out to are they in
+58:47 your network are they people who can who
+58:50 can count on for trying out your product
+58:52 who would where would your early users
+58:54 be uh even when you do open source I
+58:58 mean there are various distribution
+58:59 places right you can go to uh slack
+59:02 Community is just called Twitter uh
+59:05 would you do content what kind of
+59:07 content so distribution also has to I
+59:09 think go hand in hand with building the
+59:12 product
+59:13 um but absolutely build a smallish thing
+59:17 test it out you will always learn I I
+59:20 see I see no harm in building things
+59:22 it's absolutely the way to go yeah and
+59:26 it's fun too okay last question so one
+59:29 of the listeners uh Joanna suggested
+59:32 that we should ask every guest some
+59:34 recommendation like a book
+59:36 recommendation for example so he was
+59:38 wondering if you could recommend any
+59:40 book or some other resource to the
+59:42 listeners
+59:45 absolutely I uh we completed one year at
+59:48 zing and I treated myself to a book that
+59:51 had been meaning to read since a long
+59:53 time it's called creative selection uh
+59:55 and it talks about Apple's design
+59:57 process uh during the time of Steve Jobs
+1:00:01 especially while building their the
+1:00:03 iPhone
+1:00:03 and I absolutely loved the book uh for
+1:00:07 the way a such a large company uh at
+1:00:10 that time was still operating as a
+1:00:12 startup doing a lot of iterative you
+1:00:14 know development
+1:00:16 very lean processes but very strong
+1:00:19 focus on outcomes on polishing the
+1:00:22 product on focus on usability and
+1:00:25 quality which we know we know while we
+1:00:28 use Apple products but uh really what
+1:00:30 goes inside it uh was again something
+1:00:33 that I really enjoyed reading so I I
+1:00:36 hope people will enjoy reading it too I
+1:00:38 haven't heard about this book so I have
+1:00:41 a few credits on Audible this is I think
+1:00:44 I have used for listening to audiobooks
+1:00:46 so look it up okay thanks for joining us
+1:00:49 today thanks for sharing your experience
+1:00:51 and expertise with us
+1:00:53 um yeah that was a you had an
+1:00:55 interesting journey and thanks for
+1:00:57 sharing it with us and thanks everyone
+1:00:59 for joining us today also for asking
+1:01:01 your questions and uh yeah enjoy the
+1:01:04 rest of your day
+1:01:07 pleasure always interact
+1:01:13 with some do some channels uh thing like
+1:01:16 this and thank you all for your uh very
+1:01:18 nice questions and feel free to you know
+1:01:21 DM me or message me if there's something
+1:01:23 I can help you with thank you maybe we
+1:01:26 should do another demo because it's been
+1:01:28 a year or something like this yeah
+1:01:32 okay okay talk to you soon goodbye thank
+1:01:35 you bye

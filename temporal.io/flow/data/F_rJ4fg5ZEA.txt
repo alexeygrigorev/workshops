@@ -1,0 +1,1544 @@
+Designing a Data Science Organization
+
+0:00 hello everyone Welcome to our event this
+0:03 event is brought to you by data do club
+0:05 which is a community of people who allow
+0:07 data we have weekly events and this is
+0:09 one of such events so if you want to
+0:11 find out more about the events we have
+0:13 there is a link in the description go
+0:15 there click on this link check it out we
+0:17 have quite a few events uh scheduled uh
+0:21 so check it out then if you haven't
+0:23 subscribe to our YouTube channel do it
+0:25 now there is a red button under the
+0:27 video go there click on this button and
+0:29 you'll get notified about all our videos
+0:33 and then finally we have an amazing
+0:34 slack
+0:35 Community if you want to hang out with
+0:37 other data enthusiasts go there join the
+0:40 community and talk to other people and
+0:44 during today's interview you can ask any
+0:46 question you want there is a link a
+0:48 pinned Link in the live chat click on
+0:50 this link ask your question and I will
+0:52 be covering your questions during the
+0:55 interview okay I think that's all from
+0:59 me here now I
+1:02 will open the questions I prepared for
+1:06 you and
+1:11 um are you ready to start
+1:16 yes okay so this week we'll talk about
+1:18 designing a data science organization
+1:21 and we have a special guest today liisa
+1:23 liisa is a director of data science for
+1:25 Twitter and she leads an organization of
+1:28 200 data scientists
+1:30 uh before that Lisa worked at Microsoft
+1:33 and maybe you'll tell us a bit more
+1:35 about that uh here so yeah Welcome to
+1:38 our
+1:39 event thanks for having me yeah before
+1:42 we go into our main topic of today which
+1:44 is uh um designing data science
+1:48 organization uh let's start with your
+1:50 background can you tell us about your
+1:52 career Journey so
+1:54 far sure um so yeah let's see my
+1:57 background is in U math and science
+2:00 um my bachelor and master were in
+2:03 applied math um I always applying that
+2:05 towards various engineering Sciences so
+2:07 really passionate about just like the
+2:09 the application of math and data towards
+2:12 um various real world scenarios and
+2:15 applications um let's see I started my
+2:18 career after various internships in um
+2:21 Academia and Industry um I I started my
+2:25 um full-time career at Microsoft um
+2:28 originally I was in the veler division
+2:30 um working on Visual Studio the C and
+2:33 Visual Basic languages um the I was
+2:36 working on the the IDE and user
+2:39 experience around those languages as
+2:40 well and so that was a great opportunity
+2:42 just to to Really while I was working on
+2:44 a product that was catered by developer
+2:47 um catered For developers to learn about
+2:49 you know building software in the tech
+2:50 industry and all the various best
+2:52 practices that come with that um and
+2:54 it's been interesting actually to see
+2:55 how some of those can be applied towards
+2:57 data science the way that we um run data
+3:00 science projects as well um as my role
+3:03 there evolved from working product um to
+3:06 looking at customer feedback and then
+3:08 over time increasingly you know Big Data
+3:10 was growing in the industry and we were
+3:11 interested in more of the quantitative
+3:13 in addition to the qualitative feedback
+3:15 um then I started working on our
+3:17 Telemetry systems um our product
+3:19 analytics
+3:20 performance um as well as things like
+3:22 our overall uh metrics that we were
+3:24 using to run the business and our
+3:26 various business reviews um and then
+3:28 data science techniques we started
+3:30 employing to um understand the the usage
+3:33 patterns of our users as well um so I
+3:35 was uh doing that role within data
+3:38 within visual studio for some time and
+3:40 then as the cloud was growing and we
+3:42 were increasing our our focus on Azure
+3:44 within the company then I moved to um a
+3:46 data science Organization for Azure and
+3:49 I was in that or um That Grew over
+3:51 several years um and and and was leading
+3:54 a data science team within our what
+3:55 we're calling Microsoft cloud data
+3:57 Sciences so again we had a lot of focus
+3:59 on Azure um over time as or was growing
+4:02 but also started working on um like the
+4:04 intersection with Microsoft teams um
+4:07 powerbi and other cloud services as well
+4:10 um so in that role you know we we were
+4:12 doing data science for the product
+4:14 looking at and the retention of
+4:16 different services and how different
+4:18 features and changes would um impact and
+4:21 improve that um but also working with
+4:23 the business program so with our our
+4:25 marketing team on um you know lifetime
+4:29 value value of users and um optimizing
+4:32 our paid media and spend efforts in that
+4:34 way um working with our support team
+4:36 also with um various um optimizations on
+4:40 our support practices um our field and
+4:43 crossup so Etc and then um most recently
+4:46 I moved to a role within Twitter um it's
+4:49 the the one that you um mentioned at the
+4:52 start and so started off working on our
+4:54 Discovery and connection um teams which
+4:57 is all about how users come to the
+4:58 product and then engage with in the
+5:00 product and I'm currently leading data
+5:02 science across the um Twitter product so
+5:05 all the the features that you know and
+5:07 get to use um on a regular basis um
+5:10 using data to really help Drive our
+5:12 decisions and also improve the um the
+5:15 various ml models that help run the user
+5:18 experience as well um in addition to the
+5:20 Twitter product um my or also extends
+5:23 across the platform and so that includes
+5:25 various aspects of using data and
+5:27 science to evolve our infrastructure
+5:30 strategy experimentation platform um
+5:33 developer experience
+5:35 Etc yeah you've at Microsoft you touched
+5:38 pretty much everything right uh like
+5:41 there quite a for how long did you work
+5:44 there that was it Microsoft for 17 years
+5:47 um and so the was there and then back in
+5:49 September I moved over to
+5:51 Twitter okay yeah that's amazing I yeah
+5:55 I remember switching from Deli to C and
+5:57 it was uh like I was pretty amazed it
+5:59 was long long time ago I don't do c
+6:02 anymore but yeah that was amazing uh and
+6:06 Twitter like does everyone at Twitter
+6:09 have to have a Twitter
+6:11 account um it's not required but um
+6:15 encouraged yeah I mean I think with any
+6:17 any product you're working on it's good
+6:19 to to use the product and Microsoft we
+6:21 call it like dog fooding the product and
+6:23 you get a a firsthand experience lot of
+6:25 things that do work on all right so
+6:28 sometime ago I came across your article
+6:31 which was about designing a data science
+6:33 organization and actually this is what I
+6:35 wanted to talk about in this podcast
+6:38 episode and you start this article I
+6:40 think you wrote actually it back uh back
+6:43 at Microsoft right it is it's a couple
+6:45 of years old I think or maybe one year
+6:47 old I don't remember but it's not
+6:49 something you published yesterday right
+6:50 so it was still back at uh Microsoft so
+6:54 you start this article with a section to
+6:56 centralize or decentralize can you tell
+6:59 us more what you mean by that like like
+7:02 why is it even a choice like why do we
+7:04 have to think about this sure um yeah I
+7:08 mean the topic came up because it's
+7:09 something that I was observing across
+7:11 Microsoft at the time there were certain
+7:15 um engineering product teams within
+7:18 Azure that might have an embedded data
+7:20 science they just found that they you
+7:22 know needed that function and so you're
+7:24 kind of like you're you're running a
+7:25 business you can add whatever um
+7:27 function you need and in that role um
+7:29 I've seen this with a few other
+7:31 companies as well and so you would have
+7:33 you know an an engineering manager for
+7:36 example and then they might have one or
+7:37 two individual contributor data
+7:39 scientist reporting to them directly um
+7:42 and then the other Paradigm that I saw
+7:43 is that you would have a um a
+7:46 centralized data science organization
+7:48 where data scientists were reporting to
+7:49 data science managers but then they
+7:51 would work in somewhat of a um embedded
+7:54 way with the stakeholders so that they
+7:56 were essentially aligned with various
+7:58 partners that way and so I was you know
+8:02 just reflecting on the different pros
+8:03 and cons of the two different models and
+8:05 then how to set up for success and
+8:07 either in either um construct to ensure
+8:11 that you kind of cater to the um
+8:13 leverage the pros the benefits as well
+8:15 as solve for the the
+8:17 cons so the second one you mentioned
+8:19 centralized data science team um so you
+8:23 you said that there is a data science
+8:24 manager but the other part I didn't
+8:27 quite get so you said that they are
+8:29 still
+8:30 embedded so
+8:33 right yeah we can go back maybe to the
+8:35 Azure example so you would have so we
+8:37 had like a a whole organization um you
+8:42 know with a a VP and then um managers of
+8:46 managers for across the various areas um
+8:48 all of data science and data engineering
+8:51 we can talk about like the different the
+8:52 different roles within data but a data
+8:53 organization and then the embedding is
+8:56 essentially you know how you structure
+8:58 within that organization so you would
+9:00 align to let's say a part of the team
+9:02 that was working with our partners a
+9:04 part of the team that was working on
+9:05 startups um a part that worked on um you
+9:09 know Azure for developers and so each of
+9:11 those teams would align with another um
+9:14 business group of you know product
+9:16 managers Engineers design research
+9:19 marketing Etc um so although they
+9:22 directly reported within this broad data
+9:24 science or they still had this
+9:26 connection to a stakeholder versus the
+9:28 other model was where they would
+9:29 actually be embedded um be fully
+9:31 embedded with a a solid line meaning
+9:33 like they reported to that other
+9:35 function so this one is decentralized
+9:38 right so the the one you just described
+9:41 yes okay so in the decentralized you
+9:43 have a team that works on a specific
+9:46 part of the product or whatever so
+9:48 specific area of responsibilities in
+9:50 your example it was like uh a team that
+9:53 works with startups within Azure for
+9:55 example right um and then in this team
+9:57 we have an engineering manager Maybe
+9:59 product manager a bunch of other people
+10:01 and then there are also data scientists
+10:03 in this team and the data scientists
+10:05 report to the EM right and this is uh
+10:08 decentralized in the sense that you have
+10:10 a bunch of teams like that and in every
+10:12 team or in some teams that need data
+10:14 science they have data scientists right
+10:17 and they are spread ac across the
+10:19 organization right so it's not like just
+10:21 one place where they sit they're
+10:23 everywhere they they where they are
+10:25 needed right this is the decentralized
+10:27 part okay and then embedded uh here
+10:30 means the term means that you take data
+10:34 scientists and you embed them in the
+10:36 team that works on some area right yes
+10:40 okay and then the other thing
+10:43 centralized well then there's also um I
+10:45 think between the like centralized and
+10:47 decentralized sometimes I I mentioned
+10:49 that ultimately there can also be a
+10:51 hybrid where you kind of centralize at a
+10:53 certain level but it's not like there's
+10:55 just one data science Organization for
+10:56 the whole company mhm and in this
+10:59 example centralized could be like a team
+11:02 that has a data science manager and then
+11:04 I don't know eight data scientists
+11:05 reporting to the manager and then maybe
+11:07 we actually don't just have one team
+11:09 there is there are multiple teams each
+11:12 has a data science manager then maybe
+11:14 there is a head of data science and
+11:16 they're just somehow isolated right they
+11:19 are Central mhm okay and then the hybrid
+11:23 is you said uh like how do you actually
+11:26 combine this two uh well the last one
+11:28 that you mentioned is essentially the
+11:30 hybrid like it's centralized to a
+11:31 certain level but there's still multiple
+11:33 across the company and that's ultimately
+11:35 the most common um model that I've seen
+11:38 that you know at both companies because
+11:41 for example Microsoft is such a large um
+11:44 company you could say it's almost like
+11:46 multiple companies so many different
+11:48 products um so there's not just one data
+11:51 science or across the entire company
+11:54 there's kind of a dedicated Central of
+11:56 mass or gravity for you know for Xbox Bo
+11:59 for Azure um for developer division for
+12:03 for different groups in that way um and
+12:06 Twitter is well we're um divided into a
+12:09 few different functions so for example
+12:11 there's another data science
+12:13 organization um for our ads and revenue
+12:17 group MH so let's say let's take this
+12:20 example so we have a data team or data
+12:23 orc that is responsible for ads and
+12:26 revenue right you said uh so have a
+12:29 bunch of like a few teams right there a
+12:32 couple of teams and each team has uh
+12:35 like what kind of U structure do they
+12:38 have is it like data scientist reporting
+12:40 to data science manager yes yes so
+12:42 there's a head of data science for that
+12:44 entire division um but then for example
+12:47 I mentioned that I'm you know leading
+12:48 data science for the the product
+12:49 experience and so there's there is more
+12:52 than one or in that way um however
+12:55 within those two groups you know you
+12:57 have the data science
+12:59 reporting together MH and then these
+13:02 data scientists do they just sit
+13:04 together as a team isolated from the
+13:06 rest of the company or how do they
+13:08 actually work together on let's say
+13:10 because this ads and uh monetization it
+13:14 doesn't exist in isolation right so you
+13:16 actually need to display ads and then
+13:18 there is a product team with backend
+13:21 developers front end developers product
+13:22 manager that is responsible for this
+13:25 right so how do data scientists interact
+13:27 with these people there do they sit
+13:29 together do they sit alone like how does
+13:32 uh does this work yeah so in any of
+13:36 these models that you set up for you
+13:37 need the data scientists to be working
+13:38 with the different functions because all
+13:40 the the work that we do I mean there's
+13:42 there's some if you own a model that you
+13:44 can just you know fully I suppose
+13:46 iterate on um within the DS or and run
+13:49 that in production but I think for most
+13:51 of the changes that we're making whether
+13:53 it's like a program change that we're
+13:55 suggesting or a um a product change that
+13:59 we've you know seen in in we recommend
+14:01 based on the data um you know we need
+14:03 other functions to partner with we need
+14:05 the engineers to develop it we need the
+14:07 product managers and the designers to
+14:09 help design that user experience we need
+14:11 the the research team to also partner
+14:13 with them um on what they're hearing
+14:15 from the the users in terms of verbatim
+14:17 experience directly and so yeah all of
+14:19 these um you some as I call it like you
+14:22 need a good catcher for all of the
+14:23 different ideas to help act on it and
+14:26 the impact of the data scientist is only
+14:28 so far as those um ideas get socialized
+14:32 adopted and then acted on and then you
+14:33 see the impact of those changes um in
+14:36 measurable ways and so yeah I think in
+14:39 in all these models the data scientists
+14:40 need to work closely with these other
+14:42 functions and so that's where some of
+14:43 the the pros and cons come into play um
+14:45 regarding the different models in terms
+14:47 of what they enable and what they make
+14:49 harder um and then how you solve for
+14:51 that no matter what model you're in so
+14:55 to summarize this uh and make sure I am
+14:59 uh I understood you correctly so in both
+15:01 these models data scientists end up
+15:04 sitting together with the feature team
+15:06 with the product team that is
+15:07 responsible on this specific area of the
+15:09 product right but the difference here is
+15:12 who they report do they report to the
+15:14 data science manager or do they report
+15:16 to the engineering manager
+15:23 right one moment yeah yeah yeah
+15:32 okay I'll take a note of this to make
+15:34 sure I do not forget the
+15:36 question ah you're back yes okay I was
+15:40 about to take the note of the question
+15:42 but now I forgot I think I was giving
+15:44 you a summary right so the summary was
+15:46 that um so you have the team of data
+15:49 scientists oh sorry you have a team a
+15:52 feature team and then you embed data
+15:54 scientists there the main difference
+15:55 between centralized and decentralized
+15:58 way or of arranging this is in one case
+16:01 in the decentralized case the data
+16:03 scientists report to engineering manager
+16:06 and in the other case in the centralized
+16:08 case data scientists report to data
+16:10 science manager but in these two cases
+16:13 both of them are embedded in the feature
+16:15 teams right correct and so you know if
+16:18 you are reporting directly within the
+16:21 feature team that embedding happens
+16:23 naturally like you're already included
+16:25 in all of the team rhythms and forums um
+16:28 you have the context on the domain which
+16:30 is a key area that any data scientist
+16:32 needs to be successful you just kind of
+16:34 get that through osmosis you're
+16:36 immersing it with the team that you're
+16:37 in dayto day you're in all of the All
+16:41 Hands like um kind of connected with
+16:43 that team and the mission um and yeah
+16:47 and then perhaps on the other side the
+16:49 the business owners they always have
+16:52 like dedicated resourcing that is
+16:54 aligned with their area that they have
+16:55 you know that's fully kind of in their
+16:57 control versus that might be being PRI
+16:58 prioritize um across the or so um yeah
+17:02 maybe going back to the data scientist
+17:03 experience as you're in that um that
+17:05 model reporting that the business area
+17:07 it makes it really easy to one um get
+17:10 that context as well as have the team
+17:12 right there directly to be able to to
+17:14 act on the recommendations that that you
+17:16 make um in the other model where you're
+17:19 centralized you have to um you know be
+17:22 proactive about that and I think it
+17:23 works best also when you have other when
+17:25 you have partners that are having that
+17:27 top of mind and really looking at each
+17:29 function as equal Partners um within
+17:32 Twitter we have a um a culture around
+17:36 like each function being co-owners and
+17:38 so you know including each one directly
+17:40 is just kind of the the default within
+17:42 each of the forums um you have
+17:44 engineering design product research and
+17:45 data science as well working together
+17:48 there whether that's at the very
+17:49 beginning of the cycle like the strategy
+17:51 and planning as well as like as you go
+17:53 on to the the product road map and
+17:55 future changes and kind of measuring um
+17:57 the the different hypotheses is that you
+17:59 had tried as well just wanted to make
+18:03 sure I understood this what I said each
+18:05 function is a co-owner by function you
+18:07 mean you have like a data science
+18:09 function you have analytics function you
+18:12 have product management function
+18:14 software engineering function right but
+18:17 then everyone sits in the same team
+18:19 right that's why um yeah so we we're not
+18:22 we're all reporting to separate teams so
+18:24 it requires a little bit more of an
+18:25 effort you have to make sure that you
+18:27 know you have forum where everybody can
+18:29 come together that your slack channels
+18:33 and Google Groups are you know are
+18:35 including everybody you know it's not on
+18:38 any anyone there you know kind of
+18:40 straightforward and but just requires
+18:41 like ongoing but I guess a team has to
+18:44 have a some sort of rythm right some
+18:46 sort of um I don't know ceremonies and
+18:50 things like this so for example like you
+18:52 start with planning then you work for
+18:54 two weeks uh then you finish with I
+18:57 don't know a retrospect
+18:59 some sort of process right and then
+19:01 everyone from different functions have
+19:04 to come together right and to have to
+19:06 they have to align to work at the same
+19:09 PA right work together which is what I
+19:11 mean by working as one team right
+19:15 yes correct and there there's always um
+19:19 you know you're kind of getting into the
+19:21 planning process and how that works
+19:22 across functions and yeah there's always
+19:24 an aspect of coordination independency
+19:26 management that come into play there um
+19:28 you want to have alignment across the
+19:31 road maps of each of the respective
+19:33 disciplines functions within the the
+19:35 team area um you generally have like
+19:37 certain company schedules around those
+19:39 planning Cycles or that's going to
+19:41 quarterly or um twice a year or you know
+19:44 even kind of getting more granular from
+19:46 there and so you know let's say you know
+19:50 product setting a road map engineering
+19:53 setting a road map you know they're
+19:54 they're done in conversations
+19:55 coordinating together but the details of
+19:57 what each function need to do is um you
+20:00 know somewhat distinct and so as each
+20:01 team is creating that for themselves as
+20:03 they plan what they're going to execute
+20:05 on then you kind of need a to sequence
+20:07 that a bit so that um you know that
+20:09 folks can align and um work together
+20:11 there as well for dependency management
+20:14 and co-ownership part is about like
+20:16 let's say if we take data scientists it
+20:19 doesn't mean that data scientists just
+20:20 focus on data science they probably take
+20:24 uh like area that are close to data
+20:27 science as well like I don't know some
+20:28 bits of engineering some bits of
+20:30 analytics right so they are not just
+20:32 alone but also know what's going on in
+20:34 general in the domain where they work on
+20:37 right um yes I think there's you know
+20:40 there's an aspect there regarding the
+20:43 the work you end up doing about like how
+20:45 how hard you kind of set the line
+20:46 between the roles and responsibilities
+20:48 that I think for the co-ownership I
+20:50 think the main thing that comes to mind
+20:51 for me is you know just each role
+20:54 feeling like you know they have a voice
+20:56 in any discussion and not being confined
+20:58 in like what's traditionally expected
+21:00 from that function and so you know that
+21:04 can come into play as like we're we're
+21:06 deciding on the the product strategy and
+21:08 Direction you know you really want to
+21:10 hear Leverage The superpowers of each
+21:13 function and kind of the unique
+21:14 experiences that they have perspectives
+21:17 and um incorporate that into the the
+21:19 direction um because you know Engineers
+21:23 might have seen more you know the
+21:24 different experiments that they had ran
+21:26 over time and they have that in mind
+21:28 product like might have different
+21:29 designs that they've tried and they know
+21:30 has worked as have not DS has like seen
+21:33 the data for various areas and so you
+21:35 really want to kind of hear from all of
+21:37 the reflections that each role has on
+21:39 like whether you know this is going to
+21:41 be a good plan or not or how we should
+21:42 try it and how to drisk or um maybe
+21:45 Playing devil's advocate and thinking
+21:47 about you know a certain direction we're
+21:49 taking like should we consider from
+21:50 another lens um so it's really powerful
+21:52 to bring together like that diversity of
+21:54 voices and perspectives as we make a
+21:57 plan that's the surface it looks a bit
+21:59 complicated right because you have like
+22:01 a lot
+22:02 of functions who are not really
+22:07 connected if you think about the
+22:08 hierarchical structures but they still
+22:11 have somehow work together and move to
+22:14 the same direction uh and they somehow
+22:17 need to agree what this direction is
+22:19 right and there are many moving parts
+22:21 and then the left hand sort of does not
+22:23 always know what the right hand is doing
+22:25 like uh is it the right like how did do
+22:29 this even
+22:31 work yeah um it it does require that
+22:34 coordination together and I think um
+22:37 maybe another aspect that I often take
+22:38 into account with the designing a data
+22:41 science or is that is that cross
+22:43 functional alignment really at each
+22:44 level of the organization so you know
+22:46 for myself I should have a direct
+22:48 product um engineering design research
+22:52 partner um within each of the product
+22:54 areas let's say it's the home timeline
+22:58 the experience Etc the you know the data
+23:01 science manager for that area has a
+23:02 corresponding counterpart in each of the
+23:04 functions and so that's kind of their
+23:06 the regular group that they're um you
+23:08 know working with on a a very frequent
+23:10 regular basis um and then the individual
+23:11 is also you know those teams okay so you
+23:15 have to have this alignment on each
+23:16 level so the individual contributors
+23:19 have to align to agree with each other
+23:21 what they work on then data science
+23:23 manager has to agree with engineering
+23:25 manager with product manager with uh I
+23:27 don't know something else manager with
+23:29 product analytics manager right and then
+23:31 one level up we have heads off right so
+23:33 they have to agree uh maybe the
+23:35 direction is more broader and then you
+23:38 as a director of data science need to
+23:40 talk to director of product director of
+23:42 analytics right and also think okay what
+23:44 is the um like maybe here you more think
+23:47 about strategy rather than like
+23:49 particular details right and then you
+23:50 have above you VPS right uh who also
+23:55 need to
+23:56 agree okay that does sound complex but
+24:00 it works doesn't
+24:02 it yeah I think um I think I've seen you
+24:07 know overall like a shared interest
+24:09 across the different functions and so
+24:11 it's it doesn't feel necessarily like
+24:13 there you know conflict or in terms of
+24:16 priorities or directions we have a
+24:17 shared set of goals um we do use the
+24:20 objective and key result framework um I
+24:23 had that kind of both at Microsoft and
+24:25 at Twitter and so that's a really
+24:26 unifying Factor where you're all working
+24:28 towards um you know a common set of of
+24:31 goals you've agreed on together um DS
+24:33 plays a key role in terms of defining
+24:35 those as well and then you know you have
+24:37 your regular rhythms where you're
+24:39 walking through and checking on your
+24:40 progress or the is the direction that we
+24:42 set out seem promising and showing
+24:45 results are we executing well kind of
+24:47 execution reviews and so these are all
+24:49 ways that we can continue to stay in
+24:50 synct and
+24:52 aligned mhm yeah I'm taking a lot of
+24:55 notes because I want to come back to
+24:56 this and talk about that but I wanted to
+25:00 also take a step back and again come
+25:02 back to this centralized versus
+25:04 decentralized I think we talked about
+25:06 what we call Centralized right um but
+25:10 yeah I also wanted to talk about this
+25:11 decentralized part
+25:14 so from what you describe it seems like
+25:17 at Microsoft and at Twitter you more
+25:20 have like a centralized approach right
+25:23 or it's I mean I would say um maybe the
+25:26 hybrid where it's centralized per
+25:28 division um but there's multiple of them
+25:31 across the the company um and with I
+25:35 mean with Twitter being like a smaller
+25:36 company than Microsoft there's fewer of
+25:38 them and then um yeah Microsoft
+25:41 essentially each of the product areas
+25:44 has um has essential one for that
+25:46 product
+25:47 area so let's talk a bit about
+25:50 decentralized one so what are the pros
+25:52 and cons of having data scientist report
+25:56 to engineering manager without having
+25:58 data science manager head of data
+26:00 science and so
+26:01 on yeah so I mean often it comes about
+26:04 again because the leader within that
+26:06 group you know is they know that data
+26:09 science is going to be a key function
+26:10 for their success and so they they fund
+26:13 um a certain number of roles um around
+26:16 data science that are going to be fully
+26:17 dedicated to the work that they do and
+26:20 that like we were discussing before that
+26:22 the data scientist gets all the context
+26:25 and as well as the um in the context of
+26:28 the domain that they're working on um
+26:29 just immersively within the group and
+26:32 then they also have a a group that's
+26:34 there to directly act on um you know the
+26:37 results of their work and so those are
+26:39 some of the pros um I think you know
+26:42 around the time when I wrote that
+26:44 article I think one thing I was hearing
+26:46 was you know folks that were working in
+26:48 that model were often they would reach a
+26:51 point where they would start seeking a a
+26:53 broader data science or with where they
+26:55 would have peers of data scientists that
+26:57 they could work with together share more
+27:00 of their ideas get feedback brainstorm
+27:02 together work on more team projects
+27:04 together across different data
+27:06 scientists and then also in terms of
+27:08 like career path um and mentorship and
+27:13 just seeing like the the different
+27:15 stages of career within the organization
+27:16 that was attractive um regarding the you
+27:19 know or maybe one thing that was more
+27:21 challenging within um the other model
+27:23 where you know if all their peers were
+27:25 engineers maybe people didn't really
+27:26 understand the nature of their craft as
+27:28 well and maybe as you're having like a
+27:30 end of year performance discussion it it
+27:32 might be a little bit harder with that
+27:34 manager to have all of the the context
+27:36 and history about that specific um
+27:39 career ladder um whereas if you're in
+27:41 more of a peer group um there's a little
+27:42 bit more of that default understanding
+27:45 um by default um and then maybe some
+27:47 natural different career stages that you
+27:49 can um
+27:50 experience and then I'm I was also
+27:53 thinking
+27:54 like I asked you in the centralized
+27:58 way when everyone is taking care of
+28:00 their own stuff there are too many
+28:03 moving parts so here I guess one
+28:05 advantage I don't know if it's an
+28:06 advantage but this is
+28:08 a like a key feature let's say that only
+28:11 the engineer manager takes the decisions
+28:14 or maybe the they have the product
+28:16 counterparts or the em and PM they work
+28:19 on this but it's fewer people who need
+28:22 to take decision right so in case that
+28:24 there is disagreement maybe it's easier
+28:26 to well there are no disagreements
+28:28 probably it's just okay we just do it
+28:30 this way right while in the
+28:33 other scenario you might have some
+28:37 friction right might you might have
+28:39 different views on the direction on how
+28:43 to approach things right and it can be
+28:46 both good and bad
+28:48 right yeah I was just going to add that
+28:50 point as well I think that can be both
+28:52 good and bad you have
+28:53 fewer um I guess um decision owner in
+28:58 that sense so easier to make the call on
+29:02 the direction but um but maybe you
+29:04 actually do want that you know
+29:05 additional leaders voice in the room if
+29:08 you really want to make sure that the
+29:10 the voice of data science is um you know
+29:13 in those leadership forums and helping
+29:15 set the direction and so um yeah to your
+29:17 point it can it can be one more opinion
+29:20 that maybe makes decision harder but
+29:21 maybe it's actually hey to have that
+29:23 today MH okay and what are the cons of
+29:27 this centralized approach like what are
+29:29 the
+29:30 disadvantages yeah I think with the
+29:32 centralized you just have to really make
+29:34 a more concerted effort to one get the
+29:37 context um so for example sometimes I
+29:40 can hear from stakeholders of like
+29:43 well data scientists seem more removed
+29:46 or the work seems more academic I'm not
+29:48 sure the direct application that's going
+29:50 to have in my area and so the the data
+29:51 scientists definitely need to um you
+29:54 know grow that context um whether that's
+29:57 through like
+29:58 um you know using the product
+30:01 um um researching the product um
+30:04 understanding that the user research
+30:06 kind of the work from the other
+30:07 functions and um the the product road
+30:09 map ahead so that they you know they're
+30:12 kind of in The Forum discussing with
+30:14 their Partners um you know the the ideas
+30:17 ahead and then they can kind of go off
+30:19 and have areas where they are doing D
+30:22 data science blood projects um you know
+30:24 ideas that they've come up on their own
+30:25 but they they're applicable applicable
+30:28 to the business where like you bring it
+30:29 back to the stakeholder and say oh wow
+30:30 this is you know very insightful this is
+30:33 very useful I'm going to use it in this
+30:34 way I wouldn't have thought about it but
+30:36 now it's exactly what we need um and so
+30:39 um it's just I guess really on the data
+30:40 scientist to build that context in that
+30:42 way um and then and then ensure that the
+30:46 the product team is like at a place and
+30:47 Engineering that they can act on it in
+30:49 their road
+30:51 map yeah so so this think you mentioned
+30:54 uh like more academic more removed um I
+30:57 I guess having these shared goals that
+31:00 you mentioned like if you align on every
+31:02 level if you U have these shared goals
+31:06 on every level that kind of helps data
+31:08 scientists to stay focused on the end
+31:11 goal on the product rather than okay
+31:13 what is the next paper I am going to
+31:15 implement now and try right so like yeah
+31:19 there's a few different yeah we talked
+31:21 about the con there's a few different
+31:22 factors that contribute there um you
+31:24 know another one is just the way that
+31:25 the data scientist team data science
+31:27 team shares their work um you know the
+31:30 the language that we use I think
+31:32 whenever you're giving a a presentation
+31:35 for example you always want to be
+31:36 mindful of your audience and putting
+31:38 things in their language and um context
+31:41 and Framing and so you know um again
+31:44 that's part of like you know building
+31:46 that context so that you can help
+31:47 position this within the plans but I
+31:50 agree as you pointed out the the common
+31:52 goals are a great way to um to frame
+31:54 that and by the language I guess you
+31:57 mean things like okay we improved our a
+32:00 by 10% and now precision and recall are
+32:03 better and like the audience and the
+32:06 like who's watching this a you what
+32:08 right uh so you need to to be able
+32:12 to come down to their level I guess and
+32:15 then explain things in other terms so
+32:18 that they can relate and understand what
+32:19 these numbers actually mean yeah find a
+32:22 like find a Common Language or reference
+32:26 I guess I don't usually use like the
+32:27 going
+32:28 up or down because again they're all
+32:29 like equal partners and there you want
+32:31 to find like a common language that
+32:34 everyone has in their vocabulary and I
+32:36 think um I find it's actually useful for
+32:39 the data scientist as well as much as we
+32:40 need to like distill our message into
+32:43 the key takeaway like what's the Salient
+32:46 statistic or data point that like really
+32:48 lands the message of this broader you
+32:50 know five-page paper that you wrote or
+32:53 involved analysis like having to go
+32:54 through that process of like writing the
+32:56 exact summary and key takeaway
+32:58 points often like requires some work but
+33:00 it really crystallizes the the thought
+33:02 and the the recommendation coming out of
+33:05 the data
+33:07 science and let's say we just want to
+33:10 start with data science in our company
+33:13 how do we select the right
+33:17 approach sure um I mean I think you're
+33:20 talking about just starting with data
+33:21 science in the company then it um it
+33:24 might also suggest something about just
+33:25 like the size of the company as well I
+33:28 think it's yeah I guess like a I don't
+33:31 know a couple of hundred people not a
+33:33 startup but not like a massive
+33:36 organization either so yeah let's say
+33:39 just a couple of hundred people
+33:40 established product
+33:42 um yeah something like that yeah no I
+33:46 mean it's a good question I think I
+33:49 guess as we've been discussing along the
+33:51 way like there are pros and cons of each
+33:52 approach I think typically as you're
+33:54 starting off establishing the data
+33:56 science Oregon fun within the group you
+33:58 know there's going to be a lot of focus
+33:59 on um establishing the pipelines like
+34:03 setting the data engineering the the um
+34:06 the architecture up front and then I
+34:08 mean I feel like a lot of the initial
+34:10 foundational work is essentially the the
+34:13 counting just like getting the baselines
+34:15 and the numbers it's really hard to do
+34:16 much beyond that until you have like
+34:18 that analytical foundation and then from
+34:20 there um we can like continue to expand
+34:24 the the data science um work and
+34:27 opportunity but I think you know
+34:28 establishing that core architecture
+34:30 where you have reliable data clean data
+34:34 um you know just the data quality
+34:37 upfront um you know I think yeah you can
+34:41 do that again within the respective
+34:43 teams as they're focused on um data
+34:45 science for their various areas but
+34:47 there there is value in terms of
+34:48 bringing that together so that you get
+34:50 synergies efficiencies and you also have
+34:53 um data from different parts of the
+34:54 organization working together I guess
+34:56 maybe that's one other point that I
+34:58 should raise as we kind of discuss these
+34:59 pros and cons is that if you have data
+35:02 science fully um distributed you might
+35:06 end up having like conflicting results
+35:08 from different parts of the organization
+35:10 that's it's not completely a nonissue in
+35:12 the centralized data science org it's
+35:13 something I still focus on with my org
+35:15 as well I shouldn't have like one team
+35:17 giving a conflicting recommendation to
+35:18 the stakeholder than somebody else or
+35:20 have us use um different approaches or
+35:24 techniques but at least there's going to
+35:25 Mor a forum to bring folks together um I
+35:27 do recommend in the distributed model
+35:29 even if you don't have that data science
+35:31 reporting together that you know you
+35:33 create more of a community so I think
+35:34 that's a way that you simulate in that
+35:36 model as well where you have maybe a
+35:38 learning group or a show and share where
+35:40 you kind of get together you share about
+35:42 your work you get to hear feedback and
+35:44 ideas from others on you know ways they
+35:46 might approach it or things that they
+35:47 would recommend to keep in
+35:49 mind so what is said um first we need to
+35:54 have the foundation like P pipelines
+35:56 Analytics and then I guess this can also
+35:59 be centralized right so you have like a
+36:01 central um Team or whatever um function
+36:05 that takes care of this and then once
+36:07 this Foundation is ready then maybe you
+36:09 can just get data scientists and start
+36:12 placing them in this Central function
+36:14 with data engineers and analysts and
+36:17 then from there it will
+36:19 grow like I guess you'll know
+36:21 organically what is the best way for you
+36:24 from there the the needs are and where
+36:26 you see the highest leverag Investments
+36:29 um you I think each period I'm often
+36:31 reflecting about like the the work that
+36:33 we did in different areas and where we
+36:35 had the biggest impact and then kind of
+36:37 like deeper invest in the areas where
+36:39 you're um having an impact or where um
+36:43 you know it aligns with the overall
+36:44 strategy and direction of the company
+36:46 and the
+36:48 priorities and uh we have a question how
+36:51 many data scientists will I need how to
+36:54 estimate this before starting a project
+36:57 yeah that's a good question um you know
+36:59 there's a number of different ratios
+37:00 used in the industry I think if you have
+37:03 uh eight Engineers to one data scientist
+37:06 that's kind of a reasonable place to
+37:08 land and there's ranges you know higher
+37:10 and lower than that but um it's a a
+37:13 reasonable reference point now by
+37:16 Engineers you mean front-end Engineers
+37:18 backend Engineers data Engineers
+37:20 everyone Engineers
+37:21 right um no you're you're correct like
+37:24 there might be some areas that um
+37:27 require more data science than others so
+37:29 I would say you know Engineers that that
+37:34 um you know would you know that have um
+37:37 direct scenarios that data scientists
+37:39 can
+37:40 influence but it has to be strictly more
+37:43 than zero engineers in the team where
+37:45 you hire data scientists
+37:48 right um I would say likely yes yeah um
+37:52 otherwise there would be no one to
+37:55 really act on the that we do
+37:58 yeah yeah and you know there are you
+38:01 know a few different types of roles that
+38:04 you could consider in between the
+38:05 engineering and data science group like
+38:06 there's the machine learning engineer
+38:08 who is helping um you know develop the
+38:13 models in production and so that's like
+38:15 a very close partnership with the data
+38:18 science team as well like we might
+38:20 evaluate different signals in the models
+38:23 different algorithms um looking at the
+38:26 impact of different objective functions
+38:28 things of that nature but then you know
+38:29 there's a close partnership with that
+38:31 the machine learning expert within the
+38:32 engineering team as well so there's
+38:34 maybe a few like graduated areas across
+38:37 but yeah in terms of like it's the P um
+38:40 software engineer coding I would say you
+38:42 should have a non-zero
+38:43 number yeah but I'm just wondering let's
+38:46 take Twitter as an example I don't know
+38:47 how it happened in Twitter but let's go
+38:50 10 years back in time and then there was
+38:53 probably time when people at Twitter
+38:56 realized that chological sarting of the
+38:59 feed maybe is not the best way of
+39:01 showing things to people so let's have
+39:04 franking there and they thought okay
+39:06 like how many people do we actually need
+39:08 Let's see we have 800 Engineers so we
+39:10 can hire 100 data scientists to work on
+39:12 this or probably it wasn't how it
+39:14 happened right uh like how would you
+39:18 yeah it wasn't exactly how it happened
+39:20 but um I think that that is the that is
+39:23 the discussion that we have today as
+39:24 we're Staffing the teams I would say
+39:26 like our engineering team is actually
+39:27 very supportive of growing data science
+39:29 they see the Direct Value and benefits
+39:32 they get to use so often they'll
+39:33 actually fund the um headcount within
+39:36 the data science organization and and we
+39:38 do use things like those ratios to you
+39:41 know just give us a reasonable reference
+39:42 point as we do the planning across the
+39:44 organization and also as we're comparing
+39:46 how we're staffed across different team
+39:47 areas um but no yeah it didn't exactly
+39:52 happen that way I think for the data
+39:54 science team you know it's something
+39:56 that we need to
+39:58 consistently advocate for not from just
+40:00 a you know growing an Empire of the org
+40:03 but really just from a standpoint of
+40:05 like how can we have critical mass to be
+40:07 able to engage on the depth of that
+40:10 level within each area if you if you
+40:12 have a very thin data signs or it's just
+40:14 hard to get very deep in terms of like
+40:16 the the strategy and Direction you have
+40:17 to either just choose hey we're gonna
+40:20 we're going to have data science on some
+40:22 areas and just zero on others so we can
+40:24 really have like the quality engagement
+40:25 that um you you know and and want or you
+40:28 end up just spreading so thin that
+40:30 you're just kind of covering Basic
+40:32 Ground in terms of helping helping the
+40:34 business see you know how how we're
+40:36 tracking or progressing but um yeah hard
+40:38 to have kind of like the level of depth
+40:40 of analysis is to really recommend the
+40:41 strategy in Direction mhm yeah I'm just
+40:45 trying to kind of understand and
+40:47 summarize that uh because see there was
+40:50 a lot of information and uh so thin here
+40:53 means that um like how much ground the
+40:56 data science
+40:57 part covers like and theme meaning that
+40:59 maybe there are not so many data
+41:01 scientists and then they do pretty much
+41:03 everything they take care of many many
+41:06 domains rather than and then non would
+41:09 be like when they go deeper in one of
+41:12 the areas for example I don't know ads
+41:15 so then there is a team who focuses
+41:18 exclusively on ads right and then would
+41:20 be the opposite of fin right um correct
+41:24 yeah and I'm kind of even thinking like
+41:26 I think ads is fairly broad but even to
+41:29 kind of like a more specific level if
+41:32 you can have um let's see some good
+41:35 examples here
+41:38 um yeah like there's a number of
+41:41 different um content creation forms
+41:44 there's um spaces there's communities if
+41:47 you you know if you just have one data
+41:48 scientist across all these different
+41:49 areas the amount of time that they have
+41:50 to spend just getting context getting to
+41:52 know the data sets is is going to be
+41:54 like a pretty high proportion of their
+41:56 time and so be able to share General
+41:59 insights um just within those areas but
+42:01 in terms of like really being able to go
+42:03 deep in that strategy and um and have
+42:06 the close partnership with like each
+42:08 individual product leader it's a little
+42:10 bit more
+42:11 limited yeah I got a bit distracted
+42:13 sorry I post my thought our future data
+42:16 scientist in the
+42:17 room probably okay U I'll ask another
+42:21 question so the question is I'm
+42:23 interested what happens when data
+42:25 scientist finds a huge Discovery in data
+42:27 to whom do they report these findings is
+42:30 it head of data science is it PM is it
+42:32 po engineering manager somebody in the
+42:35 team somebody up in the
+42:38 hierarchy yeah I mean all all the above
+42:40 I would say like um you know we we try
+42:43 to share within the data science
+42:45 organization first or frequently because
+42:48 that's where you know I mentioned we we
+42:50 try to share the approaches and findings
+42:52 that they're not conflicting and there's
+42:53 opportunity to um you know have
+42:56 different question and ideas and ensure
+42:59 that you know as we bring those
+43:00 perspectives together we we give our
+43:02 most wellfound recommendations so we
+43:04 usually have some Forum within the DS
+43:05 team where we get to share either the
+43:06 work in progress or the final result but
+43:09 um communicating the the results of our
+43:12 work is like a huge topic it at both
+43:15 companies I've worked at you know we've
+43:16 had different publishing forums you
+43:18 always want to have an archive where you
+43:20 can find the um the research that the
+43:23 team has had over the years and so some
+43:25 kind of like searchable um um site where
+43:29 you can search at all the research for
+43:31 specific areas or across the teams um
+43:33 that's really important for like
+43:35 knowledge share and transfer and
+43:37 institutional knowledge over time as
+43:39 folks are onboarding Etc but then you
+43:40 also need like a a push mechanism um
+43:43 with it to each of the folks that we
+43:44 were discussing um whether here you know
+43:47 we have like a slack Channel that's
+43:49 about how we share ongoing insights we
+43:50 have one for DS and one for for research
+43:52 because we really like to think about
+43:53 like the Quant and call insights
+43:56 holistically together we're we're
+43:57 gaining our user and product
+43:59 understanding um but yeah we we point
+44:02 them out on a frequent basis within like
+44:04 the live forums that we have the
+44:05 synchronous as well as the asynchronous
+44:07 whether it's a newsletter or an email or
+44:11 updates that we share so I think for any
+44:13 function like you know the say it say it
+44:16 again and then say it again you have to
+44:17 kind of it feels like you're overc
+44:19 communicating but often there's you know
+44:21 folks across the organization that just
+44:23 don't know about um this and I think you
+44:25 know for everyone to be well educated
+44:27 inverse within our data is really
+44:29 critical for all the roles um but of
+44:31 course you can prioritize within all the
+44:33 folks you're communicating to you know
+44:35 once you go through that DS round then
+44:37 you know speaking making sure that you
+44:39 speak directly with the folks who are
+44:40 going to be able to act on this um it's
+44:42 probably who I would prioritize in that
+44:45 list so who who this thing affects most
+44:50 right is it does it affect the user
+44:52 experience and maybe go talk to
+44:54 researchers right on product managers or
+44:57 or is it like an error in dat then go
+44:59 talk to date Engineers right or is it a
+45:01 new Al go to researchers parameter tun
+45:05 you're going to work directly with the
+45:06 engineering team who's going to actually
+45:08 make that change in the the code if it's
+45:11 um yeah if it's something about the the
+45:13 user experience that you explore like an
+45:15 insight about how users are actually
+45:17 engaging with the product or experiment
+45:19 that we launched and kind of the the
+45:20 findings based on that then um maybe
+45:23 you'll be talking with someone who's
+45:24 designing that experience more whether
+45:26 that's product or
+45:28 design just one click
+45:47 on
+45:48 sorry yeah it's fun working from home
+45:51 right yes is TT
+45:54 fully um it is currently
+45:58 yes um I we have um we do have offices
+46:02 in different cities um so I have a local
+46:05 office that I I go totime butar now yeah
+46:09 but you still can work from home if you
+46:11 want right
+46:12 yeah okay yeah there is something else I
+46:15 wanted to talk about which is I took a
+46:17 look at your LinkedIn and then what you
+46:19 do at Twitter and then I took a look at
+46:21 one of the paragraphs you wrote there
+46:24 and it says part three closely with
+46:27 product management engineering design
+46:29 research to pursue datadriven product
+46:32 Innovation and achieving strategic goals
+46:34 so this is quite a packed sentence to me
+46:37 so this is a short sentence but there is
+46:40 a lot in this sentence so yeah I wanted
+46:43 to spend uh some time trying to
+46:47 understand what it means and decompose
+46:50 it so yeah I wanted to start with the
+46:54 first thing here so partnering
+46:56 partnering closely with product
+46:57 management so how important it is to
+47:00 closely to partner with
+47:03 them um it's essential yeah I think we
+47:07 kind of as we've been discussing we need
+47:08 to partner closely with um you know
+47:12 product and Engineering in order for any
+47:14 of the the work that we do to actually
+47:16 see life and make a difference um and be
+47:19 acted on because I guess the product
+47:22 managers at least in my experience these
+47:25 are the people who actually know what is
+47:27 important for the user so they are kind
+47:29 of the most important uh stakeholders
+47:32 right so they show you the direction and
+47:35 then it's up to you to understand how to
+47:37 implement this so they say users have
+47:40 this problem and you need as a data
+47:44 scientist as a director of data science
+47:46 you need to think okay how can I use now
+47:49 data science to actually solve this
+47:50 problem and then you run this by product
+47:52 managers and ask okay do you think this
+47:54 is something that will help right and
+47:56 this is this is the kind of U
+47:59 conversation you have with them right to
+48:01 understand really where to go so the
+48:03 strategy part comes from them right the
+48:05 problems come from them and then you are
+48:07 more like the
+48:08 solution um maybe yes no so like so I
+48:12 would say that the product the product
+48:14 function is you know um like the de
+48:18 facto leader for that overall road map I
+48:20 think maybe going back to the the
+48:22 co-owner I think that's why we developed
+48:25 that term because the the strategy we
+48:27 really want like all the functions to
+48:29 feel responsible for contributing to
+48:31 that but it's true that the the product
+48:33 team is the one who's really bringing
+48:34 that together and um you know
+48:37 communicating that in a holistic way and
+48:40 driving that really for the the broader
+48:42 team and so um yeah so we'll we'll work
+48:45 across the functions to discuss that
+48:47 strategy you know product will we'll
+48:50 capture it and bring that together and
+48:52 um really take the lead on that um um
+48:55 and then driving that forward and then
+48:57 you know I think a number of the types
+48:59 of interactions that come up come up for
+49:01 example between product and DS will be
+49:03 okay we we've decided that we're going
+49:05 to take this strategy and Direction what
+49:07 is the best way to measure success so
+49:09 then the data science team will be the
+49:11 driver or the owner for that and you
+49:13 know product will prove it to kind of
+49:15 confirm okay that is capturing you know
+49:17 the goal or the intent of of what we had
+49:19 in mind here um then we'll also have
+49:22 things like okay that's our overall um
+49:25 success or measure
+49:37 of have the the desirable changes and
+49:40 that can be its own data science project
+49:42 in itself to find those um causal
+49:45 indicators as well um there are other
+49:48 engagements that come up around
+49:50 experimentation um what are the um the
+49:53 ship criteria for for changes that put
+49:56 into place so for example um you know I
+49:59 think both companies we've had a way to
+50:02 um you know run experiments like
+50:04 holistically and have a view that all
+50:06 functions can use to look at the results
+50:07 of the experiments and the the way the
+50:10 different metrics move like if one
+50:11 metric goes up and another one goes down
+50:13 the data science team is responsible for
+50:16 um establishing what is the the
+50:18 recommended trade-off across these when
+50:20 it comes into guard rails um and things
+50:23 of that nature and then the then you
+50:26 have of a model for doing the experiment
+50:27 review across the functions to to
+50:30 interpret that and you know generally
+50:31 you're following that but you can also
+50:32 have room for interpretation based on
+50:34 the specific um scenario that was
+50:36 launched and what's appropriate there um
+50:39 so yeah those are a few examples I think
+50:40 of like that data science and product
+50:43 interaction do you have uh product
+50:45 analysts or it's mostly data scientists
+50:47 who do
+50:48 analytics um we we also have um analysts
+50:51 within the
+50:52 team so this is analysts they are kind
+50:56 of the part of the data science team
+50:57 because to me all you described not all
+51:00 but some of these like uh analyzing
+51:02 metrics and uh you know looking at uh
+51:06 how these metrics uh conflict with each
+51:09 other um this is something that tels
+51:11 typically do right or this is more like
+51:13 what data scientists do um no it's a
+51:17 good it's a good point regarding um kind
+51:18 of the further differentiation between
+51:20 the roles there I think you know our
+51:23 analysts have been
+51:25 um really driving a lot of the um data
+51:28 democratization for these metrics so as
+51:30 the metrics are developed you know
+51:33 putting those in a um a dashboard or a
+51:37 discoverable environment that everyone
+51:38 can use to track and um really leading a
+51:41 lot of the descriptive work like what
+51:44 has occurred um some of these um like
+51:48 determining what the the leading
+51:50 indicators are like do require various
+51:52 um DS analyses and so there is like an
+51:55 interaction that occurs there and then I
+51:57 would say like depending on the nature
+51:59 of the product area like there are also
+52:02 some very um like ml heavy areas let's
+52:07 say that's like the home timeline
+52:08 ranking feed for example whereas the
+52:10 data scientists is engaging more there
+52:12 it does require like a deeper um data
+52:15 science construct to be able to engage
+52:17 with both product on kind of the the
+52:19 road mapap for that area as well as you
+52:21 know maybe getting into how DS is
+52:23 engaging with the engineering team there
+52:25 they're a little bit more focused in
+52:26 those algorithms as well mhm yeah and U
+52:31 so I think we talked about like how do
+52:33 you uh partner with them and the
+52:36 examples I think it also comes back a
+52:39 little bit when we talked about goal
+52:41 setting and uh objectives and key
+52:43 results and so on is it essentially the
+52:46 main tool that you use for partnering
+52:49 with engineering product design and
+52:50 research like all these goal setting
+52:52 Frameworks and then alignments or there
+52:54 is more to that
+52:57 um I would say that that is a key um
+53:00 kind of Cornerstone of that alignment
+53:02 because I think you know as you have a
+53:04 set of shared goals and common interest
+53:06 across the team everything else kind of
+53:08 Falls from there whether that's um you
+53:11 know resourcing the types of projects
+53:13 that you take on um I guess one family
+53:16 we didn't really discuss is also just
+53:17 the you know we try to have a set of
+53:19 time that the data science team can have
+53:22 to just Explore More broadly like the
+53:24 user behavior and new insights that
+53:26 actually recommend what is the next um
+53:28 thing we should pursue on the product
+53:30 road map and so um I I think having that
+53:33 common view of the goals and success
+53:35 again are that common con context to
+53:37 make sure that that doesn't just come
+53:39 out of left field and seem like
+53:40 something that's not as relevant like
+53:42 it's a way to see that oh we we all have
+53:44 a agreed upon view of you know what
+53:46 we're trying to drive as terms of
+53:48 success um and then can move towards
+53:50 that model and then maybe just keeping
+53:52 like various you know communication
+53:53 forums whether that's synchronous or
+53:55 asynchronous so that we're um reflecting
+53:59 together I think as we go through those
+54:01 processes we have um postm morms or
+54:03 retrospectives whatever um term you you
+54:06 prefer to say okay what you know this
+54:08 was our goal this was what we tried what
+54:10 worked what didn't work what can we
+54:12 learn from this for next
+54:14 time How often it happens uh maybe not
+54:18 specifically at Twitter but just in your
+54:20 experience um that in this kind of setup
+54:24 uh different functions have con conflict
+54:27 goals so let's say data science wants to
+54:30 go more in data science while I don't
+54:33 know in uh in the product area backend
+54:36 Engineers uh they want to spend more I
+54:39 don't know on other things um let's say
+54:43 I don't know decoupling like working on
+54:46 uh you know removing technical debt
+54:49 while data scientists need actually
+54:51 Engineers to help them with some of the
+54:53 stuff and then you have this natural
+54:54 conflict right so because want to spend
+54:57 time on this thing and data science
+54:59 wants them to spend time on other things
+55:01 and now you need to decide what you do
+55:03 in the next quarter uh and I guess this
+55:06 situation happens quite often right so
+55:07 how do you uh resolve these little
+55:11 conflicts yeah I think that um data
+55:14 science actually has a really key role
+55:16 in in in driving those discussions um
+55:19 for example we've had several like
+55:21 strategy discussions in the past
+55:22 organizational discussions where if you
+55:25 can have everybody looking at the common
+55:26 data around like what the relative
+55:28 opportunity sizing is for example across
+55:30 these opportunities been um then
+55:33 establishes Common Grounds but we can
+55:35 you know all all prioritize this from a
+55:37 common lens so basically you convince
+55:40 with data see what will happen if we do
+55:43 X right and then everyone wow that's so
+55:45 cool let's drop everything and do this
+55:47 right
+55:48 exactly okay and then yeah uh and coming
+55:53 back to this sentence um so partnering
+55:56 closely with product management
+55:58 management engineering design and
+55:59 research we covered that to pursue
+56:02 datadriven product Innovation so what is
+56:05 datadriven product Innovation is this uh
+56:08 thing we just discussed like this is
+56:11 what happens if we do X and then
+56:12 everyone is wow let's do
+56:15 this um yeah essentially it's you know
+56:18 really looking to learn and um you know
+56:22 guide the product from from the data and
+56:24 so I think like the best
+56:26 um cultures or environments for data
+56:29 Sciences you know when you have teams
+56:31 that are really open to and curious to
+56:33 learn from from the data in that way um
+56:36 versus having like maybe an an
+56:38 attachment to a certain um you know idea
+56:42 or product design um really being able
+56:44 to view it objectively across the group
+56:46 and then use data to track our our
+56:49 progress and you know check our our
+56:52 hypotheses um and have that guiding for
+56:55 us yeah mhm so the main part here is
+56:58 having trust in your data and then being
+57:01 able to use this data to show okay this
+57:03 is the direction we should go and this
+57:05 is the new cool thing we should try
+57:07 because it probably will affect this and
+57:10 then this is how you do datadriven
+57:11 product Innovation right and then
+57:14 checking and you know validating that
+57:16 along the way yeah of course of course
+57:18 uh yeah I think we should be prepping up
+57:21 um so let me check if there are any
+57:23 questions that I missed uh no I think my
+57:27 YouTube chat doesn't work so I don't see
+57:30 any questions and one one point I'll
+57:31 just mention because you were talking
+57:32 about partnering across the functions um
+57:34 research is also an interesting one
+57:36 where we really try to do joint research
+57:38 together across the um you know more of
+57:40 the the user studies and qualitative
+57:42 research as well as the data science um
+57:45 research and so you know sometimes they
+57:47 can spark each can spark ideas for the
+57:49 other like maybe through research we
+57:51 might hear things that give us ideas of
+57:53 different data sets to explore um or to
+57:55 kind of understand see how
+57:56 representative it is across the data and
+57:58 then um research as well can kind of
+58:00 take the the data findings and then you
+58:03 know try to understand a little bit more
+58:04 the why or the psychology behind it what
+58:06 users are thinking or feeling when they
+58:09 when they that way yeah okay so the
+58:11 audience of this podcast of these events
+58:13 are mostly data scientists I assume or
+58:16 data Fox um so is there one single thing
+58:19 you can recommend them to do if they
+58:21 work with uh researchers to learn from
+58:25 them to
+58:26 you know do what you just said like to
+58:29 uh get inspiration from them is there
+58:32 something they can do to you know learn
+58:34 from
+58:35 them yeah I mean I think um just keeping
+58:37 an open mind and Curiosity on kind of
+58:40 what they're finding and seeing I think
+58:42 one challenge that we can have from data
+58:44 scientists when we're viewing research
+58:46 studies is that you know the sample
+58:47 sizes are often smaller than what we're
+58:49 accustomed to so I think it's really
+58:50 easy to say oh well that's not you know
+58:53 we don't know how representative that is
+58:55 ETC and you know just the power of you
+58:57 test right exactly just trying to kind
+59:00 of take that lens of like well what
+59:01 could I learn from this maybe if that's
+59:03 not um you know in the
+59:06 full proportionate like context like
+59:08 maybe I can take that idea and then I
+59:10 can go study in the data and see how um
+59:13 representative it is or can we set up
+59:14 the study in a way so that like
+59:17 anonymized and following LPI by users we
+59:19 can kind of confirm that okay we have a
+59:21 certain cohort within each of the
+59:23 representative cohorts certain um you
+59:26 know representive sample within each of
+59:27 the cohorts we were interested to study
+59:29 so I think there are a few ways to to
+59:31 bridge that um but yeah I would say just
+59:33 kind of you trying to to take a lens of
+59:35 what we can learn from
+59:37 it if somebody wants to find you and ask
+59:40 a question what is the best way of doing
+59:42 this is it Twitter or some other place
+59:46 yeah I think I think you've shared on
+59:47 the um on the podcast my my Twitter
+59:50 handle um LinkedIn um either of those
+59:52 work as well okay great uh
+59:56 did I did you maybe also want to mention
+59:59 something but didn't have a chance
+1:00:02 to um this is great yeah know I love the
+1:00:05 conversation thank you for driving
+1:00:07 through all the different topics and
+1:00:08 exploring here so yeah great to chat
+1:00:11 with you it was my pleasure thanks uh
+1:00:14 thanks for joining us and thanks
+1:00:15 everyone for joining us as well and
+1:00:17 asking questions watching the interview
+1:00:19 that was great and U yeah enjoy your
+1:00:24 weekend great thanks
+1:00:26 he

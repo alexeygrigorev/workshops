@@ -1,0 +1,1579 @@
+Data Developer Relations
+
+0:00 everyone Welcome to our event this event
+0:02 is brought to you by databox club which
+0:04 is a community of people who love data
+0:05 we have weekly events and today we have
+0:09 one such events if you want to find out
+0:11 more about the events we have there is a
+0:13 link in the description go there click
+0:15 on this link and you will see I think we
+0:18 have two
+0:19 workshops in our pipeline yeah so be
+0:22 amazing so go pick it up
+0:24 then of course do not forget to
+0:26 subscribe to our YouTube channel this
+0:28 way you will not miss amazing streams
+0:31 like we have today and last but not
+0:33 least we have a slack Community where it
+0:36 can hand out with other data into that
+0:37 so if you are not there yet you're
+0:40 missing out join the slack and talk to
+0:42 other folks during today's interview you
+0:45 can ask any question you want there is a
+0:47 pint Link in live chat so click on that
+0:50 link ask your question and we'll be
+0:52 covering these questions
+0:56 and now I will stop pairing my screen
+0:59 I will open the document that we
+1:02 prepared for you
+1:04 with the right bio
+1:07 and
+1:10 I've had many bios over the years yeah
+1:13 yeah
+1:14 so it's something we found from the
+1:16 internet I guess
+1:18 so um
+1:20 I think I'm ready I think you're ready
+1:23 we can start
+1:28 I'm I'm so ready born ready no I'm
+1:31 kidding
+1:33 this week we'll talk about developer
+1:35 advocacy and we have a special guest
+1:37 today very special Hugo Huga is a head
+1:40 of developer relations at outer bounds
+1:42 and he's also a host of the banished
+1:45 ingredients podcast he's a data
+1:47 scientist educator evangelist content
+1:49 marketer and data strategy consultant
+1:52 she is a very well-known educator he
+1:54 developed over 30 courses on the data
+1:58 Camp platform probably many of you
+2:01 already know his books and with these 30
+2:04 curses he managed to impact over 2
+2:07 million Learners through
+2:08 this through online education so it's a
+2:11 big honor to have you today welcome
+2:14 thank you so much for having me here
+2:16 it's a great honor to to be here and for
+2:19 those who don't know um this will go
+2:21 live soon but we also recorded
+2:23 um an open source demo of metaflow and
+2:25 full stack machine learning using the
+2:26 sandbox we've built uh recently which
+2:28 kind of shows like all the layers of the
+2:30 machine learning learning stack and how
+2:32 we can interoperate with them so we'll
+2:33 chat about that later but we can include
+2:35 a link to that in the show notes as well
+2:36 so this is a fun week for me and data
+2:38 talks Club as well we definitely will do
+2:40 this and um not everyone knows that
+2:43 outer bounds for example it's not
+2:45 obvious for most people that outer
+2:47 bounces the company behind metaphor
+2:51 is a tool that Hugo is working on yeah
+2:55 so we'll get we'll get to that but meta
+2:58 flow is a human-centric tool for
+2:59 developing full stack machine learning
+3:00 applications and software
+3:03 um and as a company we support it and
+3:04 build software and a platform that that
+3:06 supports it and helps people to use it
+3:08 so
+3:08 I'd have to fire myself if I didn't say
+3:10 that so
+3:13 questions for today today's interview
+3:16 are prepared by Johanna Bayer as always
+3:18 thanks Johanna for your help and by the
+3:21 way Johanna
+3:22 is because Huga is in based in Australia
+3:26 and Johanna is based in Australia so
+3:28 today Johanna can actually join our
+3:30 session live so amazing yeah that's cool
+3:34 thank you for all your work
+3:36 yeah let's start so before we go into
+3:39 our main topic of data developer
+3:41 relations let's start with your
+3:43 background can you tell us about your
+3:45 career Journey so far
+3:47 yeah and feel free to stop me at any
+3:49 point I'm not quite sure what level of
+3:51 granularity to go into but I'll kind of
+3:53 give a
+3:54 a bit of background that's relevant for
+3:57 what we're talking about today as as
+3:59 well so my background's in scientific
+4:01 research in uh mathematics then cell
+4:04 biology and and physics and biophysics
+4:07 so studying the physics of the of the
+4:10 cell and I was doing that not too far
+4:12 from you actually for several years in
+4:14 you're in Berlin and I was doing this in
+4:16 in Dresden there's a big Max Planck
+4:18 Institute for cell biology there where I
+4:21 did the first half of my postdoc and
+4:23 ostensibly my job was to um do applied
+4:26 mathematical modeling to model cell
+4:29 cellular biological phenomena
+4:32 um at this point my colleagues
+4:34 biologists were able to collect
+4:36 increasing amounts of of data up to
+4:39 millions of rows and and Beyond if
+4:41 they're doing genomics and that type of
+4:42 stuff at this point I'd done a bunch of
+4:44 programming but I didn't really have a
+4:46 strong statistical data bent to myself
+4:49 and this is over a decade ago now so it
+4:52 became clear that to do my job it would
+4:55 be a good idea to learn as much as
+4:57 possible about what was becoming data
+5:00 science at that point so I started
+5:03 playing around with rstudio um and then
+5:04 in IPython notebooks so and at that
+5:07 point there weren't Jupiter notebooks
+5:09 um but so I started to learn all the
+5:11 tools that I needed to analyze and model
+5:14 data and cell biological phenomena
+5:18 um then my postdoc boss moved to the
+5:21 east coast of the US to Yale University
+5:23 and so I worked there with him for a
+5:25 couple of years and in both these jobs I
+5:28 mean I love the research
+5:30 um but it became clear to me that
+5:34 there are lots of good researchers
+5:37 um right but there was a gap at both
+5:39 these places in terms of actually
+5:40 teaching these tools to all the
+5:41 biologists and all the scientists I mean
+5:43 I worked with tenured professors at Yale
+5:45 who really
+5:46 um didn't have
+5:48 um the computational skills to do the
+5:51 science that they needed a wonderful
+5:53 scientists and experimentalists
+5:55 um
+5:56 and nor did they really have the time or
+5:58 or the bandwidth so I mean the incentive
+6:00 system is is pretty screwy there as well
+6:02 so I carved out time in the department I
+6:04 was working in in order to teach what I
+6:06 called like practical data science for
+6:08 researchers and scientists workshops
+6:12 um at that point I met
+6:16 um
+6:16 uh some young entrepreneurs who'd
+6:19 started uh the company data Camp
+6:22 um and they had built out a pretty
+6:24 serious base R curriculum
+6:26 um and they were looking for someone to
+6:29 come in and build build out python
+6:31 courses and do a bunch of product and
+6:33 internal data science stuff and and that
+6:35 type of stuff
+6:36 um and I was applying for academic
+6:38 positions at the time applying for some
+6:39 industry positions and as it turned out
+6:43 um you know it it I I was able to jump
+6:45 in and start really building up python
+6:46 python courses there and very fortunate
+6:48 to be able to not only build out courses
+6:52 um that I could teach myself but
+6:54 collaborate at that point with what was
+6:56 then Continuum analytics is now Anaconda
+6:58 of course to build out like the first
+7:00 set of pandas and matplotlib courses and
+7:03 to work with Andreas Muller of psychic
+7:05 learn on the first psychic learn course
+7:07 and so really getting a huge amount of
+7:10 insight into the open source world and
+7:12 being able to collaborate with a bunch
+7:14 of these really interesting
+7:17 um in insightful uh tool Builders and
+7:19 practitioners as well
+7:21 um
+7:22 I started doing
+7:24 we'll get to why I did this soon when
+7:27 we're talking about kind of getting into
+7:29 developer relations and getting into
+7:30 developer advocacy I started doing a
+7:32 bunch of developer relations advocacy
+7:34 then
+7:35 um
+7:36 a lot of writing speaking online live
+7:39 coding sessions
+7:42 um and started a podcast called Data
+7:43 frame which I think some people probably
+7:44 have listened to
+7:46 um and that was that was a huge amount
+7:48 of fun once again getting to do stuff
+7:51 like this I mean talk with people who
+7:53 I'm interested in about stuff that we're
+7:55 both interested in and and and having
+7:57 conversations with an audience about
+7:59 that so a lot of community building
+8:00 there
+8:01 um so after data Camp I've been in
+8:04 several places
+8:07 um I first was a a company called coiled
+8:10 which
+8:12 um is a dask company so dask is for
+8:15 distributed parallelized compute um in
+8:18 in in Python
+8:20 um and I was doing a lot of evangelism
+8:22 developer relations marketing stuff
+8:23 there and more recently for the past uh
+8:26 year and a half
+8:29 um although I've been working with them
+8:30 for for longer I'm really excited to be
+8:32 working at out of bounds where we're
+8:34 working on the full stack of machine
+8:36 learning and as we'll get to I I think
+8:38 um one of the big challenges here as is
+8:41 as I think as is becoming should be
+8:43 becoming clear
+8:45 um
+8:46 I think something I love doing is
+8:48 helping scientists get access to tools
+8:50 software tools and education and content
+8:53 that helps them do better science right
+8:57 um and what does that mean in Industry
+8:59 now we're trying to tell the
+9:00 productionization story of data science
+9:02 and machine learning more and get that
+9:04 out of larger organizations I mean meta
+9:06 and Google know how to do machine
+9:08 learning at scale Netflix knows how to
+9:10 do machine learning at scale how do we
+9:12 get that into you know Mom and Pop
+9:14 e-commerce stores and how do we get that
+9:16 across across the board and what does
+9:18 this full stack look like and how do we
+9:20 build software and education so that
+9:22 scientists can do this in any company
+9:25 and they don't need to worry about you
+9:28 know configuring yamls and kubernetes
+9:30 clusters right so how do we build a
+9:33 stack of infrastructure that allows
+9:34 scientists to focus on the top of the
+9:37 stack the modeling the data the things
+9:38 they love the productionization without
+9:40 having to become the most robust intense
+9:43 software Engineers although as you and I
+9:44 have discussed these skills are
+9:46 important as as well
+9:49 um and I also I've put a link to this in
+9:50 the chat I host a podcast as well called
+9:52 Vanishing gradients and the reason
+9:54 behind that
+9:56 was actually
+9:57 um
+9:58 you know after I did the data frame
+10:00 podcast the datacamp I always wanted to
+10:02 get back into podcasting and I it was in
+10:05 between jobs that I taught a lot of my
+10:07 friends work in the space and I was
+10:08 having what I thought were a lot of
+10:09 interesting conversations with them so I
+10:12 thought
+10:12 why not record them and and put them out
+10:15 there so it's it's really nice I get to
+10:17 have conversations like this with
+10:18 friends and put them out so definitely
+10:20 check that out for for those interested
+10:24 Google decided YouTube decided that it's
+10:27 spam so your link did not go through but
+10:31 I just Googled it and posted in the live
+10:33 chat fantastic yeah it's funny because I
+10:36 also in my job at out of bounds we host
+10:39 um Fireside Chats around full stack
+10:41 machine learning and I have noticed that
+10:43 um only I as host can post things but
+10:46 yeah I still don't know how exactly it
+10:49 works sometimes people can post links
+10:51 sometimes they cannot most of the time
+10:54 they're not so only if the cost can
+10:55 which I guess makes sense like people
+10:58 made comments
+11:00 I'm really wondering so like the quilt
+11:03 the quilt is the company behind dusk
+11:06 outer bounds is the company become
+11:08 behind metaphor why not call the company
+11:10 like dusk or metaphor why do you come up
+11:13 with this names that sound completely
+11:16 unrelated
+11:17 that's a good question
+11:19 um
+11:20 so I suppose the way I frame it is that
+11:23 other people work on these open source
+11:25 projects right so
+11:27 um meta flow for example has 75
+11:29 um historical contributors on
+11:32 um on on GitHub right
+11:35 um
+11:36 and other companies as well so I would
+11:40 say out of bounds is the company that
+11:42 probably
+11:43 um you you would consider supporting
+11:46 um meta flow a lot just as coiled
+11:49 supports task
+11:50 um having said that um I think Anaconda
+11:52 still employs a bunch of gas
+11:55 um maintainers as a bunch of
+11:58 contributors for task work in a variety
+12:01 of other companies as well
+12:02 um and I think that's actually really
+12:04 important right because if we think
+12:07 about what open source is it's a pretty
+12:09 broad Church
+12:10 um and
+12:12 if you think about something like
+12:15 tensorflow which is you know think about
+12:17 governance of tensorflow where isn't it
+12:19 isn't open source in the classical sense
+12:22 of you know how many people get to make
+12:24 decisions it's very company company back
+12:27 so I do think
+12:28 um it's important to have that
+12:30 distributed also there's the converse in
+12:34 that for
+12:35 companies institutions to adopt open
+12:37 source I think
+12:40 we want to make sure that a certain
+12:42 number of companies support them as well
+12:44 so I definitely before coiled started um
+12:48 there were companies that were like when
+12:49 considering dask versus spark are like
+12:52 well spark has more support in industry
+12:55 and from data breaks and that type of
+12:56 stuff so we want to just make sure that
+12:57 dask has is supported by a handful of
+13:00 places
+13:01 um first as well so I think there's a
+13:03 there's an interplay there and now speak
+13:05 to the fact that having these companies
+13:07 can actually really support the open
+13:08 source ecosystem
+13:10 okay interesting so it's on purpose that
+13:13 the name of the company and the product
+13:15 they work on are not the same in it yeah
+13:17 because they are different entities
+13:19 right and out of bounds although we
+13:21 support metaflow and work on metaflow
+13:23 and um have a managed offering as a
+13:26 product and these types of things
+13:28 um definitely what we want to help
+13:30 people do is solve
+13:32 um machine learning and take machine
+13:34 learning from prototype to production
+13:36 and improve that um speed of iteration
+13:38 there
+13:39 um and whether we do that through
+13:40 metaflow or not isn't necessarily the
+13:43 primary concern we happen to it
+13:45 currently
+13:46 do you work on anything else a partial
+13:48 metaphor
+13:50 look at the other posts
+13:52 so no at the moment our main product is
+13:55 definitely based around metaflow but it
+13:57 it does interoperate with a variety of
+14:00 different things right so if you're on
+14:02 AWS we make sure that you can have
+14:05 access to all of your resources all of
+14:07 your data and have that secured uh in
+14:10 AWS if you
+14:12 um use kubernetes clusters we make sure
+14:14 you can do that um I think something I
+14:16 showed on the OSS demo Spotlight the
+14:19 other day was um uh we integrate with
+14:22 the Argo scheduler so when you want to
+14:24 push your models to production you can
+14:26 do that using Argo
+14:28 yeah so we support like a huge kind of a
+14:32 section of the ecosystem yeah and when
+14:35 you were talking about your career
+14:37 Journey that's that was pretty
+14:39 interesting so you came to develop
+14:41 relations through education so you first
+14:45 notice that for researchers it's
+14:48 difficult to learn about practical data
+14:50 science so you did a bunch of courses
+14:52 there and then you joined datacam and
+14:55 then through that you became a developer
+14:58 relation and I'm wondering how this
+15:00 transition happened like was it natural
+15:02 for you as a teacher as an educator to
+15:05 go there or like how exactly did it
+15:08 happen how did you make this decision
+15:09 that okay actually you know what what
+15:11 I'm doing seems to be close to devrel
+15:14 let me do this professionally
+15:17 yeah it's a good question I I suppose
+15:20 one way of thinking about it and this
+15:22 isn't the only way but that devrel kind
+15:24 of is it education right that uh that
+15:29 someone who works in developer relations
+15:30 their their job is to at least create
+15:33 educational content that helps people
+15:35 use you use software so it definitely
+15:38 was natural in in that sense
+15:42 um the other reason it was natural for
+15:45 me I think
+15:47 as I said a lot of the other things I've
+15:49 I've done I think
+15:51 um there are lots of people who are
+15:53 really good at these things and actually
+15:55 think there are lots of people who could
+15:57 be good at devrel we just haven't carved
+15:58 out the career paths for them so
+16:01 um I suppose it was a differentiator for
+16:02 me and I could I could make more impact
+16:04 then in in Endeavor or than than than
+16:07 other other positions so and I think key
+16:12 aspects
+16:13 for those wanting to get into devrel are
+16:15 of course to enjoy and be good at the
+16:18 computational side and understand the
+16:20 data science and machine learning
+16:22 although there are things you know they
+16:24 say that you know the best teacher
+16:26 sometimes is someone who's just learned
+16:27 what they're what they're teaching so if
+16:29 you have definitely a background in
+16:30 these things and want to pick things up
+16:32 and teach them that that can be useful
+16:34 but yeah to have a have a have a command
+16:36 of
+16:37 um
+16:38 you know the technical scientific side
+16:40 of things and then the other thing is to
+16:43 be an explainer
+16:45 um so I I mean when I walk down the
+16:48 street I'm having my morning coffee and
+16:49 I've done something I my mind naturally
+16:52 gravitates to hack to explaining that in
+16:54 my own head in kind of
+16:56 um as straightforward terms as possible
+16:59 um and I have colleagues and friends who
+17:00 don't operate that way right I know a
+17:03 lot of Engineers who like they just want
+17:05 to build cool product not just they want
+17:07 to build cool product and they don't
+17:09 want to write blog posts
+17:10 um and they and they don't really want
+17:12 to break things down and that's totally
+17:14 cool if that's you I wouldn't
+17:16 necessarily get into the the devrel side
+17:18 of things but if you enjoy explaining
+17:21 things and you enjoy the technical side
+17:23 of things I definitely think um
+17:27 I think there's a there's a hiring
+17:29 challenge in devrel generally
+17:31 um and I think that's going to increase
+17:33 I think the demand side of the labor
+17:35 market for devrel is going to grow as we
+17:37 get more and more tools like people like
+17:39 am I going to be replaced by GPT 23 or
+17:44 whatever right and I've got no idea but
+17:47 what I can tell you is that working in
+17:49 devrel I think definitely there's
+17:52 a significant chance of being employable
+17:55 um for a long time I'm not saying
+17:57 there's less chance in other other
+17:58 fields but I definitely think that the
+18:01 pie is growing if that makes sense but
+18:03 what is actually deprel what is it
+18:07 it's a good question
+18:08 um
+18:10 I think the best way to think about I
+18:12 mean there are multiple terms that
+18:14 fly around there's developer relations
+18:17 there's developer advocacy there's
+18:19 evangelism
+18:21 um the way I think about it is
+18:24 um we can think about open source or not
+18:26 open source software it doesn't doesn't
+18:28 really matter it's helping developers
+18:32 understand how to use software and and
+18:36 why essentially
+18:38 um so
+18:39 in my current job as I said there are
+18:43 and this is something we talked about
+18:45 um earlier this week
+18:46 um there are you know scientists who are
+18:49 great on the data and modeling side side
+18:51 of things and they need to understand
+18:52 certain things about compute versioning
+18:56 code versioning models
+18:59 um about orchestration all of these
+19:01 these types of things so a devil
+19:03 function there would be in the name of
+19:05 Education to give them access to the
+19:09 information they need about these tools
+19:11 but also
+19:12 um to resources for how to learn it and
+19:15 how to implement it and that speaks to
+19:18 the the sandbox that I that I demoed at
+19:20 the spotlight as as well as we discussed
+19:22 you know getting set up with this entire
+19:24 infrastructure stack is is days of work
+19:26 so if you can you know do devrel
+19:30 um
+19:31 in the name of education but have these
+19:33 tools that allow people to spin things
+19:35 up in 10 seconds instead of 10 days
+19:38 um that's incredibly useful another way
+19:41 to think about and this is actually one
+19:43 of the reasons one of the several
+19:45 reasons I joined metaflow and out of
+19:46 bounds the co-founders when I first
+19:48 spoke with them they showed me some
+19:50 slides on what they referred to as the
+19:51 wisdom layer of of meta flow
+19:54 um and Ville toolos who you know
+19:57 um and who is the CEO of out of bounds
+19:59 and used to run machine learning
+20:01 infrastructure at Netflix where they
+20:02 develop uh meta flow
+20:04 um
+20:05 will I said to me you know this the
+20:08 software of course is incredibly
+20:09 important but the reason we want to hire
+20:12 devrel immediately is because the wisdom
+20:14 layer is it's not secondary it's equally
+20:17 as as important and I think recognizing
+20:19 that
+20:21 um is key I'll give maybe two other
+20:23 examples
+20:25 um psychic learn
+20:28 um one of I mean it's wonderful software
+20:31 but I think one of the most important
+20:34 reasons for its huge adoption is its
+20:36 documentation
+20:38 um and documentation of course is part
+20:39 of devrel not in only in terms of
+20:41 documenting you know methods and
+20:43 arguments and Doc strings and this this
+20:45 type of stuff but giving easily
+20:48 accessible SEO findable examples
+20:53 um that that people can then use in in
+20:55 their day jobs
+20:57 um I think the Tidy verse in the our
+20:58 ecosystem is the same the way our
+21:00 original the Tidy verse originally with
+21:02 ggplot d player several other packages
+21:05 had vignettes carrot the carrot
+21:07 vignettes that Max developed I'm on
+21:10 the machine learning stuff is absolutely
+21:11 absolutely wonderful so all of these
+21:14 roll in into devrel
+21:16 um and I'm I'll I'll shush in a second I
+21:19 did want to mention the other thing I
+21:21 just used the term SEO right search
+21:23 engine optimization
+21:25 um and this is actually incredibly
+21:26 important so what we're seeing now is
+21:28 that devrel is related to Marketing in
+21:31 some way right
+21:32 um and the cynical take on this is that
+21:34 developers don't trust marketing so you
+21:36 need to invent a new function called
+21:38 something else
+21:39 um kind of like no it's nothing like
+21:41 this but I was thinking Edward Bernays
+21:43 who um
+21:44 he he coined the term public relations
+21:47 because the term propaganda had a bad
+21:51 name
+21:52 um so it he coined the term that's
+21:53 propaganda for propaganda
+21:56 um but that's the cynical take uh what's
+21:58 really happening there I I think is that
+22:02 um the tools devrel needs to to get
+22:05 to the Right audience are some of the
+22:07 same tools marketers marketers do so
+22:10 there was there's a joke and like in for
+22:12 open source a lot of Open Source
+22:14 developers that stat when you search
+22:16 something about their package stack
+22:18 Overflow
+22:20 comes up first even though it's answered
+22:23 in their documentation so a lot of the
+22:24 time people will just link to the stack
+22:27 Overflow answer with documentation and
+22:28 spell it out there so that's to say you
+22:31 also in devrel and I'm trying to entice
+22:33 people to think more about devrel
+22:35 um you get to do a bunch of fun stuff
+22:36 you get develop content go and give
+22:38 talks chat with developers also fold
+22:41 developer feedback back into software
+22:43 and product and also learn about the
+22:46 internet and search engines and all of
+22:49 this type of type of fun stuff as well
+22:51 yeah interesting so it's about education
+22:54 it's about discoverability and it's
+22:57 about
+22:59 producing content that developers can
+23:01 understand and developers can trust
+23:03 right so as you said like if it's just
+23:06 somebody from marketing department
+23:09 then maybe they don't necessarily
+23:11 believe that this person speaks the same
+23:13 languages as them right and speaking
+23:16 about marketing so I'm curious usually
+23:19 is developer relations
+23:22 a part of the marketing department or
+23:25 the part of the technical department
+23:27 um
+23:28 it depends on the organization I've seen
+23:33 both
+23:35 um I've spent most of my time in recent
+23:38 years working in
+23:39 early stage to Middle stage startups and
+23:43 what's interesting in in in my two most
+23:46 recent startups is we've hired deveral
+23:49 people before
+23:51 um like
+23:52 full-time marketers right so I think for
+23:55 an early to medium stage startup you can
+23:56 get away with you know having the devil
+23:58 people do all the marketing as well as
+24:01 you scale and grow
+24:03 um you're going to want to you know have
+24:05 a pretty serious marketing team and you
+24:07 can either have
+24:08 um some of the developerations people in
+24:11 there or or an independent unit as well
+24:13 it depends on how you want to structure
+24:14 things
+24:15 um it is always interesting when devrel
+24:17 reports into the CTO and is as close to
+24:19 engineering as possible
+24:21 um in my current
+24:23 company at out of bounds we're pretty
+24:26 non-hierarchical
+24:28 um so I'm pretty generative so that's
+24:32 actually the other thing worth worth
+24:34 mentioning
+24:35 um
+24:37 devrel is also not just about like
+24:39 creating content yourself out of the
+24:41 abstract but it's leveraging and
+24:43 collaborating with your engineers to see
+24:47 what they can bring to the world and
+24:48 lowering the barrier to entry for them
+24:50 so who's the best person to write
+24:52 documentation of a new feature it's not
+24:54 me it's the engineer who who built the
+24:57 feature right but in perhaps in
+24:59 collaboration with me depending on them
+25:01 perhaps we can write something together
+25:02 or if they're not into writing at all
+25:04 maybe I'll jump on a call with them like
+25:06 this talk it out get a transcript then I
+25:08 draft something from that so it's really
+25:10 it's fun because you have all these
+25:12 touch points internally in a project
+25:14 um and also externally with the
+25:16 developers who use it so yeah I think
+25:18 you mentioned that not all developers
+25:21 are really into writing blog posts and
+25:24 other things or million talks but then
+25:28 other developers who need to use the
+25:32 tools that these developers produce
+25:34 they need documentation they need to
+25:36 know how to actually use this site and
+25:38 then somebody needs to make this happen
+25:40 right and then it's you it's Deborah
+25:42 exactly make sure that okay even if
+25:45 maybe the developer wrote something
+25:48 is it actually understandable then I
+25:51 take this documentation this piece of
+25:52 documentation and do something with this
+25:54 or it's completely or maybe not
+25:57 completely but there are some missing
+25:58 things there are some areas for
+26:00 improvement there are some unclear parts
+26:01 that could be improved right and then
+26:03 you give this feedback to developers or
+26:05 maybe go ahead and just you know improve
+26:07 these things exactly sound right okay
+26:10 yeah and the other thing worth
+26:11 mentioning is but also it's fun because
+26:14 you get to study professionally on top
+26:16 of current trends so you know recently
+26:18 we've seen
+26:19 I suppose what we call a revolution in
+26:22 generative AI from you know last year
+26:24 all your stable diffusions and these
+26:27 types of stuff to all like the large
+26:28 language model stuff happening now
+26:31 um so when when that occurs in a company
+26:34 in a project you want to figure out you
+26:36 know how you can support these these
+26:38 efforts more generally and because at
+26:40 metaflow we really think about how to
+26:42 the how to imp how to get machine
+26:45 learning and data science in real world
+26:47 software stacks and in robust
+26:49 reproducible applications
+26:52 um and of course all the generative Ace
+26:54 AI stuff is really built around proof of
+26:56 Concepts and not robust software it's
+26:58 been a lot of fun to um to to start
+27:01 working on that type of stuff and I'll
+27:02 I'll link to a few blog posts of kind of
+27:04 how we're thinking about supporting the
+27:07 infrastructure that allows people to
+27:09 build all this generative AI stuff as
+27:12 well that I think your audience will
+27:13 find interesting so yeah it keeps you on
+27:15 top of current trends as well which is
+27:16 cool
+27:17 okay so we already discussed that you as
+27:20 a developed person work closely with the
+27:23 developers who create a product who
+27:25 create the code
+27:27 how closely do you work with marketing
+27:29 because like what marketers do in my
+27:31 opinion I might be wrong so they are
+27:33 usually in charge of different campaign
+27:35 campaigns so they might run I don't know
+27:38 ads on Google they might run they might
+27:41 work with communities to advertise
+27:43 something through these communities or
+27:45 they might create an event and then see
+27:47 how well this event performs so they are
+27:49 not necessarily into the actual content
+27:52 but rather than making sure that this
+27:54 content
+27:55 reaches the right people so how do you
+27:59 work with this marketers with these
+28:01 people
+28:04 I guess you produce content but then
+28:06 they make sure that this content is uh
+28:11 discoverable like people find it
+28:13 absolutely and so it's usually an
+28:17 iterative process and there are many
+28:20 many different examples of weister
+28:21 slices but I think um thinking so part
+28:25 of a marketing team's job is to make
+28:27 sure a company appears or a product or a
+28:30 piece of Open Source software appears in
+28:32 places where people
+28:34 um will be looking for it right and so
+28:37 as it turns out at the moment search
+28:39 engines are really important for that
+28:42 right so you want to make sure that when
+28:45 you have a digital marketer that they're
+28:47 aware of who your ideal customer is or
+28:50 ideal user and can help you
+28:53 um
+28:54 you know figure out what type of
+28:55 searches they make and getting you in
+28:56 front of their eyes
+28:57 um with with relevant relevant stuff now
+28:59 as you've ascertained it's
+29:03 the devrel team among other potential I
+29:06 mean there are content marketers as well
+29:07 but the the devil the technical people
+29:09 who develop content
+29:11 um that digital marketers will be able
+29:13 to use in order to to get that you know
+29:17 search engine stuff stuff happening so
+29:19 there's a serious back and forth there
+29:21 where you know perhaps the engineering
+29:24 team and the devrel
+29:26 um tell the marketers these are the
+29:28 types of things we're thinking writing
+29:29 about then the marketers will do their
+29:31 SEO research and come back and go okay
+29:34 this has High
+29:36 um search traffic but we're actually
+29:39 really competitive with Google itself
+29:41 for this right so maybe we won't win
+29:44 that whereas this has medium traffic but
+29:46 it's something that
+29:48 um is is super relevant and not a lot of
+29:50 people are going for it at the moment so
+29:52 it's an ongoing conversation in in that
+29:55 sense
+29:56 um and I'll I'll definitely say
+30:00 it's
+30:02 there are a lot of very good marketers
+30:04 out there but not necessarily a lot of
+30:06 great marketers who understand the
+30:08 technical
+30:10 um space Who would know what XG boost is
+30:13 for example or the difference between
+30:15 um you know uh gradient boosting and
+30:18 other forms that's not their job right
+30:20 exactly
+30:23 um so the way I think about it is that
+30:25 devrel is kind of the marketing team's
+30:28 best friend in in a lot of ways so the
+30:30 more they can can work together the the
+30:33 better off and then when you know
+30:36 um even developing at at some point
+30:38 perhaps a project or a company will want
+30:42 to have a conference that you know the
+30:44 marketing team is responsible for
+30:46 putting together
+30:47 um then devrel will play a significant
+30:49 role in in constructing kind of the lay
+30:51 of the land for who they invite what
+30:53 actually happens there what type of
+30:54 talks whether they're panels this this
+30:56 this type of stuff as well
+30:59 um because marketers can organize a
+31:03 conference but they don't necessarily
+31:04 know which content will appeal better to
+31:08 the to the audience item that's your
+31:10 input for that exactly cool um but I
+31:12 also want to say there are some pretty
+31:13 technical marketers as well so there are
+31:16 some
+31:17 I've met some wonderful product
+31:19 marketers who their job is to I mean and
+31:21 they're usually from somewhat technical
+31:23 backgrounds who know how to
+31:26 um speak speak the technical technical
+31:27 talk as well so I don't want to say no
+31:29 Market is a computational or anything
+31:30 like that but they're not as easy to to
+31:33 find
+31:34 yeah probably we should invite one of
+31:37 those Forks to our podcast yeah
+31:40 absolutely but what are the skills that
+31:43 let's say I work as a data scientist and
+31:45 I want I am interested in exploring that
+31:48 that product space I I think I enjoy
+31:51 writing I think I enjoy giving talks and
+31:55 I've heard that devrel being a devil is
+31:57 about that so I kind of want to go into
+32:00 that space into that direction so what
+32:03 kind of skills do I need for that well I
+32:06 think you you have a wonderful skill set
+32:08 Alexi for for devil because you do it I
+32:11 mean the other thing that I probably
+32:12 didn't speak to enough is that devrel is
+32:15 about community building and this is
+32:16 something you do
+32:17 a huge amount of right so it isn't only
+32:19 about
+32:21 like one-to-many broadcast mode and then
+32:24 many to one it's about getting all the
+32:25 connections between the community
+32:28 um in interacting
+32:30 um so I think as I said before
+32:33 um the most important skills are having
+32:36 a base of technical skills that you can
+32:39 can leverage there are always things you
+32:41 can learn on the fly as well
+32:44 um a willingness and a like a strong
+32:46 desire to learn more things and if
+32:48 you're working in data science and
+32:49 machine learning
+32:50 successfully you probably already have
+32:52 that right because things are moving so
+32:54 quickly so neither of these things are
+32:56 really
+32:58 special in in this skill set per se in
+33:01 in this audience
+33:03 um and then a desire to an ability to
+33:07 explain things in in simple terms
+33:11 um and to community build as as well so
+33:15 enjoying having these kind of like
+33:18 you know multi-network conversations
+33:22 um between engineers and developers and
+33:24 data scientists and people doing machine
+33:26 learning and that type of stuff
+33:29 okay so in summary technical skills
+33:33 right so if I order you work as a data
+33:34 scientists I got that covered but then
+33:37 in addition to that I need to know how
+33:39 do I actually explain my work it's not
+33:42 just okay I finished my Jupiter notebook
+33:43 I don't know right
+33:47 put this to meta flow to productionizer
+33:49 type and then my job is done then I
+33:52 actually
+33:54 once and I can explain how these things
+33:57 work and I enjoy doing this then
+33:59 probably I would be a good fit for a
+34:02 developed position absolutely and in a
+34:04 variety
+34:06 like media right so
+34:08 um being a relatively good writer
+34:12 um I think is is important
+34:15 um as is you know enjoying going out
+34:18 there speaking doing videos podcasts
+34:20 such as this
+34:21 as well
+34:22 okay so it's was it related to community
+34:27 building aspect or something a bit
+34:29 different yeah I would say the community
+34:31 building as well because what you want
+34:33 to do is be able to you know take
+34:36 information and techniques and and
+34:38 methods and bring them to a broader
+34:40 community and get the community
+34:41 discussing getting feedback from the
+34:42 community for the project as well
+34:47 um how do I become yeah I'm sorry I was
+34:50 just going to say the other thing worth
+34:52 mentioning
+34:54 um and this is always a challenge for
+34:58 for a lot of data scientists and machine
+35:00 learning Engineers who are thinking of
+35:01 getting into devrel it's not clear in a
+35:04 lot of organizations once you get into
+35:07 devrel you get to do a lot of cool data
+35:09 science and machine learning projects
+35:11 but they're more for uh content and
+35:13 developer relations as opposed to solve
+35:15 internal business problems so that's
+35:18 something that you have to give up to a
+35:21 certain extent there's a trade-off there
+35:23 depending on the organization there may
+35:25 be a structure which allows you to do
+35:27 internal data science as well but if
+35:28 you're working on the data science team
+35:29 you're also working on the data science
+35:31 team and not the devrel team right so
+35:32 they're they're kind of they can be
+35:34 mixed incentives when you're in
+35:35 reporting into two different teams as
+35:37 well
+35:38 um so you definitely get to do less
+35:40 impactful internal data science when
+35:43 working in devrel but as part of that
+35:45 trade-off you get to do all these all
+35:46 these fun things we're talking about
+35:49 so does it mean that you kinda
+35:52 you get less in-depth knowledge into
+35:56 certain things because when you solve a
+35:58 business problem and I don't know like
+36:00 there are some problems
+36:03 or like some things don't work and then
+36:05 you start digging deeper until you
+36:07 figure this out and then this is how you
+36:09 learn and then like you become efficient
+36:11 in
+36:12 using in
+36:14 at some domain or in some with some
+36:17 library but as a devrel whose focus is
+36:22 on creating educational content maybe
+36:24 you don't necessarily dig that deep as a
+36:27 yeah you still end up dog fooding a lot
+36:30 of things that you're You're Building
+36:31 though and you also um you know in order
+36:34 to get to the point where something
+36:36 works for you and is reproducible you've
+36:38 got to make it reproducible for other
+36:39 people as well so you can end up getting
+36:42 pretty seriously in in the weeds can be
+36:44 even more difficult right like this
+36:46 reproducibility
+36:48 yeah absolutely yeah I remember like one
+36:52 thing is when you do this at work you
+36:54 commit and then it's
+36:55 it's working fine but then the other
+36:58 thing if you want to actually teach
+37:00 others how you did this and then it's a
+37:03 totally different thing and then you'll
+37:05 notice that wait a wait a minute like
+37:07 most of these things are more complex
+37:09 than they should be how about they try
+37:11 to rewrite them and then like you spend
+37:13 a week doing this
+37:19 absolutely
+37:21 well you mentioned that in order to
+37:25 become a good devrel you need to be a
+37:27 good writer and you also need to be a
+37:30 good speaker but how do I become a good
+37:32 writer if I'm if these are scientists
+37:35 like is it something I'm born with and I
+37:38 either have it or not or something I can
+37:41 become better at
+37:43 well
+37:44 I mean nurture on nature right this is
+37:46 this is the age-old question and I'm I'm
+37:49 probably a Bayesian at heart so I think
+37:51 I think framing the conversations around
+37:53 likelihoods is the the most useful way
+37:56 of thinking about it so
+37:58 I think um
+38:00 like some people are naturally good at
+38:02 writing and explaining and that type of
+38:04 stuff but that it's also because people
+38:06 enjoy it more so people have done more
+38:08 of it and that type of stuff but I think
+38:10 anyone where there's a will there's a
+38:12 way as we say
+38:13 um so anyone who wants to become a good
+38:16 writer um can I I do think
+38:20 um the way you do it is by by doing it
+38:24 um of course there are courses you can
+38:25 take but I think by actually trying to
+38:28 explain things trying to write things
+38:29 down
+38:30 um if you get some form of writer's
+38:32 block you know you can record yourself
+38:33 talking through something then get a
+38:36 transcript of that these and these types
+38:38 of things well have a con try to explain
+38:39 it to someone get a transcript of that
+38:43 um I think one of the
+38:45 the best ways to become a writer to to
+38:48 improve your writing skills well there
+38:50 are two one is to collaborate with other
+38:51 people
+38:52 um and work and with Google Docs or
+38:54 whatever it is these days notion pick
+38:56 your tool right
+38:57 um uh collaborative writing is is in a
+39:02 wonderful State the other is by by
+39:04 reading more
+39:06 um and and I think noticing what you
+39:10 like about what you're reading what
+39:12 you're not noticing when you read
+39:13 something and you don't understand
+39:15 something I think
+39:18 I think a lot of us have a tendency to
+39:20 think that's our fault
+39:22 um like I'll be like am I too dumb to
+39:23 understand what and then I go no
+39:25 actually like I'm dumb in some ways but
+39:28 not in this way and this probably isn't
+39:30 written like they haven't explained it
+39:31 well and trying to figure out what they
+39:32 haven't necessarily explained well and
+39:34 then how I do it differently and so
+39:36 those those types of things I think are
+39:37 incredibly important but um I definitely
+39:40 think through through writing you become
+39:42 a good writer and it is a huge
+39:44 differentiator man I mean I
+39:46 I was very surprised when I started
+39:48 working in cell biology and
+39:51 the number of
+39:54 like incredible research scientists and
+39:56 I won't name any names or institutions
+39:58 but the number of really amazing
+40:00 scientists who don't know how to write
+40:02 properly
+40:04 um and I and I mean maybe because their
+40:06 minds on other things as well but
+40:07 they'll share what they call final
+40:09 drafts with things that like the
+40:10 sentences aren't complete right
+40:14 um so I think it is a really strong
+40:16 differentiator there as well yeah what
+40:19 helped me is uh
+40:22 having added an editor who would point
+40:24 out hey look this paragraph is
+40:28 completely not understandable I tried to
+40:31 read it three times I still don't get it
+40:33 but work on this paragraph to really
+40:35 understand what you meant here and let's
+40:37 try to the right of in simple sentences
+40:40 without all these passive voice longer
+40:43 constructions break it down so that was
+40:46 helpful and what I did later in
+40:50 is working with data scientists actually
+40:53 kind of do the same thing like when they
+40:55 submit the draft
+40:57 say okay look this sentence is a bit
+40:59 confusing can we make it clearer and
+41:02 that is very helpful for both right and
+41:05 then at the end make sure that the
+41:07 readers actually understand so and one
+41:10 thing you mentioned about the writer
+41:12 block
+41:12 and I used to have it until chargpt came
+41:16 out so now it's much easier to get
+41:20 started so I just asked hey like I want
+41:22 to write something about that can you
+41:24 give me like I don't know an outline
+41:27 outline and then like okay now I already
+41:30 have some things they are not
+41:33 necessarily good right and then I can
+41:34 enter it on this thing and then
+41:36 ask something so that that's very
+41:39 helpful I never tried speaking to myself
+41:41 and recording it and then transcribing I
+41:44 think it's a very good idea
+41:46 yeah and I do I Journal a lot as well so
+41:48 I do that with with journaling sometimes
+41:49 when I just
+41:50 too tired to write I'll just you know I
+41:53 think I got the idea from Twin Peaks I
+41:54 don't know if anyone's seen that TV show
+41:55 but um Dale Cooper the Kyle McLaughlin
+41:58 character dictates his diary into a
+42:00 Dictaphone in the 90s
+42:02 well I think now with all these tools
+42:04 from open AI it's uh you can just
+42:07 dictate something to your phone then
+42:10 transcribe it and then have uh dpt4
+42:13 summarize it in an article and then like
+42:16 we already have a graph to start with
+42:19 and then start working it working with
+42:22 on your with your own style with your
+42:24 own extra content yeah that's amazing I
+42:28 actually recently used whisper I
+42:31 attended
+42:32 parents evening in school it was in
+42:35 German my German is not very far from
+42:37 perfect
+42:38 I did not understand everything but I
+42:40 record this and then I put this into
+42:43 whisper and then I took the output of
+42:45 whisper and put it to GPT and then you
+42:47 just summarized everything and then I
+42:49 thought wow and then I asked it to
+42:50 translate from German to English
+42:53 amazing that's so cool
+42:57 yeah sorry I just noticed Hannah had a
+42:59 couple of questions in the in the chat
+43:01 that that are really relevant to
+43:04 how how to approach
+43:06 with me did them oh yes of course yes
+43:09 that's
+43:10 Johanna who helps us in Melbourne right
+43:13 yeah and she's doing this now online
+43:16 thanks so the question Johanna has is
+43:20 how do you approach creating ease of
+43:21 writing or tutorial do you start with
+43:24 structure or you have some other
+43:25 approach
+43:27 pretty early depending on
+43:31 whether I'm collaborating with people or
+43:33 doing it myself sometimes by myself I'll
+43:35 just start writing I have an idea and
+43:36 start writing I think when
+43:38 when collaborating with people getting a
+43:41 structure down beforehand is is very
+43:44 important just to align so you make sure
+43:46 you're quote unquote like rowing in the
+43:47 right right in the same direction
+43:50 um but I think before structure is
+43:53 figuring out who your target audience is
+43:56 and then what your goals are right
+44:00 so let's say I wanted to write something
+44:06 um about you know using whisper with
+44:09 metaphor right so how to build
+44:11 production software
+44:13 um that transcribes uh audio let's say
+44:17 leveraging kubernetes clusters or
+44:18 something something like that right so
+44:21 I could start drafting drafting that or
+44:23 write a structure but
+44:25 the structure might be incredibly
+44:27 different based on whether I'm writing
+44:29 it for a data scientist or
+44:32 um a platform engineer right like if I'm
+44:34 writing for a platform engineer maybe
+44:36 they want to know about how to configure
+44:39 all the kubernetes Clusters in order for
+44:42 the data scientists to be able to do
+44:43 their work as quickly as possible
+44:44 whereas if I'm writing it for a data
+44:46 scientist or machine learning engineer
+44:48 perhaps we're abstracting over all that
+44:50 information
+44:51 um so I think that is in incredibly
+44:55 incredibly important
+44:57 um in terms of goals
+45:00 um I think
+45:01 for a company or an open source project
+45:04 perhaps
+45:07 you know you want to start asking
+45:09 questions before writing a structure am
+45:11 I
+45:12 am I writing this to just build
+45:15 awareness of this open source software
+45:17 or am I doing it in order to support
+45:20 people who already use it right or am I
+45:24 doing it
+45:25 um for credibility in the space or am I
+45:29 doing it to generate excitement right
+45:33 um and so I think these all of these
+45:35 types of different questions are
+45:37 important to figure out what your goal
+45:39 are target audience then start
+45:41 structuring it
+45:43 um and then move through it and one
+45:45 thing I'd sometimes do is when I write a
+45:47 structure I essentially write what the
+45:49 tldr shouldn't should look like
+45:51 beforehand
+45:53 um and then write down what the headings
+45:54 are what the H2S are that that break it
+45:57 up and then start filling things out and
+45:59 if you're collaborating then you can you
+46:01 know figure out who wants to write which
+46:02 part and then edit for each other and
+46:04 and that type of stuff so yeah those are
+46:07 kind of General ways that I've started
+46:09 to think about
+46:10 and how do you understand what kind of
+46:13 goal you have like maybe somebody comes
+46:16 to you and says hey we don't have any
+46:18 blocks in our blog post and we don't
+46:21 have any blog posts in our blog
+46:24 let's create blog posts and then you're
+46:26 okay let's create and then you think you
+46:28 can like what is my goal actually
+46:33 and the way I think about that is
+46:37 blog posts are there to serve goals of
+46:39 projects or companies right
+46:42 um and and the audience right whoever
+46:44 the audience may it may be
+46:47 um so
+46:49 if
+46:51 an open source project wants to start a
+46:53 blog
+46:54 um if they don't have a large audience
+46:56 yet the I suppose the first thing they
+46:58 want to do is develop awareness right
+47:01 that's why they're why they're doing
+47:02 this blog as opposed to
+47:04 [Music]
+47:06 um let's say
+47:09 that they want blog posts because there
+47:11 are too many issues on the issue tracker
+47:13 which are solved
+47:14 um but they need blog posts to point
+47:16 people to
+47:18 um to say hey this is the solution to it
+47:20 right so then that's a that's a
+47:21 different thing so I would even push
+47:24 back and say you shouldn't create a blog
+47:27 out of a vacuum right for no reason
+47:29 um if you're creating content
+47:31 um there is a goal embedded in in your
+47:34 logic
+47:35 um and so it's my job to figure out what
+47:37 your what your goal is so a very
+47:40 different example
+47:42 um is
+47:44 I speak with a lot of Founders who want
+47:46 to kind of find things out about early
+47:48 stage devrel and a question that
+47:50 Founders founders of companies Venture
+47:52 back seed rounds series a companies who
+47:55 um
+47:57 a question they're they're building
+47:58 developer tools a question they almost
+48:01 always ask if they don't have one
+48:03 already is should I should we have an
+48:05 open source offering
+48:08 um between you know what already exists
+48:10 and and our product and my question is
+48:12 why why do you want to do that
+48:15 um and a lot of the time they say it's
+48:18 for community building and my response
+48:20 to that is well it's an option then but
+48:22 there are other ways to build community
+48:24 as well so once we get back to the goal
+48:26 maybe writing blog posts isn't the way
+48:28 to solve your business problem or what
+48:30 your project needs the pain point at
+48:32 that point so root causing the desire
+48:34 and then generatively thinking through
+48:37 the potential options and blog posts
+48:39 will usually form part of it but then
+48:40 you've got that goal as part of that
+48:42 process as well yeah and to
+48:45 speaking of that like if you your goal
+48:47 is building awareness
+48:49 then you can do it through an article
+48:51 through a conference talk or through a
+48:54 YouTube video or through a thousand
+48:56 other ways things like how do you
+48:59 actually select the right medium like if
+49:01 the company comes to you and says hey
+49:03 write a blog post for us
+49:05 should you challenge that and say like
+49:07 maybe for this you should just the
+49:10 conference talk because there will be
+49:11 like I don't know uh 1000 or 2000
+49:15 developers watching this talk maybe we
+49:17 should do that instead of an article
+49:19 yeah I think um not to seem too
+49:22 businessy about it but it's just a
+49:24 shorthand I mean you look at the return
+49:25 on investment right the ROI
+49:28 um and I do think you want several
+49:31 strategies and you want to make
+49:33 hypotheses and then do experiments
+49:36 around those hypotheses and then figure
+49:37 out if they they worked or not right and
+49:39 the truth is because search engines have
+49:41 such high Roi you are going to want to
+49:43 do blog posts that are indexable by
+49:45 Google and yeah being these days maybe
+49:49 um whatever it is right
+49:51 um but conference talks are incredibly
+49:53 important and I think also like
+49:56 low-hanging fruit of organizing meetups
+49:58 and that type of stuff in terms of
+49:59 community building and developing
+50:01 awareness or sponsoring meetups I do
+50:05 that's a good question now where
+50:07 returning to like a lot of in-person
+50:09 conferences and and that type of stuff
+50:12 whether you want to go and do in-person
+50:13 conferences because let's say you fly
+50:16 across the country in let's say you're
+50:18 in the US and you live on the west coast
+50:20 go into a conference on the east coast
+50:22 is and that's you know in the end days
+50:25 of travel and hotels and and that type
+50:26 of stuff is that as impactful as doing a
+50:30 set of virtual conferences right which
+50:31 you can to do in an afternoon so
+50:35 thinking through those things
+50:37 is super important I do think there's
+50:40 and this is this is one of those things
+50:42 that's unquantifiable man right like
+50:44 what happens when you're in a room with
+50:47 with people right and the conversations
+50:49 that that happened then and just like
+50:50 having a coffee with someone and those
+50:52 types of things so the hallway track at
+50:54 conferences is in-person conferences is
+50:56 so important so I think there is value
+50:58 there but it's not necessarily as
+51:00 quantifiable which which is tough
+51:02 yeah that's them for me personally the
+51:04 most interesting part of the conference
+51:06 is not the actual talk
+51:08 but what happens before and after you
+51:11 know all this yeah
+51:14 I always wondered whether we could just
+51:17 ideally we could just remove all the
+51:19 talks right yeah
+51:23 all right yeah like you could say people
+51:26 watching beforehand or watch them after
+51:28 or something like that but it's it's
+51:30 almost an excuse It's a proxy to get
+51:33 people together even though everyone
+51:35 knows that's not the reason
+51:37 they're there right but if you didn't
+51:39 have it they wouldn't travel
+51:42 yeah right I understand
+51:46 yeah well I see that we have a few
+51:48 questions and uh one question from Ella
+51:50 is about the role of the pro whether
+51:54 it's inter-company or intercompany
+51:56 because it's somebody who speak more
+51:59 outside or within the company or it's
+52:02 both or
+52:03 or that's such a good
+52:06 question
+52:08 um
+52:10 it should be both
+52:12 yeah
+52:13 um
+52:16 at the moment
+52:17 where I work a lot of it is external and
+52:20 that's because internally we're
+52:22 relatively small so internally everyone
+52:25 knows what's what what's going on right
+52:29 um like have a lot of domain expertise
+52:31 for the most part whereas
+52:34 um
+52:35 when you go to a certain size and you
+52:37 start hiring a marketing team a sales
+52:40 team
+52:42 um devrel actually has an incredibly
+52:44 important function in getting
+52:46 um resources internal to get everyone up
+52:49 to speed with what the company does and
+52:51 and what they think if you can as devrel
+52:53 if you can educate your sales team your
+52:55 account Executives and Business
+52:57 Development representatives and all of
+52:59 these different roles if you can educate
+53:00 them on the software and product even
+53:03 more so that they can talk to talk even
+53:04 if they can't walk the walk there are
+53:06 huge huge returns there
+53:08 um so I think it's both depend but it
+53:12 just dependent on the on on the size of
+53:14 the company
+53:15 um the other thing worth mentioning is
+53:16 it's between companies as as well right
+53:19 um because
+53:22 of the state of full stack machine
+53:23 learning and that essentially what's
+53:26 required at the moment and what's best
+53:28 practice is um a suite of interoperable
+53:30 best of breed tools as opposed to
+53:33 all-in-one platforms you know at
+53:35 metaflow
+53:36 um we interoperate with a bunch of
+53:38 experiment trackers such as weights and
+53:40 biases and and common right
+53:43 um so I get to work with these great
+53:45 people I um I did a fireside chat
+53:47 yesterday with um the head of product
+53:49 and a co-founder at tabula who work on
+53:52 Iceberg which is out of Netflix as well
+53:53 just like just like metaflow
+53:55 um and we're we're working on some blog
+53:57 posts showing how
+53:59 um tabular can work with metaflow to do
+54:03 really high high throughput uh machine
+54:05 learning from there from parque through
+54:08 through to Iceberg sorry through to
+54:11 metaflow so it's really really fun to
+54:13 work with a variety of different
+54:14 companies in in the space as well
+54:18 so it's external internal and
+54:22 in their company because internal could
+54:24 be you work with other companies or
+54:26 external could be you educate
+54:29 developers right so it's both exactly
+54:32 um and the other the other thing worth
+54:34 mentioning is that you know at a company
+54:37 you know that's 10 to 20 people you end
+54:40 up doing a variety of different things
+54:41 but as a company grows you people become
+54:43 more specialized right specialized right
+54:45 have a better off for Worse becoming
+54:48 increasingly specialized like I love
+54:51 I think I get bored easily so I love
+54:53 doing a variety of different different
+54:55 things so maybe that's why I'm attracted
+54:57 towards early to Middle stage startups
+55:00 um the other thing that I didn't didn't
+55:01 mention and it's not necessarily part of
+55:03 the skill set for devrel but starting
+55:05 you don't need anything major but start
+55:07 working on a portfolio make sure your
+55:10 GitHub repository is is is looking nice
+55:14 um
+55:14 you know write some blog posts and maybe
+55:16 publish them on
+55:18 towards data science
+55:21 um you know go give a talk at a local
+55:23 Meetup before proposing something for a
+55:25 conference find some of the cool work
+55:27 you're doing internally wherever you
+55:29 work and try to bring that to the world
+55:30 and and see how it feels as well
+55:34 um experiment with your career right so
+55:36 like maybe you start giving talks in
+55:38 like I don't really enjoy that
+55:40 um but you enjoy all the other parts of
+55:42 devrel and that means if you're
+55:43 interested in applying for devil
+55:45 position you can say hey
+55:46 I don't really enjoy giving talks that
+55:47 much but this is what I I I I can offer
+55:50 so experiment with what works for you
+55:53 maybe now I add the Shameless like if
+55:56 any of you who's listening and data
+55:58 scientist or a mobile engineer or deep
+55:59 engineer and you work on solvents and
+56:02 business problem and you want to talk
+56:04 about that
+56:05 there is a Meetup
+56:07 or Meetup where you can do this so
+56:09 retails
+56:11 amazing yes well you also have a podcast
+56:14 and we still have three minutes maybe
+56:17 you can tell us about that podcast
+56:20 before we finish
+56:21 yeah so it's actually this was an idea
+56:25 that I had
+56:28 when I was building a lot of courses
+56:31 um and and and con technical content for
+56:34 developers it was there isn't
+56:37 necessarily a lot of room When
+56:39 developing this stuff for long format
+56:40 conversations around what the industry
+56:43 actually looks like on on the ground
+56:46 um and because you know a lot of my
+56:48 friends as I said a lot of my colleagues
+56:49 work in this place doing a lot of
+56:51 interesting stuff I have a lot of these
+56:52 conversations all the time
+56:54 um and there are a lot of challenges in
+56:56 in the space that it is an obvious from
+56:58 when you look at KD nuggets or go to
+57:01 open data science conference or Pi data
+57:03 or look at towards data science right
+57:06 um so I wanted to kind of have a space
+57:09 for for me and like-minded people to
+57:11 have kind of longer longer conversations
+57:14 um and so it is pretty across the board
+57:16 it's called Vanishing gradients and it's
+57:18 on
+57:19 whatever app you use I think it should
+57:21 be if it isn't please please let me know
+57:24 um but you know I've had people from
+57:27 T-Mobile from Pfizer
+57:30 um and and Novartis
+57:33 um uh data scientists from from Twitter
+57:35 and and Reddit
+57:37 um Facebook so a number of different
+57:40 places and each episode is kind of
+57:41 themed in in in some way as as this
+57:44 podcast is
+57:46 um but I suppose if you enjoyed this
+57:48 conversation and you want to see what
+57:49 happens when the tables are turned when
+57:51 I'm interviewing
+57:52 um someone else
+57:54 um you can really get get a sense of
+57:55 what the space uh looks like on on the
+57:58 ground as well
+57:59 um and I'd really welcome your feedback
+58:00 on it if it resonates or what you'd like
+58:02 to hear more of also
+58:04 um and you it's it's URL we've included
+58:06 but it's vanishinggradients Dot
+58:08 fireside.fm
+58:11 open and we will make sure to include
+58:13 these links in the show notes in the
+58:16 description so if you listen to this
+58:18 podcast and recording you will find them
+58:21 so
+58:23 um what's the best way to find you
+58:26 on LinkedIn or Twitter
+58:28 um and it's Hugo Brown Anderson of
+58:30 course on LinkedIn and it's at Hugo
+58:32 bound b-o-w-n-e
+58:35 um and the other place if you're
+58:37 interested we can share the link as well
+58:41 um if you're interested in the full
+58:42 stack machine learning stuff that we're
+58:44 doing at out of bounds um we've got a
+58:46 slack where you can come and chat with
+58:48 us as well and that's
+58:49 slack.outabounds.com and we'll include
+58:51 that in the show notes Co not Kong yes
+58:55 exactly yeah that's like I think it's
+58:58 I would put com let me usually
+59:02 okay I think that's all we have time for
+59:04 today thanks everyone for joining us
+59:05 today
+59:06 thanks a lot to you Huga personally for
+59:11 checking all your experience with us
+59:13 yeah
+59:14 well
+59:16 thank you Alexi and thank you everyone
+59:18 for joining it was really great to do
+59:21 and this is it's the weekend now for me
+59:23 it's 7 P.M on Friday so well have a nice
+59:26 weekend and for those who are not in
+59:27 Australia have a nice Friday and then a
+59:30 great weekend
+59:31 great okay

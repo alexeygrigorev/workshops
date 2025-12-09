@@ -1,0 +1,1956 @@
+Data Observability: The Next Frontier of Data Engineering
+
+0:00 um so thanks everybody for joining us
+0:03 today
+0:03 this event is brought to you by data
+0:05 talks club which is a community of
+0:07 people who love
+0:08 data we have weekly events and this
+0:11 event is
+0:12 one of them so we have actually two one
+0:15 on tuesday and one on friday
+0:16 so on friday we have less formal events
+0:20 uh like this one where we have um we
+0:22 call them live podcasts
+0:24 where we talk about different topics we
+0:26 don't have any slides
+0:28 and you are on one of them today
+0:32 we will be talking about data
+0:33 observability but we will also have
+0:36 events that are more technical that we
+0:38 have on tuesdays
+0:39 they are usually slides so next week we
+0:42 will talk about the
+0:43 evolution store which is a new category
+0:46 of tools
+0:48 check it out and you can go to our
+0:50 events page
+0:51 which is datatalks.club events and you
+0:55 can check all the upcoming events
+0:58 then if you want to stay
+1:02 up to date with all our events so of
+1:04 course the best thing is to
+1:06 join our slack and you will have all the
+1:10 announcements in our uh announcements
+1:13 channel
+1:14 then you can join our newsletter and
+1:16 subscribe to this channel
+1:18 and last during our chat today you can
+1:21 ask any question you want there is a
+1:23 pinned link
+1:24 in the live chat so just click on this
+1:27 link and ask any question you want and
+1:29 then during our conversation
+1:31 i will pick um some of the questions and
+1:34 uh we'll ask our guests and that's
+1:38 all and yeah i think we can uh
+1:43 go to the main part are you ready
+1:46 yeah of course okay so let me
+1:50 open my notes okay i have my notes
+1:54 so this week we will talk about data
+1:56 observability
+1:57 and we have a special guest today bar
+1:59 bar is a ceo
+2:00 and co-founder of monte carlo which is a
+2:03 data reliability company
+2:05 she has experience with building data
+2:07 and analytics team
+2:08 us working as a management consultant
+2:11 doing research as a research assistant
+2:13 and even working
+2:14 in israeli air force so welcome
+2:18 hi thanks for having me it's great to be
+2:20 here yes um
+2:22 thanks for coming so before we go into
+2:24 our main topic of data observability
+2:27 maybe we can talk a bit about your
+2:29 background can you tell us
+2:30 about your career journey so far yeah
+2:33 absolutely
+2:34 um so as you mentioned i was actually
+2:37 born and raised
+2:38 in israel and so started my career in
+2:40 the israeli air force
+2:41 um i was commander over a data data
+2:44 analyst unit
+2:44 um actually moved to the bay area about
+2:46 a decade ago
+2:48 so i'm located in san francisco in
+2:49 california
+2:51 i studied math and statistics uh so
+2:53 that's sort of my background in data as
+2:55 well
+2:56 um and uh you know working as a
+2:58 management consultant uh
+2:59 worked um a lot with data science teams
+3:02 working with
+3:03 fortune 500 companies on under strategy
+3:06 and
+3:07 operations um and then most recently
+3:10 i joined a company called gainsight uh
+3:12 which is a customer data platform
+3:15 uh which created the customer success
+3:17 category
+3:18 um and at gainsight actually built and
+3:20 led the team that was responsible for
+3:22 our customer data
+3:24 um so sort of uh gain sight on game
+3:26 sites we shot we called it gong
+3:28 for short that was sort of our nickname
+3:30 for it um
+3:32 and we helped our customers uh basically
+3:34 use data to grow
+3:36 um grow their businesses uh with their
+3:38 with their customers
+3:39 um and throughout that experience
+3:41 actually um you know
+3:43 sort of leading the the team that are
+3:45 responsible for customer data and
+3:46 analytics
+3:47 realized how big of an issue is um some
+3:50 of the very fundamentals around data
+3:52 uh as companies try to become data
+3:55 driven and rely on data
+3:57 they actually ran into instances of what
+3:59 i call data downtime we'll talk a little
+4:00 bit about that later
+4:02 um but that's when when i first sort of
+4:03 encountered it um
+4:05 and so that got me thinking you know how
+4:07 is it that we are so advanced in data
+4:10 um uh and yet there are some things that
+4:12 we really just haven't figured out
+4:14 and so started monte carlo with the goal
+4:16 of helping organizations
+4:18 use data adopt data become data driven
+4:22 by actually minimizing what i think is
+4:24 the biggest problem the biggest hurdle
+4:25 which is data downtime um and so yeah
+4:28 it's it's a big pleasure for us to work
+4:30 with some amazing companies on
+4:31 helping them solve this problem and
+4:33 helping achieve data reliability
+4:35 okay so you worked you you were leading
+4:38 analytics teams
+4:39 right and uh you were working closely
+4:41 with data
+4:42 and you noticed okay like we have some
+4:45 ideas how to process this data but
+4:48 when something breaks then things go
+4:50 wrong right
+4:51 and that's that led you to realizing
+4:54 okay there is some gap in the market
+4:56 that you could feel and then this is why
+4:58 you created the company right
+5:00 yeah lovely yeah let me describe to you
+5:03 sort of a scenario that i'm sure is
+5:05 familiar to anyone in sort of data and
+5:07 potentially in engineering as well right
+5:09 so
+5:09 you know it's um it's it's always like
+5:11 on a friday evening at 6 00 p.m
+5:13 like five minutes before you're just
+5:15 about to log out um
+5:17 you know something hits you like a
+5:19 customer reaches out and says
+5:20 hey the data here looks really wrong
+5:22 like what's going on you're
+5:24 literally just leaving the office just
+5:25 about to like you know sign off
+5:27 um and then suddenly something blows up
+5:29 right uh or this is like five minutes
+5:31 before a really important board meeting
+5:33 you know the ceo pings you and says hey
+5:35 you know the graph here something with
+5:37 the numbers that i'm showing
+5:38 just looks off like what's going on and
+5:40 then it starts to
+5:41 scramble of what went wrong and and
+5:44 you know and and where um you know is is
+5:47 the report refreshed did all the data
+5:49 arrive
+5:50 did someone make a schema change
+5:52 somewhere that sort of messed everything
+5:53 downstream right
+5:54 it started this guessing game of what's
+5:56 going on right
+5:58 and so there's a few problems one data
+6:00 teams are often the last to know about
+6:02 these issues they often find out about
+6:04 these problems from consumers of data
+6:06 whether that is
+6:07 executives or business units or
+6:09 consumers or actually like users of your
+6:11 product
+6:12 and the second it often takes ages to
+6:14 actually understand what the problem is
+6:16 and identify root cause
+6:18 our systems are so complex today that it
+6:21 there's literally you know the ability
+6:22 to pinpoint the root causes
+6:23 is extremely complicated especially when
+6:25 done in a manual way
+6:27 um and so in seeing this problem come up
+6:29 again and again both for myself
+6:31 but also for data teams with other
+6:33 organizations i was like
+6:35 are we crazy you know am i crazy like
+6:38 how
+6:38 how is it that we you know are that this
+6:41 problem exists right how can it be that
+6:43 we don't have a better way to do this um
+6:46 and that basically inspired uh you know
+6:48 kind of the
+6:49 realization that there is a better way
+6:51 to do it and the better way to do it is
+6:52 actually based on best practices from
+6:54 engineering
+6:56 and speaking about best practices so uh
+6:58 data observability and i did a bit of
+7:00 googling before uh before
+7:02 our talk today so data observability is
+7:05 based on the concept of observability
+7:07 which is a concept from
+7:08 the devops world right so maybe before
+7:12 we go into data observability you can
+7:14 tell us a bit
+7:15 uh what it means in the devops world
+7:17 what what is this best practice you're
+7:19 talking about
+7:20 yeah absolutely um i will say in general
+7:23 in data
+7:24 you know we um the the data space has
+7:26 been evolving very very quickly
+7:28 um we're still quite behind in terms of
+7:30 sort of methodologies and frameworks
+7:32 compared to engineering
+7:33 um and so it is actually worthwhile
+7:36 spending time understanding what are
+7:37 these concepts like devops and others in
+7:39 software engineering
+7:40 that can help us navigate the space of
+7:43 data and navigate what we want to
+7:45 accomplish in a better way
+7:46 um and so the idea of devops basically
+7:49 has you know
+7:50 emerging last couple of decades and as a
+7:52 result of
+7:54 companies that move from basically
+7:58 basically the underlying tech stack
+8:00 become way more complicated similarly to
+8:02 how they are in data right
+8:03 um for example you know for an
+8:05 organization that's moving from a
+8:06 monolith to a micro service architecture
+8:08 or something that
+8:09 you know almost every organization is
+8:10 doing um and
+8:12 as a result of that there has been the
+8:14 rise of devops
+8:15 um which is basically teams that help
+8:18 have a constant pulse on the health of
+8:20 their systems
+8:21 and make sure that all the applications
+8:23 and infrastructure is up and running
+8:25 right now as part of that um
+8:28 developed the idea of observability um
+8:30 and so observability is this holistic
+8:33 view
+8:33 that includes monitoring tracking
+8:36 triaging of incidents
+8:38 to prevent downtime of those systems
+8:41 and so you know really at its core
+8:43 observability
+8:44 in engineering is broken into three
+8:48 major pillars
+8:49 metrics logs and traces and basically
+8:52 all of these together help us
+8:54 understand uh what are the the health of
+8:56 the system
+8:57 based on its outputs um and when things
+9:00 are wrong
+9:01 why right so answering basic questions
+9:03 like
+9:04 um are is a system healthy if not
+9:08 what happened when did it happen are
+9:11 there other events that are correlated
+9:12 that could help us
+9:13 understand what's happening here um and
+9:16 so you have so
+9:17 you know systems and software
+9:20 to help address the need for
+9:22 observability and monitoring
+9:24 um and really every engineering team
+9:26 today that respects itself has something
+9:29 to manage that right
+9:30 a solution like new relic or datadog or
+9:33 app dynamics or page of duty right
+9:35 all very familiar solutions um that help
+9:37 us
+9:38 answer these questions when it comes to
+9:40 applications and infrastructure
+9:42 um and so it's a very important concept
+9:44 in software engineering and one that has
+9:45 been relied on for for
+9:47 for many years now so these are
+9:49 basically tools you set uh the teams
+9:51 we're moving from monoliths to
+9:53 microservices
+9:54 and then usually the microservices some
+9:57 sort of uh
+9:58 web service and tools like datadog new
+10:00 relic
+10:01 or even open source tools like
+10:02 prometheus grafana they're
+10:04 tailored to these kind of applications
+10:07 to web services right or something that
+10:09 is always
+10:10 brian while in uh date in the data world
+10:13 we
+10:14 often have something a bit different
+10:16 maybe we more often have batch processes
+10:18 than
+10:19 uh you know something that is up and
+10:21 running all the time
+10:22 and that's why we need uh a bit a
+10:25 bit of a different approach right yeah
+10:28 exactly
+10:29 um it's it's a different approach but um
+10:33 but it's very important to to do right
+10:35 um let's
+10:36 let's let's talk about why it's very
+10:37 important right if you think about
+10:39 um you know uh sort of i'll draw the
+10:42 analogy of what we call data downtime
+10:44 explain what data downtime and what um
+10:46 uh application downtime is so you know
+10:49 if we take a specific example if a
+10:50 company
+10:51 thin e-commerce company has a particular
+10:53 website
+10:55 um and you know like a couple of decades
+10:57 ago
+10:58 if your the website was down no one
+11:00 noticed because he probably had like
+11:02 a real shop where people actually
+11:04 purchased things and so you know the
+11:05 website was something minor that nobody
+11:07 cared about
+11:08 um but today you know if your website is
+11:10 down it's basically your
+11:11 product right and so you actually have
+11:13 to manage that very carefully
+11:15 um and you have a commitment uh to like
+11:18 you know 99.99
+11:20 uptime right um
+11:23 now today you have all these solutions
+11:27 and many
+11:28 others like you mentioned to actually
+11:29 make sure that your website is always up
+11:31 and running
+11:32 um now if you think about the corollary
+11:33 of that to data as you mentioned
+11:35 um you know maybe a couple a couple of
+11:37 years ago maybe like 10 years or five
+11:39 years ago
+11:40 you know who is using your data there's
+11:42 only a small handful of people
+11:44 um and they were using data very
+11:46 infrequently
+11:47 right so maybe only once a quarter to
+11:49 report numbers to the street
+11:50 right but today in today's world there's
+11:53 way more data engineers data analysts
+11:55 data scientists
+11:56 um there's way more people in the
+11:58 organization who are using data
+12:00 to make decisions to power your product
+12:02 right um
+12:03 and so if the data is down that's a big
+12:06 deal maybe 10 years ago it wasn't a big
+12:08 deal because no one uses it but today it
+12:09 is a big deal
+12:11 so well i hope the stream is still uh
+12:15 yeah it's still live okay good
+12:18 so good yes i to be honest i don't
+12:22 remember when uh
+12:24 what you were talking about so like yeah
+12:27 you were saying that
+12:28 data downtime is a big deal because uh
+12:31 while previously nobody cared about this
+12:33 today there are always analysts data
+12:35 scientists and everyone else who is
+12:37 using data
+12:39 we rely on this data right right and if
+12:41 the data is not there
+12:42 and i know i work as a data analyst and
+12:44 we build data we build machine learning
+12:47 things on top of the data when
+12:50 the data is not there our model stopped
+12:52 working right
+12:53 and then we started okay what happened
+12:56 and then we see
+12:56 the data is not there right or uh the
+12:59 data like it's
+13:00 usually like it should be maybe i know 1
+13:03 million records but today is on the
+13:05 10 000 where's the rest right and
+13:09 these failures they are often silent
+13:11 feathers right
+13:12 because the data didn't appear
+13:16 in all volume like maybe just a fraction
+13:18 of it appeared and if we don't have
+13:20 monitoring
+13:21 to our machine learning pipeline it
+13:24 looks okay
+13:24 okay there is some data let's you know
+13:27 apply the model to this data and
+13:29 uh yeah i'm done right but
+13:33 uh it's silent we didn't notice that
+13:35 something is wrong
+13:36 so yeah yeah i think you were talking
+13:38 about something like that right
+13:40 yeah absolutely that's exactly right
+13:42 it's like it's you know the job is
+13:43 completed it's all green everything
+13:45 passed but you know what
+13:47 you only got you know a small fraction
+13:49 of the rows that you were you know you
+13:51 were
+13:51 you're hoping to get or expecting to get
+13:53 or you know what
+13:54 job completed you got all the all the
+13:56 data but now it's all null
+13:58 value like all the values for null
+13:59 settlement right um
+14:01 or you know you got all the data but
+14:03 it's credit card data and suddenly you
+14:05 have
+14:05 um you know uh values that you don't
+14:08 expect right like
+14:09 letters or you know something that you
+14:12 know you shouldn't have there but you
+14:14 never knew
+14:14 because job was completed and everything
+14:16 was fine um and you might just
+14:18 not know about it if you're lucky you
+14:21 might find out about it the same day but
+14:22 oftentimes
+14:23 it can take you know weeks or even
+14:25 months until you realize that
+14:26 yeah you know my model was operating on
+14:29 completely wrong data for example
+14:31 or you know i was i was using data to
+14:33 make decisions that
+14:34 was just totally incomplete or actually
+14:36 wrong
+14:38 so so you said like the the
+14:41 if we talk about the problems we have
+14:43 with data about data quality problems so
+14:45 first you mentioned
+14:46 that okay there could be some things
+14:48 that aren't supposed to be there
+14:49 like letters in the numeric fields right
+14:52 then
+14:53 another problem is data is simply
+14:56 incomplete we don't have
+14:57 all the rows that were supposed to be
+14:59 there like it's
+15:00 instead of one million we have only 100
+15:03 000 for example
+15:04 or even less than that what are the
+15:07 other problems that we can have
+15:09 yeah great question so um you know when
+15:11 when we start
+15:12 first started sort of set out to
+15:14 determine what is data observability
+15:17 and what should it mean you know one of
+15:19 the common things that we heard was you
+15:20 know
+15:21 every data team is different every data
+15:23 team is unique and my data can break for
+15:25 millions of different reasons
+15:27 um and you know what there's probably
+15:29 there might not be even a pattern for
+15:30 all this
+15:31 um and i actually disagree with that
+15:34 right
+15:35 before before we started the company we
+15:36 actually spoke with
+15:38 hundreds of data teams to identify
+15:40 basically to come up with
+15:41 sort of a database of all the times and
+15:43 all the reasons for when your data goes
+15:45 wrong
+15:46 excuse me for when your data goes wrong
+15:48 and why
+15:49 uh right like what the root cause is
+15:51 what is the symptom and how did you
+15:52 identify it
+15:54 and what we've seen is actually there
+15:56 are patterns
+15:57 um and there is a coherence set um that
+16:00 you could
+16:00 you could work off that you could
+16:02 instrument and monitor for
+16:04 that will help you gain observability
+16:05 similar to how you do that in
+16:07 observability in
+16:08 um for devops right even though your
+16:11 applications and your infrastructure can
+16:12 break for a million different reasons
+16:14 there's still sort of those three core
+16:16 pillars that we talked about
+16:17 that help engineers identify when their
+16:19 systems are down right
+16:20 and so for data teams what are those
+16:23 what is that framework what are those
+16:25 metrics
+16:25 um and so we do we define five different
+16:27 pillars for this
+16:28 and we believe that three three pillars
+16:30 you mentioned uh sorry for interrupting
+16:32 so it's like matrix locks and traces for
+16:35 yeah exactly and for data you said there
+16:37 are five right
+16:38 yes precisely there are five um and the
+16:41 five that that we define
+16:43 we believe that sort of if you um uh
+16:46 if you monitor for all of them
+16:48 instrument and track those you'll get
+16:50 the same sort of level of of confidence
+16:52 in your data so let's talk about which
+16:54 though which five of those are we
+16:56 gave a few examples um but the first one
+16:58 is freshness
+16:59 and so you mentioned you know um let's
+17:02 say we have a table
+17:03 that you know gets updated three times
+17:06 an hour regularly
+17:07 and then it hasn't been updated for a
+17:09 full hour right
+17:11 that might be a freshness problem for
+17:12 example just sort of a simple example
+17:15 and there's many different ways to think
+17:16 about freshness basically it answers the
+17:18 question of
+17:19 you know how up to date is my data um
+17:22 the second uh pillar is volume um and so
+17:26 the volume you know you shared the
+17:27 example i expect one million rows and
+17:28 i'm getting only 10 000 rows right
+17:30 um so this basically tells us you know
+17:33 the completeness
+17:34 of our of our data tables um
+17:37 the third pillar is what we call
+17:39 distribution
+17:40 uh distribution um basically kind of
+17:43 looks at the range of data so let's say
+17:45 i expect a certain field
+17:47 to be between 5 and 15 and then suddenly
+17:50 that
+17:50 though i'm getting values that are in
+17:51 the hundreds or 200s for example
+17:54 or or for example um you know i expect
+17:56 credit card fields or fields
+17:58 and you know suddenly get um sort of
+18:01 letters instead of numbers
+18:03 um so all of these examples would be
+18:05 under distribution pillar
+18:07 the fourth pillar is schema which
+18:09 basically looks at
+18:10 who makes changes to our data and when
+18:12 so that's both at the table and at the
+18:14 field level
+18:15 um so if a table is added remove
+18:17 deprecated if a field is changed in type
+18:21 and then the fifth pillar is lineage and
+18:24 lineage is basically
+18:26 a map a recon an auto
+18:29 auto discovered or auto reconstructed
+18:32 map of
+18:33 all the dependencies both upstream and
+18:35 downstream
+18:36 of your data assets and lineage helps us
+18:39 answer the question of okay
+18:40 if i have a freshness problem in a given
+18:42 table
+18:44 you know what downstream assets are
+18:46 impacted by that
+18:47 maybe no one's using that table so i
+18:49 don't need to care about that freshness
+18:51 problem
+18:51 but maybe there are maybe this actually
+18:54 feeds an important model that someone is
+18:55 using or maybe this goes
+18:57 into a report that gets sent to a
+18:58 customer regularly
+19:00 right what are the dependencies and then
+19:01 similarly what are the upstream root
+19:03 causes
+19:04 um for these problems um
+19:07 right what what may have contributed
+19:10 yeah i
+19:10 you you're you're talking about this and
+19:12 then i recalled that
+19:15 an example we had recently at work so
+19:18 uh data changed has schema changed
+19:21 and it was announced of course uh like
+19:23 we in this live chat
+19:25 yes it's good but of course uh
+19:29 i have so many slack channels open
+19:32 like and not all of them are it so i
+19:35 simply missed that
+19:36 and then two weeks later it stopped
+19:38 working
+19:39 and then okay what happened like why the
+19:41 data is now
+19:42 in the wrong format but it was announced
+19:45 right so it's
+19:46 uh and then uh yeah if there was
+19:49 something like this like a map with
+19:50 dependencies downstream dependencies
+19:53 then it would have been possible to
+19:56 actually know okay
+19:57 this data source is used by this this
+19:59 team and also
+20:01 like i would be one of uh these users of
+20:04 this data
+20:05 and then maybe for me i would get a
+20:08 personalized
+20:08 alert that's saying okay the data is
+20:11 about to change
+20:12 you have to take action now else in two
+20:15 weeks
+20:16 you your your jobs will fail right
+20:19 so this is i guess uh a good
+20:21 illustration of the
+20:22 lineage pillar right yeah that's a
+20:25 perfect illustration
+20:26 of a few it's the both the schema
+20:30 pillar right because there was a change
+20:31 in schema and it sounds like someone
+20:33 manually notified you
+20:35 on slack which is very thoughtful uh but
+20:38 um but maybe
+20:39 that should be automated as well right
+20:41 um and then yes lineage that you're spot
+20:44 on that's a great example of how
+20:45 that could have helped um and then you
+20:48 mentioned that
+20:49 it caused the data to just stop arriving
+20:51 right
+20:52 no it was still arriving just not in the
+20:54 format my jobs were expecting
+20:56 got it yeah so in that case it that
+20:58 might also that might be an example of a
+21:00 distribution
+21:01 type problem right when it just it's
+21:03 arriving in a different format so
+21:05 that's the interesting thing with data
+21:06 downtime is that often time
+21:08 it includes problems from multiple
+21:10 pillars
+21:12 and each pillar can have multiple
+21:13 different problems and so
+21:15 when you're thinking about observability
+21:17 and monitoring all that good stuff
+21:19 what you need is a system that can
+21:21 detect all of these and can help you
+21:24 automatically draw insight from this to
+21:26 your point and yeah
+21:27 your example is spot on i hope that was
+21:29 resolved quickly
+21:30 yeah it was well i had to stop working
+21:32 on other things and fix that and
+21:35 yeah well at least my code complained
+21:37 that hey something is wrong this field
+21:39 is not there
+21:40 and that's how you found out about it
+21:42 yeah and it broke uh
+21:43 like it didn't work but it could have
+21:45 been worse right if uh
+21:48 the script uh the job kept running and
+21:51 then i don't know when i would have
+21:53 noticed that maybe one month after that
+21:56 yeah but you also mentioned that there
+21:58 are other things like in
+21:59 uh in usual observability in devops in
+22:02 the dev
+22:02 box world there are metrics loops and
+22:05 traces
+22:06 do we still care about these things in
+22:08 uh data observability because
+22:11 it's still probably important or it's
+22:14 less important than these
+22:15 five things do we still need to think
+22:18 about them
+22:19 yeah it's a great question i'd i'd say
+22:21 you know we definitely still need to
+22:22 think about them uh
+22:24 it's just two different um two different
+22:27 ways to think about a system right
+22:28 um and you probably can't run a very
+22:31 healthy system with only one or without
+22:33 the other
+22:34 um and oftentimes we we call it the good
+22:37 pipelines bad data problem
+22:39 you know so you might have like really
+22:41 reliable great pipelines or great
+22:43 systems right and you're still sort of
+22:45 tracking the observability from an
+22:46 engineering perspective
+22:48 um but the data itself that's running in
+22:50 your pipeline is inaccurate
+22:51 and that's why you need data
+22:53 observability so you you know don't get
+22:55 into the good
+22:55 pipeline bad data problem okay so the
+22:58 the idea
+22:59 here is we still need these three so we
+23:01 still care about devops
+23:02 right so because uh like uh if i may use
+23:05 this analogy
+23:06 so we have this devops and we have data
+23:09 ops right
+23:10 so we have observability and we have
+23:11 data observability right
+23:13 and it doesn't mean that we stop caring
+23:15 about all the other things right and
+23:16 care about these five
+23:18 we still need to be on top of good
+23:20 engineering practices we still need to
+23:22 care about all these devops practices
+23:24 right and we add on top of that
+23:26 so we take these three pillars to make
+23:28 sure that
+23:30 our systems are they have the
+23:32 observability from the engineering point
+23:34 of view
+23:35 and we add five on top and then we have
+23:38 good pipeline and we have good data
+23:40 right yes
+23:42 that's right that was spot-on uh
+23:45 yeah we often find that data
+23:47 observability
+23:48 you know data engineering teams are
+23:50 really busy you know they have a lot of
+23:52 things to do
+23:53 um and data observability actually you
+23:55 know saves
+23:57 um we see a significant reduction in
+24:00 time
+24:00 uh when data observability is used in
+24:02 practice um you know
+24:05 things like 120 hours per week on
+24:07 average you know for
+24:08 for like a five person team and a
+24:11 reduction of you know
+24:12 almost 90 percent of data incidents uh
+24:15 when you think about
+24:16 sort of when teams practice data
+24:18 observability um
+24:19 so yeah you're you're spot on we can't
+24:21 we can't use one
+24:22 we can only choose one it has to be
+24:24 based on some of the best practices
+24:26 um but there's a significant impact
+24:29 okay and i noticed
+24:33 uh that you often say observability and
+24:36 monitoring
+24:37 is there any difference between these
+24:39 two things or is it like
+24:40 other synonyms and we can use them
+24:42 interchangeably or they're two different
+24:44 things
+24:45 great question um so monitoring is
+24:48 basically a subset
+24:50 if you will of of observability um
+24:53 so so observability basically tells us
+24:57 [Music]
+24:58 based on the output of a system what is
+25:01 the health of that system
+25:03 um and so so observability basically
+25:06 helps us
+25:07 answer questions about the health of a
+25:09 system
+25:10 based on the results that you get in
+25:13 monitoring and so
+25:14 monitoring will tell us you know um
+25:17 this system is operating as expected and
+25:20 it's healthy
+25:21 uh oral monitoring will tell us hey you
+25:23 know there is
+25:24 um an outlier or a problem with the
+25:26 system here
+25:27 you know you have uh there's an
+25:28 indication of a freshness problem for
+25:30 example
+25:31 you know um a table has not been updated
+25:34 um but observability will help us answer
+25:37 the question of
+25:38 why this is happening you know we'll see
+25:40 okay there is a problem there's a
+25:41 freshness problem
+25:43 what is the root cause of that and then
+25:45 also how can it be solved
+25:46 by means of answering what what depends
+25:49 on that table
+25:50 who relies on it is it an important
+25:52 table to
+25:53 to um to troubleshoot or not and so
+25:57 um you actually need both and i see
+26:00 monitoring as a part of observability
+26:01 that helps us answer these questions
+26:04 okay so if i uh
+26:07 i'm just trying to think of an example
+26:10 so let's say our
+26:11 there is a job that is producing data
+26:14 and it stopped working
+26:15 so now we have monitoring in place that
+26:17 says okay
+26:19 we expect that in this table
+26:22 uh the data appears three times per hour
+26:25 but it's been one hour since it appeared
+26:27 and
+26:27 nothing is still there so we get an
+26:29 alert right so something is wrong
+26:31 yeah so somebody a data engineer or
+26:33 maybe uh
+26:34 somebody from operations get a pager
+26:38 duty major duty call saying hey
+26:40 something is wrong with the data and so
+26:43 this is
+26:43 it doesn't tell us what went wrong it
+26:45 just tells us
+26:47 that something is wrong right and then
+26:49 using other tools and other pillars like
+26:51 this lineage
+26:52 or some other things we
+26:55 try to figure out what actually went
+26:57 wrong right
+26:59 or how how does it work from
+27:02 simply monitoring and monitoring sending
+27:05 us an alert hey something is wrong
+27:07 to actually finding this root cause yeah
+27:10 that's a great question so
+27:12 um the other pillars can in your example
+27:15 uh the other pillars can give us
+27:16 clues and help us understand um you know
+27:20 why this happened and what we can do
+27:22 about it so for example
+27:23 if you mentioned let's say we get you
+27:24 know we have we have a strong monitoring
+27:26 system and we get an alert and a
+27:28 freshness problem
+27:30 um and then we look at that table and we
+27:32 actually get you know we see that at the
+27:33 same time
+27:35 you know three other tables downstream
+27:38 also had a problem
+27:39 um and we see that those are correlated
+27:41 so they happen you know sequentially for
+27:43 example
+27:44 that can help us give give clues around
+27:47 sort of you know what's the impact of
+27:49 this
+27:49 um and to your point sort of using
+27:51 lineage maybe we can see
+27:53 okay you know what there's a bunch of
+27:55 other tables
+27:56 further downstream um that rely on this
+27:59 and they're going to be impacted later
+28:01 today so you know we need to sort of
+28:02 stop the data from going to those tables
+28:04 or we need to
+28:05 you know fix this immediately right um
+28:08 so that gives us clues as to like how
+28:10 can we actually solve this for example
+28:12 um another example of understanding why
+28:14 this is happening so
+28:15 let's say you know we see that there's a
+28:17 there's a freshness problem
+28:19 um we want to look at you know say um
+28:22 the query logs we want to understand
+28:24 like who's making
+28:24 updates to this table so i can actually
+28:27 you know
+28:28 ping the right person or the user of
+28:30 this table to better understand
+28:32 you know why they're using this table is
+28:33 it important or not when did when
+28:35 when are they using it so actually using
+28:38 metadata
+28:39 about this data um getting data driven
+28:42 um about our data can help us
+28:46 answer that so the way that i think
+28:47 about observability is
+28:49 basically um yeah getting getting data
+28:52 driven about
+28:53 data and that includes you know knowing
+28:55 when things are wrong like monitoring
+28:56 but
+28:57 answering a bunch of other questions too
+29:00 and which makes me uh think
+29:03 who should be responsible for so i
+29:05 imagine like
+29:06 usually the setup maybe it's different
+29:09 but there is
+29:10 usually some sort of central data
+29:11 platform and then there are
+29:13 teams who publish to this platform there
+29:15 are teams who consume from this platform
+29:18 and i'm wondering here whose
+29:20 responsibility is actually
+29:23 to to make sure that the data is there i
+29:27 think so the platform probably can help
+29:29 us with uh making sure that there is
+29:31 freshness
+29:32 freshness and uh yeah but it's
+29:36 if the producers of the data
+29:40 start publishing some some data with
+29:42 errors uh
+29:44 there should be some process that lets
+29:45 them know hey something is probably
+29:47 is wrong right so is it should it be the
+29:49 team
+29:50 who who implements these checks or the
+29:52 platform tells them
+29:53 hey something is wrong or like how how
+29:57 is it implemented usually yeah great
+29:59 question so
+30:00 um uh i will say that very much depends
+30:04 on
+30:04 the maturity and the size of the data
+30:07 organization right
+30:08 um when you're a very small company and
+30:10 you have maybe
+30:11 one data engineer right like the loan
+30:13 data engineer
+30:14 um you know he or she are typically
+30:16 responsible for everything so they're
+30:17 going to be
+30:19 you know setting up the the system and
+30:21 receiving the alerts
+30:22 and troubleshooting it and letting
+30:23 everyone know right and then we'll take
+30:25 the other
+30:26 exactly exactly um you know plug and
+30:29 unplug
+30:30 see what happens um and
+30:33 you know in the in the lot of you know
+30:35 it's taking like a large company where
+30:36 you might have
+30:37 30 000 people consuming data and you
+30:41 have a team of a
+30:42 data team that's you know several
+30:44 thousands of people
+30:46 in those organizations one of the sort
+30:48 of things that we're seeing is people
+30:50 moving towards a decentralized model of
+30:52 ownership
+30:53 where basically you have sub teams of
+30:56 data
+30:57 in the data organization and those
+30:59 people have ownership on
+31:01 um on basically on that data and so in
+31:05 those cases
+31:06 organizations actually make uh data
+31:09 observability and and
+31:10 data monitoring self-serve and so
+31:13 there's typically a centralized group
+31:15 that's responsible for
+31:16 saying this is the platform that we
+31:17 should be using for data for data
+31:19 observability
+31:20 and you know for each data team for each
+31:22 sub team
+31:24 um that sub team actually defines
+31:27 uh what how they engage or interact with
+31:30 that platform and so that sub team will
+31:31 receive
+31:32 you know personalized alerts for their
+31:35 data assets only
+31:36 um and so oftentimes as companies move
+31:40 from being very small to being very
+31:41 large
+31:42 on that trajectory we're seeing
+31:44 different um
+31:45 different models along that path
+31:48 i think one of the the one of the main
+31:52 questions that people ask us is like
+31:53 who's actually responsible for this and
+31:55 how do we
+31:55 set accountability one of the ways that
+31:58 we're seeing
+31:59 companies deals with this is with a
+32:01 framework called racy
+32:03 um which basically helps to determine
+32:06 accountability
+32:07 um in organizations and so ray c stands
+32:10 for
+32:11 r is responsible which is basically the
+32:13 person who is
+32:14 executing on um uh the specific task at
+32:18 hand
+32:19 a is for accountable so it's a person
+32:21 that whose neck is on the line
+32:23 uh like it's it's sort of their main job
+32:25 to make sure that this like
+32:27 they're the people held accountable um c
+32:29 is consulted
+32:30 meaning they need to be they their
+32:32 opinion might count
+32:34 um or you know you'd want to seek their
+32:36 opinion um about something
+32:38 and then i is for informed meaning
+32:41 someone needs to know about something
+32:43 and so for each part in the data life
+32:45 cycle you can define
+32:47 who is responsible accountable consulted
+32:49 and informed
+32:50 um and you can use that to determine
+32:52 what's right for your organization so
+32:54 for example
+32:55 you know um for specific data
+32:59 data observability or data data quality
+33:01 problems
+33:02 we can say okay chief data officer or
+33:05 you know
+33:06 the cto is the person who's accountable
+33:09 has the a
+33:11 but the person who's actually solving
+33:12 that um is you know the
+33:15 the data engineering the data
+33:16 engineering team um the person that
+33:18 needs to be
+33:19 or the organization that needs to be
+33:20 informed meaning i
+33:22 um is the data analyst team for example
+33:25 they need to know about problems um even
+33:27 though they're not responsible for the
+33:28 jobs in the pipeline specifically
+33:31 and so you can use this framework to
+33:32 help allocate you know who needs to do
+33:34 what and when and basically clarify that
+33:36 so you're not in a position
+33:38 where there's one person doing all that
+33:41 yeah i'm just thinking about uh
+33:44 what i'm doing so i'm a data scientist
+33:46 and
+33:48 i build models machine learning models
+33:50 usually using data
+33:52 that some other teams produce so let's
+33:53 say there is
+33:55 a team that produces this data source
+33:56 that is jim that produces
+33:58 that other data source so what i do is i
+34:00 join these two data sources and build
+34:02 something on top of that
+34:03 so in this case i guess i would be
+34:07 informed so if something is uh
+34:09 something goes wrong somebody from these
+34:11 teams reach out
+34:12 and say okay sorry there is some problem
+34:14 with the data
+34:15 right and they are responsible right so
+34:17 they're responsible they're reaching out
+34:19 to me and probably the accountable
+34:21 accountable person i don't know maybe a
+34:23 product manager in the team or
+34:26 a manager in the team who is accountable
+34:29 so this person would be doing
+34:31 you know communication saying hey sorry
+34:33 like i know you use this data i know you
+34:35 really
+34:36 rely on this data but uh something
+34:38 happened or
+34:40 i don't know server diet or there was a
+34:42 bug and the data is not there
+34:43 sorry and the data engineers in the
+34:46 meantime
+34:48 are trying to fix it right is it more or
+34:51 less like that
+34:52 yeah yes it also makes me a bit
+34:56 like puts me in the consultant category
+34:59 consulted because i could be a
+35:02 stakeholder i can say okay
+35:03 you know what you promised this data
+35:05 with a delay of one hour but this is not
+35:07 enough can you make it a bit uh
+35:09 uh you know faster quicker like smaller
+35:13 delay
+35:14 right so they they if they care about my
+35:16 opinion then it means
+35:18 i'm consulted right yeah exactly that's
+35:21 right
+35:21 yeah you got it spot on okay cool
+35:25 and so what do we do with this i guess
+35:27 so responsible and accountable
+35:29 this is the team that actually puts the
+35:32 data
+35:33 so if i'm a data scientist i want to
+35:35 make a
+35:36 a model based on some data i go to this
+35:39 team and ask
+35:40 so what are your
+35:43 like i think the right term would be sla
+35:45 right service level agreements
+35:47 so can you promise me that the data will
+35:51 appear
+35:51 there five minutes after the user made
+35:54 an action right
+35:55 so this is uh so we make some sort of
+35:57 agreement
+35:58 between our team and the team of data
+36:01 engineers right
+36:02 and then you said
+36:05 that in bigger organizations in small
+36:08 organizations would be one data
+36:10 engineer who is doing everything but
+36:12 once the company becomes bigger
+36:14 we could have this uh centralized
+36:16 platform
+36:17 where teams could define their
+36:20 these slas and what not saying okay
+36:24 we promised that the data will not be
+36:26 delayed
+36:27 more than by five minutes right and then
+36:30 they say okay the freshman requirement
+36:32 is five minutes right and so this is
+36:35 there is a agreement between us and then
+36:37 they start pushing the data
+36:39 to the platform right and then when
+36:41 something goes wrong
+36:43 the system alerts them and
+36:46 yeah i guess now data engineers fix it
+36:49 yeah right yeah that's exactly right so
+36:52 do you want to add something there no uh
+36:55 i i think
+36:56 i think you did a great job of uh of
+36:57 explaining that i think that's perfect
+37:00 yeah i think you are the podcast guest
+37:02 right now
+37:04 yeah i know it's perfect i i much prefer
+37:07 it
+37:08 um you know when you do such a such a
+37:10 great job of explaining this
+37:11 but um yeah no that's spot on you know i
+37:13 think it's in the same way that we've
+37:15 adopted observability as a concept like
+37:17 also slas is something that's like super
+37:19 common
+37:19 right in engineering um but
+37:23 uh but we haven't adopted it in data yet
+37:25 uh but we
+37:26 we can and it'll be helpful for us to
+37:28 have that communication agreement
+37:30 because
+37:31 you know the value of that actually like
+37:33 why it's important is because it'll help
+37:35 your data engineering counterparts know
+37:37 what to focus and what to
+37:39 solve for right imagine that they have
+37:40 like hundreds of tables
+37:42 that have freshness issues um but
+37:45 there's only you know
+37:46 10 of them where they have an sla a
+37:48 particular sla for freshness and
+37:50 timeliness
+37:50 that's like you know this five-minute
+37:52 window then they will know to prioritize
+37:54 those and maybe the rest can wait for
+37:55 later right
+37:56 so it provides some sort of agreement
+37:58 between you two and what actually
+38:00 matters to you and you can give the
+38:02 information of you know these tables
+38:04 matter more
+38:04 this data set doesn't matter at all etc
+38:07 um so it actually allows us to have
+38:09 better communication and to
+38:11 also you know not waste our time on
+38:12 things that don't matter
+38:14 so here i guess there are a few
+38:17 crucial uh components um the first we
+38:20 need to have this platform that allows
+38:22 us to
+38:24 to define this uh defines these
+38:26 requirements like we
+38:28 want we have these expectations for
+38:30 freshness we have these explanations for
+38:32 volume
+38:33 or i don't know maybe for volume we
+38:34 don't even need to define that that
+38:36 maybe it should be like okay something
+38:38 is wrong because yesterday it was that
+38:40 much but two days less
+38:43 for freshness actually say yeah you can
+38:46 you can you can actually that here's the
+38:48 cool thing
+38:49 is that for a lot of these actually
+38:51 actually for each of the the pillars
+38:53 there is a component that can be um
+38:56 automated to begin with and so
+38:58 what i believe is that we've
+38:59 under-invested in automation um
+39:02 and data which is kind of ironic but i
+39:04 do think we have and so teams are used
+39:06 to saying okay i need to define
+39:07 you know that this you know that the
+39:09 volume here needs to be this or that the
+39:11 freshness needs to be
+39:12 to your point but um really you have
+39:15 historical data about that and so you
+39:17 can infer
+39:18 what is the volume that you expect and
+39:19 you can also infer okay
+39:21 this table is being updated three times
+39:22 an hour so it should be updated three
+39:24 times an hour
+39:25 um and obviously you can add
+39:27 customization on top of that so you can
+39:29 say
+39:30 no actually you know in your example i
+39:32 want this data to arrive faster
+39:34 um can you make sure that that happens
+39:35 um so
+39:37 i definitely think that um we need
+39:40 we need to start with sort of a layer of
+39:43 automation and then add on top of that
+39:44 customization but i would start with
+39:46 with what we already know about the data
+39:48 yeah because i imagine that we are not
+39:50 starting from scratch
+39:51 there are already some processes that
+39:54 push data somewhere there are processes
+39:56 that three data from somewhere
+39:58 and it's not like uh we have a blank
+40:01 page
+40:01 right so there are there is already
+40:03 something so we can just uh
+40:05 see okay like here usually
+40:08 something arises within five minutes so
+40:10 let's just use this as a
+40:12 sla right so we can infer this from the
+40:14 past
+40:15 but in some cases we should have a way
+40:18 to overwrite this and say okay yeah
+40:20 let's
+40:20 let's uh make sure it dries earlier
+40:24 right but in any way we need to have
+40:26 this place
+40:27 there it's possible to define this and
+40:29 then we also need people
+40:31 who take responsibility they say okay
+40:34 we are going to stick to this sls and
+40:38 if something is wrong we are going to
+40:40 make sure that
+40:41 we recover as fast as possible right so
+40:43 yeah you can even have a
+40:44 monitor uh you know in your office that
+40:47 shows
+40:48 here's the slas and here's how well
+40:50 we're doing and we're crushing it uh
+40:52 yeah yeah in the office so yeah this is
+40:55 it
+40:55 [Laughter]
+40:58 yeah i'm wondering how this uh in your
+41:00 virtual office
+41:02 yeah okay that's a set topic yeah
+41:05 but anyway so we have this uh two things
+41:08 so we have uh the platform itself like
+41:10 the
+41:10 the the tool that lets us define all
+41:12 this
+41:13 so then we have uh this framework crazy
+41:16 to identify who is responsible so we
+41:18 have this people aspect
+41:20 so do we need something else to make it
+41:22 work
+41:23 uh this observability to have
+41:25 observability in place
+41:27 that is a great question um so i would
+41:31 say that's a good start
+41:32 if you have both of those things you're
+41:34 off to a great start
+41:35 um there's probably um different
+41:40 uh maybe the only additional thing that
+41:42 folks do is
+41:43 they start defining playbooks and run
+41:45 books for what happens in
+41:47 in these instances basically workflows
+41:48 so you know let's say
+41:50 um you know there was this table that
+41:52 you expected to get updated three times
+41:54 out an hour and it stopped getting
+41:55 updated
+41:57 um and then there's a whole set of
+41:59 things that happens right the first is
+42:01 to your point
+42:02 you know you get informed because your
+42:03 model actually relies on that data
+42:05 and then the data engineers need to take
+42:07 some actions in order to resolve that so
+42:10 what are those actions what exactly are
+42:12 they doing what systems are they using
+42:14 to look at
+42:15 to solve it who do they need to know how
+42:18 do they resolve it
+42:20 all that stuff basically like a one book
+42:22 as another thing that that typically
+42:24 folks
+42:25 define um but you know what i think even
+42:28 if you have uh if you get started with
+42:30 what you mentioned
+42:31 uh you're off to a great start yeah so
+42:34 let's talk a bit how we implement this
+42:36 so what are the and there is actually a
+42:39 question but i also wanted to ask this
+42:41 question
+42:41 so the question is what are the
+42:45 uh what are some of the good tools in
+42:46 the marketplace that provide good job at
+42:48 data observability and i think
+42:50 i know what you are going to say well
+42:53 you've been doing a great job of that so
+42:55 you can go ahead and answer
+42:57 yeah you mean monte carlo
+43:00 i get i can provide an answer um uh you
+43:03 know
+43:04 for what folks are doing if that's
+43:05 helpful um
+43:07 i talked a little bit about sort of this
+43:09 uh kind of like maturity curve for
+43:11 how people manage from like a you know
+43:13 small company where there's one person
+43:15 who's sort of doing everything and then
+43:16 there's a large company where
+43:18 um you know you have like uh you know
+43:22 you might have a decentralized model and
+43:23 you have different ownership and so
+43:25 actually you know as i mentioned we
+43:27 talked to hundreds of data teams and
+43:28 there's there's sort of a maturity curve
+43:30 for how you deal with data downtime as
+43:32 well
+43:32 um so in the very very early stage you
+43:34 might be in a very reactive
+43:36 um phase where really you don't have
+43:38 anything in place um
+43:40 and you have basically disasters all the
+43:42 time uh you know i
+43:43 like i um you know i remember the ceo
+43:46 who told me that
+43:46 that you know this is back in the day
+43:48 when there were offices like
+43:49 and they would like walk around and put
+43:51 sticky notes on like on reports and
+43:53 saying like this is wrong this is wrong
+43:55 this is wrong right
+43:56 um so that's like a very very reactive
+44:01 state
+44:01 um the first stage is or sort of the
+44:03 second stage when people start
+44:05 start thinking about how to solve this
+44:07 in a more proactive way it's
+44:09 sort of called a proactive stage is when
+44:11 people use some
+44:12 they put in place some some pretty basic
+44:14 checks right it can be just
+44:15 road counts right i'm i'm gonna like
+44:17 manually sort of select a bunch of
+44:19 tables and make sure that they
+44:20 you know get a million rows every day
+44:22 because that's what i expect
+44:24 and then those teams spend a lot of time
+44:25 in like retros and post
+44:27 mortems and figuring out what's wrong
+44:29 the third stage is sort of automated
+44:31 when they sort of start when they they
+44:33 recognize that a manual approach is no
+44:35 longer
+44:36 um uh you know scalable or
+44:39 um effective and so they basically you
+44:43 know start implementing some solutions
+44:45 um and we can talk about what those are
+44:47 and then the fourth stage is like
+44:48 scalable when basically you know you
+44:50 have
+44:51 um companies really invested in both the
+44:53 scalable and automated solution
+44:55 um you know some of the best in class
+44:57 out there you can take a look at netflix
+44:58 um has has written a lot about what
+45:01 they've done
+45:02 um uh for monitoring observability and
+45:04 detecting anomalies
+45:06 um so you know i think there's ranges
+45:09 from
+45:10 sort of things that you can hack
+45:11 together or do on your own where you can
+45:12 basically
+45:13 you know using sql or python or jupyter
+45:15 notebooks and actually would put
+45:17 together some tutorials on this um so
+45:19 i'm happy to send
+45:20 i'm happy to share the links after if
+45:22 that's helpful for kind of creating your
+45:24 own monitors
+45:25 um the other thing that you know you
+45:27 could sort of
+45:28 do is kind of look at specific area in
+45:31 your pipeline
+45:32 um and and sort of define kind of
+45:35 specific tests
+45:36 in those areas like in airflow or
+45:38 something like that um
+45:40 but really what we're finding is that um
+45:42 as
+45:43 data organizations are getting as we
+45:45 talked about like actually using their
+45:46 data and getting more serious about data
+45:48 downtime
+45:49 they do need a holistic approach um and
+45:52 so whether it's sort of an open source
+45:53 tool or something
+45:55 you know a sort of a bespoke solution
+45:56 that's easy to get up and running with
+45:59 um there needs to be something more
+46:01 holistic than
+46:02 than sort of a point solution okay so
+46:05 like you mentioned that you can at the
+46:08 beginning get away with a bunch of
+46:10 counters
+46:11 so like just count how many rows
+46:14 appeared
+46:14 in the each hour let's say and then you
+46:18 can
+46:18 at the same time check what is the the
+46:21 date of the last
+46:23 when let's say when you insert row you
+46:25 can add some
+46:26 sort of a time stamp to each row right
+46:28 and then you can just look at the max
+46:30 value
+46:31 of this of this column which will give
+46:33 you the
+46:34 the freshness right so i guess you can
+46:36 get away with
+46:37 uh a bunch of things just
+46:40 doing uh planes using plain sql and a
+46:43 bunch of
+46:44 python scripts like you said but that
+46:46 would put you
+46:47 to the proactive stage right in this
+46:50 maturity curve
+46:51 or uh yeah that's right already
+46:53 automated
+46:54 i would say somewhere between the
+46:56 proactive stage yeah that's
+46:57 that's still pretty ad hoc okay so
+47:00 how do we go to the like you said we
+47:03 need some sort of holistic picture
+47:05 uh so how do we get this helix holistic
+47:07 picture if
+47:08 all we have is a bunch of ad hoc stuff
+47:11 uh put together with a duct tape that
+47:14 does uh
+47:14 some sort of alerting already let's say
+47:17 maybe there is
+47:18 an email to some of the people hopefully
+47:22 or i don't know a slack message
+47:24 from a bot that's already quite good
+47:27 but like how do we go even further like
+47:29 how do we
+47:30 go to the automated phase yeah so
+47:33 in that case you probably will need an
+47:35 observability solution
+47:37 um and yes full disclosure monte carlo
+47:40 does have an observer that what we will
+47:42 be doing is
+47:43 you know we've built a strong
+47:45 observability platform so that's
+47:47 definitely our the core of what we do
+47:49 um some of the characteristics that i
+47:51 think are important for a strong
+47:52 observability solution
+47:54 um one it needs to you need to give you
+47:57 end to end visibility
+47:58 um so it actually needs to connect to
+48:00 whatever your data stack is
+48:02 including your data lake your data
+48:04 warehouse your etl and
+48:05 you know your bi or your machine
+48:07 learning models um
+48:09 so you know to take an example if you're
+48:11 just doing
+48:12 you know road counts and only a handful
+48:14 of tables in your data warehouse
+48:16 it's probably insufficient because you
+48:18 are relying on data arriving on time
+48:20 in other areas and a lot of the data
+48:22 moving in different systems
+48:24 and so i would you know if i were to
+48:26 choose an observability solution it
+48:28 would be one that can actually connect
+48:30 to my existing stack
+48:31 um and end to end so including the data
+48:34 lake the data warehouse the etl and the
+48:36 bi solution
+48:37 um it's also you know i think it's
+48:40 important to
+48:41 um to choose a solution that
+48:43 automatically learns your environment
+48:45 and your data so
+48:46 we talked a little bit earlier about
+48:48 whether you manually define the
+48:49 thresholds or you actually rely on
+48:51 automation
+48:52 um and i think solutions that sort of
+48:55 rely to your point we're not starting
+48:56 from scratch
+48:57 right and so solutions that can actually
+49:00 do the instrumentation for you and start
+49:03 the monitoring for you
+49:04 um using machine learning models based
+49:06 on historical data i think that puts you
+49:08 at an advantage
+49:10 um i think another key point is
+49:12 minimizing false positives
+49:14 so data teams you know often have alert
+49:16 fatigue and so
+49:18 if you actually have a system that can
+49:20 take into account not only
+49:21 um the data but also metadata and
+49:24 thinking holistically about this about
+49:26 the five pillars right each one is
+49:28 important it has to include
+49:29 things like lineage for example then
+49:32 that can help minimize false positives
+49:34 and give you rich context about each of
+49:37 the incidents
+49:38 so that you know whether you should take
+49:39 action on it so there's certain criteria
+49:42 that you should look for when you're
+49:43 thinking about
+49:44 the data observability solution and
+49:46 that's the way to
+49:47 that's definitely the way to kind of
+49:48 improve the health overall and move up
+49:50 in the maturity curve
+49:52 are there some open source tools for
+49:54 that
+49:56 um there's open source for different um
+49:59 specific uh solutions like for each of
+50:02 the pillars
+50:03 um but but not one that sort of does
+50:06 comprehensive for all of those five
+50:07 pillars
+50:08 um i'm wondering i think the the most
+50:12 difficult
+50:13 thing in my opinion maybe i'm wrong is
+50:16 this lineage
+50:17 like how do you actually define all
+50:18 these dependencies
+50:20 um is there a good tool for that
+50:24 um we've they're different they're
+50:26 different uh levels of lineage so for
+50:28 example airflow provides
+50:30 job level lineage for example um but for
+50:33 table level and field level lineage
+50:35 something that
+50:36 automatically reconstructs that um i
+50:38 actually haven't seen
+50:40 a very strong one um if anyone you know
+50:42 if there's anyone in the audience
+50:43 uh you know i'm curious to to hear if
+50:46 there's anything that
+50:47 i've seen out there um but um not not
+50:50 that i've seen
+50:52 okay yeah so we have a couple of
+50:53 questions from the audience
+50:55 maybe we can go through for them so
+50:58 rk is asking if you know any good
+51:02 approaching
+51:02 or approaches on test driven development
+51:05 in the data space and does it have to do
+51:07 any
+51:08 anything to do with uh data
+51:10 observability
+51:13 sorry can you say it again i don't think
+51:14 i got yes so you know there's this
+51:16 test driven development yes like a way
+51:19 to
+51:19 to develop things in engineering
+51:23 yeah are there some similar approaches
+51:26 in the data space to that
+51:27 and how we do we go about testing uh
+51:31 in data yeah great question
+51:34 um and this is sort of the the i think
+51:37 the ultimate question here is like
+51:39 maybe what's the difference between
+51:40 testing and monitoring and and
+51:42 or testing and observability and um
+51:45 and and you know what should what does
+51:48 that mean for us right um
+51:50 so going back to software engineering
+51:52 and to what um
+51:54 the importance of testing and software
+51:55 engineering is is critical right like
+51:58 you'd be crazy to release something to
+52:00 production without testing it thoroughly
+52:01 right
+52:02 somehow in data we'd actually do that
+52:05 right so somehow we actually like
+52:07 uh don't don't always have strong
+52:09 testing in place
+52:10 and so um you know definitely uh
+52:14 uh putting in place strong measures for
+52:16 testing too is
+52:17 important um i think you need both right
+52:19 so you can get away
+52:21 um uh just with testing
+52:24 some of the sort of common pitfalls that
+52:26 we see are teams that think that that
+52:28 just testing is sufficient
+52:30 the problem with that is that um you
+52:33 don't know
+52:33 sort of you know that it's like the
+52:35 unknown unknowns right so
+52:37 you can in testing you need to specify
+52:39 things that you know
+52:40 might happen right um but you are
+52:42 there's always going to be things that
+52:44 you didn't
+52:44 pick up on and so monitoring helps make
+52:46 sure that
+52:48 um if and when something happens you
+52:51 will know
+52:52 about that regardless um so i am a
+52:54 strong advocate
+52:55 of both and you can define tests like
+52:58 for example you know if you have a
+52:59 solution like dbt for example
+53:02 um you can actually define data quality
+53:04 tests in dbt
+53:06 um to help make sure that you know
+53:07 you're you're doing testing properly so
+53:10 100 i think that's that's super
+53:12 important and another great area that we
+53:14 can adopt from software engineering
+53:16 and these data quality tests we again
+53:18 define some sort of fringes
+53:20 or that for this sort of input this this
+53:23 this is the sort of output we expect or
+53:25 how did this work
+53:26 yeah exactly like you know um uh
+53:30 defining defining basically sort of
+53:33 manually
+53:34 what you expect out of um you know
+53:36 making sure that you know specific sort
+53:38 of null values are in specific range or
+53:40 um you know basically uh specific things
+53:44 that you know
+53:45 are often uh breaking or incorrect in
+53:47 this data that you wanted to test
+53:49 um some of the sort of problems
+53:53 that occur some of the common pitfalls
+53:54 that we see is that
+53:56 um one as i mentioned like there's some
+53:59 unknown unknown so you don't always know
+54:00 what to test for
+54:02 and then the other thing is that it's
+54:03 actually quite it's quite time consuming
+54:05 so you know there are folks who might
+54:06 define like thousands of tests and so
+54:09 for a data engineer
+54:10 to go through that it's actually quite
+54:12 quite laborious
+54:13 um and so i would really think of a
+54:15 strong strategy would incorporate both
+54:17 testing
+54:18 um and monitoring as well to kind of
+54:20 mitigate those
+54:23 thank you uh do you know if uh
+54:26 the big vendors big clouds already move
+54:29 into this
+54:30 space of data observability or it's
+54:33 still not
+54:34 really uh they still not really focused
+54:36 on that
+54:37 yeah it's a great question so um so at
+54:40 monte carlo
+54:41 uh we're actually um we we've partnered
+54:43 with um looker which is you know
+54:45 acquired by google so with gcp
+54:48 um we've partnered with pagerduty and
+54:50 we've partnered with snowflake
+54:52 um and so you know this is definitely
+54:54 something that i think
+54:56 the large vendors or the large kind of
+54:58 cloud providers
+54:59 um have noticed that something is
+55:01 important you know we hear a lot from
+55:02 them this is something that
+55:04 comes up a lot for their customers uh
+55:07 and so
+55:08 uh you know something that they that
+55:09 they want to provide a strong solution
+55:11 for
+55:11 um so i think this is definitely
+55:13 something that is becoming more and more
+55:15 important
+55:15 yeah but typically should the
+55:19 should this be agnostic of a cloud
+55:22 compute vendor like let's say uh because
+55:24 i imagine
+55:25 if somebody is if the company is on aws
+55:29 uh it's quite
+55:32 a vendor lock right like if you want to
+55:36 solve a problem for somebody who's in
+55:39 on aws then you cannot be cloud agnostic
+55:42 right there are so many things that are
+55:43 called specific like i know an aws
+55:46 s3 athena all these uh all these
+55:49 services
+55:50 um so the question is uh yeah can it be
+55:53 cloud agnostic or it's difficult
+55:56 yeah definitely it's a great question so
+55:58 um so for
+55:59 so for us so the observability
+56:02 our observability platform um actually
+56:05 we integrate with all um
+56:06 cloud data lakes um and data warehouses
+56:09 and bi solutions so
+56:11 you know integrate with all everyone
+56:13 that you mentioned you know gcp aws um
+56:16 you know and all others um as well
+56:19 and i think that's important because as
+56:20 i mentioned um i think
+56:22 a good observability solution will
+56:24 actually connect to your existing stack
+56:26 and you don't have to change you know to
+56:27 a different provider for that
+56:29 um and so yes it has to be agnostic
+56:32 actually
+56:32 in the same way that it is in
+56:34 engineering right so
+56:35 for example like prometheus grafana um
+56:38 uh you know new relic datadog you know
+56:41 they connect to
+56:42 sort of what whatever you have right
+56:44 whatever systems you have um
+56:46 and so i think it's it has to be a
+56:47 requirement in the same way okay and
+56:49 then you can also use kubernetes for
+56:51 your jobs right
+56:52 and then uh it's also called agnostic
+56:55 that's right yeah uh another question
+56:59 from
+56:59 rk what are your thoughts on
+57:02 centralizing the observability in a
+57:04 distributed environment where
+57:06 we have multiple different data
+57:08 warehouses and data pipelines
+57:10 and et cetera yeah
+57:13 um so thank you for the question rkay i
+57:16 i'd love to dig in deeper and better
+57:17 understand your
+57:18 your environment and see um how it can
+57:20 help
+57:21 probably requires sort of a deeper dive
+57:23 of your of your system
+57:24 and your infrastructure to better
+57:26 understand um but i will say that
+57:28 even in an environment where you have
+57:31 distributed ownership it's important to
+57:33 define
+57:34 um sort of in it it's important to find
+57:36 a centralized way
+57:38 what to your point like are we doing
+57:40 slas
+57:41 as an organization does data overlap is
+57:43 data reliability important to us
+57:45 do we care about having trust in the
+57:47 data right and that needs to be in some
+57:49 centralized fashion
+57:50 potentially needs to be decide but also
+57:52 each team can decide that you know
+57:54 it's important to us to make sure that
+57:56 we're delivering reliable data
+57:58 um and then each team can actually
+58:01 define
+58:01 sort of the slas for their own
+58:03 organization um
+58:05 so i think you know observability
+58:07 matters regardless of what your
+58:09 um whether you're undistributed or not
+58:11 or centralized
+58:12 um because you know providing trust and
+58:15 data is important for everyone
+58:17 uh regardless of like what your
+58:18 structure is and what kind of data
+58:20 you're dealing with if you don't have
+58:22 trust in your data that's the worst
+58:24 thing that can happen to you
+58:25 if you are producing data that people
+58:27 can't use and can't
+58:29 trust um it's it's it's really um
+58:32 you know probably sort of the biggest
+58:33 threat to us honestly as an industry and
+58:36 so
+58:37 regardless of that structure there's
+58:38 different ways to adopt to adopt it and
+58:40 to implement it but regardless of that
+58:42 data observability should be core to
+58:44 your strategy
+58:46 thank you do you have time for a couple
+58:48 of more questions
+58:49 uh yeah sure thing okay so
+58:53 uh we have a question um
+58:56 wait i lost it so how
+58:59 monte carlo detects upstream and
+59:01 downstream usage of data
+59:04 yeah so um uh again happy to go into
+59:07 into more detail if folks want to reach
+59:09 out to me
+59:09 there's a link that you can share after
+59:11 the
+59:12 yeah yeah so feel free to email me
+59:16 my email is barr b a double r at
+59:19 montecarlodata.com
+59:20 or go to our website montecarlodata.com
+59:23 um
+59:24 and i'm happy to also show the link
+59:25 after and and get into more details and
+59:28 talk about this but
+59:29 at a super high level um what monte
+59:32 carlo does is we actually have a data
+59:34 observability platform
+59:35 um that you know is based around these
+59:38 five pillars and so as part of our
+59:40 lineage pillar we actually reconstruct
+59:42 both the upstream and downstream
+59:43 dependencies
+59:44 and basically reconstruct your the
+59:46 lineage um
+59:47 for a particular system whether it's
+59:49 your data lake your data warehouse your
+59:51 bi
+59:51 i mean we actually do that across your
+59:53 systems as well um so
+59:55 we and we do that automatically there's
+59:57 no manual input so
+59:59 happy to happy to go into more detail uh
+1:00:02 you know if you want to reach out
+1:00:03 directly to me
+1:00:04 and then uh i noticed that
+1:00:08 you also joined our slack so
+1:00:11 yeah that's another way of conducting
+1:00:14 you
+1:00:14 right absolutely that's a great point um
+1:00:17 yes i'm a big fan of the community
+1:00:19 that you're building um and i am
+1:00:21 available on slack so happy to take any
+1:00:23 questions
+1:00:24 um feel free to send over yeah i think
+1:00:27 so maybe just
+1:00:28 the last one for today so how do you
+1:00:31 differentiate between getting bad
+1:00:33 bad data and getting uncommon data which
+1:00:36 might actually be interesting but not
+1:00:38 wrong yeah
+1:00:39 fabulous question so um if i will
+1:00:42 rephrase that a little bit
+1:00:43 i think the question is um i might get
+1:00:46 notified about something but it is
+1:00:47 intentional
+1:00:48 meaning it's not bad it's just different
+1:00:51 it's just unexpected but maybe it's good
+1:00:53 thing
+1:00:54 um and and you're right i don't think we
+1:00:56 can actually like
+1:00:57 necessarily discern that and also i'm
+1:01:00 not sure that that actually
+1:01:01 matters um and i'll say why um i think
+1:01:04 people want to know about changes in
+1:01:06 their data
+1:01:06 even if they are simply uncommon right
+1:01:10 um so let's say you had a crazy spike or
+1:01:12 you got instead of a one million rows
+1:01:13 you got 10 000 rows
+1:01:15 maybe that was intentional because
+1:01:16 someone made a schema change upstream
+1:01:18 and maybe that is still good data it's
+1:01:20 not bad but you still want to know about
+1:01:22 that because that has implication on
+1:01:24 your machine learning model
+1:01:25 um and so i think a good observability
+1:01:27 solution will let you know about both
+1:01:29 instances and will provide enough
+1:01:32 context about each event so that you can
+1:01:34 make the decision or someone can make
+1:01:36 the decision whether
+1:01:37 you know this is uncommon or bad to use
+1:01:40 that terminology
+1:01:41 but we need to know about both and the
+1:01:43 more context you have about that event
+1:01:45 um the easier it is to make that
+1:01:47 discernment and know what are the action
+1:01:49 items
+1:01:49 uh to take based on that should we
+1:01:52 actually get alerts
+1:01:54 every time there is an suspicious role
+1:01:57 or it's it depends like let's say we
+1:01:59 have a volume of one million rows
+1:02:02 do we want to get an alert for every
+1:02:04 unusual one
+1:02:06 yeah probably not uh you probably will
+1:02:08 get alert fatigued
+1:02:10 um right now you probably want a system
+1:02:12 that is a little bit more sophisticated
+1:02:14 than that and so um at monte carlo we've
+1:02:16 invested a lot
+1:02:17 in making sure that you know we send an
+1:02:19 event we send alerts for events that
+1:02:21 matter
+1:02:21 um so you know if this is like a table
+1:02:24 that is highly used or highly queried or
+1:02:27 has many dependencies downstream for
+1:02:29 machine learning models are really
+1:02:31 important
+1:02:32 um or you know there could be other
+1:02:34 instances or other ways to identify
+1:02:36 whether something is really
+1:02:37 really important um but i would
+1:02:39 definitely say you want to be
+1:02:40 very thoughtful um and making sure that
+1:02:43 you are
+1:02:43 being alerted and taking action on the
+1:02:46 things that truly matter to your
+1:02:47 system okay yeah so i think we should be
+1:02:51 wrapping up
+1:02:52 maybe do you have any last words before
+1:02:54 we do that
+1:02:55 uh i would just say thank you for the
+1:02:57 time really appreciate it uh yeah and if
+1:02:59 you know this is a sort of a topic
+1:03:01 that's near and dear to my heart so if
+1:03:02 anyone wants to sort of uh
+1:03:04 continue the conversation i'll be on
+1:03:05 slack okay
+1:03:07 thank you and i'll put some contact
+1:03:09 details
+1:03:11 twitter and linkedin in the description
+1:03:15 yeah
+1:03:16 thanks a lot for joining us today for
+1:03:18 sharing your
+1:03:19 knowledge and experience with us and
+1:03:21 thanks everyone on
+1:03:22 uh on the stream for listening uh
+1:03:26 for tuning in and uh i wish everyone a
+1:03:29 great weekend
+1:03:31 have a great weekend yes so nice talking
+1:03:34 to you
+1:03:35 yeah likewise goodbye bye

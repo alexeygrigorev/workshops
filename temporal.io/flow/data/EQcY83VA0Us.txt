@@ -1,0 +1,1424 @@
+Interpretable AI and ML
+
+0:00 hey everyone Welcome to our event this
+0:02 event is brought to you by datadox club
+0:03 which is a community of people who love
+0:05 data we have weekly events and today is
+0:08 one of such events and if you find if
+0:10 you want to find out more about the
+0:12 events we have there is a link in the
+0:13 description unfortunately right now the
+0:15 only event we have there is this one but
+0:19 actually we have more in the pipeline we
+0:22 just haven't announced them yet but this
+0:24 is a useful link keep this in mind
+0:26 because maybe you watch this in
+0:28 recording so when you click on that you
+0:30 will see more stuff
+0:32 but yeah if you don't want to miss out
+0:35 on Amazing interviews like the one we
+0:37 have today do not forget to subscribe to
+0:40 our YouTube channel you will have
+0:41 notifications about our streams and then
+0:44 we have a great slack Community where
+0:46 you can hang out with other other data
+0:49 enthusiasts
+0:50 during today's interview you can ask any
+0:52 question you want there is a bint Link
+0:54 in the live chat click on that link and
+0:56 ask your questions and we will be
+0:57 covering these questions during the
+0:59 interview
+1:00 and that's all the introduction we have
+1:02 now I will stop sharing my screen I will
+1:05 open the questions we prepared for you
+1:09 and if you're ready we can start
+1:11 you're right I'm ready yeah okay this
+1:15 week we'll talk about bringing together
+1:16 research and Industry and how
+1:18 explainable and interpretable machine
+1:20 learning and AI fit into it we have
+1:23 special guests today Paulina Paulina is
+1:25 a data scientist at sap she's passionate
+1:27 about bringing the current machine
+1:29 learning research to business
+1:30 in her PhD dissertation she created a
+1:33 framework for charm prediction and this
+1:35 framework uses organizational trust
+1:37 Theory and explainable machine learning
+1:38 methods we will be mostly talking I
+1:40 guess about explainable ml but I'm also
+1:43 very curious about
+1:44 organizational trust Theory I have no
+1:46 idea what it is maybe we will talk about
+1:48 that yeah Welcome to our podcast
+1:52 thank you so much for the warm welcome
+1:54 very excited to be here
+1:56 we're very excited to have you here and
+1:58 as always the questions for today's
+2:00 interview are prepared by Johanna Bayer
+2:03 thanks Johanna for your help
+2:05 so let's start and before we go into our
+2:07 main topic of interpretable and
+2:10 explainable Ai and ml let's start with
+2:12 your background can you tell us about
+2:14 your career Journey so far
+2:17 so uh
+2:19 it's maybe also going to be further
+2:21 covered in the industrial PhD but
+2:25 basically that's uh I think the the
+2:29 biggest element of my or the earliest
+2:31 element of my journey as a data
+2:33 scientist I did an industrial PhD with
+2:35 sap at the University of Mannheim
+2:37 merging together sociology and data
+2:41 science
+2:42 um I also identify myself as a
+2:43 computational social scientist
+2:46 and then after the PHD I started as a
+2:51 data scientist at sap and um
+2:54 what I do day to day I think I used to
+2:58 always cover it or like call it
+3:00 end-to-end data science so basically
+3:03 from the uh point where somebody comes
+3:06 up with an idea to uh bringing a
+3:08 productive machine learning model to
+3:10 life and then maintaining it this is a
+3:13 kind of what uh
+3:15 I can work on and that's what I cover
+3:17 um in my in my job at sap and
+3:21 um I like to say actually that's an
+3:23 interesting point I listened to one of
+3:24 your talks recently uh I think at a rise
+3:27 observed conference and here are calling
+3:29 it a full stack data scientist so I
+3:31 learned a new thing uh and now I think I
+3:34 can identify with that as well and
+3:37 um one very important point that I have
+3:40 to mention I described my job and this
+3:43 is something that I can uh say publicly
+3:45 but anything further I should not talk
+3:47 about so everything I talk about here is
+3:50 me a private person not sap not an
+3:54 opinion of my employer just wanting to
+3:57 say that okay so after that I mentioned
+4:00 that all of the opinions that I voice
+4:02 are my own I want to talk to my employer
+4:04 and that I'm not going to be talking
+4:06 about the actual job that I do because
+4:09 um obviously I'm here as a private
+4:11 person so that's uh
+4:13 that's what I have to mention just just
+4:15 for for the clarity of the situation
+4:19 so yeah it's funny that you mentioned
+4:21 this full stack data scientist because
+4:23 when I first gave this talk
+4:26 um like two or three years ago it was I
+4:28 think because ml engineer and uh that
+4:31 the role of an ml engineer was not yet
+4:35 that developed and like it wasn't that
+4:39 common and envelopes wasn't that common
+4:42 either so data scientists often needed
+4:45 to do everything end to end and there
+4:47 were of course data scientists who
+4:48 specialized more into you know the
+4:51 business side or specialize more in
+4:53 um
+4:54 software engineering uh
+4:57 but now with male Engineers data
+5:00 engineers and other people working
+5:02 together on the team I see that there
+5:04 are fewer full stack data scientists yet
+5:06 you say that you are one and I'm
+5:09 wondering like how many of those of
+5:12 people like you you see in this you see
+5:15 you see in there
+5:17 yeah
+5:18 yeah
+5:19 I think it's uh
+5:22 also kind of my impression of what I
+5:24 observe uh on LinkedIn and how people's
+5:27 career Journeys are developing I think
+5:29 it's getting more
+5:32 more specified so maybe I would be then
+5:36 going closer to
+5:38 to the business side and to to
+5:40 understanding the business problems
+5:42 compared to some people who develop more
+5:44 this ml specialization so I do see that
+5:47 but I think it's it's kind of my roots
+5:49 where uh
+5:51 in the early career I especially in the
+5:53 PHD project as well I was the only
+5:56 person managing my own PhD project and
+5:58 uh I was facing a lot of a lot of points
+6:02 where I had to bring many things
+6:04 together so that's
+6:05 um
+6:07 depths I think a simple explanation of
+6:09 how I first came to be a full-site data
+6:12 scientist because uh in a PhD you're
+6:14 supposed to do many things uh
+6:16 independently
+6:18 is it a common situation when a PhD
+6:20 student actually needs to do everything
+6:22 end-to-end because I think it is right
+6:24 that's kind of the point
+6:26 or that this usually help
+6:29 I think it really depends uh so my PhD
+6:33 project
+6:34 was actually an applied project for the
+6:38 company and there of course I faced this
+6:42 duality of on the one hand I have the
+6:45 scientific elements to it I have the
+6:48 research and then on the other hand I
+6:50 have a actual stakeholders and people
+6:53 who would in the end be using the model
+6:56 and benefit from it so of course I was
+6:59 also facing all of the things that do
+7:02 not necessarily belong to a PhD project
+7:04 but there are so many PhD projects so
+7:06 many industrial PhD projects so I think
+7:09 I kind of say it
+7:10 like it's a hundred percent a must but
+7:13 it was a big learning for me
+7:15 so the answer is it depends right it
+7:17 depends on the project it depends on the
+7:19 group where you work and many many other
+7:22 things but maybe I didn't want to phrase
+7:24 it this way because it depends as an
+7:25 answer to everything yeah right I still
+7:28 I still want to
+7:30 try better
+7:32 and uh
+7:33 so actually I wanted to talk more about
+7:35 your PhD at the end but I think now it's
+7:38 a perfect way to actually talk more
+7:40 about that and you said that it was an
+7:43 applied project for the company for sap
+7:46 as I understand and there was a
+7:48 scientific element Plus in addition to
+7:50 that there were stakeholders that you
+7:52 needed to manage so it's usual for usual
+7:55 academic PhD the output would be like I
+7:58 don't know three papers and then a
+8:00 dissertation based on these papers right
+8:02 but for you it was different right so in
+8:04 addition to the papers you also needed
+8:06 to
+8:07 deploy a project to show the business
+8:11 value right am I correct
+8:14 exactly does it make it more difficult
+8:17 because we you have kind of two goals
+8:21 yeah I think uh this would be a
+8:24 situation or a problem but every
+8:27 industrial PhD student faces where on
+8:30 the other hand on the one hand you have
+8:32 a research interests and maybe your
+8:35 University supervisor who pushes you
+8:37 into bringing the research further on
+8:40 and on the other hand you would have uh
+8:43 the industrial benefit and there might
+8:46 be a bigger or a smaller overlap to uh
+8:50 if it actually is the same project or if
+8:52 it's two completely different ones so
+8:54 for me the overlap was uh rather huge
+8:57 but of course there were elements that
+8:59 were only in the in the research part so
+9:01 only in the output text basically in the
+9:05 dissertation and of course A lot of the
+9:09 things that I learned during pushing
+9:11 things in production for example we're
+9:13 not covered in my in the dissertations
+9:16 that they were
+9:18 um
+9:18 industry only
+9:21 so you did not describe in your
+9:24 dissertation of how exactly used the
+9:26 kubernetes or whatever framework for
+9:28 deploying models you did not write
+9:30 anything about that exactly so uh maybe
+9:34 to get closer to the topic for everybody
+9:37 to understand more what I did
+9:40 um my dissertation was focusing on
+9:43 studying the relationship between a
+9:45 software as a service provider and their
+9:46 customers basically I looked into how
+9:50 the trust is built up theoretically and
+9:53 then try to see it in reality and then I
+9:57 also wanted to understand how these
+9:59 trust elements
+10:00 impact the continuation of the
+10:03 relationships basically if you phrase it
+10:06 in a machine learning problem terms then
+10:09 it's a churn problem so basically
+10:11 predict churn was the um
+10:15 it was the model so for the
+10:18 organizational trust things I think of
+10:20 course
+10:22 a lot of things were just describing the
+10:25 theories and not exactly immediately
+10:27 relevant to the industry and if you put
+10:31 it this way
+10:32 actually for the text of my dissertation
+10:34 how I bring it to production was not
+10:36 necessarily relevant to it was a tiny
+10:39 part in my defense uh during the defense
+10:43 very mentioned that it is actually live
+10:46 but it's not
+10:47 um it's not something that has a chapter
+10:49 or something
+10:50 so it was a tiny part in the
+10:52 dissertation but I imagine for the
+10:53 actual work I don't know what was your
+10:55 experience in my experience usually this
+10:57 is what takes most of the time
+11:00 so it was a big learning curve to me uh
+11:04 because I came uh from this kind of
+11:07 idealistic perspective maybe that
+11:11 um whatever insights I generate uh
+11:14 anything could be very very beneficial
+11:16 to the industry and then I realized that
+11:18 there is just so much more to it and
+11:20 that a real data science project is
+11:23 actually more complex and also managing
+11:26 it completely is
+11:29 is a big challenge
+11:31 um
+11:33 yeah so that's
+11:36 that was a big learning for me and I
+11:39 think maybe that's why it was more work
+11:41 as well so I think maybe a fun Story the
+11:45 first time I was discussing Pipelines
+11:51 around a machine learning engineering I
+11:54 was basically at the stage where it's
+11:56 like data comes in I wanted there but I
+11:59 was not understanding uh maybe if no I
+12:03 do but I I was not understanding the
+12:05 complexity of how how things I mean this
+12:07 should actually work
+12:09 thank you
+12:10 it's uh also it means that there is a an
+12:13 additional risk factor so for usual PhD
+12:16 the risk factor the typical one could be
+12:19 that you do not find what you wanted to
+12:21 find and then like how do you write your
+12:23 PhD if you
+12:25 could not prove that in your case I
+12:28 think there was uh organizational trust
+12:30 Theory can be applied to churn
+12:32 prediction right so that's one element
+12:34 and then another element even if
+12:37 theoretically it works
+12:39 but then practically with it right and
+12:42 then you kind of need to try so you have
+12:44 two
+12:45 um two things that could go wrong as
+12:48 opposed to usual PhD where maybe it's
+12:51 like less risky am I right
+12:55 I think so I
+12:57 uh a lot of research showing that it can
+13:01 work and there are also a lot of
+13:02 interesting studies showing that on
+13:05 other data and translating it into
+13:08 industrial terms so I think for the PHD
+13:10 there is a lot of risk anyways I would
+13:14 not say that this is uh
+13:17 this is more risk in uh in this case I
+13:22 think it's actually
+13:24 probably at the level of HD it's as much
+13:27 risk as it can get so
+13:29 either works how can you get a title or
+13:31 it doesn't search uh I think that's
+13:33 actually
+13:34 kind of the same for all phishes but
+13:37 um I think um maybe to turn it into a
+13:40 positive way it's also double support uh
+13:43 or it was a devil's support for me
+13:45 because
+13:46 um my supervisor
+13:49 um at the University was very
+13:50 understanding of of the setup and uh was
+13:53 also helping me to find the elements of
+13:56 value that I can get uh to uh to the
+14:00 company and then my team in the company
+14:02 was also very very supportive of my PhD
+14:05 and I think
+14:07 that's kind of where all if it if it all
+14:09 fits together nicely then
+14:11 um it's actually a lot of a lot to learn
+14:14 and it gives you two things first of all
+14:17 the research experience but then still a
+14:19 lot of
+14:20 um a lot of work experience as well and
+14:23 a reality check to be honest because I
+14:27 think um my original motivation for
+14:30 doing it in the industry was that I
+14:33 didn't want to just Thrive and then put
+14:35 it on a shelf or just publish something
+14:39 and never know if anybody got anything
+14:42 out of it and here I actually can see
+14:45 that it is applied and
+14:50 there is a lot of learning for for
+14:51 everybody including me but um
+14:56 was there also as you mentioned that you
+14:58 had a supervisor from the University
+14:59 side was there also a supervisor from
+15:02 the company side
+15:04 uh not immediately so it's also
+15:06 different in different uh industrial PG
+15:10 setups sometimes there is a supervisor
+15:12 in my case it was mostly specifically
+15:16 the teams that I worked with they were
+15:19 interested in the project but not
+15:21 necessarily somebody who would who would
+15:23 just supervise me confusing
+15:27 but there were some stakeholders right
+15:29 so still somebody
+15:30 from the company side would guide you of
+15:33 course they say okay this is not what we
+15:35 need this is not what we meant we want a
+15:37 different thing
+15:38 and that was like that right yeah
+15:41 exactly basically my stakeholders were
+15:43 helping a lot with them and how did this
+15:47 actually work like uh where you talking
+15:50 to them every day how often did you get
+15:54 feedback from them were you talking to
+15:56 other
+15:58 I don't know team members how did it
+16:02 look day to day
+16:04 oh it's a day-to-day I think it
+16:10 project so with just the data science
+16:12 work that you can can imagine like
+16:14 regular regular calls with stakeholders
+16:17 I think that's uh that's not that much
+16:19 different from what every every data
+16:21 scientist who has business facing roles
+16:24 does uh every day and then of course a
+16:28 lot of Exchange in the team again very
+16:31 typical for data science teams to just
+16:33 talk to each other so I think also no
+16:35 secret information revealed uh here I
+16:39 think what was different for me was that
+16:40 I also had a chance to change
+16:42 conferences or summer schools and
+16:46 um let us again this
+16:48 merging together the industry and um
+16:53 elegant University lifestyle so
+16:55 basically I could go to a conference or
+16:59 um to summer school and then I could
+17:01 bring my ideas from provide project and
+17:04 then Lauren um on the go from from the
+17:07 research so that was very a very
+17:09 interesting experience and by
+17:11 conferences your problem in academic
+17:13 conferences conferences
+17:15 exactly academics the one the one the
+17:19 ones where people publish papers print
+17:22 posters and then discuss research
+17:24 exactly exactly
+17:26 and summer schools are a lot of fun so I
+17:29 wish that I would burn more such things
+17:31 and they are not very common in Industry
+17:33 I guess they're usually for students
+17:35 right
+17:36 uh yeah so also my PhD was partially
+17:40 during coverage I started the first year
+17:42 of 2019 so I did Summer Schools then and
+17:45 then uh 2020 2021 uh virtually
+17:49 impossible to have uh like any real life
+17:52 real life summer schools so
+17:56 I'm also I'm also
+17:58 kind of thankful to the situation of
+18:00 being locked down because it forced me
+18:02 to write a lot
+18:03 okay but did it mean that in addition to
+18:06 your work as a full-time data scientist
+18:09 you had some extra work because you also
+18:12 needed to write it all down or it was
+18:14 balanced because your team knew that
+18:17 this is your actually this is actually
+18:19 your PhD project so then you could spend
+18:22 time saying like hey this week I'm
+18:24 actually working on a paper so I'm not
+18:27 working on the project
+18:29 so it was very balanced and uh I think
+18:34 it actually again depends on the setup
+18:36 in my setup it was balanced but for for
+18:39 other people also in Academia I think
+18:41 some people work on a project and then
+18:43 on top on their PHD and then when there
+18:47 are deadlines you are just like on your
+18:49 own with the deadline and it's it's you
+18:52 and your personal time management I
+18:53 think
+18:54 um that's that's probably shared among
+18:57 OPG students not specific to this
+19:00 industrial setup
+19:03 remember when I was getting my masters
+19:05 degree at Tu Berlin I saw the PhD
+19:09 students who all of a sudden realized
+19:12 that the deadline is soon and then they
+19:13 would just 24 hours uh seven weeks seven
+19:17 days per week splanches on writing the
+19:19 paper and they
+19:21 they did not look very good when I met
+19:24 them in
+19:25 at the University
+19:29 the stress levels I think it's it's any
+19:33 PhD at some point it's just your
+19:35 projects and you want to
+19:37 get it out in the best possible way so
+19:42 um shared experience so for you it was a
+19:47 explicit decision that you made that you
+19:49 want to do an industrial PhD project you
+19:52 don't want to do
+19:53 just a PhD you want to do it you want to
+19:56 apply This research at the company
+19:58 immediately how did you come up with
+20:01 this realization how did you learn that
+20:03 this is what you want to do
+20:06 um I think so in my bachelor's and my
+20:09 masters I was already very interested in
+20:12 doing uh basically data analysis but for
+20:16 companies or with data that can
+20:20 brings something valuable to someone and
+20:24 um
+20:25 I did a couple projects that were also
+20:28 for companies uh during my Master's and
+20:32 in seminar work and then I realized that
+20:35 I'm interested in the data that uh just
+20:39 very often is owned by companies so if I
+20:44 actually want to develop in the area
+20:46 that I think is most interesting for me
+20:49 then I want to go there and also
+20:53 um
+20:53 this idea of uh not just putting the PHD
+20:58 on the shelf and that's it I think that
+21:00 is that is very important
+21:03 so you already had some connection to
+21:05 the industry and you did not want to
+21:07 lose this connection but you still
+21:09 wanted to do a PhD right and then figure
+21:11 out figure it out that you can actually
+21:14 combine the both you can stay in
+21:16 Academia and work on industry projects
+21:19 exactly and I think uh Bose can actually
+21:22 learn a lot from each other so uh I
+21:25 still think uh I would not have done it
+21:28 differently so I
+21:30 I would have done the industrial PhD can
+21:32 if I'm
+21:34 if I'm asked again
+21:39 how common is the setup of like because
+21:42 for example I know that again at T
+21:45 Berlin where I started a long time ago
+21:49 uh uh I don't remember that the group
+21:52 where I was had such direct uh
+21:57 connection with the industry so usually
+21:59 maybe the company would give some so the
+22:02 company usually gives some money to the
+22:03 group to work on something and then they
+22:05 give some data and then they're like
+22:07 okay buy it now figure this out and then
+22:09 come back to us in five years something
+22:10 like that so that was my feeling how
+22:13 this thing worked
+22:15 uh so my question is like how typical
+22:18 what you had in general is
+22:27 and very much on the subject of the PHD
+22:30 so uh I'm a social scientist by
+22:33 education by training so it's very not
+22:36 common for social science
+22:38 or rather unusual I think in uh in other
+22:42 in other disciplines it's it's probably
+22:45 more common uh
+22:48 somehow I'm thinking chemistry but do
+22:50 not do not quote me on that I think
+22:52 there it might be more common to have a
+22:54 collaboration but
+22:56 um yeah if if you're interested so if
+22:58 any of the listeners are interested in
+23:00 finding the phds you can go at least in
+23:03 Germany for the big uh for the companies
+23:08 uh so sap obviously has this set up
+23:12 sometimes uh also I think Simmons Bosch
+23:16 are offering this I think the automotive
+23:19 industry is in Germany also has this
+23:22 industrial PhD setup
+23:24 certainly at the moment in the area of
+23:27 machine learning because if you're
+23:29 interested just do a bit of research on
+23:32 there on their job seeking websites
+23:36 um what I think also you can look at is
+23:39 a industry or university websites
+23:42 sometimes they advertise such
+23:44 collaboration programs or
+23:47 um
+23:49 yeah so industry related phds I think
+23:52 the Technical University in Munich
+23:54 definitely definitely has a page
+23:58 that offers that but again it always is
+24:01 a question if you need to find a
+24:03 professor that supports this uh this
+24:06 collaboration and in a company it also
+24:09 must fit some uh some project so I think
+24:12 it's not exactly common for companies to
+24:15 just hire scientists to do their to run
+24:18 on their own and do wild things but if
+24:21 it fits together then um there's
+24:23 actually more opportunities than I
+24:26 thought they are so
+24:28 and as you can see I'm I'm asked this uh
+24:31 quite often so
+24:33 I already did some research I'm like
+24:35 okay what can I what can I recommend are
+24:37 there any companies that they're talking
+24:39 about
+24:40 so would you say if I wanted to check
+24:43 what are the possible projects I can do
+24:46 with sap what kind of Google query I
+24:49 need to use like sap machine learning
+24:51 and Industry PhD something like that uh
+24:54 yeah I I basically use PhD uh or
+24:58 doctoral student or doctorate in the
+25:02 search because I think that's how the
+25:03 positions are uh frequently advertised
+25:07 but
+25:07 um again each team can Define it in a
+25:10 different way so
+25:12 um
+25:13 I think a query with a PhD student or a
+25:17 PhD research position should
+25:19 work
+25:21 do they require you to speak German
+25:24 or English is sufficient
+25:26 this
+25:30 team I think there is no you know yes or
+25:33 no no here it's um so it depends right
+25:36 so you just yeah in a position and then
+25:38 they probably say
+25:40 if you need this picture or not okay
+25:42 okay
+25:43 my fingers are like a quickly Googling I
+25:47 think dialer required to Urban for some
+25:49 positions but
+25:50 um yeah just it's very very independent
+25:55 on the specific team what's your
+25:57 dissertation in English or German it is
+25:59 English okay
+26:01 because I know like in some countries
+26:03 you cannot write in English you your
+26:06 dissertation has to be in the language
+26:08 of the country University whatever but I
+26:10 know that in Germany it's not the case
+26:12 like in Germany you can publish either
+26:14 in English or in German I don't know
+26:17 about other languages maybe you can do
+26:19 it
+26:20 I'm not sure because uh English language
+26:23 would you defend if you are writing and
+26:26 writing
+26:28 um yeah sure but
+26:30 um
+26:31 I think now that the the research is
+26:34 basically very International a lot of
+26:36 universities actually expect you to
+26:38 publish in English so I think that's
+26:40 what motivates this uh kind of idea that
+26:43 you can actually submit it article-based
+26:46 dissertation in English as well if if
+26:48 that's exactly the expectation for
+26:49 publication
+26:51 uh we also wanted to talk about the
+26:54 content of your dissertation and what
+26:56 can the at the beginning when
+26:58 introducing you I said that you were
+27:00 developing a framework for German
+27:02 prediction that used organizational
+27:05 trust Theory and
+27:08 explainable and interpretable ml right
+27:11 so what is organizational trust Theory
+27:14 what is that
+27:15 ah I think this will need an episode of
+27:18 the podcast of its own because it's
+27:20 actually uh you can look at trust from
+27:23 so many from so many angles and
+27:27 um
+27:28 why isolate organizational trust theory
+27:30 is because very often when people say
+27:32 trust they mean interpersonal Trust
+27:34 basically I trust you as a person but in
+27:37 organizational trust it's uh
+27:40 different agents basically organizations
+27:42 interacting with each other all of them
+27:45 have people inside so you can go to this
+27:48 personal trust level but that's not what
+27:50 I did so that's why I say organizational
+27:52 uh trust
+27:54 um
+27:55 as a term and what I used was the
+27:59 ability benevolence and integrity
+28:02 framework
+28:04 I called it Avi so basically there are
+28:08 different layers of trust and there is
+28:10 this more technical trust ability so in
+28:14 the context of software that's I believe
+28:17 that this software will work so
+28:19 um let's do
+28:22 of I I think let's let's do an example
+28:25 of Microsoft conference because I think
+28:27 uh everybody is familiar uh with that a
+28:30 little bit so the technical trust is I
+28:33 do know that this software allows me to
+28:35 do what I need like writing or um
+28:37 PowerPoints or or emails or something
+28:41 like that and then there is uh in a long
+28:45 term uh relationship between two
+28:47 companies or between a company and a
+28:50 person their uh
+28:52 are this more relationship-based
+28:54 elements benevolence and uh integrity
+28:57 and this is where um
+29:00 it goes into a more interesting for me
+29:03 direction so with Integrity is
+29:07 um
+29:08 it goes more into this uh
+29:11 I know that they will be there for me if
+29:13 something goes wrong direction and with
+29:16 benevolence uh is this long-term
+29:20 support uh delivery basically so
+29:25 Integrity happens after you sign the
+29:27 contractor you don't really know what's
+29:29 going on but then somebody talks to you
+29:31 and they assure you that it's going to
+29:34 be all right and benevolence is more
+29:36 like the actual support that you see
+29:37 over time and
+29:40 um why it was interesting for me uh for
+29:43 the relationship between two companies
+29:44 is before
+29:46 before that you could just like
+29:49 and again switching more to people
+29:51 because I think it's more understandable
+29:53 with people but uh yeah so imagine you
+29:56 bought a Microsoft
+29:58 City disk I still had City discs when I
+30:01 was in school so uh basically you have
+30:04 this CD desk forever and that's
+30:07 basically what you know is working and
+30:10 until you have a completely incompatible
+30:13 system it is going to work but um let's
+30:17 say you buy it now you buy it now and it
+30:19 works for some for some time and then
+30:22 um you have a question or there is a
+30:25 feature that you bought it because of
+30:26 and uh it's not delivered and you open
+30:30 support tickets and you go to the
+30:32 Community website you answer you ask
+30:34 questions they maybe don't get answered
+30:37 so
+30:38 there is a whole lot different of the
+30:42 relationship in the subscription context
+30:44 uh compared to this I'd have this one
+30:47 city disc and nothing goes wrong until
+30:50 um
+30:51 until the system gets so updated
+30:54 there's no way to get support right
+30:57 there was no way
+30:58 um I mean there was definitely a way to
+31:01 get support but I think it was not as
+31:03 prominent uh in the relationship so with
+31:06 the subscriptions uh it's actually I
+31:09 think after I started researching it I
+31:12 realized that it's actually kind of
+31:13 growing everywhere anything that you
+31:15 have as a subscription is it can kind of
+31:18 trust it to go for a long time but if it
+31:21 accidentally breaks or if something
+31:22 happens then you actually will go to the
+31:25 company and
+31:27 um
+31:28 and ask for help and this is why it's
+31:31 it's just so so much more relevant
+31:33 nowadays
+31:35 and what about the price because for me
+31:37 one of the big drivers for me to change
+31:41 my essay like let's say I use some
+31:44 product some internet company
+31:47 and then yeah they decide to increase
+31:50 the price and then I think okay what are
+31:53 the Alternatives that might be cheaper
+31:55 and then I do research I find a cheaper
+31:57 alternately different than I switch
+31:59 does price have anything to do with
+32:01 trust or maybe it's like a separate
+32:03 thing
+32:05 um I think uh this is actually this is
+32:07 not something that I personally
+32:09 researched but I think um also looking
+32:13 at just the consumer so again
+32:16 outside of the companies a relationship
+32:19 because there there are contracts and
+32:20 there is a lot more governing this so um
+32:23 uh with a regular end users like let's
+32:28 say I have Spotify and then they
+32:30 increase the price I think uh this is uh
+32:34 this is definitely a mechanism that uh
+32:37 goes to this ability again so kind of to
+32:40 the to the level before trust and
+32:44 um this is a place where it's it's
+32:46 actually also harder sometimes to
+32:47 justify the relevance of this
+32:49 relationship because it can be broken
+32:51 because of some other things so uh let's
+32:54 say uh I use Spotify and then at some
+32:57 point they just don't have the songs
+32:58 that I like anymore so this is again
+32:59 like this uh this ground uh reason for
+33:03 why I use this and it's not exactly the
+33:06 um
+33:07 will it be ability like your
+33:09 expectations yeah software to be able to
+33:12 give you the songs you like but then all
+33:14 of a sudden they don't have the songs
+33:15 you like so they kind of violate your
+33:17 trust to be able to provide you with
+33:21 these songs
+33:26 and that I read ability was always the
+33:30 most important and or most significant
+33:32 element of trust so basically
+33:35 um
+33:36 how it goes his ability is mostly
+33:39 consistent uh over the relationship so
+33:41 you can't imagine if
+33:43 Spotify doesn't have the songs that I
+33:45 like anymore then uh even if they're a
+33:48 nice provider even if they support me so
+33:50 much I would probably not
+33:55 uh not continue using the service uh
+33:58 hypothetically they have a lot of songs
+33:59 that I like this
+34:02 um
+34:03 maybe the question the example with
+34:06 price could be related to Integrity kind
+34:09 you kind of expect that
+34:11 like the price is this one but then all
+34:14 of a sudden they change it or maybe I
+34:16 misunderstood the framework but could it
+34:17 be related to Integrity or it's more
+34:19 like something else
+34:21 [Music]
+34:27 and what I mentioned before over the
+34:30 contracts it's actually you signed a
+34:32 contract and there is like the agreement
+34:33 between you and the company that there
+34:36 are specific regulations about the price
+34:38 change so it's actually hard to answer
+34:40 this one without knowing how the
+34:42 agreement looks like and
+34:44 unfortunately not the expert on uh on
+34:48 contracts in this how many people
+34:51 actually read these agreements before
+34:54 starting Business Services
+34:56 I try to but I always ask myself
+35:01 well would you use the service if uh
+35:04 like what should be in the agreement for
+35:06 me to not use the service and then when
+35:08 I realize it's not that much then I just
+35:10 kept but I actually try to be conscious
+35:14 about that because there are many things
+35:18 and then how is it related to
+35:20 explainable AI because I guess this
+35:22 framework you use this framework of
+35:25 organizational trust to somehow
+35:30 create features maybe for your model or
+35:32 somehow guys
+35:35 your projects but then there is another
+35:38 component which is this explainable AI
+35:40 That's how are these two connected
+35:42 so I think uh this is also maybe one of
+35:47 the arguments or one of the ways how I
+35:49 turned to research more on the in the
+35:53 explainability direction
+35:55 um only on the one hand uh I think in
+35:57 social sciences it's very it's very
+35:59 common that you have the pictures and
+36:01 variables uh however if you like to call
+36:03 them and then
+36:05 um you try to understand how are they
+36:07 connected to the outcome variable
+36:09 um in a way and uh in the industry it's
+36:13 very often they're just modeling and
+36:15 being accurate but not about building a
+36:17 theory and trying to show how it works
+36:20 in detail so uh when I was starting I
+36:25 was actually I was overwhelmed a little
+36:27 bit by the research on churn that exists
+36:30 so I tried a lot of neural networks and
+36:32 I was actually disappointed a little bit
+36:35 because on tabular data they were not
+36:38 exactly performing uh perfectly to
+36:43 maybe understate this they were not
+36:46 performing at all and then I turned to
+36:49 the more black box models random Forest
+36:51 actually boost some of the things that
+36:53 are more classic and then I started
+36:55 understanding that it's actually you
+36:57 have the feature importances of course
+36:58 but going into this uh
+37:02 understanding of how the teachers
+37:05 actually contribute today always comment
+37:07 how your model works this is not exactly
+37:09 a standard
+37:12 element of data science and um or the
+37:15 standard element of the Black Box models
+37:17 so what I uh what actually loved is that
+37:21 I realized that sometimes the
+37:23 stakeholders can feel the same way so
+37:26 there was also demands that the model
+37:29 that I'm building should be more than
+37:30 just a score because the score doesn't
+37:33 really always tell you a story so I
+37:36 realized that on one hand it's something
+37:39 that I have in me trying to explain with
+37:42 uh with a model but also knowing how it
+37:44 works but then also that
+37:47 this accuracy driven or area under curve
+37:50 driven whatever metric you have uh
+37:52 because for me it was a classification
+37:54 so these two uh come in place
+37:57 um
+37:58 this uh is sometimes not enough for the
+38:02 end users and that's also what I what I
+38:04 realized during my PhD project that
+38:07 um actually with the social science
+38:09 background I'm able to communicate and
+38:12 this explaining actually helps to
+38:14 communicate models
+38:16 in in many ways so this is how I ended
+38:20 up researching in 2019 everything around
+38:23 chat values and lime and all of the
+38:25 things that seemed so for groundbreaking
+38:27 at the point and now everybody uses
+38:30 those so
+38:31 um I think it was actually very exciting
+38:33 for me to understand that the entire
+38:36 data science
+38:38 communities growing into the direction
+38:41 that feels so natural for me so that was
+38:43 that is very very inspiring and a very
+38:46 good moment
+38:48 and then of course that's that's what I
+38:50 used
+38:50 the dissertation as well
+38:53 and in Practical terms
+38:55 um so for you it was about discovering
+38:58 the connection between I don't know
+39:00 maybe you had different groups of
+39:02 features like features related to
+39:03 Ability features related to benevolence
+39:05 features related to integrity and then
+39:08 you used tools like shop values and lime
+39:11 to determine how exactly these features
+39:13 connect to the outcome and if a
+39:14 stakeholder asks you hey why for this
+39:17 user this core is 0.9 you say ah because
+39:20 like they think that our ability is not
+39:22 really good right
+39:25 what's up yeah I think it's a there is
+39:29 also a post uh on LinkedIn where I show
+39:32 a more public uh display of uh What uh
+39:36 came out of my PhD so that's the level
+39:39 where I can stay at uh on this public
+39:43 thing yeah I think um
+39:46 for the end users uh I basically show uh
+39:49 several components of uh of how the
+39:52 outcome is modeled and it's um
+39:56 actually very important uh and that's
+39:59 also something that I learned uh over
+40:02 the years of trying to explain models is
+40:04 that sometimes it also has to be
+40:06 actionable so Integrity per se is for
+40:10 example an interesting uh an interesting
+40:12 thing to to discuss or to research but
+40:17 uh
+40:18 telling the end user Integrity is the
+40:22 reason for this and that is not exactly
+40:24 actionable so they don't know what
+40:25 Integrity is they don't have any any
+40:27 options to
+40:29 um to connect to this so I also realized
+40:32 that uh
+40:34 actionability is a very important
+40:36 element during this and if you look for
+40:39 example at the upcoming there is the
+40:42 First World xai Conference coming up in
+40:45 July and very excited about uh going
+40:47 there
+40:49 um there there is definitely a group of
+40:51 sessions on uh actionable explainable
+40:54 machine learning so you can also see
+40:56 that actionability is very uh a very
+40:59 prominent Trend currently in in the
+41:01 research
+41:04 what does it mean actionable uh did you
+41:09 say actionable interpretable with ai
+41:11 actionable explainable ai what is it
+41:13 yeah so it may be a comment on
+41:16 explainable and interpretable
+41:18 interpretable is basically more for me a
+41:21 technical term so my model is a logistic
+41:23 regression I can fully see through that
+41:26 um
+41:27 there was another podcast uh I think a
+41:31 couple months ago on data talks Club
+41:33 about uh explainable machine learning
+41:35 and there you mentioned the glass box
+41:37 models so that's that's that
+41:40 um
+41:41 and explainable is more this user-facing
+41:45 so are you able to to explain your
+41:48 models and
+41:51 I have a metaphor for this uh somehow I
+41:54 got obsessed with cats this year with
+41:57 cat like gifts and so on and there are
+42:00 many there are many gifts with like cats
+42:02 getting out of the boxes and uh being
+42:05 curious so for me explainably I is all
+42:08 about this curious cats who think about
+42:09 to whom are you explaining and who would
+42:12 be uh jumping out of the box to ask you
+42:15 more questions so that's that's kind of
+42:17 the explained it and interoperables
+42:19 obviously um an element or an attribute
+42:22 of the model
+42:24 um yeah and actionable is more like if
+42:27 you have already mentioned this cat in a
+42:30 box so can the cat do something with
+42:32 what you what you explain or is it just
+42:35 the Curiosity it's actionable machine
+42:37 learning and then we have interpretable
+42:40 and explainable so they are kind of
+42:42 different
+42:43 characteristics of a model same model
+42:46 can be interpretable a model can be
+42:47 explainable and the model can be
+42:49 actionable
+42:50 yeah and it's super actionable I think
+42:53 the way it is used for example within
+42:56 the conference uh that I that I
+42:58 mentioned it's a actionable explainable
+43:00 so you not only explain but you also
+43:03 give some insights into what actions can
+43:06 the end users take based on based on the
+43:09 model
+43:09 which is quite important right so if our
+43:11 model gives us a score a churn score of
+43:14 0.9 for us it's like okay what do we do
+43:17 now with this like doesn't mean we need
+43:19 to send them a promotion to try to keep
+43:21 them
+43:22 um I don't know our users or we need to
+43:24 do something else and so this is a part
+43:27 of actionability Plus explainability
+43:30 yeah so it's it's also something that's
+43:33 not relevant in in all cases I think
+43:35 explainable machine learning I'm always
+43:37 arguing in favor of that because uh it
+43:40 helps you as an end user it also helps
+43:42 you as a data scientist uh it has many
+43:45 many positive sites to it but uh
+43:48 actionable I think is as very often
+43:51 um maybe an attribute of actually
+43:53 something where you know the end users
+43:56 want to do actions based on that so
+43:57 maybe also more thinking of decision
+44:00 making
+44:01 then you mentioned this term glass box
+44:04 model so I guess this is uh the opposite
+44:07 for the blacks box Black Box exactly
+44:11 we have like random Forest which could
+44:13 be a black Black Box model rather than
+44:15 glass box model would be you know
+44:18 logistic regression right
+44:20 exactly yeah and then would random
+44:23 Forest plus shop values be a glass box
+44:26 model or black box
+44:30 so um
+44:31 maybe I will mention a couple uh a
+44:34 couple models that are
+44:36 more complex glass box models before
+44:39 that so what I'm what I'm mostly excited
+44:42 about in the research now are
+44:45 um
+44:46 generalized additive models and neural
+44:49 network based models that are basically
+44:53 additives and neural additive models or
+44:55 neural basis models
+44:57 um are very exciting examples of all of
+45:01 those and
+45:03 I have been in the past weeks and months
+45:06 looking at how they compare to random
+45:09 forest and chat and I think what I don't
+45:11 know yet is what is the Baseline because
+45:13 basically in the end we have a way that
+45:15 in neural network would model something
+45:17 we have a boy have a random forest with
+45:19 chat with model something but
+45:22 um
+45:23 what is what is the ground truth and
+45:26 very often we don't know and with random
+45:29 forest and chap for example the sharp
+45:32 values only try to approximate so they
+45:34 never really tell you like this is a
+45:36 hundred percent how the model Works in
+45:38 every situation so you still don't get
+45:40 this kind of a real see-through glass
+45:43 box glass box filling of it but it's
+45:46 still more than just the black box so
+45:48 um
+45:49 I do see that uh it's definitely not a
+45:52 glass box model but maybe like
+45:56 interpretable
+45:59 yeah I think it's
+46:01 not interpretable per se because it's
+46:03 it's not exactly a hundred percent uh
+46:08 the model itself that gives you the
+46:10 outcome or the the Enterprise
+46:13 so interpretability it has to be a glass
+46:16 box model then uh like a logistics okay
+46:21 or yes I think
+46:24 uh there are different ways to put it so
+46:26 basically I think every person in the in
+46:29 the field has maybe a slightly different
+46:31 definition of interpretability
+46:33 um I think that
+46:35 but linear models are usually
+46:37 interpretable exactly
+46:40 right yeah I think with a random Forest
+46:43 I think technically go into all of the
+46:47 trees and like learn it all but uh
+46:50 sometimes your brain just doesn't have
+46:52 the capacity to to do that so that's
+46:54 where interpretability breaks and
+46:58 um there's also a terrific
+46:59 explainability or a recent research that
+47:02 I mentioned that I like a lot it's
+47:05 actually so with explain bilichi you
+47:07 would say I have a random forest and
+47:09 Chap and for each feature I know what
+47:12 the contribution to the outcome is so
+47:13 that's explainable but in fact when you
+47:16 add a person to this uh sometimes it's
+47:19 completely not explainable because maybe
+47:21 your features are named in a way that
+47:23 nobody can read it or maybe they're just
+47:26 so not understandable
+47:28 um that no human can can know what this
+47:31 means I think this is more commonly
+47:33 applied for computer vision or text
+47:35 where it's like this pixel is gray this
+47:39 is why it's a cat and this is not
+47:42 exactly
+47:43 explainable how we would put it for
+47:45 humans
+47:47 stand for neural networks I think there
+47:49 are there are these techniques that show
+47:51 activation regions like that show like
+47:53 you have a picture and then it shows
+47:55 like highlights the area around the ears
+47:57 highlights the area around the nose or
+48:00 like around the areas of the picture
+48:03 that shows that this is a cat and this
+48:06 this is Art this is these are the areas
+48:09 where the neural network is activated
+48:11 that's why we think this is ahead
+48:13 and this would be an example of
+48:16 explainable
+48:18 machine learning yeah I think very often
+48:21 so I'm not an expert in computer vision
+48:23 I'm more a tabular data person uh but
+48:25 for for me when this kind of activation
+48:28 labs are displayed this is definitely an
+48:31 element that makes it explainable
+48:32 because uh of course there is much more
+48:36 in the background that is calculated to
+48:38 just display that but this display helps
+48:42 to communicate it to uh to humans
+48:46 so if I just want to summarize what you
+48:49 said turn this to make sure I understood
+48:51 so interpretable and interpretable
+48:54 machine learning model should be a glass
+48:56 box model so it should be something like
+48:58 logistic regression linear regression
+49:00 generative
+49:02 generalized additive model at this sort
+49:05 of model that you can look at the
+49:07 coefficients that the model learned and
+49:09 then you kind of can make sense of this
+49:11 right on the unexplainable ml
+49:14 model can be a black box model but there
+49:18 could be a method that helps us
+49:19 understand the output and then yeah we
+49:22 can explain why there was this
+49:24 prediction
+49:26 and then external ml model would be a
+49:28 model that
+49:29 like there is a score and then we know
+49:31 what to do what kind of action what kind
+49:33 of decision to take based on this score
+49:36 right yeah exactly then there is a
+49:39 question from satyajit and the question
+49:42 is
+49:43 is an interpretable ml model
+49:46 necessarily explainable as well or
+49:48 they're like it's not always does it
+49:51 follow from being interpretable that the
+49:54 model is also explainable
+49:56 so for me does not and if you're
+49:59 interested there is a very nice paper
+50:01 maybe we can link it in the notes for
+50:04 the episode later on
+50:06 um there is a paper about explainable
+50:08 feature spaces uh it's it's from a
+50:11 research group at MIT and they are
+50:13 looking into different uh basically
+50:16 different curious cats uh if you put it
+50:19 in my words so to whom do you explain
+50:21 your model and um it actually has a very
+50:25 nice visualization of uh of how
+50:29 different explanations May matter for
+50:31 different groups so if you're talking to
+50:33 data scientists for them an
+50:34 interpretable model is probably
+50:36 explainable because your end user cares
+50:39 about individual features and they know
+50:40 what the features are and they are also
+50:42 very technically skilled to actually
+50:45 also understand everything that the
+50:47 coefficients mean if you're looking more
+50:50 in the area of ethics for example you
+50:53 have a very different backgrounds there
+50:56 so for some people they act actually
+50:58 want very different explanations for
+51:00 your model than this kind of strictly
+51:03 technical outcome of the interpretable
+51:04 model it is a logistic regression you
+51:07 can get very
+51:09 very confusing features uh in and
+51:12 therefore very confusing outcomes and
+51:14 then the closer to the end users or to
+51:16 decision makers to get the more
+51:19 explainable your feature space must be
+51:21 so uh it's not enough to just label your
+51:24 features one two three four five and
+51:27 then put it uh basically to a decision
+51:30 maker and then tell them well five is
+51:32 one therefore it's 0.9 uh this is uh
+51:37 technically interpretable not at all
+51:40 explainable not not at all
+51:42 understandable
+51:43 okay so what is explainable for a data
+51:46 scientist is not necessarily explainable
+51:48 for a marketing person right
+51:51 exactly
+51:54 yeah
+51:56 maybe it's uh true right so from
+52:01 interpretability
+52:03 explainability follows right but for the
+52:05 rest of the world maybe it's not
+52:07 yeah
+52:10 my my logic is always like think about
+52:12 who you are trying to explain to and
+52:15 your explainability is is always based
+52:19 on your on your audience
+52:21 then there is a question about trust but
+52:23 I think it's a different sort of trust
+52:24 not the one we talked about organization
+52:26 okay but maybe it is so you will
+52:29 probably tell us so do you think that
+52:32 explainable AI models can bring trust
+52:34 among customers or different
+52:36 stakeholders
+52:37 yeah so this is a research Direction
+52:40 that's very common now uh I think also
+52:43 in computational social science in AI
+52:45 research that focuses on how people
+52:47 interact with machine learning not the
+52:49 trust that I focused on uh I think
+52:53 um so in the neural basis uh model and
+52:56 this first
+52:58 sparse polynomial additive model they
+53:01 actually test like how comfortable the
+53:03 end users feel when they um when they
+53:07 see the the explanations and I think
+53:09 that's that's something that gets more
+53:11 and more uh prominent now you also see
+53:13 it in the sharp papers that people test
+53:16 can people really understand it and
+53:19 researchers want to know does it really
+53:22 um does it really get uh
+53:24 nice feedback from
+53:26 um from the humans interpreting the
+53:28 models so I think explaining is really
+53:31 really helps also for uh to maybe
+53:35 domestify a little bit this
+53:38 machine learning uh phenomenon where
+53:41 people might think that it's just like
+53:43 press a button and then you have
+53:44 something and you will never know
+53:46 because the machine is smarter than you
+53:48 I think the machine is not smarter than
+53:50 you and very often humans
+53:53 and end users have information that the
+53:56 machine doesn't have so it's actually
+54:00 helping to build trust in my opinion but
+54:02 also what it helps to build is uh this
+54:06 power of people knowing what the machine
+54:09 learns and then adding something on top
+54:12 of this to um
+54:14 to get the best the best outcome and I
+54:18 think
+54:18 it's very interesting that for large
+54:20 language models for example also I'm not
+54:22 an expert but for large language models
+54:25 now there is an increase in demand of
+54:27 where does the information come from is
+54:29 it something that the model learned can
+54:31 you point to document where this comes
+54:33 from so it's um
+54:35 it gives you a more a more grounded
+54:38 interaction between between the model
+54:41 and the end user
+54:42 because you want to know if the model
+54:43 just hallucinated and came up with this
+54:46 out of nowhere or there is actually a
+54:47 document where this is described right
+54:50 yeah so uh with tabular data and a
+54:55 simpler Black Box models they do not
+54:58 hallucinate in this way but large
+55:01 language models it just gets more
+55:03 prominent that
+55:05 um you really you really want to make
+55:08 sure
+55:09 that it's not a hallucination
+55:11 do you have a couple of uh more minutes
+55:14 I do yeah because it is a very
+55:18 interesting question and I see that we
+55:20 run a lot of time but I want to ask
+55:22 these questions so this question is from
+55:24 Adonis and then Adonis is asking is
+55:27 there a way to track organizational
+55:28 trust is there any kpi or metric related
+55:31 to that because I was thinking so when
+55:33 you were describing that okay we have
+55:34 disability benevolence integrity and
+55:38 then we also have this framework from
+55:40 interpretable or explainable machine
+55:42 learning
+55:44 so we kind of can link
+55:46 all the predictions because we want to
+55:48 we understand that okay like these
+55:51 features are related to ability and we
+55:52 see that more and more maybe users
+55:55 churn because of that
+55:57 it would make a great metric that people
+56:00 from executive like from Top management
+56:03 would really understand like do you see
+56:05 this happening in practice
+56:09 so uh I think what I must say here is uh
+56:15 trust is incredibly difficult to measure
+56:18 so what you have is basically a lot of
+56:23 proxy variables a lot of variables Alexa
+56:25 as you said Associated related to trust
+56:29 but you can never say it's a hundred
+56:31 percent something that captures tests
+56:34 and because it's so hard to catch it's
+56:39 also I think it's impossible to make it
+56:41 a kpi because in a way it's just
+56:46 you can have measurement errors you
+56:48 never know what's really happening
+56:50 between the people because organizations
+56:52 as I said are actually people so there
+56:55 is a lot of things that uh you would not
+56:57 want to track also
+57:00 compliance gdpr a lot of laws and just
+57:06 not ethical to track uh to check this on
+57:09 a level where
+57:11 give a try to observe it so I think
+57:14 overall I would say it's impossible to
+57:18 to really make it a very well measured
+57:20 kpi and when it's not well measured then
+57:23 probably it shouldn't be kpi that's
+57:25 that's my point
+57:27 on another good proxies that at least
+57:30 will give you some indication that okay
+57:32 we're losing customers because our
+57:34 integrity is not good
+57:38 uh
+57:44 uh it's perspectives on who the
+57:46 customers are so I talked about uh
+57:49 Microsoft Office customers and Supply
+57:52 customers of course you cannot uh you
+57:55 cannot murder it in the same way for
+57:56 example for these two products so it's
+57:58 very different and
+58:00 um
+58:01 I think uh so one of the learnings from
+58:04 my PhD was that there is a lot of
+58:07 research in also marketing and
+58:09 relationship studies between companies
+58:12 that show that it's important and it's
+58:14 important to show that yes it is in fact
+58:16 true there is a role that uh trust plays
+58:20 in the relationship but I think
+58:23 um
+58:25 it's
+58:26 it's so hard to measure and it's so
+58:28 specific that
+58:30 um
+58:31 I like that it is a research project for
+58:34 me but
+58:35 [Music]
+58:35 um
+58:36 yeah maybe maybe not exactly against kPa
+58:40 for companies and then we talk about the
+58:43 fact that ability to making a great
+58:45 product is actually more important than
+58:49 um
+58:52 I think we have the response or the
+58:54 answer to that so yeah we're building
+58:56 great products would be would be a
+58:58 priority anyways
+59:00 I guess it is a good idea for another
+59:03 research project right
+59:05 because I can imagine that this could be
+59:07 useful for or at least I think now who
+59:10 knows what it's what the reality is but
+59:13 I can imagine that for executives it
+59:14 could be useful to see okay we're losing
+59:17 customers because of that thing let's
+59:19 see how we can improve that thing
+59:21 but as you said like if you focus on
+59:23 ability Maybe
+59:24 like other things before
+59:27 yeah and I think
+59:29 um
+59:29 I think there are many
+59:31 um there are many people researching
+59:33 children in many different ways there
+59:36 are a lot of a lot of ways how to how to
+59:38 look at that
+59:40 okay I think we should be wrapping up
+59:42 thanks a lot Paulina for joining us
+59:44 today for sharing your experience with
+59:46 us for telling us about your experience
+59:49 doing a PhD and your work and thanks
+59:52 everyone for joining us today too and
+59:55 watching us asking questions
+59:57 and yeah have a great week everyone
+1:00:01 thank you so much
+1:00:03 bye
+1:00:06 bye

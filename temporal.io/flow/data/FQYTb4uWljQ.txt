@@ -1,0 +1,1996 @@
+Feature Stores: Cutting through the Hype
+
+0:01 um hello everyone
+0:03 this event is brought to you by data
+0:04 talks club which is a community
+0:06 of people who love data we host two
+0:09 types of events
+0:10 so you on tuesdays we usually have
+0:13 technical events with presentation like
+0:16 a workshop
+0:18 today is tuesday but this event is
+0:20 different and
+0:21 i'll tell you in a moment but i can
+0:24 briefly tell you about our plans for the
+0:26 future
+0:27 so next month on february we will have a
+0:30 conference
+0:30 on fridays i'll talk about that in a
+0:33 moment as well
+0:35 but i can already tell you what will
+0:36 happen in march so in the first week of
+0:39 march we will
+0:40 have a workshop about building scalable
+0:43 end-to-end data pipeline
+0:44 a deep learning pipeline in the cloud
+0:47 and then the week after web that we will
+0:49 talk about
+0:49 active learning and self-supervised
+0:51 learning
+0:53 then usually on fridays we are talking
+0:56 we have
+0:56 uh sort of a live podcast session where
+0:59 we talk about
+1:00 different topics and today even though
+1:03 it's not
+1:04 a friday we have a similar sort of event
+1:07 so this is not a workshop it's just a
+1:08 conversation
+1:10 we'll talk about feature stores and then
+1:12 in march
+1:14 we will talk about public speaking on
+1:16 the first week of march and then we will
+1:17 talk about datums
+1:20 and speaking of conference this week we
+1:24 have the first day of the conference on
+1:27 friday we'll talk about machine learning
+1:29 use cases
+1:30 we will have four use cases we will talk
+1:33 about reinforcement learning we will
+1:35 talk about
+1:38 consuming food industry we will talk
+1:40 about healthcare
+1:41 and we will talk about uh using machine
+1:44 learning in manufacturing
+1:46 then next week we'll talk about products
+1:48 and processes then we'll talk about
+1:50 career in data
+1:51 and then finally on the last week of
+1:53 february we will talk about machinery
+1:55 and production
+1:57 you can read more about this event on
+1:59 our website datatalks.club
+2:02 and we have our friends
+2:05 from o'reilly and machine learning ops
+2:08 community
+2:09 who support us and today
+2:12 during our chat with willem we will use
+2:16 slido
+2:17 for questions and i'll just share a link
+2:20 with you now
+2:21 so at every time every time you have a
+2:23 question
+2:24 just feel free to to use slider for
+2:28 asking that question
+2:30 so let me just share it in chat
+2:36 okay and
+2:42 just
+2:46 yeah so um last week
+2:49 we talked about emelops and one of the
+2:52 topics we covered there
+2:54 was ml platforms machine learning
+2:56 platforms
+2:57 and we talked uh about these platforms
+3:00 that there are multiple components and
+3:01 one of the components of
+3:03 a machine learning platform is a feature
+3:06 store
+3:06 and this will week we'll talk about this
+3:09 topic in more details
+3:10 with vlam william is the creator of fist
+3:14 which is an open source feature store
+3:16 and previously william worked at
+3:18 gojek where he led the data science
+3:20 platform team
+3:21 and now he works at tecton company that
+3:23 develops a feature store
+3:24 welcome thanks alexia thanks for having
+3:28 me
+3:29 yeah it's a it's my pleasure um so
+3:31 before we go into our main topic of
+3:33 feature store
+3:34 um can you tell us a bit more about your
+3:36 background
+3:37 well what what is your um
+3:40 how was your journey so far sure i'll
+3:43 give you
+3:43 like the just one minute or two minute
+3:45 summary um
+3:47 so i'm a south african i um kind of grew
+3:50 up there in south africa
+3:51 studied mechatronic engineering um after
+3:54 graduating
+3:55 or during my university studies i built
+3:57 a company
+3:58 networking company and eventually sold
+4:01 that
+4:02 went into kind of control systems
+4:04 automation
+4:05 kind of the engineering side of
+4:09 the cross between engineering
+4:10 traditional engineering and software
+4:13 worked in that industry for about three
+4:16 years and then
+4:17 moved over to asia where i continued to
+4:19 work up and down the stack all the way
+4:21 from like low-level
+4:22 electrical and electronic devices up
+4:24 into the cloud
+4:26 and we built a lot of like vertically
+4:28 integrated solutions for
+4:29 large um mncs and
+4:33 eventually kind of gravitated towards
+4:35 like large data solutions
+4:38 um kind of analytical warehousing
+4:42 and did that for about two years and
+4:44 then moved over
+4:45 to singapore where i was the first
+4:48 engineering hire
+4:49 for a machine learning
+4:52 well it was at the time it was a data
+4:54 science team that they were staffing
+4:56 so gojek kind of
+5:00 you know i think it was like a unicorn
+5:01 at that stage was about a billion
+5:03 dollars in
+5:04 valuation and they knew they had a lot
+5:07 of
+5:08 like interesting products and a lot of
+5:09 interesting data but they were not doing
+5:11 anything with it and so they thought
+5:12 okay well
+5:12 everybody's talking about data
+5:13 scientists data scientists let's just
+5:15 hire a bunch of data scientists and
+5:16 solve
+5:17 you know some of our kind of like
+5:18 improve our products and
+5:20 um bottom line somehow so they heard a
+5:23 bunch of data sciences but they couldn't
+5:24 get into production and so they
+5:26 embedded us as engineers and they
+5:29 asked me to lead that team to kind of
+5:32 help them productionize
+5:33 their work because traditional product
+5:36 engineers in the company
+5:37 had a lot of other things going on and
+5:39 so they couldn't deal with that
+5:41 and so that's what i did for about four
+5:42 years and after that
+5:44 um you know leading that and building a
+5:46 ml platform there and leading a team
+5:47 there
+5:48 i moved over to tecton where i am right
+5:50 now
+5:51 because a large part of what i was doing
+5:52 was just building feature stores and um
+5:55 that was like my biggest focus at kojic
+5:57 and
+5:58 that's what i'm doing right now takedown
+5:59 as well yeah that's
+6:01 that's an interesting journey so
+6:03 mechanical engineer uh
+6:05 did you learn to code at the university
+6:09 oh so this mechatronic step technically
+6:12 but mostly focus on the mechanical
+6:13 aspects at university so
+6:16 i'd say 70 of that was just
+6:19 things that i were not highly interested
+6:20 in and the software aspect was always
+6:22 the most interesting part to me
+6:23 yeah and the most applicable to what i'm
+6:25 doing today okay
+6:27 yeah that's that's interesting so that's
+6:29 uh
+6:30 uh like from the very low level to to
+6:33 the cloud
+6:34 like you said that's uh that's amazing
+6:36 so what are
+6:37 what are the feature stores uh like why
+6:39 why do we need them and what kind of
+6:41 problems they solve
+6:43 yes this is actually a big thing that we
+6:44 can get into today but feature stores
+6:47 basically solve multiple problems
+6:50 [Music]
+6:51 i think it depends on the feature store
+6:53 but essentially a feature store is an
+6:55 operational
+6:56 data system but and it is opinionated
+7:00 and targeted towards machine learning so
+7:02 it solves machine learning specific
+7:04 operational problems so things like how
+7:08 do you get features that are offline
+7:10 into an online production environment
+7:12 how do you ensure consistency between
+7:14 that online and offline environment
+7:15 because
+7:16 models require that consistency of data
+7:18 all right so the features that they
+7:19 trade on needs to be the same as the
+7:20 features that are served
+7:23 how do you ship features into production
+7:25 without engineers how do you allow data
+7:26 scientists to do that
+7:28 how do you kind of version control and
+7:30 allow data scientists to create
+7:32 new features so the actual
+7:35 transformation code
+7:38 how do you allow sharing and reuse this
+7:40 is one of the ways in which companies
+7:42 kind of get into building or thinking
+7:45 they need a feature store typically is
+7:47 we have all these features that are
+7:49 being duplicated across projects
+7:50 why is that a good thing that's
+7:52 definitely a bad thing so there's a
+7:54 smell there
+7:55 and then they start researching feature
+7:58 stores as a solution
+8:00 um and then the final one i'd say is how
+8:02 do you ensure
+8:03 once the system is up and running that
+8:06 only the good
+8:06 data like you know valid data gets
+8:09 served to models
+8:10 so how do you monitor features both in
+8:12 online case as well as just
+8:14 you know how do you produce statistics
+8:15 for trading data sets and how do you
+8:17 ensure that there's no drift or
+8:18 distribution shifts
+8:19 concept drift over time
+8:23 okay so basically this is uh like
+8:26 data storage that has this nice
+8:28 properties of
+8:29 ensuring consistency being friendly to
+8:32 data scientists
+8:33 having version control and
+8:37 making it easy to use features right so
+8:40 when we have
+8:40 say project a and project b both might
+8:43 use the same features right
+8:45 and right so so those are some of the
+8:48 problems that i've seen feature source
+8:49 solved now
+8:50 there's going to be a big question
+8:51 around what should the feature store
+8:54 solve
+8:55 and all feature stores don't solve these
+8:57 so for example feast doesn't do
+8:59 transformations and so
+9:01 some feature stores like tekton's
+9:02 features or does allow you to do
+9:04 transformations
+9:05 the question about you know which of
+9:07 these problems should be the scope of
+9:08 the future store
+9:09 um but yeah essentially that's kind of
+9:12 those are the core core problems
+9:14 and by transformation you mean we have
+9:16 some data raw data sitting somewhere in
+9:18 our data lake
+9:20 or whatever place and then we somehow
+9:23 need to get this data
+9:25 apply some function to this data before
+9:27 it ends up in our feature store
+9:29 right yeah you'll have multiple sources
+9:31 typically a feature store is
+9:33 so there's one aspect of the feature so
+9:34 it's very important to understand is
+9:35 that it's positioned between the raw
+9:37 data and kind of like your production
+9:39 machine learning environment so
+9:41 it has access to streams that has access
+9:44 to your data warehouse has access to
+9:46 your data lake so if you're applying a
+9:48 transformation it should be able to
+9:50 act on any of those sources and then
+9:52 serve a kind of
+9:54 layer to your production environment
+9:57 that kind of decouples your
+9:58 ml from your data infra
+10:01 yeah so is it difficult for data
+10:03 scientists because as a data scientist
+10:05 i'm used to a certain way of querying
+10:07 data like i have
+10:09 sql i have uh i don't know um
+10:12 i usually sql right so i use equal to
+10:15 query data
+10:17 does it give this sql light interface a
+10:20 sql-like interface usually for data
+10:21 scientists or it's something
+10:23 different how how does it look typically
+10:26 so there's two aspects there one is the
+10:28 production creation aspect and one is
+10:29 the retrieval aspect
+10:31 so most of the types in most cases
+10:34 you're
+10:34 pre-computing features right so there's
+10:37 typically in a
+10:38 feature store that allows for
+10:39 transformations like the techdon one it
+10:42 provides a kind of pi spark or
+10:45 python based transformations or provide
+10:48 sql transformations and then you publish
+10:50 those
+10:50 they could materialize or pre-compute
+10:52 those features and then persist them in
+10:54 some kind of storage engine like dynamo
+10:56 radius et cetera and then there's a
+10:58 retrieval interface at the retrieval
+11:00 time you normally have an api you don't
+11:02 have
+11:02 sql it would kind of defeat the purpose
+11:05 to just provide a sql interface there
+11:07 because then
+11:08 um you can't have the same guarantees in
+11:11 terms of performance and production
+11:12 and most online models only require a
+11:15 kind of
+11:16 key value enrichment of entity data they
+11:18 don't require it's like tabular data
+11:20 essentially
+11:21 they don't require arbitrary queries to
+11:23 be executed
+11:25 now that being said uh which the tecton
+11:28 features or in some feature stores do
+11:29 provide
+11:30 on-demand or kind of real-time
+11:31 transformations so in some cases
+11:34 some of the data comes from the incoming
+11:35 request so let's say if a fraud
+11:37 detection system a request comes in
+11:39 you want to act on live data that's
+11:42 attached to that
+11:43 metadata attached to that that order or
+11:45 booking and so those features are
+11:47 transformed at request time but for the
+11:49 most part it's pre-computed
+11:52 and that's the only place that you'd
+11:53 have kind of arbitrary logic
+11:55 in most cases yeah okay yeah
+11:59 you mentioned this fraud detection so i
+12:02 i imagine a scenario like when a user
+12:06 goes to some like let's say amazon or
+12:08 whatever e-commerce store
+12:10 and buy something right so we have some
+12:12 information about the user
+12:14 and then uh let's say when there is a
+12:17 transaction we want to predict if this
+12:18 transaction is fraudulent or not
+12:20 fraudulent
+12:21 uh then at the moment uh if like when
+12:23 transaction
+12:24 happens we talk to our model
+12:27 right we we say okay this user with this
+12:29 id
+12:30 is trying to make a transaction with
+12:33 this and this and this item on this
+12:35 amount of money so we have the id
+12:37 of the user right and this is what we
+12:39 ask the feature store
+12:40 hey what are the feature for user with
+12:42 this id give it
+12:43 to me right this is how it works that's
+12:46 correct yes
+12:47 okay okay and
+12:50 this topic of feature stores is quite
+12:53 hot these days
+12:54 um i i'm also a part of the malops
+12:56 community and
+12:58 every day somebody is talking about
+13:00 future stores there
+13:01 well at least every other day and it
+13:04 seems very
+13:05 popular right so do you know why why
+13:07 it's so popular
+13:08 why is there such
+13:12 there is this hype around future stores
+13:14 i mean i have my theories but uh it's
+13:17 definitely interesting to sit back and
+13:19 just observe right
+13:20 just the amount of hype is just it's not
+13:23 just feature stores that same all apps
+13:25 in general
+13:26 i think uh ml has have has had a lot of
+13:30 hype
+13:30 and i'm trying just you know reflecting
+13:34 on that a little bit but there's a lot
+13:35 of competition in the space right i
+13:37 guess in terms of employment and
+13:39 marketability and skills and it's kind
+13:41 of like the node.js hype and the iet
+13:43 hype
+13:45 i think a large part of it is driven by
+13:48 you can't like a rebranding of your
+13:50 skill set and so
+13:52 people are incentivized to become kind
+13:54 of niche experts in new fields and
+13:56 i think that's a small part of it but
+13:59 feature stores and ml ops provide a lot
+14:01 of value to companies and a lot of
+14:02 companies are digitizing and
+14:05 there are a lot of organizations will be
+14:07 left behind if they don't
+14:09 implement these systems correctly and
+14:11 they've tried and failed
+14:12 in a lot of ways over the last couple of
+14:14 years i'd say from about 2015 2016
+14:16 onwards
+14:17 some companies have succeeded and
+14:20 they've succeeded because they solve
+14:22 these problems so
+14:23 like michelangelo and uber has
+14:26 you know it is a success whether or not
+14:28 uber 666 says
+14:30 so ml ops is critical if you want to
+14:33 actually
+14:34 use ml for a company scale and
+14:37 i'd say we've we've crossed that hump of
+14:40 machine learning platforms becoming
+14:42 standard right so everybody's got their
+14:45 uh whether it's queue flow or ml flow or
+14:47 seldom they've got some kind of stack
+14:49 running in
+14:49 models right but they realize that
+14:53 data is almost 90 of that equation and
+14:55 the value is coming from producing new
+14:57 features
+14:58 shipping that into production exposing
+15:00 that to models and iterating
+15:01 constantly on that it really depends on
+15:03 your use cases at your organization but
+15:06 a feature store has massive strategic
+15:08 value
+15:09 in that i mean it sits between your data
+15:13 scientists that produce the features and
+15:14 your production environment that makes
+15:16 decisions
+15:17 so there's a there's an acknowledgement
+15:19 of the value that a system like this
+15:21 could unlock
+15:22 for organizations and then if you look
+15:25 at the problems that you can potentially
+15:26 solve that all this reuse and waste
+15:28 and um so the idea behind
+15:32 you know solving the problems in that
+15:34 area
+15:35 uh is kind of profound whether or not
+15:38 features solve the problem is a
+15:39 different matter but
+15:40 there's a definite potential to you know
+15:43 have massive business impact with
+15:45 feature source
+15:47 so what you're saying is there is hype
+15:50 indeed
+15:50 for ml ops and feature store but this
+15:53 hype is uh
+15:54 warranted right so this uh there are
+15:56 some problems
+15:57 and uh like
+16:00 data science machine learning
+16:02 engineering has been around for
+16:04 i don't know five to ten years right so
+16:06 the the industry is maturing
+16:08 and there are some problems that are
+16:10 difficult to solve and
+16:12 these new things like envelopes and
+16:15 future stores they help to
+16:17 to address these problems right and
+16:19 that's that's why we have this hype
+16:21 because actually
+16:22 these tools help us to address these
+16:24 problems
+16:26 yeah or 80 percent of the hype is like
+16:28 feature store
+16:29 vendors promoting their software right
+16:31 so that's okay
+16:32 par for the course um
+16:36 yeah so maybe let's take a step back and
+16:39 talk about these problems that data
+16:41 science teams usually have
+16:43 what are these problems and are these
+16:45 problems more organizational or
+16:47 technical
+16:49 yeah i think that's one of the
+16:50 interesting things that i'd love to talk
+16:51 about it's
+16:52 you know if you're at a company and you
+16:54 have problems normally the problems you
+16:56 like to talk about as an
+16:57 individual contributor are the technical
+16:58 problems right because you think the
+17:00 organizational problems are kind of
+17:02 unique to your organization but
+17:04 one of the things i learned was that a
+17:05 lot of these organizational problems are
+17:07 kind of
+17:07 you know deeply rooted in many orgs and
+17:10 they're
+17:10 common patterns that occur over and over
+17:12 again
+17:14 but yeah we can address those same
+17:15 problems with them i mean we can recap
+17:18 those
+17:18 so it's like how do you get features
+17:20 into production is the one we spoke
+17:21 about
+17:22 um we can drill into these let me just
+17:25 list them out um
+17:26 there's you know how do you online and
+17:28 offline consistency
+17:30 how do you how do you if you're shipping
+17:32 data from offline to online
+17:34 uh how do you ensure that data
+17:35 scientists can do that without engineers
+17:36 like how do you build that bridge
+17:38 um and then there's you know how do you
+17:40 allow them to data scientists create
+17:42 transformations
+17:43 how do you allow for sharing and reuse
+17:45 and how do you monitor
+17:48 you know features and data being served
+17:50 to models both offline and online
+17:52 and ensure quality data there so did you
+17:55 want to kind of drill into
+17:56 those problems and kind of discuss them
+17:58 yeah but also these are technical
+17:59 problems right
+18:00 but these are not the only problems we
+18:03 have in organization yeah
+18:04 so i can i can i can expand on those so
+18:08 um kind of shipping features into
+18:10 production
+18:11 that's you know if you want to do that
+18:12 without an engineer
+18:14 that's a kind of organizational problem
+18:16 right it's the original problem is
+18:18 engineers don't want to help me with my
+18:21 you know
+18:22 quote-unquote dumb data science project
+18:24 you know they've got their product that
+18:25 they're developing they have okrs and
+18:27 other objectives and so data scientists
+18:31 are often
+18:32 second-class citizens i've seen in a lot
+18:33 of i mean they're
+18:35 they're some of the best people but
+18:36 organizationally sometimes they're
+18:38 treated like second-class citizens in
+18:39 their
+18:40 use cases and goals or not always place
+18:43 at the front
+18:43 right but expect it to be uh like uh
+18:47 you know do the magic and you know do
+18:50 all this engineering work and make
+18:52 things happen
+18:53 i think a part of the problem is also
+18:54 data scientists
+18:56 there's not a deep understanding of you
+18:58 know the value that a data scientist can
+19:00 bring or
+19:01 ml because you know there was so much
+19:04 hype and then there a lot of failures
+19:06 occurred
+19:06 and with data science use cases failures
+19:09 are normal sometimes they don't work out
+19:11 that should be expected and so i think
+19:14 organizations are
+19:15 kind of you know placing data scientists
+19:16 sometimes into a corner and saying
+19:19 you know you're not the primary focus
+19:21 you don't drive the bottom line
+19:23 directly yet but you know that's
+19:25 changing over time okay so
+19:27 shipping features into production came
+19:28 from an organizational frustration or
+19:30 serving features online is something
+19:32 that data scientists need right if you
+19:33 want to iterate on a
+19:35 feature you need to get into production
+19:36 you need to see the results of the model
+19:38 improving running your a b test and so
+19:41 that's an organizational friction if the
+19:42 engineers can't help you with that
+19:46 sharing and reuse that's an
+19:47 organizational problem as well right so
+19:49 you've got silo teams
+19:50 they don't have communication channels
+19:52 between them they don't have
+19:53 infrastructure or way to
+19:55 you know broadcast how their features
+19:58 have been created what the intent what
+19:59 are the semantics
+20:00 what are the dependencies of the
+20:02 transformation and the data that's been
+20:04 created
+20:05 in production systems um so there's a
+20:08 kind of social aspect to
+20:09 sharing and reuse and there's a trust
+20:11 aspect and
+20:13 i'd say that that's largely it is so uh
+20:16 an organizational
+20:17 problem okay makes sense so we have
+20:20 multiple teams
+20:21 every team is doing um solving their own
+20:24 problems
+20:25 um and they are building their own
+20:27 services
+20:28 and they're you know building these
+20:30 machine learning solutions
+20:32 but at the end it turns out that there
+20:34 is certain overlap between the work that
+20:36 two teams are doing
+20:37 because they they might be using might
+20:40 be solving different problems but some
+20:41 of the features like let's say user
+20:43 based features or some
+20:44 other sort of features they're common
+20:46 right and
+20:47 but they have to implement them from
+20:49 scratch and this is an organizational
+20:51 problem
+20:52 yeah i say it's a lot of organizations
+20:56 i'd say are taking a flat approach
+20:59 to these teams and they kind of embed
+21:01 them in product teams and verticals and
+21:04 um often let's say like a fraud team and
+21:07 like a team doing analytics and user
+21:09 data have the ship they have the same
+21:10 entity data
+21:12 sorry they're like they say doing user
+21:14 types of modeling right or order and
+21:15 modeling
+21:16 the features are common and reusable
+21:19 across those teams
+21:21 but they'd say the fraud data science
+21:23 team has
+21:24 an error of secrecy because they feel
+21:26 like you know what they're working on
+21:27 shouldn't be exposed to other teams
+21:29 so those are kind of organizational
+21:30 inefficiencies right if you look at it
+21:32 from like a cdo or a cio's perspective
+21:35 it doesn't make sense for some of the
+21:37 data and you know work to be
+21:39 duplicated so that is definitely an
+21:41 organizational inefficiency that could
+21:44 solve through technology or to could
+21:45 solve through some other means
+21:47 yeah yeah and then the solution would be
+21:50 to
+21:50 in addition to these multiple teams that
+21:52 we have have some sort of central theme
+21:55 or maybe central piece of technology
+21:57 like i don't know if there should be a
+21:58 team or not
+21:59 but uh like a place like a male platform
+22:02 that is common for all the teams
+22:04 and um this feature story is a part of
+22:07 this ml
+22:07 platform right yeah that's right so at
+22:10 gojek i mean you can architect these
+22:12 different ways but there's an into an ml
+22:13 life cycle and
+22:15 at each stage of that life cycle you
+22:17 pretty much have a tool or multiple
+22:18 tools that allow you to get further down
+22:20 that road
+22:21 so it's something like data
+22:22 transformations the start
+22:24 kind of data storage model training
+22:26 models surveying
+22:27 model deployment and then kind of you
+22:30 know serving aspects and experimentation
+22:32 at the tail end
+22:33 but the feature sources and you know
+22:36 climbing the data transformation and the
+22:38 kind of data serving aspects yeah
+22:40 and then the idea is that we have this
+22:43 platform
+22:44 uh where we have all these uh features
+22:47 by features i mean these capabilities of
+22:49 a platform
+22:50 and so then basically data scientists do
+22:53 not need to rely on data engineers or
+22:55 other
+22:56 engineers who are busy doing their own
+22:58 ocrs like you said
+23:00 uh so they can basically go ahead and
+23:04 do these things especially if these
+23:06 features are already pre-computed so
+23:08 there is
+23:09 when there is we already have this
+23:11 transformation drop
+23:13 running all the time and putting the
+23:14 data into feature stores so they can
+23:16 just go
+23:17 there see what features are there
+23:21 and pull these features and train the
+23:23 model
+23:24 right yeah so you can just think of like
+23:26 a utopian
+23:27 end status you don't write any
+23:29 boilerplate you only write your
+23:30 transformations
+23:32 easy way to iterate you deploy that then
+23:35 you know it gets materialized backfilled
+23:37 stored into an offline store and online
+23:39 store
+23:39 then there's some kind of api that your
+23:42 model can access in production or even
+23:44 development
+23:44 that allows you to kind of enrich
+23:46 incoming entities like
+23:48 user ids or any of that with features so
+23:50 you can do all of that without an
+23:52 engineer and then kind of deploy your
+23:53 let's say it's like a pi func or kind of
+23:55 model model wrapper
+23:57 into production and it's just a platform
+23:59 that carries you all the way through
+24:00 from
+24:01 from kind of like raw data all the way
+24:03 to prod that's the kind of like dream
+24:05 state
+24:05 and then ideally you'd also have like a
+24:07 validation layer that's giving you
+24:09 monitoring metrics and
+24:10 ensuring that any good quality data gets
+24:12 to your model
+24:16 yeah i'm just curious like this uh dream
+24:18 state like it
+24:19 looks really awesome with other
+24:21 companies that actually
+24:23 who are already there or well you can't
+24:26 ask me that
+24:28 my employer already provides a product
+24:30 like that
+24:32 uh i mean if you look at companies like
+24:33 uber
+24:36 that they've built at tecton
+24:39 i mean from a feature store perspective
+24:41 you already have that okay so basically
+24:43 like i'm sorry for interrupting so yeah
+24:46 so if you have the ml platform and the
+24:47 rest of the components
+24:48 you plug that into tech detect on then
+24:50 you will have that complete flow
+24:52 um if you have something like these
+24:53 deployed with an ml platform we don't do
+24:55 the transformations and so you need to
+24:57 have some system upstream that's doing
+24:58 transformations so the system that we
+25:00 typically recommend is
+25:02 dbt um or
+25:05 you know airflow and etl if you want to
+25:08 use spark and things like that
+25:11 but that's not something that feast just
+25:14 addresses today
+25:15 yeah and keep float by plants i guess
+25:17 also fall into this category
+25:19 right i would not use kubeflow pipelines
+25:21 for transformations
+25:22 but uh i'd use it for training models
+25:24 that's a good tool for model training
+25:26 yeah okay so this is something that
+25:28 leaves uh
+25:29 separately from that right yeah i i
+25:32 consider those kind of like separate
+25:34 you know tools in terms of what which
+25:36 stage of the life cycle they address
+25:40 so what is this it's an open source
+25:43 library right uh
+25:45 that you created but uh what problem
+25:47 does it solve
+25:49 okay so fees is a feature store uh
+25:51 that's one that we built at gojek and
+25:53 productionized and operated for a few
+25:55 years as part of the ml platform stack
+25:59 it solves many of these problems or
+26:01 aspirationally we tried to
+26:02 you know solve a lot of these problems
+26:04 we didn't solve all of them
+26:06 so we set out to solve like adser
+26:08 features online or find online
+26:09 consistency
+26:10 provide a way to kind of like you know
+26:12 work publish data into production
+26:14 without engineers
+26:15 and the sharing and reuse and monitoring
+26:17 aspects also came with that
+26:19 the sharing and reuse is something we
+26:21 didn't solve so we didn't really double
+26:22 down on kind of a ui and discovery and
+26:25 all those things
+26:26 and we didn't do that because you know
+26:29 halfway through we realized
+26:31 many of these teams are happy just
+26:32 duplicating code they're happy just
+26:34 duplicating pipelines
+26:35 and organizational or you know eat up
+26:38 the cost for a pipeline running again
+26:40 and
+26:40 nobody's going to question that and
+26:42 there's a good reason for that
+26:44 it's you know you protect your
+26:45 production environment by duplicating
+26:47 pipelines and not giving control to
+26:49 another team
+26:50 to shut down a pipeline uh so what feast
+26:52 mostly solves today is
+26:54 how do you kind of decouple your
+26:56 production machine learning environment
+26:57 from your kind of data infrastructure so
+27:00 we provide a way for you to
+27:01 ingest post-computed features from
+27:04 streams as well as from batch sources
+27:07 into the feature store and then we
+27:10 provide an interface for you to build
+27:11 training data sets in a point in time
+27:13 correct way and then through a unified
+27:15 interface meaning
+27:16 your model sees the same uses the same
+27:18 api to access features for training and
+27:20 online
+27:21 um you can also then retrieve online
+27:23 features at low latency
+27:25 so we use raiders for for online serving
+27:27 there so fees is
+27:28 that you know software that we built at
+27:30 gojek and we open sourced it we
+27:32 co-developed it with google
+27:34 cloud actually and then um yeah we open
+27:37 source that and subsequently i've joined
+27:39 tecton where i continue to develop
+27:41 feast and it's kind of one of our you
+27:44 know
+27:45 offerings and uh something that we're
+27:47 very focused on yeah
+27:49 and techton as i understood so feast is
+27:52 an open source project that you can just
+27:53 go ahead and install it on google cloud
+27:56 and i don't know aws as well
+27:58 yeah so we've been spending a lot of
+28:00 time kind of generalizing it over the
+28:01 last couple
+28:02 of months so you can deploy it on amazon
+28:05 you can deploy it on azure we actually
+28:07 have uh
+28:08 folks deploying it on azure right now we
+28:09 just launched just launched a terraform
+28:11 deployment for azure if you want to try
+28:13 it out
+28:14 and of course gcp yeah and then tecton
+28:17 would be
+28:18 like uh okay if you don't want to do all
+28:21 that
+28:21 uh like setting it up on your cloud you
+28:24 just go and have like
+28:25 it as a end-to-end package right so
+28:29 you just use it yeah so i think the tech
+28:32 tone is a little bit more
+28:33 um full-featured so it takes a complete
+28:35 platform it's like if you're an
+28:36 enterprise user or somebody that wants
+28:38 the complete life cycle so
+28:40 transformations user interface um
+28:44 you know on demand it's like streaming
+28:46 transformations on the one
+28:47 transformations it's batch
+28:48 transformations it's a ui it's
+28:49 monitoring
+28:51 um it's a complete feature store so
+28:54 [Music]
+28:56 you also have kind of like you know
+28:59 security and auditability and compliance
+29:01 related
+29:02 functionality there so it's really
+29:04 targeted at companies that
+29:06 you know just want to solve this problem
+29:07 today and they understand the value of
+29:09 future source
+29:10 and feast is mostly targeted at teams
+29:12 that are happy to bold and
+29:14 kind of slot in a smaller tool into a
+29:16 larger stack
+29:18 yeah like like this unix concept when
+29:21 you have many many small tools that do
+29:23 yeah but yeah well at the end of the day
+29:25 feature stores are still a little bit
+29:26 overloaded they're trying to solve a lot
+29:28 of problems and so they're not really
+29:29 little tools now we have a question um
+29:34 could we take a step back and say what
+29:36 are the basic components of
+29:38 the features of which feature store are
+29:41 so you mentioned
+29:42 that there is like actual data storage
+29:44 for offline and online
+29:46 uh calculations right so
+29:49 i don't know what for online you
+29:51 mentioned tradies or dynamo
+29:54 then for what do we use for offline
+29:55 storage usually
+29:57 there's a great blog post that i wrote
+29:59 for with mike
+30:01 also for techdown that i
+30:04 want to plug which is what is a feature
+30:06 store and in that we
+30:08 describe the components and so we'd say
+30:09 there's a transformation or computation
+30:11 engine
+30:12 so you'd have your upstream data sources
+30:14 like stream or batch then is the
+30:16 transformation system like spark or
+30:18 sql in a warehouse or something that
+30:20 transforms then there's storage layers
+30:22 so normally there's like an offline and
+30:24 online storage
+30:25 so the tech subtext on the offline
+30:26 storage is an object store like delta
+30:29 but you can also use a warehouse like gc
+30:31 like bigquery or snowflake as an offline
+30:33 store
+30:33 and there's also the online storage and
+30:35 techno skates that's dynamo
+30:37 and this case that's redus so normally
+30:39 it's a key value low latency store for
+30:41 online and it's kind of like a large big
+30:43 data
+30:44 lake like or warehouse like you know
+30:47 hive bigquery redshift
+30:48 snowflake for offline so those are the
+30:51 two components there's compute
+30:52 there's storage and then there's a
+30:53 serving layer and that's normally just
+30:55 an api that allows you to read from the
+30:57 you know either the online store or
+30:59 offline store or
+31:00 sometimes we just use an sdk to reach
+31:02 from mobile store so it's a query
+31:03 generator
+31:04 so serving is the third component there
+31:08 a critical component in the feature
+31:09 store is the registry and
+31:11 both feast and tecton has this nothing
+31:13 most feature source and so you define
+31:15 like
+31:16 schemas that describe where your data is
+31:18 upstream and schemas and
+31:20 you know definitions that describe the
+31:22 transformations that you want to apply
+31:24 and you register that into the registry
+31:26 and then those feature store can
+31:27 you know execute or implement those
+31:30 schemas
+31:31 as infrastructure so either it creates
+31:33 the tables in the warehouses or it runs
+31:35 the computational jobs based on the
+31:37 definitions of the registry and the
+31:39 final component would be
+31:40 just the monitoring layer so there's
+31:42 normally a monitoring component in a
+31:44 feature store that ensures that
+31:46 you know it tracks data being ingested
+31:48 from streams that are being computed
+31:49 there
+31:49 tracks that are being read from batch
+31:51 sources and you know like row counts and
+31:53 distributions and all kinds of things
+31:55 there
+31:55 and then data being read out of the
+31:57 feature store so
+31:58 what we often find is that teams
+32:00 especially in the fraud side if they're
+32:02 reading data from the online store will
+32:03 log those features
+32:05 back into like a warehouse and you know
+32:07 you can use that for training data as
+32:09 you can also use that to validate the
+32:10 data being served to models and ensure
+32:12 that there isn't drift
+32:13 so there's the five it's the
+32:14 transformation engine there's the
+32:16 storage engine there's serving layer
+32:18 registry and then there's the
+32:19 operational monitoring layer
+32:22 and registry also usually like there is
+32:26 some certain
+32:27 user interface component where people
+32:29 can just go and take a look at the
+32:30 features
+32:31 yeah so the the more advanced feature
+32:33 stores have kind of like a user
+32:34 just like a feature discovery and an
+32:36 entity discovery interface they built in
+32:38 the registry yeah
+32:40 okay and uh
+32:44 yeah let's say we want to start using
+32:46 the feature store
+32:47 at our organization right and probably
+32:50 it will also come with some
+32:52 machine learning platform um so how do
+32:55 we go about
+32:56 doing this okay so first depends on what
+33:00 your use case is
+33:01 so i'll talk about the use cases that
+33:02 typically don't
+33:04 aren't a good idea to use a feature
+33:05 software okay the ones we've seen
+33:08 like selling a feature store inside of
+33:10 gojek where we had 16 17 different
+33:12 products
+33:12 i know which use cases you know are not
+33:15 really applicable
+33:16 uh so if you have bad use cases only
+33:19 it's probably not necessary for you to
+33:21 have a feature store even though it does
+33:23 add a lot of value
+33:24 if you use something like techton to do
+33:26 transformations but you can maybe just
+33:28 get away with dbt
+33:29 if you have computer version or nlp or
+33:32 super unstructured data
+33:33 then probably not a good idea but if you
+33:35 do have online serving needs um
+33:38 if you're using kind of tabular data or
+33:41 so let's say fraud detection
+33:43 or anything that has something to do
+33:45 with kind of like product
+33:45 recommendations or
+33:47 user risk scores or
+33:50 fraud detection um said gojek we had a
+33:53 lot of like
+33:54 you know ranking systems and price
+33:56 optimization systems
+33:58 anything that you kind of want to have a
+34:00 entity coming in
+34:01 or multiple entities and you want to
+34:03 enrich them with features and you can
+34:05 use those features
+34:06 and let's say just the traditional
+34:07 models like extra boost so i could learn
+34:09 tensorflow pi torch
+34:11 that's a great use case for future
+34:12 stores um so
+34:15 feast primarily solves kind of for feast
+34:17 i'd say the big value add is going to be
+34:19 that online serving layer
+34:20 and the unified access so if you want to
+34:24 use let's say feast
+34:25 in your organization you'd implement
+34:27 that after your transformation pipelines
+34:29 so you already as we assume that you
+34:31 have some system to do transformations
+34:33 let's say it's bigquery to bigquery or
+34:35 you know it's batch to batch and then
+34:37 maybe you have some streaming
+34:38 transformations
+34:39 you you not so what some teams do
+34:43 traditionally is they transform data and
+34:44 then they write it directly into the
+34:46 production environment
+34:47 we don't recommend that architecture
+34:49 what we recommend is
+34:50 if you transform a stream you push it
+34:52 back to a stream and if you transform a
+34:54 batch data source you push patch back to
+34:55 your lake
+34:56 or warehouse and then the feature store
+34:58 is kind of like the layer that
+35:00 slots that bolts on top of that and then
+35:02 you you can with the feature store pick
+35:04 you know which columns and tables you
+35:05 want to productionize and make available
+35:07 into your in your environment
+35:09 uh for serving in your production
+35:10 environment um so that's how you'd use
+35:12 feast you'd
+35:13 apply it on your existing batch and
+35:15 stream sources protect on you
+35:17 you'd potentially not even need to have
+35:19 your transformations like you could
+35:21 read from your existing transform data
+35:23 both streams and batches but
+35:26 you could also just read raw event logs
+35:29 with techton and then transform it using
+35:31 tecton
+35:31 yeah but yes but typically they're
+35:34 they're deployed between your data
+35:36 infrastructure and your production
+35:38 serving environments yeah so just to
+35:40 summarize and to make sure i understood
+35:43 correctly
+35:44 so let's say we we we want to start
+35:48 using feature stores
+35:50 and for fist we probably already have
+35:53 some certain
+35:54 some data infrastructure let's say we
+35:56 use dbt or airflow or something like
+35:58 that
+35:58 and then we can just add this on top of
+36:01 existing
+36:02 pipelines on existing data
+36:05 transformation and
+36:06 just register like our
+36:10 but you can just point out okay in this
+36:12 table we have these features
+36:14 you can just take them and put them to
+36:17 the offline to online storage right
+36:20 okay and yeah so basically you just you
+36:22 have some kind of
+36:23 existing pipelines that are producing
+36:24 schemas of schemas for specific tables
+36:27 let's say it's
+36:28 snowflake and you'd then
+36:31 register those tables using feature
+36:34 definitions in the feature store and
+36:35 then if you still be
+36:36 aware of those tables and then you would
+36:38 start productionizing them yeah okay
+36:40 and what fist would do in this case it
+36:42 would take
+36:43 these features from our offline store
+36:46 for data lake snowflake or whatever um
+36:50 and put them to online storage right to
+36:53 try this
+36:54 okay and then in case of tecton there
+36:57 are a lot more
+37:00 options so basically you can also start
+37:02 doing transformations there
+37:04 uh plug it into some existing
+37:08 like logs and events and it will just
+37:11 take this information take this events
+37:13 and start producing
+37:14 i think the key the key difference there
+37:16 is that with feast you want to point to
+37:18 tables that are already
+37:21 featurized or transformed because you
+37:24 don't want to
+37:25 serve raw event data with tecton you
+37:28 point it towards your raw
+37:29 vendetta and your dead lake and you can
+37:31 then give it a transformation and it'll
+37:33 compute that for you yeah and
+37:36 you mentioned when i asked this question
+37:39 you mentioned that there are some cases
+37:40 when
+37:41 feature store is not a good solution so
+37:43 you just wanted to to
+37:45 to to talk a bit about that as well so
+37:48 you mentioned that
+37:49 we don't need a feature store when we
+37:52 have a
+37:53 uh batch processing right so when we
+37:55 already well it's
+37:57 it's not that you don't need a feature
+37:58 store it's a feature store like feast is
+37:59 not really that useful
+38:01 if you are using you know if you just
+38:04 need batch scoring
+38:05 so let's say you're just running like
+38:07 batch campaigns
+38:08 like you know some kind of you know
+38:11 marketing campaign or something that
+38:12 you're using machine learning for
+38:14 you typically don't need that you can
+38:16 just write everything in sql like you
+38:17 can just use bigquery and bigquery ml or
+38:19 something like that
+38:21 there's no online serving component you
+38:22 can write your own validation using
+38:24 you know credit expectations or dbt or
+38:26 something
+38:29 in the case of tektron it's actually
+38:31 quite valuable to use tecton for that
+38:32 still because
+38:33 it gives you the transformation system
+38:35 but uh
+38:38 it's a way some of the kind of key
+38:39 aspects of the features
+38:41 in that it bridges the kind of offline
+38:43 and online worlds
+38:44 okay yeah so basically in this uh
+38:48 way if we have if we let's see you
+38:50 stacked on for that for our
+38:52 bite shops the moment we decide to go
+38:54 online
+38:55 and start serving these models online we
+38:57 already have everything we can just
+38:59 you know click a button and then we
+39:01 deploy a
+39:02 web service okay and then you also
+39:06 mentioned
+39:06 and we have um less structured data so
+39:09 like when we have tabular data
+39:12 uh and we want to build an online model
+39:15 on top of that
+39:16 then a feature store is a great solution
+39:18 for that but when we have less
+39:20 structured data and it could be
+39:22 like images texts and things like that
+39:25 then this is not the best uh solution
+39:28 right yeah it's kind of like what is the
+39:32 value that you're gonna have at that
+39:34 point so i think it
+39:35 still provides a lot of value in
+39:37 allowing you to serve data right so you
+39:38 can kind of ship
+39:40 um you know you
+39:43 you can ship blobs of binary into
+39:45 production you can make it available
+39:46 that's something right but then
+39:48 imagine you have like a 2d image and
+39:50 you're just sorting that as like a two
+39:51 byte
+39:52 you know like a two-dimensional cell
+39:54 it's like you know
+39:57 you know some id that you look up and
+39:58 it's just like a 2d array right
+40:01 of of you know bits or something but
+40:04 i i i struggle to see where the value is
+40:08 and especially and kind of like a reuse
+40:09 case in the semantic case because
+40:10 normally feature with features you want
+40:12 to have like
+40:12 each feature column has some kind of
+40:15 identity right
+40:16 you have an understanding of the intent
+40:18 of the creation of that feature
+40:20 but if it's just a binary blob then it's
+40:22 pointless almost
+40:23 you can serve that data online but no
+40:25 other team is going to discover that and
+40:26 you know unpack that and understand what
+40:28 you're doing it's going to be purely for
+40:30 your use case
+40:31 so you're kind of like using the
+40:33 features towards the means to an end but
+40:34 it's not really building
+40:35 efficiency in your team if you're using
+40:37 it for those use cases
+40:39 perhaps a good use case would be correct
+40:41 me if i'm wrong
+40:42 that let's say we have a model uh image
+40:45 classification model
+40:46 we apply this model to images and then
+40:49 save the results
+40:50 and let's say we have a model that says
+40:52 what is the probability that
+40:53 this image is an image of a car and we
+40:55 just save it as a picture
+40:57 okay this is the probability that this
+40:59 image is a car and then basically in
+41:01 real time
+41:02 we would ask the feature store hey
+41:06 give me the probability that this image
+41:08 with this id
+41:09 is a car right and it would give back
+41:11 the predictions
+41:13 this is a good use case isn't it
+41:16 um i think if you're using those
+41:20 aspects of the image as outputs and
+41:22 those outputs go into the feature store
+41:23 and then subsequent downstream systems
+41:25 can use
+41:27 you know those probabilities as features
+41:29 themselves but that's a great use case
+41:31 so you can have a column that is like
+41:33 you know is car and that's maybe just a
+41:34 binary and there's maybe like
+41:35 probability car it's like 0.7 or
+41:38 something
+41:38 that's a great input to mod the
+41:40 subsequent model
+41:42 but if you're storing just i mean if the
+41:44 input to the model itself
+41:46 is the image and the image is coming
+41:49 from the feature store
+41:50 i don't think that that is a great use
+41:51 case for the features or even though
+41:53 that is a good
+41:54 because normally that that input is not
+41:55 going to come from the feature store
+41:57 so normally the incoming request is
+41:58 going to have like you know a request id
+42:01 and model
+42:02 your url on s3 and then you can download
+42:04 the image from
+42:05 sorry to image url from s3 you're going
+42:08 to download that image
+42:09 and then you're going to feed it to the
+42:10 model and that's going to take 10
+42:12 seconds
+42:12 and then you're going to get some
+42:13 outcome output but you're not really
+42:15 going to
+42:16 read that image from the feature store
+42:17 in most cases because
+42:19 um you know it's just not a good use of
+42:21 the infrastructure
+42:23 because you don't have the latency
+42:24 aspect you know it doesn't have to take
+42:26 milliseconds
+42:29 but the output of that is something you
+42:31 do want to store in a feature store
+42:32 and that's actually something we saw a
+42:34 lot of gojek so you have these all these
+42:36 ml use cases models in production
+42:38 and the output of those models go back
+42:40 into a stream and then from the stream
+42:42 we read it back into the feature store
+42:43 and you kind of built these cyclic
+42:45 you know reinforcements of uh you know
+42:47 expanding your data foundation and you
+42:49 can reuse those
+42:50 those output models as features because
+42:52 essentially the model is just a
+42:53 transformation itself so
+42:55 mm-hmm exactly okay let's say i want to
+42:58 learn more about
+42:59 uh future stores as an individual
+43:02 contributor working at the company
+43:05 and yeah i just this is an exciting
+43:07 topic everyone is talking about
+43:09 this and i just want to learn more about
+43:11 this how would i
+43:13 how would i do this is there a good
+43:16 suggestion
+43:17 for me to to start learning this thing
+43:21 that's a good question i mean i think
+43:23 you can just literally go to mlaps
+43:25 community
+43:26 there's a lot of resources there that
+43:28 people have posted especially in the
+43:29 data ops channel the open source channel
+43:31 just the general channel
+43:33 read some of the articles that are being
+43:34 posted we're also happy with you know
+43:37 our competitors articles being read but
+43:39 have a look at the tech tone blog
+43:40 there's some good articles that we put
+43:42 out there
+43:42 that explains our thinking about it
+43:45 we're spending a lot of time right
+43:47 right now thinking about the category
+43:49 itself and what a features
+43:50 feature source should do really a lot of
+43:53 time
+43:54 and you know some like great minds from
+43:57 google and uber um
+44:00 you know thinking about the space um
+44:04 but the articles that we've written on
+44:05 the tekken blog are great and i think
+44:06 you should also maybe have a look at
+44:08 just
+44:09 um you know mlm's community there's a
+44:11 lot of resources there
+44:13 but these are more like uh maybe perhaps
+44:15 theoretical but
+44:16 like is there something hands-on we can
+44:18 do like i don't know maybe just set up
+44:20 feast on our laptop oh right i mean if
+44:22 you just want to try it out if you want
+44:24 to physically
+44:24 like literally just install it you can
+44:26 just go to feast.dev and
+44:28 try it out you can run a docker composer
+44:30 feast and
+44:32 run through the notebook there's an
+44:34 example notebook okay
+44:36 yeah and that should give sufficient
+44:38 understanding on of
+44:40 what this is and let's say if
+44:43 if i see it my company there is a
+44:45 similar use case
+44:46 i can just go ahead and propose it to
+44:49 yeah i think one of the things that
+44:51 we've not really succeeded at is
+44:52 articulating all of the use cases where
+44:54 it would be valuable
+44:55 that's something we you know at least
+44:57 we've kind of failed at
+44:59 yet for the time being something that we
+45:01 want to focus on in the next couple of
+45:02 months is producing more content
+45:04 that it explains and grounds the
+45:05 features stored within an organizational
+45:07 context
+45:08 you can have a look at the these docs we
+45:10 explain exactly
+45:12 why you know when to use the features or
+45:14 when not to
+45:15 if you look at our documentation you
+45:16 don't even have to install it just go
+45:18 and read those those docs
+45:19 um but i think there is sufficient
+45:23 content
+45:23 in envelopes community that explains how
+45:26 people are using feature stores
+45:28 and even some companies and teams like
+45:29 monzo and neil lathier
+45:32 explain how he built the feature store
+45:33 to solve a specific problem and it looks
+45:35 completely different and it's a lot more
+45:36 lightweight than we did it
+45:39 but it's still relevant to solving some
+45:42 of the same problems
+45:43 and yeah he actually mentioned that they
+45:46 use feature stores for
+45:47 storing text data which is uh which is
+45:50 interesting
+45:51 so we have a question um what workflow
+45:55 do you recommend for engineering new
+45:57 features testing offline performance
+45:59 and making sure that offline and online
+46:02 data matches
+46:05 well i mean there's challenges there if
+46:07 you're using a feature store it looks
+46:08 different from not using a feature store
+46:10 um we typically
+46:13 treat transformations separately so we
+46:16 have
+46:16 streaming transformations that we treat
+46:18 differently from batch transformations
+46:20 so in the batch case you can have dvt or
+46:22 some kind of transformation system
+46:24 and then you have your i mean you have
+46:28 you know validations built into
+46:30 transformations and you have extreme
+46:31 transformations with um perhaps you can
+46:34 have like a logger that's syncing that
+46:36 to
+46:36 into a batch environment and then you
+46:38 can have some kind of
+46:39 you know system that gets triggered to
+46:41 validate data and you can use great
+46:43 expectations or tfdv to do that
+46:46 so there's kind of four areas where we
+46:48 hook
+46:49 um into validation systems so that's
+46:52 streaming ingestion and transformation
+46:55 there's the batch validate in the batch
+46:56 transformation
+46:57 and pre-ingestion into the offline store
+47:01 validation and then there's training
+47:03 dataset like right before you train
+47:05 you can validate and right before you
+47:08 serve that it's with the model itself
+47:09 you can also validate so that's the four
+47:11 main points
+47:12 um and with a feature store you get
+47:14 those hooks and like
+47:15 call you know you know trigger points to
+47:19 validations if you don't have a feature
+47:21 store you can also just you know
+47:23 run your code there you can have a
+47:25 repository with great expectations and
+47:26 just
+47:27 apply those expectations on your data
+47:29 i'd say for most teams
+47:31 covering you know the batch features is
+47:34 probably the biggest
+47:35 concern especially if they're
+47:36 productionizing analytical data that
+47:38 other teams are creating
+47:40 um but yeah you have to take a defensive
+47:43 approach and
+47:44 the unfortunate reality is if you don't
+47:45 have a feature store you probably have
+47:47 to write a lot of boilerplate code in
+47:49 order to
+47:50 prevent bad data from reaching your
+47:52 models and so your model serving layers
+47:54 can have a lot of
+47:55 you know if x greater than something
+47:59 then you know produce some kind of alert
+48:02 you know you're going to have a lot of
+48:03 hardcore
+48:04 it's giving me little logic there yeah
+48:07 and great expectations you mentioned
+48:09 this a couple of times this is the tool
+48:10 that allows you to do these checks or
+48:12 what is that
+48:14 yeah great expectations allows you to um
+48:17 you create data
+48:18 and then you can kind of use it to
+48:20 profile your data so you get an
+48:21 understanding
+48:22 and properties about columns and
+48:25 distributions then you can store and
+48:27 encode these expectations about your
+48:30 data
+48:31 and then subsequently when you create
+48:32 new data sets on the same features for
+48:34 example
+48:35 like different days you can run those
+48:37 expectations to ensure that your data
+48:39 hasn't changed
+48:41 and you can kind of layer on more more
+48:43 expectations about your data
+48:45 so you can say like the range of the
+48:46 data is within these bounds or the
+48:48 distributions within certain shape or
+48:50 these are the categorical elements of
+48:52 this and these those like nominal
+48:54 features
+48:56 so yeah great expectations is great
+48:58 mostly focused on batch today
+49:00 but we're hoping that tools like that
+49:02 will also become available for the
+49:04 streaming use cases
+49:05 that's something that we're trying to
+49:07 solve with feature stores as well
+49:08 that sounds incredibly useful we have
+49:11 another question
+49:12 about streams do you have any opinion on
+49:16 apache link versus apache spark for
+49:18 calculating
+49:19 real-time features
+49:22 well we started with apache beam and
+49:24 beam and flink are very similar
+49:27 i i'm a big fan of apache
+49:30 flink um most of the
+49:34 engineers that i respect also have very
+49:36 high
+49:37 regard for the project because of its
+49:38 api it's a really great api
+49:42 we are using spark with fees today
+49:44 because
+49:45 just because of its ecosystem and
+49:47 connector support
+49:49 um i'd say in terms of the raw
+49:50 technology itself flink is superior but
+49:54 [Music]
+49:55 the ability for spark to execute in
+49:58 multiple environments so you've got like
+49:59 traditional
+50:02 hadoop refugees and you've got clouds
+50:04 like gcp
+50:05 and azure and amazon that allow you to
+50:08 run spark jobs relatively easily
+50:11 it's not there yet for flink and a lot
+50:13 of companies
+50:14 you know they'll happily run spark but
+50:16 if you say flink then they'll say okay
+50:18 well
+50:19 now we need to implement a new runner
+50:21 although
+50:22 there are a lot of companies that are
+50:23 today running fling and some of the
+50:25 cloud providers do now
+50:26 support running flink like i think it's
+50:28 possible on amazon
+50:31 so i'd say it's probably get there in
+50:34 the next year or two
+50:36 but there's not much difference between
+50:38 them right now
+50:40 and the way at least we are using it
+50:42 yeah
+50:43 yeah i think there is a connector for
+50:45 kinesis in aw
+50:47 aws for flink if i'm not mistaken i
+50:50 think
+50:50 i remember seeing something like that
+50:52 yeah
+50:55 you know all those you know folks that
+50:58 are running either on-premise or they've
+50:59 got large
+51:00 hadoop stacks hdfs and things like that
+51:04 and hive
+51:05 that inevitably we'll need to
+51:09 get onto bigquery and snowflake and
+51:11 modernize but
+51:13 for some companies that's going to be a
+51:14 10-year effort okay
+51:18 yeah that's a funny name what
+51:22 apis are provided for future
+51:24 transformations
+51:25 is it similar to building spark beam
+51:27 transformations
+51:29 yes in the tecton case that's like pi
+51:32 spark
+51:33 spark sql if you're using an existing
+51:36 warehouse it'll be like snow sql
+51:37 bigquery sql
+51:38 and online transformations meaning just
+51:41 in time or like request time
+51:42 transformations it's
+51:44 um it's just python so you can write
+51:47 you know pandas transformations or any
+51:49 kind of python transformations
+51:51 i'm sure that you know some teams
+51:53 running scala transformations
+51:54 in production as well yeah but
+51:58 that's not supported today with takedown
+52:00 and for feast it doesn't matter right
+52:02 because fish doesn't care about
+52:04 yes it's something that we're
+52:05 considering adding but it's not
+52:06 something that's you know going to land
+52:08 soon
+52:08 um on-demand transformations is actually
+52:11 something that a lot of teams have asked
+52:12 for
+52:13 because there's a lot of request time
+52:14 transformations and if you think about
+52:16 it
+52:16 it's a big problem to unify on demand
+52:19 and
+52:20 you know the online and offline aspects
+52:21 there
+52:23 like if you're running kind of java
+52:25 transformations in production you kind
+52:27 of
+52:28 have to go back to the data science
+52:29 notebook to ensure that they have the
+52:30 same transformations being applied to
+52:32 their training data sets
+52:34 so that's something that we want to
+52:35 address yeah
+52:37 okay thanks then we have a question
+52:41 more about like organizational at what
+52:44 size of a group does it make sense to
+52:46 build the feature store
+52:48 that's a good question uh traditionally
+52:51 i would have said you know you have
+52:52 multiple use cases
+52:54 so one team like let's say two or three
+52:56 data scientists with multiple projects
+52:58 um or you have multiple teams that have
+53:02 like just one project and
+53:04 they kind of want there's some sharing
+53:05 and collaboration that they need between
+53:07 them
+53:09 that's the current state of the industry
+53:11 we're looking at whether
+53:12 you know with feast we can address like
+53:14 a single data scientist
+53:16 add value to either a single data
+53:17 scientist or a single
+53:19 team on a single use case that's where
+53:22 we want to guess if we see that as like
+53:23 the kind of ideal target state but
+53:25 not sure if features or feature stores
+53:27 will ever get to that point
+53:29 the current status quo is still a
+53:31 platform team addressing multiple
+53:34 kind of solution oriented teams
+53:37 yeah so let's say if we're a small
+53:40 startup and we're just starting with
+53:42 data science
+53:43 and let's say we're here to hire our
+53:45 first data engineer
+53:46 and i don't know data scientist should
+53:49 we already start
+53:51 like using feature store or maybe yeah i
+53:54 don't think it makes sense to start
+53:57 like if you have a feature store that
+53:58 allows you to do transformations
+54:00 yes that makes sense but
+54:04 you don't have the organizational
+54:06 friction in that case right normally
+54:07 folks have multiple ads they wear the
+54:09 data engineer and data scientists sit
+54:11 next to each other
+54:12 maybe the data scientist the ceo who
+54:14 knows
+54:16 so you know if you want to ship features
+54:18 into production you're shipping like 10
+54:20 features and 20 features and maybe you
+54:21 have one model it's not a big deal
+54:24 i think it's when you want to iterate on
+54:26 those models when it really becomes the
+54:27 core of your business
+54:28 when you have multiple use cases and
+54:30 when the teams start to kind of become
+54:32 independent and they're
+54:34 you know they're not working side by
+54:35 side every day that's when the feature
+54:37 store starts to pay real dividends
+54:40 and so i wouldn't say it's absolutely
+54:42 necessary for a team to
+54:44 of two or three you know data scientists
+54:46 and engineers to start with one
+54:48 so it will not be too difficult to start
+54:51 using it later
+54:52 it's so like it doesn't make sense to do
+54:54 it up front
+54:55 in case uh you know that later it
+54:57 becomes too difficult to
+55:00 to move our because yeah the biggest
+55:01 friction we see is normally
+55:03 the transformations let's say you're
+55:04 using airflow and spark or you're using
+55:06 dbt
+55:07 um if you already have all your
+55:09 transformations in one place and you add
+55:10 a feature store that allows you to do
+55:12 transformations
+55:13 then you have it in two places and so
+55:15 with feast
+55:16 it doesn't do transformation so it's an
+55:18 easy one to slot in with tekton it's
+55:20 also easy to slot in but you need to
+55:21 make a decision where you want your
+55:23 transformations to live and
+55:24 whether you're okay with living in
+55:26 tecton or tecton just layering on taboo
+55:31 so there's that question so it's not
+55:32 harder it's just you need to kind of
+55:34 commit to
+55:34 a single approach eventually and
+55:37 inevitably you'll have people on both
+55:38 sides you know the
+55:40 greenfield projects will want to use
+55:41 tecton and the kind of brownfield
+55:43 projects that already have everything
+55:44 implemented upstream
+55:45 they'll want to say i don't want to
+55:46 migrate my transformations and so
+55:48 there might be some friction there okay
+55:52 brownfield project interesting it's
+55:54 first time i hear this
+55:56 i've heard greenfield but not brownfield
+55:58 i i hope that's uh
+56:00 that's a thing but you understand the
+56:02 opposite the opposite of greenfield
+56:04 right so
+56:05 an existence like an existing project
+56:07 yeah okay
+56:10 so what is your take on dbt and
+56:12 futurestar from what i understood you
+56:14 previously said you
+56:15 like dbt and it's a great tool um do
+56:18 they play together
+56:19 well with future stores yeah i think i
+56:21 mean it's not really dvt specific but
+56:23 data warehouses are taking over and i
+56:25 don't think that
+56:26 you know the stack of the features going
+56:27 to be dead lakes and
+56:29 object stores it will be some kind of
+56:31 unified sql interface or some kind of
+56:34 platform that scales out like you can
+56:36 already see how bigquery and
+56:38 snowflake are kind of dominating the
+56:40 space so feature stores slot
+56:42 well onto those systems um
+56:45 and if you it depends on the features or
+56:48 but
+56:48 if you already have dpt in place for
+56:50 your batch transformations
+56:51 for i'd say most companies that's really
+56:53 solving 80 90
+56:54 of your transformation needs so that's
+56:57 why there's a good synergy between those
+56:59 two and also
+57:00 um a lot of companies
+57:04 and a lot of you know organizations that
+57:06 are large have a lot of analysts and
+57:08 those analysts
+57:09 can produce a lot of features and
+57:10 something we're seeing a lot right now
+57:11 is
+57:12 chief data officers chief information
+57:13 officers saying you know i want my
+57:16 analysts not to just contribute to
+57:17 dashboards and reports but
+57:19 why can't they contribute features that
+57:20 actually drive the bottom line
+57:23 and the gateway to that is sql through a
+57:26 warehouse and so
+57:27 dbt enables that and some feature stores
+57:30 also enable that
+57:32 okay and um how do you usually go about
+57:34 setting up features back in time
+57:36 say in bigquery or in google cloud
+57:39 platform
+57:40 sorry i didn't hear that yeah so the
+57:42 question is um just reading how do you
+57:44 usually go back
+57:45 uh go about setting up features back in
+57:47 time so when you want to
+57:49 calculate a new feature i assume you
+57:52 need to go back in time to
+57:54 actually recompute it for historical
+57:57 data
+57:57 how do you do that yes in the case of
+58:01 feast uh it's different from tecton so
+58:03 um in the case of feast
+58:04 the upstream system is doing the back
+58:06 form right so if you publish a new
+58:08 feature
+58:08 that's a new iteration of an etl or an
+58:10 elt pipeline that produces a new
+58:13 output that has to be you know you you
+58:15 run it with airflow backflip
+58:17 and then you call the feature store and
+58:19 it'll re-ingest those features into the
+58:20 online environment
+58:22 in the case of tecton you change the
+58:25 transformation
+58:26 but the source of the data stays the
+58:28 same but by changing the transformation
+58:30 you produce a new feature
+58:32 and so it'll it'll know that it doesn't
+58:34 have that in
+58:36 the new features in production or in the
+58:38 old file store and so it'll
+58:39 automatically start backfilling so you
+58:41 set a start date and say let's say the
+58:43 start of 2021
+58:44 and it'll know okay i need a daily
+58:46 feature for
+58:48 you know this feature table and it'll
+58:50 start materializing the data for you
+58:53 so it's mostly automated um in the case
+58:55 of features
+58:56 feast you just need to send it an api
+58:58 call to re-ingest the data
+59:02 do you have time for a couple of more
+59:03 questions yeah go for it yeah
+59:07 so who in your opinion should maintain
+59:09 features in feature store
+59:11 should it be as close to the source or
+59:14 the one who benefit uh the most from
+59:16 these features or some central theme
+59:20 oh that's a good question as well um so
+59:22 we've seen
+59:23 probably um the most sane approach seems
+59:27 to be
+59:28 you don't gatekeep at all because if
+59:30 you're as a central team kind of
+59:31 gatekeeping and
+59:33 having to police features uh you slow
+59:36 down
+59:36 you know to work a lot what normally
+59:39 happens with feature stores is that
+59:41 you have specific ml use cases so
+59:43 there's a proof of concept for the
+59:44 feature store and there's another use
+59:45 case in another use case
+59:47 and over time you start to see
+59:48 similarities and patterns
+59:50 and when the reuse starts to happen you
+59:52 can track the reuse of features
+59:54 a central theme can step in and say well
+59:57 either
+59:58 this feature is being reused and you can
+1:00:00 kind of just take ownership of it
+1:00:01 because it's so
+1:00:02 important for most of these use cases
+1:00:04 that are actually running in production
+1:00:05 or you can see these features are
+1:00:07 duplicated by very similar and
+1:00:10 there's not reuse happening but there
+1:00:12 should be and you can say
+1:00:14 you know i'm going to kind of take this
+1:00:16 out and
+1:00:17 own it and you know build a golden data
+1:00:19 set or a golden feature set
+1:00:21 and control that as a central platform
+1:00:23 team and then force those teams to kind
+1:00:25 of adopt your features
+1:00:26 or at least coordinate the kind of
+1:00:28 deduplication of those features
+1:00:31 but normally the process is organic it's
+1:00:33 not something that you start off with
+1:00:35 with a coordinated set of features
+1:00:37 because the features won't be perfect
+1:00:38 from day one
+1:00:39 and it's basically the data scientists
+1:00:41 iterate on them and when it stabilizes
+1:00:42 then you can kind of
+1:00:44 you know pull them out the worst case is
+1:00:46 for you to as an engineer to kind of
+1:00:47 step in and
+1:00:48 dictate how the features should be
+1:00:50 created so basically
+1:00:52 it just happens organically first data
+1:00:54 scientists look after features but when
+1:00:56 the central team sees that there are
+1:00:59 some
+1:01:00 you know duplication or things like that
+1:01:02 and then they can start
+1:01:03 taking care and start maintaining these
+1:01:06 features themselves
+1:01:08 yeah it's normally not it's normally
+1:01:10 driven by importance of the feature like
+1:01:12 uh you can see the feature importance
+1:01:14 based on uh you know the model itself
+1:01:16 and then you
+1:01:17 know how much of an influence that
+1:01:18 feature has on you know
+1:01:20 decision making and so sometimes you
+1:01:22 want to take control of that because you
+1:01:24 don't want like a
+1:01:25 junior data scientist to change a sql
+1:01:27 query and that has a production impact
+1:01:29 that has a bottom line impact on the
+1:01:30 business
+1:01:32 okay yep thanks what is the difference
+1:01:36 to a data platform with etl preparation
+1:01:39 and a good
+1:01:40 store catalog so how is it different
+1:01:43 from these catalogs
+1:01:44 that we have in traditional bi world
+1:01:48 and these feature stores i think there's
+1:01:51 just so
+1:01:52 let's track back to the first thing that
+1:01:53 we said when we talked about a feature
+1:01:55 store it's an opinionated data system
+1:01:57 for uh operational data for machine
+1:02:00 learning
+1:02:01 so those operational machine learning
+1:02:03 are the two kind of keywords there
+1:02:05 traditional data platforms are not
+1:02:06 focused on serving low latency data
+1:02:09 and if they have a means of serving data
+1:02:12 latency so
+1:02:12 if you look at like data breaks or if
+1:02:14 you look at snowflake there's no like
+1:02:16 online low latency aspect there
+1:02:18 and if they add that aspect then is that
+1:02:20 both as a
+1:02:21 traditional kind of you know low energy
+1:02:24 data as a service
+1:02:26 which isn't what feature store tries to
+1:02:28 solve the feature store tries to unify
+1:02:29 that interface the online serving and
+1:02:31 the offline
+1:02:32 specifically for machine learning models
+1:02:34 and that requires those two to be
+1:02:36 identical so if you query it with a
+1:02:38 specific list of features and entities
+1:02:39 it should produce a data set that is
+1:02:41 identical in an offline case in an
+1:02:43 online case
+1:02:44 so there's a specific constraint that's
+1:02:46 applied to the you know
+1:02:48 to those two kind of serving
+1:02:49 environments in theory a data platform
+1:02:52 could provide this and that's why
+1:02:53 feature store is
+1:02:54 a part of your data platform stack
+1:02:56 essentially right
+1:02:57 um it's also part of your email platform
+1:02:59 stack but it bridges those two worlds um
+1:03:02 so it's it's an opinionated component
+1:03:04 within a data platform i'd say
+1:03:06 yeah yeah makes sense we still have
+1:03:09 seven more questions i don't think we
+1:03:11 should
+1:03:12 keep you for that long ah what i propose
+1:03:14 is i'll share
+1:03:15 these questions in slack and if you have
+1:03:18 some time maybe you can
+1:03:19 come at some point and sure answer these
+1:03:22 questions or maybe
+1:03:22 the we in the community will take some
+1:03:25 of these questions and
+1:03:26 answer them as well so thanks a lot for
+1:03:29 coming it was a
+1:03:30 pleasure talking to you i learned a lot
+1:03:32 today about future stores and i already
+1:03:34 have some ideas how i can
+1:03:36 uh try to use them and when i should not
+1:03:39 try
+1:03:40 to use future stores that was an
+1:03:42 important thing as well
+1:03:43 so thanks a lot and thank thanks
+1:03:44 everyone else for coming today and
+1:03:46 listening and asking questions
+1:03:49 thanks legacy yeah have a nice day

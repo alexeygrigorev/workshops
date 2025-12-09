@@ -1,0 +1,1649 @@
+Translating ML Predictions Into Better Real-World Results with Decision Optimization
+
+0:00 and uh yeah i'll just do a short
+0:03 introduction
+0:04 so um the talk like
+0:08 on the slide it was just decision
+0:09 optimization it was just the actual
+0:11 title was too
+0:12 too long to fit it on the slide so the
+0:14 title is translating machine learning
+0:16 predictions into better world
+0:18 better real world results with decision
+0:20 optimization
+0:22 and this will be different from the
+0:25 three previous talks we had
+0:27 so the three the the other talks were
+0:30 uh presentations so where this character
+0:33 presented something
+0:34 and then there was a qna session but
+0:36 this one will be
+0:37 a live discussion and it will also be
+0:40 released as a podcast later
+0:42 so the previous videos we just upload to
+0:44 youtube but this one will also put to
+0:46 our
+0:47 uh data talks club podcast without video
+0:50 um so it will be just a conversation
+0:54 yes and for those who just joined so we
+0:57 use
+0:58 a slider for asking questions so in
+1:00 youtube in the stream
+1:01 if you go to the chat section there is a
+1:04 pinned message
+1:05 which you can just click and then it
+1:07 will bring you to slider
+1:09 and then if it if at any time
+1:12 during our chat you have a question just
+1:14 feel free to to ask it in slider
+1:16 and then we will cover it eventually
+1:19 and yeah so i think
+1:24 are you ready to start yes yeah so let's
+1:27 uh let's start so today we'll talk about
+1:31 decision optimization which is
+1:32 uh about making a better decisions with
+1:35 machine learning and we
+1:36 have a special guest today dan and then
+1:40 he is the founder of decision ai which
+1:42 is a company that specializes in making
+1:44 better decisions with machine learning
+1:47 welcome then glad to be here yes
+1:51 thanks for coming before we go into our
+1:53 main topic of decision optimization
+1:55 um let's start uh with your background
+1:57 can you tell us
+1:58 uh a bit about your career career
+2:00 journey so far
+2:02 yeah you know i got started with machine
+2:04 learning in a 2000
+2:06 i was part of a startup that was using
+2:07 it to help companies
+2:09 optimize how they posted things on ebay
+2:10 which was very popular at the time
+2:13 and we worked on machine learning for
+2:15 about six months
+2:17 and it was a total and complete failure
+2:20 the predictions were not good no one
+2:22 understood what we were doing we didn't
+2:24 understand what we were doing
+2:25 and by after six months i had uh we
+2:28 switched to just
+2:29 using simple descriptive statistics and
+2:32 i came to the
+2:33 point of view after probably nine months
+2:36 at the company
+2:37 that machine learning would never catch
+2:38 on it's a name that sounds cool
+2:41 but i said it's just never going to work
+2:43 um and
+2:44 there's sort of a dead end and i got a
+2:46 phd in in econometrics
+2:48 uh and then i in 2009 i started
+2:51 competing in kaggle competitions
+2:52 but i was just using very simple
+2:54 statistical techniques because i thought
+2:55 that was what was best
+2:57 and when i did that i found i was in
+2:59 almost last place and i
+3:00 came to realize that machine learning
+3:02 had improved so much
+3:04 that actually it wasn't a dead end it
+3:05 was just that we were bad at it
+3:07 20 years ago um got second place in
+3:11 uh in a competition with a three million
+3:13 dollar grand prize but no prize for
+3:15 second place
+3:16 um and then uh have the good fortune
+3:19 that that led me to do consulting i've
+3:21 done consulting with a lot of big
+3:22 companies
+3:23 uh it was an early employee at data
+3:25 robot um
+3:26 worked at google as a data scientist for
+3:28 a few years and then
+3:30 in uh january of 2020 i started uh
+3:33 decision ai
+3:34 that's uh but um you you mentioned you
+3:38 start you tried kaggle in 2009 right
+3:42 that so it was like probably the first
+3:44 competition right
+3:46 it was one of them so you know they are
+3:48 um
+3:49 they're at maybe three million users and
+3:51 my user id is 9000 or 9028.
+3:55 so i was definitely a a very early
+3:57 adopter
+3:58 and i i did well in competitions in the
+4:00 early days
+4:01 and now when i see the complexity and
+4:03 the intelligence of what people do
+4:05 i realize that the it's much more
+4:07 competitive than it used to be but uh
+4:08 yeah i was a very early adopter
+4:10 that was their first big competition at
+4:12 least yeah i
+4:14 i started from kaggle like in 2015
+4:18 uh so like i guess kaggle was six years
+4:21 old already
+4:22 but when i look at what competitions we
+4:24 have now they are so different from
+4:26 what was there five years ago when i got
+4:29 there so indeed
+4:30 the level of uh complexities is rising
+4:34 so it's interesting yeah so what is
+4:37 decision optimization what kind of
+4:38 problem it solves
+4:40 yeah so i mean it really is
+4:43 a lot like what it sounds like uh the
+4:45 easiest way to make that clear might be
+4:47 an example so
+4:48 um i really started thinking about
+4:52 making a company around this in part
+4:53 because of a conversation
+4:55 that i had probably four or five years
+4:58 ago with a friend of mine who works for
+4:59 a very large u.s based
+5:01 airline the number one most important
+5:04 problem that they were working on
+5:06 is how do we set prices for each of our
+5:07 flights they build a machine learning
+5:09 model these guys they had
+5:11 great data scientists they build these
+5:13 machine learning models
+5:14 and because they update their prices
+5:16 daily the model that they build
+5:19 predicts for any given price how many
+5:22 tickets could we sell on each you know
+5:23 each for a future flight so we've got
+5:25 flight 1000 it leaves
+5:26 march 20th if we charge 400
+5:30 how many tickets will we sell the time
+5:32 before the next time we set reset the
+5:33 price or if we charge 500
+5:35 how many uh how many tickets will we
+5:37 sell before
+5:38 the next time we reset the price now
+5:41 decision optimization is going from
+5:43 all right i've got a machine learning
+5:45 model that makes up prediction in this
+5:46 case how many tickets could i sell
+5:48 to i've got something i control in this
+5:51 case that's the price
+5:52 i've got something i care about in this
+5:53 case that is total revenue for the
+5:55 flight
+5:56 before it takes off and how do i
+5:58 actually
+5:59 like what price do i set and the thing
+6:01 that they saw which
+6:02 i see all the time in data science now
+6:06 is if you had one day until a flight
+6:10 takes off
+6:11 you can now build a machine learning
+6:12 model and it tells you you could sell
+6:14 six tickets for four hundred dollars
+6:16 each or five tickets for 500
+6:18 each and now i could just say well price
+6:20 times quantity
+6:21 i could just look at my revenue and say
+6:23 which of these is better
+6:25 but most real world situations have
+6:27 these dynamics that play out
+6:29 over time if i said you could sell
+6:31 tickets tickets for one price or five
+6:33 tickets for another price
+6:34 but you've got 90 days before the flight
+6:36 takes off which of those is better
+6:38 knowing that the tickets you don't sell
+6:40 today can be sold tomorrow
+6:41 knowing that if you lower your price a
+6:43 lot to sell
+6:45 more tickets then tomorrow your
+6:47 competitor is going to
+6:48 lower their price and so it's going to
+6:50 have all is going to mean that you make
+6:51 less money in the future
+6:52 which of these is better overall as we
+6:55 think about
+6:56 the real world that is decision
+6:58 optimization
+6:59 is just how do we make good decisions
+7:01 but it really is a very
+7:03 challenging and technical field when you
+7:05 apply it to
+7:07 real world situations so basically what
+7:10 you're saying
+7:11 correct me if i'm wrong is we have a
+7:14 model
+7:14 and then this particular case uh it was
+7:17 a demand for casting model in a way like
+7:18 uh you predicted like how many
+7:21 seats on a plane you would sell for
+7:23 [Music]
+7:24 like for that amount of money so
+7:25 basically like profit
+7:27 per day i guess and the the problem is
+7:31 we have this model but how do we use it
+7:33 in the most effective way
+7:34 so we don't hurt ourselves uh by setting
+7:37 you know by
+7:38 selling cheap tickets today and uh
+7:42 running out of tickets and then tomorrow
+7:44 competitors comes
+7:46 exactly yeah okay and uh
+7:49 but this is like does it also work for
+7:53 uh so as a data scientist uh well like
+7:56 at
+7:57 an internet company i mostly deal with
+7:59 uh
+8:00 binary classification problems so like
+8:02 that and i guess this is
+8:04 true for industry in general so this is
+8:06 what like
+8:07 i think if you even if you go on kaggle
+8:09 and check um
+8:10 i think most of the competitions will be
+8:12 classification competitions and
+8:14 binary classification uh is uh like most
+8:17 of them
+8:17 most popular one what kind of problems
+8:20 we
+8:21 can have with uh like with optimizing
+8:24 our decisions there
+8:26 yeah so um let me give you two examples
+8:29 so
+8:30 uh let's do a binary classification
+8:32 problem maybe it
+8:33 is financial fraud and actually i'm
+8:35 working with a company where
+8:37 the service they sell is an
+8:40 api you send them information about a
+8:43 transaction
+8:44 they send a response that says it's five
+8:46 percent likely to be fraud
+8:47 okay so now you are you have the
+8:51 question
+8:51 what do i do with a transaction it's
+8:54 five percent likely to be fraud
+8:56 should i reject it should i should i
+8:58 process it
+8:59 in many cases there's some third option
+9:01 to investigate further
+9:02 and so in the narrowest sense
+9:06 the decision optimization part of that
+9:08 is to say what is my threshold let's say
+9:10 this is
+9:10 simplified and say all i do is either
+9:12 accept or reject the simplest thing that
+9:14 you could do
+9:15 is say i need to figure out what that
+9:18 threshold is for where i
+9:20 reject it and there's a technique i call
+9:23 it profit curves i've talked about it a
+9:25 lot
+9:25 um or sometimes also called revenue
+9:27 curves where you can basically simulate
+9:30 if i have a three percent threshold for
+9:33 what i
+9:34 anything above three percent likely to
+9:35 be fraud i rejected anything below i
+9:37 don't
+9:37 if i have a four percent if i have a
+9:39 five percent what's the business impact
+9:40 of that
+9:41 um and so the simplest thing that that
+9:43 you could do is say well i want to
+9:44 optimize that threshold and the payoff
+9:46 to doing that that's a pretty simple
+9:48 thing to do in the payoff to doing it is
+9:49 very
+9:50 large i think even that
+9:53 is really a simplification of what is
+9:56 needed
+9:57 in practice so i was talking to to an
+10:00 insurance company they have claims that
+10:02 come in
+10:04 that they think are likely to be fraud
+10:06 and they send it to an investigator
+10:08 to say is this fraud or not fraud and
+10:10 then if it is
+10:11 um if it is fraud then they don't um
+10:15 they don't have to pay it so they were
+10:19 using
+10:19 a very simple threshold like the one we
+10:21 talked about if it is
+10:22 10 likely to be fraud then we
+10:26 investigate it if it's less than 10
+10:28 likely to be fraud
+10:29 we don't uh that to many people who have
+10:33 worked in classification for a long time
+10:34 that idea of
+10:35 i run it through a classification model
+10:37 get a probability and then either accept
+10:39 or reject it
+10:39 like that seems natural and that is the
+10:42 crit
+10:43 if you think about it is the craziest
+10:44 thing to do so if they
+10:46 have a claim it comes in it is for 50
+10:50 000 euros and it is nine percent likely
+10:52 to be fraud
+10:54 they'll say well it's under 10 percent
+10:55 we don't investigate it
+10:57 now they've got something that comes in
+10:59 is for 500 euros
+11:01 and it's 10 percent likely to be fraud
+11:03 so the expected value
+11:06 of investigating the nine percent of
+11:09 like the
+11:09 the expected value of savings is
+11:12 uh it's about 98 90 times as large
+11:16 and yet they don't do it because we've
+11:18 been so pulled in
+11:19 by we did a classification while the
+11:21 output is a is a probability
+11:24 and we think of that so narrowly that
+11:27 i just see people do these crazy things
+11:29 because
+11:30 we look at that probability in isolation
+11:33 but shouldn't
+11:34 shouldn't model be able to pick up on
+11:36 that like to see okay
+11:37 the sum is large then uh yeah probably
+11:39 more likely or less likely to be growth
+11:41 or
+11:43 so the 10 to 9 those could have
+11:45 considered
+11:46 the likelihood of being fraud and yet it
+11:49 could be the case
+11:50 that you know maybe something maybe
+11:52 small things are more likely to be fraud
+11:54 hypothetically
+11:54 and so the model figures that out but
+11:56 then it says i still have a 10
+11:58 likelihood of being fraud and the value
+12:00 of investigating that
+12:04 it accounts for it as it affects the
+12:05 probability but the value of actually
+12:06 running the investigation
+12:08 is 10 of 500 euros
+12:11 so that's i get 50 euros in expected
+12:13 value by investigating it
+12:15 and so you see where i'm going of nine
+12:18 percent of
+12:19 50 000 and so you guess the probability
+12:22 may reflect the amount
+12:24 but we need to do more than that yeah so
+12:26 we have a similar
+12:27 look at the company where i work so we
+12:29 have a moderation team and uh so the
+12:31 company is
+12:32 like it's online classifieds so like
+12:35 think uh
+12:36 like craigslist or um basically the
+12:40 place where you go sell stuff you don't
+12:41 need
+12:43 so the moment some somebody publishes
+12:45 something somebody creates a listing we
+12:46 want to understand
+12:47 if this listing is fraudulent or not and
+12:49 then if we think that is fraudulent
+12:51 then basically a moderator or like if it
+12:53 could be an automated decision or a
+12:55 moderator
+12:56 uh looks at this and the way we
+12:58 typically do it and the way it's done in
+13:00 industry usually
+13:01 is we play with precision recall and uh
+13:04 you know we said we'll play with the
+13:05 threshold we see okay
+13:07 this level of precision is acceptable
+13:09 for us this level of recall is
+13:10 acceptable for us so we're setting
+13:12 thresholds to this to do this uh you
+13:15 know to this amount
+13:16 like to this value and then we just roll
+13:19 it out
+13:19 and then yeah so this is how system
+13:21 works
+13:22 but uh yeah as i just understood from
+13:25 you this is not
+13:26 an ideal way of doing this so how should
+13:29 we
+13:29 approach it differently how decision
+13:32 optimization can help us
+13:33 yeah so decision optimization really
+13:35 requires uh is
+13:37 is very use case specific so we'd have
+13:40 to talk about it
+13:41 i guess the first question that i would
+13:44 ask is
+13:44 is every type of fraud
+13:48 not everything is every fraud equally
+13:51 painful to you as a platform yeah
+13:53 probably not
+13:54 yeah exactly not so we need to put like
+13:56 a number to each type of road right
+13:58 yeah so you'd want to think about for
+14:00 each post maybe i'd say
+14:03 i'd like to get a number and say if it
+14:06 is fraud what is the type of fraud
+14:08 and um you know it may be there even
+14:11 two people to go back to something
+14:13 that's similar to that thing i saw on
+14:15 insurance
+14:15 maybe you've got two different posts
+14:17 about someone selling a bicycle
+14:20 and one of them is a 10 a
+14:23 10 000 euro very expensive road bike
+14:27 and the other is just a cruiser bike
+14:29 that gets someone
+14:30 you know one is a racing bike and one is
+14:31 getting someone around town
+14:33 and if they're both the same probability
+14:36 of being fraud
+14:37 maybe we'd have to think about
+14:40 about the trade-off but maybe you should
+14:43 be more concerned about someone getting
+14:45 defrauded
+14:46 uh over a ten thousand dollar a ten
+14:48 thousand euro racing bike
+14:50 than over a cruiser bike um
+14:53 if there's you know if it's in a
+14:55 personal personal section
+14:56 and you think someone is going to get
+14:58 assaulted you should have different
+14:59 standards
+15:00 to protect someone's physical safety
+15:01 than you do um
+15:03 you know if something is multi-level
+15:06 marketing
+15:07 and you think maybe they're going to buy
+15:09 a bunch of
+15:11 of plastic bins and not realize the
+15:15 you know the plastic bins are in high
+15:17 quality or something
+15:18 yeah so so yeah i guess so
+15:22 yeah if we do that so right now for each
+15:24 case we
+15:26 attach some number to it so we know that
+15:27 okay cars are more expensive we should
+15:29 pay more attention to cars
+15:30 let's say than to uh to cheap bikes
+15:34 so we did that and what do we do next so
+15:36 we have that we have
+15:37 like this prices or some perceived
+15:41 received value or perceived price of an
+15:44 item
+15:45 then we have uh the predictions of our
+15:48 of our classifier so we have these two
+15:50 things so what do we do next
+15:52 yeah so the end product what you're like
+15:55 what you'd like to come up with is a
+15:56 single function
+15:58 that takes you know it can be think of
+16:00 it like a python function
+16:02 it takes in a bunch of information like
+16:04 the probability of it being fraud
+16:07 the type of fraud the cost of the item
+16:10 the
+16:11 um i'd need to understand your business
+16:13 better but maybe you have some people
+16:15 who post repeatedly
+16:16 and it would be very painful to you if
+16:19 you mistakenly
+16:21 tag them as fraudulent and so maybe you
+16:24 have different customers
+16:26 who you value in different ways but
+16:28 you'd like to come with one function
+16:31 that considers all these factors and
+16:35 the output of it is accept or reject or
+16:38 perhaps you have some third
+16:39 category which is investing manually
+16:41 investigate
+16:42 and now i would go to and it could be
+16:46 something the data scientist does
+16:48 in many companies um
+16:51 i think the process because of
+16:55 this who works there is a little bit
+16:56 different at tech companies verse
+16:58 i talked about insurance companies i've
+17:00 talked you know i've talked to talk to
+17:01 banks
+17:03 and so you probably have a different
+17:04 process in terms of who the people are
+17:06 who make this decision
+17:07 but i it really is for you to
+17:11 simulate for any given decision rule
+17:14 what happens who are the customers we
+17:16 upset what are the types of fraud that
+17:18 happen
+17:20 and then for us to visually be able to
+17:23 say
+17:24 we've we've proposed a few different
+17:26 decision rules
+17:27 which of these is the outcome that
+17:30 we're most happy with and in many cases
+17:33 that outcome will be
+17:34 um we might even look at the if you
+17:37 charge people for posting what's the
+17:38 lifetime value of the people
+17:40 who we upset or what fraction of them
+17:43 leave the platform
+17:44 and the the thing that i think
+17:47 data scientists probably have made the
+17:50 biggest mistake
+17:51 in is thinking about each of their
+17:54 machine learning models
+17:55 atomically or alone and so it could be
+17:59 that the right thing to do and again not
+18:01 knowing your business it could be the
+18:02 right thing to do is to say what's the
+18:03 likelihood of this being of
+18:04 being fraud and that's a machine
+18:05 learning model and then i've got another
+18:08 model that says
+18:09 conditional untagging this
+18:12 as as fraudulent if that's a mistake
+18:15 what's the likelihood that this person
+18:16 gets upset
+18:17 and never posts with us again so now
+18:20 i've got two models
+18:21 that i'm connected and maybe you've got
+18:22 another one that says what is the
+18:25 lifetime value of of different customers
+18:27 and now i've got three different models
+18:29 and i'm incorporating all of those in a
+18:31 way that
+18:32 um because you know if i were to ask
+18:35 someone to explain how the business
+18:36 works
+18:37 they would describe it as this like
+18:39 really complex flow chart
+18:40 and for us to model that in reality
+18:42 requires that
+18:43 each of these pieces talks to each other
+18:46 but at the end of the day
+18:47 at the end of the day you want a
+18:48 decision function like a python function
+18:50 and you want to simulate
+18:52 what are the outcomes of each of these
+18:54 and which am i most comfortable with
+18:56 yeah so we get a bunch of models
+19:00 for detection model lte prediction model
+19:03 some other models we just put them
+19:04 together into a single python function
+19:07 we somehow encode this logic of uh
+19:11 you know making this decision and then
+19:14 uh
+19:14 i guess we just use this function to
+19:16 make decision or do we experiment with
+19:18 real customers or maybe there is
+19:19 like a safe environment where we can uh
+19:22 we can play
+19:23 yeah um and this is another place where
+19:25 there are a few different tactics
+19:27 um if you are in a business where you
+19:30 have a nice way of doing some sort of a
+19:31 b
+19:32 testing a b tests and experiments are
+19:36 incredibly uh reliable so like we should
+19:38 do them
+19:39 where that's possible um the
+19:43 uh the the core of decision ai the
+19:45 company that
+19:46 i've built in the software that we've
+19:47 built is to
+19:50 build is to make it easy to build
+19:54 and visualize a simulator or an
+19:57 environment that takes in these
+19:58 different machine learning models
+20:00 and now in this simulator or in this
+20:02 almost sandbox
+20:03 i can try out a bunch of different
+20:06 decision functions and the decision
+20:08 function is the thing that we'll
+20:09 eventually deploy that's this python
+20:11 function but i'd like to be able to
+20:14 see i'd like to be able to see what
+20:16 happens if i run this decision function
+20:17 and that's
+20:18 that's the thing that we specialize in
+20:21 um
+20:21 and then the decision function like you
+20:22 said is the thing that i eventually uh
+20:25 deploy so ideally a b test if there is
+20:28 no way to do this then we can try
+20:30 um simulation and then play with the
+20:33 parameters of the
+20:34 decision function there that's right but
+20:37 who should
+20:37 create like you mentioned that it should
+20:39 be a data scientist to create
+20:41 who creates this decision function then
+20:44 wondering
+20:44 um like isn't the purpose of machine
+20:46 learning is to avoid
+20:48 you know putting the rules in this
+20:50 decision factor like
+20:51 in this decision function like maybe we
+20:54 can use machine learning
+20:55 to uh to define this decision function
+20:58 for us that's
+20:59 the promise of machine learning right
+21:01 yeah i mean
+21:03 i would make a distinction between so if
+21:06 you were to build a machine learning
+21:07 model what's the
+21:09 what is the api for a machine learning
+21:10 model machine learning
+21:12 whether you build an xg boost or
+21:13 tensorflow or a scikit-learn or whatever
+21:15 the one you
+21:16 one thing that is consistent is it is
+21:18 always dot predict so if i were to put
+21:21 that in plain english
+21:22 that is to say what will happen and so
+21:25 if you were to compare machine learning
+21:27 to the way that we built
+21:29 models 10 years ago you know we were
+21:31 using linear regression
+21:32 uh or or some sort of like glm model
+21:36 and we had to do all this feature
+21:37 engineering very manually
+21:39 in order to make better predictions
+21:40 machine learning makes that
+21:44 that prediction what will happen um more
+21:47 automated
+21:48 now we get to the step of what should i
+21:50 do about it
+21:52 and what should i do about it is
+21:55 um is a very different question than
+21:58 what will happen there is a branch of
+22:01 machine learning it happens to be
+22:02 reinforcement learning
+22:03 which is to say i've got some some goal
+22:06 or some objective
+22:07 and i want to optimize that objective in
+22:10 a very complex environment
+22:14 and so there is there is the promise
+22:17 that
+22:19 someday machine learning in this case
+22:21 reinforcement learning
+22:22 will do this job for us um
+22:26 we're not quite there yet and so the
+22:27 reason that we're not there yet if you
+22:29 if you follow the reinforcement learning
+22:31 research literature
+22:33 what are like the what are the big
+22:35 breakthroughs in
+22:36 reinforcement learning so there was
+22:37 alphago very good at the
+22:40 the board game go there was uh
+22:43 open ai had something that was very good
+22:45 at the video game
+22:47 dota and the the thing that is
+22:50 consistent
+22:50 is that the breakthroughs 10 percent of
+22:54 them are in robotics
+22:55 but 90 percent of them are in games and
+22:58 the reason for that
+22:59 is that with games
+23:03 you can just play it in a simulator
+23:05 which in this case is
+23:06 you just play the game yourself and so
+23:08 alphago it's terrible
+23:10 terrible worse than the beginner
+23:14 for a billion games but it can play a
+23:17 billion games
+23:18 in a day and it can play a billion games
+23:20 the next day and the next day and the
+23:21 next day so the thing you need
+23:23 is a simulator where you can try out um
+23:26 different rules in a simulator
+23:30 in this dynamic environment and see how
+23:32 things progress over time
+23:34 i don't i don't think they're
+23:37 yeah we we need that type of simulator
+23:40 for
+23:41 environments that are very dynamic um
+23:43 and
+23:44 we are exploring how do you take
+23:46 decision ai and use reinforcement
+23:47 learning
+23:48 but you cannot take a conventional
+23:50 supervised machine learning model and
+23:51 have it
+23:52 do this type of optimization of what
+23:54 should we do to achieve some
+23:55 some broader goal uh
+23:59 yeah and that's because of the
+24:00 narrowness of supervised machine
+24:01 learning models
+24:02 yeah it makes sense so basically like in
+24:05 ideal world
+24:06 and we are still not there we would take
+24:08 all our supervised models put them into
+24:10 one this sort of ensemble model
+24:13 decision function and then train this
+24:14 model with reinforcement learning but we
+24:17 are not there yet we don't have like
+24:19 proper environment where we can
+24:21 experiment uh
+24:22 well not always where it's easy to train
+24:25 this model so we usually
+24:27 uh do this manually right and code these
+24:30 rules in our decision function
+24:31 right yeah yeah and then i guess the
+24:33 other thing i'd say is
+24:34 you've got some you've got some
+24:38 basically i'm going to call them rules
+24:40 which
+24:42 are very straightforward in our heads
+24:45 and yet
+24:46 would be hard to learn from machine
+24:48 learning so
+24:49 the best models of if if i
+24:52 go back to the airline example the best
+24:54 model for
+24:57 how does that whole environment work is
+25:00 one that combines
+25:01 things we know and things that
+25:04 some structure that we know and things
+25:06 we can learn from machine learning so
+25:07 for instance
+25:09 we know that the total revenue
+25:12 on a flight is the sum of the revenue
+25:15 today plus the revenue tomorrow plus the
+25:17 revenue the next day
+25:18 until the flight takes off so that's
+25:20 something that
+25:21 is much simpler for us to encode it's
+25:23 just an identity there's no
+25:25 there's no error when we write that down
+25:28 and the idea that a machine learning
+25:30 model would have to learn that
+25:32 like we just don't really have the right
+25:33 data to learn that
+25:35 um and it'd be you know
+25:38 if you said i want a machine learning
+25:40 model to learn that it's
+25:42 just very awkward and the the i mean the
+25:44 eml ops around are much
+25:45 more complex than just saying i'm going
+25:48 to encode a few of these handwritten
+25:50 rules and there are some places where
+25:52 we don't have data but we've got some
+25:54 knowledge
+25:55 and the right thing to do is to combine
+25:57 some of these rules
+25:58 uh with machine learning models because
+26:01 in some cases the best
+26:02 knowledge is knowledge in someone's head
+26:05 unfortunately and we'd like to get to a
+26:06 place where
+26:07 you just hit a button and everything
+26:08 works but uh we're still not there
+26:11 yeah and i guess the that person is
+26:13 usually not the data scientist it's uh
+26:16 some kind of some sort of domain expert
+26:18 right
+26:19 it it really varies a lot from business
+26:21 to business and
+26:22 and i see um yeah because of what we do
+26:25 i see so many different
+26:28 frameworks human frameworks around how
+26:30 these decisions get made a lot of tech
+26:31 companies
+26:32 it is a data scientist and maybe the
+26:34 data scientist talks to a product
+26:36 manager
+26:37 and they sit down together to do it um
+26:41 yeah it really varies a ton based on um
+26:47 based on the business and how their and
+26:48 how their their divisions are set up
+26:52 for this to be done well because data
+26:54 scientists and analysts
+26:56 think in terms of equations i think that
+26:59 it really benefits
+27:00 by having a data scientist as the
+27:02 fingers on the keyboard but it is
+27:03 something where
+27:04 maybe you get the data scientists and
+27:05 the the
+27:07 you know the vp who just knows the
+27:09 business whether the stakeholder
+27:10 maybe they sit together and work on it
+27:13 but yeah it varies a lot from
+27:14 from business to business makes sense
+27:18 yeah i'm curious to know what are the
+27:19 tools that are uh that are
+27:21 available for this so so i guess that
+27:23 the company where you work develops
+27:26 uh a tool for that for decision
+27:27 optimization or decision optimization
+27:29 right
+27:30 so how does the house does the process
+27:33 so let's say i have these three models
+27:35 lifetime model customer lifetime model
+27:37 then i have this
+27:38 fraud detection model then i have some
+27:40 other model
+27:41 so how do i use this tool to actually to
+27:44 make
+27:45 our decisions better okay yeah so so
+27:48 let's start and
+27:49 say so the primitives are your machine
+27:51 learning models
+27:53 from those we're going to have a
+27:54 simulator which is the simulator is
+27:56 going to incorporate these and say if
+27:58 you use
+27:59 a given decision function then here's
+28:02 what will happen at the business level
+28:03 over a long period of time so we've got
+28:05 the models the simulator
+28:06 and then the last part is the decision
+28:08 function
+28:09 and so the first thing that you do with
+28:11 our software
+28:12 is you take your machine learning models
+28:15 and you just
+28:16 we have a web-based app you just drag
+28:18 and drop those web-based app
+28:19 there's uh sorry those machine learning
+28:21 models into
+28:22 our web-based app so you could pickle a
+28:25 scikit-learn model or you can
+28:26 pick an xd boost model and you just drag
+28:28 and drop those in and now
+28:30 you will use we have a domain specific
+28:34 language
+28:35 where you can write out some formulas
+28:38 that are the types of formulas that i
+28:40 mentioned in the airline example the
+28:41 number of tickets
+28:42 we sell today is whatever we
+28:46 had yesterday sorry the number of things
+28:49 we have to sell today is whatever we had
+28:50 yesterday minus what we sold
+28:52 yesterday so a very simple simple
+28:54 formula what do you sell on any given
+28:56 day well here we're going to go and
+28:57 consult
+28:58 the demand model and it's you use it in
+29:00 this you know i've got a in a very
+29:03 pythonic way demand model.predict and
+29:06 you feed in the arguments
+29:07 um yeah and so we're going to write out
+29:11 a few
+29:12 different uh formulas for how the
+29:15 different
+29:16 different variables evolve and some of
+29:18 those
+29:19 will be a function of the machine
+29:20 learning models and now the simulator
+29:22 runs this and says all right
+29:23 for a given let's say pricing function
+29:26 here's our price on day one here's how
+29:27 many tickets we sell
+29:29 given what happened on day one it will
+29:32 now simulate into day two and say well
+29:33 what will the competitor's price be on
+29:35 day two that could be
+29:36 a prediction from a machine learning
+29:38 model that takes in the price we set on
+29:40 day one
+29:41 what will we sell on day two yeah so
+29:44 after it calculates everything on day
+29:45 two it will now
+29:47 move forward to day three for the
+29:49 competitors price on day c
+29:50 three it'll look at what happened to day
+29:51 two for how many tickets we sell on day
+29:54 three it'll look at the competitor's
+29:55 price on day three so it's really
+29:57 propagating information
+29:59 from one machine learning model to the
+30:01 next and doing that
+30:02 as a sequence over time and the exact
+30:04 way that it does that
+30:06 is going to depend on some structure or
+30:08 some formulas that
+30:09 you wrote yeah i'm curious uh
+30:13 like this must be quite a complex
+30:15 environment
+30:16 uh so i imagine that it would like if i
+30:18 wanted to implement something like that
+30:20 in environment like that with uh you
+30:22 know just using pure python
+30:24 and in code of uh all that that would
+30:26 probably take a while
+30:28 right but yeah i and i
+30:31 so when i was at google um
+30:35 uh we worked on some projects that had
+30:36 this type of simulation technique
+30:39 and the thing that i found is if you're
+30:40 doing this in raw python
+30:43 you're never gonna you're never gonna
+30:44 make a simulator that is totally perfect
+30:47 but you could do something that is
+30:49 reasonable
+30:51 in much less time that it takes to build
+30:52 a machine learning model
+30:54 from scratch because you know once
+30:56 you've got the machine learning models a
+30:58 lot of it is
+30:58 some domain knowledge um and so in
+31:02 python
+31:02 in python in raw python you can do this
+31:05 it's a little painful to set up but the
+31:07 thing that was most painful
+31:08 is to iterate on it so you
+31:12 create you create this simulator you're
+31:14 going to grab some results you take it
+31:15 to someone who knows
+31:17 the business well but who's not a data
+31:18 scientist and they say
+31:21 you know you didn't account for such and
+31:22 such factor and now in this complex
+31:24 system where everything
+31:26 integrates together to iterate is
+31:29 is really very very complex and messy
+31:33 and you need to calculate things in just
+31:34 the right order because you're piping
+31:35 information
+31:36 from one in a sort of dag style or
+31:39 airflow style away from one
+31:41 um one calculation to the next and so to
+31:44 do it in raw python is possible
+31:46 but especially when you want to iterate
+31:47 and maintain it is very very messy and
+31:49 that's
+31:50 one of the problems that uh i think
+31:52 that's probably the number one problem
+31:53 that we solved
+31:54 um yeah with our domain-specific
+31:58 language
+31:58 i'm just curious how companies use that
+32:01 now if not uh like are there many
+32:05 maybe open source tools or where people
+32:07 just uh
+32:08 just do scripts in python and user
+32:11 python to create this environment
+32:12 how do companies do that these days yeah
+32:14 i mean there aren't great tools for it
+32:16 which is
+32:17 was why i started decision ai um
+32:22 the way that that we did it at google
+32:24 the few companies that i've seen or who
+32:26 are doing something like this
+32:28 are either doing it using um raw python
+32:31 so just
+32:32 numpy for the for the for the
+32:35 calculations
+32:36 um and then they're obviously bringing
+32:38 in their
+32:39 tensorflow or or pytorch or whatever
+32:41 models but they're
+32:42 the way that they connect them is very
+32:45 low level raw python
+32:47 um and then i've also
+32:50 seen sort of proof of concepts that are
+32:53 using probabilistic programming
+32:54 languages so that would be something
+32:55 like pi
+32:55 mc3 or pyro
+32:59 i have a hunch that someone
+33:01 sophisticated somewhere out there
+33:03 is doing this with that type of with
+33:06 something like pi mc3
+33:08 but i haven't seen it applied in more
+33:11 than a
+33:12 proof of concept or like a you know a
+33:14 blog post about it type of setting
+33:16 okay so basically the only alternative
+33:19 now
+33:19 is to to encode it uh
+33:23 manually or maybe like somewhere at
+33:25 google or larger companies
+33:27 uh perhaps they have something uh with
+33:29 this bmc but this is not something
+33:31 available for
+33:32 for people to use that's right yeah if
+33:35 someone is doing this
+33:36 and they don't want to use our software
+33:38 which is by the way available for free
+33:40 so
+33:41 i think they should use our software but
+33:42 um uh
+33:44 and i i like i said we can iterate 10 or
+33:47 20 or 30 times faster with our domain
+33:50 specific language for this but um
+33:52 yeah the alternative is to do it in raw
+33:54 python and it's certainly possible
+33:56 okay yeah so uh like coming back to
+34:00 my first question today about your
+34:02 career journey so you mentioned a few
+34:04 things so
+34:05 you competed on kaggle then you work on
+34:08 in data robot and you worked
+34:10 at google and then you left google and
+34:12 started decision ai
+34:14 so i'm curious what did you see there in
+34:16 the industry that led you to this
+34:18 decision
+34:19 um to to
+34:22 that's fine to to start a company called
+34:24 decision ai
+34:26 yeah so why did did you decide that so
+34:30 what did you see in the industry
+34:32 you know i saw that
+34:37 80 percent of the time when i talk to
+34:39 some a data scientist who is using
+34:40 machine learning
+34:42 they are um
+34:45 i'd say for 80 of applications there is
+34:48 an important
+34:49 decision step that comes after the
+34:52 machine learning model
+34:54 no one and most people don't realize it
+34:57 and in many cases they're deploying
+34:59 models
+35:00 and then the rest of business actually
+35:01 doesn't care about the results or the
+35:03 you know
+35:03 um you know i talked about my friend who
+35:06 works at an airline actually
+35:07 his group got cut in half as airlines
+35:10 have these financial struggles but why
+35:12 did that happen it's because they were
+35:13 not able to turn accurate predictions
+35:15 into
+35:16 good decisions or better business
+35:17 results and i think 20
+35:19 of the time that last mile from
+35:21 prediction to decision
+35:22 is so easy that you don't need to think
+35:24 about it it's almost obvious
+35:26 but i would say 80 of the time there's
+35:30 so much to be gained and i i actually
+35:32 have the i strongly believe that
+35:35 machine learning is better than the way
+35:37 that we did models
+35:38 you know with let's say linear
+35:40 regression
+35:42 um and so the way that we've improved
+35:44 predictions
+35:45 has made the world more efficient i
+35:47 think that
+35:49 being rigorous about how you make these
+35:51 about how you use your models
+35:52 has an equally large payoff and when i
+35:56 five years ago when i was telling my
+35:57 friends hey you should do this sort of
+35:59 simulation thing that we were doing
+36:00 at google they all said i wouldn't know
+36:03 how to do it or in one case i work
+36:05 i worked with someone outside of google
+36:06 and said hey let's do this together
+36:08 and it was just so manual and so pain
+36:11 painful no that we couldn't do it
+36:14 without custom tooling
+36:16 and that tooling doesn't exist and so
+36:19 um yeah i i think the need for that
+36:23 tooling for people to think about
+36:24 decisions more rigorously is so
+36:27 important that i
+36:28 i couldn't think about anything else and
+36:30 i'd i would see all this machine
+36:31 learning research and someone would
+36:33 you see this improved the state of the
+36:35 art before
+36:36 the best auc possible was .9 and now
+36:38 it's 0.91
+36:40 or you know we had an accuracy of
+36:43 85 and now we can make it 85.5 percent
+36:47 and someone worked so hard on this and
+36:49 then
+36:51 in all the places i saw it used you
+36:53 build this really accurate model you
+36:54 work hard to make it accurate
+36:56 and then the way you use it is so bad
+36:58 that you almost just throw it all away
+37:00 and i can't even see
+37:03 most machine learning now without going
+37:06 how is it that you spent so much time on
+37:07 one little
+37:08 piece and then you throw away most of
+37:10 the utility by not using it efficiently
+37:13 yeah that's uh yeah it does resonate uh
+37:17 with uh what i see yeah that's uh
+37:21 that's a a good thing to do and
+37:24 uh yeah since this is such a good thing
+37:27 so how can we how can i as a
+37:30 data scientist in start integrating it
+37:33 in our workflow
+37:34 in actually so let's say we have this
+37:36 problem that we want to solve
+37:38 we think that decision optimization is
+37:40 the right tool we played with this
+37:42 and they think that what we see in
+37:44 simulation indeed
+37:46 looks useful looks promising
+37:49 so what are the next steps how do we
+37:51 take this decision function that we
+37:53 uh did in simulation and apply to our
+37:56 problem
+37:57 okay so i think the the first thing that
+38:00 i should emphasize
+38:02 is that like so many things in life
+38:04 there's a big payoff
+38:05 to doing a little bit better than you do
+38:08 today
+38:08 and so um the thing i
+38:12 the thing that i suggest to everyone if
+38:13 let's say you're doing binary
+38:14 classification
+38:16 the thing that i suggest to everyone and
+38:17 you can do it in
+38:19 you can almost do this on like a piece
+38:20 of paper um
+38:22 but it is so easy is to start with
+38:26 you've got a classification problem just
+38:29 talk to someone in the business and say
+38:31 what is
+38:32 the the val the actual monetary
+38:35 value to us of every false positive and
+38:38 what's the monetary value of every
+38:41 true positive um and now we can just do
+38:46 a transformation on the confusion matrix
+38:48 and say how many false positives and
+38:50 true positives and false negatives and
+38:52 true negatives do we get
+38:53 if we set our decision threshold
+38:57 yeah 10 what if it's 11 12 13.
+39:00 and for each of these you can calculate
+39:02 out what's the monetary value of using
+39:04 this threshold so this you don't need
+39:06 our software for this this is
+39:07 this is really like the very first step
+39:09 um
+39:10 but even to think about rigorously
+39:15 though not in a very mathematically
+39:17 simple way but at least
+39:19 rigorously optimize that decision
+39:21 threshold the same way that you
+39:24 were analytical in everything that you
+39:25 did up until now
+39:27 so that you're achieving some broader
+39:29 outcome is is i think the very first
+39:32 step
+39:34 beyond that and especially if you are in
+39:36 a situation where you think there are
+39:39 dynamics over time so some customers if
+39:41 we upset them today
+39:43 that is going to um
+39:47 that's going to affect our business
+39:49 tomorrow in a way where it's different
+39:51 from one customer to the next
+39:52 now a simple decision threshold isn't
+39:56 isn't the optimum so uh being rigorous
+39:59 about getting to some
+40:00 decision threshold is better than not
+40:01 being rigorous at all but now letting it
+40:03 vary is
+40:04 is the next step um i think that
+40:07 i i would really recommend to anyone um
+40:12 that uh if they check out our software
+40:15 like like i said you can use it for free
+40:19 and even having the mental mindset shift
+40:23 of saying
+40:24 i'm going to optimize
+40:27 how we use our model to make decisions
+40:32 even if you don't do it perfectly just
+40:34 having that mindset shift and saying
+40:36 all right i can see the dynamic impact
+40:38 here's something that's going to show up
+40:40 on our companies let's say profit and
+40:41 loss or here it's going to show up on
+40:42 the number of customers that we have a
+40:44 year from now um
+40:46 trying to to model things that the
+40:49 your ceo cares about
+40:52 even if you don't do it perfectly is a
+40:54 big step forward and like i said i i
+40:56 would really
+40:57 recommend to everyone that decision ai
+40:59 is
+41:00 you know our website is www.decision.ai
+41:04 our app is app.decision.ai and i would
+41:07 really recommend to everyone
+41:09 to explore it and really
+41:12 start at least approximating what is the
+41:15 ideal way to
+41:18 to make decisions based on our models
+41:20 yeah
+41:21 um i actually meant it slightly
+41:23 different things so let's say
+41:24 let's say we already played with this
+41:27 decision i we found this perfect
+41:29 perfect but good enough reasonably good
+41:31 decision function
+41:32 so do we export it and use it in our
+41:35 production or how does it look like
+41:37 that's yeah that's right you're going to
+41:38 have you're going to deploy a restful
+41:40 endpoint
+41:41 um that is uh
+41:44 yeah it takes in whatever the input to
+41:46 that function is for
+41:48 your decision function and it's going to
+41:50 return
+41:52 we accept this transaction or we reject
+41:54 it or we
+41:55 you know we whatever the decision is
+41:58 that you need to inform
+42:00 you're going to deploy a restful
+42:01 endpoint uh which is that decision
+42:04 function
+42:05 okay so like uh to the rest of
+42:08 the organization it would it will look
+42:10 like a usual
+42:12 web service rest endpoint rest api that
+42:15 they send features and get back the
+42:18 the the decision so nothing changed from
+42:20 the integration point of view
+42:21 that's right okay that's so that's cool
+42:24 and who
+42:25 usually who should drive this like
+42:28 or if the initiative of trying this
+42:30 thing should it come from
+42:32 a data scientist uh should come from a
+42:35 product manager
+42:37 uh i can if it's a data scientist how
+42:40 can they explain
+42:41 the value of of doing
+42:44 this thing investing in that thing yeah
+42:47 uh
+42:48 so i think i personally think it should
+42:50 be the data scientist uh
+42:52 the data scientist is spending so much
+42:54 time building
+42:55 machine learning models and
+42:58 if those models don't pay off then both
+43:01 the data scientists and
+43:03 if they're accurate but they don't pay
+43:05 off in a way that the
+43:06 the rest of the business can see both
+43:09 the data scientists and the
+43:10 product manager are in big trouble but
+43:13 but especially the data scientists
+43:16 you know we're seeing i'm seeing more
+43:18 and more companies where there is
+43:19 pressure on the data scientists
+43:22 to to prove that their value that their
+43:25 models are leading to to not better root
+43:28 mean squared error
+43:29 but are leading to better profitability
+43:32 um
+43:33 and so i think the data scientist really
+43:36 needs to take the initiative
+43:38 uh and it is a very analytical process
+43:41 um
+43:41 and so i think the data scientist really
+43:43 needs to be bought in they will need to
+43:45 bring in the product manager
+43:46 but i i think in many cases they'll find
+43:48 that it's actually a quite easy sale
+43:51 where they say to the product manager
+43:54 what is it why don't we start with what
+43:57 is it that you care about
+43:58 not related to data science what is it
+44:00 that you care about
+44:01 a and it could be um
+44:04 the product manager has a metric that
+44:06 they really care about which is i want
+44:08 to maximize daily active users okay
+44:11 daily active users it's going to trend
+44:13 in different ways over time
+44:14 but if that's the number one thing that
+44:16 they care about then now
+44:18 the data scientists and the product
+44:19 manager need to sit next to each other
+44:21 and say all right how do we go from
+44:23 we've got a prediction for whether a
+44:26 given
+44:28 um you know what we're going to
+44:30 recommend to a user or whether a given
+44:32 posting is fraud how do we go from
+44:36 that sketch it on a whiteboard to daily
+44:39 active users so
+44:40 a certain type of fraud if it happens
+44:43 it's going to hurt our reputation and
+44:46 here's the impact of our reputation on
+44:47 daily active users or
+44:48 or some there's some way of tracing from
+44:51 the thing we control to the thing that
+44:52 the rest of business cares about
+44:54 but once you say hey the thing that that
+44:57 that you most care about we're gonna
+44:59 start optimizing for that
+45:01 it's a pretty easy sale okay so
+45:04 basically
+45:05 speaking uh in terms of metrics that
+45:07 business cares about not just
+45:09 accuracy and whatnot yeah i mean
+45:12 accuracy is only a tool to optimize
+45:15 things the rest of the business cares
+45:17 about
+45:18 and so you really want to start with um
+45:21 yeah what is it what is it that other
+45:24 people
+45:25 care about or will be excited about and
+45:27 then you're going to help you're going
+45:28 to ensure that you achieve those broader
+45:30 goals
+45:31 yeah thank you so just want to remind
+45:33 that if you want to ask dan any
+45:34 questions you can use the slider link
+45:36 that is
+45:37 pinned in the chat and
+45:41 i have one more question or maybe a
+45:43 couple of more
+45:45 so in your opinion in which cases we
+45:47 don't need decision optimization maybe
+45:50 like uh yeah maybe there are some simple
+45:52 cases
+45:53 and just uh just our model is good
+45:56 enough
+45:56 like yeah um
+46:00 there are certainly cases where there
+46:01 are certainly cases where
+46:04 um and i don't i don't always say the
+46:07 model or the prediction is good enough
+46:08 but
+46:09 there's certainly cases where the
+46:11 prediction is good enough
+46:13 um you know it's interesting there's
+46:17 there's some an example that
+46:21 that might come to mind is
+46:24 netflix so netflix they want to
+46:27 recommend things
+46:28 that if you watch it you'll rate it
+46:30 highly
+46:31 um even there you know so i know
+46:34 when i was at google i talked to folks
+46:36 at youtube so you could say maybe we
+46:37 want to optimize for what someone is
+46:39 going to
+46:40 thumbs up um the thing that the thing
+46:43 that
+46:44 google that youtube did is for better or
+46:46 for worse is they said
+46:47 we really care about someone
+46:51 continuing to watch youtube for long for
+46:53 a long period of time so the thing they
+46:54 predicted is
+46:55 if conditional i'm not showing this
+46:57 video next how much time will someone
+46:59 spend on youtube over the next six
+47:00 months
+47:02 um that's a you know if you had that
+47:03 prediction in many cases that's like
+47:05 that's close enough to the
+47:07 to the big picture metric that that's um
+47:10 yeah the prediction is probably enough
+47:12 um
+47:15 yeah so there are certainly there are
+47:17 certainly cases
+47:18 um where the prediction is enough
+47:22 um it's funny normally you people ask
+47:25 this and i normally come up with
+47:26 examples and i'm sort of blanking now on
+47:29 what the canned examples are that i
+47:30 usually give
+47:32 um yeah i mean even
+47:36 recommendation engines you know if
+47:37 you're recommending a product you might
+47:38 care what the markup is on that product
+47:40 so
+47:40 it's not that um
+47:44 yeah and if something i'm blanking on
+47:45 the examples i usually give but there
+47:47 are
+47:47 there certainly are cases where you say
+47:49 if if i had this prediction
+47:51 there's nothing else that matters and
+47:53 that's enough
+47:54 but that sounds like a very complex
+47:56 problem to predict uh
+47:58 how much time a person will spend in the
+48:00 six months on the platform
+48:02 like this is probably an enormous model
+48:05 soup
+48:05 it's uh super complex and the things
+48:08 that can happen
+48:09 if you have youtube scale data are
+48:12 different
+48:13 than the things that can happen um
+48:17 almost everywhere else and so so yeah
+48:19 you're abs you're absolutely right that
+48:20 that's a very complex problem
+48:22 and uh yes so there are things that
+48:26 happen at big tech that uh and
+48:27 especially at youtube that don't happen
+48:29 and i imagine that probably in this
+48:31 particular example this decision
+48:33 function is already encoded in the model
+48:35 so like because of the complexity you
+48:37 kind of sort of have it in the model
+48:39 already yes that's right and in their
+48:42 case just by the
+48:44 uh yes there's a lot of stuff
+48:47 happening in their models which i don't
+48:49 i only know
+48:51 somewhat as an outside i don't know all
+48:53 the details of i wasn't super close to
+48:56 to anything that you the youtube team
+48:57 did but um
+49:00 yeah okay
+49:04 um what trends do you see in data
+49:06 science as a whole
+49:08 yeah i mean the i'm working with a lot
+49:11 of companies on
+49:12 supply chain problems um and especially
+49:15 and
+49:15 more broadly almost everything that i do
+49:17 with decision ai is tabular data
+49:19 and one of the trends that i've seen
+49:22 which i think people should be very very
+49:24 worried about right now
+49:25 um is that is it's frequently called
+49:29 train test drift or concept drift
+49:31 of we're going to build a model it's
+49:34 using
+49:35 historical data because all data is
+49:37 historical
+49:38 and now we're going to predict uh you
+49:40 know if we run a retailer
+49:42 and we say i want to predict um how many
+49:47 how many cans of of
+49:50 of something uh cans of tomato sauce i'm
+49:53 going to sell
+49:55 and i'm going to deploy this model i'd
+49:56 use it to predict what's going to happen
+49:58 next week
+49:59 well the data that i collected the most
+50:01 recent data is from 2020
+50:04 the way that the way that people bought
+50:06 groceries in 2020
+50:08 was so unique that
+50:11 finding whatever patterns your machine
+50:13 learning model is going to find with
+50:14 data from 2020
+50:15 is not is not going to happen in 2021
+50:18 and so then they say well maybe we
+50:19 should go
+50:20 leave out 2020 build on data that's from
+50:23 let's say 2017 to
+50:25 and they say that's actually not we're
+50:27 that's not so representative
+50:30 of what the world looks like in 2021 and
+50:32 and so
+50:34 these concerns about train test drift
+50:36 and concept drift
+50:37 are um are really front of mind for most
+50:41 people
+50:42 who are deploying machine learning
+50:44 models today
+50:45 um in a way that i think it wasn't
+50:48 front and center certainly not so yeah
+50:51 before the
+50:52 before 2020 it wasn't front and center
+50:54 and in 2020 a lot of companies
+50:56 said all right we're just gonna not rely
+50:59 on predictions for our supply chain
+51:00 decisions
+51:01 we're just gonna guess
+51:04 um that's an interesting trend right so
+51:07 i'm not relying on data science anymore
+51:09 and now now they're coming now they're
+51:12 coming back and saying
+51:13 in 2020 we guessed now we think
+51:16 things are not so crazy we want to move
+51:18 back to you to using machine learning
+51:20 for forecasting
+51:21 but we want to be really smart about how
+51:23 we account for
+51:25 concept drift or train test drift that
+51:27 is the fact that
+51:28 the world that we live in over the next
+51:31 two months
+51:32 looks unlike what's happened in the past
+51:34 and we need to figure out a way to use
+51:36 machine learning but then
+51:37 make those sort of adjustments so sort
+51:39 of we need to
+51:40 make do with whatever data available we
+51:43 have available for the last
+51:45 i don't know one two months right and we
+51:47 cannot go back to 2020 we cannot back
+51:51 to even earlier years because this data
+51:53 is not representative so the best we can
+51:54 do is
+51:55 guess or use uh very recent data which
+51:58 is uh
+51:59 which is not yet right but i i mean the
+52:02 other technique which is quite
+52:03 common with um with this concept drift
+52:06 is
+52:06 uh i guess there are two broad
+52:09 approaches so one is
+52:10 where is frequently called model
+52:12 monitoring which is just
+52:14 we want to make sure that every day
+52:17 we have a dashboard we can go to and
+52:19 look at
+52:20 ideally it was our model less accurate
+52:22 yesterday
+52:23 than it was you know when we
+52:26 when we validated it in many cases
+52:30 you don't get the ground truth in time
+52:33 to see
+52:33 the model's accuracy over a one-day
+52:35 period
+52:36 but in those cases people look at
+52:38 something called covariate shift
+52:40 which is to say if i look at
+52:43 the data that i've used to make
+52:44 predictions after i deploy the model if
+52:46 i look at
+52:46 the data from the last week or the let's
+52:49 say the means of that are those similar
+52:51 to the means from the training data
+52:53 and if they are maybe it's okay to leave
+52:55 this thing in production
+52:56 and if not i need to be able to refresh
+52:58 the model very very quickly
+53:00 and so that sort of model monitoring is
+53:02 front of mind for people
+53:04 today in a way that it hasn't
+53:06 historically been
+53:07 and then there's there's some approaches
+53:09 that i'm talking to
+53:10 to people about quite a bit which is to
+53:12 say i have a hypothesis
+53:16 about how the
+53:20 about how the next month will differ
+53:22 from the past month
+53:24 i want to use a machine learning model
+53:26 make a prediction
+53:27 but then i want to programmatically make
+53:29 some adjustment based on
+53:30 my hypothesis about how the world will
+53:32 change there's some
+53:33 machine learning explainability is it it
+53:35 starts to get really technical but
+53:36 there's some machine learning
+53:37 explainability techniques
+53:39 um especially something with something
+53:40 called shap values where you can
+53:43 make these types of adjustments
+53:45 programmatically
+53:47 after the you get the output of your
+53:48 machine learning model so i'm talking to
+53:49 people about that
+53:50 um but it's front of mind for everyone
+53:52 now of we just live in a world that's
+53:54 changing so quickly
+53:55 that we're concerned about how much we
+53:58 rely on
+53:59 models of historical data that's indeed
+54:03 a complex product
+54:03 a problem for for data scientists to
+54:06 solve
+54:07 not just for data scientists for
+54:08 businesses yeah
+54:10 i think uh that's uh all for today so
+54:13 maybe last question how people can find
+54:15 you yeah
+54:16 um so uh on twitter i'm
+54:20 dan s becker um i can uh
+54:24 yeah i'm on linkedin i don't know you
+54:26 can look me up on linkedin
+54:28 uh a founder of decision ai but people
+54:30 also should feel free to um
+54:32 if you have a data science question
+54:34 you're struggling with
+54:35 i love chatting with people about how
+54:38 they go from
+54:40 of i know machine learning um which is
+54:43 something that so many people know now
+54:44 too all right we want to use this as
+54:46 effectively as possible
+54:48 if you've got a challenge drop me an
+54:49 email dan decision.ai
+54:52 um always enjoy chatting with people
+54:54 about it and would
+54:55 love to help so um that and then uh
+54:58 dennis becker on twitter
+54:59 yeah thanks thanks for i i shouldn't say
+55:03 thanks for coming
+55:04 thanks for joining
+55:07 these times it's uh zoom calls but uh
+55:10 it's better than nothing right
+55:12 yeah thanks a lot for joining
+55:15 my pleasure yeah well and thanks
+55:17 everyone
+55:18 for attending it uh it's been for hours
+55:22 so
+55:23 not everyone uh stayed till till this
+55:25 last talk
+55:26 so for those who stayed thanks a lot for
+55:28 those who didn't this will be of course
+55:30 uploaded as a separate video
+55:32 and yeah thanks
+55:36 thanks then for coming and thanks
+55:37 everyone for attending and
+55:39 see you next week

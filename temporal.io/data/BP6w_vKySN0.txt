@@ -1,0 +1,1295 @@
+Data Intensive AI
+
+0:01 hi everyone Welcome to our event this
+0:03 event is brought to you by data do club
+0:04 which is a community of people who love
+0:06 data we have weekly events and today is
+0:09 one of such events if you want to find
+0:11 out more about the events we have there
+0:13 is a link in the description click on
+0:14 that link and check um out all the other
+0:18 events and today in addition to this one
+0:20 we actually have another one which is a
+0:22 workshop about daa engineering we will
+0:24 learn about DT data load tool so check
+0:27 it out then do not forget to subscribe
+0:30 to our YouTube channel this way you'll
+0:31 stay up to date with all our future
+0:34 streams and last but not least do not
+0:36 forget to join our data Community there
+0:39 you can hang out with other data inas
+0:42 during today's interview you can ask any
+0:44 question you want there is a pin Link in
+0:46 the live chat click on that link ask
+0:48 your questions and we will be covering
+0:49 these questions during the
+0:51 interview now I need to stop sharing
+0:54 just in case let me actually open the
+0:57 stream on my phone so if you're right
+1:00 anything else see that so I everyone I
+1:03 see that 20 people are here with us
+1:05 today so thanks for
+1:07 joining um and the questions
+1:15 are okay so I have the questions
+1:19 open and we can start if you're ready
+1:24 yes I I think I am okay let's roll so
+1:30 this week we'll talk about data
+1:31 intensive Ai and we have a special guest
+1:34 today BOS BOS is an AI and data engineer
+1:38 he specializes in moving AI projects
+1:40 from the good enough for demo phase to
+1:43 production by building a testing
+1:45 infrastructure and fixing fixing the
+1:47 issues detected by test um he also
+1:51 teaches programmers and non-programmers
+1:52 to
+1:53 UCI and he is a public speaker and he
+1:57 contributed to one he contributed to a
+1:59 book called 97 things every programmer
+2:02 should know he there is a mistake there
+2:05 that should be every data engineer
+2:07 should know okay data 97 things every
+2:12 data engineer should know yeah I noticed
+2:15 yeah um actually my colleague um ex
+2:18 colleague he now works at meta I think
+2:21 also wrote the chapter there yeah it
+2:25 was very Community Based book yeah yeah
+2:29 so like was it 97 authors or no no were
+2:33 people who contributed two or three
+2:35 chapters I think even uh but there's
+2:38 only one mine and it's about
+2:41 testing okay so you you like testing
+2:47 right well like is maybe not the right
+2:50 word but I do it and you don't dislike I
+2:55 accept that you have to do it m CU um
+2:59 many Engineers many developers have um
+3:03 you know they are not fans of writing
+3:07 tests yeah um and well the way I
+3:11 sometimes do things is I start a project
+3:16 and then it kind of works and then okay
+3:18 now I know it will start falling apart
+3:21 so probably I should start covering with
+3:23 test so I never follow like can back I
+3:26 don't do test driven development cuz for
+3:29 me
+3:30 this is so difficult like you know start
+3:32 with a test and then you know make sure
+3:35 it fails but we will talk about that
+3:37 right um anyways yeah Welcome to our
+3:41 interview
+3:43 baros and hi yeah the questions for
+3:47 today's interview are prepared by
+3:48 Johanna Bayer thanks Johanna for help
+3:51 and before we go into our main topic of
+3:54 data intensive AI let's start with your
+3:56 background can can you tell us about
+3:58 your career Journey so far
+4:00 oh okay so I started as a Java developer
+4:04 many many years ago I work for the
+4:06 banking
+4:08 industry and then
+4:11 I really cannot it play it out loud so
+4:15 maybe let's keep it and okay um then I
+4:19 moved to data engineering uh well first
+4:23 of all I wanted to be a data scientist
+4:25 and I was for a few months at the
+4:27 startup and I realized that this is not
+4:30 for me and I really prefer putting those
+4:33 things in production than
+4:36 doing so I switched to data engineering
+4:40 and kind of stayed like this until I
+4:44 discovered
+4:46 envelops um so I could go back to mer
+4:49 leing but in a part of it that I could
+4:52 handle so deployment testing stuff like
+4:55 this and I kind of stayed in this area
+5:00 uh and then now now I switch to more AI
+5:05 engineering let's say but still in
+5:07 relation to data uh so I avoid building
+5:13 like backend applications or something
+5:15 like this mod data pipelines if there is
+5:18 AI then it's even cooler but let's stay
+5:20 with
+5:23 data yeah interesting we had a kind of
+5:26 similar career path cuz I also started
+5:29 with ja development and I also worked at
+5:31 a bank and this was in Poland too and
+5:34 then I thought okay like enough Banks
+5:35 like I I
+5:36 cannot think of all these options
+5:39 Futures and all this stuff like I I just
+5:42 want to do data science and yeah here we
+5:45 are talking about engineering right yeah
+5:50 exactly uh so you you have a very nice
+5:56 um blog with a lot of articles there so
+5:59 apparently you like writing yes uh yes
+6:04 that's true I try to do it every week I
+6:07 cannot promise that I will do it every
+6:10 week because for example I skipped the
+6:11 last one uh but this is not something I
+6:15 intend to do the goal is that every
+6:18 Monday there should be something publish
+6:21 um it wasn't always like this um I tried
+6:24 different schedules like three times a
+6:27 week there was a time when I decided to
+6:31 do uh to publish something every day for
+6:34 100 days and that was a terrible time
+6:38 never I never do it again uh but on the
+6:42 other hand it was also kind of
+6:44 interesting because you run out of ideas
+6:47 after 20 days and then you have to do
+6:49 something M yeah uh so did you actually
+6:53 write a block post every day for 100
+6:55 days or was it something
+6:57 else uh
+6:59 I published every day for 100 years I
+7:02 was trying to write two blog posts every
+7:05 day so I have some back up for later
+7:09 time when I don't want to do it
+7:11 anymore yeah so I remember I think it
+7:14 was during covid times uh when I wanted
+7:17 to do 100 days of LinkedIn so every day
+7:20 I would make a post on LinkedIn and
+7:22 exactly like you said after 20 days I
+7:24 was like H what should I post about like
+7:28 where do I get ideas and then you start
+7:30 looking for ideas everywhere like around
+7:32 you I had a notebook and then I have an
+7:35 idea and then I quickly write it down so
+7:37 I don't forget but it was so exhausting
+7:40 like I was burnt out after like I don't
+7:42 know a
+7:43 month so yeah but now I'm publishing
+7:47 every weekday on LinkedIn and it's
+7:49 similar to your experience although this
+7:51 is I think it's kind of easier right now
+7:54 because a lot of things are happening in
+7:56 the ey so we can right about this
+8:00 yeah so and for how long have you been
+8:02 doing this
+8:04 writing uh blog or LinkedIn block
+8:07 LinkedIn whatever like you've been
+8:09 writing for quite some time block seem
+8:11 since uh 2017 I
+8:15 think that's that's nice that's like
+8:19 eight
+8:20 years yeah eight there like 480
+8:25 something articles in the block I have
+8:30 480 okay so almost 500 right so yes I
+8:34 was actually checking if I already WR
+8:36 500 and still
+8:38 know okay and before you were writing so
+8:42 right now you write about Ai and before
+8:44 you were writing about dat engineering
+8:46 data science this kind pretty much
+8:48 whatever I was doing at work related to
+8:51 work I was writing about something
+8:54 similarly I couldn't I was WR exactly
+8:56 what I was doing but I could uh do
+8:59 something something
+9:01 similar and how did it happen that you
+9:03 wrote a chapter in this
+9:05 97 things every data engineer should
+9:08 know how did it happen well I noticed
+9:12 that they were looking for contributions
+9:15 and I just sent
+9:18 some um yeah okay you can say I just
+9:24 volunteered yeah I was just wondering to
+9:26 what extent your block was useful in
+9:28 making this happen well it was because I
+9:31 used my one of the articles on the blog
+9:34 uh as the
+9:36 contribution so you already had the
+9:38 article you just sent it yes I already
+9:40 had it I just sent it and was
+9:43 accepted so what are the 97 things every
+9:46 dat engineer should
+9:47 know well in my case it was the thing
+9:51 that uh that few words you don't want to
+9:54 hear as a data engineer and those words
+9:57 this number doesn't look correct and
+10:00 the
+10:00 dashboard because you immediately lose
+10:03 the Trust In well they don't trust you
+10:05 anymore yeah if you make a mistake like
+10:08 this uh so it was
+10:11 the the observation that started u text
+10:16 about the importance of testing and
+10:18 verification of the
+10:21 data so how do we like how why T
+10:26 important why should we run and and how
+10:28 is it how is it related to this phrase
+10:31 like when somebody says this number
+10:33 doesn't look correct how is it related
+10:36 to
+10:37 testing well because if for example you
+10:41 have your data Pipeline and you cannot
+10:44 proof that it works correctly then how
+10:46 you are going to prove that this number
+10:48 is in fact correct yeah so you need the
+10:51 test to to prove it okay of course we
+10:54 can argue if software tests Pro that
+10:57 something work correctly or if they only
+10:59 prove that some that you cannot detect a
+11:02 bug with what you have but there is kind
+11:04 of a different discussion yeah you at
+11:06 least have the test F then we can wonder
+11:09 if they are good good
+11:11 enough so at least you have some
+11:13 certainty certainty that your
+11:16 pipeline is overall functional right and
+11:19 then if somebody says this number does
+11:20 not look correct you can say yeah it
+11:22 should be right but let's try to figure
+11:24 out why you think so right yeah and you
+11:27 have something you can rely on while the
+11:29 bugging because you when you see a
+11:31 behavior and you see that there is a
+11:33 test for it then you know that this was
+11:35 in final not that okay maybe this is
+11:38 wrong because now I don't really
+11:40 remember what it's supposed to be
+11:42 there how do we create tests for data
+11:47 pipelines well I will say that um as as
+11:51 you said in the beginning it's often
+11:53 easier to not start with test and I
+11:55 agree with that right now I wasn't
+11:58 always the case that I was agreeing with
+12:00 this but yes I do agree so just make it
+12:04 run and then you can start seeing what
+12:07 are the outputs and then decide okay
+12:10 this this is okay so I will maybe use
+12:11 this as a test case and this is probably
+12:14 the easiest way it might not detect all
+12:16 of the errors right away because you
+12:20 will probably skip the edge cases being
+12:22 too optimistic about your own code uh
+12:26 but you have a static point I I used
+12:29 think that test div and development is
+12:30 the way to do it uh but I will not
+12:35 uh maybe P it anymore not that it
+12:39 doesn't work it
+12:40 just kind of to learn difficult uh for
+12:47 yes it is more difficult in daytime
+12:49 tring because it's not like you're
+12:51 testing one single function like there
+12:53 eight lines long you have the pipeline
+12:55 there's a lot of things that has to
+12:57 happen you have to prepare the data for
+13:00 so just not convenient and maybe
+13:03 convenience is not the thing you should
+13:05 worry about when you are
+13:07 testing but still do yeah we don't want
+13:10 to that yeah difficult what kind of
+13:14 tools and first maybe like correct me if
+13:17 I'm wrong but what you suggest is we
+13:20 write it create a data
+13:22 Pipeline and then we have some sort of
+13:24 integration test or some sort of uh it's
+13:27 not like a unit test but we run our P
+13:30 some data yeah I'm not sure if
+13:32 integration test is the the right way to
+13:37 do it but definitely unit tests are kind
+13:39 of not very useful in data pipelin so we
+13:43 have to do
+13:45 integration so what we do is we have
+13:47 some um sample of data we run it through
+13:50 the pipeline and we expect that okay
+13:53 this is the input and this is the output
+13:54 and we check that the output from the
+13:58 data pipeline f like is the same as the
+14:00 the output we expect
+14:02 right yeah that would be probably some
+14:04 kind of snapshot testing can say but if
+14:08 you prepare this data the input data
+14:11 first and you know what is that and you
+14:14 can evenbly name the tests according to
+14:16 the business Ru that they are testing so
+14:20 they basically doing something like test
+14:22 driven development but maybe not in the
+14:24 same order as you are supposed to but
+14:27 kind of at the same time so I it still
+14:30 comes yeah so if your data pipeline is a
+14:34 python script that uses pandas it's
+14:37 relatively easy I think to test because
+14:39 then you can you know create some
+14:41 functions and then you can test these
+14:43 functions with unit if it's a spark job
+14:47 then it's also it's more straightforward
+14:50 it's less straightforward maybe than the
+14:51 python script but still you can isolate
+14:54 some of the functions like with I don't
+14:55 know udfs whatever and there are some
+14:58 tools for SP park for pice park or for
+15:00 Scala or Java where you can test it um
+15:05 right but um I'm just curious are there
+15:09 are tools that work for all data
+15:11 pipelines or how do you even choose the
+15:14 tools like for testing well I work with
+15:17 spark so I agree with what you said that
+15:20 you can always configure the pipeline
+15:22 externally and then switch between
+15:23 production and
+15:25 test and this is how we are doing it um
+15:31 I I will not say that are tools for
+15:34 every type of pipeline because probably
+15:36 there are some edge cases where you
+15:39 don't have tools I just not I'm just not
+15:42 aware of them because I work with spark
+15:45 mostly so I remember at the company
+15:49 where I used to work what was popular is
+15:53 um basically writing a b of SQL queries
+15:56 and that was more difficult to test
+15:59 and the way we solved it we added some
+16:04 we use tools similar to Great
+16:05 Expectations and
+16:08 um soda so this kind like you can Define
+16:11 some checks and then run these checks
+16:13 after each step of your
+16:16 pipeline finishes but there are basic
+16:18 things like okay you expect the number
+16:21 to be like the number of columns to be
+16:23 between this and that uh or I don't know
+16:27 there are that there are no n values and
+16:29 things like that did you basic a basic
+16:33 test but if you are doing a join and you
+16:36 don't have columns and apparently
+16:38 something didn't work so you can catch
+16:41 some catch some errors U yeah great
+16:44 expectations for one of the tools that
+16:46 you can use for this I think in case of
+16:49 SQL can do some templating here
+16:53 like place
+16:55 them names of the tables with some test
+16:58 tables
+16:59 and it's also going to work
+17:04 well and um would do you recommend to
+17:06 use spark today like for new projects or
+17:10 you would choose something else I would
+17:13 use spark because I'm familiar I'm not
+17:15 sure if this is the best uh tool you can
+17:18 use
+17:20 probably well if you have a team that
+17:23 knows how to use spark then yes it is
+17:26 still the best if you have a team that
+17:29 has no experience
+17:31 and also use spark because there are lot
+17:34 of tutorials so I think spark spark is
+17:38 to stay at least for some time yeah
+17:41 because in our data engineering course
+17:43 we still teach spark and this is what I
+17:45 used and this is what I still this is
+17:48 what I see that companies still use uh
+17:51 but I'm wondering um if this tool is
+17:55 choosed for new
+17:57 projects cuz sometimes maybe it's easier
+17:59 to just write a bunch of SQL queries and
+18:01 run them on your I don't know big query
+18:04 or snowflake or whatever at one of the
+18:08 previous companies we're building a
+18:09 mlops platform and we had a part of it
+18:13 that was processing the data from the
+18:15 logs and we used spark and was pretty
+18:18 new project was this feature was not
+18:20 that before so we just uh to spark um
+18:26 even to most of the developers that were
+18:29 developers they have not had no
+18:30 experience in spark and Spark was still
+18:33 the easiest thing to do MH and we've
+18:37 talked a lot about data
+18:38 engineering yeah in your opinion so here
+18:42 we wanted to talk about more to talk
+18:43 about AI right and we call it data
+18:46 intensive AI it's kind of connected yeah
+18:49 yeah so this is my question like how do
+18:51 you think it's connected like what's uh
+18:54 what's the connection between data
+18:55 engineering and all this AI uh tools
+18:58 llms that we see these
+19:00 days okay so first of all you can use AI
+19:05 in your pip might not be the smartest
+19:07 thing to do uh because they of course
+19:09 they hallucinate so then you have a lot
+19:12 of bugs to fix later if they do it at
+19:15 the WR long time uh but that's something
+19:20 you might try uh the another think that
+19:23 this kind of a connection if you want to
+19:25 find tune on a Model definitely need a
+19:29 lot of data you have to pre-process it a
+19:31 job for data engineer okay maybe maff
+19:34 learning engineer but they will probably
+19:36 don't want to do it if just fine tuning
+19:39 so data Engineers
+19:42 again and even if you do back end then
+19:47 in the end you will have some logs and
+19:49 that would be interesting thing to get
+19:52 data
+19:53 from even if the data is just going to
+19:56 tell you that this model doesn't work
+19:57 well all you have to do something yeah
+20:00 it's still some information and you have
+20:02 to get it somehow so you always need
+20:05 data Engineers not the right scale of
+20:08 course if you have 10 examples then
+20:09 maybe
+20:11 not I was also curious uh like how your
+20:16 journey looked like how you switched
+20:18 from doing data engineering and all this
+20:20 engineering to focusing more on AI was
+20:23 it something you liked or was it
+20:25 something you needed to work on and
+20:27 learned or like how did it happen for
+20:29 you well I wanted to switch to data
+20:31 science from backend engineering then I
+20:34 ended up being data engineered but I
+20:36 still wanted to do some B learning uh so
+20:39 um I was kind of in between those uh two
+20:44 places then I became mops and was kind
+20:48 of the thing that I wanted to do yeah
+20:50 because sort of data engineering s muff
+20:54 lightning still some backs I was
+20:56 familiar with the things I was supposed
+20:58 to be doing
+21:01 so yeah this is
+21:03 how so it was like cuz you wanted can I
+21:07 say PA driven Pati driven cuz you wanted
+21:10 to do that and you saw this thing and
+21:12 you thought okay this is something I
+21:14 want to
+21:15 try yeah probably you can say it like
+21:19 this uh was also kind of um being uh not
+21:25 very satisfied with backend engineering
+21:28 anymore
+21:29 so I wanted to try something
+21:32 new okay interesting and U Can you tell
+21:35 us about some use cases of AI that you
+21:39 worked on well okay so of course the
+21:43 typical augmented generation yes so have
+21:46 a database of whatever and that's
+21:50 engering that's like I think sorry for
+21:53 interrupting you but like when I learned
+21:54 about track I thought like yeah and this
+21:58 is a engineering this is just you know
+22:00 connecting
+22:02 data you have place and then you need to
+22:05 fetch it uh it's like yeah that's why I
+22:09 think that um AI engineering is not
+22:13 going to survive as a separated all for
+22:15 long I think it's going to be data
+22:17 engineering
+22:19 again um so yeah uh so there is one of
+22:22 the use cases obviously but I think the
+22:25 most interesting things that you can do
+22:27 with AI is when you don't don't even see
+22:29 that this is AI like some report that
+22:32 tells you some data based on text for
+22:34 example I was doing a project when we
+22:36 analyzing the reviews from uh from
+22:41 Google and uh the goal was to find out
+22:45 what works at a particular location of
+22:48 the company source and what what doesn't
+22:52 and create a report on this and it was
+22:54 not screening to the user this is made
+22:56 with AI but but was you needed AI to
+22:59 analyze the data and it was not a CH
+23:02 chatboard it was not a summarize with AI
+23:04 button or whatever you do to to use AI
+23:07 was just that in the background and I
+23:09 think this is the the most useful thing
+23:12 uh for AI don't need to show everyone
+23:15 that we using it and just do it and make
+23:18 the whatever you're doing a little bit
+23:21 more useful MH but also marketing if you
+23:25 show people that you use AI it's e
+23:28 easier to attract investment it is it's
+23:30 easier to attract people I guess easier
+23:33 to attract investment but is it easier
+23:36 to attract the users because I think
+23:37 that are two camps yeah people who like
+23:39 everything with AI and people who
+23:41 absolutely hate it right because I see
+23:44 now like I live in Berlin and uh I see
+23:48 that now if I take Subway I see posters
+23:52 like banners Samsung now with AI and
+23:56 like okay
+23:59 everything needs AI now apparently but
+24:02 do users need it okay they might need it
+24:05 but they do they need to know that they
+24:07 using
+24:09 it like I'm curious what kind of because
+24:12 like I imagine machine learning models
+24:14 have been around in Mobile phones for
+24:16 quite some time right yeah exactly so if
+24:21 you are using an app where you can type
+24:25 anything to set for pictures this is
+24:27 using maff leing have to recognize what
+24:29 is in the picture but you don't have to
+24:30 tell people that this is ma learning or
+24:33 a or whatever just a feature that
+24:36 works I think Google tell that like in
+24:40 their like when they advertise the
+24:43 cameras I don't I guess their marketing
+24:45 department is
+24:46 not stupid so must probably works but
+24:52 that's one that if if you need it yeah I
+24:54 mean
+24:56 yeah the
+24:59 saying that something is built with AI
+25:01 it's pretty much like saying that it was
+25:03 built with
+25:04 spark yeah right about it yeah it that's
+25:08 just supposed to work right and um yeah
+25:13 you wrote a lot of posts you said like
+25:16 480 one of them was about um prompt
+25:19 gening so can you tell us more about the
+25:22 content of this block post and what
+25:24 exactly is a good prompt okay so it kind
+25:27 of depends on the model but there are
+25:29 few things that work always or almost
+25:33 always so first is called in context
+25:35 learning and this is a fancy name
+25:37 because in AI we need fancy names for
+25:39 everything that is easy and it just
+25:41 means give the model some examples and
+25:45 um it works because you are explaining
+25:49 what is supposed to happen in a similar
+25:51 case so the model can can use this
+25:53 information to but pretty much imitate
+25:57 what you have done in the example and
+26:00 respond in a similar way it's especially
+26:02 useful if you need some specific format
+26:04 like Json with some keys or or whatever
+26:07 then it's it's probably going to do it
+26:10 as in the way you expected if not then
+26:13 you can just put more examples
+26:15 that uh another thing that was useful
+26:18 for a long time was uh train of thought
+26:20 but of course with all of those resoning
+26:22 models they have it kind of built in so
+26:25 for those you don't need it anymore
+26:29 and that all of the things that you can
+26:32 say are prompting tricks like saying
+26:35 things step by step or offering the some
+26:38 tip like $100 for doing it right or
+26:42 whatever and this is not from the
+26:44 engineering it this is some trick that
+26:46 maybe works for someone once um for one
+26:50 particular model and they just made a
+26:52 screenshot of it because it was cool
+26:55 proper problem the engineering is
+26:57 something more like providing examples
+27:00 explaining how things are supposed to
+27:02 happen uh this is from engineering and I
+27:06 think it still works for all of the
+27:09 models for some of them may be better
+27:11 for some maybe worse and
+27:17 but is it least yeah yeah I was just
+27:21 wondering if it's becoming less
+27:23 important for models like GPT 40
+27:27 compared to GPT 3.5 cuz 3.5 was a good
+27:31 model but was not as good as for all
+27:33 right so there we needed to spend more
+27:36 time creating a good
+27:38 prompt and here it feels like it just
+27:41 gets it it's get it gets it but if it
+27:45 doesn't get it you can either describe
+27:48 it in detail or just provide an example
+27:51 and I think examples work better mhm
+27:54 so as I said this is the in context
+27:57 learning technique to is promt
+27:58 engineering so it sounds weird but
+28:02 provided an example is promt engineering
+28:04 we just gave it a fancy
+28:06 name can you give us an example of how
+28:09 can we give an
+28:12 example okay uh so for example for
+28:16 example that's going to be terrible so
+28:20 you are doing something that supposed to
+28:23 analyze let's say sentiment of a
+28:26 sentence yeah to make it easy
+28:28 and you have um one review and you say
+28:33 that okay this thing is positive the
+28:36 other thing is negative and you need
+28:39 this in a very specific format like want
+28:42 you want to pass it with python so it
+28:44 has to be Json so you can either explain
+28:48 that okay give me valid Json with this
+28:51 key or whatever or you can provide
+28:53 example of the review and then the
+28:55 answer with actually the Json put the
+28:58 The Prompt and this is going to follow
+29:00 this even without you say that I need
+29:04 Jon with this key
+29:07 because show week that you wanted Jon
+29:10 with the key so it's going to do the
+29:12 same um and it's it doesn't sound very
+29:16 fancy but uh that's probably the the
+29:20 good thing about it yeah don't have to
+29:23 think how do I explain it just thr it
+29:28 mhm but also the bigger our prompt is
+29:33 the more money we pay so I'm wondering
+29:36 how many examples we should actually
+29:38 include cuz if we talk about sentiment
+29:40 analysis analysis uh maybe it's not
+29:43 always enough to just include one
+29:45 positive example and one negative
+29:46 example sometimes we want to include
+29:48 more and if we do this at scale then
+29:53 maybe including more examples in the
+29:55 prompt becomes
+29:56 expensive yeah yeah and that's why why I
+30:00 would recommend uh testing well mean
+30:04 Gathering the data from tests so you
+30:08 prepare some um evaluation data set with
+30:12 the inputs and expected outputs and then
+30:14 you are measuring how well the model is
+30:17 performing and at some point when you
+30:19 keep adding examples you will get good
+30:22 enough results and it's stop it will
+30:24 stop improving so we can just stop at
+30:27 this point Al so I have discovered
+30:29 recently that there is a part of AI
+30:32 engineering that is uh dealing with
+30:34 prompt compression so apparently you can
+30:36 get rid of some of the tokens from The
+30:38 Prompt and the model is still doing is
+30:41 still going to do the same as if you
+30:43 kept them
+30:45 there uh
+30:47 I I cannot explain it yet because I'm
+30:51 still reading about the concept but I
+30:53 find it interesting so just a thing to
+30:56 to remember that apparently possible is
+30:59 it related to prompt caching cuz I also
+31:02 don't know how it works internally but I
+31:04 think
+31:05 it's I think it's not related because in
+31:08 prompt compression you are just creating
+31:10 a different prompt that is supposed to
+31:12 do the same and it's
+31:14 shorter okay
+31:17 so yeah using an AI model to create
+31:21 something that is an equivalent of your
+31:24 prompt giving you the same same result
+31:27 with fewer number of
+31:29 tokens drops parts of the wordss or
+31:31 something like this so it's like asking
+31:34 charp hey I have this prompt can you
+31:36 please rewrite it to make it shorter but
+31:39 not to lose any meaningful parts right
+31:43 yeah maybe I don't know how it works
+31:45 intern yet but I imagine it might be
+31:47 something like
+31:49 this because I I don't know about how I
+31:52 don't know how exactly prompt caching
+31:54 works but I know that um an tropic uh
+31:58 models I think clonet for example have
+32:01 it which makes it cheaper for some
+32:03 coding
+32:04 tasks like if you always uh so there is
+32:08 a thing called clein which is a an
+32:11 assist it's AI assistant in um that you
+32:15 can include in Visual Studio code like a
+32:18 plugin and if you use clo they enable
+32:21 this prompt caching I don't know how
+32:22 exactly it works but with clot onet it's
+32:25 cheaper cuz they have this prompt
+32:27 caching and you don't send the entire
+32:29 codebase every time with every
+32:31 prompt um it somehow gets
+32:34 cached and is used and you pay less I
+32:38 have no idea how it works but looks like
+32:40 a good thing I think I was I I read
+32:43 something about in the open a
+32:44 documentation and they were cing
+32:48 the The attemption Matrix of the values
+32:52 see if I remember correctly so you take
+32:55 didn't need to calculate it every time
+32:58 but maybe uh I just mixed up something
+33:03 so I imagine if two prompts have the
+33:06 same beginning and only different
+33:09 ending then you can um if you have a
+33:12 model so for part of the prompt that is
+33:15 the same you can cach this as you said
+33:17 attention Matrix yeah and just do the
+33:21 the parts that are different maybe this
+33:23 how work I think this is this is the the
+33:26 case here but if anyone wants to learn
+33:29 how should do it from the documentation
+33:32 not from two people who try to recall
+33:35 it right uh so what do you think about
+33:38 dips have you played with this uh only
+33:42 in the pity tool as one of the models
+33:46 and but I I like that there are a lot of
+33:49 new open source models this is good for
+33:52 everyone I like that that models created
+33:54 outside of the United States this is
+33:56 also good because
+33:59 one location having a monopoly on
+34:01 anything is never a good thing uh so
+34:05 over all I'm kind of enthusiastic um and
+34:09 when I use it in perple City it works
+34:12 really really well so yeah that's
+34:15 perfect for
+34:17 me you didn't have a chance yet to use
+34:20 it in your um no no I I wasn't using it
+34:23 in any project or anything like this so
+34:26 I can really tell but um I use it as a
+34:29 user of a tool to it and I'm satisfied
+34:32 with the
+34:34 result okay I I I haven't used
+34:37 perplexity I haven't even tried it but I
+34:40 heard it's
+34:41 good well uh sometimes it still makes
+34:46 silly mistakes like quoting something
+34:48 that
+34:50 didn't or using Reddit as a very
+34:54 authoritative source of data uh which is
+34:57 also nothing good
+34:58 thing uh but overall it is fine um yeah
+35:04 just have sometimes have to check if the
+35:06 things that gave you are really true
+35:10 when when you are asking about something
+35:13 important if it's something you can just
+35:15 know copy the code and test if it works
+35:17 then probably doesn't really matter that
+35:19 much unless it's related to security and
+35:21 yes check
+35:23 it but um if I just doing it like for
+35:29 example I was taking pictures of things
+35:31 that I have in the fridge and asking
+35:33 what I can cook with this that isn't
+35:35 Bing and even if some of those things
+35:38 are not possible I could realize really
+35:41 quickly that yeah I don't have
+35:43 this is not going to work yeah but
+35:47 overall it's helpful right yeah overall
+35:50 it's
+35:51 helpful and then another article you
+35:54 wrote and this article is called how to
+35:55 use AI for lead classification on
+35:57 LinkedIn where you actually ended up
+36:00 creating a Chrome extension yes can you
+36:03 tell us more about this project the goal
+36:06 here was I was sending some personalized
+36:09 invitations on LinkedIn I was really
+36:11 writing them not generating them and the
+36:13 process looked like this I was opening
+36:15 the page of someone looking what they
+36:17 are posting there if there is something
+36:19 I related or not then if they had a link
+36:22 to our website and was visiting this
+36:23 website and most of the links that
+36:26 people put on link in don't want
+36:28 that sadly is the reality uh then I was
+36:32 checking if they have some active
+36:34 blogger or
+36:36 whatever and if yes then I could read
+36:39 the content and write something very
+36:41 personal to them so I had to accept the
+36:44 invitation this method really works but
+36:47 takes time and and why you were like is
+36:51 it was it for your personal connections
+36:53 or was it yes yes personal connections
+36:55 yeah and uh
+36:58 the idea here was there are lot of steps
+37:02 when I can filter out someone yeah so
+37:05 they don't post on link in that have a
+37:07 website that doesn't exist anymore it's
+37:09 not updated in years do I really have to
+37:12 check it myself apparently no you can
+37:15 use a tool for this and it might use AI
+37:19 underneath to to analyze the data from
+37:21 the website and this is the purpose of
+37:23 this extension so was opening the
+37:26 profile of someone clicking a button in
+37:28 the browser was adding it to the queue
+37:31 then looking for the data and if the
+37:34 profile was good enough to even try
+37:37 writing to the that person was adding it
+37:40 to the list and yeah it was
+37:44 um decent I I would
+37:47 say um I don't use it
+37:50 anymore uh but uh at least I learned how
+37:54 to build a chromic St that was the
+37:59 biggest gain from this but I don't use
+38:03 it anymore because I realized that if
+38:05 you just send someone a connection
+38:07 request without anything in the notes
+38:11 the acceptance rate isn't significantly
+38:14 lower than when you put a personaliz
+38:16 message MH well depends like I get I
+38:20 receive so many requests per day yeah
+38:23 perly if someone is receiving a lot of
+38:24 request and it might make a difference
+38:26 but for yeah
+38:28 lots of people they don't really receive
+38:30 any request if you send just send it to
+38:32 them they will accept it but I imagine
+38:35 this is for personal connections and for
+38:37 developing a personal Network yeah uh
+38:40 but I can imagine that this could be
+38:43 quite useful if you want to do sales
+38:46 right or something like that or maybe
+38:48 you're looking for job yes probably
+38:51 because you could for example check if
+38:54 this person is posting about the thing
+38:57 you are say of course nobody is going to
+38:59 say on LinkedIn that I need to buy this
+39:02 and who is selling this this not going
+39:04 to happen never uh but at least you can
+39:09 uh check
+39:11 if in any way similar to your current
+39:15 customers yeah then maybe they they're
+39:19 interested yeah I think you could use it
+39:21 like this I never tried but it can be
+39:25 like every person on LinkedIn is
+39:28 potentially aite and then you can
+39:31 understand like how qualified this lead
+39:34 is like how good how suitable like what
+39:38 you try to sell how useful is it for
+39:40 them right do they actually have this
+39:42 problem are they in this domain like
+39:44 let's say if I build a tool for
+39:47 classifying I don't know let's say I
+39:50 build a tool for AI mod monitoring then
+39:53 this person needs to be working with AI
+39:54 otherwise if they uh don't sell shoes
+39:58 they don't care about that yeah exactly
+40:00 and if you look at the sales Navigator
+40:02 in LinkedIn there a tool that F have
+40:05 this feature and it
+40:06 doesn't it's so
+40:10 disappointing I remember I think it
+40:12 costs like 100 EUR per month or
+40:14 something like that it's not cheap yeah
+40:16 yes it's not cheap and also if it's
+40:19 useful it's kind of U I think you can
+40:24 discuss yeah I tried using it for two
+40:26 months
+40:27 and what I found out is uh just sending
+40:31 personalized connection requests works
+40:34 as good as this sales Navigator if not
+40:37 better yeah the the best thing it can do
+40:41 is filtering out people the profiles you
+40:43 have visited before this Fe is really
+40:46 useful and it can do
+40:49 it but it's not what the m m if somebody
+40:54 wants to learn how to build a Chrome
+40:56 extension and also include AI there how
+40:59 should they do
+41:01 this uh how I did I did it I had a
+41:04 backend uh service that I was calling
+41:07 from the CHR extension was not putting
+41:09 AI inside of the extension uh because I
+41:12 was not familiar with Bing extensions so
+41:15 I needed to make it as simple as
+41:18 possible uh in order to make it work uh
+41:23 so I did what I'm familiar with was back
+41:26 and Eng on AI and I put as most as I
+41:30 could inside the the back and service um
+41:34 yeah and how to approach it
+41:37 um I I used the cursor editor so a lot
+41:42 of the Cod was I had generated it didn't
+41:46 always work uh but
+41:50 uh I think it was even though it didn't
+41:54 always work it was a lot faster than I
+41:56 would do it myself
+41:59 so
+42:01 useful do
+42:05 you so you still use cursor right yes I
+42:09 I still use it you use it as a paid
+42:12 product yes yes yes yes would you
+42:14 recommend people to try if someone is um
+42:19 waiting code uh at work and they can use
+42:22 it then definitely yes if someone is
+42:25 just doing it for themselves
+42:27 M uh maybe start with the free version
+42:31 uh and then the side uh but
+42:36 overall it it helps a lot because um
+42:39 it's not that it's going to generate the
+42:42 entire application from one prompt it's
+42:45 it's not going to do it uh but uh as a
+42:50 program they already we already uh used
+42:53 to splitting code into smaller functions
+42:55 and this can generators function pretty
+42:58 well and as we discussed before part of
+43:01 the prompt is putting examples so if you
+43:04 for example write the function signature
+43:08 and the the doc string in Python then
+43:12 the rest it's going to happen
+43:14 automatically using console is just
+43:17 going to make it um if it still
+43:20 struggles I would recommend doing test D
+43:23 development in this case write the test
+43:26 you okay then at the test and then just
+43:29 modify whatever is important for you and
+43:32 use this as as as an example this just
+43:35 going to that's going to work
+43:39 so if you split the code in small enough
+43:43 functions you will probably just have to
+43:46 write the signatures and function names
+43:48 and nothing else M do you have a chance
+43:51 to compare a cursor with GitHub copilot
+43:54 I was using GitHub copilot um from the
+43:57 start when it was released for the first
+44:00 time and of course this tool was great
+44:05 because there was nothing else at that
+44:07 time yeah and it was finishing your code
+44:10 like the single line and C is way way
+44:14 better
+44:15 um I did not compare the current version
+44:19 of giab pilot with C I think they trying
+44:22 to catch up right they're trying to
+44:25 catch up with csor
+44:27 that probably trying to do it I have not
+44:29 checked this because well I I pay for
+44:32 the CER I I'm not going to switch to
+44:37 yeah that's the problem because like I
+44:38 already pay for Char PT I also pay for
+44:41 clonet and I have GitHub GitHub copilot
+44:44 for free because I contribute to open
+44:46 source and like I already have all these
+44:49 three tools and I'm thinking like yeah
+44:51 I've heard csor is good but should I
+44:53 actually pay and then if I should then I
+44:55 should cancel like one of
+44:58 the um licenses I have for like I don't
+45:01 know chpt or clonet but I use them uh
+45:05 but on the other hand like the way I use
+45:06 clonet maybe with csor I be I would be
+45:09 more effective because right now I uh
+45:12 the way I use it is I go to clonet I
+45:14 describe what I want to do then I copy
+45:17 and then I use GitHub compilot to
+45:18 actually help me complete these things
+45:20 and then like I have this back and forth
+45:22 which is annoying with Co you don't have
+45:24 to copy this is the biggest
+45:27 Improvement uh because then you quickly
+45:30 you realize that you copy a lot from
+45:32 different files I mean if course you
+45:33 don't have to do any of this just put
+45:37 the file in the context by referencing
+45:40 the name and it's going to to get the
+45:42 information from it uh so this speeds up
+45:46 a lot um the development also there is
+45:50 this
+45:51 um uh composer uh tool which is like an
+45:55 agent it can edit multiple F at once or
+45:58 even um R the command line uh commments
+46:02 of course you have to confirm them
+46:04 unless you disable this function which I
+46:07 don't
+46:08 recommend so it's going to uh to show
+46:12 you the the command and then you have to
+46:14 confirm to to run it uh so you can even
+46:16 use it for the bugging or some
+46:18 configuration it works decently well
+46:21 might not be perfect but still faster
+46:25 than looking for the answer in Google
+46:27 mhm yeah right and there are so many
+46:31 Alternatives like I don't know if you've
+46:32 heard about P AI which is uh like open
+46:36 source um alternative to csor um there
+46:41 are also many more and like every day
+46:45 there's a new tool that appears um I
+46:48 don't know at some point I just decided
+46:50 that I'm sticking to cursor unless
+46:52 something really really great is relased
+46:56 and I'm speaking to perplex City
+46:59 unless something cool gets released and
+47:02 perplex City will not catch up
+47:04 with just have to tro you
+47:06 cannot buy everything yeah because also
+47:11 use Char
+47:12 PT
+47:14 U sometimes but I I think I use
+47:19 perplexity more often because you can
+47:22 switch off the uh SE feature and then if
+47:25 you choose the uh model from open AI you
+47:29 have sort of TPT inside of perfect city
+47:32 of course there's some system that's
+47:34 probably different and it's going to
+47:36 give you a little bit different
+47:38 results uh but you can use it uh as a
+47:42 normal T vot yeah
+47:44 so I do it like
+47:47 this yeah I was just curious um like
+47:50 when I started with asking you about
+47:53 this P Ai and also there's um
+47:57 bolt there is lavable like all the tools
+48:00 like have you tried any of them and like
+48:03 did
+48:04 any um get your attention I
+48:09 I I started using C very early and I
+48:13 just um stick St it so it's this fire
+48:17 all units when it comes to programming
+48:20 yeah right now yes mhm I don't even miss
+48:24 the refactoring features from int
+48:27 anymore Ah that's what you used before
+48:30 yes that's what I used before and yeah
+48:33 so jet brains is also trying to catch up
+48:35 they have this jet brain C plugin that
+48:37 you can include in idea but yeah you'll
+48:40 have to pay extra for that of course
+48:42 yeah exactly and you already pay for
+48:44 csor so why switch right yeah I switch
+48:48 if it's not uh way way better a little
+48:51 bit better almost the same doesn't make
+48:55 a difference to me and I guess you get
+48:58 used to visual studio code by now uh
+49:01 yes like you
+49:04 would uh yeah what you have to unlearn
+49:07 when you were a in user all of those
+49:11 automatic
+49:13 refactorings kind of right now the only
+49:17 thing that you have in Visual Studio is
+49:21 I think the name maybe there are some
+49:23 plugins for different languages that add
+49:25 more factoring but absolutely forget
+49:27 about the thing that you have in inj for
+49:30 Java you can do almost everything with
+49:33 the code automatically well comparing
+49:36 intell J for Java is not fair right
+49:39 because like well first Java is I don't
+49:41 know what you use now for programming is
+49:43 it python Pyon yes python yeah you see
+49:47 like Java static language right and
+49:49 python is dy yes it is it's it's not
+49:51 fair but still yeah you don't even well
+49:55 it doesn't even
+49:57 try not that it's not not fair they just
+50:00 gave up but I think I tried GitHub
+50:03 copilot for um simply refactoring like I
+50:07 don't know splitting code into like
+50:09 extracting function
+50:12 or things like that and it works quite
+50:16 well the course is the same it just say
+50:19 that split this into functions and it's
+50:21 going to work um so yeah it's um
+50:28 I'm not sure if you can say that you
+50:30 don't have to uh learn the language
+50:33 because at the end you have to know that
+50:36 it's going to
+50:38 work uh but um maybe you don't have to
+50:43 remember all of the things that are in
+50:45 the standard Library
+50:47 anymore that's already a big
+50:51 Improvement and I've been playing with
+50:54 these tools and I know uh frontend
+50:56 development a little bit so I know just
+50:58 tiny bit of react tiny bit of HTML CSS
+51:02 and of course these tools front end
+51:04 tools they develop quite fast so even
+51:07 though maybe I was learning react uh I
+51:09 learned a bit of react 5 years ago now
+51:12 like the ecosystem has evolved and now
+51:14 it's different so I have to kind of
+51:16 relearn it
+51:18 again um but with these
+51:22 tools what I can do right now is just
+51:24 give a prompt and then have a project
+51:27 that kind of works but the problem with
+51:30 that the problem with that is it kind of
+51:33 works but I have no idea what's exactly
+51:35 happening there right yeah um that's one
+51:40 of the problems uh but yes it it works
+51:44 and um I personally cannot do front end
+51:48 I just don't know it but with C I can do
+51:52 some front it's it's ugly because it
+51:54 cannot do design for yeah but uh I'm not
+51:59 capable of doing ugly content without
+52:03 those already a big
+52:06 Improvement what you isuse for your
+52:09 website ja it's a St generator it's
+52:13 GitHub Pages or it's supported by GitHub
+52:16 pages but it's not
+52:18 deployed so deplo
+52:21 use I play on web services they have a
+52:25 service for static Pages which name I
+52:27 don't remember right now but they have
+52:30 it and I use this uh but it is also
+52:33 supported by GitHub Pages you can
+52:36 use pages so I think in ads you just put
+52:40 your files in
+52:42 S3 right and then you can attach your
+52:45 domain to this S3 bucket um there is a
+52:49 service that downloads the code from a
+52:53 GitHub and builds a Docker and then
+52:55 deploys the
+52:58 um what what was
+53:00 it I will not find it right now no
+53:04 trans okay A a something
+53:10 yeah and I'm just curious so you have
+53:14 written a lot and I also want to start
+53:18 writing and I want to get motivation for
+53:20 writing so I'm wondering does your blog
+53:25 help you finding client
+53:28 uh yes a few people reached out to me
+53:31 from saying that they found the email on
+53:34 the
+53:35 blog uh definitely it helps when you are
+53:38 uh teaching programming workshops uh not
+53:41 because the people are going to find you
+53:44 but uh a big part of my work is the when
+53:48 I'm sending links to my own articles and
+53:53 this is this makes I think it makes a
+53:55 good impression that that you already
+53:57 know what you're doing there H so this
+54:00 helps a lot um yeah so definitely it
+54:04 works as a way to attract clients it
+54:08 works as a way to show that you know
+54:10 what you are
+54:10 doing and I can tell you that I started
+54:14 blogging not because of this I just had
+54:16 a lot of ideas about programming and I
+54:19 wanted to impose them on other people
+54:21 and V was the way to do it MH and then
+54:24 eventually cuz now you work
+54:27 I you work as AI consultant am I correct
+54:30 yes yes yes that's correct and
+54:32 eventually as you see the progression of
+54:35 topics in the blog it uh I switched to
+54:38 Ai and then it was became a tool to
+54:41 attract the clients so you did not start
+54:44 it with the goal of attracting clients
+54:48 but it evolved to such platform that you
+54:50 can use to actually attract clients yes
+54:53 exactly at the beginning the goal was to
+54:59 write write down some ideas and maybe
+55:01 send a link to a few people mostly for
+55:03 my own team and then um it evolved in
+55:07 the meantime it was a tool for learning
+55:09 because I was learning about data
+55:11 science so I had a lot of articles about
+55:13 this uh I just taking notes and writing
+55:16 them down and then it evolved yeah it
+55:20 was not marketing tool from the start it
+55:24 kind of still isn't only this because a
+55:27 lot of those things are just notes to
+55:29 myself that I can copy paste into
+55:33 products yeah but it's well so for that
+55:36 I used to use Viki media Viki so I had
+55:39 my own instance of Viki but the problem
+55:41 with that is it's not
+55:43 presentable for like other people so
+55:46 it's just a bunch of your thoughts uh
+55:50 which is helpful when you need to copy
+55:51 paste but it's not something that um you
+55:55 know I can show to clients and they will
+55:58 oh no this person knows so much I I want
+56:01 to hire them no so unfortunately and
+56:04 it's not like super discoverable on
+56:05 Google so I guess a blog post work if
+56:09 you have it in the form of articles that
+56:11 can be published I think it's relatively
+56:14 easy to turn it into a block yeah yeah
+56:17 now with um all these tools that we have
+56:20 like with um AI now just bunch of uh
+56:24 drafty notes can be turned into block
+56:26 post relatively quickly I think so
+56:29 that's actually a nice uh like weekend
+56:32 project
+56:34 right uh the problem with that is I
+56:39 never succeeded at making AI WR in a St
+56:43 that I would like to present as
+56:47 myself uh like did you try actually
+56:50 showing your example so I did not manage
+56:54 to do it with long content long form
+56:57 content but I managed to do it with
+57:00 LinkedIn recommendations so when I was
+57:03 uh leaving my previous company I wanted
+57:04 to write a bunch of recommendations to
+57:07 my ex- colleagues saying how cool they
+57:09 are and what I did is um I wrote bullet
+57:13 points and I said I want you to write it
+57:17 in the same style as my other
+57:18 recommendations and I posted this
+57:20 recommendations and it did a pretty
+57:22 decent job of course I needed still
+57:24 needed to edit it a little bit but I
+57:27 think the style was more or less there
+57:29 but the recommendations on LinkedIn
+57:31 there short term for long term it's
+57:33 probably not doesn't work so
+57:36 well yeah I tried a few time that is a
+57:40 article on the blog that was kind of AI
+57:42 generated and it is about generating
+57:45 Artic with AI so it was not really
+57:48 cheating was a tutorial
+57:51 um and I did publish it it was okay
+57:57 if it was something that I could pretend
+58:00 was written by
+58:02 me yeah maybe but if someone was reading
+58:06 a lot of those this content then I think
+58:09 they will notice that this is this is
+58:11 not the
+58:12 same but do you use uh things like chpt
+58:15 to help you get started with the article
+58:19 uh get started not but when I get stuck
+58:22 or I need to rewrite something then yes
+58:25 uh
+58:27 because sometimes I I tend to write a
+58:30 really long sentences and this is not
+58:32 good for the reader yeah so if I have if
+58:36 I run out of ideas to how to split this
+58:40 very long sentence into sort on I just
+58:43 ask it to generate like five examples
+58:46 yeah and maybe one of them is sort of
+58:50 okay but I can at least start with this
+58:52 yeah and uh right do the rest of my own
+58:57 this like what I found for me is right
+59:01 now I don't have this blank page problem
+59:04 anymore when it comes to chpt so what I
+59:06 can do is just I can use the dictation
+59:08 function I just can dump my
+59:11 thoughts to char PT and then it will
+59:13 structure and I will get a starting
+59:16 point yeah but that is a
+59:21 time when I want to use the dumbest
+59:25 editor that I have because I don't want
+59:27 anything to finish my own
+59:29 sentences at this point and most of them
+59:34 are not useful for this anymore because
+59:37 if I start if you start writing a br in
+59:39 cser it's going to try to finish a lot
+59:43 for you
+59:45 um luckily obsidian doesn't do it yet
+59:48 you probably can add some plugin to do
+59:51 something like this but I'm not going to
+59:54 added yeah and Google Docs I think they
+59:57 also have it well you can disable this
+1:00:00 yeah you can disable this but then then
+1:00:02 you want to use it again you have to
+1:00:03 remember to enable this so I just uh
+1:00:07 switch to a different editor when I want
+1:00:08 to write something that it's uh maybe
+1:00:12 not so perfect but exactly what they
+1:00:15 want it to
+1:00:17 be okay it looks like it's been more
+1:00:21 than 1 hour time flies um so I think we
+1:00:24 should uh be wrapping up it was amazing
+1:00:26 talking to you BOS thanks for joining us
+1:00:28 today for sharing your experience with
+1:00:30 us um your journey like everything you
+1:00:34 did um thanks a lot um so it was pretty
+1:00:38 interesting for me um and thanks also
+1:00:41 everyone for joining us today for
+1:00:42 listening in and I guess I don't know do
+1:00:46 do you want to say anything before we
+1:00:51 finish I'm not sure I can just invite
+1:00:54 you to all to uh visit the blog maybe
+1:00:57 you can find something useful um there's
+1:01:00 a lot of things you can copy paste from
+1:01:03 that you don't even need to um subscribe
+1:01:06 to the newslet is always welcome but
+1:01:09 that's whatever is good for
+1:01:12 you I am going to now put the
+1:01:17 link where is it so I'm going to put the
+1:01:20 link to your blog post in the live
+1:01:22 chat okay bsh thanks a lot and and enjoy
+1:01:27 well I guess it's evening now for you
+1:01:29 yes almost 9 9900 p.m. okay so then have
+1:01:34 a good evening and uh yeah well see you
+1:01:37 around see you bye bye bye everyone

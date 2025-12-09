@@ -1,0 +1,1813 @@
+Similarities and Differences between ML and Analytics
+
+0:01 hello everyone uh welcome to our event
+0:03 this event is brought to you by data
+0:05 talks club which is a community of
+0:06 people who love data we have weekly
+0:08 events and this event is one of such
+0:10 events so if you want to find out more
+0:13 about the events we have there is a link
+0:15 in the description go there click on
+0:16 this and you will see
+0:18 all the events we have in our schedule
+0:22 then if you haven't subscribed to our
+0:23 channel do this there is a big subscribe
+0:25 button below this video click on this
+0:28 and you'll get
+0:29 videos from us in your youtube feed
+0:33 and then finally draw join our slack
+0:35 community and
+0:37 yeah you'll like it we can talk about
+0:40 all the
+0:41 different data topics there and
+0:44 during today's interview during today's
+0:47 conversation you can ask any question
+0:48 you want there is a link in the live
+0:51 chat it's pinned so just go there click
+0:54 on this link you'll go to slider and you
+0:56 can ask any question you want there
+0:59 so
+1:00 yeah that's
+1:02 that's the introduction okay
+1:05 now this week we'll talk about
+1:06 similarities and differences between
+1:08 machine learning and analytics and we
+1:10 have a special guest today richard
+1:12 sirishap has worked with analytics and
+1:14 machine learning teams for seven more
+1:17 than seven years most recently he led a
+1:19 sales engineering team at a data
+1:21 infrastructure company called data coral
+1:23 which was acquired by cloudera and he
+1:26 was helping analytic teams with their
+1:28 data pipelines there before that he was
+1:32 one of the employees at premiere pro
+1:35 primer ai
+1:37 primer
+1:38 yeah where he built and deployed machine
+1:40 learning models for multiple natural
+1:44 natural language applications so he also
+1:46 writes a newsletter
+1:48 called ml ops rounds that discusses
+1:50 challenges with machine learning
+1:52 production so subscribe to that it's
+1:53 emelopsrounds.stuck.com
+1:57 right so this is a cool newsletter i am
+2:00 i am subscribed so you should also do
+2:03 and
+2:04 yeah so welcome richard
+2:06 thank you thank you for having me alexi
+2:08 so before we go into our main topic
+2:11 let's start with your background can you
+2:13 can you tell us uh about your career
+2:15 journey so far
+2:17 yeah absolutely i mean i think you
+2:18 covered a little bit of that but i'll
+2:19 give you a quick introduction myself so
+2:22 you know until recently i was at this
+2:24 data infrastructure company called data
+2:26 core which would almost just been
+2:28 acquired by cloudera but sort of you
+2:30 know in my time there i had worked on
+2:32 engineering some product work and then
+2:33 some sales engineering work and really
+2:35 the goal for the team was you know how
+2:37 do you sort of help data scientists move
+2:39 data from point a to point b as
+2:41 efficiently as possible right so they're
+2:42 not blocked on uh you know data
+2:44 engineering resource so we had like a
+2:46 nice little product that would allow
+2:47 them to do that um and before that i was
+2:50 uh i was doing uh
+2:52 i was doing sort of machine learning
+2:53 work myself at a company called primer
+2:55 and there you know we were basically
+2:56 helping customers make sense of a large
+2:58 amount of unstructured text so a lot of
+3:00 fun kind of nlp problems you know
+3:02 including summarization sort of entity
+3:04 extraction
+3:06 sentiment classification all of those
+3:07 those of those fun things
+3:09 um
+3:10 and so that was that was kind of my
+3:12 journey at primer um but and before that
+3:14 i was i was at stanford doing uh doing a
+3:16 master's in computer science
+3:18 so you know lots of machine learning uh
+3:20 classes there but i was also a ta for a
+3:22 few classes including uh the android
+3:24 machine learning class um and you know
+3:27 as you mentioned at the end you know i
+3:28 write this newsletter called the mlaps
+3:30 roundup yeah it's been a pretty fun
+3:32 journey this past year to you know
+3:34 research think
+3:37 about what what is interesting to the
+3:39 community and just kind of write write
+3:41 my learnings there
+3:44 yeah cool i'm really curious what did
+3:46 you do as a sales engineer
+3:49 maybe in a few i know it's a bit of
+3:51 topic but i'm really curious what did
+3:53 you actually do there
+3:55 absolutely
+3:56 so
+3:57 you know it's it's still a very
+3:58 technical role i mean it's it's about
+4:00 um it's about kind of helping folks who
+4:03 are evaluating the product uh you know
+4:05 best understand what are the
+4:06 capabilities what are the sorts of
+4:08 problems that it can solve for them um
+4:10 and you know you know basically what are
+4:12 what are the things that can do what it
+4:13 what are the things it can't do so a lot
+4:15 of my kind of work uh you know was
+4:17 actually just working with prospective
+4:18 customers you know either doing demos uh
+4:20 sometimes running trials with them um
+4:23 and sometimes just kind of getting in
+4:24 the weeds with kind of their data
+4:26 infrastructure and saying okay maybe you
+4:28 might want to change you know this
+4:29 little thing x here because you know not
+4:31 only will this integration with us
+4:33 become easier but also it'll make your
+4:34 life easier down the line so it was a
+4:36 lot of just you know getting into the
+4:37 weeds with uh you know data
+4:39 infrastructure stuff for our customers
+4:41 and then taking you know the the product
+4:43 that we had and saying you know here's
+4:44 how it would help uh here's what it
+4:46 could do for you
+4:47 so which i guess also involved doing
+4:49 some proof of concepts uh absolutely
+4:53 yeah then the customer would evaluate if
+4:55 yeah you see works for them or not
+4:58 exactly so i was responsible for sort of
+4:59 uh the trials that we used to do with
+5:01 companies in the pocs yeah
+5:04 yeah interesting
+5:05 yeah so you mentioned that you did
+5:07 masters at stanford and you were ata 10
+5:09 course yeah that's cool so i took that
+5:12 at coursera
+5:14 of course i think it's pretty different
+5:16 from the
+5:17 real one right yeah
+5:20 yeah i think it's uh it's funny because
+5:22 i think some of the the problem sets and
+5:24 such might be similar or like the the
+5:26 the programming assignments at least but
+5:28 uh i i haven't uh seen the exact courses
+5:31 but yeah uh it's still it's so pretty
+5:33 good yeah
+5:35 so i was also doing masters although so
+5:38 i wasn't really studying computer
+5:40 science i think i ended up getting a
+5:42 master's in computer science but the
+5:44 main
+5:46 direction there was bi business
+5:47 intelligence
+5:49 so i was studying bi
+5:51 yeah so we were taking courses like data
+5:54 mining uh database housing business
+5:57 intelligence all these kind of things
+5:59 and we there in our courses we studied
+6:02 two types of analytics so one analytics
+6:05 was prescriptive analytics and the other
+6:08 kind of analytics was predicting on the
+6:10 predictive analytics
+6:12 and sometimes for this predictive
+6:14 analytics we would call it data mining
+6:17 right so it's not like not just you know
+6:20 dig something up in your data but you
+6:22 also do some prediction there right
+6:25 and
+6:26 um so i guess this predictive analytics
+6:29 this is what today we call machine
+6:31 learning to some extent right so this is
+6:33 what we analyze some data that we have
+6:36 yeah do analytics for doing predictions
+6:39 but still
+6:40 there is a reason why this thing is
+6:42 called or what's called predictive
+6:44 analytics so do you know what is the
+6:47 what is the main difference between
+6:48 these two types of analytics
+6:50 prescriptive analytics and predictive
+6:52 analytics
+6:54 yeah it's this is this is super
+6:55 interesting because you know
+6:57 like many different fields have been you
+6:59 know working with data in different
+7:01 capacities for decades at this point
+7:03 right so today we're kind of having a
+7:04 conversation about analytics and machine
+7:06 learning and you know it's very much
+7:07 kind of the modern context right like
+7:09 today's context um
+7:11 and even sort of you know you reference
+7:13 the word kind of data mining right it's
+7:15 i mean data mining mining is kind of
+7:16 this old-school kind of term but it's
+7:18 really about just extracting patterns
+7:20 from data and you can do some extracting
+7:23 patterns by
+7:24 uh sort of
+7:26 some machine learning techniques uh
+7:28 sometimes you can do it by sort of
+7:29 clustering and sort of those
+7:30 unsupervised kind of techniques but then
+7:32 there's also kind of you know classic
+7:34 kind of data mining techniques and you
+7:35 know i'd be curious about sort of the
+7:37 predictive versus prescriptive because
+7:38 predictive definitely you know sounds
+7:40 and you know from my kind of very
+7:42 minimal understanding it feels very
+7:44 similar to kind of machine learning work
+7:46 but prescriptive you know from from what
+7:48 i gather at least it's it's like um it
+7:51 kind of goes above and beyond it's also
+7:53 you know how do you explain this this
+7:54 decision that was made you know what are
+7:56 the implications of a particular
+7:58 decision that was made from a prediction
+8:00 and so it kind of
+8:01 encompasses a little bit more um
+8:04 uh but is that is that generally how you
+8:06 remember kind of prescriptive analytics
+8:10 yeah exactly so like if i translate what
+8:13 i study to
+8:15 the work i'm doing now to the work we
+8:17 are doing at uh oil x group where i work
+8:20 so i would say that prescriptive
+8:22 analytics this is what data analysts do
+8:24 and predictive analytics is more what
+8:26 data scientists do
+8:28 but um like in addition to you know
+8:30 building services so there yeah at
+8:33 university we were focusing more on
+8:36 uh
+8:36 you know algorithms but not on the you
+8:39 know actually putting this thing in
+8:40 production yeah
+8:42 yeah but yeah i think this is the
+8:45 from what i remember this was the main
+8:47 difference so prescriptive yes going
+8:49 through the data and understanding what
+8:52 is there and then coming down with the
+8:53 report and this is what i see analysts
+8:56 doing my clicks analysts are doing
+8:58 coming up with reports or dashboards and
+9:01 predictive analytics is coming up with a
+9:03 model
+9:04 and then again in bi this model would uh
+9:07 you know uh continue let's say do some
+9:10 predictions for time series and then you
+9:12 can put this on the dashboard uh so
+9:14 things like this yeah that makes that
+9:15 makes a lot of sense yeah and it's it's
+9:18 funny right like i mean i i can totally
+9:20 imagine five years from now right you
+9:21 know if we have this conversation again
+9:23 i bet the names would have changed a
+9:25 little bit right and we'd be talking
+9:26 about a slightly different concept but
+9:28 it feels kind of similar to what we've
+9:29 seen before and i think that's just how
+9:31 it goes
+9:32 yeah and
+9:33 actually in the question that i put
+9:35 initially there i wrote data science and
+9:37 then you left a comment saying hey let's
+9:39 not use
+9:40 science here because it's uh too
+9:42 ambiguous right it can mean uh
+9:45 too overloaded yeah it's i mean it's
+9:48 at least to me right like data science
+9:50 at different companies like it can end
+9:51 up being just vastly different jobs
+9:53 right um and sometimes i mean
+9:56 honestly like if somebody were
+9:58 interviewing for a data science role i
+9:59 think it's pretty important to just ask
+10:01 the team right exactly what they mean
+10:03 exactly the kinds of projects that you
+10:05 know they can imagine that the the
+10:07 person will be doing because it can mean
+10:10 everything from sort of you know you
+10:11 write some sql and then you write some
+10:13 code to your build like these machine
+10:15 learning models and so everything in
+10:17 that space
+10:18 yeah because you mentioned that uh
+10:21 it's interesting how this would be
+10:23 different in five years and uh yeah so
+10:25 curious to me how data science will be
+10:27 different
+10:28 like in five years right five years and
+10:30 i mean we're seeing some of those
+10:31 changes already right i think i saw uh
+10:34 you interviewed somebody around
+10:35 analytics engineering is that right and
+10:38 you know that's a very recent thing
+10:39 right it's it's only maybe gained steam
+10:41 in the last kind of six months to a year
+10:43 right so we're already seeing kind of a
+10:45 new thing emerge that probably is here
+10:47 to stay
+10:48 yeah definitely then yeah who knows what
+10:50 happens with uh data scientists
+10:55 so can we actually say that so we talked
+10:57 about this predictive analytics and
+11:00 prescriptive analytics can we say that
+11:02 machine learning is actually a part of
+11:04 analytics or they're two different
+11:06 things
+11:08 um
+11:09 yeah i mean i would
+11:12 so you know maybe kind of you know
+11:14 putting the sort of predictive versus
+11:16 prescriptive kind of aside because there
+11:18 might be some connotations of you know
+11:20 being uh a subset there um i mean to me
+11:22 sort of analytics and machine learning
+11:24 they feel like
+11:25 kind of distinct uh i mean i mean the
+11:28 goals there are slightly different right
+11:30 so maybe this is a good time to kind of
+11:31 uh go into some sort of them in a little
+11:34 bit more detail you know to
+11:36 to me sort of analytics is about looking
+11:38 at data in the past right so it's about
+11:40 looking at history and trying to
+11:42 understand what happened right so that
+11:44 you can answer certain questions i mean
+11:46 the data is there right so there's a
+11:47 true answer that you're looking for
+11:49 assuming that you've collected the data
+11:50 but it's about you know here's what
+11:51 happened
+11:53 whereas machine learning work is often
+11:55 about
+11:56 sort of looking at data in the past but
+11:58 can you predict stuff in the future
+12:00 right it's it's always kind of
+12:01 forward-looking it's about making
+12:02 predictions making forecasts um and you
+12:05 know there's no kind of guarantees that
+12:07 you're gonna get it right it's about
+12:08 coming up with the best guess right so
+12:11 um
+12:12 at least viewed from that lens like they
+12:14 end up kind of you know being
+12:16 you know kind of different things
+12:18 although sort of they they might have
+12:20 shared sort of data infrastructure they
+12:22 might have the same people working on
+12:24 them but often the mentality and sort of
+12:26 the the sort of outcome of these two
+12:29 ends up being a little bit different
+12:31 so yeah coming back to your original
+12:32 question um i mean you know maybe some
+12:35 people would classify sort of machine
+12:36 learning as part of analytics and maybe
+12:38 that's because you know often machine
+12:39 learning work begins in sort of like the
+12:42 the classic kind of analyst teams where
+12:44 they're like you know maybe here's a
+12:46 place where we can train a machine
+12:47 learning model so maybe that's how it
+12:48 emerges at a few companies but um to me
+12:51 they feel very different
+12:53 yeah i i saw in a couple of talks about
+12:57 data engineering so data engineers
+12:59 at least in those talks that i saw they
+13:02 refer to machine learning things as
+13:04 analytical workloads like you know
+13:06 analytical stuff so they're like you
+13:08 know these things like training the
+13:10 model or
+13:11 scoring customers
+13:14 they would refer to this as analytical
+13:16 workloads because i guess from data
+13:19 engineering point of view it's kind of
+13:20 similar so you're going through the data
+13:22 you're doing something with the data and
+13:24 then you're producing more data right
+13:26 yeah
+13:27 from this point of view maybe it's not
+13:29 that different
+13:30 yeah
+13:31 that's possible look i'll probably
+13:33 caveat this with the fact that uh
+13:35 because i've been sort of in the field
+13:37 to me to me maybe similar things also
+13:39 feel different right whereas maybe
+13:41 somebody looking at it from a little bit
+13:43 of an outside like it's just kind of the
+13:45 same thing but yeah i totally i totally
+13:47 hear that yeah yeah so basically
+13:49 analytics is looking in the history and
+13:51 then describing what happened there and
+13:54 machine learning is more forward-looking
+13:56 describing what will happen
+13:58 okay
+13:59 and
+14:00 so for analytics usually it's uh data
+14:04 analysts working on this right and for
+14:05 machine learning
+14:06 uh yeah we can argue whether it's data
+14:08 scientist or somebody else
+14:10 machine learning right let's say
+14:13 it's data scientist right
+14:15 so what kind of work
+14:17 they do people who work with machine
+14:19 learning
+14:20 um like what does the day-to-day work
+14:23 look like
+14:25 yeah so um
+14:27 so kind of the starting point for that
+14:29 is you know what is the what is the
+14:31 outcome right what is the what is the
+14:32 thing that a data sort of science the
+14:34 machine learning team is producing right
+14:36 and
+14:37 typically it's it's going to be sort of
+14:39 a either a live running system which
+14:42 basically you submit kind of questions
+14:44 to it and it returns with the prediction
+14:46 right so something that is like a
+14:48 machine learning model behind like an
+14:49 api right so that's like a system live
+14:52 system that they're producing or they
+14:53 might be producing sort of um
+14:55 predictions that are computed on a daily
+14:57 basis and then stored into a database
+14:59 right such that they can be consumed by
+15:01 uh let's say the product later on right
+15:04 so if you think about it you know it's a
+15:06 live system that they're producing and
+15:08 there are sort of predictions to be made
+15:09 you know you can imagine that some of
+15:11 the work that they're doing is figuring
+15:13 out how do we make sort of the
+15:14 prediction quality better right and that
+15:16 involves like a whole set of kind of
+15:18 machine learning activities right
+15:19 gathering data labeling data
+15:22 training models um hyper parameter
+15:24 tuning
+15:26 and then you get into some of the more
+15:28 um you know system aspects which is how
+15:30 do you actually deploy it right um you
+15:33 know what are the slas that maybe the
+15:35 live system needs to produce right so
+15:37 maybe yeah you know know many many
+15:39 companies kind of uh you know have fraud
+15:41 teams right like that are trying to
+15:43 detect fraud and some initially they
+15:44 start out as kind of rules based
+15:46 activities but eventually they kind of
+15:48 you know transition into doing some
+15:49 machine learning and then with fraud you
+15:51 kind of have to catch that reasonably
+15:53 early right um for example if you're on
+15:55 boarding somebody and uh
+15:57 you know you wait like a few days that
+15:59 might already be too late so um you know
+16:02 it's about so they often have to think a
+16:03 lot about kind of these slas for the
+16:05 system so it's you know again coming
+16:07 back to sort of the original question
+16:08 it's uh i think like machine learning
+16:10 folks like often spend a bunch of
+16:11 machine learning engineers at least like
+16:13 often spend a bunch of the time how do
+16:14 we improve quality of the predictions um
+16:18 you know when we're training the model
+16:19 but also on an ongoing basis and then
+16:21 sort of how do we improve the system um
+16:24 such that you know it actually is
+16:26 performant from you know a software
+16:28 perspective
+16:29 has that been your experience uh as well
+16:32 yeah and interesting that you mentioned
+16:34 that
+16:35 machine learning often started in
+16:37 companies and these fraud teams they
+16:40 first started with rule-based systems
+16:42 and then
+16:43 added
+16:44 machine learning so this is actually to
+16:47 my knowledge this is what also happened
+16:49 at two weeks group so it was before i
+16:51 joined
+16:52 but uh as far as i know so this is the
+16:55 first big use case um of machine
+16:58 learning at least it was like five years
+17:00 ago or maybe now seven years ago like it
+17:03 was way back i like before i joined so
+17:06 this is interesting that he mentioned
+17:07 and yeah the experience um from what i
+17:11 saw it's very similar that there is this
+17:13 system aspect or i would call it maybe
+17:15 engineering aspect
+17:16 yeah you know it's not enough just to
+17:19 um create
+17:21 a model uh logistic regression psychic
+17:24 learning you also need to
+17:25 um
+17:26 take care of other things this is what
+17:28 data scientists
+17:30 do or you can call them machine
+17:32 engineers but this is what needs to
+17:33 happen to be yeah uh to to be able to
+17:36 use the model
+17:37 yeah yeah and maybe i mean i know we're
+17:40 going a little kind of off of script
+17:42 here but you know the rules based system
+17:44 into machine learning is always kind of
+17:45 fascinating because um i mean i think a
+17:47 lot of sophisticated machine learning
+17:49 fraud detection teams also still
+17:51 continue to use a lot of rules and i
+17:54 mean the simple reason is like rules are
+17:55 really fast right somebody can just like
+17:57 see some data write a rule and have that
+18:00 deployed in like one hour compared to
+18:02 you know training a machine learning
+18:04 model with maybe that as a feature or
+18:05 maybe like a separate model which can
+18:07 take on the order of weeks so it's about
+18:09 like you know kind of the speed that you
+18:10 get and you know i was recently talking
+18:12 to uh sort of a team that does um kind
+18:14 of fraud detection and you know so
+18:16 they'll have like a team that is kind of
+18:18 coming up with these rules and kind of
+18:19 getting these deployed and then
+18:21 eventually you know if if a rule is kind
+18:23 of important enough it'll become like a
+18:25 feature in a model
+18:27 or sort of become its own model at some
+18:29 point
+18:30 whereas some rules will kind of die away
+18:32 because those patterns don't work
+18:33 anymore
+18:34 and it's it's kind of this constant uh
+18:37 kind of battle that is going on exactly
+18:39 and these
+18:40 rules
+18:41 at least uh what we have to do is uh we
+18:44 have like a ui where a fraud specialist
+18:47 uh awesome just go there click a button
+18:50 and then they have a rule and then they
+18:52 can see how effective this rule is uh
+18:55 yeah these things with machine learning
+18:56 it would take a few more iterations to
+18:59 actually yeah
+19:01 and yes speaking of that so like we just
+19:04 talked about the rule and then we see
+19:05 how effective it is all these you know
+19:08 charts i guess this is something that
+19:11 maybe analysts would do like doing some
+19:14 sort of uh analytics let's say we have a
+19:16 rule and then going there and
+19:18 understanding how this rule yeah
+19:22 how it is effective right and uh what is
+19:24 the i don't know
+19:25 like uh false positive rate and uh
+19:28 things like this yeah is this something
+19:29 that analysts would do right absolutely
+19:32 i mean i think for example uh like you
+19:34 might have either sometimes it can be an
+19:36 analyst sometimes it might be sort of a
+19:37 fraud specialist as you said right or an
+19:39 operations person who might define the
+19:41 rule right because it was relevant in
+19:43 that kind of given moment but then it
+19:45 might actually be sort of uh like an
+19:46 analytics team or analyst who actually
+19:48 looks at sort of you know performance of
+19:50 that rule um you know on an ongoing
+19:53 basis right like which rules actually
+19:55 continue to work which rules actually
+19:57 flagged important stuff um and then as
+19:59 they gather you know sort of the the
+20:01 true labels right whether a particular
+20:03 transaction or particular user was
+20:04 fraudulent or not like yeah then they'll
+20:06 be sort of comparing this and saying you
+20:08 know these last 20 rules are not working
+20:11 anymore maybe we should get rid of them
+20:12 or
+20:14 you know they might actually even kind
+20:16 of look at uh sort of once they have
+20:18 that true data right which were
+20:20 fraudulent or not they might actually
+20:21 have a good sense of you know here are
+20:23 the kinds of examples that were still
+20:25 not caught right um and so they might be
+20:28 providing those recommendations guidance
+20:29 but yeah absolutely this would be some
+20:31 of the work that an analytics team might
+20:33 do
+20:34 so this uh so this term prescriptive
+20:37 analytics
+20:39 so here so an analyst a team of analysts
+20:42 would do analysis they would analyze all
+20:45 the rules and then they say okay these
+20:47 20 rules
+20:48 are not working anymore and then they
+20:50 kind of prescribe they say okay throw
+20:52 these rules away they're useless right
+20:54 so this would be a prescription that's
+20:56 why right like they they
+20:58 have some sort of reported then some
+20:59 sort of recommendation some sort of
+21:01 decision okay we analyze the data
+21:04 this is what you should do based on our
+21:05 analysis like would you say this is the
+21:07 main outcome of the analytical work
+21:10 it's definitely one of them i mean i
+21:12 think
+21:14 if i were to look at a few different
+21:16 things that like an analyst would be
+21:18 expected to do right there are some
+21:19 things that are you know uh like ad hoc
+21:22 queries right that they'll be asked to
+21:23 do because you know their boss or their
+21:25 boss's boss will say hey i need the
+21:27 answer to this question right and i need
+21:30 this because i'm presenting to person x
+21:33 or team x and this needs to be in my
+21:35 slides right so uh the the person the
+21:38 the sort of the analyst will probably go
+21:40 to their kind of favorite sql client you
+21:42 know write some queries and get that
+21:43 answer right so these are that's that's
+21:45 probably like
+21:46 i mean depending on the sort of teams
+21:48 that can often be you know close to 100
+21:50 of of the work uh although probably
+21:53 shouldn't be 100
+21:54 um so it's that's kind of one aspect of
+21:56 like their their work right the second
+21:58 of uh
+22:00 fraud example this request could be like
+22:02 hey what are the
+22:04 um
+22:05 i don't know
+22:06 success uh ratio for the this
+22:10 was the last month right right because
+22:12 we want to did we have a board meeting
+22:14 and we want to show
+22:16 how our team is effective right how
+22:18 effective it is please prepare this i
+22:20 needed to absolutely
+22:21 yeah i mean they could be answering sort
+22:23 of all sorts of questions like you know
+22:25 how many kind of
+22:26 you know fraudulent cases were found how
+22:29 many were caught in time right what was
+22:31 the sort of overall damage you know uh
+22:33 or whatever the right word is that was
+22:35 caused by kind of the fraudulent
+22:36 activities um yeah there's so many kind
+22:39 of interesting questions there right so
+22:40 it's like part of that part of their
+22:42 work is this part of that is you know i
+22:44 think you were referencing sort of
+22:45 coming up with these reports and
+22:46 recommendations which is absolutely a
+22:48 super important piece of uh piece of
+22:50 work right for example if a data science
+22:52 or data analyst person is kind of
+22:54 embedded in a in a product team right
+22:56 then often they're working closely with
+22:58 the product manager to say you know if
+23:00 we build this feature right it's
+23:02 probably going to kind of impact you
+23:04 know this kind of user uh this is maybe
+23:07 how how we can kind of model the uh sort
+23:10 of improvements or maybe a particular
+23:12 hit on some business metric if this gets
+23:14 released to kind of 100
+23:16 um of traffic versus maybe if it was
+23:18 only released two percent so there's all
+23:20 kinds of questions there right that they
+23:22 might be helping product teams with um
+23:25 and then there's a whole set of
+23:26 activities that uh sort of a data
+23:28 analyst might be doing when it comes to
+23:30 let's say integrating different uh sort
+23:32 of data sets right so they might already
+23:35 be working with certain uh data sets in
+23:37 their uh sort of database but then you
+23:40 know let's say they
+23:41 they find like an api right for a
+23:44 completely different new data set which
+23:45 has some signal for them right so they
+23:47 might probably spend some time exploring
+23:49 the data seeing what that can bring when
+23:50 joined with their existing data so
+23:53 there's a bunch of activities there and
+23:54 of course like you know one of the kind
+23:55 of maybe unsaid parts of a lot of this
+23:58 data work
+23:59 is you know often a lot of education
+24:01 needs to kind of go into it right so uh
+24:04 you know whether it's data analyst data
+24:05 scientist or data leaders often right
+24:07 like they spend a lot of time you know
+24:09 telling people this is actually what you
+24:11 can achieve this is what you can't
+24:12 achieve uh with the kinds of things that
+24:14 we're doing and here's maybe the
+24:16 questions that you should be asking
+24:17 before you make important decisions
+24:19 right there's there's a lot of kind of
+24:21 interest you know important work that
+24:22 goes on there
+24:24 yeah and in my experience i see that
+24:26 analysts help a lot with
+24:28 let's say there is
+24:29 a new project potential project that
+24:32 let's say we think that machine learning
+24:33 will help
+24:34 and uh so what analysts often help with
+24:37 is understanding the size of the problem
+24:40 right now and then seeing okay like
+24:42 maybe actually
+24:43 just 10 users complained about this yeah
+24:46 yeah maybe it's not actually worth uh
+24:48 solving it or
+24:49 like yeah let's give it the
+24:51 lower priority because there is this
+24:53 thing where 10 000 user complaint or you
+24:56 know
+24:58 a lot of users versus this one uh like
+25:01 it seems to affect fewer users and then
+25:04 the other thing i noticed is um i'm a
+25:07 data scientist myself and i noticed that
+25:09 data at least know data a lot better
+25:11 than me so they know
+25:13 where things are so if i need to to find
+25:16 something
+25:17 uh usually i use this hack i would just
+25:20 go to another list and say hey i need to
+25:22 find this data can you help me and then
+25:24 they would here you go this is the sql
+25:26 query
+25:28 you can uh just go with this and yeah it
+25:31 saves a lot of time so i think yeah for
+25:33 sure data a lot better than uh
+25:36 you know than me for sure but maybe for
+25:38 uh better than an average data scientist
+25:41 yeah because i imagine they spent
+25:44 the entire day crunching this data like
+25:46 uh
+25:47 doing all these uh
+25:49 queries and then doing reports
+25:51 i mean that's exactly it right that's
+25:53 that's where they spend the bulk of
+25:54 their time and so they are the experts
+25:56 right and often i think a lot of data
+25:58 analytics work is you know tying sort of
+26:00 you know what data we have to important
+26:02 kind of business metrics so they have
+26:04 like a very kind of
+26:05 you know at least senior folks who've
+26:07 kind of spent time with their data they
+26:08 have like a very keen sense of you know
+26:10 what to look for what are common gotchas
+26:12 right like what are things that commonly
+26:14 go wrong right like
+26:15 there might be kind of classic things
+26:17 where you know oh to make this query
+26:20 work and get you the right data you have
+26:21 to add this where clause right if you
+26:23 don't write this where clause then
+26:24 you'll get a bunch of kind of garbage
+26:26 data right and often like that kind of
+26:27 knowledge is
+26:29 um it's kind of specifically right yeah
+26:32 yeah exactly so
+26:34 even if it's documented maybe it's
+26:37 in wiki somewhere where nobody uh you
+26:39 know nobody looks at what these people
+26:41 they know and they would just say hey
+26:43 your query is wrong so here's a good one
+26:46 there are folks building kind of good
+26:47 tools for sort of this documentation but
+26:50 honestly uh i've i've kind of yet to see
+26:52 like documentation systems for this that
+26:54 really work and i hope we get there
+26:56 because uh otherwise it's kind of hard
+26:58 to scale
+26:59 so what's it sound actually i had a i
+27:01 had a quick question around like you
+27:02 know you mentioned you know at oleg
+27:04 sometimes like analysts would kind of
+27:05 help answer questions of like you know
+27:07 it only affects 10 people
+27:09 uh do you find like uh
+27:11 like you know analysts are kind of often
+27:14 brought in at the right time to be able
+27:16 to answer those questions or how often
+27:19 are their recommendations heated
+27:22 yeah so uh we use um
+27:25 like the the setup is a
+27:27 we are embedding data scientists and
+27:29 data and listening teams so yes usually
+27:31 it happens at the right time nice
+27:33 actually you know most of them yeah like
+27:35 sometimes it didn't happen and then we
+27:38 ended up spending time on something we
+27:39 shouldn't have but i guess it happens uh
+27:43 to everyone right
+27:44 yeah no that's that's awesome honestly
+27:46 because i think there is there's plenty
+27:48 of kind of stories of like a product
+27:50 manager saying hey this is the coolest
+27:52 feature that needs to be built and often
+27:54 you can write a simple query to say that
+27:56 this will only affect like you know a
+27:58 small number of people maybe not worth
+27:59 it and it doesn't happen in time but
+28:01 that's that's awesome to you
+28:03 yeah we actually call our data and lists
+28:05 not data analysts but product analysis
+28:07 they work very closely with uh product
+28:09 managers and uh yeah
+28:11 so they are also
+28:13 they are more a lot they're
+28:15 quite into the product work so they are
+28:18 very productive that i would say
+28:20 yeah so it definitely helps but they are
+28:22 close to the product and they they know
+28:24 what is important for users and what is
+28:27 not important for users
+28:29 they know it a lot better than data
+28:31 scientists i think
+28:33 so i think data scientists need to learn
+28:35 a lot from product analysts
+28:38 to understanding what is important for
+28:40 the product but it's good that we work
+28:42 together so we can always learn from
+28:44 each other that's awesome
+28:46 and
+28:47 i when i think about this i think that
+28:49 data science work or machine learning
+28:51 work is more experimental than analytics
+28:54 so in data science you
+28:56 have a hypothesis right you have a
+28:58 hypothesis that you want to test
+29:00 and you build some model um
+29:03 or something simple and then you test
+29:05 this hypothesis
+29:07 while in analytics uh
+29:09 at least
+29:10 i might be wrong uh because i never
+29:12 worked in an as an list myself but i
+29:15 think
+29:17 it's less experimental right so they
+29:19 it's
+29:20 more clear what they need to do because
+29:22 there is some ad hoc query or some
+29:24 report they need to do
+29:26 do you think this is the correct
+29:28 observation
+29:30 yeah i think that's i think that's
+29:31 that's definitely fair i mean one of the
+29:33 things is that
+29:35 both types of work are fairly iterative
+29:38 right so uh you have to kind of
+29:41 you know try something see if it works
+29:43 try try something slightly different see
+29:45 if it works so in the world of kind of
+29:47 analysts right like they're often kind
+29:48 of iterating on um kind of different
+29:51 kind of versions of sql right like i
+29:53 know kind of analysts who have like
+29:54 thousands of lines long sql queries
+29:57 right and they're kind of making small
+29:59 changes as they understand you know
+30:00 something new about the business they
+30:01 want to add something uh slightly
+30:03 different to the to the query so there's
+30:05 often like this iterative work but it's
+30:07 it is still kind of in the service of
+30:08 finding something that is kind of true
+30:10 right like an answer that is true based
+30:12 on sort of the history of the business
+30:14 and the data that's been collected
+30:15 whereas with uh with sort of machine
+30:17 learning work
+30:19 you're right it is it is kind of fairly
+30:20 experimental and so the the iterations
+30:22 themselves are the experiments right so
+30:24 you might have experiments that are
+30:25 running sort of you know pre-deployment
+30:28 where you're just testing out a bunch of
+30:29 different models uh you're testing out
+30:31 different features you're testing out
+30:32 different hyperparameters so there's a
+30:34 bunch of experiments going on there um
+30:36 and then there are sort of depending on
+30:38 sort of the scale of the company and uh
+30:40 their sort of infrastructure setup you
+30:42 might be doing sort of uh experiments on
+30:45 live traffic right uh before kind of
+30:47 releasing the full model to prod you
+30:49 might be running them in shadow mode or
+30:51 you might be sort of you know you know
+30:53 doing kind of these a b tests with model
+30:55 and so definitely it feels it feels very
+30:57 experimental um i mean a lot of machine
+30:59 learning is just kind of you know
+31:00 empirical results on kind of you know
+31:03 the data that you're seeing and
+31:04 observing right there's no kind of you
+31:06 know who knows what the the right
+31:08 perfect model is it's just you know this
+31:10 is working best right and that's that's
+31:12 the that's the guiding principle so yeah
+31:14 yeah i think that that the the sort of
+31:16 data science machine learning world
+31:17 being experimental make sense
+31:19 and uh from what i see again uh
+31:22 not only ethics but also in other
+31:24 companies
+31:25 that
+31:26 so we talked about these six experiments
+31:28 on live traffic usually it's a b test or
+31:30 it can be a shadow
+31:32 testing
+31:34 so this analysis of a b tests or
+31:37 whatever life experiments is often also
+31:39 done by analysts
+31:41 right or together with data scientists
+31:43 so it's data scientists or machine
+31:45 learning engineers or and machine
+31:47 learning engineers were together let's
+31:48 say on setting up experiment um you know
+31:51 having two versions of model like
+31:53 baseline model and new model improved
+31:55 yeah and then
+31:56 then together with analysts they
+31:58 analyzed the results and see
+32:01 okay let's say we have an uplift here
+32:04 but why this uplift happens like is
+32:06 there any specific segment of users
+32:08 where this uplift happened or
+32:11 an uplift across all the cohorts all
+32:13 this again
+32:15 so this is something that
+32:16 analysts would do so they would dig in
+32:19 or especially when experiments go wrong
+32:21 when they are not successful
+32:23 yeah like why why why it happened why a
+32:25 new model that was perfect in offline
+32:27 experiments
+32:29 resulted in not uplift but even like the
+32:32 performance was
+32:33 worse than the baseline like why did it
+32:35 happen and then maybe there is one
+32:37 specific category where it was bad and
+32:39 in other categories it was good and this
+32:41 is something that often
+32:43 uh analysts do or help a lot with doing
+32:46 this kind of work
+32:47 yeah i mean i can totally see that and
+32:48 you know we were talking about this
+32:50 earlier as well right often like you
+32:51 know you'll have analysts who are much
+32:53 closer to sort of the business metrics
+32:55 right and their understanding of kind of
+32:57 you know what is actually
+32:58 improving the top line or sort of
+33:00 improving the bottom line in whatever uh
+33:02 respect right and having somebody who
+33:06 you know is helping the machine learning
+33:07 team kind of keep very close tabs on you
+33:10 know is it actually moving the needle or
+33:11 not right that is that is pretty
+33:13 important and you know i think like you
+33:15 know there are some machinery teams
+33:16 where you know they have that sort of
+33:19 mentality and they have that sort of
+33:20 expertise built in uh but yeah if not
+33:24 right sort of uh the model that uh that
+33:26 you're talking about i mean that's
+33:27 that's perfect that's exactly it
+33:30 yeah so maybe we can um summarize a bit
+33:33 so what in your opinion are overlaps
+33:35 what are the similarities between
+33:37 machine learning and analytics
+33:40 yeah so i mean in terms of similarities
+33:42 i mean it's the data is the biggest one
+33:44 right like the these are both kind of
+33:46 two professions which heavily rely on uh
+33:48 i mean without data nothing works then
+33:50 without you know good data quality
+33:51 nothing works um and whenever it comes
+33:54 to data you're you're kind of dealing
+33:55 with problems of you know how do you
+33:57 store it efficiently how do you process
+33:59 it efficiently how do you know where
+34:00 this data is coming from and how do you
+34:02 make sure that sort of you know data
+34:04 quality errors are kind of caught as
+34:05 early as possible so you have all of
+34:07 these data similarities um i think we
+34:09 talked about sort of them being both
+34:10 iterative right like you just have to
+34:12 kind of
+34:13 you know nothing is ever quite done
+34:14 right not even a sequel is ever quite
+34:16 perfect because there's probably
+34:17 something that is that is missing and
+34:19 models for sure right like models break
+34:21 all the time and you need to kind of
+34:22 keep updating them
+34:24 um and one of the other i mean things is
+34:26 that at least today like often it feels
+34:28 like the same people are kind of working
+34:31 on both analytics stuff and sort of
+34:33 machine learning stuff um i think there
+34:35 are teams where sort of this kind of or
+34:38 at least within teams you'll have
+34:39 specialization where somebody kind of
+34:41 does you know a bulk of like just
+34:43 working with sql and somebody does kind
+34:45 of more
+34:46 of the machine learning and modeling
+34:47 stuff but it still feels that like
+34:49 there's you know there can be a lot of
+34:51 interchange there um and
+34:54 of course when compared to kind of
+34:56 software right they're both fairly less
+34:59 mature right as ecosystems and sort of
+35:02 processes and you know how to actually
+35:04 do stuff so there's a lot to there
+35:06 there's a lot that will change and you
+35:07 know there's a lot of change that is
+35:08 going on already but there's a lot that
+35:10 will change about how this work gets
+35:11 done so i think in my head at least
+35:13 those are
+35:14 roughly the the similarities and then
+35:16 sort of differences right like um
+35:19 i mean it's
+35:20 it's to me some some of the differences
+35:22 come from like what are the use cases
+35:24 that they address right so analytics is
+35:26 typically kind of helping the business
+35:29 understand uh you know what actually
+35:31 happened what worked what didn't work so
+35:32 the use cases are often very internal
+35:34 facing right it's for the team
+35:36 themselves like the organization
+35:37 themselves whereas for machine learning
+35:39 often since they're
+35:41 uh like there can be internal facing
+35:43 stuff right like forecasting right what
+35:45 what revenues do we forecast but a lot
+35:47 of it is actually like making
+35:48 predictions on kind of um like four
+35:51 users right like uh you know things that
+35:53 actually directly will impact users
+35:55 things like yeah we were talking about
+35:56 fraud right like who to uh who to kind
+35:59 of whose transactions to block right
+36:01 what users to kind of uh stop in some
+36:04 capacity so there'll be a lot of
+36:05 external facing kind of uh stuff there i
+36:08 think we talked about differences around
+36:10 you know what are the outputs of these
+36:12 two data streams so with analytics you
+36:14 have things like dashboards reports
+36:16 whereas with machine learning stuff you
+36:18 have systems that are being that are the
+36:19 output right so it's a live system that
+36:21 you have to kind of keep running um
+36:24 and again with systems right like you
+36:25 often see that they can be fairly real
+36:27 time right um so you're talking about
+36:30 sort of slas of like you know return in
+36:32 like 200 milliseconds return a
+36:33 prediction in 200 milliseconds whereas
+36:35 if you think about like analytics stuff
+36:36 right there people are comparing week on
+36:39 week right like uh what are the how are
+36:41 business metrics changing which is like
+36:43 a completely different time scale to be
+36:45 thinking about problems on um and of
+36:47 course there are sort of different
+36:48 technologies different tools
+36:50 uh the ecosystem there's like slight
+36:53 differences there so anyway that's uh i
+36:55 can probably go on for longer but yeah
+36:57 those are some of the the key
+36:58 similarities differences in my mind
+37:01 yeah i'm looking at my notes and i don't
+37:03 think you missed anything
+37:05 yeah apart from maybe a uh like the
+37:08 analyst i think no maybe that a bit more
+37:11 uh like a bit better than data
+37:12 scientists yeah they tend to spend a lot
+37:15 more time with that and you said because
+37:17 of the output is uh
+37:19 in case of analysts dashboards and
+37:22 reports which involves a lot of sql a
+37:25 lot of data understanding while for data
+37:27 scientists to spend more time on systems
+37:30 rather than
+37:31 you know analyzing data yeah
+37:34 i mean maybe like even to maybe
+37:36 contradict myself a little bit on this i
+37:38 mean i i do think that some of the the
+37:40 best scientists like have a very keen
+37:42 understanding of the business right
+37:43 because without that
+37:45 you know sometimes you'll just make bad
+37:47 decisions about what to prioritize and
+37:49 what not to prioritize so you know the
+37:51 best kind of data scientist in my
+37:52 opinion like very clo closely understand
+37:55 you know why they're working on
+37:56 something and how that will impact kind
+37:58 of um you know the key metrics for the
+38:00 for the team and the company
+38:02 but as a rough guiding stick i think uh
+38:05 you're right that i think like analysts
+38:06 who spend a lot of time in sql working
+38:09 with business metrics directly like
+38:10 often they they kind of uh
+38:12 have a much closer sense of it maybe the
+38:15 same is true for analysts analysts who
+38:17 spent not just time in sicko but also
+38:19 spent some time programming and
+38:22 doing a bit of i don't know if actually
+38:24 at least do this like the system aspects
+38:27 but definitely
+38:28 uh you know doing a bit of programming
+38:30 doing some
+38:31 i don't know python and things like this
+38:34 yeah i think these probably are also
+38:37 great analysts right so those who well
+38:40 like for data scientists for machinery
+38:42 engineers who
+38:43 go and check
+38:44 you know go outside of the typical
+38:46 database and yeah you know do some
+38:50 business analytics right what is good
+38:52 for business for analysts who do and
+38:55 check uh data science and then
+38:57 how to do this whole machine learning
+38:59 stuff they are
+39:00 um yeah also very beneficial for them
+39:02 right
+39:03 yeah absolutely and i mean i think it
+39:05 comes down to using the right tool right
+39:07 so if the existing tool let's say sql
+39:10 right doesn't kind of get you the
+39:11 answers that you need and maybe you need
+39:13 to you know run some analyses with
+39:15 pandas right with in a jupiter notebook
+39:18 or something i mean then you know it's
+39:20 it's amazing if the the sort of analysts
+39:22 themselves can just spin that up and you
+39:24 know write whatever code they need to um
+39:26 i i do believe that like you know until
+39:29 recently maybe i mean it probably wasn't
+39:32 the easiest right to set up like virtual
+39:35 environments and jupiter notebooks for
+39:36 people who are less familiar and we're
+39:39 seeing sort of like a move into you know
+39:41 notebooks that are much more inclusive
+39:43 right which allow you to kind of write
+39:44 sql and then python sort of in the same
+39:46 environment and a lot of things are
+39:47 taken care of for you uh so i think as
+39:50 more and more of that happens right it
+39:52 will become easier and easier
+39:53 for uh you know the you know the story
+39:56 that you told of like a data analyst who
+39:57 does mostly sql writes a little bit of
+40:00 code for that to become easier
+40:02 now you are talking about this um
+40:04 remember this uh not jupiter notebooks
+40:06 but the other sort of notebooks i think
+40:08 zeppelin zeppelin notebooks yeah yeah i
+40:11 think i i don't know i don't think it
+40:13 got much traction but the idea there was
+40:15 that you can write sql query uh in one
+40:18 cell and then you can write uh some
+40:21 spark code in the second cell yeah you
+40:23 can write some pandas code and then yeah
+40:26 create these nice uh
+40:28 reports immediately in your dashboard
+40:30 yeah so that was uh yeah i i personally
+40:32 never use zeppelin i mean to me zeppelin
+40:34 was always like if you're you know if
+40:36 you're kind of working with the hadoop
+40:37 ecosystem it's probably like a better
+40:40 thing i mean i i guess i i know a few
+40:42 people use it but um i mean
+40:44 i probably won't name names but like
+40:46 there are a couple of bi tools today
+40:48 that for example in the same kind of
+40:50 interface will allow you to switch
+40:52 between sort of a notebook experience
+40:54 and sort of a sql client there's a
+40:56 couple of smaller companies that make
+40:58 sql and python running in similar cells
+41:01 possible and you know they're seeing
+41:02 some amount of traction so
+41:05 maybe maybe the time wasn't quite right
+41:07 right when zeppelin came out five six
+41:08 years ago or something uh maybe the time
+41:10 is right now but who knows
+41:13 yeah so
+41:14 all right so we already have some
+41:16 questions uh so awesome for our question
+41:18 is do you see over investment in
+41:22 organizations organizations invest more
+41:24 in machine learning and under invest in
+41:27 analytics
+41:30 yeah that's interesting
+41:32 i don't know if i ever have a clear
+41:34 answer to that i mean
+41:36 i probably at the highest level i would
+41:38 imagine that
+41:39 there is generally under investment in
+41:41 sort of data teams um
+41:44 uh
+41:44 i mean just in terms of kind of the
+41:46 value that like you know a couple of
+41:48 like uh
+41:49 good sort of data people who have who
+41:51 have kind of the right infrastructure
+41:53 and set up like the value that they can
+41:54 bring is often very outsized compared to
+41:56 the the sort of resources that are spent
+41:58 on them
+41:59 between sort of machine learning and uh
+42:01 data analytics it's possible i mean
+42:04 look sometimes like uh you know folks
+42:07 work you know sort of in executive kind
+42:09 of positions we're kind of making these
+42:11 these decisions like often they're kind
+42:13 of relying on
+42:14 you know external factors right so you
+42:16 might kind of you know read this you
+42:18 know piece from mckinsey or whatever
+42:20 right like without kind of going into
+42:22 details there and it's like look machine
+42:24 learning is like the kind of the hot
+42:26 thing right now right and we should kind
+42:28 of have like a team we should have like
+42:29 be doing this so i i could i could
+42:31 totally see that happening uh but it's
+42:34 it's hard for me to say that kind of
+42:35 without numbers but i mean generally i
+42:37 think like more investment in this stuff
+42:39 is probably better um
+42:42 but
+42:43 as long as kind of we also start from
+42:45 you know investing in sort of uh
+42:47 analytics and uh
+42:49 sort of machine learning like there's
+42:50 often like a core investment in data
+42:52 infrastructure that often also needs to
+42:54 be made along the site um and i think
+42:56 that's often like the most kind of
+42:57 underappreciated uh and underserved part
+43:00 of it but
+43:02 yeah so the the question uh
+43:04 continues so the or it's more like a
+43:06 comment i see a lot
+43:08 of organizations hiring lots of data
+43:11 scientists while forgetting about data
+43:14 analysts and forgetting to upskill
+43:16 others
+43:17 yeah so perhaps uh yeah the data science
+43:20 looks more sexy perhaps like yeah people
+43:23 talk about machine learning robots i
+43:25 don't know like
+43:27 it's cooler right and
+43:30 you know dashboards and uh okay like
+43:32 let's have a bunch of data scientists
+43:36 put them in the room and let them
+43:39 unfortunately that sounds that sounds
+43:41 very true right like it's data science i
+43:43 mean that's kind of why like i typically
+43:45 want to kind of stay away from like the
+43:47 term data science as much as possible
+43:49 just because it becomes so broad where
+43:51 you know using that phrase you can kind
+43:53 of you can convince like how like sexy
+43:56 like a particular job can be right but
+43:58 maybe the person actually gets into that
+44:00 organization and they realize that you
+44:02 know there's no kind of amazing machine
+44:04 learning model that they get to train
+44:06 right there's just like these more kind
+44:08 of important pressing uh business
+44:10 problems that can be answered with sql
+44:13 and just like you know getting your data
+44:15 into a better shape right that just you
+44:17 know that's that's what the business
+44:18 needs at that moment right so you often
+44:20 like you know you have some amount of
+44:22 dissatisfaction right for uh for people
+44:24 who are hired in um but yeah it's i
+44:27 guess it's kind of an unfortunate
+44:29 i would imagine transitionary period uh
+44:32 sort of in uh in our life right so maybe
+44:34 five seven years from now things will be
+44:36 a little bit better defined um these
+44:38 roles will be a little bit clearer and
+44:40 hopefully sort of the the importance and
+44:42 uh sort of the value that data analyt
+44:45 you know analysts can bring to the table
+44:46 right hopefully that will sort of also
+44:49 be sort of reasonably clear right and
+44:51 it's not that you know data scientists
+44:52 are here and data analysts are here
+44:54 because that's just not true yeah that's
+44:55 definitely not true
+44:57 and uh
+44:58 from what i see
+45:00 it's actually
+45:01 and i talk to some some people who are
+45:03 hiring both data scientists and data
+45:05 analysts
+45:07 and one of the comments that was a bit
+45:09 surprising for me but then i thought in
+45:11 the retrospect it probably makes sense
+45:14 so this they told me that it's a lot
+45:16 more difficult to find a senior analyst
+45:19 than a senior data scientist
+45:23 have you seen this and do you have any
+45:25 ideas why it might be the case
+45:28 um yeah not not 100 sure i mean if i
+45:31 were to make a
+45:33 guess for why that could happen it's
+45:35 it's likely because
+45:37 um you know maybe data analysts kind of
+45:40 uh like senior data analysts or who
+45:42 spend that some time doing that right
+45:44 like if they find sort of
+45:46 like uh
+45:47 like a differential in the amount of
+45:49 money that they can make right by just
+45:51 moving to sort of a data science role
+45:53 right i mean that's that seems like a
+45:55 no-brainer right and they should be
+45:56 doing that i mean it's also possible
+45:58 that i i've seen like some data analysts
+46:00 actually make the transition from you
+46:02 know just kind of writing kind of sql
+46:04 and understanding the company's data to
+46:06 becoming much more um
+46:08 like almost infrastructure people right
+46:10 because they understand what it takes to
+46:13 sort of have successful and kind of high
+46:16 performing analyst teams so like and
+46:18 maybe like this analytics engineer kind
+46:20 of is is a trend in that direction right
+46:22 where they're less about kind of writing
+46:25 um you know more sql queries and
+46:27 answering more direct questions from
+46:29 business but more about structuring and
+46:30 setting up the data sets in a way uh
+46:33 where it's you know it's it's kind of it
+46:35 makes it easier downstream right so
+46:37 there's probably sort of like moves that
+46:38 sort of analysts would make either in
+46:40 the direction of you know data science
+46:42 or sort of a little bit more upstream
+46:44 when it comes to infrastructure but
+46:46 uh yeah um
+46:48 hiring i think generally is pretty hard
+46:50 right now uh for a lot of folks but i i
+46:53 can imagine that analysts might be a
+46:54 little bit harder than normal i also
+46:57 noticed that some analysts they
+47:00 mainly go to the data science path
+47:02 mainly switch careers from data
+47:04 analytics to data science but also
+47:06 mainly go to product so they become
+47:08 product managers not many but i saw
+47:11 multiple so because data scientists are
+47:13 quite close to product yeah so they uh
+47:17 realize that they like this product
+47:19 management work and they become product
+47:21 managers that's super interesting yeah
+47:23 yeah so maybe by the time they uh
+47:26 well let's say they are not senior uh
+47:29 analysts and now they see okay there's
+47:31 this data science or this
+47:33 product management work and they just
+47:35 switch and uh
+47:37 not so many people
+47:39 uh
+47:40 get to the senior uh position i don't
+47:42 know yeah i also i hope that changes if
+47:44 that's true i hope that changes yeah
+47:46 yeah so maybe because as you said uh
+47:49 yeah maybe
+47:51 it does look like
+47:53 in industry data science looks more sexy
+47:56 right yes you know there's certainly
+47:58 more hype around this
+48:00 than analytics because analytics has
+48:02 been around
+48:04 right now the three four decades right
+48:07 while data science is
+48:10 something more uh fresh
+48:12 yeah at least
+48:14 when it comes to you know we have this
+48:16 data mining of course which is very old
+48:18 but uh yeah it's it's kind of funny i
+48:20 think i don't remember where i was
+48:21 reading this but sort of even the terms
+48:23 of kind of data mining like uh they're
+48:25 not very popular when they started
+48:28 because um there was something kind of
+48:31 uh i mean people felt a bit icky about
+48:32 the fact that like
+48:34 like
+48:35 you're having to rely on sort of
+48:37 empirical data to come up with like
+48:39 right decisions right and you just don't
+48:41 you don't fully understand the problem
+48:43 deeply right like from your heart right
+48:45 so like the practice of kind of digging
+48:47 into actual data to figure out like you
+48:49 know what is correct and what is right
+48:50 like it was kind of frowned upon i think
+48:52 when it began uh but it's kind of funny
+48:54 that like today like everything kind of
+48:56 seems to run on data and everybody is
+48:58 all about data
+49:00 wow thanks so we have another question
+49:02 so should our team work independently or
+49:05 together so let's assume we have a
+49:07 machine learning team and analytics team
+49:09 in our company so should we put them in
+49:11 one room or should we put them in
+49:13 separate rooms
+49:15 that's yeah that's a really interesting
+49:16 question um
+49:18 so maybe i'll caveat this with uh look
+49:21 my sort of experience with this is is
+49:23 limited and i rely on a lot of kind of
+49:25 other smart people who've written stuff
+49:26 about this but
+49:28 there are two aspects to
+49:30 uh
+49:31 like uh two aspects to kind of where
+49:32 they should sit one is from the
+49:34 perspective of kind of like what is the
+49:37 management and reporting structure right
+49:39 so who do they report into um how is
+49:41 their sort of career and growth
+49:43 evaluated so that's one direction and
+49:45 the other direction is you know what are
+49:46 the kinds of projects that they do and
+49:47 how fast are they able to kind of work
+49:49 on them and deliver business value and
+49:51 that's the second
+49:52 um in terms of the first
+49:55 generally like it seems that like data
+49:57 people like to be managed
+49:59 by
+50:00 sort of other data people or at least
+50:02 people who understand sort of you know
+50:03 what data can do what data can't do
+50:05 right and some of the challenges with
+50:07 data so if you ask sort of somebody
+50:10 maybe who's like a business leader or
+50:12 maybe who is um like even an engineering
+50:15 leader doesn't really work with data to
+50:17 manage data people like that can often
+50:19 be a little tricky right because they're
+50:21 just challenges are kind of unique um
+50:23 but when it comes to
+50:25 the actual projects that they do right
+50:27 it can be super valuable to have the the
+50:30 data person embedded right i think
+50:32 alexa you were mentioning this for olx
+50:34 right because they are then able to you
+50:36 know they have very close access to what
+50:39 that team needs what are the business
+50:41 metrics that their team is tracking what
+50:43 actually works what doesn't work um and
+50:45 so their feedback their cycles are much
+50:47 faster they're able to make progress
+50:49 much faster
+50:51 some of the some of the challenges that
+50:53 they run into then is if you're too
+50:55 independent then they're sort of
+50:57 learnings across different data people
+50:59 uh percolating to everybody else that
+51:01 can often take a bit of a hit but then
+51:03 again if there is sort of a common sort
+51:06 of reporting structure hopefully like
+51:07 the manager who
+51:09 you know is directly managing like these
+51:10 five or six data analysts or data
+51:12 scientists um they should be able to
+51:14 kind of take the common learnings and
+51:16 sort of help the broader team but yeah i
+51:18 mean i would say it's it's kind of
+51:19 reasonably
+51:21 sort of team dependent but as long as
+51:23 there are ways for
+51:25 sort of common learnings to be shared
+51:26 and be adopted by the rest of the team
+51:28 um and there are you know they can be
+51:31 embedded where they're learning from the
+51:33 business domain very fast that's
+51:34 probably the best outcome
+51:38 um and this probably stops being true
+51:40 once the team reaches like a very large
+51:42 scale because uh then you know there's
+51:44 probably too many data scientists to
+51:46 have like centralized reporting but um
+51:48 at least until like organizations are
+51:50 like thousands or so people they should
+51:52 uh
+51:53 work
+51:54 it's interesting that you mentioned that
+51:55 data people like to report to data
+51:57 people because what i saw when data
+51:59 science just appeared
+52:01 that it wasn't clear what part of
+52:03 hierarchy
+52:05 part of structure
+52:06 data
+52:07 team belongs to like should they report
+52:09 to product director or i don't know vp
+52:11 of product should they report to
+52:13 an engineering director to the should
+52:16 they be engineering uh part of the
+52:17 engineering organization
+52:19 and it's still like well not clear like
+52:21 data science for example
+52:23 like maybe it's closer to engineering
+52:25 but then
+52:26 analytics is closer to product like it's
+52:28 not clear
+52:30 where to put them so right now for
+52:32 example to elix we have this we have
+52:34 chief data officer and then we have the
+52:36 entire like sort of
+52:38 pillar right i don't know if you can say
+52:40 that so basically like entire hierarchy
+52:42 coming from the
+52:44 chief data officer uh down to
+52:47 you know data analysts and data
+52:48 scientists and i see more and more
+52:50 companies are doing that realizing that
+52:52 this is
+52:53 an important thing to do
+52:54 yeah
+52:55 and then coming to
+52:58 this uh should they sit independently or
+53:00 together what i also notice is sometimes
+53:04 like a bit of both works
+53:06 because if analysts are getting
+53:08 constantly getting distracted by artwork
+53:10 queries
+53:11 yeah which often happens right so yeah
+53:13 let's say they're sitting in a team so
+53:16 they're working on some product uh
+53:19 things like
+53:20 understanding the impact of
+53:22 something and then somebody comes and
+53:24 says hey i need this report for
+53:26 a board meeting tomorrow right so yeah
+53:29 okay what do i do here so
+53:31 and uh
+53:32 so what i see sometimes there is a team
+53:35 who is doing taking care of these ad hoc
+53:37 requests
+53:38 yeah like perhaps uh like larger
+53:41 organizations can afford that right yeah
+53:43 they can afford a team independent team
+53:46 for doing these kind of things
+53:47 and the toy leaks we had actually a bi
+53:50 department that was taking care of this
+53:52 alcohol request and also
+53:55 building some sort of infrastructure to
+53:57 enable cell service for nice yeah so
+54:00 that's yeah
+54:02 yeah that sounds reasonable as well if
+54:04 there's kind of common kind of
+54:05 infrastructure work that is being done
+54:06 by a separate team and i mean i'm
+54:09 guessing like the analysts must be happy
+54:10 that some of the ad hoc requests can be
+54:12 uh sent over somebody else
+54:15 unfortunately yes yeah not all so
+54:18 the embedded mod i think works really
+54:20 well yeah still analysts sometimes get
+54:23 any
+54:23 advocates
+54:25 yeah i mean the the reporting into data
+54:27 like when i say data people it doesn't
+54:29 have like have that much to do with the
+54:31 title it's about
+54:32 like does the person kind of understand
+54:34 some of the natural challenges with data
+54:35 right like i'll give you like a like a
+54:37 fictional example i guess right so
+54:39 sometimes like data has like all sorts
+54:41 of weird problems right and
+54:43 a good kind of analyst or scientist like
+54:45 would basically look at that and say
+54:46 there's something really fishy here
+54:48 right and i better kind of investigate
+54:50 right and
+54:52 the ideal thing to happen would be like
+54:54 if they're being kind of very paranoid
+54:56 and diligent about which you should be
+54:57 like about the quality of data like
+55:00 like they should be able to spend you
+55:02 know hours to maybe a few days just
+55:04 investigating like where is this kind of
+55:06 record coming from right and now if you
+55:08 go to somebody who
+55:10 hasn't kind of faced these things before
+55:12 they'll be like well just ignore it it
+55:13 doesn't matter right but you know like
+55:16 that can have all sorts of negative
+55:17 consequences down the line and
+55:19 um you know almost like what you should
+55:21 what you need there is kind of like
+55:22 support right it's like yeah like this
+55:24 is probably important and then for the
+55:26 data person to just like go into detail
+55:28 and explain like okay here are all the
+55:30 problems that happen downstream like
+55:32 that's that's not that's not ideal right
+55:34 so
+55:34 um
+55:36 at least that's that's kind of my my
+55:37 thought process on uh yeah reporting
+55:40 so last week we talked about uh so we
+55:43 had a guest
+55:45 and we were talking about building data
+55:47 teams and so tommy
+55:50 liang was there talking about her
+55:52 experience and then she suggested if she
+55:55 would start again building a data team
+55:57 so she would start with hiring a data
+55:59 engineer and hiding a business analyst
+56:02 and data analyst preferably senior data
+56:05 analyst and only then hire data
+56:07 scientists after these two three people
+56:10 right would you say um you would do it
+56:13 the same way like would you hire an
+56:15 engineer and then analysts and then data
+56:17 scientists or you would change something
+56:19 in this approach
+56:21 i mean
+56:22 i mean seems seems pretty reasonable and
+56:23 i'm sure tammy has like a lot of good
+56:25 experience to kind of back that up i
+56:27 mean i think data engineers somebody who
+56:28 can just get stuff into a good place
+56:30 that is like pretty critical right no
+56:32 not much work can happen without that um
+56:35 and i think for most companies this
+56:36 strategy seems reasonable there are
+56:38 probably some companies that are very
+56:40 kind of machine learning focused right
+56:42 so their entire product might just be
+56:44 kind of like uh like a machine learning
+56:46 thing right um and this could be
+56:48 everything from like you know
+56:49 self-driving sort of in like the very
+56:51 extreme case to even kind of you know
+56:53 smaller models that are you know in
+56:55 fintech or healthcare
+56:57 and so there when the core business is
+56:59 kind of machine learning right then sort
+57:01 of the team structure ends up developing
+57:03 very differently and it's like you know
+57:04 often it's like it might be like a set
+57:06 of phd students right or like you know
+57:08 not students but like folks with phds
+57:10 who get started and then you add sort of
+57:12 engineers once you have to take certain
+57:14 prototypes and sort of productionize
+57:16 them uh but for most teams i think that
+57:18 that advice from timing seems pretty
+57:20 reasonable
+57:22 yeah because like we talked about that
+57:26 companies tend to
+57:27 uh over invest into data science and and
+57:30 understand data analytics but um yeah
+57:33 maybe
+57:34 when they hire a person who knows in
+57:37 which order people should be hired maybe
+57:39 they can change things so
+57:41 maybe if we still see that there's over
+57:44 investment in data science maybe we just
+57:46 uh so these organizations are not mature
+57:48 yet so maybe they need to hire somebody
+57:51 like some chief data officer or
+57:54 right data kind of person who would then
+57:57 structure hiring right so this is the
+58:00 order in which we should hire people so
+58:02 first of all to have data data engineers
+58:05 who have infrastructure then data
+58:07 analysts already to make use of data and
+58:09 then only then data scientists right
+58:12 yeah
+58:13 that that sounds that sounds pretty nice
+58:15 and hopefully more and more
+58:16 organizations move in that direction
+58:18 yeah so before we finish i wanted to ask
+58:22 you about your newsletter so maybe can
+58:24 you tell us a few words about this so
+58:26 what are you writing about
+58:28 absolutely yeah so um so a friend of
+58:30 mine and i you know we had been
+58:32 you know for maybe years like we've been
+58:34 kind of trading notes and trading stuff
+58:36 about things that we're seeing in the
+58:38 world of machine learning and especially
+58:39 you know not so much research but much
+58:41 more how do you take machine learning
+58:42 and make it work in production um and
+58:45 then sometime last year we just decided
+58:47 that you know maybe uh we should just
+58:49 take some of the stuff that we're
+58:50 discussing and then put it into a
+58:52 newsletter uh and at least share it with
+58:54 some of our friends right and so that's
+58:55 how we kind of got started um and you
+58:58 know even kind of today like we just we
+59:00 just think about what are the common
+59:01 challenges that teams are facing uh in
+59:04 production with machine learning right
+59:06 so
+59:06 all sorts of stuff around you know some
+59:08 system stuff some machine learning stuff
+59:10 um and then i just how do you make these
+59:12 systems kind of work um
+59:15 and yeah so
+59:16 that's that's something that we've been
+59:18 focused on i mean the the sort of
+59:19 overall ecosystem is you know uh like
+59:22 folks kind of call it sort of mlops um
+59:25 and uh so our newsletter is called the
+59:27 mlops roundup it's on substack uh yeah
+59:31 please do check it out and let us know
+59:32 if you have any thoughts or feedback
+59:34 yeah i just realized that i
+59:36 mispronounced it at the beginning
+59:38 i always i kept reading it envelopes
+59:40 rounds and you didn't correct me so it's
+59:42 it's all good i think i should have uh i
+59:44 didn't kind of write out the name
+59:45 explicitly uh i should have
+59:48 yeah but the link is correct so because
+59:50 i copy and pasted it so the link is fine
+59:52 if you
+59:53 so the i'll put the link in the
+59:55 description of course uh thanks do
+59:58 how can people find you
+1:00:00 um so yeah please you can find me on
+1:00:02 twitter uh so my twitter handle is uh uh
+1:00:05 our well it's the grish underscore
+1:00:07 parker which is rish underscore my last
+1:00:10 name and then otherwise you know feel
+1:00:11 free to uh um
+1:00:13 if you're i mean i'm on the data talks
+1:00:15 uh slack channel so feel free to find me
+1:00:17 and send me a message always happy to
+1:00:19 chat
+1:00:20 okay thanks a lot thanks for this
+1:00:22 fruitful discussion it was a
+1:00:24 pleasure to talk to you thanks everyone
+1:00:26 for joining us today and for asking
+1:00:28 questions
+1:00:29 and uh yeah
+1:00:30 thanks thank you so much alexi yeah
+1:00:33 yeah have a great day
+1:00:35 it's nice thank you thanks a lot yeah
+1:00:38 goodbye

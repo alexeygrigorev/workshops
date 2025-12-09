@@ -1,0 +1,1580 @@
+LLMs for Everyone
+
+0:00 hey everyone Welcome to our event this
+0:02 event is brought to you by datadox club
+0:03 which is a community of people who love
+0:05 data we have weekly events and today is
+0:07 one of such events if you want to find
+0:09 out more about the events we have there
+0:11 is a link in the description go there
+0:13 click on this link and you'll see all
+0:15 the events we have in our pipeline which
+0:16 is not a lot because it's summer and
+0:18 everyone else is on location but
+0:21 there will be more
+0:23 so we are working on that
+0:24 do not forget to subscribe to our
+0:26 YouTube channel very important this way
+0:28 you will not miss
+0:30 future streams or some streams like the
+0:32 one today and we have an amazing slack
+0:35 Community where you can hang out with
+0:37 other data enthusiasts so check the link
+0:39 out
+0:39 and during today's interview
+0:42 you can ask any question you want there
+0:44 is a link in the live chat it's pinned
+0:46 so click on that link ask your question
+0:48 and we'll be
+0:50 covering these questions during the
+0:52 interview
+0:53 and right now I will stop sharing my
+0:56 screen
+0:57 I will open the questions we prepared
+0:59 for you
+1:03 if you're ready we can start okay
+1:06 okay this week we'll talk about ways to
+1:09 put llms large language models in
+1:11 production and we have a special guest
+1:13 today Miriam Miriam is a recovering
+1:17 physicist maybe very interesting and the
+1:20 co-founder of Titan ml so Titan normal
+1:22 is an NLP development platform that
+1:24 focuses on deployability of llms and
+1:28 allowing businesses to build smaller and
+1:30 cheaper deployments of language models
+1:32 so welcome to the show
+1:33 it's lovely to be here thank you for
+1:35 having me
+1:36 yeah our pleasure so the questions for
+1:39 today's interview were prepared by
+1:41 Johanna Bayer thanks Johanna as always
+1:43 for your help
+1:44 and before we go into our main topic of
+1:46 LMS let us start with your background
+1:49 can you tell us about your career
+1:51 Journey so far
+1:53 yeah sure so as you said I started my
+1:56 career actually you know in physics
+1:59 specifically theoretical physics and
+2:01 philosophy
+2:02 um that's what I studied at Oxford
+2:05 um when I left I became an investment
+2:07 banker which I really really enjoyed
+2:10 um
+2:12 well mainly because I had a fantastic
+2:14 boss but um I left Investment Banking to
+2:17 join that Tech and Tech startups
+2:21 um and the reason I did that is because
+2:23 I realized what I actually really really
+2:25 love is building things and and building
+2:27 products and systems that people and
+2:30 users specifically really really like
+2:32 um and that's why I've been in the tech
+2:33 ecosystem ever since
+2:36 um so we started typed them out a couple
+2:38 years ago now before chat's upt so we
+2:40 have we have the uh the
+2:43 the cloud to be able to say that
+2:45 um and we originally started typing ml
+2:48 as a research project coming out of my
+2:50 co-founders research at UCL
+2:53 um thinking about the deployability of
+2:55 computer vision models
+2:57 um and then we pivoted over a year ago
+3:00 to focus on the deployability of large
+3:02 language models and that's what we've
+3:04 been working on ever since
+3:06 okay that's quite an interesting career
+3:09 like
+3:10 working in physics and philosophy and I
+3:12 was like when you mentioned that I was
+3:14 like um like how does it even work like
+3:16 what's the intersection between these
+3:18 two
+3:19 and then yeah
+3:21 yeah I mean physics and philosophy is
+3:23 super interesting
+3:27 to solve the same thing they're trying
+3:28 to solve like how does the universe work
+3:30 and how should we understand it but
+3:32 they're just going about it in really
+3:33 different ways and so there is actually
+3:35 a really nice intersection
+3:38 I never thought about this from this
+3:41 angle yeah interesting but then you
+3:42 worked it in as an invest Investment
+3:45 Banking which is like a completely
+3:47 different area I don't know maybe your
+3:49 background in theoretical physics did
+3:51 help did it actually or it was like a
+3:54 completely new universe
+3:56 other than the fact that I'm really good
+3:58 at maths not really
+4:00 um so no I I
+4:03 completely from scratch when I became an
+4:05 investment I think
+4:07 one of the streams that's followed me
+4:08 throughout my entire life is
+4:11 um I just like doing things that are
+4:12 pretty difficult
+4:14 um and I learned pretty quickly so
+4:17 moving from you know theoretical physics
+4:19 gave me a great
+4:21 thinking Base Great mathematical base
+4:23 and that meant that one of the
+4:25 Investment Bank where I was able to
+4:26 learn pretty quickly and I had fantastic
+4:28 people that I was working with and a
+4:30 fantastic boss and I just like the fact
+4:32 that investment banking was difficult or
+4:35 you know it was something I had never
+4:37 done before so it's really exciting so
+4:41 so what's the most difficult thing
+4:43 theoretical physics Investment Banking
+4:46 or being a startup co-founder
+4:49 I mean it's a great question I think
+4:51 they're just different levels of sleep
+4:53 deprived
+4:54 um
+4:56 I I I think being a co-fran is probably
+4:59 the most difficult thing I've done not
+5:01 necessarily because any individual thing
+5:03 you do is difficult
+5:05 um but you are just spinning so many
+5:07 different plates
+5:09 um all of the time and you have to
+5:10 constantly be thinking about
+5:12 um everything so that's probably the
+5:14 most difficult thing that we've been
+5:16 doing so far so I don't know what my
+5:18 next one will be
+5:21 and the main difficulties like this
+5:23 variety of things like you have to do
+5:25 pretty much everything what's your Like
+5:27 official title are you a CEO CTO or
+5:31 yes
+5:33 um so we don't really like we don't
+5:34 really do uh titles within within our
+5:37 work we have so we have three
+5:38 co-founders and we all look after
+5:40 different parts of the business so but I
+5:43 guess um looks after product development
+5:45 uh Jamie looks after product strategy
+5:48 and also research angle and then I look
+5:50 after operations and Commercial and
+5:52 fundraising and so that's the kind of
+5:54 way that we we stress ourselves
+5:57 but you don't officially have a title of
+5:59 a chief fundraising officer you know
+6:03 well it you know we always get answers
+6:05 and I'm like it doesn't really make
+6:07 sense to have these really grandiose
+6:11 titles when you're still a startup
+6:13 um I think the thing that's important is
+6:15 that you just have like really clear
+6:16 division of labor
+6:18 um
+6:19 get to the point where we'll have like
+6:20 really official titles at some point
+6:21 probably in half a year you will be
+6:23 doing a different thing right
+6:25 uh yeah exactly because things always
+6:28 evolve and like the challenges are
+6:29 always really different
+6:31 um like for example we're doing way more
+6:33 on the commercial side than we were
+6:34 doing a year and a half ago
+6:36 um and we're doing Less on the
+6:37 fundraising side now so it's uh Ever
+6:40 Ever Changing
+6:42 and I know we are kind of late to the
+6:44 party of speaking about alums because
+6:47 this is as I mentioned at the beginning
+6:49 this is actually our first event ever
+6:51 about llms where we explicitly talk
+6:54 about them until the lamps are large
+6:56 language models in case you live under a
+6:59 rock
+7:00 and you have not heard about them
+7:03 and yeah we are quite late to that uh so
+7:06 finally we're catching up
+7:07 and talk about them and you mentioned
+7:10 that your startup your company Titan ml
+7:13 you pivoted from CD computer vision to
+7:16 NLP to large language models so
+7:18 apparently you're quite interested in
+7:20 them and I'm wondering
+7:23 how did it actually start for you like
+7:25 how did you become interested in LMS
+7:28 even before judge PT
+7:30 yeah so it was actually
+7:33 driven by uh our customers so we were
+7:37 interested in deep learning and were
+7:39 interested in all of the cool things
+7:40 they could do for a computer provision
+7:42 point of view from a large language
+7:43 model point of view
+7:45 um and and from various others and we
+7:49 were interested from like you know the
+7:52 technology level
+7:54 um but we started getting interested in
+7:55 large language models from an
+7:56 application point of view and from what
+7:58 they could really really do for society
+8:01 um when our customers kept on saying
+8:03 Okay computer vision is kind of cool but
+8:06 actually the thing that's going to
+8:07 change our business is language modeling
+8:10 um and that's when we really started
+8:11 getting interested in that particular
+8:13 space
+8:15 and you know part of the reasons you
+8:17 know they were telling us you know this
+8:18 is way more important is because there's
+8:20 way more text in the world uh than there
+8:24 are images or at least from an
+8:25 Enterprise setting and that's when we
+8:27 really kind of Switched our focus and
+8:30 then personally I got interested in them
+8:31 I think
+8:34 um when I was playing with gpc3
+8:38 um a couple years ago and it was super
+8:41 impressive to see the rate of
+8:43 improvement that we got from gpc2 to
+8:45 gpt3
+8:46 um and from a personal point of view
+8:48 that that really told us that something
+8:49 special is happening in the language
+8:51 modeling space
+8:53 yeah to be honest for me these demos
+8:55 when I saw GPT 3 appearing they were
+8:59 kind of okay cool but wasn't like wow
+9:01 this is going to change everything so
+9:03 for me it was like okay whatever like
+9:05 cool that these things exist but like
+9:08 but when GPS appeared it was
+9:12 mind-blowing for me yeah
+9:14 like Tech is still the same right yeah
+9:17 and and it was for us as well as well
+9:19 already involved in this space
+9:21 but then there's something you know when
+9:24 we move from gpt3 to GP changing 3.5 and
+9:28 you could have a conversation with it
+9:30 and you know it kind of felt like there
+9:32 was another really really smart person
+9:34 behind the screen and it wouldn't say a
+9:36 lot of really really stupid stuff
+9:39 um and it felt like that free-flowing
+9:41 conversation of that with just a person
+9:42 that knows everything it was huge it was
+9:46 so so so amazing
+9:48 um because before with gpt3 you had to
+9:50 do a lot of really clever prompting to
+9:52 actually get it to do the thing you
+9:54 wanted it to do so when we moved from
+9:56 you have to do really clever prompting
+9:58 to you can just have a conversation with
+10:00 it like that's a huge mindset shift in
+10:03 how accessible
+10:04 um and relatable these systems are so
+10:07 even us in the space when we saw chapter
+10:08 we were like this is gonna be huge we
+10:11 saw on the first day it came out and we
+10:13 were like this is going to be really
+10:14 huge and and then it was um so that was
+10:17 really exciting
+10:19 and what a what is an llm what is this
+10:23 thing actually
+10:24 yeah so I mean llms are large language
+10:27 models
+10:28 um I would kind of distinguish large
+10:31 language models into two things so quite
+10:34 often we conflate
+10:35 um these ideas so large language models
+10:38 as we typically talk about them are
+10:40 generative models so what these are are
+10:43 models that are able to generate human
+10:47 sounding or like convincing text and
+10:50 then there's also language models which
+10:52 are understanding models so the way that
+10:54 I think about these is these are models
+10:55 that are really really good at
+10:56 understanding
+10:58 um text and understanding language
+11:01 um so we have these two different kinds
+11:02 of language models the state of the art
+11:04 for both of them is held by Transformer
+11:06 architecture
+11:08 um although you know I'm not going to
+11:10 get into the Nitty Gritty because you
+11:11 can go and read the Transformer papers
+11:13 um themselves but that was really uh the
+11:16 Breakthrough in in creating the status
+11:18 of the art of both these so when we
+11:20 think about language models I tend to
+11:21 differentiate between generative and
+11:23 then those non-generative models
+11:26 and Char TPT is a generative model ntp
+11:29 3.5
+11:31 I mean you might have heard of models
+11:33 like Bert or Roberta or Electra
+11:37 um those are non-generative models that
+11:39 are very very good at like
+11:40 classification tasks and natural
+11:41 language understanding tasks
+11:44 so if I need to classify you know the
+11:47 intent of a search query like whether
+11:50 the customer wants to buy something or
+11:52 just make research
+11:54 um then I would go with Birthright I
+11:56 would not necessarily go with the
+11:58 generative model because it would be an
+11:59 Overkill
+12:02 I would still be able to use an nlm
+12:05 saying hey I have this query here are
+12:07 examples of other queries
+12:09 and based on these examples what do you
+12:11 think is it's like what intent of this
+12:13 query right yeah and so those like
+12:15 really massive models like GPT 304 can
+12:19 also do this
+12:21 you know if you do a few shot learning
+12:24 you can typically have very good results
+12:27 um the reason why for most deployments
+12:30 we recommend not doing that is because
+12:32 you have these massive massive massive
+12:34 models doing these tasks that can be
+12:36 done by models that are in the millions
+12:38 of parameters rather than the billions
+12:40 of parameters
+12:41 so
+12:43 so birth which is a non-generative model
+12:47 is it a large language model or is it
+12:49 just even is it even a language model
+12:51 it's definitely a language model it used
+12:53 to be a large language model
+12:55 um so we used to think of uh like birds
+13:00 and robertas and electras which are
+13:02 hundreds of millions of parameters as
+13:04 being large language models like a lot
+13:05 of businesses still struggle to deploy
+13:07 them at good inference you know for
+13:09 reasonable cost
+13:11 um but the GPT threes of the world have
+13:13 kind of blown that out the water and
+13:15 redefined what it means to be a large
+13:16 language model so the scales have just
+13:19 completely changed but buts are still
+13:22 relatively big when we compare them to
+13:24 typical machine learning models
+13:28 and a model like a usual language model
+13:31 can still be generated generative model
+13:33 it maybe will not have
+13:37 the output that is as good as uh I don't
+13:40 know GPT 3.5 or 4 but it can still
+13:44 generate some text thread yeah so like
+13:46 there's a whole range in ecosystem of
+13:50 language models
+13:52 um and they have like you know they're
+13:53 good at different things so for example
+13:55 there's the Google flan T5 range
+13:58 um which is able to generate text but
+14:00 what that's particularly good at is
+14:01 translation and summarization
+14:03 um there are other models like llama
+14:05 which is an open source language model
+14:07 which is much much smaller than what
+14:10 they suspect gbt3 is
+14:13 um which is able to generate text and
+14:16 have a conversation it's probably not as
+14:17 good as GPT 304 but it's still a
+14:20 language model that is able to uh both
+14:23 understand and generate and Converse
+14:26 foreign
+14:27 so the main advantage of llms is that
+14:30 they are better at what they do they are
+14:32 better at generative generating text
+14:34 right so why do we even care about them
+14:36 so why you focus on deploying these LMS
+14:42 so why why are these important yeah well
+14:46 they
+14:50 they are incredibly
+14:52 powerful when it comes to uh being able
+14:56 to work within our unstructured language
+15:00 you know Paradigm so most of the things
+15:04 that we work with as humans and you know
+15:06 everyday work is unstructured text
+15:09 typically right so we write emails we
+15:11 write documents we write code and all of
+15:13 this is incredibly unstructured and
+15:15 actually very difficult for machines to
+15:16 understand now language models is that
+15:19 Paradigm Shift of being able to create a
+15:21 system that is actually able to
+15:22 understand this unstructured data
+15:25 um at a to a level that appears
+15:28 human-like or sometimes even better so
+15:31 that's why it's a huge paradigm shift
+15:32 because it's you know for the first time
+15:34 really able to work
+15:37 um with these documents in a way that
+15:38 humans generate these documents in an
+15:40 unstructured format
+15:42 um and then also generate documents in a
+15:44 similar format so that's why I think
+15:45 it's a huge paradigm shift because it's
+15:47 finally able to work within the
+15:49 paradigms of how we normally work
+15:51 because humans don't normally work in
+15:53 databases unfortunately
+15:55 it would be convenient
+15:57 and it would be convenient but you know
+15:59 we don't need to anymore right
+16:02 and like you mentioned llama which is an
+16:05 open source llm because like I know with
+16:09 open AI they have all these models but
+16:11 they are closed even though like the
+16:13 name kind of such as open AI that it
+16:15 will be open but they are not they are
+16:17 closed
+16:18 yeah I think the the reason behind not
+16:22 opening them is that it can make harm in
+16:27 somebody's hands right
+16:29 like if they open then it will make more
+16:31 harm then if they keep it closed
+16:34 interesting but still there are models
+16:36 like llama the one you mentioned there
+16:38 are maybe others that are open can you
+16:40 tell us more about them like what is
+16:42 what is the main difference between
+16:43 these open models and the the models
+16:46 from open eye
+16:48 for sure for sure so there's a whole
+16:50 bunch of Open Source language models and
+16:52 they're getting better and better month
+16:54 by month so I think only two days ago
+16:57 um Matthew released llama 2 which is a
+16:59 massively improved version from llama
+17:01 one trained on 40 more data uh there are
+17:04 other examples like Falcon
+17:06 um which is released I think Abu Dhabi
+17:09 um there's models like MPT which
+17:11 released by Mosaic and these open source
+17:14 models are very quickly approaching the
+17:17 benchmarks and levels and performance
+17:18 that we see set by the open AI models or
+17:20 the at least publicly released open air
+17:22 models there is still a bit of
+17:24 performance Gap but the beauty about
+17:26 these open source language models is
+17:28 that they are much easier to in-house
+17:32 fine-tune train on your data and for
+17:34 your particular use case so with a bit
+17:37 of fine tuning and with a bit of
+17:38 training you're actually able to match
+17:39 or sometimes even beat
+17:42 um the performance benchmarks from open
+17:43 AI
+17:45 um so these open source language models
+17:47 are getting better better literally by
+17:50 the day or by the week
+17:52 and they allow the user or the business
+17:55 to have control over these language
+17:57 models and really deploy them in the way
+17:58 that they want to for the use cases they
+18:01 want to rather than relying on an open
+18:04 AI API which also as we realized this
+18:07 week they've been changing the
+18:09 performance oscillating so there's just
+18:11 a lot more control with these open
+18:13 source models which is why I am
+18:15 personally most excited in the entire
+18:17 field by
+18:20 the speed of improvement of these open
+18:22 source models because as soon as we get
+18:24 these open source models that are on par
+18:26 with what we're able to do with open AI
+18:28 then that's a huge gate um that's a huge
+18:31 paradigm shift for how we think about
+18:33 how we build and deploy these models
+18:36 what actually happened this week I saw a
+18:38 couple of posts in social media about
+18:41 the drop in performance of gbt4 but I
+18:44 don't really know any details what
+18:45 happened yeah so I had actually noticed
+18:49 this a while ago that I used gpt3 and
+18:52 gbt4 a lot
+18:54 um
+18:54 and I had noticed that it felt like it
+18:58 wasn't as smart as it used to be and I
+19:01 put it down to two things either
+19:05 um they distilled it a whole bunch and
+19:07 you know they just tried to save more
+19:08 compute and made the model worse or two
+19:11 which I thought was potentially more
+19:12 likely as I was just getting used to
+19:14 what these models were able to do when I
+19:16 wasn't thinking they were as magical as
+19:18 I thought they were six months ago
+19:20 um but a paper came out recently
+19:24 um by a group who had been secretly kind
+19:27 of benchmarking these models performance
+19:28 over time
+19:30 um and benchmarking it for various hard
+19:34 tasks so one of them was asking whether
+19:37 a very very big number was Prime and
+19:40 earlier versions of gpt4 were able to
+19:43 answer this with like 97 accuracy and
+19:45 the latest version of gbg4 was able to
+19:47 answer this with much much lower
+19:49 accuracy like you know I think less than
+19:51 10 and what that showed is that openai
+19:55 had been changing the models
+19:58 um without the user's knowledge which is
+20:01 super problematic firstly because open
+20:03 AI had been denying it for ages and ages
+20:05 and ages and secondly businesses
+20:07 businesses have built Products off of
+20:10 these openai apis and these models were
+20:13 changing behind the scenes
+20:15 um without their knowledge and so their
+20:17 products were changing I mean likely a
+20:20 deteriorating over time without their
+20:22 knowledge and that's hugely problematic
+20:25 and I think this goes to the idea of
+20:27 like if you're building
+20:29 uh AI systems that are important to your
+20:32 business you need to be able to have
+20:34 control and visibility of actually what
+20:36 the systems are doing and that's why I
+20:38 think it's important that we use open
+20:39 source models when it's business
+20:40 critical
+20:42 um and they're also when you use models
+20:44 from openai you don't own the models
+20:47 you're being leased to them and they can
+20:49 change them or they can remove them at
+20:52 any point like a couple weeks ago we saw
+20:54 open AI did
+20:57 stopped running a whole bunch of their
+20:59 legacy models which meant that anyone
+21:01 who's running applications on top of
+21:03 these Legacy models had to change their
+21:05 architectures and switch over and
+21:06 potentially change change prompts so it
+21:08 was just kind of this uh realization by
+21:11 the community that building models on
+21:15 top of open AI although it's really easy
+21:17 and and you know very easy to get going
+21:20 does come with these limitations of you
+21:22 don't actually know what they're doing
+21:23 with these models behind the scenes um
+21:25 so you have to be careful there
+21:28 so from what I understood so as a user
+21:30 of open eye API I have an endpoint a URL
+21:34 that I use
+21:35 to for sending requests and in the
+21:37 request they say like okay this is
+21:39 prompt this is the model I want to use
+21:41 and I sent a quest but what happens
+21:43 under the hood is the URL still stays
+21:46 the same but behind the scenes the model
+21:49 actually changes so I keep sending the
+21:51 same requests but yesterday it was one
+21:53 model but today it might be a different
+21:55 model that is serving the sequest that
+21:57 is answering and I have no control and I
+21:59 have no idea that this happened right
+22:01 and at any point of time they can just
+22:04 go ahead and change
+22:06 maybe take a gpt4 model and use a
+22:08 distilled version of this model that may
+22:11 be better for them because like it's
+22:13 faster but for me like the performance
+22:15 of my application drops right and I have
+22:18 whatever no control over these things
+22:21 yeah and I think it's completely right
+22:24 that they are trying to distill these
+22:25 models and I think it's right they're
+22:27 trying to make them cheaper and faster
+22:28 and they also are constantly fine-tuning
+22:31 them over time to make the performance
+22:33 better
+22:34 um you know once they get more data but
+22:37 the user needs to be able to know that
+22:38 and be able to say oh I do want to
+22:40 switch or I don't want to switch because
+22:42 when it happens behind the scenes
+22:44 um you just have these users who are
+22:46 like really confused that oh my
+22:47 application's not working like it was
+22:49 you know two weeks ago what's happened
+22:52 um so that's why I think it's kind of
+22:54 problematic
+22:56 and in case of Open Source lens let's
+22:59 say we take llama and we host Lama with
+23:01 diaton or whatever
+23:04 um some other tools right and then the
+23:06 model stays the same all the time until
+23:08 we
+23:09 ourselves we want to change it right
+23:12 because you you can go in and check the
+23:14 weight so you can go in and check that
+23:16 the model is the exact same so you can
+23:19 only you know upgrade your model when
+23:21 you want to and in ways that are
+23:23 appropriate for you and your business
+23:24 like you can say oh my application's not
+23:27 fast enough let's look at distilling it
+23:29 or pruning it or whatever but that's
+23:31 something that you control and you can
+23:33 Version Control that whereas you can't
+23:35 do that with with the apis
+23:37 I kind of assume that what you do is
+23:40 host in open source models I don't know
+23:41 if my assumption was wrong or right well
+23:44 maybe you can tell us what you actually
+23:46 do at Tatum so what we do is we help
+23:51 businesses build and deploy language
+23:53 models um for their particular use cases
+23:55 and their data and their tasks
+23:58 um we do host um open source language
+24:01 models that have been fine-tuned but
+24:02 actually a lot of our customers want to
+24:04 host these models on premise or in their
+24:07 own cloud and so they can have data
+24:10 security and privacy so we have three
+24:13 offerings
+24:14 um we have the Titan train offering
+24:16 which fine tunes
+24:18 um large language models for particular
+24:19 use cases and particular domains we have
+24:22 uh Titan optimize which is for natural
+24:25 language understanding models so the
+24:27 birthstone models
+24:29 um with those with with the optimize
+24:32 module we can compress those those
+24:35 models very very significantly by you
+24:38 know 10 to 100 x and then our latest
+24:41 offering which we actually released on
+24:43 Monday is called the Titan takeoff
+24:45 server so this is a massively
+24:48 optimized inference server that
+24:51 businesses can use to deploy large
+24:53 language models on premise even on CPU
+24:56 or on their Data Center with really fast
+24:59 inference and low costs so those are our
+25:02 kind of three offerings and we help
+25:03 businesses train and then deploy those
+25:06 large language models or we can just
+25:08 afford them as well which we've done
+25:09 before as well so as I understood
+25:11 correctly mostly previously we were
+25:13 mostly focusing on training and high
+25:16 tuning but now you're also moving in the
+25:18 serving space for alarms yeah because
+25:21 the serving part is really difficult
+25:24 um and we feel large right they're
+25:27 really large like that's you know why we
+25:29 got into the space originally as we were
+25:30 working on the compression of these deep
+25:32 learning models they're really difficult
+25:34 to serve
+25:35 um so there's a huge amount of value
+25:37 that can be added by just making that
+25:39 infrastructure easier
+25:41 um so that that's kind of I mean also
+25:44 the everything we do is about making
+25:47 infrastructure easier so fine-tuning is
+25:49 also really really hard because as you
+25:52 say they're large
+25:53 um so the serving infrastructure is an
+25:55 extension of of us making that
+25:57 infrastructure easy as well and what it
+25:59 means is people need less gpus which is
+26:01 nice
+26:03 okay and I have a question here about
+26:05 use cases and I'm also interested in
+26:08 learning more about fine tuning so I was
+26:11 wondering maybe you can give us a few
+26:13 use cases or exactly fine tuning help
+26:16 there and what is fine-tuning doing
+26:18 doing for these cases why can't we just
+26:20 take off the shelf LM model like llama
+26:23 and just use it for whatever
+26:25 we want to solve why do we even need to
+26:27 fine-tune for sure so
+26:31 when you take a model off the shelf what
+26:34 it has and what it's very very good at
+26:37 is like General language knowledge and
+26:41 understanding so your model will speak
+26:43 English you'll speak whatever language
+26:44 it was trained in and it'll have
+26:45 reasonably good grammar and it'll have
+26:47 reasonably good knowledge about the
+26:49 world
+26:51 um
+26:51 but what it won't have is any domain
+26:54 specific knowledge or any kind of
+26:57 company specific knowledge or it won't
+26:59 talk in the tone that you want to do so
+27:02 the process of fine-tuning
+27:05 um I like to think a bit about it as the
+27:07 process of specialization so you have
+27:09 this really General big language model
+27:11 how can we take that and specialize it
+27:14 for your use case in your business
+27:16 um so we end up with the language model
+27:18 that's bespoke and works well for you
+27:20 um so it doesn't just have okay accuracy
+27:23 and performance on everything it has
+27:25 really really really good performance to
+27:27 the thing that you care about and
+27:29 probably okay on everything else
+27:31 um so that's what I think about when we
+27:33 when we think about fine-tuning language
+27:35 models
+27:37 um so I can give you a couple examples
+27:39 so if we think first with the natural
+27:42 language understanding tasks
+27:44 um here fine-tuning is is necessary so
+27:46 if we want a model that classifies
+27:49 intent or some kind of classifier you
+27:52 need to fine-tune it so it understands
+27:54 you know what your labels mean or what
+27:57 kind of text is it expected to see
+27:59 um you so once you you can fine tune a
+28:02 model to classify for whatever it is you
+28:05 need to classify for for the longer here
+28:09 fine-tuning means here is a set of
+28:11 examples input text output label please
+28:16 adjust the weights in whatever way you
+28:18 want in such a way that you know we get
+28:21 the best performance possible on this
+28:24 and the key there is getting good data
+28:28 so if you can get you know good examples
+28:31 of the kind of thing you want it to
+28:33 classify and what correct looks like
+28:35 then you'll get a really good
+28:36 fine-tuning result it'll adjust the
+28:38 labels in it in a really good way
+28:40 um the way that you get that wrong is if
+28:43 you have bad data or not enough data
+28:46 then you can then it makes fine tuning
+28:48 much harder
+28:49 here usually we talk about
+28:51 classification right intent
+28:53 classification sentiment classification
+28:55 uh I don't know like basically we have
+28:58 some text
+28:59 as input and output is a set of labels
+29:02 right yeah
+29:04 um and then we can think about
+29:06 so if we think about fine-tuning for
+29:09 alternative language
+29:11 language one really use case a good use
+29:13 case that we see for fine-tuning
+29:15 generative models is it's very hard for
+29:18 example to get a generative model to
+29:20 speak in a particular tone of voice or
+29:23 in a particular style and that's very
+29:24 hard to get working with prompting so
+29:27 a particular Voice or style like him
+29:30 more colloquial or more formal or
+29:32 exactly or like maybe you're training a
+29:34 custom
+29:39 acoustic LeBron guidelines in particular
+29:41 ways of speaking you can uh fine-tune a
+29:45 large language model off of examples of
+29:48 conversations that your customer service
+29:49 agents have had in the past and it'll
+29:52 start mimicking that style of rules and
+29:55 that and that kind of tone like that's a
+29:56 great example of of
+29:59 GPT sometimes it speaks to formal and
+30:03 then I say hey it's too formal can you
+30:05 make it less formal and then it speaks
+30:06 like a teenager from Reddit exactly it's
+30:09 so hard to get it to speak kind of like
+30:11 normally
+30:13 um I I find that as well but fine-tuning
+30:16 is a really good way of getting around
+30:17 that
+30:18 um there's also other use cases you can
+30:20 do for fine tuning so
+30:22 um let's say you work in a domain which
+30:27 has a lot of domain-specific knowledge
+30:29 so like Finance is an example of that
+30:32 um you can fine-tune an open source
+30:34 language model or a language model on
+30:37 information from your particular domain
+30:39 and what that'll allow the model to do
+30:42 is start understanding phrases
+30:45 um from your domain that might not have
+30:47 been in its training set so for example
+30:49 uh let's say you work in the finance
+30:51 industry
+30:53 um you want your model to think that a
+30:56 bear Market means something to do with
+30:57 the financial markets and not a market
+30:59 where you're selling Bears it's those
+31:01 kinds of things that you can do with
+31:03 fine-tuning that really allows to get
+31:05 this domain adaptation
+31:09 an example with Market selling buyers
+31:12 because that's what I would think
+31:15 exactly
+31:16 how does this process of fine tuning
+31:19 look like for generative models because
+31:22 for this bird style models as we
+31:25 discussed it's more like you have this
+31:28 input set of data with labels here you
+31:30 go adjust your weights based on that but
+31:33 for generative models how should the
+31:35 data look like for for us to fine tune
+31:38 yeah and this kind of changes depending
+31:41 on the end tasks that you wanted to get
+31:44 it to do
+31:46 um but in you know in in cases that
+31:48 we've done you can literally just have
+31:49 like streams of documents you can just
+31:51 have raw text that you can that you can
+31:54 um fine-tuna on
+31:56 um so you don't need to have the
+31:57 superstructured format of like the
+31:59 before and after that you need for the
+32:01 understanding models unless that is what
+32:03 you wanted to do in the end so you said
+32:06 it depends on the end task and I was
+32:08 wondering what kind of end tasks are
+32:10 actually there yeah so like
+32:13 um summarization is a good one so
+32:17 uh have a long passage of text and you
+32:19 want to say okay well just give me the
+32:20 gist of this five-page document
+32:22 summarization is one
+32:24 um all of the natural language
+32:25 understanding tasks you can also mimic
+32:28 with generative tasks
+32:30 um another might be a tone change
+32:32 um so I can ask my generous model can
+32:34 you give me a before and after
+32:37 um for you know with the right tone and
+32:40 without the right tone
+32:41 um and then all of the other uh kind of
+32:44 chat GPT kind of of tasks like
+32:48 um you know knowledge retrieval and just
+32:50 generating text
+32:52 um are all the kinds of things that you
+32:54 could do with these language models I
+32:55 like to think that you know anything
+32:57 that you can kind of do with text full
+32:58 stop as a human you can probably get
+33:01 working with a large language model
+33:03 yeah a few days ago I read an article
+33:06 about a copywriter who lost her job
+33:08 because of chargept
+33:11 and yeah at the beginning she was
+33:13 getting just like instead of 10
+33:16 um I don't know 10 articles per week or
+33:19 whatever 10 articles per week she would
+33:21 get eight then six then four then two
+33:25 and then nothing
+33:27 and then eventually she was her job
+33:31 and then one of the jobs she found was
+33:36 training another language model to
+33:39 replace operators so I think this is
+33:41 what what you said like generative uh
+33:43 like and task can be generative well I
+33:46 want to generate that text in a
+33:49 particular way so then I need to hire a
+33:51 human who would produce text in the way
+33:53 I want so then we can fire this human
+33:56 and just use them
+33:58 it's it's like it's a really strange
+34:01 time and one of the
+34:03 um
+34:04 one of the industries that is expected
+34:06 to be most impacted by this is actually
+34:08 engineering which typically has been
+34:10 very very safe and someone was saying to
+34:12 me the other week that Engineers are
+34:15 actually replacing their own jobs
+34:16 because they're creating these large
+34:18 language model systems and integrating
+34:20 large language models into their work
+34:22 that actually in 10 years will will
+34:25 largely replace what they do
+34:27 um which is kind of interesting so yeah
+34:29 there's huge ethical implications for
+34:31 what we're doing
+34:33 yeah I I noticed so I tried to use gpt4
+34:36 for creating a website in Jungle I don't
+34:40 say okay this is the website I want to
+34:41 create these are the tasks I want to
+34:43 perform with this website generating
+34:46 code and then step by step it will
+34:48 actually generate my code that I would
+34:49 copy paste to the terminal TVs code
+34:53 and then sometimes it doesn't work so
+34:55 try to run it doesn't work then you just
+34:57 copy the stack Trace put into gptp chat
+35:01 GPT say hey this is the stack Trace I
+35:03 got and oh sorry I forgot to mention
+35:05 that you should have done this thing too
+35:07 so do it now then I do this and then it
+35:10 works and I'm like wow
+35:13 it's probably like my guess is that took
+35:16 you way less time than it would have
+35:18 taken you to just do it yourself
+35:20 yeah like I I use jungle like 10 years
+35:24 ago so for me I would need to
+35:27 Google for like look up many many things
+35:30 but it would just tell me what I need to
+35:31 do right and I said like at the
+35:33 beginning it generated many people like
+35:35 requirements.txt file and I was saying
+35:37 Hey I want to use ppan and then oh here
+35:40 you go here is like this is the comment
+35:42 you need to run with people it's like
+35:44 just
+35:46 who's doing it for me and then I'm just
+35:49 telling this person what to do and then
+35:50 it's doing it yeah it's crazy like we
+35:53 use it and it definitely
+35:56 massively increases the productivity of
+35:59 our Engineers there are like obviously
+36:01 risks
+36:02 um like there was
+36:05 um a malware attack that I read about a
+36:09 couple months ago where chat GPT kept on
+36:11 making up packages that didn't exist uh
+36:15 so what some Bad actors did is they then
+36:19 created those packages and put malware
+36:20 in it so when Engineers exactly exactly
+36:25 like they would maybe like slightly
+36:27 misspell a commonly uh use package and
+36:30 then that then became an attack so there
+36:32 is obviously risks associated with doing
+36:34 this but my guess is a lot of these will
+36:36 be ironed out over the over the coming
+36:38 months and years see right now today you
+36:41 still need an engineer to kind of see if
+36:43 whatever the model outputs make sense
+36:46 right that's why for now engineering
+36:48 jobs are kind of safe yeah somebody
+36:51 still need to but what you're saying is
+36:53 in 10 years it might be a completely
+36:55 different situation
+36:57 yeah I mean
+37:01 I think more code is going to get
+37:03 written so they think
+37:05 um in a similar way that we saw a
+37:08 productivity increase when
+37:10 um
+37:11 we moved um to uh you know factory
+37:15 production lines more cars were built um
+37:18 and the same people were employed but we
+37:20 just had more efficient processes so
+37:21 some people think we're just going to
+37:22 have more code written
+37:24 um full stop
+37:26 I have a slightly more pessimistic View
+37:28 and I think that if not in 10 years than
+37:30 in like the longer term we are just
+37:32 going to have less software Engineers
+37:35 um which is sad but I know what I feel
+37:39 about this because like you're
+37:41 practically building a startup for
+37:43 making it happen
+37:48 great question so we don't actually you
+37:52 know create any on any code generation
+37:54 uh stuff typically so we don't replace
+37:56 anyone's jobs directly but we're working
+37:58 in an ecosystem that's going to be
+38:00 really really disruptive for our society
+38:03 as a whole
+38:04 um and unfortunately I don't think
+38:07 there's any way of stopping it
+38:09 um kind of the the cats out the bag
+38:12 I think as a society we need to look at
+38:14 ourselves really closely and think how
+38:16 are we as a society going to organize
+38:19 ourselves when
+38:21 we have transitioned to a post-work
+38:24 society where the majority of people
+38:27 don't have jobs
+38:29 um and don't have like productive
+38:31 productive mechanisms in society like we
+38:33 need to reorganize ourselves and what
+38:35 will that look like so that's what I
+38:37 kind of think and I I know a lot of
+38:40 people have the contrary view where
+38:42 we'll just have you know everyone be way
+38:43 more productive and it'll be great
+38:46 um but I actually think this AI will get
+38:48 very very very good very very quickly
+38:51 think a few episodes a few interviews
+38:53 ago I I don't remember what we talked
+38:57 about but then at some point we talked
+39:00 about a TV show called Mandalorian in
+39:03 this TV show one of the episodes was
+39:06 there were a bunch of droids who went
+39:09 through like so they
+39:13 started behaving differently strangely
+39:16 and the whole society actually relied on
+39:18 the droids to do the work so people who
+39:21 just sit back and enjoy life while
+39:23 Droids do all the work and I think this
+39:26 is
+39:27 related to this post-work society that
+39:29 he mentioned and then when something
+39:31 happens with this Droid then they have
+39:32 to hire
+39:33 like somebody to go and fix this problem
+39:36 because like nobody knows how to work
+39:38 the little Androids
+39:44 great when we don't have don't have to
+39:45 work and you know that'll be wonderful
+39:47 and all of these things
+39:48 I think people will really struggle to
+39:52 find meaning in their lives and like
+39:56 state it you know stay attached to some
+39:58 kind of like I'm adding value which I
+40:00 think is really important for the human
+40:01 psyche so we need to figure out a way
+40:04 that we as humans can like attribute
+40:05 value to ourselves and generate value to
+40:09 society without having to have an
+40:11 official workplace
+40:13 um because I I don't know I I don't know
+40:16 whether if tomorrow everyone didn't have
+40:17 jobs if people would be happier in the
+40:22 long term I think
+40:24 pardon
+40:25 sounds like communism exactly well it
+40:28 you know that was like Karl Marx's ideal
+40:30 that you know we would have gotten in
+40:31 the morning and paint in the afternoon
+40:33 but people don't know how to work like
+40:34 that like people uh you know as a
+40:37 society we we don't know how to you know
+40:40 generate meaning without having a
+40:42 purpose in society and that will be a
+40:44 really interesting transition
+40:46 so we're getting a bit too philosophical
+40:48 and we actually have a few questions and
+40:52 one of them is related to the topic of
+40:54 fine-tuning and so here the question is
+40:58 about
+40:59 creating a chatbot with LMS so let's say
+41:03 you have one million conversations and
+41:05 then you take these conversations and
+41:07 you feed it to an llm to fine tune it to
+41:10 learn I guess the style the tone of how
+41:13 agents how chatbots should behave should
+41:16 answer
+41:18 but then the answers change with time
+41:21 so maybe what is the correct answer
+41:24 today will not necessarily be correct
+41:26 answer tomorrow so how do we deal with
+41:30 this situation we cannot just go and
+41:31 fire all our
+41:33 customer support agents right
+41:35 yeah that that's a really great question
+41:38 so there's a couple things we can do
+41:40 there
+41:42 um the one that I'm actually I prefer is
+41:45 using information retrieval so
+41:48 um when you're doing customer service
+41:50 typically you'll have a huge streams of
+41:54 documentation of
+41:56 um what the product looks like and what
+41:57 kind of response are acceptable blah
+41:59 blah blah
+42:00 um
+42:01 yeah exactly like a huge knowledge base
+42:04 and I think most companies have those
+42:06 kinds of knowledge base whether in
+42:08 Confluence or notion Etc and what you
+42:11 can do is you can embed all of that
+42:13 documentation and reinvent it every
+42:15 single time it changes in any
+42:18 substantial way and get
+42:21 um you know essentially look up the
+42:23 right part of the documentation as part
+42:25 of your answer and base your your llms
+42:29 knowledge in the truth of what's in the
+42:31 documentation
+42:33 um so that way you can always stay
+42:35 grounded to whatever the the base truth
+42:37 is in the docs
+42:39 um or you could obviously you know
+42:40 refine June but that's a much more
+42:42 expensive process than just re-embedding
+42:45 um this this like big knowledge base and
+42:47 inspect documentation
+42:49 so as I understood there are two ways of
+42:51 so let's say we have a knowledge base
+42:53 and we want our model to
+42:56 use this knowledge base in replace right
+42:58 so in the same way as let's say I use
+43:00 charge GPT
+43:02 to create a website in Django then for
+43:05 example there is a less famous Library
+43:09 like I don't know something else that is
+43:12 not widely known but we have some
+43:13 Internal Documentation about this so
+43:15 what we can do is we can just fit all
+43:18 this documentation to an llm and fine
+43:20 tune it and then we can ask it hey like
+43:24 I want to do this task how do I do this
+43:26 and then if we just to call our
+43:29 knowledge base and put it into
+43:32 nlm by fine-tuning it then it will reply
+43:35 and say this is what you need to do but
+43:37 the problem with this approach is our
+43:39 knowledge base changes with time people
+43:41 go to Confluence people edit the files
+43:43 there and we cannot constantly retain
+43:46 the model we kind of constantly keep it
+43:48 updated because I guess it's also not
+43:50 very cheap it's an expensive thing to do
+43:53 right
+43:54 and alternative to that would be instead
+43:56 of retraining the whole model from
+43:58 scratch every time we have a knowledge
+44:01 base and we Index this knowledge base
+44:03 and then we try to like when there is a
+44:05 question how do I do X
+44:07 uh with this Library instead of just
+44:10 using the weights of the model we look
+44:13 to answer up somewhere in this knowledge
+44:15 base we'll look the answer up typically
+44:18 using llms probably using some kind of
+44:20 natural language understanding element
+44:22 another key reason why I prefer this
+44:25 particular method
+44:26 um than the fine tuning method is you
+44:28 get much less hallucination so because
+44:31 your answers are grounded in the truth
+44:33 of a particular section
+44:35 um in in your documentation you know
+44:38 that that's true rather than it sounds
+44:40 like your documentation so fine tuning
+44:44 is much better for like style rather
+44:46 than kind of the substance of it needs
+44:49 to say this particular thing and then
+44:51 you can have the model rephrase it in a
+44:53 way that you know sounds conversational
+44:56 but usually when I think about
+44:59 documentation that I as a software
+45:01 engineer as a data scientist create
+45:03 usually I have like a big Confluence
+45:05 page with all the things there but
+45:08 oftentimes when I have a question I have
+45:10 a question the answer is in a specific
+45:11 paragraph of this document
+45:14 not like the entire document but just
+45:16 one part of this document then does it
+45:18 mean that I need to be careful how
+45:21 exactly I index my knowledge base or how
+45:24 do I go like I guess like I still need
+45:27 to have some training data to say like
+45:29 for this question this is where the
+45:31 answer is or yeah it's it's a good
+45:34 question and
+45:36 um the open source models aren't as good
+45:38 at this reasoning as those like GPT 4 is
+45:43 so it's not as good at pulling from five
+45:45 different sources and then put stitching
+45:47 them all together however there are cool
+45:48 things you can do when you do that
+45:50 information retrieval so instead of it
+45:53 just returning the top one answer you
+45:56 can get it to return the top five
+45:58 answers and get the l-learn to search
+46:00 for the answer based on you know five
+46:03 five different sections run then uh one
+46:06 different section
+46:07 um and what that means is you might get
+46:10 more variety in in the answer and it
+46:12 might be able to pull
+46:14 um let's say if your answer could be
+46:16 found in three different places it can
+46:18 pull those three different sources out
+46:20 together
+46:22 and how does it work in practice so do
+46:25 we
+46:26 um
+46:27 because I guess we need to put the
+46:29 entire document in the prompt right so
+46:31 we need to somehow find a way that for
+46:33 this question these are the relevant
+46:34 documents let's put them all in the
+46:36 prompt and let the model figure out the
+46:38 answer right or how exactly it does this
+46:41 that's exactly that's one way that you
+46:43 can do do it is you can just essentially
+46:45 inject relevant Parts into a prompt you
+46:48 can say something like
+46:51 um answer this query you may use the
+46:54 information from these documents or
+46:56 these sections and then and then put the
+46:57 sections below that's definitely one way
+46:59 that you can do it another way that you
+47:01 can do it is if you really want to
+47:02 ground it in Truth so if you're very
+47:04 very sensitive
+47:06 kind of
+47:08 um
+47:08 task you can say I'm just I just want
+47:12 you to pull up the relevant section and
+47:15 then I just want you to summarize it or
+47:17 change the tone or do something like
+47:18 that and then you have one model that
+47:21 does the information retrieval and then
+47:24 you have another model that just does a
+47:25 summarization and is
+47:30 hello
+47:32 hello
+47:34 you're still there yeah yeah
+47:37 um
+47:38 so yeah that's another thing that you
+47:40 can do is you can ground it entry
+47:42 through information retrieval and then
+47:44 put it through a summarizer
+47:47 so the next question we have is about a
+47:49 vector database and before we talk about
+47:53 this maybe you can tell us
+47:55 what this Vector databases are and how
+47:58 they are relevant to
+47:59 LMS yeah so these Vector databases are
+48:03 very very similar to the information
+48:04 retrieval systems I was talking about
+48:05 it's essentially a way of like indexing
+48:09 um these you know
+48:11 um this unstructured data and being able
+48:13 to search it through natural language
+48:15 um so you could use the vector database
+48:17 as like the first step in order finding
+48:20 in order to find the relevant uh parts
+48:23 of a document that you know that you
+48:25 need to answer your query so that's like
+48:27 essentially the first part of that of
+48:29 that system that I was just talking
+48:30 about the information retrieval part
+48:32 so let's say in practice we have a
+48:35 Confluence
+48:37 the key with all the documentation right
+48:39 what we do is we get each document from
+48:43 this from this conference and then
+48:47 somehow index it with a vector database
+48:49 so then for each
+48:51 for each of the documents we have a
+48:53 vector which we put into the database
+48:57 and then when there is a query from the
+49:00 user we somehow turn this query into a
+49:03 vector again and then try to look up the
+49:06 most similar
+49:07 vectors from the database is it how it
+49:09 works or too much yeah
+49:15 yeah and telems can also
+49:19 how to say vectorize the document right
+49:21 they can take a document and create
+49:23 embeddings from this document so we can
+49:26 put them in a vector database right
+49:29 yeah exactly and effects data is
+49:32 basically a hugely hugely popular to do
+49:34 those kinds of information retrieval
+49:35 systems
+49:37 um that I was talking about
+49:38 um people really love them which is why
+49:40 they've exploded in in the startup scene
+49:43 and for this task do you know if we
+49:47 should go with I don't know an open
+49:49 source llm or go with GPT 3.5 or 4 like
+49:54 are there any
+49:55 pros and cons yeah my the way that I
+49:59 tend to think about whether you should
+50:00 use gbt 3.504
+50:04 um or an open source model is if you
+50:07 are still in the prototyping stage if
+50:10 you're still at the stage where you want
+50:12 to figure out if a model or nlm is right
+50:16 for your use case then you should
+50:18 definitely use one of the API based
+50:19 models like GPT 3.5 or 4. and the reason
+50:22 for that is you're just able to get to
+50:24 results really really quickly you're
+50:26 able to get to demos within a day or two
+50:29 um which is is very very impressive
+50:32 but in the long term
+50:34 um
+50:36 businesses tend to want to use open
+50:38 source models um to build their
+50:40 applications for a bunch of reasons one
+50:42 is like you know you actually know the
+50:43 model's not changing under the hood
+50:44 another reason is you know data privacy
+50:47 and now there is it's much cheaper and
+50:48 faster all of these really really good
+50:50 things
+50:51 um so in the longer terms
+50:53 you can move over from using that open
+50:56 AI based model once you've proven out
+50:58 the business case to build something a
+51:00 bit more scalable with open source
+51:02 models and given that an application
+51:04 works in openai you can almost certainly
+51:08 get it working to a very similar
+51:10 standard with a fine-tuned large
+51:12 language model
+51:13 um so the benefits of going with an open
+51:16 source model eventually after the
+51:18 prototyping stage is models don't change
+51:20 data privacy is cheaper and you also
+51:23 mentioned faster and they wanted to ask
+51:25 like faster because like for me
+51:28 this open AI model seem to be pretty
+51:31 fast like you can be even faster when
+51:33 you host your own one can you yeah I
+51:35 mean they are really fast they're really
+51:37 really fast because they're hosted on
+51:39 very expensive Hardware if you were to
+51:41 host your model on the same Hardware
+51:43 um using good techniques so like using
+51:46 something like the Titan takeoff server
+51:48 or other like Fast inference servers
+51:51 um you can get very very fast models on
+51:54 very powerful Hardware
+51:56 um but what is also really nice is that
+51:59 most businesses aren't deploying their
+52:01 models on the state of the art very
+52:03 expensive Hardware they're deploying on
+52:05 smaller gpus like you know like smaller
+52:09 gpus or even you know CPUs because
+52:12 that's typically what they have
+52:13 available and these models will be much
+52:15 much faster
+52:17 um than you know what you would be able
+52:19 to do if you're hosting like an open AI
+52:21 model on that kind of server
+52:23 um so you can get it even fast reviews
+52:25 really powerful Hardware or you can just
+52:27 get comparable speeds for much much
+52:28 prices
+52:30 but you have to put some effort you can
+52:32 just take like in case of open AI you
+52:35 just take off the shelf API right and
+52:38 then you start using it of course you
+52:39 pay but you can move very fast but then
+52:42 at some point you start thinking about
+52:43 costs data privacy and other things and
+52:45 this is the time when you invest time in
+52:49 open source in
+52:52 adapting adopting like adjusting open
+52:55 source
+52:56 it's it's the way that I describe it is
+52:59 if you've read piece of deals zero to
+53:00 one
+53:01 um it's this you know once you're kind
+53:03 of trying to get to product Market fit
+53:05 or MVP or whatever whatever your one is
+53:07 in your case definitely use whatever
+53:10 makes you move quickest but in the long
+53:12 term when you start thinking about
+53:13 scalability and data privacy and
+53:15 performance in the long term then you
+53:17 can start transitioning over
+53:19 um and it is a bit more effort than you
+53:22 know just using apis because they're
+53:24 trivial
+53:25 um however there are a lot of tools that
+53:28 make it much easier nowadays so like to
+53:30 to fine-tune um used to be a really
+53:32 laborious process but it's now
+53:34 East Bay
+53:35 and we have a few interesting questions
+53:38 from taras so the first question he's
+53:40 asking is how can you measure if the
+53:42 data you feed into an llm is good enough
+53:49 do you even think about this case it
+53:51 thinks or you just say oh this is the
+53:52 data I have let's just throw it all in
+53:55 and then it will figure everything out
+53:58 it's a great question
+54:00 um how do you know if it's good because
+54:02 there's no well there's no like hard
+54:05 measure of this is exactly the quality
+54:07 of data that you need obviously the
+54:10 cleaner the better and I tend to measure
+54:14 these kinds of things based on the
+54:16 quality of the output so if the quality
+54:18 of the output is good and exactly what
+54:20 you want then you know clearly what you
+54:21 put in was probably fine
+54:25 when it comes to what you should put in
+54:27 the model what we've tend to find is
+54:30 that it's better to use a slightly
+54:33 smaller sample of what we would deem
+54:36 like gold standard really really high
+54:38 quality data preferably that someone has
+54:41 hand labeled or you know at least
+54:42 checked the labels for and then once you
+54:45 have that you can use interesting
+54:47 methods like data set expansion or data
+54:49 augmentation
+54:51 um to get a large llm or an llm to
+54:54 generate more examples from that gold
+54:56 standard data that typically tends to
+54:59 for us in my experience anyway yield
+55:01 better results than just throwing in a
+55:04 bunch of you know rubbish data into
+55:06 there just for volume that have a
+55:09 smaller amount of quality and then
+55:10 expand it with a with an um
+55:13 and date expire expansion is a strategy
+55:16 I guess like in the same way as we use
+55:18 data augmentation for computer vision
+55:19 like we take a picture and rotate it
+55:22 slightly or crop or do we basically use
+55:25 existing data to generate more the data
+55:28 data set expansion is something similar
+55:31 but for NLP right yeah it's super
+55:33 similar so like a very basic example is
+55:36 if I have
+55:38 um you know
+55:40 um a data set well one example is like
+55:42 the biggest pink I might get my LM to
+55:45 say the cat is black right and it just
+55:48 like kind of switches words out but it's
+55:49 semantically similar
+55:51 um another way that you can do it which
+55:53 is just much easier is if you just put
+55:55 in a bunch of examples into another lamp
+55:57 or Glam and just say generate more you
+56:00 know data points that look like this
+56:03 um and it actually tends to do pretty
+56:04 well so we recently did a benchmarking
+56:08 of this it was called GP teacher
+56:11 um where we got uh well we compared the
+56:14 performance of a fine-tuned burp model
+56:17 off of gold standard data that was all
+56:19 hand labeled
+56:20 um versus a
+56:23 um an llm augmented version where we
+56:25 took like 10 examples from the gold
+56:27 standard one and just said create more
+56:29 like this and we've got very very good
+56:31 performance for that augmented data and
+56:33 it was obviously much quicker and
+56:35 cheaper than hand labeling all of them
+56:38 mm-hmm and you mentioned good
+56:40 performance and this is another question
+56:41 from like how do you actually Benchmark
+56:44 an llms like how do you say that
+56:47 performance is actually good because
+56:49 like you need to have a an objective way
+56:52 of saying that because like of of course
+56:55 you can subjectively say okay the answer
+56:57 to this prompt is good or the answer to
+56:59 this prompt is not good but it doesn't
+57:02 scale right so when you retrain a model
+57:03 you want to somehow automatically say
+57:05 that okay this is good it's better or
+57:07 it's worse than the previous version
+57:09 it's a really good question and I don't
+57:14 solved question
+57:15 for natural language understanding tasks
+57:18 it's much easier because when it's
+57:19 classification you can say it's this
+57:21 percent right or it's this percent you
+57:23 know wrong and that's much easier for
+57:25 Generation tasks there's a lot of
+57:28 different ways you can be right and a
+57:29 lot of different ways that you can be
+57:30 wrong
+57:31 um and that is hard to systematically
+57:34 measure we actually when we're doing
+57:37 projects
+57:38 um measure it by hand so we will just
+57:40 play with a model for a given amount of
+57:42 time and say you know does this kind of
+57:45 look sensible and that's the most
+57:47 reliable way that we've found to really
+57:49 kind of get a feel for quality
+57:52 um I'm there are interesting things you
+57:54 might be able to do with automating it
+57:55 if you're of your refrain tuning and
+57:57 maybe coming up with like example
+58:00 um you know benchmark test data sets
+58:03 that you can then go in and hand
+58:04 evaluate I would always recommend hand
+58:06 evaluating at least some of them uh you
+58:09 might also be able to get an llm to
+58:12 market for you which could be an
+58:15 interesting way of doing it as well but
+58:17 unfortunately with the generative models
+58:19 it's there's not an easy way to check
+58:22 performance other than to you know Human
+58:25 by human uh human mind so right now
+58:28 currently with the existing methods we
+58:31 still need to keep the human envelope to
+58:34 assess the performance yeah it's like
+58:37 also partly because
+58:39 um this technology is new and businesses
+58:41 aren't used to it so anything that you
+58:43 can do to make it feel safer or make it
+58:48 feel like it's going to do sensible
+58:50 things the better and very often that
+58:52 just takes people to check like does
+58:53 this work what about this Edge case what
+58:55 about this Edge case all of that thing
+58:57 so maybe the job of copywriters
+59:01 might be not safe yet but at least they
+59:04 can be these humans in the loop
+59:07 okay help eliminate them in the future
+59:10 kind of interesting dilemmas anyways um
+59:14 well we should be wrapping up uh maybe
+59:16 before we finish
+59:18 is there any good resource like book or
+59:20 course or blog that you can recommend
+59:23 for those who want to learn more about
+59:25 the alarms and fine-tuning alarms and
+59:27 all the things we talked about today
+59:29 yeah there's a whole bunch of resources
+59:31 so I follow a lot of I guess like
+59:34 LinkedIn influences in the space
+59:37 um so if you follow me on LinkedIn I
+59:40 typically retweet a lot of them or
+59:41 repost a lot of them so you can see a
+59:43 lot of that really great content
+59:45 um there's also cool things like cohere
+59:46 has a great uh uh like llm University
+59:50 thing
+59:51 um the hug and face course is also very
+59:53 very good and there's a bunch of really
+59:55 good resources on YouTube
+59:58 um and that's where I would kind of get
+1:00:00 started
+1:00:01 um but yeah it's it's one of those
+1:00:03 fields that just has like a lot of
+1:00:05 scattered very very good influences
+1:00:08 um that you can just follow over time
+1:00:09 and this is so rapidly developing then
+1:00:12 maybe by the time we release this
+1:00:15 interview this episode there will be a
+1:00:16 new course everything that I say will be
+1:00:19 completely out of date within a week
+1:00:20 probably
+1:00:21 well let's hope uh at least for half a
+1:00:24 year it will still be relevant
+1:00:26 yeah
+1:00:28 okay thanks a lot for joining us today
+1:00:30 and thanks everyone also for joining us
+1:00:32 today and yeah with that I think we'll
+1:00:34 finish
+1:00:36 thank you so much Lexi yeah have a great
+1:00:39 rest of your week and bye everyone

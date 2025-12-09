@@ -1,0 +1,1474 @@
+Data Engineering for Fraud Prevention
+
+0:00 hi everyone Welcome to our event this
+0:02 event is brought to you by data do club
+0:04 which is a community of people who love
+0:07 data we have weekly events and today is
+0:10 one of such events if you want to find
+0:12 out more about the events we have there
+0:14 is a link in the description go there
+0:16 click on that link and you'll see the
+0:17 things we have in our pipeline well well
+0:20 future events uh because things we have
+0:24 in our pipeline if we think because the
+0:26 topic of today's talk is data
+0:28 engineering right so pipeline
+0:30 May mean other things anyways uh if you
+0:35 have not subscribed yet to our YouTube
+0:36 channel you're missing out you can fix
+0:39 that by clicking the Subscribe button I
+0:41 know it looks different and I haven't
+0:43 updated this slide like in a year so
+0:46 YouTube is totally different now and we
+0:50 have more subscribers now anyways that's
+0:52 the button you want to find and we have
+0:55 an amazing slack Community you can join
+0:58 it to hang out with it with other data
+1:00 into
+1:01 us and this is the the slide I was
+1:03 talking about so if you have any
+1:05 questions that you want to ask during
+1:07 the interview today there is a link that
+1:10 is pinned in the live chat it's on the
+1:12 top so click on that link and you'll get
+1:16 to ask as many questions as you want so
+1:18 just ask your questions there and we
+1:20 will be we will be covering these
+1:22 questions during the
+1:24 through okay I should have practiced
+1:27 with tank Twisters too because I feel
+1:29 like it's
+1:32 difficult do you have water you have oh
+1:35 you have
+1:36 such such a large cup I like large cups
+1:42 so now I will
+1:46 open the questions we prepared for
+1:49 you and if you're ready we can
+1:52 start yeah let's go for it okay this
+1:57 week we will talk about data engineering
+1:59 and fraud detection and we have a very
+2:02 special guest today Angela Angela is a
+2:05 data engineer working at Sam's Club with
+2:08 the fraud team she has four years of
+2:10 experience as a data engineer and she's
+2:12 currently specializing in machine
+2:14 learning for fraud
+2:16 prevention and yeah she works on
+2:19 designing maintaining the data for a
+2:22 machine Learning System that identifies
+2:24 Fring
+2:25 transactions and uh yeah welcome to the
+2:28 show
+2:30 yeah glad to be
+2:32 here so the questions for today's
+2:34 interview are prepared as always by
+2:36 Johanna Bayer thanks a lot Johanna for
+2:38 your help and let's start before we go
+2:41 into our main topic of data engineering
+2:44 and front prevention let's start with
+2:46 your background can you tell us about
+2:48 your career Journey so far yeah for sure
+2:51 so I've been a data engineer for about
+2:52 four years now I started out in um
+2:54 Sephora as a data engineer um where I
+2:57 worked more so with e-commerce and
+2:59 marketing tools
+3:01 store for selling uh Cosmetics right yes
+3:05 exactly yeah a luxury Cosmetics um those
+3:08 types of items yeah um and then I moved
+3:10 over to Sam's Club about um I want to
+3:13 say about a year back or so um so it's
+3:15 going to be two years um coming up next
+3:18 year um and yeah I've been working
+3:20 within the the fraud space which is um
+3:23 definitely a bit different but still
+3:25 with machine learning um you can still
+3:28 like utilize it it's just in a different
+3:30 like
+3:32 aspect so what Sephora is I know cuz
+3:35 every time I go to a shopping mall I can
+3:37 smell it Sephora is nearby uh but what
+3:40 about Sam's Club what do you do there
+3:43 like as a company what does it do yeah
+3:45 so Sam's Club is like Costco it's a
+3:47 wholesale company um it's actually owned
+3:49 by Walmart um and so like Walmart is
+3:52 like a general e-commerce but Sam's Club
+3:55 would be considered to be like a
+3:56 wholesale store so you can buy things um
+3:58 in bulk
+4:00 so what's Wholesale store have idea oh
+4:04 it's um it's just like both items so
+4:06 like you can um buy like cases of like
+4:08 sodas and if you have like large events
+4:11 going on it's really helpful um and like
+4:14 they also sell like other things like
+4:15 electronics and um Etc stuff like that
+4:19 um so yeah but I think it's considered
+4:21 wholesale because you're able to buy
+4:23 things in bulk um so a lot of like
+4:25 restaurants and other businesses would
+4:27 um work with Sam's Club mhm okay let's
+4:30 say if I want to buy a can of soda Coke
+4:35 I cannot do it there I can only buy like
+4:38 a whole pack yeah exactly it have to be
+4:42 um more of a bulk item um rather than
+4:44 like a single single use can yeah so
+4:47 instead of one chocolate bar like it's
+4:50 100 right yes exactly it would be like
+4:53 at least the case um yeah yeah yeah I
+4:58 think I saw stores like that they they
+4:59 also often require you to
+5:02 be members or members yeah like there's
+5:07 maybe it's your competitor
+5:09 Metro uh well at least uh I don't know
+5:12 if they're competitor but like this is
+5:14 what I see in Germany and other
+5:15 countries in Europe so there are this
+5:18 they call they're called Metro and
+5:20 usually when you enter the store they
+5:22 ask you some for some sort of like you
+5:25 are a company or whatever like it's not
+5:28 like you're individ who wants to buy
+5:31 chocolate for cheaper like they want you
+5:33 to be a company like the client yeah so
+5:36 in this case with Sam's Club um we allow
+5:39 anybody to be a a member so it's really
+5:42 helpful for homes that have like a lot
+5:43 of people in it or maybe you have a lot
+5:45 of Roommates um and so those are like
+5:47 different types of use cases where like
+5:49 wholesale like would make sense I
+5:52 actually do purchase some um items from
+5:54 Sam's Club um like usually um like
+5:58 protein bars or protein drinks or even
+6:00 like specific types of sodas that I
+6:03 can't find anywhere else um that are
+6:05 like far more expensive um in a single
+6:08 use yeah yeah I would also buy protein
+6:11 bars in bulk yeah like I buy a lot of
+6:15 them anyways exactly yes and it's it's
+6:18 um it's cheaper that way because they're
+6:19 they're far more expensive yeah so is a
+6:23 DAT engineer what do you do there you
+6:25 mentioned fro so yes so work yeah I
+6:30 specifically work within the um the
+6:32 fraud realm um and so a lot of the times
+6:35 um I like within any company as a data
+6:38 engineer um I will be working on
+6:39 maintaining their data pipelines um
+6:41 their different types of jobs such as
+6:43 like batch um or real-time jobs um
+6:47 trying to make sure that what um if the
+6:51 if um the business requires a specific
+6:53 um field or specific data set trying to
+6:56 design that data set for them um if
+6:58 there's spefic specific analysis
+7:00 involved with our like machine learning
+7:01 models making sure that we have um
+7:04 dashboards and data feeding into those
+7:06 dashboards um where we're able to easily
+7:10 understand um our metrics from the both
+7:13 the ml level and the um business
+7:17 level I'm not sure into how many details
+7:21 you can go but I'm I was just wondering
+7:24 in case of this whole sale
+7:28 Stores um
+7:30 wh sales what kind of fraud is there
+7:32 like somebody pays with like stolen
+7:35 credit cards things like
+7:37 that yes exactly that that's a that's a
+7:40 pretty good use case so it's very
+7:41 similar to um credit card companies
+7:43 where um we're trying to understand if
+7:46 someone steals your identity or someone
+7:48 steals your credit cards um and they
+7:50 start purchasing from Sam's Club how can
+7:52 we um prevent that fraud um in addition
+7:55 there are um specific policies that
+7:58 exist within um different companies um
+8:01 such as like different return policies
+8:03 or different um shopping policies where
+8:06 we might notice like a trend of like um
+8:09 member abuse and we we might want to
+8:11 block
+8:12 that okay like if I buy a pack of um
+8:16 protein bars eat half of them and try to
+8:18 return then it would be a fraud right
+8:21 yeah exactly
+8:23 yeah
+8:25 okay uh yeah so what do you do there
+8:28 like uh maybe in more details like what
+8:31 kind of
+8:33 um cuz I guess um when it comes to fraud
+8:37 detection you want to react as quick as
+8:39 possible right so your pipelines needs
+8:41 to be need to be real time right so
+8:45 maybe you can tell us a little bit more
+8:46 like what exactly happens when you
+8:49 implement some of these use
+8:51 cases yeah for sure so we have our um we
+8:54 have a batch job that runs on a daily
+8:56 basis that will actually um make
+8:58 calculations for our feature engineering
+9:01 um so we have the the batch jobs for our
+9:03 feature engineering jobs and um that
+9:05 data would then be used during our real
+9:08 live system where if a member is um
+9:10 making a purchase um there will be a
+9:13 call to our um fraud and or fraud system
+9:17 um that will make a decision on whether
+9:19 or not based off of the criteria of that
+9:22 transaction is it fraud or not and so
+9:26 depending on what we end up sending um
+9:28 that that portion is definitely live is
+9:31 US sending that request um and if it is
+9:34 fraud then we will block them for making
+9:36 that trip transaction and then if it's
+9:39 not fraud then they'll be able to make
+9:40 that
+9:43 transaction okay and um I'm just
+9:48 wondering so in your case you work with
+9:50 machine learning right do you need to
+9:53 know a lot of machine learning yourself
+9:56 or you more focus on like for you it's
+9:58 more like this this is the use case and
+10:00 I focus on the data pipeline right I
+10:02 know that there is some machine learning
+10:03 happening there are data scientists who
+10:05 deal with that but I mostly work on this
+10:08 making sure that the data is always
+10:10 there for these data scientists to to
+10:12 consume yeah so I do also work on um
+10:16 some portion of like getting the metrics
+10:19 evaluations um during the real- time
+10:21 process so like we do end up um sending
+10:24 our um our request and our
+10:27 recommendations out and then after we do
+10:30 that um we'll want to make a calculation
+10:32 based off of like how is the model like
+10:34 currently performing and so anything
+10:36 that has to do with more of like an
+10:39 operational side um or more of like the
+10:42 the deployment and handling after the
+10:45 deployment um that's on my team so my
+10:48 team consists of both um data engineers
+10:50 and machine learning Engineers um so we
+10:53 deal a lot with um machine learning
+10:55 operations as well as um data pipelines
+10:58 and creating dashboards for our um ml
+11:02 metrics yeah and your team yeah sorry
+11:07 yeah about like um our our data Sciences
+11:09 do tend to focus more on like the the
+11:11 model development itself go ahead so
+11:14 you're a part of the engineering team
+11:16 and then there is also the data science
+11:19 team yes
+11:21 yeah and by your team you mean you are
+11:25 leading this team or you work in this
+11:27 team like as a the yes so I work on this
+11:30 team as a data engineer uh my lead is a
+11:33 machine learning engineer um and but I I
+11:36 tend I work within um the team itself
+11:41 yeah okay how much machine learning do
+11:44 you need to know for
+11:46 this do you need to know
+11:49 any um I having a good background of
+11:52 machine learning for this role is
+11:53 actually really helpful um I I think
+11:56 within um it makes it helpful to
+11:58 understand like how to do certain
+11:59 analysis but it is it isn't necessarily
+12:02 like required so I work on um the side
+12:05 of both analysis and maintaining the
+12:07 pipelines themselves but I have some
+12:09 members who will work on um setting up
+12:11 the pipelines working with kofka more so
+12:14 um and working with those types of um
+12:16 access and
+12:18 databases I I I think with my M machine
+12:21 learning background um I do end up
+12:24 working on analysis and um ad hoc
+12:27 queries and um I end up working with my
+12:31 main um thing that I work with is I'm
+12:34 considered like the network model and so
+12:36 um a lot of the stuff that I end up
+12:38 doing is trying to analyze like the
+12:40 performance of that Network model um and
+12:43 um other tasks around
+12:47 that I I don't think you maybe I forgot
+12:50 I don't think you mentioned the your
+12:52 background so what is your background I
+12:55 guess you well I know that you you also
+12:59 do something with NLP right so I assume
+13:02 your background actually does involve
+13:04 machine learning so you you know this
+13:07 but at work you more focus on the
+13:09 engineering part right yes I um I
+13:12 actually majored in cognitive science
+13:14 with an emphasis in human computer
+13:16 interaction artificial intelligence
+13:18 which is um I want to say more user
+13:20 experience Focus um as well as more like
+13:24 AI focused um but I had a minor in
+13:26 computer science and um during my
+13:29 undergrad I focused a lot more on um
+13:31 working with big data and understanding
+13:34 um the impact of
+13:36 that and um I did end up majoring in
+13:39 natural language processing and I think
+13:41 for a lot of um like NLP um currently um
+13:46 machine learning has been um one of the
+13:49 more um recent approaches that they
+13:51 finded to be um very useful like the
+13:53 transformer based models and more
+13:55 recently like chat GPT um so I I've
+13:58 gotten some experience with that MH just
+14:02 curious if you're if
+14:05 you focused on NLP and machine learning
+14:09 how did you or and why did you end up
+14:12 doing data
+14:13 engineering yeah so when I was at um
+14:16 Sephora that was um one of the roles
+14:18 that I ended up working towards um I
+14:21 think a big reason why I tend to work
+14:23 with data engineering is because um I
+14:26 really love the importance of data
+14:28 within the ecosystem of like NLP and ml
+14:31 um so a lot of the times people don't
+14:33 really understand that data really is
+14:36 the root of um these these processes
+14:39 like even chap GPT in order for it to be
+14:42 able to be chap GPT it should have been
+14:44 trained on a bunch of data there must
+14:46 have been pipelines um that were
+14:48 scraping the data putting that data into
+14:51 um its training Loop and being able to U
+14:54 maintain it on a daily basis as well um
+14:58 but I'm sure like and they're probably
+14:59 also getting requests on a daily basis
+15:01 where they're having to consume that
+15:03 data and then be able to um analyze the
+15:06 performance of their models and then use
+15:08 it for um their new U methodology of
+15:11 like reinforcement learning using human
+15:13 feedback so data is really a part of all
+15:16 of the ecosystem and so that's really a
+15:18 big reason why I like to focus on um
+15:21 data engineering because I feel like it
+15:22 lets me um not I don't necessarily have
+15:25 to work on the model but it lets me
+15:27 understand what's going on with the
+15:29 models themselves and um maintaining the
+15:32 data in my opinion is one of the um most
+15:35 critical components that you can have
+15:37 and if there are any um failures if
+15:39 there are any quality issues um your
+15:42 system will fail and your system will
+15:44 have issues and your models won't really
+15:46 work so you might think your models are
+15:48 working perfectly fine but if your data
+15:50 is not there they're they're going to
+15:53 fail did you join Sephora as a data
+15:56 engineer or first you joined maybe like
+15:59 as a data scientist and then
+16:01 transition yeah so what's interesting I
+16:03 actually joined as a intern as a
+16:05 continuous process Improvement intern um
+16:08 so I work on continuous process what
+16:10 sorry continuous and process Improvement
+16:14 intern what does that mean yeah no I
+16:17 thought the same thing when I I joined
+16:19 and they they told me that it was um I
+16:21 was going to be like um identifying how
+16:24 to streamline processes um so I learned
+16:27 more about like U diagramming and system
+16:30 design um and so I used um a combination
+16:32 of system design to um identify pain
+16:35 points with it within the um within
+16:39 whatever system
+16:41 modeling yes yes I remember studing
+16:44 something like
+16:46 BN PM or something like business process
+16:49 model notation something like that did
+16:52 you need to do these
+16:54 things yes I did um end up having to
+16:57 like learn about like um like I learn I
+16:59 would talk to people um about their
+17:01 business process how they would work
+17:03 with a specific tool the um the issues
+17:06 that they would have with that tooling
+17:08 and um based off of that I came up with
+17:11 um different suggestions or more of like
+17:13 a holistic view of like what was going
+17:17 on so it's more like uh a bit higher
+17:21 level work than I don't know being a
+17:23 software engineer cuz you need to
+17:25 analyze the whole system and then
+17:28 document it and then understand how it
+17:30 works and then uh yeah propose
+17:33 improvements but how like okay this is
+17:36 what you joined to do but like how did
+17:38 you end up doing data engineering cuz it
+17:41 sounds even less um how I say well
+17:46 relevant not relevant but uh it's like
+17:49 data science and what you were studying
+17:51 is closer to data engineering than
+17:54 probably that but maybe it's just my
+17:56 ignorance yeah I then worked as a um as
+17:59 a data analyst for the company and then
+18:01 um they were hiring for data engineering
+18:03 internally and so then I was able to um
+18:06 talk to that manager and he was willing
+18:08 to hire me on as a data engineer um
+18:11 because I wanted to work more with a
+18:12 tech stock as an analyst I was working
+18:14 more with like Tableau I was trying to
+18:16 build out how can we get um data how can
+18:19 we consolidate data um data sets and
+18:22 databases together to in order to kind
+18:24 of get um different metrics for that
+18:26 team that I was working with um which
+18:28 was basically like data Engineering in a
+18:31 way um so that's when um I really wanted
+18:34 to like make that move I would honestly
+18:37 I would say with the the system design
+18:39 it has been only useful when I have to
+18:43 um document the type of pipelines that
+18:45 we've generated and created um so if
+18:47 we're noticing that um data is going
+18:49 from point A to point B um creating that
+18:53 pipeline has been something that I've um
+18:55 and documenting how that pipeline looks
+18:58 is um where that skill has come in um so
+19:01 more on like the the architect side of
+19:03 things if
+19:05 anything okay so it does help this
+19:09 knowledge does help you be a better data
+19:14 engineer yeah yeah it's more of like
+19:16 thinking about the the overall big
+19:18 picture of um and I think it's also
+19:21 helpful when thinking about like the
+19:23 timing of data engineering jobs like
+19:25 there's a lot of questions you have to
+19:26 ask when you're first working uh to
+19:28 create a data engineering job like who
+19:31 are your
+19:31 stakeholders um because then that can
+19:34 affect like the timings of when your
+19:36 data engineering job should occur um and
+19:39 etc etc so there there are different
+19:41 things to to consider when trying to um
+19:45 work with
+19:47 it okay so well what we talked about the
+19:51 system design I think this is like falls
+19:54 into the category of having a good
+19:56 documentation good documentation that
+19:58 describes like this uh and then like the
+20:02 other thing he mentioned like knowing
+20:03 who the stakeholders are this is also
+20:06 helpful I'm wondering what are the what
+20:09 are the general best practices that um
+20:13 you need to follow when you are a data
+20:16 engineer to make sure that the thing you
+20:19 work on actually makes sense it's
+20:21 reliable uh yeah it's working well so
+20:24 apart from having good documentation
+20:26 knowing who stakeholders are they other
+20:28 best
+20:29 practices yeah absolutely and I think
+20:32 that's that goes to um the type of data
+20:35 that you're hosting um how much data
+20:37 that you're you're passing through
+20:38 whether or not it's um I I think when
+20:41 you're looking at um database design um
+20:44 that's where good principles really come
+20:46 in and understanding um the type of data
+20:48 that you're working with because then
+20:50 that affects um like for instance if
+20:52 you're working with um Dynamic data
+20:54 you're going to be wanting more of a
+20:56 document based database if you're
+20:58 working with uh data that's more static
+21:00 you're going to want something more
+21:01 relational um in addition once you
+21:04 understand the type of data that you're
+21:05 working with as well it'll help you
+21:07 figure out the type of model that you
+21:08 have such as like if you're working with
+21:10 network based data that's a network
+21:12 model and you'll want to use something
+21:14 like
+21:15 neo4j um and it when you're working with
+21:18 like relational then you have to decide
+21:20 whether or not you want to use star
+21:22 schema or snowflake schema and um
+21:24 whether or not that really applies in
+21:26 your case
+21:29 MH I've heard so so you mentioned this
+21:32 document database so what you said like
+21:34 if the the data is more Dynamic then you
+21:36 need to document database if it's static
+21:39 relational and I was wondering what's
+21:41 your experience with document databases
+21:43 cuz I heard very mixed uh messages about
+21:48 things like or dyam DB or other
+21:51 more like document databases so what's
+21:54 your what's your experience with them so
+21:58 I've only worked um currently with
+21:59 relational databases um so specifically
+22:02 Cassandra redis um those types um and
+22:06 then I've worked a bit with um
+22:08 network-based databases um so like
+22:11 elastic search um and those types of um
+22:14 data sets yeah so elastic search is more
+22:18 like a network BTE yeah exactly yeah ah
+22:22 okay I thought I always thought of
+22:24 elastic search is more like a document
+22:26 database cuz like
+22:28 index document yeah I think you can but
+22:31 I think um the way that we've used it
+22:33 yeah we've used it with indexing as well
+22:35 um so I I think since I've worked with
+22:38 it with network based data um but it's
+22:41 yes it's indexed and it has a very
+22:43 specific structure um there so I think
+22:46 that's why I I kind of um think about it
+22:49 more as a network even though we
+22:51 probably just um adjusted our network
+22:53 data to be more document
+22:55 based can you give an example like how
+22:58 exactly you put a network and what kind
+23:00 of network you would put in elastic
+23:03 search um so this would be like um like
+23:06 Wiki data um so like
+23:08 for yeah so for the um Amazon Alexa priz
+23:12 competition um I've worked on that um
+23:14 for my Master's program and even more
+23:17 like um recently just mentoring of a
+23:20 couple students um they work with um
+23:23 elastic search to be able to store their
+23:26 um entity based data
+23:28 so like for instance U let's say you
+23:30 want to store information about um book
+23:33 information so like the author of a book
+23:36 then you also want information um about
+23:39 like the year that book was created um
+23:41 so we would want to store that um that
+23:44 book name as a document and then its um
+23:49 relations um within that um database as
+23:51 well so then when we're um so then when
+23:54 the system's actually running we're able
+23:56 to easily retrieve that information
+23:58 um using um different like sparkle
+24:03 queries okay so there was a lot of
+24:05 information and uh like I I think I've
+24:08 heard Sparkle before but maybe for those
+24:11 who did not so first
+24:13 um yeah you mentioned Viki data right so
+24:16 what is Viki data yeah so Wiki data is
+24:19 actually built on top of um Wikipedia um
+24:23 so Wiki data has like information um
+24:26 regarding different enti it's similar to
+24:29 Wikipedia where um you'll have like
+24:31 editors of this network graph um and to
+24:35 be able to to gather this information
+24:37 you need to be able to use this query
+24:38 based language called Sparkle it's very
+24:41 similar to SQL but it has its own um
+24:44 specific way of relating um relations
+24:48 and entities together um and even
+24:50 getting inverse relations from um from
+24:54 the graph itself so it's just a
+24:56 different way of querying data um based
+24:59 off of the structure that that it
+25:02 has so from what I remember about wik
+25:06 data is that say you have
+25:09 Wikipedia that was my B so you have
+25:13 Wikipedia and in Wikipedia the data is
+25:16 not structured right so it's most of the
+25:18 time it's just free text somebody put I
+25:21 know let's say an article about Game of
+25:23 Thrones the book right so then uh like
+25:25 in the book usually people just write
+25:28 right I don't know some information
+25:30 there is like this table that is kind of
+25:32 structured but then it's like free text
+25:35 uh who is the offer like when the book
+25:37 was written and so on right so there's a
+25:39 bunch of information there and Wiki data
+25:42 is an attempt to get this information
+25:44 from unstructured or semi structured
+25:47 data and put it in machine processible
+25:50 format right such that you then can just
+25:53 run a
+25:55 query um can you give an example of a
+25:58 query that you can run um like for
+26:01 example I don't know with
+26:03 books um just select book name and then
+26:07 you would just do like um like trying to
+26:10 get the you'll use the the relation of
+26:13 like what is book um and then um that's
+26:17 where it's going to be um you'll do like
+26:20 like question mark book and then the
+26:22 relationship for that and then you'll
+26:24 have the the actual book name here um
+26:27 because if not then you'll just get the
+26:29 The Entity node um and so that's what
+26:32 you want to like grab and so you'll just
+26:35 push back like book
+26:38 name so like I'm just wondering what
+26:41 kind of queries in addition like for
+26:43 example I have this Game of Thrones book
+26:45 right so for example I want to find all
+26:48 the other books by the same author right
+26:50 and then I can EAS Express that or books
+26:54 published in the same
+26:55 year yeah so you'd want to do do some
+26:57 sort of um filtering statement where um
+27:00 you'd want to then filter by year um and
+27:03 have that specific um year there or um
+27:06 that specific name and that's exactly
+27:08 what we end up trying to do is um during
+27:11 the conversation you might want to bring
+27:13 up um other books related to um Game of
+27:16 Thrones um like did you read the the
+27:18 following sequel um or the the next book
+27:22 um or have you read this book which was
+27:24 in the same year so then you would want
+27:26 to construct queries to be able to um
+27:30 look based off filter these books based
+27:31 off of the year and then send those
+27:33 titles back and then you would just grab
+27:35 one um to then um talk to about with the
+27:38 user and then if you want to even pick
+27:40 it further you can do filtering on top
+27:42 of the the JRE itself so let's say you
+27:45 want year and genre to make it a bit
+27:47 more relevant um you would just um alter
+27:50 your your SQL query to be able to um
+27:53 filter for that information and then
+27:55 give you that list of books to M to then
+27:58 um recommend okay so as I understood in
+28:01 this example we have a bunch of notes
+28:03 notes are different books or just
+28:06 objects in general right and then uh we
+28:09 know that these books they have like
+28:11 links between each
+28:13 other uh and the link could be like
+28:15 author right so for example there is
+28:18 entity George Martin there is entity
+28:20 book and then we know that the relation
+28:22 between these two entities these two
+28:23 notes that George Martin is the author
+28:26 of this book right then there's another
+28:28 entity year of publishing and we know
+28:30 that okay this book was published in
+28:32 this year right
+28:35 and and so on right and
+28:37 then we have this network and in this
+28:40 network we can easily answer questions
+28:42 like the one you
+28:44 mentioned and in your case you mentioned
+28:47 that you also currently at your work
+28:50 work with network data right so this is
+28:53 something similar I don't know maybe I
+28:56 should do that I don't know in into how
+28:57 many details you can go there CU like
+29:00 you probably don't want to reveal how
+29:02 your fraud prevention system works but
+29:05 maybe you can give like
+29:06 a some details without going too deep in
+29:10 that like what kind of network do you
+29:13 have
+29:13 there um so that that would just be like
+29:17 relating the like the members to other
+29:20 members or relating um transactions to
+29:23 other transactions using um specific um
+29:27 relations that can um be similar towards
+29:31 one another so like let's say we want to
+29:33 um get all of the transactions and we
+29:36 want to see if um maybe there's a trend
+29:38 with um the products involved um so
+29:41 maybe we want to get all of the the S
+29:43 the transactions with similar products
+29:46 and then based off of that if there are
+29:49 um if there are specific um transaction
+29:52 networks where we're noticing um that
+29:55 these networks have these transaction
+29:57 networks and these like products have
+29:59 been related to um certain fraud cases
+30:03 then we might want to um target maybe um
+30:08 use this as an additional um vector or
+30:10 use this as like an additional
+30:12 information
+30:15 umh okay so do I understand correctly
+30:18 that we have a network in this network
+30:20 we have transactions we have products we
+30:22 have customers all these things are
+30:24 notes in this
+30:26 network
+30:27 and then we know okay like there is this
+30:29 transaction with this number that
+30:30 involves this customer it involves this
+30:33 sort of products right and then we have
+30:36 this network right we
+30:39 see I don't know we see all the
+30:41 customers we see all the transactions
+30:43 and we know in some cases what are the
+30:45 fraud cases right we know okay like this
+30:48 transaction was
+30:50 fraudulent and what it gives
+30:52 us is access to other transactions that
+30:56 are similar and maybe they are frauding
+30:57 too so maybe uh this customer or
+31:01 customers that are similar to this
+31:02 customer bought this product maybe these
+31:05 transactions are also fraudulent right
+31:07 and then we can I don't know put the
+31:11 send them to our machine learning model
+31:13 for for checking is this exctly yeah so
+31:17 it could be either an additional there
+31:18 there's many way I'm trying to be very
+31:20 like big very specic not
+31:22 non-specific um because you uh you could
+31:25 just add it as like a layer of like
+31:27 based off of um this type of network
+31:30 criteria then we would send it to the
+31:32 model or you could even um use it as an
+31:34 additional feature um or if um you can
+31:37 use it during your analysis and if
+31:39 there's a very um specific Trend going
+31:41 on where um specific combinations of
+31:44 member and transaction networks um maybe
+31:47 you'll want to um block certain
+31:49 transactions from happening based off of
+31:52 um the networks that are
+31:55 created and how do you actually know if
+31:57 an transaction is fraudulent like there
+31:59 is some information coming from a bank
+32:01 that says okay like this was a stolen
+32:03 credit card yeah that's a great question
+32:06 um usually we do get that information um
+32:08 about whether or not this is a stolen
+32:10 credit card or whether or not this is a
+32:12 fraudulent um transaction um it's not
+32:14 something that we recognize um
+32:16 immediately but that is something that
+32:18 we end up um looking towards yeah
+32:22 because I imagine that I don't know a
+32:24 credit card got stolen then somebody
+32:26 goes and buy buys I don't know a lot of
+32:29 coke and drinks all of them but then the
+32:33 owner of the card discovers that the
+32:34 card is missing only like in a few days
+32:36 and then like reports that and then by
+32:39 the time you have this information the
+32:41 coke was already I don't know gone yeah
+32:46 exactly so that's where like our our
+32:47 model failed and then we would have to
+32:49 identify like why in this case was our
+32:51 model um failing and what was it that
+32:54 what what can we do next that could make
+32:55 this um even better mhm yeah mhm but
+32:58 ideally what you want to have is like
+33:00 somebody is paying with a card and then
+33:03 you already maybe security says hey hold
+33:07 on like can you wait a little bit you
+33:09 want to check your transaction yes
+33:11 exactly yes so if there's before they
+33:13 work out yeah for instance like if their
+33:16 their card it has um the card that
+33:18 they're using doesn't necessarily match
+33:20 their membership information or there's
+33:22 certain things about it that might flag
+33:25 something then we might um we might have
+33:28 specific protocols in mind that would
+33:31 get um flagged
+33:33 yeah well I guess here since it's it has
+33:36 to be realtime system like you have to
+33:39 be really fast like how do you design a
+33:41 system with this requirement in mind
+33:44 such that when I don't know somebody
+33:47 tries to pay with a stolen credit card
+33:50 the security guard can get notified
+33:53 immediately like how how the
+33:55 architecture should look like for this
+33:57 sort of system so I I would assume that
+34:00 it wouldn't necessarily start with a
+34:02 machine learning check to be honest um I
+34:04 would assume that there would be
+34:05 specific rules which I guess could be
+34:07 machine learning if it's rule based um
+34:09 but we could start with like specific
+34:11 rules in mind um looking at those checks
+34:14 um and then you would have to work with
+34:15 your front-end team to be able to
+34:17 actually um show some sort of like
+34:19 signal to your um to your cashier who
+34:23 can then um which can then be triggered
+34:25 to your security worker
+34:27 um or which will then um flag a sort of
+34:31 um wave of um different protocols um so
+34:35 I I'm assuming it would have to be um
+34:38 multiple systems trying to communicate
+34:40 with each other um based off of that one
+34:42 um
+34:45 call and systems U like I guess the
+34:49 there is a system that I know tracks all
+34:52 the transactions right and PS them
+34:54 somewhere so you need to have a reliable
+34:56 way of
+34:57 capturing this data and putting it in
+34:59 such a way that it's easy to
+35:01 retrieve and yeah exactly yeah store
+35:04 that's why we have yeah that's why we
+35:06 have our our batch jobs that are run on
+35:08 a daily basis um so these batch jobs
+35:11 allow us to um we've already made the
+35:13 calculations themselves and then we're
+35:15 able to um bring forth that information
+35:19 and then um in addition like we within
+35:21 our system itself um we'll make real
+35:24 time calculations based off of um
+35:26 information within the payload um and so
+35:28 that will happen almost
+35:32 instantaneously okay well I guess
+35:33 there's a lot of stuff we can go into
+35:37 and a lot of details I don't know if it
+35:38 makes sense CU like in a podcast format
+35:41 it's probably very difficult to
+35:44 understand all that but I'm wondering so
+35:47 in this case you used the network
+35:49 database but sometimes you can just use
+35:52 a relational database right and
+35:55 probably like maybe some cases it will
+35:57 work even faster right instead of like
+36:00 traversing all this notes you kind of
+36:02 know what kind of queries you will send
+36:04 in advance you know in advance what kind
+36:06 of queries you will use so you build
+36:08 your Rel relational database in such a
+36:10 way that it's very easy and fast to
+36:12 answer these queries so I'm wondering
+36:14 like how do you make a decision which
+36:16 database to use for a specific use case
+36:19 like should you go with I don't know key
+36:21 value store should you go with a
+36:23 document store should you go with like
+36:25 traditional database uh like relational
+36:28 database do you have like a rule of Thum
+36:30 or maybe some criteria you use for
+36:32 evaluating this
+36:34 decision yeah I think that's um where
+36:37 your your type of data comes in so if
+36:39 you know notice that it's not going to
+36:40 ever change your schema will probably
+36:42 remain stagnant um relational will
+36:44 probably be the the better case to go
+36:46 with um if you're noticing that Dynamic
+36:49 that's when you have to actually think
+36:51 about the document I've never worked
+36:53 with Dynamic data um but that is um from
+36:56 my experience um the criteria for that
+36:59 and then in terms of like more of the
+37:02 key value store it's just a matter of um
+37:05 what is what is your use case that
+37:07 you're working with and does it actually
+37:09 make sense for that type of data point
+37:11 that you're trying to capture because if
+37:13 if in the the end you're just trying to
+37:15 put everything into tables I can't see
+37:17 why you can't use a relational database
+37:19 but if you're um if you need a specific
+37:22 type of analysis or a specific type of
+37:24 structure for your data um and I I think
+37:26 that also depends on the structure of
+37:27 your data as well actually because we've
+37:29 mentioned like unstructured versus
+37:31 structured um and like with structured
+37:33 data that's perfect for relational
+37:35 database it's um especially if it's not
+37:37 static oh no especially if it's static
+37:39 so um there there that's like a specific
+37:42 criteria um for those types of databases
+37:45 but with unstructured data it kind of
+37:47 like you can always find a way to take
+37:49 unstructured data and turn it into
+37:51 structured data um which is possible um
+37:55 such as like taking it from um like
+37:57 maybe you have like a Json where maybe
+37:59 it's just but but if there's an
+38:02 additional layer on top of it that's
+38:03 where I think you have to rethink um the
+38:06 type of database that you're working
+38:07 with or maybe get a bit more creative
+38:10 there and uh what's your experience with
+38:13 working for with Neo for J cuz I heard
+38:15 things like okay it's a good database
+38:17 but there are not so many people who
+38:20 have a lot of experience working with
+38:22 this this database and sometimes what
+38:24 happens is like when you um hit some
+38:28 problem with this database like it's a
+38:30 lot more difficult to
+38:32 find a work around um did you have to
+38:37 experience something like that or for
+38:38 you for your your case it was actually a
+38:40 good decision to use NE forj instead of
+38:43 let's say
+38:44 postgress um I think for for our use
+38:47 case it makes more sense to use neo4j
+38:49 only because of the type of
+38:50 visualizations that you can be able to
+38:51 do with this um I I I would say that
+38:54 like you could definitely have some
+38:56 problems in terms of like understanding
+38:58 um the like how to query your data
+39:01 correctly but I think if you're working
+39:03 with data where it's pretty um
+39:05 understandable pretty easy to work with
+39:07 um and your um your relations aren't
+39:09 necessarily too complex um it could be
+39:12 really helpful um in trying to
+39:14 understand the type of networks that are
+39:16 being
+39:18 formed so this uh visual aspect is it
+39:22 like cuz you can explore your network
+39:24 your graph right by clicking
+39:27 uh and this is probably useful for so in
+39:31 the company where I worked previously we
+39:32 also had like anti fraud uh department
+39:36 and in addition to like machine learning
+39:37 Engineers data scientists analysts and
+39:39 so on who would work on Solutions there
+39:43 were also antifraud Specialists who were
+39:47 not super technical they were like more
+39:48 domain experts and they were one of the
+39:51 stakeholders for this uh like they the
+39:54 users of this tool right and then uh
+39:57 sometimes they would need to decide okay
+39:58 like does it look suspicious or not just
+40:00 looking at uh some data and they they
+40:03 then they need to make a decision like
+40:04 should we bond this user or should we
+40:06 let
+40:07 them I don't know set them
+40:09 free and for them it was important to
+40:12 actually you know being able to open a
+40:14 graph like that and Traverse it to see
+40:16 like what the other connected users um
+40:21 yeah in your case is it something
+40:24 similar yeah that's that's exactly it's
+40:26 it's really um a great tool for end
+40:28 users really and trying to visualize the
+40:30 network Craft um I think right like
+40:33 right like we can we can always give
+40:34 them tables that can easily try to give
+40:37 them sort of like that snippet of
+40:39 information but there's a lot more um
+40:42 complexity on their side and a lot more
+40:44 time that they end up spending um having
+40:46 to look at this data in a more tabular
+40:49 format yeah I mention I noticed that
+40:52 there are a few questions from the
+40:55 listeners so I think maybe we should
+40:58 cover them so the first question is how
+41:01 much software engineering is required
+41:04 when you work as a data
+41:08 engineer um I think there are good um
+41:11 software engineering principles that you
+41:12 should be able to hold uh when working
+41:16 as a data engineer um so like if you're
+41:19 because we do end up working a lot with
+41:22 either like Scala spark spark is
+41:24 probably like one of the biggest
+41:25 languages I've um or libraries that I've
+41:28 worked with um I specifically work with
+41:30 pypar but in my previous company we work
+41:33 entirely with just Scola spark um and so
+41:37 you should be able to at least work with
+41:39 these different languages um and be able
+41:42 to um Constructor code in a way where um
+41:45 it makes sense like we we would want um
+41:47 I think generally you should as a data
+41:49 engineer you should also think about the
+41:50 different types of um testing that you
+41:52 might want to complete I think as
+41:53 software Engineers software Engineers
+41:55 really know how to create like good unit
+41:57 test um to really test the system as a
+42:00 whole um so but we would have to think
+42:02 about it as from like the data
+42:03 engineering perspective like how could
+42:05 we add in um data quality checks within
+42:07 our pipeline um on top of um the the
+42:11 data set that you're creating itself so
+42:13 like if you want to add in like null
+42:15 checks if you want to add in checks of
+42:17 the specific date types um or specific
+42:20 types within your um schema to make sure
+42:22 that there's no um failure there that's
+42:25 where um having a really good ability of
+42:28 using test and looking for different
+42:30 libraries is really helpful um so there
+42:33 there are definitely um software
+42:34 engineering principles and practices
+42:36 that you'd probably want to um to
+42:38 utilize with um data
+42:42 engineering so there is what you said is
+42:44 like there is there's quite a lot of
+42:47 software engineering knowledge that you
+42:48 need to have all these programming
+42:51 languages testing best practices right
+42:53 but there's also like other things in
+42:54 addition to that which is
+42:56 like I don't know data quality checks
+42:58 all the schol checks right so what you
+43:01 say like a data engineer is like a
+43:04 specialized software engineer who
+43:06 specializes in data yeah I think that's
+43:09 a great way of putting it because um
+43:11 like as a software engineer usually
+43:13 people think about like the application
+43:15 or the system like how could it fail um
+43:17 so then you then have to like put on a
+43:19 different hat and instead of thinking
+43:21 about the application you think about
+43:22 the data itself um so that yeah that's a
+43:25 that's a perfect way of
+43:27 out just curious what kind of stuff what
+43:30 kind of tools do you use for this data
+43:32 quality
+43:33 checks um so you could use something
+43:35 like Great Expectations um you can also
+43:38 build your own types of unit test um or
+43:41 like your own framework if you've wanted
+43:43 to um Great Expectations is one of the
+43:46 ones that always comes to mind for for
+43:48 me um but I'm pretty sure there other um
+43:50 third party companies or toolings um
+43:53 that have that in place um any even if
+43:56 you look at other like data profiling
+43:58 tools and stuff like that they might
+44:00 also have like a layer of data quality
+44:02 even um like cloud services like um
+44:06 Google big query they have data quality
+44:08 checks integrated um within their their
+44:11 platform itself so you don't necessarily
+44:14 need a specific library or to add in
+44:16 those tests but you need to identify um
+44:18 how you can start adding in those test
+44:20 into your um into your
+44:23 pipeline so as a data engineer you need
+44:26 to be aware that these things are
+44:28 important and um you need to think about
+44:31 them you need to like when you design
+44:33 your data pipeline so that you don't
+44:36 forget to include the data quality
+44:38 checks yeah
+44:41 exactly okay what are the most
+44:44 challenging tasks in data engineering
+44:50 practice it's a really good question um
+44:53 I think when um I think one of them most
+44:56 challenging task is when one your job
+44:58 fails and you don't know why your job is
+45:00 failing um and usually as an entrylevel
+45:03 data engineer that's when um you're
+45:06 you're first starting out you're not
+45:07 really sure how u a job specifically
+45:10 works and that's when you have to really
+45:11 look into your log files to understand
+45:13 is it the code because if it's the code
+45:16 then it's probably a bug or a fix that
+45:19 you need to make is it um a schema
+45:22 change that happened not because of you
+45:25 but because of your uh upcoming your
+45:28 incoming source of data so if your
+45:30 Source has changed um I think that
+45:33 having that um that visibility is
+45:36 difficult sometimes because it can cause
+45:38 your job to fail um and then um like if
+45:42 you're if calling your database if it's
+45:44 having issues with um like maybe your
+45:46 database is failing because um there's
+45:48 too many requests to it at a time um and
+45:50 maybe um it's processing too much data
+45:53 and so maybe you need to think about
+45:55 maybe we need to make this an a pen job
+45:57 so um when your job fails it really
+45:59 makes you have to think very creatively
+46:02 and understand um why is it failing
+46:04 what's going on um and how can we
+46:06 actually it might be like a bigger
+46:08 Improvement that needs to be made um
+46:11 during that time so I think that's one
+46:12 of the biggest challenges of as a data
+46:14 engineer is that we might um make
+46:17 certain configurations based off of um
+46:20 the data load that we've tested with
+46:22 within the testing environment but once
+46:24 we actually identify how many of the
+46:26 jobs that we actually have running um
+46:28 concurrently in parallel and just these
+46:31 different aspects of like that could
+46:33 actually affect um your system like then
+46:37 you'd have to start reconfiguring
+46:39 reoptimizing your jobs U maybe it's a
+46:42 optimization within the code level so
+46:44 it's um I I think that's one of the
+46:47 biggest struggles as a data engineer is
+46:49 just trying to identify like what is the
+46:51 best solution um for the job that I'm
+46:53 working
+46:54 on
+46:56 yeah and you
+46:57 mentioned multiple reasons why a job can
+47:00 fail so first reason the code there's a
+47:02 bu in your pipeline I don't know in your
+47:05 p park job or whatever in your script
+47:07 then there is a schema change like there
+47:09 is Upstream data that you consume right
+47:14 and then the team that is producing this
+47:15 data changed something there then could
+47:19 be an issue with that database the
+47:21 database that you write to or data
+47:23 database that you read from right so
+47:26 then and I think like you're only
+47:29 scratching the surface here cuz like
+47:30 there are so there can there can be so
+47:33 many other reasons why why why it fails
+47:36 right could be like error in the code as
+47:39 you mentioned could be error in the data
+47:41 so maybe there's an errorless uh record
+47:44 that goes through your pipeline and like
+47:47 there's a n somewhere and you expect a
+47:50 number and then like all of a sudden
+47:52 your entire job fails just because of
+47:54 that record right yeah and there could
+47:56 be millions of reasons like that and
+48:00 like debugging finding the root cause
+48:02 could be a nightmare I remember that
+48:05 like
+48:06 it's I understand why it's one of the
+48:09 most challenging things to do so do you
+48:12 have like a an algorithm to figure out
+48:17 what's the root root cause like how do
+48:19 you usually go about
+48:21 that usually once you actually get U
+48:24 accustomed to your jobs and the typ of
+48:26 um like errors that you see there tends
+48:28 to be like a trend and how you solve
+48:30 them so I I really think it comes with
+48:32 an experience because I think when you
+48:33 first start out as a data engineer
+48:35 you're not really sure about like these
+48:36 types of errors but once you actually
+48:38 get into the system once you've actually
+48:40 worked with these jobs you become a
+48:41 familiar with them then you start
+48:43 noticing like oh it's it's probably a
+48:45 database issue or like oh it's probably
+48:47 um something with the my code or um and
+48:50 there there are also times where your
+48:52 job doesn't fail your job works
+48:53 perfectly fine but the data is incorrect
+48:56 because of the the Upstream team and
+48:58 like maybe you're just not getting a
+48:59 column like correctly anymore so it's
+49:02 it's very much um like a trial and error
+49:06 process but once you understand the
+49:07 errors that you're working with um and
+49:09 the data that you're working with you
+49:11 you can figure out the the trends and
+49:13 the patterns pretty pretty easily I
+49:14 would say um I think if you're you're
+49:17 still struggling with it I would suggest
+49:19 like creating some documentation with
+49:21 common error types that you're seeing
+49:23 and then identifying um like what were
+49:25 the solutions to actually solve them and
+49:27 like if you create really good
+49:29 documentation for your jobs which you
+49:31 should um then you can create run books
+49:33 for how to actually solve them pretty
+49:35 easily um so that like not only you but
+49:38 anyone within your support team um can
+49:41 be able to solve these these issues
+49:43 pretty
+49:44 easily sounds like a great piece of
+49:46 advice
+49:48 for any date engineer and specifically
+49:51 Junior date Engineers could just start
+49:53 CU like when you have a
+49:56 a task that is failing and your job is
+49:58 to figure out why so and if you try to
+50:01 do what you just said like not only I
+50:04 don't know maybe you'll spend a few days
+50:06 trying to figure out what's happening
+50:08 but if you document everything and then
+50:10 if you also document like how to fix
+50:12 this problem next time like the entire
+50:14 team will be so
+50:18 glad yeah exactly
+50:22 yeah
+50:23 okay I think like there was a question
+50:27 that just disappeared the question was
+50:29 let me try to remember what kind of
+50:32 tools do you use on daily
+50:36 basis um so I specifically use um like
+50:40 gcp so gcp data bricks um I've worked I
+50:45 think I work with um Cassandra so I work
+50:47 with table plus um to be able to connect
+50:49 to that um I work with pis spark
+50:53 probably every day um I I've I've worked
+50:56 a bit with pandas but I don't have to
+50:58 use that quite often within um this
+51:00 current role but I know some people who
+51:02 um love using pandas as well especially
+51:04 with the the new py Aro um
+51:06 implementation change that they recently
+51:09 made with that um so but I I primarily
+51:12 work with pypar um and gcp cloud
+51:15 services um I've worked with um data
+51:18 proc and um big query yeah data proc is
+51:24 a tool from from gcp it's like a spark
+51:28 cluster yes it's kind of yeah it's kind
+51:31 of like um I know aure has a similar um
+51:35 like cluster configuration um where
+51:38 you're able to to run your job and your
+51:40 um your clusters that way um so yeah
+51:43 data procs more of like a um um managing
+51:45 your clusters tool but I know they've
+51:47 also um have like server server
+51:50 serverless management now within um
+51:54 within that tooling as well well that's
+51:55 something that um people should look
+51:58 into as well because that's that's
+52:00 pretty powerful having um jobs that
+52:02 don't necessarily require
+52:04 servers so in this case let's say we
+52:07 have a p park script p park job and we
+52:11 want to execute this job on a specific
+52:15 piece of data okay we have the script so
+52:17 typically the way it works you need to
+52:20 have a spark cluster right uh where you
+52:23 can execute this job so then you need to
+52:26 provision all these machines you need to
+52:28 configure it and data proc makes it
+52:30 easier so I I didn't work a lot with gcp
+52:34 I work with AWS in AWS there is a thing
+52:37 called elastic map reduce EMR so
+52:40 basically by click in a few buttons you
+52:43 can set up you can get the spark cluster
+52:46 and then you can execute and the several
+52:49 thing that you mention is instead of
+52:51 woring about like provisioning all these
+52:53 clusters and then managing them somehow
+52:56 you just say hey Google this is my P
+53:00 Park job execute it somewhere right I
+53:02 don't care where and then it just
+53:04 executes that that sounds pretty
+53:06 convenient yeah exactly right I think
+53:09 that's probably going to be um hopefully
+53:11 the future of data engineering jobs
+53:13 because it seems like that would be um
+53:15 probably the most ideal way to
+53:17 go because I imagining I imagine I
+53:21 remember when debugging a spark job like
+53:25 yeah it's not always easy like
+53:27 to first of all make sure that you have
+53:30 enough servers enough computers there
+53:33 enough executors and then like selecting
+53:35 the the proper machines for the job and
+53:39 then making sure they have enough memory
+53:40 and all that like you could spend days
+53:43 uh tuning this and with serverless I
+53:47 guess yeah it's just much
+53:49 easier and you mentioned that there is a
+53:53 p error change in panda
+53:56 do you know what it that what is that
+53:57 what kind of changes yeah so with um
+54:00 pandas it's now running with um Pi Arrow
+54:02 so it's supposed to be a lot more
+54:04 efficient when it's running um I before
+54:06 I think pandas wasn't running in a
+54:08 distributed fashion um so it was running
+54:10 very um so it was a lot slower for that
+54:13 reason but with pi Arrow it provides
+54:15 that ability to run um in a distributed
+54:18 fashion um and um which is quite helpful
+54:22 because um if you're just running
+54:24 something on like a sing instance um and
+54:27 you're working with big data I I also I
+54:29 think one of the biggest issues though
+54:30 with pandas is that um it does have like
+54:33 a cap with the data size that it works
+54:34 with um I'm not sure if Pi Arrow somehow
+54:38 handles that differently but from my
+54:39 understanding that's um one of the
+54:41 drawbacks of using something like pandas
+54:43 is that you you won't necessarily be
+54:44 able to load um all of the data into a
+54:47 single
+54:49 frame but Pi arrow is yeah it's more of
+54:52 like allowing it to to U be r at a
+54:55 faster rate okay so inist it just became
+54:59 faster because of some internal changes
+55:02 that's cool yeah then you mention
+55:05 another tool that you use regularly
+55:06 Cassandra and I'm wondering what are the
+55:08 use cases for Cassandra cuz like FAS
+55:11 Sandra maybe my information is outdated
+55:14 but you actually need to have like a
+55:16 cluster again a cluster that you manage
+55:20 or maybe you get a manage cluster from
+55:22 somewhere and yeah I'm wondering like
+55:26 okay what is it good for what kind of
+55:28 use
+55:29 cases um I should consider for what kind
+55:32 of use cases I should consider
+55:34 Cassandra so um Cassandra is like a
+55:36 relational database so if you're working
+55:38 with structured data if you're working
+55:39 with um data where it's it's relational
+55:42 like it can be in a tabular format um
+55:45 that's where it can be it can be helpful
+55:47 um I believe it's also um fault tolerant
+55:50 and it's really good with um
+55:53 scalability um but you're right it does
+55:56 necess it does need a cluster so you do
+55:58 need a cluster to be able to to run a
+56:00 Cassandra database
+56:02 yeah okay so it's um good for like
+56:06 analytics or for transaction I guess for
+56:10 transactional you should use something
+56:11 else but the main use case is more like
+56:14 analytical stuff right yeah yeah
+56:18 exactly
+56:20 okay well another question is how much
+56:24 of a challenge is it to get data from
+56:27 external
+56:31 sources um
+56:34 I that's a really good question because
+56:36 I think it depends on um the type of
+56:39 like what you mean by external sources
+56:41 so um for us it could be even though our
+56:44 data is like internal within the company
+56:46 maybe you're working with like an
+56:47 external team so it's being able to
+56:49 identify what teams that you need to
+56:51 work with in order to get the the
+56:53 different data sets um Within
+56:55 your within um your database so then
+56:59 that your analysts have that access as
+57:01 well um so it can be difficult in order
+57:04 like finding the person and then finding
+57:07 um good documentation on that data in
+57:10 terms of like how to use it properly so
+57:12 like um I I think that's probably a very
+57:15 difficult thing to look at and then if
+57:17 you're working with um businesses
+57:19 outside like third party Services um so
+57:22 like let's say um your working with um
+57:26 like with within my company maybe we're
+57:28 working with a third party fraud service
+57:30 where they're also running a fraud check
+57:32 we would want to be able to get that
+57:34 information into our system somehow um
+57:37 and be able to read that in and then
+57:39 there's that layer of getting the
+57:41 documentation from their team to be able
+57:42 to understand what's going on um and I
+57:46 think one of the the issues with that is
+57:48 just making sure that like you're
+57:49 getting the data on a daily basis and
+57:51 nothing from um their side changes so I
+57:54 I think in general working with any
+57:56 external teams or any external like
+57:58 third party service to to get data or
+58:01 even through like an API call one of the
+58:04 the worries as a data engineer is is
+58:06 their data going to change at any point
+58:08 without me knowing um or is this um data
+58:12 not going to be able to be consumed
+58:14 after a period of time so there's
+58:16 there's different um talks that have to
+58:19 go on in terms of creating that type of
+58:21 data contract and understanding um how
+58:24 they external teamwork works as well as
+58:27 understanding like is this data going to
+58:29 be on a a batch basis like at a specific
+58:32 time um is this something that's um real
+58:34 time or occurs like every like four or
+58:38 five hours um so then it's and then
+58:40 understanding how that would impact your
+58:42 analysis and your jobs and all of that
+58:46 so yeah I think working with external
+58:49 teams does bring in some um
+58:51 difficulties um definitely in terms of
+58:54 like who do I talk to where do I get
+58:56 this data point and how often will I get
+58:59 it and will this data ever change um so
+59:04 it is challenging and you need to think
+59:06 about um you mentioned data contracts
+59:08 right so you need to somehow uh
+59:11 understand how exactly the data should
+59:12 look like and you need to make sure that
+59:15 it doesn't change right so like the API
+59:18 that there is already there like all of
+59:20 a sudden it does not change and like
+59:22 what used to be a number does not become
+59:24 a or whatever right yeah exactly mhm
+59:28 okay I already hear the bells from a
+59:32 church nearby which means that it's
+59:35 actually time we wrap up so there are a
+59:39 few more questions um so maybe my
+59:42 question to you is if it's okay that
+59:45 people reach out to you somehow and ask
+59:47 these
+59:48 questions yes um feel free to reach yeah
+59:52 feel free to reach out to me on like
+59:53 LinkedIn and um I'll for sure definitely
+59:55 answer from there yeah thank you well
+59:58 maybe last one before we wrap up we
+1:00:00 talked about many things like U I don't
+1:00:03 know we covered many topics are there
+1:00:06 good resources could be courses books
+1:00:09 articles that you recommend our
+1:00:12 listeners if they want to find out more
+1:00:14 learn more about these
+1:00:16 topics my um my biggest suggestion I
+1:00:19 love the O'Reilly books um I definitely
+1:00:22 suggest doing some sort getting a um
+1:00:25 data engineering um like the the best
+1:00:27 like practicals like principles some
+1:00:30 more of like an overview book um I don't
+1:00:32 want to specifically say like a specific
+1:00:33 book type in case people have their
+1:00:35 preferences but I think getting
+1:00:37 something that's more data engineering
+1:00:39 as an overview um getting something
+1:00:41 that's more of like designing data U
+1:00:44 data intensive applications um I think
+1:00:46 that's the specific O'Reilly book um
+1:00:48 that I would definitely recommend um and
+1:00:51 then um definitely something with py
+1:00:53 spark SQL
+1:00:55 um to be able to um always look those
+1:00:57 those types of um questions up during
+1:01:00 your
+1:01:01 interviews I think I read this
+1:01:03 designning data intensive applications
+1:01:05 like two times and I think if I read
+1:01:08 third time I'll still find a lot of new
+1:01:11 information there yeah absolutely it's
+1:01:13 def good one okay Angela thanks a lot
+1:01:16 for joining us today that was really
+1:01:19 great talking with you today and thanks
+1:01:21 everyone for joining us uh today well
+1:01:24 what
+1:01:24 and asking questions and yeah I guess
+1:01:27 that's it for the day and um have a
+1:01:29 great rest of your
+1:01:30 week

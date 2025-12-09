@@ -1,0 +1,1802 @@
+A/B Testing
+
+0:00 hello everyone welcome to our event this
+0:02 event is brought to you by adidas club
+0:04 which is a community of people who love
+0:05 data we have weekly events this event is
+0:08 one of such events if you want to find
+0:10 out more about the events we have go to
+0:13 the description there is a link to our
+0:15 events page click on this and you will
+0:16 see everything we have in our pipeline
+0:19 then not to miss any future events that
+0:22 we have you should subscribe to our
+0:24 youtube channel and then finally the
+0:26 most important thing join our slack
+0:28 channel where we talk to
+0:31 other like-minded people who love data
+0:33 during today's interview you can ask any
+0:36 question you want there is a link in the
+0:38 live chat click on this link and ask
+0:40 your questions and i will be covering
+0:42 these questions as we as the interview
+0:44 progresses
+0:46 so that's all
+0:47 let me stop sharing my screen
+0:51 and
+0:52 open the questions i prepared
+0:57 okay i am ready are you ready
+1:01 yup
+1:02 okay so let's start
+1:04 this week we'll talk about a b testing
+1:06 and experimentation and we have special
+1:08 guest today jakob jakob has more than
+1:11 three years of experience of growing
+1:12 data and analytics teams now he's a head
+1:15 of analytics at inkit he's passionate
+1:17 about a b tests
+1:19 defining metrics and pizza dove so
+1:21 welcome jacob
+1:23 yeah thanks for having me
+1:25 yeah especially curious about the last
+1:27 point the pizza that's enough but maybe
+1:29 this is something we'll talk uh later uh
+1:32 but before we go into our main topic of
+1:35 a b test let's start with your
+1:36 background can you tell us about your
+1:38 career journey so far
+1:40 sure yeah
+1:42 so
+1:43 yeah i guess
+1:46 my journey started with like finishing
+1:49 my master's
+1:50 degree in economics and
+1:53 yeah econometrics so with like a
+1:56 quantitative focus
+1:58 i um
+1:59 back then was super into economics and
+2:02 really wanted to actually you know be a
+2:05 practicing economist which is
+2:06 surprisingly hard on the job market but
+2:09 i kind of found like a job in economic
+2:11 consulting
+2:13 um
+2:14 basically it did like analysis of like
+2:17 mergers and cartel damages and stuff
+2:20 like that so you can actually apply and
+2:22 run
+2:23 econometric models like regression
+2:25 models and stuff like that but
+2:27 the overall work environment wasn't
+2:28 super inspiring so
+2:31 what i took away from that was basically
+2:33 i like working with data but not in that
+2:36 industry
+2:39 so yeah there was a
+2:41 through a friend i
+2:43 learned about an opening at king
+2:45 king is like the producer of candy crush
+2:48 and these types of mobile games so they
+2:50 have
+2:51 tons of touch right
+2:53 yeah yeah
+2:55 um
+2:56 and uh yeah that was basically my start
+2:59 in a
+3:00 like proper data science job so
+3:03 that's the first time when i actually
+3:05 started
+3:06 started working with with sql with um
+3:11 properly with r
+3:13 and later also python
+3:15 really got to enjoy the topic of a b
+3:17 testing
+3:19 and then
+3:20 later on i moved to bubble
+3:22 which is a language learning company
+3:25 and yeah there i
+3:27 pretty much did a similar job but
+3:30 i would say at a company that had less
+3:33 data tools built out um which is also
+3:35 what was interesting to me i really
+3:37 wanted to kind of understand how to
+3:38 build up a data organization how to
+3:41 like create the tools and kind of pave
+3:43 the way
+3:44 um and yeah um got promoted there into
+3:48 like a team team league position as
+3:50 product um
+3:52 team leader of product analytics and
+3:54 later on my team also took kind of the
+3:56 mission of
+3:58 building an experimentation platform so
+4:01 um also much more of a focus on av
+4:03 testing
+4:04 um and then afterwards i yeah i had the
+4:07 opportunity to join inkits which is
+4:09 where i am now
+4:11 um smaller company than bubble
+4:14 we basically do online publishing
+4:19 or to put it specific we kind of
+4:23 are a platform where
+4:26 users can publish their books um we
+4:28 analyze um
+4:30 reading behaviors
+4:32 and kind of have an algorithm that's
+4:34 that predicts like how well these books
+4:36 will perform they perform well enough we
+4:39 put them under a contract and move them
+4:40 to our app where users actually pay for
+4:43 this
+4:45 and we do tons of story specific testing
+4:47 as well which is also one of the big
+4:49 reasons why i joined
+4:52 yeah in small plug we have positions
+4:54 open so
+4:56 if you're interested uh you're happy to
+4:58 happy chat about it
+5:00 is it for novels or like for for what
+5:03 kind of uh yeah
+5:05 um yeah for novels um
+5:08 sorry
+5:09 not for technical books
+5:11 no
+5:12 maybe that's something for the future uh
+5:14 would be it would be interesting but so
+5:16 far it's it's strictly fiction
+5:19 so you get a manuscript you run it
+5:21 through a model and then if the model
+5:22 says it's going to be a bestseller you
+5:25 sign up a contractor
+5:27 um basically yeah but it is based on how
+5:31 users read it um
+5:33 rereading platform and then we have a
+5:36 paid reading platform um and on the page
+5:39 one are basically the successful ones
+5:40 from
+5:43 that's quite interesting
+5:44 so this is more like for indie um
+5:48 who want to publish independently right
+5:51 not go to
+5:52 i don't know big publishing publishers i
+5:54 don't actually know any names
+5:57 yeah i am
+5:58 exactly i mean in some sense we are then
+6:00 the publisher so ink it is kind of like
+6:03 a publishing house but um you know we i
+6:06 think
+6:07 in the past we sold books on amazon
+6:10 but we've pretty much stopped doing that
+6:12 and the focus is really on this app
+6:14 and through which you can read
+6:17 i'm also curious about your econometrics
+6:20 background so you said you first started
+6:22 with that and i remember taking courses
+6:24 about econometrics
+6:26 and what surprised me is how rigorous it
+6:28 is compared to machine learning so in
+6:29 machine learning
+6:30 the idea is you just you know throw in
+6:33 data then you do cross-validation and if
+6:35 it works on cross-validation you're fine
+6:38 right but in econometrics you need to do
+6:40 a lot of uh
+6:41 how this uh
+6:44 like analysis like you need to find this
+6:45 there are correlated variables and all
+6:47 these things you need to be careful with
+6:49 them remove with that i already move
+6:50 them so is it is it the correct
+6:53 observation
+6:55 um yeah
+6:56 i think because the aim of econometrics
+6:58 is more like to to learn about
+7:01 relationships and the data and less
+7:03 about predicting right so
+7:05 the whole
+7:06 um
+7:07 i think the whole science behind it was
+7:10 is based on the idea that economists
+7:12 wanted to understand
+7:14 the world and see if their models
+7:16 actually fit it so they collect the data
+7:18 and they started
+7:19 kind of using these regression
+7:21 techniques to to understand causality
+7:23 like is this doing that and of course
+7:27 causality is very complicated when you
+7:29 work with observational data
+7:32 and that's also why i think this like
+7:35 yeah this whole field of econometrics is
+7:37 very specific about
+7:40 regression techniques and stuff like
+7:42 that
+7:43 and yeah
+7:45 how the errors are
+7:47 distributed and where you need to be
+7:49 careful so it's i think it's much more
+7:51 about hypothesis testing to some extent
+7:54 yeah i remember there are a lot of tests
+7:56 like okay is this normally distributed
+7:58 and then you run a test and then just
+7:59 say it's okay it's not or the p-value of
+8:02 this is uh
+8:03 you know this much
+8:05 yeah yeah this is when you
+8:07 uh really got into statistics really got
+8:09 into statistical tests right yeah
+8:13 okay so maybe can you tell us what
+8:16 actually an ib test is so why would we
+8:18 should we care about this test if we are
+8:20 not
+8:21 somebody who is into econometrics but
+8:23 let's say a data scientist or yeah
+8:26 sure so
+8:27 i mean an a b test in
+8:30 i i think of it as like you
+8:33 what what everybody kind of knows from
+8:36 at least popular science and i guess
+8:38 particularly from
+8:40 uh the corona pandemic our clinical
+8:43 trials so um how we actually find out
+8:46 whether vixen works or not
+8:48 um
+8:49 and these clinical trials usually have
+8:52 you know are split into two groups you
+8:54 have a treatment group that actually
+8:56 gets the proper vaccine and then you
+8:58 have a control group that doesn't get
+8:59 the proper vaccine maybe they get a
+9:00 placebo or something like that
+9:03 um
+9:04 and yeah the the the participants are
+9:06 kind of like randomly
+9:08 split into these two groups and then
+9:10 you kind of track
+9:12 track their their um
+9:15 whatever outcome you're interested in
+9:17 over time and an a b test is
+9:19 very similar to that
+9:21 i think
+9:23 well i don't know where a b testing
+9:25 strictly starts but i would say like in
+9:27 you know in the online world
+9:30 that's where the what the um the whole
+9:32 idea came up with um or when it started
+9:35 being called an a b test
+9:37 um it is really about like
+9:40 taking some some unit of randomization
+9:42 that may be a user that maybe a specific
+9:45 session for example
+9:47 um
+9:48 and basically um
+9:50 testing
+9:52 testing um specific experiences on users
+9:54 so
+9:55 the classic example is like a button
+9:57 color i don't think anybody really does
+10:00 that because
+10:03 um oftentimes
+10:05 at least i think at the companies where
+10:06 i worked we had like bigger things that
+10:08 we wanted to to improve upon but the
+10:10 idea is really yeah
+10:13 some users will get a control version of
+10:15 something
+10:16 basically your website version
+10:18 yeah
+10:19 and then um another group of users um
+10:23 gets get something in addition to it for
+10:26 example a new feature
+10:28 a redesign or something like that
+10:30 we track the behavior over time we
+10:32 measure it
+10:34 and then we basically compare which of
+10:36 these two groups performs better
+10:40 usually that's done with some
+10:41 statistical analysis
+10:44 to
+10:45 control the noise um of the experiment
+10:48 and conclude it based on that
+10:50 so that's the overall idea of an a b
+10:52 test um in some way fairly old idea but
+10:56 um
+10:57 yeah i think the cool thing about it uh
+11:00 in the online world is like you get
+11:01 results so much faster
+11:03 when you talk to people that that
+11:05 actually work on clinical trials and
+11:07 things like that
+11:08 they have to run studies for years um
+11:11 and
+11:12 if if we have enough users on a certain
+11:14 website or a certain product we can we
+11:16 can do it in weeks or even days
+11:19 but i guess here so in clinical trials
+11:22 uh the example with vaccine
+11:24 so there are two groups one gets the
+11:26 proper vaccine the other gets not a
+11:29 vaccine right and then there is some
+11:31 metric that you measure right so after
+11:33 half a year how many of them got a
+11:36 disease right this is uh this is the
+11:38 metric you measure
+11:40 and
+11:41 you expect that in the treatment group
+11:43 this percentage will be lower right than
+11:46 in the control group
+11:48 yeah exactly
+11:49 um and yeah the idea behind why we do a
+11:53 b testing in the first place is really
+11:55 um to establish like this causal link of
+11:58 like the change
+11:59 and the impact which is
+12:02 otherwise as as i mentioned before like
+12:04 econometrics is so
+12:06 sophisticated because economists have to
+12:08 work with observational data you can't
+12:11 you can't do experiments on entire
+12:13 countries or something like that um that
+12:15 gets very hard
+12:16 and is unethical of course
+12:18 um but in
+12:20 yeah in the online world it's much
+12:22 easier to do right so
+12:25 and
+12:26 at the same time we have so many
+12:28 external factors that may otherwise
+12:30 influence our metrics that it oftentimes
+12:32 gets really hard to establish whether
+12:35 something had a impact unless it's
+12:37 really big
+12:38 um that we need these types of
+12:40 experiments to really make sure what
+12:41 we're actually doing
+12:43 this is what you mentioned
+12:45 you set control the noise right so noise
+12:48 is all the factors that we do not have
+12:50 control of
+12:51 and we want to make sure that
+12:53 whatever we are observing and not
+12:55 affected by that because i guess let's
+12:57 say with the example of
+12:59 the color of a button so let's say you
+13:02 just think okay maybe green button will
+13:04 convert better than blue button so you
+13:06 change this button right you deploy this
+13:09 change and then you see on the next day
+13:11 more people bought and you think okay
+13:13 this probably is good but maybe
+13:14 something happened right maybe
+13:17 maybe there was a promotion that your
+13:18 marketing team run and you didn't know
+13:20 about this right that's why more people
+13:22 uh yeah yeah clicked on this button
+13:25 and
+13:26 especially like
+13:28 or i think you reach that point quickly
+13:30 when when you're just in a company where
+13:32 it's very hard to keep track of what
+13:34 everybody's doing and there's so many
+13:35 different factors
+13:37 that that just gets very hard i think
+13:39 that's yeah these external influences
+13:41 are a big challenge
+13:43 um
+13:44 the the other source of noise is just
+13:46 like that every every user is going to
+13:47 be a bit different
+13:49 um
+13:50 even if
+13:51 you look i don't know like at the exact
+13:53 same demographic in the exact same diff
+13:56 uh situation they may
+13:58 they may just behave differently so
+14:01 on the one hand these external factors
+14:03 those we can like with this experiment
+14:06 set up we can control for all of them
+14:08 hopefully like if we
+14:10 if we design it properly
+14:12 um and then we just deal with this
+14:14 individual noise and for that we can use
+14:17 statistics to kind of say okay um this
+14:20 is actually like a
+14:22 measurable effect or this is just chance
+14:25 that we see
+14:27 can you give us an example maybe from
+14:29 something you did recently
+14:31 like of an a b test that you run maybe
+14:33 something simple
+14:36 um
+14:38 let's see
+14:41 well
+14:42 something that we uh that we did on
+14:45 inkit and which was a lot of um
+14:50 basically introduced um
+14:52 well or was a big project let's say like
+14:54 that
+14:55 um is so on our on our
+14:58 commercial app called galatia
+15:01 basically to um to be able to
+15:04 read the next chapter of a book book you
+15:06 either either have to wait for six hours
+15:08 or you
+15:09 basically purchase points that was the
+15:11 old
+15:12 old kind of like so points are you know
+15:15 like a like a in-game currency so to say
+15:18 and you can purchase point packages in
+15:20 our store
+15:21 uh but we then
+15:23 we're thinking about introducing a
+15:25 subscription model which basically says
+15:27 if you have the subscription you can go
+15:28 on reading
+15:30 as much as you want
+15:32 um so obviously
+15:33 bubble witch and other games from king
+15:36 do quite often right
+15:38 exactly
+15:39 so um
+15:40 that's that's uh that's a really great
+15:42 example of like you know this can be a
+15:46 huge um
+15:48 huge like positive impact uh for for for
+15:51 the business but at the same time it has
+15:53 certain risks right so what if users
+15:56 are scared of the subscription don't
+15:58 want to subscribe because it's much more
+16:00 money up front than what they would do
+16:02 with these points
+16:04 um
+16:06 so like this this revenue per install
+16:08 for example based on this um
+16:11 is something that is quite um
+16:14 quite hard to foresee in which direction
+16:16 that goes and
+16:17 then again we have so many ways how to
+16:20 design a subscription model right we can
+16:22 do
+16:22 12 months subscriptions we can do one
+16:24 month subscription we can change the
+16:26 prices we can change the prices of the
+16:29 points packages in comparison to it so
+16:31 that there are so many degrees of
+16:32 freedom
+16:33 which of course adds opportunity if you
+16:36 get
+16:37 get it wrong the first place there's
+16:38 things to change but it also means like
+16:41 if you don't if you're not aware of
+16:43 whether this was a success or failure
+16:46 uh you can also cause a lot of harm to
+16:48 your business and
+16:50 yeah
+16:51 whoever works with revenue data
+16:54 um in in a like freemium environment
+16:57 probably knows that
+16:59 this is one of like these metrics that
+17:01 fluctuates the most on end on a user
+17:03 level so it's really hard to measure and
+17:06 therefore um
+17:08 if you just roll something out you can't
+17:10 hope that from one day to another it
+17:12 just like goes up and stays up or it
+17:14 goes down and stays down like these
+17:16 level changes are going to be unlikely
+17:19 so you really need an experiment to
+17:21 actually compare the differences
+17:23 yeah so in this case the experiment uh
+17:25 you had two models the old model uh
+17:28 without was it with points or without i
+17:30 don't remember with points yeah so
+17:33 points only and then the um the test was
+17:36 actually points and subscription at the
+17:38 same time
+17:39 and i guess here the metric what you
+17:42 actually the outcome you wanted to
+17:44 measure is some sort of revenue based
+17:46 metric right
+17:47 yep
+17:48 okay and then you would look at how much
+17:52 revenue i don't know per user each group
+17:55 would
+17:56 generate right and then based on that
+17:57 you decide whether you should stick with
+17:59 the old version or
+18:02 you know go with the new one right
+18:04 exactly
+18:06 and why can we just can't we just trust
+18:08 our gut feeling so in this case let's
+18:10 say
+18:11 you have this experience from king and
+18:13 you know that for
+18:15 users they really like this little
+18:17 gamification and then they would also
+18:19 some of them would pay to actually to be
+18:21 able to go to the next level of bubble
+18:24 witch
+18:25 or some other game so can't you just
+18:27 trust your gut feeling and say okay
+18:29 trust me it will work let's uh let's go
+18:32 ahead and deploy it
+18:33 yeah i mean
+18:35 gut feelings are great
+18:37 generally just to come up with ideas and
+18:39 i think there are probably some
+18:42 some decisions where i would say maybe
+18:44 it's too hard to test maybe
+18:46 it's too much effort to test or
+18:47 something like that and then
+18:50 expert opinion is is a good way to go
+18:52 but in any case i think
+18:54 the challenge with
+18:56 um
+18:58 with expert opinion is like you can
+19:00 devise
+19:01 saying you know users like a
+19:03 subscription or user like a certain type
+19:05 of feature but then i think
+19:07 how you then implement this general idea
+19:10 of a feature um
+19:13 can
+19:14 still like go a myriad of different ways
+19:16 and some some implementations may work
+19:19 perfectly and then you know
+19:21 you you can trust your gut feeling or
+19:23 your your expert vision
+19:25 but some may also be
+19:27 you know just not be very user-friendly
+19:29 or something like that
+19:32 and those you probably want to want to
+19:34 understand or catch early
+19:37 so like this de-risking of a feature i
+19:39 think is a huge aspect of why why we
+19:42 should be doing this
+19:44 um
+19:45 i think the the
+19:47 the other aspect is
+19:50 if if you're working with a product team
+19:52 um that is like continuously iterating
+19:55 on a certain product component or
+19:57 something like that building new
+19:58 features and iterating
+20:00 um
+20:01 then it's it's also good for them to
+20:03 have feedback like specific feedback as
+20:06 like this change that we did
+20:08 gave
+20:09 10 more revenue or something like that
+20:12 or this change only gave like five
+20:14 percent more revenue and when we tried
+20:15 this we actually i don't know um
+20:19 failed and uh revenue actually reduced
+20:21 so to to have these learnings and
+20:24 you know that's actually what builds up
+20:26 expert knowledge
+20:28 so like um
+20:29 i think it's it's
+20:31 it's basically about the organizational
+20:34 kind of like learning as well like the
+20:36 more you test
+20:37 and the more like you test iterations on
+20:40 a similar field
+20:43 the more you kind of understand how
+20:45 users function how
+20:47 what makes them tick and at the same
+20:49 time how you can transfer that knowledge
+20:52 maybe later on so
+20:54 for sure like with most tests if you
+20:57 design them in a good way you can
+20:59 probably abstract some kind of learnings
+21:01 that you could
+21:02 apply somewhere else like
+21:05 the example for when i worked at king
+21:07 was obviously like king has a whole
+21:09 portfolio of games um
+21:12 they had some huge games
+21:14 like candy crush um and then they had
+21:16 some small games um
+21:19 and the small games you can't it's it's
+21:22 harder to break something massively so
+21:24 um they oftentimes did did like little
+21:27 experiments or
+21:29 like more risky stuff on the on the
+21:31 smaller games and when they found
+21:33 that worked out well
+21:35 then they just like could copy that over
+21:37 to all the games
+21:39 so in that way
+21:41 i think that's a that's a really great
+21:43 example how you can how you can kind of
+21:45 multiply and and transfer your learnings
+21:48 quite quickly
+21:49 with other products it may not always
+21:51 work that's that's
+21:53 like
+21:54 directly but indirectly i think you can
+21:56 still get get to learn a lot about like
+22:00 your impact as a team and and the users
+22:02 that you're serving
+22:04 so if uh to summarize uh
+22:07 uh why we should go with a bts not gut
+22:09 feeding the first thing is gut feelings
+22:11 are good just to give you some initial
+22:14 idea but there are thousands of way of
+22:16 implementing this idea which one works
+22:18 best you don't know the only way to find
+22:20 out is iterate and see how users react
+22:22 this way you learn from users you can
+22:25 attribute um to see like this feature
+22:28 brought x amount of um
+22:30 uplift to our metric we care about for
+22:33 example revenue and then we know okay
+22:35 this is what users really like i think
+22:37 that you can maybe run cure features by
+22:39 the impact
+22:41 now so you have this learning uh was
+22:43 there something else uh
+22:46 no i think that's a good summary maybe
+22:47 one more aspect is like imagine
+22:51 from one day to another your revenue
+22:53 like cuts in half huge crisis in the
+22:55 company like where what happened right
+22:58 if you
+22:59 like the
+23:01 previous couple of days like just rolled
+23:03 out new features without a b testing
+23:06 like you wouldn't know is it because of
+23:08 them like did they ruin it you roll
+23:10 those
+23:11 releases back and hope for the best um
+23:14 and maybe that fixed it or not but
+23:16 yeah with an a b test you could just
+23:18 like open the data and have a quick peek
+23:20 and say okay
+23:21 both groups go down it's something else
+23:24 right
+23:25 so that also helps
+23:27 just another aspect
+23:29 yeah and i
+23:30 realized that you mentioned this diri
+23:31 skin thing so if you have a big game
+23:34 like candy crush you want to be very
+23:37 careful with the changes you introduce
+23:39 because they will affect a lot of users
+23:41 and then if it brings i don't know a
+23:44 huge pie of the revenue right so you
+23:46 want to be super careful there
+23:48 and you want to test if every change you
+23:51 make actually brings this uplift yep
+23:55 so now we know that kb tests are good we
+23:58 need to experiment
+24:00 and how do we start with this so let's
+24:02 say you join a company a startup so at
+24:05 this startup they do not experiment yet
+24:08 they already have a data
+24:10 a data engineering team or maybe a data
+24:11 engineer single person who put together
+24:14 some infrastructure
+24:15 so the company is already tracking some
+24:18 events these events hopefully end up in
+24:21 a day-to-day house where we can i don't
+24:23 know bigquery or athena or some other
+24:26 tool you know snowflake i think is
+24:28 popular these days
+24:30 so we have this infra and you join this
+24:33 company as a product analyst right and
+24:36 uh
+24:38 how do you go about setting iab tests
+24:40 there setting up this experimentation
+24:42 culture in this company
+24:44 yeah um that's a good question i've
+24:47 never been at that stage where i had to
+24:49 set everything up from scratch so one
+24:51 thing i i uh
+24:54 i would probably think about first is um
+24:58 kind of have like two roads to take that
+25:01 in some sense like have major
+25:03 implications down the line and the on
+25:05 the one hand so there are
+25:07 kind of like
+25:09 third-party tools that um
+25:11 that you can purchase that gives you
+25:13 kind of like the the all-in-one kind of
+25:15 packaging of like
+25:17 doing a b testing doing the analysis and
+25:20 all and so on like stuff like optimizely
+25:22 google optimized firebase and
+25:25 they all have like
+25:26 varying amounts of features probably
+25:29 optimize least most complete that serves
+25:31 you like a nice analysis dashboard at
+25:33 the end
+25:34 um
+25:35 so i have never actually worked at a
+25:38 company where we use these
+25:40 these third-party tools um
+25:42 at king bubble and and now also at inkit
+25:45 we kind of have our in-house tools um
+25:50 which is
+25:51 i would say it's probably much more
+25:53 effort to actually do it but at the same
+25:55 time you have like full transparency um
+25:59 so i think
+26:01 yeah i i can't really give like a fair
+26:04 advice is like which road to take when
+26:06 when you're at the very beginning
+26:09 but i would say like
+26:11 it depends a bit
+26:15 probably at the beginning
+26:16 um the the experiment setups are going
+26:19 to be very specific and probably a bit
+26:21 basic and maybe then it's fine to use an
+26:23 external tool that just like
+26:26 splits the traffic split quickly
+26:29 and gives you some feedback in terms of
+26:31 i don't know events and you can choose
+26:33 either to
+26:34 manually do the analysis or look at
+26:37 their dashboard or something like that
+26:38 that they serve you
+26:40 the nice thing about that is like you as
+26:43 the first product analyst going to be
+26:45 probably the poor person having to do
+26:46 all the work if if there's a tool that
+26:49 that already
+26:50 gives you
+26:51 like
+26:52 basically a does something or like that
+26:54 automatically maybe it's good
+26:57 um
+26:59 that's that's i think one way to go with
+27:01 um at the beginning the other way would
+27:03 be to really work with engineers and
+27:05 build your own traffic splitter so
+27:08 something in the back end that basically
+27:10 can get and can receive an api call and
+27:13 then say this user b or this user a or
+27:16 something like that and then
+27:18 whatever product we're working with
+27:20 let's assume it's an app or something
+27:22 like that
+27:23 the app can then receive that and based
+27:26 on that um show a specific um
+27:29 experience
+27:30 and um
+27:32 yeah with see the traffic splitter
+27:35 i mean it doesn't do something very
+27:37 difficult right you just have to be
+27:38 careful that it actually randomizes
+27:41 whatever is doing and it randomizes on
+27:43 the right level so what unit of
+27:45 randomization
+27:46 is that the user id is a session id like
+27:49 a cookie or something like that
+27:53 and
+27:55 my my next suggestion would be
+27:57 build as much tracking around this
+27:59 process as possible so not only tracking
+28:03 well here's the assignment this user is
+28:05 a or this user is b but you actually
+28:07 want to understand
+28:09 does the app always call the traffic
+28:11 splitter at the right time that's the
+28:13 traffic splitter always gives a sensible
+28:15 result is that received properly and
+28:17 these sorts of things
+28:19 because they're the first complications
+28:21 can start
+28:22 what if the internet connection is bad
+28:25 what will the app do then right will it
+28:27 just
+28:28 say
+28:29 well don't have a call so
+28:32 i'm just gonna say that user is in group
+28:34 a
+28:36 and that's already the first point where
+28:38 that's not how it should work because
+28:40 then every offline user is a control
+28:42 user obviously all of a sudden and
+28:44 you're gonna get very biased results
+28:45 like these sorts of things so
+28:48 kind of from scratch i think you need to
+28:50 build out a system that you can like
+28:51 fully monitor and
+28:53 build trust in because if you don't
+28:55 trust that system then you can forget
+28:57 about your a b tests
+28:59 um
+29:00 a good way to understand what's
+29:02 happening there is to do an aa test so
+29:04 really let the traffic splitter split
+29:06 but the app will just show each group
+29:09 the exact same thing you just track
+29:11 you have two groups they see the same
+29:13 thing so you should ideally be able to
+29:16 to measure the same thing
+29:18 there's only like the difference the the
+29:20 the
+29:21 differences due to due to chance
+29:24 due to like users being individuals
+29:29 but for example if you 50 50 split
+29:34 between test and control um
+29:36 then in an aa test you can at first
+29:39 understand well
+29:40 are the assignments actually 50 50 or is
+29:43 it 60 40 which is a warning sign that
+29:45 something's going wrong
+29:47 or
+29:48 other experiment results i don't know
+29:50 we're tracking some conversion rates in
+29:52 group a it's 40
+29:54 and in group b it's 60
+29:57 then also probably something is going on
+29:59 with the randomization
+30:01 so that's kind of like making making the
+30:04 tool trustworthy and i think it's also
+30:07 worth doing that with external tools
+30:08 because at babel we had the experience
+30:11 that
+30:12 we couldn't really trust them and that
+30:14 was what actually was going on like they
+30:16 gave us like these
+30:18 um
+30:19 not really clean tests like we had
+30:21 wanted 50 50 splits and we got
+30:23 55 45 and
+30:26 we didn't know what was going on
+30:29 so i think that's
+30:31 that's kind of like the trust building
+30:34 um
+30:35 yeah and then i think the next step is
+30:38 really
+30:41 work with the team that does the first
+30:43 test and and properly design it like
+30:46 um and designing the experiment means
+30:49 like properly planning out
+30:51 here which
+30:53 groups do we have
+30:55 which kind of metrics do we want to make
+30:57 a decision based on
+30:58 there should be one metric that
+31:00 shouldn't be five or something like that
+31:01 because
+31:03 results won't be it won't be
+31:07 won't be very clear otherwise
+31:10 and ideally there should be some idea of
+31:12 expected impact
+31:14 you'll probably want to understand the
+31:16 metrics before you actually run the
+31:18 tests so
+31:19 understand like
+31:22 are they super noisy are they fairly
+31:24 stable these sorts of things to kind of
+31:26 understand and plan the duration you can
+31:29 apply statistics for that but
+31:32 like at the basic level at least
+31:34 understand okay revenue per install is
+31:36 probably super noisy whereas
+31:38 i don't know a click-through rate is
+31:40 maybe something that's fairly stable
+31:43 and my recommendation was the first av
+31:45 test just like keep it as simple as
+31:47 possible don't don't plan more than two
+31:49 groups don't
+31:50 do the fancy metrics where you don't
+31:52 even know what to like statistical tests
+31:55 to apply later or something like that
+31:58 don't
+32:00 put it in like a you know
+32:03 very strange logical position that
+32:06 makes it hard to track it or that that
+32:08 makes it
+32:10 challenging um
+32:12 for the product to kind of like handle
+32:14 the request to the server to get the to
+32:16 receive the assignment and these sorts
+32:18 of things so it should be something that
+32:22 you know you can you can understand the
+32:24 technical environment it's not going to
+32:25 give you too many headaches and then
+32:28 yeah in the end it's
+32:30 you know catch making sure that that you
+32:31 catch the data in the right way
+32:33 and do the analysis
+32:35 and um
+32:37 yeah
+32:39 summarize so there are two routes
+32:41 third-party tools and then building this
+32:43 in-house so you need to select the route
+32:45 you want to take then you need to get a
+32:47 good
+32:48 first use case right it should be
+32:49 something simple
+32:52 and then
+32:53 yeah you need to understand the metrics
+32:54 and maybe this is something we can talk
+32:56 a bit more
+32:57 but the first thing
+32:59 as you mentioned is we need to have
+33:01 trust in what we are doing and the first
+33:04 thing we can do is run an aaa test so in
+33:06 a air test it should be
+33:08 the split at the end should be 50 50.
+33:10 the results in each group should be
+33:12 similar and then once we have that once
+33:15 if we have trust in the tool
+33:16 uh
+33:17 then we work closer with the team and
+33:19 then
+33:20 design this experiment right and you
+33:23 mentioned a few things so we need to
+33:24 understand the metric
+33:26 we need to understand if they are noisy
+33:28 or stable what is the expected impact
+33:31 and i have a few questions about this so
+33:34 first of all
+33:35 what is the noisy metric what does it
+33:37 mean for a metric to be noisy
+33:40 well um i think the simplest way to to
+33:43 look at
+33:45 noise is just to track a metric over
+33:48 time let's look i don't know look at a
+33:50 conversion rate daily or
+33:52 revenue daily or something like that if
+33:54 it fluctuates a lot um
+33:58 you know like a stock price or something
+34:00 like that that means it's
+34:02 it's probably very noisy like think
+34:04 about
+34:05 if you had two of these lines
+34:08 that are like going like this and you
+34:11 you need to be able to distinguish and
+34:13 and say just from looking at it
+34:16 is it easy to say whether these lines
+34:18 are one line is like clearly
+34:20 outperforming the other line or not
+34:22 um
+34:23 that's in the end like what's gonna
+34:25 gonna be spit out of the experiment and
+34:27 you have to make sense of so if if it's
+34:29 two lines and they just like go like
+34:31 this
+34:33 yeah very easy to say right um but if
+34:35 it's if they go like this then it's
+34:38 gonna be much harder to say and that's
+34:39 kind of like how i would think about
+34:41 noise in an intuitive sense of course
+34:43 you could you know
+34:45 say standard deviation very high or
+34:47 something like that and
+34:49 throw some statistics at it but i think
+34:51 that's
+34:53 the intuitive way of looking at it like
+34:54 how how much variation do i see when i
+34:57 look at a time series
+34:59 and unstable is the opposite of a stable
+35:02 metric is the opposite of a noisy metric
+35:04 right so stable means that it doesn't
+35:06 oscillate too much right it's not
+35:08 jumping
+35:10 back and forth so and then when you plot
+35:13 i don't know a metric for group a and
+35:15 group b you can clearly see that this
+35:17 blue line is better than this green line
+35:19 right so yeah
+35:21 you can make a decision okay this group
+35:23 is better but if they're constantly
+35:26 overlapping then it's very difficult
+35:28 right yeah another another aspect of
+35:31 this that is um
+35:33 that is relevant for a lot of metrics
+35:35 and then that i think in the end like
+35:37 you have to
+35:38 really analyze for each product is um
+35:41 are there any like specific
+35:42 seasonalities or patterns in the data so
+35:45 for example
+35:47 on entertainment products you're
+35:48 probably gonna have like higher usage on
+35:51 on the weekends than the weekdays or
+35:55 these sorts of things so
+35:57 um that means for example that you
+35:59 probably shouldn't run an experiment
+36:01 that only runs on the weekend two week
+36:03 weekend days and then it's done
+36:05 um you probably want like a full weekly
+36:08 cycle to have unbiased results um
+36:11 because maybe
+36:12 what could be such metrics like i know
+36:15 how much time people spend in games so
+36:18 probably maybe they spend more time
+36:20 i don't know when people spend maybe on
+36:22 the weekend right they spent more time
+36:24 on the phone because
+36:25 on the
+36:26 working week they have i don't know go
+36:28 to school or work or
+36:30 yeah
+36:31 yeah something like that um
+36:33 think about
+36:35 um
+36:37 game rounds per user
+36:39 will probably be higher on on the
+36:40 weekend
+36:41 right
+36:42 retention rates also very common
+36:46 metric
+36:48 will probably also be higher on the
+36:49 weekend
+36:50 um
+36:52 yeah so each of these kind of have like
+36:54 these weekly cycles um but there may
+36:56 also be
+36:58 products like
+36:59 thinking about tax fix like this uh this
+37:02 uh company where you can
+37:04 with per app submit your uh submit your
+37:08 taxes in germany
+37:10 well they're going to have like their
+37:12 big boom
+37:13 beginning of the year or like first half
+37:15 of the year and then in december
+37:16 probably there's not that much going on
+37:18 right so
+37:19 there are these like business cycles
+37:21 even even on a larger scale
+37:24 um that you kind of have to anticipate
+37:26 of course like we're not gonna run an
+37:28 entire year experiment to control for
+37:31 that but um
+37:32 i think you at least have to have to be
+37:34 aware because that's also going to
+37:36 determine how many users will actually
+37:38 go into the
+37:39 experiments like how much traffic it
+37:41 actually gets
+37:44 and yeah you mentioned this uh
+37:46 duration
+37:48 so well for metrics that have this uh
+37:52 uh you know
+37:53 uh
+37:54 oscillations that there are more users
+37:56 on the weekend so there we need to plan
+37:58 to at least
+38:00 cover the entire week right
+38:02 and what do we need to think about when
+38:04 we are talking about duration when we
+38:06 plan for how long we want to run the
+38:08 experiment yeah
+38:09 so um
+38:11 that's actually where we could imply in
+38:14 in like typical frequent statistics
+38:17 there's something
+38:18 called power analysis and the idea is
+38:20 basically you plug in
+38:23 all the requirements that you have for
+38:25 your for your experiment
+38:28 and
+38:29 some some like property statistical
+38:31 properties of the metric that you're
+38:33 looking at and based on that it will
+38:35 spit out like how many observations do
+38:37 you need to make a decision so the idea
+38:39 is basically we want to make sure that
+38:41 we have
+38:42 enough observations
+38:44 to
+38:45 um
+38:46 like reasonably well detect for example
+38:49 a five percent improvement on some
+38:51 metric or something like that
+38:53 and then based on that you can basically
+38:56 take this five percent improvement of
+38:58 the metric and the metric itself
+39:01 it's it's standard deviation and and
+39:04 mean
+39:05 and
+39:06 that then really depends on how is the
+39:08 metric statistically distributed but if
+39:10 it's for example a conversion rate it's
+39:13 fairly straightforward to
+39:15 basically
+39:17 like use this idea of the z-test and for
+39:19 that there's there's a simple formula
+39:21 for uh for the power analysis and we
+39:23 basically will spit you out okay you
+39:25 need
+39:27 say 2000 observations and then based on
+39:30 based on that result you can actually
+39:32 look at your daily traffic like how many
+39:34 users do i get on
+39:37 on that page for example where the where
+39:39 the a b test triggers
+39:41 every day and just estimate like how
+39:44 long do i need to run this roughly
+39:47 and that's then something that on the
+39:49 one hand
+39:50 you can use to determine
+39:52 well
+39:53 at this stage now i can do my analysis
+39:56 but also talk to stakeholders and say
+39:58 okay we need to get this running roughly
+40:00 like three weeks or something like that
+40:03 um
+40:04 yeah
+40:06 oftentimes
+40:07 once you have like a b test running you
+40:10 know um as an analyst
+40:12 one day later you're going to get some
+40:13 questions about from the product manager
+40:15 and it's basically how's it doing how's
+40:17 it doing
+40:19 this is dangerous to give into these
+40:21 things
+40:23 and uh yes you mentioned that uh there
+40:25 is a simple formula and i saw these
+40:28 calculators so you don't even need to
+40:30 look at the formula you just go uh
+40:32 there's a like on online calculator you
+40:34 go you put some
+40:36 numbers there and then it says okay you
+40:39 need that many samples
+40:40 and
+40:41 i'm wondering how much statistics do we
+40:44 actually need to know as data scientists
+40:46 or as product analysts to be able to run
+40:49 eb tests if we have these simple
+40:50 formulas if we have these online
+40:52 calculators do we even need to bother
+40:55 with you know knowing the internal so we
+40:57 just can use these calculators and
+41:00 yeah
+41:04 i think you know to be honest i would
+41:07 say
+41:08 in the most basic format like i i i said
+41:12 um that you could also just look at time
+41:14 series and if they're like if they look
+41:16 very different
+41:18 probably don't even need statistics for
+41:20 it um like they're i think
+41:23 for very obvious um uplift between uh
+41:27 test and control probably
+41:30 you won't need statistics i think the
+41:32 statistics will just tell you when you
+41:34 can't tell with your own eyes any longer
+41:37 what's right and what's wrong
+41:40 so i think
+41:41 you don't necessarily need somebody
+41:44 who's like super advanced statistics
+41:47 if
+41:48 you know if you did like a university
+41:51 course or something like that and
+41:52 probably refresh your knowledge on
+41:55 how
+41:56 do hypothesis tests work i don't think
+41:58 it's super necessary to be able to
+42:00 derive formulas or something like that
+42:02 but you know what is
+42:05 what are like type 1 type 2 errors how
+42:08 do i control for them and that's
+42:09 basically like you know setting the
+42:11 confidence level and understanding what
+42:13 the confidence level means understanding
+42:15 how to interpret p-values and these
+42:17 sorts of things and
+42:19 um i think
+42:20 that's the most important thing
+42:23 um the next part i think if you're
+42:26 testing
+42:27 on only like these rates that just are
+42:30 always between zero and one like
+42:32 conversion rates retention rates i think
+42:34 that's enough
+42:36 but um
+42:37 the challenge is when you go
+42:39 into like metrics that
+42:42 um yeah get a bit more
+42:46 difficult actually to describe
+42:47 statistically so
+42:49 revenue per install for example um i
+42:52 think is a great example of
+42:56 you know there's also the t-test
+42:58 half the world probably applies the
+43:00 t-test to everything um but it may or it
+43:03 may also be a bit um
+43:06 at times very misleading and i think
+43:08 especially with this data where
+43:11 for ninety percent of users uh you know
+43:13 the outcome is zero and then for one
+43:15 user it's like 59 or something like that
+43:19 like you see these very extreme values
+43:21 then
+43:22 that's actually where you have to be
+43:24 really careful
+43:27 in in your choice of statistical tests
+43:30 and then it i think it really helps
+43:32 having a bit like more in-depth
+43:34 knowledge of um
+43:36 of statistics
+43:39 yeah so i think it really depends like
+43:42 how advanced it gets if if you have very
+43:44 complicated metrics it's definitely
+43:46 worth to have somebody
+43:48 that knows a bit more about it knows how
+43:50 to kind of like choose an appropriate
+43:52 distribution and these sorts of things
+43:56 because yeah i
+43:58 i think oftentimes you know nothing like
+44:00 super bad will happen necessarily if you
+44:03 don't choose the perfect test
+44:06 but you may have to wait way longer or
+44:08 something like that
+44:10 will need way more data than
+44:12 necessary for example if like
+44:14 you can't
+44:15 apply a t-test so you're doing a
+44:18 non-parametric test
+44:21 or something like that
+44:23 that just
+44:24 in terms of like
+44:26 what kind of um
+44:28 what kind of uplift or um or increase in
+44:31 the in the mean it can detect it'll be
+44:34 less efficient it'll take so much more
+44:36 observations for example
+44:38 how can we pick this up like let's say
+44:41 uh so for those who have no idea what
+44:44 well maybe t-test is quite a widespread
+44:46 thing uh but for those who don't know
+44:49 what a t-test is what uh
+44:51 this non-parametric test but maybe we
+44:53 did some machine learning so or i don't
+44:56 know some analytics uh in the past uh so
+44:59 what could be a good resource
+45:01 uh to pick this
+45:02 up um
+45:05 how much math do we need for that
+45:08 i would say
+45:11 actually not necessarily a lot of like
+45:15 math um i would say like you know if you
+45:18 if you are familiar with python or with
+45:21 r there gonna be tons of packages where
+45:23 you can apply these sorts of tests
+45:25 um and i think the more interesting part
+45:28 is to actually
+45:29 look at histograms see how they fit
+45:32 distributions and these sorts of things
+45:33 so that's
+45:34 kind of where the statistical model
+45:36 comes in like
+45:38 does my data or does the mean of my data
+45:40 look like
+45:42 normally distributed if yes
+45:45 life is very easy usually
+45:48 um if it looks similar to normally
+45:51 distributed but it has very fat tails so
+45:53 you have like these much higher chance
+45:56 of having seeing extreme values
+45:58 then
+45:59 it gets more difficult and i think it's
+46:02 mostly about like visualizing and making
+46:05 sure um
+46:06 that you understand the distribution of
+46:08 your data
+46:09 and that you maybe know some like basic
+46:11 distributions that you can throw on it
+46:13 and compare it with
+46:15 but
+46:16 i don't think you need to be
+46:19 super into math unless you're doing like
+46:21 proper research on statistics do you
+46:23 know any good
+46:24 like crash course maybe tests that do
+46:26 not involve does not involve a lot of
+46:28 math but it's more like practical if
+46:30 your data looks like this use this test
+46:33 if your data looks like that use the
+46:34 other test
+46:36 honestly i don't know
+46:38 i mean i'm pretty sure there are tons of
+46:40 like
+46:41 i would say there's probably more that
+46:43 you can find on uh
+46:46 on on
+46:48 online than than in real books i've
+46:50 rarely found like a good book on a b
+46:52 testing that
+46:54 is not
+46:55 just like a statistics course
+46:58 um
+46:59 or
+47:00 i don't know how to apply statistics in
+47:02 python or are
+47:03 um there's one book i can really
+47:05 um recommend but it's more of a
+47:09 practical guide and it's
+47:12 it touches upon almost everything except
+47:14 for statistics um which is i think
+47:16 oftentimes like the harder part to
+47:18 obtain um but i would yeah i would say
+47:21 in the end
+47:22 um
+47:24 like my advice is also when starting to
+47:27 a b test
+47:29 probably
+47:32 it's only ten percent of the effort like
+47:33 thinking about how how
+47:35 things are statistically distributed
+47:37 there's surprisingly so many other
+47:39 things that are going on and can go
+47:41 wrong
+47:42 design um
+47:43 right thinking of metrics and yeah yeah
+47:46 yeah
+47:48 yeah we have quite a few questions and
+47:50 we already talked about well you
+47:52 mentioned
+47:53 the frequencies approach and then
+47:56 so the the question is related to that
+47:58 can you please explain like m5 what
+48:02 the p-value is
+48:07 um or maybe like five is a bit tough
+48:10 maybe like m10
+48:12 yeah
+48:13 um
+48:17 well i i'm just gonna try to explain it
+48:20 in simple words and then i'm not sure if
+48:22 it's appropriate for 10 year olds um
+48:25 but basically it gives you an
+48:27 idea
+48:28 how likely is it that you see the
+48:31 results that you see from your test
+48:33 let's say i don't know
+48:35 tests
+48:36 the test group has a five percent better
+48:38 performance than control
+48:40 how likely is it that you would see such
+48:43 a result
+48:44 um
+48:47 in an aaa test basically so there you
+48:49 don't have a treatment it's the same
+48:51 thing and you um
+48:53 you test the exact same thing in both
+48:55 groups but with the same kind of like
+48:57 from the same user population and you
+48:59 would still get a five percent uplift um
+49:03 so the p value is kind of like um
+49:07 an indication of
+49:09 how
+49:11 what are the chances that that this is
+49:13 like
+49:14 out of the ordinary that that this is
+49:16 not by chance
+49:18 um
+49:20 so the lower it is the the
+49:22 the more likely is that there's
+49:24 something else going on than just like
+49:25 the typical noise that you see
+49:28 yeah this is such a good explanation
+49:30 because usually like the p-value is
+49:32 the probability of rejecting the null
+49:34 hypothesis under and then like when i
+49:36 read this my mind just blows and then
+49:39 yeah this is very always very difficult
+49:41 to understand and then this is uh like
+49:44 probability of rejecting and then yeah
+49:47 but the
+49:48 way you put it is like you compare it
+49:50 with aa test right and what's the what's
+49:52 the probability you would see it under a
+49:55 test that makes a lot of sense and this
+49:57 is a lot easier to uh to understand and
+49:59 to explain probably to people who do not
+50:02 uh have mad background who hasn't who
+50:04 haven't studied statistics because if
+50:06 you start telling them about null
+50:07 hypothesis they will just you know their
+50:10 mind will go blank right yeah yeah
+50:12 exactly i think it's uh
+50:15 that's the fun thing like
+50:17 um i think there's like a
+50:20 you need to strike a balance like you
+50:22 you're always gonna as a data scientist
+50:24 people are not going to trust you if if
+50:26 you
+50:27 or like they're just going to be
+50:28 impressed like they're also like these
+50:30 typical people of like oh i feel you're
+50:33 the smartest guy in the room whatever
+50:36 whatever you tell is probably like a
+50:38 super smart idea but like if you can put
+50:41 it in simple terms they'll understand it
+50:43 and um
+50:46 they'll probably
+50:47 believe in the results more than than if
+50:50 you if you keep it very abstract so it's
+50:52 actually like when i interview people
+50:55 for for these types of
+50:57 like analyst position i just asked them
+51:00 always to explain
+51:02 these those are terms in
+51:04 like a way that a product manager with
+51:06 zero statistics background could kind of
+51:08 relate to um you know and of course it's
+51:12 always going to be a bit
+51:13 simplified or simplistic and a
+51:16 statistician would get nervous or
+51:18 something like that but
+51:19 at least that it's not misleading you
+51:21 know
+51:23 do you remember any good answers that
+51:24 you got
+51:26 well in addition to this aa test
+51:29 um
+51:33 i i think it's always kind of like a
+51:35 similar answer uh so far i've actually
+51:38 not had so many
+51:41 well maybe i'm also biased myself just
+51:43 because that's just my answer to it
+51:46 um
+51:48 but yeah um
+51:51 no no i i
+51:52 like off the bed i can't tell
+51:55 what do you think about this other way
+51:57 of doing tests the other way is so we
+52:00 have the frequentist approach to testing
+52:02 and then we have the bayesian approach
+52:03 to testing which i think
+52:06 um correct me if i'm wrong but there is
+52:07 no notion of p-value in bayesian tests
+52:10 right so what do you think about this
+52:12 yeah um
+52:14 i think
+52:16 so oftentimes i think like people stay
+52:18 take very strong sides um and bayesian
+52:22 is
+52:22 i think a bit more popular because it
+52:24 sounds much more exciting and it's a bit
+52:26 more like the hype these days
+52:29 um i think
+52:30 both you know both approaches work
+52:34 um and both have like
+52:37 some pros and cons i think like the
+52:39 frequentist
+52:41 um approach is just it's well adapted
+52:44 you know
+52:45 um as as
+52:46 as we mentioned like we have like these
+52:48 online calculators
+52:50 we have methods
+52:52 or like packages implemented in almost
+52:55 all like
+52:56 um data programming languages
+53:00 that
+53:01 let you analyze data in a very
+53:03 convenient way with like frequency
+53:04 statistics
+53:06 almost all people that had some
+53:08 statistics course
+53:11 will have like been exposed to like this
+53:14 basic idea of hypothesis testing they
+53:16 have heard
+53:17 about confidence intervals about
+53:19 p-values and these sorts of things so
+53:21 like the
+53:22 the terms that you work with are like
+53:24 well-established it's
+53:26 they also usually like
+53:28 easy to calculate so computationally
+53:31 it's cheap you can
+53:32 you know think about automating a b
+53:35 testing in a large company where you run
+53:38 like hundreds of tests
+53:40 and you want to update the results every
+53:41 day then it's
+53:44 nothing to worry about basically
+53:46 um
+53:48 but yeah the i think the challenge is um
+53:51 as he said like
+53:53 the the formal definition of what is a
+53:55 confidence interval and what is it
+53:57 what does it mean or a p-value is fairly
+54:00 abstract right um it's not not something
+54:03 that how how we relate to things like in
+54:05 in
+54:07 in
+54:08 in our daily life
+54:10 um
+54:11 yeah and the other the i think the other
+54:13 drawback is really that um
+54:17 you each test um
+54:20 is based on various specific assumptions
+54:23 and you often times or
+54:25 fairly quickly may run into a situation
+54:27 where you just don't know what is a good
+54:30 test to fit your data and then
+54:32 yeah you can apply these non-parametric
+54:34 tests as i said but they may not be
+54:36 super efficient i think the bayesian
+54:40 bayesian approach on the other hand um
+54:43 you know
+54:44 the outputs that you get from it you can
+54:47 construct very intuitive things like a
+54:50 credible interval um
+54:53 is actually something much more
+54:55 intuitive than um than a confidence
+54:58 interval although it doesn't look the
+55:00 same
+55:01 what is the credible interval
+55:03 it just literally
+55:05 tells you
+55:06 there's a 95 chance that
+55:09 um your mean
+55:11 is within these boundaries whereas the
+55:13 confidence interval says basically
+55:16 if you repeat this experiment 100 times
+55:19 than 95 out of these times
+55:22 you get a
+55:23 confidence interval that may not look
+55:25 like this but the true mean is in there
+55:29 that's super confusing yeah
+55:32 so the credible interval is like super
+55:34 easy to work with but you can also you
+55:36 can you can calculate win and loss
+55:39 probabilities right so you can say that
+55:41 this test um like that or the test
+55:44 version of my a b test has like a 60
+55:48 chance of winning and then
+55:49 with that it's super easy to
+55:52 to talk to product managers and discuss
+55:54 with them hey
+55:56 this we're going to roll this out if we
+55:58 see like a 80 win winning probability
+56:00 right so that's like a huge
+56:04 i think um
+56:05 pro of the bayesian approach it's
+56:08 like the outputs that you get are very
+56:10 intuitive um
+56:12 i think the
+56:13 another factor is like it
+56:17 there's a lot of like very explicit
+56:19 modeling in it but you you still
+56:22 you need to understand a bit more about
+56:24 the statistics behind it so you can you
+56:27 can choose priors you have to think
+56:29 about what priors to pick
+56:31 from which distribution they come from
+56:32 then you have to model like the actual
+56:34 data distribution
+56:36 based on that you're going to get some
+56:38 posterior so there's like a lot of
+56:40 modeling choices that you can do and
+56:41 based on that
+56:43 you can have like really great result
+56:46 quality maybe in
+56:48 like with less observations than
+56:49 actually
+56:50 a frequentist approach
+56:52 um
+56:54 but you can also yeah i think do do
+56:57 things
+56:58 um wrong very easily if you just like
+57:02 throw
+57:03 throw some data into some random model
+57:05 and then
+57:06 it computes something and the other
+57:08 thing is
+57:09 um
+57:10 for most you know again you're very
+57:13 quickly gonna gonna end up in a world
+57:15 where there's no analytical solution for
+57:18 um for the approach that you take and
+57:20 then you have to do simulations like
+57:22 this mcmc modeling
+57:25 which can get computationally expensive
+57:27 so at inkit
+57:30 for example we run
+57:32 currently like hundreds of story tests
+57:36 um now imagine for every test you have
+57:38 to do like simulations i don't know
+57:43 5 000 like draws from or something like
+57:45 that to
+57:47 just for uh one group of one test
+57:51 um
+57:52 you need a powerful computer
+57:54 computational resource for that for sure
+57:57 um
+57:58 yeah and that's i think that's one of
+58:01 the problems with it for sure like if
+58:02 you if you want to automate something
+58:04 like that and you're
+58:06 it's it's it's harder to scale um and
+58:09 the other aspect that is oftentimes
+58:11 forgotten is like you can still run into
+58:13 the same errors that you do with like
+58:15 frequency statistics so type 1 and type
+58:17 2 errors are still
+58:18 something that you need to deal with
+58:20 there's only not such a clear framework
+58:23 for it so
+58:24 um you can still make wrong decisions
+58:27 um or misleading decisions and you can
+58:30 still not
+58:31 detect effects um
+58:33 and
+58:34 that i don't know there may be there may
+58:36 be ways of actually controlling that as
+58:38 well like invasion statistics but at
+58:40 least i think it's
+58:41 uh not something that is like
+58:44 the knowledge is not super available
+58:45 about it at least um
+58:47 yeah so i think it's it's it's much more
+58:51 um
+58:52 an open field like with frequent as
+58:55 there's tons of literature
+58:57 about problems and corner cases and i
+58:58 think with bayesian approaches you
+59:01 quickly reach the end and then you have
+59:02 to be really confident in what you're
+59:04 doing yourself
+59:07 i see that we are almost running out of
+59:09 time but there is one question that we
+59:11 you perhaps can answer
+59:13 pretty quickly so the question is about
+59:16 abcd tests
+59:18 so what is this a slash b slash c slash
+59:21 d test with respect to a b test and when
+59:24 do we need this complex tests
+59:26 um
+59:28 so
+59:29 when do we need it i think
+59:32 that's probably what
+59:34 if you talk to to product teams that
+59:37 quickly want to iterate on things
+59:39 they want to do those all the time
+59:44 but the idea is basically instead of
+59:46 having one test group you know have
+59:48 three test groups
+59:50 and you can
+59:51 you know going back to this stupid
+59:53 button color example you don't only test
+59:56 like green versus red but you also have
+59:58 blue and here of yellow now on the side
+1:00:00 and you just run it all at the same time
+1:00:02 and you want to find out which one is
+1:00:04 the best
+1:00:07 now you can do that
+1:00:08 there's nothing
+1:00:11 you know there's nothing that's that
+1:00:13 methodology methodologically
+1:00:16 is problematic about it but you're kind
+1:00:18 of
+1:00:19 when you think about duration um
+1:00:21 splitting a population into two parts
+1:00:23 and and reaching the required sample
+1:00:26 size for it is going to be faster than
+1:00:28 doing it
+1:00:29 if um if you have like a
+1:00:32 25 in each group so the test will run
+1:00:35 longer to detect the same effect
+1:00:37 um that's one of
+1:00:39 one problem
+1:00:41 oftentimes because you know
+1:00:44 we all wanted
+1:00:45 like
+1:00:47 get things over with quickly
+1:00:49 and the other pitfall that can be is
+1:00:52 just
+1:00:54 um going back to this frequentest
+1:00:57 approach like basically you always
+1:00:59 usually set like this five percent
+1:01:00 confidence level and that really tells
+1:01:03 you
+1:01:04 i
+1:01:05 want to um
+1:01:07 make
+1:01:08 like i want to limit the chance of type
+1:01:10 one errors to to five percent so
+1:01:12 basically seeing
+1:01:14 seeing uh you know
+1:01:16 a test say
+1:01:19 uh this has an impact
+1:01:21 um
+1:01:22 even though in in reality it doesn't
+1:01:24 have an impact
+1:01:25 um that chance is is fairly small
+1:01:29 now when you have to
+1:01:31 do pairwise comparisons where in abcd
+1:01:35 tests then uh you you're not only doing
+1:01:38 one test decision you're doing a versus
+1:01:40 b you're doing a versus c a versus d b
+1:01:44 versus
+1:01:45 and so on right
+1:01:46 so all of a sudden you have a much
+1:01:48 higher chance that one of those is wrong
+1:01:50 um
+1:01:52 and maybe that's fine
+1:01:54 maybe you also want a limit and just
+1:01:56 want to say
+1:01:57 i want to compare a versus b i just want
+1:02:00 to compare a versus c and a versus d and
+1:02:02 i don't want to compare like the the the
+1:02:05 three groups in between each other but
+1:02:07 in reality
+1:02:09 of course you will you want to do that
+1:02:11 right so
+1:02:12 then you kind of have to think about how
+1:02:14 to
+1:02:16 make sure that
+1:02:17 with that you know at some point you're
+1:02:19 not going to end up deciding on
+1:02:21 something that may just by chance have
+1:02:24 an effect
+1:02:25 um
+1:02:26 i mean the simplest example of that is
+1:02:28 like let's imagine we have 20 groups
+1:02:32 and then this 5 chance will
+1:02:34 you know you
+1:02:36 if you do 20 tests then one of them will
+1:02:38 have an impact
+1:02:39 20 aaa tests
+1:02:41 by chance
+1:02:42 um
+1:02:44 so yeah
+1:02:45 these sorts of problems can be can
+1:02:48 become very prevalent with like multiple
+1:02:51 test groups
+1:02:52 okay thanks so i actually wanted to ask
+1:02:54 you about pizza dove as well
+1:02:57 which we didn't have a chance to talk so
+1:02:59 maybe do you have any resource that you
+1:03:01 can recommend us
+1:03:02 to learn more about this topic and a b
+1:03:04 tests maybe how can we test the best
+1:03:07 pizza stuff with
+1:03:09 you know heavy tests
+1:03:12 i have never tested so that's one of the
+1:03:14 things where i don't a b test um maybe i
+1:03:17 should do it
+1:03:18 right
+1:03:20 um
+1:03:22 yeah i i think how to get good at pizza
+1:03:25 dough also just like practice a lot um
+1:03:27 invite people over so that he can
+1:03:29 produce a lot of pizza dough
+1:03:33 and not just like for one or two pizzas
+1:03:35 and then like keep on keep on doing it
+1:03:37 but yeah i have like this
+1:03:39 in the in the summer i got this portable
+1:03:42 pizza oven which is a lot of fun
+1:03:45 so it heats up high enough that i can do
+1:03:48 like this neapolitan style pizzas in it
+1:03:52 and
+1:03:53 yeah i'm getting very very nerdy about
+1:03:56 though okay yeah so you mentioned that
+1:04:00 you are actually hiring for product
+1:04:02 analysis right so if you have any job
+1:04:05 descriptions linked to your job portals
+1:04:08 please send
+1:04:09 and i will include this in the
+1:04:11 description and who
+1:04:12 like for those who are interested you
+1:04:14 will find the link in the description
+1:04:16 and i guess you can just look up uh look
+1:04:18 it up and get jobs right on in your
+1:04:20 favorite search engine and you will find
+1:04:23 that
+1:04:24 and if somebody has a question to you
+1:04:26 how can they find your linkedin or some
+1:04:28 other um yeah linkedin is probably
+1:04:30 easiest um and they're under my full
+1:04:33 name so jacob graph g r a double f
+1:04:37 should be easy enough to find
+1:04:39 okay thanks a lot thanks for joining us
+1:04:41 today thanks for sharing your experience
+1:04:44 with us thanks everyone for joining us
+1:04:46 today as well for asking questions
+1:04:48 and i wish everyone a great weekend
+1:04:52 thanks
+1:04:53 yeah

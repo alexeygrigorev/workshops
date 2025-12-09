@@ -1,0 +1,1202 @@
+Human-Centered AI for Disordered Speech Recognition
+
+0:00 This week we'll talk about human-
+0:03 centered AI or disordered speech
+0:05 recognition. And we have a special guest
+0:08 today, Katina. Katina is u a
+0:11 computational linguist with over 10
+0:14 years of experience experience in NLP
+0:17 and speech recognition. She has
+0:19 developed language models for automotive
+0:20 brands like Audi and Porsche and
+0:23 specializes in phonetics, morphos syntax
+0:25 and sentiment analysis. Kadina also
+0:27 teaches at the University of Porso and
+0:30 she's passionate about human centered AI
+0:32 and multilingual NLP. Now, welcome to
+0:34 the show.
+0:36 Thank you. I I'm very happy and honored
+0:38 to be here with you today.
+0:41 How accurate was the bio? Because
+0:42 actually I asked Chad GPD to summarize
+0:46 uh your longer bio. So, I hope it was
+0:49 pretty accurate.
+0:50 Yeah, it was accurate. It was quite
+0:52 rich. uh if it was a summary it's still
+0:56 quite quite rich so yeah all is fine
+0:59 always fine
+1:00 so before we go into our main topic of
+1:03 human centered AI and speech recognition
+1:06 let's start with your background I think
+1:07 already
+1:09 gave us um a lot of good ideas of what
+1:12 you did but maybe you can tell us more
+1:14 about your career journey
+1:16 yeah it did it it it job but yeah that's
+1:20 true I I'm a compet computational
+1:23 linguist if I have to uh give you a a
+1:26 short answer. Um on one hand the
+1:29 researcher at the University of Warso
+1:31 also a teacher at the department of
+1:33 Italian studies faculty of modern
+1:35 languages. Uh on the other hand uh I I
+1:38 also worked and work on um NLP projects
+1:44 u for industry for automotive industry
+1:47 as you mentioned uh for high-tech
+1:49 electronics uh and in general um I
+1:53 collaborate with data handling companies
+1:56 u
+1:58 my background is mainly linguistics so
+2:00 this was the starting point um Italian
+2:04 and Polish English at the same time in a
+2:07 in parallel. Uh then with some technical
+2:11 skills added I started my uh adventure
+2:14 my journey as a computational linguist.
+2:18 Um and my main field of interests are
+2:24 sounds let's call them like that. Uh
+2:26 that's why phonatics and that's why uh
+2:29 the topic or of our uh today's uh
+2:33 meeting. Sorry for being too long.
+2:36 Mhm. No, it was not long. And like I I
+2:39 I'm just wondering like in order to be a
+2:42 linguist in Italian, do you have to
+2:46 speak Italian perfectly?
+2:49 It helps. It helps. It helps. You speak
+2:52 Italian, do you? Yeah, I do. Yes, I do.
+2:55 Mhm.
+2:56 Like I usually go to Italy as a tourist
+2:58 and uh yeah funny thing is like I live
+3:01 in Germany and usually they just look at
+3:03 me and start speaking German. Like I for
+3:05 example if I go to Garda which is one of
+3:07 the default locations like vacation uh
+3:10 destinations let's say for Germans I go
+3:13 there and people just speak German with
+3:14 me.
+3:15 Maybe that's why because in general
+3:17 Italians are usually very open and are
+3:19 very happy when you speak their
+3:21 language. So
+3:25 do it do it consistently and
+3:29 at one moment it will it will work.
+3:32 I'm just curious like how difficult for
+3:34 you was a transition from a linguist to
+3:36 a computational linguist because
+3:38 linguistics I might be wrong. I might be
+3:40 wrong.
+3:41 There was a there was an audio problem.
+3:42 I I heard only the first part of the
+3:45 question. How difficult it was for me?
+3:47 How difficult was it for you to become a
+3:51 computational linguist? Cuz I know that
+3:55 uh maybe I'm wrong, but linguistics is
+3:59 more
+4:00 um how to say it's not as mathematical
+4:04 heavy as other disciplines. So when you
+4:07 switch to computational linguistics,
+4:10 now instead of language and words and
+4:12 all that, you have math. How difficult
+4:15 was it for you to to become a
+4:17 computational linguist?
+4:19 You touched two points um and both are
+4:22 interesting. The first that it's far
+4:25 that linguistics is far away from
+4:26 mathematics.
+4:28 Not really. It depends on the approach.
+4:31 U literature can be far away far away
+4:34 from mathematics. linguistics if you uh
+4:38 if you're concentrated on data and
+4:41 relation between your uh data sets uh
+4:47 not necessarily uh and a second thing uh
+4:52 is that being computational linguist
+4:55 linguist is not being only it's not only
+4:59 the first part of the expression so
+5:01 linguistics is still my superpower and I
+5:05 want to keep this uh ability this this
+5:09 approach uh to be very careful to be
+5:12 very attentive uh about uh about the
+5:15 language itself.
+5:16 Mhm. So you were saying that it was like
+5:19 a natural continuation of your um let's
+5:22 say linguist career. It's always a bit
+5:25 of hard work and that's obvious. But at
+5:28 the same time, I think it's easier to uh
+5:31 look for common points to things that
+5:34 that can can help one uh one another and
+5:37 not to to see only difficulties and new
+5:39 things.
+5:42 Like now when you say that depending on
+5:44 how you look, linguistics might not be
+5:46 too far from mathematics. I remember
+5:49 reading what was about like creating
+5:52 this uh syntax trees and like if you
+5:55 think about that like this syntax trees
+5:58 uh the structure when you get like
+6:01 sentence and then what you produce at
+6:03 the end if you think about that that's
+6:06 you kind of have some sort of like
+6:08 algebra there where you try to represent
+6:12 language with something more concrete
+6:16 like and by concrete I mean like
+6:18 something more mathematical, right? And
+6:20 then you operate with these mathematical
+6:22 abstractions rather than letters and
+6:25 characters.
+6:26 Indeed. And it's one one of the main u
+6:30 linguistics perspectives to see the
+6:32 language as a structure and if we do it
+6:35 it becomes quite close to to the
+6:38 approach that you described.
+6:41 So when you were doing this linguistics
+6:43 in Italian, did you first learn Italian
+6:46 and then you started doing linguistics
+6:49 or you first um
+6:52 learned learned the language from the
+6:55 linguist point of view and then started
+6:56 learning it more and more like as a user
+6:58 I started I started learning learning
+7:00 Italian first. So uh first I um managed
+7:05 to communicate in Italian and then I
+7:07 continued as this path already being
+7:10 concentrated on this language. Uh but I
+7:13 also I'm also specialized in Polish
+7:14 linguistics and this was much more
+7:16 natural as this is my first language.
+7:19 Yeah. And uh like in your bio in your
+7:22 biography and that was summarized by CHP
+7:25 it says that you specialize in phonetics
+7:29 more for syntax and sentiment analysis.
+7:32 While I can recognize what sentiment
+7:34 analysis is, I don't know much about the
+7:37 other two things like phonetics and more
+7:39 for syntax like what are they? Can you
+7:41 tell us more? When I started talking
+7:43 about myself, I uh I I said that uh what
+7:48 what's very interesting for me are
+7:50 sounds and phonetics is this part of
+7:53 linguistic language system uh that is
+7:55 all about sounds uh about speech. We'll
+7:59 talk today about speech uh and it
+8:02 usually goes with phonology uh which
+8:07 can explain the uh sounds on a mental
+8:11 level on a uh level that we uh have it
+8:14 in our uh minds. And morphology
+8:18 is all about words how they work uh one
+8:23 with another how they are built. So the
+8:27 if we think about
+8:30 morphologically rich languages as Polish
+8:33 for example um it's all about inflection
+8:37 uh about prefixes suffixes so uh the the
+8:42 structure uh if we want to um use the
+8:45 same word that we already used um so yes
+8:49 and uh I think it's uh extremely
+8:52 important to consider these both
+8:55 perspectives because many um um things
+9:00 that uh um we produce we articulate uh
+9:04 when we speak um definite language is
+9:09 connected with the um with with
+9:12 morphology. So um a lot of u things that
+9:16 we can observe um are result one from
+9:20 another.
+9:22 So we have linguistics and in
+9:25 linguistics we have morphology and
+9:27 phonetics right? Yeah, we can we can go
+9:30 uh go much further and talk about
+9:34 lexical things than semantics the
+9:37 meaning uh we can talk about pragmatics
+9:41 so the use of language but for today I
+9:43 think phonetics speech is the most
+9:47 important uh level um of representation
+9:52 and I'm not sure if you answered this
+9:54 question or not but what is morphos
+9:56 syntax
+9:57 morphos syntax
+9:59 It's morphology. So the knowledge about
+10:02 how
+10:05 words are built with syntax. So uh
+10:08 syntax is all about sentences a bigger
+10:11 segments of the texts. Uh and also here
+10:15 also we can see a very strict link um
+10:19 how we use words uh how they like or
+10:22 don't like each other um has a strong
+10:25 influence on the text itself.
+10:29 So how is it related to grammar or it's
+10:31 like basically the same thing? Grammar
+10:34 uh is u
+10:37 linked with both. But when we use the
+10:39 word grammar, we you usually start from
+10:42 a word uh and we talk how it how it is
+10:45 built and how it is inflicted
+10:49 um if it's a verb or um we talk about
+10:52 declansion if it's
+10:54 so syntax is more higher level think
+10:57 right. So we have words each of them
+11:00 Mhm. each of them is like correctly
+11:02 inclined and uh
+11:05 like is correctly used and then the
+11:08 syntax is overall thing like how we put
+11:10 them together in in sentence
+11:12 and you create sentences. Yeah, the
+11:14 syntax is all about sentence. syntactic
+11:17 is connected with the
+11:18 is it also related to the order of words
+11:21 like for example in German the verb
+11:23 should always must always go to the
+11:24 second position right so that's syntax
+11:27 right
+11:28 that's that is that that's a syntax
+11:30 pattern that that's a thing that studied
+11:32 by uh syntax that's true
+11:35 because for me syntax was always um
+11:38 syntax of a programming language like
+11:41 for example in Java you have to use
+11:42 curly braces that's syntax and if you
+11:44 have if you want to have like the
+11:47 condition then it's if then parenthesis
+11:50 so this is syntax and like I to me I had
+11:54 no idea that actually it comes from
+11:55 linguistics
+11:57 indeed and this is a common point that's
+11:59 a great great example of of what we
+12:03 talked about before uh we we see the
+12:06 same um the same patterns yeah what
+12:10 comes first what comes after what should
+12:12 I use here like in linguistics in in the
+12:14 natural language what preposition after
+12:17 a verb and in uh in syntax of a
+12:21 programming language uh what uh
+12:23 character what what pattern
+12:27 and when it comes to phonetics. So
+12:29 phonetics is how we pronounce words,
+12:31 right? How we pronounce sounds,
+12:34 how we produce basically
+12:35 produce. Yeah.
+12:38 And um we also want to talk about speech
+12:41 disorder. So how are these two
+12:43 connected?
+12:45 Uh quite intuitive. Yeah. If we speak,
+12:48 we can
+12:50 speak in a standard manner or uh in a
+12:54 non-standard uh a typical manner. Uh
+12:58 speech disorders uh are example of in
+13:02 general communication disorders. Um
+13:06 speech disorder, speech impairment,
+13:09 speech uh
+13:12 imperfection uh is all connected with
+13:15 articulation. So pronunciation of
+13:18 different sounds and sounds clusters uh
+13:21 but also with fluency uh also with our
+13:24 voice. Uh so we can uh articul
+13:29 articulate a sound uh in a incorrect or
+13:33 non-standard manner. Uh we can think
+13:37 about different pronunciation of the
+13:40 sound R that
+13:43 we can think now about different
+13:45 languages. Polish is much different than
+13:49 the German one, the French one that you
+13:52 mentioned before. uh and English one uh
+13:56 and they are all okay in their language.
+13:59 But if you if we use a French or uh in a
+14:02 in Polish language, it would be a a
+14:05 typical um a typical pronunciation. Uh
+14:10 some of these speech disorders can lead
+14:14 to mistakes uh to uh difficulties in
+14:19 understanding. Uh not only this
+14:22 connected with uh articulation uh but
+14:25 also those connected with fluency. Uh
+14:28 when we think about uh fluent speaking,
+14:32 we think about u speaking with uh no
+14:36 interruptions or not too many
+14:39 interruptions.
+14:40 um rhythmically uh with not too many
+14:45 repetitions
+14:47 and uh or fluency disorders like
+14:50 stammering, stuttering in other words um
+14:53 are affecting the the fluency and then
+14:57 uh something can uh go wrong with our
+14:59 voice and uh it also results in abnormal
+15:05 uh production of speech uh so-called um
+15:09 speech disorder. there's disordered
+15:11 speech
+15:13 and um like did I understand correctly
+15:15 that accent
+15:17 can also be seen as a speech disorder or
+15:21 it's more like just a typical
+15:24 like is it correct to call accent a
+15:26 disorder?
+15:28 Uh if we if we are talking about foreign
+15:32 accent for
+15:34 like for example right now both of us
+15:35 speak with accents right
+15:38 both of us are native speakers
+15:40 we would not call it a speech disorder
+15:43 all is fine with us um it's just a
+15:46 foreign accent foreigner speech it also
+15:50 can result in um difficulties in
+15:53 comprehension uh but in in another way
+15:58 When we speak about um speech disorders,
+16:01 we usually speak about
+16:07 disorders that are caused by universal
+16:10 biological or neurological causes. Uh so
+16:15 we we we just cannot produce normal
+16:18 speech. Sometimes we know how it sounds
+16:22 uh how it should sound but we are not
+16:24 able to do it. uh sometimes we are not
+16:28 aware uh how it should be produced
+16:31 because of hearing problems for example.
+16:34 Mhm. Yeah. Interesting. But like even
+16:38 with accents I remember like even five
+16:40 years ago if not less
+16:44 many voice recognition systems would not
+16:48 be able to uh correctly transcribe what
+16:52 I say. Right? Like even YouTube like
+16:54 this channel has been around for four
+16:56 years maybe around that. Yeah. At the
+17:00 beginning it wasn't really good but like
+17:02 now things like Whisper
+17:05 Mhm.
+17:05 it works really well with my accent.
+17:07 Maybe my accent also improved. I don't
+17:09 know. Uh could be the case too.
+17:13 I think these systems improved more than
+17:15 my accent. So
+17:17 but still the models themselves
+17:20 that's also true. uh everything that is
+17:22 non-standard uh can cause problems. Uh
+17:26 we usually uh do not treat uh foreign
+17:30 accent. We can work on it if we want or
+17:32 we can just be happy with it uh and be
+17:35 proud of our mother tang accent. Uh but
+17:38 that's true that uh talking about uh
+17:41 speech recognition for disordered speech
+17:44 uh is very close
+17:46 to talking about um speech recognition
+17:50 for any atypical speech uh child um
+17:55 speech included foreigner speech
+17:57 included or all our uh idiosyncratic uh
+18:02 productions. So things that we um say
+18:06 that we pronounce a bit differently
+18:09 because we are used to do that. Uh it's
+18:12 also case of uh dialects varants of uh
+18:16 like Scottish accent for example, right?
+18:20 Some languages have very very rich
+18:23 regional varieties, some not so much. Uh
+18:27 but in general uh we know well uh on
+18:30 this example of Scottish that local
+18:33 regional variant can be far far away
+18:36 from the stand so-called standard one.
+18:40 There was a video uh from the British
+18:43 Parliament or whatever it's called, I
+18:45 don't know, like there was somebody a
+18:47 representative of Scotland and he was
+18:49 trying to say something and then nobody
+18:51 could understand what he's saying or
+18:53 like like they apologized. They ask him
+18:55 to repeat like three times. It was funny
+18:58 like I don't know if
+19:01 in these cases we should we should try
+19:03 to use the standard version just for the
+19:06 uh purpose of good communication but not
+19:09 always it's it's possible on the other
+19:12 hand sometimes maybe it's better not to
+19:17 transmit everything to not to be
+19:19 understood fully
+19:22 I can imagine some advantages of such
+19:25 yeah right so can we talk about species
+19:27 recognition like how does it work in
+19:29 general? And uh before we talk about
+19:32 like speech recognition for a typical
+19:35 speech or disordered speech, maybe we
+19:38 can talk about speech recognition for
+19:41 like how could call canonical speech or
+19:43 like standard or whatever like I don't
+19:45 know what's the right way of saying
+19:46 that.
+19:48 It's a very good m moment or these are
+19:50 very good times to talk about it because
+19:52 much is uh changing in also in this
+19:55 sector. um with uh large language models
+19:59 with generative AI. Erh and uh
+20:04 traditionally the models uh were trained
+20:07 on a uh concrete precise data set uh and
+20:13 then uh the uh
+20:17 production of
+20:18 from BBC for example like if we talk
+20:20 about uh I don't know British English
+20:22 like for example if we just take people
+20:25 from BBC that would be this right
+20:29 very articulate pronounce Usually data
+20:33 collected uh collected
+20:36 according to a prepared scenario but
+20:38 that's a good example of standards.
+20:40 That's a perfect example of standard
+20:42 speech. Uh and u
+20:46 the system was
+20:49 prepared to uh map the um
+20:54 the output of the um the production of
+20:57 the speaker the the words articulated to
+21:00 to the um model to the to the model
+21:04 phrases that it was trained on. Uh now
+21:08 with LLMs we can add uh some context
+21:11 training we can improve recognition and
+21:14 there is also um
+21:17 hope there is also uh um a huge
+21:21 improvement for uh let's not call it
+21:25 disordered speech let's just call it a
+21:27 typical uh speech because we all
+21:30 sometimes speak uh not really fluently.
+21:35 uh we can uh we can have different
+21:37 problems. We can speak very fast or
+21:40 being very slow. Uh so we can all speak
+21:43 atypically. Uh and in these speech
+21:46 disorders or all these atypical um
+21:49 productions can significantly interfere
+21:52 with automatic speech recognition.
+21:54 uh leading to to to poor accuracy
+21:57 leading to uh uh lack of uh uh
+22:01 recognition um because um ASR systems
+22:06 automatic speech recognition systems are
+22:09 uh usually are typically trained on
+22:12 large amounts of data from speakers
+22:14 without speech disorders. Um so handling
+22:18 this uh
+22:21 variations handling these uh not uh
+22:25 standard patterns um can um can be
+22:29 problematic. Um we mentioned some u
+22:34 speech disorders uh that can influence
+22:37 this recognition. We talked about
+22:39 articulation disorders like uh
+22:42 substitutions, omission, distortions of
+22:46 uh phonms, speech sounds. Uh so uh such
+22:51 mispronouncing
+22:53 uh replacing one phonm uh with another
+22:56 can transform I don't know uh risky with
+23:01 whiskey if we coming back once again to
+23:04 this r if we pronounce it um in an
+23:07 incorrect manner. um then uh dropping
+23:11 the final sounds. And here we are coming
+23:13 once again uh to uh to the point where a
+23:17 normal standard speaker uh is close to
+23:21 uh to the one that has some speech
+23:23 impairments. Uh we sometimes all speak
+23:27 in this way that we drop final sounds
+23:29 because we are
+23:30 Yeah. Like if we like now I think about
+23:33 Cockney which is like a dialect of
+23:35 people who live in London like the way
+23:37 they speak they
+23:39 like I saw a video to how to speak
+23:41 Cockney and they said just don't bother
+23:43 pronouncing like the half the second
+23:45 half of the word right so they basically
+23:47 drop it right and then
+23:49 yes that's for many dialects yeah this
+23:52 informal informal varieties
+23:55 like we we don't call it a disorder we
+23:57 call it maybe
+23:58 not at all not at Like it's even like I
+24:02 don't know if we should call it a
+24:03 typical like if half the London half the
+24:05 city speak that right like is it a
+24:08 typical I don't know but I remember like
+24:10 there was a colleague from London and I
+24:13 couldn't understand like I asked can you
+24:14 type me please
+24:17 it's a variant
+24:19 it's a in many cases it's an informal
+24:23 variant but it's also the everyday
+24:25 speech the Yeah,
+24:27 the
+24:29 just the tool for the for the
+24:30 communication the most useful and the
+24:32 most frequent.
+24:34 So that's also the I think the very good
+24:38 uh point to to remember from our today's
+24:41 talk just not to be concentrated on
+24:45 disorder because sometimes we are all uh
+24:48 far away from from standard. uh then we
+24:52 can ask ourselves what is this standard?
+24:56 Yeah, it's also difficult to um
+25:00 to to to define uh but such uh
+25:03 difficulties uh coming back to
+25:07 disordered speech in a in a straight
+25:10 understanding of its definition uh like
+25:13 uh motor speech disorder called
+25:17 disartria
+25:19 which u result in slard slow sometimes
+25:24 mumbled speech each uh just because of
+25:27 this um uh of of this weak or uh poorly
+25:32 coordinated muscles. Uh so here it's
+25:36 another thing. Yeah, it's
+25:38 it's a speech that sometimes it's really
+25:40 really difficult to uh to recognize and
+25:44 it's also difficult to recognize uh by
+25:47 um by an ASR model. Uh then uh when we
+25:51 come to voice uh all of us has sometimes
+25:55 has runny nose u and other um
+25:59 yeah my nose is blocked right now so I
+26:01 don't know if you can hear that.
+26:03 Uh but u yeah it's
+26:06 no I would say your voice sounds very
+26:08 nice. It's it has this bus tonality. U I
+26:13 wouldn't call it hyperality or
+26:16 something. That's that's perfectly fine.
+26:19 But indeed, these voice problems can
+26:21 also affect with uh difficulties in
+26:24 distinguishing uh speech from background
+26:27 noises for example because that's also a
+26:30 problem for for ASR if we sound far um
+26:34 enough from the from the model from the
+26:37 standard. Uh so it um it can be u
+26:42 treated as as a noise as a background
+26:45 noise. So these key challenges for uh
+26:48 for ASR are linked to um articulation
+26:54 problems also inconsistent
+26:56 pronunciations.
+26:57 Um
+26:59 all these things that are far away from
+27:02 uh from the uh from the model. Uh and
+27:06 why it causes problems we can ask. Uh
+27:11 probably because of lack of diverse
+27:14 training data. That's the that's the
+27:16 main problem that uh we should uh uh
+27:19 handle. uh other thing uh if we if we
+27:23 try to use such data mixed with uh
+27:27 standard ones so-called standard ones it
+27:30 can lean lead to error production uh
+27:33 error propagation in in the model um and
+27:38 also um
+27:43 be an obstacle in in proper uh
+27:46 recognition. Uh so these are main the
+27:50 main u
+27:52 problems that disordered speech as as we
+27:55 observed not only uh disordered because
+28:00 of health reasons um encounter.
+28:04 So if I try to make a summary. So what
+28:08 you said is like usually these ASR
+28:12 automatic speech recognition systems
+28:15 uh they are trained on
+28:19 standard speech, right? Whatever,
+28:22 however you define standard
+28:24 and and we all know like people who know
+28:28 machine learning that if you're test if
+28:31 you train and test data are sufficiently
+28:33 different then the model was trained on
+28:36 train and like if hasn't seen this kind
+28:40 of data right so then it produces
+28:42 something else not what you expect
+28:45 so this is the problem right
+28:47 I would not put a full stop here because
+28:50 we can do something with that. We can uh
+28:53 we can
+28:54 That was my question. Yeah. Like what do
+28:56 we do with that?
+28:56 Yeah, that's quite quite natural
+28:59 question at this moment. We have a
+29:00 problem. So what should we do with that?
+29:03 Uh and there are um there are different
+29:07 uh strategies to u to handle u this
+29:13 problem. Uh we can uh uh collect and uh
+29:19 uh curate specialized
+29:22 data sets uh like collect speech from
+29:26 individuals with uh various disorders.
+29:30 uh and uh then use it uh as a um
+29:37 subset as a set that is included uh in
+29:41 the
+29:42 [Music]
+29:44 in the in the training. So use a
+29:46 transfer learning method uh and
+29:48 fine-tune the model. Uh we have a model
+29:51 that has been already trained on the uh
+29:54 so-called standard data uh not affected
+29:57 by by speech disorders uh and we would
+30:00 like to adapt it to the uh to the to a
+30:04 speaker with uh with speech disorders,
+30:06 we can use this transfer learning uh uh
+30:10 strategy. Um then if we don't have uh
+30:15 such data because it's not easy to
+30:18 collect them, we can also uh introduce
+30:23 um uh data augmentation. So we can
+30:27 expand the training data set uh with
+30:31 artificially
+30:33 uh simulated uh disordered uh speech. uh
+30:40 if we know what we what we are uh aiming
+30:43 uh to yeah we have problems for example
+30:45 with this consonant consonantic clusters
+30:48 we can use um these artificial
+30:52 augmentation of data. Uh then another
+30:55 strategy that can be introduced uh is
+30:58 the uh this multimodel output because of
+31:03 course we can uh learn and understand uh
+31:08 from what we hear. Uh but if we add a
+31:12 visual uh data to our audio data uh we
+31:18 can add lip reading, we can add gesture
+31:22 recognition. We mentioned Italian
+31:25 before. This gesture recognition would
+31:27 be useful not only for disordered speech
+31:31 but in general. uh it would it would uh
+31:35 help a lot with with Italians and
+31:38 probably uh not only uh so there are
+31:41 several
+31:43 uh there are several um techniques
+31:47 several things that we can do uh to to
+31:52 improve the
+31:54 the the understanding the the
+31:56 recognition itself.
+32:01 Yeah. Interesting. So like I have never
+32:04 worked with speech or like sound at all
+32:08 in general.
+32:08 Not yet, Alex. Not yet.
+32:10 Mhm. Yeah. Not yet, of course. Um but
+32:14 like I worked with images and like a t
+32:16 very typical situation like you have
+32:18 imageet a neural network trained on
+32:21 imageet and then you have your
+32:23 own data that is could be tractors or I
+32:26 don't know whatever that is not in
+32:28 imageet and then you just there are
+32:30 probably tractors but like I don't know
+32:32 something else uh and then you just take
+32:35 this I don't know thousand examples and
+32:37 fine-tune your network that was trained
+32:39 before on image net and the Same thing
+32:42 you do with pitch, right? So like there
+32:44 is a a model that is trained on standard
+32:48 data and then you collect uh disorderous
+32:50 pitch, right? Maybe it shouldn't be it
+32:53 doesn't have to be like a very large
+32:54 sample I assume like with images and you
+32:59 use transferred learning, you fine-tune
+33:01 your model, right?
+33:03 Mhm. Uh you mentioned this data
+33:05 collection and I also said that it's not
+33:08 always uh easy. Uh
+33:11 yeah, I imagine
+33:12 because of uh very different speech
+33:15 disorders firstly because of uh the
+33:21 sometimes like for people with these
+33:23 motor speech disorders uh it's just
+33:25 difficult to to organize the whole um
+33:29 collection process. uh but also because
+33:31 we are talking about the health issues
+33:35 because of GDPR uh and uh it would be
+33:40 perfect also for the research purpose to
+33:43 have huge corpora uh of such uh
+33:47 disordered speech. Um
+33:48 how huge should it be? like cuz in case
+33:51 of imageet and transfer learning like we
+33:54 don't need a lot of data a few hundreds
+33:56 is already sufficient to at least images
+33:59 um is sufficient to have a decent model
+34:02 to to get started with
+34:03 indeed but if we if we if we think about
+34:06 different disorders and different
+34:07 languages and also non-English languages
+34:10 it becomes huge
+34:12 because you need to like for each subset
+34:15 like okay maybe somebody is uh
+34:17 stammering and this is probably a more
+34:20 or less common disorder, right? Maybe
+34:22 compared to other disorders. Um, and
+34:25 maybe it's not a typical thing to let's
+34:28 say get American English and get people
+34:31 who stammer to but if we talk about some
+34:35 particular dialect or maybe even not
+34:37 English language but some
+34:39 less common language, right? And
+34:42 for example, it's not the most common
+34:44 language. So that's always a good
+34:46 example but stammering it also a good
+34:48 example an interesting example uh
+34:51 because there are studies uh showing
+34:53 that for example in bilingual uh
+34:56 individuals um it can occur in one
+34:59 language uh and uh not in the second
+35:02 one. Uh it's connected for examples that
+35:06 you stop at um some consonantic
+35:09 clusters, some syllables and they may be
+35:12 more frequent in one language or less
+35:14 frequent in another. Uh so there are
+35:17 such differences uh and also summary
+35:21 that as you as you mentioned it's quite
+35:23 common. Um
+35:25 like it also happens sometimes to me. I
+35:28 don't know how it works. Like I just
+35:30 maybe because I'm thinking about what to
+35:33 say next and then I start stammering.
+35:36 It's not like I'm doing this um
+35:39 often, but sometimes it happens and I
+35:42 see that it happened to other people. So
+35:43 I guess it's uh it happens, right?
+35:47 These are usually fluency problems or
+35:50 issues or just normal flu fluency
+35:54 behaviors, human behaviors. uh but
+35:57 stammering is something that should be
+36:00 diagnosed and usually uh is a bit
+36:04 different from what happens to all of
+36:07 us. So
+36:08 yeah, I imagine
+36:08 fluency this fluency that is normal and
+36:11 it's even more normal if we can use this
+36:14 word uh when we are using a foreign uh
+36:18 language that we just need time to to go
+36:22 on just need time to find find the right
+36:24 word
+36:25 and people with this dis disorder it's
+36:28 more like they know what to say but uh
+36:32 there's a certain sequence of sounds
+36:34 that is difficult to pronounce and they
+36:36 have too.
+36:37 Yeah, there is this block on the
+36:41 sometimes it it affects for example the
+36:43 beginning of the sentence and then
+36:45 everything is fine. Sometimes it it's
+36:47 connected with um with the specific uh
+36:52 consonant cluster. Yeah. The combination
+36:54 of consonants that is so difficult to to
+36:57 overcome. So it blocks you and you
+36:59 cannot u you cannot go uh go over. So if
+37:05 a language has a lot of them like Polish
+37:07 it's difficult if it has less like
+37:09 Spanish or Italian it may be
+37:11 because in in Polish you have a lot of
+37:13 um consonants right?
+37:15 Yeah.
+37:15 And also like difficult to pronounce
+37:18 letters that uh are together. I remember
+37:21 like I now remember a funny story like
+37:23 in Krakco where is a street one of the
+37:26 central streets called
+37:29 and it's touch
+37:31 it's touch it's so many like consonants
+37:33 together and it was always funny when
+37:36 somebody like from uh from Britain
+37:39 approaches me and says I'm looking for
+37:41 this treat and they try to read it like
+37:45 indeed because there is there is also a
+37:47 trick to make it a a little bit easier
+37:50 that we have these sounds that we write
+37:52 with two consonants but it's one sound
+37:55 like s and uh z makes make one sounds
+37:59 together. So these are not so many
+38:01 consonants together. These are just this
+38:04 is just polography that makes the whole
+38:08 thing a bit more difficult.
+38:11 And by the way I use automatic speech
+38:13 recognition for podcast episodes too
+38:16 after we record it and edit it. I also
+38:21 use I think it's called Amazon
+38:22 transcribe
+38:24 that does speech.
+38:25 How disordered we are after we see the
+38:28 transcript.
+38:28 Yeah. But not only that like it expects
+38:31 English and now all of a sudden I speak
+38:33 I used a Polish word which is
+38:36 but also I think one of the things you
+38:38 mentioned that right now um what happens
+38:41 also in this area in this domain that
+38:44 you start using LMS more and more often
+38:47 and this is what I do too. So there's
+38:49 output from um Amazon transcribe
+38:54 and then I edit this output with an LLM
+38:58 and probably an LLM like even though
+39:00 maybe the transcriber could not figure
+39:04 out some things but LLM using the
+39:07 context around might actually do that.
+39:10 Is it something that uh when you
+39:12 mentioned that LMS are used more and
+39:13 more these days is it something is it
+39:16 how it used these days? So first you do
+39:19 ASR and then kind of edit
+39:22 indeed. Yeah. Uh so uh LLMs can help on
+39:26 different uh um different levels but
+39:30 adding this context is
+39:33 crucial for the for the recognition for
+39:36 the um uh
+39:40 both at the sorry now I'm stuttering
+39:42 that that was on purpose of course uh
+39:45 example of what we talked about both at
+39:48 the beginning uh when we train and when
+39:50 we want to show the context and also uh
+39:53 at the um
+39:56 stage of transcription and error
+39:58 recognition
+40:00 so uh with LLMs I think we can talk uh
+40:04 not about the traditional metrics that
+40:06 were used for uh ASR uh like this word
+40:10 error rate uh like um word accuracy but
+40:14 we are more concentrated uh or the on
+40:17 the meaning preservation. Yeah, we are
+40:20 more concentrated uh on uh the semantic
+40:24 distance from the model phrase that
+40:26 should be uh pronounced uh or that is
+40:29 expected to be pronounced and the one
+40:31 that uh has been pronounced. So instead
+40:34 of this wer
+40:37 word error rate um as research studies
+40:41 mentioned for example bird score um as
+40:46 um as the metric that that can help um
+40:50 to to assess uh better uh such models
+40:55 where LLMs are used uh and c and can
+40:59 help to guess yeah thanks to the context
+41:02 can help to guess uh what uh what has
+41:05 been uh said. So yeah that's that's a
+41:08 very very good question and a very good
+41:10 uh very important aspect of the whole
+41:12 thing
+41:13 and uh like in my particular case in
+41:15 this particular application of voice
+41:18 recognition and LLM so there was a
+41:21 interview about scikitlearn right
+41:23 scikitlearn
+41:25 um yeah everyone like many people in the
+41:29 machine learning community know what it
+41:30 is but for a voice speech recognition
+41:33 and maybe also because I was
+41:34 interviewing a guy from France France
+41:37 and I also speak with accent like the
+41:39 voice recognition system wasn't able to
+41:42 correctly identify that we are talking
+41:44 about scikitlearn
+41:46 but llm cuz we also gave the context we
+41:50 gave the description of the event like
+41:53 here's this is what we plan to talk
+41:55 about planned to talk about this is what
+41:57 we actually talked about please use the
+41:59 context this text uh to actually like
+42:03 correct and then eat correctly puts
+42:06 learn where each where it should be
+42:08 right this is amazing and I was
+42:11 wondering like is it also how it's used
+42:14 like as a two-step process first there
+42:16 is a speech recognition process and then
+42:18 LLM or right now there are models that
+42:20 are kind of do this in one go
+42:23 uh at it can be used at any uh stage of
+42:27 the u of the uh whole process so uh both
+42:34 at the Um at the training part and also
+42:39 um then when we when we talk about this
+42:41 contextual understanding and the proper
+42:43 names are a very good example that uh we
+42:46 have to give uh the context the the the
+42:49 specific
+42:54 part of the um extra language reality to
+42:59 uh to make it clear and only then it can
+43:02 be it can be recognized. So a proper
+43:04 name uh it's not a uh it's not
+43:08 pronounced it's not a speech disorder
+43:10 but it's a um I think that probably it's
+43:15 unexpected. Anything that is unexpected
+43:19 creates problems
+43:21 like I if I think I don't know how if
+43:24 it's actually true but if I think how
+43:26 these voice recognition systems work so
+43:29 there is a certain how do I call it
+43:31 phonem or like when I say a word right
+43:34 so there's a this utterance right
+43:35 there's this
+43:37 let's call it yeah it can be anything it
+43:39 can be word it can be a phrase
+43:41 phone is
+43:43 phonm is sound but like a word that I
+43:46 say utterance right um and I say for
+43:48 example I have um a disorder I say
+43:52 whiskey instead of risky right and if I
+43:55 already have a language model in my
+43:57 voice recognition system it can
+43:59 understand when it from the content
+44:02 context that I'm not talking about the
+44:04 alcoholic beverage but rather like it's
+44:08 there's a lot of risk right because it
+44:12 has access to the other words and the
+44:15 goal for language model is to predict
+44:17 the next word based using the context.
+44:20 we can somehow utilize language models
+44:22 and we probably do in voice recognition
+44:24 systems right
+44:25 both it can be trained to predict it or
+44:28 it in in post-processing uh it can it
+44:32 can uh see okay it's strange that it's
+44:36 in this context it should be something
+44:39 else uh all data all our predictions
+44:43 what happens next as LMS do um
+44:47 say that um here should comes should
+44:51 come risky and not the beverage uh from
+44:54 from your example. So it can be uh it
+44:57 can be done before and it can be uh also
+45:00 done at the at the second step. Um one
+45:03 thing that came to my mind now uh if we
+45:07 still have time um this uh ASR um models
+45:13 uh can be also personalized so can be uh
+45:17 used for uh a specific person with a
+45:21 specific disorders and in this case this
+45:25 first uh stage this first step so
+45:28 training uh and preparing the model to
+45:32 expect uh such uh
+45:36 atypical productions articulations
+45:39 uh can be done. uh it's a bit different
+45:42 uh if we want to have a model that uh
+45:45 recognizes both uh so-called standard
+45:48 speech and uh atypical um productions
+45:52 atypical articulations
+45:55 regional disordered and other
+45:59 I guess this uh when it's personalized
+46:02 the way it works is I first need to
+46:04 train it as a user meaning that it asks
+46:06 like hey hey can you pronounce this
+46:09 sentence and I record myself pronouncing
+46:13 this sentence and then it asks me to
+46:14 pronounce something else and then I do
+46:16 this for like I don't know 10 sentences
+46:18 and then it does transfer learning and
+46:20 then I have a model that is for me
+46:23 specifically tailored to my um
+46:27 say the way I speak
+46:29 individual uh speaking features. Yeah.
+46:32 Uh to your your style of speaking. I
+46:36 think there was a system like that like
+46:38 before before whisper existed. I I think
+46:41 I even tried that but now with whisper
+46:45 it's it's doing such a good job of like
+46:47 I use it in charge when I just dictate
+46:50 whatever I want and then it recognizes
+46:52 and even if
+46:54 it
+46:56 mis how to say like it thinks I said
+46:59 that I said something else still charges
+47:03 out what I want.
+47:04 Mhm.
+47:05 Yeah. So it's quite convenient.
+47:07 Seems amazing. But did they say I'm a
+47:09 bit terrifying? Yeah, he knows me so
+47:11 well. Maybe he knows me better than I
+47:13 know myself. Yeah, right.
+47:15 That's what you think in at this moment.
+47:18 Well, probably I assume like if we talk
+47:20 about speech disorders, not accents and
+47:23 stuff,
+47:24 then having this personalized
+47:28 uh think personalized model is quite
+47:31 useful, right?
+47:33 It can be of course um in this case
+47:37 especially when you when you when when
+47:39 it's difficult for you to use uh st
+47:41 so-called standard models uh the the
+47:44 personalized one can be a tool to
+47:47 communicate.
+47:49 We talked to today about the speech
+47:51 disorders but there are also so-called
+47:53 language disorders. uh when you have
+47:56 problems with uh um especially u as a
+48:01 result of neurological diseases uh with
+48:04 finding the right word uh with u using
+48:08 the word in the in the context. So these
+48:10 are more uh the problems more connected
+48:13 to the content itself than to the way of
+48:18 of articulation.
+48:20 How does it work? It's like I cannot
+48:22 pronounce if I have this disorder I
+48:25 cannot pronounce a word a specific word.
+48:27 You cannot find the right word in the
+48:30 context. You don't remember it for
+48:32 example. Uh
+48:33 well it happens to me all the time in
+48:35 German.
+48:36 Yeah it happens to all of us from time
+48:39 to time but
+48:40 like in foreign languages especially.
+48:42 But if it happens too often, it looks so
+48:46 well when when it happens in your native
+48:48 language and it kind of interferes with
+48:50 uh your day-to-day then it's a problem,
+48:53 right?
+48:53 Yeah, of course. Then it's a real
+48:55 problem because as stuttering as
+48:58 disluences as other um problems with
+49:03 speech can occur to all of us and that's
+49:06 absolutely natural thing. uh if it uh if
+49:11 it is excessive it it just becomes uh a
+49:15 problem in communication
+49:18 and maybe this is something I should
+49:19 have asked you at the beginning but like
+49:21 how do we actually use this like what is
+49:24 the application? I might have a guess
+49:28 cuz you also
+49:30 um have done some work with automotive
+49:32 industry probably what we talk about
+49:36 might be used in cars
+49:39 but like maybe can you give us uh an
+49:41 example of where it's used
+49:44 uh when uh you were asking me about
+49:48 where a speech recognition model can be
+49:51 used uh
+49:52 and especially if we talk about disorder
+49:54 pitch.
+49:55 Mhm. Uh, of course in cars. Uh, but this
+50:00 is this would not be my first answer.
+50:04 Uh, for u
+50:07 people with speech disorders, it can be
+50:10 used as a tool to communicate. Uh,
+50:13 because sometimes it's difficult it's
+50:17 difficult for a human to understand this
+50:20 very affected very atypical speech. uh
+50:23 and it's easier for uh for a model
+50:27 pre-trained uh personalized model to to
+50:30 do it. So this uh would be my first
+50:32 answer because that's I think the the
+50:35 most important and uh our today is yeah
+50:41 how does it look in practice like let's
+50:43 say I have an app on my phone and then I
+50:47 speak to the app and then I show the
+50:51 result to somebody who I want to speak
+50:52 to to communicate with
+50:54 for example it's not common yet common
+50:57 enough yet we are talking today about
+50:58 well I do this all the time with the
+51:00 German
+51:03 but we are not I don't see any serious
+51:07 pronunciation problems in your face we
+51:10 are talking about uh humans today and
+51:14 yeah the AI that should shouldn't be the
+51:17 obvious one but the number of centers
+51:20 that dedicate their work to human
+51:23 centered AI just prove that that's
+51:26 important topic and that's not obvious
+51:28 for everyone so human needs needs uh
+51:30 should be at the first place. Um it's
+51:34 not uh a standard yet to to
+51:38 uh to to give each person with serious
+51:43 disorders such tool. Uh but I think that
+51:47 can be a hope.
+51:48 That's what you're working on right now
+51:50 to make it possible.
+51:52 Yes, that that's one small step. Um
+51:56 is it like are these models heavy like
+51:59 cuz if we want especially if it comes
+52:02 when it comes to personalized
+52:04 uh models and fine-tuning and if we talk
+52:06 about model devices mobile devices then
+52:09 these uh apps need to run on devices and
+52:13 that not everyone has the latest iPhone
+52:16 pro right then like it has to be um
+52:21 conservative when it comes to resource
+52:23 consumption. So I guess that's quite
+52:25 challenging to have a
+52:28 challenge.
+52:30 One is creating a personalized model for
+52:33 for for a person uh that's quite doable
+52:38 but then creating one that can be
+52:40 universal for many speech disorders that
+52:43 that makes thing uh things much more
+52:46 complicated.
+52:47 uh we'll probably put some uh readings
+52:51 in the description of uh of the episode
+52:53 and there are some studies Asian studies
+52:56 for Korean uh for Chinese that managed
+53:00 to um to create such tools. We will put
+53:05 put them uh in the description. We are
+53:08 talking uh all the time about European
+53:11 languages but let's not forget about uh
+53:13 what's happening a bit far away from us.
+53:17 And when it comes to cars, like how is
+53:19 it used? And like in general, how
+53:24 is voice recognition used for cars?
+53:27 Play Spotify like with Alexa or
+53:30 Yeah, you can uh you can ask car to to
+53:35 do to behave in a certain manner. uh
+53:38 please park
+53:40 for example if it can uh if it
+53:42 and if I cannot pronounce R then please
+53:44 park and the car has no idea what I'm
+53:46 talking about
+53:47 and it's packing and it's um
+53:51 yeah
+53:53 everything what you what you need and
+53:54 what is uh planned by the producers uh
+53:58 by the by by the car designers like
+54:02 opening the window uh air conditioning
+54:06 uh seat heating
+54:08 uh steering wheel hitting radio uh
+54:11 calling uh etc. That's a that's also an
+54:15 interesting example not for disordered
+54:17 speech but
+54:20 recognition in general. Um uh for years
+54:23 it was uh the part of u ISR systems that
+54:27 was developing a bit slower because u
+54:32 the the purpose the the plan was to make
+54:35 it uh work um al by itself. Yeah. Also
+54:40 when it's not connected to internet. Uh
+54:43 so these um uh built-in systems uh were
+54:48 more traditional uh ones based on
+54:51 engrams. Now things are changing and uh
+54:55 LLMs are also introduced. So uh
+54:58 recognition u becomes better and better.
+55:01 Still there are many videos on YouTube
+55:04 with uh Porsche drivers and other
+55:07 drivers trying to convince their their
+55:09 cars in uh Polish, Italian, Spanish um
+55:14 to do something and the car is doing
+55:16 completely different things. Uh so there
+55:19 is still much work to be done.
+55:21 There's this hilarious video uh with two
+55:24 Scottish guys trying to go to 11th floor
+55:27 on an elevator using voice recognition.
+55:30 Have you seen that
+55:31 in the elevator? No, you have to send it
+55:33 to me.
+55:34 Like, yeah, I'll send it. If you just
+55:35 Google,
+55:37 Alex, we'll put it in the postcard
+55:38 descript like like like the icing on the
+55:43 on the cake.
+55:46 So, if I just Googled 11 elevator,
+55:51 Yeah.
+55:53 then there's a video. Um, I'll include
+55:56 this in the description. It's amazing.
+55:58 Um,
+56:00 so I think we're run out of of time. Um,
+56:03 so
+56:04 surely but it was fantastic. Thank you.
+56:07 Like I think we covered only like three
+56:08 questions out of uh I don't know how
+56:10 many that we prepared, but it was
+56:12 I think that's good. Yeah, because
+56:14 there's still something to think about.
+56:15 There is still something to read to to
+56:17 to to
+56:20 dive deeper.
+56:21 So I'm going to send the video
+56:26 to you right now.
+56:28 So, and then for the rest, I'll send it
+56:31 to Zoom and I will put it also to
+56:33 YouTube.
+56:34 Thank you.
+56:34 And then uh this should be a good um
+56:38 say
+56:40 um way of ending this interview today.
+56:44 So, there's still much to like I think
+56:46 this is like 10 years old if not more
+56:48 video. Uh probably now the systems are
+56:51 better.
+56:52 It's 10 years old and it's still valid.
+56:54 Yes. and we still have the same
+56:57 problems. No, I think the situation is a
+57:00 bit better but probably uh probably um
+57:04 such thing happens still.
+57:07 So thanks Kasha for joining us today for
+57:10 answering questions for sharing your
+57:12 experience and what you work on. That
+57:15 was amazing. I really enjoyed this and
+57:17 I'm sure everyone enjoyed it too.
+57:19 Thank you. Thank you for the invitation
+57:21 and really congratulations for the for
+57:23 for the great great uh series of
+57:25 podcasts but also for the great uh
+57:28 platform that that you created. Uh I
+57:31 feel really impressed and as I said at
+57:33 the beginning I feel honored to be here.
+57:36 Yeah thank you. So if you happen to be
+57:39 in Berlin please let me know and if I
+57:40 also go to Warso I'll say hi. Please do
+57:43 please come to Sunny.

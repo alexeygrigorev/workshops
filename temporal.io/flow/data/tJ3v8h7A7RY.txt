@@ -1,0 +1,1695 @@
+Data Governance
+
+0:00 hello everyone thanks for joining us
+0:02 today this event is brought to you by
+0:03 data tokens club which is a community of
+0:05 people who love
+0:06 data we have weekly events this event is
+0:09 one of
+0:11 the one of them to find out more about
+0:14 their events you can go to the
+0:15 description
+0:16 and then there is a link to our website
+0:18 with all the events
+0:19 you can just click on this and you'll
+0:21 see all the amazing events we have
+0:24 like for example the next week we'll
+0:26 talk about the role of analytics
+0:28 engineer i'm very curious about that one
+0:30 so
+0:30 if you're also curious about that one go
+0:33 to our website and you can register
+0:35 and what people uh really like is we
+0:38 have
+0:39 um google calendar so you can just
+0:41 subscribe to our calendar and you will
+0:42 get notified about
+0:44 all our events and of course
+0:48 you should subscribe to our youtube
+0:49 channel if you haven't yet
+0:51 you will get a notification every time
+0:54 we start a new video
+0:56 and join our slack where we um
+0:59 talk about data and we have book authors
+1:01 like jc anturi
+1:03 who last week we were answering
+1:05 questions about data governance
+1:07 so do check it out
+1:11 then also in a couple of weeks we have
+1:14 a conference it's not really a
+1:15 conference it's like a
+1:17 bunch of meetups but we call it summer
+1:21 uh we'll have two weeks every day we'll
+1:24 have an event
+1:25 on the evening in europe
+1:28 so there is a link in the description
+1:30 also check it out
+1:32 if during today today's conversation now
+1:36 you
+1:36 have any question there is a pin link in
+1:39 the live chat
+1:40 you click on this link and you can ask
+1:41 any question you want and i will
+1:44 i will ask the these questions later
+1:48 and finally uh thanks to o'reilly we had
+1:52 five copies of the data governance book
+1:55 uh which uh we gave away
+1:59 to our community and five people won it
+2:02 congratulations
+2:03 i will be in touch with you uh with uh
+2:06 details how you get
+2:07 you can get the book and
+2:10 that's all for the introduction
+2:13 i can stop sharing my screen now are you
+2:16 ready to start
+2:19 yes do you have your glass of water
+2:21 would you
+2:23 check okay with ice
+2:26 okay it means we're ready to start right
+2:29 yeah okay so
+2:38 let me just get my notes and
+2:42 yeah this week we'll talk about uh data
+2:44 governance
+2:45 and we have two special guests and this
+2:47 is the first time i actually have two
+2:49 guests
+2:50 in this podcast so far it was only one
+2:53 so it will be a lot of fun i'm sure so
+2:55 we have two guests
+2:56 jesse and tui they both work on google
+2:59 and they
+2:59 both are co-authors of the data
+3:02 governance governance book that we just
+3:04 saw jesse is a senior user experience
+3:08 researcher
+3:08 at google cloud she conducts user
+3:11 studies with customers
+3:12 and then she uses these findings to
+3:15 shape google's data governance program
+3:17 and products
+3:18 and uri is a product manager at google
+3:20 and he's leading
+3:21 data governance efforts in google so
+3:25 welcome thank you hello
+3:29 now before we go into our main topic of
+3:32 data governance uh let's start with your
+3:34 background
+3:36 so maybe we will start with jesse jc can
+3:38 you tell us about your career journey so
+3:40 far
+3:41 sure um it's been a
+3:45 a long one i've done a lot of different
+3:47 things
+3:48 um i i started out as a
+3:51 psychology major and looking at
+3:54 research loved research
+3:57 back in the you know early 2000s there
+4:00 weren't a whole lot of jobs for somebody
+4:02 who had a degree in psychology so i
+4:04 bounced around and did a lot of
+4:05 different things
+4:06 um real estate uh you know
+4:09 coaching athletics until i finally found
+4:13 this
+4:14 thing called ux research and i'm like
+4:16 what is this ux you speak of
+4:18 um and it was this perfect marriage of
+4:20 psychology
+4:22 and actual useful stuff that you could
+4:24 do for people that um was pretty
+4:26 immediate
+4:27 so i started in um that maybe seven or
+4:29 eight years ago
+4:31 and i worked at t-mobile on their
+4:32 enterprise products for about four years
+4:35 until i moved to google
+4:36 and i've been here um working with uri
+4:38 pretty much the entire time i've been
+4:39 here at google on
+4:41 cloud and data governance for the last
+4:42 three years
+4:46 oh thanks
+4:50 yeah well my background is much more
+4:52 banal i guess for product manager just
+4:54 say i never knew you were in real estate
+4:56 so every day you learn something new um
+5:00 i spent the last couple of decades like
+5:03 i started off
+5:04 as an engineer in a security company i
+5:07 moved to product because people was
+5:09 tired were tired of me criticizing the
+5:11 product and then you were
+5:12 like how about you actually do something
+5:14 about prioritizing those criticisms
+5:17 um and i've spent
+5:20 uh several years in security company was
+5:23 an early employee
+5:24 in full scout and checkpoint
+5:27 was most recently before google the
+5:30 vice president of product management in
+5:32 a security company called mobileiron
+5:35 for endpoints devices um
+5:38 the it's kind of funny how i
+5:41 got to google because throughout my
+5:44 career it's been a couple of decades now
+5:47 i've been caring for data on
+5:50 endpoint devices and the google offer
+5:53 was really about
+5:54 how about you sort of cross the
+5:58 mirror across to the looking glass
+6:01 and get to careful data at the source
+6:04 at at the server side at the cloud
+6:08 provider side
+6:09 and data governance
+6:12 has been around for a long long time it
+6:15 was
+6:16 something google has been doing from
+6:17 google
+6:19 throughout its history but uh it was an
+6:22 initiative that basically the challenge
+6:25 was to bring
+6:26 data governance to google cloud
+6:28 customers
+6:29 and i'm sure we'll talk more about that
+6:33 so now you also care about security but
+6:36 uh from a different angle
+6:38 yeah yeah okay yes we mentioned data
+6:42 governance and actually the talk
+6:44 today is about data governance so what
+6:48 is it i to be honest i still uh have
+6:50 really awake idea what
+6:52 data coordinates is and why do we need
+6:54 it
+6:57 i i i'll start with that um
+7:00 so data governance i guess
+7:04 maybe maybe i should start with saying
+7:05 what it's not only
+7:07 um so i feel like when often people talk
+7:09 about data governance
+7:11 um and and you're right depending on who
+7:13 you talk to there is
+7:15 like a myriad of different definitions
+7:17 but i guess
+7:18 um from our perspective what it's not
+7:20 only it's not only securing your data
+7:23 so it's not only about um how do we
+7:26 govern the things that what i like to
+7:28 call the scary stuff right
+7:30 pii credit card numbers you know things
+7:33 like that
+7:34 it's not just about securing those and
+7:37 um monitoring access to those so
+7:40 sorry pii is what oh
+7:44 or is it personally identifiable data
+7:47 thank you
+7:47 i always protected something
+7:52 yeah thank you so things like a name a
+7:55 social security number
+7:56 um date of birth
+8:00 potentially so i think
+8:03 recently with gdpr um like
+8:07 a lot of companies and folks are very
+8:08 worried about data governance
+8:10 you know or governing their sensitive
+8:13 data
+8:15 but and we talk a lot about this in the
+8:16 book it's more than that it's also about
+8:19 knowing what data do i have period
+8:22 because if you don't know what data you
+8:24 have you can't really use it you can't
+8:25 run analytics you know you also can't
+8:27 secure it
+8:28 um you can't really decide where it
+8:30 should go
+8:31 what you should do with it whether or
+8:33 not it's a duplicate
+8:34 should you retain it so data governance
+8:37 really kind of encompasses
+8:38 the entire story of what data do i have
+8:42 and um and and how how can i use it best
+8:47 uh whether that means securing it or
+8:49 using it for you know business
+8:51 uh analytics things like that
+8:54 erie did i miss anything do you want to
+8:56 add no
+8:57 but i'd like to offer a different
+8:59 perspective maybe that adds on to what
+9:01 jesse said
+9:02 so so first of all data governance has
+9:04 is
+9:05 actually not new okay data governance
+9:09 broadly speaking is a practice of
+9:12 the people processes and tools or the
+9:15 usage or the combinations of those three
+9:18 in order to understand
+9:22 care extract insights from your data
+9:25 now the the reason i'm saying it's not
+9:28 new
+9:28 and what made it more
+9:33 the term itself more popular recently is
+9:36 it always was the case where any company
+9:38 would have a customer list
+9:40 any company would have uh certain
+9:43 insights
+9:44 of that customer list that has been ever
+9:46 since companies were born
+9:48 the normal insights was like this
+9:49 customer is behind on his payments or
+9:51 something like
+9:52 that now here is something that has been
+9:54 happening
+9:55 uh surprisingly slowly and yet
+9:59 had implications that made data
+10:01 governance a very popular term
+10:03 uh cloud cloud did not happen in one day
+10:06 and the cloud uh sort of like
+10:09 transformational transition is still
+10:11 happening
+10:12 much more slowly in my opinion than
+10:14 anyone expected
+10:15 but cloud got to the game unlimited
+10:18 infrastructure
+10:19 and that part of the game the abilities
+10:22 for companies to say okay i would not
+10:23 only save
+10:25 the payments table maybe i'll save the
+10:27 customer behaviors table
+10:29 maybe i'll look at all the events that's
+10:31 happening as people interact with the
+10:33 product
+10:34 maybe that will allow me to say okay if
+10:37 people are spending
+10:38 time in my e-commerce website in the
+10:42 t-shirts department maybe i need more
+10:44 choice in t-shirts
+10:46 maybe if people are buying a lot of
+10:48 t-shirts
+10:49 towards the 4th of july maybe that's a
+10:52 good time to make sure my supply chain
+10:54 is ready for the 4th of july
+10:56 and so on now this trend
+11:00 of saving more data for insight switch i
+11:03 don't know actually what these are right
+11:05 now i'll just collect all the data
+11:07 has made people uncomfortable
+11:10 and cause caused several things one is
+11:13 uh the regulator stepped in and said
+11:15 okay
+11:15 you're collecting a lot of information
+11:17 about people
+11:18 this information may identify them and
+11:21 those people have not signed up to be
+11:22 identified
+11:24 like i don't want the 4th of july
+11:26 t-shirt website
+11:28 uh to know my buying habits
+11:31 because that's highly personal it may
+11:32 indicate where i live it may indicate
+11:35 uh how much money i have i'm not
+11:38 comfortable with that the european
+11:39 regulation
+11:41 uh sort of like says a you must
+11:44 explicitly ask for people to share the
+11:46 information and b
+11:48 uh you should separate the people with
+11:50 processes and tools
+11:52 that collect pii personally identify
+11:54 information
+11:55 from other systems in order for me as
+11:58 the customer of your
+11:59 again the t-shirt website um to be able
+12:03 to say hey
+12:04 you know what i'm done with my business
+12:06 uh
+12:07 with your website i want to be taken off
+12:10 now uh this uh
+12:14 accumulation of highly personal data
+12:17 that can easily predict and identify you
+12:20 uh it also led to some mishaps uh the
+12:23 most uh
+12:24 well most notorious one is the cambridge
+12:26 analytical
+12:27 scandal that others
+12:30 and really forced companies
+12:33 that realize they can make money from
+12:35 data
+12:36 also to be more
+12:41 prescriptive and cautious about using
+12:44 the data
+12:45 and that is sort of like the chain of
+12:47 thought
+12:48 that led to this practice now as i said
+12:50 it was always there
+12:52 if you look at the banking industry uh
+12:54 the banking industry has always been
+12:56 like you must keep
+12:57 uh depending on the country seven years
+12:59 of data
+13:00 in order for us to go back on
+13:02 transactions and detect ford
+13:04 for example uh and that is usually
+13:07 proven by a chain of transactions or a
+13:09 chain of money movements
+13:11 and banking or the financial services
+13:14 community as a general
+13:16 uh always had rules about how you can
+13:19 collect the data
+13:20 how long to keep it and who should be
+13:22 able to access it
+13:23 data governance is taking that practice
+13:26 making it
+13:27 more accessible and hopefully
+13:31 as data governance goes it will become
+13:33 not as jesse said
+13:35 a security mechanism but rather an
+13:38 enabler
+13:39 that allows people to access more data
+13:42 safely
+13:43 with groud rails that prevent them from
+13:45 falling into
+13:46 pits of like inadvertently sharing data
+13:49 and basically making more useful
+13:51 insights bringing us
+13:52 more useful products there's a lot of
+13:54 products not just
+13:56 t-shirts or things like that that are
+13:59 possible
+14:00 because we can understand what people
+14:02 want for example
+14:04 okay that's a lot of information so i'll
+14:06 try to summarize and maybe you correct
+14:08 me if i'm wrong
+14:09 so uh we have a lot of data let's start
+14:12 we start collecting data
+14:14 and then in order for an analyst to be
+14:16 able to understand the data they need to
+14:18 know
+14:19 what we actually have so we need to have
+14:21 a way of saying we have this this this
+14:24 data right so this is one part of that
+14:27 so actually having the data itself then
+14:30 having the tools to access the data
+14:32 right so there are tools to access the
+14:34 data there are tools to catalog the data
+14:36 and how people go about so the third
+14:39 component you said processor so well
+14:41 how people go about accessing the data
+14:43 how people go about collecting the data
+14:45 how people go about
+14:46 storing the data and all that right did
+14:49 they miss something
+14:50 and i think you mentioned also banks so
+14:53 in banks
+14:54 that the rule of keeping the data for
+14:56 seven years has been around for quite a
+14:58 while
+14:59 and this is one of the like that's
+15:03 one of the data governance rules right
+15:04 so they say okay we must keep the data
+15:07 for seven years
+15:07 so this is a rule they have to follow
+15:09 and this is how they define
+15:12 data governance right so they debut
+15:14 that's a good example of
+15:15 retention which is how long or how short
+15:18 you retain the data is an example of a
+15:20 data governance policy yes
+15:22 okay we have a bunch of policies like
+15:24 this and then collectively
+15:26 they're told they're called data
+15:28 governance right
+15:30 okay good and uh
+15:33 yeah so this actually this sounds
+15:35 excellent right as uh
+15:37 as a company i really want to have it i
+15:38 want our analysts
+15:40 to know what data we have and where this
+15:43 data lies how to access this data
+15:45 so how do i implement this what what do
+15:47 i actually need to implement this
+15:49 data governance so i i wanted to add a
+15:53 little bit
+15:54 um which will i think go to your
+15:57 question so you were talking about like
+15:59 there's these tools and the processes
+16:01 and you were really hitting on
+16:04 kind of the the process that the tools
+16:06 have right like okay i'm an analyst
+16:08 what tool do i use to find my data to
+16:11 access it to run analytics
+16:13 um but as uri was hitting on there's
+16:17 also policies and this is also a part of
+16:20 the process
+16:21 right so there are you know
+16:24 things that are policies of like okay
+16:26 this is what we do with this kind of
+16:28 data right
+16:29 um you know like he was giving the
+16:31 example with the banks this is
+16:33 this kind of data we need to keep it for
+16:35 seven years but there's also the process
+16:37 around
+16:38 like how do we ingest the data what do
+16:40 we do once
+16:41 it's ingested um and that's a big piece
+16:44 that
+16:44 often doesn't get done or doesn't get
+16:48 done
+16:48 well so when uri was talking about okay
+16:51 everybody wants to collect
+16:52 all this data so what a lot of companies
+16:54 do is they just
+16:55 collect it and dump it right let's just
+16:57 dump it somewhere
+16:59 in this big you know blob storage or
+17:01 whatever um
+17:03 and then we're gonna figure out what to
+17:04 do with it later and i'm not saying that
+17:06 there's
+17:06 anything wrong with that but then you
+17:08 need a process of how do i go through
+17:09 that and then
+17:10 find out what it is and then classify
+17:14 this
+17:15 so um and i know you had a question
+17:18 um like we're probably going to talk
+17:19 about data catalogs later so i'm
+17:21 probably hitting on it a little bit
+17:22 early
+17:23 but if we're talking about how do i
+17:24 implement data governance first
+17:27 you first kind of have to start with
+17:29 saying how do i want to classify my data
+17:31 what are the different data classes that
+17:33 i want to identify
+17:35 of okay this is sensitive stuff this is
+17:38 business critical
+17:39 you know i mean even simple things of
+17:41 like
+17:43 like let's say that you have revenue
+17:45 data and
+17:47 depending on how you call it they might
+17:49 be four different kinds right there
+17:51 could be
+17:52 roi there could be sales um
+17:55 you know different kind of classes or
+17:58 different kind of labels that you want
+18:00 to clump together in a class
+18:04 so really it's about defining what are
+18:07 these different data classes that you
+18:08 want to have
+18:09 and going through your data to then map
+18:13 what you have to these different classes
+18:16 at least it's kind of a first starting
+18:17 point um there's a lot more but uri did
+18:19 you want to add on to
+18:21 at least kind of this classification
+18:22 part yeah
+18:24 a little bit so again um
+18:27 don't start uh it's with the time saying
+18:30 that don't don't start from a
+18:31 technocratic point of view like you want
+18:34 to have data governance great
+18:36 why why are you uh
+18:39 subject to regulation are you
+18:43 afraid of data exfiltration are you
+18:47 in a business that requires you to have
+18:50 a certain
+18:51 liability or certain accountability to
+18:55 customers
+18:56 out of that uh like core reasoning which
+18:59 may be multiples of those things
+19:01 you need to as just to say now
+19:03 understand as a business
+19:05 i need to understand what
+19:08 kinds of data do i hold on and then
+19:10 jesse went into classification which is
+19:13 a very
+19:13 that that's the way to go about it and
+19:16 then i
+19:17 like why am i concerned about data
+19:19 governance which means
+19:20 what kinds of oh that relates to what
+19:23 kinds of data do i want to
+19:25 do something about and then the third
+19:27 part which is what policies do i want to
+19:29 put in place
+19:30 in order to get to that why
+19:34 answer and answer it with confidence um
+19:36 that's very high level
+19:38 uh the next step would be to pick yeah
+19:40 cool
+19:41 yeah so like you mentioned that uh you
+19:44 know like we should ask ourselves why we
+19:46 need data governance
+19:47 so why before we implement this we need
+19:50 to ask this why question
+19:51 and i'm wondering if there are reasons
+19:53 why we do not
+19:55 we do not need it like maybe
+19:58 like maybe it's just an overkill for us
+19:59 maybe we're a small company
+20:01 or we don't have that many analysts or
+20:03 maybe we don't store sensitive data what
+20:05 kind of reasons we can have not to have
+20:08 it
+20:09 so jesse uh mentioned a bit about
+20:12 like data is valuable because otherwise
+20:15 you wouldn't be collecting it right
+20:16 um so if data is valuable
+20:20 you pretty much want to make sure that
+20:22 you know what you have
+20:24 where it is and how to access it which
+20:26 is the act of cataloging
+20:28 which is an act of data governance
+20:32 so i would argue back and i know that i
+20:36 am
+20:36 sort of like speaking from a very clear
+20:38 interest but i would argue
+20:40 just cataloging and understanding what
+20:42 you have
+20:43 is a step that clearly is in the path to
+20:47 getting
+20:47 insights and we i think we can agree if
+20:50 not i'll try to convince you
+20:51 that data insights from data are
+20:53 valuable and you'll make your fish
+20:55 business more efficient more slimline
+20:58 identify new sources of revenues
+21:00 that will be one answer uh jesse seems
+21:03 to have more
+21:06 yeah i i would completely agree um and
+21:08 and this is kind of why we talked in the
+21:10 beginning
+21:10 of how broad of a definition of data
+21:13 governance
+21:15 that there is right and and you're right
+21:17 i mean different companies are going to
+21:18 have
+21:19 different levels of intricacy
+21:22 into their data governance program but
+21:25 uh as uri said i think we would
+21:27 vehemently argue that any company that
+21:30 has data even if you've got five
+21:32 employees versus
+21:34 50 000 you still are going to need
+21:37 some way of knowing what data you have
+21:40 so that you can have
+21:41 insight from it now maybe your processes
+21:44 aren't going to be as complicated as say
+21:46 a bank
+21:46 right that is collecting a lot of
+21:49 sensitive information and
+21:51 in the the years that we've been doing
+21:53 um research on companies there have been
+21:55 some that are small
+21:57 kind of cloud native they don't have a
+21:58 whole lot of employees they don't
+22:00 collect a whole lot of sensitive data
+22:02 and their data governance program is a
+22:04 lot less complicated
+22:06 than let's say a very big financial
+22:08 institution
+22:10 that has many moving parts that they
+22:12 have to think about many employees
+22:15 um so you're right it can be a bit less
+22:17 complicated but we would argue that no
+22:19 matter
+22:19 what if you have data at all you're
+22:22 going to have to
+22:23 you you would be best served
+22:26 to think about how you're going to
+22:29 um structure a governance program for
+22:32 that data
+22:34 so distilling it just adding a little
+22:36 bit distilling it to an even base
+22:38 motif like you collect data you store it
+22:40 somewhere you
+22:41 query it with some system that costs
+22:44 money
+22:45 so how do you know that the the money
+22:47 that you pay for storage
+22:49 and compute to like retain this data and
+22:53 process this data
+22:55 is actually doing something for you
+22:57 that's data governance
+22:58 yeah so it's not a question whether we
+23:01 need
+23:02 data governance or not we do need it
+23:05 but the the why here the question we
+23:08 should ask
+23:09 ourselves is what is the reason we need
+23:11 it so
+23:12 it's clear we need it but why we need it
+23:14 right it's not like
+23:16 a decision between yes or no it's
+23:18 decision between
+23:20 okay what are the aspects what are the
+23:23 problems we want to solve first
+23:25 with this right before starting to
+23:27 implement it
+23:28 exactly exactly yeah you're totally
+23:31 right and that's going to help you
+23:32 figure out
+23:34 how extensive of a data governance
+23:37 program am i going to need and uri is
+23:38 completely right you know you
+23:40 yes you're going to need it but figuring
+23:42 out that why is it because i'm
+23:43 collecting a bunch of sensitive
+23:45 data um am i going to need to show
+23:47 regulators a certain something um
+23:50 is business asking us for like you know
+23:53 our t-shirt website right well
+23:55 are there differences in fourth of july
+23:57 versus other times do we need to
+23:58 increase our supply chain
+24:00 right so answering those kinds of
+24:01 questions those are the things that help
+24:03 you figure out
+24:04 what parts of a data governance program
+24:08 do i prioritize first you know
+24:14 and i guess most of the time the answer
+24:16 is data catalog
+24:18 i need to know you need to have this
+24:20 catalog of data you need to know what
+24:22 kind of data you have
+24:23 and you started that we need to classify
+24:26 the data
+24:27 so we need to know first of all what
+24:29 kind of data sources we have and then
+24:31 for each data source
+24:32 uh we need to understand this
+24:36 field in this data source is it uh
+24:39 you know personally identifiable or not
+24:42 is it like i think you mentioned
+24:45 business critical
+24:47 um so what kind of actually what kind of
+24:49 classes can we have there
+24:52 in addition to these two that's a good
+24:54 question uri i think you're more
+24:55 familiar with a lot of the different
+24:58 classes so so the classes yes thank you
+25:01 the classes of data really are not like
+25:03 there's not like a preset
+25:05 uh like dictionary of classes you use
+25:08 for every purpose in every business
+25:10 the classes of data are really defined
+25:13 by
+25:14 yourself there are examples of classes
+25:16 of data which we'll go over
+25:17 but they'll define by yourself as groups
+25:20 of data i want to assign a specific
+25:23 policy or a specific uh governing
+25:26 method too here are common examples
+25:29 banded about
+25:30 in the industry one is we already
+25:32 mentioned pii
+25:34 uh we mentioned pii because the european
+25:36 regulator really made the point
+25:38 of like you must suffer pii separate pi
+25:41 from
+25:42 other kinds of data pii is personally
+25:44 identified information
+25:45 that can be as jesse mentioned earlier a
+25:47 phone number which can clearly identify
+25:49 you in this day where everybody has a
+25:51 phone
+25:52 or a phone hardware number or an address
+25:55 or
+25:56 name and it actually depends on the
+25:58 kinds of business you are
+26:00 because in some businesses you may be
+26:02 collecting uh
+26:03 names and addresses but not in an
+26:05 identifiable manner maybe
+26:08 google offices is an address for example
+26:10 but it doesn't
+26:11 identify people there's like i don't
+26:13 know how many thousands people working
+26:15 there
+26:16 um there's special health information
+26:18 which has been
+26:19 around also for a long time and it's the
+26:22 demographics of the patient
+26:24 the uh kinds of treatments that patient
+26:27 is having the
+26:29 the success of those treatments and
+26:31 especially in medicine by the way
+26:33 uh in medical research since we all went
+26:36 to an interesting year
+26:38 the sensitivity of uh treatments on a
+26:42 specific person which can identify
+26:44 them and maybe things they don't want uh
+26:48 a processor of medical information to
+26:51 know are actually very useful in
+26:53 determining
+26:54 the possible success of a treatment and
+26:56 uh
+26:57 we have obvious recent examples so
+26:59 patient health information
+27:01 personally identified formation fiscal
+27:04 information so
+27:05 list of transactions and amounts and
+27:09 so on um there's other
+27:12 classes of data but really uh when you
+27:16 try
+27:16 as we are talking to potentially people
+27:18 who want to start a governance program
+27:20 don't subscribe to a like outside
+27:24 defined uh classes of data think about
+27:27 your business think about what data you
+27:30 possess
+27:31 and think about how you would like to
+27:32 control make accessible
+27:34 delete that data that's how you should
+27:37 think about it there are examples
+27:39 we literally wrote a book um but
+27:43 think about yourself not about outsiders
+27:47 yeah yes and when it comes to
+27:50 implementing this
+27:51 data catalog so i can already imagine
+27:53 that if i just
+27:54 or create an excel spreadsheet or
+27:58 google spreadsheet and then start
+27:59 putting all the data sources there
+28:01 all the fields all the classes that is
+28:04 probably a reasonably good start but i
+28:07 guess that's not
+28:08 always the best tool there are better
+28:10 ones do you
+28:12 do you know if there is something
+28:14 available that can help us that
+28:16 is a purpose built for this
+28:19 for this purpose
+28:23 yes there are many uh
+28:27 areas laughing because there are many
+28:30 many many
+28:31 tools um and uri i'm sure you have
+28:34 a a lot of opinions on this so i guess
+28:37 the the thing that i'll start with
+28:39 saying
+28:39 is that um
+28:42 there are there are so many tools and
+28:45 people create a lot of their own tools
+28:47 um but i think one of the important
+28:49 things is to really think about
+28:51 the future right so how scalable
+28:55 is what you're doing is it going to have
+28:57 to scale
+28:58 enormously because one of the problems
+29:00 we've seen folks have is that
+29:02 data governance especially if we're
+29:04 talking about cataloging
+29:06 classifying i mean if you're even
+29:08 thinking about doing this as an excel
+29:09 spreadsheet that is so
+29:11 manual right and as we've talked to
+29:15 companies
+29:16 where data governance often fails
+29:19 is because it's so manual and there
+29:22 isn't somebody to do that
+29:24 in fact we had talked to a company a
+29:25 couple years ago
+29:27 who had a full-time uh data steward you
+29:29 know so a person whose sole job
+29:31 was to catalog classify do all this kind
+29:35 of stuff
+29:35 um and that person quit because they
+29:38 said the job was and i quote soul
+29:39 sucking
+29:40 so true true story i'm not lying
+29:45 um and you know so most other companies
+29:48 we we've talked to
+29:49 is they don't have a single person who's
+29:51 doing this job
+29:52 and so um i think the takeaway from that
+29:55 is to just think about
+29:57 whatever process you're going to start
+30:00 think about how how can i keep this
+30:03 going
+30:04 who's going to be doing this work and am
+30:06 i setting up a process
+30:08 that is just um
+30:11 so time consuming and and so arduous
+30:13 that it's going to be really difficult
+30:15 to keep going
+30:17 uh uri i want to
+30:20 i want to double down on a lot of what
+30:22 just he said
+30:23 so so alex say what you discussed
+30:26 is really okay i need to get data
+30:28 governance i'll open this spreadsheet
+30:30 i'll start inputting
+30:31 i will work for my data if you work for
+30:34 your data
+30:35 something is wrong there from the start
+30:37 the data should work for you
+30:39 not the other way around and that's
+30:41 actually that's not my
+30:43 metaphor that's uh one of the analysts
+30:45 that's worked today like make data work
+30:47 for you is what data governance is about
+30:50 but but think about it this way you need
+30:53 the data governance program
+30:54 program that probably means you have
+30:57 data
+30:58 somewhere which you process and uh which
+31:01 you stole
+31:01 okay where is the data right now this is
+31:04 something
+31:04 you should know because you pay for that
+31:06 storage every day okay
+31:08 what systems do i already have
+31:12 that uh tell me something about my data
+31:15 then take those systems and it's just he
+31:17 said extend
+31:19 your timeline into the future five years
+31:22 ten years
+31:22 see like is this place where i stole the
+31:25 data
+31:26 right now am i happy about it is it
+31:28 performant is it scalable is it
+31:31 more or less future proof okay what
+31:33 systems
+31:34 do i have that integrate into this
+31:36 system today i'm going to do
+31:37 a little bit of a shameless plug here uh
+31:40 when you use
+31:41 a platform such as google cloud
+31:44 we have tools already built in to the
+31:47 platform
+31:48 uh to support a lot of the basic
+31:50 workflows and basic needs we
+31:53 google cloud has a google cloud catalog
+31:56 which automatically as you drop data in
+31:58 other
+31:58 file storage or columnar storage
+32:01 assesses the data and indexes it because
+32:05 we are also known for being a search
+32:07 company and
+32:08 uh allows you to like find what you need
+32:11 that's great
+32:12 that's a free starting point you can
+32:14 have today
+32:15 now uh to be fair other clouds have
+32:18 similar systems
+32:19 so uh just assess your situation right
+32:23 now
+32:23 then if you need to fi to buy a
+32:26 specialized tool
+32:27 again don't work for your data
+32:30 what do you need next that is not
+32:33 satisfied
+32:34 with your existing infrastructure and
+32:36 the way to look at it is i can go back
+32:38 to the why
+32:39 why do i need data governance i need to
+32:41 comply with regulation
+32:42 or i need to extract more insights or
+32:45 i need to be wary about exfiltration
+32:49 there are tools that are built around
+32:52 those concepts
+32:53 evaluate them in light of your current
+32:56 and future goals
+32:58 and then decide now do do you did you
+33:01 want a
+33:01 is like concrete uh like if you are a
+33:05 do this kind of uh thing that's more of
+33:08 a conversation that
+33:10 is very different for each particular
+33:12 company in each particular
+33:13 vertical i'm sorry if that's a little
+33:16 bit disappointing though
+33:19 so what i understood is starting with an
+33:21 excel spreadsheet maybe is not ideal
+33:23 because
+33:24 at the end the person who needs to
+33:25 maintain it will quit because it's a
+33:27 sole second job
+33:29 then then you need to make
+33:32 data work for you and there are tools
+33:35 who actually go there look at your data
+33:37 and
+33:38 [Music]
+33:39 organize and organize it yes but i guess
+33:42 the this manual component this
+33:44 human component will not go away because
+33:46 at the end you still need to make a
+33:48 decision
+33:48 if this particular field is personal or
+33:51 not
+33:52 personal identifiable or not is this
+33:54 particular
+33:55 field is business critical or not so
+33:57 there still needs to be a person
+33:59 who looks at this and makes this
+34:00 classification right and
+34:02 even more importantly like okay this
+34:04 particular field is personal or not
+34:06 fine what do you do with personal data
+34:09 that can only come
+34:10 from a human do you delete it do you uh
+34:13 encrypt it
+34:14 do you allow it to be accessible only by
+34:16 certain people
+34:18 uh that's most definitely a human
+34:20 component
+34:21 and that's the human that the data works
+34:24 for
+34:25 and then data doesn't stand still it
+34:27 evolves right
+34:28 we add new fields we remove fields we
+34:30 add new data sources
+34:32 so i guess somebody still needs to keep
+34:34 track like even though
+34:36 like a system could be automatically
+34:37 synchronizing with the data sources and
+34:39 say okay there is a new field hey
+34:41 and then maybe there is a pop-up or
+34:43 email saying
+34:44 hey data steward please take a look at
+34:47 this field
+34:48 or the team who is responsible for
+34:50 producing the data
+34:51 at the end somebody needs to go there
+34:54 and
+34:55 do a manual action right we just need to
+34:58 make
+34:58 this process we talked a lot
+35:02 about like binary uh binary concepts
+35:05 like is this data
+35:07 a or b is uh this column protected or
+35:10 not should this be accessible to
+35:12 this person or not there's also some uh
+35:16 like fuzzy concepts in data governance
+35:18 one of which
+35:19 is data quality and data quality is a
+35:23 little bit more elusive it's like
+35:24 this data source that contains
+35:26 personally identifiable information
+35:29 that is entering through this system and
+35:31 going to that system
+35:33 do i trust it uh is it high quality
+35:36 enough to be used in the machine
+35:38 learning model
+35:39 is it high quality enough to make a
+35:41 business decision alone
+35:43 this is a little bit more of a tricky
+35:45 concept which is also part of data
+35:47 governance we can talk a little bit
+35:48 about that
+35:49 yeah i'm wondering uh yeah this is an
+35:52 interesting discussion like
+35:54 how do you know if this data is high
+35:55 quality is because the analyst working
+35:58 and that
+35:59 team said so or so so the
+36:03 mechanic ways to understand quality
+36:06 and uh like more elusive ways so first
+36:09 of all
+36:09 what's the source of the data that will
+36:11 be like is the source of the data
+36:14 and i have this insurance company i'm
+36:16 working on they have proudly
+36:18 mentioned that they are at world 3.0
+36:21 now and i'm like what does that mean and
+36:23 they're like
+36:24 we are now at the stage where we have
+36:26 processed most of the handwritten data
+36:28 and we are now reading data written in
+36:31 microsoft word 3.0 so that's probably
+36:34 1990s and or
+36:37 slightly later but not much later and we
+36:41 are
+36:41 making our way through the backlog so is
+36:44 that data
+36:45 that potentially some of it's
+36:47 handwritten can that be used today
+36:50 in making a decision about the mortgage
+36:52 because it's an insurance company
+36:54 uh that's an interesting question only
+36:56 somebody who's familiar with the entry
+36:58 no is this data that's coming from an
+37:01 oil rig
+37:02 where transmission is iffy and there's a
+37:05 lot of
+37:05 noise on the communication channel
+37:08 should i be using that
+37:09 in order to uh determine
+37:12 gas leaks that's somebody was familiar
+37:15 then there's like
+37:16 okay this data source is the combination
+37:20 of merging
+37:21 uh data sources a and b for which i do
+37:23 have a quality signal
+37:24 what's the derivative quality signal
+37:27 those are the if that that are technical
+37:29 you can detect
+37:29 uh like out of bound values missing
+37:32 fields
+37:33 uh like uh error in rows
+37:37 those are more technical practices that
+37:39 you can implement uh
+37:40 fairly easily and also give you a
+37:42 quality signal
+37:44 so basically it is up to the team or
+37:48 whoever
+37:48 up to the producer of the date to say
+37:51 because they have a domain expert a
+37:52 business expert
+37:54 like somebody from insurance or somebody
+37:56 from this oil ring
+37:58 who can say okay this data can be
+38:01 trusted but this data is easy
+38:03 right so we still need to trust the team
+38:06 the producer
+38:07 who created you can implement a lot of
+38:09 tools that give you
+38:10 a leg up uh but i would argue that the
+38:14 final decision
+38:16 of trust should be handled by a human
+38:19 still we are still useful there's future
+38:22 hope
+38:25 so okay so we have the data sources
+38:28 right so we have the data storage
+38:30 where we put data it can be a data lake
+38:32 or whatever database house so we have
+38:34 some place where we keep the data then
+38:37 we have this data catalog
+38:38 which might also communicate with our
+38:41 data storage
+38:42 and get all this information from there
+38:44 we have a data steward who maintains the
+38:46 data catalog
+38:47 and knows what's going on there one or
+38:49 multiple
+38:50 so what else do we need to when it comes
+38:53 to tools and
+38:54 practices what else do we need to
+38:55 implement for
+38:57 data governance so
+39:00 i think that the next step and we had
+39:02 kind of talked about this a little bit
+39:04 is the policies that you then have
+39:07 on these classifications right
+39:10 so once you have your data classes now
+39:13 you're going to have to define
+39:14 okay what do i do with those right are
+39:17 there certain ones that need to stay
+39:19 in this kind of storage certain ones
+39:21 that um as already said need to be kept
+39:23 for seven years
+39:24 um ones that are business critical that
+39:26 we should be using um
+39:28 ones that it matters very much the
+39:29 freshness of the data
+39:31 right um so the these policies and and
+39:35 they can be very
+39:36 i just listed a lot of ones that are
+39:38 very straightforward
+39:39 um and as we've done more research into
+39:42 policies and i'm sure the listeners
+39:44 uh will will agree is
+39:48 that they are a lot more complicated
+39:50 than we
+39:51 had originally thought of just okay
+39:53 here's a simple policy
+39:54 um you know only allow access
+39:58 of this data for for these folks
+40:01 and one of the use cases we've heard
+40:03 recently is
+40:04 well depending on the purpose somebody
+40:08 is accessing this data for that might
+40:11 change who can have access so we heard
+40:14 an example from a company that sells
+40:16 furniture
+40:17 and they had said you know okay let's
+40:19 say um that we have somebody's email
+40:21 address because they bought a couch and
+40:24 we're going to ship them
+40:25 the couch so you know the the person who
+40:28 is you know handling these shipping
+40:31 addresses and everything they can have
+40:33 access to that data
+40:34 but now let's say that we have a sale on
+40:37 couch covers or something and we'd like
+40:39 to be able to market this to folks who
+40:41 have recently bought a couch
+40:43 well if someone and it could even be
+40:45 that same analyst right
+40:47 they cannot access that email address
+40:50 for that marketing purpose unless that
+40:52 customer explicitly gave permission
+40:55 so there's even these nuances in um
+40:58 in policies that you know how do i
+41:00 create a policy that's going to capture
+41:02 that nuance
+41:03 of for this particular use case of this
+41:07 data
+41:07 that it can't be used for that um so i
+41:11 guess where i'm going with this
+41:12 is that um you know once you have your
+41:16 classes you're going to have to think
+41:17 about what do i
+41:18 do with those um and what policies am i
+41:21 going to
+41:22 put on this and as uri had said at the
+41:24 very beginning
+41:25 this all goes back to your why right if
+41:28 you know and
+41:29 and this is the way that you can figure
+41:30 out i don't want to say minimal
+41:32 governance but what are the key things
+41:34 that i really need to care about
+41:36 um if regulations are you know top of
+41:39 mind and that's the most important then
+41:41 my policy should really fall in line
+41:43 with that because as you can see you can
+41:44 go down like a million rabbit holes
+41:46 of you know govern this govern that you
+41:49 know classify this classify that
+41:51 policies
+41:51 um so really being able to map back to
+41:54 what do i have to do like what do i have
+41:57 to do what's the most important
+41:59 and starting there with your policies um
+42:01 or did you want to add to
+42:04 yeah a bit um so so adding to what jesse
+42:07 said
+42:08 the next step as jesse said is like you
+42:10 have organized your data you've
+42:11 understood your data you've
+42:13 attached tags to further understand and
+42:15 index your data
+42:16 and now you're into okay what is allowed
+42:19 to do with my data and just to describe
+42:21 a couple of policies
+42:23 uh the way i like to think about this
+42:26 being inspired by our customers is
+42:29 policies are not thou shalt not or
+42:32 doubts
+42:33 shell those are not those should not be
+42:35 thought of as prescriptive
+42:37 policies like uh should answer the
+42:40 question
+42:40 how do i make sure the cio the
+42:44 ciso the ceo feel comfortable
+42:47 about everybody in the company accessing
+42:49 this data
+42:50 and the way to make those people those
+42:53 sea sweet people feel comfortable
+42:55 is saying okay anybody can access the
+42:57 data but only this specific group
+43:00 can access personally identifiable data
+43:03 or we make sure to scrub away any
+43:06 location information it never
+43:08 even enters our system and therefore the
+43:10 data is safe
+43:11 those guardrails enable democratization
+43:15 of the data
+43:16 and enable people to extract insights
+43:19 and the tricky thing about insight again
+43:21 is you don't know what you don't know so
+43:24 you may not know that all of the
+43:26 playback
+43:27 events of the music app that you of the
+43:31 list are
+43:31 valuable but then suddenly a year later
+43:34 you go over those and you realize that
+43:36 you can predict
+43:38 uh trends in music and that's valuable
+43:40 because then you can replenish your
+43:42 catalog and then you can
+43:43 basically make more attractive music off
+43:46 the links
+43:47 um there's mechanisms in place that
+43:51 now we are talking about tooling that
+43:52 allow you to do so jesse mentioned how
+43:55 you can make
+43:56 email available for everyone but make
+43:58 sure
+43:59 that when somebody accesses data they
+44:01 are test purpose
+44:02 then they can very easily mass mail
+44:04 about the new couches
+44:06 and the system makes sure that
+44:09 only those people who opted in for email
+44:12 communications will actually get
+44:14 uh the notification of a new culture i
+44:16 guess
+44:17 uh there's other things like for example
+44:20 training machine learning
+44:22 models many machine learning models
+44:24 don't need
+44:25 the personal email they do need a way to
+44:28 identify this is person a this is person
+44:32 b
+44:32 so hashing the email in a one-way
+44:35 function which is still
+44:37 uh still um
+44:41 so one-way hash that is still unique
+44:44 will make sure that you don't expose any
+44:46 personal information
+44:48 but still you can differentiate between
+44:50 humans to do things like
+44:52 count distinct and aggregate by
+44:55 and so on which will create a hopefully
+44:58 useful machine learning model to predict
+45:00 shopping plans yep
+45:04 uh these policies like what it can be
+45:06 accessed what cannot be accessed
+45:08 is it something how many things we
+45:10 access how yes like which team can
+45:12 access
+45:13 for example how exactly uh should it be
+45:16 hashed information or not hashed
+45:18 is it something that is implemented on
+45:20 top of the catalog
+45:22 or is it built into the catalog or how
+45:25 does it usually
+45:26 look in practice so there are variations
+45:30 there's some systems that says a you
+45:33 should access
+45:33 all data through the catalog the catalog
+45:36 will normalize
+45:36 everything the catalog will be your
+45:38 workbench and the catalog
+45:40 also cares for how the data is shaped
+45:43 before you see it sort of like maintains
+45:45 those guidelines
+45:46 that that's one approach the thing i
+45:48 like about this approach
+45:50 is um it is
+45:53 a certain choke point for governance
+45:55 that
+45:56 is sort of by equalizing all the data
+45:58 the downside of the system
+46:00 is it puts a constraint about the tools
+46:03 you can use
+46:04 you can only use the catalog as an
+46:06 interface or tools that
+46:07 interface with the catalog again
+46:11 being a little bit biased here but i
+46:13 would uh
+46:14 correct towards a system that make sure
+46:17 the actual storage system
+46:19 implements the governance with essential
+46:21 control plane and the dashboard and so
+46:23 on
+46:24 but but having the storage implement
+46:27 governance
+46:28 means you can use any tool that can
+46:30 access the storage
+46:32 and still be safe and that
+46:35 like opens up compatibility with much
+46:37 more tooling
+46:38 again at the end of the day nobody
+46:41 should be maybe
+46:42 besides like just see data storage which
+46:44 hopefully we made much happier
+46:46 um nobody should be
+46:50 working uh to figure out the guardrails
+46:53 the guidelines should be invisible
+46:55 and enable you to use whatever tool you
+46:57 want to do to generate
+46:58 the business purpose you came to the
+47:00 data for
+47:02 but i guess there should be some central
+47:05 place
+47:06 where i as an analyst or i is a data
+47:09 scientist can
+47:10 go and say i need this piece of data
+47:13 and then somebody a lawyer or data
+47:15 protection officer or
+47:16 data producer can evaluate my request
+47:19 and say okay
+47:21 maybe you don't really need this data
+47:22 use this instead or okay yeah like your
+47:24 use case is valid
+47:25 here this is uh now the access is
+47:28 granted right so we need a tool that
+47:30 allows that and
+47:31 should it be on top of the catalog or
+47:34 elsewhere
+47:35 so so it can be on top of the catalog it
+47:39 can be
+47:39 on top of the storage it can be agnostic
+47:42 to actually
+47:43 both so so we recently launched a
+47:45 product called
+47:46 dataplex again being biased but still as
+47:48 a good example
+47:50 dataplex actually sits besides all the
+47:52 storage systems in google
+47:54 and basically tells you hey uh these
+47:57 users have access to this data
+47:59 are you happy about this this data is
+48:02 accessible for these users
+48:04 are you happy about that uh there are
+48:06 systems thoughts
+48:07 just to give a shout out to coliba for
+48:10 example which is
+48:12 a data catalog data governance system
+48:14 which is the third party
+48:16 they implement a shopping cart
+48:19 experience really
+48:20 which is exactly as you described like
+48:22 say it's like i
+48:23 need the financial information for the
+48:26 last two years
+48:27 in order to perform for the analysis and
+48:29 i searched for financial information in
+48:31 the last two years
+48:32 i'm presented with certain uh data mods
+48:35 and i can
+48:36 request access to that and you get like
+48:38 a shopping cart experience with
+48:40 authorizing and
+48:41 auditing which is another concept of
+48:43 data governance
+48:44 which records this transaction which is
+48:47 also
+48:48 important i think one thing to add to
+48:52 is that um alexi a lot of what you were
+48:55 describing
+48:57 it's manual too right and and as uri
+49:00 said there's
+49:00 i mean you have to have people involved
+49:02 right that that is going to be important
+49:04 but again this is another place to think
+49:06 about
+49:08 how much of this can i sort of automate
+49:10 or or make
+49:11 easier for myself and i think this is
+49:13 kind of what erie is getting at too if
+49:14 my storage system can implement some of
+49:16 this if my data catalog can implement
+49:18 some of this of
+49:19 you know i i've classified my data and
+49:21 now i've added tags
+49:23 and these tags do certain things with
+49:25 the data then it doesn't become
+49:27 always on the onus of the data producer
+49:30 or something you know an analyst oh we i
+49:32 mean we've talked to a lot of
+49:33 data producers or you know data
+49:35 engineers who are like oh man
+49:37 like i like spend so much of my time
+49:41 having to deal with requests of analysts
+49:43 and data scientists wanting this data
+49:45 set
+49:46 why do you need it you know and then i
+49:47 give it to them and then they don't use
+49:49 it and now i got to do another one
+49:50 so i'm i'm sure many people are familiar
+49:53 with that so
+49:54 the more systems you know when you're
+49:56 kind of thinking about this process that
+49:58 you can
+49:59 implement that will help make some of
+50:02 that stuff
+50:02 not so manual whether if that's a tool
+50:05 that you use or just the way that you've
+50:07 classified it and tagged it um that will
+50:09 help you also
+50:14 thank you yeah we have a question
+50:16 actually from uh
+50:19 so it's also about the data catalog so
+50:22 how
+50:22 can we systematically evaluate data
+50:25 governance initiatives such as having a
+50:27 data catalog
+50:28 for data access so how can we
+50:31 prove their value to to the business
+50:36 but that's a good question i i would go
+50:39 back
+50:40 to the business objectives okay
+50:43 and start at the highest level okay you
+50:45 are storing a lot of data
+50:48 you are spending efforts and compute
+50:51 resources which also cost money on
+50:53 processing this data
+50:54 here's a question which can easily be
+50:57 answered with the catalog and easily
+50:58 addresses
+50:59 like what is the relationship between
+51:03 the money you spend on storing the data
+51:07 and the uh usage
+51:10 of that data a catalog can answer that
+51:12 question and the catalog can show you
+51:14 the most used tables and so on and then
+51:17 you can make decisions such as
+51:19 hey you know what this is a lot of
+51:21 alcohol data nobody is touching
+51:23 let's move it to cold storage which is
+51:25 cheaper
+51:26 uh that could be one way that there's
+51:28 the also
+51:29 uh other way which is uh like i'm
+51:32 subject to regulation
+51:34 uh this regulation can take a bite out
+51:37 of my revenues if i don't comply
+51:39 so how do i move easily cheaply
+51:43 without like every time there's an audit
+51:45 going into a lot of manual label
+51:47 that i comply that will be another
+51:49 approach still
+51:50 justin do you have a couple more yeah um
+51:54 i i would say i mean i think to add on
+51:56 to uri's approaches i think that's
+51:58 absolutely right and you know not to
+52:00 like beat a dead horse but if you kind
+52:02 of go back to the original
+52:04 what governance do i need i i think a
+52:07 lot of times folks look at okay well i
+52:08 got to have this entire governance
+52:10 program
+52:11 and i need all these tools and and this
+52:13 storage and all this head count and it's
+52:15 super complicated super expensive right
+52:18 and and kind of your
+52:19 your c-suite's like hell no that's way
+52:21 too much we're not going to do that and
+52:23 i think oftentimes that's where this
+52:24 question comes from
+52:26 but if you can look at what's the
+52:28 minimum and i
+52:29 like you know we we wrote a book on this
+52:32 so obviously we don't think data
+52:33 governance should be like a bare minimum
+52:35 thing but
+52:36 if you're trying to implement something
+52:39 you got to start
+52:40 somewhere and looking at what's that
+52:42 minimum that i can do
+52:44 um that doesn't require a huge amount of
+52:46 head count that doesn't require a lot of
+52:48 manual stuff that's not a ton of
+52:50 expensive tools
+52:51 is a place to start and as uri said once
+52:54 you can start doing some of these things
+52:56 you can start showing the value of okay
+52:58 we have all this data now we're able to
+53:00 get more insights from it and then it
+53:01 will start to sell itself
+53:03 and then you can see how do i uh expand
+53:06 from there
+53:08 how to find this minimum
+53:12 say again how to find this minimum so we
+53:14 need to find this minimum
+53:16 or minimum thing so how do we do this
+53:21 again look at your business objectives
+53:24 like i need the data governance spoken
+53:26 fine because regulation because insights
+53:30 because
+53:30 things then uh the determining
+53:34 from your objective what you need to
+53:37 solve for
+53:38 successfully will be that minimum the
+53:42 maximum will be how do i solve this in a
+53:45 way
+53:45 which is future proof caters for
+53:47 potentially buying other business units
+53:49 or accumulating 10x data from
+53:52 yx sources will be the maximum
+53:55 uh that's the difference between
+53:57 planning for now
+53:58 and planning for the future as a general
+54:01 approach
+54:02 that's always like in the world of lean
+54:04 startups you need to
+54:06 plan for now plus 1x uh
+54:10 because you don't want to be surprised
+54:12 that will be
+54:13 a way to look at this okay that makes
+54:15 sense so basically
+54:17 you for the first iteration you plan as
+54:20 much as possible for now
+54:22 give yourself uh like a bit of uh
+54:26 allow yourself to also plan for the
+54:27 future a bit but don't be so ambitious
+54:30 and then prove that this thing is
+54:31 valuable and only then
+54:33 expand right yep
+54:36 thank you so we have a question from
+54:38 danish um
+54:40 could you please explain a bit with
+54:42 examples what a data catalog could
+54:44 contain
+54:45 and how we can leverage it i guess we
+54:47 talked a bit about it like a couple of
+54:49 like some data sources
+54:51 and uh yeah so what can it contain as
+54:55 well
+54:56 here is what i wanted data catalog to do
+54:58 for me uh
+54:59 i wanted data catalog so so there's a
+55:01 lot of technical metadata information
+55:03 associated with data table names
+55:06 data set names column names let's begin
+55:08 with that collect all that
+55:10 index all of that do it without or with
+55:13 as little much
+55:14 effort for me saying okay i have a new
+55:17 table
+55:18 now i need to go to the data catalog and
+55:20 register that table
+55:22 that becomes that becomes this manual
+55:25 label
+55:25 like say you mentioned earlier i i don't
+55:28 think anybody wants a data catalog that
+55:30 works
+55:31 basically creates more work for you so
+55:33 let's begin with it
+55:34 then the better data catalog actually
+55:37 extract
+55:38 a logical layer or business layer on top
+55:42 of this technical information which is
+55:44 okay a lot of my data contains
+55:46 information about customer
+55:48 here's a customer entity it includes
+55:50 these kinds of things
+55:52 and customer entities can be found
+55:55 in these systems in these data sets
+55:58 in these tables that catalogs also
+56:03 usually care for lineage of the data so
+56:05 that's another kind of metadata which
+56:07 says
+56:07 where the data came from where the the
+56:10 data is going next in terms of both
+56:12 analyzing your sql data warehouse
+56:15 as well as analyzing other flows of data
+56:18 in and out of your
+56:19 organization obviously we want to be
+56:22 able to search rather than list
+56:24 uh all of this data and uh
+56:28 the the many so those are like the core
+56:31 things the those features i see in many
+56:35 partners for example democratizing data
+56:37 quality is an
+56:38 interesting trend people can five star
+56:41 certain data sets if they are happy with
+56:43 them or not
+56:45 shopping cloud experience which we
+56:46 mentioned earlier policy management
+56:49 is sometimes part of data catalog
+56:51 sometimes not because you already have a
+56:52 view of your data
+56:54 additional business metadata inclusion
+56:57 is something that
+56:59 um uh is part of many data catalogs it's
+57:02 like i don't only want to know there's a
+57:03 customer entity
+57:05 i want to add to that customer entity
+57:08 information about
+57:09 is this a internal customer or an
+57:11 external customer
+57:13 information that maybe only humans know
+57:16 those are things that
+57:19 are normally found in a catalog
+57:22 and again think about the catalog as the
+57:24 dictionary that leads you to all of your
+57:26 data
+57:26 where it is and what it means so you go
+57:29 from
+57:30 uh a table in a data set in
+57:33 a query engine to what does this table
+57:36 mean
+57:36 where did it come from who uses it uh
+57:39 how often is it can you use
+57:41 so that will be the kind of information
+57:43 it's in a that
+57:44 it's in a catalog yeah thank you
+57:48 and i i think most of the time today we
+57:50 spend talking about
+57:51 uh data catalog i don't i know that we
+57:54 have only one minute left
+57:56 and i'm just wondering uh is it
+57:59 all about having this data catalog or
+58:02 there are other things that
+58:04 are important so we talked about uh
+58:08 even more basic concepts as well like
+58:11 data is stored somewhere
+58:12 so that's uh something the catalog often
+58:15 scrapes
+58:16 data is processed somewhere either data
+58:18 warehouse or data analytics engine
+58:20 or an open source tool those are things
+58:24 that are part of your strategy
+58:26 a policy engine which is either part of
+58:29 the storage system or a data catalog
+58:31 data catalog
+58:32 sort of became synonymous
+58:35 with data governance because it's a tool
+58:39 very often used by two groups data
+58:41 analysts and data stewards
+58:43 each of them have a kind of a different
+58:44 purpose in mind one is
+58:46 understanding the data in order to query
+58:48 it and the other is
+58:49 understanding the data in order to
+58:51 govern it
+58:53 and that's why a lot of data governance
+58:55 tools that exist there
+58:56 sort of like our in the catalog or have
+58:59 catalog
+59:00 as a part of it
+59:05 yeah so we should be wrapping up
+59:07 anything else you want to mention
+59:09 before we finish uh thank you for having
+59:13 us this was great yeah
+59:14 yeah this is fun any tips
+59:18 or i don't know read the book
+59:21 yeah okay
+59:24 yeah that's the most important one
+59:28 okay so how can people find you if they
+59:31 have questions
+59:34 um i know we're both on linkedin um
+59:38 that's probably at least for me the
+59:40 easiest way
+59:43 and just seeing sometimes i do a lot of
+59:45 talks
+59:46 so uh linkedin twitter
+59:49 the normal communications channels we
+59:51 all have
+59:52 yeah okay yeah well thanks a lot
+59:56 for joining us today for sharing your
+59:58 knowledge and thanks everyone else for
+1:00:00 joining and listening for asking
+1:00:01 questions
+1:00:03 and uh yeah i guess that's all
+1:00:06 have a great weekend and uh see you next
+1:00:10 week
+1:00:12 the uh and
+1:00:15 our viewers
+1:00:19 thank you very much and thank you all
+1:00:21 who are watching i'm sure alex i will
+1:00:23 contain our uh contact details in the
+1:00:25 summary for this content
+1:00:26 yes linkedin i don't think i have your
+1:00:30 twitter but if you
+1:00:31 give me i'll include this as well sure
+1:00:35 yes thank you it's great a great day and
+1:00:37 have a great weekend
+1:00:38 thanks you too bye

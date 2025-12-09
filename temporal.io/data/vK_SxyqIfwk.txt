@@ -1,0 +1,1447 @@
+Lessons from Applied AI: Tesla, Waymo, and Beyond
+
+0:00 Hey everyone, welcome to our event. This
+0:02 event is brought to you by data talks
+0:03 club which is a community of people who
+0:05 love data. We have weekly events today.
+0:08 Uh this is one of such events. Um if you
+0:11 want to find out more about the events
+0:13 we have, there is a link in the
+0:14 description. Um so click on that link,
+0:16 check it out right now. We actually have
+0:19 quite a few events in our pipeline, but
+0:21 we need to put them on the website. Uh
+0:24 but keep an eye on it anyways. Um so we
+0:27 will put um them. you'll see them. And
+0:30 then don't forget to subscribe to our
+0:32 YouTube channel. So this is the most um
+0:35 reliable way of getting notified when
+0:37 our stream starts. And last but not
+0:40 least, do not forget to join our um data
+0:43 community where you can hang out with
+0:45 data with other data enthusiasts. During
+0:48 today's interview, you can ask any
+0:49 question you want. There is a pinned
+0:51 link in the live chat. Click on that
+0:53 link, ask your questions and we'll be
+0:56 covering your questions during the
+0:58 interview. So that's the usual
+1:01 introduction I do.
+1:04 Also, I'm a bit sleepy. Um, but I hope
+1:07 it goes well.
+1:10 So I guess if you're ready, I have the
+1:13 questions prepared
+1:16 in front of me.
+1:17 >> Yeah,
+1:18 >> if you're ready, we can start.
+1:20 >> Yeah, sounds good. Ready? Um, today on
+1:24 the podcast we are joined by Aishwara.
+1:26 Do you pronounce your name correctly?
+1:28 >> Yes, that is right.
+1:29 >> Yeah, good. A machine learning engineer
+1:32 at Vimo, formerly part of Tesla's
+1:34 autopilot AI team and a Cambridge Melon
+1:36 University Alumni. Aishwara has worked
+1:39 across some of the toughest applied AI
+1:42 problems. Financial recommendation
+1:44 systems at Morgan Stanley, multimodel
+1:46 research at CMU, perception and video
+1:49 understanding and Tesla and now gesture
+1:51 and pedestrial semantics at IMA. She has
+1:54 also contributed to AI for social good
+1:56 including a malaria mapping project in
+1:58 Africa that achieved real world impact
+2:00 at scale.
+2:02 Welcome to this event.
+2:06 >> Hi, thank you for having me. Yeah,
+2:09 that's um quite a nice bio. Um
+2:12 especially um I don't know probably
+2:16 um what you do now uh at and Tesla
+2:19 is challenging but for me also Morgan
+2:22 Stanley sounds very challenging cuz um I
+2:26 worked a little near high frequency
+2:29 trading. So I wasn't actually working on
+2:32 the system that we were doing tra uh
+2:33 high frequency trading but we were doing
+2:36 some um
+2:38 how to say analytics on top of this
+2:40 data. It was huge. So probably quite
+2:44 challenging. Um so can you tell us uh I
+2:48 just outlined your uh career journey but
+2:51 can you tell us more about this? Um
+2:55 >> yeah uh so I I think uh like you
+2:58 mentioned at Morgan Stanley it was a lot
+3:01 of data. So I was a big data engineer at
+3:03 Morgan Stanley and I basically did that
+3:06 handle all this huge amounts of data and
+3:10 I was there when Morgan Stanley you know
+3:12 they were doing this acquisition of
+3:14 Erade. So we had like a lot more data
+3:16 coming in. So my role there was you know
+3:19 handling all this data. How do we
+3:21 connect the different dots? how do we
+3:22 analyze them together? And from there I
+3:26 uh like realized that you know there's
+3:29 so much of data that it has so much of
+3:30 value that we don't need to do all the
+3:33 things that we do manually and that was
+3:35 back I guess in 2018 and the whole AI
+3:39 domain the AI bubble hadn't like formed
+3:41 yet but you know it was getting there
+3:43 people were realizing how important it
+3:45 was and uh finance was one of the last
+3:48 fields to take on uh the machine
+3:50 learning aspect the AI aspect so we were
+3:53 onboarding systems And that's when I
+3:55 decided to like you know get a hand at
+3:58 it and like try some of like begin with
+4:00 some of the smaller systems like you
+4:02 know recommendation engines and uh stuff
+4:05 that was already well known in the uh AI
+4:09 domain. So I started off as that and
+4:12 then we decided to get a bit more uh I
+4:16 guess researchy with that. We tried out
+4:18 like you know graph neural networks
+4:20 which were some of the more complicated
+4:22 topics at that point and that's when I
+4:24 realized that oh it's you know there's
+4:26 so much to be learned here and there's
+4:28 so many this this field is so vast so
+4:30 that's when I decided to like uh pursue
+4:33 a masters
+4:34 >> and I like decided to join Kangi Melon
+4:37 University and my program it was like
+4:41 sorry it was a mix of data science and
+4:44 uh machine learning so I had like I
+4:46 could draw upon both my experiences and
+4:48 what I wanted to learn and where I
+4:50 wanted to get at and dur during CMU I
+4:53 was more like uh inclined towards
+4:56 projects that involved a lot of computer
+4:58 vision. So I was involved in this
+5:00 project project for like navigational
+5:03 app for blind people. Uh so it's called
+5:06 like AI guide dog. So it it like takes
+5:09 in the world and navigates uh people
+5:11 without vision. And from there, you
+5:14 know, I got into Tesla because it's also
+5:16 similar like computer vision domain and
+5:18 navigation related stuff. Uh and that's
+5:21 where my self-driving journey began. And
+5:23 then from Tesla to Wayob, it's like a
+5:26 similar domain but uh different kinds of
+5:28 products. Uh like uh some different like
+5:31 differences are there. Uh and yeah, uh
+5:34 that's where I am at Whimo right now. um
+5:37 in the self-driving domain started from
+5:39 finance uh reached in a different domain
+5:42 >> but yeah
+5:43 >> that's that's an interesting journey uh
+5:45 this app that you developed for blind
+5:48 people
+5:49 um can you tell us more about it like
+5:52 how does it work uh is it uh like they
+5:55 hold their phone and then it tells uh
+5:57 where to go or describes things
+6:01 >> yeah sorry
+6:03 so yeah for this uh app like the goal
+6:06 was that you know uh people without
+6:08 vision they should be able to navigate
+6:10 the world just as cited people do. So
+6:13 this app is basically their eyes. So it
+6:16 you just like hang it around your neck
+6:18 and you walk with it and it gets a world
+6:21 view of what is in front of you and then
+6:24 uh via like live audio instructions. It
+6:27 tells you like you know keep walking
+6:29 straight and uh if you've entered a
+6:31 destination based on that you know take
+6:33 left or right or stop at a traffic
+6:35 signal or there's like you know
+6:36 pedestrian crossings so it gives you
+6:39 instructions via audio.
+6:41 >> Interesting. And is it something you did
+6:44 just as a pet project? Was it a part of
+6:46 a company? Was it AI for social good
+6:49 project? How did you
+6:52 um get involved?
+6:53 >> Yeah. So uh so my program has this uh
+6:57 thing called the capstone project. So
+6:58 every year like you either pair up with
+7:01 a professor or someone from the industry
+7:03 who already has a very interesting
+7:05 project and then you work on it. So this
+7:08 project was from an alumni uh of CMU and
+7:11 he currently works at Pinterest. Uh but
+7:14 he started this whole project and uh
+7:16 this was like the third iteration where
+7:18 you know he worked with two groups of
+7:19 folks before and then uh my team on
+7:22 boarded on it. Mhm. Okay. But was it um
+7:26 like a community AI social good project
+7:29 or was it a company?
+7:32 >> Um I would say it was like more of a
+7:35 volunteer project. So uh it's it's just
+7:39 like they every year a group of
+7:41 volunteers from CMU work on it and then
+7:45 we make some progress and then we pass
+7:46 it on to the next group.
+7:48 >> That's a very interesting concept.
+7:51 >> Yeah. So before me like two batches of
+7:53 people had worked on it. So they were
+7:55 like mentors to us and then when I got
+7:57 done I mentored another batch that came
+8:00 after me. So this is like in its fifth
+8:02 iteration now like there have been two
+8:04 batches after me and they are making
+8:06 more and more progress on this print.
+8:09 That's really
+8:12 that's a really nice idea because well
+8:15 we have courses at data talks club and
+8:17 for me I immediately uh started thinking
+8:21 how can I implement something like this
+8:22 cuz it sounds so amazing and with the
+8:25 community we have uh I see that the
+8:28 people from the uh previous iterations
+8:30 they have people who are currently doing
+8:32 courses. So having a project like that
+8:35 for them to actually um sharpen the
+8:38 skills they picked up during the courses
+8:40 that's a really good idea.
+8:42 >> Yeah. And it doesn't need to be like you
+8:44 know done like it's a big thing right?
+8:46 You need there's so many moving
+8:48 components. It can't be built in one
+8:50 year by a given cohort or even in 6
+8:52 months by a given cohort. So you like
+8:55 pick up small pieces like the first one
+8:57 started with like the data efforts. The
+8:59 second one started building like
+9:00 baseline models. the third one like
+9:02 tried improving it with evals and stuff.
+9:05 So you do it iteratively.
+9:07 >> So it's a good idea. Yeah.
+9:09 >> Do do you know if this app is accessible
+9:11 uh in app store?
+9:14 >> Uh not yet. So the the next community
+9:17 like the new batch of students are going
+9:19 to be working on the app. We have the
+9:21 model but it's still in beta phase. Uh
+9:24 we are doing a lot of testing because
+9:26 it's kind of like a sensitive use case
+9:28 and uh yeah.
+9:29 >> Yeah. Yeah. You can imagine I recently
+9:32 uh participated in a marathon. People
+9:35 who know me, they would roll their eyes
+9:36 cuz I wouldn't shut up. Of course, I've
+9:38 been preparing for so long. Uh but yeah,
+9:41 so the reason I thought about this uh
+9:44 blind people also or people with um
+9:48 how to say um with vision problems and
+9:52 also completely blind who don't see at
+9:55 all. They took part in this but they
+9:57 were running with a guide. So there was
+9:58 a person who was running with them and
+10:00 they were holding their hands uh and
+10:03 running together
+10:04 >> and I thought like it's so amazing to
+10:08 include them too like cuz they also want
+10:10 to be a part of this event but cuz they
+10:12 cannot see it's very difficult but what
+10:16 they did uh they allowed um they called
+10:20 them guides to also join and be the
+10:23 leads and this is so amazing and I guess
+10:26 well maybe with this app they wouldn't
+10:28 be able to run an event, a race. Uh but
+10:33 uh yeah, this is one step closer to
+10:37 this, right?
+10:38 >> Yeah, we that that's the hope like you
+10:40 know, they don't need like uh a person
+10:43 or some rely on someone. They can just
+10:45 have their app and that can be their
+10:47 guide for the world. Yeah. Mhm. And also
+10:50 with this um VR glasses um you probably
+10:55 heard like I think Meta has them, some
+10:57 other companies have them. So you put
+10:59 them in your eyes and they uh have
+11:02 cameras, right? And the cameras they
+11:05 have broader,
+11:08 how to say vision than mobile phones.
+11:12 >> Yeah. Yes.
+11:12 >> Right. So maybe
+11:15 >> Yeah. Maybe this is something that um
+11:18 future alumni can work on, right?
+11:22 Or like
+11:27 >> cars, right? Not necessarily cameras.
+11:30 >> Yeah, that's like, you know, those are
+11:32 the things that we're trying to work
+11:33 around because it needs to be cost
+11:35 efficient and you know, we can't afford
+11:36 to put like lighters and stuff. So, a
+11:38 mobile phone, everyone has it like in
+11:41 today's world. So, we're trying to fit
+11:42 it on what everyone has. How expensive
+11:46 is uh uh lit lighter?
+11:50 >> I think it depends on the quality like
+11:52 uh you can get from somewhere like
+11:55 really cheap to extremely high-end. Uh
+11:58 so yeah, I guess the
+12:00 >> pronounce it lighter. LAR
+12:03 >> it's LAR. Yeah,
+12:04 >> LAR. So this is I know radar. So radar
+12:08 emits uh uh radio frequencies and one
+12:12 waits back to the frequency to come back
+12:14 to the wave to come back right and based
+12:17 on that uh the the radar can estimate if
+12:21 there's something
+12:24 uh and if it's moving
+12:26 >> uh and so on. Um whales do this right?
+12:29 So they make sound
+12:31 >> or I don't know maybe not whales but
+12:33 some other
+12:35 >> bats.
+12:37 Yeah. Yeah.
+12:39 >> And the same uh uh the same thing u
+12:42 lighter has um kind of similar idea but
+12:46 it's instead of um a radio wave it uses
+12:50 lasers, right?
+12:52 >> Uh it it's light. Yes, that's right.
+12:55 Like light rays. Yes. Okay.
+12:57 >> That's why the lighter thing. Yeah.
+12:59 >> Okay. I thought it's laser there. Okay.
+13:01 >> Uh similar like I I think it's one of
+13:03 the light frequencies.
+13:05 >> Okay. Okay. And um
+13:08 I don't know if you can disclose or talk
+13:11 about things you do at work, but um I
+13:13 know that these things they are used
+13:16 often for cars, right? For self-driving.
+13:21 >> Yeah. Uh I think it uh like depends on
+13:23 the stack. Uh some companies they do use
+13:28 like uh most of the like uh fully
+13:31 self-driving where there is like
+13:33 absolutely no driver use it. Uh whereas
+13:36 if you see some of the Tesla systems,
+13:38 they do not use it at all. They rely
+13:40 solely on the cameras. Yeah.
+13:41 >> Mhm. So Tesla I um took a few times a
+13:46 taxi which turned out to be Tesla and
+13:49 for me it was so fun to watch um they
+13:52 have this uh screen and as the car
+13:55 drives they start showing uh like cars
+13:58 and people and uh stuff like around the
+14:01 car, right? And uh for me it was always
+14:04 curious to see like when it makes
+14:05 mistakes or when it doesn't make
+14:07 mistakes. Um well but for me it was kind
+14:10 of fun to watch. So the ride was more
+14:12 entertaining than a usual I don't know
+14:15 um Toyota right cuz I could look at the
+14:20 at the screen.
+14:22 >> Um so this thing works with a camera
+14:24 right
+14:27 here. Sorry, I've uh I think I came down
+14:30 with a flu in in the evening. Um yeah,
+14:34 like I have cold. U might take like
+14:36 brief.
+14:36 >> Hope you recover very quickly.
+14:40 >> Yeah. Um sorry. Uh like could you please
+14:43 quickly repeat the question for me?
+14:45 >> Yeah. Yeah. Uh so I was uh talking about
+14:47 uh these Tesla cars, right? And in Tesla
+14:50 you there's a screen that shows that
+14:54 detects people, cars, bikes or whatnot.
+14:57 Yeah.
+14:59 >> Do you know how this thing works? Like
+15:02 does it use just video cameras?
+15:05 >> Yeah.
+15:07 >> Uh that's like the USB of Tesla systems
+15:10 that you know they uh because LAR is
+15:12 expensive or at least the good quality
+15:14 ones and uh they want to be like really
+15:17 scalable. They rely on just cameras. But
+15:20 it's not just one camera. There's like
+15:23 uh you know cameras all around the car.
+15:25 So you get a view from all around like a
+15:28 360 view of the system and uh you kind
+15:31 of like run your models on top of it
+15:33 that can make use of these different
+15:35 views of the world and see basically all
+15:38 around the car. So basically the the the
+15:41 car has a much better holistic view of
+15:44 the world than a person like a p person
+15:47 driving the car. Yeah.
+15:49 >> Yeah. Cuz we cannot have cameras uh on
+15:51 our back right on our sides.
+15:54 >> Yep. That's yeah.
+15:56 >> So yeah, I think that's the goal with
+15:58 self-driving is to make like driving
+16:00 safer once it accomplishes that level
+16:04 of, you know, the the AI reaches that
+16:06 level. Yeah.
+16:07 >> Mhm. But what is this screen for? Like
+16:10 this screen is for self-driving, right?
+16:12 But in these cases when I took a taxi,
+16:14 it was Uber or some other ride hailing
+16:18 service and they were actually driving.
+16:22 The drivers were driving, not the car.
+16:24 So what's the point of this thing?
+16:27 >> I think it's more about like at this
+16:29 point uh so there's two purposes like
+16:31 you know in like long drives or if the
+16:33 stop traffic is like stop and go you can
+16:36 just put it in the autopilot mode and
+16:37 you don't need to like be constantly on
+16:40 the wheel and constantly like super
+16:42 alert and then the car tricks you. Like
+16:44 I remember 2 years ago I took a trip to
+16:47 like Vegas. It was like a 13-hour drive
+16:50 one way and then 13 hours back and I was
+16:52 the only person driving and like the car
+16:55 aided me all the way. Like it drove 95%
+16:57 of the time and I was like just there
+17:00 and it was so much better because you
+17:02 know I couldn't have made it without
+17:03 that like 12 hours is too much.
+17:05 >> So it's like an assistant system and
+17:09 sometimes like people just drive because
+17:11 they don't trust it. So it's like okay
+17:14 better me driving than the car doing
+17:16 something wrong. So it's also about the
+17:18 trust factor
+17:18 >> if there is any statistics about that.
+17:22 Um there is statistics about like uh
+17:26 failure. People people are saying that
+17:28 it's better me driving than AI, right?
+17:30 Or whatever self-driving thing, but like
+17:33 the question is who actually drives
+17:35 better
+17:37 >> because people might be overconfident in
+17:39 their driving skills, right? But for
+17:41 some simple cases like you said when you
+17:44 need to go to Vegas, I don't know what
+17:47 kind of road is there, but maybe it's
+17:49 like most of the time it's just
+17:51 straight, right?
+17:52 >> Yeah. I I think like uh it's a highway
+17:55 so it's not like you know there's a lot
+17:58 of traffic lights and stuff. You just go
+18:00 straight and you go along the route and
+18:02 it's like uh there's a there's a patch
+18:04 which is like just 150 mi straight and
+18:06 like a normal person would just be so
+18:08 bored out of their mind if you have to
+18:10 drive that much.
+18:13 So, in Berlin, uh it's probably
+18:15 difficult because there are bikes, uh
+18:18 the streets are quite narrow, um like
+18:22 crazy, uh bicycle riders who can jump on
+18:26 you out of nowhere and um like other
+18:30 things. I guess that's why they don't
+18:32 use self.
+18:34 >> I think Tesla is trying to get into the
+18:36 European markets though with its
+18:38 autopilot. Like at least when I was
+18:40 trying to like when I was there I was
+18:42 working on some European road signs like
+18:45 speed limit signs. So yeah.
+18:48 >> Yeah. But also it's regulated, right?
+18:50 You're right. So maybe they cannot use a
+18:53 self-driving yet.
+18:55 >> Not yet. Yes. Yeah. Yeah.
+18:56 >> I see. I see. Makes sense because I am
+18:59 originally from Russia and I know in
+19:01 Russia in Moscow some cars already drive
+19:04 u without drivers. I guess in San
+19:07 Francisco too, right?
+19:09 >> Yes. Yes. SF has SF also has way more
+19:13 which has like no driver at all. So I
+19:16 guess very people people are more
+19:18 interesting.
+19:19 >> So you get something like Uber and then
+19:22 a car comes and there is no driver,
+19:24 right?
+19:25 >> Yes. There's no one there.
+19:28 >> If you ever visit if you visit SF next
+19:31 time, like be sure to take away no. It's
+19:34 it's quite the tourist attraction right
+19:36 now over here.
+19:37 >> Okay. Okay. Ah, that's where you work,
+19:39 right?
+19:40 >> Yeah. Yeah.
+19:41 >> Okay. That's why um is there an app
+19:44 called Whimo, right?
+19:46 >> Yes, there's an app called Whimo through
+19:48 which you can hail it and I think in
+19:49 some cities they've also partnered with
+19:51 Uber and Lyft so that you can call via
+19:54 Uber as well.
+19:57 >> Yeah. How much about your current uh
+20:00 position can you talk cuz you mentioned
+20:02 that uh or we at least know that you
+20:04 work on gesture recognition right so can
+20:08 you tell us more about that and how much
+20:10 I don't know but I would be pretty
+20:12 pretty curious to know
+20:15 >> yeah I I think I can like give a high
+20:17 level picture it's basically about
+20:19 trying to understand uh you know if
+20:21 there's like a police officer or a
+20:24 construction worker trying to guide
+20:25 traffic like uh you know there's like a
+20:28 big event or
+20:29 >> so there is a police officer slow down,
+20:31 right?
+20:32 >> Yeah. No, like they they tell you to
+20:35 stop or they tell you to go or they tell
+20:38 you to like Yeah. So yeah, that's the
+20:41 humans like slow down when there's a
+20:42 police officer.
+20:44 >> That's the human brain. Uh the car tries
+20:47 to stay in the traffic rules.
+20:50 uh but uh yeah I basically try to
+20:52 understand what they want to say and
+20:54 communicate with the car and like try to
+20:57 uh you know modify its root or modify
+21:00 its behavior according to what what
+21:02 they're communicating.
+21:04 So
+21:05 >> I guess in your case in case of my mom
+21:07 if you say that there is a right hailing
+21:10 service the car comes without the driver
+21:13 and then all of a sudden there is an
+21:15 event like um I don't know Friday or
+21:19 whatever with a lot of people like what
+21:22 the car should do right so cuz in
+21:24 training data I guess it's less common
+21:26 to have things like that or like a
+21:29 traffic light uh breaks
+21:32 >> and there is a police officer are
+21:34 controlled in the traffic.
+21:36 >> Yeah, I think all of these cases are
+21:38 covered like Whimo has been in business
+21:40 since like I think 15 years I would say
+21:43 like they've been working on the product
+21:45 and try to cover many of the cases that
+21:49 we have. So you know the broken traffic
+21:51 light uh large crowds of people uh it's
+21:56 it's pretty pretty good around it. you
+21:58 know there are sometimes events and game
+22:00 nights and it actually does really well
+22:02 over there. So uh and also like you know
+22:05 during these cases there are these
+22:07 police officers controlling the traffic
+22:09 and like directing traffic and my job is
+22:12 to make the way more better at
+22:14 understanding
+22:17 >> how much can you talk about this project
+22:19 because I wonder how does it actually
+22:20 work like what kind of tech do you use
+22:24 it must be something super fast right?
+22:26 Uh
+22:27 >> yeah,
+22:28 >> so I know you you cannot go into into
+22:30 details. Uh but I guess it should be
+22:33 something super fast cuz like you need
+22:35 to make this decision in real life in
+22:37 real time, right? So something like I
+22:40 don't know yellow or something. Um yeah
+22:43 there are like a bunch of in-house
+22:44 models that use like you know uh cameras
+22:47 LA data and like all all the sensor
+22:50 information that we have or we get from
+22:52 the car and uh it's like uh way more
+22:56 does not publish its models what it
+22:59 uses. So uh these are in internal model
+23:02 that uh you know they are optimized to
+23:04 run on the car and they optimized to run
+23:07 really fast. So it's uh it's probably
+23:10 not the same neural network that was
+23:12 trained. It was like you know uh we use
+23:15 various techniques to make it much
+23:17 faster and run much faster on the car to
+23:19 like detect in very quick amounts of
+23:22 time and detect like multiple times a
+23:24 second uh about what's what's happening
+23:26 with the world. Yeah.
+23:28 >> How is this process called when you take
+23:30 a big model and make it smaller and
+23:33 faster?
+23:35 Um I I guess there's a bunch of ways to
+23:37 do it like you know publicly available
+23:40 ways are like something like you know
+23:41 you quantize the model.
+23:43 >> Yeah exactly this is this is the word I
+23:45 was looking for quantization.
+23:47 >> Quantization. Yes. So you make it like
+23:50 you make it smaller you make it faster
+23:52 with with quantization. So many of
+23:55 similar techniques but uh there are a
+23:57 whole bunch of other stuff that we also
+23:59 do uh internally.
+24:03 Yeah, I I guess like I I think that's
+24:05 the extent of it.
+24:09 >> I was just thinking not to torture you
+24:11 and put you in a uncomfortable position
+24:14 by asking more and I was thinking what
+24:16 should I ask next cuz you also did a few
+24:18 other interesting things and one of them
+24:22 which I find quite interesting is uh
+24:26 this malaria mapping project in Africa.
+24:29 Um can you tell us more about these
+24:31 projects?
+24:33 >> Yeah, I think this was when I was in
+24:35 Morgan Stanley and I was like oh this
+24:37 domain is really interesting and I want
+24:39 to do more projects about this. Uh so I
+24:42 I joined this organization called OMina
+24:44 and basically they work they have like
+24:46 AI for good projects where you have a
+24:50 like a nonprofit company that comes in
+24:52 with their uh problem and you have these
+24:55 volunteer ML engineers. Some of them are
+24:58 trying to learn, some of them are
+25:00 experts and they want to contribute to
+25:01 the community and they put you in like
+25:03 groups of 30 40 people who work together
+25:06 on this problem. So uh there was this
+25:10 nonprofit organization called Zap
+25:12 Malaria. They were trying to like uh
+25:14 lead efforts for fumigation in Africa.
+25:18 So you know they the the first iteration
+25:21 was to just like go in places and
+25:23 fumigate places uh where there could be
+25:26 high possibility of malaria mosquitoes
+25:28 so that to prevent like you know the the
+25:30 breeding of mosquitoes and the spread of
+25:32 malaria in those region. What they
+25:34 wanted us to do was to like determine
+25:36 you know make this process more
+25:38 efficient like uh they don't want to go
+25:40 to every region or every city in a given
+25:43 region and fumigate. they only want to
+25:45 target places where there's a high
+25:47 probability of mosquitoes. So they
+25:49 wanted to use machine learning models or
+25:51 AI to do that. So what what what we
+25:55 thought that okay if we have like
+25:56 satellite images or we have some
+25:58 knowledge of where could be like you
+26:00 know marshy lands or uh where areas
+26:03 where like you know water stagnates
+26:05 which is typically where mosquitoes have
+26:07 breeding grounds. we could just like
+26:09 identify these areas and these people
+26:12 could just go with their fumigation and
+26:14 just fumigate those areas and that would
+26:16 be much more efficient. It would save
+26:18 like so many manpower, so much cost and
+26:20 you know for these kind of nonprofits
+26:22 cost is a very big I guess
+26:24 consideration. So I guess with this team
+26:28 we worked in multiple groups. One team
+26:31 tried to use satellite images to detect
+26:33 like water bodies, stagnant water
+26:34 bodies. What my model did was it used
+26:37 topographic information. So we have this
+26:40 Google data gives you uh information
+26:42 about the geography of a particular
+26:44 region and then you try to basically
+26:47 train a model to identify what could be
+26:49 like low-lying areas where there's a
+26:51 high possibility of water stagnating and
+26:53 detect those areas and like you know let
+26:55 them know. So uh I think uh at the end
+26:59 like we used kind of an ensemble system
+27:01 that could use satellite images,
+27:02 topographic information and give you
+27:04 this data which they later made some
+27:06 changes and integrated into their whole
+27:08 model and I think their website also has
+27:11 some good very good results that they
+27:13 achieved with our models uh with this
+27:15 but yeah it was like a completely
+27:17 volunteerbased AI for good project.
+27:20 So you worked at Morgan Stanley and
+27:22 managed to also contribute to AI for
+27:26 social good project because I I don't
+27:28 know about Morgan Stanley but usually
+27:30 these financial institutions
+27:33 are not known for um
+27:36 um you know good work life balance.
+27:40 Yeah, I I think like it's um I was there
+27:44 for 2 years so I was already pretty
+27:47 efficient with all the systems and I
+27:49 knew where everything was. So I uh I was
+27:54 and I was interested in learning more
+27:55 because in financial institutions
+27:57 generally like you know these newer
+27:59 technologies like ML and all it's not
+28:02 easily adoptable. So it's it's really
+28:04 hard to get started a project. So I I I
+28:08 worked basically on weekends for this
+28:09 project that I had.
+28:11 >> Yeah, makes sense. Yeah, like I have
+28:14 PTSD now like when you talk about
+28:16 because I worked at a bank too. It was
+28:18 2012 so it was a while ago and it was so
+28:21 difficult to get even like a new
+28:23 database like to use.
+28:26 >> Mhm.
+28:26 >> Uh like let alone starting a new project
+28:29 that involves machine learning. No,
+28:31 forget about that.
+28:33 uh and we deploy it even uh once per
+28:36 month and if we didn't have a chance to
+28:39 prepare some things for the deployment
+28:43 uh cuz there is a process like you need
+28:44 to do some sort of audit I don't know I
+28:47 don't remember
+28:48 >> and if you miss this line then you wait
+28:51 for one month for the next cycle right
+28:53 and then only then you can see your work
+28:56 um actually being applied to real data
+29:00 and that was frustrating right Uh so
+29:03 well well I guess there are reasons why
+29:04 there is there are these bureaucratic
+29:06 processes right cuz like it's money.
+29:09 Yeah, I I think I 100% like agree and
+29:12 you know I can resonate with what you're
+29:14 saying. You know there are these like
+29:16 big processes that happen before every
+29:18 release and deployment that you must do
+29:20 every single time and it after a point
+29:23 it gets repetitive and it's like even
+29:25 for like putting the smallest thing in
+29:28 production you need to go through this
+29:29 and at some point it gets to you and
+29:32 you're like I I want to like do
+29:34 innovation. I want to like make impact.
+29:36 I don't want to do like get caught in
+29:38 processes and stuff.
+29:40 >> So yeah,
+29:41 >> which makes me wonder now how does it
+29:43 work with self-driving cars cuz it's
+29:45 also not a thing you can easily roll
+29:47 out, right? So first of all, there is
+29:49 this component that um like you cannot
+29:53 really afford having bucks there, right?
+29:55 cuz like if there is a buck and then a
+29:58 car misbehaves and I don't know hits
+30:00 traffic light uh and then like
+30:04 it's good if nobody gets injured but
+30:06 like what if somebody gets injured and
+30:08 it's super bad right? uh especially with
+30:12 um competitiveness like there are so
+30:14 many there are multiple
+30:17 um cars who like how to say companies
+30:20 that work on self-driving of course you
+30:23 want to be the best one right so I guess
+30:26 you have to be super careful when you
+30:28 work on things like that so how do you
+30:30 go about deployment in this case
+30:33 >> yeah I I think like there is again a lot
+30:37 a I would say multi-month process of you
+30:40 know deploying any I guess news release
+30:43 or software because like you mentioned
+30:46 it's a very sensitive and safety
+30:48 critical domain. So we want to be
+30:50 absolutely sure that it doesn't like
+30:52 negatively impact and doesn't have any
+30:54 bad behavior out in the open or out in
+30:57 the wild uh in the world. Mhm.
+30:58 >> So uh yes uh I think there are different
+31:01 components you know every time you push
+31:03 a change you do these whole bunch of
+31:05 evals you uh try to rerun uh from
+31:09 existing logs you rerun a lot of
+31:12 different evaluations and then you
+31:15 combine your changes with all other
+31:16 changes and then again there like for
+31:18 many months you have drivers driving in
+31:22 multiple areas testing out the software
+31:24 and like after you have accumulated
+31:27 enough data points joints that okay this
+31:29 is safe and this is good to go only then
+31:32 you deploy it. Uh but yeah the joint
+31:34 evals and you know uh the drivers
+31:37 actually driving around like we
+31:38 engineers are not involved so much with
+31:40 that. So that process has like it has a
+31:44 very different team and that is very
+31:45 well managed and they go through it.
+31:48 >> But even as engineers we
+31:50 >> Yeah. Yeah. There are there's tons of I
+31:52 would say there's lot more than
+31:53 financial company because
+31:55 >> you know in like in Morgan Stanley I've
+31:58 seen there's been losses there's been
+32:00 millions of dollars of losses but that
+32:01 you can recover but you know this this
+32:03 is like someone's life or someone's
+32:05 safety and it's much more important.
+32:09 >> Yeah that's interesting. Um, which
+32:12 reminds me of this uh case. Remember a
+32:14 few years back um there was a bug in
+32:17 Windows computers and all the airports
+32:19 had blue screen of death. Uh what was
+32:22 that? Crowd Strike, right? It was crowd
+32:24 strike.
+32:24 >> Yeah, Crowd Strike I think. Yes, Crowd
+32:27 Strike.
+32:27 >> Nobody knew about this thing that this
+32:29 thing existed until like I had no idea
+32:33 this company ever existed. uh they got
+32:37 provider
+32:38 >> lot of they got a lot of publicity out
+32:40 of that negative one but uh now we know
+32:44 what it is.
+32:45 >> Yeah. And uh so the story there was that
+32:48 they wrote uh something out and then it
+32:50 broke right.
+32:52 >> Yes. Yeah. I think the test thing they
+32:55 they missed some test cases and
+32:56 something very unexpected happened over
+32:59 there.
+32:59 >> Yeah. I don't know what happened though
+33:01 but it was a talk of the town I would
+33:03 say. Mhm. Yeah. But I guess what you
+33:06 work with is kind of similar in a sense
+33:09 that there is also the hardware
+33:11 component, right? So in Morgan Stanley,
+33:14 I don't know about you, but I assume it
+33:16 was probably just software, right? You
+33:17 didn't need to,
+33:18 >> of course, like you run on a computer.
+33:21 Uh but chances are that um you know, you
+33:25 don't run native C code. Most likely
+33:26 it's Java or Python or I don't know
+33:29 something like that.
+33:30 >> Yes. Yes.
+33:30 >> Um but like once you need to use uh
+33:34 something low level, something native
+33:36 and you need to be closer to hardware
+33:39 uh then things can get complicated,
+33:42 right? And uh in case of self-driving,
+33:44 you're very very closely connected with
+33:46 hardware cuz you actually need to I
+33:48 don't know steer the wheel or
+33:50 hit the brakes or whatever.
+33:53 Yeah, I guess uh definitely connected to
+33:56 hardware but for my role specifically I
+33:59 mostly work on the software that drives
+34:01 it and then there are different teams
+34:03 that work on the hardware aspect like
+34:06 you know or connection between the
+34:07 hardware and software where you do this
+34:09 whole like making the model faster and
+34:12 stuff
+34:13 >> but uh yes it like every time you push
+34:15 any new change there's this whole suite
+34:18 that needs to run and it's it's it's a
+34:20 very comprehensive very thorough ES Yes.
+34:22 Yes.
+34:24 >> Are you working on any um um side
+34:27 projects right now?
+34:29 >> Uh not right now. Uh what I'm doing
+34:32 right now is the AI guide dog thing that
+34:35 I was doing. I'm I'm still mentoring a
+34:37 group uh on that project but not like
+34:41 it's just like in a mentor capacity. Not
+34:43 like working on anything right now. I
+34:46 guess right now the work work aspect is
+34:48 a bit busy at this time of the year. you
+34:51 know it's before the November like when
+34:54 everything slows down uh we have a lot
+34:56 of work in September October months
+34:59 >> and then in December it's chill
+35:01 >> yes a bit chill during the holidays here
+35:05 >> okay
+35:06 >> I guess it's the same for most companies
+35:08 I think I had similar experiences in
+35:12 >> in Europe definitely
+35:14 >> yeah yeah
+35:15 >> I don't know about states but
+35:18 >> yeah I I think side projects are in like
+35:21 I I some sometimes start something in
+35:23 December and then it's it's good if I'm
+35:25 able to complete it otherwise I wait for
+35:28 the next December to take it off.
+35:30 >> But uh yes yeah I think mentoring is
+35:33 easier because you have uh people
+35:36 actually working on something and who
+35:38 have more time to work on it and you can
+35:39 help them in their process.
+35:41 >> Yeah. Yeah.
+35:42 >> Uh what I like about mentoring is you
+35:45 can test ideas without actually spending
+35:48 a lot of time implementing them.
+35:50 >> But you know the outcome, you learn the
+35:52 outcome from the person you mentor. So
+35:54 you can just say, "Hey, you can try this
+35:56 and that." And then a few days later
+35:58 they come and say if it worked or not,
+36:00 right? And then you kind of you still
+36:02 learn from this experience too. Like you
+36:04 not only teach, you also learn. Um and
+36:07 then you can know okay
+36:09 this thing for this case uh maybe not is
+36:12 the best one so we can try something
+36:15 else then you also um get experience by
+36:19 mentoring
+36:20 >> for sure I I think that's how uh it's
+36:23 been working and even like you have if
+36:24 you have like a bigger team you can try
+36:26 out multiple ideas at a time and uh the
+36:29 people actually working on it they they
+36:31 joined that project because they like it
+36:33 and they are like super invested in it
+36:36 So it's nice to work along they're super
+36:38 passionate about it. So it's you trying
+36:41 out different ideas without actually you
+36:43 know spending a lot of time but you you
+36:46 also get to mentor people. So yeah, it's
+36:48 it's a mix of good both good good
+36:51 things. Yeah.
+36:53 >> Uh with all these new things coming up
+36:55 coming out um of AI LLM and whatnot. Um
+37:00 so since you were working in computer
+37:02 vision but all these new things they are
+37:04 mostly related to NLPs and text NLP and
+37:08 texts. Um, do you also find time to try
+37:11 to stay up to date with this field or
+37:15 you you're focusing more on what you do
+37:18 at work?
+37:20 >> Actually, I in CMU I was in the language
+37:23 technologies institute. So, I actually
+37:25 studied NLP and then transitioned to CV
+37:29 just before the whole Chad GPT boom.
+37:32 Yeah, I I I graduated in December 2022
+37:36 and then like I guess Chad GPT was
+37:38 around the same time and like few months
+37:40 later it was like super big and then the
+37:42 whole AI bubble with the LLM's like
+37:45 booming off. Uh but uh yes I do
+37:49 definitely stay ab breast with
+37:51 everything like even when I was
+37:53 switching my roles like from Tesla to I
+37:56 did a lot of different interviews and
+37:59 the way it works in the industry is like
+38:02 although you are from a CV background
+38:04 it's the same underlying fundamentals.
+38:06 So you know you still are eligible to
+38:09 interview for many of the LLM roles and
+38:11 I did interview with like a bunch of
+38:13 places where it was only NLP focused uh
+38:16 not much uh um CV but many times it's
+38:20 also a hybrid like multimodel uh large
+38:23 language models are very popular now and
+38:26 um many teams who I I I guess like they
+38:30 need CV expertise along with their LL
+38:33 inhouse like NLP folks so uh definitely
+38:36 like you know I read a lot of papers um
+38:40 that deal with this kind of multimodel
+38:42 LLM stuff or read a lot of blogs or uh
+38:46 even like you know the LLM techniques
+38:48 that they use it's it's good to have
+38:50 that knowledge because many of these
+38:52 techniques are general deep learning
+38:54 techniques rather than just that are
+38:56 applicable to LLMs. So you can use some
+39:00 of these techniques even for your models
+39:02 that work with CV data. So yeah at the
+39:05 end of the day it's all deep learning uh
+39:07 and it's is as much interesting to know
+39:11 about it and like it's as much
+39:12 >> useful.
+39:13 [Music]
+39:14 So I my masters was um in 20134
+39:21 uh it wasn't focusing on um even not on
+39:24 machine learning but I was taking a lot
+39:26 of extra courses uh in particular I was
+39:29 quite interested in LP at NLP but um NLP
+39:33 was quite different so it was
+39:35 pre-transformer era
+39:37 >> yes
+39:38 >> um so we were doing like um logistic
+39:41 regression this kind of stuff right to I
+39:43 don't know.
+39:45 >> Yeah. So like we if you want to identify
+39:48 part of speech
+39:50 >> and then there was I I don't even
+39:52 remember how these models were called.
+39:54 Uh but today you just throw everything
+39:56 at LM and it tells you okay here's a
+39:58 noun or there's names there are named
+40:01 entities. uh back then uh like you had
+40:04 to train models for that and then you
+40:07 had to have a corpus uh and then this uh
+40:10 has to be had to be labeled and then you
+40:13 say for this corpus like these are my
+40:15 named entities like and then you train a
+40:17 model. So these things are way easier
+40:20 today.
+40:21 >> Mhm.
+40:21 >> I wonder in your case when you studied
+40:23 NLP you already covered deep learning
+40:26 right? So for you when these LLMs came
+40:29 up like when they started to be big and
+40:32 charge BT like people started using it
+40:35 for you cuz you studied deep learning
+40:37 techniques right so for you it wasn't
+40:39 such a big leap right
+40:42 >> yeah I think uh I still remember like
+40:44 when I was in undergrad I did take a few
+40:47 ML courses and that time it was these
+40:49 very basic uh natural language
+40:52 processing techniques like part of
+40:53 speech and uh Identity correlation and
+40:56 bag of words and logistic regression
+40:58 like started off with that but then like
+41:01 during that time deep learning was also
+41:03 very popular. So uh in my masters there
+41:06 was a lot of focus on deep learning
+41:07 transformer based systems because that
+41:09 was already big at that point. But uh
+41:12 now like if you think about it, it's all
+41:14 based on the same fundamentals like you
+41:16 know your LLMs they're based on
+41:18 transformers which is based on like the
+41:20 attention mechanism and uh that boils
+41:23 down to your representation learning
+41:25 where you have like embeddings and the
+41:27 embeddings have similarity and like the
+41:30 whole core of LLM could be like you know
+41:33 said it's like anation learning kind of
+41:36 thing
+41:36 >> which uh which is like where the basics
+41:39 began which is where the fundament
+41:41 began. So for sure like I did do a lot
+41:44 of deep learning and that was really
+41:46 helpful when jumping to LLMs but uh I
+41:49 feel like uh with LLMs there's a lot of
+41:53 more creative or ingenuity in how the
+41:58 pre-training how they made it work or
+42:00 the RL stuff like I I am I have never
+42:04 taken an RL uh reinforcement learning
+42:06 course. I don't know what it is but uh I
+42:09 did read the papers and I it was hard to
+42:12 understand in the beginning but like uh
+42:16 if you tie it down to okay some basic
+42:18 principles and there's like so many good
+42:20 blogs explaining things uh about it it
+42:24 does take some effort uh but like you
+42:27 can just like try to piece together
+42:29 things uh
+42:31 >> but it does take some effort uh of
+42:33 course like if I had not learned about
+42:35 deep learning if I had not learned about
+42:37 this representation learning or
+42:38 embeddings, it would have been much more
+42:40 harder for me.
+42:43 >> Yeah, I I remember like I mentioned in
+42:45 Morgan Stand doing these basic things
+42:47 with the recommendation systems and like
+42:49 graph neural networks. It took me like
+42:51 almost two weeks to go through one paper
+42:53 and it was just like eight pages and at
+42:56 that time I did not have any background
+42:58 about deep learning. So I think having
+42:59 that background definitely makes it much
+43:02 easier to grasp these concepts.
+43:04 >> Mhm. So now when you read papers for
+43:06 you, it doesn't take two weeks usually.
+43:10 >> No, no, it it's like probably an hour at
+43:12 max.
+43:14 >> So it's it's much more efficient now.
+43:16 >> For me, I think it would be like two
+43:18 weeks. If I needed to get into any
+43:21 modern uh papers like this uh I don't
+43:25 know if I go to archive and take any
+43:27 paper uh about an OP or computer vision.
+43:31 Yeah. Well, good that we have chat GPT
+43:33 so I can ask it to explain things.
+43:36 >> That is so good now. Like it was not
+43:38 there back when we were in school and
+43:40 college
+43:41 >> doing assignments. Where was strategy
+43:44 then? Interesting that you mentioned you
+43:48 didn't have any prior experience with
+43:49 reinforcement learning cuz I thought
+43:51 reinfor reinforcement learning is
+43:53 something that used quite often for um
+43:58 um driving too cuz for me uh before this
+44:02 whole um LLM space appeared. So for me
+44:06 AI was um so there was machine learning
+44:10 which was kind of part of AI but for me
+44:12 machine learning was machine learning
+44:13 never like AI uh but this reinforcement
+44:17 learning you can actually get an agent
+44:20 to do things in the environment
+44:23 and work there were companies I
+44:25 interviewed with one of them who were
+44:27 creating these environments for
+44:29 self-driving cars to be like a test bed
+44:31 or whatever like for testing uh so they
+44:35 have the environment with streets and
+44:36 what not. So they look very realistic
+44:39 and I don't know um it was in Germany so
+44:43 I guess like BMWs and Audi's and whatn
+44:46 not who like companies who also work at
+44:49 on self-driving here in Germany they
+44:51 could use this uh environment to test
+44:54 their cars right and the idea there was
+44:56 that they have this reinforcement
+44:59 learning framework where they can the
+45:02 car can just go wild and learn from like
+45:04 okay like if I uh hit a pedestrian and
+45:07 then there is a huge penalty and then it
+45:09 learns not to do this, right? Um, so for
+45:12 me it was interesting. It didn't work
+45:13 out so I didn't join the company and it
+45:16 was funny. It was like a company with
+45:19 four people in a basement and a lot of
+45:21 GPUs.
+45:22 >> Uh, so they needed a one and they
+45:24 thought, uh, yeah, I have a kit and
+45:26 doesn't sound very stable.
+45:30 >> Wow. Okay. Okay.
+45:32 >> Yeah. But it was a good thing.
+45:34 >> Yeah. Reinforcement learning is kind of
+45:37 interesting. I think I I my first
+45:39 interaction with reinforcement learning
+45:41 was like with all these robots like we
+45:43 had these robo wars in college where you
+45:45 build your robot and like you go to a
+45:47 tech festival and you like compete
+45:49 against each other
+45:51 >> and I I I think uh reinforcement
+45:53 learning is still a big part of
+45:55 robotics. Um for me personally like so
+45:59 far in my career I've like whatever
+46:01 career has been in computer vision or
+46:03 robotics so to speak it has mostly been
+46:05 on the computer vision side so
+46:07 perception side trying to understand the
+46:09 world and then I I believe like
+46:11 reinforcement learning comes into
+46:13 picture when you're trying to modify the
+46:14 behavior of the agent or trying to teach
+46:16 it how to uh like behave in the world it
+46:20 is in. Um so these are like two separate
+46:23 parts of the stack is one is you try to
+46:25 understand or make the agent understand
+46:27 the world which is where I work and then
+46:30 trying to make it behave a certain way
+46:31 which is I I I believe like
+46:33 reinforcement learning could be used. So
+46:35 yeah I never had to like even though I'm
+46:38 in the self-driving industry I never had
+46:39 to like work on the other part of the
+46:42 stack. I don't think I'll be very good
+46:43 at it. I've like I skipped all
+46:46 reinforcement learning courses in
+46:47 college because I just found it too
+46:50 hard. So yeah.
+46:52 >> Yeah. But I imagine also it's not uh you
+46:54 will not let a car go wild and learn uh
+46:58 the way to interact with pedestrians
+47:01 right outside
+47:03 >> uh to actually do reinforcement learning
+47:07 fun.
+47:07 >> Yeah. Yeah. That's for sure. Uh
+47:09 >> it's karmagon. Honest honestly, I don't
+47:12 know if we use reinforcement learning.
+47:14 I've never tried to find out
+47:16 >> because it looks like more like a fun uh
+47:19 project to do like when you have a
+47:22 emulator, right?
+47:24 >> Yeah.
+47:24 >> Uh but like in real life probably you
+47:27 still have there's actually a question
+47:28 from Ole. Ole is asking uh I think the
+47:32 question is about self-driving.
+47:34 The question is is this full AI or mix
+47:36 of rules and AI? So I am assuming Le is
+47:39 referring to uh to self-driving cuz I
+47:44 guess like full AI would be this
+47:45 reinforcement learning right when the
+47:47 car just learns to drive by itself. Uh
+47:50 but we still need to add some rules,
+47:52 right? Like what's um what's the current
+47:55 state of the art in AI or in
+47:56 self-driving?
+47:59 Um yeah, I think like all environments
+48:01 like even in reinforcement learning or
+48:04 uh uh other ways to teach the car there
+48:07 would be some constraints that you
+48:09 impose upon it like you know the the
+48:12 rules of the world like you shouldn't
+48:13 like go against the traffic there are
+48:17 the these you need to put these
+48:19 constraints u so it's like I I I don't
+48:24 think it's full do whatever learn
+48:28 however you want to drive.
+48:30 >> Uh definitely constrained by a lot of
+48:32 rules and also I I would say like as you
+48:35 try to expand into different countries
+48:37 or different continents there are a
+48:39 whole bunch of new rules that go about
+48:41 over there.
+48:42 >> Uh sometimes you like even in the same
+48:46 country even different cities have
+48:48 different patterns of driving. Sometimes
+48:50 the travels are very aggressive.
+48:51 Sometimes it's like more rule following,
+48:53 right?
+48:54 >> So it needs to be adaptable that way and
+48:56 constrained in specifically.
+48:59 >> Yeah. So in Italy and in Germany, it's
+49:02 so so different like the way people
+49:05 drive. So in Germany, at least in
+49:06 Berlin, people are driving slow and it's
+49:09 very easy to cross the street. But in
+49:11 Italy, especially in the south, good
+49:12 luck. like you have to be you just have
+49:14 to go across the street then they will
+49:17 stop otherwise they will just keep
+49:18 driving right
+49:20 >> okay
+49:21 yeah yeah I I think like uh it still
+49:24 needs to learn all these patterns
+49:26 >> in the world so a lot of constraints
+49:28 over that's why it's such a hard problem
+49:30 like you know it changes so so so much
+49:34 with geographies
+49:35 >> yeah I was thinking about chess because
+49:37 in chess and in also in go um they used
+49:40 eventually reinforcement learning to
+49:42 build this uh state-of-the-art uh models
+49:45 for playing these games. Um but what
+49:47 they did is they let um the I don't know
+49:51 how to say agent or whatever the players
+49:53 um the AI go wild and do whatever they
+49:56 want. So instead of learning from
+49:59 previous games, they just let the game
+50:01 the AI explore the game and then
+50:05 eventually because they were not bound
+50:07 by the training data by the what people
+50:10 played in the past, they could play
+50:12 better than humans, right? Um but I
+50:15 guess with AI, with self-driving, it's
+50:18 kind of different, right? So you still
+50:20 need to obey. But yeah, in chess you
+50:23 have rules. the knight jumps like uh
+50:26 this right or the bishop goes by on
+50:29 diagonals right so you have these rules
+50:31 in chess too
+50:32 >> yeah I I think like the problem here or
+50:35 or the difference here what I see is
+50:36 with chess the rules are fixed like you
+50:39 know
+50:39 >> yeah very
+50:40 >> every piece has a given purpose and
+50:43 there's no rules beyond that like you
+50:45 have these pieces and 16 pieces and then
+50:49 you have the 16 set of rules that's it
+50:52 and then you can do whatever and then
+50:54 you can explore and then AI just has
+50:57 like full reign to do whatever uh it
+51:00 wants to do. But in self-driving the
+51:02 rules are also constantly evolving like
+51:05 you have like infinite number of rules I
+51:08 would say. So it's it's hard to like
+51:13 teach the model in such a changing
+51:15 environment uh so to speak. But uh yeah
+51:19 uh yeah I honestly don't know if we use
+51:22 reinforcement learning but yeah
+51:24 definitely the constraints do come into
+51:26 picture whatever model we use. Yeah, I
+51:28 see that there's a question from Adonis.
+51:30 He just asked it. How is uh how does the
+51:33 testing process go for sensitive cases
+51:35 like autonomous driving? Two developers
+51:38 inherit some general tests and they have
+51:41 to pass uh are there any stages? That's
+51:44 a very large a big loaded question. But
+51:48 uh I guess yeah the question is like uh
+51:50 how does testing uh how is testing
+51:53 organized for self-driving cars?
+51:56 Yeah, I I guess like uh it it depends on
+51:59 like what what change you're trying to
+52:00 do. So I work on pedestrians and
+52:03 gestures. So we have a bunch of like
+52:06 evaluations around cases where you have
+52:09 these pedestrians and or cases which
+52:11 have happened in the past and you try to
+52:14 like rerun your new model on those cases
+52:16 and then that is the first stage and
+52:18 then the next stage you uh evaluate
+52:20 overall with various different scenarios
+52:22 from the world where other pedestrians
+52:24 are involved and uh like the like the
+52:28 question mentioned there are different
+52:29 stages like you starts off small and
+52:31 then you slowly get like bigger and more
+52:34 comprehensive eval sets and then you
+52:37 roll it out slowly like you let drivers
+52:40 take it to the world and drive few miles
+52:42 around then you deploy it to the larger
+52:44 field. So it happens the rollout happens
+52:47 in stages uh that way.
+52:49 >> Mhm.
+52:51 And um
+52:53 another question about LLMs. We already
+52:56 talked LLMs can do computer vision too,
+52:59 right? Uh but they are
+53:03 kind of slow, right? Is there do you
+53:06 think um we can apply this with for
+53:11 self-driving at some point? Like does it
+53:13 actually make sense to use generative
+53:15 models for that?
+53:17 Yeah, I I think like there uh there have
+53:20 been a lot of attempts. So if you see
+53:22 the latest state-of-the-art even in
+53:24 literature or even some companies such
+53:26 as wave, they are trying to in fact use
+53:29 like multimodel LLMs for a self like end
+53:32 to end driving self-driving case. So
+53:36 there is definitely a lot of room mainly
+53:38 because LLMs are trained or pre-trained
+53:40 on so much amount of data. they have so
+53:43 much of world knowledge that's e easy to
+53:46 teach them more or like you know have
+53:48 them behave certain ways because they
+53:50 already have a lot of knowledge. Uh the
+53:52 challenge still remains in you know how
+53:54 do you make them fast enough. So the you
+53:57 have to like probably do a lot of
+53:59 tradeoffs. There needs to be a lot of
+54:01 different techniques but definitely it's
+54:04 something that's been explored very
+54:06 actively in current research as well as
+54:08 by some companies. And there are in fact
+54:11 systems out there that use LLMs for the
+54:14 self-driving use case
+54:16 >> because I guess uh we talked about
+54:17 different patterns in different
+54:19 countries like Italy versus Germany.
+54:22 LLM might know might not might know
+54:25 about these things, right? It might know
+54:26 that uh I don't know if you go to south
+54:31 it's more chaotic. If you go to north
+54:32 it's more strict, right? So something
+54:34 like this. Uh so maybe for it it's
+54:36 easier to actually use it for I don't
+54:41 know I'm just making this up I guess but
+54:43 uh maybe it already knows because it uh
+54:45 the ways are trained they trained from
+54:48 internet forums where Germans can go to
+54:52 forums and complain about drivers in
+54:53 Italy right
+54:55 >> yeah I guess that's the hope that it has
+54:58 some semblance of knowledge about like a
+55:01 lot of different things that probably
+55:04 you're well curated ated data set might
+55:06 not have like when you try to train a
+55:08 model you curate a data set and you only
+55:10 put in cases that you might be aware of
+55:14 but with LLMs the thing is that it has
+55:16 so much of world knowledge that you
+55:19 there are high possibility that it might
+55:21 know these things and it it might help
+55:22 you in your tuning process to get it
+55:25 across the world.
+55:28 >> Okay, maybe last question and we wrap it
+55:30 up. So if I want to work on self-driving
+55:33 cars, uh um
+55:36 what should I do? What should I study?
+55:38 Uh how do you uh can I get into this
+55:40 industry?
+55:42 >> Yeah, I I guess like uh it again starts
+55:45 with uh
+55:47 deep learning. So the way I did it was I
+55:50 was good at deep learning. I got got
+55:52 into the AI guard dog project which was
+55:54 a similar use case like you know you use
+55:56 vision and you use navigation and that's
+55:59 how like that that based on that one
+56:01 project I got into Tesla. So uh I think
+56:05 it's a combination of knowing your
+56:07 fundamentals and doing relevant
+56:08 projects. So if you are if you do some
+56:12 computer vision related projects it's a
+56:14 very good start. It's very good to have
+56:16 on your resume so that the company knows
+56:19 that okay you're familiar with the space
+56:21 so they pick your resume and you can you
+56:23 at least get the chance to interview and
+56:24 then you like iterate and get better.
+56:27 >> Mhm. So, a good pet project could be uh
+56:31 you write an app that you just show like
+56:35 with use your that uses your camera to
+56:37 describe things that you have like you
+56:40 just point at your room and it says okay
+56:42 there is a bed uh uh there is like a
+56:46 clock and things like that right
+56:48 >> I think I saw that big with yo
+56:52 >> yeah like even with the LLMs it's gotten
+56:55 so much easier that you even if you like
+56:57 prompt an LM with the appropriate
+56:58 prompt. You don't need to train
+57:00 anything. It will just tell you whatever
+57:02 it is in the room.
+57:03 >> What else you can ask Chad GPT to write
+57:05 you this app and then you learn how we
+57:07 did this, I guess.
+57:10 >> Yeah, that's like two stages. You don't
+57:12 even write the app yourself. Corp can do
+57:15 it.
+57:16 >> But yeah, I asked recently um a tool
+57:21 like Corser, it's a coding agent. I
+57:24 asked it to implement a multi- aent
+57:27 system for evaluating uh projects that
+57:31 are on GitHub according to a set of
+57:33 criteria and then half a half a hour
+57:37 later I had a system that kind of works.
+57:40 I needed to tweak a it a little bit uh
+57:42 also with prompts and then it was
+57:44 working and then I could start studying
+57:46 the how it was implemented and I was
+57:48 okay that's nice now I also know how to
+57:51 do it. Yeah, it's it's fascinating to me
+57:55 like you know these kind of projects
+57:56 used to be projects and pet projects in
+57:58 college and you used to spend like weeks
+58:00 on it and now it's just done but still
+58:03 yeah I I tried using it once it gets
+58:05 stuck in some weird bugs that you
+58:07 >> yeah then you have to intervene and
+58:09 >> and like you have to also learn
+58:11 everything that the AI system came up
+58:14 with before you can fix the bug you have
+58:17 to know the entire code base
+58:19 >> and sometimes
+58:20 >> I think it's very good
+58:22 >> sorry go ahead
+58:23 Yeah, I think it's very good for setting
+58:24 a framework like when you're starting a
+58:26 whole new project from scratch and you
+58:28 want like a framework, it's really good
+58:29 with that. But if you want to get into
+58:31 the nitty-g gritties, you have to know
+58:33 what you're doing. Yeah.
+58:35 >> Okay.
+58:36 >> Okay. Um it was amazing talking to you.
+58:40 Um
+58:41 so thanks a lot. Uh good that we managed
+58:43 to work out work it out and find time
+58:46 that worked for us. Um, I'm sorry about
+58:50 uh you getting sick, so I hope you
+58:51 recover super quickly. So now I know
+58:54 it's very late for you, so you should go
+58:55 and rest and I'll go have breakfast.
+58:59 >> All right, have a good day. Nice to meet
+59:01 you.
+59:01 >> So thank you and thanks everyone for
+59:03 joining us today. Um, and

@@ -1,0 +1,1430 @@
+Data Access Management
+
+0:00 hi everyone welcome to arvind this event
+0:02 is brought to you by David Lux club
+0:03 which is a community of people who love
+0:05 data we have weekly events and today is
+0:07 one of such events if you want to find
+0:09 out more about the events we have there
+0:12 is a link in the description go there
+0:14 click on this link check it out there
+0:16 are a few more events in the in our
+0:18 schedule
+0:19 do not forget to subscribe to our
+0:21 YouTube channel this way you will not
+0:23 miss any future streams like the one we
+0:25 have today and last but not least we
+0:28 have an amazing slack Community where
+0:30 you can hang out with other data
+0:31 enthusiasts so if you are not there for
+0:34 some reasons you can fix that by going
+0:37 there in the description clicking on
+0:39 that link and signing up for our Slack
+0:43 so during today's interview you can ask
+0:44 any question you want there is a pinned
+0:46 Link in the live chat
+0:48 click on that link ask your question and
+0:50 I will be covering these questions
+0:51 during the interview
+0:54 so now I will stop sharing my screen
+0:58 and I will find the questions that
+1:01 Johanna prepared for you
+1:04 and
+1:07 yeah I don't know if you want to open
+1:10 this document too
+1:12 it's up to you I I have it here but I
+1:16 got a separate one with my answers
+1:18 okay so you have both of them cool so
+1:23 then I guess we start right yeah
+1:27 this week we'll talk about data access
+1:29 management and we have special guests
+1:31 today part Bart is the CEO and
+1:34 co-founder at ratio rato rato right yeah
+1:38 right away
+1:41 Bart is on a mission to give data
+1:43 workers access to the data they need to
+1:45 do their job in a faster and safer way
+1:47 before co-founding rate top art worked
+1:50 as a senior product manager in the data
+1:52 privacy area at equilibrium and Barb
+1:55 released that for data to be liquid
+1:57 trust has to be solid and you will
+1:59 probably tell us later what has been for
+2:01 data today because I have no idea like
+2:03 my imagination is not that good to
+2:06 understand this metaphor so welcome to
+2:08 our show
+2:09 hey Alexa thanks for having me super
+2:11 excited to be here don't be on the show
+2:13 today
+2:14 so as always the questions you will hear
+2:17 today are prepared by Johanna Byer
+2:20 thanks a lot Johanna for your help
+2:22 and um yeah so before we go into our
+2:25 main topic of data access management
+2:27 let's start with your background can you
+2:30 tell us about your career Journeys for
+2:32 hey yeah Alexis so there was a really a
+2:35 great summary uh before starting right
+2:37 so I was indeed a product manager a
+2:40 privacy at calibra uh that's where we
+2:43 also saw the challenge of scalable data
+2:45 access management now Libra was my first
+2:48 step in uh the world of data and uh
+2:52 software before that I was actually a
+2:57 consultant at Deloitte you know I was
+2:59 doing Financial Risk Management
+3:01 and uh but there I saw that you know the
+3:04 future is data everything evolves around
+3:07 data and that's why I made to move to to
+3:10 calibra but I learned that you know for
+3:13 data to be really successful and for
+3:15 organizations to be really successful
+3:17 they need to have that trust right and
+3:20 that's why I started uh writing together
+3:23 with the deed of my co-founder mm-hmm
+3:26 so what did you do as a consultant at
+3:28 Deloitte
+3:30 uh we helped Banks uh with you know
+3:35 accounting with the valuation of
+3:38 financial products there was a lot of
+3:41 mathematics a lot of physics so models
+3:44 that we borrowed from physics uh but
+3:47 then gradually I was also stuck was
+3:49 getting more and more involved in a data
+3:52 governance programs because this was
+3:53 right after the financial crisis that
+3:56 was where uh for banks it was impossible
+3:59 to know know how much loans were
+4:03 defaulted what their exposure was to
+4:05 other Banks and then the European
+4:07 supervisor European regulator actually
+4:09 boast data governance regulation on
+4:11 banks to improve their quality lineage
+4:14 and so forth and in that way I kind of
+4:17 evolved into the data governance space
+4:21 so basically there was a financial
+4:23 crisis and then
+4:26 Banks had some data but it was a mess
+4:29 huge mess and what you did as a part of
+4:33 your job as a consultant at Deloitte was
+4:36 to help them
+4:38 make it less messy right yeah indeed I I
+4:42 I mean doc talking about a trauma right
+4:45 this is before you add all the hip data
+4:47 governance solutions that are out there
+4:49 now right like I mean if you have to do
+4:51 data governance now
+4:52 it's much more pleasant than when I had
+4:55 to do it I had to draw a lineage in like
+4:58 the office Tool uh I had to uh keep data
+5:03 dictionaries in Excel so this was before
+5:06 all the tooling was there and I can tell
+5:08 you uh it was not great by the time my
+5:12 lineage was ready it was already
+5:14 outdated so by the time my dictionary
+5:16 was ready it was already outdated and I
+5:18 had to go back
+5:19 so what is data governance actually
+5:24 recovery is is a
+5:28 Chinese mentioned the word data
+5:31 conference you know you see people
+5:32 frantically looking for the nearest exit
+5:34 to escape the conversation it's a it's a
+5:39 heavy load of words you know but I mean
+5:42 if I would have to summarize their
+5:43 governance it's just you know all the
+5:46 activities that you do to create trust
+5:49 in the data that you're using right so
+5:51 your your data worker so data analysts
+5:54 scientists you know they can trust that
+5:56 they're using the right data they can
+5:58 trust that the data has sufficient data
+6:01 quality uh but also just your customers
+6:04 can trust that their data is being used
+6:07 in in a safe way you know if you you
+6:10 know put it in that perspective who
+6:13 doesn't want data governance right
+6:16 um so despite you know the bad
+6:18 connotation that data conference has
+6:20 uh if you're really serious about using
+6:24 data as a competitive asset you need to
+6:26 create a trust and hence you need to do
+6:28 some of those activities uh but the cool
+6:31 thing is that the perception is Shifting
+6:33 you got all these cool startups now
+6:35 among others rights or rights that help
+6:39 you do data access or data governance in
+6:41 a more scalable way
+6:43 why does it actually have bad
+6:45 connotation like why do people are
+6:47 searching for the fire exit when yeah
+6:50 yeah
+6:53 uh it's because you know how we used to
+6:56 do data governance it used to be very
+6:58 centralized right uh a bit like in an
+7:01 ivory Tower Excel sheets that you Excel
+7:04 sheets
+7:06 so it's a couple of things it's the
+7:08 awareness it was very hard it's fake
+7:11 still today very difficult to you know
+7:14 make people aware in the organization of
+7:16 the importance of good data governance
+7:18 right
+7:19 um there's also the way that we used to
+7:22 do data governance it used to be in an
+7:24 ivory Tower your boss is your standards
+7:26 that you try to impose on the
+7:28 organization and it was always you know
+7:30 bolted on bolted on data products
+7:33 spotted on how we use data and that
+7:36 creates a lot of friction right it makes
+7:37 it a data governance team is more
+7:39 policing but why why doesn't it happen
+7:42 like is it because like somebody from
+7:44 like for example in your case when you
+7:46 worked at Deloitte
+7:48 you commission or whatever some some
+7:50 entity governmental entity said okay you
+7:53 have a mess Banks go fix it and then
+7:55 like probably top Management in a bank
+7:57 thought
+7:58 more just told others like hey like we
+8:02 have a message data go fix it right so
+8:04 this was like a top down decision and
+8:06 then it was forced on people and it was
+8:10 too difficult to implement right that's
+8:12 that's why it's uh it has this bad
+8:14 connotation yeah indeed
+8:17 we're learning right the government is
+8:19 going to transition and how it used to
+8:22 be uh was indeed it was stopped down and
+8:25 forced on the organization people had to
+8:27 do it they didn't want to do it and
+8:29 what's happening now is it's becoming
+8:32 more and more about you know uh
+8:34 Grassroots Bottoms Up where data
+8:37 governance is being implemented or in
+8:40 the data in the data Ops process right
+8:43 data Engineers can
+8:44 integrate interdevelopment process
+8:46 making it so much easier and becomes
+8:49 more convenient and also they really see
+8:52 the value from it so in in that
+8:53 perspective it's really evolving in a
+8:56 good way
+8:58 so you mentioned a few things so you
+9:00 mentioned that like a thing called Data
+9:03 lineage that you use the office tools to
+9:06 draw then you mentioned a data
+9:08 dictionary was an Excel but what these
+9:10 things actually are and why did Banks
+9:13 care about them like why was it
+9:14 important for them to actually have
+9:16 these things why why did they care about
+9:18 that like how did it help to solve their
+9:20 problems
+9:23 um
+9:24 I don't think they really cared uh back
+9:27 then right this is 2009 2010 it was
+9:31 basically the BCBS 239 regulation that
+9:35 uh kind of imposed uh better process
+9:38 better data governance
+9:40 um on on banks uh so they had to live to
+9:44 combine they had to comply uh and that's
+9:48 that's why it was also top down you had
+9:50 to do it and nowadays it's people are
+9:53 more and more becoming aware that you
+9:55 have to do it if you really want to use
+9:57 data so that's a bit the Mind shift
+9:59 that's happening today
+10:02 and this lineage and data Dictionary
+10:05 what is this
+10:07 so a dictionary is basically just uh um
+10:11 or or a catalog right is is a let me say
+10:15 by stop by saying what a catalog is
+10:17 catalog is just a list of all your data
+10:19 sets that you have in your organization
+10:22 and now just with their description what
+10:24 you can find in a data set and also just
+10:27 a definition right because customer
+10:29 depending on where you are in a business
+10:31 that word has a different interpretation
+10:33 right in finance customer is somebody
+10:36 that's paying the bills paying their
+10:38 their invoices whereas in sales a
+10:41 customer is somebody that's sometimes is
+10:42 becoming a customer right so different
+10:45 definitions you have to be sure what the
+10:47 definition is if you look at the report
+10:49 and and a Lynch is like a addressability
+10:52 view a view of how your data flows
+10:54 through your application and data
+10:57 sources
+10:59 just like okay this data
+11:02 starts here then there is this
+11:04 transformation applied to this data and
+11:06 this transformation and this is how it
+11:07 ends in a report for the I don't know
+11:10 somebody from the top management you can
+11:12 see all the
+11:15 all the Journey of the data yeah that's
+11:18 correct okay
+11:21 and what does it have to do with data
+11:25 access management like what is data
+11:26 that's management yeah yeah well data
+11:29 access management it's it's a weird
+11:32 conundrum uh it's security right that
+11:35 access management is really like a form
+11:37 of access management it's it's security
+11:39 but how it has historically grown is
+11:41 that it's now a responsibility of the
+11:43 data governance teams of the data teams
+11:45 right so in this way it's a bit weird
+11:47 but to understand data access management
+11:50 you got to take a step back right access
+11:54 imagine used to be uh or we used to
+11:57 manage access at the application or
+11:59 database level right you had access or
+12:02 you did not but once you had access you
+12:04 had access to all the data in there
+12:07 right but now it's like the the cloud
+12:11 compute cloud storage that's completely
+12:13 revolutionized the way that we use data
+12:16 and what you see is that you know data
+12:18 teams are now like massively building
+12:21 analytical workflows or the assignable
+12:24 data science workflows on the clouds on
+12:27 public Cloud right so
+12:30 by doing that they're taking data from
+12:32 all these different systems and
+12:34 applications and moving it to one
+12:36 location your Lake your Warehouse right
+12:40 um and by doing that they lose the
+12:42 Chinese wall that they naturally have
+12:44 between this different Source systems
+12:47 now we do our data in one location and
+12:50 it being uh publicly assessed and
+12:52 accessed over the web of course you need
+12:55 to have this same Chinese walls in your
+12:58 lakes and the warehouses right because
+13:00 you know you've seen all the data
+13:01 breaches you open you look at LinkedIn
+13:04 or newspaper and there's data breaches
+13:06 in there there's all the Privacy
+13:08 regulations your customer awareness is
+13:11 increasing so you need to have this same
+13:13 Chinese walls in your warehouse and in
+13:16 your Lake and that means matching access
+13:17 at the data set level and that's data
+13:20 access management
+13:22 okay and you mentioned that
+13:25 data access management in this is
+13:27 responsibility of the data governance
+13:30 team so what is the data governance team
+13:33 actually what do they do yeah well it
+13:36 kind of depends right so what we see is
+13:39 that in in organizations
+13:41 that are really data driven right so
+13:44 they're driven organizations up to 3 000
+13:46 people their data access management is
+13:48 still the responsibility of the the data
+13:51 team like the data Engineers right and
+13:53 then for large organizations you'll see
+13:55 that they start building out a data
+13:57 governance team and there they will be
+13:59 responsible for like data access
+14:01 management or in certain cases when
+14:04 they're implementing like a data mesh
+14:06 then it's a data owners who are
+14:08 responsible for data access management
+14:11 as for a data governance team that is
+14:15 the nature of that team is kind of
+14:17 Shifting right it used to be a
+14:20 dictionary and definitions the lineage
+14:23 the get log and so forth but now it's
+14:26 also becoming more and more of a team
+14:29 that also you know promotes data usage
+14:33 this evangelization and enables teams to
+14:37 use data in a more efficient way so it's
+14:39 going more from monitoring and policing
+14:41 to enabling
+14:43 um the business
+14:47 so in smaller organizations
+14:50 to 3000 people
+14:52 very small organizations right so in
+14:55 these organizations
+14:57 there is a team I guess a central team
+14:59 of data engineers
+15:01 who move data from one place to another
+15:03 and as a part of that they Implement
+15:06 some of the things we discussed right so
+15:09 it's just data Engineers who do that but
+15:11 like how much
+15:13 I'm thinking of data Engineers like
+15:16 whose core skills are
+15:18 I don't know Cloud holy city building
+15:21 etls spark python Docker like all this
+15:24 stuff like very technical people
+15:27 how do they actually know about what
+15:29 they need to do like how do they need to
+15:31 educate themselves in
+15:34 in data governance data access
+15:36 management because like it's uh it
+15:39 doesn't seem like the core job or maybe
+15:41 it should be but not at least
+15:43 from what I see what typically data
+15:47 Engineers do
+15:48 uh that's the the what you're just
+15:51 describing is a core problem look if
+15:53 you're a data engineer who is interested
+15:55 in data governance you know please
+15:57 investigate please learn more it's only
+15:59 going to improve your career but it's
+16:01 not your core competence right you
+16:04 haven't studied or you haven't delved
+16:06 into Data engineering to the data
+16:08 governance and then that's a bit the the
+16:10 challenge that we're seeing as
+16:12 specifically for data access management
+16:13 as we're talking to a lot of
+16:15 organizations you know the data
+16:17 Engineers they have to do it because
+16:18 that's how it was right and then they
+16:21 get access requests you have to access
+16:22 or they have to manage access and they
+16:25 have to do it because they know the
+16:26 technology that's the only reason
+16:27 they're not doing it because they know
+16:29 the business context or they know the
+16:31 policies no it's because they know the
+16:33 technology and they use it so they end
+16:35 up being the the person has to process
+16:38 the the access requests and that's not
+16:40 how it should be right you know it's not
+16:42 their core competence it's not what
+16:43 they've been hired for they should focus
+16:46 on other things like managing
+16:47 infrastructure and that's why you see
+16:49 that somewhat larger organizations
+16:51 indeed they've realized that hey this
+16:54 shouldn't be with the data team let's
+16:55 give it to the data owners or the data
+16:57 governance team
+16:59 say in larger or maybe more mature
+17:01 organizations
+17:03 there is the central data team with data
+17:05 Engineers but in addition to that there
+17:07 is this data governance team
+17:09 yeah yeah or like or a data mesh team
+17:12 where in the responsibility is is with
+17:16 the data owners yeah
+17:17 and what kind of skills these people in
+17:21 the data governance team should have to
+17:23 be able to do these things effectively
+17:26 where they actually learn these things
+17:30 so the skills well
+17:32 I'll ignore the data on or for a moment
+17:35 like the data governance team the skills
+17:37 that you have is actually I think the
+17:40 biggest skill is so
+17:42 you don't need to know all the
+17:44 technology right so you don't have to be
+17:46 super technical you need some kind of
+17:48 business Affinity right but you also
+17:51 need to be able to enable and manage
+17:53 change right to be successful uh in
+17:56 after people have to change processes
+17:59 have to change so you need to be a
+18:01 change enabler that that's probably
+18:03 the the biggest skill you can have
+18:06 working in their conferences how can I
+18:09 change Behavior how can I make people
+18:11 aware how can I evangelize in terms of
+18:14 like art skills like pure knowledge
+18:18 there's uh there's the um the DM DM book
+18:22 so it's a Dharma Book of Knowledge I
+18:25 believe and that's really like the unbox
+18:29 it's really like the Bible for data
+18:31 governance people
+18:33 okay
+18:34 so who's uh like you said like the
+18:37 skills that they need is uh is change
+18:40 management which does not sound like
+18:43 something that
+18:45 engineering like that computer science
+18:48 courses cover at any University I know
+18:52 so
+18:53 um I guess these people do not
+18:56 necessarily come from the computer
+18:57 science background so what kind of
+18:58 background
+18:59 is actually the best like where do they
+19:03 come from like you from the Consultants
+19:05 the consultant space or
+19:07 I've seen I mean I've seen data
+19:10 governance people with all kinds of
+19:11 backgrounds actually engineering uh
+19:14 legal HR marketing
+19:16 uh yeah
+19:19 so it's not something you can learn in
+19:21 school like I don't know when you finish
+19:23 your school let's go learn about data
+19:27 governance like and have a bachelor
+19:29 degree in that
+19:31 not that I'm aware of but I wouldn't be
+19:33 surprised if that comes soon I mean
+19:38 I guess it would be a specialization
+19:40 right in some sort of yeah
+19:46 you're saying
+19:48 no I mean like I said it's really uh
+19:51 fundamental I mean everybody has I was I
+19:54 was on this uh I was a coalesce in
+19:58 London last year you know a DPT
+20:01 conference
+20:02 this is about analytics engineering
+20:04 right and there was the keynote uh and
+20:09 after the keynote there was I was with
+20:11 go farmers and the product manager of
+20:13 DBT there was room for question a
+20:15 question q a right
+20:17 and half of the Q a were data governance
+20:20 questions there were data governance
+20:21 related because these were analytics
+20:23 Engineers they were building on DBT and
+20:25 they kind of
+20:27 because they were focused on proving the
+20:29 value of data right proving that you
+20:33 know getting this initial data products
+20:34 out those initial successes and then
+20:37 they had success they get more and more
+20:39 their consumers on the platform more and
+20:41 more they have products in there and
+20:43 then you start seeing all those data
+20:44 governance issues and you know data
+20:46 access management is really one of those
+20:48 challenges that's why like you see that
+20:50 with you know the data teams that have
+20:53 proven value of data they're getting
+20:56 more data consumer on the platform
+20:57 they're they're successful in their
+21:00 self-service analytics the number of
+21:01 data products is exploding and then
+21:03 regarding having all these data access
+21:05 management issues right
+21:06 and it said we did a government applies
+21:09 to data access management now you got to
+21:11 gradually you know mature your data
+21:13 access management right you cannot just
+21:16 say oh stop the process hold on
+21:18 everybody stop doing self-service
+21:20 analytics I gotta improve access my data
+21:23 access management that doesn't work
+21:24 that's too disruptive and that's also
+21:27 like the approach for data access
+21:29 management should be like just do it
+21:32 incrementally don't have like a big bang
+21:34 but incrementally
+21:36 um improve your data access maturity
+21:41 um and that's the same with data
+21:42 government and that's why you need like
+21:43 a good plan a good change agent that
+21:46 allows you um to do that
+21:49 mm-hmm
+21:50 I understand what about those poor data
+21:53 Engineers who work in a smaller
+21:54 organizations that all of a sudden need
+21:57 to deal with all these data access
+21:59 requests I assume some of them might
+22:02 naturally become interested in data
+22:04 governance
+22:05 so
+22:06 how do they actually get better at that
+22:08 like do they pick up the book you
+22:10 mentioned this damn book or how do they
+22:13 do this
+22:14 there's a lot of content out there
+22:17 there's also like several uh select
+22:19 communities there's a data mesh Select
+22:23 Community there's also the name escaping
+22:25 there's also data governance a slack
+22:27 Community where you can go on
+22:31 um
+22:31 so so definitely uh communities and
+22:35 literature out there that can help you
+22:37 yeah I think there is a book from
+22:38 O'Reilly right that is called Data
+22:40 governance
+22:41 it can be yeah yeah I think we've had
+22:44 authors like a couple of years ago on
+22:47 this podcast so if anyone is listening
+22:49 and did not check that maybe you can go
+22:52 and check like just type data governance
+22:55 because we
+22:56 discussed it in much more details
+23:01 okay but uh
+23:03 so when is organization is when is
+23:06 organization large enough to actually
+23:08 start thinking about the data governance
+23:10 team or it's more a question of maturity
+23:13 or how does it happen
+23:15 yeah
+23:16 um
+23:17 I think it depends on on several factors
+23:21 but I think
+23:22 uh
+23:23 yeah
+23:25 so what I see in practice is still this
+23:27 is for organizations that are very
+23:29 serious about data right so they have
+23:31 customer data and they want to use it
+23:34 for as a competitive asset asset right
+23:37 so for better insights better Services
+23:39 better products and so forth
+23:42 then you have to really have the basis
+23:44 of data governance to become successful
+23:47 at that now
+23:48 this is typically as of a certain size
+23:50 if you're small right and you can just
+23:53 talk to each other over your over over
+23:55 the computer screen or over slack as
+23:58 we're working from home now but as of a
+24:01 certain size if you're serious about
+24:03 data then you really need to invest
+24:06 somewhat in in their governance
+24:08 um because that as I said it's like the
+24:11 fundamentals to become uh become
+24:13 successful with data
+24:15 like let's say a startup with 10 people
+24:18 do they need data governance thing
+24:22 well I mean no I don't think at that
+24:24 station you data governance right you
+24:26 all have the same definitions of the
+24:27 data you understand the data flows
+24:31 um even for data access management you
+24:33 can just one person manage it it's when
+24:35 you start getting more data consumers on
+24:37 the platform when you start getting more
+24:39 data products in there and you start
+24:42 feeling like the issues like like people
+24:45 not trusting the reports anymore there
+24:48 are quality issues right you see like
+24:50 the trust disappearing the trust fading
+24:52 you get out of ad hoc requests you know
+24:55 we have to kill or kill a lot of fires
+24:59 that's when you know these are all
+25:01 symptoms of a lack of data governance
+25:04 let's say if we have data issues and we
+25:07 already lost the trust and data is it
+25:09 isn't it too late now to
+25:11 to do this like should have we tried to
+25:14 prevent it
+25:16 yeah indeed
+25:18 um
+25:19 but I mean the priority is often let's
+25:23 do the value of data first right in
+25:25 theory yeah it should have been
+25:26 prevented in practice I mean if you have
+25:29 a limited budget and your
+25:31 responsibilities you know prove that
+25:33 there's value in data analytics you're
+25:34 going to focus on that and when that
+25:36 takes off you're going to improve your
+25:37 data governance that's how it happens in
+25:39 practice I would love to see the other
+25:41 way around but that's how it is yeah so
+25:44 I guess for a startup with 10 people
+25:45 it's like at most two teams right
+25:48 working together but let's say if there
+25:51 is one team that is producing data and
+25:53 then there are multiple teams that is
+25:56 consuming this data
+25:58 the moment you have some sensitive data
+26:00 that only one team can consume and
+26:02 others could not like I don't know some
+26:04 personal identifiable data right then
+26:06 you need to start thinking okay like how
+26:08 do we make sure that this team can
+26:11 have access to this data and this team
+26:13 cannot right and then you need to start
+26:15 thinking like how do we
+26:17 keep this organized like how do we know
+26:19 do not go I don't know Matt thinking
+26:22 about all these things because like
+26:23 there could be another field another
+26:26 sensitive
+26:27 sort of information that maybe just one
+26:30 team can consume and it's a different
+26:32 team
+26:33 right
+26:34 absolutely I mean I think any day access
+26:38 management before you go for a steep
+26:40 that's for sure right like if you're
+26:42 soon as you have a data warehouse or a
+26:46 lake and you have sensitive data in
+26:48 there be it customer data or like
+26:51 business critical data like very
+26:52 sensitive intellectual property of
+26:55 course then you need an access
+26:56 management that's for sure and then and
+26:59 then like you said if you start bringing
+27:01 on more data consumers then you really
+27:03 need it but then you need to do it in a
+27:06 scalable way then you need to have like
+27:07 automated process better insights better
+27:10 collaboration and that's that's when you
+27:13 have to start looking at you know taking
+27:15 that responsibility and the processes
+27:18 out of the core their team and then put
+27:21 it either with the government scene that
+27:22 typically around that size starts you
+27:25 know developing you start getting your
+27:26 first data Steward data governance
+27:28 person or push it to the the data owners
+27:33 um but if anything and data access
+27:35 management that's one of the things when
+27:38 you work with customer data one of the
+27:39 data governance
+27:42 like one of the parts of data governance
+27:45 that you have to start as early as
+27:46 possible with
+27:48 and to mentioned the word process many
+27:52 many times and I'm wondering how should
+27:55 a good good enough process look like
+27:57 look like if we talk about data access
+27:59 management let's say we have producers
+28:02 of data we have consumers of data some
+28:04 of the data is sensitive so not everyone
+28:06 should have access to that and one team
+28:09 wants to have access to this data like
+28:11 how do they go about
+28:14 I don't know consuming starting to
+28:16 consume this data yeah
+28:19 I didn't I didn't realize I was talking
+28:21 about process that much I must be I must
+28:24 be getting old you know four times yeah
+28:28 yeah well there's a there's a
+28:31 um now there are many processes in data
+28:33 this is my right you have like the
+28:34 access request the approval you have the
+28:37 regular review uh you have a revoking
+28:39 accident so forth uh I I think it starts
+28:43 with like good rules and
+28:44 responsibilities right uh ideally and
+28:47 this is for somewhat larger
+28:48 organizations you need like a good
+28:50 collaboration between the data owners
+28:53 who know the business context of the
+28:56 data who know what it means ideally they
+28:58 approve access they manage accidentally
+29:01 view it uh so the data owners they work
+29:04 with the data Engineers they know the
+29:06 technology they can they have to
+29:08 implement the controls
+29:11 um and then if you have a data
+29:13 governance scheme that they should also
+29:14 be involved because you know the
+29:16 regulatory context within your working
+29:18 so they know the privacy and security
+29:20 standards and the policies in the
+29:22 organization and ideally you had a
+29:25 collaboration between these three and
+29:27 what we've seen is that you know when
+29:29 data access measure does not scale it's
+29:30 because the collaboration between these
+29:32 three has has broken
+29:35 okay so I'm thinking it's a bit abstract
+29:39 to me still let's take an example so for
+29:42 example we have
+29:43 a use case I don't know churn prediction
+29:46 right so we have uh we're in a company
+29:48 we have some clients it could be like a
+29:51 usual uh internet SAS company right so
+29:55 there's there's a customer team who
+29:57 manages the all the information about
+29:59 the customer like they their contact
+30:02 details and so on and there is let's say
+30:04 a marketing team that wants to
+30:06 understand if somebody is about to churn
+30:08 then we want to try to win them back by
+30:11 offering some discounts right so the
+30:13 marketing team wants to implement this
+30:15 turn prediction
+30:16 and they need to access the marketing
+30:19 team needs access to the email field
+30:21 right
+30:22 so then uh how do they go about this if
+30:25 we have proper data governance and data
+30:28 access management tools you mentioned
+30:30 like there are things like access
+30:31 requests approval revoke right like it's
+30:35 probably
+30:36 um okay ask for a quest right how does
+30:39 it happen yeah so ideally uh there's
+30:43 this there's this concept of pushing
+30:45 pushing governance left right so ideally
+30:49 when the the data Engineers have created
+30:52 the initial data set with the was it
+30:54 customer email uh in there right yeah uh
+30:58 they have uh dagged that data set a
+31:01 customer email and they've also defined
+31:04 the roles that can access that data set
+31:06 so that's the customer team right so the
+31:08 data engineers and the team that make
+31:10 this data available yeah they it's their
+31:13 responsibility to document this data to
+31:15 say which fields which information is
+31:19 sensitive which is not and who can
+31:21 access what right yeah that's ideal and
+31:23 that's when you start moving towards
+31:25 data mesh data contracts right so the
+31:28 data producers in in the sales team they
+31:32 say this is data set the discussion data
+31:34 these are the roles that can assume it
+31:36 and then the marketing team they
+31:39 basically when they need that data set
+31:41 they find it in a catalog right and they
+31:44 say hey I need access to this data set
+31:47 the email field I need it for children
+31:49 analysis so the login access request
+31:51 with the purpose turn analysis right and
+31:55 then access request is like they say
+31:57 okay this is the field we're interested
+32:00 in but we don't seem to have access to
+32:02 this please give us and this is the
+32:04 reason why we need it because we want to
+32:06 do XYZ right yeah and then ideally also
+32:09 like we only we need for three months or
+32:12 or we need permanent but you also add
+32:14 like the time Dimension and then if you
+32:17 have a data owner in the sales domain
+32:20 they approve it and then in ideal case
+32:23 permissions are automatically updated
+32:25 and then if that approval is for three
+32:27 four months after that build the
+32:30 permissions are revoked and that
+32:32 revoking access is is really important
+32:34 and what we've seen and a great deal and
+32:38 this is pure data access mentioned their
+32:40 Governors but one of the issues that we
+32:42 see with data access environment is like
+32:44 excessive privileges role explosion it
+32:48 becomes way too difficult to to see who
+32:51 has access to what or you have a lot of
+32:54 excessive users with excessive
+32:55 privileges that's because access is
+32:57 always granted and not revoked and I
+33:00 think now more than ever with public
+33:02 cloud and all the data breaches and the
+33:04 Privacy regulations but also the
+33:06 upcoming security regulations in in
+33:08 Europe and the same in the States you
+33:11 need those concept of least privileged
+33:13 access management so like time-bound
+33:15 access is also like part of the best
+33:17 practices I would say
+33:20 and you're based in Europe right in
+33:22 Belgium yes it's especially important to
+33:26 know about all these things and in
+33:28 Belgium the European commission is
+33:29 actually there right so it's like Europe
+33:30 or lament so all these laws about data
+33:34 uh data privacy I actually made
+33:38 somewhere near you right yeah yeah
+33:40 that's those are my neighbors okay like
+33:45 do you go do you have I don't know
+33:46 grills with them
+33:48 um
+33:52 they're my neighbors but I got I got
+33:55 them my friends are more other
+33:56 entrepreneurs okay
+34:00 um okay yeah and then um so I guess in
+34:03 this case
+34:05 if I request a temporal access if I say
+34:07 hey I want to do a proof of concept I
+34:10 want to see like if our term prediction
+34:12 model is actually useful then you
+34:14 request access for three months and then
+34:16 if it's granted then automatically
+34:18 whatever data access management tool we
+34:21 use should
+34:22 after three months revoke it right
+34:24 but look at the the development cycle
+34:28 right so typically it's like a data
+34:30 engineer or data scientist a data
+34:32 scientist in this case has to build a
+34:34 new model they request access to that
+34:36 data to build that model they get it for
+34:39 a couple of months when the model is
+34:40 built and it can go into production data
+34:42 scientist doesn't need that data anymore
+34:44 right I mean and every gift we give
+34:47 access to the service account or the the
+34:50 workbench that needs the data for the
+34:53 chair prediction model and the access
+34:55 for this scientists has been revoked and
+34:58 I mean I'm always talking about privacy
+35:00 and security you have many regulations
+35:03 indeed why you have to limit access and
+35:05 you also have sarbanes oxy and so forth
+35:07 but also it just it prevents you from
+35:09 making mistakes right it's like for a
+35:12 lot of people having the guard rails
+35:14 that prevents them from like deleting a
+35:16 production table or whatever you can
+35:18 also give a peace of mind so there's
+35:20 there's a lot of benefits in just like
+35:21 working with temporary access and
+35:23 knowing then that like when I do
+35:25 something wrong because I didn't have my
+35:27 coffee in the morning I mean I have my
+35:28 peace of mind that no that is somewhat
+35:31 limited to the access that I have
+35:34 well as a data scientist in the past I
+35:37 can
+35:39 think of ways where it could potentially
+35:41 go wrong maybe there's a solution so for
+35:43 example okay we implemented a proof of
+35:45 concept we decided to go ahead with this
+35:48 it's in reduction right now and I no
+35:51 longer have access to this data right
+35:52 because why do I need access to emails
+35:54 of the customers but something happens
+35:56 with our model it gets broken right and
+35:59 then I need to go and debug it and
+36:01 figure out what's wrong and then if I
+36:04 don't have access to this data
+36:06 how do I actually debug it yeah yeah and
+36:10 I mean I don't want to go too much into
+36:13 the writers solution because that's we
+36:16 cover all that stuff with writer and I
+36:17 don't want to make it a sales pitch
+36:18 right but there ideally you get access
+36:21 to do your investigation right and and
+36:24 and
+36:25 yeah it's a process of currently the
+36:28 what is broken is a process of
+36:30 requesting getting access and revoking
+36:33 access it the process does not work and
+36:35 that's why as a data scientist I'm sure
+36:37 in your experience that
+36:39 um like say I'm sure you've had admin
+36:43 credit rights right they were just like
+36:44 Alexa leave me alone here are admin
+36:46 rights do your thing right and that's
+36:48 because the the process is broken right
+36:50 we just have to improve the process of
+36:52 requesting approving and revoking access
+36:55 such that at all times you only have
+36:57 access to the data that you need whether
+36:59 it's to build a model to run a model
+37:01 investigate data quality issues or why
+37:04 the model has broken and nothing else
+37:06 but just getting requesting an X and
+37:09 getting the model should be easy right
+37:12 and it automated where possible so at
+37:15 all time it just limited to what you
+37:17 really need
+37:19 well in defense of the company where I
+37:21 worked we actually had the data
+37:24 Protection Officer so I was not always
+37:25 giving up in rates
+37:27 maybe speaking about this data
+37:30 protection I remember having a
+37:31 discussion with that person like when I
+37:32 needed to access
+37:36 yeah I think some senses of information
+37:37 like emails
+37:40 like all of a sudden I got to know this
+37:43 person data Protection Officer because
+37:45 he was pretty interested in why I need
+37:47 this data and I needed to explain him
+37:48 yeah
+37:50 so do you see this role often this data
+37:53 Protection Officer
+37:55 um
+37:56 I see them as an important stakeholder
+37:59 so I see companies I was talking to that
+38:02 were
+38:04 where you see that the data access
+38:06 mentioned
+38:07 projects actually started because DPO
+38:11 was concerned or the season is concerned
+38:14 I mean it's a responsibility it actually
+38:17 like it's an organization's
+38:19 responsibility to keep their customer
+38:21 data private and secure a good example
+38:24 is uh Optus in Australia that has been
+38:27 breached a couple of months back they
+38:29 lost 10 percent of their customer base
+38:31 after that breach right so I mean
+38:33 customers are are becoming more and more
+38:36 privacy aware so as an organization of
+38:39 course you have to take that
+38:41 responsibility but it's often driven by
+38:43 the DPO who has to comply with the
+38:45 Privacy recognitions they have to say to
+38:47 the supervisor right they have to report
+38:50 on that they have to
+38:51 Delta supervisor and the customer hey we
+38:54 only use the data for the purposes that
+38:56 we've agreed upon and then the Caesar
+38:58 has to make sure that there are no data
+39:00 breaches no data leaks they have to
+39:01 prevent unauthorized access and you know
+39:04 for operational systems that's pretty
+39:07 straightforward right but when you look
+39:09 at your data warehouses your data Lakes
+39:13 that's where you know they lose sleep
+39:16 because you got all that data it's messy
+39:18 it's a lot of data you got a lot of
+39:21 change and there you have to you know
+39:22 prevent an authorized access and you
+39:26 know data scientists data analysts data
+39:28 Engineers that have to do their job they
+39:29 need that access and they have to but on
+39:33 the other hand you have to comply with
+39:34 privacy and security regulations and
+39:36 that balance you know doing your job
+39:37 being productive for data giving your
+39:40 company that Competitive Edge with data
+39:42 while you know keeping it secure and
+39:45 private that's a very difficult battle
+39:47 and then creates that friction that you
+39:50 know your DPO your previous job like
+39:52 being like hey what do you need the data
+39:53 do you really need it for that purpose
+39:55 can you explain me
+39:57 I would ask that these questions all day
+40:00 long yeah and sucks it sucks for
+40:03 everybody right because then you have to
+40:05 explain them they're not all dpos are
+40:08 very technical they're often more
+40:10 working with legal texts with policies
+40:13 so there's this like miscommunication
+40:15 and it just it's policy so that it
+40:18 shouldn't it should be automated as much
+40:20 as possible the collaboration between
+40:22 the DPO and the data team should be
+40:24 streamlined as much as possible you need
+40:26 to have give them the insights and just
+40:29 like in enable it right rather than
+40:31 policing
+40:33 oh
+40:34 I was also curious I actually mentioned
+40:37 two things so you we talked about DPO
+40:39 but he also mentioned seesaw ciso
+40:42 whatever so maybe you can tell us a bit
+40:44 about these roles these roles like who
+40:46 are these people usually what's their
+40:49 job is and why do companies actually
+40:51 employ them like why do they care about
+40:53 them yeah so there typically as of a
+40:57 certain size
+40:58 um so when you're working with sensitive
+41:00 data and yes of your as of a certain
+41:03 size you will typically see a data
+41:05 privacy officer or DPO and a ciso or
+41:09 Chief Information a security officer
+41:13 um what I've seen is that they've grown
+41:15 towards each other right
+41:17 um so they used to be like two
+41:18 completely separate entities now they
+41:21 collaborate more closely and that's
+41:23 because the DPO has to rely on a season
+41:25 what does a DPO do it makes sure that
+41:29 you know the data that you as a customer
+41:31 give to organization is only used for
+41:35 the purposes you've agreed upon right so
+41:37 if I give you my data uh to you know for
+41:41 billing for sending invoices and I say
+41:44 you cannot use it for marketing I hope I
+41:46 don't get marketing emails from you that
+41:48 would create a speech and that's not
+41:51 always that big but you also have like a
+41:54 Northwest access or used by Third
+41:57 Parties by hackers and that's where the
+41:58 Caesar comes in so Caesar makes sure
+42:01 that you know no unauthorized users or
+42:05 unauthorized people can have access to
+42:07 your data so they keep everything secure
+42:09 your DPO makes sure that the data is
+42:13 being used in in a way and in the
+42:15 context that you as a customer can
+42:17 rightly expect
+42:19 yeah yeah thanks I noticed that we have
+42:22 three questions I think it's about time
+42:24 we covered that question from IOP I hope
+42:27 you I pronounce your name correctly so
+42:29 the question is
+42:31 how to deal with access management in a
+42:33 data managed setup with sensitive data
+42:35 usually data producers own it but for
+42:37 sensitive data even producers shouldn't
+42:40 access it I don't know maybe we covered
+42:43 it a little bit the first part of this
+42:47 also like not everyone knows what data
+42:50 mesh is maybe you can introduce it in
+42:51 like a just a couple of sentences yeah
+42:54 uh great question I know by the way uh
+42:57 so first off data mesh it's a new
+42:59 framework uh it comes from thoughtworks
+43:02 from jamac and it basically applies like
+43:05 best practices from devops and data
+43:07 governance and applies it to data there
+43:10 are four principles so I don't know by
+43:12 heart I think it's data as a product uh
+43:16 domain thinking self-service analytics
+43:18 and Federate computational governance
+43:20 not not 100 certain that we had Sean
+43:24 Mark also in one of the interviews so
+43:26 you can check it out
+43:28 just maybe enough I think maybe it's
+43:30 enough information to for those who
+43:33 don't know what it is
+43:34 just go and check that one indeed
+43:38 Mark will do much better job than I and
+43:40 I just did
+43:42 um but that's a great pointy obey so
+43:44 like like said uh often it's uh that the
+43:48 data producers or the data owners that
+43:50 decide on who can have access to what
+43:51 but there's this point of sensitive data
+43:54 because you know that has to comply with
+43:56 privacy regulations security standards
+43:58 and support the way that we see that
+44:00 writer is uh that should still be
+44:03 controlled by your central data
+44:05 governance team that knows the
+44:06 regulations knows the Privacy standards
+44:09 and should be as as much as possible
+44:11 automated and that we're looking at you
+44:13 know column level masking or Road level
+44:16 filtering where based on the central
+44:18 policies these columns are automatically
+44:21 massed so a good example is like
+44:23 marketing has a data sets customer data
+44:26 they say based on their policy so John
+44:29 and Mary can access this data set I
+44:31 approve access but in that data set it's
+44:34 like payment card information or home
+44:36 address then there should be Central
+44:37 policy that says like this comp should
+44:40 always be missed and that's something
+44:42 that should be automated as much as
+44:44 possible we call we call this by the way
+44:47 we call this the the Conway Benson
+44:50 movement where both teams collaborate on
+44:52 that topic great question
+44:55 yeah another question from the same
+44:56 person and we spoke already about this
+45:00 role explosion that's when we have too
+45:03 many roles maybe when we forget to
+45:05 revoke access uh
+45:07 and the question is do you have any
+45:09 recommendations for following the least
+45:11 privileged privileged access principles
+45:13 without filing in failing into the role
+45:17 explosion problem when there is a role
+45:19 dedicated for each private data set
+45:21 uh there's a role for each data set
+45:24 right I see
+45:26 um tough question so
+45:29 um what I've seen is that role explosion
+45:32 typically comes when your roles divert
+45:35 from how the business uses
+45:37 um data so a couple of things there is
+45:41 like we we see work with organizations
+45:44 that have like the wall inheritance they
+45:46 have the data roles that give you low
+45:48 level permissions on data sets reads
+45:51 permissions write permissions and so
+45:53 forth and then you have the functional
+45:55 roles that correspond to your roles in
+45:57 the business that you can then assume
+45:59 the data roles right so that's one way
+46:03 another reason for role explosion is
+46:06 like the access requests right so people
+46:08 request access for you know building an
+46:11 ml model for investigating issues
+46:13 there's no role that matches that
+46:15 request perfectly so what you typically
+46:17 do is then just create quickly new one
+46:19 and then forget to revoke it so I think
+46:21 like regular reviews and alerts for
+46:24 unused rules will definitely help with
+46:27 that so I think like having like the the
+46:30 role inheritance where you have roles
+46:32 that mention business and roles that
+46:34 match the data combined with regular
+46:36 reviews and alerts on unusuals I think
+46:39 that should should help
+46:42 thank you make sense and another
+46:44 question is uh and I've been sort of
+46:47 guilty of that too
+46:48 oftentimes data owners do not know if
+46:51 the data is sensitive or not and or
+46:53 maybe they accidentally may make made a
+46:55 mistake
+46:56 so how to make sure that we have the
+46:58 right process to catch
+47:01 pii data personal identifiable
+47:03 information because I happen to be a
+47:06 data owner at some point
+47:07 and producing data and then I just
+47:10 didn't realize that some of these data
+47:12 is actually private sensitive and then
+47:15 somebody pointed out they discovered
+47:18 they accidentally so there was no
+47:21 process for that and then of course I
+47:23 went to our data catalog and then Mark
+47:25 this uh feel this sensitive so is there
+47:29 a process for that like how do you you
+47:31 deal with this kind of problems yeah
+47:34 that is really uh the best way to
+47:37 address this is by integrating
+47:38 governance in your data of this process
+47:40 so uh once I was talking to this guy
+47:44 like UC need a data engineering team at
+47:47 a Woolworths in Australia like 200
+47:49 people and he said you know when I
+47:51 started integrating data governance in
+47:53 my data Ops the effort became one
+47:55 percent of what it used to be right so
+47:57 as you're creating data products you add
+48:00 the tags and then based on those Stacks
+48:03 you can have like an automated decision
+48:04 process that mask sensitive data
+48:08 um so ideally yeah the data is stagged
+48:11 that's the ideal scenario and then data
+48:14 is automatically messed based on on
+48:17 those tags
+48:19 um but of course you always need like a
+48:21 regular review right so I think having
+48:23 good insights in who has access to what
+48:26 what are the usage patterns and you know
+48:28 showing that in an easy to consume way
+48:31 would also be very important to catch
+48:34 issues like like that
+48:38 but I guess the question was also about
+48:39 like if I accidentally
+48:42 Mark data is not sensitive even though
+48:44 it is sensitive
+48:45 uh what is their way to automatically
+48:49 detect that or like it's just we need to
+48:52 work on processes maybe we just need to
+48:54 have regular reviews
+48:56 uh so about the tagging itself right uh
+48:59 I think they're looking at like
+49:02 there's now this concept of active
+49:04 metadata where the data is actively
+49:07 automatically is actively managed like
+49:09 you have a lot of automation there
+49:10 models to help you with the tagging
+49:14 um not really my field of expertise but
+49:17 I think there there are several
+49:18 Solutions out there that help you know
+49:21 with automated data tagging and that
+49:24 could help you with that
+49:26 because like maybe
+49:28 well with emails addresses phone numbers
+49:31 IP addresses and geographical
+49:33 coordinates it's kind of obvious right
+49:35 like they follow more or less the same
+49:37 pattern so they are probably automatic
+49:38 ways to oh yeah
+49:41 yeah so these models that are out there
+49:43 they can indeed you know use regex
+49:46 patterns to detect sensitive data but
+49:48 they can also use at the context of the
+49:50 the the data itself look at the actual
+49:53 values and add tags in that way and
+49:57 there's a whole field that has been
+49:58 developing in that space over the past
+50:01 couple of years so some of them are even
+50:03 open source so definitely some sort of
+50:05 solutions out there to help with that
+50:07 now I want to talk about instrumenting
+50:10 all everything we talked about
+50:12 what I typically see in companies is we
+50:15 have tools like terraform that or even
+50:18 before telephone so we have like all
+50:20 these clouds like for example AWS cloud
+50:22 and in ABS we have this thing called IM
+50:26 which is
+50:29 identity and access management yeah yeah
+50:31 right and then what typically happens is
+50:35 we use this infrastructure it's called
+50:37 tools such as terraform or cloud
+50:39 formation all that so that there is like
+50:42 this infrastructure team that manages
+50:44 this this code base
+50:47 and if I need access to something I need
+50:50 to poke these people saying hey can you
+50:52 please like I have a role or my team has
+50:55 a role
+50:56 and then like I need to like I want to
+50:58 have access to this S3 bucket so I need
+51:00 to poke them first and then I say okay
+51:02 we're too busy just create a pull
+51:04 request to this thing so then I go and I
+51:06 need to manage to make sure that I can
+51:08 actually you know run this thing on my
+51:09 computer and then maybe I add this uh to
+51:13 to the terraform file then I create a
+51:15 pull request and they take some time to
+51:17 review this pull request somebody needs
+51:18 to approve it so then somebody approves
+51:20 it and somebody needs to apply it and
+51:22 then like maybe one month later I
+51:25 finally have access if everything goes
+51:26 smoothly I guess that's not the most
+51:29 ideal scenario right but from my
+51:32 experience I see that often this is how
+51:34 it starts
+51:36 right that's correct that's indeed how
+51:38 it starts
+51:40 um I think it's a good way to get
+51:42 started is with terraform because you
+51:45 know most their teams like I said a bit
+51:47 earlier right it's all about you know
+51:49 proving the value first so you're really
+51:51 focused on getting those First Data
+51:53 products out you know improving the
+51:55 value of a data analytics getting more
+51:57 their consumers on there more their
+51:59 products in also on the platform
+52:02 um and then that initial terraform
+52:04 script that you used to manage accident
+52:07 requests and process to request access
+52:09 to a slack or email they start breaking
+52:12 right it doesn't scale
+52:14 um that's because you know one it's too
+52:16 technical so for data owners to take
+52:19 ownership right they can't go in in the
+52:21 terraform code and start managing access
+52:23 so it keeps on being with the core data
+52:25 team so too technical uh if by the time
+52:29 you have a DPO or CSO there's no way of
+52:31 reporting there's no Insight so the
+52:33 visit there's no visibility and there's
+52:36 hardly any automation right so you
+52:38 cannot automatically uh approve or
+52:41 revoke access
+52:43 um and trees like an issue I I heard at
+52:46 a at a tech scale up was that they had
+52:49 State drift in their access controls
+52:51 right so they had access defined in
+52:53 terraform and it was different from what
+52:56 actually was in Snowflake because other
+52:57 Engineers were just directly update the
+52:59 probation in the snowflake so I think
+53:01 it's a great way to get started uh it
+53:04 just you know gets gets you started you
+53:06 don't have to worry about access
+53:07 management that is covered as of a
+53:09 certain scale that's when you start
+53:11 looking at more uh like like vendors
+53:13 like right to help you manage
+53:15 permissions and the ways we just build
+53:17 on top of that right so I really believe
+53:20 in excess code as much as possible so
+53:23 like pushing governance left my vision
+53:26 it's like let's just keep defining data
+53:29 products as code and the roles that can
+53:31 access your data products as code but
+53:33 then everything access requests the
+53:35 management of the reporting let's do
+53:37 that in a dedicated tool like writer
+53:39 where everybody can go to request access
+53:41 and your data engines are just taken out
+53:44 of the process they can focus on cool
+53:46 stuff another processing access requests
+53:49 so I'm I want to I don't I see that we
+53:53 don't have a lot of time like five
+53:54 minutes I still want to talk about
+53:55 writer but I'm just wondering so
+53:57 Engineers being engineers and I'm one of
+53:59 them too
+54:00 uh why do I need a vendor if I just can
+54:03 implement this thing myself it's so much
+54:04 fun right
+54:05 yeah yeah uh the the building is indeed
+54:10 fun uh the maintaining uh sucks uh you
+54:13 have to update your connectors all the
+54:14 time it becomes costly but then also
+54:16 just for your employer right it's
+54:19 security it is important and I've seen
+54:22 I've seen several cases where the
+54:24 engineer that built it left and just
+54:27 nobody maintained it he left with all
+54:28 the knowledge they get huge key person
+54:30 risk and on something as important as a
+54:33 data access management it's uh it's not
+54:36 a it's not ideal
+54:38 so how do you solve this problem what do
+54:41 they actually do yeah so the the biggest
+54:44 challenge with implementing data access
+54:46 management is a change right people have
+54:49 to you know change their behaviors
+54:51 change their process and maybe even
+54:52 tools so the the way that we do it is by
+54:57 you know limiting the change that it
+54:59 needs on gradually improving data access
+55:02 management and the way I do it we do
+55:04 that is by you know we let you start
+55:06 from your as a situation so there's no
+55:09 big bang change you don't have to
+55:10 disrupt anything we come in and with our
+55:13 we have a free version of the product
+55:15 uh you integrate with your data
+55:18 warehouse or your data Lake and from the
+55:19 first day you instantly see who has
+55:21 access to what what is the usage right
+55:24 and then from that place so from your
+55:26 ads is you can gradually Implement uh or
+55:30 improve your access controls through
+55:31 collaboration the insights and
+55:34 Automation and that is uh
+55:37 um like the opposite of what the other
+55:39 vendors do which is like okay first
+55:41 Define your policies your metadata uh
+55:44 and then push down all that change and
+55:46 it breaks a lot there's a lot of change
+55:48 uh all at once so that big bang is
+55:51 something we don't believe in we believe
+55:52 in like the gradual implementation
+55:55 other open source Alternatives like if
+55:58 somebody is not really or somebody just
+56:00 want to make sure they see all the code
+56:03 and you know
+56:06 yeah
+56:07 so we have a right to CLI that is open
+56:10 source that you can manage access code
+56:13 now uh we have our first contributor who
+56:17 is building out the the report
+56:19 capabilities so super happy for that uh
+56:23 in terms of other open source what we
+56:25 see all the time is Easter
+56:29 what their form has all these issues
+56:32 that we talked about right yeah indeed
+56:34 indeed
+56:35 well since you have an open source thing
+56:38 we have a we have um I think called open
+56:41 source Spotlight where we invite open
+56:43 source authors to demo their tools and
+56:46 you are more than welcome to demo right
+56:48 or CLI so we also recognize something
+56:52 I think that's all we have time for
+56:54 today so thanks Bart for joining us
+56:57 today for sharing all this information
+56:58 with us and thanks everyone for joining
+57:01 in for listening for asking questions
+57:03 and yeah I guess that's all thanks part
+57:07 thank you thanks for having me
+57:09 okay well see you soon I guess I don't
+57:12 know if it will be you or somebody else
+57:13 from your team presenting right or CLI
+57:15 but I'm looking forward to that
+57:17 that will be uh that will be our devrel
+57:20 okay that works okay awesome thank you

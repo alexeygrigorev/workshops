@@ -1,0 +1,1988 @@
+DataOps 101
+
+0:00 so this event is brought to you by data
+0:01 talks club
+0:03 which is a community of people who love
+0:05 talking about data
+0:06 and we have weekly events and today is a
+0:09 one of such events
+0:12 typically we have two types of events
+0:15 and you can find
+0:16 more about these events if you go to our
+0:18 website
+0:19 datatalks.club events and
+0:23 so yeah we here we have two types of
+0:26 events
+0:27 today we have live broadcast event where
+0:30 we
+0:30 talk about different topics today we
+0:33 will talk about data ops
+0:35 and you can see here that next week
+0:38 we'll talk about
+0:39 online communities and then we'll talk
+0:41 about transitioning from project
+0:43 project management to data science and
+0:45 then on
+0:46 tuesdays we have more presentations
+0:49 like webinars and more technical events
+0:53 with slides
+0:54 so if you want to find out more go to
+0:56 our website
+0:58 and yeah so to
+1:02 stay up to date about our events the
+1:04 first thing you can do
+1:05 is you can subscribe to our newsletter
+1:07 then of course you can
+1:09 also join our slack if you haven't yet
+1:12 and the last thing
+1:13 what you can do is you can just
+1:14 subscribe on youtube and every time we
+1:16 have a stream
+1:17 you will get a notification and the last
+1:21 thing
+1:21 uh that during our chat today with lars
+1:25 you can ask any question and for that
+1:27 you
+1:28 should use a pinned link in the chat in
+1:31 live chat
+1:32 so it's there just go there click on
+1:34 this and ask any question you want
+1:37 you can ask questions anonymously but
+1:40 you can also
+1:40 put your name there and then yeah we can
+1:44 just uh
+1:44 refer to you by name when asking
+1:48 questions
+1:50 and that's all for the introduction
+1:53 so now just let me quickly get my notes
+1:57 and yeah let's start are you ready to
+1:59 start
+2:01 absolutely do you want to share your
+2:03 screen or oh
+2:04 sorry not screen with the camera or oh i
+2:07 thought it was on
+2:08 sorry i
+2:11 can only see your oh you're right
+2:15 turned off so
+2:20 am i visible now no no it's uh all black
+2:25 oh ah palmer
+2:30 okay here we go yes we have quite a few
+2:33 books there
+2:34 oh yeah that's mostly my wife's actually
+2:38 okay so let's start
+2:42 okay so this week we will talk about
+2:45 data ops and what is this and how is it
+2:48 different from
+2:48 any other something something ops that
+2:51 we have out there
+2:52 so we have a special guest today lars
+2:55 and
+2:56 lars is the founder of uh let me try to
+2:59 pronounce it and then please correct me
+3:02 it's uh it's a difficult word uh lars is
+3:05 the founder of
+3:06 skling yes correct correct
+3:09 okay which is a data engineering startup
+3:11 based in stockholm
+3:13 so vars frequently speaks on data
+3:14 related topics
+3:16 and we tried to get him on this podcast
+3:19 to talk about
+3:20 data ops and luckily he agreed so
+3:23 welcome lars thanks for joining us today
+3:26 thank you it's a pleasure to be here yes
+3:29 so
+3:29 before we go uh into our main topic of
+3:32 data ops
+3:32 let's start with your background can you
+3:35 briefly tell us
+3:36 about your career journey so far yes
+3:38 i'll try to not
+3:40 there for too long so i graduated
+3:44 from the royal institute of technology
+3:46 in 97 i think it was
+3:49 and i was an academic for a long time
+3:51 into re distributed systems
+3:53 and when distributed systems became
+3:56 popular industry i got a call from a
+3:59 google recruiter
+4:01 so i joined google in 2007 and
+4:06 as one of the first engineers in
+4:08 stockholm and
+4:09 we built google's first generation of
+4:11 video conferencing
+4:13 systems and uh that
+4:16 was a uh sort of a milestone in my
+4:19 career because it gave a glimpse into
+4:21 the future
+4:22 uh google was the only company
+4:25 in 2007 to do what we today call big
+4:27 data
+4:29 and it immediately became
+4:32 uh sort of apparent to me how
+4:35 much value you could extract from your
+4:37 data if you
+4:38 if you had the skills and the
+4:40 infrastructure and the competence
+4:43 so ever since my uh sort of career
+4:45 gravitated towards data
+4:47 at google i was working engineering
+4:49 productivity as well
+4:51 and we we did some uh productivity
+4:54 improvements
+4:55 that are still beyond what is sort of
+4:59 state of of practice in most companies
+5:01 so that
+5:02 those two things have essentially
+5:03 colored my career a
+5:06 a focus on efficiency
+5:09 and obsession and efficiency and and and
+5:11 then on data
+5:13 so fast forward a couple of years i
+5:14 managed to join spotify here in
+5:17 stockholm
+5:17 when i realized they were doing
+5:19 interesting things and had a hadoop
+5:20 cluster
+5:21 and so forth and so i was uh
+5:24 part of a sort of the core data
+5:26 infrastructure team
+5:28 and uh we did back in 2013
+5:32 a transformation to what today has the
+5:34 name of date ops but we didn't yet have
+5:37 a name at the time
+5:39 um and uh for again a couple of years
+5:42 i've been freelancing
+5:44 uh first for a number of years uh trying
+5:46 to
+5:47 sort of spread the the superpowers of
+5:50 data and machine learning and ai to
+5:53 uh to other companies outside the the
+5:56 little
+5:56 tech elite that that currently are are
+5:59 running ahead of everybody else
+6:02 and uh i i did that as a
+6:05 as sort of a self-employed because often
+6:07 for a while you know embedded into
+6:09 companies everything from from like star
+6:11 big banks to startups to to retail to to
+6:14 news
+6:15 so forth um but i was
+6:20 ultimately limited in how there's only
+6:23 so much that you can do
+6:24 to change these companies and usually i
+6:26 go in there and i try to build
+6:28 technology but you usually not
+6:30 technology is not the limiting factor uh
+6:33 so so therefore i
+6:34 i've been sort of very limited in in
+6:37 what i could achieve as a loan
+6:38 consultant so um
+6:40 a couple of years ago we flipped this
+6:42 around and say
+6:44 okay uh it's the key is the the ways of
+6:46 working and the workflows and how you
+6:48 work with data not
+6:49 not the technology and so uh so we're
+6:52 now trying out a
+6:54 sort of different collaboration paradigm
+6:56 where we say
+6:58 we you have data to our customers right
+7:01 you have data that has potential that
+7:03 has value so
+7:04 how about we together with you figure
+7:07 out what the value is in this data and
+7:08 try to
+7:09 extract value from it through through uh
+7:12 simple things like reporting and
+7:13 analytics or
+7:14 all the way to machine learning and but
+7:17 we do it
+7:18 right so we together with you because
+7:19 you are the domain experts but but we
+7:21 handle the how we work
+7:22 uh the technology stack and the
+7:24 operations and so forth
+7:26 and thereby sort of
+7:30 circumvent the need to change how our
+7:33 customers work and
+7:34 and instead they'll extract the value
+7:37 from the data and then returning
+7:38 valuable
+7:39 date or date assets to customers so
+7:42 you've been self self employed for
+7:45 five six years i have
+7:48 four something like that i don't know
+7:52 and you said like you started with data
+7:54 ops even before it became i think in
+7:56 2013 right
+7:58 yeah and uh yeah yeah
+8:01 how how was it called there or like uh
+8:04 how did you
+8:05 like what was that what happened for you
+8:08 yes like how did you how did you come up
+8:11 with uh
+8:11 this so uh i mean we didn't
+8:15 we didn't give it a name it wasn't it
+8:17 got the name was coined the year after
+8:19 by someone from ibm i believe
+8:20 uh and then it became a thing like 2018
+8:24 or
+8:25 2018 or something but uh
+8:28 roll back to 2013 um we were
+8:31 there were just a few teams that were
+8:34 intensively working with data spotify at
+8:36 the time
+8:36 so um and and i was in sort of the the
+8:39 core team and we were doing both the the
+8:41 infrastructure on the platform uh
+8:42 but also handling some of the main
+8:45 pipelines like
+8:46 the what songs have been played and what
+8:48 users do we have
+8:49 and so forth and then there were there
+8:52 were a couple of power user teams as
+8:53 well
+8:54 like recommendations for example uh but
+8:57 we were getting swamped
+8:58 with requests for from analytics and
+9:01 from from various other sources hey can
+9:03 you implement this
+9:04 x y and set for us so we were in in a
+9:06 way in an internal consultant team
+9:08 as as well and uh this was no longer
+9:12 feasible the the
+9:13 that everybody was dissatisfied with us
+9:16 having so little bandwidth
+9:18 so uh in a uh sort of a spotify manner
+9:22 we said well the team should be
+9:23 autonomous right it's a very autonomous
+9:25 uh culture spotify so we should enable
+9:28 them instead from
+9:29 from being dependent on us so
+9:32 uh we we sort of flipped that uh
+9:36 situation around and said uh okay okay
+9:38 let's let's build the tooling and the
+9:39 workflows to
+9:41 support everybody to go in and build
+9:44 their own data flows
+9:45 on the on the data platform the
+9:46 hadoop-based data platform that we had
+9:50 so um the goal was to
+9:53 enable everyone to be able to deploy a
+9:55 pipeline in production in
+9:57 in like less than a day and then fix
+9:59 mend the pipelines
+10:00 and if there was a problem in less than
+10:04 an hour and uh it took us a few months
+10:06 to get the
+10:07 everything in place and uh we
+10:11 embedded one of the factors of success i
+10:13 believe is that we embedded with the
+10:15 teams that were the early adopters and
+10:16 actually work really
+10:18 very tightly with them to figure out
+10:20 where we were missing things and so
+10:22 forth
+10:23 and uh shortly thereafter the this sort
+10:26 of the use of pipe data pipeline spread
+10:27 throughout the company and the
+10:29 the hadoop cluster exploded in size and
+10:32 uh and nowadays they are uh producing
+10:35 like
+10:36 hundreds of thousands of new data sets
+10:38 per day and and
+10:39 really building
+10:42 data pipelines and using data is is an
+10:44 obvious
+10:45 thing for every developer team in the
+10:47 company so was it around the time when
+10:49 luigi
+10:50 appeared or what was it yeah luigi dates
+10:53 back to
+10:54 2010 2011 and so forth that that that
+10:57 was our
+10:58 workhorse uh at the time and still is at
+11:01 spotify
+11:03 so we can go back come back to luigi
+11:05 later
+11:08 but what i heard is like you had a date
+11:10 like you
+11:11 were working in uh like the on a data
+11:14 platform
+11:14 but you were swamped with requests so
+11:16 everybody wanted you to learn something
+11:18 and what you did instead
+11:20 you kind of reverted it and let other
+11:22 teams like you kind of create it like a
+11:24 serve
+11:24 self-service platform right so they
+11:27 could implement
+11:28 whatever they needed whatever data
+11:30 transformation things they want
+11:31 to do so you enabled them to implement
+11:34 that and you focused on
+11:36 on building this self-service thing so
+11:39 others could move faster without your um
+11:43 well without your uh you know you
+11:45 implementing things
+11:46 right exactly exactly and
+11:50 is it like the this is the like is this
+11:53 why you said this is like
+11:54 core of data ops or like what is data
+11:56 offset
+11:57 well what is data that's a good question
+11:59 well uh
+12:00 you can look at it from a few angles all
+12:02 right one is the
+12:04 uh the enablement which was the angle
+12:06 that i brought up
+12:07 now enable everybody to be uh sort of
+12:09 self-sufficient
+12:10 and it's there's a parallel here today
+12:13 to devops right is instead
+12:14 of having i mean developers throw things
+12:16 over the wall to operations you you
+12:18 integrate the the activities so that
+12:20 people are enabled to run their own
+12:21 things
+12:22 um there is also the workflows
+12:26 and the tooling with continuous we built
+12:28 continuous deployment at the time and i
+12:30 believe that was one of the first
+12:32 continuous
+12:32 deployments uh at scale in europe at
+12:36 least
+12:36 on a data platform like this um
+12:40 and but i would like to sort of
+12:43 highlight another aspect
+12:44 that's the people aspect uh because if
+12:47 you take
+12:47 a a sort of a if i can go out in the
+12:50 tangent here do a more
+12:51 like philosophical and historical uh
+12:54 view on this
+12:56 if you look back for 50 years from now
+12:58 the the waterfall
+12:59 paper came out by winston royce and he
+13:02 said he looked at software engineering
+13:04 and he said this is
+13:05 what seems to be happening he's just
+13:06 like observed and said that there
+13:08 seems to be phases of requirements then
+13:10 design then
+13:11 uh coding then testing and and and then
+13:14 deployment
+13:15 or operations and these these are done
+13:17 by different people but then they're
+13:19 done in that
+13:20 order and this doesn't seem
+13:24 this was made sense from a civil
+13:25 engineering point of view but he said it
+13:27 doesn't seem to make sense from a
+13:28 software engineering point of view
+13:30 uh and but people disregarded the his
+13:33 comments
+13:34 and said oh yes that's how we do it we
+13:37 now have a methodology and let's call
+13:39 that waterfall right
+13:41 and that was dominant um for for a long
+13:44 time
+13:45 and eventually sort of extreme
+13:48 programming popped up
+13:49 and said it doesn't seem to be efficient
+13:52 this let's how about we mix the
+13:54 activities of development and quality
+13:56 assurance and do that in this
+13:57 integrated with to these mix two diff
+14:00 these two different skills and different
+14:02 people working together towards the same
+14:04 goal
+14:04 instead of of having different goals
+14:06 with the developers
+14:07 throwing something over the wall and the
+14:09 quality assurance trying to prevent the
+14:11 developers from from doing bad things
+14:13 right
+14:13 with contradictory uh like goals and
+14:17 alignment so instead we
+14:18 set these people together have the same
+14:20 alignment and
+14:21 nowadays that's obvious right that's
+14:23 that's much more efficient
+14:25 and that those that those types of
+14:29 transformations have
+14:30 have appeared ever since the agile is is
+14:32 not a type
+14:33 type of such transformation where you
+14:35 take the design and the requirements and
+14:37 you muddle that up with development so
+14:40 that it becomes iterative and you same
+14:42 people do it and
+14:43 try to figure out what the requirements
+14:44 are along the path
+14:46 and date ops is yet another
+14:49 of those of that evolution
+14:54 of mixing up different types of people
+14:56 and different types of competences so
+14:58 not only development and quality
+15:00 assurance and operations
+15:02 but also data modeling and data skills
+15:05 and analytics
+15:06 into the same melting pot and all align
+15:09 towards the same
+15:11 goal uh and and that i believe is the
+15:14 key
+15:15 right when you when you're online and we
+15:17 and they this
+15:18 is this alignment has become obvious for
+15:20 for a qa there used to be a blocking
+15:22 thing and operations used to be blocking
+15:25 thing that said no
+15:26 and if we look at the the disciplines
+15:28 that still have this blocking thing like
+15:30 security for example where
+15:32 you have lots of people that say no and
+15:34 see this as their
+15:36 their goal in in life or in the company
+15:40 uh there's still so much friction right
+15:41 so so datups is a way to
+15:43 to like remove that friction and get
+15:46 people aligned towards the same goal and
+15:48 i i think that's the important part
+15:50 it's the people part so is the people
+15:53 so the first one is enable enablement
+15:57 so you enable others to to do
+15:59 self-service and
+16:00 build data pipelines then the
+16:03 actual data pipelines so that you have
+16:05 this workflow component right so you can
+16:08 um design like you build the workflow
+16:10 like when one thing depends on the other
+16:13 now you can have that and then the final
+16:15 and
+16:16 you mentioned this is like the most
+16:17 important one is the people component
+16:19 where everyone works together
+16:22 on the same goal right it's not like a
+16:24 waterfall where you
+16:25 throw something over the wall and hope
+16:27 they will take care of everything
+16:29 but instead you work together in one
+16:31 team
+16:33 developers analytics analysts
+16:36 data engineers uh everyone worked
+16:39 together
+16:40 together on achieving the same goal
+16:42 right
+16:43 exactly there is a key uh
+16:46 sort of technical process component here
+16:49 that
+16:50 needs to be in place in order to do the
+16:52 enablement
+16:53 and that is to switch from
+16:56 from the traditional database oriented
+17:00 mutable data storages
+17:04 uh so if you look back in time we we
+17:07 used to have databases
+17:08 and everything was all the data that we
+17:11 had was in databases
+17:12 and in databases you have like uh
+17:16 mutable records where you can just you
+17:18 know i can go in and change your address
+17:19 for example and we also have
+17:21 uh mutable collections of of records so
+17:25 every day the the user list is different
+17:27 right um and
+17:30 that only scales to a certain degree we
+17:32 all know the limitations of
+17:34 of the monolith right and because too
+17:36 many people cannot go in there and same
+17:39 at the same time so you have you have a
+17:41 few teams that are
+17:43 are able to to work in there so we have
+17:45 the microservices split
+17:46 where everybody has their own all the
+17:48 teams have their own database but that's
+17:49 spread out all the data so we cannot use
+17:51 data easily from one
+17:53 end of the company to another and the
+17:55 solution here
+17:56 has been and now we're getting into the
+17:59 what you mentioned before a data
+18:00 platform
+18:01 uh and to gather all of the data that
+18:05 you have within the company
+18:07 into a data platform and that's that's
+18:10 that's the key
+18:10 uh key sort of technology
+18:14 or or a workflow component that you need
+18:17 to get in place
+18:19 and um one and the in
+18:22 inside the data platform you
+18:25 have a couple of principles in order for
+18:28 to make it work at scale and when i say
+18:30 scale i don't necessarily mean
+18:32 data scaling into from terabytes to
+18:34 petabytes but
+18:36 a human scale from one team to 10 teams
+18:38 to 100 teams
+18:40 and also to scale in terms of business
+18:43 logic complexity that you can do more
+18:45 and more complex
+18:46 things and achieve more things uh and
+18:49 the the the key sort of the key
+18:52 principles
+18:53 for for achieving this scale is
+18:55 essentially
+18:57 what can be described as functional
+18:59 architectural principles so you take the
+19:01 principles for function programming and
+19:03 apply the market on an architecture
+19:05 level so you have
+19:06 for example all the data you should put
+19:09 in that should be
+19:10 immutable you you strive to make it
+19:12 immutable as much as you can
+19:14 because immutable things you can freely
+19:16 share if i
+19:17 dump a data set in the file and say
+19:20 here's the data set it will never change
+19:22 then i don't need to coordinate with
+19:24 other teams that might use it
+19:25 right but in order to do something
+19:28 intelligent with it i need to
+19:30 process it but i can't since i can't
+19:31 mutate it i need to transform it into a
+19:33 new
+19:34 data set so we instead of mute taking
+19:37 things in in uh databases with with sql
+19:40 queries
+19:41 we ended up with these pipelines of
+19:43 steps of transformations
+19:46 uh on immutable data sets and purely
+19:49 functional transformations without any
+19:51 external input and so forth
+19:55 um and these these functional principles
+19:58 are critical to to making the
+20:00 uh the sort of making data processing
+20:04 and extracting value from data scale to
+20:07 large
+20:08 to large volumes of value basically
+20:12 so this is like the this data platform
+20:14 is the key
+20:16 how to say technology enabler like for
+20:18 an organization to
+20:20 uh you know to implement this data
+20:22 outside so because
+20:23 we need to we need we need this tool
+20:26 to uh like you said to scale in terms of
+20:30 people
+20:31 uh to be able to process all the data we
+20:34 have
+20:34 and you mentioned one thing like this
+20:36 immutability and this brings
+20:37 to to mind like uh i just heard a chat
+20:40 today
+20:41 um about like about etl processes like
+20:44 when you have some data and you will
+20:45 transform uh
+20:46 this data into a certain um like do a
+20:49 sequence of steps to transform it
+20:51 and then and the problem we were talking
+20:53 about uh somebody in chat
+20:55 with ankush um that
+20:59 when you run this data on different uh
+21:01 like let's say you can run it at six
+21:03 o'clock or twelve o'clock right
+21:05 and the problem is when you run it and
+21:07 the results are different
+21:08 right so this is because of your data is
+21:10 not immutable right
+21:12 so you can change your roles you can
+21:14 change your database right
+21:16 and then when you run this uh etl
+21:19 process at different times
+21:21 results is different right and this is
+21:23 what data platform tries to
+21:25 to solve uh with this immutability right
+21:28 yeah exactly and the the situation that
+21:31 you describe
+21:32 uh that was the case in the sort of the
+21:34 data warehouse days when you would do
+21:36 these things for for reporting purposes
+21:38 of software in data warehouses
+21:39 uh because they were the each of the
+21:41 data sets were represented as mutable
+21:43 data
+21:44 tables and as new data was arriving they
+21:46 would change a bit
+21:47 so you could not reproduce the steps so
+21:50 uh so we
+21:51 uh in a sort of a
+21:54 purely built so to speak data platform
+21:56 with with
+21:57 these data pipelines and data factories
+22:00 uh then
+22:01 then you have in theory full
+22:03 reproducibility
+22:05 uh but then we have other ways to
+22:08 handle late incoming data for example uh
+22:12 and it we're still
+22:15 the world is still in uh training on
+22:18 this one
+22:19 uh because the it's very easy to fall
+22:23 back
+22:23 into the old mutable practices and we
+22:26 actively see
+22:27 some of the main actors in in the scene
+22:31 uh sort of falling back there
+22:34 for example we've seen databricks has
+22:37 pushed something called the lake house
+22:38 with mutable where you can mutate data
+22:41 sets and
+22:42 and uh you can look at this from from
+22:44 different angles
+22:45 i so i i sometimes say that this is an
+22:49 anti-pattern this is something that you
+22:51 really should avoid
+22:52 on the other hand you can see it as a
+22:53 gateway drug to to those that have
+22:56 the existing etl flows in their data
+22:59 warehouse
+23:00 that they can now easily move without
+23:02 changing their workflows
+23:04 to a to sort of a data lake and
+23:07 and not have to do the redo
+23:11 the the logic and the workflow logic to
+23:13 handle
+23:14 immutability maybe we can take a step
+23:18 back and
+23:20 like we talked about this data platform
+23:22 but what is the data like
+23:24 yes these two are related exactly so
+23:29 so uh a data lake is uh one of my
+23:32 clients
+23:32 when i described what it is so one of my
+23:35 clients said so
+23:36 this buzzword that everybody keeps
+23:37 talking about is basically just a big
+23:39 disk
+23:40 and i said yes sorry to disappoint you
+23:42 but it is a big disk
+23:43 right it's just a bunch of files and
+23:47 they became popular when hadoop came out
+23:49 because then it was
+23:50 certainly suddenly economically feasible
+23:53 to
+23:53 to store all all raw data from your web
+23:56 applications and so forth uh
+23:58 forever uh but you could do it you know
+24:01 with older nfs server technology or
+24:04 whatever
+24:05 uh so it's just a big file system that
+24:07 is shared between the
+24:08 the nodes that do the data processing so
+24:11 hdfs
+24:12 or these days maybe like this uh
+24:15 cloud-based storages like i don't know
+24:18 s3 or
+24:19 google storage or something like that
+24:20 exactly yes
+24:22 uh now now in now hadoop is is sort of
+24:26 obsolete
+24:27 and uh now so nowadays you would use
+24:29 object stores on
+24:30 in the cloud instead so basically
+24:33 every data you have you dump it to s3
+24:36 and you just call it a data lake or
+24:38 yes from
+24:41 from a glass yes but then you need to
+24:45 this will degenerate in what's called a
+24:47 data swamp and if you do it without it
+24:49 without any
+24:50 control of governance or order so in
+24:52 order to get value from it you need to
+24:54 have structure in there
+24:55 and also in order to be compliant you
+24:57 need to have some kind of of governance
+24:59 so
+25:00 uh the you uh
+25:04 part of sort of the this this big data
+25:06 and data platform
+25:07 philosophy is that you store raw data
+25:10 you you store the data that has been
+25:13 generated in source systems you know by
+25:17 events in mobile apps or clicks on your
+25:19 web page or
+25:20 or dumps of your
+25:23 current database current user database
+25:26 and so forth
+25:26 you store those in raw format without
+25:29 processing them whatsoever
+25:30 in in your data lake and uh in what i
+25:34 usually call the cold pond
+25:35 so palm is the the lingo for for parts
+25:38 of the data lake
+25:40 and uh if if it's not personal data you
+25:43 store that forever
+25:45 uh if it is personal data you you have
+25:47 to separate
+25:48 first and sort of separate the personal
+25:52 from the non-personal data so that you
+25:54 can discard the person late in order to
+25:55 be compliant with
+25:56 gdpr
+25:59 data lake right and then a data platform
+26:03 is like a tool
+26:04 that enables us to process the data in
+26:06 data like because you said
+26:07 like in essence we have this like we
+26:09 have this part of the
+26:10 data lake that is raw data right but uh
+26:13 for an analyst
+26:14 maybe the raw data is not super useful
+26:16 right so they need to be able to
+26:17 transform
+26:18 it uh aggregate and whatnot and this is
+26:21 where
+26:22 a data platform comes into place right
+26:24 so this is like enabling
+26:25 before exactly so so the data platform
+26:28 is is a wider thing that consists of at
+26:30 lake
+26:31 uh and also of processing capabilities
+26:34 uh
+26:34 and the from a value perspective the
+26:37 primary processing capabilities
+26:39 is batch processing uh and
+26:43 and and then you can it enables you to
+26:45 build uh
+26:46 like series of batch processes that take
+26:49 one data set at the time or several and
+26:51 combine
+26:52 them and so forth and in refi do
+26:54 refinements from
+26:55 you know usually there's a series of of
+26:58 steps where the first ones are cleaning
+27:00 you remove the invalid records you you
+27:03 fix whatever what you know is broken and
+27:06 then you you sort of decorate the record
+27:08 so if you
+27:09 at spotify for example we had uh songs
+27:11 that have been played and then we joined
+27:13 with the users so that we know what what
+27:14 product they were on which country
+27:16 they're in and so forth
+27:18 um and then uh the
+27:21 these uh sort of pipelines fan out
+27:24 so the these popular data sets are used
+27:26 for many purposes for reporting purposes
+27:28 for recommendation purposes and so forth
+27:31 and then step by step for each use case
+27:34 you have a series of refinement steps
+27:38 where you do
+27:39 more and more first the domain and
+27:41 application specific things and then the
+27:43 end
+27:43 the sort of use case specific
+27:47 uh transformation step by step and
+27:50 at the end of such a pipeline you
+27:53 have arrived you arrive with some kind
+27:55 of refined data set like a
+27:57 recommendation
+27:58 index for example of of high value base
+28:01 built from the raw things of
+28:05 low value and then you take this high
+28:08 value data
+28:09 data set and you export it or egress it
+28:13 to some kind of storage where that is
+28:15 more suitable for serving like a
+28:17 sql or nosql database and then then it
+28:20 goes out to the
+28:21 data platform and ingress is just
+28:25 what does it exactly mean so ingress
+28:28 is the is the processing of taking
+28:30 things into to the platform and egress
+28:32 is the process of taking things out of
+28:34 the platform
+28:35 so the platform itself is completely
+28:38 offline
+28:39 right so it doesn't have any direct
+28:40 connections to to the online world
+28:43 and that's important because when you're
+28:46 in offline you can
+28:47 move with you can accept higher risk
+28:50 basically
+28:50 so so you can move with higher speed and
+28:54 with very little operational overhead so
+28:56 you don't need any staging environments
+28:58 or or development environments you can
+29:00 you can do your tests in production and
+29:02 so forth
+29:03 and that speed translates to innovation
+29:06 capability
+29:07 basically and this is what enables other
+29:10 teams to
+29:11 to do the cell service so they can just
+29:13 an analyst who is not necessarily like i
+29:15 don't know hadoop expert
+29:17 can just go there write sql queries and
+29:19 then they get translated to
+29:21 uh i don't know like maybe internally
+29:23 use presto or hive or whatever
+29:25 and so they just focus on sql right and
+29:28 then the
+29:29 the platform takes care of actually
+29:31 executing this
+29:32 and having the data in the form they
+29:34 need so they don't care
+29:35 they don't need to care about all these
+29:37 things like i don't know staging
+29:39 and uh like all these things you
+29:42 mentioned
+29:42 right so something like that yes uh
+29:44 there uh
+29:45 the uh data platforms are usually uh
+29:48 fairly
+29:48 sort of technical so so you need uh it
+29:51 for a team to work directly with the
+29:53 platform you need a software engineering
+29:54 expertise
+29:56 uh and then uh to depending on the on
+29:59 the maturity and the size of the company
+30:02 you might have like self-serve analytics
+30:07 capabilities for for uh
+30:10 analysts to develop things right away or
+30:13 you
+30:13 could or you combine the analysts with
+30:16 engineering expertise
+30:17 and then there's also usually some kind
+30:19 of of data warehouse or data marts
+30:22 in a warehouse at sort of a corner of of
+30:24 the platform
+30:26 where what they primarily serves the
+30:29 purpose of
+30:30 exploratory uh analytics
+30:33 yeah so you touched a bit like on
+30:35 maturity level this is something uh
+30:37 we i think we definitely should cover a
+30:39 bit later
+30:40 but first maybe we can summarize like
+30:43 this uh
+30:44 what this data platform is so what i
+30:46 understood is data platform like the
+30:47 main parts of that
+30:49 is the data lake that stores
+30:52 the data especially this raw data and
+30:55 everything is immutable
+30:56 the only way we can process something is
+30:58 by creating this
+31:00 transformation steps and this is what we
+31:02 um
+31:03 how to say orchestrate like this is what
+31:05 we create with this uh
+31:07 processing component like workflows
+31:09 right
+31:10 so we have these two like the data lake
+31:12 and the the
+31:13 workflow engine is there something else
+31:16 that we need to have in the platform
+31:18 so now you get to do to the workflow
+31:20 engine here um
+31:22 there is very very little technology
+31:24 that you actually need to have right you
+31:26 need storage for
+31:27 for the lake uh but that's just files
+31:29 that's simple and
+31:30 uh when you egress it at some point you
+31:32 need uh some kind of database stories
+31:34 there this indexes as well but you for
+31:36 most use cases
+31:37 relational databases are fine uh then
+31:40 you need compute
+31:41 so you need uh some way to do perform
+31:44 these transformations and
+31:47 there are scalable uh things like spark
+31:49 and flink and so forth here
+31:51 but uh for for most uh
+31:55 for most companies uh the horizontal
+31:58 scalability is actually not
+32:00 necessary you can you can get 12
+32:02 terabyte memory machines in in the cloud
+32:04 these days and
+32:05 most people's data sets fit fit in one
+32:08 machine
+32:09 nowadays but these
+32:12 tools tend to have languages
+32:16 or dsls domain specific languages that
+32:20 are highly suitable for data processing
+32:22 so it's easier to take something like
+32:25 spark of link
+32:26 and express your data processing in that
+32:29 language
+32:30 as opposed to uh chopping up your own
+32:33 java
+32:34 solution and do for loops right
+32:38 but the only key the only component
+32:40 that's really unique
+32:42 here and that you need to solve one way
+32:44 or another is
+32:45 the workflow engine or the work rather
+32:48 the workflow orchestrator
+32:51 and that is it's a simple piece of
+32:53 technology but it's crucial because it
+32:56 keeps you sane and it's
+33:00 it makes you weld a
+33:05 robust system from fragile components
+33:09 so what it does is that it
+33:14 it looks you define a your
+33:17 dependencies between all of your
+33:19 transformations in this workflow
+33:21 orchestrator
+33:23 so you say that you know for for this
+33:24 particular recommendation now we need
+33:26 the raw events on the web shop and we
+33:28 need the information about the users
+33:30 dumped on this particular day and so
+33:32 forth and
+33:34 uh it then no it you don't tell it what
+33:36 the different processing steps are you
+33:38 don't do processing inside the
+33:40 orchestration engine you rather do that
+33:42 in your spark jobs or whatever
+33:45 on the outside uh and then you schedule
+33:48 this to run every once in a while
+33:50 when new data arrives or every hour or
+33:52 so
+33:53 and it tries and if it fails it will
+33:55 later try again
+33:57 which means that if the data is late or
+33:59 or if you have a transient problem or or
+34:02 if you have a bug
+34:03 uh the workflow engine will try and sort
+34:06 of repair
+34:07 so it's like a build system for good for
+34:09 data
+34:11 and uh that's one of the keys of data
+34:13 success at spotify is that we
+34:16 nail this uh with luigi basically they
+34:20 we used to have uzi that is shipped with
+34:22 with hadoop
+34:23 and and that's a terrible thing and then
+34:26 we made something
+34:27 something else that was called a builder
+34:29 and then we made
+34:30 builder 2 and then we made rambo or if
+34:33 it was in some other order
+34:34 and finally we made luigi
+34:37 based on the learnings that we have made
+34:39 and sort of got this right
+34:41 and and that was that's what kept us
+34:44 sane and kept
+34:45 just able to to do these things at a
+34:48 very large scale
+34:49 uh but regis is a very very simple tool
+34:52 it's it
+34:53 has very little complexity and it's it's
+34:56 easy to to adapt
+34:57 uh but you need to get this
+35:01 welding in place that is this is so
+35:04 only applies to batch uh processing
+35:08 which i tend to focus on nowadays stream
+35:10 processing
+35:11 is very uh popular as well and uh many
+35:14 data platforms has has a stream
+35:16 processing capabilities
+35:17 usually built around kafka or some
+35:19 similar tool
+35:20 um the there are pros and cons with
+35:23 batch and stream
+35:24 uh but but uh there's
+35:27 streaming is very fashionable these days
+35:30 but comes at a significantly higher cost
+35:32 of operations
+35:34 so it's because it doesn't have this
+35:36 workflow orchestration
+35:37 that sort of automatically repairs and
+35:40 heals the system
+35:41 you need to keep things up and if things
+35:44 go down you
+35:44 you need to do much many much more
+35:47 operations so
+35:48 i tend to gravitate towards batch
+35:50 because the
+35:52 the time that i don't have to spend on
+35:54 operations i can spend on innovation
+35:57 okay so what if we want to so you
+36:00 mentioned luigi i know there are other
+36:02 tools
+36:02 maybe um well let me take a step back so
+36:06 you mentioned that like for a data
+36:08 platform we have three components we
+36:09 have the storage we have compute
+36:11 and we have this workflow engine right
+36:14 so if we want to
+36:15 implement a data lake data platform
+36:17 sorry so i guess there are
+36:19 first of all there are probably data
+36:22 platforms that just work out of the box
+36:24 you just buy them
+36:24 and you have it right
+36:28 yes and yes and no uh usually people go
+36:31 to the cloud for this thing and then
+36:32 they just pick the pieces but
+36:34 i mean all of these uh components are
+36:36 just technically so simple that you can
+36:39 it's easy to put them together uh you
+36:42 can get some help
+36:44 if you go to the cloud there there are
+36:46 the different
+36:47 vendors have different sort of
+36:51 pre-packaged things um
+36:55 the the ones
+36:58 several of them are not particularly
+37:00 good to be honest
+37:02 uh and but then there are uh there are
+37:04 so there are a few so
+37:06 that are sort of useful so if you
+37:08 instead of luigi use airflow as you work
+37:10 for orchestrator it comes with more
+37:12 things it has a wider scope
+37:14 and it it's more opinionated which
+37:17 uh if you're a power user like me that
+37:19 becomes annoying because
+37:21 there are some things that he can't do
+37:23 but but for beginners that's usually a
+37:26 a good thing because it sort of pushes
+37:29 you towards
+37:31 some reasonable patterns uh
+37:35 so and but there are no um
+37:39 there are no fully pre-packaged data
+37:42 platforms that i would recommend
+37:44 but on the other hand uh once you obtain
+37:46 the skills there it's technically easy
+37:48 to put together
+37:50 so for example if we talk about clouds
+37:52 uh then for storage we have this uh
+37:54 object storage right and uh s3 or google
+37:58 google storage right then for compute
+38:00 the like all these
+38:02 all these clouds all the major cloud
+38:04 providers they have their own tools
+38:06 um i guess like maybe for google cloud
+38:10 this is like bigquery can be one of
+38:11 these things right
+38:14 bigquery is is essentially a data
+38:16 warehouse if so
+38:17 so but you yes you can run jobs in in
+38:19 bigquery as well
+38:21 um so the uh for compute uh i mean the
+38:24 the plain virtual machines work fine
+38:26 nowadays everything is containerized so
+38:28 then
+38:28 a one of the managed kubernetes clusters
+38:31 this is perfectly fine or
+38:32 or things like uh fargate org or
+38:36 jk autopilot where you just run a
+38:38 container
+38:39 uh that's that's perfectly fine as well
+38:41 you just need to be able to run a
+38:43 a batch or a cron job yes basically so
+38:46 and if you can then express your job in
+38:48 terms of sql then you can use bigquery
+38:50 or i don't know the equivalent in
+38:52 lds right but uh like then
+38:56 you maybe lose some flexibility also
+38:59 i think most of the clouds have like
+39:02 managed spark that you can just also
+39:04 yeah they can use uh um
+39:07 okay yeah more or less clear and then
+39:10 for workflow orchestration
+39:12 we have luigi airflow and
+39:15 i know now that we have uh more and more
+39:18 such tools that uh
+39:20 maybe do not that are not written in
+39:22 python like
+39:23 luigi and airflow but
+39:26 they got like this camel syntax maybe i
+39:29 don't know do you
+39:30 have you used any of them i i am aware
+39:34 of
+39:34 dagster and prefix i think it's the name
+39:38 i think they're both in python
+39:40 uh nowadays fortunately we've left the
+39:42 days of a
+39:43 oc xml uh workflow orchestration
+39:47 and nowadays since people people tend to
+39:49 want to target
+39:50 uh data scientists as well python is
+39:52 sort of the natural choice
+39:57 yeah so we already have a couple of
+39:59 questions
+40:00 so the first one is uh regarding
+40:03 uh functional programming principles
+40:05 applied to architecture
+40:07 is there any good literature that you
+40:09 can recommend on
+40:10 building these functional architectures
+40:18 so i well there are a couple of
+40:22 tangential books i think the original
+40:25 the original good book that described
+40:27 these functional transforms is
+40:29 nathan mars who made storm uh once upon
+40:32 a time
+40:33 uh he wrote a book called big data back
+40:35 in
+40:37 2013 something and that defines that
+40:40 that's the definition of the lambda
+40:41 architecture
+40:43 uh lambda architecture is nowadays it
+40:46 actually has two parts now they
+40:47 just one is remembered and that's the
+40:50 that's the part where you have dual
+40:52 streaming and batch pipelines
+40:54 and combine them but the other part is
+40:56 more important and that's where he
+40:58 that's where what i explained earlier
+41:00 with this you you know you save the raw
+41:02 data sets
+41:03 and then you do these transformations
+41:06 and that was
+41:07 uh sort of formulated in in the in this
+41:10 book
+41:10 and in a blog post blog post at the same
+41:13 time
+41:14 uh there's a more fresh book by
+41:17 harwinder atwal i think i got his name
+41:19 right which is plainly called
+41:20 datups i believe or date ops in practice
+41:23 or something like that
+41:24 uh but that's a that has a much wider
+41:27 scope
+41:28 uh and is not so focused on on these
+41:31 functional transforms
+41:33 and then the third resource that i want
+41:35 to throw out is
+41:36 that we have a date engineering reading
+41:40 list
+41:40 on skling.com reading list
+41:44 with lots of links to books
+41:47 presentations
+41:48 uh youtube videos and so forth
+41:53 i i remember going through this and
+41:55 actually to prepare to this
+41:57 uh to this talk i swear
+42:00 from from that so thanks a lot for
+42:03 putting this together
+42:04 i will make sure to include a link in
+42:06 the description
+42:07 um so then we have another so you
+42:10 already touched a bit to
+42:12 bite versus streaming we have a question
+42:16 related to that um so um
+42:19 as far as bachelor's streaming go what
+42:22 are your thoughts on data latency
+42:24 how frequent is too frequent uh for
+42:26 batch jobs
+42:28 yes uh that's a good question because
+42:30 that's a trade-off right
+42:32 with batch you uh with streaming you can
+42:35 sort of
+42:36 process it more or less right away uh or
+42:39 or uh actually let's let's split it into
+42:42 three time windows here
+42:44 right if and and we're now talking about
+42:47 the latency from new
+42:48 interesting data coming in to you
+42:52 reacting on it your process is reacting
+42:54 on it and serving something back to the
+42:56 user uh
+42:58 and the the shortest latency is when you
+43:02 have
+43:03 direct interaction and and then you have
+43:05 a user that expects something within on
+43:07 the order of hundreds
+43:08 100 milliseconds and so forth streaming
+43:11 is too slow for that essentially so
+43:13 then it has to be in memory in your
+43:16 server in order to to
+43:18 get have this uh completely interactive
+43:21 experience
+43:23 um and then you have batch where where
+43:26 things are can be really slow like
+43:28 reporting or you you're making a human
+43:32 analytics this or business insights
+43:34 decision is to be made then
+43:36 you can wait for an hour and that's fine
+43:38 right
+43:40 and then you have streaming sort of
+43:42 takes care of the window in between and
+43:44 then the question is how
+43:46 how big is that window because you can't
+43:48 get it
+43:49 down to tens or hundreds of milliseconds
+43:52 because streaming involves hops between
+43:54 multiple machines and also some batching
+43:56 in some internal matching in order to
+43:58 make it efficient
+44:00 and there are cases where that that
+44:02 might be interesting for example
+44:04 fraud detection is one typical example
+44:06 where you in a few seconds it would be
+44:08 great if you figured out that this
+44:09 credit transaction was
+44:10 was fraudulent example uh
+44:14 match cannot go down to a few seconds
+44:16 but it can easily go down to a couple of
+44:18 minutes i've been running
+44:20 batch processes with like one two minute
+44:22 latencies
+44:23 and um i think that we can actually with
+44:26 the current technology squeeze the batch
+44:28 latency down to tens 10 seconds
+44:31 perhaps i've never had really had the
+44:33 use so
+44:34 which means that the window where you
+44:38 really need to do streaming is kind of
+44:40 small
+44:42 and and
+44:45 you there are a few use cases in that
+44:49 particular window
+44:51 so i instead of
+44:54 developing stream complex streaming
+44:56 technology what we try to do is push the
+44:58 latency of batches there because then
+45:00 you have this workflow orchestration and
+45:01 a very forgiving environment
+45:03 where you can operate with and accept
+45:06 high risk but be able to recover
+45:07 nevertheless
+45:09 i don't know if that answered the
+45:10 question i think it does
+45:13 and then we have a related question in
+45:15 your opinion what is the boundary
+45:17 between micro batching and swimming
+45:21 the the importance boundary here is is
+45:24 not
+45:25 what the technology does right for
+45:26 example if you go to spark streaming
+45:28 they have this
+45:29 micro batching thing but from a
+45:30 programmer perspective it's a streaming
+45:32 experience uh whereas if you go to batch
+45:36 and and in and you're you have the
+45:38 workflow orchestration
+45:40 where you as a programmer explicitly
+45:43 say that this minute of events is one
+45:46 batch or these 10 seconds of event is
+45:48 another batch
+45:49 and then you explicitly define
+45:52 the dependencies between these batches
+45:55 and say
+45:55 i'm now going to take six of these 10
+45:58 second batches
+45:59 and i'm going to make a minute batch out
+46:00 of them and then i'm going to do an
+46:02 average over
+46:03 five of these and so forth and
+46:06 that explicit dependency management is
+46:09 really the
+46:09 the key difference between streaming and
+46:12 batch because once you have that
+46:14 then you can you can have these uh
+46:17 forgiving
+46:18 environments and the data factories that
+46:19 that automatically heal and so forth but
+46:22 if you are
+46:22 in the in the streaming mode then your
+46:25 dependencies are implicit so they
+46:29 you get different results depending on
+46:31 how two different streams are
+46:33 synchronized
+46:34 and matching time so if you do click
+46:36 through uh rate analysis but for example
+46:38 if one stream is late you will get the
+46:40 different results from
+46:42 and both streams are on time whereas if
+46:44 you have the dependency management in
+46:46 place
+46:47 the result is entirely predictable so
+46:50 that's that's the key difference
+46:52 makes sense thank you so we also wanted
+46:54 to talk about uh a bit about maturity
+46:57 levels and you briefly touched on them
+46:59 um yeah so maybe um you can
+47:02 tell us a bit like what are the maturity
+47:05 level of
+47:05 organization and when an organization is
+47:08 ready for data ops and what are the
+47:10 different level of
+47:11 sort of readiness so uh
+47:14 ready for date ops is uh everybody's
+47:17 ready for data
+47:18 right now just like everybody's ready
+47:20 for devops right now there's there's
+47:22 absolutely no drawback
+47:24 in in adopting these things uh we
+47:26 mentioned it in context to
+47:28 enablement and scaling before but
+47:30 because datops is sort of a
+47:33 necessity in order to scale efficiently
+47:35 but you can
+47:36 you even if you have just one little
+47:38 data team doing all of the data things
+47:40 you can have you can have a date ops way
+47:43 of
+47:43 of working definitely
+47:46 uh regarding the maturity levels i don't
+47:49 have a
+47:50 super great uh definition of maturity
+47:54 levels
+47:54 um there there was an interesting
+47:58 development at
+48:00 uh spotify uh because um i
+48:03 when i was at google if we traced back
+48:05 all to that time we had a
+48:06 maturity ladder in terms of et cetera
+48:09 essentially of devops or
+48:10 or of quality assurance and
+48:13 and software engineering and that ladder
+48:16 was called test certified and that drove
+48:19 that was the main vehicle for
+48:21 transformation at google
+48:23 from from mostly manual testing to
+48:26 automated testing and sort of
+48:28 part of the devops uh philosophy
+48:32 and that same idea was later
+48:36 applied at spotify i can only take a
+48:39 tiny little credit because i dumped
+48:41 a document on on somebody's table
+48:43 essentially
+48:44 and then i left the company and when i
+48:47 came back a few years later to to look
+48:49 people had these t-shirts that said test
+48:51 certified so i
+48:52 affected not only the the processes but
+48:55 also the fashion
+48:56 um and that was very successful at
+48:58 spotify as well and
+49:00 precisely what they needed and they took
+49:02 that further
+49:03 to to test certified for data which
+49:06 essentially became a data ops maturity
+49:10 ladder so
+49:11 instead of the original test certified
+49:13 with with
+49:14 you know you should have a continuous
+49:16 integration build and you should have
+49:17 uh recovery measurements and you should
+49:20 add regression tests whenever you have a
+49:21 production plug and so forth
+49:23 uh they added similar things for data so
+49:26 you should have
+49:26 data quality measurements uh that
+49:30 and you should have a schema management
+49:32 uh automation so that you don't push out
+49:35 invalid errors or incompatible schema
+49:37 changes and
+49:38 and so forth so that is the only sort of
+49:41 data
+49:41 maturity ladder that i've seen
+49:45 and also as a meta answer to that
+49:47 question i would like to point people to
+49:48 a great company called data kitchen
+49:50 based in boston
+49:52 uh where the ceo christopher berg is
+49:55 sort of the
+49:56 premier ops profit so
+49:59 they have lots of good uh
+50:03 resources online in blogs and
+50:05 presentations and
+50:06 and white papers and so forth so you
+50:08 might be able to find
+50:10 further information there so yeah thank
+50:13 you
+50:13 uh and probably yeah i will also if you
+50:16 give me some links i will put them in
+50:18 the description to the video
+50:20 but i remember we talked like when we
+50:22 were talking about
+50:23 self-service and enabling analysts to do
+50:26 self-service
+50:27 you mentioned that you know not all the
+50:29 organizations are ready and
+50:31 for some like just paid in the data and
+50:33 list
+50:34 with a data engineer will
+50:38 solve this right but then at some point
+50:39 like uh um
+50:41 i guess the company becomes mature
+50:43 enough when the
+50:44 the pairing doesn't need to happen right
+50:46 so analysts can just use these tools to
+50:48 um to do this themselves so how do does
+50:52 a company go from
+50:54 you know there is a central team who is
+50:56 taking care of all the ad hoc requests
+50:58 like it was
+50:59 in your case to the to the state where
+51:03 uh analysts can themselves just go and
+51:06 uh you know build these uh etls
+51:09 themselves
+51:11 yeah that's a long journey uh i'm afraid
+51:14 and
+51:14 uh the if if you have the the
+51:17 centralized data team
+51:18 first then the the lower hanging fruit
+51:20 is to enable the developer teams in the
+51:22 organization and that's the step that we
+51:24 took
+51:25 back in back in 2013. um
+51:28 and that this sort of a step
+51:32 a later step is to is to enable
+51:35 non-technical teams to
+51:37 to also sort of implement pipelines but
+51:41 that's not necessarily a step that all
+51:43 organizations
+51:44 should take because it is
+51:48 much cheaper to embed
+51:52 analysts and software engineers or data
+51:54 engineers in the same team
+51:56 to working towards the same goal rather
+51:58 than having this wall with a team that
+52:01 builds self-service capabilities and
+52:03 then on the other side of the wall you
+52:04 have this analyst
+52:05 that's that's the waterfall mentality
+52:08 still sticking around
+52:09 right so in some organizations you
+52:13 cannot break down these barriers
+52:15 and then it might uh make sense
+52:19 but it's not necessarily a step that
+52:22 every organization should take if you
+52:24 have the capability to mix up the
+52:26 competencies you're better off that way
+52:28 it's much more efficient
+52:30 so would you say it's more like an
+52:31 anti-pattern than uh
+52:35 in a sense but some self-serves you ha
+52:38 you have to do so
+52:39 uh if if you look at
+52:42 non-technical teams in a very data
+52:45 mature organization
+52:46 like spotify even the non-technical
+52:48 teams have access to like bigquery
+52:50 and can do exploratory uh
+52:54 analytics there and i saw some numbers
+52:57 that
+52:58 i think it was 30 of the of this entire
+53:02 staff at spotify use bigquery on a
+53:04 regular basis like
+53:05 at least monthly basis and that is an
+53:07 extraordinary figure
+53:09 it's it's as low friction to get
+53:12 data to to for your decisions
+53:15 at such a company as it is for us to you
+53:18 know open a
+53:19 word processor right it's it's the same
+53:22 we don't think about it we just do it
+53:24 uh and very few companies are at that
+53:26 level of maturity
+53:31 yeah thank you um and uh this reminds me
+53:34 that
+53:35 actually at the beginning of our chat i
+53:36 wanted to ask you this question about
+53:39 you know different something something
+53:40 ops so we already talked
+53:43 i think more or less about the
+53:44 difference between devops and data ops
+53:46 and correct me if i'm wrong but
+53:49 like so in case of data ops you have
+53:53 um so the the idea
+53:56 is uh similar so like all the principles
+53:59 uh but in addition you have um you first
+54:02 you have embedded
+54:03 data engineers and data analysts in the
+54:05 in the team right
+54:07 uh this is a cross-functional team and
+54:10 then you have this data platform right
+54:11 so the
+54:13 which has all these components that
+54:15 talked is there something else uh
+54:17 there that is like the key
+54:19 differentiator between data ops and
+54:21 devops no i think i think you nail it
+54:25 i mean it's the uh it's the different
+54:27 mix of competences
+54:29 but the philosophies are very similar
+54:31 and some activities are different
+54:33 of course but i think you nailed it and
+54:36 yes there are other ops i think that's
+54:37 what you were about to get to right
+54:39 yes yes exactly there is envelopes uh
+54:42 right so do you have any
+54:43 ideas about that and what is the
+54:44 difference between envelopes and data
+54:46 ops
+54:47 uh it's it's also the different mixes of
+54:50 people right
+54:50 uh so if if you have seen i don't know
+54:54 if you've experienced like
+54:55 enterprise companies adopting data
+54:57 science and machine learning and so
+54:59 forth but
+55:00 you usually see the water patterns
+55:01 showing up again you see a bunch of data
+55:03 scientists in a corner
+55:05 and they are first they have nothing to
+55:06 do and they are unhappy
+55:08 and then somebody figures out they need
+55:10 a pile of data so they get the one
+55:12 one-off dump of data and then they build
+55:14 some others and then what do we do now
+55:16 um
+55:17 okay those python models are thrown over
+55:18 the wall to a bunch of developers and
+55:20 they look at them and say yuck and
+55:22 and translate them to java and then that
+55:25 that bunch of things is thrown over the
+55:27 wall to the operations people
+55:29 and then the data scientists say we now
+55:32 have a new model
+55:33 and and then the whole thing repeats
+55:36 but they never get any feedback from how
+55:38 they work in production and so forth
+55:41 so emelops is essentially mixing
+55:44 these different competences
+55:48 data science data software engineering
+55:51 operations and quality assurance into
+55:53 the same
+55:54 mix and all working together together
+55:56 towards the same goal with the same type
+55:58 of tools in the same environments and so
+56:00 forth
+56:00 and closing that feedback loop from from
+56:03 model idea to production to measurements
+56:06 and there's much overlap between data
+56:08 ops because all of the pipelines and the
+56:11 the working in the data platform and and
+56:14 so on and so forth and the data
+56:15 quality measurements and all of that is
+56:18 is in common
+56:19 uh but there are a few other things as
+56:21 well uh
+56:22 that are specific to data science and
+56:24 machine learning models like
+56:26 uh you know running multiple models in
+56:28 parallel
+56:29 and trying out the new ones uh in in
+56:32 sort of dry mode
+56:33 uh measuring internal characteristics of
+56:37 of the models
+56:38 the you know measuring precision recall
+56:40 for example in real life
+56:42 and acting on that and having ensemble
+56:44 models where you combine several so
+56:46 there are a number of
+56:47 sort of animal specific things that that
+56:50 come into play here
+56:52 okay but the philosophies are the same
+56:54 and then
+56:55 because i often see teams that have both
+56:58 ml engineers and data engineers and
+56:59 analysts and data scientists
+57:01 all work together and then now the
+57:04 question is
+57:04 like is it envelopes is it data officer
+57:07 like maybe it doesn't really matter like
+57:09 as long as you is
+57:11 you know working on uh delivering value
+57:14 and
+57:16 exactly okay so the alignment
+57:20 city it's the it's the alignment towards
+57:23 the same goal right and i think if we
+57:25 fast forward five ten years we will see
+57:27 the
+57:28 devsecops coming becoming more mature
+57:30 with where security is aligned towards
+57:32 the same goal and
+57:33 you know the data compliance ops where
+57:36 the legal
+57:37 uh aspects also are aligned instead of
+57:40 of having another department that says
+57:42 no to things
+57:45 and so now recently and i found out
+57:49 about this thing called
+57:50 data mesh only maybe a one month ago
+57:54 but since i accidentally discovered it
+57:58 i noticed that it's all over the place
+58:00 like everyone seems to be talking about
+58:02 this
+58:02 so what is data mesh and how easy yeah
+58:04 yeah related to data observer
+58:07 yeah it is related it's everybody's
+58:10 talking about it
+58:11 very few have seen one i i i actually
+58:13 have seen one because
+58:14 uh spotify again moved to one
+58:18 essentially when we moved from hadoop to
+58:22 the cloud
+58:24 as a side effect of the cloud move and
+58:28 data mesh first it
+58:32 it assumes datups are in place otherwise
+58:35 you can it's not meaningful to have a
+58:36 data mesh
+58:37 it also assumes something called data
+58:39 democratization which we
+58:41 uh have touched on but not named which
+58:43 is the enablement of others
+58:46 all teams to to to use
+58:49 to access the data and to implement data
+58:51 pipelines
+58:54 uh and data mesh is a scaling
+58:58 technology that is relevant
+59:02 for large organizations
+59:05 that where this centralization of
+59:08 how you work with the data the the
+59:10 technology of the data platform and the
+59:12 storage of the data platform and so
+59:14 forth
+59:15 where it has it becomes a bottleneck
+59:18 that the that the data platform is
+59:20 homogeneous
+59:21 and is like governed in a centralized
+59:24 way
+59:25 usually you you have this used to be
+59:27 hadoop nowadays
+59:29 it's the cloud where the data platform
+59:31 all of the data
+59:32 files are of the same format and they're
+59:34 governed with the same workflow
+59:35 orchestration and
+59:37 and the same principles for for privacy
+59:40 access and so forth
+59:42 data mesh is about decentralizing that
+59:45 governance
+59:46 so uh so after the after spotify's moved
+59:50 to data measure rather than
+59:51 going to the the central hadoop cluster
+59:54 you went to the people
+59:55 the teams that actually were producing a
+59:57 particular data set
+59:59 if it was the user team or the or the
+1:00:01 web team or or
+1:00:03 whatever and you talk to them to get
+1:00:05 access to the data rather than going to
+1:00:06 talking to some
+1:00:07 some data infrastructure teams there is
+1:00:10 also an aspect of
+1:00:12 uh um responsibility
+1:00:16 on the source system owners the
+1:00:20 the you use the team on the website and
+1:00:21 so forth to produce data artifacts into
+1:00:24 the data platform
+1:00:27 so in early data platforms it's often
+1:00:30 the case that hey i need this i need
+1:00:32 this data
+1:00:32 uh could you export it for me and the
+1:00:36 owning team says no we have more
+1:00:38 important things to do but here you can
+1:00:39 get access to the database and you do
+1:00:41 the dump yourselves
+1:00:42 please do it during during the night
+1:00:44 when the activity is low right
+1:00:46 uh so with the with time with maturity
+1:00:49 that shift that responsibility shifts
+1:00:51 to the to the source system owners to
+1:00:55 do that export uh on their own
+1:00:58 and and be sort of having that as part
+1:01:01 of their uh
+1:01:02 expect expectations i am quite concerned
+1:01:06 regarding the uh the talk of the buzz of
+1:01:10 around the data mesh because i think
+1:01:13 that uh there's so many companies that
+1:01:17 jump on the latest buzzword
+1:01:19 and say oh we want that as well and
+1:01:22 if you don't have a strong governance or
+1:01:26 strong culture of
+1:01:27 sharing in place if you go rather
+1:01:30 go directly to data mesh instead of via
+1:01:33 a centralized platform where you share
+1:01:35 everything
+1:01:36 then you will end up with the data
+1:01:38 spread around in silos which is what we
+1:01:40 used to have before there were data
+1:01:41 platforms right so we're back into the
+1:01:43 to the everything is locked up in
+1:01:44 microservices
+1:01:46 um and you will have you won't have the
+1:01:49 homogeneity that that keeps the
+1:01:52 operations low and then they keep
+1:01:53 and and enables the data to
+1:01:55 democratization and so forth and if you
+1:01:57 and if you say to teams hey you are
+1:01:59 expected to
+1:02:01 to export this data set yes but the data
+1:02:04 mesh philosophy over here it says that
+1:02:06 we should also be
+1:02:07 responsible for curating that and
+1:02:10 cleaning that data set
+1:02:11 and first of all you have to wait the
+1:02:13 quarter until we have more time
+1:02:15 and second of all we will export the
+1:02:18 cleaning things but
+1:02:20 in that cleaning lots of information is
+1:02:22 lost
+1:02:23 and that whether that's in whether the
+1:02:25 lost information is important or not
+1:02:27 depends on the use case so for reporting
+1:02:29 purposes you want everything to be clean
+1:02:31 and smooth and all the real users
+1:02:33 are included but for fraud detection
+1:02:36 purposes or or both detection purposes
+1:02:38 you want all of the dirty information so
+1:02:41 uh and that in in the data lake
+1:02:44 everything raw is dumped right so all
+1:02:45 the information is there
+1:02:46 but but in in with data silos all of the
+1:02:50 raw
+1:02:50 interesting information is sort of
+1:02:53 hidden away
+1:02:54 so i'm quite concerned that the all of
+1:02:55 the bus around this will make
+1:02:57 people never get out of their data silos
+1:03:02 yeah so as i understood just to quickly
+1:03:04 summarize so
+1:03:05 like uh organization involves then there
+1:03:09 is a central
+1:03:10 uh data platform but at some point it
+1:03:12 just becomes too big
+1:03:13 right and then the idea behind
+1:03:16 behind data mesh is uh we start chopping
+1:03:19 this data platform into different uh
+1:03:21 sort of sub platforms or even separate
+1:03:24 completely separate platforms
+1:03:25 and then this is in essence the what
+1:03:27 data mesh is about right
+1:03:29 something like that yes yeah
+1:03:32 and the time at which it makes sense to
+1:03:35 split up the the homogeneous or the
+1:03:37 centralized platform depends on your
+1:03:39 capability to coordinate if you have
+1:03:41 a strong autonomous culture like spotify
+1:03:43 then it makes sense
+1:03:45 at some size but spotify managed to
+1:03:47 become i don't know
+1:03:48 several thousand employees before before
+1:03:50 you had that
+1:03:52 worth that scale and but if you have a
+1:03:55 company that with very strong
+1:03:56 capabilities of coordinating your work
+1:03:59 like google or facebook have for example
+1:04:01 uh then the centralized solutions work
+1:04:05 to perhaps to infinite scale
+1:04:08 okay thank you we still have three uh
+1:04:12 more questions and i want to ask you if
+1:04:13 you have some time
+1:04:16 absolutely my time is yours okay yeah so
+1:04:19 uh the first one is um how do you keep
+1:04:22 track of
+1:04:23 all the transformations that have been
+1:04:25 undertaken
+1:04:26 between each newly created created data
+1:04:29 set within the data platform
+1:04:32 yeah that's a very good question and and
+1:04:34 i i sort of skipped
+1:04:36 uh past that and and the answer is
+1:04:38 simple it's all code
+1:04:40 right so we don't keep track of data we
+1:04:43 only keep track of code
+1:04:45 and part of that co code is the
+1:04:48 workflow definitions which says that
+1:04:51 these data sets over here
+1:04:52 when they arrive are supposed to be
+1:04:54 transformed to this data set over there
+1:04:56 so they the all of the definitions are
+1:05:01 there by encode and uh the
+1:05:04 data sets can get orphaned if you change
+1:05:06 the code without changing the data so
+1:05:08 you have to have some
+1:05:09 like very lightweight process for that
+1:05:12 like an automated retention
+1:05:13 or or something but every single data
+1:05:16 set
+1:05:17 that is produced and active somewhere is
+1:05:20 defined in code at some point
+1:05:22 so uh there is also tools uh to sort of
+1:05:26 if you don't have sufficient order to
+1:05:28 sort of recover from that order
+1:05:29 there are cataloging tools that will go
+1:05:31 out to scout your
+1:05:33 your google cloud storage or s3
+1:05:36 storage or databases and so forth um
+1:05:39 in a way those are useful but those are
+1:05:42 also
+1:05:44 to patch a symptom when you perhaps
+1:05:47 should address the
+1:05:48 the root course instead so i tend to not
+1:05:51 use these tools so so heavily but in
+1:05:53 some cases they might be
+1:05:54 applicable but but the the the short
+1:05:56 answer is you keep
+1:05:58 track of everything in in code thank you
+1:06:01 can you name some relational database
+1:06:04 that make
+1:06:05 immutable snapshots for example datasets
+1:06:08 and then run version transformations
+1:06:10 with the ability to differentiate
+1:06:11 between the versions
+1:06:16 i cannot uh but i know remarkably little
+1:06:21 about relational databases
+1:06:24 and i'm terrible at sql so
+1:06:27 so uh i don't so
+1:06:30 what we do in in data platforms
+1:06:34 uh typically is to dump the database
+1:06:37 tables that we're interested in so so we
+1:06:39 take a full dump each day or each hour
+1:06:41 or something
+1:06:43 and uh and that avoids
+1:06:46 for example the uh this problem with
+1:06:49 slowly changing dimensions that that you
+1:06:51 have in data warehouses
+1:06:53 because we have the full history way
+1:06:54 back in time
+1:06:56 and um that
+1:06:59 introduces some other problems for
+1:07:01 example with gdpr compliance that so you
+1:07:03 need to prepare for that
+1:07:04 uh but but
+1:07:08 that's that's generally how we handle
+1:07:10 the sort of the different versions of
+1:07:12 database tables
+1:07:13 that you lose some information in that
+1:07:16 dumping because what happened in between
+1:07:18 you don't catch
+1:07:19 so there are ways to to mitigate that
+1:07:22 or to get all of the information and one
+1:07:26 way is to have the application dump all
+1:07:28 of this sort of change events
+1:07:31 either on a stream or in a
+1:07:34 change table inside the database or via
+1:07:37 something called
+1:07:38 change data capture which is essentially
+1:07:41 a way of translating the transaction
+1:07:43 login
+1:07:43 in the database to to like a kafka
+1:07:46 screen and then you get all of the nitty
+1:07:47 gritty
+1:07:48 details if you want thank you
+1:07:51 and then the last question we have from
+1:07:53 uh luck is um
+1:07:56 i don't know what lake house means but
+1:07:58 like how would you define lake house
+1:07:59 architecture
+1:08:00 and what's the core difference bet
+1:08:03 compared to
+1:08:04 data warehouse yes so um
+1:08:10 data warehouse is the predates the data
+1:08:14 lake and
+1:08:15 and that that is a construct force
+1:08:18 collecting aggregated data from from
+1:08:21 various systems
+1:08:22 uh to a place where you where you can
+1:08:24 build reports and do exploratory
+1:08:26 analytics and so forth
+1:08:28 the data warehouses usually don't have
+1:08:30 the raw data but they have the aggregate
+1:08:32 data and they tend to might very well
+1:08:35 have mutable tables and so forth
+1:08:38 the data lake has all of the raw data
+1:08:41 and then you have these functional
+1:08:43 transforms a data lake house is
+1:08:46 a combination of these two
+1:08:50 where you they technically look like a
+1:08:52 data
+1:08:53 lake but you add the ability to
+1:08:58 uh interactively explore your data with
+1:09:00 within
+1:09:01 and add indexing and so forth um
+1:09:04 to to to be able to use it as a data
+1:09:07 warehouse
+1:09:08 and then also add mutability
+1:09:11 to to the data sets which means
+1:09:14 that you can reuse your
+1:09:18 etl scripts from the data warehouse
+1:09:21 without changing the transformations but
+1:09:23 you lose
+1:09:24 you break these functional principles
+1:09:27 that make the data lake in the data
+1:09:29 platform
+1:09:30 so efficient for operations
+1:09:34 and innovation so
+1:09:38 yes it's it's yes it can be useful as a
+1:09:41 gateway drug
+1:09:42 as i said if you want to transition
+1:09:45 but i i think it's an anti-pattern i
+1:09:49 so i recommend i strongly recommend
+1:09:52 people to to
+1:09:53 get into immutability instead just like
+1:09:56 we nowadays accept that
+1:09:57 a container a container image is is
+1:10:01 of course immutable it's something that
+1:10:02 we build from the source code in a
+1:10:04 purely functional manner
+1:10:06 i mean if you say that no way we i think
+1:10:09 we should
+1:10:10 revise that immutability and start
+1:10:13 patching our containers in production
+1:10:15 you know people will
+1:10:16 throw axes at you right it's it's insane
+1:10:19 because it will it increases this
+1:10:21 complexity so massively right
+1:10:24 so stick to mute immutability and and
+1:10:27 bear
+1:10:28 live with the great fruits of functional
+1:10:30 transformations
+1:10:32 yes thank you very much and you have
+1:10:34 covered all the questions we have
+1:10:36 i still have a lot more that i didn't
+1:10:38 manage to ask but maybe we can keep them
+1:10:40 for
+1:10:40 some other day so thanks a lot for
+1:10:42 joining us today and sharing your
+1:10:44 experience your knowledge
+1:10:45 and uh defining all these terms uh some
+1:10:48 of them were
+1:10:49 just buzzwords to me you still like this
+1:10:51 data mesh now i know
+1:10:53 uh thanks a lot and yeah i think
+1:10:56 that's oh do you have any last words
+1:11:00 uh i do not uh if you were interested in
+1:11:04 some of the topics that i brought up
+1:11:05 there
+1:11:06 there is a uh there's also a list of the
+1:11:09 conference presentations
+1:11:10 uh that i've done on if you go to
+1:11:13 skling.com
+1:11:15 next to the reading list so you will
+1:11:17 find me diving into
+1:11:19 things like the daytops and the quality
+1:11:21 assurance for data pipelines and
+1:11:25 how to solve gdpr related problems
+1:11:28 uh and uh and then solving some of the
+1:11:32 time related problems that we're
+1:11:34 speaking that we've been spoken of
+1:11:36 for example how do you deal with late
+1:11:37 incoming data and so forth
+1:11:39 so if you want to dive further that's a
+1:11:41 resource yes i will make sure to include
+1:11:43 that
+1:11:44 as well and here on twitter linkedin
+1:11:47 data talks club somewhere else
+1:11:53 yeah okay so i guess that's
+1:11:56 all and a lot of people are saying thank
+1:11:59 you and i joined them
+1:12:00 in thanking you uh thanks a lot and uh
+1:12:04 yeah have a nice weekend it was a
+1:12:06 pleasure to be here

@@ -1,0 +1,1797 @@
+Build Your Own Data Pipeline
+
+0:01 um hello everyone
+0:03 thanks for joining us today for our
+0:05 third day of the conference
+0:07 or mini conference or actually what it
+0:10 is it's just a bunch of uh
+0:12 meetups every day for two weeks every
+0:14 day we have
+0:15 a talk so the first week we're already
+0:18 on the third day
+0:19 we're talking about career and data and
+0:21 then on the next week we'll talk about
+0:22 machine learning production
+0:24 we already had a chat with santiago and
+0:27 daliana
+0:28 on monday and tuesday and today we're
+0:30 talking to andreas
+0:32 about um how data scientists can improve
+0:34 their data engineering skills and learn
+0:36 uh how to build our own uh pipeline
+0:40 tomorrow roxalana will talk about two
+0:42 roles big data engineer
+0:44 role and data scientist role and the
+0:46 differences and similarities between
+0:48 two roles and on friday elena will talk
+0:51 about building a machine learning
+0:53 startup
+0:55 i want to thank our partners for making
+0:57 it possible
+0:58 for helping us with uh
+1:02 supporting us
+1:05 supporting this event there is a link in
+1:07 the description
+1:09 that goes to our conference page you can
+1:11 check
+1:12 what they do and you can also register
+1:14 for our
+1:15 second track of the conference um don't
+1:19 forget to subscribe to our channel
+1:21 and join our slack where we talk about
+1:25 different data things finally during
+1:27 today
+1:28 if you want to ask any questions there
+1:30 is a pinned link in live chat
+1:32 just go there click on this and ask any
+1:34 question you want
+1:36 and this is it for the introduction
+1:40 so let me stop sharing my screen
+1:44 so yeah are you ready
+1:50 okay so now i'll just do that and
+1:54 yeah i'm also ready so today we'll talk
+1:57 about learning how to build data
+1:59 pipelines for data scientists
+2:01 and one of the most frequent questions i
+2:04 get
+2:05 is i'm a data scientist and i want to
+2:08 build
+2:08 data pipelines how do i do this
+2:12 finally today i'll know how to answer
+2:14 this question
+2:15 because the guest we have today andreas
+2:18 knows it better than anyone so andreas
+2:20 is a data engineer
+2:22 and he calls himself the plumber of data
+2:24 science
+2:26 he writes and talks about platform
+2:28 architecture tools and techniques
+2:30 that are used to build modern data
+2:31 science platforms welcome andreas
+2:34 thanks thanks for having me so why the
+2:37 plumber
+2:38 of data science do you have any uh study
+2:40 behind this
+2:41 well um i i call i call data engineering
+2:44 the plumbing of data science because
+2:46 when you when you look at data science
+2:48 usually you see what the what the
+2:50 scientists do
+2:51 and like algorithms and so on but at the
+2:53 background in the background
+2:55 there is a platform that you have to run
+2:57 or pipelines that you have to build and
+2:59 everything
+3:00 basically an infrastructure that needs
+3:02 to support what the data scientists do
+3:05 and that is usually uh i say it's it's
+3:08 it's invisible but it's a huge mess when
+3:10 done wrong so build like plumbing
+3:12 so that's and also it fits very good
+3:15 with with pipelines
+3:16 right so yeah indeed yeah so before we
+3:20 go into our main topic of
+3:21 uh plumbing and building pipelines
+3:24 let's start with your background can you
+3:26 tell us about your career journey so far
+3:29 yeah sure yeah my name is andreas cut
+3:33 i'm in i'm coming from germany and
+3:36 i'm i've been basically within computer
+3:40 science all my life i
+3:41 always loved computers and i started
+3:43 like many people playing or
+3:45 playing on computer computer games and
+3:47 then i got into actual computer science
+3:49 and studied computer science
+3:52 after that i made a quick detour towards
+3:56 sap consulting but that doesn't that was
+3:59 nothing that wasn't
+4:00 my thing and i came back into the
+4:03 uh the computer science realm where i
+4:05 started as a
+4:06 as a software engineer and
+4:10 basically in a project where um
+4:13 where it was about the inter the iot
+4:17 but the industrial iot so we were
+4:20 working on
+4:21 getting machine data and analyzing
+4:23 machine data
+4:25 and so basically uh that's where i got
+4:28 into the topic of um
+4:32 where where does uh or how i got into
+4:35 big data big data was a thing back then
+4:38 and everybody was talking about
+4:39 big data and we're doing big data but i
+4:42 actually had the problem that there were
+4:44 so much
+4:45 data coming coming around or coming in
+4:48 that we yeah that the the standard tools
+4:51 didn't work anymore
+4:53 so i need to find solutions different
+4:57 solutions to actually
+4:58 yeah work this out and back then i
+5:01 started with hadoop so
+5:03 uh hadoop was really the the thing back
+5:06 then
+5:07 and uh that really turned out really
+5:10 good
+5:11 and so that's how i got into into the
+5:13 into the field back then
+5:15 big data now now data engineering data
+5:17 science
+5:18 i became then i switched basically
+5:22 to data engineer became a team lead for
+5:25 data engineering
+5:28 this year i started leading a data lab
+5:31 but since this month i'm basically went
+5:34 full time with
+5:35 teaching data engineering with my with
+5:37 my academy at learndataengineering.com
+5:40 okay so yeah yeah that's how i got here
+5:43 yeah we'll talk a bit
+5:45 about your uh about your course as well
+5:48 it seems like there is a lot of interest
+5:51 in data engineering these days
+5:53 and you're probably so since
+5:56 you said that you work with hadoop i
+5:59 think you're in this area for quite a
+6:01 while
+6:02 um so i think now these days there is a
+6:05 lot of a lot more interest
+6:07 than even a couple of years ago so
+6:10 now i talk to some data scientists and
+6:12 they
+6:13 they say that they want to get into data
+6:15 engineering they want to start building
+6:17 data pipelines
+6:18 not just learn to build data pipelines
+6:20 but switch to data engineering entirely
+6:23 yeah you have any ideas why it's
+6:25 happening
+6:26 um generally the the thing that
+6:29 generally happens is
+6:30 when you look back a few years and i've
+6:32 i've saw this everywhere
+6:34 people were starting with data science
+6:36 they they got themselves
+6:38 they hired data scientists they had some
+6:40 data laying around
+6:42 and they basically analyzed the data i
+6:45 had a few
+6:46 business ideas we could do this we could
+6:48 do that and then
+6:49 they got to the science data science
+6:52 track and they solved the problems but
+6:55 at some point
+6:57 that's where we are getting more and
+6:58 more and more is they people realize
+7:01 okay
+7:01 now i have this i have this analytics
+7:04 methods i have i solved the problem but
+7:06 now i need to automate it now i need to
+7:08 build something around it
+7:10 how to actually bring this into
+7:13 production
+7:13 and that's that's why we see a lot more
+7:16 engineering
+7:17 is people leave the stage of like a
+7:20 proof of concept and they go
+7:22 they get more into this stage of okay
+7:24 now we need to build something we need
+7:25 to make money or we want to make money
+7:27 we want to build a platform
+7:30 that's that's the what i currently see
+7:33 so basically data science uh
+7:36 becomes more mature and companies
+7:39 realize that okay
+7:41 it's not just a one-time thing where we
+7:43 do something jupiter notebook and throw
+7:45 it away
+7:46 right we need to automate it we need to
+7:48 build those data pipelines
+7:49 and that's why people realize that okay
+7:53 this is what data engineers do
+7:54 this is what engineers do it it's also
+7:57 from uh from
+7:58 a scientist perspective usually you
+8:00 would think of like okay this
+8:01 why should the scientist actually do
+8:03 that because the scientists
+8:05 should work on the science right
+8:06 shouldn't work on the engineering
+8:08 but it also it depends on like the
+8:11 structure of
+8:12 the of the the project or it depends on
+8:14 the structure of the company if you're
+8:16 in a small startup
+8:17 most likely they start small they have a
+8:21 data scientist and the data scientist
+8:23 needs to
+8:24 set up something there is no engineer
+8:26 and
+8:27 they are once it works then they bring
+8:29 into in
+8:30 engineers and they make everything nice
+8:32 and beautiful and
+8:34 you know but that's why that's why also
+8:36 the scientists are getting more into
+8:38 this so do you think a company should
+8:41 first hire a data scientist
+8:43 and then data engineer or the other way
+8:45 around
+8:46 i personally think it's it they should
+8:48 hire both
+8:50 but not like a huge engineering team but
+8:53 like have a have a scientist have a
+8:55 have start if you want to start really
+8:57 small
+8:58 one scientist one engineer so the
+9:00 scientists can focus on the actual
+9:02 science and the engineer can already
+9:04 think of okay how can we
+9:05 how can we later down the road turn this
+9:08 into a product
+9:09 so that because that's usually a hurdle
+9:12 once the proof of concept is finished
+9:14 how can we put this into a into a
+9:17 product how can we
+9:19 build a platform or something around it
+9:21 so if you if you
+9:22 can already get a data engineer early
+9:24 then you are already in
+9:26 you're already ahead you know but
+9:29 generally the science part i would say
+9:31 starts with the scientist
+9:33 that's the that's the main thing usually
+9:36 having some one-off data usually
+9:37 it lays around somewhere somewhere
+9:39 somewhere somebody has the right csv
+9:41 for the right database x hopefully
+9:45 most likely hopefully so i imagine
+9:48 that okay company hired data scientists
+9:51 and so this data scientist works on a
+9:54 proof of concept
+9:55 and then they need to productionize it
+9:57 and then data if
+9:58 the company maybe doesn't realize that
+10:00 they need the data engineer
+10:02 what happens is this data scientist
+10:05 implements the whole thing
+10:06 themselves right and what we usually
+10:10 end up with is a lot of code that is
+10:13 difficult to maintain because
+10:15 data scientists are usually not the best
+10:17 engineers
+10:18 and i think this is where the question
+10:21 actually comes from the question
+10:23 that at the beginning i mentioned
+10:26 how can i as a data scientist improve my
+10:29 data engineering skills
+10:30 because sometimes it happens that data
+10:32 scientists need to do this
+10:34 so coming back to this question i am a
+10:36 data scientist
+10:37 i want to learn how to build data
+10:39 pipelines
+10:40 how can i do this the i would say the
+10:44 i think the problem isn't isn't actually
+10:47 the coding the coding is
+10:48 usually fairly simple like nowadays
+10:51 engineering uh
+10:52 you can most stuff you can do with
+10:54 python and if you're a good developer
+10:57 at which you should be as a data
+10:59 scientist it shouldn't be a problem
+11:01 the actual problem that a data scientist
+11:05 has or what a data scientist should look
+11:07 into thinking ahead of
+11:09 how can i how can i deploy this how can
+11:12 i make this
+11:13 like uni bring this into a uniformed
+11:17 platform because um what a lot of data
+11:20 scientists
+11:21 tend to do like they they they choose
+11:24 tools for their for their platform like
+11:26 they choose the
+11:28 the packages that they use in in python
+11:30 like take this take that try this out
+11:32 here and then that but actually in
+11:35 engineering that doesn't work you you
+11:36 can't you can't
+11:38 introduce 20 different tools you need to
+11:40 figure out a few things
+11:42 that you that you select and then
+11:46 build everything around it so that's the
+11:48 the actual conceptual part is is
+11:50 is actually i think the the problematic
+11:53 part for that
+11:54 that a scientist needs to understand do
+11:56 why does it work why
+11:57 can't we take 20 different tools and
+12:00 make a platform from them
+12:01 i'm sorry i didn't get the the beginning
+12:03 part yeah so why can't
+12:04 so you said it doesn't work like this so
+12:06 like data science we can take many
+12:08 different packages
+12:09 and just put them into
+12:12 one thing and do data science why cannot
+12:16 we do this with uh
+12:18 with platform so why can't we take 20
+12:21 different tools
+12:22 the the problem is the operations part
+12:24 right
+12:25 somebody needs to take care of this at
+12:27 some point
+12:29 and if if it's the like
+12:33 even if it's the data scientist
+12:35 themselves
+12:36 like okay you have one data scientist
+12:38 and the data scientist needs to
+12:40 needs to or set something up uses 20
+12:43 different tools
+12:44 and then somebody and then the data
+12:47 science
+12:47 needs to take care of it if there's no
+12:49 if there are no more people
+12:51 then it would will be problematic
+12:53 because there are so many things to
+12:55 actually keep it
+12:57 like keep afloat very often there some
+13:00 pipeline gets stuck somewhere something
+13:01 quits then you need to look it up if
+13:04 you're if you're
+13:05 on if you're using an open source tool
+13:06 here or there you need to optimize
+13:08 configurations so
+13:10 it's getting more and more complicated
+13:12 to actually have everything up and
+13:14 running
+13:14 instead of if you focus on in a few
+13:17 areas on a few tools
+13:19 that you that you use and that's that's
+13:22 very that's very important
+13:24 and to mention data pipeline and we talk
+13:26 about these data pipelines
+13:28 maybe we can talk a bit about this
+13:32 what is the data pipeline so why do we
+13:34 need a data pipeline why is my jupyter
+13:36 notebook with all
+13:37 the code in it is not enough yeah
+13:40 well for from a from an analytics
+13:43 standpoint that it's enough
+13:45 like um you don't for you don't need to
+13:48 set up huge pipelines for
+13:50 for like or like dif different pipelines
+13:53 for the actual analytics stuff
+13:55 most likely uh in many cases
+13:59 in in other case if it gets more
+14:00 complicated you need to split up your
+14:02 your your notebook and you create
+14:05 actually talker containers out of it or
+14:06 whatever and
+14:07 deploy but let's forget about the
+14:09 analytics when you think about the
+14:12 pipelines or the platforms somehow you
+14:14 need to you have somewhere you have an
+14:16 ingestion somewhere the data needs to
+14:18 come from
+14:19 and then at the at the at the other end
+14:22 you have a
+14:23 you have analytics and the visualization
+14:25 behind it or storage
+14:27 and you need to actually build something
+14:29 to actually
+14:30 for instance i always i always put it
+14:33 into a few parts one part is
+14:35 ingestion another part is are buffers
+14:38 like
+14:38 message queues then i have i
+14:42 say the next part is processing
+14:44 frameworks
+14:45 storage and visualization these are the
+14:48 the different
+14:49 the the different areas you need to look
+14:51 at so
+14:52 if you think about like ingestion how
+14:55 could you how could you ingest the data
+14:57 either for instance
+14:58 you set up an api or you set up an edl
+15:01 job that
+15:03 pulls the data in like what type of
+15:06 you could have different types of
+15:08 processing frameworks
+15:09 um like ingestion is uh
+15:12 let's say we have a website and then the
+15:14 user can do a bunch of things
+15:16 on this website so these events that we
+15:19 track
+15:20 and need to end up in our databases this
+15:22 process of
+15:23 getting these events and putting them
+15:25 into
+15:26 into some place this is called
+15:28 congestion right yeah you could say okay
+15:30 i
+15:30 i you have your you have your website
+15:32 where the
+15:33 the user is clicking and you want to
+15:35 track the clicks
+15:36 so the website would actually shoot the
+15:38 event and the event would for instance
+15:40 go into a message queue like apache
+15:42 kafka or
+15:43 kinesis on aws and then you then it lays
+15:46 around
+15:46 somewhere there and then you need to
+15:49 process it further so you would bring in
+15:51 introduce a processing framework that
+15:53 actually takes this message
+15:55 processes it and stores it somewhere and
+15:58 then
+15:58 the next step would be the visualization
+16:00 and in between there somewhere you
+16:02 you then use the analytics to actually
+16:04 access the data
+16:06 do the analytics and then put the data
+16:09 back
+16:09 for instance yeah so the process is
+16:12 uh so first the user makes an event so
+16:15 this
+16:16 goes to some message queue then from the
+16:19 message queue it gets to some storage i
+16:21 think this is what is usually called
+16:22 data lake
+16:23 yeah these days uh it could be a data
+16:25 lake could also be a nosql database
+16:28 just some storage then these aeros we
+16:31 need to process them
+16:33 so then there is a job that takes the
+16:34 events and processes them
+16:36 does some transformation and then it
+16:39 ends up in
+16:40 some visualization to some dashboard
+16:43 maybe
+16:43 for analytics or maybe this is something
+16:47 i as a data scientist can also take and
+16:49 use for billionaire models right yeah
+16:51 for instance yeah it depends a bit on
+16:54 what you're doing
+16:54 are you doing event processing are you
+16:56 doing streaming where you're
+16:58 were you immediately reacting to the
+17:00 actual data that's coming in
+17:02 or are you taking the data in a batch
+17:04 processing way
+17:06 because when you when you do when you do
+17:08 streaming you are going to take the data
+17:10 immediately for instance from the
+17:11 message queue
+17:12 take it process it analyze it make a
+17:15 forecast
+17:16 and push the data further or if you're
+17:18 doing a batch process then it would come
+17:20 out of you would store it first and then
+17:22 you would take it out
+17:23 and then process it and then put it back
+17:25 in
+17:26 and in both cases we refer to this uh
+17:29 a bunch of things this sequence of
+17:31 things as a data pipeline right yes
+17:33 yes i i i would refer this or call this
+17:36 a data pipeline a complete pipeline
+17:38 where you have a beginning
+17:40 where you have an end now you could you
+17:43 could argue okay where's the end is the
+17:45 end at the storage or is the end at the
+17:47 visualization
+17:50 i mean depends but like
+17:53 it's it's a the important part is there
+17:55 are a few a few
+17:57 tools a few a few parts that are there
+18:01 and they
+18:01 interact with each other it's not just
+18:04 like there comes something and gets
+18:05 stored and gets
+18:06 then at some point you take it out
+18:08 that's or you use a csv file that you
+18:10 download from somewhere that's
+18:12 that's not a pipeline yeah that looks
+18:14 like a lot of
+18:15 work right so something that uh a data
+18:18 scientist
+18:19 uh just one person probably cannot
+18:22 really implement
+18:23 so it needs multiple people and a data
+18:26 engineer
+18:26 at least it depends um where you are
+18:30 like if you're in a if you're in a like
+18:33 in a private cloud or an
+18:35 on-premise setup where you where you
+18:36 have to install everything with open
+18:38 source tools
+18:39 run everything on on them
+18:43 can be annoying if you're on on a cloud
+18:45 platform like aws azure or
+18:48 gcp it's fairly simple to actually set
+18:51 up a message queue
+18:52 or or or set up a nosql database
+18:56 the the problem is like as i said before
+18:59 the problem is
+19:00 understanding okay which tools
+19:03 do make sense in this in this case that
+19:06 i currently have
+19:08 and um and also
+19:11 what is always a problem is the actual
+19:14 um
+19:15 i refer generally always a schema design
+19:18 that you that you
+19:19 not like in a term of like a relational
+19:21 database but you have to design
+19:23 how does the data or how does the data
+19:25 look how do you
+19:27 yeah how do you process the data because
+19:29 it's important to understand okay and
+19:31 the
+19:32 like in this step i need to do that and
+19:34 then i need to do that
+19:35 and my final result is that is coming in
+19:38 my document story looks like this
+19:41 and so where are the problems there what
+19:44 what can be
+19:45 yeah yeah so maybe we can
+19:49 simplify it a bit so let's say i work at
+19:52 the company as a data scientist and we
+19:54 have
+19:54 data engineers so the data engineers
+19:56 take care of this injection part
+19:59 so they track the events they
+20:02 put them into these message queues and
+20:05 then eventually these events getting uh
+20:08 end up in our data lake
+20:09 or some other storage and we need to use
+20:12 these events to build our pipelines
+20:15 for our machine learning models
+20:18 so the data engineers they really focus
+20:21 on this lake
+20:22 so they are not really helping us uh
+20:24 maybe they can help a bit but uh
+20:26 basically we're on our own here so we
+20:29 have access to this data lake
+20:31 and we need to um build a model
+20:34 and yeah so what usually data scientists
+20:38 know
+20:38 they know python pretty well they know
+20:41 some sql they know all these git bash
+20:45 things and when it comes to python
+20:49 we also usually know the so-called pi
+20:52 data stack uh psychedelium by pandas
+20:55 um yeah so with this knowledge so how do
+20:57 we approach
+20:58 this process of building a pipeline to
+21:01 get
+21:02 our events from the data lake yeah so
+21:05 first first of all you mentioned in the
+21:06 beginning you're you're
+21:08 more alone in this as a scientist
+21:11 hopefully not
+21:12 hopefully the engineering already speaks
+21:14 to you or the
+21:15 or you speak with the engineering to
+21:17 like already turn it in a way
+21:19 that the data gets stored somewhere
+21:23 where or in a form that you can already
+21:25 work with
+21:27 that's that's usually that's
+21:30 that's one of the the main things that
+21:31 you that you need to look at
+21:33 as a scientist i would start i would i
+21:36 would
+21:37 very as i would start very simple i
+21:39 would focus on python you know python
+21:42 don't go for another language don't go
+21:45 for
+21:45 something like like scala or java or
+21:48 like use what you what you already
+21:52 know best as you said like working with
+21:55 working with git
+21:57 working with docker most likely working
+21:59 with docker
+22:00 um writing python code
+22:03 so i would focus on okay what tools are
+22:07 there for instance what processing
+22:08 frameworks can could you use that
+22:10 already
+22:11 where i can use my python skills and
+22:13 build something up
+22:14 uh yeah like an api you would you would
+22:18 then use for api building you wouldn't
+22:20 use something with java you would most
+22:22 likely look at something like flask or
+22:24 or
+22:25 fast api that i that i like a lot for
+22:28 for prototyping
+22:29 like you you would go that direction
+22:33 yeah so what are these processing
+22:34 frameworks
+22:36 processing frameworks you have to uh i i
+22:39 order i when i when i do the coachings
+22:42 in my academy
+22:43 i'm i try to show the
+22:46 the students as okay there is this
+22:48 section processing framework and this is
+22:50 everything that actually takes some data
+22:53 does something with it like analyzes it
+22:55 or
+22:57 modifies it and then it doesn't output
+23:01 so in the processing framework you could
+23:02 think of like okay
+23:04 what does what are some some some
+23:07 processing
+23:08 a python script that runs in a docker
+23:11 container
+23:12 i already count this to processing um
+23:15 apache spark uh where is there apache fl
+23:18 flink or if you're on the cloud you
+23:20 could say okay uh
+23:22 aws lambda functions or azure functions
+23:25 you know these things or or like um
+23:29 i would also call a use aws glue for
+23:32 that where you can then like these are
+23:34 these are frameworks that are doing the
+23:36 processing for you
+23:37 you just need to code them right but
+23:39 like
+23:40 it's it's one area that you that you
+23:43 need to decide so
+23:44 and that is back to what we talked
+23:45 before it wouldn't make sense to like do
+23:47 a part in spark then do a part in flink
+23:49 then introduce some lambda functions
+23:51 here and there and then
+23:53 and then you run a jupiter notebook
+23:55 where you do some processing
+23:58 it gets it almost gets too complicated
+24:01 to actually run with a small team then
+24:04 yeah so basically this is i think that
+24:06 gets in some data and
+24:07 out produces data right
+24:10 and it might convert something or
+24:14 for instance it's it's there where you
+24:16 the processing framework i would say is
+24:18 there where you
+24:19 where you run your where you train your
+24:20 algorithms with
+24:22 it's where you apply your algorithms
+24:24 with it's where
+24:25 you as a data scientist do the
+24:27 pre-processing
+24:28 this guy these kind of things is where
+24:30 you filter out the data
+24:32 yeah and um i think
+24:36 most of the time we can do for most of
+24:38 these things except
+24:39 model training we can do with plain
+24:41 skill right
+24:43 like data transformation it depends on
+24:46 well it depends on where you
+24:49 [Music]
+24:50 what you're working with if you're
+24:52 working with some kind of a nosql
+24:54 database
+24:57 running simple sql queries might be a
+24:59 problem
+25:00 if you're uh like if you're running a
+25:04 another like a more relational orient or
+25:07 relational database then
+25:08 yeah you most likely would use sql to
+25:11 get the data
+25:12 or just the simple files from a data
+25:14 lake but
+25:15 within your framework it could be that
+25:17 you that you use sql to to build data
+25:19 frames and then
+25:20 then access the data frames via sql and
+25:23 yeah
+25:24 sql is is a big is still a big part in
+25:27 engineering and in science like
+25:29 everybody knows it everybody all the
+25:31 tools
+25:33 support it it's one of the big things
+25:36 yes so what are the most common setup
+25:39 that you see or
+25:40 the setup you would recommend let's say
+25:42 we have these tasks we have data
+25:45 in our s3 bucket for example or some
+25:48 google storage bucket
+25:49 so these are let's say packet files that
+25:53 engineers prepared for us
+25:56 and park it for those who don't know
+25:57 this like a special format for files
+25:59 that is optimized for
+26:01 for storing data so we have that
+26:05 so what would we use to actually process
+26:08 this
+26:08 this data well in general giving general
+26:12 recommendations is always a bit
+26:13 problematic because you don't know what
+26:15 what people are doing
+26:17 um there are a lot of ways of actually
+26:20 processing this data
+26:22 as i said before you could say okay i'm
+26:24 just
+26:25 this data is laying around i'm just
+26:27 using uh
+26:28 using um docker containers on how it's
+26:31 called ecs
+26:32 to actually trigger easy as chops and
+26:35 read the data from the data lake
+26:36 process it and then put it somewhere
+26:38 else
+26:40 you could even schedule this aws for
+26:42 instance has a
+26:44 has a scheduling service basically
+26:45 airflow and in the cloud
+26:48 uh just forgot how they call it but like
+26:50 you could even say
+26:52 something they call it manage their flow
+26:55 something yeah
+26:56 or manage data flows or yeah something
+26:59 so you could you could set up something
+27:02 like this
+27:03 uh you could also go like we said before
+27:06 you could also
+27:07 also build some within sagemaker use the
+27:09 sagemaker notebook and then
+27:11 i use that it's like the the the
+27:14 possibilities are endless
+27:17 and i don't want to cheap out of this
+27:19 question but it's it's like
+27:21 yeah that's a bit difficult maybe a
+27:24 problem as well because when you have so
+27:26 many tools
+27:26 for for doing your job you can be lost
+27:29 right
+27:30 and um yeah maybe we can make it a bit
+27:32 more concrete
+27:34 so let's say i want to build a model for
+27:38 predicting car prices
+27:39 right so here let's say
+27:43 we have a website with carson the prices
+27:47 and different characteristics of the car
+27:50 and we want to build a pipeline
+27:51 for training our model uh for predicting
+27:54 prices and also
+27:56 a pipeline for applying this model
+27:59 and i don't know to make it more
+28:01 concrete
+28:02 let's say our data well
+28:06 the data is stored in mysql but what
+28:08 engineers did
+28:10 for us so we don't use production mysql
+28:12 they copy all the
+28:14 the all the data to an
+28:17 s3 bucket so we have a replica of uh
+28:20 of the data set so we don't need to
+28:22 touch the production database we have a
+28:24 copy of our data
+28:25 and we need to build a model um
+28:28 for that so we use let's say i don't
+28:31 know if you have any preferences for the
+28:32 cloud
+28:33 um so i kind of mentioned here s3
+28:37 yeah i usually i tend to tend to or my
+28:40 i i like aws the most i i
+28:43 work with aws the most so i'm always
+28:46 thinking in aws first
+28:48 yeah so we can maybe take a aws as an
+28:51 example i think they're
+28:53 right now the most popular cloud
+28:55 provider like seven years by far
+28:58 yeah something like this i imagine that
+29:01 most of our listeners they also
+29:04 the chances are that they will use aws
+29:07 pretty high
+29:09 that that depends by the way it depends
+29:12 on the on the actual industry
+29:14 it also depends on the actual location i
+29:16 have had
+29:17 students from from the northern european
+29:22 countries where they uh where they're
+29:24 looking at job descriptions and it turns
+29:26 out
+29:26 actually more azure for some industries
+29:29 and then in others like in the us most
+29:32 of the things have
+29:33 they have aws in them so but but there's
+29:36 there are actually differences but
+29:40 yeah to your example so uh
+29:44 i'm not sure if i understood it
+29:45 correctly is there data coming in
+29:47 basically from two sides from the
+29:49 from the website and from the from the
+29:51 sql database
+29:53 that the yeah let's say um
+29:56 so we have a product we have a website
+29:59 with cars
+29:59 so we own it as a company and what we
+30:03 want to do is we want to help
+30:05 our users uh when they are not sure what
+30:08 price to put
+30:09 we want to build the model for them when
+30:11 they enter
+30:13 like the the car make model etc we just
+30:16 help them
+30:16 with suggesting a price so this is a
+30:19 simple model
+30:21 and we have uh for this website
+30:24 so it's baked it's backed by uh
+30:27 mysql so there is a mysql database with
+30:30 all the data
+30:30 for all the listings uh but we as data
+30:33 scientists cannot really go
+30:35 and take the access this bicycle
+30:37 database because it's a production
+30:38 database
+30:40 so what engineers made for us is a
+30:43 some sort of snapshot replica just for
+30:46 us to access the data
+30:48 and now we need to build this model yeah
+30:51 well um when you when you think about
+30:54 that first of all you need to think
+30:55 about okay how do i
+30:57 from the analytic standard how do i
+30:59 apply this then is that
+31:02 you most likely want to apply it so that
+31:04 the
+31:05 that when the customer searches as i
+31:07 said it goes on the side searches
+31:09 that it already um gets the the
+31:12 predictions or the their
+31:14 recommendations right so would you do
+31:16 that live or would you say would you put
+31:18 that to the categories
+31:20 so that the end the end result of your
+31:22 analytics
+31:23 is that is that always getting generated
+31:26 live or are you
+31:27 are you doing some predictions that and
+31:29 you store them somewhere with and
+31:31 let's say uh i i know it's going to
+31:34 complicate things
+31:35 but let's say we need it live so when a
+31:37 user creates a new listing
+31:39 and then they fill everything in and
+31:42 then
+31:43 once they do this we suggest the price
+31:46 so when they create a new listing so a
+31:49 live thing okay so you could you could
+31:51 say now
+31:53 the there are a few methods you could
+31:55 you could do that
+31:56 you could take the listing that has just
+31:58 been created
+31:59 you could for instance send it i'm just
+32:01 online
+32:02 you could you could take it and you
+32:04 could send it from your
+32:06 send it uh into a message queue so you
+32:09 stay in the event
+32:11 in in the in the streaming lane and then
+32:14 you have at the other side of that
+32:16 that is where your actual algorithm is
+32:18 listening
+32:19 and once something is coming in the
+32:21 algorithm takes the listing for instance
+32:24 as a json most likely it's a website we
+32:26 come comes to json
+32:28 um takes it and then it does the
+32:31 recommendation part
+32:32 and then uh yeah it either stores it
+32:36 somewhere or
+32:37 like offers it over an api or i'm not
+32:40 sure how how you would
+32:42 you would want to do that it's is the is
+32:44 the if the listing is already stored
+32:46 then you could say okay
+32:48 i'm i'm putting that to the stored
+32:49 listing
+32:51 now i mean what you see is that people
+32:53 that people actually
+32:54 um apply the or supply the
+32:58 the analytics as an api so the the
+33:01 website would
+33:02 would actually call an api and the api
+33:05 in the background you would run your
+33:07 you would run your your your quick your
+33:09 your script
+33:10 and that would then return the api to
+33:13 the return would already have
+33:14 the recommendations in it yeah what i
+33:17 mean is like what you described is
+33:19 the process of we already have model and
+33:21 we want to deploy it so this is how we
+33:23 use it
+33:24 but what they meant is we don't have a
+33:26 model yet
+33:27 we need to do this right and yeah so
+33:31 what i can do is a data scientist i can
+33:33 pull this data
+33:35 in save it on my laptop open jupiter
+33:38 notebook
+33:39 uh you know do stuff with pandas do
+33:42 stuff with numpy scikit
+33:44 learn i train this model and i have this
+33:47 pickle file
+33:48 and then two months after that things
+33:51 change right
+33:52 so prices are different and we need to
+33:54 retrain it
+33:55 and i don't want to do this like every
+33:58 month i don't want to pull a new date
+34:00 and execute cells in a particular order
+34:02 in my jupiter notebook because maybe in
+34:04 half a year i will forget
+34:06 that i need to execute this cell before
+34:08 this cell
+34:09 because i accidentally uh i know messed
+34:12 the order so we need to somehow
+34:14 predictionize it yeah right
+34:15 you and that that's what i meant is the
+34:18 with the
+34:19 jupiter notebook sometimes it's good
+34:21 like for this you would you would
+34:22 actually
+34:23 create a proof of concept or the first
+34:25 version of your analytics you would set
+34:27 up in a jupyter notebook
+34:28 so you see that it works and then the
+34:31 next part is so
+34:32 now then you need to productionalize it
+34:34 most likely if you're already in a
+34:36 jupiter notebook and working with this
+34:38 stuff
+34:39 you you could go and just take your
+34:41 python code
+34:42 put it in a container put in a docker
+34:44 container schedule this container to run
+34:46 on the data i don't know every day every
+34:49 every
+34:50 week and just retrain the models and see
+34:53 if you find something better
+34:55 if you find some different results for
+34:57 the for the current ones
+34:59 and then basically this way you you you
+35:02 keep training your models
+35:03 and then you store the model somewhere
+35:06 where you could then can
+35:07 if you apply them then can most likely
+35:09 they you store the
+35:11 store the the model configs on s3
+35:14 so when you apply the the data you apply
+35:16 the model then you in your pipeline
+35:18 it would actually have your script and
+35:20 that script would pull the
+35:21 pull the information from the s3 and
+35:24 then just
+35:25 apply it for instance yeah so we take
+35:28 our notebook jupyter notebook
+35:30 we put it in a python file we put it
+35:34 this python file in some docker
+35:35 container and we go to our cloud and we
+35:38 find a way how we can schedule this
+35:41 uh script right and
+35:44 that's pretty much it right depends on
+35:46 how you want to run it if you
+35:48 for for the training yeah yeah and i
+35:51 mean that
+35:53 it can be really really easy the actual
+35:55 scheduling you
+35:56 you could use something like airflow but
+35:59 if you have some some real simple you
+36:01 could
+36:01 uh you could use a use cloud watch and
+36:04 then schedule
+36:06 schedule uh your use it's a bit
+36:10 with with aws you need to schedule a
+36:13 lambda function that lambda function
+36:14 then starts your container but it's like
+36:17 you could very easily set this up
+36:19 without without having the whole
+36:22 a like a framework running like like
+36:25 airflow
+36:26 because let's let's and that that's what
+36:28 i meant before
+36:29 um does it even you need or the data
+36:32 scientists need to need to look into
+36:34 this
+36:34 to actually figure out is it worth it
+36:37 like
+36:37 because it's one more thing to manage or
+36:40 can i kind of live
+36:41 right now with something that is like
+36:44 you said cloud watch and then i as far
+36:47 as i remember in amazon there are
+36:48 multiple ways
+36:50 of uh deploying a docker container so
+36:52 you have
+36:53 ecs right you have aws batch and you
+36:56 have
+36:56 uh sagemaker right yeah
+37:00 so you can just take any of this
+37:03 put your docker container there with
+37:06 your script
+37:07 and then use uh cloud watch to schedule
+37:10 it to run it uh
+37:11 every week for example yeah i remember i
+37:14 think we we talked that sagemaker can
+37:16 get quite
+37:17 quite expensive so yes that's why
+37:20 i'm like always hesitant to
+37:24 just say usage maker for everything
+37:27 well at least you can use adobe as batch
+37:29 which i think is four times cheaper if i
+37:31 remember correctly i know i don't that i
+37:34 don't know
+37:35 because in sagemaker so they have the
+37:38 same instances
+37:39 instance types but they have ml in front
+37:42 of them
+37:42 and just having ml in front of them
+37:44 makes them more expensive
+37:46 but at the end it's the same types of
+37:48 instances that's logical it makes sense
+37:51 exactly but the cool thing the cool
+37:54 thing is and what what i like about that
+37:56 is what i said
+37:57 what i mentioned before like um
+37:59 deploying your algorithm as a service
+38:02 what you could what you can do that you
+38:03 deploy your algorithm actually as an
+38:05 endpoint with sagemaker that you have
+38:07 running
+38:08 and where you actually you can send the
+38:09 data to the endpoint and the endpoint
+38:11 will
+38:11 will send you some predictions that's
+38:14 something that is really really cool
+38:16 and and yeah um
+38:19 makes it a bit easier to to do the
+38:21 management of the pipelines
+38:23 let's make our example a bit more
+38:25 complex so let's say we have
+38:27 this screen usually what i do
+38:30 usually i do this with with with boards
+38:33 where we draw on the board so i don't
+38:36 get
+38:37 yeah let's make it more complicated yeah
+38:39 so usually
+38:40 let's say before to get the data from
+38:43 this
+38:43 storage that we have we need to write a
+38:45 couple of sql queries
+38:47 and we need to execute the sql queries
+38:49 one after another
+38:50 so first query would get us
+38:54 so we have a lot of row data so the
+38:57 first query would get
+38:58 us like a smaller data set with all the
+39:01 data we need
+39:02 and let's say the second query would do
+39:04 some
+39:05 extra aggregation or cleaning i don't
+39:08 know so let's say we have two queries to
+39:09 do something
+39:10 and then what we do at the end this is
+39:13 what we use for training in our model
+39:15 we take the output of the second query
+39:18 and
+39:19 again maybe do simple stuff with pandas
+39:22 uh
+39:23 and then train our model we get this
+39:24 pico file
+39:26 so now we need to schedule this to
+39:28 somehow run the whole thing
+39:30 in sequence so we need to run the first
+39:32 query
+39:33 then the second query that gets the
+39:35 results of the first query
+39:37 uh and produces some other result and
+39:39 then we have the third job
+39:40 that gets the results from the second
+39:43 query and
+39:43 trains model and produces the pico file
+39:45 so how do we
+39:47 what's the right word architect this
+39:50 whole thing
+39:52 it depends on how how like i i feel like
+39:55 i
+39:56 see always it depends on how complicated
+39:58 you've wanted to
+39:59 want to make it well the simplest you
+40:01 could you could do something really
+40:03 simple where you like build up a message
+40:05 queue
+40:06 and once the once the first script is
+40:09 ready
+40:10 it fires up a message into the message
+40:12 queue and then on the other side is a
+40:14 listener
+40:15 that basically takes this message and in
+40:17 the message you you say okay where do i
+40:20 what what what
+40:23 what part of the job already run where
+40:25 is the data stored
+40:26 and then the second part can take the
+40:28 data and can actually process
+40:30 and then writes back to the message
+40:32 queue and this way you can you can use
+40:33 your message you actually as
+40:35 in a streaming manner where one shop
+40:38 takes it out it takes the information
+40:39 out okay i need to do something
+40:41 there is already where does the data lie
+40:44 lay around
+40:45 do it i'm finished right back and
+40:48 this so it's very often very easy to
+40:52 actually use
+40:52 use cues for this kind of job i think i
+40:55 implemented something like this a couple
+40:57 of companies ago
+40:58 what the when i left what they ended up
+41:00 doing is uh
+41:02 discarding all that and moving to her
+41:03 phone
+41:05 yeah it's i mean
+41:09 i mean airflow these things are really
+41:11 really strong and really good
+41:14 so it makes sense to use them but if if
+41:16 this is a one-off thing
+41:18 and like you need to build something
+41:20 quick you need to you need to start
+41:22 somewhere
+41:23 um what is good enough
+41:26 right and most likely for this company
+41:28 as you said you built this
+41:30 it ran for some time and it was good
+41:32 enough while you built it
+41:34 and at some point they they they
+41:36 actually it grew over they needed to
+41:38 they needed to have more more logging
+41:41 behind it the more inside
+41:43 then you're then you're moving to
+41:45 something like
+41:46 like airflow or something yeah
+41:49 okay and then you don't need to go all
+41:52 out
+41:52 in the beginning like for the first
+41:54 model if it's just the first uh
+41:56 data science project in the company you
+41:58 don't need to go with uh
+42:00 airflow kubernetes and uh you know all
+42:03 these big things
+42:04 yeah yeah it's like it always
+42:07 it depends on a bit on your timeline
+42:10 what what's
+42:10 or what's the goal of of the company
+42:13 right
+42:14 where does the company want to move is
+42:15 this uh
+42:17 is it unsure or is the company unsure
+42:19 where to move
+42:20 or is this going to be a platform where
+42:23 like a lot of a lot of projects are
+42:25 going to work on and
+42:26 then it's good to have a help then i
+42:28 would set up everything
+42:30 already otherwise start start small
+42:33 start agile
+42:35 and you can always build something add
+42:38 something to it after afterwards
+42:40 that's also how i how i usually talk
+42:42 with my coaching students like
+42:44 build something first build it build it
+42:46 simple
+42:47 and then at some point add more stuff to
+42:50 it
+42:50 like start with start with start with a
+42:53 lambda function and then then use spark
+42:57 streaming for that and then the next
+42:58 step
+42:58 so in every area you can you can
+43:01 escalate and make it more
+43:03 more complicated or different yeah so we
+43:05 have a related question from
+43:07 chetna so i think we already discussed
+43:10 uh
+43:11 how we can do this uh from a jupiter
+43:14 notebook like how data scientists can
+43:16 start
+43:17 their journey towards being like picking
+43:19 up data engineering skills
+43:21 uh so we that part we discussed but the
+43:24 second part of
+43:25 the question is how to learn the devops
+43:28 and software engineering skills that you
+43:30 need to actually to be able to implement
+43:32 this
+43:34 um well the devops skills
+43:40 it's that's where that's where the tool
+43:42 selection comes in
+43:44 that you understand okay how can i
+43:45 actually bring this into production
+43:49 how do i how do i manage my code how
+43:52 how do i yeah that's there are certain
+43:56 tools
+43:57 that i see around all the time um like
+44:00 something like
+44:01 um gitlab a lot of people use gitlab as
+44:04 their
+44:05 as their code repository and actually
+44:07 for building
+44:08 for building than their their their code
+44:10 and deploying their code in production
+44:12 that's something i see a lot um
+44:16 yeah where but generally these
+44:22 there yeah there are many tools out
+44:25 there it's always the same
+44:26 like most of the day if you use jenkins
+44:29 for building and so on it's
+44:31 most likely that's the same stuff right
+44:34 so
+44:36 so your recommendation would be just to
+44:37 pick any two and try to learn
+44:39 um i would pick something that fits to
+44:42 the rest of what i would have just built
+44:45 so that is that and that's that's what i
+44:47 meant in the beginning like you need to
+44:49 understand what what tools do i actually
+44:51 want to use
+44:52 so they so you you don't go overboard
+44:55 and in this case
+44:56 so that everything fits together so
+44:58 you're you're actually
+45:01 you're actually using the right the
+45:03 right tool
+45:04 to manage your code to to deploy your
+45:06 code and
+45:08 that fits to your to your actual deploy
+45:10 or to the actual
+45:11 production environment yeah so i guess
+45:14 if
+45:15 i'm a data scientist and i don't have
+45:16 experience with this kind of thing so i
+45:18 would
+45:18 need to talk to a data engineer or
+45:21 somebody who's dealing with
+45:22 infrastructure to actually help me
+45:24 and guide me through that right because
+45:27 how do i know if this is the right tool
+45:29 if i haven't used yeah biggest thing
+45:32 there are there are a few options
+45:34 that you can do first of all um how i
+45:37 how i always go at this i look at the
+45:41 this is very lame but i look at the
+45:42 documentation of the tool
+45:44 like what what are the what can this
+45:47 tool actually do
+45:48 and then i search for um
+45:51 um how do you call it in english like
+45:54 like um not proof of concept
+45:59 like examples that where people already
+46:01 did that what i wanted
+46:03 what i envisioned to do and if you
+46:05 already find some examples are here
+46:08 only and you can just do this on google
+46:10 like
+46:11 uh they did this this and this and you
+46:13 you find some
+46:14 some quick uh how to-do lists of what
+46:17 you need to do
+46:18 or tutorials then most likely you're
+46:20 already on the on the right track
+46:22 and then if it's an open source tool or
+46:24 whatever
+46:25 just set it up in a deaf environment and
+46:27 test it out
+46:29 and if that works
+46:33 already it looks already good then then
+46:35 you're most likely on the right
+46:36 so speaking of the example we had with
+46:39 this
+46:41 building a model for price prediction so
+46:44 let's say if we decide to go with uh aws
+46:47 batch and
+46:48 lambda and whatnot so what we can do is
+46:50 we can go to your favorite search engine
+46:53 uh put the queries there like
+46:56 model training pipeline then the name of
+46:59 the tool
+47:00 uh it was batch lambda and then we hit
+47:03 enter
+47:03 and then we see what are the results uh
+47:06 then maybe adding a word tutorial at the
+47:08 end
+47:09 might help and you end up on towards
+47:12 data science
+47:13 on some other or some other similar
+47:16 website
+47:16 where there is a like almost a
+47:19 step-by-step tutorial with all the steps
+47:21 you need to
+47:22 very often you find this like in in in
+47:25 your case like
+47:26 how to use aws batch to
+47:29 uh analyze s3 data or something
+47:33 and then most likely you're finding then
+47:35 then blog posts that already do the
+47:37 exact
+47:38 thing that you want to do and then you
+47:39 just insert your code
+47:41 of course you're analytically right you
+47:43 need to write it but like
+47:44 the phrase the frame around it how to
+47:46 how to get to the data and where to
+47:48 write the data
+47:49 most likely you can already extract from
+47:51 this
+47:52 yeah yeah so i guess the the short
+47:55 question to this answer how to learn
+47:56 devops is just uh
+47:59 do stuff if you don't know google them
+48:01 or
+48:02 yeah like the
+48:05 as that use use the search search for
+48:08 what different tools are there
+48:09 what capabilities do they have how does
+48:12 that fit to
+48:13 to the rest of the platform and then
+48:15 just try it out just
+48:16 i'm always i'm always i'm always going
+48:18 for okay let's try
+48:20 this because usually when you actually
+48:22 do it then you're finding the
+48:23 the holes in the in the whole thing like
+48:26 ah
+48:26 this doesn't work that way this doesn't
+48:28 work that way it's
+48:32 it's always the same yeah unfortunately
+48:36 do you think data engineering skills
+48:38 like um
+48:39 hadoop and etc so this is
+48:42 another question i'm reading like hadoop
+48:44 docker cloud they are necessary for
+48:47 students who are looking for internship
+48:49 or like do they need to have these
+48:51 skills to
+48:53 uh to get their first job i think for no
+48:56 i think for internship
+48:57 for internship if you if you can code
+48:59 python
+49:00 if you know your way around sql you
+49:02 should have learned this during study
+49:05 uh if you have a bit of an idea
+49:08 how to how computer networking works so
+49:11 like dns ip networking if you have an
+49:15 idea about this
+49:16 then for an internship you're good to go
+49:19 that
+49:19 that that i mean
+49:23 for for becoming a junior data engineer
+49:25 i think you
+49:26 you need some experience on some kind of
+49:28 a platform
+49:31 most likely it makes sense to use aws
+49:35 i would i would start by using aws
+49:39 and that's why i for instance in the
+49:41 academy i built the aws capstone project
+49:43 first because i think that's the most
+49:44 important thing
+49:45 and we use that in the coaching as well
+49:47 most often
+49:48 and then the the second part i think
+49:52 is for the open source tools
+49:55 just just use a few open source tools
+49:58 like kafka spark
+49:59 and like mongodb most likely that's some
+50:03 some stuff that is that is around there
+50:05 everywhere
+50:07 makes sense and then you should if you
+50:10 then don't get a junior role i don't
+50:11 know like
+50:14 i i would most likely hire someone who
+50:17 who has that as a resume
+50:19 the important part is documenting it
+50:20 that's what i always
+50:22 that's that's what i what i say to my
+50:24 students document your stuff
+50:27 never just do a aws or aws certification
+50:30 or whatever never just
+50:31 do the certification always create a
+50:35 github
+50:35 put up some information put put up
+50:38 interesting stuff that you have learned
+50:40 you need a track record you need to have
+50:43 a track record you need to have a
+50:44 professional profile and not just like a
+50:46 linkedin page
+50:48 but like a professional profile that has
+50:50 some some
+50:51 some experience where you show some
+50:53 experience
+50:55 and uh yeah so in this question there is
+50:57 a bunch of things mentioned
+50:58 mentioned under the data engineering
+51:00 skills which are hadoop docker cloud
+51:04 so docker and cloud i don't think you
+51:06 would argue that
+51:07 these are important things to learn what
+51:09 about hadoop
+51:10 do people still need it use it
+51:14 it depends i see the trend that hadoop
+51:18 isn't that
+51:20 isn't isn't what it used to be because
+51:24 the cloud platforms got so strong and
+51:26 and they innovated so
+51:28 fast um most most companies nowadays use
+51:33 user cloud platform yes you have you
+51:35 have stuff still laying around or still
+51:36 working on hadoop
+51:38 most very often in bigger companies
+51:40 where they have
+51:42 private clouds that they're running and
+51:44 then they're running of course they're
+51:45 running hadoop
+51:49 i i think for for getting a
+51:52 a role or for for for learning it
+51:56 it can make sense but it's not like one
+51:58 of the primary thing the cool thing is
+52:00 coming from like me coming from hadoop
+52:03 you see that
+52:04 everything on the cloud platform that is
+52:06 basically the same stuff that you do on
+52:08 hadoop
+52:08 it's basically always the same stuff
+52:12 you're running on a hadoop platform just
+52:14 it has a different name it works a bit
+52:15 differently
+52:16 like it's it's very very interesting how
+52:19 these how these tools fit together
+52:21 so yeah and we have a question from
+52:25 julian
+52:25 uh and or julian uh i don't know
+52:30 but the question is about your uh your
+52:33 academy
+52:33 and you mentioned it a couple of times
+52:35 so first of all what is the link to the
+52:37 academy so how can people find it
+52:40 learndataengineering.com
+52:41 so one word right one word one word
+52:45 that's that's uh that's where everything
+52:49 where i where i have the academy where i
+52:51 do the coaching
+52:52 uh i at some point i i like i started
+52:55 with youtube i don't know how many years
+52:57 ago
+52:57 43 years from now when did we talk
+53:00 alexei do you do you know what the year
+53:02 two years ago i think
+53:03 two years so maybe then two and a half
+53:05 years ago
+53:06 um i started with youtube um
+53:10 and actually i on youtube it's always
+53:14 you you make videos but it's not like
+53:15 one like you you can't put up a journey
+53:18 or you can't say okay learn this this
+53:20 this
+53:20 this and then then it will work out and
+53:23 so last year i actually decided to
+53:25 okay let's let's try to build a
+53:27 curriculum
+53:28 for actually learning data engineering
+53:31 um
+53:32 it turned out it's harder than i thought
+53:34 because what we talked about before like
+53:36 there are so many tools and
+53:38 you need to focus on some stuff but in
+53:41 in the academy i basically
+53:42 i created a course a step-by-step course
+53:46 that that starts basically giving you
+53:48 the fundamentals of actually what is
+53:50 data engineering and what do you need
+53:52 for actually starting and then
+53:55 we go through basics of platform and
+53:57 pipeline design
+53:59 and then fundamental tools and then uh
+54:02 capstone projects
+54:03 like the aws project i i we are having
+54:06 one more coming next week about azure
+54:08 an azure course and i'm currently
+54:11 working on another one as i said before
+54:13 with uh
+54:14 with open source tools mongodb is kafka
+54:17 spark
+54:18 and so on so if if
+54:21 you're interested in or if somebody's
+54:23 interested in data engineering check
+54:25 that out or check out
+54:26 one of my 300 videos on youtube or
+54:30 something i don't know where we are
+54:31 currently
+54:32 i think if you google for the plumbers
+54:35 of data science
+54:37 the the first link should be your could
+54:39 be could also be yeah
+54:41 yeah or your
+54:44 your name yeah my name as well my name
+54:47 and data engineering most likely
+54:49 most likely will bring something up yeah
+54:52 so from what i understood uh
+54:54 by uh by talking to you now is the most
+54:57 one of the most important skills uh to
+55:00 have for
+55:01 to pick up data engineering for a data
+55:03 scientist is to help this cloud skills
+55:06 but cloud skills is such a broad thing
+55:08 right
+55:09 but there are a couple of tools that are
+55:11 useful for
+55:13 for data processing so i'm wondering if
+55:16 you can give
+55:17 a good recommendation how to
+55:21 approach learning this so i usually
+55:23 suggest to learn things by doing
+55:25 projects
+55:26 and maybe you can you can recommend the
+55:28 project that
+55:29 people can build to pick up these cloud
+55:32 skills um
+55:36 a general project well i don't want to
+55:39 be
+55:39 my own like this this shouldn't be a
+55:42 sales thing
+55:43 i have a project using e-commerce data
+55:45 on aws to actually do it
+55:46 but generally i i think it's it's more
+55:49 the general approach is the more
+55:51 important approach
+55:53 um i have a
+55:56 on my website you find a link to the
+55:58 data engineering cookbook
+56:00 and in the cookbook i have and also on
+56:02 my youtube i have
+56:03 videos about my data science platform
+56:06 blueprint
+56:07 and this will help you will help you a
+56:09 lot to actually see these areas that i
+56:11 talked before connect
+56:13 buffer processing framework store
+56:15 visualize
+56:16 and then actually select some select
+56:19 tools
+56:20 for each of these and then build a build
+56:22 a pipeline
+56:23 and just start sort by using this and
+56:26 use the data set from kaggle or whatever
+56:28 you don't need to go go really big use a
+56:31 small data set 40 megabytes whatever
+56:34 and just just start start applying this
+56:37 in
+56:38 and building building a platform
+56:40 building some pipelines on it
+56:42 i think there are a couple of
+56:43 competitions on kaggle where
+56:46 it's not just one csv file but they have
+56:48 multiple csv files
+56:49 and then you would need to actually do a
+56:51 join uh
+56:53 like four or five different files and
+56:56 then
+56:56 to actually to build this final uh
+56:59 table let's say you need to do multiple
+57:01 joints i think this kind of
+57:03 data sets would be most interesting
+57:05 because this is what we usually do
+57:07 at work so it's not just data already
+57:09 prepared but we need to do a couple of
+57:11 joints a couple of um
+57:13 a couple of things on top of that um i
+57:16 think one of the competitions
+57:18 were it was i think outbrain click
+57:21 prediction
+57:22 i think but there are there are a couple
+57:24 of them and these click prediction
+57:26 competitions are quite interesting
+57:28 because they have a lot of data
+57:29 there yeah but 40 megabytes i think is
+57:32 also a good start
+57:33 you don't the the thing is you don't
+57:35 need to for
+57:36 learning it you don't need the huge data
+57:38 sets what what is going to happen is
+57:40 when you use huge data sets
+57:41 first of all the loading times are going
+57:43 to be terrible
+57:44 that that everything runs long then you
+57:47 need to
+57:48 you cannot easily look into the data
+57:50 then
+57:52 because it's big the cloud platforms are
+57:55 going to cost
+57:55 more because you need bigger systems and
+57:57 everything
+57:59 don't need that you use small data i
+58:02 i very often in the uh very often in the
+58:05 academy or
+58:06 in the in the coaching we use a simple
+58:08 e-commerce data set
+58:10 from kaggle that because of that because
+58:14 even there you can you can understand
+58:15 okay why actually
+58:17 for instance would you go the nosql
+58:19 route and not a
+58:20 another standard route of building a
+58:23 relational database and so on
+58:25 so that these are these it doesn't need
+58:27 to be complicated to actually start
+58:29 that that's if if if if you're listening
+58:32 to this and
+58:33 you only need to you only remember one
+58:35 thing
+58:37 start simple and use a simple data set
+58:40 don't go
+58:40 all out and you only get frustrated you
+58:43 only get frustrated
+58:44 and most likely used to use the cloud
+58:46 for beginning
+58:47 so don't start with kubernetes air flow
+58:50 and
+58:51 one terabyte of data no
+58:55 good advice i know we almost
+58:58 so it's almost time to um it's actually
+59:01 time to finish but there is one
+59:03 interesting question and maybe we can
+59:05 take a couple of minutes to answer that
+59:08 maybe it's a tough one so let's try i'm
+59:11 trying to convince my company to start a
+59:13 data science department
+59:15 what is the best tool set to show
+59:17 results with my current
+59:18 zero dollars budget
+59:23 with your current zero well
+59:27 first so if you if you need to
+59:32 let's i don't want to discourage people
+59:34 so
+59:36 be careful so if you need to if you need
+59:39 to convince somebody who
+59:40 that to run actually to to use data
+59:44 science
+59:44 it's already a bit of a problem um i
+59:47 would
+59:48 i would go the route and just do it if
+59:50 you if
+59:51 if you don't have money and you can
+59:52 spend some time just
+59:54 just build something locally use if you
+59:57 like you don't don't build a platform
+59:59 don't build pipelines do a proof of
+1:00:00 concept
+1:00:01 like it just have as we saw as we said
+1:00:04 uh use a notebook get some data
+1:00:07 and show what analytics can actually do
+1:00:10 what analytics can can result can can
+1:00:14 deliver and put a number on it how much
+1:00:17 data
+1:00:17 how much money will this bring don't
+1:00:20 people don't care about data how much
+1:00:21 data do you process for that or how long
+1:00:23 did it take
+1:00:24 how much money will this bring in it
+1:00:27 it's even better than
+1:00:29 than how much money will be saved
+1:00:30 through that most likely
+1:00:32 revenue counts so if you can if you can
+1:00:35 show a good result
+1:00:36 and if you can if you can show a like a
+1:00:39 rough timeline how much
+1:00:40 how much revenue this is going to this
+1:00:43 can generate in the future
+1:00:45 and most likely if you talk to the right
+1:00:48 people then
+1:00:49 something will move otherwise
+1:00:52 forget it try it but
+1:00:55 don't don't like okay so you need to
+1:00:58 turn this zero dollars budget into
+1:01:00 something greater than zero yeah yeah
+1:01:03 and
+1:01:04 the cool thing nowadays is if you have a
+1:01:06 if you have a macbook or whatever
+1:01:07 you can already start doing data science
+1:01:10 right it's not like you need that big
+1:01:11 machine that ten thousand dollar
+1:01:13 uh analytics pc
+1:01:17 you can you can start small and twist
+1:01:19 aws there is this
+1:01:21 thing called free free tier right and
+1:01:24 which allows you to do some
+1:01:26 lambda stuff for free then you can get
+1:01:28 easy too for free
+1:01:29 but but actually yeah but how much does
+1:01:31 that help you
+1:01:33 yeah most likely most likely you
+1:01:37 you are going to run run tests over for
+1:01:39 a few days
+1:01:40 or train a models for a few days yeah
+1:01:42 and three tier is over so
+1:01:44 so you have a computer at work use that
+1:01:47 start start a start a training at the
+1:01:50 end of the day let it run throughout the
+1:01:52 we did all this years ago like let it
+1:01:55 run over the night over the weekend
+1:01:58 and hope that somebody something comes
+1:01:59 up on monday
+1:02:04 that's interesting so last question how
+1:02:07 people can find you
+1:02:09 um you can find me uh on just google my
+1:02:11 name andreas kreitz or
+1:02:13 plumbers of data or learn data
+1:02:15 engineering on linkedin
+1:02:17 on on youtube on instagram
+1:02:21 um yeah instagram instagram as well
+1:02:23 andreas
+1:02:24 i have 1400 followers
+1:02:29 i've been trying so hard on instagram
+1:02:31 instagram is like
+1:02:32 terrible yeah but you can you can
+1:02:36 contact me there as well
+1:02:38 and we have we have a telegram chat
+1:02:40 group so if you go to
+1:02:41 learndataengineering.com on the bottom
+1:02:43 is a telegram chat group
+1:02:46 team data science i call it um
+1:02:50 where you can put a link in the
+1:02:52 description
+1:02:54 okay do you have any cool last words
+1:02:58 thanks for inviting me it was really fun
+1:03:00 talking to alexei i hope
+1:03:02 i hope a few people get into engineering
+1:03:04 now yeah
+1:03:05 so it's really it's really it's a cool
+1:03:07 profession and
+1:03:08 yeah i love it yeah so
+1:03:12 i'll put all these links maybe not right
+1:03:14 now in a couple of hours
+1:03:16 but i'll do this so check the
+1:03:17 description and
+1:03:19 we have a couple of more talks tomorrow
+1:03:21 and on friday check them out
+1:03:24 thanks for joining us today and thanks a
+1:03:26 lot andreas for
+1:03:27 sharing your experience with us so now
+1:03:29 when next time when somebody asks
+1:03:31 how can i build a data pipeline i will
+1:03:34 share this video with them
+1:03:36 and hopefully they will not start with
+1:03:39 kubernetes and other stuff but that's
+1:03:42 something simple
+1:03:45 okay thanks to help

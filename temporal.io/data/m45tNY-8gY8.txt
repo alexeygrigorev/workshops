@@ -1,0 +1,1640 @@
+Building Machine Learning Products
+
+0:00 hi everyone Welcome to our event this
+0:03 event is brought to you by data do club
+0:05 which is a community of people who love
+0:06 data we have weekly events today is one
+0:08 of such events if you want to find out
+0:11 more about the events we have there is a
+0:12 link in the description go there click
+0:14 on that link and you'll see many events
+0:16 we have in our
+0:18 pipeline actually right now there are
+0:20 quite a few of them so go check it out
+0:23 then do not forget to subscribe to our
+0:24 YouTube channel this way you will get
+0:26 notifications about future streams like
+0:30 the stream we have today and we have an
+0:32 amazing slack Community where you can
+0:34 hang out with other dating to
+0:36 US during today's interview you can ask
+0:38 any question you want but slideer does
+0:40 not work for some reasons today so like
+0:43 ignore that part of the slide so just
+0:46 use live chat for asking questions and
+0:49 then I'll try to I will keep an eye on
+0:53 the questions because I have them on my
+0:55 phone here so ask your questions during
+0:58 the interview in the live chat
+1:00 I will stop sharing right now so just
+1:03 use the live chat ask your questions and
+1:05 then I'll be keeping an eye on these
+1:07 questions and I think that's pretty much
+1:10 it now I am opening the questions we
+1:14 prepared for you but mostly you yourself
+1:16 prepared um I'm a huge fan of the
+1:18 community by the way so I do encourage
+1:20 everyone to join the slag and I also
+1:22 have your event set up on my uh Google
+1:25 Calendar so I'm always up to date with
+1:27 them so you guys do great things
+1:31 thank you you're setting a very good
+1:32 example that's what everyone should
+1:35 do um okay um like I just want to make
+1:38 sure I pronounce your name correctly
+1:40 it's Rim Yeah so it's like long e right
+1:45 yeah if you know French it's like an i r
+1:48 i Am is also another way you can
+1:50 pronounce it I learned French French
+1:54 like 10 years ago I actually spent one
+1:56 year learning French and now I cannot
+1:59 even
+2:00 count to 10 I get that I was I actually
+2:04 studied French all of my Elementary in
+2:07 high school and I can barely put a
+2:09 proper sentence together so yeah yeah I
+2:11 can I remember how to say I do not speak
+2:14 French that was very useful when I lived
+2:16 in France
+2:19 yeah yeah probably if I start living in
+2:22 a French speaking country again then it
+2:25 will come back but cuz now I live in
+2:28 Germany I don't need French yeah German
+2:31 displaced all the French I like
+2:36 immediately anyways let's start so this
+2:41 week we will talk about building machine
+2:42 learning products and teams and we will
+2:45 see where it goes but initially
+2:48 originally the topic was that but we
+2:51 changed the questions a little bit in in
+2:53 between time but we have a very special
+2:56 guest today re R is the director of data
+2:59 science at
+3:00 interview AI do I pronounce it correctly
+3:03 interview yeah interview AI which is an
+3:08 HR Tech startup she has a lot of
+3:10 experience in training and mentoring
+3:12 people in the data space she also
+3:14 co-founded an AI education company and
+3:17 have killed more than 3,000 people in
+3:20 total she has over 8 years of experience
+3:23 in the data space and she also has a
+3:27 PHD and you researched
+3:31 transfer learning right yes machine
+3:34 learning from limited data yeah exactly
+3:37 trans for learning was essentially where
+3:39 that led it you so yeah welcome to the
+3:42 interview to our event thank you it's a
+3:45 pleasure to be here like I said a huge
+3:47 fan of what you guys do so I was very
+3:50 happy to get the chance to be here and
+3:52 contribute back in some
+3:54 way yeah thank you for being here and
+3:58 yeah the questions for today inter riew
+4:00 are prepared by Johanna Bayer and T but
+4:04 thanks Johanna for your help as always
+4:06 thank you and uh yeah before we go into
+4:09 our main topic of building machine
+4:10 learning teams let's start with your
+4:13 background can you tell us about your
+4:15 career Journey so
+4:17 far yes so I originally started uh my
+4:21 career in my bachelor's studies as most
+4:24 people and there I was actually an
+4:26 electrical engineer so I was fascinated
+4:29 with physics I was a huge nerd when it
+4:31 came to electromagnetics and that was
+4:33 something I was very passionate about uh
+4:35 led me into electrical engineering and
+4:38 um so it was a bit you know not too far
+4:41 but a bit of a different field than
+4:42 where I am today but there was still an
+4:44 intersection with software engineering
+4:46 Computer Engineering in general but it
+4:48 was in my last year where I took
+4:50 accidentally actually my first course in
+4:52 Ai and that was my first exposure to the
+4:55 topic um and I got fascinated I was
+4:58 someone who always always curious about
+5:01 how things are built and so when I came
+5:03 across this idea that we can get
+5:05 machines to do things in a smart way
+5:09 that was fascinating for me because I
+5:10 was only familiar with you know
+5:11 traditional software and explicitly you
+5:14 know giving uh machines instructions on
+5:16 how to do things so this idea of being
+5:18 able to do more than that was um very
+5:21 cool for myself back then um so I
+5:25 decided that I wanted to pursue like a
+5:27 master's degree uh specializing in this
+5:29 area uh purely out of just you know
+5:31 being more Curious and uh back then I
+5:35 mean it wasn't that long ago but back
+5:38 2015 um it was kind of like an obvious
+5:41 choice to go for graduate school I think
+5:43 today you know you have a lot more
+5:45 options on how you can dive into the
+5:47 field um so that's what I did I went
+5:49 into graduate school really enjoyed the
+5:51 research that I did so you know extended
+5:54 it into the PHD as well and continued
+5:57 working um in the field during my PhD
+6:00 that's when I uh co-founded the startup
+6:03 on AI education so I started kind of
+6:05 like balancing between you know my
+6:07 academic work as well as kind of the
+6:09 startup world and how things worked
+6:12 there got fascinated with startups
+6:14 finished my PhD joined another startup
+6:18 um where I'm currently you know building
+6:20 the HR Tech solution that you
+6:23 mentioned um and yeah um this is where
+6:26 I'm at
+6:28 today yeah well must be not easy to
+6:33 simultaneously um start in a startup and
+6:37 then U doing your PhD
+6:39 right no yeah it was not easy but uh it
+6:43 was a lot of fun actually because it was
+6:45 a nice balance because during the PHD
+6:48 you know PhD is very intense and you get
+6:49 to do a lot of work I mean for those who
+6:52 have been in a similar Journey you get
+6:54 to do a lot of very intense work and
+6:55 mostly to some extent
+6:58 Alone um and I balanced that out with
+7:01 you know the excitement of working with
+7:02 a team and training people and you know
+7:06 um kind of that Community aspect because
+7:08 everything that we also did in that um
+7:11 company was very much community-driven
+7:13 so it was kind of like a balancing act
+7:16 as long as you're enjoying what you're
+7:17 doing really you end up managing somehow
+7:20 I
+7:21 guess yeah so what did you so you said
+7:25 that your research was you you had your
+7:28 first course ai ai last year of your
+7:31 Bachelor studies you really liked it and
+7:33 you enrolled in the master program you
+7:36 also liked it so then you continued
+7:38 researching it during your PhD and your
+7:41 research was about transfer learning
+7:44 in with limited data right can you tell
+7:48 us a bit more what did you yeah yeah
+7:50 sure um so I mean that was a very long
+7:54 time ago but I hope I can remember like
+7:56 how things came together so during my
+7:58 masters I mean my adviser was already
+8:00 working on certain areas and he was
+8:02 specifically focused on um natural
+8:05 language processing and context aware
+8:07 sensing and back then NLP was still not
+8:10 the hype that it is today um so it was
+8:13 more of basic uh or more foundational
+8:15 NLP stuff I would say not basic but more
+8:18 foundational um I was fascinated with
+8:20 the context OFW sensing because the
+8:22 applications that he was working on were
+8:24 very much um touching people's lives and
+8:27 for me like context over sensing you
+8:30 said context aware sensing so something
+8:33 like context aware sensing yeah yeah
+8:35 like wearable devices for like um human
+8:38 activity recognition emotion
+8:41 recognition um sensing human behavior
+8:44 and environments stuff like that right
+8:46 so he was working on a variety of these
+8:48 things um so I start of started kind of
+8:51 looking down this direction I didn't end
+8:53 up you know down that path but along the
+8:56 way I came across the idea of um
+8:59 transfer learning and multitask learning
+9:02 and this concept of um getting models to
+9:05 learn from each other again you know I
+9:08 was starting in the field back then so
+9:09 for me driven by the same curiosity I
+9:12 was like wow like okay that's
+9:13 interesting not only can you teach a
+9:15 machine but you can get them to kind of
+9:16 learn from each other's
+9:18 experiences that sounds very cool um so
+9:22 that's when I got into you know diving
+9:23 into multitask learning specifically a
+9:25 branch of transfer learning where you're
+9:28 able to learn multiple tasks multiple
+9:31 problems that you're trying to basically
+9:33 optimize the model for using one model
+9:36 essentially so saving on resources if
+9:39 your data sets are limited you're able
+9:40 to kind of share and leverage knowledge
+9:43 across the tasks to boost the
+9:44 performance and stuff like that and that
+9:46 was the focus in my Master's extended
+9:50 into my PhD and kind of branched out a
+9:52 bit more where I started looking
+9:54 into um um teacher models and you know
+9:59 more more if you want more kind of
+10:02 overarching challenges in multitask
+10:04 learning transfer learning like the
+10:06 challenges of catastrophic learning
+10:08 where you know when you find tune in a
+10:09 model you forget the old task are you
+10:11 able to
+10:12 maintain you know tasks as you find tune
+10:15 models even though their data is missing
+10:17 and kind of you know diving into these
+10:19 things in in more detail uh but all
+10:21 within the realm or the umbrella of
+10:24 leveraging trained models to boost
+10:27 performance on other tasks and new tasks
+10:29 that suffer from limited data
+10:32 whether um naturally some tasks
+10:35 naturally suffer from limited data or
+10:37 whether you know your initial stages of
+10:38 training and you don't have access to
+10:40 this
+10:41 data it's the first time I hear the term
+10:44 catastropic learning that's
+10:46 interesting I know the concept yeah
+10:49 sorry forgetting yeah like I now yeah I
+10:54 know the term not the term but like
+10:56 concept the concept like yeah CU it
+10:59 happened like when you set learning rate
+11:01 too high the model just or override
+11:04 accidentally the weights like I don't
+11:06 know if you take this image net model
+11:08 accidentally yeah exactly yeah it just
+11:11 forgets or even if you find unit on a
+11:13 smaller data set it's still gonna it's
+11:15 going to become optimized for the new
+11:17 one and not really be able to perform
+11:18 the same on the old task um it's very
+11:22 very interesting problems again research
+11:24 driven so they were very uh kind of like
+11:27 detailed s but it was an interesting
+11:30 space and I kind of this is this is the
+11:32 direction that I took MH and U how do
+11:37 you switch your focus more towards um
+11:40 the industry like you were doing your
+11:43 PhD and then you probably wanted to have
+11:47 something more practical or how did
+11:50 happen yeah Yes actually so
+11:54 um um even though I enjoyed the research
+11:56 that I was doing and the work that I was
+11:58 doing I wasn't very much driven by the
+12:02 way that Academia worked um you know and
+12:06 kind of like the reward that you would
+12:08 get out of this heavy heavy effort that
+12:11 you would put in and I really wanted to
+12:13 be in a place where you know I was able
+12:15 to build something that would actually
+12:17 make it into practice and I would
+12:18 actually be able to see the impact and
+12:21 um you know touch people's lives
+12:23 basically because most of the research
+12:24 that you know you do today doesn't end
+12:27 up making it to Industry um um because
+12:29 of Many Many Factors so that was
+12:32 something actually I early on kind of
+12:34 decided that I would be switching to
+12:36 Industry once I'm done with my
+12:38 PhD um and so yeah it was driven from
+12:43 from that being able to kind of make a
+12:44 direct impact um with with a solution
+12:48 that people can actually
+12:50 use yeah I guess like touching people
+12:53 lives with uh PhD research is way more
+12:57 difficult because in industry like the
+12:59 the the the loop between like you do
+13:02 something and then it affects people is
+13:04 way shorter right compared to yes yes
+13:07 yes and then most again most research
+13:10 doesn't make it to Industry right I mean
+13:12 we see on the industry side you don't
+13:14 see it that way because you do see you
+13:16 know these foundational models that come
+13:18 up from R&D teams but they are really
+13:21 kind of centralized in these you know
+13:24 big tech
+13:25 companies everyone else in the world
+13:27 who's doing research most of the time
+13:29 you know they're contributing to the
+13:30 body of work that's out there yes but
+13:32 it's not it's not making it to
+13:33 production and one of the main reasons
+13:35 actually is um when you do research and
+13:38 you you you're optimizing models or
+13:40 you're improving you're not really doing
+13:42 it with industry standards in mind so
+13:45 many of the methods that are out there
+13:46 are probably not practical to make it
+13:48 into production probably not needed
+13:50 especially you know with companies that
+13:52 are still in early stages I mean at
+13:54 least where I am I know that you know
+13:58 getting to a point where you have um R&D
+14:01 grade models and production is not
+14:02 really it's not really needed in most
+14:04 most of the companies um in the region
+14:07 where I am people are still in very
+14:09 early stages kind of discovering how um
+14:12 AI can can help bring value to their
+14:19 organizations and did you immediately
+14:21 start with a startup or was there
+14:24 something else like how did you
+14:26 transition go what did you do
+14:29 I did I immediately started with a
+14:31 startup actually I started before I
+14:32 finished my PhD by a few months um it
+14:37 was uh yeah I mean I just it was a
+14:39 coincidence really like I got approached
+14:41 by uh the
+14:43 founders so you yeah accidentally
+14:45 started the
+14:46 startup
+14:48 um not really I mean I I didn't I mean
+14:51 I'm not I'm not a founder of the startup
+14:53 but I was approached by the founders who
+14:55 I'm sure did not accidentally begin
+14:56 their their startup but they were still
+14:58 initial stages of kind of like you know
+15:00 thinking it out and they wanted to
+15:02 brainstorm you know feasibility and all
+15:04 that stuff and through the conversation
+15:06 we got to a point where I was like yeah
+15:08 I'm finishing my PHT and they're like oh
+15:09 like would you be interested to join and
+15:12 I was I mean it was it was a very
+15:14 interesting product that they had in
+15:15 mind it was something I knew would be
+15:17 very challenging and interesting to work
+15:19 on and the impact for me was very
+15:21 meaningful so I was like okay here we go
+15:24 that's what I'll be doing after I'm
+15:27 done was it a difficult
+15:31 transition
+15:33 um not really I know a lot of people
+15:36 kind of um you know think that the
+15:39 transition from PhD to Industry is
+15:41 challenging I think the one area that
+15:43 it's challenging in is the perception on
+15:45 the opposite side I think people in
+15:47 Industry look at you as a PhD candidate
+15:50 and they have certain assumptions that
+15:53 are difficult for you to kind of
+15:55 navigate um depending of course on who
+15:58 you're talking with but I've seen this a
+16:00 lot like people assume you know you're
+16:01 going to be uh driven by you know
+16:04 whatever you were doing in research and
+16:06 you're going to be very detail oriented
+16:08 and you're not going to be able to adapt
+16:09 to you know industry standards and
+16:11 Industry requirements prejudices how do
+16:14 I say Prejudice
+16:15 prejudices yes exactly and that's you
+16:18 know you're going to be stuck with your
+16:19 academic mindset and you know obviously
+16:21 some people think you're overqualified
+16:23 and they don't consider you Etc these
+16:25 challenges it's not like you're going to
+16:26 stuck with your academic mindset it's
+16:28 what people think you're going to do
+16:30 right well yeah yeah I mean yeah exactly
+16:32 and then there's also like this thing
+16:36 that I I mean I faced and I know many
+16:38 people who face which is like you know
+16:39 you leave your PhD and there's also this
+16:42 challenge of you know in Industry your
+16:44 experience is counted in years of work
+16:47 in other companies so for them it's a
+16:49 bit weird to kind of process but you've
+16:52 been in school for the past X years so
+16:55 do you have work experience I've been
+16:57 there and I was like
+16:59 right and it's I mean it's hard to
+17:01 explain it honestly like I've been in
+17:03 situations where it was hard to explain
+17:05 like I have the experience I mean I
+17:08 might not have the experience that you
+17:10 that you you know you have structured in
+17:12 your mind I gained it elsewhere and in
+17:15 different ways um so it's hard to kind
+17:17 of communicate that to the opposite side
+17:18 but the transition at least for me
+17:20 personally it wasn't that difficult
+17:22 especially maybe that I was I had
+17:24 already gotten exposed to Industry so I
+17:26 was already you know Consulting on
+17:27 projects wasn't something entirely new
+17:29 for me uh working on you know industry
+17:32 projects and so I knew that you know the
+17:35 mindset would have to be different
+17:36 you're not coming in to try and build
+17:39 complex models that are like one to two%
+17:41 outperforming state-ofthe-art or so on
+17:43 so forth right um so I I mean as long as
+17:47 you have the right expectations in mind
+17:49 and um you do this transition it
+17:51 shouldn't be difficult and in many cases
+17:53 actually there are industry roles
+17:55 specifically tailored for PhD graduates
+17:57 in my case it wasn't
+17:59 um I wasn't working in a role that would
+18:01 require let's say
+18:03 PhD um but there are many uh roles that
+18:07 would require that in which case you
+18:09 don't really need to transition from
+18:10 your
+18:12 mindset so maybe let's talk a bit in
+18:15 more detail about your what you were
+18:18 doing for this HR tech companies guess
+18:22 so as I understood the first it was uh a
+18:26 startup not the one yuk found it but
+18:29 startup uh I don't know was it in HR
+18:31 Tech
+18:34 too the first one you mean the the F so
+18:38 the first startup was was the training
+18:40 it was an education startup that was my
+18:42 my startup that I co-founded with a
+18:43 group of friends yeah um and that I
+18:46 worked on during my PhD but the one I'm
+18:49 in right now I joined after I finished
+18:51 my
+18:52 PhD um and I was like you know uh one of
+18:55 the initial team team members I'm not a
+18:58 founder but I was one of the people who
+18:59 kind of initiated the whole thing and
+19:01 yes it's an hrtech startup so we're
+19:04 building an AI actually hrtech in
+19:08 general um it's I mean in a nutshell any
+19:12 technological Solution that's serving
+19:13 the HR space right which is like hiring
+19:18 or upskilling people or both so whether
+19:21 you're talking about so usually in HR
+19:24 you can talk about hiring right which
+19:26 involves actually many many things so
+19:27 screening and then the different
+19:29 interviewing phases that could be
+19:31 involved managing like you know what
+19:33 atss probably do today and then you can
+19:35 talk about employee uh um I don't know
+19:40 what's the exact term but kind of like
+19:42 employee retention employee um
+19:45 assessment right um and training as well
+19:48 so this is all within
+19:49 HR um in my case we're you know we're
+19:52 focusing specifically on recruitment so
+19:54 the initial stages of people coming in
+19:56 and more specifically on the the
+19:58 screening
+19:59 phase um so yeah this is the company
+20:02 where you work at right now right yeah
+20:06 so what do you
+20:08 do um so we're building an AI video
+20:11 interviewing solution right and so the
+20:14 idea that's cool it is it's very cool of
+20:18 of course I'm biased but I mean the the
+20:21 idea or the motivation behind what we're
+20:22 doing is um and I think we'd all agree
+20:25 CVS are not really the best way to
+20:27 present
+20:29 yourself right and so the motivation is
+20:32 to kind of give you a chance give
+20:34 everyone a chance to present themselves
+20:36 um through a richer medium than just
+20:39 their CV usually in the screening
+20:41 process you know you submit your CV
+20:43 wherever you submit it the ads system
+20:45 would do some um uh keyword matching and
+20:49 you know uh decide if you match the
+20:52 requirements or not many flaws there
+20:54 right on many different levels um we
+20:57 want to kind of change that and allow
+20:58 you to start with an interview and your
+21:01 CV I mean we're not going to get rid of
+21:03 your CV you still need to know what
+21:04 you've done or the recruiter still need
+21:06 to know needs to know what you've done
+21:08 but to allow you to interview so it's
+21:09 kind of like you're you're getting
+21:11 directly into the first HR interview
+21:13 where you usually would not get this
+21:15 chance and um we assess you basically on
+21:19 behavioral traits so we're not looking
+21:21 to assess you on you know like your
+21:22 technical P capacity that would happen
+21:24 in later stages Beyond screening but the
+21:27 point is to kind of give a chance to
+21:28 present yourself and your qualifications
+21:30 as an individual so behavioral aspect
+21:33 like soft skills right and this the
+21:36 interview with an actual human or with
+21:40 an AI no it's it's with an AI so it's an
+21:44 avatar that interviews you okay it's a
+21:47 she actually has a name her name is ISA
+21:49 at the moment we're gonna have more
+21:51 interviewers in the future but you get
+21:53 interviewed by an avatar um so the
+21:56 entire process is automated
+21:58 it's cool because you can get you get to
+22:00 do the interview really at any time that
+22:02 suits you anywhere that you like your
+22:04 phone your your laptop Etc um it's like
+22:08 a 15 20 minute interview and you get a
+22:11 chance to really give more than just
+22:12 your CV right and then in the background
+22:15 your recruiter is able to look at your
+22:18 CV as well as you know your richer
+22:22 representation if you will um of what
+22:24 you can bring to the table as an
+22:26 individual
+22:28 so then it's also I guess recorded So
+22:31 then the interviewer can the the the
+22:34 recruiter can look at the interview
+22:37 itself probably there is a summary right
+22:39 at the end of the interview they can
+22:42 look at there's
+22:43 whole there's a whole assessment so it's
+22:46 you're getting interviewed by an AI you
+22:47 get assessed by an AI but the assessment
+22:49 the point of the AI assessment that
+22:51 happens in the background is to rank the
+22:54 candidates based on their performance
+22:57 performance in terms of um your level of
+22:59 soft skill right so in the background
+23:02 the recruiter has an open position
+23:04 whatever that position may be let's say
+23:05 it's for a software engineer and they
+23:07 would Define the required level of soft
+23:10 skills that they believe is necessary
+23:12 for the role and so you perform the
+23:14 interview and then your performance on
+23:16 those soft skills is compared and
+23:18 Benchmark against the requirements and
+23:19 you get ranked so the recruiter at the
+23:21 end of the day gets a ranked list of
+23:24 candidates we don't tell them you know
+23:26 you should hire this person the decision
+23:28 is up to them but they get an easier if
+23:31 you want filtration where they can start
+23:33 with the best fit candidates in terms of
+23:36 Behavioral qualifications check their
+23:38 CVS see if they make it through you know
+23:40 the requirements and they get into the
+23:41 system for the next stage of the
+23:43 interview um so this is this is
+23:45 essentially how it
+23:47 works and what do candidates think about
+23:50 being interviewed by an
+23:52 avatar mixed
+23:54 feelings um I've seen mixed feelings
+23:57 actually and one interesting pattern I
+23:59 noticed is that it seems younger
+24:01 Generations really enjoy it which I find
+24:04 weird like I get it if you're neutral
+24:06 but they really enjoy it I even had
+24:08 candidates who would tell me they were
+24:11 more comfortable interviewing with the
+24:13 Avatar than an actual person because the
+24:16 Avatar was not judging them with facial
+24:18 expressions I was like we've probably
+24:20 had bad interviews in the past I don't
+24:21 know what kind of recruiter was judging
+24:24 you straight on but um yeah I've had
+24:27 mixed so you see I see candidates who
+24:29 are excited right about this you know
+24:31 Innovation and this new way of doing
+24:33 things candidates who are obviously like
+24:35 uncomfortable oh like I'm not
+24:37 comfortable talking to the screen um and
+24:40 then candidates
+24:41 who refuse the process all together
+24:44 candidates who are not um comfortable
+24:47 getting recorded and their data you know
+24:50 uh being stored or being used for
+24:52 training or whatever you know the the
+24:54 reasons that they may
+24:56 have like I was wondering maybe there
+24:58 are cases when people think it
+25:01 disrespectful that instead of a human an
+25:04 actual human being that's interesting
+25:07 can't you just find time for me like why
+25:09 there is a robot that's a good point but
+25:12 I I
+25:13 mean I I would get that as a candidate
+25:16 right because you're kind of maybe for
+25:18 me it's kind of like I would motivate it
+25:20 from the perspective of this is not even
+25:23 an interview you would get right it's
+25:26 not like we're replacing you know the
+25:28 recruiter's interview or you know the
+25:31 interviews that come in the process
+25:32 we're giving you an extra um opportunity
+25:36 where you know showcase yourself better
+25:38 so kind of you can think about it in a
+25:40 way it's kind of like you know we
+25:41 present ourselves on LinkedIn as well
+25:43 right so you have you know your LinkedIn
+25:45 profile which is an additional
+25:46 representation to your CV and now this
+25:48 is kind of an additional step you can uh
+25:51 present yourself as naturally as
+25:53 possible and have that taken into
+25:55 consideration where I mean what was what
+25:58 was the other option you're going to
+25:59 upload your CV and some ATS is going to
+26:01 screen you for keywords and probably not
+26:04 hear back from the recruiter for for a
+26:06 while so um again that's my perspective
+26:10 I'm on the inside but that's interesting
+26:12 I will see how we can translate that
+26:16 into the solution so no one feels
+26:17 disrespected that's a good point
+26:19 actually I've never crossed my
+26:21 mind cuz like I imagine this is a
+26:24 replacement for like when I apply for a
+26:26 job there could be a questionnaire that
+26:29 I need to fill in right yeah and then
+26:32 exact kind of a replacement but more
+26:36 interactive and then instead of like
+26:38 thinking and typing and
+26:40 then that might take even more time
+26:43 actually than just having a 15 minute
+26:46 minutes chat and I guess the time is
+26:48 like at when it's convenient for me as a
+26:51 candidate it's not like okay you need to
+26:53 show up at 3 p.m. right yeah yeah
+26:57 exactly like
+26:58 when and then you can take it whenever
+27:00 you want exactly so we tried to make it
+27:03 as convenient as possible and this is
+27:04 actually what I do so when I recruit for
+27:06 my
+27:06 Physicians this is your application
+27:09 process you know upload your CV and take
+27:11 the interview and this is where the
+27:13 screening would start um and I've I mean
+27:16 we can we can talk about this a bit more
+27:18 but I've had many CES where I really
+27:20 felt like if I had looked at your CV I
+27:22 would not have picked you out of the
+27:25 screening but it was because of the
+27:27 interview you and because of the way I
+27:28 saw that you presented yourself that I
+27:30 was interested in you and I thought you
+27:32 know this candidate looks like they're
+27:34 they have promise and I would like to
+27:35 interview them further so I've been
+27:37 there personally and I kind of see the
+27:39 value I I felt I sense the value that
+27:42 you know can be brought to the table out
+27:43 of this
+27:44 experience it's like ACV is a soulless
+27:48 thing like just a piece of paper not
+27:50 even piece of paper like this uh one or
+27:53 two PDF pages right and then like you
+27:57 don't always remember that there is a
+27:59 human but like when it's like that when
+28:02 it's recorded when you have you can see
+28:04 what kind of person it is right maybe it
+28:06 gives yeah exactly and they provide
+28:09 richer
+28:10 responses yeah yeah they provide Rich
+28:13 responses they give you examples from
+28:15 their work experience and you you get to
+28:17 know them you get to know them a bit
+28:19 better um the TV I mean also a lot of us
+28:21 are not very good actually at making our
+28:24 CVS it's it's probably better these days
+28:27 because you get all these tools that
+28:28 kind of help you still most of us are
+28:31 not good at designing our CDs so it's
+28:33 really not a good representation of you
+28:35 even in that single
+28:37 page well I imagine in this company you
+28:41 have a lot of ml products there and then
+28:45 since we talk about building ml products
+28:47 today yeah and uh there is a qu like we
+28:50 have a lot of questions but uh there's a
+28:51 question from
+28:53 Peter which maybe is a summary of all
+28:56 the questions we have have so the
+28:58 question can we have an overview of the
+29:00 Journey of a machine learning project
+29:03 from the beginning to the end and how to
+29:05 track value from the prod product so I
+29:08 guess this is like a quite an extensive
+29:11 question right which covers pretty much
+29:13 everything especially the last part
+29:15 especially last part that's a that's a
+29:16 good one
+29:18 actually um so yeah should we start from
+29:21 the like if we take this question and
+29:24 yeah let's do that let's do that I mean
+29:26 I would would prefer actually I mean if
+29:29 we can take the questions of the people
+29:30 who are interested in them that would be
+29:32 better even yeah if we talk about an
+29:36 overview from the beginning to the end
+29:38 like maybe you have a sequence of steps
+29:41 in mind like how do we actually usually
+29:44 approach that yeah
+29:47 um I don't know if there's like a global
+29:50 skeleton for this but I'll just talk
+29:52 based on my experience um I think you
+29:56 know there are essential steps that
+29:57 we're all familiar with and obviously
+30:00 step number zero is to start with really
+30:03 understanding what it is that you're
+30:04 trying to solve and I feel like this is
+30:07 actually a step that many people kind of
+30:10 um go past pretty quickly um in many
+30:14 cases I mean I've been there we make the
+30:15 mistake of assuming things that are not
+30:19 necessarily the case and we kind of get
+30:22 past a lot of information that's missing
+30:24 from the table um defining the
+30:28 doesn't really happen in one stage so
+30:31 I've tried to do this where I would sit
+30:32 and be like okay you know I'm going to
+30:33 define the problem and you know work
+30:35 through the data science life cycle
+30:37 collect the data and build the models
+30:38 and put them into production it never
+30:40 actually ends up working that way um and
+30:43 especially when you're in a startup and
+30:45 there's a lot of changing
+30:46 Dynamics what you define today may not
+30:49 be what you need in another month and um
+30:53 being aware of that is is very important
+30:56 so I mean you would you would start with
+31:00 a cycle and I'll walk through my cycle
+31:02 and then I'll I'll add an important
+31:03 point at at the end of it so defining
+31:06 the problem this could be you know with
+31:09 the stakeholders so the business um
+31:12 owners or whoever business department
+31:14 you're working with to make this product
+31:17 happen whoever is involved is involved
+31:19 in you know bringing this product to
+31:20 life depending on your problem and in
+31:23 most cases I assume you're going to need
+31:24 a domain experts um this is not
+31:27 something you should overlook in my case
+31:30 for example and I didn't I didn't in the
+31:32 case of the HR tech
+31:34 company I came into this problem of you
+31:37 know let's uh do behavioral interviews
+31:39 and let's get AI to assess them and the
+31:42 first thing that popped into my mind is
+31:44 how on Earth you know how are how on
+31:46 Earth are we going to assess soft skills
+31:48 right because as people as people we can
+31:51 assess them quite differently and I had
+31:52 no idea how to tackle this problem from
+31:54 even like a just a general sense not
+31:57 from a machine learning sense and you
+32:00 know we came to realize that actually
+32:01 there are experts who are specialized in
+32:04 in in you know designing these
+32:05 behavioral interviews and in scoring
+32:08 behavioral interviews in real life this
+32:10 is actually a process that happens
+32:12 humans usually score they have a system
+32:14 they have a framework and it's very very
+32:16 well defined and it's very rigorous
+32:18 right so there's a scientific framework
+32:20 behind it it's import it's very
+32:22 important that the domain expert is
+32:23 involved um at that stage um to define
+32:26 the
+32:28 properly in parallel I would say not
+32:30 even at the Second Step but in parallel
+32:32 to this you need to keep in mind access
+32:33 to data right and obviously like
+32:36 depending on your situation this may
+32:37 vary a lot um do you have do you already
+32:41 have access to the data do you not have
+32:43 access to the data how long would it
+32:44 take you to get access to the data this
+32:46 was for me one of the biggest challenges
+32:48 in the um at least in the latest uh um
+32:52 on the ver that I have with the HR Tech
+32:54 startup because you know you have this
+32:57 kind of balance you need to get a
+32:58 product out there the product is still
+33:01 not there the data is still not in right
+33:03 so where do you start and there's a lot
+33:06 that you can do here so you can try to
+33:08 um find proxy data that might kind of
+33:11 like serve as an initial data set for
+33:13 your problem if that's something that
+33:14 you can find so something available
+33:16 online that's as close as possible to
+33:18 what you're trying to solve you could um
+33:21 try to somehow get data in any way
+33:24 possible so for for example um for me it
+33:29 was trying you know to get people I know
+33:31 to kind of conduct interviews and start
+33:32 collecting that initial base to run
+33:34 experiments right and some PS to see you
+33:37 know how can we get this off the ground
+33:39 so defining the problem and access to
+33:41 data would be like the initial stage of
+33:43 kind of um starting the whole
+33:47 process once you kind of have a good
+33:49 idea of what the problem is and you've
+33:51 you've you've understood from the domain
+33:53 expert what it would take to actually
+33:54 bring that to life so for example in my
+33:56 case
+33:57 um with with the product that I have
+33:59 right now it's okay understanding that
+34:01 there are psychologists who conduct
+34:03 these interviews you know they have
+34:05 criteria like when I say criteria I mean
+34:07 like Excel an Excel sheet of criteria
+34:10 right this is what we look for in a
+34:12 candidate when we're evaluating their
+34:14 communication skill let's say so once I
+34:16 was able to kind of get this criteria I
+34:18 like okay now this is something I can
+34:20 work with right if you were to tell me
+34:22 score the person's communication
+34:23 skill I wouldn't even know where to
+34:25 start but when you tell me you know we
+34:27 need to look specifically at how the
+34:30 person presents certain things in the
+34:33 conversation or how the person speaks or
+34:36 how fluent they are in the conversation
+34:38 this is where you can start to translate
+34:41 the business problem into a data science
+34:43 problem and and have something solid
+34:46 that you can actually build in the data
+34:48 Science World um and then you kind of
+34:50 start diving into the modeling side so
+34:52 how do I tackle the problem the most
+34:55 straightforward way is to kind of see
+34:57 you know what have others done in a
+34:58 similar uh place what have they used
+35:01 before what has worked what has not
+35:03 worked and from there I I'm always
+35:07 always someone who would opt for start
+35:08 with a simpler solution as a starting
+35:10 point PC see how it goes and then add
+35:13 complexity if
+35:15 needed um I have seen a lot of Direction
+35:19 especially recently where people would
+35:21 kind of jump directly on oh let's get a
+35:24 GPT to you know take all the data and
+35:27 solve the problem for us and it really
+35:29 really doesn't work that way I mean
+35:31 there's a lot of benefit to um the
+35:34 latest type of LMS that we' seen there's
+35:37 a lot of amazing things that you can do
+35:39 but for example there is no way that I
+35:42 could throw you know whatever criteria I
+35:45 have at a GPT and be like score this
+35:47 interview for me that would be a
+35:49 disaster that would be a disaster um so
+35:52 you really want to work with what you
+35:54 have right make sure that you really
+35:56 understand the problem see what people
+35:57 have done how they solved it and start
+35:59 with the simplest possible solution that
+36:01 you can find to solving it and iterate
+36:04 from
+36:05 there um once you've kind of had a
+36:08 initial good starting point with pcing
+36:11 like the modeling stage where you
+36:12 actually have a brain that functions for
+36:15 the functionality that you want you want
+36:17 to also start thinking about the
+36:18 engineering side I actually did those
+36:20 things at the same time so I was
+36:22 thinking of the modeling and the when I
+36:24 say engineering I mean like serving of
+36:25 the models and what what that would
+36:29 require with that um I would stress even
+36:33 more on Simplicity because I feel like
+36:36 one thing I mean for me this was kind of
+36:39 my um the area that I was kind of newer
+36:43 to coming from a PhD right so what would
+36:45 be the best way to do it what would be
+36:47 the best way to serve what would be the
+36:48 best way to put things into production
+36:51 and I was bombarded like when you read
+36:52 online there's like so much
+36:54 recommendations best practices so many
+36:56 tools to so many tools so many tools and
+36:59 um I really felt like I don't really
+37:01 need right at least at the stage that I
+37:03 was I don't really need this whole world
+37:05 of mlops with all the you know delicate
+37:08 pieces and all the complexities that
+37:09 would come into it to do what I need to
+37:12 do today so one like very critical thing
+37:15 for me was to block out like this noise
+37:18 of you need to do it this certain way
+37:20 and really try to have the best judgment
+37:22 that you can taking into consideration
+37:24 your resources the size of your
+37:27 company the size of users that you're
+37:28 serving right um and um the reliability
+37:34 that you need to offer in the product
+37:35 that you're serving there are certain
+37:37 places where mistakes are tolerable
+37:39 certain places where mistakes are not um
+37:43 so this is kind of how I went through
+37:44 the flow it's a typical flow but the
+37:46 most important point that I said I'll
+37:47 mention at the end is the iteration I
+37:50 know it's cliche we all say that right
+37:54 but I mean if you if you don't stop
+37:59 maybe every Sprint or however you work
+38:02 every month or whatever at a certain
+38:04 interval and look back at the decisions
+38:07 that you've made and see what has
+38:09 changed and what needs to be improved or
+38:11 what needs to be put on hold or what
+38:13 needs to be added now that wasn't
+38:16 necessary before you will end up finding
+38:19 your self in a position where um in a
+38:23 disastrous position really because it's
+38:26 especially again startup smaller it
+38:28 doesn't even have to be a startup but
+38:29 like a smaller organization or even
+38:31 organization that's large but starting
+38:34 um with their data initiatives there's
+38:36 going to be a lot of change and if you
+38:38 don't if you're not conscious if you get
+38:39 sucked into the work this is something
+38:42 that happen to me if you get sucked into
+38:44 you know the details of your work and
+38:46 you forget to kind of zoom out and
+38:47 reflect and see what needs to change
+38:49 what needs to be moved up Etc um you you
+38:53 will face very challenging um situation
+38:56 I
+38:58 believe so yeah I mean this is as much
+39:01 as I could um put into like details in a
+39:04 road map or how I would tackle
+39:06 things and what do you describe to Cris
+39:10 DM simplified version of this you know
+39:14 yeah no like okay so let me try to
+39:18 summarize what you said like the first
+39:20 the the zero step is understanding what
+39:22 you want to solve like we don't need to
+39:25 assume things we need to understand and
+39:27 then step number one is defining the
+39:29 problem which to me sound very related
+39:33 to step number zero I guess they're kind
+39:35 of from one it falls the other and then
+39:38 in part we understand what kind of data
+39:41 we have right so we understand we Define
+39:44 the problem and then we see what kind of
+39:46 pro what kind of data is available and
+39:49 if not what kind of proxy dat we can get
+39:51 like how can
+39:52 we actually do the modeling right and
+39:55 then the next part is
+39:58 modeling and here we start with the
+40:01 simplest solution and I say this because
+40:03 I've also worked with a lot of people
+40:05 and the last part which is the iteration
+40:07 which is always there in those images
+40:09 that we see right online but we we kind
+40:12 of it slips by right and I would add for
+40:15 the data point for the point about you
+40:17 know what data is
+40:19 available also what data do you need
+40:21 right because sometimes you have data
+40:24 available and you might think you know
+40:26 this is what works for your problem but
+40:27 you have things that are missing and
+40:29 I've been over and over again actually
+40:31 this is an ongoing process for me where
+40:33 you know you collect data and then you
+40:35 look at it and when you really evaluate
+40:36 you find it's missing something that's
+40:39 critical for you right you need to go
+40:41 back adjust the data generation
+40:43 processes recollect data and see does
+40:46 that really give you the data that
+40:47 you're looking for or not so for
+40:49 example to give you something practical
+40:52 um when we were when we first started
+40:54 collecting interviews we started with a
+40:55 set of questions we realized the
+40:58 candidates are not really giving very
+41:01 detailed responses we need we need
+41:03 details from them right so we were like
+41:05 okay maybe the questions are like too
+41:06 broad so we improved the questions and
+41:08 we made them more detailed and more
+41:10 specific the the responses got a lot
+41:13 better resp candidates were responding
+41:15 for longer so previously they had really
+41:16 short responses they were not enough to
+41:19 kind of extract information from now
+41:21 they got to a point where they're giving
+41:22 longer responses they're giving examples
+41:24 Etc uh we noticed in some cases
+41:27 candidates were um kind of assuming that
+41:31 the person is watching and they were
+41:32 referring to the CV Etc so we added
+41:35 guidelines that clarified you know um
+41:39 you know you're being assessed by an AI
+41:40 make sure that each response is um is
+41:44 like complete and coherent you don't
+41:46 refer to other responses or something
+41:47 offline right this helps um so on so
+41:51 forth right so so you collect you see
+41:53 you evaluate you see something's missing
+41:55 you adjust this is also something that I
+41:57 assume would happen in any case where
+41:58 you're building especially where you're
+42:00 building something
+42:01 new and many of these things are more or
+42:06 more related to the product work and
+42:09 user experience work rather than only
+42:11 the model right like this is how you
+42:14 present the thing to the user this is
+42:16 Hower interacts with this thing oh one
+42:19 probably you cannot easily separate one
+42:21 from another when not really exactly
+42:24 because how did we realize that the
+42:25 interview were not sufficient it was
+42:27 because of the modeling results that we
+42:29 came back and we're like why you know
+42:30 why are things not going well what's
+42:32 happening we went back to the interviews
+42:35 and we're like oh okay that makes sense
+42:36 because the interviews are really quite
+42:38 bad right but it's not the candidate's
+42:41 fault it's never the candidate's fault
+42:42 right so you have to improve the user
+42:45 experience um and it's it's an ongoing
+42:47 thing it's it's um till today it's
+42:50 always I found it's always about going
+42:52 back and changing something in the user
+42:54 experience that would improve how they
+42:56 interact with these models right so that
+42:59 you end up getting the results that you
+43:00 need um so they're they're quite they're
+43:03 quite
+43:05 intersected and uh I'm thinking about
+43:08 your use case so you said that you want
+43:10 to understand the soft
+43:11 skills and for that people have
+43:15 developed Frameworks there are criteria
+43:18 that let you assess candidates according
+43:22 to different um yeah Dimensions so to
+43:25 say so there is fluency you mentioned
+43:28 there are something else and I guess
+43:30 what you need to
+43:31 do is that you would have a model that
+43:35 assesses one or multiple of these
+43:38 criteria Dimensions right so let's say
+43:40 if we talk about fluency like how can we
+43:43 build a model that says whether a
+43:46 candidate is
+43:47 fluent or not fluent right so then this
+43:50 is your problem right and then you start
+43:52 from this like okay what do I want to
+43:54 solve I want to understand that
+43:56 the fluency of candidate right how can I
+43:58 do with it with AI with machine learning
+44:01 right like what kind of right and this
+44:03 is this is how the process looks like
+44:05 right so then for each of the criteria
+44:07 you would have a model right something
+44:10 like that or more or more yeah yeah
+44:15 exactly because the criteria are quite
+44:19 um are defined for humans right so when
+44:23 you read it as a person it's it makes
+44:25 sense it's quite easy to to assess but
+44:28 when it comes to doing it through you
+44:30 know machine learning or data science or
+44:32 you know maybe even basic uh text
+44:35 analytics you end up having to probably
+44:38 use several techniques for assessing one
+44:40 single
+44:41 criteria right so yeah depending on what
+44:45 the criteria is some of them are easier
+44:46 than
+44:48 others yeah and you mentioned LMS and
+44:52 you also said something along these
+44:54 lines that now noway some people think
+44:58 that all you need to do is just throw
+45:00 your problems at llm and then the llm
+45:03 will just magically solve it which is
+45:06 not the case it would lead to a disaster
+45:08 when you do that right so in your
+45:11 opinion in your experience now all the
+45:14 LMS that we have
+45:17 like does it change the process we
+45:20 follow when working withl products or
+45:23 it's just one of the tools and the
+45:25 process still stays the same as I don't
+45:28 know five four years
+45:31 ago um I would say the process should
+45:34 not change has it probably I think
+45:38 people are taking
+45:39 shortcuts um well you know whoever is
+45:42 following the mindset that I shared
+45:43 which is like okay let's you know let's
+45:45 get a GPT to solve it or to score it or
+45:47 to assess it or whatever because that
+45:50 that would get you past all the initial
+45:52 stages of understanding the problem of
+45:54 choosing the right technique to solve
+45:56 the problem maybe even finding the right
+45:58 data for it right especially if you're I
+46:01 mean not eloquent enough to be able to
+46:04 properly assess these LMS and how
+46:06 they're performing at the end of the day
+46:09 um I mean for me um I mean I I say gpts
+46:14 because LMS have been around for longer
+46:16 but I'm talking about more you know the
+46:18 the you know the gpts of the generation
+46:20 models and kind of you know the hype
+46:22 that happened there um we still have the
+46:25 El right for like birth for example text
+46:28 cassation all that stuff so these are
+46:29 still very task specific um I would say
+46:33 these are still tools that we can use
+46:35 they have changed what they have changed
+46:37 is kind of the way that we can do things
+46:39 right so one application of llms that I
+46:42 really um love and I feel like there's a
+46:45 lot of value there is using it as an
+46:48 interface to your
+46:50 product um you can use it as an
+46:53 orchestration layer so just the way that
+46:55 a user will be able to interact with
+46:57 your application can be enhanced greatly
+47:00 because of this advancement that we've
+47:01 seen but I wouldn't use it as a
+47:03 replacement right um there I have been
+47:07 in many scenarios where you know I have
+47:09 people tell me you know can we get open
+47:12 AI models to um predict a certain uh
+47:17 classification value for us in a certain
+47:18 problem and this is what people assume
+47:21 right they assume these models can do
+47:22 anything and they forget the initial
+47:25 capabilties of the model they're not
+47:26 built to to support such tasks and this
+47:29 is kind of the challenge that I've seen
+47:31 and um I don't know if you've been there
+47:34 I don't know I don't know actually I
+47:35 want to hear your opinion on this but
+47:36 I've been in many situations where I
+47:37 kind of felt like um like I was looked
+47:41 upon like I'm outdated right it's like
+47:43 oh you're you're anti you're anti- I'm
+47:46 like no but this is not the intention of
+47:49 these models right you're setting
+47:50 yourself up for failure um if you work
+47:53 with them with an incorrect assumption
+47:55 so I I think you know these models have
+47:57 brought about a lot of opportunity but I
+48:00 don't see it changing the way that
+48:02 things have been done but more new
+48:04 opportunities actually that can be
+48:05 presented in how we solve
+48:07 problems what's your
+48:10 take well it looks
+48:12 like if we manage to keep the process
+48:16 the same it looks like we can have a
+48:19 first itation way faster with these new
+48:21 tools right so for example we can do is
+48:24 just hey
+48:26 like these are criteria for assessing
+48:29 fluency just tell us if the candidate is
+48:31 fluent or not well fluency maybe is a
+48:33 bad example because you probably analyze
+48:36 audio rather than text but yeah let's
+48:39 say coherence right like if the is
+48:42 coherently or not like you just throw a
+48:44 bunch of texts on this and they say like
+48:46 here are criteria how youate coherence
+48:49 and then what do you think right so
+48:52 probably you can arrive at the first
+48:53 solution rather quickly right and then
+48:57 maybe it will work maybe it will not but
+48:59 at least you will start getting some
+49:00 feedback first PC yeah that's also
+49:03 another um one of the good opportunities
+49:07 that you could have right so being able
+49:09 to I mean if it's applicable for you to
+49:11 test things quickly and to kind of have
+49:13 something that works for you quickly
+49:16 that could I mean that's something
+49:18 because that's something I was faced
+49:19 with honestly and one one one thing that
+49:23 might come back to bite you is if you
+49:25 start Ping with these models and you
+49:28 think that they work but they're not
+49:29 working and then you realize you have to
+49:31 kind of take a step back and you're
+49:33 going into more basic techniques right
+49:36 so now instead of kind of starting with
+49:38 something that
+49:39 works you're you're kind of put behind
+49:43 right you're kind of put behind on
+49:45 schedule um this is something that I've
+49:48 at least faced uh the past I see well
+49:52 it's not like I have a lot of experience
+49:54 of using LS to solve business problems
+49:57 but as a user I use them quite
+50:01 extensively so for example right now I'm
+50:04 preparing for an exam in
+50:06 German and then there is this uh writing
+50:09 part and then they have strict criteria
+50:12 and then what I do is I give chpt my
+50:16 text set of criteria and say okay chpt
+50:19 what do you think like how many scores
+50:21 will I get and then oh your text is
+50:24 awesome you'll get like 15 out of 15
+50:27 don't trust it don't trust yeah I mean
+50:31 yeah because I've played I've played
+50:32 around with it honestly with you know
+50:34 specifically like these criteria and
+50:36 seeing if it's able to kind of do things
+50:39 as as needed right because it depends on
+50:42 what you're trying to solve if you're
+50:43 trying to just say the person is good
+50:45 the person is bad maybe it can do that
+50:47 properly decently well but if you're
+50:49 trying to distinguish between people on
+50:51 a scale of 0 to 100 and really kind of
+50:54 be very specific about the criteria and
+50:56 how how good this person is versus to
+50:59 this person you really need something
+51:01 that's a lot more
+51:03 um specialized for what you're trying
+51:06 what you're trying to build and for me
+51:08 gpts did not do
+51:11 that so which means for you for you your
+51:15 life doesn't really become simpler you
+51:18 still need to do all this modeling
+51:20 collect all this data right for for this
+51:23 specific problem yes
+51:26 in other areas a lot of a lot of things
+51:28 have been simplified yeah because like I
+51:30 told you there's a lot of opportunities
+51:31 to for example enhancing the interview
+51:34 process being able to make it more um
+51:37 user friendly giving the candidates
+51:38 maybe live feedback these are things
+51:40 that you can very easily do leveraging
+51:43 um these models without having you know
+51:46 to build complex engines yeah I imagine
+51:48 that if I talk to a screen right one
+51:52 think is if I just talk to the screen
+51:55 and it's recorded and the other thing is
+51:57 if there is okay an avatar it's still
+52:00 not a human but something that reacts to
+52:03 me say like maybe notes and then ask she
+52:06 talks to you she encourages you she's
+52:09 really nice yeah like things can be
+52:12 built with uh this chatbot capabilities
+52:16 that are way better with LMS than
+52:19 without them yeah exactly exactly so
+52:22 there's definitely a lot that's improved
+52:24 a lot that can be done better some some
+52:26 things that can be done a lot faster
+52:28 right um I didn't get that lucky with my
+52:31 specific use case um but yeah I mean
+52:35 even even with I'll give you another
+52:37 example one thing that I assumed was you
+52:40 know we can leverage these models for
+52:42 data generation right maybe they can
+52:44 they can produce a few interviews for us
+52:46 they really don't do a good job at it
+52:48 because it's really hard to get them to
+52:50 diversify and to give you enough of
+52:52 diversity and it's really hard to
+52:55 get them to reflect a bad
+52:58 interview actually this was one of the
+53:00 challenges that I had like how it it
+53:02 would very explicitly tell you that it's
+53:04 doing a bad job and people would never
+53:06 really do that so it's not they didn't
+53:08 really serve the job as um as well as
+53:11 needed so yeah I guess you know it was
+53:14 one of those use cases that didn't see
+53:17 much value at this point at
+53:19 least I see an interesting question from
+53:22 Brendon so I imagine that in this
+53:24 evalation
+53:26 systems um we can have some biases cuz
+53:30 in when humans relate other humans we
+53:32 have some biases and these biases un
+53:35 advertently creep in into our machine
+53:38 learning solutions for reating people so
+53:42 are how can we mitigate these biases
+53:46 when we work with machine
+53:49 learning it's a very good question
+53:51 because the bias comes up in many
+53:53 different areas right
+53:55 um the first initial step is the human
+53:57 bias that can creep in which is
+54:00 essentially where the data is being
+54:01 labeled the interviews are being labeled
+54:04 for example in my case um
+54:07 so I mean I'm going to give specific
+54:09 examples here uh to my use case but
+54:12 one one um if you want methodology that
+54:15 we use to kind of mitigate having a
+54:18 person's bias creep into the modeling
+54:21 process at least is to have many people
+54:24 score
+54:25 an interview to have several people
+54:27 scores on an interview and then take an
+54:29 aggregate of their scores and in this
+54:31 way and by the way this is actually how
+54:32 it's done in practice so usually um when
+54:35 companies conduct these interviews you
+54:37 have several interviewers who are
+54:39 scoring you and then they would combine
+54:42 their results to come up with the final
+54:43 results so um so that not one person's
+54:46 bias is creeping into the system right
+54:49 and kind of defining their own opinions
+54:51 on you um the second way is through the
+54:53 criteria that I mentioned so by having
+54:56 very clear criteria and by trying to
+54:59 standardize the process across um every
+55:02 candidate and across everyone who's
+55:04 scoring you try as much as
+55:06 possible to um navigate that people
+55:10 don't come up with their own definition
+55:12 of what communication good communication
+55:14 is right so they follow very specific
+55:16 criteria did the candidate show this
+55:19 Behavior yes no medium high Etc right
+55:23 did this candidate show this specific
+55:24 behavior here so to break it down to as
+55:27 small pieces as possible to mitigate
+55:29 these internal biases um to standardize
+55:33 right and to aggregate results across uh
+55:36 the scoring panel essentially whose
+55:38 labels are taken and fed into the models
+55:41 so imagine this criteria the standards
+55:43 they exist for a reason and this reason
+55:46 is we humans have biases so how can we
+55:50 remove subjectivity as much as possible
+55:53 exactly human like when humans interview
+55:56 other humans right so we want to remove
+55:59 um subjectivity there that's why there
+56:02 are these criteria right that's why
+56:04 there are these that's why standards
+56:07 exactly so like um my you know my
+56:10 teammate who's the psychologist on the
+56:11 team she explained it to me in a very
+56:13 nice way she said you know if I tell you
+56:15 them you know score this person on
+56:17 communication and I score this person on
+56:19 communication and that's the only
+56:20 criteria we have we have very different
+56:22 mental models of what communication
+56:25 means it's not and when we talk about
+56:26 bias here I'm not talking about like
+56:28 negative intended bias right but these
+56:31 internal mental models that we have but
+56:33 if I tell you um you know we mean an XY
+56:36 Z by communication you have a better
+56:38 idea of you know we have a closer model
+56:41 representation in Our Minds when we're
+56:43 scoring but if I give you very specific
+56:45 criteria we're as close as possible to
+56:48 thinking about this assessment in the
+56:50 same way there's still differentiation
+56:52 and that's a good thing right there's
+56:53 still differentiation because you're
+56:55 kind of getting um an overall assessment
+56:57 from several people and not just one
+56:59 person's opinion uh which is you know to
+57:01 ensure fairness and to ensure that I
+57:04 don't know there's not one specific
+57:05 person's opinion going into play um but
+57:08 we're assessing the same thing we're
+57:10 looking at the same criteria and we're
+57:12 very diligent about this so
+57:15 we there's a lot that's done we you know
+57:17 we conduct regular sessions where for
+57:20 example the panels scor together and
+57:21 they meet and they discuss the results
+57:23 and they make sure you know no one has
+57:26 traded and is scoring in a different way
+57:29 but make sure we're following the
+57:30 criteria the same way the rules of
+57:32 scoring the same way trying to
+57:33 standardize it as much as possible right
+57:36 and again I I mean there's always
+57:39 potentially flaws that can creep in but
+57:42 for me I always go back and I I I
+57:44 compare it to The Benchmark The
+57:45 Benchmark is you would be assessed by
+57:47 one person in reality if you make it to
+57:50 the actual interview and you will be
+57:51 judged by that person's own biases right
+57:55 in a in an automated interview like the
+57:57 one that we have and actually there's
+57:59 many of them out there today you know
+58:02 it's a standardized approach but also at
+58:04 least in our case we don't really know
+58:06 anything about you we're not collecting
+58:08 anything about you in terms of personal
+58:09 information we don't care we're really
+58:11 just listening to your
+58:12 interview and following that criteria um
+58:16 we're very careful about how we evaluate
+58:19 audio and video we don't use these to
+58:21 assess your soft skills by the way we
+58:23 assess different aspects
+58:25 because according to literature they're
+58:27 not
+58:27 reliable um so you know obviously trying
+58:30 to do things as diligently as possible
+58:33 to make sure you know you're not coming
+58:34 up with your own idea of what good
+58:36 communication is and you're following
+58:38 standard research that's been
+58:39 established in the psychology space
+58:42 that's the best that you can do really
+58:43 to make sure that the process is as
+58:45 reliable as
+58:46 possible maybe the last question I know
+58:48 we are a bit over time so it's okay it's
+58:52 good for my side yeah yeah yeah good so
+58:55 there's a question from B and it's
+58:57 related to what we were talking about so
+59:00 communication can be quite subjective
+59:03 but it's also different for different
+59:05 roles the communication we expect from a
+59:08 data analyst can be different from
+59:10 communication skills we expect from a
+59:12 data engineer right it's communication
+59:14 like data analyst need talk need to talk
+59:17 more with stakeholders while data
+59:20 Engineers
+59:21 might need mostly to talk to the manager
+59:25 right something like that right so the
+59:27 expectations are different and the sort
+59:29 of communication skills are different
+59:31 does it mean that your system needs to
+59:34 have adjustment for different
+59:36 roles or like it does it does um the way
+59:42 today the way that it's handled is by
+59:44 the recruiter so the recruiter is the
+59:45 one who essentially knows or should know
+59:47 the requirements for you know the
+59:49 position they're hiring for and even
+59:52 though so the system assesses you the
+59:53 same way right so in the back background
+59:54 the system is assessing you regardless
+59:56 of what your industry is where you're
+59:58 going to work etc you have a certain
+1:00:01 communication capability that's been
+1:00:03 presented in your interview and that's
+1:00:04 assess but the way that you are ranked
+1:00:07 and presented to the recruit is based on
+1:00:09 criteria that they set so they set a
+1:00:12 specific level or expectation of
+1:00:14 communication let's say depending on the
+1:00:16 role requirements and then your score is
+1:00:19 matched with their
+1:00:20 requirements if you are above that score
+1:00:24 you you're considered to be a good fit
+1:00:26 for the role if you're below you're
+1:00:28 considered to be not well fit in this
+1:00:32 specific capacity the specific
+1:00:34 competency there's even we also have
+1:00:36 this interesting concept actually that I
+1:00:37 wasn't aware of before but if you are
+1:00:40 above the requirement in a certain
+1:00:42 threshold you're also considered to be
+1:00:44 overqualified um you you could have an
+1:00:46 overqualification of soft skills that
+1:00:49 would make you you know get to a point
+1:00:52 where perhaps you might end up
+1:00:53 unsatisfied with the role and want more
+1:00:56 right um so these are things that we
+1:00:58 measure and we kind of show you know
+1:01:00 where are you at the scale reference
+1:01:02 that the recruiter defines depending on
+1:01:03 the job requirements so that's a good
+1:01:06 question
+1:01:07 actually yeah on the candidate side it
+1:01:11 must be quite frustrating when you get
+1:01:13 rejected with this
+1:01:16 overqualified you don't you don't we
+1:01:18 don't reject because you're
+1:01:20 overqualified it's a a concept of uh
+1:01:23 what was it it was a really interesting
+1:01:26 um concept that was defined by again my
+1:01:28 teammate this is her area of expertise
+1:01:30 but she compared it it's not like you're
+1:01:32 overqualified like you're not a good fit
+1:01:34 um she defined it actually differently
+1:01:37 which is you know you you either have
+1:01:40 the um
+1:01:41 capability right so this is what makes
+1:01:43 you like the perfect fit today but you
+1:01:46 could also have potential like exceeding
+1:01:48 potential so when you're overqualified
+1:01:51 you have the capability and you have
+1:01:53 potential so you're a Plus+ right you
+1:01:56 have the potential to grow you have a
+1:01:58 potential perhaps for a higher role
+1:02:00 maybe a different position um so all
+1:02:02 these things are monitored and reported
+1:02:04 back well yeah yeah exactly even if
+1:02:08 you're even if you're um underqualified
+1:02:11 in that skill you're not rejected
+1:02:13 automatically if you don't match on a
+1:02:15 specific portion of the criteria then
+1:02:17 you're not the best fit but you're not
+1:02:19 thrown out again like the way that we've
+1:02:21 done the system is to be very careful
+1:02:23 that we're not making decisions
+1:02:25 all the candidates are there we're
+1:02:27 simply assessing the recruiter looks at
+1:02:29 the results and they decide you just
+1:02:30 give them a bunch of numbers explain
+1:02:33 these numbers and then they think okay
+1:02:36 this is important for us maybe for this
+1:02:38 part it's not really important let's
+1:02:40 just take a look at this candidate yeah
+1:02:43 exactly yeah that's amazing do you have
+1:02:46 a few more minutes I do okay yeah cuz I
+1:02:50 was wondering maybe there are
+1:02:51 interesting resources books courses
+1:02:54 articles YouTube videos about machine
+1:02:57 learning in HR Tech do you know of
+1:03:01 any uh no actually in HR Tech I
+1:03:04 struggled in when I was in this space
+1:03:06 until I got my you know my colleague on
+1:03:08 board who was the domain expert and she
+1:03:10 taught me you know everything that I
+1:03:11 know today when it comes to kind of you
+1:03:13 know the recruitment side um
+1:03:17 but uh cliche but I actually recommend
+1:03:19 your Zoom camps to everyone who tells me
+1:03:21 you know if I want to grow in the space
+1:03:23 how do I do that and I always recommend
+1:03:25 data talks uh Club Zoom Camp um um as
+1:03:30 kind of like an experience I know many
+1:03:31 people kind of go like this is kind of
+1:03:33 drifting a bit but a lot of people talk
+1:03:35 to me about like building their profile
+1:03:37 and you know struggling to find their
+1:03:39 first role or their second role or
+1:03:42 whatever and um you know projects are
+1:03:45 always something that's encouraged but
+1:03:46 one thing I've always kind of um kind of
+1:03:49 encouraged towards is to find um as
+1:03:53 close as possible to real world World
+1:03:54 projects and one Community whose
+1:03:56 projects I really like is oma as well um
+1:04:00 where you know you work on actual
+1:04:02 projects with big teams and it's quite a
+1:04:05 realistic experience I would say as
+1:04:07 close as possible to what you could get
+1:04:09 if you're working with a team um and
+1:04:11 this way you you build your portfolio as
+1:04:13 well communities have been a big thing
+1:04:15 for me being part of communities like
+1:04:17 data talks I'm not selling you guys I'm
+1:04:19 I'm actually a huge fan um but
+1:04:21 communities like data talk and uh amops
+1:04:24 Community very interactive very helpful
+1:04:27 very responsive right so if you're
+1:04:29 struggling um stuck on something you
+1:04:32 know ask people are a lot more helpful
+1:04:33 than you would assume um joining
+1:04:35 communities has been a big thing for me
+1:04:37 and navigating a lot of the challenges
+1:04:39 that uh I did so yeah these these are
+1:04:43 things that I would recommend at the top
+1:04:44 of my head yeah thank you for your kind
+1:04:48 words about Community this community and
+1:04:50 communities in general and yeah thanks
+1:04:52 for staying a bit longer to answer
+1:04:55 that's my pleasure thank you so much
+1:04:57 thank you for having
+1:04:59 me thank you as well yeah I guess that's
+1:05:02 it for today so thanks again a lot and
+1:05:05 thanks everyone for joining us today too
+1:05:07 for asking questions for being active
+1:05:10 and we see each other next week I think
+1:05:13 next week we have two or three
+1:05:15 interviews yeah great be fun okay yeah
+1:05:19 good luck yeah you take care and good
+1:05:23 night bye bye

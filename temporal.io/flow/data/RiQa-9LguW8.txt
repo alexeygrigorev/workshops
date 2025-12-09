@@ -1,0 +1,1668 @@
+Mastering Algorithms and Data Structures
+
+0:01 well hello everyone um
+0:04 this event is brought to you by data
+0:06 talks club which is the community of
+0:08 people who love data
+0:10 we have weekly events this event is one
+0:12 of them so on fridays we have interviews
+0:17 or live podcasts like today when we talk
+0:19 about different topics and then on
+0:22 tuesdays we have
+0:23 more technical
+0:25 sort of talks with presentations
+0:28 so go check it out there is a link in
+0:31 the description you just click on this
+0:34 you can see at all the events we
+0:37 have planned
+0:38 and while you are there you can also
+0:40 click
+0:41 subscribe to our google calendar to stay
+0:43 up to date with all our events
+0:46 and of course you should subscribe to
+0:48 our youtube channel to get notified
+0:50 about
+0:52 the new content where it is
+0:54 and join our amazing slack community to
+0:56 talk about
+0:57 all data things
+0:59 so if you want to ask any question
+1:01 during today's conversation you should
+1:04 go to the live channel
+1:06 chat and click on a pinned link there so
+1:10 and just ask any question you want and
+1:13 then if there is a question you want
+1:15 somebody already asked you can just
+1:16 support that question
+1:19 and i know that many people watch this
+1:21 event in recording so if you watch this
+1:23 event recording and there is something
+1:25 you really want to ask um you can go to
+1:29 uh our slack events q a channel
+1:32 and
+1:33 you can ask your question there
+1:36 um yeah i think that's
+1:38 it which i think you can start are you
+1:41 ready
+1:44 yeah
+1:45 that's good
+1:46 [Music]
+1:49 okay so uh
+1:51 this week we'll talk about algorithms
+1:53 and we have a special guest marcelo
+1:55 marcella is a senior software engineer
+1:57 at tundra
+1:58 and he is an author the author of
+2:01 advanced algorithms at data structures
+2:04 which is a book
+2:05 i think it was released recently right
+2:07 it's out of meat now uh congratulations
+2:10 uh so it's a book about algorithms uh
+2:14 and actually which reminds me that i
+2:16 forgot to talk to ask
+2:18 minions marketing department for a
+2:20 couple of free copies maybe i should do
+2:22 this uh
+2:23 by the time when we actually release
+2:26 this recording
+2:27 so keep an eye
+2:29 so marcelo works
+2:31 in
+2:32 like with graphs optimization algorithms
+2:34 genetic algorithms machine learning and
+2:37 quantum computing
+2:39 and yeah so also one thing that i
+2:42 noticed in your bio is that you author
+2:44 it they need source adaptive certain
+2:46 algorithm maybe we'll talk about this uh
+2:49 a video so welcome
+2:52 hi
+2:54 thanks a lot for inviting me thanks for
+2:55 having me it's a pleasure
+2:57 yeah
+2:58 it's a pleasure as well so before we go
+3:01 into our main topic of algorithms let's
+3:04 start with your background can you tell
+3:06 us about your career journey so far
+3:09 sure of course
+3:11 well i've worked most of my careers as a
+3:17 web developer or in
+3:19 our own data infrastructure um i started
+3:23 with the web developer and
+3:26 and then
+3:28 i worked for a long time five years like
+3:31 in a governmental company in italy
+3:34 then i moved
+3:36 i started was working remotely with
+3:39 startups and then
+3:40 moved to ireland to join twitter
+3:44 and after a couple of years i moved
+3:46 again and
+3:47 i'm now in zurich since 2016
+3:51 and working for microsoft apple and now
+3:56 since last year i joined tundra
+3:59 and
+4:00 wholesale
+4:02 online shop
+4:05 so does tundra have anything to do with
+4:08 uh forests in russia
+4:12 no unfortunately no i honestly
+4:16 i nobody knows like well
+4:19 where the name exactly comes from
+4:22 but
+4:23 it's a
+4:24 it's a
+4:26 nice very nice company working on
+4:29 world cell
+4:31 so i don't know if this word means
+4:33 anything in english but in russian it
+4:34 means that uh this area where it's very
+4:38 cold like few things grow there and it's
+4:40 like uh you know
+4:42 yeah so the kind of force uh but uh very
+4:46 cold one
+4:47 okay
+4:48 yeah so uh
+4:51 how like you as an author of a book
+4:54 that you wrote about algorithms so and
+4:56 the topic today uh is about algorithms
+5:00 many people wonder like
+5:02 especially those who are starting
+5:04 their career
+5:05 how should they approach learning
+5:07 algorithms do you have any suggestions
+5:10 for for that
+5:13 um
+5:15 quite sure
+5:16 i mean it's uh
+5:19 if it depends on one mostly i guess
+5:23 needs that everybody can have
+5:25 and
+5:28 it can be learned at very different
+5:31 levels depending how much like
+5:33 how much you need to to learn how much
+5:35 in depth you need to learn
+5:37 um one thing like that i
+5:41 would suggest and it's the way that i
+5:43 was told the way i was
+5:47 suggested when i started my my studies
+5:50 is that for for algorithms especially
+5:53 it's um it's not important like to focus
+5:56 on the
+5:57 details when you are learning the most
+5:59 important thing
+6:01 that
+6:02 the most important things that you need
+6:03 to learn
+6:05 like what
+6:06 that there is such an algorithm
+6:09 that
+6:10 when
+6:10 when you can use it in which situations
+6:13 what problems it can solve
+6:15 and
+6:17 perhaps also how efficiently it can talk
+6:21 by uh knowing that there is such an
+6:24 algorithm that solves a certain problem
+6:26 and that you can find it like when you
+6:29 need and where when you should apply it
+6:32 it's the most important thing it's
+6:35 even if you don't remember the algorithm
+6:37 in my heart like nobody can remember all
+6:39 the algorithms
+6:41 but you know where to look for it
+6:44 it's uh it's perfect
+6:47 yeah i remember when i was studying
+6:48 algorithms so actually it wasn't a part
+6:50 of my studies when i was at university
+6:53 so this is something i was taking uh
+6:55 outside of university sort of uh
+6:58 self-studying
+6:59 and many courses actually focused on all
+7:01 these derivations on mathematical proofs
+7:04 and all these things and it seems like
+7:06 that
+7:07 is an important thing
+7:09 right like to really understand how the
+7:12 algorithm works to really understand
+7:14 like okay if it says
+7:16 o and log n that you can proof it using
+7:19 some
+7:21 i don't know difficult uh mathematical
+7:23 stuff
+7:24 so
+7:25 this is not something we should focus on
+7:27 right so we should more focus on
+7:29 applications
+7:30 yes i would say so i mean there is also
+7:32 a funny story
+7:34 about this
+7:35 and you know
+7:37 like being
+7:42 was created of course by
+7:44 paige and vegan and when they started
+7:47 the the studies like apparently or at
+7:49 least the story goes that they
+7:52 heard
+7:53 at a conference about
+7:55 um like from an italian researcher
+7:58 and
+7:59 about this idea of
+8:02 like an
+8:03 intelligent the growler that
+8:06 did the research in a different way than
+8:09 just indexing like
+8:11 yahoo
+8:12 or altavista were doing and
+8:15 this guy like went to the to his italian
+8:17 university and proposed the idea
+8:19 suggested the idea to
+8:22 his tutor and they told him like that
+8:25 this would never have a future because
+8:27 you couldn't prove that it was right
+8:30 so yeah i mean it can be tricky in
+8:33 dangerous focusing on the mathematical
+8:36 proof
+8:37 of something it can be important it's
+8:39 important of course if you are working
+8:41 on a paper to prove that an algorithm
+8:44 works and
+8:45 it can be used in order to understand
+8:48 when it can be used but it doesn't mean
+8:50 that if you don't know or don't work out
+8:54 the month it would be useless
+8:56 yeah i can tell you a reference uh later
+9:00 so basically like when we
+9:02 learn algorithms we should focus on more
+9:05 applications than
+9:07 then you know uh proofs do you know any
+9:10 good reference for you know like basic
+9:12 algorithms uh
+9:14 again sorting and
+9:16 whatnot
+9:18 um
+9:19 i
+9:20 let's say i can
+9:23 of course there are a lot of resources
+9:24 online there are a lot of courses and
+9:28 websites
+9:29 there is this series of videos from mit
+9:32 about algorithms which is very very good
+9:36 and there is
+9:39 team rock garden course on coursera like
+9:42 specialization i found it
+9:44 really extremely good
+9:46 it is really great in explaining things
+9:50 clearly and as simple as it gets
+9:53 and and if you prefer books like
+9:56 i can suggest groping algorithms from
+10:00 published by mining which also like is a
+10:03 gentle introduction to basic algorithms
+10:06 and other structures
+10:08 so in your opinion uh what is the most
+10:11 what are the most important algorithms
+10:13 and data structures that we should
+10:16 know
+10:17 like we by way i mean developers also i
+10:21 kind of include data engineers and data
+10:22 scientists here as well but general
+10:25 anyone who programs like what kind of uh
+10:28 algorithms data structures they should
+10:30 know um
+10:32 okay
+10:34 well
+10:34 importance is
+10:36 relative right like it depends on
+10:38 of course like the field you're using
+10:40 and what you're actually doing
+10:44 it's maybe i would say the the basic
+10:47 data structures
+10:48 can be the most important just because
+10:50 like are the ones that
+10:54 quantitatively can make the greater
+10:56 impact so if you are misusing an
+11:00 array or release
+11:02 and
+11:03 like you still you can earn performance
+11:06 of your application a lot or your
+11:08 program
+11:09 and not just performance actually
+11:12 and it's
+11:14 far more common that you are using these
+11:16 data structures than the most advanced
+11:18 one
+11:20 so basically you need to know uh array
+11:22 list and i guess when to use them when
+11:25 do you set when to use dictionary right
+11:29 yeah for example knowing when you should
+11:32 use an array or when you should use a
+11:34 list depending on what you have to do
+11:36 like if you need random access of course
+11:38 array is the best choice but if you are
+11:41 always adding
+11:44 elements in in front of what you have
+11:47 then array is complicated like you will
+11:49 have to
+11:51 do a lot of uh
+11:53 copying and moving on memory and yeah it
+11:57 becomes a mess
+11:58 um and besides our race and these
+12:00 sagging like the bare minimum for me
+12:02 would be like
+12:04 stats queues
+12:06 these kind of structures
+12:09 and that's uh i guess as well
+12:12 so
+12:13 yes of course
+12:14 basically
+12:16 yeah
+12:17 what let's say if we use python then
+12:20 python comes with a
+12:23 from a set of different data structures
+12:26 um
+12:27 so basically
+12:28 dictionary cs like uh
+12:31 basically knowing
+12:33 how
+12:34 at least some idea how they implement
+12:36 are implemented internally
+12:39 like what is the
+12:41 uh
+12:42 like if you want to add something how
+12:44 does it work inside right if you want to
+12:46 check if something is in the list or
+12:48 using the set
+12:50 how does it work right and things like
+12:52 this
+12:54 yes yes absolutely i mean like we
+12:58 with algorithms you always have to
+13:01 uh distinguish the implementation
+13:04 and the abstract data structure
+13:06 that so the first step would be
+13:08 understanding what's the abstraction
+13:10 behind it and then you can implement it
+13:12 in many ways like for example a
+13:14 dictionary you could implement it with
+13:16 anything from a at least an array
+13:19 or
+13:20 a tree or a hash table and all these
+13:23 implementations have
+13:25 like pros and cons they
+13:27 do well on some operations and
+13:30 do poorly perform poorly on other
+13:32 operations
+13:35 from at the point of view of
+13:39 who uses a language like python you are
+13:41 more interested
+13:43 in understanding the abstraction behind
+13:45 it so
+13:46 what's the uh api of the dictionary for
+13:49 example what are the operations that you
+13:51 do then if you delve into the language
+13:54 then you if you are performing time
+13:57 critical operations or memory critical
+13:59 operations then you might want to deep
+14:01 like to dive
+14:03 into the implementations and understand
+14:06 how you can leverage those or
+14:09 if they can present any problem any
+14:11 bottleneck
+14:13 so basically you can take the all the
+14:16 data structures that you typically use
+14:18 or you should use let's say from python
+14:20 or from any other language
+14:22 and you just
+14:24 learn it's uh the api like all what are
+14:27 the possible methods
+14:29 and
+14:30 try to understand how they work
+14:32 internally right
+14:33 yes yes like for example you mentioned
+14:36 that it's important to know that uh
+14:38 what's the contracts that the client
+14:41 have
+14:42 with the data structure like i said so
+14:44 that
+14:45 you have you can add elements you can
+14:47 remove elements but there will be no
+14:49 duplicates and
+14:52 it
+14:53 will like you can also expect
+14:56 to
+14:57 that insertion for example check are
+14:59 reasonably fast compared to an array
+15:02 although this is
+15:04 this also depends on the implementation
+15:08 yeah and he mentioned that he worked as
+15:10 a web developer at some point
+15:12 and i heard this from
+15:15 many web developers and also from data
+15:17 scientists as well
+15:19 let's say let's talk about web
+15:21 developers so web developers today
+15:24 these days they
+15:27 do
+15:27 um simple things like they create simple
+15:30 web applications
+15:32 and they say okay
+15:33 you know i don't actually need
+15:35 algorithms for that
+15:37 i
+15:38 all i need is you know this library
+15:40 react or whatever
+15:42 it works and i don't need to use
+15:43 algorithms
+15:45 so how do i learn algorithms
+15:48 if i don't need them at work
+15:50 i don't we can also
+15:52 like it's not unique to uh web
+15:54 developers right there is also a
+15:56 question from vikram like how important
+15:59 is for data scientists and all that like
+16:01 if we don't use this at work like how do
+16:04 we how do we learn these things
+16:07 okay uh so as say
+16:10 first i i'd like to challenge the first
+16:13 assumption so that's
+16:15 that you don't need the algorithm for
+16:17 that and because
+16:19 you you as a web developer or as a
+16:23 data analyst scientist like any of these
+16:26 jobs
+16:27 one uses algorithms more than you can
+16:30 think right it's like even
+16:34 the basic ones that we mentioned earlier
+16:36 like in the nobody
+16:39 i cannot believe that they are not using
+16:42 arrays or at least and that can make
+16:44 like a big difference especially
+16:46 um if you are time constrained or
+16:48 resource constraint as sometimes it
+16:51 happens as web developer or if you
+16:55 if you have to handle large datasets
+16:58 as a data scientist
+17:00 and
+17:01 but
+17:02 even more than these like
+17:05 developer can
+17:08 be in this in a situation where using
+17:10 the right data structure
+17:12 make a difference makes a difference
+17:14 like
+17:14 you have to provide some spell checker
+17:18 functionality and then you
+17:21 if you know what bloom filters or tries
+17:23 are that you're in a better position
+17:26 otherwise you might end up reinventing
+17:29 the wheel or providing a sub-optimal
+17:32 solution
+17:33 whether or not you use a party library
+17:38 some existing code
+17:40 but i mean to go back to your question
+17:43 how do you do like how do you master
+17:46 algorithms if you don't have the chance
+17:48 to work every day in your
+17:50 yeah i don't implement type checkers uh
+17:53 like checkers every day so
+17:56 like how do i learn how to use boom
+17:58 filters then
+17:59 um so there like there are a few things
+18:02 so i guess
+18:03 probably the best way might be like if
+18:05 you are interested in the topic but
+18:07 there are a lot of resources so you can
+18:09 do some
+18:10 learning on your own you can set goals
+18:14 and but if you're looking for extra
+18:16 motivation
+18:19 say
+18:20 joining some competition like google hop
+18:23 gem or
+18:24 something like that
+18:27 uh can like
+18:30 be
+18:31 like a good push for for
+18:35 give you a sprint like you you can be
+18:37 motivated to
+18:38 to learn more and
+18:41 more than that it gives anyone the
+18:43 chance to uh
+18:45 you know learn on the field and so on
+18:48 and
+18:50 have some practical
+18:52 experience with these algorithms
+18:55 not just knowing the theory
+18:58 but
+18:59 actually learning to use them
+19:02 and to take advantage of these
+19:04 algorithms or data structures
+19:07 so basically if you cannot do this at
+19:09 work for whatever reason try to do this
+19:12 outside of work right
+19:13 yeah
+19:14 well you can
+19:19 it's
+19:21 it's not common to have the chance at
+19:23 work to implement actually these
+19:24 algorithms from scratch but you can
+19:27 learn about
+19:28 how to use them as well as that work and
+19:32 one thing that people can do is like
+19:35 if they see that there is a bottleneck
+19:38 or
+19:40 profile their application and see the
+19:43 space like some room for improvement
+19:47 that they can try to learn what pro what
+19:49 algorithms can solve similar situations
+19:52 and try to apply them
+19:54 especially if you use a mainstream
+19:56 language an instant programming language
+19:58 at work it's easy to find libraries that
+20:01 implement
+20:04 common and more advanced algorithms and
+20:06 then
+20:08 you see how they can make a difference
+20:12 okay yeah and one thing one mistake i
+20:14 often
+20:15 notice in code is people accidentally
+20:18 use for example instead of using a set
+20:21 when you check
+20:23 something like checking for containment
+20:25 people use list and i think even simple
+20:28 things like that right
+20:30 for a web developer for a data scientist
+20:32 this is a very very common operation
+20:34 right so you have
+20:36 something that comes in and you want to
+20:39 check if this is something that you
+20:41 already know or not right and what you
+20:43 typically do
+20:44 is you check if this i don't know x is
+20:48 in a collection that i have right and um
+20:51 if we just replaced list with the set
+20:53 then we see like an order of magnitude
+20:55 uh improvements in speed right
+20:58 exactly yes
+21:00 and
+21:00 she may have seen this with
+21:04 just keeping track of elements like
+21:06 adding elements to elise and
+21:09 using uh adding it to the wrong end of
+21:12 the list for example in
+21:14 scala
+21:16 or in it would be the same in ascribe
+21:19 functional programming languages
+21:22 and adding it to the wrong end of the
+21:24 lease it can cause the
+21:27 a simple linear operation by
+21:30 constructing this list began quadratic
+21:32 and slow and time out your server for
+21:35 example
+21:37 and coming back to the question from
+21:39 vikram
+21:40 how important these data structures for
+21:43 somebody who is uh
+21:45 into data science with data scientists i
+21:48 think we just mentioned this a
+21:49 particular use case like us checking for
+21:52 containment
+21:53 and as a data scientist i do this
+21:55 operation every often
+21:57 like every like quite often
+21:59 right um so in your opinion are there
+22:02 other cases where it's very important to
+22:04 know uh data structures for data
+22:07 scientists
+22:10 and
+22:11 as you said like
+22:12 whenever like especially if you are
+22:15 working on then on
+22:18 huge differences even the slightest
+22:20 improvement can we
+22:22 can make a attempt like a make a
+22:24 difference in running time
+22:26 and even more if you can have an order
+22:29 of magnitude
+22:31 an improvement of an order of magnus can
+22:33 make a tremendous difference it can be
+22:36 searched like
+22:37 replacing
+22:40 speeding up search it can be
+22:43 using a blue filtering instead of a
+22:45 dictionary
+22:46 to keep track of what you have already
+22:49 seen
+22:50 and
+22:51 it can be like a
+22:54 nearest neighbor search for
+22:57 like to look into
+22:59 this huge dataset to search into
+23:01 multi-dimensional datasets
+23:04 there are a lot of cases i think they
+23:05 are even more important for other
+23:07 scientists
+23:09 yeah so
+23:10 you mentioned bloom filters and you
+23:12 mentioned this approximate neighbor
+23:14 search
+23:16 and
+23:17 this is actually something i wanted to
+23:18 talk to you about because
+23:21 in your book this advanced algorithms
+23:23 and data structures
+23:25 i think you cover them so maybe let's
+23:27 talk a bit about
+23:28 your book so well
+23:30 first of all
+23:33 what is there in the book can you tell
+23:34 us a bit about that
+23:38 hey sure thank you for asking um of
+23:41 course um so
+23:44 but the idea of
+23:45 writing this book the idea that we had
+23:48 was providing
+23:50 some sort of bridge between theoretical
+23:54 you know theoretical knowledge on
+23:55 algorithms and textbooks and more
+23:59 practical like hands-on books
+24:02 so in
+24:03 my book like you you can find an
+24:06 approach that goes
+24:08 um that is like layered in several level
+24:12 levels and it covers both
+24:14 the theory and more practical aspects of
+24:18 how to use the algorithms
+24:20 i mean the main
+24:22 focus of
+24:24 for each data structural algorithm that
+24:27 we covered was
+24:28 um
+24:30 coming up with a like real life real
+24:33 work use case
+24:35 um
+24:37 where you can actually make a difference
+24:39 by using the right algorithm
+24:41 and also i
+24:43 as we have discussed earlier the problem
+24:46 can also be the opposite so you can make
+24:48 a negative difference
+24:50 difference by using the wrong data
+24:51 structure in the wrong place
+24:54 and
+24:55 so if you learn to avoid that it's
+24:57 already like great and
+24:59 you you can improve a lot the
+25:01 performance of your applications
+25:03 and
+25:04 the book is
+25:06 goes through 18 chapters in
+25:09 three parts the first part
+25:11 and the appendix the apprenticeship is
+25:13 going to cover
+25:15 the basic data structures big
+25:17 organization some
+25:20 like cover the grounds to say
+25:22 and
+25:24 and then
+25:26 we start going into more and more
+25:28 complicated algorithms and
+25:31 this then in the second part
+25:34 we cover nearest neighbor search and
+25:36 some machine learning clustering
+25:39 and and explain the
+25:42 map reduce programming model
+25:44 and then finally then the third third
+25:47 part
+25:48 we covered graphs and we talked about
+25:51 graphs and
+25:53 evolutionary algorithms and
+25:56 how to
+25:58 well every optimization in general and
+26:00 different options for implementation
+26:03 from
+26:03 like
+26:04 random algorithms to like grammar
+26:07 sampling to gradient graduate
+26:11 even like simulated and living a genetic
+26:13 algorithms
+26:17 yeah thanks and well since it's called
+26:20 advanced algorithms does it require some
+26:23 knowledge of algorithms already
+26:26 uh
+26:27 like does it have a prerequisite
+26:31 we tried to cover the basics
+26:33 in the up conditions
+26:35 and
+26:36 in the first few chapters so you should
+26:39 be
+26:40 good like you shouldn't need
+26:44 anything more than then it's in the book
+26:46 but of course if you have for if you
+26:50 had algorithm 101 or if you have
+26:54 previous experience
+26:56 with that with the topic
+26:58 you're like of course in better shape
+27:00 and it helps
+27:02 yeah the not needed
+27:05 yeah thanks so there are a couple of
+27:06 questions about the resources we
+27:08 mentioned i will put all the resources
+27:10 later when we finish the talk and i
+27:12 guess like if somebody watches this
+27:14 mit course that you recommended or the
+27:17 coursera course by team ravgarden
+27:20 rob gardner then probably this will give
+27:25 enough foundation for sure right to be
+27:27 able to continue with your book but even
+27:30 if they don't
+27:32 do this courses you try to cover
+27:34 everything in appendices as well as the
+27:37 uh first chapter straight
+27:39 yes
+27:40 we cover like everything you need to
+27:43 start
+27:44 it's not required
+27:46 you don't need complex
+27:49 matter or knowledge of linear algebra or
+27:53 basically
+27:55 only
+27:56 very very
+27:59 in
+27:59 like
+28:01 initial knowledge of programming and we
+28:04 don't use
+28:06 a programming language a single
+28:08 programming language we use to see the
+28:10 code so that everyone with any
+28:12 background can understand that
+28:15 the
+28:16 how the algorithm works
+28:18 and
+28:20 the only thing that
+28:21 maybe they may help is knowing what the
+28:24 for loop or
+28:26 conditional is but anyway there is an
+28:28 appendix only for also for that
+28:31 and
+28:32 explaining how they work like these
+28:35 basic constructs
+28:37 and yeah i know that you also have
+28:39 github prep
+28:41 where all these algorithms are
+28:42 implemented like in
+28:44 basically every possible language
+28:46 right
+28:48 it's not every possible one but man like
+28:52 the goal and idea is yes to have them in
+28:55 as many languages as possible for now
+28:58 most of them are implemented in java
+29:00 javascript and python i will
+29:03 soon add scala
+29:05 and i was hoping to add c plus plus and
+29:08 rust
+29:09 later
+29:10 so you also have a lot of fun like just
+29:13 trying to
+29:14 implement that in all these different
+29:16 languages
+29:17 yes yes that is
+29:19 it is fun
+29:20 do you plan to cover go as well in one
+29:23 of the
+29:24 maybe like after you cover these ones
+29:27 yeah well why not yes i love go
+29:30 okay
+29:31 um
+29:32 yeah so uh you mentioned that you're in
+29:34 your book you have multiple parts and
+29:37 [Music]
+29:39 first you start with integration and
+29:40 then you go in more complex ones
+29:43 so when i look at the table of contents
+29:45 uh so a few things uh
+29:48 like uh they're quite interesting to me
+29:50 um so i got interested in bloom filters
+29:52 and this approximate nearest neighbors
+29:56 and
+29:56 concentrate this is what we also talked
+29:59 about previously
+30:00 so yeah i thought maybe we can cover a
+30:03 bit
+30:04 this
+30:05 this data structures and algorithms a
+30:07 bit so yeah maybe let's start with uh
+30:10 bloom filter so
+30:12 what problem do they solve and why do we
+30:14 need them
+30:16 yeah maybe it's not a consequence
+30:18 because like they are very useful for
+30:20 the
+30:20 data science
+30:23 so
+30:24 it's all
+30:25 bloom filters yes um
+30:28 it's quite interesting data structure i
+30:31 think
+30:31 it's
+30:33 it's surprisingly not as much spread as
+30:37 i would have expected
+30:39 um
+30:40 so
+30:42 let's say that
+30:44 that to start let's say that bloom
+30:46 filters solve all right solving the
+30:50 dictionary problem
+30:51 so
+30:53 the dictionary
+30:54 a dictionary is a data structure where
+30:56 you can
+30:57 uh
+30:58 save like it's a container so you can
+31:01 save entries but the main point is being
+31:04 able to retrieve them
+31:06 quite fast and like
+31:09 as we were talking earlier
+31:11 there are many different ways you can
+31:14 implement it for example you can
+31:15 implement it
+31:16 as a tree like as a
+31:19 a free balancer tree binary search tree
+31:22 and then you can get a
+31:25 good performance for almost all applique
+31:27 applications but maybe the
+31:30 what people usually associates with
+31:33 dictionaries the hash tables they in
+31:36 many languages they are like synonyms
+31:40 um
+31:42 filters
+31:43 are works similarly to hash tables
+31:47 they actually leverage hash functions
+31:50 but they
+31:51 they
+31:52 have an advantage like they have a
+31:55 different approach
+31:56 compared to staples and that allows them
+31:59 to uh use a limited memory so if you
+32:02 have a large data sets that you have to
+32:05 put into a dictionary you might
+32:08 not have enough memory or enough disk
+32:11 space to use a hash table for it
+32:14 and this happens especially like if you
+32:17 want to store in these containers
+32:20 not
+32:21 like primitive data but
+32:26 variable size data something like
+32:28 strings or something that can be
+32:30 serialized to a string
+32:32 and
+32:34 in that case like the
+32:36 other advantage of
+32:38 bloom filters is that
+32:40 you can like first you can store
+32:43 each entry independently like regardless
+32:46 on
+32:48 uh how much
+32:49 space
+32:50 they they
+32:52 require like
+32:54 uncompressed you can store them with the
+32:57 same amount of space
+32:59 and you know we need the same
+33:02 a limited like a fixed number of lookups
+33:05 to find those elements
+33:09 and
+33:10 the
+33:12 of course like you have to pay a price
+33:14 for this and
+33:16 the price can be a little bit
+33:18 performant because you
+33:21 may have to wash like you will have to
+33:23 hush many times in the same entry
+33:27 each time you have to look up for it or
+33:29 store it while we touch tables you only
+33:32 run the ash once
+33:34 and the other like
+33:36 bigger disadvantage is that you can have
+33:39 false positives with bloom filters which
+33:41 means that if you look look up for an
+33:44 entry
+33:45 uh the bloom filter can tell you that it
+33:47 was stored
+33:49 although it actually wasn't and this is
+33:52 caused by the way that uh actually they
+33:55 work internally i try to explain these
+33:58 in the chapter
+34:00 i don't know if we have time to explain
+34:02 it no probably not but uh yeah i just uh
+34:05 wanted to
+34:06 uh
+34:07 like ask what uh are they used for
+34:10 and uh
+34:11 yeah so basically maybe to summarize you
+34:13 said uh like we need to use this data
+34:16 structure when we have limited amount of
+34:18 memory it uses hashes to look things up
+34:22 so everything is hashed
+34:24 and we use it to check if something is
+34:27 in our boom filter or not right so for
+34:29 containment
+34:32 but the way it works sometimes it gives
+34:34 us false positives so you can say okay
+34:36 this item is there
+34:38 but actually it's not right so it gives
+34:40 because of the like it's a limitation
+34:43 yeah sometimes it's not a big deal um
+34:47 for example like you might
+34:50 decide to like you let's say let's first
+34:53 say
+34:55 you can use like you can see these long
+34:58 filters used in many many places for
+35:00 example in crawlers to check if a page
+35:03 was already visited or not
+35:06 or
+35:07 like by looking at the url or even at
+35:09 the content of the page
+35:11 and you can they were used in spell
+35:13 checkers now they are replaced by
+35:16 tries
+35:17 but they for a long time they were they
+35:20 were used for that they are used a lot
+35:22 in rounding tables to check if
+35:24 any ip address was already visited or
+35:27 not
+35:28 oh and is in the table or not
+35:31 so in all these cases if you have a
+35:33 false positive it's not a big deal for
+35:35 example in a crawler you will process
+35:37 the page again
+35:38 uh if the
+35:40 false positive ratio is limited and with
+35:42 bloom filters you can balance
+35:46 the amount of memory you use with the
+35:48 false positive ratio ratio
+35:51 then
+35:52 you can control how often this happens
+35:55 and how often you pay this penalty
+35:59 yeah maybe i can also tell about the use
+36:01 case i had a couple of years ago at the
+36:04 previous company so the company is then
+36:07 a tech company so they are doing
+36:09 advertisement and they are selling
+36:11 advertisement on mobile devices so
+36:13 basically every like all these annoying
+36:15 ads that you see when playing games so
+36:18 yeah we contributed to that
+36:20 yeah and basically so the way we used
+36:24 bloom filters so every device like let's
+36:27 say you have an uh a phone right so a
+36:29 phone has some id some device id right
+36:33 and
+36:34 yeah and let's say i am a returning um
+36:38 user of an app so i have used an app
+36:41 uh already and
+36:43 the
+36:45 sort of the owner like the whoever uh
+36:47 owns the app
+36:49 they want to bring me back like because
+36:51 i played like i don't know 10 levels and
+36:53 stops doing this so they want to show me
+36:56 an ad saying hey come back finish your
+36:59 game right so this is a simple scenario
+37:02 so basically what they have the
+37:06 they have the device ids of everyone who
+37:09 played the game but stopped
+37:11 and you can think like there are
+37:14 like hundreds of thousands of uh device
+37:17 ideas right so if a game is popular many
+37:19 people play it right and yeah basically
+37:23 the way we were doing this we see if
+37:26 somebody let's say i open it up a
+37:28 different app
+37:30 and uh what the app is doing it's
+37:32 sending a request to
+37:34 like basically there is some auction
+37:36 happening under the hood uh doesn't
+37:38 matter
+37:39 so basically what we do is we check okay
+37:41 do we know this person or not
+37:43 like is it a returning user or not
+37:46 right and then imagine from everyone in
+37:48 the world who uses uh
+37:51 who is playing who is holding an f1
+37:54 right now who is trying to see like an
+37:56 ad or who we want to show an app at ed
+37:59 we want to see a subset of those users
+38:02 who are returning users right and for
+38:04 that we use the boom filter
+38:06 so basically like uh okay do we know
+38:08 this because it's impossible to store
+38:10 everything in memory right
+38:12 so we just check okay do we know this
+38:13 user or not
+38:15 and if it turns out that we actually
+38:17 don't know this user even though we
+38:19 think we do
+38:20 it's not a big deal we just show that
+38:21 person
+38:22 and that right and then okay we lose
+38:24 like a fraction of a cent but you know
+38:27 the world doesn't stop because of this
+38:29 right
+38:30 and yeah surprisingly it's used a lot in
+38:33 uh
+38:34 these uh industries like that like for
+38:36 marketing like every time you have you
+38:38 want to bring back a user then yeah you
+38:41 need to somehow store all these users
+38:43 and yeah so this is when uh i learned
+38:46 why boom filters exist and why we
+38:48 actually need them because i have no
+38:49 idea like previously i just watched this
+38:52 uh course on corsair by team
+38:55 rob gardner and i started something
+38:57 complex and i have no idea
+38:59 why these things actually are needed
+39:02 right
+39:04 yeah yeah that was the perfect use case
+39:10 what about search trees so do you have
+39:12 another part of your book where you talk
+39:14 about approximate nearest neighbors and
+39:17 uh yeah so maybe we can talk about uh
+39:20 this use case as well so
+39:22 um
+39:23 like why do we need this approximate
+39:25 search
+39:26 search these for approximate nearest
+39:28 neighbors
+39:30 um
+39:31 yeah well in general
+39:33 we need the nearest neighborhood search
+39:35 in
+39:36 also in many fields especially
+39:40 like in data science
+39:44 the
+39:45 perfect use case is when we have
+39:47 multi-dimensional data because
+39:51 if you think about
+39:52 for example binary search trees
+39:55 you have they are a fast way like a way
+39:58 to do fast search in
+40:00 a
+40:02 static or slowly changing
+40:05 set of course you can use automatically
+40:08 balanced search trees like red black
+40:10 trees for example
+40:11 to have to you also
+40:14 take on more dynamic sets but i mean
+40:17 beyond the point
+40:18 um
+40:19 the problem is that if you this data is
+40:22 basically uni dimensional if you put in
+40:24 a binary search three unit dimensional
+40:27 data
+40:28 and
+40:29 many many times
+40:31 especially in the last 10 15 years we
+40:35 have to deal with multi-dimensional
+40:37 datasets like even geographical data
+40:40 geolocation you have
+40:44 with approximation you can think as
+40:46 bi-dimensional data but you can have
+40:49 like also other data sets uh as we see
+40:53 every day like with even hundreds of
+40:56 features
+40:58 so
+40:59 they by the binary search binary search
+41:01 trees don't generalize well in
+41:04 multi-dimensional data but still we need
+41:06 a way to do
+41:07 like to search these datasets
+41:10 faster than going through all the data
+41:13 points in engineers kind like brute
+41:15 force
+41:16 search
+41:17 and
+41:18 especially because i if yeah you have
+41:22 hundreds of features for a single point
+41:26 it might be
+41:28 costly even to compare a single that's a
+41:31 data point to what you're looking for or
+41:34 to run any operation on this data
+41:39 and
+41:40 the way we can do this is
+41:42 this neighbor nearest neighbor search
+41:45 and there are different data structures
+41:49 let's say the probably the first one
+41:51 that was invented to deal with this
+41:54 particular problem well
+41:57 were they kd3s
+41:59 and it's like 40
+42:02 or
+42:03 50 year or years old
+42:05 destruction
+42:07 and
+42:08 and
+42:10 for a long time that's been
+42:12 the the the best like the
+42:15 cutting edge solution for this
+42:18 however like
+42:20 now there are even better structures kd3
+42:23 said some problems they work well
+42:27 up to a certain dimension of the data
+42:30 sets like
+42:31 not very
+42:34 high dimensional datasets like small to
+42:37 medium dimensional datasets
+42:39 and also i had a problem with dynamics
+42:43 data points
+42:44 now in the in in my book i will go
+42:46 through kd trees to you know what yeah
+42:50 readers after appetite and to explain
+42:52 the basics and why nearest neighbor
+42:54 search is important that we go to
+42:56 a real case like using geo location for
+42:59 example for a delivery system or
+43:03 an
+43:04 online shop
+43:06 to make
+43:07 like 200
+43:09 thousands or millions of orders and to
+43:12 find for each of them the closest
+43:14 warehouse from where
+43:17 some goods can be shipped
+43:19 and
+43:20 but in the other chapters we also go
+43:24 through
+43:25 newer afternoons like arteries or esse
+43:28 trees like similarity search trees
+43:32 which handle better high demand
+43:34 dimensional spaces
+43:36 and
+43:38 also allow these approximate nearest
+43:40 negative research but the point with the
+43:42 approximate is
+43:44 that sometimes we don't need the actual
+43:47 best possible results but we can be good
+43:51 with the
+43:52 close to optimal results for example if
+43:54 we have
+43:55 like two warehouses close to the
+43:58 destination of a parcel it doesn't
+44:00 really matter if one is
+44:03 uh like if they are about 10 kilometers
+44:05 more or less far away it doesn't matter
+44:08 if one is 100 meters closer
+44:11 it's the same right
+44:13 if we can perform this search
+44:16 much faster
+44:18 and
+44:19 and and like
+44:21 find the suboptimal solution that
+44:23 however is only
+44:25 one percent or 0.1 percent
+44:28 further away than the best possible
+44:30 solution than
+44:32 in many many uh
+44:34 in many many
+44:35 areas many many problems
+44:37 it's pretty much the same like it's it's
+44:40 okay
+44:44 yeah do you uh like i i have an example
+44:48 in my uh
+44:49 mind but i'm not sure if this is like a
+44:51 great example if the search trees work
+44:54 for that so i work at elix and twiligs
+44:57 is uh
+44:58 basically like uh online marketplace and
+45:01 we have a recommender system there so in
+45:03 a recommender system
+45:05 um so basically you want a person uh
+45:09 you want to recommend the person like
+45:10 things that they might be interested in
+45:12 like think of amazon as well like
+45:14 basically based on what you so
+45:16 previously we want to recommend
+45:18 something that the user might be
+45:19 interested in
+45:21 and what we do for that is we each
+45:24 each item we represent like a vector
+45:28 um
+45:29 like i don't know 16 dimensional vectors
+45:31 so it's basically
+45:33 uh
+45:33 each item is an array with 16 numbers
+45:37 right
+45:38 and
+45:39 then what we do is we
+45:41 do a similar thing with the user so we
+45:43 represent the user as a 16-dimensional
+45:46 array right so you have an array user
+45:49 and you have an array for each item
+45:52 and then what we do is
+45:54 we want to find the closest possible
+45:56 array to the user array right so we look
+45:58 at all the items and we try to find the
+46:00 closest uh
+46:02 one and uh yeah often we don't need the
+46:05 most closest one right you just need
+46:08 something that is suboptimal right like
+46:11 it's
+46:11 close enough right is it a good use case
+46:14 for that
+46:16 yes a perfect use case actually it's um
+46:20 these are finding similar images
+46:23 if the images are translated to feature
+46:25 vectors for example
+46:28 and
+46:29 for example similar images to a product
+46:31 that the
+46:32 the user already saw or similar users or
+46:36 even finding not just the closest one
+46:39 but
+46:41 the five closest uh
+46:43 profiles to some users or five closest
+46:46 images
+46:47 yeah it's perfect use case
+46:49 yeah because we have we use a library
+46:51 for that it's called files from facebook
+46:54 and i to be honest i don't know what it
+46:57 actually uses inside i just know that it
+46:59 works faster than you know brute force
+47:01 search
+47:03 and that's all i know
+47:06 so probably this is one of those
+47:09 data structures inside there
+47:11 yeah it's possible yes and
+47:14 it's
+47:16 these data structures are really used a
+47:18 lot in machine learning
+47:20 and
+47:22 in both like in these cases
+47:25 uh in clustering uh
+47:28 they
+47:29 for example
+47:31 k-means or
+47:33 other clustering algorithms can use
+47:36 these nearest neighbors search and this
+47:38 data structure to perform near stable
+47:41 search to speed up
+47:44 to speed up the algorithm
+47:46 and yeah so we have a question this may
+47:49 be quite related to the point i just
+47:51 brought up about
+47:52 using the library and not necessarily
+47:54 knowing what is inside the question from
+47:57 bin code
+47:58 is
+48:00 is it necessary to know
+48:02 data structures or knowing how to use a
+48:05 framework is more important
+48:07 like for example if they think about
+48:09 bloom filters we can take
+48:12 just off-the-shelf implementation of a
+48:14 boom filter
+48:16 as a library
+48:18 and just use it or sometimes we actually
+48:20 need to know how these things work
+48:22 inside
+48:25 um the most important thing is to know
+48:28 how they work like on the outside and
+48:32 what you can expect
+48:38 the contract that you have with the
+48:40 other structure the guarantees that you
+48:41 have
+48:42 from that
+48:45 most of the time you can be
+48:48 you can be fine not knowing how the
+48:50 internals are only if you have to
+48:52 improve uh your performance or if you
+48:55 run into problems the other case where
+48:58 you might want to know how things work
+49:01 is when
+49:03 you have to do some customization
+49:05 so you cannot
+49:07 use something off the shelf
+49:10 and you have to write your own
+49:13 or maybe
+49:14 another possible case is when you
+49:18 you're
+49:19 using a
+49:20 a new programming language like for
+49:23 which there isn't such a library yet so
+49:25 you have to write your own you have to
+49:27 be the first one
+49:29 but i would say it's more common like
+49:30 maybe if you have to use a customized
+49:33 solution
+49:34 customized solution then you might have
+49:37 to implement it yourself you it can give
+49:41 of course there would be workarounds
+49:44 maybe
+49:45 but they you
+49:47 sometimes with these workarounds you
+49:49 lose the gain that you have with the
+49:51 data structure
+49:52 i was talking about like this use case
+49:54 that i mentioned in a
+49:57 tech company
+49:58 so actually we ended up the implementing
+50:01 bloom filters ourselves there because we
+50:03 needed to have an exactly the same
+50:05 implementation for
+50:06 multiple languages for goal for java and
+50:09 for javascript and for python as well
+50:11 because we were data scientists the data
+50:13 scientists work in python so that's why
+50:16 the stuff we create like if we create a
+50:18 bloom filter we need to be to make sure
+50:20 that
+50:21 this bloom filter can be consumed by
+50:24 uh whatever other language we were
+50:27 running so what we ended up doing was
+50:30 implementing bloom filters
+50:32 ourselves i did that
+50:35 i
+50:36 remember that i just re-implemented it i
+50:38 took the implementation from somewhere
+50:40 so i cannot claim i actually know how it
+50:42 works
+50:43 it seems to work but i remember with
+50:45 bloom filters um yeah what you actually
+50:48 need to know like because
+50:49 they give you these false positives
+50:51 right
+50:52 um and you need to somehow
+50:55 know at least a little bit about the
+50:56 internals of the boom filter just to
+50:58 understand that you have these false
+51:00 positives and how you can actually
+51:02 control how to you uh
+51:04 like based on the size of your set and
+51:07 based on the this false positive error
+51:10 rate like how can you make sure that you
+51:13 can minimize this error rate so this is
+51:16 you you need to to know a little bit
+51:18 about that to to use boom filters so
+51:22 yeah i probably need to
+51:23 to know a little bit uh
+51:25 about that but maybe for the first use
+51:27 case uh
+51:29 you can just go ahead and use and use
+51:31 like for example in google guava which
+51:33 is a
+51:34 like a library in java
+51:37 they use a pretty good preset uh
+51:40 configuration so you don't really need
+51:42 to care about what is inside it just
+51:44 give you an okay
+51:46 boom filter right and then if
+51:49 uh like performance is not good then you
+51:51 can
+51:52 try to understand what's going on and
+51:54 try to tune it right
+51:56 yeah it's perfect yeah success but also
+51:59 like your use case was
+52:01 um yeah i in an ideal example like i
+52:05 guess you need to see realization of
+52:07 this boom filter and like
+52:10 having the same seeds for the hash
+52:12 functions through all the sets and yeah
+52:15 that's
+52:16 another case where you might want to
+52:18 have control on these things and you
+52:20 cannot do that yeah
+52:22 so we were producing uh bloom filters in
+52:25 a
+52:26 python job because we're a data
+52:28 scientist that's
+52:30 the only language we know right but then
+52:33 yeah it was used by uh production
+52:36 systems written in java and go and uh we
+52:40 needed to
+52:41 and for some reasons javascript i don't
+52:43 remember why but
+52:44 yeah um we needed to be able to read
+52:47 these uh boom filters that we produced
+52:49 uh
+52:50 it was fun i i liked doing that
+52:54 um
+52:55 yeah what do you think about uh so
+52:57 speaking of algorithms what do you think
+52:59 about um
+53:01 job interviews so in job interviews uh
+53:03 companies seem to
+53:06 really um how to say be obsessed about
+53:09 uh at least that's my uh
+53:11 you work
+53:12 at
+53:15 microsoft as well
+53:16 so
+53:17 like i have an impression that if you
+53:19 want to get into such of these companies
+53:21 you really need to know uh
+53:24 like all the
+53:26 algorithms 101 then you also need to
+53:28 know maybe more advanced algorithms like
+53:30 you need to know trees graphs and so so
+53:33 on what do you think about this like is
+53:35 it reasonable
+53:36 um these companies expect everyone uh to
+53:40 know these things
+53:42 um
+53:44 so well
+53:46 i mean they have this company have a lot
+53:49 of experience interviewing people so
+53:52 it's hard to for me to say no maybe
+54:04 my feeling is that when you focus an
+54:06 interview on
+54:08 uh only on challenges and algorithms
+54:12 you are not interviewing the candidates
+54:15 on the right
+54:17 on the right knowledge on the right
+54:18 skills because they will maybe they will
+54:20 use them
+54:22 and
+54:23 certainly it is good to know if a
+54:25 candidate has an idea about like the
+54:30 performance bottlenecks and how they can
+54:32 screw everything
+54:34 by
+54:35 misusing an array or always simple data
+54:39 structure
+54:40 but it's not the only part of the job
+54:42 like there is much more we i've seen
+54:44 candidates that they did sell our job on
+54:47 the algorithms interview and then they
+54:49 could not use git
+54:52 so they had to catch up a lot on their
+54:54 first month
+54:55 um
+54:56 on the job
+54:58 um so i think
+54:59 it's
+55:02 like maybe it's too much like the it's
+55:05 too much of an opposition it's good to
+55:07 have some questions on these but it's
+55:10 also good to have
+55:13 a different set
+55:15 of
+55:16 skills tested in the interview too
+55:19 like i i like
+55:20 mixing the
+55:23 different kind of interviews doing some
+55:25 paid programming and even some great
+55:27 programming or some debugging in the
+55:30 interviews
+55:31 and so you can see how it actually is
+55:34 working with this person and what they
+55:36 can do on the job
+55:37 like debugging bloom filters or
+55:39 debugging or something yeah
+55:42 well that's maybe the master you need to
+55:44 be
+55:48 i remember i had an interview with uh
+55:50 was it facebook i don't remember well
+55:51 some of these um
+55:54 top tech companies and the other
+55:56 questions there were
+55:59 like i don't remember exact questions
+56:00 but it was like just mind-blowing that
+56:03 in 35 minutes
+56:05 you need to solve two these kind of
+56:07 problems like two not just one
+56:09 and then if you spend like 30 minutes
+56:11 solving one and then you have just five
+56:13 minutes for
+56:14 solving the second one it's kind of true
+56:18 yeah so it's also difficult like when
+56:20 you have a limited time maybe you don't
+56:22 have the right idea immediately also
+56:25 because of the pressure
+56:27 it's very
+56:28 it's a very good way
+56:29 yeah and then they also had uh for me
+56:33 two such interviews in a row so in the
+56:35 first interview they had like
+56:38 two two tasks like that and then the
+56:40 second one that was
+56:42 like too much um
+56:45 yeah
+56:46 yeah i didn't notice one interesting
+56:47 question is um
+56:50 so there are quite a lot of algorithms
+56:53 and data structures
+56:55 so for data engineers and data
+56:57 scientists and
+56:58 everyone who works with machine learning
+57:00 what you think are the most
+57:03 needed ones
+57:05 i think we talked about the race and
+57:06 sets and that is there anything else
+57:09 that
+57:10 should also
+57:11 like every data scientist or data
+57:13 engineer should uh keep in mind
+57:16 um
+57:19 it's uh i mean for sure the basics uh i
+57:23 would say
+57:26 like at least knowing what
+57:28 biology search is
+57:30 is a must if especially if you want to
+57:34 get to
+57:35 facebook
+57:40 if you're going to interview for these
+57:42 companies i i i
+57:44 i had my fair share as well i have had
+57:46 similar experiences with you
+57:49 i think you need to know all the basics
+57:53 and graphs as well like dfs bfs
+57:58 even the extra but
+58:01 probably
+58:02 not much more than that
+58:04 well sometimes i got
+58:06 like questions that could have used
+58:10 interval trees or
+58:12 more exotic that's like
+58:16 like you know there are these contests
+58:18 for people
+58:19 for programming
+58:20 contests uh that they they need to use
+58:23 some sort of very smart data structure
+58:25 like this in the old days so these
+58:27 people
+58:28 will have no problems getting into
+58:31 facebook
+58:32 yeah no it did i actually once was uh
+58:35 interviewed by one of the former
+58:38 champions of such a competition
+58:47 [Music]
+58:49 yeah so um
+58:52 yeah maybe last one um can you suggest
+58:55 uh good resources where
+58:58 um
+58:59 like when we where we can build a
+59:01 project to learn data
+59:03 structures and algorithms so basically
+59:05 learn them by doing them
+59:08 by using them
+59:12 like besides all the material that you
+59:15 can find
+59:17 yeah like one you suggested i think you
+59:20 suggested taking part in online
+59:21 competitions like a stop coder and yeah
+59:25 there are many of
+59:27 them
+59:29 but is there anything else we can do to
+59:32 like maybe build our own
+59:34 pet project to learn uh
+59:37 data structures and algorithms
+59:41 um
+59:44 there are sites like uh lead code and
+59:48 examples like where you are
+59:52 you have these kind of problems and you
+59:54 can try to solve them you can also see
+59:56 other people's solutions so you can
+59:59 learn
+1:00:01 like new techniques to solve the same
+1:00:03 problems
+1:00:04 and
+1:00:06 well i don't know maybe like one
+1:00:08 solution is
+1:00:09 working on
+1:00:10 like finding an open source project that
+1:00:13 you can join or start in one of your own
+1:00:16 and
+1:00:18 you can also get feedback on that right
+1:00:21 especially if you start if you join an
+1:00:23 existing project
+1:00:25 like that it's well run running
+1:00:29 um
+1:00:30 you can get a lot of feedback but even
+1:00:32 if you start yours and you put yourself
+1:00:34 out there
+1:00:35 you might get some some feedback
+1:00:39 yeah thank you
+1:00:40 yeah while we were talking that there
+1:00:42 was another question popped up so maybe
+1:00:45 we take this one and uh this will be the
+1:00:47 last one
+1:00:49 so um do you recommend data scientists
+1:00:51 who are interested in
+1:00:53 data structures and algorithms to jump
+1:00:56 ship
+1:00:57 and go into compiled languages like c
+1:00:59 plus plus or java
+1:01:02 rather than using python like is there
+1:01:04 any advantage going this way
+1:01:09 well i think python is perfect right now
+1:01:12 for that scientist
+1:01:14 it's uh it has the
+1:01:16 best libraries for these and it's like
+1:01:20 an esperanto for for data science
+1:01:23 everyone in data science knows it
+1:01:25 that said you might find yourself
+1:01:28 uh you need to implement to actually
+1:01:31 implement if you actually need to
+1:01:33 implement the production model
+1:01:36 then it's like c plus plus more than
+1:01:38 java that you might need
+1:01:40 it will allow you to
+1:01:44 write more performant code like work on
+1:01:48 parallelism multitrading and have
+1:01:51 greater control
+1:01:52 um
+1:01:53 on
+1:01:54 on the low level the tails
+1:01:57 i would say that it can be quite
+1:02:00 important it's
+1:02:01 kind of the difference maybe sometimes
+1:02:03 it's the
+1:02:05 kind of the difference between data
+1:02:06 scientists and other engineers maybe
+1:02:08 that engineers works a little bit a
+1:02:10 little bit more on the c plus plus side
+1:02:13 than data scientists
+1:02:15 but it can be useful i i wouldn't
+1:02:17 suggest
+1:02:18 that to switch one for the other to
+1:02:20 switch from knight to class plus but
+1:02:22 maybe to learn about
+1:02:25 yeah and there is one there is a thing
+1:02:27 called titan so you don't actually need
+1:02:30 to
+1:02:31 ditch python completely you just use
+1:02:34 python and in saturn
+1:02:36 like it's almost c
+1:02:38 uh i think that's why it's called like
+1:02:40 saturn
+1:02:42 but basically you can have this
+1:02:43 performed perform
+1:02:46 like quite performant uh typed code for
+1:02:49 number crunching things
+1:02:51 so you kind of still stay within the
+1:02:52 python realm but
+1:02:55 you also get the benefits of
+1:02:57 like native code
+1:03:00 okay i guess that's all for today um
+1:03:03 so how can people find you
+1:03:06 um on twitter maybe that's uh this is
+1:03:09 the easiest
+1:03:10 and uh yeah we can share my tutorial
+1:03:14 at the end of the conversation and
+1:03:17 on
+1:03:18 on slack on that socks club as well
+1:03:27 mainly these two these are
+1:03:31 okay thanks for the chat thanks for
+1:03:33 joining us today and uh
+1:03:36 sharing your experience with us and uh
+1:03:38 yeah nice it was nice chatting with you
+1:03:41 thank you thank you again for having
+1:03:43 it was nice
+1:03:47 i just wanted to say thank you everyone
+1:03:49 to
+1:03:50 for joining us today and asking
+1:03:52 questions yeah
+1:03:54 indeed
+1:03:55 yeah well i guess that's it have a great
+1:03:58 weekend
+1:03:59 you too thank

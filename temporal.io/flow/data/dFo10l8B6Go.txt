@@ -1,0 +1,1830 @@
+Teaching Data Engineers
+
+0:00 hello everyone welcome to our event this
+0:02 event is brought to you by data talks
+0:03 club which is a community of people who
+0:05 love data
+0:06 we have weekly events and this is one of
+0:08 such events if you want to find out more
+0:10 about the events we have there is a link
+0:12 in the description go there
+0:14 click on this link and you'll see all
+0:16 the events we have in our pipeline
+0:18 then if whatever for whatever reason you
+0:21 haven't subscribed to our youtube
+0:22 channel do it now
+0:24 and this way you'll get notified about
+0:26 all our new videos
+0:28 and of course join our amazing community
+0:31 and if you do not know we have we are
+0:34 planning an amazing course about
+0:36 envelopes and mlaps zoomcamp it's a free
+0:38 course about envelopes
+0:40 um you can check the link in the
+0:42 description as well so go there click if
+0:44 you like it
+0:45 register there we are starting in a
+0:47 couple of weeks
+0:50 during today's interview you can ask any
+0:52 question you want there is a pinned link
+0:54 in the live chat click on this link ask
+0:56 your question and
+0:58 i will be covering this question during
+1:00 the interview
+1:01 so i think that's all from me
+1:03 so i will stop sharing my screen
+1:06 and i will now try to get the notes i
+1:08 prepared
+1:11 okay i have the notes are you ready jeff
+1:14 sure
+1:16 okay
+1:18 so
+1:19 this week we'll talk about teaching data
+1:21 engineers and we have a special guest
+1:23 today jeff jeff has been teaching for
+1:26 quite some time so first he was teaching
+1:28 data scientists and data engineers he
+1:31 will probably tell us more about that so
+1:33 welcome jeff
+1:34 hey thanks for having me
+1:36 yeah so before we go into our main topic
+1:39 of teaching data engineers and teaching
+1:41 in general let's start with your
+1:42 background i know you have an amazing
+1:44 background but probably it's better if
+1:46 you tell us
+1:47 about that so can you tell us about your
+1:50 career journey so far
+1:51 sure um
+1:53 so yeah i started uh as a lawyer and i i
+1:56 went to law school um
+1:58 and in my last semester of law school i
+2:01 joined a tech startup
+2:03 um and i was doing you know like
+2:05 strategy for them basically helping them
+2:07 expand uh their product and their their
+2:10 offering
+2:11 um and what i saw was just i started
+2:14 getting a lot of the questions that i
+2:16 wanted to answer and a lot of the work
+2:18 that i wanted to do just involved code
+2:21 you know if we wanted to know what
+2:23 regions to move into
+2:25 uh who our sales people were that were
+2:27 the best you know like i we had to
+2:28 answer those questions with sql and
+2:30 things like that just when i started
+2:31 coding um
+2:33 and then i joined a law firm because i
+2:35 had to you know pay off my student loans
+2:36 but while i was there i knew that i
+2:38 wanted to move
+2:40 into
+2:40 web development and learning how to code
+2:43 so i did a general assembly for three
+2:45 months i was lucky enough to get hired
+2:49 by an awesome tech company um really
+2:52 learned on the job for a couple years
+2:54 and
+2:55 after i felt pretty good about being a
+2:58 developer and you know like i could you
+3:00 know like i was really a contributor to
+3:02 the team
+3:04 for a little while then i kind of i
+3:06 found myself actually reading a book on
+3:07 how to be a better teacher which was
+3:09 weird because i never taught at that
+3:10 point before
+3:12 and i was like halfway through the book
+3:13 and i just knew that education was a
+3:15 passion of mine so i looked to see if
+3:17 flattering school was hiring anyone um
+3:19 they were they're looking for a new lead
+3:20 instructor uh i applied on their website
+3:23 and i you know started teaching there a
+3:25 few months later uh and learned a ton
+3:28 there i stayed there for like about
+3:30 three and a half years and then uh
+3:32 started my own school
+3:36 yeah that's pretty amazing from law to
+3:39 uh to software engineering then to
+3:42 teaching that's amazing so the book was
+3:45 how to be a better teacher right no it
+3:48 was uh the book i was reading was called
+3:50 um teach like a champion
+3:52 teach like a champion i should check it
+3:54 out what does it talk about
+3:56 so the main takeaway i got from it so
+3:59 one is this for like um
+4:01 like high school middle school teachers
+4:03 right uh so a lot of it is just lead and
+4:06 if you if you like i volunteered in a
+4:08 high school so you just see how much
+4:10 time can be wasted because the class
+4:12 room time is only like 45 minutes long
+4:15 so literally if you spend like 10
+4:16 minutes getting people settled and then
+4:18 like handing out the assignment that you
+4:20 have like 30 minutes to teach a lesson
+4:22 it's crazy um but the main takeaway i
+4:25 got from that class was just feedback
+4:26 you know always try to be getting
+4:28 feedback from your students to see what
+4:30 are they actually learning um and
+4:32 assessing that constantly right so they
+4:35 would just give like different
+4:36 mechanisms as to how to do that
+4:38 and that's what i started
+4:40 working in to the classroom and also
+4:42 what they did at flatiron school
+4:46 interesting i should check it out
+4:48 so getting feedback is the main takeaway
+4:51 right
+4:52 yeah there is actually there's like an
+4:53 article written by malcolm gladwell uh
+4:56 on teaching as well in educators and
+4:58 that's basically the way because they're
+4:59 saying like how do you evaluate teachers
+5:01 and that's like the main way that they
+5:03 evaluate teachers and one thing i'd say
+5:06 is like you'd be surprised
+5:09 how you know
+5:10 like you could do an awesome job
+5:12 teaching a subject but that does not
+5:13 mean the students understand it and i
+5:15 think teachers are often surprised like
+5:19 and i'll watch on like lectures you know
+5:21 given by like these great stanford
+5:22 professors and things like that and then
+5:23 i'll see them give the quiz and i'm just
+5:25 surprised that okay the students did not
+5:28 retain this information because you know
+5:29 they're either doing other stuff or
+5:30 there's so much to focus on or etc but
+5:33 you're just always surprised when you go
+5:35 to assess student learning that it takes
+5:37 a few times for them for it to sink in
+5:40 it's always the case right no matter how
+5:42 good
+5:43 the teacher says
+5:44 well the other thing is you know the
+5:46 best it's like you know passive learning
+5:48 versus active learning so if you're
+5:50 giving like one thing from another book
+5:52 they said is like if you're the one
+5:53 doing all the work you're the one uh you
+5:57 know look at who's making the noise in
+5:58 the classroom if it's the teacher he's
+6:00 the one having fun he's the one learning
+6:02 if it's the student like they're the one
+6:04 having fun and they're the ones learning
+6:06 so like you can tell where the learning
+6:07 is going on just by who's the one who's
+6:09 the
+6:10 group of people being active
+6:13 so uber a software engineer right so
+6:16 you're
+6:17 doing development job and then you
+6:20 accidentally bumped into this book and
+6:22 decided to become an instructor or how
+6:24 did you how did this happen why did you
+6:26 decide to actually leave your software
+6:28 engineering job and become a teacher
+6:32 so i was interested in education since i
+6:34 was about like 20 years old uh i you
+6:36 know i did like a lot of human rights
+6:38 stuff uh in undergrad and
+6:41 then i you know so i did this like
+6:42 really cool uh like summer program uh
+6:45 like working with refugees and got
+6:47 really into it when i was like 20. and
+6:49 then i tried to then like
+6:51 i didn't want to you know i wanted to
+6:53 kind of keep going with that in college
+6:54 so i was like looking for just projects
+6:56 to help out similar types of groups um
+6:59 and
+7:00 one thing i kept on hearing from people
+7:02 is like hey can we donate this stuff to
+7:03 them or can we do this type of thing and
+7:05 they're like all right well you can like
+7:06 they needed cleaner water so it's like
+7:08 okay well you can like yeah you can like
+7:10 give them water filters uh but unless
+7:12 there's like training to go along with
+7:14 it they're not going you know they're
+7:16 not going to really know how to use it
+7:17 and then it was and they said and by the
+7:19 way like instead of water filters they
+7:21 could just boil their water and if they
+7:23 had you know if you train them like kind
+7:25 of like these sanitary things then they
+7:27 actually don't need to
+7:28 they don't need these services in the
+7:30 first place so we kept on kind of
+7:32 running into like education as a
+7:34 solution and for me it really came like
+7:36 from that element and then you know just
+7:38 reading about it it involves so many
+7:39 different skill sets that that's it was
+7:42 just like a great challenge that you
+7:43 could go in a lot of different
+7:45 directions with it and go very deep with
+7:47 it as well
+7:51 so it's like instead of bringing people
+7:52 fish teach them how to fish
+7:55 yeah but it's also you know without you
+7:57 know people always say it's like you
+7:58 know you can have build unless the
+8:00 technology is really perfect right it's
+8:02 like the last mile problem like okay
+8:04 well then you hand it over to people are
+8:06 they actually
+8:08 using it right and
+8:10 you know so that's you know when i went
+8:12 there too they were basically asking for
+8:13 education like they
+8:15 they needed work and they for them it
+8:18 was their refugees for so for them they
+8:19 didn't speak english so it's like
+8:21 english training you know so in college
+8:23 i was like trying to develop like an
+8:25 online program to help them learn
+8:26 english and things like that so i just
+8:28 kept on running into education as
+8:30 something that was
+8:31 seemed like a good solution and it also
+8:32 was fun to do
+8:35 yeah so then you checked the so you were
+8:38 studying there at fatreon or you said
+8:40 you studied the general assembly so this
+8:42 was yeah so i did so you know when i was
+8:45 a lawyer like at that point i really
+8:47 wanted to learn how to code right i just
+8:48 worked in the startup i saw you know
+8:50 like 10 people doing this like amazing
+8:52 stuff it was it blew me away and
+8:55 so when i was a lawyer like i was just
+8:58 itching to try to figure out how to code
+8:59 at that point it was
+9:01 2013 there really were like hack the
+9:04 only like boot camp for months that i
+9:07 could see um right now they're called
+9:09 recurse center i think uh but at the
+9:11 time
+9:12 uh for they had a different name um so
+9:15 anyway but they were they were more like
+9:16 a writer's retreat uh like four coders
+9:18 you know for people that really could
+9:20 code and then flatter school and general
+9:22 assembly were really like the first two
+9:24 uh coding boot camps in new york city
+9:27 that you could get into i didn't get
+9:29 into flat iron school uh so or i think
+9:32 they they were filled up so i went to
+9:33 general assembly
+9:36 okay so you were looking for a teaching
+9:37 job so you went to flatrion website
+9:40 the careers page right and you saw was
+9:43 it lead instructor but then you worked
+9:45 there as a lead teacher
+9:47 right
+9:48 and i think your last position there if
+9:50 i remember correctly is lead curriculum
+9:53 writer so what what does it mean
+9:56 to be a little
+9:57 writer so essentially
+9:59 you know my last role was really to like
+10:02 build the data science course right um
+10:05 because at that point they offered the
+10:07 web development course and they just
+10:10 been bought by wework and they wanted to
+10:11 develop you know both expand the school
+10:13 in terms of locations and then also you
+10:16 know product offerings uh and i wanted
+10:18 to yeah i was really interested in data
+10:20 science so you know i kept on asking i
+10:22 mean before that if we could build a
+10:24 course in that
+10:25 um
+10:26 so you know it basically involved just
+10:28 you know first pitching to
+10:30 uh
+10:31 you know like leadership that hey this
+10:33 this was act this would work both in
+10:35 terms of employers would hire these
+10:37 students and the fact that like students
+10:39 would want to apply for that so there's
+10:41 a lot of just like competitor analysis
+10:43 looking at the job market looking at you
+10:45 know was there a viable career path
+10:47 looking at like student interest things
+10:49 like that
+10:51 and then it was okay looking
+10:53 also at other schools to see how did
+10:55 they develop a curriculum what subjects
+10:57 they teach what would it mean for us to
+10:59 do something like that talking to
+11:01 employers to get feedback from them
+11:03 talking to past students from these
+11:04 other schools and then just getting
+11:06 started writing curriculum uh and then
+11:09 you know about like six months in we
+11:10 hired a team of curriculum writers uh to
+11:12 help out
+11:15 so this is what you did as a lead
+11:17 curriculum writer
+11:19 right i guess so i mean like
+11:21 you know but you this wasn't your titles
+11:23 so as you said you were yeah i guess
+11:25 that's really
+11:26 development right right i mean my title
+11:28 didn't really you know like i don't know
+11:30 like i also then taught the court like
+11:32 taught the first course while i was
+11:33 still the lead curriculum writer
+11:35 okay but what does it actually mean to
+11:38 build a community lead curriculum writer
+11:40 it means you write you know you're right
+11:41 curriculum
+11:42 but what does that inter write a
+11:44 curriculum what does it mean to build a
+11:46 curriculum well what do you do there so
+11:48 what
+11:49 does
+11:50 what the curriculum actually is what is
+11:52 that oh like okay so um
+11:55 you know like first you basically write
+11:57 out like the syllabus and you try it you
+11:59 know so like first i guess i like read
+12:02 you know did all like just got a bunch
+12:04 of ideas and by looking at other
+12:06 people's syllabuses and topics and
+12:08 reading blog posts on the school
+12:09 experience and things like that right
+12:11 and then from there you start general
+12:13 level topics right uh data science could
+12:16 be regression classification clustering
+12:18 time series whatever exactly right and
+12:20 then you know looking at coursera
+12:22 courses looking at statistics courses
+12:24 look you know you kind of start with
+12:26 okay here's the topics we need to teach
+12:28 and then what is that what does that
+12:30 mean and then you you know so you go
+12:32 deep into these individual courses that
+12:34 are all kind of disparate um
+12:36 and then you start to see like how they
+12:38 line up right because you always want
+12:40 the
+12:41 learning material to fold into one
+12:42 another like if it if it um if you just
+12:45 teach it once and it's never used again
+12:47 was your brain learns that and it
+12:49 they'll nev you forget it immediately so
+12:51 you want to see like okay how do these
+12:53 topics build on one another um and then
+12:56 you want to you know develop the
+12:57 syllabus uh where that lines up and then
+13:00 finally you start writing the curriculum
+13:02 like you just start literally you know
+13:04 typing on the page and coding out and uh
+13:07 you know i started with the intro
+13:08 material and and just started writing
+13:11 that curriculum and then as you're doing
+13:12 it things change right and especially as
+13:14 you then go to teach the material you
+13:17 you know things change as well you see
+13:19 it's just the ordering changes or you
+13:21 need more time here and not as much time
+13:22 there and things like that
+13:25 the curriculum is a detailed detailed uh
+13:28 description of each unit or more no i
+13:30 mean
+13:31 it's a syllabus but then also it's you
+13:34 know literal you know
+13:35 readings right so you have to write out
+13:37 like lessons for every
+13:39 uh corresponding like lecture that you
+13:42 give so each lecture say if a lecture is
+13:44 an hour that probably consists of like
+13:47 three different lessons
+13:48 two to three different lessons and then
+13:50 probably two different two to three
+13:52 different labs right so you'll give
+13:54 maybe like two different small labs and
+13:56 then one larger lab uh to tie it all
+13:59 together
+14:01 so it could be like okay we take like an
+14:04 instruction step by step step
+14:05 instruction of what exactly you're going
+14:07 to talk about so for example if we take
+14:10 i don't know regression so first you
+14:11 show a data set then you talk about i
+14:13 don't know importing psychic learn then
+14:15 you talk about turning this data set
+14:17 into something then you set there is a
+14:19 lab so students actually sit and do that
+14:21 and then there is another bunch of you
+14:23 know you talking about something that
+14:25 students do and you describe all that on
+14:28 a piece of paper or in google yeah yeah
+14:30 but you break it down like i think you
+14:33 know you break it down very granularly
+14:34 right so like i think with regression it
+14:36 would be like because you want to
+14:38 understand each component right of y
+14:40 equals mx plus b whatever right so you
+14:43 start with okay well this is b and this
+14:45 is like why because that's the most
+14:46 simple probably to understand and it
+14:47 just like raises the line up and down
+14:49 and then m of course is the slope and
+14:51 then from there you probably be like hey
+14:53 by the way we can like build this and
+14:55 plot this out in code uh and as we
+14:57 change these numbers like as we change m
+14:59 and b you can see this thing change so
+15:01 you you want them to like understand it
+15:03 each component comes set conceptually
+15:05 and then from there you'd probably want
+15:07 to do okay like why you know you you
+15:09 want to really understand the
+15:11 application of it
+15:12 and honestly probably like ideally you
+15:14 want to understand the application first
+15:16 and then go into uh the underlying
+15:18 components
+15:20 did you already know about data
+15:21 engineering back then that you want to
+15:23 teach it when you've been yeah i have no
+15:27 when i was teaching data science i'd say
+15:29 one thing i saw was you know because i
+15:31 had been teaching web development at
+15:33 that point for a couple years
+15:35 one thing i kept seeing and like kind of
+15:38 like wasn't
+15:39 you know kept on kind of saying to
+15:40 myself and to some others was like man
+15:42 if they knew they're better at
+15:44 engineering like they would just be so
+15:46 much better at these projects and these
+15:48 skills and like
+15:49 you could just see
+15:50 like how much it made sense uh and how
+15:53 much you know the reason why i was able
+15:55 to teach myself like sk learn and pie
+15:57 torch and things like that pretty
+15:59 quickly was because i was a software
+16:00 developer um you know i could read
+16:02 libraries pretty well and understand
+16:04 what was going on
+16:05 um so
+16:07 that's what i kept seeing that and kept
+16:10 trying to like advocating for more and
+16:12 more uh back-end development work uh
+16:15 and you know when i first launched my
+16:18 school it was data science as well and
+16:20 really what was the turning point was
+16:22 just
+16:23 the job market shifted uh so that it i
+16:26 felt like it was no longer viable career
+16:27 path for someone to
+16:30 go just go through a coding bootcamp and
+16:31 become a data scientist but it was a
+16:33 viable career path to become a data
+16:35 engineer
+16:37 so maybe let's uh go a little bit back
+16:40 so at some point you decided to leave
+16:42 flat room and start your own
+16:44 bootcamp
+16:45 so why why did you make this decision
+16:50 you know
+16:51 again just follow the same
+16:53 approach right you could have pitched
+16:54 this to
+16:56 um to the school right and going i
+16:58 didn't know that data engineering i left
+17:00 flat on people before i kind of
+17:03 you know but when we
+17:05 when i first taught a flattering school
+17:07 this was i think the first course
+17:08 graduated in like
+17:10 2018 and 2019
+17:13 uh
+17:14 like students got jobs as data
+17:15 scientists pretty pretty quickly even
+17:18 though you know the course probably
+17:19 still had some more like a lot of
+17:21 improvement uh but the job market was
+17:24 such that that was okay you know they
+17:26 were they were getting great career
+17:28 paths out of it so that was really cool
+17:30 um so you know in terms of leaving flat
+17:33 iron school i guess
+17:35 there was there are other components
+17:36 that i wanted to do
+17:38 uh beyond just build curriculum you know
+17:40 there are other things that like
+17:41 problems i wanted to solve so one thing
+17:44 was like career services you know like i
+17:46 felt like there was a huge opportunity
+17:47 like in career services to just stick
+17:49 with the students because a lot of times
+17:51 what i saw was okay students would be
+17:53 like at this level uh like like maybe
+17:56 right at the bar to get a job when they
+17:58 graduate and then there was a huge
+17:59 difference between students that kind of
+18:01 just had a good path going forward and
+18:03 those that were kind of floundering
+18:06 right uh so you know that was and i
+18:09 would see it because then we would check
+18:10 in on students that didn't get a job
+18:12 three to four months later i was like oh
+18:13 crap they forgot you know so much of
+18:16 what we had been teaching them
+18:18 so like so that was one thing i thought
+18:20 this school could be way too way cheaper
+18:22 you know by by making a part-time by
+18:24 just like lowering the tuition uh things
+18:27 like that and then you know i i think
+18:29 like for me i also had this question of
+18:31 okay like why doesn't everyone do this
+18:33 you know and i didn't feel like anyone
+18:34 had a good answer for that
+18:36 uh so that i think when i like left the
+18:38 school it was things like that too i was
+18:40 like i want to answer those kinds of
+18:42 questions that don't have to do with
+18:44 curriculum and
+18:46 like i'm not like right now i'm a
+18:48 teacher you know and i write curriculum
+18:50 so to do that this is now starting to be
+18:53 my own
+18:54 school so
+18:56 you wanted to
+18:58 focus to lower the price you wanted to
+19:01 do it part time for those who already
+19:03 was really a dramatic thing you know
+19:05 that was part of the why doesn't
+19:06 everybody do this type component was
+19:09 like you know when you join a boot camp
+19:11 it's always take the leap and and trust
+19:13 right and it's a boot camp right and
+19:15 which means it's like all-encompassing
+19:17 type of thing
+19:18 and i wanted it to be something where
+19:20 you don't have to like put your whole
+19:22 career on the line to do this thing
+19:25 right um
+19:26 you know like like it doesn't have to
+19:28 feel like one i went through boot camp
+19:30 and i know that it feels very vulnerable
+19:33 when you quit your job and you're just
+19:34 putting so much trust into school to
+19:37 really deliver like you have no other
+19:39 option like at that point you are in
+19:40 their hands you know and
+19:42 like if you if you don't quit your job
+19:45 well then all of a sudden that's not
+19:46 true at all you know what i mean like
+19:48 like if you if the school doesn't work
+19:49 out or you don't like it you can
+19:50 literally you can just walk away
+19:52 effectively um
+19:54 and it's not a huge deal uh but if or
+19:56 you know but if something happens you
+19:58 get six there's some sort of tragedy or
+19:59 whatever like yeah that's pretty
+20:01 dramatic when you quit your job and
+20:03 you're trying to transform your career
+20:05 in four months
+20:06 [Music]
+20:07 yeah you you saw that and you thought
+20:09 okay i should
+20:11 make a
+20:12 create my own school
+20:13 for for people who will do it part-time
+20:16 right and i guess but it's also like it
+20:18 was also don't you know lower the
+20:20 barrier to entry like how do you lower
+20:22 the barrier to entry to
+20:24 make this possible like you like what it
+20:27 was you know really like the first
+20:28 question was again like why doesn't why
+20:30 don't more people do this right so you
+20:33 know one thing i started doing was i
+20:34 started just teaching weekly workshops
+20:37 right after work because like okay
+20:38 that's like a natural step to just
+20:40 showing people they can do it it's not a
+20:43 huge commitment right and then you know
+20:45 instead of showing up once a week show
+20:47 up three times you know obviously some
+20:48 more commitment but hopefully you see
+20:50 that hey this is coding is
+20:53 is more fun than you might think and you
+20:55 can it is it's it does not involve math
+20:57 and it's different than you might think
+20:59 right like the misconceptions around
+21:01 coding from people who have never coded
+21:03 before it's probably it's pretty
+21:05 dramatic they work for me uh so it was a
+21:07 lot of that like how do you introduce
+21:08 this to people how do you not make it
+21:10 such a huge step and and make it an
+21:14 easier transition for people
+21:17 yeah interesting but you started first
+21:19 with machine learning for your own
+21:21 bootcamp machine learning data science
+21:23 all that but then you gradually shifted
+21:25 to
+21:25 data engineering why did you do that
+21:28 yeah it was all about jobs like job
+21:30 opportunities i mean i was i was very
+21:32 surprised like i said you know when we
+21:34 when i first started teaching data
+21:35 science like there was you know we we
+21:38 followed we like went on people's
+21:39 linkedin that went to different boot
+21:40 camps and like made sure there was like
+21:42 a a real career path and same thing like
+21:45 the students that i taught initially
+21:48 like they kind of got they they got made
+21:50 the leap and they got to become data
+21:52 scientists and some of them are doing
+21:53 some really amazing things now um
+21:56 by the time i st my in my first data
+21:59 science class that i was teaching i
+22:00 started talking to employers and you
+22:03 know telling them you know what my
+22:05 students were doing and things like that
+22:06 and they're like like well you're like
+22:08 okay that's still naughty that we're we
+22:10 still wouldn't be that interested you
+22:12 know um and they still need more and
+22:14 they're still not actually great do you
+22:15 know how many applications we get for
+22:17 this position is crazy like i don't even
+22:19 know i'm talking to you and i'll be like
+22:20 okay
+22:21 do you remember well i remember i mean
+22:23 there would be you could click on
+22:25 instagram
+22:26 so many of the jobs would say like over
+22:27 500 you know um
+22:30 you like one person i spoke to a data
+22:32 scientist at bcg who was who told me you
+22:35 know i get 20 pings on linkedin a day uh
+22:38 asking me how do i become a data
+22:40 scientist like the only reason i'm
+22:41 talking to you is because you know you
+22:43 seemed interesting and you have this
+22:44 school uh
+22:46 you know like you can read like vicky
+22:47 boykiss's blog and she'll just you know
+22:49 it's like she she wrote uh right she
+22:51 wrote that blog post like data science
+22:53 is different now and she talks about
+22:54 just so so many people
+22:57 and one of the things i you know to
+22:59 point out is just but you know i would
+23:00 be like yeah well my steps are really
+23:02 good and they were like these tips are
+23:03 really good but it doesn't matter if
+23:06 there's just so much noise you know like
+23:09 flooding the market it's just not worth
+23:11 the time like i think the reason why
+23:13 people are looking for masters and phds
+23:16 is just like a easy way to like cut out
+23:19 a bit of the applicant pool you know and
+23:22 just like for mental sanity purposes be
+23:24 like all right i'm just going to look at
+23:25 these people
+23:27 and then data engineering on the other
+23:29 hand
+23:30 was in demand but did not such a lot of
+23:32 attention like data science right
+23:34 exactly right yeah yeah i mean one you
+23:37 know
+23:38 you actually had engineering skills like
+23:40 if you graduate with
+23:41 you know working in data engineering you
+23:44 know with data science there's so much
+23:46 to learn too that was the other thing
+23:47 was it was hard to build a curriculum
+23:49 around it we kept i kept extending the
+23:51 course it was originally six months and
+23:53 then i was like okay well we should
+23:54 teach you aws docker and like you know
+23:58 others airflow as well so then you know
+24:00 it kept and kept on extending it to the
+24:02 point that i was like eight nine months
+24:04 with data engineering it was like a more
+24:06 defined skill set of you know python sql
+24:09 cloud computing you know
+24:11 orchestration uh things like that uh and
+24:15 they and you could go deep into their
+24:16 subjects so that you weren't you know
+24:18 just going an inch deep in you know 15
+24:20 different subjects you're focusing you
+24:22 know on really giving them solid python
+24:25 sql skills it's like turn them into a
+24:26 back end developer and then also add
+24:29 this kind of data specialization on top
+24:32 did you also see that some of your
+24:34 students who
+24:36 went through your data science bootcamp
+24:38 that they were getting jobs as data
+24:40 engineers or not really no we were able
+24:42 to get them but you know they were
+24:44 qualified students like they you know
+24:47 like phd students and people that had
+24:50 been working with sql or things like
+24:51 that for you know five plus years um
+24:54 so you know it was it was successful but
+24:57 i did see that but i i didn't think it
+25:00 was sustainable like i thought it was
+25:01 still too much lift right to get them i
+25:03 was like this was way too much work like
+25:05 we had them do everything like they did
+25:07 they like crushed kaggle competitions
+25:09 like they like before they even
+25:10 graduated like they did so much stuff
+25:13 and i just was surprised at the
+25:14 resistance um but then when i was i did
+25:17 talk to graduates from other bootcamps
+25:19 and was you know because i was wondering
+25:21 like are they able to get data science
+25:23 jobs you know like like how does this
+25:25 work and and then and when i called the
+25:28 you know these students and spoke to
+25:29 them i was like no it was like either
+25:31 they would get kind of engineering jobs
+25:33 or data engineering jobs or analyst
+25:35 positions but it felt like that door had
+25:37 closed
+25:39 interesting i talked to a data science
+25:41 bootcamp here in berlin and they said
+25:44 something similar so many students that
+25:47 graduate from data science bootcamp that
+25:49 they have
+25:51 end up
+25:52 being hired as data analysts so and they
+25:55 now are
+25:56 kind of
+25:57 repurposing this already thinking like
+26:00 building a new curriculum
+26:01 for data analysts because this is how
+26:04 data scientists are usually hired the
+26:06 data scientists that graduate from that
+26:08 will come
+26:09 yeah i mean i even wonder like how much
+26:12 like i i trust in this person hiring for
+26:14 machine learning
+26:15 more than data science to begin with
+26:17 like because
+26:18 data science is
+26:20 there really i feel like there's a big
+26:22 diversity and the skill set asked
+26:24 machine learning i think at least
+26:26 there's
+26:27 like it's becoming more consolidated as
+26:30 a skill set being asked for it's just
+26:31 pretty advanced like i think you need
+26:33 kind of like the data engineering skill
+26:35 set plus like plus then the machine
+26:37 learning skill set
+26:40 how do you make sure so you have uh
+26:41 students who go through your web your
+26:43 bootcamp data engineers
+26:46 so how do you
+26:47 make sure they get hired
+26:50 yeah i mean we do a lot i mean one
+26:52 crucial thing is honestly the admissions
+26:54 you know just only admitting people that
+26:57 we believe are going to get hired at the
+26:59 end of it like that's the main
+27:01 question i ask myself
+27:02 uh it's hard to do you know it's hard to
+27:04 do because one like you know you like
+27:07 these you know you like the applicants
+27:09 and you want to say yes uh to people and
+27:11 then obviously you want to grow the
+27:12 school um
+27:14 but but only doing that that's i think
+27:15 that's like a huge thing um two you know
+27:18 the curriculum we just try to have a
+27:20 line up perfectly with what employers
+27:21 are looking for and then three you know
+27:24 we do we do the post-career uh work so
+27:26 we meet with them twice weekly uh to
+27:29 make sure that they're on track
+27:32 um and that also gives us feedback on
+27:34 the curriculum right because i see what
+27:35 questions are being answered i see you
+27:37 know how they're applying for jobs like
+27:39 things like that and then finally like
+27:40 hopefully like the other thing we saw in
+27:42 the first
+27:43 data engineering course was we paired
+27:46 students up after they graduated with
+27:48 employers
+27:49 like working for free because this way
+27:51 you know if it takes a few months to
+27:52 find a job they're building experience
+27:55 and that was that was really successful
+27:58 uh and so we built that into this
+27:59 program that like halfway through you'll
+28:01 start working for a company for free and
+28:03 that way you'll have experience by the
+28:04 time you graduate
+28:06 ah interesting how does that actually
+28:08 work like do companies agree because
+28:11 sometimes
+28:12 some random people write me on linkedin
+28:14 hey i will work for free give me job and
+28:16 then i'm okay but how do i
+28:19 even do that like it's exactly easier to
+28:21 say and then like another thing is if a
+28:24 person is working for free i do not
+28:26 trust the motivation of this person they
+28:28 might just decide one day not to show up
+28:31 because why would they
+28:33 so like i'm i have very mixed feelings
+28:35 and then another
+28:37 another thing here is like
+28:39 why for free like can't they just pay i
+28:41 don't know like minimum wage for that as
+28:43 well
+28:45 yeah um so there's a couple things that
+28:47 we saw too it was like you know if
+28:49 students just ask for an internship
+28:52 it's still an investment on the side of
+28:53 the company right to you know they're
+28:55 allocated like the most expensive thing
+28:57 is still going to be like a senior
+28:58 engineer's time to make sure and do
+29:00 project management and things like that
+29:02 so that's why
+29:04 we kind of said okay we'll help you
+29:06 right with coaching the students and
+29:09 kind of be the manager for the students
+29:12 right so it's like they kind of deliver
+29:13 a good amount of stuff for us
+29:15 um the other thing is
+29:17 you know we try to
+29:18 we basically say hey try find fun
+29:20 projects that are not mission critical
+29:23 that are nice to have and you know will
+29:25 really provide value and if they're
+29:27 delivered you'll you know you'll use
+29:29 them right
+29:30 um
+29:31 and then you know we we allocate in
+29:33 class time right this is we allocate six
+29:35 hours per week and we kind of make sure
+29:38 students tell us in advance if they're
+29:40 going if they're available for
+29:41 additional hours and then they stick to
+29:43 that right so kind of like as a teacher
+29:46 we we provide a lot of you know hey this
+29:48 is what you signed up for you know we
+29:50 have to deliver we have to be engaged on
+29:52 it and the same thing like the
+29:53 admissions really helps like our
+29:55 students are real you know professionals
+29:57 and they're they're quite good um so
+29:59 they they provide that
+30:01 professionalism when they do the job
+30:04 so when you
+30:05 do this screening what kind of signals
+30:08 you look for
+30:10 so
+30:12 i mean technically like technical skills
+30:14 we look for just like
+30:16 you know what we just need to be able to
+30:18 program well yeah yeah so we give them
+30:22 for engineers right all right yeah that
+30:24 again
+30:25 it's like already for engineers let's
+30:26 say somebody's working in uh software
+30:29 engineering already this is for them or
+30:31 they are not no no i mean we have taken
+30:34 people like let's say some of our
+30:36 students maybe about a third to 20
+30:39 um have had previous like engineering
+30:41 experience or have uh like gone to other
+30:44 boot camps things like that but what
+30:46 that but by the way like sometimes
+30:49 i mean you can't trust
+30:51 like we've had people that have been
+30:52 like ctos uh but you know for different
+30:55 organizations but that doesn't
+30:56 necessarily validate their coding uh
+30:59 background or skill set um so we have to
+31:01 we always do like a technical interview
+31:04 um
+31:05 so for us what we do is we give them uh
+31:08 there's like free curriculum that we
+31:09 have on the website uh like intro to
+31:11 coding right uh entry starting from zero
+31:13 to whatever on on python and we say hey
+31:17 go go do the first 10 lessons and then
+31:19 we'll give you an assessment and that's
+31:21 what i'm
+31:22 when i'm when we're doing the assessment
+31:24 uh what i do is you know i both
+31:27 you know like i'm looking to see like do
+31:29 they understand each step like they're
+31:31 not memorizing anything but they can
+31:32 tell me why you know they're using each
+31:35 step um
+31:37 and then like can if i give them
+31:39 something a little bit off the track of
+31:41 what they learned in the curriculum can
+31:42 they respond to my teaching style and
+31:44 and understand this so you're looking to
+31:46 see like can they are they thinking
+31:48 right like and are they thinking it was
+31:49 just hard to do when you're under
+31:51 pressure right and then translating
+31:53 those thoughts into code
+31:55 right if they can do that
+31:56 uh that's pretty good like like because
+31:58 you know if they've only they spent a
+32:00 couple weeks and they were able to do
+32:01 that that's pretty good and you also
+32:03 pick up a lot of things like
+32:05 all right well they are they going to
+32:06 put in the work are they motivated to
+32:08 put in the work um
+32:10 you know those components and then
+32:11 you've already spoken i've already
+32:13 spoken to them at this point
+32:14 so in the earlier stage we see okay what
+32:17 are they looking to get out of this
+32:18 program what do they kind of know about
+32:19 the industry
+32:21 uh what's their previous background that
+32:23 you know employers might look for or
+32:25 find attractive when they then go to
+32:27 hire them right so there are things like
+32:28 that that we're also looking at
+32:31 and we have a question that is quite
+32:33 relevant to what we are talking about is
+32:35 how does one know then the students are
+32:38 ready to apply for an entry-level data
+32:40 engineer and maybe i will rephrase it a
+32:42 little bit because it's similar to a
+32:43 question i wanted to ask which is about
+32:46 what do you include in the program
+32:48 now i think they are similar because you
+32:50 will probably know
+32:52 what entry-level data engineers should
+32:54 know so you put these things
+32:57 specifically in the curriculum right
+32:59 yeah am i correct that this is how you
+33:01 know that they are ready because you
+33:03 include
+33:04 only the things that yeah but you need
+33:05 to
+33:06 yeah i mean we can put in the curriculum
+33:07 but it goes back to the same thing like
+33:09 they need to master and really
+33:10 understand that material and and not
+33:12 only that it's six months where you know
+33:14 it's 400 plus hours of material
+33:17 over six months uh
+33:19 so
+33:20 like though they trust when they
+33:22 graduate they a lot of them i'll say hey
+33:24 apply
+33:25 start applying for jobs even if you're
+33:27 not ready all right start applying it's
+33:29 cool get get those rejections out of the
+33:30 way uh and that's a good motivating
+33:33 factor and we start to see you know in
+33:35 this we do that the other thing is we'll
+33:37 we'll ask that we'll give them technical
+33:39 interview questions right
+33:41 and see how they perform in that but
+33:44 there's no
+33:45 um
+33:47 no harm in applying to the job
+33:49 especially when they're starting to get
+33:52 you know takers and people that accept
+33:54 them which generally when you have those
+33:56 skill sets
+33:57 that's a nice thing is they don't have
+34:00 too many problems getting interviews
+34:03 so i encourage them to get the
+34:04 interviews get scared you know bomb an
+34:06 interview
+34:08 and then you know we can use that and
+34:10 you'll be motivated uh to improve
+34:13 so basically what you're saying is
+34:16 they might not be ready but they just
+34:18 need to get over this fear of rejection
+34:21 and then eventually yeah i mean
+34:23 interviewing is a skill in itself you
+34:24 know what i mean like like
+34:26 you know be great like you know you see
+34:28 all the time on linkedin how the
+34:29 technical interview does not line up to
+34:31 the job of course we like we all know
+34:32 that uh
+34:34 is so
+34:35 being great at interviewing
+34:38 is itself a skill no matter really
+34:41 probably no matter what job you're
+34:42 applying for so i i want them to start
+34:44 doing that and it will start to kind of
+34:46 like put them on track as well as
+34:50 okay they bomb the interview now they
+34:51 really want to start practicing lead
+34:52 code you know like now they see like oh
+34:54 crap like i really need to improve my i
+34:57 thought i was gonna sequel but now i
+34:58 really gotta improve it even more
+35:01 okay so but technically from what i
+35:03 understood from you the students are
+35:05 already ready technically but they just
+35:08 need to learn how to pass the interview
+35:10 what kind of questions get asked how to
+35:12 answer these questions and these
+35:14 questions are not always technical so
+35:15 from my experience like maybe 50 of the
+35:18 interview
+35:19 is not super technical they are like
+35:20 okay tell me about yourself tell me
+35:22 about the project that you're proud of i
+35:24 don't know tell me about x y z and then
+35:27 you need to have some practice right you
+35:29 to know how to answer these questions
+35:31 and the only way you can learn is i
+35:33 guess you know going to interviews well
+35:35 that's true but i it really helps i
+35:37 think it really helps to talk to an
+35:39 engineer about your experience like you
+35:41 have a friend that's an engineer so what
+35:43 i'll do is you know before students go
+35:45 on interviews
+35:47 i like i have every student send me
+35:48 their resume i look through their resume
+35:50 but then i talk to them for like 30 40
+35:53 minutes about their job experience and
+35:55 i'd say like inevitably
+35:58 i'll be like i'll be like oh i didn't
+35:59 get any of that from your resume uh
+36:02 that would be super attractive to an
+36:04 employer like let's let's put that in
+36:06 there and that process is basically like
+36:09 now how you know what we put on the
+36:11 resume is now a lot really focuses what
+36:13 you want to talk about in the interview
+36:17 okay and what do you actually put on the
+36:19 curriculum what are the topics there
+36:21 i mean so uh the first section we think
+36:24 of it like analytics engineering right
+36:26 so it's python you know strong focus on
+36:28 sql
+36:29 uh and then building kind of an
+36:31 analytics engineering pipeline uh so
+36:34 five tran dbt
+36:36 um snowflake
+36:38 uh and then we use mode as like a
+36:40 business intelligence tool um
+36:42 so that's that's like the first section
+36:44 and then the second section is
+36:47 essentially back-end engineering so it's
+36:49 you know flask
+36:51 uh building orms uh like the adapter
+36:54 pattern you know etl and python um mvc
+36:58 obviously
+36:59 uh
+37:00 and you know so and that takes a while
+37:02 like to go through that and a lot in
+37:05 testing right so a lot of that is like
+37:08 how do you write code for a larger code
+37:10 base how do you navigate a larger code
+37:12 base um things like that
+37:14 and that's that's another i don't know
+37:16 10 10 weeks or so
+37:18 and then finally we go into cloud
+37:20 computing and airflow
+37:22 uh it's a docker aws
+37:25 um airflow
+37:27 and then we layer in like starting in
+37:29 that second semester
+37:31 one they start their externship like
+37:33 their internships right we do that six
+37:35 hours per week and then also we start
+37:37 layering in interview questions so they
+37:39 start kind of thinking that way
+37:41 do you cover things like i'm
+37:43 making uh some comparisons by picking
+37:46 parallels with the course we have data
+37:47 engineering zoom comes
+37:49 and yeah so we do not
+37:51 we have this the analytics engineering
+37:53 model
+37:54 we don't really
+37:56 talk about five tron we cover just dbt
+37:59 but we do cover things like spark
+38:02 and kafka which you do not cover we do
+38:04 not cover that so we taught spark uh in
+38:08 the first iteration and you know i have
+38:10 we have so we have curriculum on that
+38:12 but we saw what wasn't really asked in
+38:14 interviews uh wasn't really required of
+38:17 junior like i see it a lot for senior
+38:19 engineering positions you know i scraped
+38:21 we scraped all these data engineering
+38:22 positions it does come up a lot but when
+38:25 we
+38:26 uh i want to look deeper to see if it's
+38:28 even listed on junior data engineering
+38:31 positions like zero to three years
+38:32 experience
+38:33 um and then it wasn't asked in
+38:35 interviews right so so that's why we you
+38:38 know we're like okay we have other
+38:39 things to teach
+38:42 okay and kafka i guess i remember when
+38:45 we first met it was a couple of years
+38:47 ago
+38:48 and i think he was showing me some
+38:49 curriculum and you were asking my
+38:51 feedback on that curriculum and i think
+38:54 we talked about kafka at some point
+38:55 right i think we wanted to include this
+38:57 but at the end it is i guess you decided
+38:59 to drop it was it again the same thing
+39:01 as with spark yeah it was the same thing
+39:03 you know like i don't i don't think it's
+39:05 listed that it's listed for again like
+39:07 more senior level position
+39:10 um the other thing is you know like this
+39:11 analytics engineering role really has
+39:13 like grown in the past couple of years
+39:16 so we wanted to you know focus
+39:19 also put time into that
+39:20 but the truth is like we took out we
+39:22 started taking out like
+39:24 we used to teach kubernetes too and then
+39:26 we saw while it like turned heads like
+39:27 people were impressed that the students
+39:30 knew it uh and sometimes they would ask
+39:33 questions on it it wasn't
+39:34 it you know it took so long it took like
+39:36 two and a half weeks to teach it which
+39:38 is a good chunk of the course and then
+39:40 it just wasn't enough added to justify
+39:42 keeping it
+39:44 yeah i remember again our
+39:46 discussion a couple of years ago you
+39:48 said that there is no good book that
+39:50 covers machine learning and kubernetes
+39:52 and i thought okay i need to include
+39:54 this in my book right right exactly it's
+39:56 a complex topic very complex topic that
+39:58 i i realized that it can be very
+40:00 overwhelming for
+40:01 people who are entering the field you
+40:03 can teach it like i really think you
+40:05 know you teach docker first obviously
+40:07 and then you know you can like we were
+40:09 able to successfully teach kubernetes
+40:11 the other part of it that was not great
+40:14 was
+40:15 it's people were stopping they stopped
+40:16 coding you know what i mean like like
+40:18 kubernetes you're you're writing yaml
+40:19 files you're not you're not coding and
+40:21 that's two and a half weeks that the
+40:23 students are not like are not coding so
+40:26 we kind of like that was the other thing
+40:28 we always wanted like reinforcing skill
+40:30 sets so if you if you look at the
+40:32 curriculum
+40:33 it's all like 80 like i tell people that
+40:35 are playing like yeah the curriculums
+40:36 are like 85 percent python and sql like
+40:38 that's that's really what we're teaching
+40:40 all the time
+40:42 a question we have is what steps should
+40:44 a data analytics or bi professional take
+40:48 to become a data engineer i think you we
+40:50 kind of partly covered that right so
+40:52 when you were describing the curriculum
+40:54 uh maybe they should start with
+40:55 analytics engineering right so what do
+40:57 you think about that
+40:58 for analytics engineering or data
+41:00 engineering like for data analysts they
+41:02 want to become data engineers so what
+41:04 kind of steps they should take yeah i'd
+41:07 say the main thing you know to ramp up
+41:09 on is back end engineering and cloud
+41:12 computing like cloud computing is
+41:14 probably the easier step to fill in the
+41:15 gaps with and then you know python
+41:19 so maybe
+41:20 you know if you wanted to just start
+41:22 applying for jobs
+41:23 maybe you start with cloud computing but
+41:26 like probably on the job a lot of uh
+41:29 what would be asked of you would be like
+41:31 python and i think you're seeing more
+41:33 and more people asking python questions
+41:34 and uh in the interviews
+41:37 well what about uh things like five tran
+41:39 dbt should we yeah i mean definitely
+41:42 they're easier to learn you know five
+41:43 train you can learn in a day or so less
+41:45 than that
+41:46 right like it's designed to be very easy
+41:48 to learn uh dbt you know same type of
+41:51 thing like you can you can navigate dbt
+41:54 like well enough for
+41:56 interviews probably in you know a week
+41:59 uh or two like it's not so bad what's
+42:02 harder is and i don't know you know i
+42:04 think for on the job like the pat like
+42:06 the dbt patterns and you should know
+42:08 that stuff of you know like staging and
+42:10 integration and marks um so like
+42:14 uh so learning that stuff is valuable
+42:16 but i think if if you can just start
+42:18 navigating dbt and then more like
+42:20 writing ctes and writing like modular
+42:23 sql code that's that that would be
+42:25 helpful
+42:26 what is cde
+42:28 a cte like a common table expression so
+42:30 just rapping
+42:32 right yeah yeah just just wrapping the
+42:34 sql statement with you know with boss
+42:37 you said you scraped
+42:40 a lot of job descriptions
+42:42 and you saw that spark is not there for
+42:44 for junior positions but it's present
+42:46 for seniors i'm wondering
+42:49 how often do you see five trend and
+42:51 things like air by at least low no it's
+42:53 surprising but lower court
+42:56 i don't see the the analytics so we
+42:58 didn't scrape i didn't scrape
+43:00 specifically for analytics engineers uh
+43:02 yet but for data engineers well it just
+43:04 it just did it for data engineers like
+43:05 literally in the past month and i i
+43:07 don't the the analytics engineering
+43:09 stack like does not show up at all like
+43:11 it shows up a little like i literally
+43:12 see like 10 out of like 400 uh job
+43:15 descriptions or listings like dbt which
+43:17 is kind of crazy
+43:19 but even like the worst elt like the
+43:21 worst etl like show up at the very top
+43:23 but then elt is like nowhere to be found
+43:26 i think people just mean
+43:28 like they use them interchangeably like
+43:29 i i always confuse oh what is the
+43:31 difference i'll just go with etl it
+43:33 doesn't matter i just mean
+43:35 i just mean i don't know data pipeline
+43:38 yeah but you know it's like when you
+43:39 look at the slack channels like then
+43:41 you'll see
+43:42 uh dbt and and airbud and things like
+43:45 that listed like in like kind of any of
+43:47 these slack channels but uh i don't know
+43:49 all the job descriptions i'm not sure if
+43:51 it's these are companies that aren't as
+43:52 plugged in or if it's just the job
+43:54 description isn't lining up or whatever
+43:57 but you but you still decide to teach it
+43:59 right regardless of whether i know
+44:01 there's a market for it you know what i
+44:02 mean like i know that i can we can reach
+44:04 out on these you know we can go to these
+44:06 slack channels or these employers and
+44:08 and they'd be attracted to people that
+44:09 really know mbt and the same thing like
+44:11 when i talk to employers like oh do you
+44:14 have people that really know dbt like
+44:16 we'd love that i'm like okay
+44:18 we'll make them
+44:20 another question is uh questions from
+44:22 john
+44:23 um like for data engineering sql is a
+44:26 useful skill so how
+44:29 how to improve sql
+44:31 if somebody wants to do that
+44:32 yeah i mean
+44:34 uh yeah you basically need to know sql
+44:36 in and out uh so like you know beyond
+44:39 you know aggregates obviously in joins
+44:41 that's kind of level one and then you
+44:44 want to know
+44:45 uh probably window functions is a mate
+44:47 like a favorite of interview questions
+44:50 um
+44:51 you know the leak code problems really
+44:53 are like you know if you look at data
+44:55 engineering interviews people will be
+44:57 like i always ask this leak code
+44:58 question you know uh and then i was
+45:00 asked this leaked question like so those
+45:02 leak code questions if you can get to
+45:04 you should probably be at like the
+45:05 medium level uh but by lead code
+45:08 questions you may because i know on lead
+45:09 code you have algorithmic challenges and
+45:11 sql problems as well you mean the uh i
+45:13 mean the sequel just click on the c
+45:15 typically code for sql right and then be
+45:18 able to do probably up to like medium
+45:22 uh
+45:22 for most positions is pretty good
+45:25 um and that's really like that's the
+45:27 main way they'll be assessing sql the
+45:29 other thing is going to be
+45:31 data modeling like you know
+45:33 knowing the difference in modeling
+45:34 between like oltp versus olap uh so
+45:38 practice modeling uh you know you can
+45:40 probably find them online as well
+45:41 because that's that's definitely fair
+45:43 game for people to ask
+45:45 so how do you do you know any useful
+45:47 resources for that
+45:49 otp versus olap
+45:51 yeah modeling
+45:52 for data modeling
+45:54 you know what's interesting someone told
+45:56 me uh like another teacher that runs it
+45:59 ran a african-american touring school i
+46:01 think or something like that uh they
+46:03 said like rest is really good for
+46:04 teaching for data modeling because it's
+46:06 kind of it's pretty similar principles
+46:08 uh so there's like rest from your
+46:10 mortals and then of course you know like
+46:12 there's the kimbo book but sometimes
+46:14 it's like a bit too much
+46:15 um
+46:16 it's quite the formal right yeah it's
+46:19 like very working right i feel like the
+46:21 first couple of chapters is like enough
+46:23 of it um
+46:25 i think that there are
+46:26 i think that there is some stuff online
+46:30 uh where you can do it the other thing
+46:32 are like those classic databases like
+46:34 the right like microsoft has like the
+46:36 northwinds database and thing like those
+46:38 types of databases and see how they're
+46:40 modeled we try to model them in advance
+46:42 you can take any kind of
+46:46 uh
+46:46 like domain like an airport right
+46:49 like that's i give my students that okay
+46:50 model an airport like like down here's a
+46:52 ticket here's a ticket of a airport uh
+46:55 you know that for a flight do you do the
+46:57 modeling for it
+46:58 right and then
+46:59 you know then you could show it to an
+47:01 engineer or maybe there is if you google
+47:04 it online maybe you know people already
+47:05 have an answer for it
+47:09 okay yeah so just think of something
+47:12 like i don't know parking lot but i
+47:14 think yeah i think you want to like look
+47:15 at sample databases uh also maybe if you
+47:18 go to code bases that are online like
+47:21 like for instance
+47:25 uh
+47:25 shoot there are like some organizations
+47:28 if you look at their
+47:29 like their open source repositories then
+47:31 just like go to their models you know
+47:33 afterwards and look at and draw it out
+47:35 like even just drawing it out would
+47:36 probably be useful but if beforehand you
+47:39 guess you know what is the relationship
+47:41 or how is this modeled that would
+47:42 probably be really useful
+47:46 so somebody with a nickname future
+47:49 ds engineer asks when to stop learning
+47:52 and start start attending interviews
+47:54 this seems like an ocean of topics and
+47:57 never ends and overwhelms sometimes
+47:59 yeah so that's why i think like you know
+48:02 there's no harm in just attending an
+48:03 interview
+48:04 for
+48:05 just to
+48:06 just just do it just for the experience
+48:09 right so if you feel like
+48:11 i'd say
+48:12 they're mainly going if you you maybe we
+48:14 can give some expectation as to what
+48:17 probably is going to be asked in an
+48:18 interview so like the first interview
+48:20 would be probably a screening interview
+48:22 like maybe they'll ask you uh you know
+48:24 like a little bit about data engineering
+48:26 maybe they'll ask you like otp versus
+48:28 olap um maybe they'll just ask you have
+48:31 you built any data pipelines and you
+48:32 know tell me about some of the tools
+48:33 you've used in data engineering things
+48:35 like that you don't need to know every
+48:36 one of them uh but just like if you've
+48:39 you know they want to know that you've
+48:40 spent some time with this uh and then
+48:42 the second interview is probably going
+48:43 to be a sql question
+48:45 so you can expect that so you know i'd
+48:48 say
+48:49 if you can do some of the medium
+48:51 uh lee code problems
+48:53 then okay you should feel pretty good
+48:55 and you don't have to get them 100
+48:57 right but if you don't feel blown away
+48:59 by like the medium uh sequel questions
+49:01 they're probably pretty good and then at
+49:03 that point go in an interview you know
+49:06 like like just like it's fine like there
+49:08 will be more interviews that show up so
+49:10 i'd say like go on the interview and
+49:11 that will help you
+49:12 a little bit see
+49:14 you know you can self-assess afterwards
+49:16 you can see where you are one thing i
+49:18 would say
+49:20 one caveat to that and one thing to be
+49:22 careful of is sometimes i'll see
+49:24 students go on an interview they're like
+49:27 bs something kind of out of left field
+49:29 and of course they vomit uh and they'll
+49:31 be like i gotta learn that thing like i
+49:32 learned everything about that thing and
+49:33 you come back to them two months later
+49:35 they're still just like learning
+49:36 everything about that thing and so like
+49:38 you want to stay on your learning path
+49:40 of okay i'm building like a data
+49:42 pipeline i'm improving my sql skills i'm
+49:44 going through some like python lead code
+49:46 problems right because those will also
+49:49 be asked
+49:52 okay so there are still a couple of
+49:53 questions i want to ask so yeah
+49:57 and the question uh i want to ask most
+49:59 if somebody wants to start teaching
+50:01 software engineering or data engineer or
+50:03 data science
+50:04 any topic
+50:05 what would you suggest to them so let's
+50:07 say i am a data engineer already i do
+50:10 not have experience in teaching
+50:12 what should i do
+50:14 okay so
+50:16 i mean the first thing is okay so think
+50:19 of a topic i guess that is probably like
+50:22 beginner level you know meaning meaning
+50:24 that one is something like a beginner
+50:26 can accomplish
+50:28 and
+50:28 two
+50:29 would be interesting to a beginner like
+50:32 actually fi like and that itself will be
+50:33 a process like it took me multiple tries
+50:36 uh to get there
+50:37 and then i'd say explain it to someone
+50:39 like explain just like
+50:41 explain it to someone at the level that
+50:42 you want your audience to be just one
+50:44 person and walk them through it uh and
+50:47 teach them it and then see if they know
+50:49 it and then also kind of maybe hear
+50:51 their feedback on it and that would be
+50:54 pretty good actually like at that point
+50:57 you're probably ready to deliver that to
+51:00 a meet-up
+51:01 um you know to like a small classroom
+51:04 something like that
+51:06 if you can do it in person it's better
+51:09 because
+51:10 uh one is easier actually in person than
+51:13 online and then two you get more
+51:15 feedback like the feedback is almost
+51:17 immediate like you can sense everything
+51:19 uh when you're teaching in person
+51:21 and you can see their faces and things
+51:23 like that which sometimes online you
+51:24 can't
+51:25 so if you can teach like just given a
+51:27 workshop in person that would be great
+51:30 and then do it again you know just give
+51:31 that work same workshop to a different
+51:33 meetup and revise it right and that's
+51:35 like the kind of teaching process is
+51:37 then revise the workshop and think about
+51:40 it and change the order of stuff and you
+51:42 know do it again
+51:44 how do you revise it is it based on the
+51:46 questions you get is it where it's like
+51:48 you
+51:49 you explain something and then you see
+51:51 that clearly everybody is lost right and
+51:53 then you see okay probably should have
+51:55 explained something else
+51:56 sometimes uh normally you can normally
+51:59 it's uh sometimes the questions
+52:01 questions can be really good and give
+52:02 you like oh that's that's kind of cool
+52:05 uh i can tell you less times you want to
+52:07 get to the point like as fast as
+52:08 possible you know or show the benefit as
+52:11 fast as possible this is one of the
+52:13 reasons why i said teaching online is
+52:15 harder is because online people could
+52:17 just like leave in a millisecond you
+52:19 know like you're boring for like five
+52:21 minutes well they're going on netflix
+52:24 immediately and if you're not
+52:25 interesting within the first five
+52:27 minutes like it's amazing to just see
+52:29 the people drop out of the zoom um so
+52:32 you know i found it way like my one of
+52:35 my best lectures uh in person right was
+52:38 like building a neural network from
+52:39 scratch right lots of people showed up
+52:41 they got a lot out of it and then i
+52:42 delivered it online but because there
+52:45 was such like a lead up until we got to
+52:47 the interesting stuff and like through
+52:49 you know like
+52:50 over half the people left by the time we
+52:52 got there so i just had to like totally
+52:54 flip the order of everything to make to
+52:56 make it it like told me a lot about oh
+52:59 if i can actually put this here and then
+53:01 we can start getting to the point way
+53:03 earlier
+53:04 okay yeah because uh like if when people
+53:07 come to the classroom
+53:09 it's not so easy for them to leave right
+53:11 and then switch to netflix because they
+53:13 are physically in that little exactly
+53:14 right they're physically there they're
+53:16 like with people you know things like
+53:18 that you can also give them activities
+53:20 to do you can't really give them it
+53:22 and zoom sessions it's a lot harder like
+53:24 for people to once you tell them to do
+53:26 something i found that's another point
+53:27 where people just like you know uh drop
+53:30 off but in person you know it's great
+53:32 you're just like okay and then here's
+53:33 this activity turn the person next to
+53:35 you and work on it with them right and
+53:37 like i love you know that stuff is great
+53:40 and then you set uh yeah pick something
+53:42 beginner level and then explain it to
+53:44 somebody how do i pick up this somebody
+53:46 how do i select who to i mean i taught
+53:49 my mom you know what i mean like like
+53:51 like really like if you go on my website
+53:53 it's like me teaching my mom how to code
+53:54 like in 10 lessons
+53:57 uh and really really and she would do
+53:59 the same actually
+54:00 what's that
+54:01 you actually recorded that yeah yeah i
+54:03 recorded it yeah
+54:05 um
+54:06 so yes it's on the that's on the website
+54:09 so
+54:10 and people of society were like
+54:12 i'm signing up because i saw you teach
+54:14 your mom to code
+54:17 so
+54:18 and she gave me great feedback because
+54:20 you know this is somebody who won uh has
+54:22 no background right in coding like let
+54:24 alone email uh and two has zero interest
+54:28 in code like you know she's retired
+54:30 she's not going to use this so
+54:32 you know like when i'm giving these
+54:34 lessons you know i'm going through lists
+54:35 and here's how you select from lip you
+54:37 know all that and she's like like like
+54:38 why do i need to know that you know so
+54:40 everything which is how you're supposed
+54:42 to teach everything should be directly
+54:45 solving their problem you know so they
+54:47 want to learn it and you're you're
+54:48 answering their question right and
+54:49 that's like how you like that that's
+54:51 like a good lesson
+54:54 and all this time or when you talk about
+54:56 the bootcamp you say we we teach
+54:58 but i think you're a one-person company
+55:02 right or less i no i have a co-founder
+55:05 but
+55:06 yeah in terms of like the education
+55:08 things like that yeah it's basically me
+55:11 so how difficult is it for you to to run
+55:13 this what are the main challenges
+55:16 um
+55:18 i mean you know writing the curriculum
+55:20 was like a massive lift like literally
+55:23 probably over 2500 pages of curriculum
+55:26 you know in the past three years so just
+55:28 cranking you know right and that's where
+55:30 my law background really helps is i can
+55:32 just like write eight page essays like
+55:33 they're nothing um and also you know the
+55:36 in the education is cool
+55:39 yeah i found a use for it thank god
+55:41 so
+55:42 i so you know but i'm still just writing
+55:45 constantly
+55:46 um like really really all the time uh
+55:49 for such a long time but i'd say that
+55:51 was that's kind of another challenge
+55:53 which hopefully i did properly which was
+55:56 you know when people ask me what i did
+55:57 like if someone just randomly met me i'd
+55:59 say i'm a curriculum writer like that's
+56:00 all i did for basically two and a half
+56:02 years was right curriculum and then
+56:04 teach the course 17 hours a week right
+56:07 um and then now you know
+56:09 so so i'd say like a lot of time like
+56:12 the one of the nice things about this
+56:13 business is that i've been able to focus
+56:15 on like one thing at a time so before i
+56:17 started the course it was you know
+56:18 marketing and giving these workshops and
+56:20 things like that and then once the
+56:22 course starts for the next six eight
+56:24 months i'm just writing curriculum right
+56:27 uh and doing that and then when students
+56:29 graduate then like right now i'm
+56:30 focusing on getting them jobs and
+56:32 marketing the next class that's that's
+56:34 it like i'm not writing curriculum right
+56:35 now i'm doing those two things so at
+56:38 least just having a couple things on my
+56:40 plate and not five different things on
+56:41 my plate at once is
+56:43 makes it manageable
+56:45 there are quite a few questions we have
+56:48 about the interviews and i just want to
+56:50 mention that jeff will come again to
+56:53 data talks club and he will do a webinar
+56:56 about getting a data engineer job
+56:58 that will actually cover that mostly the
+57:01 interviews on how you need to prepare
+57:03 for that so
+57:04 i will
+57:05 apologize but i will skip them because
+57:08 there are a few questions that are
+57:09 related to actually teaching
+57:11 and one interesting one is uh
+57:14 so we learn latest technologies but most
+57:17 companies go for
+57:19 uh so here it says tried and tested
+57:21 technologies
+57:23 um so they prefer you know traditional
+57:25 versus
+57:26 new shiny tech so what is your opinion
+57:28 on that should we teach the new stuff
+57:31 should we teach the whole stuff should
+57:32 we somehow find balance how do you do
+57:34 that well i mean you teach the
+57:36 fundamentals like i mean the traditional
+57:38 tech is like sql and python yeah like
+57:41 that sounds great like you know like
+57:43 because
+57:44 even if you're a junior engineer uh
+57:48 i'd say you know if you can improve your
+57:50 python skills
+57:52 like that's awesome like i like my first
+57:53 year as a software engineer uh you know
+57:57 the per the the other junior engineer
+57:59 next to me was just building like tetris
+58:01 and pure ruby and that's what the senior
+58:03 developer advised him to do just build
+58:05 auditory programming in ruby like that's
+58:07 it right and he got a job at apple like
+58:09 like within like by the end of that year
+58:11 so it seemed like good advice so i i
+58:13 think yeah you don't have to go super d
+58:16 and like writing good airflow code means
+58:18 that most of the code is in python right
+58:20 so uh and is not relying on airflow
+58:24 so like most of your skill set
+58:27 should be on like python and sql and you
+58:30 know like i said that's what 85 of our
+58:33 course is and then only probably like 15
+58:36 is these like shiny new technologies but
+58:38 cloud computing like you can feel safe
+58:41 learning docker and aws like i think
+58:43 that's a safe bet there are enough
+58:45 companies that are interested in that
+58:48 so if i want to teach data engineering
+58:50 then i should teach sql python cloud
+58:54 computing docker and that probably is
+58:56 the 20 that covers uh you know this
+58:59 pareto principle it covers 80 percent of
+59:01 uh
+59:03 i mean it depends who you're teaching it
+59:04 to you know what i mean like like you go
+59:06 to these coursera courses and they're
+59:07 good like they teach you these skills
+59:09 but they're not going deep into python
+59:12 and sql right they assume
+59:14 that i guess you already know that but
+59:16 if you're taking someone who is who is
+59:18 not an engineer or has not
+59:20 really worked with sql that deeply
+59:22 before
+59:23 okay you need to ramp them up on that
+59:26 like intense like that has to be the
+59:27 focus of the course
+59:29 okay
+59:30 so it seems we are out of time but maybe
+59:34 you want to
+59:35 mention anything before we wrap up
+59:38 uh sure so you know we are accepting
+59:40 applications for a new course we have uh
+59:43 the next course is june 15th uh it's
+59:45 been it's like it's going well like uh
+59:47 so everyone from our last cohort got a
+59:50 new job um the minimum like the minimum
+59:52 salary was 100k which for me actually i
+59:55 don't you know i want their salary just
+59:57 to be good but i just mainly care that
+59:59 they are launching a new career um and
+1:00:02 then this course
+1:00:03 uh also went well so you know we just
+1:00:06 they just graduated a couple weeks ago
+1:00:07 but we had a student get a job and has
+1:00:10 been a day energy data engineer for the
+1:00:12 past couple months now
+1:00:13 so he he got employed before he
+1:00:15 graduated um
+1:00:17 yeah so you can go to jigsawlabs.io if
+1:00:20 you're interested
+1:00:21 yeah i was going to ask that how can
+1:00:22 they find it so you send me the links
+1:00:25 and then if people want to find you and
+1:00:27 ask a question what's the best way of
+1:00:29 doing this oh yeah they can uh well they
+1:00:31 can email me jeff at jigsawlabs.io they
+1:00:34 can also ping me on linkedin
+1:00:36 um
+1:00:37 you know just do jeffcats and type in
+1:00:38 jigsaw um
+1:00:41 yeah and then uh alexi if you can just
+1:00:43 save the questions about the interview
+1:00:45 stuff i can make sure yes i will i am
+1:00:47 going to send you these questions that
+1:00:49 are about system design and they are
+1:00:52 about something else so i definitely
+1:00:53 asked a question about the system design
+1:00:55 testing pipelines
+1:00:59 some other stuff yeah there are some
+1:01:02 questions related to teaching which
+1:01:03 sadly we could not cover
+1:01:06 but i'll send you them as well so you
+1:01:08 have them
+1:01:09 three yeah thanks a lot
+1:01:11 thanks man that's great
+1:01:13 yeah and thanks everyone for uh joining
+1:01:16 us today for asking questions thanks
+1:01:17 jeff and by the way when you look for
+1:01:19 jeff in linkedin there is another jeff
+1:01:21 cuts so be careful there is one in
+1:01:24 berlin so this is not right jeff
+1:01:26 i made this mistake once so now i have
+1:01:28 two jobs in my linkedin network
+1:01:32 i'm very accepted here
+1:01:34 yeah he did so he's my first
+1:01:37 connection no i mean first level
+1:01:38 connection
+1:01:40 and he's also in the data space so that
+1:01:42 was very confusing for me
+1:01:45 anyways yeah thanks for joining us today
+1:01:47 uh and um have a great weekend all right
+1:01:50 thanks man you too take care

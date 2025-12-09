@@ -1,0 +1,1810 @@
+Big Data Engineer vs Data Scientist
+
+0:00 hello everyone thanks for joining us
+0:02 today
+0:03 so this is a fourth day of our summer
+0:06 marathon
+0:07 so this is the first week where we talk
+0:08 about career in data
+0:11 so we already had three talks so on
+0:14 monday we talked about transitioning
+0:16 from software engineering to
+0:18 machine learning then on tuesday diana
+0:21 was talking about
+0:22 getting promotion yesterday andreas was
+0:25 telling us how data scientists can learn
+0:28 to build data pipelines and today we
+0:31 will know
+0:32 we will talk about two roles
+0:35 we will talk about the role of data
+0:36 engineer and we will talk about
+0:38 the role of data scientists and we
+0:40 compare we will compare them
+0:42 and tomorrow elena will talk about uh
+0:45 building a machine startup
+0:48 so i would like to thank all our
+0:50 partners who made this event possible
+0:52 who helped us spread word about the
+0:54 conference
+0:55 uh please check them out there is a link
+0:58 in the description
+0:59 about the conference if you click on
+1:00 this link if you scroll if you scroll
+1:02 down
+1:03 then you can click on the logos and see
+1:06 what they are doing
+1:08 subscribe to our channel not to miss any
+1:12 new ones we do streams regularly and
+1:14 join our slug to talk about data
+1:17 and finally uh during today's interview
+1:20 you can ask any question you want
+1:21 there is a link in the live chat so just
+1:24 click on this link
+1:26 ask any question and we will try to
+1:28 cover these questions
+1:30 during the interview and that's
+1:33 all i have
+1:37 for the introduction are you ready to
+1:38 start yeah
+1:40 okay so let me just
+1:47 pull my notes
+1:52 okay we have um today we will talk about
+1:55 uh the difference between uh
+1:57 big data engineers and data scientists
+2:00 and we have special guests today
+2:02 rexella ruxlana works as a big data
+2:04 engineer
+2:05 in uh captify right yeah and
+2:09 uh yeah so today she will talk about
+2:13 the role of a data engineer and data
+2:14 scientist welcome
+2:17 thank you before we go before we start
+2:20 with our
+2:21 main topic let's talk a bit about your
+2:24 background
+2:25 can you tell us a bit about your career
+2:26 journey so far
+2:28 yeah sure so i have a software
+2:31 engineering degree
+2:32 in one of the key universities it's both
+2:35 bachelor and
+2:36 master's degree and after that i was
+2:38 working some time as
+2:40 a background engineer in java mostly and
+2:43 just at some point i
+2:44 learned about data science big data
+2:46 engineering and
+2:48 i had some time to make a decision what
+2:50 exactly i would want to do
+2:52 and kind of back-end engineering at some
+2:54 point just got a bit boring for me so
+2:56 i switched into big data engineering
+2:59 learned the
+2:59 scala programming language and that's my
+3:02 main programming language
+3:04 now and um for a few years i worked at
+3:07 a company called sql it's quite famous
+3:10 in ukraine because it's
+3:11 quite big company one of the top five
+3:13 and
+3:14 it's an outsourcing company which works
+3:16 with clients and
+3:18 as well as has some research so i was
+3:21 working at the
+3:22 r d department we had some internal
+3:24 research stuff and
+3:26 also i worked for some client projects
+3:28 and
+3:29 only two years ago i joined captify
+3:32 which is
+3:33 a product company they are building a
+3:35 product in the sphere of
+3:37 advertising and actually a company is
+3:40 british it's based in uk
+3:41 but it has a part of the engineering
+3:44 team in cave
+3:44 where i'm based and mostly working on
+3:48 the product part specifically
+3:50 in the big data engineering team
+3:53 yeah i've heard that in advertising
+3:55 there are there is so much data
+3:57 that this data engineering big data
+4:00 engineering becomes really important
+4:01 because
+4:02 these companies every day gets get
+4:04 terabytes of data and they need to
+4:06 effectively
+4:07 uh process this data right yeah
+4:10 and also what kind of makes uh the
+4:12 solution of creptify unique
+4:14 is data insights which are obviously
+4:17 delivered to the help of
+4:19 big data engineering team by having
+4:21 different
+4:22 sources of data and ways to transform
+4:24 this data and deliver it to the clients
+4:27 so what do you do at work uh what do you
+4:29 usually do
+4:30 as a big data engineer so my main
+4:33 responsibility is building data
+4:35 pipelines uh usually it's etl format
+4:37 extract transform load so kind of
+4:39 reading the data from some source
+4:42 building transformations some
+4:43 aggregations
+4:45 and uploading it somewhere which would
+4:47 be available for other users it can be
+4:50 a relational database or it's often just
+4:53 data storage like hdfs or s3 and the
+4:57 users can query the data using
+4:59 query engines like impala so usually we
+5:01 kind of service
+5:02 and saturated data to the analyst team
+5:05 so they could run queries and build
+5:06 reports
+5:07 that's kind of the main responsibility
+5:10 aside from that
+5:11 um we have some internal libraries
+5:14 development
+5:14 um researchers like for example right
+5:17 now
+5:18 i'm working a bit on the delta lake
+5:21 introduction
+5:22 from databricks and uh also
+5:26 we have like either some features so
+5:29 added some small fixes because it's a
+5:32 bit of legacy code already
+5:33 the product is quite stable and also
+5:37 some new
+5:38 creation of new pipelines or just
+5:42 redoing kind of the existing
+5:43 infrastructure sometimes we just
+5:45 rewriting some parts to make them more
+5:46 performant
+5:48 so optimizing performance of existing
+5:51 pipelines is also a big part of the job
+5:53 especially during some production
+5:56 incidents
+5:57 or just when you see that something
+5:59 performs
+6:00 not as good as it's supposed to do
+6:03 so basically your main job is
+6:06 so there is some raw data that is coming
+6:08 from your product that
+6:10 users of your product generate and your
+6:13 job
+6:13 is to take this data convert it
+6:16 usability data pipeline ctl
+6:18 etls such that analysts or
+6:21 other users who need to analyze the data
+6:24 they can use tools like impala to access
+6:26 this data and sql queries and
+6:29 get some insights right yeah
+6:33 yeah you also maintain this impala to
+6:35 make it possible for them to do queries
+6:37 um partially it's work of the
+6:39 infrastructure team but
+6:41 um we kind of work mostly on optimizing
+6:43 queries and
+6:44 jobs in such a way that other users will
+6:46 be able to run their queries because if
+6:48 our jobs would take like too much
+6:51 resources it would be
+6:53 impossible for them but we set up our
+6:56 own
+6:56 smart jobs and optimize them in terms of
+7:00 resources
+7:00 like for example how many nodes in the
+7:02 cluster we need
+7:04 how we want to scale that and we decide
+7:06 for our own jobs and their performance
+7:08 that we want to get
+7:09 less or more resources and that they
+7:12 want to
+7:13 optimize it using spark capabilities so
+7:15 just improving the code base
+7:18 so what kind of tools you use so you
+7:20 mentioned spark you mentioned impala you
+7:22 also mentioned
+7:23 hdfs and s3 what else do you use for
+7:26 for that for you for doing this creating
+7:29 these pipelines
+7:30 and those are like the main ones aside
+7:32 from that some
+7:34 aws services like s3 some services for
+7:38 spark setup spark is built using masses
+7:41 for now
+7:42 we have a bit of kubernetes mostly for
+7:44 matrix and alerting system
+7:46 like uh promises graphon as well and uh
+7:50 we have some back-end libraries for the
+7:52 part of
+7:53 data parts in like play in scala
+7:57 or libraries for tests which are also
+7:59 scholar libraries like scala tests
+8:02 and all of that i remember you have a
+8:05 talk
+8:05 about um uh what is it uh i think
+8:09 this has a funny name about alice
+8:12 discovering kubernetes
+8:14 what's the name of this talk i think
+8:17 i have like a series of those probably
+8:19 it was the first one when
+8:21 alice learns the difference between
+8:23 functional programming and
+8:25 kubernetes i'm doing that how did you
+8:27 come up with this idea by alice
+8:31 i don't know it's hard for me to say
+8:32 it's kind of a cumulative experience
+8:35 because
+8:35 i before i started to speak at
+8:37 conferences i visited like tons
+8:40 of local and european conferences and
+8:43 i noticed that it's much more
+8:44 interesting to kind of get invested into
+8:47 the story aside from the technical side
+8:50 and that's how i tried this idea with
+8:52 the first talk
+8:53 and only after some time i decided that
+8:55 probably i need to build more of those
+8:57 and then it kind of sparked the
+8:58 popularity because people enjoyed a lot
+9:00 the story side as well
+9:03 it became like a brand uh like this kind
+9:06 of okay
+9:10 um so i'm sometimes
+9:13 a bit confused so we have data engineers
+9:15 we have big data engineers
+9:17 is there any difference between these
+9:19 two like or
+9:20 they're mostly synonyms of big data
+9:22 engineers and usual engineers
+9:24 i mean usual data engineers like uh buy
+9:28 the book and the way it's supposed to be
+9:30 a difference in terms of um how you
+9:32 process the data like big data
+9:34 engineering requires a bit different
+9:36 tools like heavy load
+9:37 optimizations data engineering small
+9:40 like
+9:40 software engineering on the back end but
+9:43 in reality i would say that
+9:44 a lot of companies name big data
+9:46 engineers as data engineers and it's
+9:48 like constantly a bit confusing
+9:50 because of that so many just drop the
+9:53 big part and just
+9:55 go with data engineer and is there any
+9:58 difference in
+9:59 tools uh because for example you you say
+10:02 you mentioned spark impala
+10:05 things like this and what i see
+10:09 in data engineers
+10:12 maybe is a bit different like most of
+10:14 them use spark as well but i see
+10:17 more cloud-based things like i don't
+10:20 know
+10:21 streams lambda functions and things like
+10:24 this or it's just
+10:25 it depends on the company and there's no
+10:27 really big difference
+10:29 i would say it depends on the company
+10:30 because some companies choose multiple
+10:32 cloud sources
+10:33 some companies build custom solutions
+10:35 and because of that
+10:37 data engineers might be more on the side
+10:39 of for example parsing data
+10:40 which is considered to be like more
+10:42 background thing or
+10:44 writing written from the database while
+10:46 more big data scene is working with
+10:48 uh so-called big data specific data
+10:51 formats
+10:51 like uh avro rk and protobuf
+10:55 probably like backgrounds and js usually
+10:58 work with json
+10:59 or maybe a little bit the safe space
+11:02 okay so at the end usually there is no
+11:04 much difference
+11:05 yeah okay and so what kind of i think we
+11:09 talked about
+11:10 about tools so we talked about uh
+11:13 spark cloud
+11:16 and you mentioned scala as well i think
+11:18 python is quite popular
+11:20 yeah what kind of skills if we not if
+11:23 we're not talking about specific tools
+11:24 but more skills
+11:26 or more fundamental skills what kind of
+11:28 skills they need
+11:30 to be able to do their job i would say
+11:33 the most important one is coding skills
+11:35 um
+11:36 it's often that senior level engineers
+11:39 get into big data engineering which is
+11:40 quite logical because
+11:42 they already have some experience on the
+11:44 backend side and then
+11:45 they learn big data stack and just
+11:48 understand already how it works behind
+11:50 the scenes
+11:51 so definitely a great level of coding
+11:54 skills
+11:55 another one is working these databases
+11:58 like writing queries being able to
+12:00 optimize them
+12:00 usually it's a sql databases sometimes
+12:03 no sql
+12:04 so kind of being able to switch from one
+12:07 to another because
+12:08 in my experience when you join different
+12:10 companies sometimes you have
+12:12 totally different stack or even
+12:13 different projects and you just have to
+12:15 switch real quick
+12:17 so those are those would be the main
+12:19 ones and
+12:21 the one which i also consider important
+12:23 but sometimes
+12:24 kind of missing out is infrastructure
+12:26 side skills like
+12:27 understanding of the networking for
+12:29 example being able to know
+12:32 how the racks look like like how does it
+12:35 work on the hardware side
+12:36 why it's important to optimize some of
+12:39 our applications in such a way
+12:41 and not being afraid of kind of getting
+12:44 into infrastructure side and setting up
+12:46 something because
+12:46 we do need to do that sometimes
+12:51 and so what about distributed computing
+12:53 and things like this
+12:54 like reviews and so or it's included in
+12:58 in databases sort of i would say that
+13:02 kind of now frameworks are on such a
+13:04 high level that sometimes people
+13:06 like don't need to understand that but i
+13:08 would say that it's quite a basic thing
+13:10 kind of university stuff so
+13:13 because i remember we at the university
+13:15 we studied this map reduce
+13:18 i don't think i really used hadoop after
+13:21 university so we just covered it in
+13:22 the university and uh so we don't know
+13:24 how to do this but outside
+13:26 not really but it's still important to
+13:29 know these concepts right
+13:31 i would say it's important to understand
+13:34 them but
+13:35 in terms of hadoop it's getting really
+13:36 outdated lately because when i was
+13:38 starting out it was
+13:40 important to understand how it works
+13:42 like hdfs specifically but right now a
+13:44 lot of
+13:45 people a lot of companies just switch to
+13:47 something else
+13:48 instead of that because it's easier to
+13:50 maintain some cloud services for example
+13:54 yeah and so we talked about big data
+13:57 engineers
+13:58 so they take care of data preparation so
+14:01 there is some data generated by the
+14:03 users of our product
+14:04 so data engineers big data engineers
+14:07 take care of
+14:08 processing this data and making it
+14:11 possible for analysts and other people
+14:13 to
+14:14 run their queries what do data
+14:16 scientists do
+14:18 usually yeah the main part would be
+14:21 actually building machine learning
+14:23 models but it's only one part of the
+14:25 machine learning model cycle how it's
+14:27 called because they do need to clean the
+14:29 data
+14:30 prepare it to build features create the
+14:33 models
+14:34 deploy them sometimes sometimes it's in
+14:36 their role sometimes in someone else's
+14:38 but still they need to understand very
+14:40 well how it's supposed to be deployed
+14:42 so they would be able to evaluate it
+14:44 further and
+14:45 it's called the cycle because it can get
+14:47 repeated again if we need to
+14:49 fix some features some two hyper
+14:52 parameters
+14:53 or just in general go to another
+14:55 solution because this one
+14:57 is not really good for our needs
+15:01 so clean the data is something that data
+15:04 scientists do
+15:05 so you cannot expect data engineers to
+15:07 clean data for data scientists right
+15:09 i would say it's a bit controversial
+15:11 because sometimes
+15:12 data engineers do that sometimes data
+15:15 scientists need to still have this
+15:17 pre-processing stuff depends on the
+15:18 company as well
+15:19 or just the way the pipeline is built
+15:23 and they just attend both do just
+15:26 different uh different kind of cleaning
+15:29 right
+15:30 yeah okay and so in terms of
+15:36 responsibilities i think i have an
+15:38 understanding
+15:39 in terms of tools i think data
+15:41 scientists use quite a different set of
+15:43 tools right
+15:44 from big data engineers yeah sometimes
+15:47 they
+15:47 can coincide in spark because now spark
+15:50 is getting more and more popular for
+15:52 machine learning as well
+15:53 and the python is also heavily used by
+15:56 some big data engineers so
+15:57 they can kind of coincide here but yeah
+16:00 mostly
+16:01 machine learning engineers or data
+16:02 scientists would use some
+16:04 multiple specific libraries for a
+16:07 specific model case
+16:08 whether it's recommendation system deep
+16:10 learning or computer vision
+16:12 and they may not get involved that much
+16:14 with infrastructure for example
+16:16 and yeah databases would be practically
+16:19 the same
+16:19 especially if eight engineers just lose
+16:22 the data there and
+16:23 data scientists just read it from there
+16:26 and in terms of the programming language
+16:28 um like
+16:30 you use scala do your
+16:33 do data scientists we work with they
+16:35 also use color or they use python
+16:37 they use python and we kind of
+16:39 communicate through
+16:41 files or data that we write to database
+16:43 so therefore they don't need to go into
+16:46 our source code
+16:47 but they also have a software engineers
+16:49 kind of machine learning engineers who
+16:51 work with both
+16:52 scala and pyson depending on the task
+16:55 okay so you produce a file a packet file
+16:58 for example
+16:58 and then a data scientist they know how
+17:00 to to read this file
+17:02 using python for example and this is how
+17:04 you work
+17:06 um so actually my next question was how
+17:08 do you work together i think we partly
+17:11 answered that so the interface for you
+17:14 is
+17:15 the files that you create so you create
+17:17 files and
+17:18 data scientists consume these files but
+17:21 how do you
+17:22 work in general do you work in the same
+17:24 team or do you work in different teams
+17:26 so how the the process looks like
+17:28 so in my company we work in different
+17:30 teams we don't even
+17:32 have that much like connection because
+17:34 we don't really know what data
+17:36 scientists do with the data later
+17:38 you just deliver it the way they need it
+17:40 for example they can just ask to add
+17:42 some field
+17:42 or to build some transformation because
+17:44 it's easier to build it on our side
+17:46 and it would be like less heavy load in
+17:50 other projects that i saw or that my
+17:52 colleagues work on in different
+17:54 companies sometimes they have this
+17:56 specific team where they have a
+17:57 dedicated data engineer
+17:59 or multiple data engineers and they work
+18:01 closely on each step of the pipeline
+18:04 so it's kind of different things and
+18:07 sometimes it just happens the way i work
+18:09 like in my career it didn't really work
+18:11 for service data scientists
+18:12 and it just was usually outside of work
+18:15 like just my interest to see how it
+18:17 works
+18:18 while uh my colleagues from previous
+18:20 workplace for example that
+18:21 change the jobs they constantly work
+18:24 with data scientists closely
+18:26 so we can be different than this so
+18:29 if a data scientist needs a new field
+18:31 would they just go and create a jira
+18:34 ticket for you hey i need this field or
+18:36 yeah
+18:37 something like this okay so this is how
+18:39 you interact
+18:40 so you sit maybe in different rooms or i
+18:42 mean now we don't have rooms but uh
+18:45 different teams right and you
+18:48 communicate occasionally through jira or
+18:50 maybe some common meetings that you have
+18:53 very frequently
+18:55 okay and yeah maybe we can
+18:58 um do uh some sort of a walkthrough of a
+19:01 project
+19:02 so let's say you want to start a new
+19:04 project and this project is about
+19:05 machine learning
+19:07 but you still need to process some data
+19:10 before data scientists can do this do
+19:13 you have some ideas
+19:15 what kind of project we can talk about
+19:18 we can for example take some
+19:20 recommendation system
+19:22 case when for example we have kind of a
+19:24 network's website where we have
+19:26 um different types of data users uh
+19:29 information and history of their ratings
+19:32 for example
+19:33 the movies or just their searches and
+19:36 we need to recommend some movies for
+19:39 these users
+19:40 so the part of data engineering would be
+19:42 to extract this data
+19:43 um we could probably build um two
+19:46 pipelines
+19:47 streaming and static or batch processing
+19:51 we streaming some new data coming in
+19:53 constantly to update the model
+19:55 later and the batch to store the history
+19:58 and it can build different formats and
+20:01 then we would build some kind of
+20:03 transformations to write it to either
+20:06 files like
+20:07 rk or cs3 for better processing for data
+20:10 scientists
+20:11 or write some part of the information
+20:14 for example we could store the data
+20:15 about movies or users in the database
+20:18 and have the streaming information about
+20:20 their agents
+20:22 and then we could combine this together
+20:24 and data scientists would be able to
+20:26 culture this data which would be for
+20:28 example cleaned from
+20:29 duplicates or some zero values which are
+20:33 a bit confusing later and they can
+20:36 define
+20:36 which features would play the biggest
+20:39 role
+20:40 build the machine learning model and the
+20:43 deploy part
+20:44 um kind of depends who does that
+20:46 sometimes machine learning engineers
+20:48 sometimes
+20:48 data scientists themselves or even data
+20:50 engineers
+20:52 so someone would deploy the model to
+20:54 production and then
+20:55 data scientists could evaluate whether
+20:57 solution works or not
+20:59 and deliver some results and actually if
+21:02 it's deployed
+21:03 some tools like um i don't remember how
+21:07 it's called but there is this library
+21:08 that
+21:09 is able to be connected to top role or
+21:12 write results to the database
+21:13 and if it's recommendations and then we
+21:16 can display it in tableau in such a way
+21:19 other users like data analysts or
+21:21 business users
+21:22 can just visualize the data with some
+21:25 graph charts
+21:26 while data scientists could kind of
+21:28 present the solution with these results
+21:30 in a more graphical way
+21:32 okay so we have a netflix-like website
+21:36 where users can watch movies
+21:38 so every time a user watches a movie or
+21:40 maybe
+21:42 rate liberating about the movie
+21:45 so this data ends up in your data
+21:47 pipeline
+21:48 immediately so you said you have this
+21:50 streaming uh you you have a stream of
+21:52 data
+21:53 this kind of data right and you have
+21:55 some sort of
+21:57 processing jobs that take this
+21:59 information take this event
+22:01 process this and then put them
+22:04 put it in some sort of storage like
+22:06 parquet or csv
+22:08 and then data scientists data scientists
+22:12 take this data that you prepared from
+22:14 the events
+22:15 and they can train a model on that
+22:19 so i assume if this thing runs maybe for
+22:21 a month
+22:22 then they take this one off date one
+22:24 month of data and train their model
+22:26 right and yeah and you said
+22:29 the data scientists also take care of
+22:31 deploying the model
+22:32 um and then there are some analysts who
+22:35 can look at the results
+22:36 right yeah okay and um
+22:40 so what kind of tools would you use here
+22:43 like for steam for example
+22:44 like would you use something like kafka
+22:46 or kinesis or
+22:48 what uh what kind of tools would we use
+22:49 here probably i would use fling
+22:52 it's quite good for streaming spark is
+22:55 not that good but it's easy to connect
+22:58 spark and flink for example you would
+23:00 have a spark pipeline for
+23:01 patch data processing like already
+23:03 having some history about users if
+23:06 the website was created some time ago we
+23:09 already have some historical data
+23:11 and the streaming for flink use of link
+23:13 and then
+23:14 you can write the link files for example
+23:17 in some parquet
+23:18 to s3 storage and the spark pipeline to
+23:23 would be stored using database like
+23:25 historical data about users and movies
+23:28 and then we can combine the two in
+23:31 either a library or data scientists
+23:33 could read from both
+23:34 and rely on historical data to build
+23:37 better predictions and then they use
+23:40 their data science tools
+23:42 but then at the end you have a model
+23:45 which
+23:45 they deploy themselves or you can also
+23:48 help them because i imagine that if
+23:50 you have this stream of data maybe this
+23:52 is where you can
+23:53 put this model or not really
+23:57 yeah actually data engineers can help
+23:59 with deploying
+24:00 uh for example there are tools like ml
+24:03 flow
+24:04 queue flow which i know other teams in
+24:06 my company are using
+24:07 and therefore they have like dedicated
+24:09 person to that who is kind of um
+24:12 data engineer or machine learning
+24:13 engineer depends on
+24:15 how each company calls this person but
+24:18 they work on this
+24:19 more infrastructural side of things like
+24:21 whether you build an api
+24:23 or you have to work with kubernetes or
+24:26 cloud services to
+24:28 build the kind of provision for this
+24:30 model service
+24:31 probably built some container for it so
+24:34 it's more
+24:34 of a back-end work than data science
+24:37 work
+24:38 okay and this person was in the data
+24:40 science team
+24:42 they were helping the data scientists
+24:44 with this engineering work
+24:45 right yeah it's kind of the way it works
+24:48 in my company
+24:49 okay because we have a question and
+24:52 it's quite interesting and related to
+24:55 what
+24:56 we're talking now how much data
+24:58 scientists
+25:00 should know about data engineering and
+25:03 what kind of skills they
+25:05 they need to have so you mentioned that
+25:07 you have a dedicated engineer
+25:09 in their team does this engineer take
+25:11 care of
+25:12 all the engineering stuff or still data
+25:14 scientists need to
+25:16 to have basic knowledge of data
+25:18 engineering
+25:20 in my company they kind of called
+25:22 machine learning engineers because they
+25:24 do deploy their own models sometimes and
+25:26 they
+25:27 operate with data in other teams or
+25:30 other companies sometimes data
+25:31 scientists
+25:32 only work with machine learning models
+25:34 but i would say that it's kind of ideal
+25:35 case
+25:36 because startups or new projects usually
+25:39 have this they call it uh full stack
+25:42 data science because they kind of make
+25:44 one person do everything
+25:45 or at least the part lists post model
+25:48 and deployment
+25:49 so i would say that um it's important
+25:51 for data scientists just to
+25:53 have an understanding why some pipelines
+25:55 are built in such a way
+25:57 and so it would be helpful with
+25:59 assessment of time for example or
+26:02 having an understanding how long it
+26:04 might take for them to get the data
+26:06 and how some issues on the data
+26:08 engineering side can
+26:10 influence them but just in general i
+26:12 would say that
+26:13 it's only necessary to have the skills
+26:15 if this person has to do
+26:17 the whole pipeline which also happens
+26:19 sometimes
+26:21 okay so your data scientists are
+26:25 engineers basically so they if they need
+26:28 they
+26:28 can go and figure out how your pipelines
+26:30 work right
+26:33 but like in general so you said that
+26:35 it's a good idea that
+26:37 data scientists should should know how
+26:40 pipelines are built do you know how they
+26:43 can
+26:44 acquire this knowledge how they can
+26:45 learn how data pipelines are built
+26:48 if you're working in different team so
+26:51 data scientists work
+26:52 in one team you work in another team so
+26:54 how data scientists can get this
+26:56 knowledge
+26:57 i would say that um inside a company
+27:00 could be just some knowledge sharing
+27:02 sessions like
+27:03 we have for example internal engineering
+27:05 meetups where
+27:06 each team sometimes can just talk about
+27:08 the technologies that we use
+27:10 how we build some solutions and aside
+27:13 from that
+27:14 if they are interested in the topic they
+27:15 can just also
+27:17 turn in some resources like books or
+27:19 courses or some lectures
+27:21 because i think that it's quite a lot of
+27:24 resources lately on big data engineering
+27:26 since
+27:26 it's becoming more popular
+27:30 yeah thanks and you mentioned that you
+27:33 in your free time you're working a bit
+27:36 with data science just
+27:38 to learn a bit of machine learning and
+27:40 we have a question from prem
+27:42 um is the question is should data
+27:45 engineers
+27:46 gradually try to transition to
+27:49 to become more data scientists um what
+27:52 what is your
+27:53 um what are your thoughts about this
+27:56 like should data engineers get to know
+27:58 more data science to be better data
+28:00 engineers i would say that
+28:02 it's good to know more on the side of
+28:05 how the machine learning
+28:07 cycle works and for example i don't
+28:09 really work with internals of how much
+28:11 learning model works i don't get into
+28:14 that but i have
+28:15 knowledge of each step and recently i
+28:18 started like to learn how to deploy that
+28:20 how to build the whole pipeline and so
+28:23 that data scientists would be able to
+28:24 only build machine learning model
+28:26 so i would say that it's important to
+28:28 understand each step
+28:30 and all the inputs and outputs of those
+28:33 steps
+28:34 and not that much important to
+28:36 understand how the
+28:37 model actually works like we're more on
+28:40 the
+28:41 software engineering side here like what
+28:42 is the input what is the output and
+28:45 what happens next kind of thing so you
+28:48 don't need to go into details of how the
+28:50 exact mathematics or even what kind of
+28:52 model they use inside
+28:55 but you need to know okay this is a
+28:58 model
+28:58 this is the kind of input it gets this
+29:00 is the kind of output it produces
+29:03 and you need to know how what
+29:06 actually to do this how do you package
+29:09 this thing how you deploy this thing
+29:11 and things like this yeah i don't get
+29:14 much into algorithms but more like
+29:15 it's important to understand what this
+29:17 model actually does because
+29:18 it influences the pipeline like to
+29:21 actually predict what can happen
+29:23 inside the pipeline or in different
+29:25 cases which can be unexpected
+29:29 do you think it would be beneficial for
+29:30 data engineers to actually learn
+29:32 these internals maybe not
+29:35 not into details a lot but at least like
+29:38 i don't know how random forest works
+29:40 how logistic regression works or like
+29:43 for
+29:44 for data engineers it's not really that
+29:46 important
+29:47 i would say that it's not really
+29:49 important it's more like um part of the
+29:51 interest if it's
+29:52 something that's interesting like i know
+29:54 some data engineers that are interested
+29:55 in machine learning
+29:57 and they are trying it out and i think
+29:59 that it's helpful if they work closely
+30:01 with data scientists
+30:02 and it's also kind of nice to have
+30:04 different perspective
+30:05 while a lot of data scientists have more
+30:08 mathematical backgrounds and
+30:10 analytical skills and they kind of come
+30:12 more from software engineering
+30:13 backgrounds
+30:14 and have this point of view which can be
+30:16 also helpful if people collaborate on
+30:18 building such solutions
+30:21 and i guess the same is uh like if we
+30:24 reversed it
+30:24 the same is uh true for data scientists
+30:27 it's also for them
+30:29 would be beneficial to know the data
+30:31 engineering part of things
+30:33 um maybe not just okay this is how i use
+30:36 this function in pi spark
+30:38 but maybe a bit more details right too
+30:41 yeah it's not required for them to do
+30:44 this
+30:45 but it would be would be beneficial for
+30:47 them to
+30:48 get some idea how it works underneath
+30:50 right
+30:51 yeah yeah i'm great here now and because
+30:54 we have a related
+30:55 question from steve um what advice would
+30:57 you give to
+30:58 analysts or data scientists who would
+31:01 like to transition into data engineering
+31:04 i would say that the most important
+31:06 thing is to work on
+31:07 a great level of coding skills i noticed
+31:10 that
+31:11 i was mentoring a data analyst and i
+31:13 noticed that she doesn't have the same
+31:15 background
+31:16 in a software engineer and therefore she
+31:19 sometimes couldn't understand
+31:20 how the actual algorithms work which are
+31:23 quite kind of
+31:24 seem to me basic and from my perspective
+31:27 i didn't really understand that that she
+31:28 had more like mathematical background
+31:31 and therefore i think it's very
+31:32 important to have more experience here
+31:35 and learn on that side um aside from
+31:38 that
+31:38 i think kind of databases and some tech
+31:41 stack
+31:42 coin sites in general so maybe a bit of
+31:44 infrastructure side as well
+31:46 if this person would like to get
+31:48 involved in deployment for example
+31:50 and the setup of the jobs and
+31:53 algorithms is quite broad so what kind
+31:56 of algorithms
+31:57 do you think will be most beneficial to
+31:59 know like just basic data structures and
+32:02 algorithms or
+32:03 yeah exactly some basic data structures
+32:05 sometimes
+32:06 even the code reviews it comes up that
+32:08 someone could write something
+32:10 in a more performant way just reusing
+32:13 this knowledge from the algorithms and
+32:15 data structures
+32:16 it's like uh you said instead of list
+32:19 this
+32:19 okay yeah okay and how hash map
+32:24 works yeah things like this okay are
+32:27 there
+32:28 any other things that would be
+32:30 beneficial to know from this uh
+32:32 from these algorithms and data
+32:34 structures like would they need to
+32:36 go into graphs for example or trees uh
+32:39 or not at the beginning um depends on
+32:43 the
+32:44 sphere for example um i i got into
+32:47 graphs because i was working with
+32:49 graph databases there is this nosql
+32:51 databases so
+32:52 before that you wouldn't need to know
+32:55 much
+32:56 of that and also it's not that often
+32:59 used like in reality i didn't notice
+33:01 in other companies usage of graph
+33:03 databases
+33:04 and again mostly it's about complexity
+33:07 of algorithms it's not like just knowing
+33:09 by heart but
+33:10 understanding why it's better to use
+33:12 this data structure or this algorithm
+33:15 and also it's uh a lot in the context of
+33:17 the programming language
+33:19 like in some programming languages it's
+33:21 different some data structure is named
+33:23 differently some
+33:24 implemented differently so it's
+33:26 important to know which one is better to
+33:28 use
+33:29 do you from the top of your mind maybe
+33:34 you have a list of must know
+33:37 like data structures that you must know
+33:40 to uh you know to to get started
+33:44 like in addition to lists and sets and
+33:47 hash pumps that we mentioned
+33:50 you know i kind of get it from scholar
+33:52 like we have sequences
+33:54 and lists and arrays but uh in
+33:56 functional programming you don't use
+33:57 arrays much
+33:58 so it's also different in uh the way
+34:02 the programming language you use so it's
+34:05 specific to the language in python
+34:07 they have different names for the data
+34:09 structures
+34:10 okay i guess the the sequence you
+34:13 mentioned i think this is like or maybe
+34:14 a linked list right
+34:16 yeah yeah okay and then you have a
+34:18 different type of list which is
+34:21 an array right so
+34:24 okay and then um sets like when it comes
+34:27 to sets there are different ways of
+34:29 implementing
+34:30 a set you can have a three base search
+34:32 or you can have a
+34:34 cash based set do you think it's
+34:37 also like a good knowledge to have or
+34:39 not really you just need to know that
+34:40 set is faster than beast
+34:43 i would say that just knowing that set
+34:44 is faster than least and in some cases
+34:46 that instead of sourcing
+34:48 you could just use a set sometimes
+34:50 people do that
+34:53 and when it comes to databases
+34:56 what kind of databases would you
+34:57 recommend to learn
+34:59 just pick any or i think
+35:03 poster sql is the easiest one to start
+35:05 or my sequel
+35:08 so it's kind of not that much difference
+35:10 between that so i would say that
+35:12 it's also nice to have at least one
+35:14 nosql database just to understand how
+35:16 it's different from
+35:17 sql databases and it's easier than to
+35:19 switch to something else
+35:21 which one would you recommend one go or
+35:25 i guess is easier to start i had a
+35:27 lot of fun with this neo4j but it's very
+35:30 like specific not that many people use
+35:32 it neo4j is a graph database right
+35:34 yeah then you also have someone i think
+35:37 it's called uh
+35:38 document database yeah you also have
+35:40 like a different kind of like there are
+35:42 so many nosql databases you have this
+35:44 document database
+35:45 databases like one go couchdb
+35:49 you also have key value databases maybe
+35:51 it's a good idea to try to play with at
+35:53 least one
+35:54 or yeah just understand why it's called
+35:57 like
+35:58 no sql because when you just hear about
+36:00 them it's
+36:02 hard to understand and map it to reality
+36:06 and then from the infra infrastructure
+36:08 side of things
+36:09 so i think you mentioned that data
+36:11 engineers need to know networking
+36:14 and yeah things like this but
+36:17 when it comes to data scientists who
+36:19 want to transition they maybe don't need
+36:21 to
+36:22 get into nitty gritties of networking
+36:24 and know the um
+36:26 how it's called like this famous uh oci
+36:29 stack
+36:30 right maybe they don't need to to know
+36:32 all the seven layers uh
+36:33 by heart but like what kind of things
+36:36 they need to
+36:37 know from the infrastructure point of
+36:39 view to
+36:40 to know a bit of data engineering to be
+36:42 successful in that
+36:44 i think docker is a must because data
+36:47 scientists also use
+36:48 docker as far as i know for at least
+36:50 testing or deploying
+36:53 also i would say um some tools like
+36:56 cloud services that would help to
+36:57 understand
+36:58 um kind of have this obstruction on top
+37:01 of the hardware
+37:02 like cloud services like
+37:06 aws lambda or something like that i
+37:09 would also recommend kubernetes but it
+37:11 kind of has
+37:12 this high learning curve so it's not for
+37:14 everyone in terms of starting out
+37:16 but it's necessary to use kubernetes and
+37:19 it's becoming more and more popular i
+37:21 would recommend
+37:22 trying out to learn that what's the
+37:25 easiest way to try out
+37:27 kubernetes i think just install and try
+37:30 it out
+37:31 like even having a small cluster with
+37:34 one node and setting up something
+37:36 and seeing how it works for me the most
+37:39 interesting part is
+37:40 having it more connected to work like
+37:43 when i was just setting up databases it
+37:45 was kind of interesting but
+37:47 it's not really practical if you don't
+37:49 have to use with that
+37:51 you don't have to use that but in data
+37:53 science or data engineering sometimes
+37:55 you have to deploy some pipelines using
+37:57 kubernetes
+37:58 and try now that sometimes helps to
+38:01 actually learn better the framework and
+38:03 the pipeline and get a better
+38:04 understanding how it works behind the
+38:06 scenes
+38:07 like for example sparkle kubernetes it's
+38:09 quite useful
+38:10 for a future understanding of how spark
+38:13 would work with other
+38:14 providers of the data
+38:18 okay so if a data scientist
+38:21 or analyst want to transition into data
+38:24 engineering so first they need to know
+38:25 the basic data structures
+38:27 like list sets maps etc
+38:31 then they need to pick up one relational
+38:33 database
+38:34 supposedly or mysql then they need to
+38:37 pay to pick
+38:38 one nosql database for example now
+38:42 play with this
+38:43 also try to understand what kind of
+38:46 categories
+38:47 are there in nosql databases because we
+38:49 mentioned document
+38:51 and then from the infrastructure site
+38:54 docker
+38:55 cloud and then maybe plane with
+38:56 kubernetes even though there is a
+38:59 high learning curve it's still um
+39:02 useful to try it and you said you can
+39:05 just install it locally
+39:06 and play with this right yeah
+39:09 okay yeah thanks um
+39:13 yeah so let me see what kind of
+39:15 questions we have
+39:18 so the question we have um another
+39:20 question we have is how do you deal with
+39:22 data quality checks what kind of
+39:23 monitorings
+39:24 do you recommend setting up and i would
+39:28 say at least
+39:29 monitoring how the data flows in the
+39:31 pipelines like
+39:33 for example monitoring that today there
+39:35 is no data in this pipeline
+39:37 or there is uh like too much data more
+39:40 than you expected to monitor spikes of
+39:42 data which is also important because it
+39:44 helps to optimize
+39:46 pipelines in the future and it will be
+39:49 good as well to monitor
+39:50 these schema changes at least because
+39:52 definitely
+39:54 monitoring data changes it's way too
+39:57 complicated
+39:58 but the monitoring schema changes it's
+40:00 quite helpful
+40:01 is that schema changes for example
+40:04 in some beta formats like avro parque
+40:08 uh or protobuf they have either separate
+40:10 files with schema
+40:12 or they are defined in such a way that
+40:14 you can
+40:15 um kind of get it separately aside from
+40:17 data and track that
+40:19 it changed or it didn't change something
+40:21 what kind of versions added for example
+40:23 right already moved
+40:24 this yeah or someone renamed something
+40:26 which also happens like we had this case
+40:29 recently it was very
+40:30 not cool and if that happens if schema
+40:34 changes if somebody renames something
+40:35 what do you do you just
+40:37 send an alert and abort your job
+40:40 b in that case we didn't have a setup
+40:43 for csv files because they just have
+40:45 this header
+40:46 and we just noticed that the pipeline
+40:48 doesn't return the same results as it
+40:50 used to in the same amount of data
+40:52 and some empty values and therefore like
+40:54 debugging leads to
+40:55 it's knowledge that some naming changed
+40:59 so this kind of monitoring i guess is
+41:01 more on data engineers
+41:03 do data scientists also need to do a bit
+41:06 of monitoring
+41:07 for their jobs i think they can
+41:11 just do the monitoring in terms of
+41:14 whether the model returns the results
+41:17 and whether it's expected results
+41:20 i would say that another part of monitor
+41:22 in terms of resources
+41:23 and something like that would be more on
+41:25 data engineers or machine learning
+41:26 engineers
+41:28 at least it's the way it works in in
+41:30 another team where data scientists are
+41:32 in my company
+41:34 do you think tools you would use are
+41:37 the same the dating data scientists
+41:39 would use some data engineers or they're
+41:41 different like tools for monitoring
+41:43 quality
+41:45 and i think that it could be the same
+41:47 like for example
+41:48 some alerts or metrics gathering
+41:51 or something either visual like
+41:54 dashboards with their phone or other
+41:56 tools or tableau
+41:58 so i think it's quite universal in this
+42:00 case
+42:02 okay thank you here we have an
+42:04 interesting question uh
+42:06 so as you said the data scientists
+42:07 depend on data engineer
+42:09 engineers so let's say data engineers
+42:11 data scientist needs
+42:13 a new field they would open agility
+42:15 ticket for
+42:16 data engineers to add this
+42:19 is there anything on which for which
+42:21 data engineers
+42:23 depend on data scientists and i think it
+42:26 depends on the workflow
+42:28 for example if we would get the results
+42:30 of the models
+42:31 in some way we would definitely depend
+42:33 on data scientists
+42:35 like for example right now we depend on
+42:37 either the source of data
+42:39 which is a third party client or the
+42:42 database where another
+42:44 team pushes the data so we kind of
+42:46 already depend on another team
+42:48 but on the data scientist side yeah
+42:50 definitely if you would uh
+42:52 get the data from them for example the
+42:54 case that we described with
+42:55 recommendations if you would want to
+42:58 build some reports on that and before
+43:00 that we need to do some transformations
+43:02 for
+43:02 other people for example analysts and
+43:04 therefore it could depend on the results
+43:06 of the model
+43:08 but i guess like more
+43:11 what more happens more often is data
+43:13 scientists depend on data engineers
+43:15 because
+43:16 to train a model you need to have some
+43:18 data and if you don't have data
+43:20 engineers you don't have data or
+43:21 data scientists have to somehow get this
+43:24 data and because of this dependency on
+43:27 data
+43:28 it happens more often that data data
+43:31 scientists depends on data changes
+43:33 yeah exactly
+43:37 so we have a question about data
+43:39 documentation how do you
+43:41 maintain data documentation do you think
+43:43 it's important
+43:44 to to have it and what would be your
+43:46 recommendation there
+43:49 i would say it's just in general
+43:50 important to have it but a lot of people
+43:52 don't like to create
+43:54 the communication therefore it's not the
+43:56 case for many companies where i noticed
+43:59 that especially
+44:00 outsourcing companies if you have fixed
+44:02 time project or just don't have time for
+44:05 that
+44:05 as it happens um in general i would say
+44:08 that at least
+44:09 it's important to have some schemas
+44:12 documented
+44:13 like we have that in terms of the fields
+44:16 like what is this field what
+44:17 this table has like what kind of data is
+44:20 stored there
+44:21 examples of values for each field which
+44:24 is also helpful if you would see some
+44:26 anomalies there or
+44:27 just helpful for testing and having like
+44:30 expectations in terms of these values so
+44:33 yeah i would say that schema is
+44:34 important or just documentation in terms
+44:36 of
+44:37 what happens inside of the pipeline
+44:40 what tools do you use for
+44:44 for that would you just create a i don't
+44:46 know excel spreadsheet with that or
+44:48 maybe use a specialized tool for that
+44:52 well we have for schema documentation we
+44:55 use
+44:56 that as hive sql files description so
+44:59 like description of each field uh the
+45:01 name and the type
+45:03 as for the documentation of pipelines
+45:05 it's
+45:06 in confluence just like documents with
+45:08 some graphs
+45:09 or schemas if it's necessary
+45:12 so these hive sql files i think this
+45:15 documentation
+45:16 is uh is optional but
+45:19 you you say that okay it's our standard
+45:22 that we put
+45:23 accommodation there right and then you
+45:25 generate the communication from this
+45:26 files
+45:27 yeah in such a situation it's for us
+45:30 just a
+45:31 decision to build this data governance
+45:33 solution and
+45:34 better understanding what kind of data
+45:36 the process and
+45:37 what kind of data we have inside just
+45:39 from multiple people having multiple
+45:41 tables and
+45:42 no one knows what's in there
+45:46 i assume that data scientists
+45:49 also they produce a lot of data so their
+45:52 models produce data
+45:53 they also need to document the data
+45:55 right do they use the same tool for that
+45:58 yeah they just use the same time
+46:01 description
+46:02 or recommendation confluence so you have
+46:05 the central place
+46:06 for implementation for your data for
+46:08 data that
+46:10 data scientists produce and then it's
+46:12 just once interface base
+46:14 okay cool thanks uh we have a question
+46:18 from ak
+46:19 shot is
+46:22 i think
+46:26 so how much of data engineering should
+46:27 one ideally know
+46:29 i think we covered that um
+46:32 a bit but um yeah so we talked about
+46:36 that like how much data engineering
+46:38 skills data scientists need to know
+46:40 ideally um
+46:43 but yeah we were more talking about like
+46:45 if data scientists want to transition
+46:47 into data engineering
+46:48 but to be able to successfully do work
+46:51 as data scientists
+46:53 what kind of data engineering skills
+46:55 they should have
+46:58 i would say that coding skills it's also
+47:00 important because i know that some
+47:02 data scientists somewhere on the
+47:03 mathematical side and they
+47:05 more interested in building algorithms
+47:07 than to write code
+47:08 and it actually influences the quality
+47:10 of the creation
+47:12 because they you can either build just
+47:15 everything for example in one notebook
+47:17 and it would be hard to deploy it in
+47:19 some way or they would build the whole
+47:21 solution this libraries and for example
+47:24 classes in python
+47:25 maybe object-oriented programming so it
+47:28 would be more like software engineering
+47:30 way to do things
+47:31 and the databases for sure as well
+47:34 because they do need to read the data
+47:36 or write some results there right
+47:39 okay so basically uh improve your
+47:41 software engineering skills
+47:43 yeah yeah i think the trend i see
+47:47 is now most data scientists in most
+47:50 companies that
+47:52 i see there is a requirement of being a
+47:54 good
+47:55 developer so maybe they don't need to be
+47:58 as good as software engineers
+48:00 but they need to be decent with coding
+48:06 um yeah there is a comment about uh for
+48:08 getting started with kubernetes there is
+48:10 a good resource
+48:11 called catacoda and
+48:14 i think i saw it um i know have you seen
+48:16 it
+48:17 yeah i tried it once it was in the
+48:20 beginning it's quite useful you can just
+48:22 try out
+48:22 different commands and see what happens
+48:25 yeah i think
+48:26 i saw uh one with kubernetes and one
+48:28 with
+48:29 i think and it's pretty cool so they
+48:32 just
+48:33 set up a local kubernetes for you in
+48:35 browser
+48:36 and then in this browser you get a
+48:38 terminal like a linux
+48:39 terminal and then you can do you have a
+48:43 cubectl there with these kubernetes
+48:45 and then you can do and they basically
+48:49 tell you
+48:49 uh what you should do like execute this
+48:52 comment execute that command
+48:53 and then you get this feeling
+48:56 also google cloud has sometimes some
+48:59 called labs
+49:00 they have this in documentation for
+49:02 example of q flow where you can
+49:04 try out on each step and some of them
+49:07 are free so
+49:08 it's possible to use them data breaks
+49:09 has this kind of trainings as well but
+49:12 they are usually paid sometimes they
+49:14 allow to use some of them for free
+49:16 either for
+49:17 some conferences attend this like lately
+49:20 sparks on it is free and
+49:22 people could send the summit can use
+49:24 these trainings for free some of them
+49:27 [Music]
+49:28 thanks um so there is a question that
+49:31 they wanted to ask
+49:32 and they just uh just remembered it
+49:35 so let's say i am graduating from a
+49:37 university
+49:39 so it was let's say i was studying
+49:42 um i'm studying um
+49:45 you know computer science so i'm
+49:46 graduating from university i study
+49:48 computer science
+49:49 and now i need to make a choice um
+49:53 what kind of position i want to work um
+49:57 do i want to do data science or i want
+49:59 to do
+50:00 data engineering so which one uh which
+50:03 path would you recommend
+50:04 and why and maybe uh you can also think
+50:07 how would you
+50:09 suggest people to find out what they are
+50:11 more interested in
+50:13 yeah and exactly i would suggest to like
+50:15 find out what's more interesting
+50:17 um why i chose big data engineering is
+50:19 for me uh
+50:20 data science was a bit not that
+50:23 determined
+50:24 i think that software engineers would
+50:25 understand me because
+50:27 it's hard sometimes to explain why
+50:29 machine learning model does what she
+50:31 does and why
+50:32 these results are this way and uh big
+50:36 data engineering is more like software
+50:37 engineering that it's more determined
+50:39 so for me i was just in general
+50:41 interested in software engineering and i
+50:43 wanted to work with some different tools
+50:44 and different
+50:45 uh tasks therefore big data engineering
+50:48 is
+50:48 a great way for people who are getting
+50:51 bored in backhand engineering or they
+50:53 already just go right from the
+50:55 university and learn more of big data
+50:57 tech
+50:57 and go into the great engineering if the
+51:01 person would be more interested
+51:02 in building algorithms like mathematics
+51:05 machine learning just feeling kind of
+51:07 fashionable things
+51:09 like computer revision or deep learning
+51:11 then it's a good case to start with data
+51:14 science
+51:15 is there any project you would recommend
+51:18 people to try
+51:20 to understand if they like data
+51:22 engineering or not
+51:24 like i mean it sounds cool right uh like
+51:26 if you look people say hey data
+51:28 engineers are so important
+51:29 the data scientists really depend on
+51:32 them
+51:32 and many people think okay it's cool i
+51:34 want to become a big engineer
+51:36 but maybe they don't really understand
+51:38 what this work requires
+51:40 do you have any ideas like maybe a small
+51:43 project they can do to try
+51:44 to find out if they like doing this kind
+51:47 of stuff
+51:48 i would say even building a simple word
+51:50 count and getting more transformations
+51:52 on that
+51:53 or beating it building into a more
+51:55 complicated way and trying to
+51:57 kind of improve it in each step and
+51:59 building the pipeline around because
+52:00 there are so many ways you can do that
+52:02 like either using
+52:03 hdfs like mapreduce standard or spark
+52:07 and try to optimize some algorithms the
+52:10 project which
+52:11 i enjoyed working when i was at the
+52:13 university was
+52:14 just working with streaming data like
+52:16 for example twitter has
+52:18 an open api and you could just read the
+52:20 data
+52:21 and build some analytics on top of that
+52:24 for example how many users tweet about
+52:26 this
+52:26 uh how many users tweet from this
+52:28 location or another one and it's quite
+52:30 fun
+52:30 in terms of seeing the results and uh
+52:33 getting to know how some frameworks work
+52:35 and how you can just deploy it all right
+52:37 the result somewhere which is a great
+52:39 practical way to see how it works
+52:42 so this twitter project it was so you
+52:45 have a
+52:46 stream of data from twitter so you build
+52:49 a pipeline a streaming pipeline to
+52:51 process this data and display it in real
+52:53 time like on some sort of a dashboard
+52:55 yeah i used elasticsearch which was
+52:58 quite easy to kind of connect it to
+53:00 spark
+53:00 just dump the data into elasticsearch
+53:03 and have it displayed in kibana which
+53:05 it's easy to try and also visualize
+53:07 results of work already
+53:09 now that's a cool project and this word
+53:12 count
+53:13 this is just you take a text documented
+53:15 account how many
+53:16 times each word appears do you know any
+53:20 um documents that people can take
+53:24 to to do this
+53:28 think there are data banks with some
+53:30 text so
+53:31 the text can be taken usually the
+53:34 typical example is some shakespeare
+53:36 works
+53:37 but maybe it's more interesting to take
+53:39 some article for example big article to
+53:42 process more data or even some
+53:44 scientific article for example as well
+53:46 and get some words from there and
+53:49 analyze that
+53:51 yeah well shakespeare i think it's the
+53:54 opposite of big data
+53:56 this is i don't know how many kilobytes
+53:58 are there but
+54:00 even though maybe he was productive but
+54:02 uh
+54:03 yeah not uh um so one thing
+54:06 uh i know it's possible to to process
+54:09 wikipedia
+54:10 now it's also a bit challenging because
+54:12 on wikipedia you have just one big
+54:15 xml file that you need to figure out how
+54:17 to process
+54:18 but i guess this is kind of things you
+54:20 as a data engineer as a big data
+54:22 engineer
+54:23 need to maybe enjoy like if you enjoy
+54:27 doing this like figuring out okay i have
+54:29 this big xml file
+54:30 how do i actually read it right
+54:34 that could be a part of this then there
+54:36 is data set
+54:38 maybe heard called common call
+54:41 yeah yeah i think they just
+54:45 get a copy of the internet like there is
+54:48 a crawler and then they
+54:49 uh go on the internet and save all the
+54:53 pages they see
+54:54 and you can just download these pages
+54:57 and like every
+54:58 month they generate generate like
+55:01 terabytes or petabytes of data
+55:05 yeah there are sometimes some scientific
+55:07 open apis
+55:08 like i found one's uh nasa nasa api
+55:12 about
+55:13 their discoveries or some results from
+55:15 their researches like for example some
+55:17 data from mars and
+55:19 kind of can be found in terms of the
+55:21 topic data
+55:22 from mars so they published all the data
+55:25 from ours
+55:26 yeah i think partially like not all of
+55:29 the data but they
+55:30 published some data from their
+55:31 researches
+55:33 wow that's cool like do you know if they
+55:36 publish it in real time
+55:37 no yeah i think some of them mentioned
+55:40 streaming because i was looking at the
+55:41 time into streaming apis
+55:44 yeah because how cool would it be to
+55:46 build the
+55:47 streaming pipeline to actually get data
+55:49 from mars and process it
+55:50 yeah maybe it's not super high volume
+55:53 but
+55:54 it's quite cool also it's possible to
+55:57 just
+55:58 parse some social media like instagram
+56:01 for example has an api and parse some
+56:03 information about the posts or
+56:05 facebook yeah right so in social media
+56:09 there is so much data
+56:11 to be able to take advantage of it
+56:15 yeah we still have some time and we have
+56:18 quite a few questions
+56:19 so one question is um what are your
+56:22 thoughts on companies that
+56:23 use tools for etls instead of hiring
+56:27 data engineers
+56:28 and what are the advantages of kind of
+56:31 outsourcing this
+56:32 uh to these companies and use pre-build
+56:35 tools
+56:36 or hire data engineers and build your
+56:39 own data pipelines
+56:41 okay so i can say that i have some
+56:43 attitude towards that i think
+56:45 just one way to solve the issue um i
+56:48 would say that i noticed
+56:49 this approach for startups or like
+56:52 projects with fixed time and you need to
+56:54 deliver something real quick and to get
+56:56 the results
+56:57 like real quick as well and therefore it
+56:59 really works
+57:00 well because you can just uh build for
+57:02 example aws
+57:04 or google pipeline with all their
+57:06 services and kind of like
+57:07 construct your details and that's it
+57:11 um i would say that it doesn't really
+57:13 scale well in my opinion that
+57:15 after some time there is always
+57:17 something that should be customizable
+57:19 in each product sometimes you have new
+57:22 features of the product new parts
+57:24 all the product and therefore you can
+57:26 just rely on the
+57:27 cloud services so it usually works on
+57:29 smaller scale in my opinion
+57:33 yeah i i remember there's a tool from
+57:35 microsoft that has this
+57:37 drag and drop you just drag
+57:41 and drop these boxes components and you
+57:44 connect them with errors
+57:45 arrows and then you say okay like
+57:49 you add a deduplication step you just
+57:51 drag and drop duplication then
+57:53 you also can do this with fuzzy lookup
+57:56 you can do
+57:57 quite complex pipelines there but yeah i
+57:59 guess there at some point they become
+58:01 less flexible
+58:02 right yeah
+58:05 um so the question from this um what are
+58:08 the most challenging tasks
+58:10 for uh data engineers on their on in
+58:13 their daily work
+58:15 i would say one of those is the
+58:17 duplication of data
+58:18 sometimes because it can be quite a
+58:20 complex condition in terms of
+58:23 how we want to track these duplicates
+58:26 another one which
+58:27 i often have to do is historical data
+58:30 reprocessing it's usually for
+58:32 batch jobs so for example there is some
+58:34 mistake
+58:35 one month ago in the data or something
+58:38 changed and you need to go back in time
+58:40 and kind of
+58:41 remove these data and reprocess it back
+58:43 and it's
+58:44 complicated because it's always
+58:48 very customizable in comparison to just
+58:50 running a job you have to set up
+58:52 like some data limits uh the ways you
+58:54 want to go back
+58:55 like the ways the solution changes and
+58:58 then also see that it actually works
+59:01 well and that you don't need to do that
+59:03 again and it's very resources consuming
+59:06 because it's usually
+59:07 a big period of time at least a week or
+59:09 sometimes months or
+59:10 more than that
+59:14 yeah indeed this historical data
+59:18 representing that
+59:20 you know so do you have um like a way of
+59:23 dealing with this like a standard
+59:24 approach or like every time you do
+59:26 something different
+59:28 and yeah there is a standard approach
+59:30 but i would say that it currently
+59:32 has a lot of manual steps and we are on
+59:34 the way of trying to
+59:35 make that and some of those steps
+59:37 require
+59:38 um some work from the infrastructure
+59:40 side because of the
+59:42 kind of granted privileges and some
+59:44 systems where you need to delete the
+59:45 data
+59:46 and the infrastructure team hates this
+59:48 when it happens because
+59:50 it's kind of uh quite risky to delete
+59:53 some data in production systems and
+59:56 rewrite it
+59:59 yeah we had a talk recently uh in
+1:00:02 datadocs club about that i think it was
+1:00:04 called uh
+1:00:05 data hysterization which allows to
+1:00:08 actually do this so for those who are
+1:00:10 interested maybe you can check
+1:00:11 but it's a indeed a complex topic so i
+1:00:13 remember one slide
+1:00:15 there was one slide with the algorithm
+1:00:16 that describes the process
+1:00:18 and it's uh it's quite complicated so
+1:00:22 yes very please first uh delta 8 helps
+1:00:25 now
+1:00:26 with spark for tracking versions of data
+1:00:28 which we're also trying to use to kind
+1:00:30 of automate that and see
+1:00:32 how the data changed and you can kind of
+1:00:34 travel back in time to different
+1:00:35 versions of data there
+1:00:37 it's also useful yeah right thanks
+1:00:40 so maybe last question for you um
+1:00:44 do you know any course about
+1:00:47 data engineering that could be useful
+1:00:49 for data scientists
+1:00:51 i would say that there is a
+1:00:52 specialization on big data on coursera
+1:00:55 just
+1:00:56 called big data specialization and uh
+1:00:59 it's that's the one where i was starting
+1:01:01 from and it was really great because
+1:01:03 the first course of the specialization
+1:01:05 is purely theoretical
+1:01:07 so the person doesn't know doesn't want
+1:01:09 to go into
+1:01:10 a specific practical task and just go
+1:01:12 through the first course
+1:01:14 where all the tools explain the kind of
+1:01:17 tasks the data engineers do
+1:01:18 data form and servers in so it gives
+1:01:21 like great
+1:01:22 understanding perspective how everything
+1:01:24 works
+1:01:25 and the next courses are more practical
+1:01:27 on the specific tools and
+1:01:28 uh solving specific tasks thank you
+1:01:32 do you have any last words just in
+1:01:36 general also i would suggest to
+1:01:38 use the books as well because uh i find
+1:01:41 it
+1:01:41 kind of given more deeper understanding
+1:01:43 than sometimes courses
+1:01:45 or lectures like there are a lot of
+1:01:48 books on spark or
+1:01:49 big data in general which kind of cover
+1:01:51 quite a lot
+1:01:53 any specific book specifically i enjoyed
+1:01:57 spark books like high performance spark
+1:01:59 or learning spark
+1:02:01 on big data i think um there is a book
+1:02:05 by um
+1:02:06 i don't remember the name and it's about
+1:02:08 data intensive workloads something like
+1:02:10 that
+1:02:11 yeah just integrated intensive
+1:02:12 applications right yeah something like
+1:02:14 that yeah
+1:02:15 yeah it has a peak on the cover yeah
+1:02:18 also
+1:02:19 yeah our island books are great on that
+1:02:22 yeah i think
+1:02:23 the author is martin klepman and design
+1:02:25 yeah data intensive applications
+1:02:27 yeah that's uh that's a good book um how
+1:02:30 can people find you
+1:02:33 um i am on twitter linkedin also
+1:02:36 like you can find my talks on youtube
+1:02:38 because most of them are recorded about
+1:02:40 big data or about kubernetes as well
+1:02:43 and alice yeah
+1:02:46 i listen kubernetes yeah
+1:02:50 in every part yeah thanks a lot for
+1:02:53 joining us today and for sharing your
+1:02:55 knowledge with us and thanks everyone
+1:02:56 for uh
+1:02:58 for joining us and asking questions and
+1:03:00 uh
+1:03:01 yeah just want to remind it tomorrow we
+1:03:04 have another day
+1:03:05 the last day of this conference we will
+1:03:07 talk about building a machining startup
+1:03:09 so
+1:03:10 don't forget to check it and
+1:03:13 yeah i guess that's all thanks thank you
+1:03:16 i enjoyed it
+1:03:17 yes me too have a great evening goodbye

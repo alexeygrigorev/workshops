@@ -1,0 +1,1753 @@
+Lessons Learned About Data & AI at Enterprises
+
+0:00 so hi everyone welcome to our event this
+0:02 event is brought to you by later talks
+0:04 club which is a community of people who
+0:05 love data we have weekly events and this
+0:08 event is one of such events if you want
+0:10 to find out more about the events we
+0:12 have there is a link in the description
+0:14 so go to the description check it out we
+0:16 have quite a few events planned
+0:18 so yeah you will like them check them
+0:20 out
+0:21 if you haven't subscribed to our youtube
+0:23 channel now it's the best time to do
+0:24 this just click on this big red button
+0:26 and you will get notified about all our
+0:29 future streams which will be as awesome
+0:32 as this one maybe less awesome because
+0:33 we have very special guest today we will
+0:36 talk
+0:36 about alexandre with alexander a bit
+0:38 later but
+0:40 a few more things so we have a great
+0:43 slack community if you want to hang out
+0:45 with other data enthusiasts check it out
+0:48 there is a link in the description
+0:50 and we have a machine learning
+0:51 engineering course starting soon so if
+0:53 you want to learn more about the
+0:56 machinery engineering
+0:57 check the link in the description
+0:59 and it's free so check it out in it's
+1:02 pretty long it's not easy but it's
+1:04 definitely worth it so check it out
+1:06 and then finally during today's
+1:08 interview you can ask any question you
+1:10 want there is a link pinned in the
+1:11 description
+1:13 so click on this link
+1:15 and i will be covering these questions
+1:17 during the interview
+1:18 so
+1:19 that's
+1:21 all the introduction i have so now i
+1:23 need to
+1:25 get the questions
+1:27 so okay
+1:29 here are the questions
+1:31 you probably have the copy of the
+1:32 questions nearby somewhere too or you
+1:34 know actually actually actually i
+1:36 haven't but it's a good point
+1:38 do you need
+1:40 no i i i don't i i think uh yeah just
+1:44 i'm just trying to watch the time
+1:45 because i'm i have a tendency to be very
+1:48 transparent but that could also include
+1:51 explaining too much uh so yeah i'm just
+1:54 watching the time a bit more
+1:57 okay so let's start
+2:01 so this week we'll talk about
+2:04 machine learning and data at
+2:06 enterprises so we have a special guest
+2:09 today alexandra so alexander is
+2:11 responsible for data and artificial
+2:12 intelligence at the consultancy called
+2:15 keonix back i hope i pronounced it
+2:17 correctly my german is perfectly
+2:19 yeah
+2:20 i've lived in germany for some time so i
+2:22 think now i can pronounce this uh umlaut
+2:25 so um
+2:27 but you might know alexander not from
+2:29 his work at keonexpect but from his
+2:31 involvement in the pi data community so
+2:33 he's one of the organizers or probably i
+2:36 should say chairs of the pi data
+2:38 conference the conference i think this
+2:40 is one of the
+2:41 this is the biggest conference the data
+2:42 conference in berlin
+2:45 my favorite conference
+2:47 this a couple of months ago like i was
+2:49 in the conference it was in brilliant
+2:51 was like really awesome conference
+2:53 and actually from these conferences i
+2:55 invited a couple of people to this
+2:57 podcast
+2:58 and alexander is one of them so i'm very
+3:00 happy
+3:01 that you joined us today so welcome
+3:05 yeah thanks for having me
+3:07 yeah so before we go into our main topic
+3:10 of
+3:11 doing machine learning at enterprises
+3:14 let's start with your background can you
+3:16 tell us about your career journey so far
+3:19 oh it's a long story actually and
+3:20 actually starts like here
+3:23 with the records uh actually like i
+3:26 i used to study the law actually so
+3:28 actually i hated it in school like
+3:29 pascal i thought that was like super
+3:31 boring
+3:32 and i couldn't put used to it so
+3:34 actually um i was a music enthusiast um
+3:37 in the 90s uh
+3:39 finally i i was djing finally i was
+3:41 co-owner of the record record company
+3:45 and the company was actually doing
+3:46 pretty good and there was no software
+3:48 around so that's why you have so many uh
+3:51 records on your background
+3:53 yeah actually advertising
+3:55 yes actually from those days yeah and
+3:59 and so actually uh
+4:01 so i have a tendency to make every stuff
+4:03 i'm passionate about and i care about
+4:05 also into my profession so it's very
+4:07 similar with data and programming and
+4:09 python later on and actually like
+4:12 the record company did pretty good and
+4:15 we had administration problems there was
+4:17 no software around so
+4:19 i had to build it or i decided to build
+4:21 it and so i taught myself programming
+4:23 with two books at that time so it's yeah
+4:27 and from there it goes so the record
+4:29 company didn't really survive the big
+4:31 crisis at the turn of the millennium uh
+4:34 but it wasn't too bad because i was
+4:37 moving into um programming uh and as
+4:40 soon as a whole
+4:42 everything about machine learning
+4:44 started i was just super excited took
+4:46 all the courses i could get and yeah and
+4:49 decided to move on to the field of
+4:51 machine learning and ai
+4:55 yeah
+4:56 and so now you work as a partner at
+4:59 koenigsegg
+5:00 so what does it mean to do to be a
+5:03 partner and what do you do as a partner
+5:06 as a partner of course i'm responsible
+5:08 for my team with the team working on
+5:11 data and ai topics to look for no new
+5:14 people uh of course because the clinic's
+5:17 week is growing so
+5:18 i always look for support in projects if
+5:21 it's freelancers or also people to
+5:25 employees or
+5:27 of course we have to
+5:30 as a partner have to think about what's
+5:31 our strategy what's which
+5:35 products should we focus on which
+5:37 services because it's uh it's a very
+5:39 broad field and so we always try to
+5:42 narrow it down and uh
+5:44 we we have a tendency to like to work uh
+5:47 cutting edge state of the art so just
+5:49 like implementing boring stuff isn't
+5:51 isn't probably not our thing of course
+5:53 some it's very often
+5:55 part of an a more exciting project but
+5:58 um yeah so this is this is
+6:01 my work and so being also like a partner
+6:05 and a founder of boutique consultancy
+6:08 and yeah that's
+6:10 that's it's fun
+6:12 because it gives you also like a lot of
+6:13 freedom
+6:14 to decide
+6:16 whether what do you want to work on
+6:18 which people do we want to work with and
+6:21 this is not only like people we want to
+6:23 bring in our team uh it it's also like
+6:26 clients so we we would not accept any
+6:29 client we say okay that's not a good
+6:31 company culture
+6:33 it's uh it's probably yeah it's not they
+6:35 don't really share those same values so
+6:37 we we wouldn't just do it for the money
+6:39 we would just like say no it's not a
+6:41 good fit because we like to get things
+6:43 done and not
+6:44 and not change lifetime against money
+6:47 because that's just a waste
+6:49 yeah i'm just also curious about the
+6:51 word partner so like i work at the
+6:53 product company and we usually i don't
+6:56 know
+6:57 chief technical officer or vp of
+6:59 engineering so partner is not something
+7:02 we use as a term as a
+7:05 job role so this is i guess more common
+7:08 to consultant consultancies and also to
+7:11 law firms right so people who
+7:13 do services for other companies right
+7:16 and here partner a partner means that
+7:18 you're responsible for an area
+7:21 correct for by of the company like right
+7:24 here as a partner you're
+7:26 driving you're driving a certain area uh
+7:30 in in the company you're responsible for
+7:32 that and of course with all the support
+7:34 from other partners so it's not
+7:38 we collaborate on things all the time
+7:40 but it's it's yeah it's
+7:42 it's it's like
+7:43 i'm running a department but i can
+7:45 decide um where i want to move so
+7:48 there's nobody uh
+7:50 except for like we meet as partners we
+7:53 meet and discuss things we should do or
+7:55 work well but it's not nobody can tell
+7:58 me if we should focus uh on mlaps as we
+8:02 are doing now or if we should do
+8:04 implement some other things uh so this
+8:07 is basically my call to make and
+8:10 yeah
+8:11 so basically the company consists of
+8:13 many independent you know units like uh
+8:17 uh and each unit is led by a partner
+8:19 right and you're
+8:20 a leader of your particular unit yeah so
+8:23 basically but there's not too many so
+8:25 there's only five partners so yeah okay
+8:28 it's it's it's not like and because we
+8:30 also like
+8:32 we we don't we currently grow and we
+8:34 especially grow in the field of data and
+8:36 ai and financial services um but for us
+8:40 it's it's it's very important to work on
+8:42 stuff we care about as well so
+8:45 and there's a lot of stuff you could do
+8:47 but it's too boring
+8:50 but i imagine that this is not a simple
+8:52 work not an easy work right so you need
+8:54 to do a lot of stuff you need to talk to
+8:56 clients you need to think what should be
+8:58 the strategy what you should focus on
+8:59 then you also have people who report to
+9:01 you
+9:03 and that's what you do as a managing
+9:05 partner of company but that's just one
+9:07 thing and i also know that you do a lot
+9:09 of other things outside of your
+9:11 let's say work
+9:13 so you're a chair at bicone paidata
+9:16 berlin conference right you're doing
+9:18 many other things and i also checked
+9:20 your github profile so i have a link so
+9:22 i went there i checked it and i saw that
+9:24 it's quite an active profile
+9:26 so how do you manage to do all that so
+9:28 yeah managing partners actually i
+9:30 community
+9:31 i don't have other hobbies
+9:34 no
+9:36 i have a tendency things i care about to
+9:40 make it or like combine it with my work
+9:43 um
+9:44 because for me yeah and the community is
+9:47 part of that i i enjoy the community i
+9:50 love especially in the python community
+9:53 i love the input i love the
+9:56 community is has a very very healthy
+9:59 country uh
+10:00 it's
+10:01 it's also but it's quite broad from the
+10:04 topics you can find you can find it
+10:05 astronomers you can find web developers
+10:07 and i think this is a very
+10:10 very good mix too because i i believe in
+10:13 learning cross domain is
+10:15 is a very good thing to see people's who
+10:19 work on very different topics to learn
+10:22 hey you have a similar problem for
+10:23 example if you have image problems talk
+10:26 to astronomers because they they have
+10:28 real image problems
+10:30 and they solve them already and they
+10:31 solved them probably with way less
+10:33 hardware than other people uh throw at
+10:36 it in the cloud and i think that's
+10:38 always like it's important to to keep
+10:40 the exchange going of course there's
+10:41 always like a lot of interest from
+10:43 academia what academia can also learn
+10:46 from business or like business
+10:47 experiences so and and i just like go
+10:50 like to go to conferences talk to people
+10:53 and yeah it's it's it's always very
+10:57 enlightening and and joyful and uh i
+11:00 like the atmosphere that
+11:03 there are no stupid questions culture
+11:05 i'm i'm and this is one thing i i preach
+11:08 everywhere also clients like there are
+11:10 no stupid questions
+11:13 how did you become a chair like i guess
+11:16 well so you mentioned when you became
+11:17 interested in machine learning you took
+11:20 all the questions about this you found
+11:22 and i guess at the same time you started
+11:23 to look for local meet ups local
+11:25 communities you started attending all
+11:28 these uh meetups right and one of the
+11:30 meetups local meetups so this is how you
+11:32 became a chair right so you stand
+11:34 actually it was just like an accident
+11:37 it's just like actually actually i i
+11:39 joined my first pycon was in cologne
+11:42 2013
+11:44 um
+11:45 and
+11:46 this was my first python community
+11:48 experience and i decided to go to europe
+11:49 and then build it just like across
+11:52 in the bcc again where we have the
+11:53 conference now
+11:55 and i heard about the european society
+11:57 and uh yeah i said okay let's go there
+11:59 it's free and then they were looking for
+12:01 an auditor um and i said okay auditing
+12:04 books your python at that time was like
+12:05 to audit like 10 10
+12:08 10 invoices a year so it was the
+12:11 conference was still run by the local
+12:12 community so it wasn't
+12:14 actually a lot of workloads okay i can i
+12:16 can do it so if nobody else wants i can
+12:18 throw myself in them so i met a lot of
+12:21 people
+12:22 i've i i interacted with a lot of people
+12:24 i've never met in my life with email and
+12:27 we were building the billboard
+12:28 conference and uh then basically when i
+12:32 came to bilbao it's the first time i
+12:33 meet like i met like alexavio christian
+12:36 barra and many others who have been
+12:38 working on the bilbao conference and if
+12:40 you had asked me beforehand can you
+12:43 organize like a 1200 person conference
+12:46 no no by email remotely i would have
+12:49 said no way
+12:51 actually it worked pretty well um and so
+12:54 it was a great conference it really
+12:55 worked and and while we were building
+12:57 the pro because
+12:58 20
+12:59 the billboard conference was a reset for
+13:01 europe python to run in a different
+13:03 fashion and so basically everything was
+13:05 just like
+13:07 reorganizing and so actually while we
+13:10 were building the process i ended up
+13:12 being program chair with alexavio
+13:15 and
+13:16 so yeah and from there goes and i i like
+13:20 i like to
+13:22 i don't really would say i would like to
+13:24 organize but i think like like getting
+13:27 making things happen is very powerful
+13:29 and of course conference gives you a lot
+13:32 of
+13:32 room for creativity to try new things
+13:35 out and and it's also like and you see
+13:38 okay it resonates with the community you
+13:40 help people you help people who don't
+13:42 not at the conference by recording the
+13:44 videos and getting everything
+13:46 together and yeah so
+13:49 i quite like that and so i just stayed
+13:51 on europe and and from there just like
+13:54 went on one euro python and sebastian
+13:57 and uh
+13:58 um and peter from castro nearby they
+14:00 came oh we should bring pike on the e to
+14:03 castro and i said it's like that's like
+14:06 it's a very connected area here so
+14:09 we run pi data so invest in mannheim
+14:11 heidelberg nowadays and so it's very
+14:14 close and they said hey do you want to
+14:15 help you have the experience from your
+14:16 presence said yeah of course
+14:19 this is how i was became part of the
+14:21 the uh
+14:23 german conference and actually i was
+14:25 just like helping a little bit on your
+14:27 sci-fi and then the program share left
+14:29 and then valerio mucho just like wrote
+14:31 in the telegram from alex should do it
+14:33 and i said i want not but so um
+14:37 so that's why i ended up like being
+14:39 involved in many conferences but it's uh
+14:41 it's basically not my plan so to die i
+14:44 more think about how can uh how can i
+14:47 not be involved in so many conferences
+14:50 because we also need no i think we also
+14:52 have to consider we need to make room
+14:55 for fresh blog fresh ideas and
+14:58 and so i'm i'm currently just working on
+15:01 the european summit for organizers in
+15:04 november because of course organizing
+15:08 conferences and everything is a lot of
+15:10 work on
+15:11 and on very few shoulders and
+15:14 and i've been investigating is
+15:16 is is it different has everybody ever
+15:19 figured out running a conference not
+15:21 being core organizers be basically
+15:23 burned out
+15:24 and i haven't found one yet so if
+15:26 somebody from the audience knows one
+15:29 please contact me because
+15:31 we we need to find new structures
+15:33 because the community is growing the
+15:35 conferences is growing
+15:37 the the experience we want to provide to
+15:40 um the
+15:42 communities is is growing so
+15:45 we we need to rethink how we organize
+15:48 and work on conferences because it
+15:50 depends on too few
+15:53 and people
+15:53 have to you have to work on that so
+15:55 that's why uh we are euro python i'm
+15:58 organizing a summit in november and
+16:00 we will invite organizers from all over
+16:03 europe and discuss and also how can we
+16:05 help each other
+16:07 by mentoring
+16:09 and standardizing some processes because
+16:11 very often in the conference we have to
+16:14 local communities or new people reinvent
+16:16 the wheel
+16:17 for the fifth time and so maybe we can
+16:20 help that because it's
+16:22 it's it's a problem yeah
+16:24 so if anyone is interested please
+16:26 contact alexander yes and if you want to
+16:28 help on conferences
+16:31 or who knows maybe you wouldn't become
+16:33 the next chair of pi date by called in
+16:36 berlin right
+16:38 anyways
+16:40 so
+16:41 i i also notice so when doing a little
+16:44 bit of research that you're a very
+16:45 active speaker so not only you speak at
+16:48 like all these events you organize well
+16:49 maybe not on all of them but your quote
+16:52 like your talks uh appear often and then
+16:55 actually like in google you can
+16:58 put in a name and then look for videos
+17:00 right there is a special tab so when i
+17:02 did this with your name
+17:04 i found
+17:06 604 results so did you actually do 600
+17:10 for no actually i think it's it's
+17:12 probably playlists or something else so
+17:15 actually i think it's a lot i haven't
+17:18 stopped i have stopped counting uh but i
+17:20 think it should be something like a
+17:22 hundred so i i am planning to recount
+17:24 soon because maybe the hundreds talk
+17:27 should be something a little more
+17:29 special
+17:30 so yeah it's uh yeah it just added adds
+17:33 up during the years
+17:36 it's none of this i'm asking is well
+17:38 some of this is what we prepared but i'm
+17:41 really curious like because i find
+17:43 problems sometimes getting inspiration
+17:45 like okay i probably have done something
+17:48 interesting
+17:49 but how do i package this as a talk like
+17:51 how do i find uh how do i share this how
+17:54 do i
+17:56 you know find materials to talk about
+17:59 like this is a problem for me so for you
+18:01 like with 100 talks you probably found
+18:04 like a way for you to generate
+18:07 talk proposals maybe you can share no
+18:09 not at all actually
+18:11 every time i propose a talk and when i
+18:13 finally have to prepare it i hate myself
+18:15 so why are we doing this to myself i i i
+18:18 lack time and of course for me it's
+18:21 important to deliver quality talks so
+18:24 it's uh it's it's i don't just don't
+18:25 want to say okay it's a talk and it's
+18:27 some topic or like just like something
+18:29 like uh
+18:31 something people have seen
+18:33 before or something like that um
+18:35 so it's it's of course um
+18:38 i i can narrow it down to a very simple
+18:40 formula if you have something to say you
+18:42 don't have to worry what you are talking
+18:44 talk to talk about and a lot of
+18:47 um
+18:48 a lot of the
+18:51 things what should i talk about is it
+18:52 good enough i can just like if people
+18:54 think it's just in your head i'm sure
+18:56 you have like five topics you can talk
+18:59 about and share your share insights and
+19:02 and and with the community and it
+19:04 doesn't have to be like
+19:06 the latest hype or like tech so yeah
+19:09 just like discuss things you learned
+19:12 when i do talks
+19:13 about something new and it's not only me
+19:15 actually i i i'm being programmed to
+19:17 have many conferences i know many
+19:19 speakers of course
+19:21 you become friends and and and then we
+19:23 also like talked hey what about you and
+19:25 then actually i realized many people
+19:27 would say okay this is these are great
+19:28 speakers actually very often they talk
+19:30 about things they're just
+19:32 learning and doing the talk and
+19:34 delivering talk is part of the learning
+19:36 phase so it's not like you're an expert
+19:39 and then you are eligible to talk you
+19:41 have
+19:42 and i think more value and this is also
+19:44 what i'm trying to point out no matter
+19:46 where i am if it's in the community or
+19:48 customers don't talk about the shiny
+19:52 things they're nice yeah you talk about
+19:54 them but don't forget to talk about the
+19:56 mistakes you made and how you solved
+19:58 them and what would the problems were
+20:00 and where you were stuck because this is
+20:02 where we can learn from each other we
+20:04 don't need
+20:05 we hardly learn from impressing each
+20:07 other with like cool stuff so
+20:10 this is uh yeah so
+20:13 so a talk proposal could be something
+20:15 that you don't know yet but you want to
+20:18 learn then you come up with the top
+20:19 proposal and then uh by the time the
+20:21 conference happens like you have to
+20:23 actually learn this thing to talk to
+20:25 yeah it's not bad it's not that short
+20:26 notice so of course you probably so for
+20:29 some when i did the pandas talks i was
+20:31 already working a lot with pandas but i
+20:33 did i did deep dives by providing bandus
+20:37 talks and also like thinking about okay
+20:39 what what should we basically point to
+20:42 is pandas at that time because all the
+20:44 pandas tutorials were like
+20:46 not nobody was explaining the index at
+20:48 that time and i think if you don't if
+20:50 you understand the index and nobody
+20:51 understands index except maybe
+20:56 yeah
+20:57 it's an important topic to say hey
+20:59 there's the index it's a very important
+21:00 structure when you work with the data
+21:02 and actually you can do like really cool
+21:03 things with that as well which can which
+21:05 are really useful in big time savers
+21:07 that was then uh then
+21:10 i i did the talk series about deep
+21:12 learning and ai which was deep learning
+21:14 for fun and profit taking blog posts and
+21:16 trying to do like style transfer text
+21:18 generation
+21:19 speech generation uh and and
+21:23 and things um and that was it was quite
+21:26 fun actually
+21:27 i missed that a bit because i learned a
+21:29 lot about deep learning i learned a lot
+21:31 about how to approach it and of course
+21:34 being part of the consultancy i also
+21:37 have to consider oh there might be also
+21:38 like customers there so it's
+21:41 it can be toy full but of course it's
+21:44 what's what's also like the connection
+21:46 what can you learn as a business from
+21:48 that and the learning from
+21:50 the deep learning for fun and profit
+21:51 series is basically yeah you don't
+21:53 predict deep learning you have to you
+21:55 have to experiment you have to be free
+21:57 to experiment and you you cannot
+22:00 basically decide what's if something is
+22:02 going to fly or not which was it was
+22:04 quite useful
+22:06 and yeah yeah stuff like that
+22:08 and the range of topics so it was the
+22:10 they think you mentioned was it what was
+22:12 the for fun and profit was deep learning
+22:15 with learning foreign yeah yeah so it
+22:18 was quite enjoyable um and that was fun
+22:21 of course it was many weekends spent on
+22:22 making
+22:23 these things happen
+22:27 because for me i mean like many people
+22:29 think a partner at the consultancy is
+22:32 just like oh yeah you're just like
+22:33 manager and i said no yeah yeah of
+22:34 course i'm also a manager but i'm a
+22:36 generalist because also if i'm work with
+22:38 clients for me it's very important to
+22:41 understand the tech
+22:43 we're talk discussing we're working on
+22:46 so i'm still hands-on so i'm not just
+22:48 like on this level x please xdo team
+22:50 explain me this new technology so no i
+22:53 i'm probably not
+22:55 i'm not the expert on everything but i
+22:58 i've always worked with everything and i
+23:00 can give like a a very good um and
+23:03 insights what's useful what's not useful
+23:06 so and yeah that was the deep learning
+23:08 part and i had the ideas arcaders there
+23:11 are so many misunderstandings in the
+23:13 hype about data and ai and why they not
+23:16 work at
+23:17 companies or small bit small or bigger
+23:19 companies and yeah but for example you
+23:22 recycle i will talk about software
+23:23 engineering because i see there's
+23:26 still too many data scientists around
+23:28 who have not heard about it and your
+23:30 sci-fi is an academic conference and
+23:32 students work with jupiter notebooks and
+23:34 if we really want to deliver something
+23:38 reproducible and stable um i thought
+23:41 about no it's time to give a talk what
+23:44 you really should
+23:45 know about software engineering yeah
+23:48 yeah so the your talks are quite diverse
+23:50 so then you also have a talk about
+23:52 pandas you mentioned that mongodb and
+23:54 one of the talks
+23:56 or variation of talk i noticed quite of
+23:58 quite a few talks you had so the topic
+24:02 is explaining ai to managers and this is
+24:04 actually like the topic of today's uh
+24:07 interview
+24:08 so like i guess you as a manager as a
+24:11 managing partner
+24:13 you need to do this quite a lot
+24:14 especially like you talk to your clients
+24:16 right and then you probably talk to
+24:19 people who do not necessarily have a lot
+24:21 of knowledge about machine learning
+24:22 right so then you have to explain all
+24:24 these things this is how this
+24:26 theme appeared right this is how you
+24:28 started talking about this right yeah
+24:31 and actually like talk giving talks was
+24:33 really helpful
+24:34 to explain things
+24:36 to other humans
+24:38 because actually i was when i started
+24:40 doing the talk doing talks
+24:42 i was really bad at explaining because i
+24:44 was too detailed i was
+24:46 nested sentences and everything very
+24:48 often people said now alex i cannot
+24:50 follow you ah and then i said and the
+24:52 talks also helped me to evolve
+24:55 personally to
+24:57 simplify sometimes because of course i
+25:00 if you work on software and you want to
+25:03 want to deliver quality away so you have
+25:04 like an engineer's mindset and the
+25:06 downside is
+25:08 you want to be very exact but sometimes
+25:10 simplification is not exactly exact
+25:12 enough so sometimes but have to simplify
+25:15 things um
+25:16 to get the message across um
+25:19 so yeah um of course this helped me a
+25:22 lot because the clients we work with
+25:24 they they are looking for
+25:25 state-of-the-art tech they are they work
+25:28 with open source um
+25:31 they but very often we also have to
+25:33 explain
+25:34 uh
+25:36 proper territory software you buy is
+25:38 probably a solution it depends on
+25:41 what you want to use it for but
+25:44 data nai something you you have to build
+25:47 you cannot just buy it it's not like a
+25:49 piece of software and
+25:51 very often we also support people in the
+25:53 company um to convince decision makers
+25:56 because
+25:57 very many many people management they
+25:59 think of data and ai yeah that's just
+26:01 like a piece of software you buy and you
+26:03 hire people to implement but it's not a
+26:05 data and ai uh it's two things like
+26:08 getting your data in order you actually
+26:10 can use it and and if a company is older
+26:12 than five years old the data is always
+26:14 like messy and distributed and
+26:18 you have to really work on on on
+26:20 how you organize your data how you make
+26:23 it accessible or if you were like yeah
+26:26 find new approaches for like more like
+26:28 ai centric
+26:30 data um
+26:31 and on the other hand
+26:33 of course there is sometimes a software
+26:35 tool which can help or help for a part
+26:37 and it's probably easier because not
+26:40 everybody has like tons of skilled
+26:42 developers
+26:44 that's the other thing um
+26:46 and so our part is very often to help
+26:49 make
+26:50 the right calls and then if it's
+26:52 implementation well in open source um we
+26:55 we're we are there to make it happen
+26:58 so we're not dogmatic about open source
+27:00 but i'm i'm a strong believer is
+27:02 everything in analytics
+27:04 prediction
+27:06 data is basically why not use open
+27:09 source it's way easier because if you
+27:11 buy software tools you also have to
+27:12 learn it and and what i like to see
+27:16 many decision makers they don't want to
+27:18 be dependent on a piece of software from
+27:21 the supplier which is probably a startup
+27:23 they don't know
+27:24 is it going to last
+27:26 or even like bigger bigger software
+27:27 vendors they
+27:29 they
+27:30 they invent new products and
+27:32 two years later they're gone so and we
+27:34 think yeah okay just enable yourself use
+27:37 open source um
+27:38 build build up a team
+27:40 build up your team skills start working
+27:42 with the community contribute to
+27:43 community and then you basically give
+27:45 all the freedom you want of course it's
+27:48 work but if you miss a piece if you miss
+27:51 a feature you can just like go ahead and
+27:53 implement it
+27:54 that's the beauty of open source right
+27:56 yeah and
+27:57 so this topic of explaining machine
+28:00 learning to managers
+28:02 for you as a consultant like why is it
+28:04 important can you not just tell your
+28:06 clients that trust me it works
+28:10 so like it's a bunch of math you will
+28:11 not understand it anyway so why should i
+28:13 bother explain it trust me it works yeah
+28:16 people have to make
+28:18 people have to make decisions of course
+28:20 i mean we're talking about like building
+28:22 software in the larger team of takes it
+28:25 takes budget and of course other people
+28:27 need to know
+28:28 why should i spend the budget is it the
+28:30 right call and of course as we always
+28:32 say nobody was ever fired for buying
+28:34 something from microsoft yeah
+28:37 so this is the other thing like of
+28:38 course if you hate is the ibm solution
+28:40 and people say okay let's buy this
+28:43 and because yeah it's it's very very
+28:45 cool but very often we still have to
+28:47 explain it's not software we build of
+28:49 course we build software to
+28:52 work with data to build models but this
+28:55 is
+28:56 it's it's not a software project and
+28:58 many people are not fully aware of that
+29:00 yet it gets better and better and so i
+29:03 would say like five years ago as many
+29:05 c-level
+29:06 people uh were not aware that um
+29:10 basically open source or data scientist
+29:12 is something different than peop
+29:13 somebody who sets up your email which is
+29:16 just like configuration we are a
+29:18 dashboard because it's all i t and so i
+29:20 don't
+29:21 i don't understand they don't understand
+29:23 of course it's also like nice to see
+29:25 this generation changes are happening so
+29:27 more and more
+29:29 decision makers younger decision makers
+29:32 enter the field they know many of them
+29:34 know python because from
+29:37 studying writing their phd thesis stuff
+29:40 like that so yeah it's getting better
+29:43 and better
+29:44 but still we need to support them also
+29:46 what which
+29:47 opens those tools they should use
+29:49 because there's always like there's a
+29:51 new framework every day uh yeah and
+29:54 what's the best choice yeah yeah i mean
+29:56 it's cool uh but on the other hand it's
+29:59 always we have to see okay
+30:02 how how long it's gonna last because of
+30:05 course we ever we
+30:07 we lack resources everybody likes
+30:09 resources so we have to help them to
+30:11 make the right calls and go for
+30:13 something stable which can work for
+30:15 multiple years um so and this is also
+30:18 very helpful like being around the
+30:20 conferences and interacting with the
+30:22 community so i can have like a broad
+30:24 field of tools which around there can
+30:26 get like good good
+30:28 um
+30:30 yeah yeah like good advice on which is
+30:33 good
+30:33 which is probably
+30:36 even better but with a smaller community
+30:39 and so probably it's better to use the
+30:40 other two
+30:42 so if i understood you correctly the
+30:44 main
+30:45 thing you want to solve with explaining
+30:47 ai to managers is not to explain how
+30:50 actually like i don't know the last
+30:52 transformer models work right what you
+30:54 want to explain is that
+30:57 in addition to this
+30:58 model that does this magical thing there
+31:01 are many many things around this that
+31:03 you also need to think about right like
+31:05 all these things you mentioned like it's
+31:06 not just
+31:07 data and ai in one box there is data
+31:10 which is like a vast thing and then
+31:12 there is ai component
+31:14 like which sits in the center maybe
+31:16 right that's what we need to explain
+31:17 right actually what i need to explain if
+31:20 you
+31:21 if you're serious for the first question
+31:23 you have to ask is
+31:25 is this really just the strategy of the
+31:27 organization or is it something oh yeah
+31:28 we should try this i've read it in the
+31:31 newspaper or seen something on linkedin
+31:33 um and i think the times oh we should
+31:35 try this and maybe i think these times
+31:37 are definitely over now even if it's
+31:39 your strategy or it's not and if it's
+31:42 not
+31:42 good luck
+31:45 so other other companies will be
+31:47 eventually faster and better so if it's
+31:50 a strategy um people of course they
+31:53 people are fascinated by ai they want to
+31:56 know about neural networks artificial
+31:58 intelligence and of course there's a lot
+31:59 of science fiction ideas hypes in their
+32:02 head and
+32:03 very often uh
+32:05 i'm just going to okay um
+32:08 explain to them okay you actually don't
+32:10 have to worry about building a neural
+32:12 network at all it's something you can
+32:15 just like get from the shelf there's so
+32:17 much research on your networks so
+32:20 maybe you have to make a choice but you
+32:22 never have to design your own neural
+32:24 network very few companies need to do
+32:26 that because but then they're like super
+32:28 specialized ai companies
+32:30 um
+32:31 so basically hey
+32:33 the magic is already out there you just
+32:35 have to scout it we can help you making
+32:37 the right calls the challenge is
+32:40 establishing the right company culture
+32:43 like because
+32:45 i always say get your data right to
+32:47 scale experiments because you can never
+32:50 know where the real value
+32:53 will be for the company many things are
+32:56 good ideas but i also have to explain
+32:58 yes
+32:59 for example google google does a lot of
+33:01 research with ml and deep learning and
+33:05 then there's also the things that work
+33:07 in research some of them go to
+33:10 production and even then only five
+33:12 percent said only five percent survive
+33:14 there
+33:15 so things which might sound plausible
+33:18 will probably not be the solution and
+33:20 things which
+33:22 you don't think about at all might be
+33:26 great solutions and you have to
+33:27 establish like an openness so you need
+33:29 to establish
+33:31 culture to get the data to collaboration
+33:34 to openly discuss problems because of
+33:36 course it's hard you do something fancy
+33:38 a little machine learning and who wants
+33:40 to do a presentation yes sorry it didn't
+33:41 work out but we very often have this we
+33:44 very often have this in
+33:46 in in projects we say okay we're looking
+33:49 for a solution for example uh a client
+33:51 of ours was looking for a solution in
+33:54 natural language processing and they had
+33:56 like 30 years of
+33:58 research data and documents there and
+34:01 they said okay yeah
+34:03 search keyword search is not good enough
+34:05 so what about building a knowledge graph
+34:07 i said yeah well of course let's do this
+34:09 and then we
+34:10 started building the knowledge graph and
+34:12 but then we had to say ah sorry
+34:15 it's like 30 years of research but it's
+34:16 still not good enough the knowledge
+34:18 graph is not building up so of course
+34:21 you can get data from outside in but we
+34:23 want to be one
+34:25 that
+34:26 we i always have to
+34:28 look for what is the real problem we
+34:31 want to solve what do you really want to
+34:32 accomplish and here he was okay we need
+34:34 more insights into we need we need
+34:37 better access to this corpus and so
+34:39 knowledge graph was not the solution so
+34:41 we say okay we don't say
+34:43 we don't tune things and do a knowledge
+34:45 graph and have a nice presentation and
+34:47 said yeah bye bye good luck with the
+34:48 nostrils unless we address this we don't
+34:50 we do not believe this will ever fly in
+34:53 to something useful
+34:55 and then we say okay but we have
+34:57 alternatives so here alternative was
+34:59 keyword
+35:00 extractions finding entities
+35:03 summaries and actually then clustering
+35:05 and then they were like and then put
+35:07 this into a nice ui and then they really
+35:09 had a very good could get a totally
+35:12 different perspective on all their
+35:14 research documents to find out okay what
+35:16 was the battery research at the time
+35:18 because of course for them it's not just
+35:20 we would like to look at this for
+35:23 because we like to dig in our history um
+35:26 we're talking about research department
+35:27 these research departments have like
+35:30 billion figures
+35:32 to work with so on of course if they
+35:34 know
+35:34 we researched this 20 years ago and it
+35:37 didn't work or we know it didn't work
+35:40 why it didn't work
+35:42 it can help to save a lot of money and
+35:45 resources uh if
+35:47 unless you reinvent the wheel and
+35:48 probably come to the same conclusion
+35:50 yeah so it's um yeah
+35:52 and of course
+35:54 this it's very open to be also like
+35:56 if there are problems to be really open
+35:58 and transparent with the clients and not
+36:00 just trying to to uh
+36:04 work on the happy path
+36:06 of course
+36:08 i'm happy to say we always ended up in
+36:10 the happy path so we never had like a
+36:12 total failure we always like found a
+36:15 good solution addressing the problem but
+36:18 in between it's quite a right and you
+36:20 have to explain things because people
+36:22 also as very often experts involved and
+36:25 uh when we did that project that was
+36:28 still a thing
+36:29 and of course you said oh can't we use
+36:31 beard yeah we like to use bird but we
+36:33 don't really think it will help solving
+36:35 the problem we're currently addressing
+36:36 um so and and yeah we're not paid to
+36:39 play with the new newest tech we are
+36:41 paid to do yeah to develop value and
+36:44 help people to save time to be more
+36:47 effective to make better decisions
+36:50 would you say your biggest challenge in
+36:52 explaining ai to managers is
+36:56 conveying the experimentational nature
+36:58 of all these projects saying that okay
+37:01 like yes there is this cool tech that
+37:03 you heard about from social net social
+37:06 media right but it might not be the
+37:08 solution for your program so we need to
+37:10 experiment we need to play
+37:12 with different tools and we need to have
+37:14 a proper
+37:16 way of humiliating
+37:18 if something is working or not right
+37:20 um actually i like the main challenge or
+37:22 not
+37:24 actually i'm
+37:26 i used to be a little bit more like
+37:29 uh
+37:30 like uh i kind of say like holding back
+37:33 in the past but actually i learned to be
+37:34 very being really upfront
+37:36 is the best thing just to say for
+37:38 example uh yes
+37:41 we had a meeting in a client and
+37:42 somebody just told me okay these are
+37:44 like this is the input and was input
+37:46 from frankfurter algominer about there's
+37:49 some ai
+37:52 camp somewhere and it was and i read the
+37:55 article and was full of
+37:57 nice idealistic ideas and and there's
+38:00 like stuff people read about yes ai
+38:03 finished beethoven's unfriendly sympathy
+38:06 and and and then i said and they said
+38:08 are you really excited about it and said
+38:10 what is my answer to that i said
+38:12 i'm very sorry but we have to accept
+38:16 the tenth symphony of beethoven will
+38:18 never be finished because it has a very
+38:20 simple reason
+38:21 beethoven is dead and he never finished
+38:23 it and
+38:24 i think beethoven is a very
+38:27 very good example because if you just go
+38:30 one symphony back and said what if the
+38:32 ninth symphony was unfinished we only
+38:35 had like eight
+38:36 of course an unfinished symphony could
+38:38 be something that sounds like these
+38:40 symphonies he has composed before but
+38:43 especially if you look at the ninth
+38:45 symphony of beethoven both the choir
+38:47 which is the european hymn and
+38:49 everything this is invention and ai at
+38:52 the current stage doesn't really invent
+38:55 things like that it can very good
+38:57 repeat things it has learned of course
+39:00 this is also
+39:01 um so this is a very good example
+39:03 explaining it with beethoven because
+39:05 everybody gets excited i think oh this
+39:07 is such a great thing i said no no we
+39:09 will just like get the same thing we
+39:11 know already and this is the strong suit
+39:13 but
+39:14 it's
+39:15 i don't think it's a good solution and
+39:16 also i think it's a little bit
+39:18 disrespectful
+39:20 yeah so because beethoven cannot say has
+39:24 no longer
+39:25 the ability to say no this is not what i
+39:28 intended so but like stuff like really
+39:30 really upfront but of course it's very
+39:33 important to be respectful about it and
+39:35 of course there's many hypes there's a
+39:37 lot of startups around who claim things
+39:39 and there was one and that's also like
+39:41 really good being connected to community
+39:43 because one ceo of the
+39:45 one of of a startup was also like cited
+39:48 in in the newspaper and then uh uh and i
+39:51 said yeah yeah we're already there and
+39:52 basically how we acted was over here
+39:54 we're basically on the same level as the
+39:55 point they cited us in this and then we
+39:57 we're already there yet and and i said
+40:00 yeah well
+40:01 actually the person who wrote the
+40:03 research paper gave gave a talk at a
+40:04 whole meet up and actually the expert
+40:06 working on on the topic gave us
+40:09 a little different impression when
+40:12 delivering the talk about the majority
+40:15 of of the tech although the tech is
+40:18 still exciting but of course this is
+40:19 it's very good
+40:21 you can also i can also give good
+40:23 examples
+40:24 why it's not just hype and why i'm not
+40:26 just saying oh don't believe the hype
+40:28 yeah it's it's i can
+40:30 bring also evidence yeah and and and to
+40:33 narrow it down and say hey what are you
+40:34 really want to solve and i think the
+40:37 biggest issues are still
+40:40 company culture like have expert domain
+40:43 expert and technical people and
+40:46 engineers
+40:47 work together on the same level as one
+40:50 team because bigger enterprises it still
+40:53 there's the departments
+40:55 they they have a requirement they write
+40:57 a ticket or use a story and then they
+40:59 just throw it over and so and
+41:02 and our message is no no work in hybrid
+41:04 teams work on this together because we
+41:06 don't have time for paperwork and all
+41:08 this miscommunication in between but of
+41:10 course
+41:12 people humans are not really good at
+41:14 changing routines we are we are routine
+41:17 animals and so i think the biggest
+41:19 challenge even the bigger challenge than
+41:21 solving ai is actually changing
+41:23 human routines and i think for me it's
+41:25 also like
+41:27 one thing that absolutely belongs
+41:29 together you won't be able to invent
+41:32 technology if you are not able to
+41:36 reinvent your company culture or if you
+41:39 already have phone because like for some
+41:41 time many startups they start they have
+41:43 this form that's basically built in from
+41:44 the history
+41:46 the young but especially
+41:48 big larger enterprises they go back
+41:50 decades and of course there's
+41:53 it's like
+41:54 multiple generations of people working
+41:56 there and of course it takes time
+42:00 and in preparation for this uh interview
+42:03 so you also like i asked you hey can you
+42:05 think about some questions that i should
+42:07 ask you and then you can came up with a
+42:09 few so we already talked so you added a
+42:12 few points so
+42:13 i'll just read these points right first
+42:15 one innovation requires culture and then
+42:17 the second innovation requires patience
+42:19 so i think we covered the culture part
+42:21 right so we talked like we should be
+42:24 extreme it should be experimentational
+42:26 data driven you shouldn't be like
+42:28 uh you know just chase the latest uh
+42:32 trends from twitter or whatever
+42:34 but the other thing this one innovation
+42:37 requires patience so what do you mean
+42:39 here like why do we need patience
+42:42 like
+42:44 will ai not just magically solve our
+42:46 problems like tomorrow no
+42:48 no because i think the patience is very
+42:50 good to make good calls uh i give you
+42:52 another example so if you uh
+42:55 it's probably without slides a little
+42:57 bit hard to explain so i i i
+43:00 it's i i gave
+43:01 i gave a more extensive talk about this
+43:03 at pi data london and it's on youtube
+43:05 already has the same title as
+43:08 our today's session
+43:09 and um so basically why patients it was
+43:12 actually quite interesting because
+43:14 before i actually this talk i was
+43:16 complaining like oh i hardly have
+43:18 questions from the audience probably i
+43:20 answered them already up front i was
+43:22 actually
+43:23 making fun with alexandre saucedo about
+43:25 this because hey after you have the same
+43:27 experience so and then basically this
+43:29 was one of like where we really started
+43:31 the conversation after the talk because
+43:33 i was pointing out hey i love i like
+43:35 agile i like retrospectives but and of
+43:39 course there's like a lot of like scrum
+43:40 rituals but what happens
+43:43 if you have for example you have like
+43:45 every three weeks you do a retrospective
+43:47 and i
+43:48 like just like us
+43:50 we could ask ourselves
+43:52 or like think
+43:53 what happens if you ask engineers and
+43:55 developer for problems will they ever
+43:57 say there is no problem at all i don't
+43:59 know ask for problems and you will
+44:01 always get at least five problems
+44:03 because we're problem solvers and of
+44:05 course we always have problems at hand
+44:08 and and if you do retrospectives for
+44:10 example are you everything might be in
+44:13 order um but if you ask okay what can we
+44:16 improve there will always be tons of
+44:18 ideas to improve but
+44:20 why not say everything's in order we
+44:22 have accomplished just that the spree
+44:24 goals were accomplished we're on track
+44:26 everybody's helping we have found a good
+44:28 working rhythm and say okay this is the
+44:29 retro let's finish after 15 minutes go
+44:32 for coffee or pick up work because
+44:34 everybody's always busy
+44:36 um of course we try to find more
+44:38 problems and try to over engineer the
+44:42 whole thing as well because what i
+44:44 learned also like working with
+44:45 non-technical people non over
+44:47 engineering is actually not an
+44:49 engineer's only problem many people
+44:52 do that even in management um they try
+44:55 to over engineer they and then and and
+44:58 ask too often is there something we
+45:00 should improve is there something we
+45:01 should improve and i said no no patience
+45:03 you just need to
+45:05 get more like a bird's-eye view because
+45:07 things take time and
+45:10 and
+45:11 it was quite interesting because like
+45:12 especially the retros and agile for data
+45:15 and data science it quite resonated with
+45:18 the audience it was a great conversation
+45:20 afterwards
+45:22 so
+45:23 so interesting i'm just taking trying to
+45:26 somehow distill the main message here
+45:29 uh
+45:30 so
+45:31 like
+45:32 we as humans always want to
+45:35 look for ways to improve what we
+45:37 currently have let's say we have a
+45:38 product and it's doing i don't know
+45:40 let's say we have search right and
+45:41 search is working fine and we as a
+45:44 humans if somebody comes to me and says
+45:46 hey what do you want to improve i can
+45:47 say
+45:48 like our search could be better right
+45:50 and then it triggers the whole
+45:52 discussion of how we can make it better
+45:55 even though maybe we don't need really
+45:57 to work on improving search right now
+45:59 maybe there's something else to work on
+46:01 right yeah right or like like the
+46:03 firmware also like maybe just
+46:06 lean back and watch what happens
+46:08 until because if something has happened
+46:10 i know we already know okay we should
+46:12 improve this we should improve this and
+46:13 maybe just like take a step back work on
+46:15 something else and come back two three
+46:18 weeks later and see okay is the whole
+46:20 thing really now
+46:21 not working anymore or is everything
+46:23 just like fine because of course if you
+46:25 if you're working
+46:27 if you're very involved in not working
+46:28 on something of course you see all the
+46:30 tiny bits that could be better but are
+46:32 the tiny bits actually
+46:35 important for solving what what you're
+46:37 working on and sometimes and i also fear
+46:40 like working on too many details um
+46:44 might might also not be good because you
+46:46 lea you you lose the bigger perspective
+46:48 maybe there are other factors especially
+46:51 if you work in data and ai maybe you
+46:52 have solved the problem and you know
+46:54 knew how to even tune the algorithms
+46:58 even better but maybe taking a step back
+47:00 could also be helpful okay now the
+47:02 algorithm um what about like ethics and
+47:05 all the stuff so like lean back what
+47:07 does this really work is there anything
+47:09 in the data and take also like some
+47:11 different perspectives on working
+47:14 on the on the projects and not just like
+47:16 over engineering the the technical parts
+47:18 and then in germany we have a saying at
+47:20 the scooter that the perfect zone is
+47:21 defined as gluten
+47:24 so actually perfectionism is the the
+47:26 enemy of the good
+47:28 and then there's another thing i picked
+47:29 up from
+47:30 our
+47:31 software architecture book is actually
+47:33 it's
+47:35 no
+47:36 big system will ever be perfect
+47:39 yeah so that's that i mean that's like
+47:42 the nature of having like complex and
+47:44 bigger systems they will never be
+47:45 perfect
+47:46 they cannot they can never be perfect so
+47:49 we actually have to deal and work with
+47:51 okay this is just like probably good
+47:53 enough yeah
+47:55 and that's still good engineering
+47:57 because as an engineer i think no it's
+47:59 not perfect so
+48:00 yeah
+48:02 i think a quote from
+48:04 was it from or somebody else like from
+48:07 some famous engineers was that uh
+48:10 premature optimization is the
+48:12 root of all evil something like this
+48:14 yeah yeah yeah yeah
+48:15 and this is also something this is also
+48:18 something uh
+48:19 i also have to point out very often
+48:22 we don't optimize for performance until
+48:25 we had a bottleneck because
+48:28 i just know from experience when you try
+48:30 to optimize upfront you will always
+48:32 optimize the wrong things
+48:34 anyway so
+48:36 uh so it's um it's uh
+48:39 that's
+48:40 a huge part of like communicating being
+48:42 part of teams making data and i hop and
+48:45 also to say hey
+48:46 stop here like wait we should do
+48:48 something else and refocus and
+48:51 give advice on that
+48:53 and speaking of that so there is a
+48:55 question that we have so the question is
+48:57 sometimes we don't need machine learning
+48:59 or artificial intelligence how do we
+49:01 convince managers or business
+49:03 stakeholders to not use ml or ai when
+49:06 there are others who insist to use them
+49:10 it's
+49:10 actually
+49:12 very simple
+49:14 so usually
+49:17 when i talk about it i say okay
+49:20 we we we suggest like a reference
+49:22 architecture to our clients so if you're
+49:24 serious about data you need like a
+49:25 reference architecture which is
+49:27 basically data in data like structured
+49:29 data lake just being a concept not not
+49:32 not a real storage thing and
+49:34 making data accessible
+49:36 and accessible
+49:38 in
+49:39 a very consumer friendly way and of
+49:41 course with all the governance stuff
+49:43 being taken care of as well and even
+49:46 like in first meetings when people
+49:48 contact us about data and i i very often
+49:51 say already okay and if we have
+49:53 established this reference architecture
+49:55 very basically okay you can get the data
+49:57 it's really easy it's way easier to get
+49:59 the data you don't have to
+50:00 research where is the data and and pull
+50:03 these together because
+50:04 we're taking data projects they often
+50:07 start from the wrong end oh we have this
+50:10 idea where can we find the data yeah you
+50:12 can like
+50:13 do like
+50:14 hundreds of these problems but you will
+50:16 just you will just build a hundred zeros
+50:18 while doing it so actually if you're
+50:20 serious you say get the data right do
+50:22 the experiments qualify and
+50:24 or not and
+50:26 of course i also say seventy percent
+50:29 once with the data is right and very
+50:31 accessible seventy percent of the data
+50:33 use will likely be just
+50:35 um business intelligence and just like
+50:38 analytics no machine learning at all
+50:40 because
+50:42 like having the data accessible building
+50:44 or dashboards for business users is is
+50:47 the problem solved and then maybe
+50:50 another 20 will be machine learning and
+50:52 if you're lucky there's also like 10
+50:54 percent deep learning depending of
+50:56 course the domain that they and and of
+50:59 course depending on the data mix because
+51:01 but most companies still have numerical
+51:03 data of course if they were like more
+51:05 unstructured data in the mix or images
+51:08 deep learning um it would of course be a
+51:11 bigger percentage but
+51:13 i not i'm not there just like to say oh
+51:15 we only do data and i okay if we
+51:16 organize if you get your data right you
+51:19 can have better standard analytics
+51:22 that's that's also a good thing yeah
+51:23 that's all
+51:24 and and it's it's also like business
+51:26 intelligence this is not our remedy we
+51:29 are here to save
+51:31 i see our goal is to save people time to
+51:35 help them to make better decisions
+51:37 faster without like
+51:39 yeah handling excel sheets and whatever
+51:42 all day so
+51:45 and i also see like speaking of patients
+51:48 so i imagine this scenario where
+51:50 somebody comes hey we want to use
+51:53 um
+51:54 this latest ai trends and then but how
+51:56 about your data pipelines do you have
+51:58 like a lake and then you build a lake
+52:00 and then but can we use data data
+52:02 science now can we use artificial
+52:04 intelligence now no no no wait like
+52:06 there are cases where we can solve like
+52:08 with analytics right i always say the
+52:10 lake the lake hasn't been has doesn't
+52:13 have to be full like if it's like 10
+52:15 already or if there's some data in there
+52:17 you can already start it it's more like
+52:19 the about like
+52:21 the right mindset like
+52:23 okay get the data right and not look for
+52:25 nice
+52:26 machine learning or deep learning ideas
+52:28 and then like research later because
+52:29 then we will likely have some export of
+52:31 them from the database and you basically
+52:33 have just like you're just like being
+52:35 disconnected from the system because of
+52:37 because of course if you really want to
+52:40 build efficiency you have to bring it to
+52:42 production and then of course
+52:44 the solution for this is ml ops so like
+52:47 hey there's new data retrain the models
+52:49 like
+52:50 close the circle because there's also
+52:52 like a lot of like machine
+52:54 learning um or data scientists
+52:56 national engineers or data scientists
+52:58 they also spend a lot of time like
+53:00 release building models releasing them
+53:02 putting them somewhere and
+53:04 so uh
+53:06 ml ops is actually
+53:08 currently the best thing you can do to
+53:11 become effective um and and and get
+53:14 things done and
+53:16 have uh that people think about the
+53:19 problems and not just like
+53:21 um
+53:22 wasting time on doing
+53:24 like stuff you can automate
+53:27 so would you say that a melopsi is the
+53:28 best recipe for
+53:30 machine learning in all these
+53:31 enterprises or with something else
+53:34 yeah definitely
+53:35 because it's it's it's
+53:37 it's not just because it's ml ops
+53:39 because ml ops is
+53:41 it also
+53:43 that's that's probably another thing i i
+53:45 always preach
+53:47 it's not just programming
+53:48 everything we do is also like a standard
+53:50 decision
+53:51 we don't have to standardize things we
+53:53 have to
+53:55 build common we have to set you have to
+53:57 settle a whole company let's work on
+53:59 this standard this is how we do things
+54:00 because of course if you just like it as
+54:02 a company and you have like
+54:04 20 data scientists and
+54:06 and you don't
+54:08 see okay what's the common standard how
+54:10 do you want to
+54:12 build ci cd pipelines and all this if
+54:14 you have 20 people you probably have 30
+54:16 different approaches running ci cd
+54:17 pipelines in the company and then
+54:19 cleaning it up is basically impossible
+54:21 you can you can you can really so of
+54:23 course this is also not another patient
+54:25 part don't
+54:26 don't think about okay how can we
+54:29 deliver things in quality and increase
+54:31 the quality rather than thinking about
+54:33 making many many many different approach
+54:36 approaches happen or not um
+54:38 so it's it's it's very very important to
+54:42 to standardize to think what's a good
+54:44 standard also like to question standards
+54:46 during the process until
+54:48 it's basically um at the best level um
+54:52 and
+54:53 yeah so
+54:55 this is so
+54:56 to be honest like emma lops feels uh
+54:59 lately because of all the buzzwords all
+55:01 the buzz around this world it feels like
+55:03 a buzzword right so people would throw
+55:06 uh
+55:07 envelopes everywhere like how do we
+55:09 solve it oh with emma lopes what do we
+55:11 do here let's do envelopes and then i
+55:13 already import
+55:14 imagine like important people from
+55:16 mckinsey all these suits
+55:18 um
+55:20 delivering the presentation in
+55:22 powerpoint and then they have envelopes
+55:24 like with big letters there saying that
+55:26 it will solve all your problems okay do
+55:28 you also have this feeling that
+55:31 people just talk about mlops without
+55:32 release you know knowing what it is i
+55:35 mean like we've experienced it like
+55:37 there was the big data hype everybody
+55:39 here we do big big data so why is your
+55:42 data not in order when we want to start
+55:43 deep learning projects now so of course
+55:46 there's always big hype and of course
+55:48 we also have to be really critical uh
+55:51 people push for good news we consume
+55:54 stuff on social media linkedin and it's
+55:57 hardly questioned we always if you go on
+56:00 linkedin i try not to be too much on
+56:01 linkedin because you always get the
+56:02 impression everybody has solved
+56:04 everything and we basically last then
+56:06 then you go to clients and you say okay
+56:08 basically i've made a travel in the past
+56:11 or like for 10 years because this
+56:13 everything is i have to i i have to make
+56:17 some efforts to explain things
+56:19 bring in new concepts get new ideas and
+56:21 so it's it's it's like always like a hot
+56:24 and cold path but of course there's many
+56:25 people who talk about
+56:27 ops and actually have no clue and
+56:28 sometimes if you look at larger consult
+56:32 i like like like like
+56:34 like really big ones i have met many
+56:36 people or i find my clients and look but
+56:38 they delivered i always see like okay
+56:40 yeah you basically have no idea you
+56:42 basically just copy paste and do
+56:44 something and uh it's it's you don't
+56:47 have an understanding so when we discuss
+56:50 ml ops i i don't put big letters there i
+56:53 just put there was this great paper on
+56:55 ml ops from the
+56:56 kit with the whole detail process and
+56:59 then we just go there okay
+57:01 where where are you now what can you
+57:03 already do for example like data
+57:05 exploration i mean everybody can do that
+57:07 at least if you think about considered
+57:09 envelopes just to do you already
+57:11 probably have like a part of a restart
+57:13 line and then you can see okay
+57:15 what do you already have to solve what
+57:17 with p which pieces of the puzzle are
+57:19 already in place what do we have to work
+57:21 on and of course having like this very
+57:23 detailed
+57:26 process we can all say okay
+57:29 sometimes if we work in finance if we do
+57:31 a lot of finance or insurance and of
+57:33 course there are like also regulatory
+57:35 measures so uh and they say okay do
+57:38 regulatory measurements or
+57:41 also fit in and of course if you have
+57:43 like this nice detailed process to see
+57:45 okay before we release a new model
+57:47 probably somebody from the department
+57:48 has to sign off not because we don't
+57:50 trust the tech but it's part of the
+57:52 regulatory process and then you can just
+57:54 like say okay this makes a whole picture
+57:56 and we already discussed like okay how
+57:58 can we solve it what is there what is
+58:00 not because
+58:01 hype or not nothing is a self a thing
+58:04 for like a purpose in itself so of
+58:07 course we end the ops and i i love
+58:09 envelopes
+58:10 because it's just like saving a lot of
+58:13 time and helping to build better things
+58:15 and yeah so i think it's the the right
+58:18 way to go although it's
+58:21 a lot of work from
+58:22 the most most companies
+58:25 the emelops uh
+58:27 would you say it's more about processes
+58:28 right about the process you have that
+58:30 you have to follow rather than
+58:32 tools because
+58:33 my impression from all these companies
+58:36 that offer envelope solutions that they
+58:39 generate a lot of
+58:41 you know let's say okay we are the
+58:43 envelope solution right
+58:45 while it's not just about tools but
+58:47 rather how you structure your process
+58:50 right
+58:51 the the the problem is also like they
+58:54 always want to okay you need to use the
+58:56 platform you need to put the data there
+58:58 and there are many companies and now we
+58:59 can't
+59:01 we don't trust
+59:03 a startup
+59:04 because of course you maybe have a
+59:05 funding and maybe you're gone next year
+59:08 and then you have the data and of course
+59:10 also like day they plan
+59:13 mid and long term so we're not looking
+59:15 for okay we need a solution which works
+59:18 short term of course everybody's happy
+59:20 if there's a quick quick solution for
+59:22 everything but they they uh we need to
+59:24 be able to run long term because if you
+59:27 have like millions of customers you
+59:28 cannot say oh sorry
+59:30 wrong startup we can no longer deliver
+59:33 this or this is stuck or we have to do
+59:35 it manually now
+59:36 um
+59:37 so of course there are many things to
+59:39 consider and
+59:41 and and of course
+59:42 many of these platforms are also limited
+59:44 because as i mentioned in the in the
+59:46 beginning freedom
+59:48 is very important to most clients to say
+59:51 okay we need this feature we want to
+59:52 implement it and
+59:54 like bagging supplier like the suppliers
+59:58 for for the software windows for that
+1:00:00 and waiting for um uh responses um this
+1:00:04 is
+1:00:04 no way for us because everybody has the
+1:00:06 experience
+1:00:08 yeah you file tickets you never get an
+1:00:10 answer even if it's something urgent so
+1:00:12 yeah and yeah and this is basically a
+1:00:15 thing and of course
+1:00:17 what i'm also mentioning so because i
+1:00:19 would suggest ml ops only to companies
+1:00:21 if you have like
+1:00:23 um a decent team of
+1:00:25 experts around the company i would not
+1:00:27 suggest oh we want to move into data
+1:00:29 science now we have hired three junior
+1:00:32 data scientists but and we should do
+1:00:33 everything probably from the very
+1:00:35 beginning and do ml ops i would say this
+1:00:36 is a very bad idea because and on office
+1:00:39 comp is of course it's complicated it's
+1:00:41 a lot of work to get everything right to
+1:00:43 get like this automation level um
+1:00:46 but you're so you need to have in-house
+1:00:49 skills of course we can from current
+1:00:50 speed always help building the skills
+1:00:53 help building envelopes and and other
+1:00:55 things are in data and ai but
+1:00:58 it's it's not an easy problem of course
+1:01:00 it just looks easy because it makes
+1:01:01 sense but if you know
+1:01:03 there's a lot of details to work out
+1:01:07 so
+1:01:08 if somebody has questions
+1:01:10 who me and they want to ask you or maybe
+1:01:12 they want to apply to that position by
+1:01:14 data that you mentioned or maybe they
+1:01:16 want to
+1:01:17 ask for your advice maybe to help for
+1:01:20 their company so how do they find you
+1:01:23 you can find me on linkedin uh i'm the
+1:01:25 only alexander and alexander handoff is
+1:01:27 actually really easy to find you can
+1:01:29 find me on linkedin also on twitter
+1:01:31 although i very often miss
+1:01:33 messages from from from twitter
+1:01:36 so probably the best way is is just like
+1:01:40 add me uh write me on linkedin um
+1:01:43 or just if you're at the conference just
+1:01:45 come by and say hello
+1:01:47 and
+1:01:48 any pi data conference right and he'll
+1:01:50 be there no i think just european ones
+1:01:54 wait
+1:01:55 not true like actually
+1:01:57 it's actually to actually i'm actually
+1:02:00 pretty close to pi data miami but we are
+1:02:02 on holiday and
+1:02:04 so because that's on the 27th of
+1:02:06 september and actually i'm i'm close by
+1:02:08 so i was tempted oh i could go there but
+1:02:10 actually we have other plans we actually
+1:02:13 planned for disney world so i cannot say
+1:02:16 go to pi data to miami um no uh yeah so
+1:02:20 so yeah mostly the european ones um
+1:02:23 of for sure also like uh other
+1:02:27 around the world again that's which
+1:02:28 we're still like coming back from kobit
+1:02:30 and pandemics so
+1:02:32 yeah so the next one
+1:02:34 is your sci-fi end of the month so i'll
+1:02:36 be there
+1:02:37 ah so it's uh it's it's also handy it's
+1:02:40 close by it's only two two hours battery
+1:02:42 um
+1:02:46 now thanks a lot for the chat i see that
+1:02:48 we went a bit over time um so yeah
+1:02:51 thanks for joining us today
+1:02:53 it was fun like really nice conversation
+1:02:55 thanks a lot thanks for sharing your
+1:02:56 knowledge your expertise and thanks
+1:02:58 everyone for joining us today as well
+1:03:00 for asking questions for listening
+1:03:02 um thanks for organizing the podcast
+1:03:05 yeah well in online it's uh not as
+1:03:08 difficult as offline like i cannot
+1:03:10 imagine what you need to go through to
+1:03:12 actually organize things offline because
+1:03:13 online is just a zoom column that's it
+1:03:15 but offline that's
+1:03:17 it entirely different level so i really
+1:03:20 admire your work thanks for doing this
+1:03:22 thank you
+1:03:24 okay well uh have a great weekend
+1:03:26 everyone yeah see you soon

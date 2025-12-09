@@ -1,0 +1,14 @@
+[project]
+name = "temporal-workflow"
+version = "0.1.0"
+description = "Temporal.io workflow for processing YouTube podcast transcripts"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "temporalio>=1.8.0",
+    "pyyaml>=6.0.3",
+    "requests>=2.32.5",
+    "tqdm>=4.67.1",
+    "youtube-transcript-api>=1.2.3",
+]
+

@@ -1,0 +1,1413 @@
+Linguistics and Fairness
+
+0:01 yeah okay so hi everyone Welcome to our
+0:05 event this event is brought to you by
+0:06 the do club which is a community of
+0:09 people who love data we have weekly
+0:10 events and today is one of such events I
+0:13 think these are the last events we have
+0:15 this year we don't really have anything
+0:17 planned for the rest of the year maybe
+0:19 something accidentally will pop up but
+0:22 probably we will see each other next
+0:24 year maybe there will be some surprise
+0:27 seems I don't know but if you want to
+0:29 stay tuned and do not miss our surprise
+0:31 stream if it will happen this year do
+0:33 not forget to subscribe to our YouTube
+0:34 channel and we have an amazing slack
+0:37 Community where you can hang out with
+0:38 dating USS during today's interview you
+0:41 can ask any question you want there is a
+0:44 pined link in live chat so click on that
+0:47 link and ask your questions and we will
+0:49 be covering these questions during the
+0:52 interview and I'm going to stop sharing
+0:54 my screen actually I did not check my
+0:57 audio it's good right yes at least I can
+1:00 hear everything it's like sometimes
+1:04 um Zoom decides to use my buil-in
+1:07 microphone instead of this one and I
+1:10 speak I think I'm speaking to this
+1:11 microphone but actually the other one is
+1:14 recording and this is annoying because
+1:16 the the built-in one has Echo like it
+1:20 doesn't have noise
+1:23 reduction uh and then like if I type
+1:25 something it also captures that
+1:28 soble anyways
+1:33 um on the questions that Johanna
+1:37 prepared yes if anybody's listening I'm
+1:40 sorry that I'm going to speak with a bit
+1:41 of a sick voice we can we can go through
+1:43 this a bit slower recognition yes you
+1:48 ready we can start right yeah yeah so
+1:51 this week we'll talk about linguistic
+1:53 fairness and social social technical
+1:56 perspective on a I don't know what it
+1:57 means we'll find out we have a special
+1:59 guest today Tamara Tamar works on ML
+2:02 explainability interpretability and
+2:04 fairness as open- Source engineer at
+2:07 probable and you're the third person
+2:09 from probable we have had in like last
+2:13 half a year or since probable exists I
+2:17 guess right that we're here yeah it's
+2:20 really cool to have um
+2:22 you um so Tamar is a maintainer or Fair
+2:26 learn contributor to psychic learn and
+2:28 SK Ops it says G Ops right Ops we call
+2:33 it I don't know people can pronounce it
+2:36 differently maybe yeah so we will stick
+2:38 to your way of pronouncing pronouncing
+2:40 it scops so Tamara has both computer
+2:42 science and software engineering degree
+2:44 as well as computational Linguistics
+2:47 background so welcome to our
+2:49 interview thank you thank you for
+2:51 inviting me it's lovely to be here and
+2:54 uh thanks as always to Johanna Bayer who
+2:57 helped to prepare the questions for
+2:59 today's interview so let's start before
+3:02 we go into our main topic of social Tech
+3:05 that's such a difficult word to to AR
+3:08 technical soci technical AI yeah so
+3:12 let's start with your background so can
+3:14 you tell us uh more about your career
+3:16 Journey so far yes I think you mentioned
+3:19 what I do right now so I am an open
+3:21 source software engineer as we everybody
+3:23 call each other in my team at probable
+3:27 um and I kind of share my attention as
+3:30 you mentioned I maintain Fair learn so I
+3:32 have more responsibility there but I
+3:34 also have been contributing to scops and
+3:36 we can talk about what that is later
+3:37 maybe and I sometimes
+3:40 contractually contribute to psyched
+3:42 learn as well but in a bit of a lesser
+3:45 um
+3:46 Manner and I also have been involved in
+3:50 computational linguistics research and
+3:52 kind of studying it for at least four
+3:54 years I think it's now more I'm just
+3:57 about to start a new research project um
+4:00 I'm still working on uh figuring out the
+4:02 scope I'll talk about that a bit later
+4:05 maybe but in a broader sense in the last
+4:07 15 years since I finished my first um
+4:11 computer science degree I've worked
+4:12 mostly as a software engineer and in
+4:14 multiple areas um I spent about five
+4:17 years in music tech and before that a
+4:18 few years in Civic tech music tech yes
+4:21 music tech that's how the the the area
+4:24 of people who do music production
+4:26 software and so on is
+4:28 called and I have in the last few years
+4:31 I am working in the machine learning and
+4:34 specifically natural language processing
+4:36 area mhm okay tell me more about music
+4:39 tech like what is that so I I I
+4:44 got um I've always produced music I also
+4:47 have a music background I played the
+4:49 violin I went to music school for a very
+4:51 long time um but in 200 I think it was
+4:56 15 yeah 2015 I started a job at Ableton
+4:59 which is the market leader for music
+5:01 production software and I work there as
+5:04 developer relations for a few months um
+5:07 doing op stuff uh interesting enough and
+5:09 then I uh went to work at the hardware
+5:11 team as a software engineer for the rest
+5:14 four years or so and what we did was an
+5:18 instrument digital instrument it was
+5:20 really really
+5:21 fun so this like pedals for guitars or
+5:24 something like that or no no um like
+5:28 keyboards example like
+5:30 what can so this instrument for example
+5:32 is a console that I worked on it's
+5:34 called it's called push and I worked on
+5:36 the push two I think then at the time
+5:39 yes um and it has little pads where you
+5:43 can sequence your music change make
+5:46 patterns and you have access to the
+5:48 whole other music production so which is
+5:50 where complicated the big kind of
+5:53 station on it so when I go to concerts
+5:56 and there is electronic music so usually
+5:58 there is like a person um often times
+6:01 there is somebody playing drums and then
+6:03 there is a person with some sort of
+6:04 panel pressing buttons so that's the
+6:07 console right yes but they're very
+6:09 different ones like they're they have
+6:12 different scope and our scope in my team
+6:14 was to create like a full instrument
+6:15 where you can just lose yourself looking
+6:17 at this and you never have to look at
+6:18 your computer anymore to to recreate
+6:21 this um this state of flow that you have
+6:23 when you play real instruments um but
+6:26 there are some consoles which are meant
+6:28 for just kind of steering the wheel of
+6:31 your music for live performances they
+6:33 have smaller they have smaller Scopes um
+6:35 so there's like a really wide range and
+6:37 you can also have DJing consoles of
+6:38 course which are different again yeah I
+6:42 was always wondering how does this
+6:44 actually work CU like
+6:46 there pressing buttons and then music
+6:49 happens but I have no idea what exactly
+6:51 is happening under the hood but it's
+6:52 usually for electronic music but I can
+6:55 tell you how this is really it's uh so
+6:57 we in so the main software was a legacy
+7:00 software 20 years old I think when I
+7:01 joined it already and so it was written
+7:04 in
+7:04 C++ and historically at some point long
+7:08 time ago before I joined or even done
+7:10 software professionally somebody decided
+7:12 that um they're going to do the hardware
+7:14 bindings with thir parties in Python and
+7:16 so we also follow that um kind of
+7:20 standard so we did the hardware bindings
+7:22 in Python which every I tell someone
+7:23 they find it really strange but then the
+7:25 hardware bindings we had with them
+7:27 processed on the computer there was a
+7:30 cable we're not going to process python
+7:32 on this device that will be really
+7:33 really hard there is a device now that
+7:35 is Standalone by the same company I
+7:37 don't work there anymore of course but
+7:39 people can check it out that is done a
+7:41 bit differently and so this uh we would
+7:43 interact through python with a c plus
+7:45 API and all of that will be you know uh
+7:48 executed on a computer so in the
+7:50 computer you have access to all kinds of
+7:52 powerful things to do music and sound
+7:54 and all the stuff yeah I see usually in
+7:57 these performances uh when there's live
+8:00 performance in addition to this panel to
+8:02 this console they usually have a
+8:04 laptop right so this is where the
+8:08 computation is happening right for some
+8:10 of the things okay a couple of years
+8:12 there was a trend there is a trend of
+8:15 making Standalone um kind of machines
+8:18 with the instrument in mind or like
+8:20 losing yourself or jamming with others
+8:21 in a space that the computer doesn't
+8:23 distract you because the computer is a
+8:24 distraction a possible distraction in a
+8:26 sense um to break your flow but those uh
+8:30 devices are quite expensive they're
+8:32 expensive to
+8:33 produce it's cheaper to have a laptop
+8:35 and a panel it definitely is for a user
+8:39 uh but a lot of people really this is
+8:40 their life you know and they say buy and
+8:43 it's still quite a bit Market yeah yeah
+8:46 right so you did um this music tech and
+8:50 eventually you got into language and AI
+8:54 like how did it happen yes I know it
+8:57 sounds really strange but this was the
+8:58 plan all strange but like interesting
+9:01 let's say musicing this boring stuff
+9:05 with
+9:06 AI yeah I think if we wanna we want to
+9:09 talk about how I ended up studying
+9:11 competitional Linguistics at at this
+9:13 point in life after doing all this other
+9:15 things like music tech and I was
+9:16 involved in like the CV Tech area and so
+9:18 on um that's like ties so much with who
+9:22 I am so we have to like revisit my life
+9:24 story in a sense but um I studied my
+9:27 first degree I started when I was 18
+9:29 like most people uh it was computer
+9:32 science and I was it was fascinated I
+9:35 did really well but before I studied
+9:38 computer science and I got interested I
+9:40 mean computers were that was in the
+9:42 middle of the 2000s so that was quite
+9:44 new um before that I always have been a
+9:46 language nerd I went to a language
+9:48 focused gymnasium how is it called in
+9:50 English school I don't know gymnasium oh
+9:53 well I know in German it's called
+9:54 gymnasium right yeah it's a high school
+9:56 I guess yeah but not not just any High
+9:58 School high school with focus on stuff
+10:02 on humani language focus and and I did
+10:06 interes I did ethics I did all the type
+10:08 of languages looking at languag as a
+10:10 phenomenon I did Latin and other foreign
+10:12 languages it was great and then but
+10:14 computers were really fun and I did a
+10:15 lot of computerist working at home so I
+10:17 decided to go for a computer science
+10:19 degree but I never really forgot this
+10:22 you know first Passion that I had that
+10:24 led me to that gymnasium and later as I
+10:27 was learning my computer science degree
+10:29 um in the um late 2000s and early 2010s
+10:33 a lot of machine learning was kind of
+10:35 emerging and um I was really started to
+10:39 be really interested in machine learning
+10:40 even then uh but there was no need to
+10:43 study I mean I'm from Macedonia we
+10:44 didn't really have this kind of things
+10:46 at the time around uh so much or it was
+10:49 very very little and um I somehow
+10:53 started reading all these books uh like
+10:55 there was a book called on intelligence
+10:57 I don't know who wrote it which was uh
+10:59 this discussing using uh machine
+11:01 learning methods to explore cognition
+11:03 and it was like such a hook for me
+11:05 because then in my head was like oh
+11:07 language is this such a the most human
+11:10 thing that we can think of that the
+11:11 brain does and what if we explore
+11:13 cognition through language which was
+11:14 something I I started ordering myself
+11:16 Neuroscience book from Amazon at the
+11:19 time in Macedonia secondhand uh and I I
+11:21 decided to study computational
+11:23 neuroscience and I did apply to a few
+11:26 places but it didn't really work out so
+11:27 I continued working as a software
+11:30 engineer I had to apply outside of the
+11:32 country and um yeah and many years
+11:35 passed by and this never went away so I
+11:38 had like a moment to so ah I can't hear
+11:42 you yeah right because I was muted uh so
+11:45 music happened in between but like your
+11:47 passion was always uh machine learning
+11:50 yes I mean I went to music school when I
+11:51 was young and um but um it was It was
+11:55 kind of it was a kind of a pingback to
+11:57 this old passion but I really wanted to
+11:59 study I think my my biggest reason for
+12:02 coming back to computational Linguistics
+12:04 because I really wanted I didn't study
+12:06 computational Linguistics only it was a
+12:07 cognitive systems program so a
+12:09 combination of cognitive science uh
+12:12 computational Linguistics and machine
+12:13 learning and like knowledge and
+12:15 reasoning module um quite complicated in
+12:18 in the sense of what it all included it
+12:20 was just a perfect blend for me I I I
+12:22 the first time I contacted them was 2014
+12:25 and it took six years until I can enroll
+12:27 and I was way for the right moment so
+12:30 this was you know a dream the dream to
+12:33 do I'm so glad that I got to do it I
+12:36 still doing anything in related to music
+12:39 or music
+12:40 tech I still have uh ablon live on my
+12:44 computer and um yeah sometimes but I
+12:48 have never have been one of those people
+12:50 that have posted or shared music or
+12:52 something like I used to DJ when I was a
+12:54 teenager going to
+12:56 parties okay and and did a lot of that
+12:58 life style but uh yeah it's just very
+13:02 rarely and just for for me so you don't
+13:04 do like technos sets and
+13:08 kind no no I think that that that is
+13:11 like the dedication to this like a
+13:13 full-time job I decid to do seems or
+13:16 like full time because like if we talk
+13:20 about clubs it's usually at night right
+13:23 it is but getting there it's the music
+13:25 industry is tough it's it's tough okay
+13:28 yeah interesting
+13:30 so this word that is difficult to
+13:33 pronounce socio soci technical soch it's
+13:37 social not social social well I call it
+13:39 like this let's say I I guess somebody
+13:42 can pronounce it with a bit of much I
+13:44 guess so what is a social technical
+13:46 approach to model what is first social
+13:48 Technical and then like the whole thing
+13:50 social technical approach to modeling
+13:53 language I think there's a a lot of um
+13:56 there's this is a kind of a a whole
+13:58 academic study of its own uh but in
+14:01 order not to like waste the time on this
+14:03 there's a lot of things people can read
+14:05 our link some papers we can think of uh
+14:08 looking at technology from a socio
+14:10 technical perspective as
+14:13 a as kind of how our technology and the
+14:17 social impact of our technology and it
+14:19 could be seen in both ways which is the
+14:23 social how when we place the technology
+14:25 that we make in society what kind of
+14:28 impact does it have have but also what
+14:30 kind of already social connotations and
+14:34 context is interwoven in this technology
+14:37 that we've made so it can be this can be
+14:40 very granulated and there's like to
+14:42 early with like thinking types of traps
+14:44 and formalism and solutionism and so on
+14:46 but at the end is about the social
+14:48 context of the technology that we make I
+14:50 think that is the most accessible that
+14:53 sounds quite abstract if I'm being
+14:56 honest um you have like some uh yeah I
+15:00 mean social impact of technology is also
+15:02 very
+15:04 broad so we're talking what kind of
+15:07 technology is it like we're talking
+15:08 about AI right yes I guess and like is
+15:12 it something like chpt now replaces
+15:15 copywriters that's impact that is impact
+15:18 definitely there's so so many different
+15:20 ways to measure this um let's
+15:24 see I think a so in Fair learn as some
+15:28 somebody com to Fair learn and I came to
+15:30 Fair learn as an engineer um because
+15:33 most of the other maintainers are
+15:34 scientists in the area and professors or
+15:37 researchers at big companies like
+15:38 Microsoft or Google but um I am still
+15:43 I'm still figuring out the theory of
+15:45 this particular approach but in that
+15:47 sense Fair learn
+15:49 explores um there is
+15:52 really I think one of the the most real
+15:56 use cases that is uh explored because I
+15:58 think that is really tough in this case
+16:00 because not a lot of people share what
+16:02 they use fairness tools for but it's
+16:04 like credit loan um decisions for
+16:08 example this is one of the real impacts
+16:10 like we can we can dissect this and and
+16:13 talk about it because I was just I was
+16:15 just presenting this to someone this
+16:16 weekend at the P ladies conference so
+16:18 it's at the top of my
+16:19 mind but for example let's take making
+16:22 an algorithm that makes a credit loan
+16:24 decision and it can make a decision um
+16:28 to give it or not to give it based on
+16:31 how trustworthy you are I forgot I
+16:33 forget the economic terms I guess Banks
+16:35 still use these things right they still
+16:37 used they used people use this and U so
+16:41 the decision will be most likely made U
+16:44 by training a model on previous data
+16:47 points and uh this
+16:49 data the study that um they wrote a
+16:52 white paper with Ernst and Young and
+16:54 Microsoft that is featured on the F
+16:56 website was made with 300 th000 data
+17:00 points and after using the techniques
+17:04 that fair learn uh provides for
+17:07 disaggregated evaluation I can explain
+17:09 maybe what's that a bit later but um it
+17:11 was found out that there are certain
+17:13 groups where the model would perform
+17:14 differently and in this case it was um
+17:17 sex as well male and female um
+17:19 applicants and for example to maybe
+17:22 think about okay so there was a certain
+17:24 type of data that we fed into the system
+17:27 that has its own um potential of
+17:31 harm uh but also the types of harm of
+17:34 using this algorithm can be not uh
+17:37 allowing someone to have an opportunity
+17:39 but getting a loan or it was interesting
+17:42 to me because I I've never thought about
+17:44 loans before um they read in the white
+17:46 paper or giving a loan to someone that
+17:48 has very little chance of actually
+17:50 repaying it which would Cascade their
+17:52 life and and throw it into a
+17:55 um I don't know a disarray for forever
+17:58 so so you can get a false positive by
+18:02 saying somebody shouldn't get a loan and
+18:04 then deny somebody opportunity or you
+18:06 can get a false negative and you can
+18:08 give someone a loan that they shouldn't
+18:10 get uh but that also I think about that
+18:14 that is actually that giving somebody a
+18:17 loan is not bad just for the bank but
+18:21 also for the person I didn't think about
+18:23 it too I learned from the white paper
+18:25 there read is available I'm going to
+18:27 like it makes sense now when say that
+18:29 but like in retrospective it's not just
+18:32 something I thought like I thought for
+18:34 the
+18:34 person like they would be happy cuz they
+18:37 got money for something right but
+18:41 actually eventually in the future they
+18:43 will have a lot more problems yes I
+18:47 think they they listed things like how
+18:50 does people call it come and take your
+18:51 stuff the people coming to take all your
+18:54 stuff uh losing jobs and opportunities
+18:57 and so on because you in depth and you
+18:59 cannot pay your debt and on um and in I
+19:02 mean a lot of other if they're parents
+19:04 and so this could be like a more serious
+19:06 especially in the US um so yeah quite a
+19:09 big deal and I think this this really
+19:12 question that you said that we both
+19:13 didn't think about this illuminates one
+19:15 of the core things about fairness which
+19:17 is that it is abstract there is not one
+19:19 way to define fairness um and while Fair
+19:23 learn addresses group fairness which is
+19:27 how uh specific
+19:29 technology or an algorithm in this case
+19:32 can affect um Can can inflict harm on a
+19:36 group and a sensitive group of some kind
+19:39 we have
+19:40 to do problem definition and identify
+19:43 the groups affected and interpret the
+19:46 results of of the models and of our
+19:49 mitigations or assessments ourselves in
+19:51 a context and uh yeah that is a lot but
+19:56 again why do we need that so if I think
+19:58 about maybe a different example uh of
+20:01 hiring so in hiring we we would rather
+20:04 not hire a good candidate than
+20:07 accidentally hire B candidate right and
+20:11 like yeah for us the how do you call
+20:14 false positive when we think
+20:17 somebody positive like when we H anyways
+20:20 like if a candidate the prediction is
+20:22 higher or not higher that is yeah
+20:25 prediction is higher or not higher and
+20:26 if it's uh
+20:29 false negative right then it's good hire
+20:31 for somebody bad right we no no like
+20:35 when we hire somebody who is bad is not
+20:38 good for the company because it will be
+20:40 yes difficult to then fire them uh so
+20:44 it's better to be more strict and not
+20:48 hire good candidates rather than
+20:50 accidentally hire a bad one and maybe
+20:53 with
+20:53 credits credits it's similar so it's
+20:56 better not to give a loan to somebody
+20:58 who is potentially uh can pay back
+21:01 rather than give a loan to somebody and
+21:04 this person will not be able to pay back
+21:06 right so like what I'm trying to say is
+21:08 like why do we even care about fairness
+21:10 like we are running a business shouldn't
+21:12 we be more concerned about
+21:15 like doing well as a company oh
+21:19 ow this such a provocative this is a
+21:22 trick provocative question no I'm just
+21:24 thinking like why where does prents come
+21:27 into to
+21:29 um because like at the end I want to
+21:30 optimize my Revenue right I understand
+21:33 yes but um so I watched so there's
+21:36 another meler called Hilda she's
+21:39 assistant professor at the in the
+21:40 Netherlands I forgot the university I'm
+21:42 sorry Hilda if you're listening um I I'm
+21:44 Holden I think it's um she had this
+21:48 presentation where I listened to her
+21:50 speak about the context of hiring about
+21:53 this um and um she said that uh we
+21:59 sometimes want to produce models um that
+22:04 model uh the values that we want to see
+22:07 even if the data doesn't contain them
+22:10 and it it comes down to the fairness is
+22:12 absolutely related to the values that we
+22:15 have and the the fact that we want to
+22:19 maximize Revenue doesn't mean that we
+22:22 need to wreck social havoc on on society
+22:26 because our products are not separate
+22:29 from it we do have some responsibility
+22:32 and then the interesting thing is that
+22:35 that if somebody sits down and assesses
+22:38 this uh properly the problem definition
+22:40 and know thinking about the problems not
+22:41 just from a technical perspective but
+22:43 also from a societal perspective um they
+22:45 could find for example uh fear learn has
+22:49 assessment tools the symmetric frame
+22:52 where you can assess um this imbalances
+22:56 by instead of assessing a model one uh
+22:59 metric you assess the model by a
+23:02 specified you know metric in for
+23:04 multiple groups where you can find you
+23:06 know then plot and then you can make
+23:08 your own decisions what the model is
+23:09 doing but if you want to mitigate this
+23:12 um there are several types of ways that
+23:13 you can have like a post-processing like
+23:15 after you've done everything train the
+23:17 syis and so on you can uh rebalance the
+23:20 predictions or you can the results in
+23:22 the sense or you can uh retrain the
+23:24 model with some like an algorithm that's
+23:26 called exponentiated gradient and I can
+23:28 share our paper it's the mats is a bit
+23:31 but there is an example on the website
+23:33 and uh by thinking about the problem
+23:35 maybe it is possible to find a way to
+23:40 mitigate these imbalances to also
+23:42 reflect the kind of world you want to
+23:44 see or the world that you don't harm by
+23:47 not reducing your performance or not
+23:49 significantly reducing your performance
+23:52 so I think in this sense uh it's very
+23:54 important that there is curiosity and
+23:58 cares to sit down there there could be a
+24:00 solution that works okay for both cases
+24:04 okay so so I'm just trying to understand
+24:07 what actually pray learn or other tools
+24:10 in this space give us um so if we talk
+24:15 about this again it's example of credit
+24:18 scoring
+24:19 so maybe my understanding is not correct
+24:22 and you'll correct me so we have a model
+24:26 let's say it's I don't know decision
+24:27 three or itic regression something
+24:29 simple that tells us um what should be
+24:32 the laan decision right and um so we
+24:36 have this model and then we use
+24:38 something like par learn that analyzes
+24:41 the performance of this model across
+24:43 multiple groups cohor let's say we have
+24:46 gender variable yeah you have to pass
+24:48 basically what your sensitive groups are
+24:50 you have to think about this yourself
+24:52 yes CU I was thinking there are some
+24:54 natural patterns that we want to recover
+24:56 discover with the model right something
+24:58 like if this person is from a i
+25:02 lowincome group then it's more likely
+25:04 that they will not be able to pay back
+25:07 the loan which is kind
+25:09 of apparent right probably I don't know
+25:13 I guess or I don't know they have been
+25:15 unemployed six out of the last 12 months
+25:18 something like that just making this up
+25:22 um so this is these are the patterns we
+25:24 kind of want to use but there are some
+25:27 patterns that we don't want to to use
+25:29 what gender and um I don't know what
+25:32 else like other things that could be
+25:33 sensitive so we as race anything that's
+25:37 I think um I was asking I think this is
+25:40 a it's important here to mention that I
+25:42 was also struggling myself like okay if
+25:44 I have to advise someone now to use this
+25:46 and they have to make like their they
+25:47 shape their own problem and so on how do
+25:49 I with my very limited worldview and
+25:51 experience because I've had only one
+25:53 life and it's limited and I don't have
+25:55 all the experiences how am I going to
+25:56 help someone to figure out which groups
+25:59 as you say are important here and which
+26:01 group we should protect and there is no
+26:03 right answer to this you have to
+26:04 understand the domain and the harms you
+26:05 can inflict Case by case basis and you
+26:08 can look at the data in an exploratory
+26:11 way to before you assess and pass the
+26:14 certain features sort of to to be this
+26:18 to be segregated
+26:20 by would it be possible to let's say
+26:22 just throw in all the features we have
+26:25 and then have Fair learn highlight what
+26:27 could be the problem itic ones and then
+26:29 we think okay this actually makes sense
+26:31 we shouldn't let's say include this
+26:33 feature at all in our training data or
+26:37 okay this is fair because this is
+26:39 actually one of the patterns the model
+26:40 discovered so we're keeping this feature
+26:43 I think uh yeah the discovery so let me
+26:46 explain this in a in a way that I also
+26:48 can um so when
+26:51 you so when you ask um so for example if
+26:55 you write a pipeline and you pick like
+26:56 whatever psych Lear model you going to P
+26:59 pick or something whatever in your
+27:00 pipeline that is going to be making
+27:02 these decisions and then you pass a um
+27:06 assessment tool from Fair learn and um
+27:09 when you pass this you also have to pass
+27:11 a bunch of sensitive features and so on
+27:15 in a demographic case they're more um
+27:18 they're more apparent I don't know what
+27:20 it will be for some more abstract things
+27:22 but um you could technically do the
+27:25 segregated evaluation of a model by
+27:27 every single feature if you want to but
+27:30 the thing is then what do you learn from
+27:33 it how do you uh interpret this the the
+27:37 the the understanding is like when you
+27:39 get for example when you pass we have
+27:41 this model and then we pass sex into it
+27:44 and then we get this little there is
+27:46 like there's maybe we should have shown
+27:48 this little graph so people can
+27:49 understand what we talking about and
+27:50 then we can see how the false positive
+27:53 and the false negatives change between
+27:55 groups and then if we contextualize this
+27:58 by asserting the harms that can be done
+28:00 by it and seeing the
+28:03 disproportion um by sex then this makes
+28:06 sense um I don't think you can automate
+28:08 this fully and you and I think the human
+28:10 is necessary in the loop to make this
+28:12 decision um it's I don't think you can
+28:16 just say the okay find all the possible
+28:18 sensitive groups I saw somewhere
+28:21 somebody using a fairness tool much more
+28:23 granulated I think it was a Microsoft
+28:24 presentation where they were looking at
+28:27 some data set about housing and their
+28:30 sensitive groups were a combination of
+28:32 several features of some kind and this
+28:34 is again very contextual you have to you
+28:38 it cannot um an algorithm cannot tell
+28:41 you who's going to be harm because it's
+28:44 grounded in the real world context and
+28:45 this is where it comes that the word
+28:47 soot technical is grounded in society
+28:49 it's not just a technical thing like you
+28:53 you were able to read my mind cuz I was
+28:55 going to ask how is it connected to
+28:57 social soot technical um thing we talked
+29:01 about but uh so what I understand is at
+29:05 the end there is still a human um some
+29:09 sort of let's say domain expert who can
+29:11 evaluate who can I think you s you said
+29:14 assert the harm right who can understand
+29:16 the harm can understand the harm yeah uh
+29:19 that is done so we look at false
+29:21 positives false negatives and U think
+29:24 okay like in the case of false positive
+29:27 or false negative what is the harm that
+29:30 the model has on the kind of impact the
+29:33 model has on the
+29:35 individual if any right there might not
+29:37 be none and also this is I think the
+29:40 false positive and false negatives with
+29:41 the equals odds metrix there were four
+29:44 different ones and I sometimes forget
+29:45 them because I'm not a scientist in the
+29:47 area for example there's like
+29:48 demographic parity is a metrics where
+29:49 you want to see like balance and so on
+29:51 so not everything not all the uh false
+29:54 positive false negatives a combination
+29:56 or a balance uh is matters in every case
+30:00 you have to decide I guess you can plot
+30:03 um a kind of a distribution with all the
+30:06 different kinds of metrics for the
+30:07 sensitive features and then you can
+30:09 reason as a human okay which of these am
+30:12 I supposed to use mitigation for like am
+30:16 I should I strive for balance is that
+30:17 going to be fair or should I strive for
+30:19 the reduction of false positive is that
+30:21 going to be fair but um unfortunately it
+30:26 cannot be only a technical solution and
+30:27 this is where the soci technical comes
+30:30 but if you ask me I mean for for the
+30:33 most of the products that we do have a
+30:36 socio technical component because
+30:37 they're made by people for people and
+30:40 yeah and who should do this like let's
+30:42 say if we talk about the
+30:44 hiring I don't I don't know if actually
+30:47 hiring yeah exist maybe they no longer I
+30:51 heard that there was a model at Amazon
+30:53 but uh there was some stories around
+30:56 this maybe they just removed it um
+31:00 internal that they
+31:02 have I I've heard that they had
+31:05 something like that and then then they
+31:07 discovered some issues uh exactly these
+31:09 kind of issues like prejudices and
+31:11 biases with this model um so we can
+31:15 probably talk about this La decision
+31:17 which as you mentioned uh uh this kind
+31:21 of model models are still used in the
+31:23 industry um so I was thinking where was
+31:27 I going with that uh it is used a lot uh
+31:30 I think I'm going to check so what I
+31:34 wanted to ask is like who is going to
+31:37 make this assessment like okay a false
+31:40 positive is harmful and false negative
+31:42 is not harmful for example oh H well the
+31:46 team creating this should should make it
+31:48 they should have competence how am how I
+31:52 as a data scientist can make this call
+31:54 yeah this is also my concern because I I
+31:57 feel
+31:58 and you know what very interesting I
+32:00 spoke to someone recently that told me
+32:02 that they have been feeling this like
+32:05 freeze and reluctance to even get into
+32:07 the topic of responsible AI or even try
+32:09 to use um the tools because of of this
+32:13 fear of like am am I Really Gonna Do the
+32:16 Right Thing If I start thinking about
+32:18 this it's very overwhelming and so on
+32:21 but um I think as as domain
+32:24 experts uh we should understand the
+32:27 impact of our um of our products on
+32:31 other people but uh I'm like let's say
+32:34 I'm a technical person I'm not
+32:35 necessarily yet or maybe I will not
+32:38 never I will never be a good Tech domain
+32:41 expert because I'm a data scientist I
+32:44 learned how to use I don't know support
+32:45 Vector machines in my studies I did not
+32:48 study
+32:54 sociology but again then I'm kind of
+32:57 shift in my responsibility towards
+32:59 somebody else saying like hey this is
+33:01 not my domain expertise like let's get
+33:05 somebody else to like I'm just wondering
+33:07 how it should
+33:09 work uh I think B companies sorry bigger
+33:13 companies they have these people that
+33:15 probably do this and assess this I don't
+33:17 I've never worked in a bigger company I
+33:18 wish to have have some insight but this
+33:21 is very secret and I I I should probably
+33:23 talk about this because it's really
+33:24 interesting and shines like on the whole
+33:26 industry part um but in smaller places
+33:30 uh I think people's curiosity leads this
+33:33 asking
+33:34 questions um and this is one thing that
+33:37 so you don't these tools I'm talking
+33:39 about this uh equals odds or demographic
+33:42 parity or like exponentiated gradient or
+33:45 whatever all these names that I'm
+33:46 mentioning you don't really need Fair
+33:48 learn to use these tools these are
+33:50 techniques that you can just Implement
+33:52 in your own notebook what is a um a plus
+33:56 in in tools like fear learn is that you
+33:59 get education and help with with
+34:02 thinking about the problem and uh that
+34:05 is actually our main uh Focus for the
+34:07 next months is improving the learning
+34:09 objectives and
+34:10 education um materials and hopefully
+34:13 people will come also help us and
+34:14 contribute that want to learn guess the
+34:16 best way to learn is to teach I guess um
+34:19 and um by reading if you're if you're
+34:23 I'm a data scientist I'm like okay there
+34:24 is some tool that I might use but I feel
+34:27 very overwhelmed with defining what do I
+34:29 do how do I make a decision and is it
+34:31 going to be right am I going to do more
+34:33 harm maybe just going over the basic uh
+34:37 problem definition Theory things already
+34:39 will help quite a bit with the framework
+34:42 of thinking because there is a framework
+34:44 to think about um these things that it's
+34:47 rooted in then in this little tiny
+34:49 components and so on um but it doesn't
+34:52 have to be perfect none of this can be
+34:53 perfect right there is no perfect
+34:55 solution there's no perfect solution for
+34:56 assessment because as machine learning
+34:59 people right we never can model fully
+35:01 the real world as much as we want to
+35:03 there's the irreducible error of not
+35:05 modeling the real world that is always
+35:08 there it's calculated into it and um
+35:12 second we cannot fully mitigate
+35:16 something we just don't have the
+35:17 information I guess we have to uh be
+35:19 curious and live with a little bit of
+35:22 ambiguity I'm just I was also in the
+35:25 meantime reflecting back on my uh
+35:27 personal experience when it comes to
+35:29 like making these sort of decisions I
+35:31 was working in a moderation team and
+35:33 there we needed to make a decision
+35:35 whether something should go so it was a
+35:37 Marketplace Online Marketplace um and we
+35:42 were making a decision whether something
+35:44 should go live and people could buy it
+35:48 or it should be blocked and not be
+35:50 visible right MH and then I remember we
+35:53 were talking about things like okay like
+35:55 did this seem like there are features
+35:57 like uh oh maybe I shouldn't go into
+35:59 describing features uh they might still
+36:01 be used but anyways like I remember that
+36:03 uh we were looking at the performance of
+36:05 the model and it was Data
+36:07 scientists um and product managers and
+36:10 also fraud experts like people who are
+36:13 fraud Specialists so we were sitting
+36:16 together and thinking like also
+36:18 sometimes just looking at things Case by
+36:20 case like okay this is the case this is
+36:22 the decision this model made like was it
+36:25 a good decision and what could be the
+36:27 consequence
+36:28 right uh so I think that
+36:32 uh probably is in line with the
+36:35 Curiosity you mentioned but also kind of
+36:37 as a data scientist I might not NE not
+36:40 necessarily have all the domain
+36:41 expertise I have the technical expertise
+36:44 that's why we also had this uh fraud
+36:46 Specialists and also product managers so
+36:48 product managers represented the users
+36:51 the fraud Specialists they have the
+36:52 domain knowledge of the frers like how
+36:55 the pro is actually happening
+36:58 and I think when we were in the group
+37:00 that was really helpful absolutely yeah
+37:04 so it's so sometimes it's not just up to
+37:06 one person to the data scien who is
+37:08 developing the model but like the the
+37:12 team yes I I and I and I think you
+37:15 mentioned something really important
+37:16 that is the human in the
+37:18 loop right a central component
+37:21 to um all AI systems if we want them to
+37:26 be fair we need the human in the loop
+37:28 it's necessary and you were that human
+37:30 in the loop before that this decision
+37:32 going to be propagated into actual harm
+37:34 and also there are moderators in this
+37:37 specific case I was talking about so
+37:38 there are people who actually look at
+37:39 the output of the models and think make
+37:42 the final call yeah exactly this is
+37:45 already quite quite quite a big deal
+37:47 yeah yeah okay and also like I got an
+37:52 while we were talking while you were
+37:53 talking I got an notification and then
+37:55 thought okay like it's really good we
+37:57 were talking about music right and this
+37:59 panels consoles that get detached from a
+38:02 computer so you can be like do the whole
+38:04 thing without a computer because
+38:06 computers can be uh distractive
+38:10 distractive yeah can distract you and
+38:13 this is exactly what happened right
+38:15 indication I got
+38:17 distracted yeah and I mean if you want
+38:19 to create music you really want to be in
+38:20 a any art I mean with programming as
+38:23 well don't we want to be into when we're
+38:25 doing it it's that we do when we're
+38:28 we're really into it for five hours when
+38:30 you don't go to the bathroom and you
+38:31 don't drink water and work done the best
+38:35 work it hasn't happened to me like for
+38:37 quite some time I think you have a very
+38:39 multidisciplinary job now and uh this is
+38:44 yeah there is Beauty in that job though
+38:45 you can also have a flow with working
+38:47 with people that is I used to call it
+38:50 like I get high from like this joint
+38:52 work that we do sometimes yeah yeah so
+38:55 when I was a data scientist not like um
+38:58 data science lead or whatever like when
+39:00 I was just a data scientist when I
+39:03 didn't have any meetings I could just
+39:05 come in the morning open my laptop and
+39:07 work and then all of a sudden realize
+39:10 that it's already evening that's really
+39:12 cool that is the
+39:14 flow but we tied to our computer though
+39:17 so yeah we are um so what actually made
+39:21 you like how did you get involved in in
+39:24 the project yes cuz last time we spoke
+39:26 you were not
+39:27 like probable did not exist at all no um
+39:31 so how this happened like how did you
+39:34 you were doing NLP and all um I mean
+39:37 still am you know and yeah I mean it's
+39:41 not a completely uh it's not like
+39:43 changing from music tech to I don't know
+39:46 doing NLP so it was kind of natural but
+39:50 like tell us how it happened how did
+39:53 you end up if it's the right word like
+39:56 how did you start working
+39:58 U with Fair learn at
+40:01 Pro um I think the story from Pro uh
+40:05 joining propo starts sometime in 2023 in
+40:09 the summer I guess but it was very
+40:11 informal I went to a p ladies Meetup
+40:14 here in Berlin there was a psych 23 like
+40:17 when did the company appear no 2024 I'm
+40:20 no 2024 is now 2023 yes in the summer
+40:22 company didn't exist but I met the the
+40:25 the guys that made the company there um
+40:27 there was a Meetup in PES Berlin and it
+40:30 was about psych learn contributor Meetup
+40:33 and um I just went for fun and then the
+40:36 thing I started to work on was really
+40:38 fun and I made another three four pool
+40:40 request that got merged and I started
+40:43 working with them that was in secondy
+40:44 and that was I think at the beginning of
+40:46 this year and the end of last year
+40:47 something like this I was still doing um
+40:50 actually until April this year I was um
+40:55 uh doing research with a research group
+40:58 on uh semantic alignment which I don't
+41:00 know if people are going to be
+41:01 interested in but it's um we were
+41:03 drafting papers and so on and um that
+41:06 was and then I was also doing this on
+41:07 the site so I don't forget how to do
+41:09 programming because programming in
+41:11 Academia it it's it's not it and so I
+41:14 but I've been also you know contributing
+41:16 to open source and probably my my first
+41:18 internship I did Google summer of code
+41:20 in 2010 and that was a long time ago so
+41:23 for me this was a way to have fun and
+41:25 then I kept touch and when they were
+41:28 creating the company they invited me to
+41:30 apply there were people applying
+41:34 for uh this I think the titles are same
+41:37 for everyone I'm not sure we're all
+41:38 called open source software engineers
+41:40 and if I'm wrong people can find out
+41:43 on I am not sure because they were kind
+41:46 of forming the open source um team and
+41:50 um people work focus on different things
+41:53 I think there I can share a link there
+41:54 is like what are open the priorities of
+41:56 the team you'll work on on something
+41:57 different uh but I already worked at the
+42:00 time on explainability in language
+42:02 models and reasoning before it was
+42:05 really popular right now and we did it a
+42:07 bit more riment than what it's done
+42:09 right now because I already knew some of
+42:11 those some of the theory so they needed
+42:13 somebody to work on the psychic learn
+42:14 inspection package I don't know if
+42:16 people know it but where you have the
+42:18 feature important stuff and um it's not
+42:21 very big um at the moment and at the
+42:25 same time um probable was kind of
+42:28 committing of supporting the extended
+42:30 family how do I call it of psychic learn
+42:32 libraries or libraries that are
+42:34 compatible with Psy learn and some of
+42:36 those libraries were also Fair
+42:39 learn and uh
+42:42 scops and inspection package what is
+42:46 that is it what package inside it's the
+42:49 package inside is inside the
+42:52 Library learned on inspection I guess
+42:55 what does it I don't think I know about
+42:57 this I think it has PCA and stuff like
+43:00 this inside at the moment umca okay
+43:04 inection delay delay so I'm checking it
+43:07 inspection so they have partial depend
+43:09 inspection yeah I was there is like um
+43:11 there's it's really
+43:13 notation feat import have peration
+43:15 feature yeah and there's um also some
+43:19 smaller other methods and the whole
+43:20 point was we want to extend this and we
+43:23 might as well it's fairly new right I
+43:26 don't remember seeing this dis
+43:27 inspection uh no I I I think I used it a
+43:31 couple of years ago okay um I don't know
+43:34 new I mean like I started using psych
+43:36 learn more than 10 years
+43:38 ago yeah that then it might be newer
+43:41 yes uh
+43:44 but yeah I don't remember exactly when
+43:46 it's created I remember using it at
+43:48 University but I did
+43:50 University doation from Psychic learn
+43:54 1.5.2 MH which has been a while
+43:58 which has been around for some time
+43:59 right yeah okay but yeah it's again not
+44:03 so much time but I used I remember using
+44:05 permutation feature importance at uh
+44:07 University for a project from here um
+44:10 and I mean there whole interpretability
+44:12 and explainability in the sense is
+44:15 something that I'm building expertise on
+44:17 slowly and it's going to take a little
+44:19 bit of time I think in the next few
+44:21 months since I'm rejoining a research
+44:24 project I might work on that a bit less
+44:26 than PL and mostly focus on Fair learn
+44:30 and um yeah I think that's that's going
+44:32 to end up but and this last month since
+44:35 I joined in May I did work on a lot of
+44:37 things I got to do a little enhancement
+44:39 which was not and check aray in psyit
+44:42 learn and um some other PRS that are
+44:45 still being reviewed like the baph
+44:47 improving some computation the baph
+44:49 algorithms and so on and and scops um
+44:53 and scops and learn the most interesting
+44:55 thing is that I mostly worked on on um
+44:58 um cross Library um compatibility which
+45:01 means that I had to make all fair learn
+45:05 estimators compatible with psych learn
+45:07 as well as some of the API and the same
+45:09 thing for scops now that they're
+45:11 changing to psych learn 1.6 I think it
+45:13 was released now so people that's there
+45:16 will be a lot of compatibility issues
+45:18 people should check it
+45:19 out and uh yeah but my work has been
+45:23 very engineering kind of focused and uh
+45:26 during this interview we we kind of uh
+45:30 tested a lot of machine learning stuff I
+45:32 guess but at the end the need was the
+45:34 most for this packages and to be honest
+45:36 I was really interested in working with
+45:37 Fair learn anyway so it was really a
+45:39 great
+45:40 fit um yeah so I guess to finish the
+45:43 story that's that's how that happened
+45:46 most of the other part of the team they
+45:48 mostly work on psyit learn if people
+45:49 open the website and check out there is
+45:51 like an open source priorities they
+45:52 could see um that people mostly work on
+45:54 psych learn
+45:57 so I actually asked chpt when the
+45:59 inspection model in Psy learn was
+46:01 introduced so it was introduced in
+46:02 version
+46:03 0.22 which was released in December 2019
+46:07 but it might be hallucinating so I don't
+46:10 know if it's correct I I remember using
+46:12 the the premutation feature importance
+46:14 in a project in 20 maybe was maybe it
+46:16 was like it could also be in a different
+46:19 package but then yeah it could be yeah I
+46:21 I don't know if that was so what is
+46:24 scops yes scops I um yeah so so uh I
+46:28 cannot talk so much about the internals
+46:30 but I can say what it is cops was I
+46:33 believe um originated from other time um
+46:36 at hugging space but it's kind of an
+46:39 independent Library um and it's the
+46:43 biggest well it has this integration
+46:45 with the hugging space Hub where you can
+46:47 publish your psychic uh learn models
+46:51 basically bring them into production um
+46:53 you can also I think the biggest benefit
+46:56 is the persistence which basically I
+46:58 don't know if um you've seen this there
+47:00 was a big Bloomberg article about uh
+47:03 people downloading malware through um um
+47:06 loading models from hugging face and
+47:08 similar platforms did you seeig u l in
+47:12 Link in yeah I did not read I don't know
+47:14 the details but I saw I think maybe
+47:17 people that listen have seen it yeah and
+47:19 so this for example was because of uh
+47:22 the known problems with pickle that can
+47:24 allow untrusted types to be package
+47:27 there and then when you basically
+47:28 unpickle the the model then you run
+47:31 things that you don't want to run and
+47:33 then you made a make a mess but scops
+47:36 offers secure persistance where you have
+47:37 to Define you you basically have full
+47:39 control of defining and it will won't
+47:42 open all this objects will not load them
+47:45 if they are on the in the untrusted
+47:47 types yes
+47:49 so scops stands for psych
+47:53 hops or don't remember what is it's like
+47:58 Psy basically this is like a way to
+48:01 serialize the serialize portals right
+48:03 yes exactly secure der D I cannot say
+48:06 that word in English der serialization
+48:09 it's so hard for AIC tongue it's the D
+48:15 this yeah whatever people understand SEC
+48:18 serialization and D
+48:20 serialization yeah yeah so this is scops
+48:23 and scops and faar aren't really related
+48:27 in a sense that no common theme but you
+48:30 still you're still involved in both like
+48:33 how did it happen I
+48:35 know uh well how did it happen it's I
+48:38 signed a contract for it I guess and so
+48:42 but uh I haven't been so involved I uh
+48:45 we pair programmed on a few things with
+48:47 um addin together and I was um we so
+48:52 psychic learn 1.6 introduces API
+48:55 breaking changes and some other things
+48:57 because things are moved around I guess
+48:59 people are going to know in the next few
+49:00 days they should really check out the
+49:02 compatibility guides and the biggest
+49:04 work I did was uh work on um making scul
+49:08 psychic learn um 1.6 compatible which
+49:11 involved a lot of smaller changes and
+49:14 then a lot of those changes basically
+49:15 spilled over psychic learn and then
+49:17 psychic learn had to fix them and then
+49:19 we had to integrate them and that
+49:20 happened several times so I all this
+49:23 compatibility work I did I also did this
+49:25 with Fair learn um several times I got
+49:28 to know a lot of psyched learn internals
+49:30 now and especially how the estimators
+49:33 are written and how they should be
+49:35 written I'm going to make um a talk
+49:37 about custom creating custom estimators
+49:40 in JY in
+49:42 Berlin but which meet up uh pie ladies I
+49:46 think exclusively picking
+49:49 them yeah I don't think our our Meetup U
+49:52 landscape in Berlin is suffering a
+49:54 little bit I have to say there another
+49:58 prices yeah it's been a while since I
+50:00 went to a meet up I think the last one
+50:02 was the AI Street Smart do you know this
+50:05 one no okay so does it still exist AI
+50:10 Street Smart
+50:11 um yeah I think it was like three months
+50:14 ago or two months ago so not that long I
+50:17 me before that I went to P I
+50:20 think yeah I contacted P I think and um
+50:25 I barely
+50:28 but I never heard back to have this talk
+50:30 there so I don't know how active are
+50:32 people uh the pandemic kind of Ro like
+50:35 broke the the system a little bit and
+50:39 Haven fully recovered that's why I I
+50:41 love the P ladies I've been a pie lady
+50:43 for over 10 years and I'm happy to go
+50:46 there and speak you're also one of the
+50:48 organizers or you're just you're just an
+50:51 active active
+50:53 participant I am
+50:55 just yeah yeah I mean the pilotes uh
+50:58 when I came to Berlin in 2013 um and uh
+51:02 worked briefly at startup boot camp um
+51:04 with the startup I um there was the
+51:07 first contact with a community I had
+51:09 they let me have a talk there and it was
+51:11 long time ago and for me like it's a
+51:13 central part of me moving to Berlin
+51:14 being a pie lady and I love going back
+51:17 every single chance that I have plus the
+51:20 the people organizer really doing a
+51:22 great job and sacrificing a lot of the
+51:24 time we just had a pil
+51:27 PES con this weekend where I got to have
+51:29 a fair learned Sprint and it was really
+51:32 nice to have people contribute we don't
+51:35 have so many active contributors because
+51:37 a lot of people find the whole thing we
+51:40 now just discussed it's intimidating the
+51:42 theory the the maths behind the
+51:44 approaches and a lot of the the code
+51:47 base it's written in a very academic way
+51:49 we we're going to do a big refactoring
+51:51 projects now uh where I get to replace
+51:54 uh pandas with narwals which is really
+51:56 cool
+51:57 and we also refactor the whole metric
+51:59 frame so people maybe can come
+52:01 contribute we have made lots of good
+52:03 first issues for the pie ladies con so
+52:06 maybe other people would be interested
+52:08 as well they're not pie ladies yeah
+52:10 that's interesting because you were able
+52:13 to read my mind again I don't know how
+52:15 you do this because the question I
+52:17 wanted to ask you is if somebody is
+52:20 interested in contributing to Fair learn
+52:22 how they can do this and if you live in
+52:25 Berlin then you can go and join the the
+52:28 meet up right and then there would be
+52:30 contributions um like the think you just
+52:33 mentioned ah no we there should be a
+52:35 Sprint but uh where people can come and
+52:38 contribute to fand but it's going to be
+52:40 probably um in the second month of the
+52:43 year but in January I'll just have a
+52:46 talk can talk to me of course I'm so
+52:48 happy to hear we have a Discord Channel
+52:51 which I check all the time and people
+52:54 are free to come and ask questions
+52:56 there's also issues and other Help
+52:59 Wanted labeled issues that I prune
+53:01 constantly so people can just take okay
+53:05 I Discord channel for PES or Discord
+53:08 channel
+53:09 for it's quite a lot of people are there
+53:11 it's about uh 370 380 people are there
+53:17 it's a bit quiet how do I find this
+53:19 Discord Channel um on the website of
+53:22 fairn fair.org there is a link invite
+53:25 link on the top
+53:27 right p.org we also have a a LinkedIn uh
+53:32 page that I made recently because we
+53:34 didn't have LinkedIn presence and I have
+53:37 been posting uh good first issues there
+53:41 recently to so I was able to find so if
+53:44 I scroll all the way down I see the
+53:46 Discord icon yes and then if I click on
+53:50 this then it brings me to the Discord
+53:53 Community cool and then you said in gith
+53:56 up you have a bunch of good first issues
+53:59 yes there's good first issues and
+54:01 there's also a label called Help Wanted
+54:04 I been labeling a lot of things with
+54:05 help wanted but help wanted could be
+54:07 more ideal for people that have some
+54:10 contributing experience they don't need
+54:12 to learn the cycle uh GitHub workflows
+54:15 or something or like maintainer reviews
+54:17 and so on there a lot of people have to
+54:19 learn that too right um and um there are
+54:22 lots of different things to contribute
+54:24 one um one of course that would be
+54:27 really nice is for people who want to
+54:29 learn a little bit about the theory and
+54:33 um teach other people there's lot of
+54:35 things to add to the documentation and
+54:37 write and explain um for education
+54:40 purposes but there's also a lot of
+54:42 Statistics work so people that are
+54:43 experienced
+54:44 statisticians um there is an issue about
+54:47 testing statistical Integrity of the
+54:49 methods and so on that will be really
+54:50 great to get some people to work on and
+54:54 um ah yeah so I think one thing is
+54:56 important to mention that the library
+54:58 has this ethos so to say of um that was
+55:02 already there when I joined as a
+55:03 maintainer that no new methods are added
+55:07 unless they're peer reviewed because we
+55:09 are talking about um fairness here and
+55:12 this is already so wishy-washy in a
+55:14 sense and the science is never fully you
+55:16 know we don't have a technical solution
+55:19 that you can you know so grounded in
+55:20 contextualize right and so um the ethos
+55:24 says that a um a method that has to make
+55:27 sense has to be really tested and peer
+55:29 reviewed and accepted by The Wider
+55:31 scientific community so just coming by
+55:33 and suggesting something um that is not
+55:38 that it's not going to work
+55:41 this right the same the same ideology as
+55:44 with psychic learn like they it has to
+55:48 be time proven yes it's so hard yeah
+55:52 this is why writing custom estimators uh
+55:54 make sense because they have 200 seven I
+55:56 think the last time I I as a command you
+55:58 can run to see how many estimators are
+55:59 there in second learn I think it was 207
+56:02 and people are like oh why would they
+56:03 make a new one but there are a lot of
+56:05 cases where you want to or you want to
+56:06 make yourself a meta estimator or
+56:08 something like this so yeah and um Fair
+56:12 learn I guess has the same kind of ethos
+56:15 but In fairness you want to also
+56:16 yourself be really careful about what
+56:18 you want
+56:19 to what you want to
+56:22 implement and I just put the link to
+56:26 Discord uh so there was a question share
+56:28 the Discord link please I just put it
+56:30 the comments in the live chat and I will
+56:33 also put it
+56:34 [Music]
+56:36 um be so lovely for people to come and
+56:39 work on this and I think um when I first
+56:43 opened the documentation on fairer I was
+56:45 like oh my God all this academic speak
+56:48 but once you start working with it
+56:49 looking at the code and so on even for
+56:51 somebody that doesn't come from this
+56:53 particular scientific background it is
+56:55 more clear and the nicest thing is that
+56:57 you can use it in psychic learn existing
+56:59 psychic learn pipelines because the most
+57:01 work I've done this six months was make
+57:03 sure that this works and if it doesn't
+57:05 work with your particular Pipeline and
+57:07 estimators that you're using please just
+57:09 do an issue and we will take care of
+57:12 it yeah which we are doing release this
+57:14 week very likely by the way so I guess
+57:17 there will be new
+57:19 stuff I have to do it
+57:21 tomorrow by the way funny thing is uh so
+57:24 next uh last time when I was um so the
+57:27 the the way it works so we do an
+57:29 interview then there's a transcript and
+57:32 I edit the transcript with uh
+57:35 chpt and
+57:37 chpt breaks down when it sees
+57:41 probable written with DOT so it replaces
+57:44 the name with a line break for some
+57:46 reasons I don't know if it's fixed or
+57:48 not but like it really so the name of
+57:51 the company breaks charp so I don't know
+57:54 how you did that that is funny I guess
+57:57 some tokenization there is like yeah CU
+58:00 like a very unusual token because it has
+58:03 a DOT at the end right yes and then
+58:06 like finds it an issue as well you have
+58:08 to add it to the dictionary as like a
+58:10 full name sometimes I check my stuff
+58:13 there okay well uh that's all we have
+58:16 time for today so Tamara thanks a lot
+58:18 for joining us today for sharing your
+58:21 knowledge experience uh all the stories
+58:24 about music were also quite interesting
+58:27 and yeah it was really nice talking to
+58:28 you so it's been a while and um I'm
+58:31 happy we finally talked and uh yeah and
+58:34 thanks everyone for joining us today too
+58:36 and listening in thank you yeah I hope
+58:39 everyone uh considers coming to
+58:42 contribute if we even if it's for the
+58:45 issues that are less time
+58:47 consuming um and yeah if you have any
+58:49 questions I please add me on LinkedIn
+58:51 I'm really happy to talk to anyone that
+58:53 has questions and if you're in Berlin
+58:55 check the P date meet up P ladies P
+59:00 ladies in
+59:02 January learn there right no I'm going
+59:05 to talk about writing custom estimators
+59:07 and psychic learn and but I will show a
+59:10 custom estimator from Fair learn so I
+59:12 guess sort of yeah okay so yeah so
+59:18 that's it for today thanks everyone

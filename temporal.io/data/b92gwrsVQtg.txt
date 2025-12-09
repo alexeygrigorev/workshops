@@ -1,0 +1,1714 @@
+From Astronomy to Applied ML
+
+0:00 Hi everyone, welcome to our event. This
+0:02 event is brought to you by data talks
+0:04 club which is a community of people who
+0:06 love data. We have weekly events and
+0:08 today is one of such events. If you want
+0:10 to find out more about the events we
+0:12 have in our pipeline, click on this
+0:13 link. It's in the description. Um you
+0:16 will see other events we have in our
+0:18 pipeline.
+0:20 Then do not forget to subscribe to our
+0:22 YouTube channel. This way you'll get um
+0:24 you'll receive notifications about all
+0:26 future streams like the one we have
+0:28 today. And last but not least, we have
+0:30 an amazing Slack community where you can
+0:32 talk to your other data enthusiasts. The
+0:34 link is also in the description. Check
+0:36 it out. Um um during the interview, you
+0:39 can ask any question you want. There is
+0:40 a pinned link in the live chat. So ask
+0:43 your questions there and we will be
+0:44 covering these questions during the
+0:46 interview.
+0:48 That's the usual intro. I haven't done
+0:50 it in a while cuz we've been uh I was on
+0:53 the break. Uh but now it's back to
+0:56 school time. So now we are also back to
+0:59 our usual activities
+1:02 and um right now I'm opening the
+1:04 document with the questions.
+1:08 Um
+1:09 so Daniel are you ready to start?
+1:12 >> Oh yes I am.
+1:13 >> Yeah. So let's start. This week we'll
+1:16 discuss uh astronomy applied machine
+1:18 learning and how you can move from one
+1:20 to another. We have a very special guest
+1:22 today Danielle. Daniel is an
+1:24 astrophysicist, turned machine learning
+1:26 engineer and AI ambassador. Um he is a
+1:29 PhD candidate at the University of Cape
+1:31 Town. He builds end to end systems and
+1:33 LM applications with a focus on
+1:35 relability and monitoring. His recent
+1:37 work spans knowledge retrieval
+1:38 assistance, evaluation, observability,
+1:41 applying data science to space uh
+1:43 weather and multi-wavelength astronomy.
+1:47 So this is really cool. I am really
+1:49 excited to talk about all these topics.
+1:51 Um so welcome to uh our event.
+1:55 >> Thank you Alexing.
+1:57 >> Yeah. Um usually the first thing I ask
+2:00 about um is about your career um uh so
+2:05 far but recently uh I don't know if you
+2:08 observed this in the southern
+2:10 hemisphere. Recently we had a lunar
+2:13 eclipse and it was very very cool
+2:15 because we had this full moon but then
+2:18 the next night I see and I see the moon
+2:20 is not full and I'm like okay this is
+2:22 strange like it's supposed to gradually
+2:24 decrease but all of a sudden it's just
+2:26 like a little piece of the moon and I'm
+2:27 like what's happening? But then it turns
+2:29 red and I'm like oh my god what's what's
+2:32 going on? So I asked JPT how can moon be
+2:36 red and then GPT says yeah it can be
+2:39 during moon
+2:41 eclipse and like okay when is the next
+2:44 >> when is the next lunar eclipse and it
+2:46 says yeah by the way it's actually today
+2:47 and I'm like wow it was so cool and now
+2:50 we talk about astronomy I don't know
+2:53 anything about astronomy except this
+2:55 lunar eclipse um thing cuz I witnessed
+2:59 with my own eyes that the moon can turn
+3:02 red This is awesome. And I've been to um
+3:06 our planetarium in Berlin here in Berlin
+3:08 a few times. So that's my knowledge of
+3:10 astronomy. So I'm really excited about
+3:12 this talk today cuz uh for me this is
+3:14 always interesting but I don't know much
+3:16 about this. So pretty cool.
+3:18 >> Well, thank you very much. Also uh on my
+3:21 side I'm going to say thank you again to
+3:23 you because um uh over the years you
+3:27 have been running this data talks club
+3:29 and to be honest there's been a lot of
+3:30 value that been get from it um
+3:32 especially with this concurrent courses
+3:35 that runs from January to end of the
+3:37 year. So I sometimes I wonder how you do
+3:39 that like how you able to run the things
+3:41 organize podcast bring people to talk
+3:44 about the new you know new software
+3:47 development you know and all that. So
+3:49 kudos to you as well for for pulling
+3:52 that off.
+3:53 >> Yeah. Well, it's kind of my job now. So
+3:56 before it wasn't so I was a data
+3:58 scientist, but now it's my job. So
+4:00 that's how I managed to do all that. But
+4:02 today we're talking about you Daniel. Um
+4:05 so uh let's start with your background.
+4:07 Can you tell us about your career
+4:09 journey so far?
+4:10 >> Well, my career journey just like you
+4:12 said, I'm a PhD candidate at University
+4:14 of Cape Town. I only came to South
+4:16 Africa because of my PhD. uh I did my
+4:19 undergrad masters in Nigeria and then um
+4:23 after co I got a scholarship to come do
+4:26 my PhD here at South Africa at the
+4:28 University of Cape Town also at the one
+4:31 of the institutes here called the South
+4:32 Africa astronomy observatory. So
+4:34 generally my work is on um leveraging
+4:38 what we call mult
+4:40 strategy to find radio emitting stars.
+4:43 So um all of us know that stars is
+4:45 something that we see very common in the
+4:46 sky with our neck and eyes. But that is
+4:49 because um stars are very good at
+4:51 radiating in the optical wavelength
+4:53 which our eyes can see. But if you go um
+4:56 towards the lower frequency regime of
+4:58 the electromagnet electromagnetic
+5:00 spectrum it becomes very difficult to
+5:02 speak of stars to see stars. So u
+5:05 recently um there's a current project
+5:08 global project or international project
+5:10 going on now called the square kilometer
+5:12 array. So the quest square kilometer
+5:14 array is one of those I would say
+5:16 gigantic science missions to build
+5:20 arrays of telescopes radio telescopes um
+5:24 is going to be hosted by two countries
+5:25 South Africa and um Australia. So in the
+5:30 course of that project, South Africa did
+5:32 and they got the um the hosting rights
+5:34 to host a part of the the SK made. So
+5:37 that prompted them to build this um
+5:39 precursor telescope called MCAT which is
+5:41 a 64
+5:43 um 64 antenna array sitting in the car
+5:47 desert in the northern Cape. So um after
+5:50 you know launching the telescope in 2018
+5:53 there was this um legacy data set that
+5:56 was taken about the galactic plane. So
+5:58 the galactic plate is just that patch of
+5:59 the sky that is very very dusty. Um if
+6:02 you look at the picture you guys using
+6:04 my uh for this ad you're going to see in
+6:06 that picture a part of the sky what we
+6:08 call the Milky Way. So that is the
+6:10 galactic plane and in 2018 from 2018 to
+6:14 2020 MAT mapped this whole portion of
+6:16 the sky and my job is to now take the
+6:19 data from meat and find radio emitting
+6:22 stars from that data set. So that's
+6:25 >> find what? Sorry.
+6:27 >> Find radio emitting stars.
+6:29 >> Uhhuh.
+6:30 >> Yes.
+6:30 >> So what is it? So I'm a very lay person
+6:33 when it comes to these things. So I uh
+6:37 physics wasn't my favorite subject for
+6:39 some reasons in school. I don't know
+6:41 why. I liked mathematics but not
+6:43 physics. Um so what does it mean
+6:45 electromagnetic spectrum?
+6:48 >> Oh well um so the electromagnetic
+6:50 spectrum is basically um the regime by
+6:53 which light can emit in. So you have it
+6:56 um it can be low frequency, high
+6:58 frequency or wavelength related. So it
+7:01 spans from radio which we consider low
+7:05 frequency to high frequency to like
+7:07 gamma ray.
+7:09 >> Yeah. So um so um you have x-ray and
+7:12 gamma ray. So these things are quite
+7:15 this tells you more like the intensity
+7:17 or the energy range of the photon. Yeah.
+7:20 So um our eyes can only pick up things
+7:22 in um in the optical
+7:25 >> right but um yeah so um but at the same
+7:28 time things like um the communication
+7:31 channels like radio when you talk about
+7:33 antennas Wi-Fi they all operate in the
+7:35 radio region um stinking
+7:38 telecommunication devices then you begin
+7:40 to talk about gammaray you're talking
+7:42 about maybe um okay x-ray you can talk
+7:45 about x-ray some of these x-ray devices
+7:48 and stuff like
+7:50 Yeah. So um in astronomy we also build
+7:53 receivers. Astronomers also in
+7:55 astrophysics you build receivers for the
+7:57 picking up these um emissions at
+8:00 different wavelength. So in the optical
+8:02 you have the most common telescopes and
+8:04 the basic ones that you see people buy
+8:07 um you can buy from Alibaba, you can buy
+8:09 from Amazon. Those are basic ones. And
+8:11 also um even um big ones like we have
+8:14 here at this uh SEO facility. But then
+8:17 things like um radio is not so common.
+8:21 So you have to you need to build it in a
+8:23 very quiet field because you also want
+8:25 to avoid um radio interference from um
+8:28 electronic devices or from satellites.
+8:31 And then for X-ray
+8:33 um it's not so convenient to build um
+8:36 them here. So you have to send them to
+8:39 space. You have to spend send um you
+8:40 know satellites um telescopes in space.
+8:43 We have a couple of them um like um the
+8:46 most common one is the one from your
+8:48 country. Are you from Germany, right?
+8:50 Okay. You're based in Germany.
+8:51 >> I'm based in Germany. Yeah.
+8:52 >> Okay. We have the project currently
+8:54 ongoing. Um it's a collaboration between
+8:56 Russia and Germany. So
+8:59 >> it's also a space telescope that
+9:00 operates in the X-ray.
+9:03 >> And James Webb telescope is optic
+9:07 >> um yeah James Webster is also a space
+9:09 telescope. Um it it operates in the
+9:11 infrared.
+9:13 >> Infrared.
+9:14 >> Yes.
+9:15 >> Okay. So many things. But uh infrared is
+9:18 something we don't see, right? So when I
+9:19 go out or in Berlin, the sky is not
+9:21 really visible. But let's say there is
+9:22 not a lot of less light pollution. So I
+9:25 go go out, turn my head up and I see
+9:29 stars, right? So this is just the usual
+9:33 um light waves, right? That go from I
+9:36 don't know. Um
+9:37 >> so infrared is quite
+9:39 >> to violet right so the usual range
+9:43 >> so well infrared infrared sits in lower
+9:46 more like lower frequency compared to
+9:48 the optical but it's very near to the
+9:50 optical
+9:51 >> and this electromagnetic spectrum is uh
+9:53 we have devices like my my mobile phone
+9:56 um like Wi-Fi router but stars also and
+9:59 other
+10:01 I don't know space bodies they emit some
+10:05 Yeah. Yeah.
+10:07 in in in multiple wavelengths. Um Yeah.
+10:09 But the only thing is that sometimes the
+10:10 strength of wavelength is not able to
+10:12 reach us here. Yeah.
+10:13 >> It's only optical that usually very very
+10:16 um dominant or unless X-ray in the case
+10:18 of um maybe black hole systems that like
+10:21 black holes you can say oh these are
+10:23 very energetic systems. Yeah.
+10:25 >> Mhm. Because black holes they don't emit
+10:27 light but they emit something else or
+10:29 they don't emit anything. Well, yeah,
+10:31 not optical light, but um there's a
+10:33 whole lot of activity there that is very
+10:34 very energetic. So, with that, we're
+10:36 able to pick up um even X-ray and gamray
+10:39 events.
+10:40 >> Okay. Okay. Interesting.
+10:42 And uh what do you exactly do? So, you
+10:46 said there is this mech telescope,
+10:48 right? or
+10:49 >> so so what I do is that what I do is
+10:50 that we have the ma data the collected
+10:53 data of the galactic plane and then and
+10:55 then also we would like identify the
+10:57 point source or compact source points in
+10:59 this object. So our job is to say given
+11:02 the fact that we have these data sets,
+11:04 uh we need to find how many of them are
+11:07 emissions coming from stars and not from
+11:09 other um extra galactic or you know
+11:13 astrophysical subjects out there because
+11:15 usually in the radio you tend to pick up
+11:17 mostly extragalactic sources, AGN's
+11:21 um galaxies and the rest of them because
+11:23 they are very strong in the radio. Yeah.
+11:26 So but at the same time we know there a
+11:28 couple of stars too that also have
+11:30 emissions that we can pick up especially
+11:32 with new instrument that are coming up
+11:34 like MCAT or in Australia's gap or the
+11:37 the um the VA
+11:40 >> okay so your job if I understood so you
+11:44 scan the uh the sky at least the Milky
+11:47 Way part right and
+11:50 >> so the operation of MCAT was to scan the
+11:52 Milky Way part and then get this data
+11:54 and then my job is to now take this data
+11:56 derived from MCAT and do crossorrelation
+11:59 with um other multi wavelength data
+12:01 sets.
+12:02 >> Okay. And the task for this particular
+12:06 project if I understood correctly. So
+12:08 you have this scan of the sky with the
+12:10 Milky of the Milky Way and there are
+12:13 many sources of uh waves of uh radio
+12:19 >> many detections of sources.
+12:20 >> Yeah. Yeah. So then you need to
+12:21 understand if this wave is it coming
+12:24 from a star or it's coming from
+12:25 something else right.
+12:26 >> Yeah. Exactly. Yes.
+12:28 >> Uhhuh. And you use machine learning for
+12:29 that.
+12:30 >> Oh well um not necessarily uh we didn't
+12:32 use machine learning for this. Uh we
+12:34 used um crossation method which is more
+12:36 like you know the nearest concept. Yeah.
+12:40 So because you have to also take into
+12:41 account the positions in the sky. Um the
+12:44 same way um in geography here we know
+12:46 our positions on earth using the
+12:48 longitude. We also have it for the sky.
+12:50 So even though you observing a different
+12:52 epoch you need to also you know
+12:55 >> enter in the correct position. So given
+12:57 the position that we have with meat we
+12:59 go to other instruments like the
+13:01 European space agency space telescope
+13:03 they also have their own space telescope
+13:04 mission called GIA which you think is
+13:06 top to operation this year. Um it also
+13:08 has its own optical data. So at least
+13:10 the one we can see with our eyes. So
+13:12 comparing that positions and then we're
+13:14 able to align which um
+13:18 um which star actually which source
+13:21 actually has a common emission or
+13:23 detection in these two instruments.
+13:26 >> Why do we need um to look in this
+13:29 electromagnetic spectrum? Why is light
+13:31 not enough?
+13:33 >> Okay. Well um so like I said we're
+13:35 looking for stars and stars are very
+13:36 weak in the radio. So but in the optical
+13:39 you have a lot of stars
+13:40 >> now to connect. Okay. From the radio the
+13:42 emissions um
+13:44 >> into linking the emissions whether it's
+13:47 from the same star.
+13:48 >> So this is why you have to also cross
+13:50 correlate the positions. So if you
+13:52 >> if you match the positions and you see
+13:54 oh this actually falling from the same
+13:56 >> position they begin to check okay
+13:59 >> at least it raises the hype the
+14:01 probability that this is this emission
+14:03 might actually be coming from the same
+14:04 source but that is not enough. you begin
+14:06 to think about other possibilities
+14:09 because you are dealing with a 2D space.
+14:11 You're dealing with a 2D space. You're
+14:13 not dealing with a 3D space. So you
+14:14 don't have the ST information or or you
+14:17 also have a case whereby you can have a
+14:19 background and foreground object. Is it
+14:22 for example, let's say you have um how I
+14:25 say this? So let's say you have this,
+14:27 right?
+14:28 >> Then you have this.
+14:29 >> It's a pan. And
+14:30 >> yeah, so you'll be able to see this,
+14:31 right? You'll not be able to see this.
+14:33 Yeah. But it's also
+14:34 >> for those who are listening this cuz we
+14:36 will release this later as audio only
+14:38 podcast. You were showing a pen and
+14:41 behind the pen there was a piece of
+14:43 paper right?
+14:44 >> Yeah. Yeah. So um if you depending on
+14:47 your looking you first of all see the
+14:48 pen right?
+14:49 >> Yeah.
+14:50 >> Good. And then um um so let's say they
+14:53 are of the same if you look at the if
+14:55 you if you look at the pen you might
+14:58 assume that oh because we are from a far
+15:00 distance then the pen and the paper in
+15:02 the same position but they not actually
+15:03 in the same position I understand.
+15:05 >> Yeah.
+15:06 >> Okay. So this is when we observe light
+15:08 only right and the the radio signal may
+15:11 tell us that actually like these are
+15:13 quite distance object distant object
+15:15 just one is on top of like over how to
+15:17 say overlays one one covers another
+15:20 right
+15:20 >> yeah one covers another
+15:22 >> and in Milky Way I guess it's a common
+15:25 problem because we have so many stars
+15:27 there
+15:27 >> yeah you have so many stars thank you
+15:29 know that
+15:30 >> so you have to now take that into
+15:32 account and then um so even just finding
+15:34 that things are in the same position is
+15:36 not enough. You need to think of the
+15:37 physics. Um what are the properties?
+15:40 What are the known properties of the
+15:41 source based on previous observations
+15:43 and then that can help you tie that the
+15:45 radio emission is actually coming from
+15:46 the source and not from a background
+15:49 object.
+15:50 >> Okay.
+15:50 >> Yeah, I understand now. Um when I was to
+15:53 I told you at the beginning that I have
+15:55 visited the planetarium here in Berlin
+15:58 and in the planetarium uh I think the
+16:01 the show was about stars. Anyways, so
+16:03 they were showing what is um like what
+16:06 do we see in what we see in the sky and
+16:09 they showed the Milky Way but because
+16:11 Milky Way is so dense, we cannot really
+16:13 receive the light coming from I don't
+16:15 know some galaxies that are behind Milky
+16:17 Way. So our map of the universe is
+16:21 limited to things outside of Milky Way.
+16:25 So from outside of Milky Way, we can
+16:27 detect light coming from like some
+16:29 galaxies, right? But because Milky Way
+16:32 uh covers or hides other things, we
+16:35 don't really know what is uh behind the
+16:37 Milky Way.
+16:38 >> So, but that's because you are looking
+16:39 in the the optical wavelength.
+16:41 >> Yeah.
+16:41 >> So, in the optical wavelength you have
+16:43 this um you have this issue
+16:45 >> and um this but in the radio it's a
+16:48 different thing all together.
+16:50 >> Yeah. Yeah.
+16:50 >> So, the stars are very dark in the
+16:52 radio. So if you you point if you point
+16:55 to the same place where I see a lot of
+16:56 stars in the radio,
+16:58 >> you're not going to see those stars
+16:59 anymore.
+17:01 >> Background objects. Yeah.
+17:02 >> Uhhuh. And potentially with the research
+17:06 you're doing, we will be eventually able
+17:09 to uh extend the map of the universe we
+17:13 currently have uh to include like
+17:15 galaxies that are behind Milky Way,
+17:17 right? The one
+17:18 >> couple of people. Yes, of course. That
+17:20 is what mat was able to achieve with
+17:22 those galactic planes. So there are
+17:24 people a lot of people looking at those
+17:26 background non galactic sources within
+17:30 our galaxy.
+17:31 >> Yeah. What my job is to also my job is
+17:34 just to look at the data and find
+17:36 galactic sources at least the one radio
+17:39 stars emitting stars not
+17:41 >> extra galactic.
+17:43 >> Yeah. Very interesting. Very
+17:44 interesting. Thank you for sharing. How
+17:46 do you use machine learning? Do you use
+17:48 it in at your work right now?
+17:51 >> Oh, no. No, not really. Um, but we we're
+17:54 building up a data set that could
+17:55 actually be very useful for machine
+17:57 learning in the future because um, like
+17:59 I said, we what we have currently is
+18:00 more of observational data. So, you need
+18:02 to also build a physics from the
+18:05 observational data before diving into
+18:07 machine learning.
+18:09 >> Yes, it's more like modeling right now.
+18:11 So there's some uh
+18:14 data you observed or you collected and
+18:18 then you try to uh I don't know use uh
+18:20 some formulas from physics to understand
+18:22 how this data
+18:23 >> exactly
+18:25 you're doing the physics. Yeah. Doing
+18:26 the physics is giving the
+18:27 interpretations and making sure you're
+18:29 getting reliable data because you need
+18:31 to enough reliable data to be able to
+18:33 find
+18:34 >> Yeah. So let me give you a shocker. Um
+18:38 at least we over the years we've had
+18:40 both guard and space-based telescopes to
+18:42 operate optical. Um like I told you the
+18:44 other one is Gaia. They stopped
+18:46 operation this year last year.
+18:48 >> Gaia mission had more than 1.8 billion
+18:52 >> um stars.
+18:54 >> Mhm.
+18:55 >> Survey and stars.
+18:57 >> Yeah. Stars in it survey. So this
+18:59 telescope was able to map the stars 1.8
+19:02 million stars. We have it in the data
+19:04 set. And if you look at even in the
+19:07 infrared you're going to pick up close
+19:10 to a billion stars like two mass wise
+19:13 hundreds of billions of stars then even
+19:17 um ground space telescope like even um
+19:19 CTF and the rest of them but in the
+19:22 radio
+19:24 we only have few thousands of stars in
+19:26 the radio.
+19:28 >> Mhm.
+19:28 >> So you can see it is very very it is
+19:30 short until recently it was less than a
+19:32 thousand radio stars. less than a
+19:35 thousand radio stars. So the reason is
+19:38 because um the radio infrastructure is
+19:40 not as you know common as we have in the
+19:43 optical because these are very these are
+19:46 high engineering and again they cost a
+19:48 lot to build compared to optical
+19:50 telescopes. So but recently um
+19:52 investment and ongoing into some of
+19:54 these things um also building sensitive
+19:57 telescope that is able to pick up even
+19:58 very faint detections than microcy. So
+20:01 it is now helping astronomers to at
+20:03 least um resolve you know potential
+20:07 candidates of what we might call um
+20:09 radio stars that people have thought
+20:10 about that oh given that we've seen this
+20:12 emission in the x-ray or in the optical
+20:14 this kind of behavior we're expecting
+20:16 that there should also be a radio
+20:17 emission coming from the star right yeah
+20:20 for the nearby universe or within our
+20:22 solar neighbor we should be able to pick
+20:24 up some of these things and that is what
+20:26 the old escape pre telescopes are doing
+20:28 with right now um like I say mircat in
+20:30 South Africa
+20:32 Scap in Australia and V mission in the
+20:35 US.
+20:37 >> Okay. So right now it's a few thousand
+20:40 of stars only but with the investment in
+20:44 uh the hardware and technology
+20:47 um we should be able to observe more and
+20:50 more stars with this uh
+20:52 >> radio stars. Yeah, radio stars
+20:55 because again this these things do also
+20:57 they do also they do other science
+20:58 project not just for stars they dominate
+21:01 dominating field in radio galactic like
+21:05 a
+21:07 >> um um even um galaxies you know extended
+21:11 objects remnants and the rest of them
+21:14 just things outside of our galaxy.
+21:16 >> Mhm.
+21:17 >> Yeah. But um how did you actually so you
+21:20 said what you use right now at work is
+21:23 more like statistics correlation uh than
+21:26 also physics more like traditional
+21:28 modeling uh at what point and how did
+21:31 you come across machine learning and
+21:33 decided to use it?
+21:34 >> Well um so coming across machine
+21:36 learning was um a thing that um happened
+21:38 sometime like say I'll say probably
+21:41 during my masters or so. So um I will
+21:44 say this I I have a friend who who who
+21:48 is an engineer. We also grew up together
+21:51 in Nigeria and then he left for Canada
+21:53 some time and was able to build um uh so
+21:58 he studied electrical electronics
+21:59 engineering and then he he was able to
+22:02 build this AI startup called
+22:05 um way back in um
+22:07 >> yeah I'll say sometime around 2015 16
+22:11 >> and it was um
+22:12 >> an AI you know then wasn't AI wasn't
+22:15 necessarily like a trend and stuff so AI
+22:18 that was infant asphysia. So this
+22:22 happens by analyzing the infant cries of
+22:25 babies, you know.
+22:26 >> So you're able to use that to predict if
+22:30 a child if an infant has physia. So um
+22:33 it became a motivating factor but at the
+22:35 time it wasn't necessarily my thing but
+22:39 um getting into doing this program I
+22:42 realized that I need to do a lot of
+22:45 data. I need to like I short I have a
+22:47 lot of data and this data is actually
+22:48 very very huge. You're talking about
+22:50 tens of gigabytes. So you're not able to
+22:52 process it on your PC you need a cloud
+22:54 you need a cluster to process this data.
+22:56 So that is where the whole
+22:58 >> um data science concept came in. Mhm.
+23:01 >> So when I started my program at the same
+23:03 time there was um an announcement a
+23:05 program called
+23:08 um um black and brilliant AI program um
+23:12 organized by some people in the US and
+23:15 also in collaboration with code academy
+23:17 because I was also struggling to learn
+23:19 you know um how to code
+23:22 >> in Python you know how to do data
+23:24 analysis because I didn't I'm going to
+23:26 deal with a lot of data
+23:27 >> and you need to get hands on in all of
+23:30 this. So I applied for that program and
+23:33 then I got accepted and in about three
+23:36 months we had this whole coding phase
+23:39 with code academi is the platform and
+23:42 also provided me with a couple of
+23:43 mentors. So
+23:44 >> with that we're able to interact there
+23:46 were also conversations around machine
+23:48 learning because a good number of them
+23:49 are practitioners already like in the
+23:52 industry tech industry not some of them
+23:54 are not necessly doing machine learning
+23:55 but they are like you know things
+23:57 related to machine learning. So one of
+23:59 my mentors who happens to be um was also
+24:03 in machine learning person like said oh
+24:05 motivated about how data science is I
+24:09 already know the impact of data science
+24:10 in my field but he was also trying to
+24:12 like butress why I should not look at it
+24:14 from the prism of astronomy alone but
+24:15 also look at it from the prism of the
+24:17 fact that I'm able to understand the
+24:19 concept of data analysis and also
+24:22 employing
+24:24 >> um programming tools into it because
+24:27 again the idea was that if you're able
+24:29 to do this successfully within your
+24:31 academic field, you can also do it. It's
+24:33 also the same paradigm in the industry.
+24:35 So that become that became a motivator
+24:38 and um um at least that I started also
+24:42 getting my hands dirty and instead of
+24:44 using some software to do the cross
+24:46 matching or crossorrelation um I started
+24:49 using um Astropi. So in a we have a
+24:52 Python package called Astropy. It is
+24:54 very very robust. It actually
+24:56 incorporates um I'm going to say it
+24:58 incorporates a number of things from
+25:01 um haz
+25:03 um numpy
+25:05 to even start um um yeah sci all
+25:09 together bonding into one. So
+25:12 >> I'm looking at it right now.
+25:14 >> Yeah. So it's um
+25:15 >> yeah it's a it's the go package for
+25:18 doing anything astronomy related in
+25:20 Python. So uh I started you know trying
+25:23 that out started combining my data with
+25:27 >> um nonpi because like I said the data
+25:29 was very very huge. So even using pandas
+25:31 was
+25:32 >> was not going to work but as to pi
+25:34 allows like you know the whole
+25:36 flexibility of dealing with big data and
+25:38 all that. So I started seeing how I
+25:40 could actually manage all of these
+25:42 things together. So that's where the
+25:44 whole thing like oh this actually
+25:45 beautiful I could do this and I'm also
+25:47 glad that I didn't have to also run
+25:48 these things on my PC.
+25:50 had access to like a free a cloud
+25:52 service or cluster where I could just
+25:54 run things on a Jupyter hub and you know
+25:56 keep running day to day and then yeah
+26:00 but then um in 2022 that's when I think
+26:05 I saw I think it was one of the mentors
+26:07 who reshared your post about your
+26:10 advertisement for MLOps.
+26:12 >> Mhm.
+26:14 >> Of course data initially it was data
+26:16 engineering.
+26:17 >> Okay.
+26:17 >> Yeah. Data engineering. So this was
+26:19 January 2022. So I signed up for the
+26:22 >> It was the first one, the first.
+26:24 >> Yeah. So I signed up for the data
+26:26 engineering. But at the time I was
+26:27 traveling. So I wasn't available to do
+26:29 all of that because again I was just
+26:30 starting in Python, you know, there were
+26:32 a lot of things now like heavy and I'm
+26:34 talking about cloud. I'm like okay
+26:37 >> you know terraform and the rest of them
+26:39 like but one of the the the motivation
+26:42 at the time was that I was not stable.
+26:44 So I was just trying to do and um you
+26:46 know trying I was traveling and then at
+26:49 the same time uh you know I was just
+26:50 studying my PhD. So I need to like get
+26:53 to do some get some results and get my
+26:56 hands dirty. So I had to skip it. Then
+26:58 later that year that's when the ML zoom
+27:01 came in. I had to take the ML zoom and
+27:04 >> yeah I would say that was um
+27:07 >> the eye opener on the machine learning
+27:08 perspective. So when I eventually um
+27:12 when I eventually finished the emission
+27:15 learning course like I think for more
+27:17 than is it eight or 10 weeks and um one
+27:20 of the rule was that you need to share
+27:22 your learnings online. So I was sharing
+27:25 and one of the reasons why I was sharing
+27:26 is because a lot of the people who were
+27:28 my mentors or part of people who were
+27:29 mentors in the black and brilliant they
+27:31 were all on we connected on LinkedIn. So
+27:32 most times I ask questions really those
+27:34 who have background in like science and
+27:36 machine learning. So um so they started
+27:39 seeing what I was doing right and so
+27:42 with that they like oh you're doing a
+27:45 good job. So they keep encouragement
+27:46 sometimes one of them will send me a
+27:48 message on WhatsApp. Oh I see what
+27:49 you're doing. Keep it up. Keep it up.
+27:50 You're doing
+27:51 >> that's really cool.
+27:53 >> Yeah. So that's how the whole team
+27:55 start. I'm like are you serious? This
+27:56 thing I'm doing I'm think I'm just
+27:57 trying to like get my hands dirty and
+27:59 then somebody is like telling you you're
+28:01 doing a good job. So that's just where
+28:02 the whole machine learning
+28:04 >> thing I would say kicked in fully. Yeah.
+28:07 >> Mhm. So, you took it in 2022, right?
+28:12 >> The ML course.
+28:13 >> Yes.
+28:14 >> Uhhuh. Cool. It was I think our second
+28:16 edition of ML Zoom Camp.
+28:20 >> That's really cool. Yeah. Thanks for
+28:23 sharing that. Um, does it help you like
+28:27 u because you said you don't really use
+28:29 machine learning, you use other things.
+28:31 Well, I'm wondering if
+28:34 >> what you learned is very help is helpful
+28:36 at your work.
+28:38 >> Yeah, of course it is helpful. So, okay,
+28:40 first and foremost, um let's not even
+28:42 just talk about the machine learning
+28:44 aspect. You talk about like the paradigm
+28:46 shift in the coding experience itself
+28:48 because initially when I started
+28:50 learning Python and even like whole data
+28:53 analysis, data science, it's mostly
+28:55 everything is just done on the Jupyter
+28:56 notebook, right? Mhm.
+28:59 >> Um even um like I said even testing
+29:02 getting my hands dirty on the on the
+29:05 Jupyter hub server that we have.
+29:06 Everything runs on Jupyter notebook. But
+29:08 taking the MLOps camp allowed me to now
+29:12 shift from just writing codes in Jupyter
+29:14 notebook like writing Python scripts
+29:17 that are reusable, right? That can be
+29:19 used for like doing other task later.
+29:21 Because let me tell you something. It's
+29:22 really in in the whole whole lot of the
+29:24 science field is a lot of people don't
+29:27 unlike maybe computer scientist a lot of
+29:29 people don't learn Python like from a
+29:33 developer perspective.
+29:34 >> Mhm.
+29:35 >> They just learn for doing their basic um
+29:38 task right okay I'm a scientist I need
+29:40 to do this analysis maybe I need to do
+29:42 this plot I just do it in a Jupyter
+29:43 notebook. The lazy way of doing things
+29:45 and it stops there. Even senior
+29:48 researchers or stuff they only just know
+29:50 how to do the whole jupiter because this
+29:51 is not like a you know the UI thing
+29:54 where you can just see your results save
+29:55 them and then you go away. So the ML
+29:58 zoom cam were like an eye opener to say
+30:00 no actually you need to think about
+30:04 developing your project think about
+30:08 implementing models that can be used in
+30:11 real life or like in the industry or for
+30:13 in France just like you say. So that is
+30:15 where the whole idea you know crept in
+30:18 and that's when I started doing the
+30:19 whole like GitHub repo projects
+30:23 >> writing script and you know sharing them
+30:25 and this making them reusable and the
+30:27 rest of them so yeah I think that was
+30:29 also very very essential like I said
+30:32 then the introduction to cloud service
+30:34 right because I know even though here we
+30:36 have the data cluster it's also a cloud
+30:38 service but doesn't even have an idea
+30:41 what happens behind the scene you
+30:42 understand and also how to do all that
+30:44 because it's all set up in a way that
+30:46 you just go and jump in. So those some
+30:50 of those steps that you have to do you
+30:52 know even terraform even doing things in
+30:55 the cloud where you have to like even
+30:57 set up like virtual environments or
+30:59 setting up your doa in a cloud. So those
+31:01 are like small add-ons even though I
+31:04 know in astronomy we tend to use a lot
+31:06 of Linux a lot because we also have
+31:07 other softwares that allows you. So I
+31:09 was very familiar with doing the bash
+31:10 scripting right but not like doing
+31:14 Python scripts and just calling them
+31:17 over and over again. Yeah. So those are
+31:19 some of the those are some of the
+31:21 takeaways.
+31:22 >> Yeah. But um in addition
+31:26 it also opened a lot of opportunity to
+31:28 me because um in 2023 you know um open
+31:32 AI came up with their chat right in 22
+31:35 and then in mid 2023
+31:38 one of the mentors reached out to me and
+31:40 say they see you progressing very well
+31:42 especially when I finished the ML zoom
+31:44 course and to got a certificate so I
+31:45 shared it and then it was reached out to
+31:47 me and say would you be willing to work
+31:48 on an ML project um as an intern I'm
+31:51 like what he said. Well, I understand
+31:54 you're you're a student. Um I don't want
+31:56 to distract you, but this is just going
+31:57 to be like um um something minor. A few
+32:00 hours um a month we can make
+32:03 arrangements so that it doesn't affect
+32:05 you. Like okay, that's a good deal.
+32:07 >> So because he was setting up a
+32:08 consulting company in the US and that's
+32:11 how we kickstarted. So my job was to
+32:13 just to do
+32:15 um testing out um deployment of Intel um
+32:22 you know there's this um Intel product
+32:24 called open veno for edge devices. So
+32:27 the idea then was to see how
+32:29 >> it's some computer vision uh yes so the
+32:34 idea was to test out a couple of the
+32:36 models um you have I forgotten all of
+32:39 them now. This was way back. So you know
+32:41 package them and deploy them on Intel um
+32:44 Intel cloud Intel so Intel hardware they
+32:47 do have a couple of GPUs at the time or
+32:50 their own set of hardware CPU their
+32:53 different sort of comput resource so
+32:54 that is what I was doing because he
+32:56 worked with Intel so more like okay we
+32:59 need you to do this we need to test this
+33:01 things out and that's how I started
+33:02 doing it I saying well getting the
+33:03 essence of how you know um you need to
+33:06 actually deploy stuff um on your in like
+33:10 different set of hardware. Think about
+33:12 and latency and the rest of them and
+33:14 even figuring out okay what is the right
+33:16 um um infrastructure for deploying your
+33:20 service. So we did that and um it
+33:24 worked. So I I usually just run the
+33:26 whole the typing and then just hand it
+33:29 over to to him because he has other
+33:32 people in the team. So my job was just
+33:34 to quickly test out something and then
+33:36 later on lang chain came into the scene
+33:38 and then you know people started talking
+33:40 about AI LLM and the rest. So he he said
+33:44 I know you just started doing machine
+33:46 learning AI deep learning is not
+33:47 something that you're very good at but
+33:49 if you think you want to test the waters
+33:51 you can check out it. He did share me a
+33:54 couple of resources. Have you heard
+33:55 about launch? I said well I'm not so
+33:57 sure. I was like about it. So I started
+33:58 reading about it was like oh
+34:01 because then I wasn't paying attention
+34:03 to that area. So now I realized that
+34:05 okay oh we're now in an era where you
+34:08 can actually use these models especially
+34:09 the open source models hugging face you
+34:12 know try them out.
+34:13 like okay get hugging face API and then
+34:16 started trying things by myself and so
+34:19 that's how that whole step started into
+34:22 moving from classical machine learning
+34:24 to thinking about AI application like um
+34:28 LLM prompting and um um essentially rag
+34:33 uh application thinking about embedding
+34:35 thinking about vector database and the
+34:37 rest of them so we're just always
+34:38 prototyping as new products coming or
+34:41 new frameworks coming because they were
+34:42 like you need to get a sense of also
+34:44 testing on their infrastructure and
+34:46 maybe see for also some of the um maybe
+34:50 I'll say clients he was servicing with
+34:52 his consulting company. So I was going
+34:54 through all of these things and to be
+34:55 honest it was it was challenging at the
+34:57 same time it was fun because you know
+34:59 somebody trusting you even when you
+35:00 don't necessarily have like technical
+35:02 knowhow you know at least uh to do all
+35:05 of these things. So it became
+35:07 so it became more of a a thing. Yeah.
+35:11 until at some point we had to stop when
+35:13 Intel's problem you know the time Intel
+35:15 had to um there's a lot of issues I
+35:18 think last year meaning it was a detain
+35:20 in the news so we had to stop and then I
+35:23 had to go back to uh my studies because
+35:27 I was so thinking about okay after all
+35:28 of this um research or analysis that
+35:31 I've done we need to put them in a paper
+35:33 this academic paper so I have to like
+35:36 >> um you know stop that and until Yeah.
+35:41 LED again like
+35:42 >> gradation.
+35:43 >> Yeah. Yes. We needed to like you know do
+35:46 all that. So that's just how my journey
+35:49 has been in the space.
+35:50 >> Yeah. That's uh pretty cool. And did I
+35:53 understand you correctly that uh they
+35:56 reached out to you because you were
+35:58 sharing your progress during the course.
+36:01 They saw you on LinkedIn and then at
+36:03 some point when they had a project they
+36:05 reached out to you saying I think you
+36:07 say 2023 May they reached out to you
+36:10 saying hey do you want to work on this
+36:12 thing?
+36:13 >> Oh yes like I said because we um I
+36:15 already knew this person as a mentor
+36:17 during the black and brilliant. So while
+36:20 I was sharing my progress on the on
+36:23 LinkedIn he was like okay I see you're
+36:25 now taking machine learning seriously. I
+36:27 did get like message like good job and
+36:30 one again one of the reasons why I was
+36:31 sharing my learning this thing then on
+36:33 LinkedIn was because I know I follow
+36:35 them. I also wanted the people in my
+36:37 circle who I think are way better to
+36:39 also maybe share their thoughts about
+36:40 what um maybe what I need to do because
+36:43 that's what I usually do then maybe if
+36:45 I'm learning something I can maybe reach
+36:47 out to somebody I think please what do
+36:49 you think about this? Do you think it's
+36:50 a waste of time? Do you think it's worth
+36:51 it? So, so I got that encouragement a
+36:54 few times and then in May it was like
+36:56 okay if you can do this project then you
+36:59 can can you do this or you can if you
+37:01 want to try you understand.
+37:03 >> Yeah.
+37:03 >> Yeah. That's that's really cool
+37:06 >> cuz uh in our courses we usually uh
+37:10 encourage uh course participants to
+37:12 share in public but uh many don't do.
+37:17 many still continue doing this uh
+37:20 silently which is okay not everyone
+37:22 wants to share but I want to encourage
+37:24 as many people as possible and your
+37:26 story is really good so it um if you
+37:30 don't mind uh I want to use your story
+37:33 to encourage students to say to to share
+37:36 things uh to share their learnings
+37:37 publicly
+37:38 >> yeah I do to be honest I I I I I
+37:42 tell people to do that a lot these days
+37:44 because I'm also mentoring people So um
+37:47 irrespective of how basic what
+37:48 everything you've done just
+37:51 >> just say it no matter how it just say
+37:53 because again um it doesn't have to be
+37:56 about praises or people telling you well
+37:59 done
+37:59 >> it should also be about somebody might
+38:01 actually just make a suggestion to you.
+38:03 >> I've seen a post where somebody have
+38:05 made something I feel like I see this is
+38:06 a beginner I made a suggestion to them
+38:08 you understand. So um I know there was
+38:11 um somebody who was just trying to share
+38:14 something around um
+38:17 machine learning was just a beginner
+38:19 asking questions. So I was reading this
+38:20 blah blah blah. I said you know what go
+38:23 to YouTube go and search for ML of Zoom
+38:25 camp.
+38:26 >> So actually have I like encouraged a lot
+38:28 of people to enroll directly into the
+38:31 zoom camp. Why? because it's important
+38:33 that you
+38:36 >> that you learn the best practices which
+38:38 is something that I think was missing
+38:41 then most times if you go to things like
+38:43 cosera and stuff you don't see the sort
+38:45 of foundational thing like the whole end
+38:47 to end process you understand so
+38:50 everybody can come and teach you teaches
+38:52 you machine learning teaches you okay oh
+38:55 you need to do um you know the sort of
+38:58 um functions you need to call type of
+39:00 models But then nobody talks about
+39:04 deployment,
+39:05 >> right? Yeah. Nobody talks about
+39:07 deployment. People then like MLOps
+39:09 because again even though remember you
+39:11 didn't necessarily call the ML Zoom camp
+39:14 an MLOps thing but at least it was uh it
+39:17 was this was a a a
+39:20 call it it's an end to end project
+39:22 right?
+39:22 >> Yeah.
+39:23 >> Yeah. because you're able to like train
+39:24 your model, evaluate the performance of
+39:26 your model and then you deploy it which
+39:29 is not something that was so common at
+39:31 the time especially for like for free
+39:32 resources online. It wasn't something
+39:34 common and I felt like um instead of
+39:37 wasting a lot of time you can people can
+39:39 actually come you know do this because
+39:41 this is how you actually enhance your
+39:42 programming skills
+39:44 >> doing those tough um tough tasks because
+39:46 at the end of the day it's a pattern
+39:49 right? If you're able to figure out the
+39:50 pattern then things will be able to
+39:52 move.
+39:54 >> Yeah. Yeah. That's why when thinking
+39:58 about the course I really wanted to make
+40:00 sure this is a machine learning
+40:03 engineering course. So we have a lot of
+40:05 we cover a lot of deployment strategies.
+40:08 We talk about deployment cuz many
+40:10 courses don't and then people who
+40:12 graduate from these courses they go to
+40:14 work and then they need to deploy a
+40:15 project and then they feel stuck. So in
+40:18 order and I saw this uh with my own
+40:20 eyes. So that's why I thought it's
+40:22 really good to create a course that
+40:24 focuses on that.
+40:26 >> Oh and I also took I also took the
+40:28 recent MLOps.
+40:30 >> Okay. Okay. Good.
+40:31 >> I just so I in that case I I didn't have
+40:34 enough time because these days I'm also
+40:36 very busy. So if I tell you I only just
+40:38 take those courses during the weekend
+40:41 >> and did the project. I was like no I
+40:43 need to do the projects. So I did the
+40:45 project and make sure I was able to get
+40:46 myself.
+40:48 >> So but I didn't share a lot of things.
+40:50 In short, I'm not sure I even shared
+40:51 everything online because I was also
+40:53 like very very
+40:54 >> um on a very tight schedule. Again, I
+40:57 didn't want to also share it to draw
+40:58 attention like you've lived your
+40:59 academics and you're doing this at this
+41:01 critical time.
+41:04 >> So uh there are sometimes cases when you
+41:08 don't want to share your rolling in
+41:10 public, right?
+41:12 >> Well, yeah, of course. Especially if you
+41:14 are you are uh yeah I recommend majority
+41:18 of the time you should but like in my
+41:20 case the reason why I didn't share it
+41:22 then was that I
+41:23 >> I was in between a couple of projects
+41:25 and you don't want to feel like you have
+41:26 a divided attention but again
+41:30 desired I need to actually do that
+41:32 course and get the certificate so that's
+41:35 lingered for months 2023 when I got the
+41:38 ML zoom I bought the next certificate I
+41:41 was like no I have to do this I I
+41:43 actually registered the in the data
+41:46 engineering zoom camp at the beginning
+41:48 of the year. I actually went through it
+41:50 end to end. The only problem was that I
+41:52 didn't put I didn't submit I didn't
+41:54 submit the project like I didn't even
+41:57 though I did project because uh
+41:59 beginning of the year too was like I
+42:00 usually like have this activities a lot
+42:03 of activities like volunteer engagement
+42:05 and all that at the beginning of the
+42:06 year even observation time sometimes we
+42:08 like sometime which is also what like
+42:10 you know you have to use the telescope
+42:12 sometimes like do observation run for
+42:14 like weeks so you you're walk during the
+42:18 day and you need to pay attention to
+42:21 observation. So those times are not
+42:23 usually convenient for me to do
+42:26 >> any other things. Yeah.
+42:27 >> Yeah. Well, if you'll have a bit of free
+42:29 time, you can just submit your project
+42:31 in the next the next iteration, not do
+42:34 any course, just focus on
+42:35 >> Oh, yeah. Okay. I I actually just did
+42:38 another one this time using a flow. Um
+42:41 >> Okay. Yeah.
+42:45 >> The whole thing all integrated.
+42:48 Yeah.
+42:49 >> Yeah. Can you tell us about uh any of
+42:52 the projects you did for the courses?
+42:54 Maybe like for example this one um
+42:58 it's I don't know if it's for a course
+43:00 or not but the one you mentioned right
+43:01 now airflow and minio uh is so yeah so
+43:05 it is recently yeah so I
+43:08 >> so I because I usually just sit down
+43:10 sometimes I say what are the unfinished
+43:12 project that I did
+43:14 >> and what is more relevant. So during the
+43:16 editor engineering zoom camp the one at
+43:18 the beginning of the year. remember the
+43:20 orchestration was Kestra
+43:22 >> and I did use Kestra and I did the whole
+43:25 thing of running the whole
+43:28 >> process from using Terraform to create
+43:31 your compost your
+43:33 >> big query because we use Google right
+43:36 and then um setting things up and make
+43:37 sure they are running and also um
+43:40 querying data doing the ELC
+43:42 transformation and putting them in
+43:44 Google query uh bigquery and I use
+43:48 Kestra for
+43:50 But then I was speaking to somebody like
+43:51 I said sometimes I like to like consult
+43:53 with people in the industry to figure
+43:54 out what's actually the major trend. So
+43:56 it was like
+43:57 >> was telling me no um a flow is still the
+44:00 number one orchestrator for um for you
+44:03 know running this thing. I was like if
+44:05 you can try I'm like okay I think I've
+44:08 tried a flow for once but I didn't sure
+44:10 I'm not sure I did I understood what was
+44:12 happening. So I just sit down um last
+44:15 weekend. You won't believe it. And then
+44:18 I like okay setting up a flow 3.0. And
+44:22 to be honest, thanks to there was a pres
+44:24 thanks to
+44:26 there was one of the uh presenters in
+44:28 the in one of your show. I don't know if
+44:31 it's what's called again who talk about
+44:33 a flow 3.0.
+44:35 >> Mhm. Yeah. Yeah.
+44:36 >> So that's that's one of the resources I
+44:38 used. You believe it to just set up the
+44:40 the Aflow 3.0 zero on a da
+44:44 right this is the command line you use
+44:46 this command line utility from
+44:47 astronomer for setting up
+44:49 >> oh yeah yeah so actually I tried using
+44:51 it but unfortunately uh I didn't succeed
+44:54 because I was trying to connect spark
+44:56 >> okay
+44:57 >> the other things to um I don't know I
+45:00 think like I said I was in a hurry but I
+45:02 figured out how to like do all of those
+45:04 things with um just to compose without
+45:07 using but I think the CLI is very very
+45:10 nice to set things up And
+45:12 >> yeah, but yeah, finally if you get
+45:13 everything worked right night last
+45:15 night, the whole end to end my SQL. So I
+45:19 did the whole thing of think about quing
+45:21 the data from a source, right? And
+45:22 putting it in your data warehouse. So in
+45:25 this case uh I didn't want to connect to
+45:26 a cloud service although I know how to
+45:28 do that but I had to use M IO to um
+45:31 simulate the the
+45:34 data link sorry. Yeah. So take data
+45:38 using um my SQL put it into min.io
+45:41 >> and then also do um ispark
+45:45 transformation and then also save it mio
+45:48 and then take the data from min.io
+45:49 transform data to pos like where you
+45:53 have like analytics.
+45:55 >> Yeah. So what I still have to do now is
+45:57 to employ dbt.
+46:00 >> Mhm.
+46:00 >> Okay.
+46:01 >> Yeah. You're almost done. and then you
+46:03 can just submit this uh when we start
+46:06 the course and then you'll get your
+46:07 certificate.
+46:08 >> Oh yeah yeah yeah I'm actually thinking
+46:10 of doing writing a maybe probably think
+46:13 of writing my first medium article
+46:15 because I haven't I've not written
+46:16 medium article I know I've written
+46:17 something on them then because to be
+46:20 honest the the whole integration right
+46:22 now is not out there like you know
+46:25 >> um incapassing 3.0 zero.
+46:28 >> Yeah, I imagine that it wasn't super
+46:30 straightforward.
+46:31 >> Yeah, I was searching on YouTube. I I
+46:33 couldn't figure out I couldn't find so I
+46:35 had to struggle but n I figured out how
+46:36 to work. So I think this is going to be
+46:38 one of those things that
+46:39 >> Yeah, please do. You'll save time to
+46:41 many people. But this is also kind of
+46:43 the essence of of the data engineer job
+46:47 because you have some things you need to
+46:49 figure out how they work together and
+46:50 sometimes you spend a lot of time doing
+46:52 that.
+46:54 >> Yeah. So it was a combination of looking
+46:56 at many mostly people using airflow 2.0
+47:00 and then um because that's where you see
+47:01 a lot of them use by spark but then the
+47:03 3.0 there's a whole lot of glitching
+47:07 so I had to take my time to figure that
+47:10 out. Yeah writing the ta compose also
+47:13 setting environmental variables and
+47:15 parameters inflow
+47:17 >> web server to make sure things work.
+47:19 Yeah. So it's just one of those you know
+47:21 learning phases that we um we just do
+47:24 especially when I feel like not like I
+47:26 have time but when I feel like I have my
+47:28 free time
+47:29 >> I just hop in. Then other things that I
+47:32 do I think and
+47:33 >> is also
+47:36 there something I probably recommend is
+47:39 >> especially now that we have this whole
+47:41 AI thing. Um there's a lot of startups
+47:44 coming up especially those building um
+47:46 you know um conventional frameworks like
+47:50 you know lang chain lama index mon have
+47:53 even you know many of these things they
+47:55 also have their own academy so I think
+47:57 sometimes you have this sort of best
+47:59 practices where they kind of like you
+48:02 know offer tailored trainings know you
+48:05 know
+48:06 >> that fits in with how to use their tools
+48:08 effectively so I also saw this um an guy
+48:11 who I saw for the data data talk post
+48:15 this morning about um um learning a flow
+48:19 3.0 which I signed up for. I believe
+48:21 those who are interested in data
+48:22 engineering should take that kind of
+48:24 course. Those who are interested in AI
+48:26 should look out for um AI related
+48:29 courses. Um especially from
+48:32 especially if you want to be a developer
+48:33 from a developer perspective, look out
+48:35 for the academy like Arise AI. They do
+48:37 have their own academy for those who
+48:38 want to learn how to do um obser um
+48:42 observability within the LLM space.
+48:44 Yeah. Or take the lang chain um academy.
+48:47 They do have um I think about two
+48:49 courses now around agents land graph
+48:52 rest of them. So I think it's it's more
+48:54 like um
+48:56 for me that's more like the best um bet.
+48:59 And then there a couple of resources too
+49:00 that are out there. Uh one of the things
+49:03 that have helped me is um you know
+49:06 NVIDIA deep learning institute.
+49:08 >> Mhm.
+49:09 >> Yeah. So um they do offer um you know
+49:13 courses around um so thinking about
+49:16 especially around leveraging NVIDIA
+49:19 hardway. So they try to like their
+49:21 courses around you thinking about the
+49:23 hard way thinking about best practices
+49:26 and also
+49:27 >> deploying. So I was lucky enough so one
+49:31 of the mentors that I have just was able
+49:34 to offset that for me um getting me a
+49:37 coupon for one of their courses. Some of
+49:38 the courses are also free. Yeah. Some of
+49:40 the are free. Yeah. So they also like
+49:43 that
+49:44 >> essential
+49:45 >> with Nvidia. I remember they often uh
+49:48 give coupons for free. So I remember
+49:50 partnering with them uh for they do this
+49:55 conference. I don't remember how it's
+49:56 called. They do it once or twice per
+49:58 year.
+49:58 >> BTC
+49:59 >> PTC. Exactly. And they usually want to
+50:02 promote the conference. That's why they
+50:04 contact people on LinkedIn with some
+50:07 number of followers. They contacted me
+50:09 too and say okay like here are coupons
+50:11 you can share them with your followers.
+50:13 So I was doing that.
+50:14 >> So some yeah just watch out maybe check
+50:18 social from time to time.
+50:20 >> Yeah social they have this website for
+50:23 higher institutions. So they have this
+50:25 some of their courses um especially
+50:27 those special ones. Um they usually do
+50:30 it at certain times of the year. So you
+50:32 always you see the trainings that they
+50:35 have and you can sign up free as a
+50:36 student. just use your student email. So
+50:38 that has helped me a lot to take a
+50:40 number of their courses like the recent
+50:42 one I did was the conversational AI
+50:44 building conversational AI application
+50:46 deploying it using the Nvidia name
+50:49 infrastructure deploying on um on the on
+50:54 Nvidia GPU hardware be it a 100 or H100
+50:57 designing the whole kubernetes um
+51:01 that's yami templates and the rest of
+51:03 them and then deploying so these are
+51:05 very very essential especially for
+51:06 students to have an email address. Your
+51:09 student email address can get you a lot
+51:11 of stuff.
+51:12 >> Mhm. Okay. Yeah. There are a few
+51:14 questions. The first question I see is
+51:16 when to can we register for 2026 batch.
+51:20 The question is about date engineering
+51:21 course. I shared the link. Uh it does
+51:24 say 2025 simply because I did not update
+51:28 the date. So you just sign up for 2025
+51:30 link and it's fine. Um yeah. Um but then
+51:36 we also have a questions to you
+51:37 Danielle. So the question is for a data
+51:40 beginner what works in the field and how
+51:42 to approach um how to even approach
+51:46 doing projects there and I guess you
+51:49 were there a couple of years ago. Um so
+51:52 how did you approach
+51:55 being a beginner and starting to
+51:58 actually um getting things done? Okay.
+52:01 So, yeah, that's a good question, but
+52:03 I'm going to answer it this way. Um, I I
+52:06 borrowed your templates, um, Alexi. Uh,
+52:09 so like I said, a lot of people in
+52:12 astronomy, especially for some of us
+52:13 coming from developing countries, you
+52:15 know, don't even know how to code. So,
+52:17 if you want to do a postgraduate
+52:18 program, that's when the whole coding
+52:20 thing now because scripts in because
+52:21 automatically you need it, but then you
+52:24 don't have enough time to to like learn
+52:27 the skills because remember you're
+52:28 already in the middle of your program.
+52:30 So I I so people that I work with here I
+52:34 I reached out to the bricks astronomy
+52:37 team here. So because astronomy we have
+52:39 the bricks astronomy for the bricks so
+52:41 countries so they have the office. So I
+52:43 I reached out to the league and then I
+52:45 proposed that
+52:48 don't you think we need to organize some
+52:49 sort of um learning um event for young
+52:54 people who are interested in astronomy
+52:56 and he was like okay what do you want? I
+52:58 say yes I know uh this there's a lot of
+53:01 um summer schools but most times the
+53:03 summer schools always center on the
+53:06 physics itself. So even when they are
+53:08 doing the Python
+53:10 >> they have they usually have the
+53:12 especially for developed countries like
+53:13 America or Europe they usually have the
+53:15 notion that you're already very good at
+53:17 programming right so um we started this
+53:21 whole thing I made the first proposal
+53:23 last year I think around um October or
+53:26 so and was like okay this is a good idea
+53:27 we're going to discuss it and then um
+53:30 around um January they would finalize it
+53:33 and say okay a lot of people now came in
+53:36 um we have the institute called idea.
+53:38 They provide a cloud service for
+53:39 astronomy and then the bricks astronomy
+53:42 group and then um other people from
+53:44 India an institute in India. So we have
+53:46 two professors from there who teach um
+53:48 computational astronomy physics. So they
+53:50 were like oh this is a good idea for
+53:52 beginners in astronomy to say so we
+53:54 called it data based astronomy data
+53:57 analytics program. So it's it was a an
+54:00 8x program that is designed for those
+54:04 who are like who have no background in
+54:06 programming. So it's a pure analytics
+54:08 studio come in you learn the process you
+54:10 learn the coding process from Python
+54:12 just beginner level Python and then at
+54:14 the end of the day so we also
+54:16 incorporated like assignment so like I
+54:17 said I borrowed your template so doing
+54:20 this like making sure every week there's
+54:22 always a lecture and then there's also
+54:23 like a presentation hands-on that people
+54:25 need to do and then um at the end of the
+54:28 course there was a project so in the at
+54:33 the beginning of the whole thing we also
+54:34 mentioned that people should share their
+54:36 resources online So I to be honest my
+54:38 LinkedIn that's why I say I don't know
+54:40 how you do this my LinkedIn has been
+54:43 because we had more than 900 people sign
+54:46 up for this program
+54:48 >> shift and then um in the course of this
+54:50 whole thing the video is also there on
+54:51 YouTube
+54:52 >> uh because I was the lead facilitator so
+54:54 you're training people they are learning
+54:56 they come in we also have to do it two
+54:58 two times so morning and evening to just
+55:00 make sure we accommodate people either
+55:01 in the eastern part of the world or the
+55:03 western part of the world so um it was
+55:06 very very successful and they did a
+55:08 project
+55:10 like you know what you're just a
+55:12 beginner yes maybe I encourage the
+55:15 second one even if you just do it in a
+55:16 Jupyter notebook for now in a collab
+55:19 that is sharable I emphasize that they
+55:21 should make sure that they put the whole
+55:22 things in collab because with collab you
+55:24 can share the link people can see
+55:25 exactly what do you even see the result
+55:27 so they did that and they were able to
+55:29 also tell the story taking um astronomy
+55:33 data for those who have astronomy
+55:34 background or if you have so because
+55:36 there were a lot of people who were not
+55:37 like you know amateur astronomers who
+55:40 wanted who signed up for the program
+55:42 because they just wanted to use the
+55:43 opportunity to see how what is happening
+55:45 there. So we had more than 190
+55:49 submissions of project that we had done
+55:51 and a whole lot of them got their
+55:52 certificates at the same time. um you
+55:55 know they shared their learning uh
+55:57 things on on
+55:59 um this program finished in July first
+56:03 around first second week of July and uh
+56:06 about two three people have reached out
+56:08 to say oh they are so happy about this
+56:11 that um it has helped them to even
+56:13 improve their uh what's it called again
+56:16 especially those applying for
+56:17 postgraduate opportunities so you want
+56:21 to also show a form of projects
+56:23 >> that you've done also to demonstrate
+56:24 that you know how to code, you know how
+56:26 to think about solving problems, taking
+56:29 a data, doing analysis and generating
+56:31 results. So some of them did very things
+56:33 that were like I was surprised like how
+56:35 did you guys do come up with these whole
+56:37 ideas. So the thing is
+56:40 >> irrespective of where you are um if
+56:42 you're just starting make sure you learn
+56:44 the basics but while you are learning
+56:46 the basics think about the problems that
+56:48 basics can solve right um if your
+56:51 background let's say your background is
+56:52 finance or your background is economics
+56:55 and you just learn how to maybe use
+56:57 pandas to read a data and you learn how
+57:00 to do basic statistical analysis the
+57:02 next thing should be to find an
+57:04 economics data right you already have
+57:06 some basics economic background use py
+57:08 to do the same thing and share the
+57:10 results. Explain what you have done. It
+57:12 helps a lot. At least people are saying
+57:14 that you have both the technical knowhow
+57:17 in your background. You also have the
+57:18 technical knowhow um I would just say
+57:21 scientific knowhow or knowledge in of
+57:23 your field and you also have the
+57:24 technical knowhow in terms of how to use
+57:26 uh tools to derive um results. So
+57:30 irrespective of where you are just make
+57:32 sure you're doing that. I'm not
+57:34 discouraging Jupyter notebook when you
+57:35 start you can also use Jupyter notebook
+57:37 share make sure the link is shared so
+57:39 that people and put it on collab because
+57:41 with collab people can easily go open it
+57:43 up and they will see what you're doing
+57:46 they just explain the steps that you've
+57:48 taken
+57:48 >> and all that. Yeah.
+57:50 >> Yeah. So basically how to what works in
+57:53 the field and your answer if I may
+57:56 summarize it is first face focus on
+57:59 basic basics for machine learning this
+58:02 uh would be python programming and then
+58:05 do projects and for projects what helps
+58:08 is having some sort of structure so for
+58:10 example this is what we did in our
+58:11 courses so say okay this is what is
+58:14 expected this is the criteria we use for
+58:16 revelating so now for you it's simpler
+58:18 to go ahead and implement the project
+58:20 and this is what you borrowed and this
+58:22 is what you used in your course and you
+58:25 were saying that it works. Students were
+58:27 happy and some of them found new
+58:30 interesting opportunities, right?
+58:31 >> Oh yes, of course. So um because you
+58:33 know this is a system where students are
+58:35 applying for like um um PhD
+58:37 opportunities, masters are coming out.
+58:39 So people are always applying and then
+58:41 you also want to like you know show
+58:43 strong motivation that you have
+58:44 programming skills or this in the area
+58:46 that you're interested in. you've done
+58:48 something already like maybe taking data
+58:51 somewhere and doing physical analysis
+58:52 that shows that you already have a
+58:54 background and um it's um you know they
+58:56 say seeing is believing yeah so
+58:59 communicating astronomy is beautiful I
+59:01 can say I know this but when you now say
+59:03 okay I was able to get this data
+59:04 somewhere and I was able to do this um
+59:06 you know because I was taking the data
+59:08 analysis project becomes like a plus for
+59:10 you as a student
+59:13 >> and then uh the same question actually
+59:15 has two questions the question this the
+59:18 other part is should I focus on data
+59:19 engineering or data science/machine
+59:21 learning what do you think
+59:23 >> uh well uh I'll just say start with data
+59:26 science first data engineering is um
+59:28 it's um it's a bit technical so because
+59:31 you need to understand data itself
+59:33 initially before going to
+59:35 >> because data engineering is more like
+59:37 managing data provisioning data
+59:39 warehousing so understand what data is
+59:42 first
+59:43 >> yeah but also it depends where you start
+59:46 um so if you start as a software
+59:47 engineer then maybe for you data
+59:49 engineering will be easier than machine
+59:51 learning.
+59:52 >> Well, that's true. Yeah, I'm just
+59:54 answering from maybe I don't know the
+59:56 >> like you to yourself four years ago,
+59:59 right?
+1:00:00 >> Yeah.
+1:00:01 >> Okay. Yeah. Uh there's also a question
+1:00:04 about my t-shirt actually install DT
+1:00:07 that.
+1:00:08 >> Yeah, it's a DT. Yeah,
+1:00:12 >> it's a data load tool. DT is one of our
+1:00:15 sponsors. uh they support data dos club
+1:00:18 and with them we did quite a few things
+1:00:21 already so you can go and check our
+1:00:24 YouTube channel for um so they are a
+1:00:27 data engineering tool let's say you have
+1:00:30 some things that are let's say on S3 and
+1:00:34 you want to move them to um bequery you
+1:00:38 can easily use uh data load tool for
+1:00:41 that also doing some transformation and
+1:00:43 so it's a very convenient way to build
+1:00:45 pipelines. So, and because they sponsor
+1:00:49 um our community, they also Berlin
+1:00:52 based, so they gave me this t-shirt and
+1:00:54 I like this t-shirt. It's just a
+1:00:56 coincidence that I wore it for today's
+1:00:57 stream. I sometimes do that. Um but
+1:01:00 yeah, it's a very convenient t-shirt. I
+1:01:03 like it. But yeah, give them a go. And u
+1:01:07 with that, uh we should be actually
+1:01:09 wrapping up. Maybe Daniel, last question
+1:01:11 to you. If anyone wants if anyone wants
+1:01:15 to learn more about um astronomy and
+1:01:20 data science in astronomy. Um you
+1:01:23 mentioned Astropi. Is there any resource
+1:01:27 for learning Astropy?
+1:01:29 >> Oh yes, there's um there's um just
+1:01:31 Google Astrop Astropy Len. Um
+1:01:35 >> Astropy what?
+1:01:36 >> Len
+1:01:38 astropy len. Yeah. So,
+1:01:41 >> there's a couple of tutorials on on it.
+1:01:45 You will see how to get
+1:01:46 >> I cannot quickly find it. Maybe
+1:01:51 >> Yeah. Astropy.
+1:01:52 >> Yeah. So, um let me len.org.
+1:01:56 I'm sending it now.
+1:01:57 >> Learn. Okay.
+1:02:02 >> Yes.
+1:02:03 >> Okay. Please send it because like
+1:02:05 doesn't load for me.
+1:02:07 >> Okay. Sent it in the chat. It's
+1:02:09 that.org. Sorry, I wrote home
+1:02:13 or
+1:02:15 let me Yeah,
+1:02:17 I'm going to share it in live chat.
+1:02:22 Okay.
+1:02:26 Okay, I share it. Okay, Daniel, thanks a
+1:02:29 lot for joining us today, for sharing
+1:02:31 your story. Um, I'm pretty sure it
+1:02:33 motivated and will motivate a lot of
+1:02:35 people cuz I also want to use your story
+1:02:37 as an example why they should uh share
+1:02:40 what they learn in public. So, thanks a
+1:02:42 lot for uh joining us today and for
+1:02:46 talking about astronomy, machine
+1:02:48 learning and how um you liked our
+1:02:51 courses. Thanks a lot.
+1:02:52 >> Yeah, sure. Thank you too, Alex, for um
+1:02:55 like I say pulling all that courses for
+1:02:57 free is not easy. And I hope um are you
+1:02:59 able to get sponsors for the next MLOps
+1:03:01 camp because I was worried when you said
+1:03:04 oh it's going to be the last if you
+1:03:06 don't get any sponsor because I think
+1:03:07 that course is very very essential
+1:03:08 especially for anybody that wants to do
+1:03:10 AI LLM related stuff because if you
+1:03:13 don't understand the whole concept
+1:03:14 around MLOps
+1:03:16 ah you're going to struggle with
+1:03:18 >> the MLOps um it's sad that I cannot find
+1:03:22 any sponsors because all the companies
+1:03:25 that were doing MLOps uh They're now
+1:03:28 focusing on more more on AI products
+1:03:30 because this is their the high pace
+1:03:32 right now. This is where the investor
+1:03:34 money is. So many companies are focusing
+1:03:38 on this side
+1:03:39 >> which means that for MLOps they don't
+1:03:41 have any marketing budget and yeah
+1:03:44 >> I I do understand
+1:03:47 the LLM ops 2 is there for people to
+1:03:50 >> to catch up to. Yeah
+1:03:52 >> but let's see maybe things will change.
+1:03:54 I will continue reaching out to sponsors
+1:03:56 even though I said it probably would be
+1:03:58 the last one but if some of them says
+1:04:00 okay now we actually want to support the
+1:04:04 course we'll just run it again and
+1:04:06 probably update a few things so let's
+1:04:08 see what happens
+1:04:09 >> and final word is for those listening
+1:04:10 please the resources is freely available
+1:04:12 on YouTube even if you don't have the
+1:04:14 next one just go there because I usually
+1:04:16 go there and consulting time intervals
+1:04:18 just go there you should bookmark it I
+1:04:21 don't know if it's what it's called in
+1:04:22 YouTube make sure you save them
+1:04:24 something that you can always go to GR
+1:04:25 because the resources are freely
+1:04:26 available and the tools are not
+1:04:29 necessarily changing because they are
+1:04:30 still there um they are not outdated.
+1:04:33 >> Yeah.
+1:04:33 >> Yeah. We are not going to remove any
+1:04:35 content. So the envelopes course is
+1:04:37 going to stay on GitHub regardless of
+1:04:39 whether we will find sponsors or not.
+1:04:41 All the content will stay there. So you
+1:04:43 can just watch uh the videos when you
+1:04:46 want.
+1:04:48 Okay, that's it. Thanks everyone for
+1:04:51 joining us today and thanks Danielle.
+1:04:55 [Music]

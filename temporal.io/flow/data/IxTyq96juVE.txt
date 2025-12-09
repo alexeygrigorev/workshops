@@ -1,0 +1,1589 @@
+DataTalks.Club Behind the Scenes
+
+0:01 [Music]
+0:09 welcome to another session of uh data
+0:12 podcast well it's a bit unusual today
+0:14 well alexis is here i'm here but in
+0:17 instead of alexa hosting the podcast
+0:19 this time i'm going to be
+0:21 hosting it and i'm going to be grilling
+0:22 him with questions
+0:24 so a bit about alex and i we've known
+0:26 each other for about
+0:27 i don't know how long has it been like
+0:28 say a year or two
+0:30 yeah like something between that
+0:33 yeah i think we met a long time ago i
+0:35 don't know how uh but we started
+0:37 chatting and since then we've been
+0:38 chatting every other month
+0:40 and
+0:41 through that i think
+0:43 i've seen how alexa has come to me the
+0:46 crazy idea of wanting to start his
+0:48 community
+0:50 i thought he was crazy and i was like
+0:51 wow that's a lot of work and i've seen
+0:53 him really grown into
+0:54 the crazy amazing communities today and
+0:58 i have always had a lot of questions for
+0:59 him so today i'm going to be taking my
+1:01 chance
+1:02 uh but first let us try to learn more
+1:05 about alexey the person the person he is
+1:08 at work
+1:09 um so alexis in 2010
+1:12 you graduated with a degree in
+1:14 information technology and became a
+1:16 software engineer mostly focused on java
+1:18 so fast forward more than 10 years later
+1:20 you're now a principal data scientist at
+1:22 olx
+1:23 how did that
+1:24 happen
+1:26 yeah so that's a
+1:28 long story so i don't know how i can
+1:30 compress 10 years into
+1:32 i'll try to be short because actually
+1:34 eugene interviewed me
+1:36 half a year ago or something like that
+1:38 so there is a long article that you also
+1:40 published on top of data science right
+1:43 so if you want to have to know a longer
+1:45 version of that you can go check the
+1:47 article
+1:48 um
+1:49 but yeah so
+1:51 my background yeah java development and
+1:54 then i was doing that for a couple of
+1:56 years
+1:57 and
+1:59 then
+2:01 one day i came across this website that
+2:03 is called coursera maybe some of you
+2:05 heard about this and on this website
+2:08 there was a course called machine
+2:09 learning and then i watched that course
+2:11 it was by andrew eng
+2:13 from stanford and then i really loved it
+2:15 and then i thought okay i think i'm
+2:17 wasting my time doing this java stuff
+2:20 i should do something else i should
+2:22 actually use some of the math skills i
+2:24 picked up at university
+2:26 in
+2:28 and do this do this kind of stuff
+2:31 so then i started doing more courses
+2:34 and then i thought then i started
+2:36 interviewing with companies and then
+2:38 they said
+2:39 yeah you know you don't have enough
+2:41 experience enough education so then what
+2:43 i did is i
+2:45 joined a masters and then at the same
+2:47 time i started freelancing
+2:49 and then with freelancing
+2:51 it was actually very easy to start
+2:53 freelancing i was surprised
+2:56 by that and then fast forward two years
+2:58 i got a portfolio good portfolio with my
+3:00 freelance projects with my master's
+3:04 degree master's diploma thesis
+3:07 and that was enough to get a job then
+3:09 since then i'm doing data science
+3:11 full-time
+3:13 yeah engineering in my engineering
+3:15 background was very helpful
+3:17 in getting my first job as a data
+3:19 scientist
+3:20 and then at the second company i where i
+3:24 worked i focused more on actually
+3:26 engineering things on setting up the
+3:28 infrastructure doing taking care of all
+3:30 these data pipelines
+3:32 and all that
+3:35 because there was nobody else who wanted
+3:37 to do that and i thought okay maybe that
+3:39 would be me who takes care of that and
+3:41 it worked out really well because back
+3:44 then and they think this is still true
+3:45 today
+3:46 companies really value this kind of
+3:48 experience so a lot of people who took
+3:51 the courses they know how to train a
+3:53 model in a jupiter notebook
+3:55 but what's after that like how can you
+3:58 deploy these things
+3:59 and or how do you like before that how
+4:02 do you can you work on data pipelines
+4:04 and then having this experience
+4:06 uh that i got at the startup really
+4:08 helped me in basically every every place
+4:11 every place where i interviewed everyone
+4:13 was interested in that
+4:15 yeah and so this experience as a startup
+4:18 doing a bit of everything was also very
+4:20 helpful uh
+4:22 in corporate environment so leaks now
+4:24 where i work is more like a corporation
+4:26 than a startup i've been with elix for
+4:29 more than three years so i joined as a
+4:31 senior data scientist
+4:34 and
+4:34 yeah i think i was doing a pretty good
+4:36 job because i got promoted two times
+4:38 there
+4:39 so my manager noticed
+4:41 so i have a very good manager who
+4:43 noticed that uh
+4:45 all my effort and uh i got a few promos
+4:48 and
+4:49 yeah i guess that's it condensed like 10
+4:52 years of experience condensed into a
+4:54 couple of minutes
+4:56 nice thank you for sharing us sharing
+4:58 that with us i mean do you have any
+4:59 lessons from from from your experience
+5:01 so far to what have you got so what so
+5:04 far
+5:05 yeah maybe not
+5:07 lessons
+5:08 is maybe advice is to try to
+5:14 you don't have to stay
+5:16 within your comfort zone right so try to
+5:19 step outside of your responsibilities so
+5:22 this is what i did with uh what we said
+5:25 in data pipelines and uh what not
+5:27 and that really helped so this opened
+5:31 um
+5:32 the door to many many opportunities so i
+5:34 think that's one thing and then another
+5:36 thing is it's very similar so
+5:40 it's not only about technology it's not
+5:41 only about engineering so also try to
+5:44 get into product development try to
+5:46 understand
+5:48 try to learn from your product manager
+5:50 because they're there for a reason right
+5:52 so they are making sure that we as a
+5:54 team are working on the right thing so
+5:56 try to learn from them so i did these
+5:58 two things um and that was quite helpful
+6:01 in my career
+6:02 so maybe that and one another lesson
+6:05 that may be something that they learned
+6:07 the hard way is don't chase the
+6:10 exciting things
+6:11 like if there is a neural network that
+6:14 can do amazing things it doesn't mean
+6:15 that you need
+6:17 that network for your business problem
+6:20 probably like uh
+6:22 a couple of statements will be enough or
+6:24 a logistic regression or something like
+6:25 that
+6:27 cool um so thank you for that alexa so i
+6:30 think
+6:30 one other question um so you know you
+6:33 share with us about all the technical
+6:34 stuff that uh that you did uh early in
+6:37 your career but now that you're a
+6:39 principal data scientist now yeah you're
+6:40 somewhat more senior can you share a bit
+6:42 about what do you do uh in your work i
+6:45 guess this is a question for people out
+6:47 there who are thinking you know what do
+6:48 actually senior data scientists do or
+6:50 principal data scientists what do they
+6:51 do
+6:52 yeah so you can think of me as
+6:55 an internal consultant so we have a lot
+6:58 of teams at alex who work on different
+7:00 things so we have a team that works on
+7:02 moderation we have a team that works on
+7:04 search and recommendation we have a team
+7:06 that works on uh
+7:08 um
+7:09 like other things so we have like
+7:12 six teams or something like this
+7:14 and
+7:16 i'm like a consultant to this team so i
+7:18 don't belong to any particular team but
+7:20 more like if somebody needs help with
+7:22 something i come there and help usually
+7:24 this is about
+7:27 let's say somebody comes up with a model
+7:30 and now they want to find out what's the
+7:31 best way of deploying this model
+7:34 or before that
+7:36 like before even we start working on a
+7:39 project
+7:40 sometimes product managers reach out to
+7:42 me saying hey can you help us figure out
+7:44 if machine learning actually is needed
+7:46 here or how would you go about using
+7:48 machine learning here what kind of data
+7:50 we need so i'm doing a lot of
+7:53 consultancy sort of and then also
+7:55 coordinating and alignment because i
+7:58 don't belong to any particular team i
+8:00 can see what other teams are working on
+8:03 i can i know what kind of projects they
+8:05 work on and when a new project starts i
+8:08 can say wait a minute this looks similar
+8:10 to what the other team did one year ago
+8:12 go talk to them so
+8:14 i
+8:17 need to do this kind of thing
+8:19 quite often uh saying they talk to this
+8:22 team or talk to that team
+8:24 and then also maybe last bit is um
+8:27 like taking part in architectural
+8:29 discussions
+8:31 or
+8:31 making technical decisions that affect
+8:33 many teams like uh
+8:35 how do we standardize the way we are
+8:37 doing data science like
+8:39 even things like what kind of package
+8:41 manager we use so it's uniform across
+8:43 all the aims
+8:45 so
+8:46 yeah and also maybe
+8:48 one last aspect is mentoring and
+8:50 education
+8:52 i'm doing courses for example one of the
+8:54 last course i
+8:56 did was machine learning for product
+8:58 managers
+8:59 to tell them
+9:01 why
+9:02 we need machine learning what is
+9:03 possible to do with machine learning and
+9:05 things like that
+9:07 and then also mentoring people like
+9:08 let's say we have an analyst who wants
+9:11 to become a data scientist what do they
+9:13 need to do
+9:14 to make the transition or there is a
+9:16 data engineer who wants to become a
+9:18 machine learning engineer
+9:20 or sometimes
+9:21 a couple of years ago we had this
+9:22 discussion
+9:23 um like who is it who is the machine
+9:26 engineer what kind of responsibilities
+9:27 they have and then sitting there with
+9:29 other teams and then defining these
+9:31 responsibilities that's also something i
+9:34 i do
+9:36 oh that's very high leverage work i mean
+9:38 getting teams to talk to each other to
+9:39 make sure that they don't reinvent the
+9:41 wheel
+9:41 removing unnecessary work and also
+9:43 educating people
+9:45 and you know creating courses and i can
+9:47 sort of see where the motivation comes
+9:50 to start data talks club
+9:52 so i remember more than a year ago at
+9:55 the end of 2020 i think alexis mentioned
+9:57 this idea of building a community and
+9:59 that turned out to be 20 talks club and
+10:01 now data talks club i think now we have
+10:03 almost nine thousand or is it ten
+10:04 thousand already it's almost
+10:06 almost ten yeah so that's pretty crazy
+10:09 can you take us back to the very
+10:10 beginning what gave you this idea
+10:13 yeah so
+10:15 when i started even before i started my
+10:17 career even before i had my first
+10:19 computer
+10:20 communities were already like a part of
+10:22 my life so i was interested in
+10:25 programming
+10:27 and then yeah actually i did have a
+10:29 computer but i didn't have internet so i
+10:31 was i became interested in programming i
+10:34 had delphi borla delphi this is like a
+10:37 programming language which is based on
+10:38 pascal
+10:40 and yeah i needed to do some stuff there
+10:43 but without internet it's very difficult
+10:45 uh the help
+10:47 you know when you press f1 there's this
+10:49 help thing it wasn't super helpful and
+10:52 it also was in english and i didn't
+10:53 speak english that well back then
+10:56 so i had to rely on
+10:57 others to help me with that and for me
+11:00 it was a community so i found forums
+11:03 online forums where developers who
+11:06 liked delphi
+11:08 when they were where they were hanging
+11:10 out
+11:11 and i had to to go actually to go to my
+11:13 mom's place or my father's place
+11:16 uh to access the internet so i would go
+11:18 there and then ask for advice and then
+11:21 sometimes
+11:22 after a couple of months like after half
+11:24 a year i would also jump in and answer
+11:27 questions so that was great
+11:29 so when i was at university when i
+11:31 already have had access to internet i
+11:34 was a part of many different online
+11:35 communities not only
+11:38 development related but also like some
+11:39 hobbies i was into bootleg music so this
+11:42 is like when you go to a concert like a
+11:45 metal band concert and you film the
+11:47 concert and then you exchange with other
+11:49 enthusiasts
+11:51 yeah so that was uh
+11:54 so i i was really into this online
+11:56 communities
+11:57 and then i became a java developer
+12:00 the first thing i did i registered at
+12:02 java talks which was a
+12:05 online community for people who are java
+12:08 developers and this is actually where
+12:09 the name comes from for from for a data
+12:11 talk
+12:12 yeah
+12:13 yeah so i i was
+12:16 inspired by that name
+12:18 and i just started answering questions
+12:20 there in that community and then after a
+12:22 couple of months people thought that i'm
+12:24 super experienced person who knows
+12:26 everything i wasn't i was a junior i had
+12:28 no clue what i was talking about
+12:30 but in people's mind minds i was
+12:34 you know somebody who knows an answer to
+12:36 everything and that was a really nice
+12:38 experience so and then the same story
+12:41 happened when i decided to come to
+12:43 switch from java development to data
+12:45 science i joined a couple of online
+12:47 communities and i started
+12:49 i tried answering questions there and
+12:52 that helped also to get
+12:55 you know to know things to see what
+12:57 doesn't work for people where they get
+12:59 stuck what they need help with
+13:01 and then doing some research and then
+13:03 putting an answer
+13:05 there
+13:07 and yeah so for me communities were a
+13:09 big part of my life
+13:12 and then at some point i was
+13:14 like in 2020 i was quite active on
+13:17 linkedin i was i would do a post every
+13:19 day um with you know different career
+13:22 advice uh like daliana is doing right
+13:25 now um so i was doing that sort of thing
+13:28 and um i was getting a lot of questions
+13:31 in
+13:32 direct messages on linkedin where people
+13:34 would say hey i have this situation can
+13:36 you help me or i have that situation can
+13:39 you help me
+13:40 um i was also doing some career
+13:42 consultation so i would have like a
+13:44 30 minutes zoom call with people also
+13:47 they would ask me different questions
+13:51 funny thing is sometimes people would
+13:53 come to me and say hey i'm a qa engineer
+13:55 how do i switch to
+13:56 let's say product management i have no
+13:58 idea right i am not a qa engineer i
+14:01 don't know anything about product
+14:02 management but the final thing uh is
+14:05 that i was able to actually help them by
+14:07 just listening and asking hey but what
+14:09 do you like more
+14:11 and then so people would just talk and
+14:13 then you know this rubber duck thing
+14:15 you just need to talk to somebody to to
+14:18 make a decision
+14:19 and then yeah so i was doing that for
+14:22 a couple of months and then i thought
+14:23 okay would be nice to first
+14:26 all these direct messages i get from
+14:28 linkedin to somehow
+14:31 scale that because it wasn't easy to
+14:33 answer each and every one
+14:35 and then the second thing was all these
+14:38 uh
+14:39 consultation goals that i had like how
+14:41 about putting all these people together
+14:43 in some place
+14:44 and
+14:45 having them to talk to each other
+14:47 and this uh
+14:49 is how
+14:50 data talks club for the idea for data
+14:52 docs club appeared so i thought they
+14:54 they need a place to to hang out
+14:56 together i
+14:59 woke up i went to go daddy i registered
+15:02 the domain there it took i don't know 10
+15:04 minutes then i went to mailchimp i set
+15:06 up a landing page it also took like 10
+15:08 minutes and then i put this link to a
+15:10 few places mostly github so i put it on
+15:14 my github account
+15:16 and then when people would reach out to
+15:18 me i say i would say here is this
+15:20 community you can actually not only ask
+15:23 me a question but also get an answer
+15:25 from others to join it and then people
+15:28 would
+15:29 like would damn me and then i would
+15:30 reply with that and b they would just
+15:33 stumble uh
+15:34 upon my
+15:35 github and then find a link there and
+15:37 also join
+15:39 and
+15:41 yeah and it got some traction
+15:43 people like i started talking to people
+15:45 i started to
+15:47 ask them different questions hey what do
+15:49 you do why did you join what brought you
+15:51 here
+15:52 um
+15:53 then yeah it was going quite well and
+15:55 then we had the first event um
+15:57 which attracted also quite a few people
+16:00 and then i will also uh you probably
+16:02 know the materials from envelopes
+16:04 envelopes community they have a podcast
+16:07 and i was a guest on his podcast nah
+16:10 and i really liked the format so the way
+16:13 he invited people and then
+16:16 basically what we are doing right now
+16:17 right so we are having an interview but
+16:20 it's live
+16:21 so people can join ask questions
+16:24 and then it is recorded and released as
+16:26 a podcast
+16:28 so i really like that format and
+16:32 yeah i decided to try something similar
+16:35 and yeah this is how it started
+16:38 you recall i recall you shared some
+16:40 statistics with me at beyond right i
+16:42 think like
+16:42 first mother the growth was clean after
+16:44 the six months i mean what happened
+16:47 could you refresh your memory about how
+16:54 yeah i don't remember the numbers
+16:57 so i think uh
+16:59 like the first year by the end of 2020
+17:03 um we had like
+17:06 500 people
+17:08 um wow
+17:10 by the end of 2021 it was
+17:14 9 000. so yeah
+17:17 but mostly like it what i did the first
+17:19 month um i think i i sat here i told you
+17:23 that i was um
+17:25 welcoming everyone in the community i
+17:27 was trying to get to know them i was
+17:29 trying to ask uh what brought them here
+17:33 and
+17:35 trying to learn what kind of problems
+17:36 they have
+17:38 and
+17:39 what people are interested in
+17:41 and what i can do to solve their
+17:43 problems so this is what i was doing the
+17:45 first month um so welcoming people
+17:48 trying to understand what kind of
+17:50 programs they have
+17:52 and then um
+17:53 that actually doesn't scale well when
+17:55 more people join at some point i just
+17:57 stopped doing that because like when uh
+18:00 three four people join per day i can do
+18:02 that but when 10 people or 20 people
+18:05 join per day that's not possible to
+18:08 to welcome everyone and ask them
+18:11 these questions and then
+18:13 the first quarter
+18:16 we started events so a friend of mine he
+18:18 asked me if i know a place where he can
+18:21 give a talk
+18:23 and i said yeah actually you know what
+18:25 there is a place where you can do that
+18:27 there's a place now
+18:28 yeah
+18:30 i think eugenie also attended that event
+18:33 it was about sage maker
+18:35 deploying models with stage maker right
+18:37 it was from dmitry
+18:39 um that was the first event and like 70
+18:41 people or something like that joined the
+18:43 first event i thought wow so cool i
+18:46 should do more of that
+18:48 actually the second event was like 20
+18:50 the 31 was like 10. so i think it's just
+18:53 you know the excitement of something new
+18:55 so that excitement gradually went down
+18:58 and then it
+19:00 i think around 20 people is
+19:02 the
+19:04 um
+19:05 the usual attendance i would say
+19:07 so 70 is very it's more like an outlier
+19:11 uh yeah so this is when i started
+19:14 actively announcing that we have events
+19:16 that we have this awesome community i
+19:18 was creating linkedin posts so before i
+19:21 was like in more in the stealth mode
+19:24 but then this is where we went live
+19:26 and then in first six months so
+19:30 we experimented with different
+19:31 activities
+19:33 like this book of the week
+19:35 thing when we invite book authors and
+19:38 ask them questions about their books
+19:40 um so i took this idea from a forum
+19:43 called
+19:45 called javarange so they used to do
+19:47 something similar so i thought it would
+19:49 be cool to do
+19:50 something like that in data docslab as
+19:52 well
+19:53 then yeah we started the podcast
+19:56 and then at some point even a conference
+19:58 we did a small conference i think you
+20:00 also were a speaker there on that
+20:02 conference one year ago
+20:05 yeah that attracted quite a few people i
+20:07 think this is how it started so after
+20:09 that conference i think more than 1 000
+20:12 people
+20:13 joined the community
+20:14 and then gradually now by the end of
+20:17 this year it reached
+20:20 yeah
+20:20 nine thousand was almost 10 yeah yeah
+20:24 so i recall uh
+20:26 so i i recall the first time uh that i
+20:28 really got a shock was man alexey
+20:30 invited me to share on data talks club
+20:32 right
+20:33 okay what's data talking about
+20:35 you learn more about it and that's when
+20:37 i realized that alexa was actually
+20:39 putting out two videos or podcasts a
+20:42 week
+20:43 uh that's a lot of work i mean on top of
+20:45 a full-time job at orax i was wondering
+20:48 uh could you share with us how do you do
+20:50 it how do you sustain were there times
+20:52 that you actually felt like skipping for
+20:54 a week
+20:56 yeah there were times what helped
+20:57 actually with not skipping is
+21:00 planning in advance so i would uh sit
+21:04 right now for example and plan one month
+21:06 in advance
+21:07 and then i would announce this and once
+21:09 it's announced it's very hard to skip
+21:11 right because already people signed up
+21:13 they expect me to show up uh and then of
+21:16 course there is a guest who comes uh
+21:19 yeah so there is no way uh for skipping
+21:22 after it announced so i tried to do this
+21:25 like uh for
+21:26 a month in advance so that really helps
+21:29 to
+21:31 to sustain
+21:33 that
+21:34 um
+21:36 yeah and the the way it works yeah so i
+21:38 need to reach out to people
+21:40 um asking hey we have this
+21:43 great community we have weekly events do
+21:45 you want to speak at our event or be a
+21:48 guest to our podcast
+21:49 um only half maybe answer and
+21:53 out of this half maybe you a half say
+21:55 yes so um yeah it's uh
+21:59 it's not always easy to find speakers
+22:01 um what i found helpful is when i ask
+22:04 somebody for a recommendation
+22:06 i ask hey do you know somebody who can
+22:08 speak at our event
+22:11 and then when i reach out i say uh
+22:14 person x recommended to reach out to you
+22:16 and they said that you would be
+22:18 interested in speaking well what do you
+22:19 think about that and that increases uh
+22:22 chances of getting a positive answer
+22:25 a lot
+22:26 yeah so with webinars it's easier so
+22:28 usually there is not so much preparation
+22:30 on my site i usually the guest
+22:34 the speaker takes uh like it's mostly on
+22:37 them to prepare so i only need to get
+22:39 like i tell the description
+22:41 um it's a
+22:43 biography
+22:44 like a picture so that's not easy oh
+22:47 that's not difficult for me to prepare
+22:49 for that
+22:51 with podcasts it's a bit trickier
+22:52 because i actually need to do some
+22:54 research
+22:55 um
+22:55 [Music]
+22:56 put together so it's usually there is a
+22:58 topic
+23:00 so first of all i need to know what kind
+23:02 of things i can ask this person so then
+23:04 i need to do some research look at the
+23:06 internet footprint of this person see
+23:08 what they usually talk about
+23:10 or ask them hey what do you want to talk
+23:12 about but when i do this they say oh i
+23:15 don't know what do you want to ask me
+23:17 and then yeah i usually need to do some
+23:19 research and then come together a list
+23:21 of questions
+23:22 then i sent this doc to a guest so then
+23:24 the guest says okay yes i can answer
+23:26 this this and this question but you
+23:28 don't like this question let's remove
+23:30 that so we do like a couple of
+23:31 iterations and once they are comfortable
+23:34 with the questions then we make an
+23:35 announcement so there is
+23:38 like
+23:39 some time to prepare in for podcasts but
+23:42 i actually enjoyed doing that quite a
+23:44 lot so doing some research and preparing
+23:46 these questions
+23:49 and then after that i announced it on a
+23:51 couple of platforms so we use eventbrite
+23:53 even bright we use meetup so i'm making
+23:56 some announcements there
+23:58 um
+23:59 and i use
+24:01 automation tools like zapier so it's
+24:04 like
+24:05 the moment i post something on
+24:07 evanbright then it posts a link to
+24:11 slack it posts a link to twitter it
+24:13 posts a link to linkedin and it really
+24:15 helps me with a lot of routine stuff
+24:18 so that's that's helpful um
+24:22 so that's a bit easier for me to manage
+24:24 these things so that's another reason
+24:26 how i sustain doing this because i rely
+24:28 on tools like zapier to make my life
+24:31 easier
+24:32 um
+24:33 yeah i guess that's uh that's a summary
+24:38 that's really cool in how you use your
+24:40 ability to
+24:41 as an engineer to try to automate stuff
+24:43 and try to make it easier
+24:44 for you talk stuff there's just a lot of
+24:47 different kind of talks right i think i
+24:49 was looking at it there's
+24:50 open source spotlight there's minis um
+24:52 there's no book of the book of the week
+24:55 what are all these different talks about
+24:56 and what do you hope to achieve from
+24:58 each type of talk
+25:01 yeah so indeed
+25:04 so
+25:04 let's start with open source spotlight
+25:06 so open source spotlight is as name
+25:09 suggests it gives spotlight to open
+25:11 source projects
+25:13 so we
+25:14 invite open source authors to talk about
+25:17 the tools the tools they are building
+25:20 um
+25:21 so this is something i'm doing more like
+25:22 on a background i don't think i ever
+25:25 announced that thing that hey we're
+25:27 doing this thing just one day
+25:29 a video like that appeared
+25:32 it was actually
+25:33 you probably know neil latia because he
+25:35 also interviewed him yeah so he is doing
+25:38 a model store um he
+25:40 this is like a model store uh
+25:43 open source framework for storing your
+25:46 models so i interviewed him once and i
+25:49 like this format
+25:51 of talking to open source authors
+25:53 and then i reached out to more and more
+25:55 people with that
+25:57 so i even though i haven't announced so
+25:59 these videos are published to our
+26:02 youtube channel so some people
+26:04 uh watched it so what i want to do there
+26:07 is i want to create a page on our
+26:09 website that is called tools and all
+26:11 these interviews all these open source
+26:13 tools will end up there on
+26:16 on data talks clubs website
+26:19 so actually by the way we are now i'm
+26:21 working on creating a new design for the
+26:24 for the website so this new design will
+26:26 already have this tools page
+26:28 so that's open source spotlight then we
+26:30 have
+26:31 you mentioned i think minis right so
+26:33 minis is something that when i was on
+26:36 vacation so i was preparing to go on
+26:38 vacation for one month and i thought
+26:40 okay like it's not a good idea to
+26:44 not have any activity on the youtube
+26:46 channel or in the community for one
+26:48 month
+26:49 so what can i do to actually to have
+26:52 some activity there to have people in
+26:53 the community
+26:55 entertained
+26:57 so yeah i thought
+26:59 let me reach out to a few people who are
+27:02 active in the community
+27:04 and ask them about some stuff some
+27:06 things
+27:08 for 10-15 minutes
+27:10 and that was the idea of minis so i
+27:12 reached out to a couple of people
+27:14 we recorded that
+27:16 and then every week of my vacation
+27:19 during the time when we usually have a
+27:21 webinar i would release this video so to
+27:24 keep the channel active
+27:26 and that was only for one month i really
+27:28 loved i really liked the format
+27:31 but given the amount of other activities
+27:33 i'm doing it's just difficult to to also
+27:36 add that so for now there are no minis
+27:39 anymore
+27:40 but yeah maybe one day we'll come back
+27:42 to that
+27:43 and have more of that because i really
+27:45 like the format then it's small and
+27:47 focused
+27:48 unlike this one which is long and not
+27:50 focused
+27:51 yeah i know
+27:52 it's great actually these all these
+27:54 different ideas came out uh just out of
+27:56 necessity right it's not something that
+27:58 was planned
+27:59 okay last last question about the
+28:01 community before i want to ask you about
+28:03 your book
+28:04 um so what are some of the most popular
+28:06 talks or guests you had and not
+28:08 considering engagement well you're some
+28:09 of your favorites
+28:11 yeah so there are very popular as
+28:14 popular
+28:15 well known yes so martin klepman who is
+28:19 the author of designing data intensive
+28:21 applications so he was doing amma in our
+28:24 slack community
+28:26 so probably that was the most famous
+28:28 person we had and
+28:30 of course like i put an announcement in
+28:32 reddit and it had like 100 likes in uh
+28:35 one hour or something like this like
+28:37 people really like that brought quite a
+28:39 few people to the community
+28:42 so that was very well received and then
+28:44 uh like i after that i compiled on all
+28:47 his answers and also published them as a
+28:49 web page and also generated some some
+28:52 attention
+28:53 then another famous guest i don't know
+28:55 if he considers himself famous you
+28:57 probably know him it's santiago from who
+29:00 is
+29:00 who has quite a lot of followers on
+29:02 twitter
+29:03 um more than
+29:05 100 000 right now
+29:07 so i would qualify him as as famous
+29:11 because that's quite a following that he
+29:13 has on twitter
+29:14 so i had him as a guest
+29:17 he was talking about his transition from
+29:19 software engineering to machine learning
+29:23 then
+29:25 yeah
+29:26 another talk that was very well received
+29:29 uh
+29:30 uh from elena elena samuilova she was
+29:33 talking about how your machine learning
+29:35 learning project would fail so it was
+29:37 also a talk that she gave during the
+29:39 conference in this conference one year
+29:41 ago
+29:42 and it got quite a lot of attention like
+29:44 it has more than 1 000 views
+29:48 um so that was quite
+29:50 a good talk the talk was good and it
+29:52 also received a lot of a lot of
+29:54 attention
+29:55 and then you also asked about
+29:57 things that didn't get a lot of
+29:59 engagement but more like my favorites
+30:02 so there are two talks that i really
+30:04 loved i really loved these topics and
+30:07 my interview with the guests and these
+30:09 are the least popular topics uh the
+30:12 least popular episodes of the data talks
+30:15 club podcast i don't know why they were
+30:18 really good in my opinion so the first
+30:20 one
+30:21 was about development advocacy for data
+30:25 science from ellie o'brien
+30:27 o'brien
+30:29 yeah i guess
+30:30 people are not so much into deaf
+30:33 advocacy in the community but the talk
+30:35 was very nice
+30:37 and the second
+30:38 least popular talk was from dimitrius
+30:41 from the melops community about
+30:43 community building so i guess it's also
+30:45 kind of
+30:46 off topic for data talks club oh yeah so
+30:50 these two events they were quite good so
+30:53 i really love i really like the topics
+30:56 uh i really like the i liked the guests
+30:59 so it was quite an engaging conversation
+31:02 but yeah i don't think these two podcast
+31:05 episodes got
+31:06 enough attention
+31:07 uh i suspect that both of these uh
+31:10 topics are a bit off topic for
+31:12 uh data talks club um
+31:16 your audience probably more data exactly
+31:18 exactly but i really loved them
+31:20 personally because this is something
+31:22 that i'm interested in like
+31:24 for example talking to the mattress
+31:26 about community building
+31:27 most of these things that he shared with
+31:29 me i could apply immediately
+31:32 for data talks club so that was useful
+31:34 for me personally
+31:37 okay yes one last question uh and i know
+31:39 we are coming out on time but one last
+31:41 question before i have a lot of
+31:42 questions to ask you about your book uh
+31:44 i know you've been trying to monetize
+31:46 the community you know with the main
+31:47 goal of making the community more
+31:48 self-sufficient
+31:50 uh you know maybe hiring more people
+31:51 making it less reliant on you so that
+31:54 you can go on vacation and data club can
+31:56 still continue uh can you share how
+31:58 that's going uh how can people support
+32:00 their talks club
+32:02 yeah
+32:03 i i'm thinking about the word monetize
+32:06 if i like it or not because there is a
+32:09 bit of a negative sentiment to me about
+32:11 this
+32:12 i don't know why
+32:14 but yeah the idea is to
+32:17 earn some money with the work i'm doing
+32:19 so
+32:20 mostly
+32:22 for me i was spending money on the
+32:24 community
+32:25 uh so i actually spent around
+32:28 500 euros per month
+32:30 wow that's alive that's uh yeah so
+32:33 that's all i have for a good salary but
+32:35 yeah that's a couple thousand a year
+32:37 that's a lot yeah that's a lot
+32:39 um so
+32:40 for me like i like doing this but
+32:43 getting some of this money back would be
+32:45 nice so and i was thinking how can i
+32:48 actually
+32:49 do that how can i start earning some
+32:51 money
+32:52 and then the second thing is
+32:55 yeah like you said i'm
+32:58 it would be nice to
+33:00 for me to be able to offload some of the
+33:02 things i'm doing to
+33:04 to hire somebody to do some of the
+33:06 things there are a lot of routine and
+33:08 mundane tasks like setting up all these
+33:10 events
+33:12 that could be
+33:14 delegated to somebody
+33:16 if i had money for that because i think
+33:18 500 euros is already quite a lot to
+33:21 spend even more on top of that yeah so
+33:23 for the last six months i've been
+33:26 talking to
+33:28 different companies and then i was
+33:29 asking them hey do you would you like to
+33:31 support the community
+33:33 um
+33:34 and it was it is very difficult for me
+33:37 so i'm more like i consider myself an
+33:39 engineer
+33:40 um
+33:42 so i don't have this
+33:44 how to say sales uh
+33:46 mindset so for me it's very difficult to
+33:48 sell so to sell it's very unnatural to
+33:50 me so i'm more used to
+33:53 sitting in front of a computer and
+33:55 coding something rather than talking to
+33:57 people and then
+34:00 convincing them to
+34:02 to give me some money that was
+34:04 that is very difficult to me
+34:07 yeah so so far it wasn't very fruitful
+34:12 i'm learning a lot so i'm taking courses
+34:14 about sales i don't know if they are
+34:16 helpful
+34:17 uh let's see
+34:19 yeah
+34:21 i did find a few
+34:23 uh sponsors um there was one um
+34:28 so the one person wanted to advertise an
+34:30 event so they paid me some money so they
+34:33 advertised this event through the
+34:34 newsletter
+34:36 and
+34:37 i don't think people actually engaged
+34:39 with this link at all so it was very few
+34:42 registrations
+34:44 so it was
+34:45 super low engagement the event was
+34:47 actually good i don't know why um
+34:49 and that person said okay yeah like the
+34:52 it's just not uh
+34:54 um
+34:55 how to say like uh it's not bringing any
+34:58 value so the return on investment is
+35:00 very bad
+35:01 well but he paid me money so that was
+35:03 already good
+35:05 then another one was from topcoder so
+35:08 you know this topcoder they host data
+35:10 science competitions as well so at the
+35:12 end of like it was less than one month
+35:14 ago i think so they also gave me some
+35:17 money to advertise a competition they
+35:19 were hosting
+35:20 and yeah they they actually did like the
+35:23 result results so the engagement was
+35:26 quite good
+35:27 so i keep my fingers crossed that they
+35:29 will and they like this and this they
+35:32 will come back for more things like that
+35:36 then i also managed to partner
+35:39 with taloka to locate the company
+35:41 similar to
+35:43 mechanical turk from amazon so they are
+35:45 doing crowdsourcing
+35:47 and we will organize a workshop it's
+35:50 actually already announced it's on our
+35:52 website
+35:53 so this is a workshop about
+35:56 using crowdsourcing for monitoring the
+35:58 mod the performance of your models so
+36:00 using humans
+36:02 to
+36:03 uh humans in the loop to see if
+36:06 your model is still doing good uh is
+36:09 still performing well and if it doesn't
+36:11 then how can we
+36:13 3d retrain with training for example so
+36:16 it's about that i think i
+36:18 think the topic is pretty interesting so
+36:20 i hope people will also like this and
+36:22 will come and the local will like it and
+36:25 they will decide to do more events like
+36:28 that with us so if you're listening for
+36:30 this right now you can go check our
+36:32 website there is an event from i think
+36:34 it's called crowdsourcing for model
+36:36 performance and you if you think this is
+36:38 interesting please sign up because they
+36:40 will look at these numbers and if the
+36:42 numbers are good then they will consider
+36:45 to gonna sign up now
+36:49 uh yeah and time right now i'm in
+36:51 process of talking to a few more
+36:53 companies
+36:55 i would like to convince them to
+36:58 to do something like longer term
+37:00 sponsoring like maybe sponsor for a year
+37:02 um
+37:03 [Music]
+37:05 yeah so far i haven't
+37:08 how sales people say closed right so
+37:11 nobody signed up yet nobody signed the
+37:13 contract
+37:14 but
+37:15 let's see how it goes uh
+37:17 it's actually something entirely new to
+37:19 me it's way out of my comfort zone
+37:22 so i'm also learning that
+37:25 i hope we will see new sponsors soon
+37:29 i keep my finger crossed and
+37:32 yeah so and
+37:34 yeah please
+37:35 interact with engage with content from
+37:38 sponsors if you think it's valuable
+37:40 because they're looking at these numbers
+37:42 and
+37:43 this is what they
+37:45 will use to decide if they want to
+37:46 sponsor more communities or not because
+37:49 that will be very helpful for me
+37:51 personally
+37:53 like for the community for me personally
+37:54 to be able to use some of this money to
+37:57 invest back in the community maybe hire
+37:59 a personal assistant to take care of all
+38:01 these mundane tasks and all that so if
+38:04 you're a company if you're working in a
+38:07 company maybe you can talk to
+38:10 i don't know your marketing department
+38:12 and then see if they would be interested
+38:13 in sponsoring and supporting data talks
+38:15 club and if they would be maybe you can
+38:18 connect us that will be super helpful
+38:22 and that's the best than just
+38:24 uh no i like
+38:27 says initially nothing is uh while
+38:29 looking for sponsors and it's gonna be
+38:31 easier you don't really have the queue
+38:32 to have an event
+38:34 because he can give his full attention
+38:36 so thank you for sharing us with us
+38:38 about that alexa about their talks club
+38:40 and you know how much work it was
+38:47 uh so recently you wrote a book called
+38:51 ml bootcamp
+38:52 well you've been
+38:54 putting a lot of effort into it and it
+38:56 was recently published late last year
+38:58 uh can you share everything about that
+39:00 book uh what is it about who is it for
+39:03 and why did you write it
+39:06 yeah i'll try to be brief because there
+39:07 are still uh questions from the
+39:09 community that i want to cover
+39:11 uh yeah so this book was for people like
+39:14 me for software engineers who
+39:16 want to go to machine learning so and
+39:19 there i focused
+39:22 on teaching through projects and i also
+39:24 focused on
+39:26 being more end to end rather than just
+39:28 here is how you train your model in
+39:30 jupiter notebook and here's
+39:32 you know these nice graphs so what
+39:35 happens after that so there are
+39:37 three chapters devoted to deployment
+39:40 um there's so like deployment with flask
+39:45 and deployment with aws lambda
+39:46 deployment with kubernetes so these kind
+39:49 of things are there as well and i think
+39:51 this
+39:52 is one of the things that
+39:54 separates this book from other books i
+39:56 don't think there are many other books
+39:57 that talk about that
+40:00 and yeah there is also a course based on
+40:02 the book it's called machine learning
+40:04 zoom camp
+40:06 which is free it's based on the book
+40:09 it's just in video format and then it's
+40:11 cohort based
+40:13 well it was cohort based now it's almost
+40:15 over
+40:15 um so if you prefer this kind of content
+40:18 more you can check it out
+40:21 in our slack it's course email melzoon
+40:23 camp
+40:24 basically each chapter there is a
+40:28 like a model in that book but there are
+40:30 also there is also homework
+40:32 and you're getting some points for doing
+40:34 this homework then there are also
+40:36 projects and uh to get a certificate
+40:39 you'll need to finish the projects so if
+40:41 you don't finish the projects then you
+40:43 will not get
+40:45 a certificate at the end so i think it's
+40:48 the most important thing
+40:49 is to do these projects so when you
+40:52 see how others do something now you have
+40:54 to repeat
+40:56 to do it yourself but not to just follow
+40:59 but do something on your own and that's
+41:01 why i
+41:03 make it mandatory for people to pass to
+41:06 projects to get a certificate
+41:08 so yeah check it out
+41:11 so why why i mean the course that you
+41:14 release is like 13 lessons over four
+41:16 months
+41:17 uh why do it for free i mean what's your
+41:20 motivation behind and how much effort
+41:22 did it take to create that course
+41:23 oh that's too much i wish i was timing
+41:26 myself i didn't know what i was signing
+41:28 up for
+41:29 when i was uh when i announced it
+41:31 because it's just an insane amount of
+41:33 work
+41:34 yeah but uh yeah i always wanted to do
+41:36 the course i wanted to maybe i should
+41:38 have started with something smaller
+41:40 than that yeah i always wanted to do
+41:43 that and see how uh
+41:46 how it feels to actually do a course
+41:48 yeah and then there was also another
+41:51 [Music]
+41:53 motivation is to spread the word uh
+41:56 about the book
+41:57 um because everyone will know that this
+42:00 book exists
+42:01 at least everyone who is taking who has
+42:03 taken the course and then also i wanted
+42:05 to attract more people to the community
+42:08 so it kind of served multiple purposes
+42:11 i really liked the engagement i really
+42:13 liked the outcome even though it was
+42:15 very difficult to record i really i
+42:17 would record some things multiple times
+42:20 and i would spend a lot of time editing
+42:21 i still haven't finished editing the
+42:23 last module about uh keep low serving
+42:26 but i really like the result i really
+42:28 like the engagement the feedback i got
+42:30 from people
+42:32 so yeah
+42:34 that went quite well so maybe for the
+42:36 next course i'll try to do something
+42:39 less ambitious
+42:41 perhaps
+42:42 but i'm quite satisfied with the outcome
+42:44 and the feedback i'm getting from people
+42:46 is really motivating and inspiring
+42:49 well the projects you've taken on have
+42:51 always been have always had that quality
+42:53 where it's very very big but you managed
+42:54 to tackle it anyway uh their talks club
+42:57 and then the book and then now the
+42:58 course well now we have a couple of
+43:00 questions from the community yeah lynn
+43:02 asked what advice would you give to
+43:04 someone starting in this field um and
+43:06 how would they go about finding mentors
+43:09 yeah my advice would be to join a
+43:11 community
+43:13 and this is what i did and i think it
+43:15 worked quite well for me every time i
+43:17 wanted to
+43:18 start in a new field i joined the
+43:20 community and it didn't it wasn't always
+43:23 career related so as i said i was into
+43:26 exchanging these
+43:28 bootlegs bootleg videos
+43:30 um
+43:31 yeah so join a community and then after
+43:34 you join don't just
+43:36 sit there and watch what people talk
+43:37 about
+43:38 answer questions do some research and
+43:41 then people will think that you're some
+43:43 sort of uh
+43:45 uh i don't know experienced person who
+43:47 knows everything they don't have to to
+43:49 know that maybe you're not
+43:51 uh
+43:52 yeah that's uh the number one advice i
+43:54 will give i guess the question from
+43:56 amrita have you ever felt like giving up
+43:58 during your data science journey uh what
+44:00 kept you going what what motivation
+44:04 yeah for my data science journey
+44:08 yeah i don't remember actually
+44:10 having this feeling of giving up
+44:12 entirely
+44:13 but sometimes i would feel frustrated if
+44:15 i cannot derive a formula
+44:18 or if i wouldn't be able to understand
+44:20 this vm
+44:21 now i look back at this and find it
+44:23 funny like why did i spend time on
+44:25 learning about these vms why did i think
+44:27 they are important
+44:28 like i wish somebody
+44:30 had told me that hey don't waste your
+44:32 time on this vms
+44:34 so yeah sometimes i felt frustrated i
+44:36 thought
+44:37 i was learning something important but
+44:38 these things weren't important at the
+44:41 end
+44:42 um but what motivated to keep me going i
+44:44 guess was the interest that spark that
+44:47 andrew hank um
+44:50 created in me like when i first watched
+44:53 that video i thought okay wow it's so
+44:55 cool you can actually use
+44:57 data for these kind of things
+44:59 and it felt like large magic to me
+45:02 and
+45:03 being able to do this sort of magic and
+45:06 then seeing the results in action i
+45:07 think this is what motivated me
+45:10 yeah
+45:11 so i still have that motivation maybe
+45:14 less so than
+45:16 seven years ago because now some of the
+45:18 things that uh
+45:19 uh become routine like you know this
+45:21 perimeter tuning
+45:23 and then all this uh
+45:25 other things that are maybe less
+45:27 exciting but uh
+45:29 i found out that i really like the
+45:31 engineering component of this
+45:33 and
+45:34 seen my result in action i think this is
+45:37 what still keeps me going
+45:39 yeah i know i mean i think initially
+45:41 when we first started it's quite amazing
+45:43 that you can actually use data to
+45:44 predict what's going to happen
+45:46 and now building things with your own
+45:48 hands
+45:49 a question from william how do you keep
+45:51 up to date with new tools and advances
+45:53 in the field and at work how do you
+45:56 evaluate new tools and libraries
+45:59 yeah so to answer the first part of the
+46:00 question from william is i do not keep
+46:03 up to date with new tools and advances
+46:06 because it's not possible
+46:08 like i remember
+46:10 i would use a recess reader
+46:13 it was the old reader something like
+46:15 google reader but maybe there are people
+46:17 who still remember the google reader it
+46:19 was awesome
+46:20 um so there are some recess readers and
+46:23 i would um
+46:24 set up a recess feed from archive to see
+46:29 and then it just like
+46:30 a couple of weeks i understood that it's
+46:33 too much
+46:34 that there is no it's not humanly
+46:36 possible to look at this amount of
+46:38 information
+46:39 and then at some point i just okay like
+46:43 why do i do this like what does it
+46:45 actually bring me
+46:46 and then i think uh this
+46:49 this understanding this realization came
+46:51 with a bit of experience understanding
+46:54 that uh you know sometimes what business
+46:56 needs is not a state of the art
+46:59 so i better look at what other companies
+47:01 are doing what works for them
+47:04 and
+47:06 try to stay up to date with that not
+47:08 with the recent deployments not with
+47:10 recent advances
+47:12 uh and with tools also like every day
+47:15 there is a new tool like you go on
+47:16 twitter and then there are tools
+47:19 some new tools that will solve all your
+47:21 problems but one month after that nobody
+47:23 remembers about these tools
+47:25 so probably it's a good idea when uh you
+47:27 know you see a trend that like over
+47:29 multiple months uh this tool keeps
+47:32 appearing people keeps talking about
+47:34 this so actually i want to keep to try
+47:36 quedro do you know kedro
+47:38 no have you heard about this so i've
+47:40 heard i've been hearing about this tool
+47:42 for quite a while now to actually give
+47:44 it a try
+47:45 um so this is uh
+47:47 like uh pipe psychic learn pipelines but
+47:49 better this is how i understood it so i
+47:52 want to give it a try but yeah so i just
+47:54 try to
+47:55 not stay up to date that's uh
+47:59 that's my answer and then how i evaluate
+48:01 new tools
+48:03 then
+48:04 i don't
+48:07 because
+48:08 yeah
+48:09 there are many other problems that we
+48:11 need to solve
+48:12 sometimes you know these tools appear
+48:14 and then we have this hackathons when we
+48:17 can try to play with these tools and see
+48:20 if it's worth including them in the
+48:23 pipeline
+48:24 but it's not something i do on a regular
+48:26 basis so it's not like i
+48:28 try to devote like i heard this advice
+48:31 like spend 10 percent of your time
+48:32 trying to play with new stuff
+48:36 maybe this is good advice actually but i
+48:38 do not follow that because
+48:40 i have too many problems other problems
+48:42 that i need to solve that are not tool
+48:44 specifics as tools specific they are
+48:47 more focused on
+48:48 like are we actually building the right
+48:50 thing do people care about that like it
+48:53 doesn't matter what kind of tool we use
+48:54 for that right i agree
+48:57 so well besides how you are so busy at
+48:59 work and you don't have time to
+49:01 evaluate those new tools rob asks how
+49:04 are you so productive uh what does your
+49:06 process look like how do you balance
+49:07 your full-time job at orx and data talks
+49:10 club and writing a book
+49:12 and doing ml zoom cam do you even
+49:14 sleep
+49:16 yeah sleep is annoying right so we have
+49:18 to get it
+49:21 sleep is overrated no i'm joking
+49:25 so yeah like i i'm maybe i'm good at
+49:28 keeping appearances so but actually i'm
+49:32 like i like to slack like i'm i like to
+49:34 procrastinate so i'm
+49:37 keeping things up like keeping things
+49:40 very long before starting doing this
+49:44 so yeah my process looks like
+49:47 i postponed things till the very last
+49:48 day and then do them um
+49:50 [Music]
+49:51 like
+49:52 before the the deadline
+49:54 uh so for me what helps is having these
+49:57 deadlines and having these deadlines
+49:59 public and if i have that like with the
+50:01 course
+50:03 like because every week i had to release
+50:05 something that kept me you know
+50:08 not procrastinating too much
+50:11 so i don't know if it's a secret but
+50:12 yeah
+50:14 i don't think that makes sense it's like
+50:16 building in public right and then once
+50:17 you have a date uh
+50:19 people hold you accountable for it
+50:21 people are expecting you and you don't
+50:22 want to let people down and so therefore
+50:24 you deliver
+50:25 yeah but unfortunately i have to sleep
+50:27 that's i
+50:28 haven't found a way around that
+50:31 all right so we have a few more
+50:32 questions uh queen asked how do you
+50:35 learn technical subjects how do you know
+50:36 if you're able to apply it well
+50:38 and you mentioned that you keep notes
+50:40 about your projects could you shed some
+50:42 light onto that
+50:44 so learning technical subject is i think
+50:46 the best way especially for technical
+50:48 subjects is to do it through projects
+50:51 i think you eugene i think you mentioned
+50:54 this concept uh like a year ago maybe um
+50:57 just in time learning yeah so you build
+51:00 the project and then there is a thing
+51:02 you need to learn and then you start
+51:04 looking it up and then
+51:06 you solve your problem
+51:09 and you learn enough just to solve this
+51:11 problem so you don't learn entire
+51:14 you know machine learning just to solve
+51:16 this
+51:17 classification problem you just maybe
+51:18 learn logistic regression or whatever
+51:21 so
+51:23 that's
+51:24 that's how i try to learn technical
+51:27 subjects by doing projects and by
+51:29 focusing on these projects so that helps
+51:31 me focus on that
+51:35 so how do you know if
+51:36 you can apply it well
+51:38 well that's uh i guess asking for
+51:41 feedback uh
+51:42 and then uh like at work that would mean
+51:44 deploying things and then doing a b
+51:46 tests uh things like that
+51:48 but
+51:50 yeah like for my personal projects is am
+51:52 i satisfied with the result uh does it
+51:55 work or does it break apart
+51:57 uh things like this and then about notes
+52:00 is when i try something new i try to
+52:03 document everything what i do because i
+52:05 know the next day i wake up i will not
+52:07 remember anything from this
+52:09 and then yeah
+52:10 sometimes my bash keeps the history
+52:13 sometimes i can just go up and see what
+52:15 the comments but this is very unreliable
+52:18 so often when i close my terminal all
+52:21 the comments that i put are gone i don't
+52:23 know why it happens but i do not rely on
+52:25 that i put i would create like a
+52:27 readme.md file or i would open a google
+52:30 document or notion recently i have been
+52:33 using notion for that and i would just
+52:35 copy paste like from the terminal the
+52:38 commands there
+52:40 sometimes i would take screenshots with
+52:42 errors and then would post there
+52:45 and then yeah i shared a couple of
+52:47 tutorials like that so i had these
+52:49 documents and then i put them together
+52:51 as docs like tutorials public tutorials
+52:53 and shared
+52:55 um
+52:56 yeah i have a couple of git github repos
+52:59 like that so maybe you can check them
+53:03 uh one more question from the slack
+53:05 community and then we go on to the slido
+53:07 um so dmitrios who's a fellow organizer
+53:10 of super communities i think he
+53:11 organizes mvl ops community he asks
+53:14 where do you get your community related
+53:16 ideas from yeah i know where demetrius
+53:20 is coming from
+53:21 with this
+53:24 so
+53:25 yeah
+53:26 i did get a few ideas let's say
+53:29 i got inspired from the stuff demetrius
+53:33 is doing what was doing at the envelopes
+53:35 community so for example the podcast the
+53:37 format we have right now
+53:39 of doing it live with the live audience
+53:42 so today i think this is the first time
+53:44 when it didn't really work well because
+53:46 of the internet problems so the first
+53:48 time in more than a year so i think that
+53:53 yeah i hope it doesn't repeat on friday
+53:55 when we have another one but yeah
+53:57 so this idea i
+54:00 borrowed from the matrix then there are
+54:03 some ideas
+54:04 like for example from java ranch which
+54:06 is a java community so they invited book
+54:09 authors to ask them questions i also
+54:11 brought this idea so i got a lot of
+54:12 inspiration from other communities
+54:15 um
+54:16 and perhaps also added
+54:18 a personal twist to these ideas
+54:21 for example the minis and the open
+54:23 source spotlight
+54:24 yeah exactly exactly yeah but mostly it
+54:26 comes from uh
+54:29 some from other communities like malop's
+54:31 community
+54:33 and
+54:34 from people from the community members
+54:37 sometimes people would reach out to me
+54:38 saying hey i have this awesome idea do
+54:41 you want to try it and then usually yes
+54:44 let's try it and then there are very few
+54:47 a few initiatives like that that
+54:48 unfortunately didn't work out well so
+54:50 for example about networking sessions
+54:53 but somebody reached out to me saying
+54:55 hey it would be nice to just
+54:57 hang out in zoom and then we started
+54:59 with right that it didn't work out
+55:02 but yeah this is how these things happen
+55:06 right i think we have the last question
+55:08 for this podcast which is from slido
+55:10 have you ever considered live coding
+55:13 sessions or
+55:14 coding
+55:16 and commenting sessions
+55:19 yeah that would be interesting not for
+55:21 data talks club i haven't we haven't
+55:22 really tried that
+55:25 um
+55:26 for yeah for ml zoom comp actually there
+55:29 were a few office hour sessions when it
+55:32 was live coding
+55:33 so maybe check it out
+55:36 but notice there's something
+55:40 like something that we regularly do that
+55:42 would be a good idea to try something
+55:44 like this so yeah thanks for the idea
+55:47 um but uh we are already doing a bit of
+55:50 that so check out our machine learning
+55:52 zoom cam for
+55:54 office hours
+55:56 all right so that's it for all the
+55:59 questions is there anything else that
+56:00 you felt that i didn't ask but you
+56:02 really wanted to share with the audience
+56:07 well i think i just want to thank
+56:10 everyone who
+56:12 have been with me all this time
+56:15 who joined at the beginning who joined
+56:17 uh half a year ago who just joined this
+56:20 community
+56:22 so you kept me motivating
+56:25 seeing the community growing is awesome
+56:27 this is a
+56:28 really good feeling so thanks for being
+56:31 a part of that and i'm looking forward
+56:34 to the next into this year to do even
+56:36 more of that so i hope i stay sane and
+56:39 find sponsors and
+56:41 delegate some of this work but i'm
+56:45 i'm really excited about this year
+56:47 so thanks for being a part of that
+56:50 thank you to everyone who's out there
+56:52 listening and maybe next year we have
+56:53 another you know a review of how it went
+56:56 this year and we'll do the same format
+56:58 all right thank you everyone
+57:00 goodbye everyone and thank you eugene
+57:01 for interviewing me
+57:03 hi guys my pleasure yeah goodbye
+57:07 [Music]
+57:17 you

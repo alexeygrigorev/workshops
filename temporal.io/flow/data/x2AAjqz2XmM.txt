@@ -1,0 +1,1541 @@
+Building reliable AI products in the era of Gen AI and Agents
+
+0:00 Hi everyone, welcome to our event. This
+0:02 event is brought to you by dataox club
+0:04 which is a community of people who love
+0:06 data. Every time I say that I remember
+0:08 that when uh this automatic speech
+0:11 recognition software processes this, it
+0:14 recognizes what I say is data docks
+0:16 club.
+0:18 Data docks club. I I need to work on my
+0:21 articulation. So this ATS uh um
+0:27 how to say text. Anyways, so so these
+0:30 recognizers can actually uh deal with my
+0:33 accent. So let's see. Data talks club.
+0:36 Anyways, uh we have quite a few events
+0:38 in our pipeline. Um although recently we
+0:42 had quite a few already. Anyways, if you
+0:44 want to stay up to date with all the
+0:46 events we have, there is a link in
+0:48 description. Go there, click and you'll
+0:50 see all the events we have. Um also you
+0:53 will probably see um you can subscribe
+0:56 to our newsletter too. Um, we constantly
+1:00 send uh reminders about future events.
+1:03 Then uh do not forget to subscribe to
+1:05 our YouTube channel. This way you'll
+1:07 stay up to date with all the events,
+1:09 future streams that we have. And I'm
+1:12 just curious um how many subscribers we
+1:14 have. So I think this is right now
+1:17 66,000.
+1:19 >> Wow.
+1:20 >> So this is pretty outdated. So if you
+1:22 want to be 66001,
+1:27 do it now. And then last but not least,
+1:30 you can uh you do not forget to like we
+1:33 have a Slack community if you want to
+1:35 hang out with other D enthusiasts.
+1:38 Check it out. Uh what else? Yeah, last
+1:43 uh pink if you have any questions uh
+1:47 that you want to ask during the
+1:48 interview, there is a pinned link in the
+1:50 live chat.
+1:51 um click on that link, ask your
+1:53 questions and we will be covering these
+1:55 questions during the interview. Uh
+1:59 so this intro that I do it's the same
+2:02 every time. So for me it gets a little
+2:05 boring. So I improvise a little but when
+2:07 I improvise I kind of forget what I was
+2:09 talking about.
+2:11 >> Anyways,
+2:13 so let me clear my throat one second.
+2:18 Sorry. Yeah, I think I'm good. Um so
+2:21 Rangita
+2:24 >> yes Alexi
+2:25 >> you're ready?
+2:26 >> Yes we can start.
+2:27 >> Yeah.
+2:28 >> Uh today on the podcast we are joined by
+2:30 Rangja staff ML engineer at noird at.AI
+2:34 previously at Dropbox-
+2:36 building LLM and agent powered products
+2:38 with uh also with earlier work in speech
+2:41 recognition and LP at Microsoft and
+2:44 research at Carnegi Milan. You have
+2:46 quite a nice career journey. Uh so it's
+2:49 uh it's a big pleasure pleasure to have
+2:51 you here on our event.
+2:53 >> The pleasure is mine.
+2:56 >> Okay. So tell us uh about your career
+2:59 journey
+3:01 so far. I think I outlined.
+3:03 >> Yeah.
+3:04 >> Uh but this is pretty interesting. I see
+3:06 you you have worked at quite a few
+3:09 companies. Uh so yeah please tell us
+3:11 more.
+3:12 >> Yeah definitely. So I think in a
+3:14 nutshell my career is basically machine
+3:16 learning, NLP um from the start and the
+3:21 way it started was actually during my
+3:23 undergrad. Uh that was my first time
+3:25 that I came across this stuff and this
+3:27 was uh when in 2011
+3:31 or 2010 I think. Uh we didn't really
+3:34 have many courses on AI or you know any
+3:36 structured way of learning back then. Uh
+3:38 but my friends and I we were curious. So
+3:40 we just got building something like an
+3:43 image search engine and this was like
+3:45 you know back when we it was using um
+3:50 Sundance search engine and then uh open
+3:53 CV for like extracting features from
+3:55 images and so on so forth and it was
+3:56 just
+3:57 >> this back of visual words or how this
+3:59 approach was called
+4:01 >> it was it was kind of like that. So kind
+4:03 of extracting features from the images
+4:05 and doing segmentation
+4:06 >> those times. Yes,
+4:09 it was. And
+4:11 >> I'm glad don't need to do this stuff
+4:12 anymore.
+4:13 >> Yeah, I'm so glad to. But it it just it
+4:16 was it was hard to do, but it was so
+4:18 like, you know, it got me hooked onto
+4:20 this whole space. So, I just wanted to
+4:22 learn more and that's what brought me
+4:23 to, you know, CMU doing my masters there
+4:25 and
+4:26 >> I learned a lot of stuff from amazing
+4:28 profs and amazing, you know, colleagues
+4:31 and, you know, some startups that were
+4:33 there locally in Pittsburgh as well. And
+4:35 um from then I joined Microsoft um where
+4:38 I did of course you know speech
+4:40 recognition you know language modeling
+4:42 for you know Xbox, Bing search, Bing
+4:44 voice search, Cortana these kind of
+4:47 things and really met some amazing
+4:49 people that have been doing this for
+4:50 many years and I just got to learn so
+4:53 much from them. Um then I wanted to
+4:55 broaden my scope in ML a little bit. So
+4:57 that's what kind of brought me to go to
+4:59 Dropbox and uh there I started working
+5:02 on um recommendation systems initially
+5:06 and then
+5:06 >> what kind of recommendation systems are
+5:08 there?
+5:10 >> Yeah, I've been a user
+5:12 >> I've been a user of Dropbox since I
+5:15 don't know for so many years. I don't
+5:17 remember it recommending me a single
+5:19 thing.
+5:21 >> Dropbox web. So this is basically if you
+5:24 go to dropbox.com you get suggestions on
+5:28 like what files we think you might open
+5:30 based on you know your
+5:31 >> I understand I understand I since I
+5:34 don't use Dropbox through the web for me
+5:37 it's just a folder
+5:38 >> right right
+5:39 >> um but when I open Google Drive when I
+5:41 open Google Drive I see recommendations
+5:44 you say okay these are the files you're
+5:45 interested in so Dropbox has something
+5:47 similar
+5:47 >> Dropbox has something like that yeah
+5:50 it's it's has had it for a while So uh I
+5:52 worked on that feature and um some you
+5:55 know auxiliary things around it you know
+5:57 trying to improve the quality of it and
+6:00 that's where I think I dabbed a lot more
+6:02 into neural networks trying to
+6:03 understand uh you know how how these
+6:06 things work because when I started my
+6:08 career neural networks weren't a thing
+6:10 yet uh so I I learned a lot on my job
+6:14 then I somehow made my way back into NLP
+6:17 and uh started working on
+6:20 building um first question answering
+6:23 system. So it was like a an incubation
+6:25 team at Dropbox that wanted ML expertise
+6:27 and then I I went and joined them and
+6:29 worked on this question answering system
+6:31 and then later that led to me and my
+6:34 then manager is an amazing mentor and
+6:37 amazing engineer himself and we both
+6:39 kind of started a new team which focuses
+6:42 on um agents and this was back then we
+6:47 didn't really have the term agents as
+6:49 popular yet. So
+6:50 >> when was it?
+6:51 >> Uh 2022 December.
+6:55 >> So it was like
+6:57 >> cuz I imagine now when you say Q&A
+6:59 system for Dropbox, I have like ding
+7:02 ding ding.
+7:04 But now everyone knows everybody knows.
+7:06 Yeah,
+7:07 >> cuz you can just take all the documents
+7:08 you have in Dropbox index time and here
+7:10 you go.
+7:11 >> But back then I guess it wasn't as
+7:13 obvious as these days.
+7:14 >> It just wasn't. Yeah. So it was u I mean
+7:17 we we were trying to innovate so it was
+7:18 not just on Dropbox. So we like okay
+7:20 what other data sources can we do and
+7:22 how can we make it you know better and
+7:24 better and just then like um I was
+7:27 fine-tuning T5 for example right and
+7:30 then after that then GPT 3.5 came and
+7:33 then you know it like totally disrupted
+7:36 the whole market and
+7:39 >> it was like compared to three it was
+7:42 really good.
+7:43 >> Yeah.
+7:44 Yeah, it was it was really fun and that
+7:46 brings basically after working on agents
+7:48 at Dropbox last couple of years. I think
+7:50 it brought me to like what can agents
+7:53 do, right? And um that's how this this
+7:55 startup caught my eye, newbird, which is
+7:57 where I am right now. And I'm uh fully
+8:00 immersed in the potential that these
+8:02 agents have. You know, we're trying to
+8:03 solve this problem of
+8:06 um engineering on call. How do we take
+8:10 that away from users and you know make
+8:12 agents be on call for us so that we can
+8:15 focus on the more fun building part of
+8:17 the system.
+8:18 >> That's interesting. So I'm wondering how
+8:21 sRes take that.
+8:23 >> I mean as a developer I would be
+8:26 actually quite happy to be not to be on
+8:29 call right not to have paid duty. So
+8:31 because I I I was a data scientist I was
+8:35 not on call. Um but I remember my
+8:37 colleagues who were software engineers
+8:40 >> they had to be with their laptop. So
+8:42 when they receive like a notification
+8:45 from pager duty or whatever we used
+8:48 >> um they would just open their laptop and
+8:49 check the locks and do all this stuff.
+8:51 So probably for them they are like h
+8:54 it's good not to do these things
+8:56 anymore.
+8:57 >> You are lucky. So even if I have been
+8:59 doing machine learning forever but I
+9:00 have had to be on call many many times
+9:03 and uh I I totally get the pain when you
+9:05 get woken up at 3:00 in the night you
+9:07 know you're sleeping and you have to
+9:10 wake up and go you know
+9:11 >> that's why you decided to join the
+9:13 company right
+9:14 >> I I can get behind this vision
+9:16 >> so that's yeah that's why I'm here
+9:19 >> do you know where the name comes from
+9:21 >> I actually don't know I think I think
+9:24 the founders are just a lot into birds
+9:27 But no bird as I mentioned noi means new
+9:30 in German. So I wonder if it has or
+9:33 maybe new bird was already taken and
+9:34 they are like okay what do we do now?
+9:37 Yes, I will ask them this
+9:41 >> because I I guess
+9:43 right now it's very difficult to start a
+9:45 startup
+9:46 >> because all the domain names are already
+9:48 taken, right? Yes. Like how can you come
+9:51 up with a name that is not taken but
+9:55 also doesn't sound like gibberish.
+9:57 >> Yeah. Yeah. There there's a lot of
+9:59 creative names these days.
+10:01 >> Yeah.
+10:02 >> I remember you know Kaggle, right? Um,
+10:05 so Kaggle, uh, I was interviewed
+10:08 probably with Anthony Gold Bloom, his
+10:11 last name. Anyways, with one of the
+10:13 creators and what they did in order to
+10:15 come up with the word Kako,
+10:17 >> they would write a script that would
+10:19 just go through all the relatively short
+10:22 names
+10:23 >> that sound okay and check if they're
+10:25 available.
+10:26 >> So this is how they did this.
+10:29 >> Yeah. So what do you do at Newbur? So
+10:33 yeah, I'm basically building agents and
+10:35 everything around it. The whole agent
+10:37 ecosystem, it's it's actually just been
+10:40 um like four weeks since I joined and
+10:43 I'm already like, you know, I can
+10:45 understand the sheer complexity of the
+10:49 problem, you know, things.
+10:50 >> You just joined.
+10:51 >> Yeah, I just joined like a month ago and
+10:53 um
+10:54 >> congratulations.
+10:55 >> Thank you. Thank you.
+10:57 So yeah, just trying to build the whole
+11:00 you know the story of how LLM agents can
+11:04 actually do this more reliably and more
+11:07 uh in a way that you know our customers
+11:10 if they're happy today they are still
+11:11 happy tomorrow you know things like that
+11:14 >> you've been in the industry for quite
+11:16 some time uh also you started machine
+11:18 learning in 2010
+11:20 >> um
+11:22 so the word at least I my interest in
+11:25 machine learning I started it around
+11:27 2012.
+11:28 >> Mhm.
+11:29 >> Little late later.
+11:31 >> And I remember taking courses about
+11:33 reinforcement learning and there the
+11:35 agent was uh the concept of an agent was
+11:38 defined differently. So I'm just curious
+11:40 like how do you define an agent? What is
+11:43 an agent in your opinion?
+11:45 >> Right. Okay. This this is like something
+11:48 I I usually start all my talks with
+11:50 this. What is an agent? Because it's not
+11:53 a very well understood concept.
+11:55 >> Yeah. I'm really curious what's uh what
+11:57 is your opinion on that?
+11:58 >> Yeah, I mean the agents the way back
+12:01 when you're talking about reinforce
+12:02 learning agents that's basically the
+12:04 task the definition was simple. There's
+12:06 a task and these agents have to go
+12:08 complete it. And agents are basically
+12:11 these automated uh pieces of you know
+12:14 software that would go and complete a
+12:16 given task even the goal objective and
+12:18 then you're you're kind of tuning
+12:20 yourself to kind of go um improve upon
+12:23 that task and you know so that you were
+12:25 increasing or decreasing the objective
+12:27 function as you know as required. So now
+12:29 it's not that far from that definition.
+12:31 The core of it still remains the same.
+12:33 It's it's about autonomously going and
+12:37 completing a task that was given to
+12:40 them. And right now it's somehow has
+12:43 honed into LLMs being at the core of it
+12:45 all. LLMs are powering these agents.
+12:48 LLMs are the brain of these agents and
+12:52 what defines a type of agent because
+12:55 everybody's building agents and not not
+12:56 two of them are alike. Everything is
+12:58 everyone has been um coming up with
+13:00 their own recipes for building agents
+13:02 and what that uh brings in is how you're
+13:05 orchestrating multiple you know calls to
+13:08 LLMs, calls to tools, calls to uh some
+13:12 knowledge store and so on uh things like
+13:14 that. So an agent is at the end of the
+13:17 day something that performs a task that
+13:20 is given to it autonomously with the
+13:21 help of LLM's tools some kind of um
+13:25 memory and um storage and you know
+13:29 things like that to basically you know
+13:31 please the user.
+13:33 >> Mhm. Okay. Yeah. I was actually
+13:36 experimenting with agents too uh the
+13:38 other day and I thought like can I do
+13:42 make an agent without an LLM
+13:44 >> and the answer is actually yes right so
+13:46 we need a can makes that can make
+13:48 decisions
+13:50 >> uh so right now we delegate the
+13:52 decisions to an LLM so LLM is the brain
+13:55 >> the decision maker
+13:56 >> but it can be something simple like a
+13:59 bunch of heristics and depending of what
+14:01 kind of agent we are talking about so in
+14:04 my case it just uh some environment
+14:07 where
+14:08 >> um I had people who were applying for
+14:11 jobs and people like employees. So
+14:14 employers employers one type of entity
+14:17 job seekers the other type of entity and
+14:19 they were interacting with each other
+14:20 right?
+14:21 Um like people have skills. Um then uh
+14:25 these uh employers they have uh
+14:28 vacancies like job positions
+14:30 >> for which they require certain skills
+14:31 and then the goal is to you know
+14:34 >> and then it was just I created this
+14:36 environment and they run simulation
+14:38 >> uh there and
+14:41 >> um yeah and there without any LLMs they
+14:44 could actually
+14:47 >> do something but of course once you add
+14:49 an LLM you can have one thing talk to
+14:51 another thing so let's say we have an
+14:53 interview interviewer interviewer asking
+14:55 the question in interview like and then
+14:58 yeah they make a decision at the end
+15:00 okay do we want to hire that person
+15:02 >> uh but I abandoned this project like
+15:04 many others
+15:06 >> but it was fun yeah fun side project
+15:10 >> yeah uh
+15:12 would you agree with with this
+15:14 definition cuz it seems these days
+15:17 >> u agent is just an LM that has tools
+15:21 that can make decisions to use tools.
+15:23 Would you just say an agent is equals LM
+15:27 with tools?
+15:28 >> It's it's not just that. So there is
+15:31 that wrapper around it which kind of has
+15:33 the
+15:34 >> the way you plan it can differ a lot
+15:39 when it comes to the types of agents
+15:40 you're building. So like um so we had
+15:43 come up with this classification system
+15:45 earlier for you know kind of classifying
+15:47 like a taxonomy of sorts where an agent
+15:51 can complete a given task in let's say
+15:55 one single step or it can take multiple
+15:58 steps uh by what by step what I mean is
+16:01 like maybe calling a tool or something
+16:03 like processing information or something
+16:05 like that and so depending on if it's
+16:08 single step or multi-step it can get
+16:10 more complex
+16:11 And then there is also this thing of how
+16:13 many iterations of this are you going to
+16:16 do like you know how many times is there
+16:18 a feedback loop around it. Is it a
+16:20 single pass that you just go from start
+16:22 to end or is it like a multipass thing
+16:24 where you're you know constantly
+16:26 checking what you have planned so far
+16:28 and constantly uh asking maybe um the
+16:32 same LLM asks itself self-reflecting or
+16:34 things like that and then going and
+16:36 correcting multi multiple times and
+16:38 saying oh you know what I had this plan
+16:39 earlier but looking at the current
+16:41 output it doesn't look like I should
+16:43 continue with my plan I should probably
+16:44 go back and change and these kind of
+16:47 multipass systems make most uh like
+16:52 complex type of agents and these are the
+16:55 ones that everybody is trying to head
+16:56 towards. But um a lot of us like you
+17:00 know we start off with this uh single
+17:02 step or single pass kind of system where
+17:05 you know we have a plan let's take this
+17:07 plan and go execute it in a way that
+17:09 >> makes the goal come true
+17:12 >> and and then with like some some amount
+17:14 of like planchecking self-reflection
+17:16 things like that.
+17:17 >> Mhm. And yeah, you mentioned what is
+17:21 different in this agents is the way you
+17:23 plan because I can have an agent that
+17:26 doesn't have any LLM at all. Right? Like
+17:28 I mentioned,
+17:30 >> uh probably if I ask it to do to to give
+17:33 me to create me a jungle project, it
+17:35 will not be able to execute that. Yeah,
+17:38 >> if I give it to a simple LM
+17:41 >> like I don't know or mini then it would
+17:44 be able to create something but maybe
+17:45 not as elaborate as a reasoning model.
+17:48 Exactly. Right.
+17:49 >> Yeah. Yeah.
+17:51 >> Yeah. And the plan can be something that
+17:52 is super dynamic that you know gets
+17:54 built as we go or it could be something
+17:56 that you already have a predetermined
+17:58 path of like in your agent example that
+18:00 you gave earlier you had a fixed task so
+18:04 and it had a fixed set of tools and you
+18:05 know how to orchestrate you know step A
+18:08 comes uh before step B and so on so
+18:10 forth so that that could be something
+18:12 with just like some bit of fail
+18:14 statements you you've got yourself a
+18:16 path right it's the plan doesn't always
+18:18 have to be dynamic
+18:19 >> um so I've seen in those kind of agents
+18:22 as well. So that's that's another
+18:23 >> how is this implemented like if we talk
+18:26 about so the typical way we implement an
+18:28 agent let's say I take a framework like
+18:31 pantic I I AI or I take uh I don't know
+18:36 agents SDK and then there what I have is
+18:39 I can have the system prompt right and
+18:41 there's user prompt and then I define
+18:44 tools
+18:45 >> right
+18:45 >> so let's say I say there's some system
+18:48 prompt where I describe the task I give
+18:51 the task of the agent
+18:52 Right. And then there's user input that
+18:54 specifies the thing the user wants
+18:57 >> and then the agent starts invoking tools
+19:00 in order to do this. Right.
+19:02 >> Right.
+19:02 >> Where the the planning where does
+19:06 planning come from? Where does it
+19:08 appear?
+19:09 >> So in this case when you're talking
+19:10 about the predefined tools and SDKs they
+19:14 they have this logic embedded in them of
+19:17 how they want you to plan. So the
+19:19 prompts that you're giving are ones are
+19:21 the ones prompt and tools that's the one
+19:23 that is kind of defining how the plan
+19:25 gets generated right but when we are
+19:27 talking about like most people what they
+19:29 end up doing most startups or even big
+19:31 companies we end up defining our own
+19:34 agentic platform right we end up define
+19:36 defining our own set of tools SDKs and
+19:39 so on to build an agent and it's it's
+19:42 also it's it's very hard to build this
+19:45 in a generic way it's uh easier if you
+19:48 kind of focus on the problem that you're
+19:50 trying to solve and see what type of
+19:52 agents make sense. So there's another
+19:53 distinction where you see some agents
+19:55 are you know planning in plain English
+19:58 and some agents are doing this in like
+20:00 code code agents right so that is
+20:03 another thing so that depends on like
+20:05 what is the type of task you're trying
+20:07 to solve you know is it super complex
+20:10 like uh talking if if something that can
+20:13 be solved by talking with each other
+20:15 like you know in natural language those
+20:17 kind of problems are okay to be solved
+20:19 with like a natural language based agent
+20:21 but if there is a very complex task. You
+20:24 have to like plan like a 100 steps and
+20:26 you know go this way that way and you
+20:27 know there's conditionals and all that.
+20:29 In that case you would want something
+20:30 that is more programmatic in nature. So
+20:33 um I'm I'm a big fan of that latter
+20:36 mainly because like that's the kind of
+20:38 agents we kind of came up with uh with a
+20:41 lot of experimentation. Um, so it just
+20:44 feels like a lot of use cases can fit
+20:47 into that uh code agent type of system
+20:51 where it's it's just less ambiguity,
+20:53 more kind of predictability.
+20:57 >> Can you talk about the agents you use at
+21:00 work right now or it's not something you
+21:02 can share? I mean I can't share too much
+21:04 in detail but it's it's basically the
+21:08 >> yeah I'm just curious what are you
+21:10 working on specifically like what kind
+21:12 of agents of course you uh cannot share
+21:16 or shouldn't share a lot but also in
+21:18 many cases the devil is in the details
+21:21 right
+21:21 >> exactly yeah I can tell you like at a
+21:24 high level basically the agents are
+21:26 trying to
+21:28 build a right context
+21:31 to present to the LLM right so it's a
+21:34 lot of it is I think a lot of people are
+21:36 talking about this about it these days
+21:38 called context engineering uh but I
+21:41 think this is something that we had to
+21:42 bake in uh from the time I've been
+21:44 working on agents because uh back then
+21:47 we had models that you know had 4k
+21:50 context window you don't have the luxury
+21:53 of stuffing everything in to the context
+21:55 so you have to be very deliberate about
+21:57 what it is that you're kind of sending
+21:59 to the LLM and what we learned in that
+22:01 process is that when you're doing that
+22:04 you're not losing much. You learn to
+22:06 kind of put the context into LLM's
+22:09 windows by you know only providing you
+22:13 know how do you define it like something
+22:15 like uh the metadata or the the way to
+22:19 plan and things like that. So you ask
+22:20 the LLM, hey what are the steps to do
+22:22 something like this, right? rather than
+22:24 saying giving it all the data and saying
+22:27 these are all the documents I have can
+22:30 you go dig into it and you know find me
+22:32 the right answer and things like that
+22:34 right so it's it's a lot to do with
+22:36 context engineering and even at newird
+22:38 we are doing a lot of that
+22:40 >> uh trying to reduce the noise that you
+22:42 feed into LMS and uh it's a complex
+22:45 agentic system that they have built here
+22:47 uh even before I joined right so and
+22:50 it's so many tools if you can imagine
+22:53 being an what what would you do right
+22:55 you have to look at so many different
+22:57 data sources different um logs and
+23:00 metrics and
+23:02 >> so I imagine so let's say I am on call
+23:06 >> and I get I receive a message saying
+23:08 that this system is failing right and
+23:11 then I open whatever thing for logs then
+23:15 I investigate the logs then I go to
+23:17 kubernetes and then I check the I don't
+23:20 know deployment ports whatever find
+23:23 about like the logs and try to find out
+23:26 the reason. I may go I may go to the
+23:29 source code to actually see where the
+23:32 issue is coming from and maybe I do a
+23:34 quick fix or I roll back to the previous
+23:36 version. Right. So that's what I would
+23:38 do.
+23:39 >> Um
+23:40 >> does the system you have kind of mimics
+23:43 this behavior?
+23:44 >> It's it does it does mimic that kind of
+23:46 behavior in its own special way? Uh
+23:49 something wrong with my camera. It keeps
+23:50 going off. Yeah, it's it's basically
+23:54 um this is the way you as an S sur would
+23:56 do something like this, but an agent uh
+24:00 at the end of the day is like basically
+24:02 now like 23 24 of us are building it
+24:04 together, right? So it's it's all of our
+24:07 personalities go into it and you know
+24:10 it's uh what wins eventually is
+24:13 something that's you know uh that can do
+24:15 it again and again repeatedly that can
+24:17 solve a problem again and again. what
+24:19 our customers come and like we get a
+24:21 customer email saying yeah this this
+24:23 really worked well for us and those are
+24:25 the things that we learn from that is
+24:27 the feedback that we get as a startup
+24:29 you don't yet have that much luxury of
+24:31 that much data to look at right you're
+24:33 you're waiting for these individual
+24:35 customer feedback and um like our team
+24:39 is amazing in the sense I'm I'm new to
+24:42 startups and when I look at it I'm like
+24:44 so amazed by it everybody is like
+24:46 >> harping on anything that is like if a
+24:48 user says something is not working,
+24:49 everybody goes and you know, okay, it
+24:51 should have done this, it didn't do it,
+24:52 and how do we fix it? And that's the
+24:55 kind of um you know, mentality that's
+24:59 >> going to you know, propel the startup
+25:01 forward. Yeah.
+25:02 >> And I just uh what occurred to me is
+25:04 every setup like infrastructure
+25:06 >> Yeah.
+25:07 >> can vary drastically from company to
+25:09 company. One company can use uh I don't
+25:12 know data do another uses new relic the
+25:14 third one uses something built in in
+25:17 house built in on prem then I don't know
+25:20 there's el key or elk right from
+25:24 >> based on elastic search like there are
+25:26 so many different tools and then some
+25:28 use kubernetes some use uh I don't know
+25:31 god knows what like um whatever
+25:34 deployment
+25:35 >> deployment
+25:37 >> um there is such a variety
+25:40 How do you
+25:42 >> like you have to at some point restrict
+25:43 and say okay I work only with this tech
+25:45 or what do you do? True, true. I mean
+25:48 there is that thing where there is a cap
+25:50 after which you kind of say you know we
+25:53 will keep these as highest priority and
+25:55 you know dep prioritize some of them but
+25:59 uh the challenge of this that's the
+26:01 beauty of these agentic systems right
+26:02 you kind of bake in this generality in
+26:05 which you can you abstract away the
+26:08 details of what API am I talking to what
+26:10 kind of data am I looking at you
+26:12 abstract that away so that you are um
+26:16 you you know implementation is generic
+26:17 enough to kind of uh it's just a matter
+26:20 of building those connections with the
+26:23 agent.
+26:24 >> So if you have you know people building
+26:27 connections for you as in when a new
+26:30 kind of data source becomes available
+26:32 then you're you're mostly good. There
+26:34 are peculiarities of course there'll be
+26:36 like you know a particular data source
+26:38 might come with its own pecularities
+26:40 where you know no we will write the log
+26:42 in a reverse fashion where we'll you
+26:44 know put status codes in the end and
+26:46 we'll write the error message before
+26:47 there are things like that too that
+26:48 happens
+26:50 >> um for those things you kind of have to
+26:51 have domain knowledge unfortunately that
+26:53 is there's no nothing that you can't
+26:56 magically do this and that's where you
+26:59 know you consult SR you you kind of get
+27:02 we have an SR in our team as well.
+27:05 >> You have an S. You don't fully dedicate
+27:08 it to agents yet.
+27:10 >> No, no, no, no. It's all agents, but
+27:13 >> Yeah. Yeah. One SR does.
+27:17 >> I see. I see a joke.
+27:20 >> No. Yeah. So, it's something that uh
+27:22 you're constantly learning from uh you
+27:25 know, humans that are doing this for
+27:27 ages and trying to embibe that knowledge
+27:30 into this. But the difference is as a
+27:33 human you might be like good at doing
+27:35 solving one type of those problems or
+27:38 one set of tools or whatever right your
+27:40 learning curve is much higher compared
+27:42 to like this agentic system which if you
+27:46 build it once you kind of it has the
+27:48 capability to kind of spread across
+27:51 multiple tools and multiple integrations
+27:53 and so on. So that's the advantage of
+27:55 having this um uh doing making an agent
+27:59 do this versus a human thing.
+28:01 >> Yeah. Interesting. You mentioned um one
+28:04 keyword that I see quite often these
+28:06 days in LinkedIn and Twitter.
+28:08 >> Sorry, I should say X on social media
+28:11 basically
+28:12 >> context engineering,
+28:13 >> right?
+28:14 >> So what is context context context
+28:17 engineering and how is it different from
+28:19 prompt engineering?
+28:21 Okay. It's I think it's just like a mind
+28:24 shift.
+28:26 It's more of a rephrasing or rewarding
+28:29 of the whole thing so that you look at
+28:30 it from a different perspective. So
+28:32 prompt engineering has always been this
+28:34 thing of um you know I will give my
+28:39 instructions this way to make the model
+28:40 work right. So if if I were to kind of
+28:44 put it succinctly, I would say context
+28:46 engineering is like a sub field of
+28:48 prompt engineering. But what the main
+28:52 focus was when people said prompt
+28:53 engineering was, you know, I will put
+28:55 this instruction at the top. I will
+28:56 change the I'll move the instruction to
+28:58 the bottom, you know, things like that.
+29:00 I will write in all caps and all those
+29:02 things. That was the core of prompt
+29:04 engineering most of the time. But uh
+29:07 context engineering is like just being
+29:08 more deliberate about what information
+29:10 you give to the LLM rather than like you
+29:12 know stuff everything in you can't just
+29:14 I know like there are a million tokens
+29:17 models these days but does that mean I
+29:19 can give it like you know a thousand of
+29:22 my documents and you know I expect it to
+29:24 understand everything fully well answer
+29:26 is not yet at least uh right now we
+29:30 still need to reduce the amount of noise
+29:32 that we put into an LLM's context and
+29:35 that's what this context engineering
+29:37 >> right there.
+29:38 >> Yeah, I remember at the beginning of
+29:40 this year I remember seeing posts that
+29:43 rack is dead
+29:44 >> cuz we have these models
+29:46 >> that can just take your entire knowledge
+29:48 base and answer question based on that.
+29:51 >> Right.
+29:51 >> Um from what I see rak is not dead yet,
+29:54 right?
+29:54 >> Yeah, definitely not. And then the main
+29:58 idea is yes you technically yes there
+30:01 are models that can take your entire
+30:04 knowledge base code base whatever base
+30:06 right
+30:07 >> but then how good are they at using all
+30:10 the information you give it and how fast
+30:12 like probably you don't want to wait for
+30:14 too long
+30:15 >> exactly
+30:16 >> for LLM to process to go through like
+30:18 your super huge prompt
+30:20 >> with everything so probably you want to
+30:22 be smart about what kind of information
+30:25 you give to an LLM right Yeah,
+30:27 >> it is it is latency, it is cost. It is
+30:30 >> also I mean think about it as garbage in
+30:34 garbage out, right? If you're going to
+30:36 start putting a lot of noise in then
+30:38 your model also has only so much to work
+30:40 with. I know they have become a lot more
+30:41 capable than they were before in you can
+30:44 fill up to like you know 32k context
+30:47 window or something. Beyond that I have
+30:48 not seen many models do very well. Maybe
+30:51 the newer models start improving that
+30:53 pushing that window a little further.
+30:56 uh but still like if you want it to work
+30:58 reliably every time you would want to
+31:00 reduce that to smaller and smaller
+31:03 context window so that um you don't like
+31:06 burden your LLM with like runtime
+31:09 processing everything rather than you
+31:11 know doing some pre-processing uh
+31:13 beforehand. So I think this is where
+31:15 like us doing machine learning for a
+31:18 while we have seen these kind of
+31:21 patterns. I think those skills come in
+31:23 handy when you're uh when you're dealing
+31:25 with LLMs as well.
+31:27 >> So uh that's uh rag is not really like
+31:32 dead per se but also it doesn't mean
+31:34 that rag can solve everything. It has
+31:36 its shortcomings. So I think that's what
+31:38 people mean when they say that. It's
+31:40 just that we are now realizing a world
+31:43 where rag has had shortcomings where
+31:45 because LLM is this really smart thing
+31:47 and then we are uh the back end of that
+31:51 the thing that supplies contexts into
+31:53 LLMs is this
+31:55 >> old system of you know information
+31:57 retrieval which is
+32:00 historically not been designed for this
+32:02 kind of use case right it is for like
+32:04 you know it'll give you 10 blue links
+32:06 and humans go click on things and
+32:08 >> that's what it was designed for and now
+32:10 we are trying to morph it into something
+32:12 that fits into uh solving uh this
+32:16 problem of context feeding the context
+32:18 into L
+32:19 >> but would you agree that rack is one of
+32:21 the simplest examples of context
+32:23 engineering so instead of let's say we
+32:25 have a database with uh even if it's
+32:28 like I don't know a small database 5,000
+32:30 records instead of giving the entire
+32:33 5,000 we just select the top 10 most
+32:36 relevant ones
+32:37 >> and by providing In that we already
+32:40 engineer our context. So then
+32:42 >> the LLM knows what to focus on instead
+32:45 of going through the entire knowledge
+32:47 base and understanding okay like this is
+32:48 relevant this is not relevant.
+32:50 >> Yeah at a high level I think it is that
+32:52 but like along with that there's a
+32:54 wrapper around it again
+32:55 >> which kind of presents this information
+32:58 in a way that is
+32:59 >> much more conducive for the LM to kind
+33:02 of understand. So let me give you an
+33:03 example. So you can do this chunking
+33:06 business of you know take take a lot of
+33:08 documents and chunk it into uh you know
+33:11 lines of 200 lines of text or whatever
+33:14 right and then you put that in as one
+33:16 chunk every time and it's always almost
+33:20 always very lossy way of chunking right
+33:23 or if you if you kind of just break it
+33:25 by length or just you know bake it by
+33:27 paragraphs or things like that. Now how
+33:30 do we do better in terms of embedding
+33:32 the whole context into that chunk right
+33:35 of what has happened so far like which
+33:37 document is this from what is the
+33:39 question this is trying to answer what
+33:41 have we learned so far so there is still
+33:43 a bunch of engineering that you have to
+33:45 do around just this you know chunking
+33:48 and putting your data into index and
+33:50 that helps in in rag cases at least in
+33:53 in search cases it helps quite a bit in
+33:56 improving the quality of your system.
+34:00 >> What are the other examples of context
+34:02 engineering? Well um a lot of agents the
+34:05 way they work right so you kind of say
+34:07 okay these are the tools that I have
+34:09 available and the the question is asking
+34:12 for this I have worked on I have solved
+34:14 this problem in this way before like
+34:17 giving an example so that's you're kind
+34:19 of influencing how the LLM thinks and
+34:22 you know how do you make it produce an
+34:24 output in like the structured format and
+34:26 things like that so all those things are
+34:29 >> examples of your influencing the LLM
+34:32 them
+34:33 >> by engineering the context so that you
+34:36 can get something that you um you know
+34:40 >> that is meaningful rather than just you
+34:42 know okay these are all the logs go look
+34:44 at it right
+34:45 >> mhm yeah and in case of uh no um what
+34:50 kind of uh context engineering do you
+34:52 have is it all uh variations of rack
+34:56 where you index like I don't know all
+34:58 the logs uh or you're doing something
+35:01 else cuz I This is where we started the
+35:03 conversation, right? You mentioned
+35:05 context engineering that you do that
+35:09 >> and
+35:10 >> yeah, there's a bit of this and a bit of
+35:11 that. I I can't tell you more than that,
+35:13 but it's uh it's basically
+35:17 um we are doing something where we are
+35:21 influencing the LLM. Yes. Um rag
+35:25 you may you may not apply it everywhere.
+35:28 Let me just say that you may not apply
+35:29 rag in like all these problems even for
+35:33 um for the s use case or for search use
+35:36 case uh well but for search use case
+35:38 when there are billions of documents you
+35:39 would apply ra for that but for for
+35:42 something like this which is a very task
+35:43 specific thing and you kind of have some
+35:45 domain knowledge is to know how do you
+35:47 do this so instead you would try to
+35:48 apply the right tools for it so in my
+35:52 view I view rag or search IR as a tool
+35:56 in itself
+35:57 So now make that a tool and then you can
+36:00 orchestrate that. So, so use it when
+36:03 needed, right? It's not like
+36:06 >> what people are saying when they say rag
+36:08 is dead is because rag is a vanilla rag,
+36:11 right? Like where you're just doing this
+36:12 embeddings and uh vector search and then
+36:15 putting it into LLM that is a very set
+36:17 workflow
+36:18 >> and what we are going more and more
+36:21 towards in the world of agents is
+36:23 getting rid of these set workflows and
+36:25 making it as dynamic as possible. So
+36:27 >> like agentic rock, right?
+36:29 >> Exactly. So agentic rag is one thing and
+36:32 agents is even further where you're just
+36:34 you're taking rag as a tool rather than
+36:38 it's a means to an end. It's not
+36:41 >> so basically what you mean is we have an
+36:43 agent.
+36:44 >> Uh the agent has some tools. One of them
+36:46 is search which performs search in the
+36:50 database that we I don't know chunk and
+36:52 have done like all the things to prep
+36:54 process
+36:55 >> but we let the LLM decide when
+36:58 >> it needs to
+37:01 >> if if needed. Yeah. Exactly. Exactly.
+37:04 >> Okay. So which yeah there's there's a
+37:06 lot of different ways in which you can
+37:08 actually
+37:10 query these kind of information right so
+37:12 you can you can do it via search query
+37:15 you can do it via um you know saying
+37:18 okay it's in a table get me stuff from
+37:20 the table you know you know it's in
+37:22 MongoDB or something get me all the uh
+37:26 documents that have this value or
+37:28 something like that right so it's
+37:30 >> all these are just tools and knowing
+37:32 which tool to use when is something that
+37:33 we have to teach our agents and they
+37:37 >> let them do the orchestration.
+37:39 >> Yeah. And since we started talking about
+37:41 that and we already like I mentioned ra
+37:43 is dead or ra maybe maybe is not dead
+37:46 like and the conclusion or this is where
+37:49 the industry is kind of converging to is
+37:51 ra tools. Um but I'm wondering um so
+37:55 what kind of business problems are good
+37:57 for these kind of solutions whether like
+38:00 classical rack that is fixed flow or
+38:03 maybe crack where it's one of the tools
+38:05 >> for which problems it's still a good
+38:08 solution and for which we don't really
+38:10 need rack or AI at all like I mean
+38:13 problems that we're trying now to solve
+38:15 with uh you know all this AI stuff.
+38:17 >> Yeah that's a good question. So I think
+38:19 rag can do this thing of reducing a
+38:22 really large search space into something
+38:24 small right. Rag can do well in uh when
+38:27 you have first of all a large search
+38:28 space and the task is simple the the
+38:32 things like question answering based on
+38:34 like a you know piece of content or
+38:36 something like that those
+38:38 >> those things when you have imagine
+38:41 Dropbox right so we millions of
+38:43 documents you have put in there you you
+38:46 don't have to organize your data in very
+38:48 neat ways or anything but this is the
+38:50 use case where you really have like a
+38:53 keyword that you want to go look for or
+38:55 you want to find an answer to a
+38:57 question. So these are the use cases
+38:59 where rag can help very easily provided
+39:02 there's not like you know the there's
+39:04 this context of what you were doing till
+39:08 now maybe or what time is it what time
+39:10 of day things like that you know
+39:11 basically what is happening right now
+39:13 that kind of context rag kind of fall
+39:15 short in but if it's just like finding
+39:19 the answer out of uh lot of knowledge is
+39:22 present and now in that I want to you
+39:24 know do a needle in the haststack kind
+39:26 of a problem then That's where rag is
+39:29 still useful and uh the minute these
+39:32 problems start getting complex where you
+39:34 know you have multiple data sources and
+39:36 you want to do some dynamic planning or
+39:39 you know integrating with multiple APIs
+39:42 and you want to do write operations for
+39:44 example all these things is when you
+39:47 don't do rag as much you go to agents
+39:50 when uh when you want to do something
+39:52 like that
+39:53 >> uh can you give an example of a of
+39:55 dynamic planning Yeah. So dynamic by
+39:59 what by dynamic planning what I mean is
+40:00 whenever an input comes you want your
+40:03 LLM or agent to be able to plan the
+40:06 trajectory it takes based on the input.
+40:09 So like when I get a task I might think
+40:11 how do I execute the task like I don't
+40:13 know if I need to
+40:16 >> I don't know a pager duty notification
+40:18 comes
+40:19 >> and I need I look at this and uh maybe
+40:22 even uh subconsciously I come up with
+40:24 with sequence of actions I need to
+40:26 execute like I need to go there first
+40:28 then here here right this is the part
+40:30 >> exactly exactly so like a very simple
+40:32 easy to understand example would be like
+40:34 a calendar thing right so you have a
+40:36 calendar assistant or something and and
+40:38 you're talking to it and say um I want
+40:41 to schedule a meeting for half an hour
+40:44 tomorrow with um my manager or my skip
+40:48 level or something like that. So in this
+40:49 as you see there's a lot of these hidden
+40:52 uh uh you know understandings of or
+40:55 context that I'm assuming that you know
+40:58 about me that you know okay I need a 30
+41:01 hour 30 minute meeting and what time
+41:03 zone am I in who is my manager and uh
+41:06 what are their working hours and you
+41:09 know things like that those are all the
+41:11 um queries that the LLM has to come up
+41:14 with and go and say okay can I get the
+41:16 working hours from the calendar can I
+41:18 see when the two of them are free uh
+41:20 first and like consult a different
+41:22 source to find out who is who is the
+41:23 manager she's talking about right and uh
+41:26 do they have a Google calendar do they
+41:27 have outlook calendar like all these
+41:29 things are in the sense in a sense that
+41:32 they're
+41:34 you have the LLM is coming up with this
+41:36 plan as the input changes now if my
+41:38 input changes to um summarize my meeting
+41:41 notes from yesterday
+41:42 >> what will it do it it it doesn't have to
+41:44 go to Google calendar uh or uh to get
+41:47 the note notes. It'll go into Zoom or
+41:49 something like that. Zoom trans
+41:50 transcripts and find all the meetings
+41:52 that happened yesterday and summarize
+41:54 them things like that.
+41:55 >> Does a tool like that exist?
+41:58 >> We have been building it at I was
+42:00 building at least at at Dropbox before I
+42:02 left and yeah.
+42:04 >> Okay. I sounds like something I want to
+42:07 have.
+42:08 >> I know I we are not alone. lots of
+42:10 people are actually building um this
+42:13 kind of assistance
+42:14 >> uh
+42:14 >> cuz I imagine so the way I communicate
+42:16 with CHP I often just u do voice
+42:20 recognition tell it to do something and
+42:21 then I check so this is how I
+42:24 communicate and I imagine that uh
+42:28 yeah so I have an idea and for me
+42:30 instead of writing I can just say hey
+42:32 what did we talk about yesterday on the
+42:34 on the podcast with Rangja like we
+42:37 talked about agents can you please
+42:38 summarize Yeah,
+42:40 >> right. Like what we talked about rock
+42:42 and it is like it goes there like
+42:45 fetches the transcript, summarizes it
+42:47 >> and gives it to you.
+42:48 >> Oh, easily doable.
+42:50 >> Okay, I want to have that.
+42:52 >> Okay, let's meet for a hack hack project
+42:54 then.
+42:55 >> Uh but you said Dropbox has it. I have
+42:57 Dropbox.
+42:58 >> Yeah, Dropbox is building. Yes.
+43:00 >> But like that do I need to put all the
+43:02 things to? So right now the the product
+43:04 that uh I was building on I don't know
+43:06 what has changed since I left but uh we
+43:09 were building uh this product called
+43:10 Dropbox Dash which is like you know AI
+43:13 powered search and assistant and so on.
+43:15 So it helps with a lot of these um use
+43:19 cases of productivity and you know
+43:21 connecting to all the SAS that you use
+43:23 at your work and so on so forth. So um
+43:26 yeah you should check it out.
+43:29 Okay, I guess I need to have a paid
+43:31 account, right?
+43:32 >> I do not know the answer to that right
+43:34 now, but
+43:35 >> yeah, I'm checking and there is a big uh
+43:38 there's a link contact sales.
+43:40 >> Okay,
+43:42 that's a problem because I I I know
+43:44 Dropbox is used by enterprises, right?
+43:45 And these are main target audience
+43:48 >> because when multiple people use the
+43:50 same olders or Dropbox, whatever. Yeah,
+43:54 >> that's because the content there becomes
+43:56 much more blown up and discovering other
+43:58 people's, you know, documents and stuff
+44:00 becomes much more challenging. So, it's
+44:02 a it's a more of a fit there.
+44:06 >> Yeah, I see we have some questions. I
+44:08 think at the beginning when we when we
+44:10 started talking about agents, I used an
+44:13 example of frameworks.
+44:15 >> Uh I mentioned pedantic AI and agents
+44:19 OpenAI agents SDK. Um so in your opinion
+44:23 do we need to learn any frameworks and
+44:25 if yes what kind of frameworks we should
+44:27 learn to make our life easier
+44:30 >> or should we just implement everything
+44:32 from scratch?
+44:33 >> Good question. So I think so far I I've
+44:36 tried quite a few and uh but to be
+44:39 honest at work I don't really use any of
+44:41 those things. Uh, one that really I I it
+44:45 kind of struck a chord with me was this
+44:48 thing called uh small agents. Uh, it's a
+44:51 hugging face uh transformers um library
+44:56 that kind of transformed to this called
+44:57 small agents. Sm agents. Yeah, that's
+45:01 something that I really like because
+45:02 it's it's as I said, I'm biased towards
+45:04 like code based agents and it's a very
+45:06 uh programmatically thinking kind of
+45:08 agent and that helps you kind of
+45:10 bootstrap if you want to uh you know let
+45:13 a framework do this for you. But I would
+45:15 still say um build it from scratch.
+45:18 There is there's nothing like it because
+45:20 you know what happens with these
+45:22 frameworks uh when you're building
+45:23 something it's after a point you have
+45:26 gotten into this complex state where you
+45:28 don't really understand what this agent
+45:30 is doing
+45:31 >> it's um
+45:33 >> it becomes like a debugging nightmare so
+45:36 >> I would say start from scratch you know
+45:39 what is an agent at the end of the day
+45:40 it's a bunch of tools and a bunch of
+45:43 instructions right and you know you can
+45:45 implement your own choice of memory your
+45:47 own choice of where your data sits if
+45:49 you need to you know query data sources
+45:52 things like that so um that's what I
+45:56 would suggest.
+45:57 >> Mhm. Mhm. Yeah. What do you think about
+46:00 lchain?
+46:02 >> Lang chain has its uses but uh I haven't
+46:07 really you know connected very much with
+46:10 uh using lang chain agents as such. uh
+46:13 even they were like pretty early on in
+46:15 terms of agentic you know invention like
+46:19 we were we were building this code
+46:21 agents at the time and they had their
+46:23 own react framework type of building
+46:25 agents and
+46:27 >> uh I was a little underwhelmed by you
+46:30 know the the way it couldn't handle
+46:32 ambiguity because you're doing
+46:34 interactions in natural language and
+46:37 stuff but it has come a long way since
+46:40 then and I'm sure they have like new
+46:43 types of agents that you can experiment
+46:44 with and so on.
+46:45 >> Yeah.
+46:46 >> So when you mentioned debugging
+46:48 nightmare and trying to figure out
+46:50 what's um wrong
+46:53 >> uh for me was like lane
+46:57 >> because like this uh agents SDK from
+47:00 open AI is kind of
+47:03 >> very light wrapper around plane
+47:08 API. Mhm.
+47:09 >> So it kind of like I understand what's
+47:11 happening there is more or less uh clear
+47:15 but with line chain often times I have
+47:17 no idea what's happening.
+47:18 >> Yeah.
+47:18 >> And like it's very hard to debug. So
+47:21 >> because it's a complex mesh of things,
+47:23 right? So it's so it's like multiple
+47:26 things talking to each other in natural
+47:28 language. It can get a little confusing
+47:30 uh to understand what's going on. Mhm.
+47:33 >> And when you suggested to implement your
+47:36 own agent or agentic framework from
+47:38 scratch, I agree. So this is something I
+47:40 did too and it really helps to
+47:42 understand what's happening and then
+47:44 like I don't know if you have multiple
+47:45 agents that realizing that one agent can
+47:48 be just a tool of another agent.
+47:50 >> Right? So I I think it helps to
+47:52 understand like how these things that
+47:54 people are talking about how they
+47:55 actually work.
+47:57 >> Yeah.
+47:57 >> It's really helpful for understanding.
+48:00 >> Very true. I think eventually we'll come
+48:02 into a reality where agentic platforms
+48:04 are something that is you know usable as
+48:08 is and there's like I mean including us
+48:11 we have been dreaming about this at
+48:12 Dropbox me and my manager we were like
+48:14 talking about it for for a while now um
+48:16 of having this agentic dream of agentic
+48:19 marketplace where you can you know build
+48:21 agents of of the same sort and people
+48:24 can you know buy agent from each other
+48:25 or you know talk to each other things
+48:27 like that
+48:29 >> but uh we are
+48:30 MCP we're kind of with MCP we're kind of
+48:33 one step closer there right
+48:35 >> right I mean MCP is it it solves the
+48:39 problem of you know having one protocol
+48:42 where you can talk to things but that's
+48:44 about it after that it's it's a lot of
+48:46 >> you mean like this market places or how
+48:49 is it called basically where you can get
+48:52 okay like for example in your case
+48:55 >> you have I don't know if this is
+48:57 something you deal with but I imagine If
+48:59 you're building an uh AI
+49:03 um
+49:04 >> site relability engineer s right
+49:07 >> then you need to be able to access data
+49:08 do new relic uh I don't know AWS uh how
+49:12 it's called cloudatch anyways like all
+49:14 these systems right and then like if you
+49:16 have MCP for each of them your job
+49:18 becomes easier
+49:21 >> yeah so so that I mean it becomes easier
+49:24 in one way but not always um in the
+49:28 sense that So I would say MCP is more of
+49:32 um like you have your own custom tools
+49:34 let's say and you you don't want to you
+49:37 know provide the swagger of that or like
+49:40 you know your open API spec or something
+49:43 like that where you know all the methods
+49:45 are there all the signatures are there
+49:47 you want to kind of abstract it in this
+49:48 way of doing MCP and also you might have
+49:51 more context on these things than I do
+49:53 so MCP has this way of like describing
+49:56 your tool and so on so forth so that is
+49:59 useful in the sense that you can just
+50:01 give me an MCP server rather than
+50:02 telling me what are the tools and you
+50:04 know having to sit with you on a call
+50:06 and you know in integrating with all the
+50:09 tools that you have so th those kind of
+50:11 abstractions when you don't have to know
+50:13 the full details of things yes it's
+50:15 useful
+50:17 >> um but what I mean by like agent market
+50:20 space is like something that has been
+50:22 built to solve a particular task let's
+50:24 say like the whole task the the agent
+50:26 itself so the MCP is doing solving the
+50:28 problem of tools.
+50:30 >> Wait, doesn't Chad GPT have this? I
+50:33 think they tried.
+50:33 >> Yeah, it did have the plugins, right?
+50:35 Chad GPT plugins. Yeah, that that's
+50:38 >> similar. Not exactly, but
+50:40 >> yeah, that's the idea. But uh I think
+50:42 >> doing it in a more like agentic uh way
+50:46 where you know you can actually then
+50:48 compose from one agent to another and so
+50:51 on so forth. I think that that's where
+50:52 the
+50:54 >> um that would be a nice place to be. I
+50:56 don't know if industry is actually
+50:58 really putting effort into that because
+51:00 you know in in some cases agent
+51:04 collaboration makes sense but in a lot
+51:06 of places people are like no I want to
+51:09 shield my my technology and things like
+51:12 that and
+51:13 >> so
+51:14 let's see let's see where it goes
+51:17 >> how do you go about evaluations because
+51:19 in case of rack when it's a fixed flow
+51:22 evaluating is
+51:25 uh It's not super complicated, right? So
+51:27 you kind of know what the flow is. So
+51:30 then you can evaluate it. But in case we
+51:32 are talking about agents, how do you go
+51:34 about evaluation? Because not only we
+51:36 need to evaluate the answer, but also we
+51:37 need to evalate if tools were called or
+51:39 not,
+51:40 >> what kind of parameters they were called
+51:42 with and things like that. So how do you
+51:44 go about that?
+51:45 >> Yeah, great question. And uh I I would
+51:47 like to point out one one contradiction
+51:51 uh earlier from your statement which is
+51:53 you said it's easy to write for rag. Uh
+51:57 >> it's not.
+51:58 >> Yeah,
+51:58 >> it's not like we we learned it the hard
+52:00 way and I like it takes it takes time to
+52:03 build a system, right? So imagine like
+52:06 there are these public benchmarks that
+52:08 are available for for search for
+52:10 question answering and so on so forth
+52:12 like you know squad or um uh what else
+52:15 is there like uh quad is from Wikipedia
+52:18 that there's log all those QA data sets
+52:21 right so those ones are if you look at
+52:25 it and say okay I will just pick my
+52:27 model based on that benchmark you are
+52:29 going to go horribly wrong in your
+52:31 system because
+52:33 >> it's you're not evaluating your system,
+52:35 you're evaluating just that model's
+52:37 capability, right?
+52:38 >> And it's very likely that the model
+52:40 already has seen that data set and so
+52:42 on. And so that challenge is there. So
+52:44 how do you kind of come up with a data
+52:46 set that fits into your system and is
+52:49 representative of what your real user
+52:53 >> going to be? You need to create it
+52:54 yourself. And it's it's u it's still a
+52:57 very very much unsolved um
+53:01 >> you know area of uh you know for for
+53:03 industries to you know right for
+53:05 picking. There are a lot of people that
+53:07 are trying to solve this. There are a
+53:09 lot of companies in this space that are
+53:10 trying to make it easier to you know
+53:12 manage evaluations and you know create
+53:14 data set synthetic data and so on so
+53:16 forth but
+53:17 >> it's not there yet. Um now when it comes
+53:20 to agents um of course multiply that a
+53:23 little bit because now you have not one
+53:26 but you know multiple LLM prompts and
+53:31 and you need to have first of all do you
+53:34 have to have evaluations for each of
+53:36 those prompts you have to have uh
+53:38 evaluations for first of all are the
+53:40 tools doing what they're supposed to be
+53:42 doing right so this kind of challenge
+53:46 the the way I have solved it before And
+53:48 uh like the team at Drawbox and I we
+53:51 were working on this for a while and the
+53:53 way we came up with this was like having
+53:55 some sort of very similar to software
+53:58 engineering tests, right? So like if you
+54:02 think of
+54:04 the minute you step into agentic world,
+54:06 think of it as like a software system
+54:08 rather than uh I mean you do have to
+54:12 keep the probabistic part of it in mind
+54:14 of course because you know it it it will
+54:16 not behave the same way every time.
+54:19 >> But as a software system as a the whole
+54:23 whole thing uh you have an input you
+54:25 have a predictable output. Now you how
+54:27 do you write integration tests for
+54:29 software? You write it by mocking the
+54:31 input and saying okay this is the input
+54:33 that I give it and then it should
+54:34 reliably give me this output right
+54:37 >> it's a painstaking process but once you
+54:39 kind of set like enough volume of these
+54:43 cases depending on how complex the
+54:44 system is like for something like a
+54:46 calendar agent that I talked about like
+54:47 on 200 300 test cases
+54:50 >> uh of that sort will help uh you know
+54:54 remove doubts from your you know mind
+54:55 that actually this will not work but uh
+54:58 for something like an S agent it's a lot
+55:01 more complex because now when you're
+55:04 mocking you have to mock like all these
+55:06 data sources like you know logs and
+55:08 metrics and whatnot and it's
+55:11 >> uh but it is doable uh unfortunately
+55:13 that's the that's the path to take right
+55:15 now. So what you mock in this case is uh
+55:18 tools because tools need to yes
+55:21 >> they communicate with external services
+55:22 but in your integration test you don't
+55:24 want to uh communicate with external
+55:27 services so you replace them with some
+55:29 local services or like
+55:31 >> uh but you uh what you check is that
+55:35 these local services are actually the
+55:37 agent actually invoke tries to talk to
+55:39 them tries to communicate with them
+55:41 right and then this this could be your
+55:43 assertion
+55:44 >> that okay for this prompt.
+55:46 >> Mhm.
+55:46 >> Um I don't know set up a meeting with my
+55:49 manager. So we first talk to um like I
+55:53 don't know the HR system that figures
+55:56 out who your manager is and so on. So
+55:58 yeah
+55:59 >> and then there should be two calls for
+56:01 checking.
+56:02 >> So I wouldn't go that deep Alexi. So the
+56:04 thing is
+56:06 >> the now this is where the LLM nature of
+56:08 things comes in right. So it's possible
+56:11 that there are two paths to taking to
+56:13 accomplish the same goal.
+56:15 >> So if it's able to do that with some
+56:17 other method
+56:19 >> then it's still okay, right? I mean as
+56:22 long as it's not like regurgitating
+56:23 without any tool calls uh tool calls
+56:25 then uh you're kind of safe. You just
+56:28 have to make sure that it's it's
+56:29 actually consulting the true source. So
+56:31 so the way you would do that is like you
+56:32 know say these are the sources that I
+56:34 want it to have and in what way it made
+56:37 the calls to the sources. it called it
+56:39 multiple times or single one time like
+56:41 for example let me give you for org
+56:43 chart there can be two ways of finding
+56:45 out who my skip level is right maybe
+56:47 it's just in like the user's own okay my
+56:51 skip level right like manager's manager
+56:53 it's it's just there or I can go uh
+56:57 build like a graph
+56:58 >> of the orc chart and say I will traverse
+57:01 up
+57:02 >> until like two hops right so that's
+57:06 >> there are two different ways of doing is
+57:08 but it's both both are okay right so as
+57:12 long as the end goal is met I think it's
+57:15 um it's okay because now this is only
+57:17 we're talking about two different data
+57:18 sources now imagine adding like 10 more
+57:21 it's not going to be the same every time
+57:23 >> so what we can evaluate is not only uh
+57:26 two calls or sometimes we might not even
+57:28 want to evaluate this because because
+57:30 there are multiple ways to achieve this
+57:32 same goal but we evaluate if the goal
+57:34 was achieved
+57:35 >> yes exactly
+57:36 >> right so maybe there is have final
+57:38 things like uh create a calendar invite
+57:41 and this is what we want to assert for.
+57:43 >> Yeah.
+57:44 >> And all other steps they they're
+57:46 interesting to know but for us the main
+57:48 thing in this process is the tool with
+57:50 uh I don't know create calendar invite
+57:53 email one two time slot
+57:56 >> is what should be invoked right and this
+57:58 is what we search for.
+58:00 >> Yeah. Yeah.
+58:00 >> Cool. Okay. But it requires a lot of uh
+58:03 domain knowledge. I guess this is not
+58:04 something
+58:05 >> Yeah.
+58:06 >> Yeah.
+58:06 >> Yeah. That's why I think it's like
+58:08 making it super generic has not happened
+58:10 yet because
+58:11 >> these are very specific things.
+58:13 >> Yeah, I'm looking at the list of
+58:15 questions we prepared. I think we
+58:17 covered maybe one of them only today
+58:20 maybe. But it was super fun to talk to
+58:23 you. Uh yeah, you're very knowledgeable
+58:26 in this topic and it was great pleasure
+58:28 to talk to you. I learned a few new
+58:30 things. Um, so I still I could keep
+58:35 asking you forever,
+58:38 but yeah, at some point we need to stop
+58:40 and I think this should be now cuz it's
+58:42 been 1 hour. I didn't even realize.
+58:44 >> Yeah, time flies. So, thanks a lot for
+58:47 joining us today. It was a great
+58:49 pleasure. Thanks a lot everyone for
+58:52 >> joining us today too. Um,
+58:56 >> yes.
+58:56 >> Yeah, there's actually a funny question.
+58:58 Uh
+59:00 the question is how how soon can you
+59:03 replace your own s with your agent? Uh
+59:06 you don't need to reply to
+59:09 >> it's a good question. It's a good
+59:10 question
+59:11 >> but maybe like if I were the SE I should
+59:14 be like
+59:17 >> yeah no yeah we we'll we'll get back to
+59:19 you. You will watch watch our space new
+59:21 word.ai you will see.
+59:23 >> Okay. Okay. Yeah. Thanks a lot. Thanks
+59:26 everyone for joining us and uh we see
+59:29 >> all right
+59:29 >> you soon in our next events.

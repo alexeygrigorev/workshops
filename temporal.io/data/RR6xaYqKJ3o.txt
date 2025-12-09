@@ -1,0 +1,1402 @@
+Working as a Core Developer in the Scikit Learn Universe
+
+0:00 hi everyone Welcome to our event this
+0:02 event is brought to you by data do club
+0:03 which is a community of people who love
+0:05 data we have weekly events and today is
+0:08 one of such events if you want to find
+0:10 out more about the events we have there
+0:11 is a link in the description go there
+0:14 check it out you'll see other things we
+0:16 have in our pipeline it's been a while
+0:19 since we had a podcast interview like
+0:21 the one we have today we are working on
+0:24 getting more guests to our podcast so
+0:27 you will see more and more things uh
+0:29 there so do not forget to check this
+0:31 link and also do not forget to subscribe
+0:33 to our YouTube channel also we have an
+0:35 amazing slack Community where you can
+0:37 hang out with other data enthusiasts or
+0:39 check it out
+0:41 too and during today's interview you can
+0:44 ask any question you want there is a pin
+0:46 Link in the live chat click on that link
+0:48 ask your question and we will be
+0:51 covering these questions during the
+0:55 interview so
+0:58 now I will open the document with
+1:08 questions okay and we can start if
+1:12 you're ready yeah yeah everything okay
+1:16 this week we'll talk about how is it to
+1:19 work as a open source developer and cor
+1:21 developer in the psychic learn universe
+1:24 and we have a very special guest today
+1:26 Gom Gom is an open source engineer at
+1:29 probable
+1:30 and he's focusing on uh data science
+1:32 development and contributing to the
+1:34 psych Library he's actually not our
+1:37 first guest from the probable um company
+1:42 uh we recently had an interview with
+1:44 Vincent and uh yeah so very excited
+1:47 about this interview of course so Gom is
+1:49 also an open source engineer at tiria
+1:52 and tiria for those who don't know which
+1:54 is the organization behind psychic learn
+1:57 has been for many years until probable
+2:01 and he worked there for more than 7
+2:03 years he also has a PHD in medical
+2:05 imaging focusing on computer Aid
+2:07 diagnostics from for prostate cancer so
+2:09 welcome to our show hello happy to be
+2:13 here yeah so the questions for today's
+2:16 interview are prepared by Johanna berer
+2:18 thanks Johanna as always for your help
+2:20 so let's start before we go into our
+2:23 main topic of being an open source
+2:25 engineer and working on Psychic learn
+2:27 let's start with y ground can you you
+2:30 tell us about your career Journey so far
+2:33 yeah uh I can do quickly these things so
+2:37 will not start with Master whatsoever so
+2:39 I will start with my my PhD so basically
+2:41 I was a user of csy I mean before Cy I
+2:44 was using basically mat lab and I was
+2:46 doing basically I did a PhD in like
+2:49 detecting concer in medical imaging I
+2:52 mean M Imaging and then you have to
+2:55 deploy those on the cluster and then the
+2:57 licensing of M lab just block you
+2:59 because you have 300 notes and you have
+3:00 10 licensing and that that doesn't scale
+3:03 so I mean we don't tell you to do that
+3:05 so this where I started to use like
+3:07 psychic learn and then I which year was
+3:10 it so
+3:13 2009 I think something like that or 2011
+3:16 second second learn was already a thing
+3:20 it was already a thing and there are
+3:22 like why I was really interesting about
+3:23 it was there had this random Forest
+3:25 classifier that was working very well
+3:27 for my use case um and I needed as well
+3:30 this I had this problem of of data
+3:32 balancing because you have much more uh
+3:35 like Vell without any concer why work s
+3:38 with concern in those images so I had
+3:40 like imbalance programs and this why
+3:43 nothing was there and then by reading
+3:45 the literature I said okay let's let's
+3:47 make something that is compatible and
+3:50 then we just hanged out with some people
+3:52 that were were as well interesting about
+3:54 that things um and one day I went to to
+3:58 see a similar where I so like G varu and
+4:01 say oh by the way I mean how is it going
+4:03 Atria is he any job and whatsoever and
+4:07 and one person just present like few
+4:09 days afterwards and is how I landed
+4:12 basically this is the guy behind SAR
+4:14 right the one and is yeah is the co
+4:17 co-founders um of of psychic Lear
+4:21 basically when when they started the
+4:23 project like uh 2011 I think something
+4:27 9 and and by knowing that I was working
+4:29 working on related stuff say oh so
+4:31 you're pretty a good candate to speak
+4:33 with because we want to maintain as well
+4:35 like the ecosystem and and having people
+4:37 that are like have a tendency to touch
+4:39 those things so come and and interview
+4:41 and then we'll figure out something and
+4:43 then I have left okay so I ended up in
+4:46 at inria the modality of how like this
+4:50 Evol over times first like as an
+4:53 Engineers within inria then within
+4:55 foundations and then now probably just
+4:57 like a Continuum of changing and to make
+5:00 sustainable like pay basically Engineers
+5:03 for for these open source packages M so
+5:06 this this is a bit like the uhuh so I
+5:10 only learned about psyit learn in
+5:13 2013 I think maybe
+5:16 14 uh yeah so like all the courses I
+5:19 took was about either r or octav M and
+5:25 like for me I still didn't understand
+5:27 that python is actually quite convenient
+5:29 until
+5:30 I think I saw a course about that and
+5:33 then found Psy learn and this like I it
+5:35 was really good interface the API we
+5:38 using so I I think okay I really like
+5:41 the way it's done it's so clean like
+5:43 with all this Feit predict so and then
+5:46 ever since I'm in love with this Library
+5:49 so yeah thanks it was something similar
+5:53 because I started the PHD in 2011 but I
+5:55 did like half of the PHD in mat lab so
+5:59 20 13 or 14 was pretty like the place
+6:02 that say okay actually this like this
+6:04 language and then I never touch and it
+6:06 seems like something much much easy to
+6:08 use so let's go there MH yeah so back
+6:11 then I actually like in my main activity
+6:14 I was a software
+6:15 engineer and I was a Java developer and
+6:18 back then what people used for Java was
+6:20 VCA I don't know have you heard about
+6:22 this thing which one W so it's
+6:27 a from I think it's from University of
+6:30 New Zealand somewhere from that part of
+6:32 um yeah because it's a qwi that is on
+6:34 the page so yeah and yeah at the time I
+6:38 think that you had a rapper matab rapper
+6:40 just to like un call the Java
+6:42 implementation so I I kind of like use
+6:46 it at some point as well and yeah it was
+6:49 not as easy as just like turning into
+6:51 Python and do doing thing there ex yeah
+6:54 so this is how we all ended up in uh in
+6:58 the python World play yes
+7:00 I think so and you've so you've been
+7:02 working first as a user uh you've been
+7:04 using psych learn as a user first and
+7:07 then you became an open source developer
+7:09 right and you've been doing this for
+7:11 seven and a half years roughly right
+7:14 yeah yeah something like this um yeah
+7:16 first as a I mean when I was developer I
+7:18 was using psych then I I somehow like
+7:22 developed this compatible Library so I
+7:24 knew a bit like some internals but
+7:27 roughly and my journey really started
+7:29 starting when when I collaborate or work
+7:31 with people basically at Ina because
+7:33 then like the inside just open and then
+7:36 people explain you like more
+7:38 stuff and this compatible I think you
+7:41 said compatible libraries so one of them
+7:43 is imbalanced learn I think right yes MH
+7:48 and others so yeah right now we are
+7:53 working on something but is much much
+7:55 recent which is called scrub uh and this
+7:58 is to scrub basically your data and and
+8:01 bringing back let's say your data
+8:02 sources that could be SQL table or any
+8:06 type of sources bring them like closer
+8:09 to your machine learning models because
+8:10 second is very good once that you have
+8:12 your tab data X and Y and then you want
+8:15 to preprocess them slightly and put them
+8:17 inside the machine learning models but
+8:19 you cannot do like extreme or like
+8:21 joining and whatever pandas is good at
+8:25 but it doesn't have this this like State
+8:27 thing so scrab is more like inside is
+8:30 this like scope of like bringing closer
+8:34 the data source to the machine learning
+8:35 one so that's that's like some tool that
+8:38 we want to make them like compatible and
+8:40 and I'm imply inside the development of
+8:42 those two
+8:43 tools I'm looking at the GitHub read me
+8:49 so it says scrap formally dirty cat is a
+8:52 python library that facilit facilitates
+8:55 prepping your tables for machine
+8:56 learning exactly because so the original
+8:59 so when it was called Dirty cat it's
+9:02 linked to a research project from g v
+9:05 actually where it was interesting to say
+9:07 instead of trying to just take a columns
+9:10 and and have to clean manually
+9:11 everything like for instance categories
+9:13 which are not uh properly formated or
+9:17 there typo and stuff like that let's
+9:19 stop to do that and let's come with a
+9:21 machine learning approach where you will
+9:24 just reduce the amount of time that you
+9:25 have to do this manual preprocessing and
+9:27 come with a has good preprocessing with
+9:31 like a statistical approach so maybe
+9:33 eding maybe like over type of of of
+9:36 things that go on and uh and that was
+9:39 the original IDE and then it was maybe
+9:41 we can just like a larger BOS Scopes not
+9:43 only categories but as well to if I had
+9:46 date times I want to have like U like on
+9:51 the shelves encoding of those the same
+9:53 with uh High Cate cardinality category
+9:57 low C low cardinality categories and and
+10:00 numbers I mean what can we do
+10:02 there so that scope of
+10:05 SC and the cat here is not a a cat an
+10:09 animal it's a category right yes exactly
+10:13 yeah so yeah dirty cat has like yeah
+10:15 dirty categories basically at at the
+10:17 start okay and the logo was a dirty cat
+10:20 but a real dirty
+10:22 cat so I this is something as a data
+10:25 scientist I encountered quite often that
+10:27 um you have a column which which is
+10:30 categorical but you have so many like
+10:32 for example country name and if you let
+10:34 users type country instead of giving
+10:37 them a list of countries then you end up
+10:40 with like all sorts of things there like
+10:42 us us USA with dots without dots uh the
+10:46 US like all sort of things right and you
+10:49 want to normalize it somehow and this is
+10:52 what dirty cat would help with right
+10:54 helps with exactly so yeah so this if if
+10:58 you think of it like I mean an MLP
+11:00 approach so like with our Network you
+11:02 can just project those into an latent
+11:05 space like an iding and all those us and
+11:08 variation of it should be closed
+11:10 together so I can just like provide
+11:12 basically a vector where all of those
+11:15 will be like close to to each other and
+11:17 like something that is completely
+11:18 different will be far away and I don't
+11:20 need to treat like the original data in
+11:23 some way so that's a that's I could
+11:26 maybe cruster inside an edding space and
+11:28 just like trying to project back let's
+11:30 say but that's let's say the projection
+11:33 is good enough to start to do machine
+11:34 learning but this is exactly yeah that
+11:37 type of
+11:38 processing and uh yeah so you've been
+11:42 working on Psychic learn for quite some
+11:43 time did you focus on any specific part
+11:46 of psychic learn or you worked on the
+11:49 entire library or what what did you work
+11:52 on
+11:54 um so now it's quite too while so I
+11:58 would say now I have
+12:00 an overview of what's happening but of
+12:02 course depending of the
+12:03 time I'm just focusing more on something
+12:06 or or something else one thing that I
+12:08 really like so I'm not a performance
+12:10 person so I'm not doing lowlevel things
+12:12 I can review that but I mean it's not
+12:15 I'm getting annoy after sometimes um I'm
+12:19 not like a Pure ma approach like I don't
+12:22 do like really like low level mats or
+12:25 like really going to the bottom and
+12:26 optimization I mean this is not my my
+12:29 like where I am the I can have the most
+12:32 values and somehow I I end up in in
+12:35 looking more like higher level API
+12:37 things so for instance I'm I'm really
+12:39 interesting at seeing what type of value
+12:42 we can give to users when they want for
+12:44 instance to plot evaluation metrics or
+12:46 those type of things and then you need
+12:47 to have a good IPI for that and you have
+12:49 a model then you want to plug it there
+12:51 and make like nice plots or sometimes as
+12:54 well on on business cases so let's say I
+12:57 probably will come back later on that
+12:59 but like like you have this for very
+13:02 long time the predict method just can
+13:05 take for probability in in the
+13:07 classification cases and to make the
+13:09 final decision you cut at 0.5 which is
+13:12 very confusing when you ENT enter inside
+13:15 that nobody really question that that
+13:17 things and and if you are inside a
+13:20 business PR that thing is not the right
+13:22 one and then so for instance we recently
+13:25 developed this this meta estimator which
+13:27 allow you to retune this is depending of
+13:29 of a business metric uh so it's more on
+13:33 those like we we see over time some very
+13:36 important thing inside the road map and
+13:38 I I will take like usually what nothing
+13:41 that is really related to lowlevel mat
+13:44 or lowlevel performance and more to API
+13:47 and sometime going into like very deep
+13:49 into like the application and what can
+13:51 bring values to
+13:53 users Okay and like when I ask this
+13:56 question like what part of csy learn you
+13:58 worked on
+14:00 I thought I realized that I don't
+14:03 actually know like what parts are there
+14:05 like I know that there are different
+14:07 subm modules like three subm module The
+14:10 Ensemble subm module the linear subm
+14:13 module how does it look under the hood
+14:15 do you have like how do you like if you
+14:18 wanted to Split Second learn into
+14:21 multiple areas multiple Parts how would
+14:23 you do this based on modules or based on
+14:25 some something internal or how does it
+14:27 look like
+14:29 so right now how it split is really in
+14:34 in yeah sub modules and family of of
+14:36 algorithm so you have the preprocessing
+14:39 with like a bunch of things there but
+14:41 then as you say like if I have models
+14:43 which are like linear model they will be
+14:44 inside that modules emble will be like
+14:47 as well in in their own
+14:49 modules um and trees in their modules if
+14:53 I have nowadays to to
+14:56 Define uh what organization makes sense
+14:58 to me me it would be uh it would be like
+15:02 to define the scope basically where C is
+15:04 good and where maybe it should move a
+15:06 bit would be we should have numerical
+15:09 algorithm so this ision three linear
+15:11 models are like really you put an ire
+15:15 inside and this what was from the
+15:16 beginning you put an ire R inside it
+15:19 does some mathematical operations to
+15:20 give you output and and at some point we
+15:25 as well add like PR processor for inance
+15:27 scaling and all this and I assume that
+15:29 nowadays there's a kind of a value and
+15:32 maybe scrubs can shine because there a
+15:33 value to have like different tools for
+15:36 inance polars bring like lazy data frame
+15:39 P was as well a data frame and it's not
+15:41 anymore an ire Ray that you want to put
+15:44 inside those it's much more than that
+15:46 it's much more like erogenous and have
+15:49 more values and I think that N I will
+15:51 just like split into like component one
+15:54 which is like the really applied mats
+15:57 where you need like efficient algor with
+15:59 solvers and all of those there and then
+16:02 the other part which is inside the
+16:04 preprocessing and PR like we should have
+16:08 another Vision on on what those tool are
+16:10 doing but I mean they should help you to
+16:12 put them then inside numerical part M
+16:16 but should it still be a part of Psych
+16:18 learn or like in a separate Library like
+16:20 scrub that's a good question so today
+16:24 they are inside Lear uh and we have for
+16:27 instance difficulties to be a to be
+16:29 compatible with pandas poras and all of
+16:31 those what scrub could be in the
+16:34 meantime is a playround to see what we
+16:37 should support and how to support it
+16:39 very well and if at some point we have
+16:42 like something uh that you can just
+16:45 instead to use a St scaler from from
+16:47 cycl you have a version in scrap that
+16:49 exactly do but like speak to different
+16:52 back end then it makes sense to say you
+16:54 know what c will be the fundamental I
+16:57 mean like the foundation models of of
+16:59 like tab data and then like we should
+17:02 restrain maybe to this I have no idea is
+17:05 not a question discussion that we got in
+17:07 the r m because I mean it's very early
+17:10 but uh that might make uh things more
+17:13 flexible actually in in that regards so
+17:17 we should not stop ourselves to say
+17:18 maybe we should like remove some of the
+17:20 part because nowadays with all the back
+17:22 end that we have and to make it like
+17:24 easy to our users we should like have
+17:27 this distinctions and maybe will become
+17:29 like a Cy thing but I think that
+17:32 pressing should be split maybe from the
+17:34 numerical part such that people don't
+17:35 come and say I want to be able to put
+17:39 whatever like Matrix inside my trees
+17:41 because at the end this is a numerical
+17:43 operation so we will have to convert
+17:45 into NP or Cai or but to an array
+17:49 because this way it will be very
+17:52 efficient yeah and also since I learn is
+17:56 uh I would say the most popular popular
+17:59 machine machine learning library in the
+18:01 world it's not something you can just
+18:03 say okay yeah we have this preprocessing
+18:06 model but it doesn't really fit there
+18:08 let's remove it cuz so many people
+18:10 depend on this right so like I guess for
+18:13 you A big challenge is
+18:16 like how do you change this thing
+18:19 because like uh the moment you change
+18:21 something in this Library so many like
+18:24 you have this uh large domino effect
+18:26 right yeah I I will take a typical ex I
+18:30 mean like uh the strongest examples that
+18:32 everybody in the python Community PR
+18:34 like observe if you're at least maybe 20
+18:38 years old python 2 Python 3 what you
+18:41 don't know when where where I mean now I
+18:43 know because I'm 35 like if you're 20
+18:46 you don't know about it because I mean
+18:47 it's already Python 3 now but python 2
+18:50 should have been a change in couple of
+18:52 years I know two three years it lasted I
+18:54 don't know maybe 10 or because like yeah
+18:58 it was like some difficult part and make
+19:00 people switch is super
+19:03 difficult and C that is so costly you
+19:07 really question if this is worse or not
+19:10 so here we don't want I mean we have the
+19:12 same Vibes in in in C which is we don't
+19:16 want to break your ecos your pipeline of
+19:19 machine learning just because we just
+19:21 find this is a much better way to do uh
+19:24 so we need to have these very long
+19:25 Transitions and for instance we if this
+19:28 is like coming from like really
+19:30 splitting estimators that would be a
+19:32 very rather big change and then we need
+19:33 to understand how smoothly we can do
+19:38 because moving an
+19:41 import is already breaking a lot of
+19:43 things so uh changing your behavior is
+19:47 may be even worse because like changing
+19:49 Behavior people get surprised and then
+19:50 they say oh I need to have this vd1 to
+19:52 V2 and now everything need to change so
+19:55 this is like so it's really something I
+19:57 would like that we don't have moving the
+19:59 import may be something that uh is like
+20:02 at least it doesn't change the behavior
+20:04 so that might be okay but I mean it's
+20:07 not something that you just say okay now
+20:09 it's cyar one so now is it cyar two and
+20:11 then you change stuff uh so it need to
+20:14 be long and up to now we always have
+20:16 been like throwing down everywhere
+20:19 because of those making it
+20:21 like a very trustful like library in the
+20:25 way that we don't break stuff MH and
+20:28 also um like when you make a
+20:31 change I I get a warning and this
+20:34 warning stays for a few major releases
+20:37 like until I'm okay finally I'll fix
+20:40 this just stop doing this stop making
+20:42 this warning yeah it's exactly that it's
+20:46 one year we give a one year uh lapse of
+20:49 time that people can so six months where
+20:51 we change and then we start to change
+20:53 ourselves the code and the release will
+20:54 be six months later so I give you like
+20:56 one lap of one years to
+20:59 ad up to code and I assume just people
+21:02 just like might be just annoying and
+21:03 just like pin the versions I mean that's
+21:05 that's how you can hand up I mean in
+21:07 companion because you don't want to say
+21:09 anything so yeah even doing this is like
+21:13 already a challenge in some places so we
+21:17 have to be aware of this well people
+21:20 still use Python 2 for some things right
+21:23 so St in versions for second
+21:28 yes that's true at least now the PPI
+21:32 repository tell us that a lot of people
+21:34 just move to Python 3 it's it's it's
+21:36 much nicer than what it was still people
+21:39 using uh the 1.0 versions and we are at
+21:43 1.5 so maybe it's only CIS that like try
+21:46 the minimum version that they support
+21:48 and then we get like a lot of downloads
+21:50 there but this is kind of interesting to
+21:53 to look at like that numbers for
+21:55 instance collab is using cyclon 1.2.2 I
+21:58 think so is like you teach people using
+22:00 like as well old version so if today you
+22:03 say we don't care we don't support
+22:05 anymore the old versions or like we
+22:08 don't give U like any interest like in
+22:11 the next six months we break everything
+22:13 then I mean yeah no no not that much
+22:16 people will be happy about
+22:19 it um was like affected with the recent
+22:22 n.2 release 2.0 that was a very
+22:27 interesting uh Community efforts so yes
+22:30 we got uh
+22:32 affected in our development but I assume
+22:35 nobody has the user should
+22:38 have felt it because we so what happened
+22:42 is that now with a cpai community like
+22:46 Scientific Python Community this have
+22:48 been very well organizing oh we are
+22:50 going to do this and it's a long time
+22:52 that basically we are testing nightly
+22:53 buil so we are testing already since
+22:56 maybe a year against like nay to uh and
+23:00 then we discuss as well with the
+23:02 developer in different Coen and eurosci
+23:04 with people from ning we will break this
+23:07 IBI so you proba want to make releases
+23:10 in between such that I mean we have the
+23:12 transition that people don't like from
+23:14 day one to day two they just like
+23:17 install something and is not compatible
+23:19 anymore and I found that it went very
+23:22 very smoly at least we have the chance
+23:25 as being Cent to only depend on n IP so
+23:29 that's easy for us but at least we
+23:31 didn't block anybody that uh depend on
+23:34 Psy because we are already like ahead of
+23:37 that and if the major package just like
+23:40 pandas did the same uh and over like
+23:43 major libraries did the same and I
+23:45 assume then is up to the people that are
+23:48 dependent of those library to make the
+23:50 move and when it come to K I think that
+23:53 k for is just amazing because they can
+23:56 just
+23:57 like if people take care then they can
+24:00 just rebuild all the packages so it went
+24:03 very very smoothly but because of the
+24:05 community efforts as well I mean and
+24:07 Communications and that's very
+24:08 interesting things to me I mean for for
+24:10 me and you're also quite tightly
+24:13 connected with each other I mean uh naai
+24:16 saai s learn cuz like I guess they know
+24:20 that you're one of the major users so
+24:24 they want to inform you about all the
+24:25 breaking
+24:26 changes yes so the the somehow is like
+24:31 if there have a major changes they want
+24:32 to say he by the way on your side how
+24:35 bad this is and then we have the
+24:38 communications and and yes the
+24:41 Scientific Python ecosystem relies on a
+24:43 lot of people that are the same
+24:45 everywhere so you have for instance
+24:48 Quant site that pay open source
+24:49 Developers for in like Ral gers and you
+24:52 can see R gers in naai in CI and then we
+24:56 know who to P so in say oh we have that
+24:59 question about what's happening and then
+25:00 he will be directly like answering that
+25:02 things here and then in k for that's as
+25:04 well some other people that are really
+25:06 like tight and so it's something which
+25:10 is scary in one way because actually the
+25:12 community is not that big compared to
+25:15 the impact of what it has but then it's
+25:17 very interesting because we always speak
+25:19 to the same people so uh we need to
+25:22 embold more people as well but I mean
+25:24 like this is very interesting that
+25:26 everybody know each other and our aware
+25:29 that what you should break and what you
+25:31 cannot break and how how to to make it
+25:34 smooth MH and I guess you usually meet
+25:38 at P dat or similar conferences right
+25:41 yes
+25:42 so um there's uh one community in the US
+25:46 which usually go either in Pyon because
+25:49 now you have certainly a data track and
+25:51 in cie and then in in Europe we have
+25:55 Euros ccii which is like very small but
+25:59 very inse in in car
+26:01 contributors uh and usually happening in
+26:03 August and way is like multiple P data
+26:05 events and we see everybody in different
+26:08 locations so for instance Pon D we P
+26:11 data bur in this year or like the year
+26:13 before is one Comm one event where we
+26:15 see people in Pon Italy is one as well
+26:19 uh and then this year will be pataa
+26:22 Paris and pataa Amsterdam I mean there
+26:25 are the thing that just like there's
+26:27 many of them so you always be sure that
+26:30 if you go to one of those event you will
+26:31 see some people M right and speaking of
+26:34 P data Pon Berlin so this is actually
+26:37 where I saw your name and your talk and
+26:40 I thought it would be nice to invite you
+26:42 for this
+26:43 interview um and the talk that you gave
+26:46 was a retrieval augmented generation
+26:49 system to query the psychic learn
+26:51 documentation right can you tell us a
+26:54 bit more what you talked about there yes
+26:57 so yeah that's we some llm within second
+27:00 what's happening there so yeah so so the
+27:03 reason is uh we were revamping the
+27:07 website which is actually now like
+27:09 nicely done using these PS things and
+27:13 and during this revamping one thing that
+27:15 we know that is not that great is this
+27:17 search bar somehow that's using like the
+27:19 things I mean it's very minimum it works
+27:21 if you know what you are searching for
+27:23 but if you don't know then this is not
+27:25 that great I mean it doesn't do fzy
+27:27 matching and all of those like of
+27:30 quering um so it's a bit limited and we
+27:33 thought like maybe uh like everybody
+27:37 speak about those Rag and llm but none
+27:39 of us really knows so that would be nice
+27:41 to make a PK and learn first like the
+27:43 Techno what is it unlocking and with our
+27:47 perspective of like open source package
+27:50 what are the limitations because we have
+27:51 some and uh and if it brings some values
+27:55 and cost things so
+27:58 basically to go fast in the result of
+28:01 this is uh limitation that we have when
+28:03 we open source that we cannot collect
+28:05 data from users because we don't do that
+28:07 we don't want we could we could ask
+28:10 people do you want to give us like which
+28:11 search you are doing and it's to improve
+28:13 basically usability the problem is that
+28:15 if one day we leak those mean we don't
+28:18 want just to take the risk so we don't
+28:20 do that EV could be lgpd compliance so
+28:23 we have no data at the pl so we have no
+28:25 very way of evaluating
+28:28 uh and this is a big b big issues when
+28:31 you want to develop such like technology
+28:33 that you don't know what would be the
+28:35 impact and that you don't know basically
+28:38 the framing because everybody like see
+28:40 it and and evaluate it in where they
+28:43 think that their user are using it for
+28:45 and then there's all the thing that user
+28:48 will actually use it for and then on
+28:49 those things you have no idea what it
+28:51 gives and and uh so this is a very like
+28:55 let's say philosophical question where
+28:57 is the tool Worth to put if actually
+29:00 nobody will use it or use it badly uh so
+29:03 that that was one of the thing there and
+29:05 then what the technique component itself
+29:08 uh it was just to know where what
+29:11 everybody tell you R are simple like
+29:14 just chck your data check your
+29:16 documentation put it there and then it
+29:17 will work and then when you do it
+29:20 yourself you just like see a lot of
+29:22 issues so my point was to say okay let's
+29:25 make something that is reproducible and
+29:27 let's look at what are like the actually
+29:31 the pieces that people don't tell you in
+29:33 blog post that you can read in five
+29:35 minutes so let's look at those and and
+29:37 make a presentation and bring by that
+29:39 first vision of a committee and second
+29:42 all the drawbacks that could you didn't
+29:44 think at the begin and that could be
+29:46 helpful if you were thinking to start
+29:48 with that so that's that was the talking
+29:50 Pon D um and probably I will just like
+29:54 make a blog post with probable around
+29:56 the topics and now we have as well this
+29:58 uh repository where you can just take
+30:01 your Mac and just like reproduce that
+30:03 and have you right if you want to test
+30:05 it uh if you really want to see like
+30:08 what these things gives um so that's
+30:12 yeah that was a bit like the idea of
+30:13 these things it's called ragger duck
+30:16 yeah yeah I I'm I'm only proud about the
+30:19 name so it's a ragger duck so it's as
+30:21 bad as a rubber duck you cannot expect
+30:24 anything from it but you can answer some
+30:26 stuff so okay okay that's that's an
+30:29 ingenious name uh and then speaking of
+30:32 uh psych learn documentation for me this
+30:35 is one of
+30:36 the best examples to me of how
+30:41 documentation should look like for a
+30:43 library cuz like it's so well documented
+30:46 and it's just like and it has been like
+30:49 since I started using it so when I be I
+30:52 became a data science fulltime in
+30:54 2015 right and then it was already so
+30:57 good and it keeps getting better this is
+31:00 amazing and but to be honest I never
+31:03 used this search functionality on the
+31:05 website I just usually use Google yeah
+31:09 that the things is first is like if the
+31:11 search is bad then you try once and then
+31:13 it doesn't answer you need then you
+31:14 don't do it so you have that I never
+31:17 really use
+31:18 it yeah so I I never really use it as
+31:21 well but it was like maybe we can do
+31:23 instead of that maybe a chatboard would
+31:25 be nice um so most probably no uh one
+31:29 thing that we need actually is like
+31:31 something that is a good information
+31:33 retal system that could be
+31:35 cheap and for Alia of those type of
+31:38 thing and then that really like let's
+31:40 say one Improvement in the user uh like
+31:45 interaction experience for people that
+31:48 using this bar for people that don't use
+31:50 it maybe then if because if it's better
+31:52 then they can use that so we are much
+31:55 more thinking about like doing these
+31:56 things before to do like any right
+31:59 things uh the right things is maybe we
+32:03 have to see because serving it as well
+32:05 unit GPU and we are a community how do
+32:08 we pay pay for
+32:11 that M 77 7B right this what you use
+32:17 yeah but but the model so you need to
+32:18 serve it so somehow I I need to get a
+32:21 server somewhere loads on the GPU this
+32:23 thing and then I need to pay 75 cents an
+32:26 hour for that machine
+32:28 so and at the end of the month depending
+32:30 and we have 1 million
+32:32 users that look at the documentation
+32:34 every month if everybody start to just
+32:37 like make a re queries how much does it
+32:41 scale uh so do you need more dpus how
+32:43 much does it cost you and I mean we are
+32:46 not a company that can ask money to
+32:48 people and just like cover the the cost
+32:50 I mean that could be one thing that we
+32:52 could do if we a company I don't say
+32:53 that Reg are usel for for companies far
+32:56 from that is just that as a community
+32:58 perspective we have much more
+33:00 constraints and then this is like yeah
+33:02 you should ask yourself those things and
+33:05 regarding the documentation I really
+33:06 agree that we spend an extensive amount
+33:09 of time to put ourself to
+33:12 non-technical perspective to write that
+33:14 documentations bring as well the the
+33:17 technical part if you want to go
+33:19 further and the funny part is that I
+33:22 think that in the contributors yeah we
+33:24 like it but we see a lot of thing that
+33:26 we just dislike
+33:28 and it's maybe why over time for people
+33:30 from outside it look like ah it's
+33:32 improving because we hate some of the
+33:34 part so much like you go in the example
+33:36 and there's too many things and we say
+33:38 we should come and just like like Cate
+33:41 this because that's not helping people
+33:44 so maybe a r would be good here to say
+33:46 find me like the example that I search I
+33:48 mean that's we never know but uh this is
+33:51 always like you can always do better MH
+33:55 and also documentation is one of the
+33:57 aspects where for us U users of psychic
+34:02 learn is we can actually contribute
+34:04 easily and this contributions are
+34:06 accepted because I myself have an
+34:08 experience of uh improving some examples
+34:12 and then this uh PR was accepted like in
+34:15 within one day or something like that so
+34:17 it was pretty fast compared to other
+34:19 open source projects where there is like
+34:21 usually a long discussion and then a lot
+34:23 of um revisions so that was just uh that
+34:29 was a minor fix but I was so proud of
+34:30 myself when
+34:33 uh it yeah documentation somewhere that
+34:37 with a small amount of work you can have
+34:40 a huge impact and and even if you make a
+34:43 mistake let's say I I wrote a paragraph
+34:46 I make spelling mistake nobody will die
+34:49 from there I mean that's so actually you
+34:51 can quickly merge that because most of
+34:53 the time this is just like a a jump
+34:57 check it right I mean you don't need to
+35:00 run it to run all the test you just see
+35:03 the and yeah but the C run so just will
+35:08 pick up those but uh for sure is that we
+35:11 can be like reading and understanding
+35:15 what what's the impact and of course if
+35:18 this is a documentation that like work
+35:21 about mathematical aspect and stuff like
+35:23 that it will be slower when it's
+35:25 straightforward changes we don't need to
+35:27 go back and forth and having long
+35:29 discussion for speaking about nothing so
+35:31 yeah we try to be much more proactive on
+35:34 this and for instance we need two
+35:37 commenters to review on very like
+35:39 technical aspects or methodological
+35:42 aspects while for documentation we say
+35:44 we have a documentation team as well
+35:47 that are feeling like really like part
+35:50 of that process and then only a single
+35:52 maintenance can just merge so for them
+35:55 like a a person from that team say I
+35:57 mean this is good enough for me I see
+35:59 the value of that changes so let's just
+36:00 go because uh that that will be already
+36:03 a net
+36:06 Improvement and uh So speaking of
+36:09 contribut contributors
+36:11 contributions um so I suspect you have a
+36:14 lot of people U so there are a lot of
+36:17 people who just contributed once and
+36:19 maybe twice but uh and then they moved
+36:22 on with their lives but you also have
+36:24 people who work full-time on Psychic
+36:26 learn right mhm how many of those
+36:29 working full-time on second learn are
+36:32 there um so Ina and our Pro is one of
+36:37 the main uh like anti that pay for for
+36:42 full-time contributors so uh in the open
+36:45 source team we are now seven so maybe
+36:49 five of the people will contribute to Cy
+36:52 Lear there and then like let's say in in
+36:55 full-time equivalent because we spend
+36:58 sometime on over libraries to help out
+37:01 um and then there's exal people and then
+37:04 this is where is a bit more fzy to know
+37:06 if they are fully paid like fulltime and
+37:11 usually this one person at Nvidia that
+37:15 that is team head which is paying this
+37:16 way and over is more volunteer be based
+37:21 things so if people contribut their time
+37:23 that are C but doesn't have like the
+37:26 full
+37:28 like they to work on that so in total I
+37:30 mean like if you consider like the cev
+37:33 we might be top 15
+37:34 people
+37:36 um and and this where this is really
+37:39 important for us as well to be sure that
+37:41 for instance the full-time paid people
+37:43 like what we have prob will not just
+37:45 take over like other people that those
+37:48 other people have the impression that
+37:49 they have no impact our goals is to be
+37:53 uh like the servant of of the community
+37:56 so who are here to
+37:58 uh address things that might be taking
+38:02 too much of your time if you are not if
+38:04 you are a volunteer there so we we we
+38:06 can do Dirty Works on CI we can do like
+38:09 those task quiz which you might don't
+38:12 want to spend your time I mean if you
+38:13 don't like to if you really like to do
+38:15 that I mean no problems but we can
+38:17 freeze some time of of other people I
+38:19 mean that's really how we see as well
+38:22 some of our impacts that at being like a
+38:24 fulltime paid um
+38:28 contributor and when you mentioned that
+38:30 it you need two commoners to look at a
+38:34 to approve a pool request uh I assume
+38:38 that the commoners are not just uh inre
+38:41 or probable employees they also like
+38:44 these volunteers that uh can work
+38:46 somewhere outside yeah so is is what is
+38:50 two of these 15 peop which are from the
+38:54 the core maintainer teams okay so that's
+38:57 uh where when it comes to like the
+38:58 maintenance of the pro the code is this
+39:00 cor core maintenance
+39:02 team okay and uh like how does it
+39:07 actually look like um for you cuz like
+39:12 if you go to GitHub and open issues
+39:14 there are 2,000 issues like how do you
+39:17 and like how I cannot imagine how many
+39:19 pool requests are there every day that
+39:22 you need to review like how do you
+39:25 manage all that you probably have some
+39:27 sort of process for for managing all
+39:30 these things of course is a chaotic
+39:33 process of Open
+39:34 Source no but um it's half a joke
+39:39 because during long time we didn't have
+39:40 any process we just like whoever want to
+39:43 look at an issue just look at an issue
+39:45 whoever want to review the the pr uh
+39:48 review a PR because we cannot for inst
+39:50 understand say to people that volunteers
+39:53 please look at that things and and solve
+39:55 it because that's that's I mean
+39:59 so at least that now we have prob or the
+40:05 foundation at inria before we try to
+40:07 have a bit more of process where we
+40:10 would have a I mean work on on defining
+40:14 a community road map so help people are
+40:16 defin this community road map then
+40:19 within the people that are paid we can
+40:21 say we have our priority items on that
+40:23 road map and we will look at those items
+40:26 which uh and and help on those basic
+40:29 things and I assume that one thing that
+40:32 happen since probables is that nowadays
+40:35 we went the step a bit further which is
+40:38 we want to have project boards on on
+40:40 GitHub and there's like project boards
+40:41 on priority that um the core team find
+40:45 that this is useful and like issue that
+40:47 are linked to this and and to have an
+40:50 idea or a between milstone between
+40:52 really is what we should focus and what
+40:54 we try to achieve I mean this is like
+40:56 one way of organ in and having a bit
+40:58 more process let's say and second one is
+41:01 that we create as well this uh run
+41:06 Robin issue PR so every week there's one
+41:11 uh contributor that say understood
+41:14 separately round robin what triage uh so
+41:20 triage task let's say so the idea is
+41:22 that you it's it's it's not always the
+41:25 same person that will go there is like a
+41:28 weekly task where you go and you go on
+41:30 the issue tracker or you go on the
+41:33 pr and then you give feedback on things
+41:35 that have nobody receive uh like any
+41:39 answer and one of the issues if if of
+41:44 not answering to people that they're
+41:45 living but actually part of our fault is
+41:47 that no is not only the fault of people
+41:50 just like living that we don't have
+41:52 enough time like to to retain them so
+41:55 here we try to have a small process that
+41:57 we ensure that one person is affected to
+42:00 give back like ask more details on the
+42:03 issues to to know if we should close or
+42:06 not if this is rep participle if it's
+42:08 missing informations so this is like the
+42:10 easy part on the P request is more on
+42:14 like giving a first feedback and and to
+42:17 the person so let's see if we can like
+42:20 uh quickly answer and that people
+42:21 doesn't get like say nobody cares about
+42:24 my my contribution I'm leaving mhm
+42:28 and for the moment I think we are six or
+42:30 seven contributors doing this so every
+42:32 six weeks this is coming back and and
+42:36 while before I think that it was much
+42:38 more like whoever want to answer just
+42:40 answer and for that was one of thing
+42:43 it's something that I really like like
+42:45 going to the isue track answering to
+42:46 people and like interacting with them
+42:48 there it's something that this is
+42:50 something that I like but in the same
+42:52 time you say maybe I should as well
+42:53 spend time on some priority feature
+42:55 because I mean this will have as well an
+42:58 impact so I think here we for like the
+43:02 middle ground thing we should have one
+43:04 person looking at it but then like as
+43:05 well as a contributor you should as well
+43:07 spend on Community Driven road map task
+43:12 or items let so
+43:14 that's I understand okay so you have to
+43:17 invest in community work as a as a
+43:20 company I guess as the core team that uh
+43:24 people don't feel like nobody cares
+43:25 about them yeah yeah so we we always
+43:29 give the example of for Tor flow and if
+43:32 you go on the pr we check his if you go
+43:35 on the pr tracker of tensorflow then you
+43:37 see both committing because actually is
+43:39 PR from the internal U Google
+43:43 development that are just like
+43:45 backboarded on the external project but
+43:48 there is no Community there is is a
+43:51 open-source software developed by your
+43:54 company uh which could be fine I mean
+43:56 that's answering the needs of of uh of
+43:59 people us intense ofro but we have a
+44:02 very different uh Target we just want to
+44:05 be a community and and grow around that
+44:08 uh and and favor like people that want
+44:11 to actually be part of the process I
+44:13 mean is is what we like is what we are
+44:15 from the beginning and it's not because
+44:18 Pro is now a company that pay for the
+44:21 some developer that should change we are
+44:23 at the service of the community we are
+44:24 not driving the community by by our
+44:29 choices and how often do you have to
+44:32 reject
+44:34 PRS we I mean that's one of the reason
+44:38 of that we have 600 PRS is that we don't
+44:40 reject that many
+44:44 um uh let's say the the the most the pr
+44:50 that we reject the most is people coming
+44:52 and say oh look at my new fancy academic
+44:55 algorithms and want to include it and
+44:58 then we say sorry we cannot and but we
+45:01 came with Criterion to try to discuss
+45:04 basically the the discussion which is we
+45:07 are very boring Library okay so you will
+45:11 come you can come back in three years
+45:13 and show us that people use your things
+45:14 and this is actually have like huge
+45:16 impacts on every data scientist years
+45:20 yeah so proof of time is what we need so
+45:23 I assume this is most of the thing that
+45:25 we say we discard it because we created
+45:27 some of uh two rules which is cations
+45:31 and and let's say use like practical
+45:35 usefulness they can show us that ah yeah
+45:38 that's the way to go and make that
+45:40 things are slow in between we can help
+45:43 at at for making like imbalance never
+45:45 have been in for those reason and but
+45:49 this is a compatible package and we can
+45:51 tell you how to be compatible we can
+45:52 give you the tools to put your ASAT be
+45:55 compatible and you maintain it until you
+45:58 show us that this is working and for
+46:00 instance hdb scan which have been
+46:03 recently merged in cyon is from uh leand
+46:08 mess like that wrote that inside the
+46:11 site contributions and that was
+46:13 compatible and at the time that we saw
+46:15 that it has a clear like impact it have
+46:19 been merged in Psy learn uh in this in
+46:22 this way MH do people usually talk to
+46:26 you in some way not to you specifically
+46:28 but to the core team before they start
+46:30 working on PRS I guess this is a good
+46:33 way of uh making sure that what you do
+46:36 before you create a PR is actually not
+46:39 in vain that when you open a PR there is
+46:41 high chance of something happening right
+46:45 uh so is there a way to somehow
+46:47 communicate with you to say hey like I
+46:50 have this idea do you think I should
+46:51 work on that yeah that's the issue
+46:54 tracker so the issue tracker is not only
+46:56 for issues yeah like I want to propose
+46:58 this feature and we really like that
+47:01 people start by that before to to to
+47:03 send us a PR usually what happen is that
+47:06 if you send a PR and this is border line
+47:08 we didn't we don't know exactly if we
+47:09 should go forward we always as a person
+47:12 so thank you you will not receive any
+47:15 feedback here please open an issue so
+47:17 that we can have further discussions and
+47:19 then we'll come back there if this is
+47:20 valuable we don't close it necessarily
+47:23 because we don't want to be abrupt
+47:24 because we we have no idea
+47:27 I mean if it's a clear thing that we see
+47:29 that yeah that's not going to work we
+47:31 area going to close but we are very we
+47:35 want to have the discussions and the
+47:36 issue tracker is as well the place for
+47:39 that because one of the mistakes I
+47:42 personally did I remember I tried to
+47:44 contribute to ex boost ex boost for Java
+47:48 specifically and then I did that without
+47:51 talking first to the maintainers I spent
+47:54 like maybe a week not like full week but
+47:57 like every now and then during this week
+48:00 I spent some time and then I was so
+48:02 proud of whooping in the pr and it was
+48:04 just rejected and then like I was so
+48:06 disappointed like I was
+48:08 uh like I put so much effort there and I
+48:13 thought this is cool this is improving
+48:15 the library I'm doing something good and
+48:17 then they just they had their own
+48:19 opinion on how things should be on yeah
+48:21 which is of course this is who are going
+48:24 to to maintain it afterwards right so
+48:26 they
+48:27 it's okay for them to have this opinion
+48:29 but for me somebody who tried to to make
+48:31 this contribution and my PR is close I
+48:34 feel kind of rejected right yes so now
+48:37 since then I think like okay I first
+48:39 should talk to the maintainers to make
+48:42 sure that this aligns with what they
+48:45 want to see and if it does then I move
+48:48 forward yeah yeah I this is really like
+48:51 where is what we are writing inside our
+48:53 contrib contribution guideline seeing
+48:56 come to speak to us first uh we will not
+48:59 bite uh and even on on the pr themselves
+49:03 we are not going to bite at the first
+49:06 like oh you open it like five minutes
+49:08 latest we just close it without telling
+49:10 you why I mean we it's it's not
+49:13 welcoming we don't want people that feel
+49:15 rejected because uh we are just like
+49:18 boring and uning people we want to make
+49:22 people understand like what are the
+49:24 reason and and the process is long and
+49:27 is is a Pity because the process could
+49:29 have save you times most if we had it up
+49:32 front I mean that's but if you missed it
+49:34 at least we want that you understand
+49:36 what what the reason behind that is
+49:38 nothing personal is nothing that we
+49:40 don't give a we don't care basically
+49:42 about it or I mean this is just like
+49:44 okay let's let's that's the same rule
+49:46 for everyone we need to go through that
+49:47 that that discussion
+49:49 process so if I want to contribute to PR
+49:53 to Psy learn what are the steps I should
+49:56 make
+49:57 to make sure that it actually happens or
+50:00 I don't spend my time I don't waste my
+50:02 time implementing something that will
+50:04 not be accept it so I think there's two
+50:07 things to do first is like read the
+50:10 contribution uh guideline which is on
+50:12 the page so it bring technical things
+50:15 but it bring as well like the aspect
+50:19 of what do we expect with the
+50:21 interaction where where to go and and
+50:23 how to interact with with the community
+50:25 and then from there yeah it's going back
+50:27 to opening and issues and discussing and
+50:30 uh and then the way forward we we will
+50:32 let you know basically but it's there is
+50:35 more details we have always like a huge
+50:38 and too big page with information there
+50:41 but it's it's where like it's the gold
+50:44 mine to basically do that
+50:47 things and if I
+50:49 just sorry yeah I think nowaday we just
+50:52 like as well help a bit in the issue
+50:54 tracker like if you try to open an issue
+50:56 then we tell you do you want a bug
+50:57 report do you want an enhancement
+50:59 feature do you want this and this and
+51:01 then we tell you oh if it's this case
+51:03 look at these things because if it's a
+51:05 bug then we need a minimal reproducer
+51:07 and we show you how to do one so we try
+51:09 to engage you towards looking at the
+51:12 right part of the documentations if you
+51:14 didn't come to the issue tracker then
+51:15 yes you didn't see that and then yeah
+51:18 you might go like in a different path
+51:20 and that's completely fine as well is
+51:22 that will bring you back to the to the
+51:24 path that we are used to mhm so you also
+51:28 use some automation to make sure you can
+51:31 still manage all this uh issues and all
+51:34 this
+51:35 process kind of templating let's say but
+51:38 we don't have any votes so for instance
+51:41 project for instance do like both thing
+51:43 inactivity during two months three
+51:46 months we just close that things and I'm
+51:49 personally really like against that and
+51:52 uh so in
+51:54 right uh other thing is that if it's a
+51:57 bug and then it's still a bug Ian not
+52:01 have inactivity that you should close it
+52:03 because either maybe you're not able to
+52:05 reproduce but at least it's there if
+52:07 somehow somebody else come with a
+52:10 reproducer later on it's a win if it's
+52:14 something close you have much is much
+52:17 more like
+52:18 uh difficult to interact because like
+52:21 you lost the sight of of that of that
+52:24 issue so you can lost sight as well when
+52:26 you have 2,000 issues but I mean that's
+52:29 uh but I mean you have this this so is a
+52:31 kind of a tradeoff and the worst would
+52:33 be like if you Lo the conversations and
+52:35 saying now you cannot speak anymore you
+52:36 have to open a new one you need to make
+52:39 it easy such that people can come and
+52:40 just like discuss to you and even if
+52:42 there's like noise that not related to
+52:44 what is a subject I mean this
+52:47 is that's that's okay I
+52:49 mean and if I just defended and if I
+52:53 just defended my PhD with and developed
+52:55 like a novel method for something I
+52:57 should probably wait 5 to 10 years
+53:00 before I make a PR to secondy Lear no
+53:03 not 10 years and not five
+53:06 years and I would say it depends if your
+53:09 PhD was to make a new server for making
+53:12 a linear model like optimization much
+53:15 faster
+53:17 then it just come and tell us about it
+53:21 because that's an inner thing is not
+53:23 adding a new model is adding like very
+53:26 internal things and maybe we will see
+53:29 and we have to discuss we are a bit more
+53:31 lenient on those like lowlevel things
+53:34 that doesn't have like a user impact it
+53:36 does that it need to be really I mean
+53:39 first like the pr will be H for you
+53:41 because it will be a PR to implement it
+53:43 but it will be a lot of Benchmark to be
+53:45 sure that every corner case that we are
+53:46 used to are covered and and and it will
+53:50 be a process that will take you a long
+53:52 time I mean it's not like I mean you
+53:55 should not expect one one week PR
+53:57 because the process will will take
+53:59 times if this is like a full new
+54:02 algorithm then yes then like this is a
+54:05 much more complicated
+54:08 thing okay well I have a question from
+54:11 Adonis so Adonis Adonis is asking how do
+54:14 you decide on what to improve improve
+54:16 next in Psych learn is it public public
+54:20 feedback Trends something
+54:23 else yeah so um bit of of
+54:28 everything um so course is we are slow
+54:32 to move inside in some way um so some of
+54:36 the priority that we have is priority
+54:38 that we got uh during like years and it
+54:41 was just like improve over time but then
+54:44 there's like yeah new updates of what is
+54:46 important in
+54:48 2024 uh and and we have two ways of
+54:52 doing this so first like we're running
+54:53 this Foundation where we had money from
+54:56 sponsor company from outside that were
+54:58 our users as well so we were asking them
+55:01 how do you use PSY and from there we
+55:02 could have an idea of what's important
+55:04 for them and helping us at maybe
+55:07 updating and prioritizing item on on on
+55:10 the road map so coming back to the
+55:11 community with that's feedback from our
+55:14 close users did you heard anything with
+55:17 like is it does it look like okay for
+55:19 you like this this is it making sense or
+55:22 is it like some areow really like only
+55:24 for that industry and then we don't care
+55:26 uh so this this first things and now we
+55:30 are preparing with the community itself
+55:32 a much more public survey where we want
+55:34 to ask similar questions so it takes
+55:38 much more much more time because you
+55:39 need to prepare a survey which is short
+55:41 but bring you the right informations and
+55:44 this is like a a job that you need to
+55:46 know how to do so we are being people
+55:50 like that really take care about like
+55:52 developing that survey and I think it
+55:54 will be launched in couple of weeks
+55:56 so upcoming months at most where we will
+56:01 ask like the broad Community what are
+56:04 using uh cycl one4 and one of the goal
+56:08 of this survey is for us to
+56:12 understand updating our priority and
+56:14 understand as well like if the goals
+56:16 that we like defined since years are
+56:18 align with those one so if you second
+56:22 user you can expect at some point in the
+56:24 upcoming two weeks you you will receive
+56:26 or you will see G like Tweeting or the
+56:30 Cy tweeting about this
+56:32 specific survey on the website we will
+56:35 like maybe a top Butner thing like click
+56:37 here if you want to help us to know and
+56:39 to shape the future of
+56:40 s so I was just going to ask you how we
+56:44 can stay notified and you mentioned that
+56:48 we can subscribe to uh a couple of
+56:50 Twitter accounts right yeah the second
+56:54 Twitter account is it will be like the
+56:55 main communication
+56:57 channels uh and then on the road map
+57:00 itself the road map will be published on
+57:02 the on the website so there's already
+57:05 one if you go in the about section then
+57:07 you would have something road map if I
+57:09 remember and the idea is to always have
+57:12 this I mean it's not like static it's
+57:15 moving over time so here the idea is to
+57:18 be able just to update it but we need
+57:22 first to make the survey and and
+57:24 consolidate it into actual things that
+57:27 we are working on uh another source is
+57:30 for instance on the pro website we
+57:33 are uh
+57:36 publishing um a road map of the
+57:40 priorities basically of the people that
+57:42 uh work on
+57:44 on on Psy plan to make it like obvious
+57:47 and transparent what we're working on
+57:49 what is our our agenda and actually on
+57:52 that blog post there is not only ours
+57:55 there as well like uh the agenda of over
+57:59 cor contributors that decid say oh I
+58:00 want as well to put my name on this list
+58:02 of task because I will review all stuff
+58:04 like that so we want to make as well
+58:07 like communication on probab sit to
+58:09 really show to people what we do do you
+58:12 have uh something like a mailing list CU
+58:14 Twitter is uh Twitter has an algorithm
+58:18 in order to decide to show you something
+58:20 or not and even if I'm subscribed in if
+58:23 I'm if even if I'm following psychic
+58:25 learn the psy turn account doesn't mean
+58:27 I will actually see it so we have uh
+58:30 several thing that's on social media we
+58:32 have
+58:34 um
+58:36 Twitter uh we have a huge pull on
+58:39 LinkedIn actually so we will publish the
+58:42 same information on LinkedIn and then we
+58:44 have this mailing list which is a public
+58:46 one uh like public mailing that anybody
+58:49 can can go there we have low traffic and
+58:53 for inst the road map will be sure
+58:56 something that we will communicate
+58:58 either to participate or either we
+59:01 publish a new road map we will redirect
+59:02 send an email saying like oh go and see
+59:05 what's happening on the website because
+59:06 the item are there and we already for
+59:08 instance do that for every releases
+59:10 saying oh we make a release we use that
+59:13 Cy and mailing list and this is public
+59:15 everybody can just like uh Shi in and um
+59:20 so that's like like I would say that's
+59:21 the free source of information and
+59:23 otherwise if you want to be close to the
+59:25 maintenance giab is the best place for
+59:28 discussions maybe and and issues I mean
+59:31 everything is centralized there in term
+59:34 of like
+59:37 development and I'm trying to find the
+59:40 mailing list now ony learn website so I
+59:43 see that there is a road
+59:46 map uh I don't see the mailing list if
+59:50 you
+59:52 go or should I use maybe search on
+59:58 no not you will
+1:00:01 find
+1:00:02 Uh I that we have a
+1:00:06 support yeah so there's um there's a
+1:00:09 link inside the support page uh second
+1:00:13 Lear mail list I can see it yes and this
+1:00:16 is on the python mailman basically uh
+1:00:20 mhm so this is this is looks very old
+1:00:24 school it's very old school he do a job
+1:00:28 yeah right okay I think that's all we
+1:00:31 have time for today so I really enjoyed
+1:00:33 this conversation thanks a lot for
+1:00:34 joining us today for sharing your
+1:00:37 experience expertise for talking about
+1:00:39 the internals uh of of like behind the
+1:00:43 scenes uh of psychic learn development
+1:00:46 that was pretty interesting so thanks
+1:00:48 for for your chat happy to have been
+1:00:52 here and thanks everyone for tuning in
+1:00:55 so
+1:00:56 have a great week everyone
+1:00:59 goodbye thanks a lot bye

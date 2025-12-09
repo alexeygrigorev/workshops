@@ -1,0 +1,1556 @@
+From MLOps to DataOps
+
+0:00 hello everyone Welcome to our event this
+0:02 event is brought to you by datadox club
+0:03 which is a community of people who have
+0:05 data we have weekly events and today is
+0:08 one of such events if you want to find
+0:10 out more about the events we have there
+0:12 is a link in the description go there
+0:14 click on this link and you'll see all
+0:16 the events we have in our pipeline we
+0:18 have a few workshops lined up so
+0:21 tomorrow we have a workshop about
+0:22 identity resolution and next week we
+0:25 have a workshop about pipeline building
+0:28 and next week I also have a podcast
+0:30 interview about envelopes so if you're
+0:33 interested in these things go there
+0:36 check them out and sign up for those for
+0:40 those who want to events you like
+0:42 then do not forget to subscribe to our
+0:44 YouTube channel this way you will stay
+0:46 you will get notified about all awesome
+0:49 interviews like we have today and we
+0:52 have an amazing slack community
+0:54 and join it if you want to hang out with
+0:57 other update enthusiasts
+0:59 during today's interview you can ask any
+1:01 question you want there is a pinned Link
+1:03 in the live chat click on that link ask
+1:05 your question and we will be covering
+1:07 these questions during the interview
+1:10 that's all
+1:12 for the introduction
+1:14 now I will open the document we prepared
+1:18 for you
+1:20 and
+1:22 we can start if you're ready
+1:25 okay
+1:27 and let's start
+1:30 this week we'll talk about envelopes and
+1:32 dataops and we have a special guest
+1:35 today chantona chantona started your
+1:38 data Journey as a researcher at CERN
+1:41 then worked in MLP and then worked as a
+1:43 python engineer she did many things and
+1:47 one of those things we were working at
+1:50 the company behind airflow
+1:53 astronomer right
+1:55 so she worked in the data space
+1:58 and now she works at absolver where she
+2:01 leads data engineering and science doing
+2:03 research
+2:05 and she will tell us probably more about
+2:08 that so she's passionate about building
+2:10 as well as empowered empowering others
+2:14 to build end-to-end data and ml
+2:16 pipelines so which will be the topic of
+2:18 today welcome
+2:21 thank you so much happy to be here
+2:24 questions for today's interview are
+2:26 prepared by Johann buyer as always
+2:28 thanks Johanna for help
+2:30 and let's start so before we go into our
+2:34 main topic of data Ops and envelopes
+2:37 let's start with the above ground can
+2:39 you tell us about your career Journey so
+2:40 far
+2:41 yeah absolutely so I'm a physicist
+2:44 turned ml Engineers turned data workflow
+2:48 Builder yes kind of
+2:50 um and I feel like I started as a full
+2:52 stack data scientist because you know as
+2:54 a physicist there is data engineering
+2:57 data modeling feature engineering
+2:58 machine learning and then
+3:01 um you know result uh presentation
+3:04 um so I think of myself as a generalist
+3:06 and now I'm give I'm going even more
+3:08 meta in the sense that I want to solve
+3:11 the problems that allow other people to
+3:14 solve their problems so I'm passionate
+3:16 about building workflow authoring
+3:18 tooling
+3:19 um and like in a way that that it's with
+3:22 the user in mind when where users or
+3:24 other developers like myself so that we
+3:27 can we can build the right kind of
+3:30 tooling that you know helps others do
+3:32 their work as simply as easily and as
+3:34 enjoyably as possible
+3:37 that's me and you're going to tell us it
+3:41 in a few more details because it's a
+3:43 quite a curious career Journey so you
+3:46 worked as a researcher then you worked
+3:48 as a mail engineer and then he worked as
+3:50 a I don't know if it's correct way of
+3:52 saying this as a dating engineer you
+3:53 worked in the data space before that in
+3:55 the mail engineering space and before
+3:56 that this is so sure
+3:58 so what motivated you to actually
+4:01 go into ml engineering so you were like
+4:04 a full stack ml ml person as a
+4:07 researcher right you needed to do all
+4:09 these things so why exactly amount
+4:11 engineering how did it happen to you
+4:14 um yeah that's a great question so as I
+4:17 was leaving Academia and thinking about
+4:18 what's next
+4:20 um at that time this was in 2019 2020
+4:24 um it was NLP was was pretty exciting
+4:28 um and I mean obviously it's still very
+4:30 exciting
+4:31 um more exciting yeah it becomes more
+4:34 and more exciting yeah exactly so it was
+4:37 um so I wanted to go in uh I was just
+4:40 very very eager to jump into that field
+4:43 and uh so in physics I was doing work
+4:45 with
+4:46 um massive data and uh fast moving data
+4:49 and all of those things but there were
+4:51 mostly numerical and categorical the the
+4:53 data types
+4:55 um so as I did a few just a few projects
+4:57 here and there on
+4:59 um NLP or natural language based
+5:02 applications it was really refreshing in
+5:06 the sense that like I as as a human
+5:09 um I could interpret the models and
+5:13 their you know the predictions the
+5:15 inferences that they were making
+5:17 in an intuitive way that like this this
+5:20 algorithm was was also doing I think
+5:22 that's what kind of
+5:23 um what I latched on to
+5:26 um and so I started talking to folks
+5:29 that were doing NLP and this opportunity
+5:31 uh um you know arose where um we were
+5:35 building a predictive routing engine
+5:37 um using natural language queries
+5:40 um to figure out how to best resolve
+5:42 them how to best answer
+5:44 um the questions that people were asking
+5:46 um so uh yeah that was a lot of fun
+5:48 building an intent architecture
+5:51 um to
+5:52 figure out what people might ask in this
+5:56 entire network
+5:57 um per you know was per product and then
+6:00 per language
+6:01 um and then curating that over time
+6:03 training the classification models over
+6:06 on on of the on those intents um it was
+6:09 just it was just a lot of fun so I would
+6:10 say the transition was more yeah it was
+6:12 a bit narrower in the sense I was mostly
+6:14 thinking about the ml algorithms uh you
+6:17 know deep neural networks
+6:19 um and sort of the production
+6:21 pipeline in which they were deployed
+6:23 um as opposed to a more end-to-end uh
+6:26 and then the other difference was the
+6:27 kind of data and so on and so forth um
+6:29 but it didn't feel like a huge
+6:32 transition because I mean at the end of
+6:34 the day it's it's still um you know data
+6:36 nml pipelines and serving some some end
+6:40 user purpose
+6:41 just text instead of numbers
+6:44 and then you convert text into numbers
+6:46 and then it's all the same exactly
+6:52 so and then this is how you end it up
+6:55 being a mail engineer right so of course
+6:56 you need to deploy all these neural Nets
+6:59 that you created you need to deploy the
+7:02 chatbot right so these things needed to
+7:04 be scalable and whatnot yeah exactly but
+7:09 then you decided to go I think you set
+7:12 even more meta right
+7:14 focused on more more on data
+7:17 data workflows so how did it happen
+7:20 yeah I think
+7:23 well a lot of things sort of uh fell
+7:25 into place but I started using airflow
+7:28 um at at directly as in my in the
+7:31 production stack and
+7:33 um workflow authoring so it all sort of
+7:36 comes down to like how your pipelines
+7:38 are orchestrated right or you know if
+7:41 it's Orchestra if the orchestration is
+7:42 abstracted away that's even better but
+7:44 like a lot of this um the engineering
+7:47 component of data and ml pipelines has
+7:49 to do with okay what are my dependencies
+7:51 uh when do things get executed what do I
+7:54 do when things go wrong fallback
+7:56 protocols etc etc so like thinking about
+7:58 the pipeline line as you know as a main
+8:01 asset as a main thing to to take to take
+8:03 care of
+8:05 um is the direction in which I was going
+8:06 and I was excited by the fact that this
+8:08 was um astronomer was a company that was
+8:11 um sort of managing that
+8:13 um the airflow OSS and
+8:18 um yeah it was it was just a I also you
+8:20 know joined the the data team very early
+8:22 as it was as it was being formed so it
+8:24 was a lot of open you know Green Fields
+8:26 open opportunity as far as what we were
+8:28 going to be able to do
+8:31 um and the thing the the component of
+8:33 that job that was most fun for me uh
+8:36 which maybe I didn't even realize when I
+8:37 was joining is the uh user research
+8:41 aspect of it
+8:42 um so I was now Thinking Beyond the use
+8:45 cases that I had come across
+8:48 um you know be it particle physics or
+8:50 NLP to okay what is everyone else doing
+8:53 what is everyone else trying to do with
+8:55 airflow or more generally what are what
+8:58 are the pipelines what kinds of use
+8:59 cases are there so um I really enjoyed
+9:02 like learning
+9:03 um the cross domains across Industries
+9:05 what folks were trying to do and what
+9:07 their pain points were were and that
+9:09 like get got me more and more excited to
+9:11 solve these problems
+9:13 um and that you know sort of following
+9:14 that thread is how I ended up NetApp
+9:17 solver SQL is is kind of the lingua
+9:19 Franca right of of data
+9:22 um I I really enjoy working in Python uh
+9:25 but also and the other the other
+9:27 component of this is I love going to
+9:29 places where I know know the least and
+9:31 then sort of building up my
+9:33 um education there so um as as a
+9:37 physicist
+9:38 um as a certain uh physicist I was
+9:41 working in C plus and some python
+9:44 um we the data structures are these like
+9:47 trees tuples of tuples nested data
+9:49 structures that we have are custom
+9:51 storage methods and our custom query
+9:54 methods and so on and so forth so all of
+9:55 that to say I'd never use SQL before
+9:58 um you know so I started using SQL to to
+10:01 query data
+10:02 directly and then um you know through
+10:05 the years I I learned better um SQL
+10:09 um and so I wanted to see uh so that's
+10:12 part of the motivation actually to
+10:13 coming to absolver is we are uh we
+10:17 author pipelines or in our frame in our
+10:19 platform You author pipelines just to
+10:21 see equal and you just Define the
+10:24 outcomes that you want and then
+10:25 everything that happens uh everything
+10:27 that needs to happen to make that
+10:29 possible is handled by us and of course
+10:31 we have you know it's our own dialect so
+10:33 we have these like keywords like sync
+10:35 versus unsync that like sets a
+10:37 dependency that allows you to say what
+10:39 the dependencies dependencies between
+10:41 pipelines pipeline components are so
+10:43 yeah that's sort of like the thread that
+10:46 I followed
+10:48 I never used top solver so I only
+10:50 received sometimes marketing information
+10:52 from you in addition to webinars but I
+10:56 never actually seen the tune practice
+10:58 but what you describe sounds similar to
+11:00 dbta right so you have a bunch of SQL
+11:03 queries and the two looks at these
+11:05 queries and figures out in which order
+11:07 these queries need to be executed is
+11:09 this a correct
+11:12 um yeah and that's I mean that that uh
+11:15 fine analogy to draw with Liberty is a
+11:18 good partner of ours so there's
+11:20 definitely an app solver plus DBT story
+11:24 um so specifically so we do a few
+11:26 different things and um I want to sort
+11:28 of delineate between between them so one
+11:31 is
+11:32 a pipeline authoring workflow authoring
+11:35 so you can go into our UI an author you
+11:39 can use our CLE python SDK or in DBT
+11:41 actually you can author up solver
+11:43 pipelines and then we have the actual
+11:45 engine that executes it so DBT doesn't
+11:49 you know doesn't have its own HTTP
+11:51 delegates it to the data warehouse to
+11:53 exactly
+11:55 bigquery whatever or up solver so with
+11:58 that with our new activity connector so
+12:01 you can write the pipeline in DBT and
+12:03 execute an app solver
+12:05 um and and we also have and the second
+12:07 component is we have a lake
+12:09 um a data Lake where the data actually
+12:11 lives and flows through and we're um you
+12:14 know you uh make your Transformations on
+12:18 and then the most recent thing that that
+12:20 we added to this already
+12:22 um pretty pretty end-to-end tool is a
+12:25 focus on data ingestion so we guarantee
+12:29 high quality data ingestion whether you
+12:32 ingest it into absolver or snowflake
+12:34 which is also a good partner of ours or
+12:37 just your S3 bucket
+12:39 um for complex data sources we found
+12:42 that that's another pain point that
+12:43 folks are struggling with is if it's if
+12:46 it's CDC right you want to do change
+12:47 data capture on your production
+12:49 databases or you have to pull in data
+12:51 from cues like Kafka or Kinesis and
+12:54 you're usually used to like batch data
+12:56 processing and airflow for example then
+12:58 this is sort of a different set of tools
+13:01 that you have to think about or
+13:02 different mindset so we're making that
+13:04 very easy so streaming data large files
+13:08 message structures and so on and so
+13:10 forth is sort of our specialty and what
+13:13 we do on the ingestion front is
+13:14 guarantee strong ordering guarantee
+13:16 exactly ones the things that usually
+13:18 data Engineers have to think about while
+13:20 they're doing Transformations we just
+13:22 take care of that at the front end
+13:25 yeah so a lot of data engineering stuff
+13:28 you mentioned and remember a while ago
+13:31 we had a podcast episode about envelopes
+13:33 here I think it was like two years ago
+13:36 and one thing that the guests back then
+13:39 um
+13:39 said that you should never confuse a
+13:44 data Pipeline with a machine learning by
+13:45 plan because some scheduling pipeline is
+13:48 a very special sort of pipeline so
+13:51 yeah do not do this is like a big
+13:53 mistake and I'm wondering
+13:56 so what are these
+13:58 ml pipelines and data pipelines maybe
+14:00 can you tell us in a few words and
+14:03 what's the main difference between these
+14:04 two yeah absolutely I think it come down
+14:07 to the application what is the
+14:12 ultimate value that you're trying to add
+14:15 to your end users so
+14:18 um when I worked at directly where our
+14:20 product was this predictive routing
+14:23 engine where the ml model was the thing
+14:26 that was deployed and is what was
+14:28 receiving data making a prediction on it
+14:30 and sending that prediction to end users
+14:33 that was an ml pipeline the data
+14:36 engineering aspects of that were very ml
+14:40 focused which is to say as you said
+14:43 um we we retrieve the or we get the the
+14:46 question the question is asked on on
+14:49 some uh UI that then gets sent to uh
+14:52 comes through directly through rabbitmq
+14:55 receiving that question vectorizing it
+14:58 you know doing all sorts of filters on
+15:00 it uh that is the data engineering which
+15:02 is very very different from for example
+15:04 analytics engineering which is happening
+15:07 you know in Snowflake uh let's say where
+15:09 you're interacting with the data you're
+15:11 doing SQL Transformations and and these
+15:13 things so it's it's it's very focused
+15:16 um in some sense very focused use case
+15:17 very specialized
+15:19 um kind of uh use case it can be you
+15:22 know computer vision or NLP or
+15:24 multimodal models are also very common
+15:26 it can be numerical data but still the
+15:28 future engineering that's happening you
+15:31 usually kind of you you do the Deep dive
+15:33 as an ml engineer or even as an ml uh
+15:37 you know model or you do the Deep dive
+15:39 you figure out exactly how your data
+15:41 needs to be transformed in order to
+15:43 serve this ml use case in production
+15:46 as opposed to most data pipelines today
+15:51 maybe somebody this will change but the
+15:53 vast majority of data pipelines today
+15:55 are serving analytics use cases where
+15:59 you might still have ml as part of the
+16:02 pipeline but it's not the main it's not
+16:04 the first class citizen
+16:06 it's only because you think that there's
+16:09 something some pattern some Trend to
+16:12 extract that makes more sense with a
+16:15 with a regression or with a you know
+16:17 classification or something like that so
+16:19 to me that's different here your
+16:21 um you're starting with data from
+16:22 different sources again like the the
+16:24 sources is less relevant but once your
+16:26 your data is in your system you're
+16:28 really looking at the data
+16:31 uh figuring out how different entities
+16:34 in the data relate to each other so for
+16:36 example you get your product data from
+16:38 your product uh from your application
+16:40 database you get your CRM data from
+16:42 Salesforce you get your agendas data etc
+16:44 etc and then you have to create this
+16:46 model of okay how what are the different
+16:48 primary entities in my data how what's a
+16:51 mapping between them how do things
+16:53 relate to each other and then you try to
+16:55 get to a representation of all of that
+16:57 data that can help serve analytics use
+17:00 cases Downstream so which might be other
+17:03 data Engineers on on dedicated teams and
+17:07 you know they're different models as we
+17:08 know there's you know data mesh etc etc
+17:11 different ways in which you can power
+17:13 that but the main focus is building an
+17:16 understanding of the business
+17:18 and then serving up that understanding
+17:20 to to end users and usually the end
+17:22 users or often end users are internal
+17:25 like your your customer success team
+17:27 wants to know you know when a certain
+17:29 client is going to churn that's the
+17:31 that's the person you're serving
+17:33 um so the other other shift there is
+17:36 you know who's who's the who's the
+17:37 Persona that I'm building for
+17:39 um so yeah I I agree with with uh the
+17:42 other uh podcast speaker I think they're
+17:45 very different there are certainly
+17:47 elements that are in common
+17:49 um in the at the end of the day data is
+17:50 flowing through both pipelines but it
+17:52 should always be the the architecture of
+17:55 the pipeline should always be use case
+17:58 driven application driven and then
+18:01 lastly
+18:02 um I'll you didn't ask this but I'll
+18:03 sort of add you know we use the word Ops
+18:05 and I think that it's uh you know I
+18:09 think it's it's a little bit up in the
+18:10 air as far as like how you define it
+18:13 um or maybe there isn't but I have
+18:14 decided that I use a very simple
+18:15 definition of Ops which is that you it's
+18:20 it's all the steps that I need to take
+18:22 to consistently deliver value to the end
+18:25 user from whatever the thing is so from
+18:27 data from ml so if I have an ml model
+18:30 great it already does everything that I
+18:32 needed to do but getting it from there
+18:34 to actually serving end users
+18:36 consistently reliably with you know
+18:38 little to no downtime
+18:41 um that sort of that's my Ops portion
+18:44 um so then using your definition
+18:46 envelopes would be steps you need to
+18:48 take to deliver value from a machine
+18:49 learning model and then data Ops would
+18:52 be steps you need to take to deliver
+18:54 value from
+18:55 what exactly from
+18:58 um all of no I would say from all of
+19:01 your business data right like it yeah
+19:05 um yeah I don't know do you agree that
+19:09 um
+19:09 like a lot of data applications today
+19:13 are uh really we're trying to build an
+19:16 understanding of the business so like
+19:17 the representation the the final I mean
+19:20 there's no final state but usually the
+19:23 end the um parts of your snowflake
+19:25 database or whatever else database that
+19:27 you're exposing to other users are meant
+19:31 to be a complete representation of all
+19:34 the data in the business
+19:36 yeah I do agree although being a data
+19:39 scientist I have a somewhat biased view
+19:41 on this because most of the data
+19:43 pipelines I worked on were more
+19:47 like how do I transform the data in
+19:50 order to feed it into a machine learning
+19:52 model right so then even though it was
+19:55 mostly a data engineering pipeline still
+19:57 like last couple of steps were mostly
+20:00 I don't train a second mode publishing
+20:03 the model somewhere so for me my
+20:06 understanding of the difference between
+20:07 machine learning Pipeline and data
+20:09 pipeline based on this experience where
+20:13 that ml pipeline is more more
+20:15 specialized version of a data pipeline
+20:18 because you have like different steps
+20:20 that are ml specific most of the steps
+20:22 are not more specific but then you have
+20:24 this feature engineering or like
+20:27 extracting numbers from text like this
+20:30 factorization thing that you mentioned
+20:32 and then training a model which is more
+20:34 specific and then I don't know
+20:35 publishing this model somewhere so this
+20:37 last few steps there ml specific the
+20:39 rest are not so for me the distinction
+20:41 was that it's just a more specialized
+20:44 version of a machine learning
+20:46 of a data pipeline but based on your
+20:50 definition or based on what you
+20:51 described
+20:52 it looks like these are
+20:55 quite separate things I mean like one is
+20:58 the focus more ML on ML the other you
+21:01 focus more on business understanding
+21:03 what they have in common is the pipeline
+21:05 park right which is like all the circuit
+21:08 station but the rest are different is it
+21:11 the correct understanding and they can
+21:13 have the data um in common as well so
+21:15 for example in
+21:17 um also also at directly although we
+21:19 primarily had like this was our ml
+21:21 product was there we also did analytics
+21:23 right so we did
+21:25 um analytics we ran SQL queries on
+21:28 um the the data that had come into all
+21:30 the historical data and then
+21:32 um what was going on with their ml model
+21:34 like performance and so on and so forth
+21:36 so I think that there's definitely
+21:37 overlap and definitely a close marriage
+21:41 um the the way that I mean definitions
+21:43 are only as good as they're useful right
+21:46 so I think the only useful component
+21:48 useful part of um the way that I I like
+21:51 to think of it is that if you if you are
+21:55 a data engineer who has been building an
+21:57 ml pipeline an ml uh certain service of
+22:01 an ml product so so let's say like not
+22:03 not at a startup where you're doing
+22:05 things end to end right so let's say at
+22:07 a larger organization
+22:09 um
+22:09 I'm just going to pull something out of
+22:11 the lake you know Reddit or something or
+22:12 Netflix where
+22:14 um there is a big ml uh it's it's an ml
+22:17 based product right it's a recommend a
+22:20 recommender engine recommendation engine
+22:21 is what's serving the end users and you
+22:24 have ml Engineers that are developing
+22:25 models and deploying models and and
+22:27 looking after them in production and
+22:30 then uh you know there might be
+22:31 separately data Engineers who are called
+22:34 Data engineers and they're more in
+22:37 charge of like Upstream what's happening
+22:38 Upstream so that's another way of
+22:40 splitting it up is like within the ml
+22:42 application pipeline you've got Upstream
+22:44 data engineers and downstream you've got
+22:45 ml Engineers so that's you know that's
+22:48 totally a valid
+22:49 um valid data engineer Persona and
+22:53 workflow the one thing I will say is
+22:56 that data engineer is used to doing
+22:58 different work than a data engineer at
+23:01 an analytic at a company whose main
+23:04 purpose is something else so let's say
+23:06 like uh I mean it's not an ml based
+23:09 model right let's say it's really hard
+23:12 to find these days companies that don't
+23:13 have demo as a product uh I'm really
+23:17 struggling but but you know so your your
+23:19 end user product is is something it's
+23:21 not uh like extra astronomer let's let's
+23:24 go with that one right you're you're
+23:25 it's just a managed airflow service
+23:27 there's no ml component to that
+23:29 um so what what were we doing as a data
+23:31 team right we uh so our Focus there was
+23:35 Data engineering for the purpose of
+23:36 building business understanding
+23:39 um and serving serving those up so there
+23:41 were thinking much much much more about
+23:44 how do I represent the data in a way
+23:48 that makes sense to our business
+23:51 partners across the organization not our
+23:54 ml model right so you're thinking
+23:57 human-centrically you're thinking in
+23:59 terms of like what is the mapping here
+24:01 and you're doing a lot more data
+24:03 modeling you're doing a lot more of
+24:05 those like views and tables that uh
+24:09 build up so it's it's less um
+24:12 yeah so you're as you go down the
+24:15 pipeline you're you're getting more
+24:16 denormalized right because you're You're
+24:18 Building these mappings and complex
+24:19 relationships
+24:21 um it's just a very different kind of uh
+24:24 workflow in my opinion and having
+24:26 experienced a little bit of both granted
+24:28 like I definitely want to learn from
+24:29 folks who have done more of of either
+24:32 but I wouldn't I wouldn't
+24:35 um hire someone who is building data
+24:39 models in SQL primarily for analytics
+24:42 use cases into a data engineering
+24:45 position for an ml use case
+24:48 straight like unless they were eager to
+24:50 make that switch and unless they were
+24:51 eager to learn whatever gaps there were
+24:53 like it's not a one-to-one mapping
+24:55 between those two data engineering roles
+24:57 even the tools are different right so
+24:59 for ML use cases you might have tools
+25:02 like I don't know airflow
+25:05 um spark I call this uh like Kinesis
+25:08 Kafka uh rabbit mq all these things you
+25:12 mentioned that but for
+25:14 the first case for developing business
+25:16 understanding
+25:18 the tools are different like the tools
+25:19 could be DVT up solver and these kind of
+25:23 things and I think when you were saying
+25:26 that like here the main goal is to build
+25:29 a pipeline and develop this business
+25:31 understanding and think like how do I
+25:33 represent the data in a way that's
+25:35 understandable for business
+25:37 I think there is a term for that right
+25:40 now called analytics engineering right
+25:42 am I correct I mean I think so yeah yeah
+25:47 I I was pretty excited to see the term
+25:50 come out I don't see it being used as
+25:52 often like I don't see a lot of people
+25:54 without analytics Engineers the title
+25:56 but I think it makes a lot of sense
+25:58 yeah yeah we have it so we have a data
+26:01 engineering course in data rocks club
+26:02 and one of the modules there is about
+26:04 DBT
+26:06 and we call it analytics analytics
+26:08 engineer because it seems like
+26:12 um
+26:12 it's kind of synonymous like people who
+26:15 call themselves analytics Engineers they
+26:17 usually use DBT and then like use DPT
+26:19 your kind of an analytics engineer so it
+26:22 seems like but I think this is coming
+26:24 from the
+26:26 DPT lab so they came up with this term
+26:29 to
+26:31 kind of differentiate to show the
+26:34 difference between usual data engineers
+26:36 and this business
+26:39 oriented data Engineers yeah
+26:43 okay so then uh
+26:46 we started talking about the tools
+26:48 already so maybe you can
+26:51 the
+26:53 so what I wanted to ask is like what
+26:55 sort of tools I usually there I gave a
+26:57 few examples but maybe you have more
+26:58 examples like what kind of tools
+27:00 different you need for different
+27:03 pipelines for data pipelines are for and
+27:05 for ML pipelines yeah no I mean I think
+27:08 you you hit the nail on the head
+27:10 um it's yeah the common Stacks today are
+27:13 still
+27:14 um some orchestration engine it could be
+27:15 airflow it could I mean nowadays there
+27:17 are uh you know prefect Stacks or Mage
+27:19 Etc
+27:20 um and it you could also so depending on
+27:24 what kind of Transformations you're
+27:26 doing right you could also use uh let's
+27:29 say like spark or absolver or something
+27:31 like that for the ml pipelines uh it all
+27:34 depends on how you break up your
+27:36 workflow right I mean that's the thing I
+27:37 love about the modern data stack you
+27:39 know there's things you hate about it as
+27:41 well but it is you know you can sort of
+27:43 pick and choose your different pieces
+27:45 and and build your own so it's like
+27:46 build your own adventure
+27:48 um kind of so you can definitely
+27:50 um I think it's less about the tooling
+27:53 but on the other hand I will fully agree
+27:55 with you that like you know a DBT would
+27:58 be hard to use if nml pipeline I think
+28:00 probably but you know I don't want to
+28:02 I'm sure there there are teams that are
+28:04 doing it so again that's that's uh
+28:06 um the fun part but uh the uh Warehouse
+28:10 aspect of of the data landscape I think
+28:14 is is much more closer to analytics
+28:17 engineering and analytics use cases
+28:19 um than ml uh I have you know nowadays
+28:24 feature stores are becoming a thing and
+28:26 Vector databases and stuff and obviously
+28:28 we were building those things
+28:30 um for NLP MML applications even three
+28:33 years ago we were building those
+28:34 in-house so what is it's a data Lake you
+28:37 know an industry bucket with the hive
+28:39 metastore and and so on and so forth and
+28:41 nowadays there are managed services for
+28:43 that which I think is cool any sort of
+28:44 abstraction any sort of like anytime you
+28:46 can take away some work
+28:48 um and like you know put it abstract it
+28:50 away I think it's great
+28:52 um but yeah it's more Focus around you
+28:54 don't really need as a human you don't
+28:56 really need to fully Rock and understand
+28:59 the data
+29:01 um how it lives and how things relate to
+29:03 each other as long as you have that
+29:05 layer
+29:06 um of metadata that retain
+29:09 that information and you can have a
+29:11 programmatic querying of it and usage of
+29:14 it
+29:15 and you mentioned one thing you
+29:17 mentioned a modern data stack and he
+29:21 said like it's good because it can see
+29:23 it's a good thing because it consists of
+29:24 many different components and then you
+29:26 can kind of can replace these components
+29:28 but what is this modern data stack I see
+29:30 this term used
+29:32 quite often but I still like for me
+29:35 modern data stack is okay you have DBT
+29:37 you have snowflake
+29:39 um what else I guess these two and then
+29:41 like some things for ingestion and then
+29:43 you call this thing modern data stack
+29:45 right
+29:47 yeah um that's certainly I think a
+29:50 common
+29:51 um way to define it and like for example
+29:53 with app solver where we would be the
+29:55 third thing right of solver for
+29:57 injection and Snowflake and ntpt and
+29:59 that's your modern data stack that's
+30:00 really all you need for your analytics
+30:02 use cases
+30:03 um that's but it's a choice right it's a
+30:05 choice that you're making you also have
+30:07 these platforms that like data breaks
+30:09 right that uh have different different
+30:13 um have pieces that will allow you to do
+30:16 all of those things and I mean it's
+30:17 always going to be you know it should
+30:18 make your bill your build and buy
+30:20 decisions and buy and buy decisions
+30:22 um by looking at exactly what you need
+30:23 and for your use case but um so it's
+30:26 hard for me to
+30:28 um attach the like a data stack you know
+30:32 the idea of a data stack with specific
+30:34 Brands and specific companies because I
+30:37 think that
+30:38 um like again what I love about today's
+30:41 data ecosystem and perhaps it's
+30:43 incorrect for me to use the word today
+30:46 the modern data stack more generally in
+30:48 the modern in the in today's data
+30:50 ecosystem new new three-word acronym
+30:54 um we uh what is cool is that there are
+30:57 these specialized tools that you can
+30:59 pick and choose from
+31:01 um because if I if again if I do a ml
+31:03 application I don't really want to be
+31:05 working with Snowflake and data and uh
+31:07 DBT without you know like because then
+31:11 I'm gonna feel a little bit lost uh
+31:12 because I don't have python in my in my
+31:15 hands right I mean granted snowflake has
+31:17 now has a better python support but I
+31:19 mean that's the whole thing is
+31:21 um rather than
+31:22 thinking about tools which then you're
+31:25 at the mercy of the tool to come out
+31:27 with the thing that you're used to or
+31:29 the thing that you need you can instead
+31:32 okay fine my data lives in Snowflake
+31:34 great let me I can still get it out and
+31:38 work in my you know python environment
+31:40 and do my whatever you know and then
+31:43 bring in my ml libraries and and do the
+31:47 rest of the work so to me that's the the
+31:49 modern data experience
+31:51 modern data experience already mentioned
+31:53 today's data system
+31:55 so what is building what are the
+31:58 buildings building blocks of this data
+32:01 ecosystem so you mentioned snowflake
+32:03 which is a data warehouse which is the
+32:04 place where we eventually put all the
+32:07 data data is the data is already cleaned
+32:10 and traded to be used for analytical
+32:12 purposes but what are the other
+32:14 components of this
+32:16 ecosystem yeah I mean often there there
+32:19 is a data Lake whether it's
+32:22 surface to end users or not as you said
+32:24 like
+32:25 um and even within snowflake or our data
+32:28 breaks there's usually in tabular
+32:30 representation as well you usually have
+32:32 like a bronze a silver and a gold like a
+32:34 you know uh raw ingested and modeled and
+32:38 then you know Mart etc etc so there
+32:41 there's that and you can sort of choose
+32:43 where the data warehouse comes in in
+32:46 that data pipeline but often before we
+32:48 ingest into snowflake we will still
+32:51 stage the data somewhere external in a
+32:54 lake right whether it's um you need to
+32:57 Stage the data
+32:59 what does it mean to Stage the data oh
+33:01 so
+33:03 yeah I mean this is and there are
+33:04 different patterns um and if you use a
+33:06 dedicated ingestion tool then usually
+33:09 that so yeah I'll start with the
+33:11 definition right so you data is coming
+33:14 in from some some Source it's going to
+33:16 be in a raw format You Pull It in to a
+33:20 place that is meant to be accessed only
+33:22 programmatically and not
+33:25 um by individuals right so the access
+33:28 controls are are programmatic and then
+33:30 from that data State staging area you
+33:33 pull in the data into a warehouse where
+33:36 it's it's a more human-centric I don't
+33:39 want to query that Source every time you
+33:41 need the data exactly and at once it's
+33:44 there and next time you need the data
+33:46 you take it from that place yeah I mean
+33:49 that that that's a that's a way you
+33:50 could design it for sure uh you could
+33:52 also just it's you know it's part of
+33:53 it's part of your as part of your uh
+33:55 data pipeline right this um I think the
+33:58 staging area is useful because it even
+34:01 if you're like it's regular right it's
+34:04 always every day at you know 1pm my data
+34:07 from
+34:09 um zendesk is pulled in to my GC uh GCS
+34:14 bucket or my S3 bucket and then
+34:17 um another dag another let's say airflow
+34:19 tag picks it up from there at 3 P.M and
+34:21 you know our DBT model picks it up and
+34:25 um
+34:25 yeah does DVD work with like S3 probably
+34:29 I don't know I don't know but yeah yeah
+34:33 was it into my warehouse right
+34:36 um it's the staging area is useful
+34:37 because if you do have
+34:40 catastrophic failures right then that's
+34:43 a place to to catch it or if you need to
+34:46 wait for some data like some Services uh
+34:48 down and you know you need to wait for
+34:51 the data and so on and so forth and uh
+34:52 like at up solver we're sort of turning
+34:54 that idea on its head right you can
+34:57 we're enabling you to do all of those
+34:59 things like
+35:01 um stopping catastrophic failure or like
+35:03 stopping the pipeline if there's
+35:04 catastrophic failure or choosing um if
+35:07 there are bad quality rows in your in
+35:09 your incoming data choosing what to do
+35:10 with them uh such as you know drop or
+35:12 warn it's alert Etc
+35:15 um in this ingestion portion uh without
+35:19 having to think about the stage or
+35:21 without having to think about
+35:22 um you know the the actual underlying
+35:24 you know leg underneath it we actually
+35:26 you know we don't need it like the way
+35:27 that that we have uh We've written it uh
+35:31 the data does move pretty much
+35:32 continuously through without really
+35:34 stopping and absolvers equal league but
+35:37 it gets like a lot of the benefits
+35:39 anyway the the the main thing with a
+35:42 stage staging area is that you it like
+35:44 it's like it's a holding area and no
+35:46 one's supposed to be learning anything
+35:47 like no one's supposed to be querying it
+35:48 no one's supposed to be making business
+35:50 decision on top of it but it's like a
+35:52 buffer buffer zone right and
+35:55 um with more uh I think over the years
+35:57 we've iterated towards more abstracted
+35:59 staging and more
+36:01 um hidden staging so like five Trend
+36:04 um and up solver you have to your data
+36:06 will come in and be staged but it's
+36:08 within the service right you don't uh
+36:10 you don't have to think about setting up
+36:11 an S3 bucket or a GCS bucket for that
+36:14 staging so again abstraction is is great
+36:17 um
+36:19 exactly the engineers the user of five
+36:22 Tron or absolver or other ingestion tool
+36:25 I do not really
+36:28 think about that it's happening under
+36:30 the hood but all I care about is that
+36:32 the data is being
+36:35 moved somewhere right yep exactly
+36:40 yeah the data is being moved into my
+36:42 warehouse or the lake that the lake
+36:44 house basically the lake that I want the
+36:47 data to persist in and want to be able
+36:49 to query and if something happens then
+36:51 that I rely on the tool to redo this
+36:54 thing so I don't physically or I don't
+36:57 manually go to this buffer zone to this
+37:01 stage to redo things I don't even know
+37:04 about its existence the two just pulls
+37:06 it from somewhere and it does to work
+37:08 yep exactly that's cool that's very
+37:12 convenient yeah
+37:14 okay and this is how the data ends up in
+37:18 a very house but it's in row form right
+37:21 we haven't processed it yet
+37:24 so that's the first initial step of our
+37:26 data pipeline what happens next with
+37:28 this data
+37:30 yeah sorry so when you say in in we
+37:32 haven't processed it yet
+37:34 um yeah we haven't like uh done any
+37:36 complex Transformations yeah
+37:38 what kind of Transformations do we
+37:40 actually do at this stage do we do any
+37:43 in the in the staging slash ingestion
+37:45 stage yeah
+37:46 yeah I think uh the we don't really
+37:49 think of them as Transformations they're
+37:53 more
+37:54 um sort of various cleaning or quality
+37:58 assurance mechanisms so for example this
+38:01 is where we would dedupe your data right
+38:04 so the kind of thing that you'd have to
+38:06 later on say oh let's do a select
+38:08 distinct on on my table you don't have
+38:10 to you don't have to do that anymore
+38:11 because every entry is guaranteed to
+38:13 appear only once
+38:15 um and then the exactly ones consistency
+38:18 in in strong earnings so those are the
+38:21 kinds of things that we do the other
+38:22 thing that that you can do with up
+38:24 solver I'm not so sure about you know
+38:26 five Tran and others is you this is
+38:27 where you can set your pii strategy uh
+38:30 your um governance strategies right so
+38:33 if you have a field that you want to
+38:35 mask or if you have a field that you
+38:37 want to Hash you can configure those
+38:39 things uh through the absolver UI
+38:42 um and then uh so like when the data
+38:45 appears let's say in Snowflake
+38:48 um which is for again for human and
+38:50 human consumption right the data is
+38:52 already like sanitized in some ways uh
+38:55 the things that are hidden are hidden
+38:56 the things that are uh any duplicates
+38:59 are dropped any uh and data are strongly
+39:02 ordered there is some initial
+39:04 pre-processing which might be enough for
+39:06 some use cases so it's already ready for
+39:09 some consumption but maybe for more
+39:12 complex queries for more complex reports
+39:14 then a data engineer or analytics
+39:17 engineer need to take this data and do
+39:20 some extra conservation exactly yeah
+39:23 right the transformation that is that is
+39:26 the next step transformation uh Slash
+39:28 some degree of modeling right so
+39:31 um the way that I've I've done it and I
+39:34 think it's generally
+39:36 um a fairly good good good way of doing
+39:38 it is
+39:40 um let's your data is going to come in
+39:41 from a number of different sources even
+39:44 at like small startups uh if you're do
+39:47 if you have an analytics team you're
+39:49 going to be able to bring in like 10
+39:50 different sources of data
+39:52 um so this is the the next stage of
+39:54 after your data has landed in your
+39:56 Warehouse or lake house is to figure out
+39:59 what are the you know what are well
+40:01 you'll have primary Keys coming coming
+40:03 in from the data source but what are the
+40:04 basically the mapping Keys the foreign
+40:06 Keys what is the relationship between
+40:08 each of these uh let's say tables that
+40:10 have come in and what can we build on
+40:12 top of that like what do we actually
+40:14 want to answer as far as for my for my
+40:16 business
+40:18 um so usually the bit there are very
+40:19 specific questions and this is why it's
+40:22 important for the data engineers and
+40:24 analytics Engineers to talk to you know
+40:26 the the end users the other teams within
+40:29 the visit the business partners right to
+40:31 understand what exactly are you trying
+40:32 to answer
+40:33 okay then I go sort of again a back back
+40:36 propagation right and figure out okay to
+40:38 answer this question I need to pull in
+40:40 data from this table this table not that
+40:43 table and so on and so forth so that's
+40:45 the kind of modeling where you're
+40:47 thinking in terms of business entities
+40:50 and business questions so I think that's
+40:52 what's next
+40:54 okay so here this is transformation
+40:56 slash modeling phase is uh when we
+41:00 actually prepare data in order to show
+41:04 it as a report or a dashboard so here we
+41:07 need to work closely with business
+41:09 people we need to talk to them we need
+41:11 to understand what all these Keys mean
+41:13 foreign Keys like everything you
+41:15 mentioned and we also need to make sure
+41:17 that business people who consume this
+41:19 information they also understand what's
+41:21 happening in the result we give to them
+41:24 right yep yeah and there are
+41:26 optimizations that you want to do as a
+41:28 data or analytics engineer right you
+41:29 want to make sure that your data isn't
+41:31 like
+41:32 super anti-normalized and like isn't
+41:35 like the same thing doesn't exist in
+41:37 many many different places on the lookup
+41:39 index should be
+41:41 um index indices across your your tables
+41:44 should be efficient
+41:46 um
+41:47 you
+41:49 yeah I mean there are lots of things to
+41:51 sort of so for example in
+41:54 um
+41:55 data and motion pipeline right if your
+41:57 if your sources are streaming then this
+41:59 is the stage where you think about what
+42:01 Downstream use cases rely on these
+42:06 um streaming Upstream use cases and how
+42:08 do I keep them in sync so let's say I
+42:11 need to combine two different Kafka cues
+42:13 to answer a question right how do I make
+42:15 sure that that transformation and the
+42:17 downstream application gets the relevant
+42:19 data from each of those two streams so
+42:22 and that's another thing like sometimes
+42:24 in the batch world we don't think about
+42:25 we don't have to think about that right
+42:27 because things things are happening in
+42:28 batch but um you know in a in a tool
+42:32 like up solver where we're combining
+42:33 batch and streaming and like having the
+42:35 streaming first mindset then this is
+42:38 where you would
+42:39 um really think about like how do I
+42:42 do Transformations that respect and um
+42:48 that you know stay true to the data
+42:50 dependencies and still answer the
+42:52 questions
+42:54 okay
+42:55 so we have the ingestion phase then we
+42:57 have the transformation slash modeling
+42:59 phase
+43:00 and then we have anything else after
+43:02 that
+43:05 depends so um actually we said one thing
+43:09 um that like I want to double click on
+43:13 um
+43:14 so dashboards and reports and other
+43:18 deliverables I think are actually a
+43:20 little bit further Downstream
+43:22 um and we shouldn't really be thinking
+43:23 about them at the transformation stage
+43:25 uh Slash modeling stage uh the
+43:28 requirements are important I want to
+43:30 know what dashboards folks are wanting
+43:32 to see or more specifically what
+43:35 questions they want answered I don't
+43:36 think that uh this is something that
+43:38 that I said earlier um in a LinkedIn
+43:41 post and it resonated with with folks
+43:45 um is you shouldn't come in with
+43:47 dashboard dashboard requests to your
+43:49 data team you should come in with this
+43:51 is what I want to know I want to know
+43:54 you know this entity that I care about
+43:57 how is this going to change or what's a
+43:59 trend and so on and so forth and then we
+44:01 work with you the data team works with
+44:03 you to figure out exactly you know how
+44:06 that breaks down what the metrics are
+44:07 and how how we want to present them but
+44:10 that whole process is still a little bit
+44:12 further Downstream I think from the
+44:14 modeling because you want to get at the
+44:16 modeling stage you want to get to a
+44:18 place where you feel that the main
+44:21 entities of your business for analytics
+44:24 purposes are covered are being
+44:28 um regularly updated
+44:30 um and then on top of that so there's a
+44:32 second layer of Transformations where
+44:35 you're just going from okay I'm taking
+44:36 these entities and I'm just writing the
+44:38 transformation that answers my question
+44:40 and in some places this is called Mart
+44:42 right or you could go a bit more
+44:45 directly from you know those entities
+44:47 into your dashboards but it there's like
+44:50 these two layers there's ingested data
+44:52 modeled data and then there answers
+44:57 just the data model data answers I'm
+44:59 wondering how different it is
+45:01 for a machine learning pipeline because
+45:04 in ml pipeline we also have a modeling
+45:06 phase but it's a different kind of
+45:07 modeling phase but I guess some things
+45:10 are similar right so we still have might
+45:13 still have some injection base right
+45:15 maybe it's not our team who is doing
+45:16 that but then somehow it's happening and
+45:20 then we have the data that we can use
+45:22 for uh for transforming the data in such
+45:25 a way that we can use it in order to
+45:27 train a machine learning model right
+45:30 so I guess it's somewhat similar right
+45:32 so we have ingestion then we have
+45:33 transformation
+45:34 then we have modeling which is a
+45:36 different kind of modeling because in
+45:38 the first phase in the first case in
+45:39 case of a data pipeline the modeling is
+45:42 more like what kind of things we have
+45:46 in in the database in our data but here
+45:49 modeling is actually three in the model
+45:52 and then finally I know all these other
+45:54 things like serving the model instead of
+45:56 creating dashboard
+45:58 so it's kind of similar right but the
+46:00 tools we use are different
+46:01 it's kind of similar but
+46:05 my applique location is an ml
+46:07 application I don't really need to model
+46:09 the data as you said by by the entities
+46:11 right I don't have to build this
+46:12 business understanding for the ml model
+46:15 to then use that to answer questions
+46:17 because by that time it's already like
+46:19 cognitively simple and you know we can
+46:22 there are other ways to do it or simpler
+46:24 ml models so in in that sense it's more
+46:27 the feature engineering or data
+46:29 engineering component for the ml
+46:31 application is more focused around how
+46:33 do I best
+46:36 um how do I best featurize the data for
+46:39 the ml model not for not for human
+46:43 beings again so I think yeah largely I
+46:45 feel like it's uh it's a matter of who
+46:48 it's for
+46:50 um so so the data model that I'm
+46:52 building who is it for if it's for
+46:54 analytics use cases for humans then
+46:56 that's a different mindset as opposed to
+46:58 if it's for it powering an ml model and
+47:01 for a machine to pick up then uh it's
+47:04 different so
+47:05 um in feature engineering you're
+47:07 absolutely right I have to think about a
+47:09 lot of the same things I still have to
+47:10 de-duplicate my data I still have to
+47:14 um you know make sure that uh if like a
+47:17 field has
+47:18 to nulls too often I have to figure out
+47:21 how to fill that in or you know drop or
+47:23 whatever decisions I I choose to make
+47:26 but at the end of the day my output is
+47:29 this sort of like vector space right
+47:32 this um large
+47:34 um or maybe it's not that large maybe
+47:35 it's smaller but like all of those
+47:37 decisions I'm making as a ml
+47:42 engineer as an ml
+47:44 um application focused person and I am
+47:48 working with the data to get it to a
+47:52 better form for my machine to be able to
+47:54 pick up
+47:56 and now I'm talking with you and I'm
+47:59 wondering
+48:00 I guess four years ago or when you were
+48:03 doing the switch from
+48:05 um I said I think you said 2019 right so
+48:08 when we were switching to ml maybe you
+48:11 did not know about all these things like
+48:13 all this different steps like ingestion
+48:16 staging area and all that but you were
+48:19 an airflow user already
+48:21 so I'm wondering like how did you
+48:24 convince astronomer to hire you with
+48:27 your background
+48:31 um yeah so so let me uh so I joined
+48:33 astronomer in I think 21.
+48:36 um so uh but I've already worked as a as
+48:38 a mountaineer 40 years yeah yeah and uh
+48:42 that's where I was I was using airflow
+48:44 so it was um
+48:46 I mean yeah I have the data experience
+48:49 um and in physics as well uh just
+48:51 writing data pipelines end-to-end uh
+48:55 doing uh the like data Transformations
+48:58 that that I needed to do and so on and
+49:00 so forth so it wasn't really a big
+49:03 um a big challenge
+49:06 um
+49:06 it's there are things that I learned of
+49:09 course along the way
+49:11 um coming out of Academia right that uh
+49:14 that that were different and I think the
+49:16 main thing that I found was things
+49:18 needed to be translated a little bit
+49:20 um so in physics uh specifically in
+49:23 particle physics um we had we did we
+49:27 used Quran right we had a job schedule
+49:29 or custom build uh job scheduler
+49:31 um that was
+49:32 just like um you know most most
+49:34 orchestrators and schedulers like
+49:36 underlying uh it was just just cron and
+49:39 we had uh we had to set our own
+49:40 dependencies and we have to set our
+49:42 priority on like how important is this
+49:44 job to run uh because the jobs were
+49:46 really really massive
+49:49 um so and like when when does it need to
+49:50 be run by and then put it in IQ and then
+49:52 it gets reprioritized so
+49:55 all the same
+49:57 um all the same considerations all the
+50:00 same Technologies underlying
+50:02 Technologies were there but we just had
+50:03 a different
+50:05 um
+50:06 like we had a custom
+50:08 uh solution for for each of the
+50:10 different parts because that's what we
+50:12 needed like we couldn't query our uh
+50:15 particle
+50:17 Collision database with with SQL or with
+50:19 you know pandas or so I couldn't pull it
+50:21 into a pandas data frame
+50:23 um so
+50:24 I realized and this is this is going out
+50:26 to folks who are maybe making this
+50:28 transition now or or just trying to
+50:30 think how their skills relate right I
+50:32 it's not useful for me to say oh
+50:36 um I have the software it's called root
+50:37 and this is uh where uh the the data
+50:41 lives and I write this you know I open
+50:43 the branch you know and then I in the in
+50:46 that in that data Branch I opened the
+50:48 next branch and so on and so forth
+50:49 that's not useful that may be what
+50:51 you're doing but it's not what folks are
+50:53 going to resonate with if you instead
+50:55 explain that all the tool doesn't matter
+50:58 but I have this deeply nested data
+51:01 structure event data which is how my
+51:04 data is going to be created in particle
+51:06 collisions and how it's how it has to be
+51:08 stored and I in order to do analysis and
+51:12 Run Aggregates on it then I have to be
+51:14 able to reach all of the um like the and
+51:18 endpoints in my uh going back to trees
+51:21 trees and leaves but all the leaf nodes
+51:23 I have to be able to reach and I have to
+51:25 run filters across different events on
+51:28 those those properties and then I that's
+51:31 my you know features those are my
+51:33 features and then I do ML on that it
+51:36 doesn't matter like what I we had a
+51:37 minimizer for I mean like it was a
+51:40 custom built minimization engine to find
+51:43 like the um the uh to get the least
+51:46 what's the word um to minimize the loss
+51:49 function right but you we don't have to
+51:50 you don't have to talk about that you
+51:52 can say okay and then I did this
+51:54 minimization
+51:55 it was a regression or it was you know
+51:57 whatever else and this is how I got to
+51:59 the answer so it's a level of like
+52:01 coming out of the weeds coming out of
+52:03 thinking about exact tools and you know
+52:05 thinking about this is what I did and
+52:07 this is exactly what you do as well so
+52:09 you should hire me because I have
+52:11 experience doing this
+52:13 so even though the tools maybe are not
+52:15 like your typical psychic learn tool it
+52:18 was something else and then the way you
+52:20 access data was different but still at
+52:22 the end you need to access data you need
+52:25 to run some modeling some training
+52:27 process on top of this data and then you
+52:30 had a model which is pretty much the
+52:33 the steps you need to do uh I think now
+52:37 with I don't know SQL and second learn
+52:39 right
+52:40 yeah I understand and then you work as a
+52:42 mail engineer and then somehow you
+52:45 ended up at astronomer but you you said
+52:48 you used airflow so for you it wasn't
+52:51 difficult to convince them to hire you
+52:53 or was it yeah yeah um I think that
+52:56 having used airflow was a was a perk or
+52:59 was a you know positive for sure
+53:02 um yeah doing pipelines end-to-end
+53:05 um and again like we were just forming
+53:07 the data team so there were some open
+53:09 questions around what uh the data team
+53:11 was going to be like what exactly uh the
+53:13 Chargers were going to be so uh like
+53:15 some of some of the work that I did um
+53:17 at astronomer was NLP
+53:20 um analyzes so again ml for the purpose
+53:22 of analytics so that's different or ml
+53:24 for the purpose of
+53:26 um showing how you can use airflow for
+53:29 ML so that's actually like it's it's it
+53:32 was a hybrid role at astronomer it's a
+53:34 hybrid role at absolver as well the kind
+53:37 of work that I do is is really this like
+53:40 um I write data Pipelines
+53:42 sometimes I write data pipelines to show
+53:46 how a data pipeline can be written using
+53:49 best practices for a specific use case
+53:51 or for a specific domain sometimes I
+53:54 craft those user personas and user
+53:56 stories to say okay this is and these
+53:59 are based off of real people like my
+54:01 friend at you know who's a head of ml at
+54:03 this like you know a series startup is
+54:06 doing this I know he's he's doing he's
+54:09 pulling in data uh from these sources
+54:11 he's using prefect for orchestration
+54:13 he's you know those things so I write a
+54:15 Persona based on that I write a Persona
+54:18 based on
+54:19 um my friend who is
+54:20 um working at this feature um feature
+54:24 flagging a b testing platform and he has
+54:27 this frustration around he's identified
+54:29 a data set that is incorrect and for the
+54:32 last six months he's been trying to
+54:34 um you know stop all the downstream
+54:36 applications because they're they're
+54:37 flawed and you know there's this
+54:39 community so I I write those pain points
+54:41 down and those user stories down and
+54:44 then I think about how do I solve this
+54:46 using the tool that I want to that I
+54:49 want to build and improve
+54:52 um and so then then the data work comes
+54:54 in it's after that sort of Market user
+54:56 research it's after uh thinking about
+55:00 problems then then I go to okay let me
+55:03 actually write this pipeline you know uh
+55:06 and let me use you know airflow to do it
+55:07 or let me use up solver to do it and now
+55:09 you see that like your pain point is
+55:12 solved and it's you know it's simple in
+55:14 these ways
+55:16 um and and there it is and in the
+55:17 meantime I'm doing data work right
+55:18 because I'm actually pulling in data
+55:21 um one of the analyzes I did at
+55:22 astronomer was uh building a a
+55:25 predictive model on how long uh an issue
+55:28 a GitHub issue on the airflow project is
+55:31 going to take to get resolved so NLP
+55:34 analysis of you know the issue title and
+55:36 the issue comments
+55:38 um and then a
+55:40 multi-class classifier on top of that to
+55:43 say hey these 10 issues came in you know
+55:46 in the last five hours this one's going
+55:48 to take you know days to resolve this
+55:50 one's gonna can be done quickly so we
+55:52 can prioritize based on that so yeah it
+55:56 looks like there is quite some overlap
+55:58 between ml engineering and data
+55:59 engineering because like with the skills
+56:02 you've got as an ml engineer you could
+56:04 just say hey like I know how to do this
+56:07 this and this I might not be able to do
+56:10 this thing that you need yet but I will
+56:13 learn so hire me and then okay like you
+56:15 seem to be good enough let's hire you
+56:17 and then you just learn all the rest at
+56:20 work this is how it works yeah and this
+56:23 is why I like being a generalist
+56:24 encourage others to be generalists
+56:27 um it's it's not like all the words that
+56:29 we use all the definitions and titles I
+56:32 think are um can be restrictive right
+56:34 the more important thing is is to
+56:37 actually
+56:39 figure out what the work is that needs
+56:42 to be done and what the gaps are between
+56:44 your skill set and and that work and
+56:47 then fill those in
+56:48 you have a framework for doing this
+56:53 um a framework of curiosity and no I
+56:55 don't have I don't have an organized uh
+56:57 what is this term right okay hey look it
+57:01 up right this is how it happens
+57:03 do you I don't know follow some
+57:06 resources online I don't like podcasts
+57:08 or
+57:10 um some articles or it just comes up
+57:12 with conversation with colleagues or how
+57:15 does it work for you where do you get
+57:17 this in
+57:18 like how do you feed this curiosity and
+57:20 how do you know like what you're curious
+57:22 about to in order to learn about that
+57:24 yeah that's a great question I don't
+57:27 religiously follow any one podcast or or
+57:31 publication but yeah I try to again
+57:34 build my own adventure from various
+57:37 sources which if you do the only concern
+57:40 is vetting right how do you vet the
+57:43 right sources how do you make sure that
+57:46 what you're learning is uh you know a
+57:49 good practice as opposed to a bad
+57:51 practice and that's tricky
+57:53 um but yeah for that I mostly rely on
+57:55 yeah my network of folks that I that I
+57:58 respect and admire and I am very
+58:01 unafraid to just ask hey like what do
+58:04 you think of this or I read this and
+58:06 this it seems like a good idea on
+58:08 principle is this what you're doing or
+58:10 are you doing something else and why so
+58:12 yeah all of those conversations together
+58:14 with online resources is what helped me
+58:17 learn
+58:18 um I can't really speak to and say like
+58:19 oh you should go read this or go listen
+58:21 to this maybe someday I will but not
+58:24 today
+58:25 so you just have a pool of resources you
+58:28 read from these resources or consume
+58:30 these resources and then for some things
+58:33 you run them by your colleagues friends
+58:35 who will tell you no this is actually
+58:38 not exactly correct I don't know you
+58:41 really think like okay can I trust the
+58:43 source
+58:44 yeah yeah totally this is how I do this
+58:47 then you can see that you can continue
+58:49 consuming from this resource yeah
+58:51 because then you're getting the real
+58:53 experience from a person who's doing it
+58:54 and building it I do really like I
+58:57 should say
+58:58 um companies that have engineering
+59:00 specific blogs like the they're talking
+59:03 about the problems that they're solving
+59:05 in a blog outwardly that again like
+59:07 you're getting the real experience of
+59:09 someone who struggled with something and
+59:11 then came up with something those are
+59:13 those are really informative to me
+59:15 yeah okay last question for today are
+59:18 there any books or other resources that
+59:20 you can recommend
+59:21 well let's say if somebody wants to
+59:23 learn more about these data pipelines
+59:25 that we discussed
+59:28 um
+59:29 to learn about data pipelines uh
+59:34 all right
+59:35 again I'm a little bit hesitant to
+59:38 recommend specific books I think that
+59:41 depending on what you want to do because
+59:44 reading a book is also a time commitment
+59:46 and so there's that
+59:48 um but I I hear that
+59:51 um the fundamentals of data engineering
+59:53 by Joe and Matt is is really solid for
+59:56 for learning data engineering skills
+59:58 there's white papers that um you know
+1:00:03 companies that are in the orchestration
+1:00:04 pace uh organization space will publish
+1:00:08 I found those to be some somewhat useful
+1:00:12 um my friend bass uh who I think is
+1:00:14 still at astronomer maybe not anymore
+1:00:16 wrote a book on on airflow basically
+1:00:20 um so and that's that's solid if you
+1:00:22 want to specifically learn orchestration
+1:00:24 with airflow but I think we're just
+1:00:26 moving a little fast right now for
+1:00:30 um unless unless you are a fast reader
+1:00:32 and then fast uh you know
+1:00:35 some someone who learns really quickly
+1:00:38 um to relight too much on books because
+1:00:42 they become outdated just so quickly
+1:00:46 um so yeah just broaden uh consume from
+1:00:49 other other sources as well like like
+1:00:51 podcasts like cures
+1:00:53 um talking to folks who are who are
+1:00:55 doing the actual work and reading like
+1:00:57 shorter form content as well
+1:01:00 hey thanks that's all we have time for
+1:01:03 today thanks a lot for joining us today
+1:01:05 for sharing your experience and thanks
+1:01:07 everyone for joining us today too and uh
+1:01:10 yeah I guess that's it really yeah thank
+1:01:13 you so much
+1:01:15 yeah have a nice rest of your day and
+1:01:17 have a great week

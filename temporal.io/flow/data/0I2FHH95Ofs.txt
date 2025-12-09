@@ -1,0 +1,1681 @@
+Democratizing Causality
+
+0:00 hi everyone Welcome to our event this
+0:02 event is brought to you by davidox club
+0:03 which is a community of people who love
+0:05 data we have weekly events and today is
+0:08 one of such events if you want to find
+0:10 out more about the events we have there
+0:12 is a link in the description click on
+0:13 that link check it out you'll see but
+0:16 now we don't have much but there is one
+0:17 interesting Workshop that is happening
+0:19 in September
+0:20 then do not forget to subscribe to our
+0:23 YouTube channel this way you will not
+0:25 miss future streams as awesome as the
+0:28 one we are going to have today
+0:30 and lastly we have an amazing slack
+0:32 Community where you can hang out with
+0:34 other data enthusiasts
+0:36 during today's interview you can ask any
+0:38 question you want
+0:39 and there is a paint Link in the live
+0:41 chat click on that link ask your
+0:43 question and we will be covering these
+0:45 questions during the interview
+0:49 so I don't know Alexander we're Au based
+0:52 in and based in Berlin and it's pretty
+0:54 hot here today surprise I just came from
+0:57 Frankfurt to Warsaw yesterday
+0:59 you're you're based in Warsaw currently
+1:02 yes yes
+1:04 okay yeah
+1:06 and right now I will
+1:09 open the document with the questions we
+1:11 prepared for you
+1:12 you probably also have it somewhere
+1:16 and if you're ready we can start yes I'm
+1:19 ready we can go
+1:21 okay let's go
+1:22 this week we'll talk about causality and
+1:25 we have a special guest today Alexander
+1:27 Alexander is a machine learning
+1:29 researcher educator and consultant he
+1:32 has worked with many companies across
+1:33 Europe in the United States of America
+1:35 Israel where he designed and built
+1:38 large-scale machine learning systems
+1:41 he's also known as the author of causal
+1:44 inference and Discovery in Python and
+1:46 this is one of the topics or the topic
+1:49 of today's interview welcome to the show
+1:51 Alexandra
+1:52 welcome Alexi thank you for having me
+1:53 and thank you for the invitation
+1:56 welcome as usual the questions for
+1:59 today's interview are prepared by
+2:01 Johanna Bayer thanks Johanna for your
+2:03 help
+2:04 and yeah let's start before we go into
+2:07 our main topic of causality let's start
+2:10 with your background can you tell us
+2:12 about your career Journey so far
+2:14 sure
+2:16 um so I I started with my journey with
+2:20 computers when I was a kid I was like
+2:22 five six seven years old I was do I was
+2:24 doing a little bit of programming
+2:25 because my father was
+2:27 um
+2:27 was a programmer back then then I had a
+2:30 very very long break and after studying
+2:34 my at my doing my second degree that was
+2:37 psychology and social psychology
+2:39 experimental psychology with
+2:40 neuroscience and so on I fell in love
+2:44 with with statistics
+2:46 and
+2:47 looking into Googling into about
+2:49 statistics because I was very interested
+2:51 in this topic and also Googling about
+2:53 what is going on in computer science at
+2:55 this stage I learned about python this
+2:57 led me to machine learning and that was
+3:01 the that was the start of of my journey
+3:04 into this rabbit hole
+3:06 um
+3:07 and one of my first machine learning
+3:10 projects like real machine learning
+3:12 projects was was a scientific one
+3:14 we worked on predicting on finding uh
+3:18 pre-diagnostic predictors of the
+3:20 selection children
+3:22 and I was very excited about this
+3:24 project and actually now after many many
+3:26 years there's a tool being developed
+3:28 that will help people diagnose the risk
+3:32 of Dyslexia in very young children which
+3:34 is very important because
+3:36 early diagnosis can help those children
+3:39 start special specialized training that
+3:43 can help them overcome the difficulties
+3:44 in their in their adult life
+3:46 and from there I I started working
+3:49 um with a with an international
+3:52 consulting company called lingaro
+3:55 and that was uh that was a place where
+4:00 where I started developing many many
+4:04 more complex architectures for for for
+4:07 Global clients working with NLP
+4:11 um and and other models
+4:14 yeah so that was the that was the
+4:16 beginning then I worked for other
+4:18 companies uh then I I moved to we moved
+4:21 to Tel Aviv and I worked with a cyber
+4:23 security company
+4:25 um and then recently I finished writing
+4:29 my book and and moved to doing
+4:32 consulting for companies and
+4:35 and focusing on my educator and and
+4:38 causal Ambassador or causal
+4:42 advocacy work
+4:45 do you remember as a kid what exactly
+4:48 picked your interests in programming
+4:50 because I I have a kid he's seven years
+4:52 old and I try to
+4:55 to show him what you can do with an
+4:58 algorithm so we bought the robot
+5:00 and it's possible to program a robot
+5:02 right so you can like there is like this
+5:04 visual interface and you can tell the
+5:06 robot like first like do three steps
+5:09 forward then like rotate and then you
+5:12 can create Loops there so like it can
+5:14 rotate like 10 times or something like
+5:16 that
+5:17 and he was not impressed at all after
+5:19 after
+5:21 like how how to show him that
+5:24 programming in school do you remember
+5:25 how it happened to you I don't know if
+5:27 how relevant this will be for for you
+5:29 and for him or for her I don't know um
+5:32 uh for me you know I didn't have a robot
+5:35 back then I just have a monochrome
+5:37 display the PC 186 or 286 or something
+5:42 like this with uh with GW basic
+5:46 and I know I wrote myself a piano you
+5:48 know that I could play melodies using
+5:50 computer keyboards and that was my main
+5:52 achievement back then
+5:54 it's amazing I have no idea what these
+5:57 terms that you mentioned mean because I
+5:59 myself got a computer pretty early
+6:01 lately but anyways yeah thanks thanks
+6:03 for sharing that so I guess not every
+6:05 kid should be immediately impressed when
+6:08 they see like an algorithm a robot that
+6:12 could be programmed perhaps you know
+6:13 everyone is different so yeah right
+6:17 um
+6:18 so now you focus on education and did
+6:22 you call yourself a causality ambassador
+6:26 yeah that's uh that's that's one way to
+6:28 think about what I'm doing
+6:30 so so what what does it mean what do you
+6:33 do as a causality causality ambassador
+6:36 so I do a couple of things I I do my
+6:40 best to democratize the set of methods
+6:42 and the style of thinking I think both
+6:45 things are very important here
+6:48 um I have a feeling that
+6:50 causality in general is a tool or a set
+6:53 of tools that can be very very helpful
+6:56 for for individuals and businesses alike
+6:59 and this is just something that
+7:03 for this reason or another we haven't
+7:06 learned in our curricula
+7:08 right so many people were not
+7:11 were not lucky enough to just uh get
+7:15 this idea as uh passed to them from the
+7:18 teachers from the environment and so on
+7:20 and so on I I believe that everyone
+7:22 deserves to
+7:24 to understand how it works and to have a
+7:27 chance to apply this to their work
+7:31 you set your goal is to democratize this
+7:35 style of thinking so what exactly this
+7:37 style of thinking is like what is
+7:39 causality or why it's
+7:42 how is it different from like the usual
+7:44 style of thinking
+7:45 um
+7:46 so usual style thinking I don't I don't
+7:48 know uh it probably depends where you
+7:50 are growing up and what in what what
+7:53 circumstances what context and so on but
+7:56 the
+7:58 thinking about the the data science
+8:00 Community
+8:02 most people are
+8:05 going into a journey that is focused
+8:07 around traditional statistical machine
+8:09 learning
+8:10 which means that we look at associations
+8:13 and um
+8:16 associations seeing associations is
+8:18 great it gives us great opportunities in
+8:20 in many different contexts
+8:23 but sometimes
+8:25 it's also it also comes with a set of
+8:27 risks
+8:29 which means that we can see an
+8:30 association
+8:32 and
+8:33 this Association might be the because of
+8:36 another variable that we do not observe
+8:39 and for whatever reason
+8:41 we can think about this Association as a
+8:44 valid tool
+8:46 to make a conclusion that is either
+8:49 implicitly or explicitly causal in order
+8:54 it's a bit abstract yeah sure let me let
+8:57 me make it more concrete
+8:59 um
+9:00 so I was just going back from my lunch
+9:02 and I was uh seeing YouTube shots you
+9:05 know this is like this yeah
+9:07 Instagram like kind of short short
+9:10 movies and that was one that was where
+9:14 there was a guy speaking and trying to
+9:17 convince the audience that there's a
+9:19 correlation between the color of your
+9:22 skin and the likelihood that you will
+9:25 commit violent crimes
+9:27 and he was citing different types of
+9:29 statistics for this right
+9:31 and so this is this is
+9:33 um an example of associated thinking so
+9:36 we maybe we say like hey there are
+9:38 people uh from with certain properties
+9:41 right I don't know physical mental
+9:44 properties psychological properties and
+9:46 there are some outcomes and we think
+9:49 that these outcomes are more
+9:51 um are more
+9:53 frequent for I don't know one group
+9:56 versus another and then if we just talk
+9:59 this Association language
+10:02 and we talk about those associations
+10:04 here's one here's another one here's
+10:06 another one it's very easy to make
+10:08 people start thinking that this property
+10:12 of this group of people is linked to
+10:14 this outcome right well sometimes it
+10:17 might be something completely different
+10:18 so maybe people with this certain
+10:21 property physical or psychological are
+10:24 also
+10:25 uh for whatever let's say historical
+10:28 reason
+10:29 uh in a group of people who have much
+10:32 lower income
+10:34 and maybe they have less parenting
+10:37 skills on average right within certain
+10:40 geography or certain location
+10:42 and this might be also related to to the
+10:47 fact that there is more violent crime in
+10:48 this particular neighborhood or
+10:51 um
+10:52 or for for for a group of people that
+10:55 accidentally also have another
+10:57 characteristic right but if we don't
+11:00 look at the third variable
+11:02 we might start implicitly thinking that
+11:06 those two properties that we're
+11:07 observing are are related and we also
+11:10 usually say related but what we think is
+11:12 related causally right so there is
+11:14 something that is causing the other
+11:16 thing
+11:18 um so from purely associative point of
+11:21 view or correlational point of view
+11:24 we often cannot distinguish which type
+11:26 of situation we are in
+11:30 right so we might see uh an association
+11:33 with uh with temperature and uh I don't
+11:37 know there's there's an example in my
+11:39 book it's it's a very simple example uh
+11:42 but perhaps a an intuitive one there are
+11:45 more drownings
+11:47 or drownings are correlated with ice
+11:49 cream sales
+11:50 right and somebody yeah a scientist
+11:54 might might hypothesize that hey there
+11:57 is sugar in ice cream and maybe people
+11:59 who eat ice cream that are just a little
+12:01 bit they become a little bit less uh you
+12:04 know slower to react and so on and so on
+12:06 sometimes we feel after we eat we feel a
+12:08 little bit like hey maybe I'll have an
+12:09 app right especially if it's a
+12:11 carbohydrates rich food
+12:14 um and and somebody would could make a
+12:16 hypothesis like this and invest like a
+12:18 large budget in in exploring this
+12:21 hypothesis so try to falsify it while
+12:23 the while the cause there is a common
+12:26 cause and its temperature right so when
+12:28 it's warmer people are more likely to
+12:30 buy ice cream but they are also more
+12:32 likely to go and swim and if more people
+12:36 are swimming more people are also
+12:37 unfortunately drowning usually right
+12:41 I guess for for some applications uh we
+12:44 don't need to think about this causality
+12:47 we just seek a relation I know we train
+12:49 our logistic regression I think maybe a
+12:52 good example is this famous B feature in
+12:55 the Boston data set
+12:57 it's also related to the skin of color
+12:59 the example you mentioned yeah I think
+13:01 it's like the proportion of colored
+13:03 people in a neighborhood
+13:05 in Boston right and then like if you
+13:08 train a model maybe this model is
+13:10 accurate to some extent right because
+13:12 like it uses this problematic B feature
+13:16 uh
+13:17 so for some purposes
+13:19 like we will not think if it's like uh
+13:24 correct to use this feature or not but
+13:26 maybe it improves the performance of the
+13:28 model right
+13:29 that's a very interesting point what
+13:31 you're saying because uh well statistics
+13:35 is just enough for predictive for
+13:37 predictive tasks now the problem starts
+13:41 when we want to make a decision
+13:44 right so uh if you imagine there was a
+13:49 very famous there was a very famous case
+13:51 some time ago of of a company called
+13:54 Zillow so they were doing actually what
+13:57 you described they were trying to
+13:58 predict you know prices of of Real
+14:01 Estate
+14:02 and then
+14:04 what they also did based on those
+14:06 predictions
+14:07 they were deciding if they want to buy a
+14:11 real estate and then flip it which means
+14:14 renovate it and sell for about the price
+14:16 or maybe even without renovation I don't
+14:18 remember what was their business model
+14:21 um or not and now
+14:24 this might be and this is what this
+14:26 turned out to be a very good business
+14:27 for them for a very long time
+14:30 and as long as the distribution of all
+14:33 the variables in the background was the
+14:35 same right so
+14:37 machine learning models are IID machines
+14:39 which means that they assume that we
+14:42 have the same identically independent
+14:45 and identically distributed
+14:48 distributed data set in training and in
+14:51 in the test or in the
+14:53 real world right and this is not always
+14:55 the case now causal models depends on
+14:58 the type of a causal model might address
+15:00 this if you have a lot of information if
+15:03 you have a reach causal representation
+15:04 you can address a situation like this so
+15:07 if Zillow had a very rich causal model
+15:10 they would not fall because of the fall
+15:13 of the market
+15:14 what happened with them
+15:17 essentially yeah because of their
+15:20 machine learning models or yeah they
+15:23 bought they bought a lot of they bought
+15:25 a lot of
+15:26 um real estate and then the prices went
+15:28 down and they were not able to take it
+15:31 so yeah the models were predicting that
+15:34 the prices would go up but they did not
+15:36 yes yes as far as I remember that was
+15:39 that was the case and they made a
+15:41 decision based on this prediction right
+15:43 and when we when we're making decision
+15:45 let me let me give you another example
+15:47 when we're making a decision usually not
+15:50 always right sometimes we might have a
+15:51 decision threshold maybe like in credit
+15:54 risk sometimes we have right somebody
+15:56 says like hey if this is the
+15:59 if the probability of default
+16:02 is higher than something we're just not
+16:03 giving money to those people and this
+16:05 might be good enough depending on what
+16:07 you really want to achieve in the long
+16:08 run but this might be really good enough
+16:10 but we can think about another scenario
+16:13 with uh let's say marketing or churn
+16:16 when in marketing we would we are
+16:19 interested in
+16:22 targeting people
+16:24 who respond favorably which means they
+16:27 will purchase right if we target them
+16:30 this will increase the likelihood of
+16:32 purchasing because targeting every
+16:35 person is is spending a little bit of
+16:37 our marketing budget
+16:40 but there are different people right and
+16:42 some people might react uh some people
+16:44 might just don't care if we target them
+16:46 and they will buy anywhere anyway
+16:50 uh
+16:51 some other people might not buy
+16:54 regardless if we target them or we don't
+16:56 Target them and there will be also some
+16:59 people that will buy only if we target
+17:01 them because maybe they just feel a
+17:03 little bit special when we send them
+17:05 their disk this discount or we give them
+17:08 uh this personalized email right
+17:11 but there's also the fourth group of
+17:13 people
+17:14 who will buy from you
+17:16 as long as you do not Target them and if
+17:19 you target them they get angry and they
+17:21 say like hey it's too much marketing too
+17:22 much of this [ __ ] I don't want this
+17:24 goodbye and they just
+17:26 and they just stop working with you
+17:30 um so for this uh so for this problem
+17:34 predicting the probability of of the
+17:37 outcome is not enough
+17:39 right because we might predict that
+17:41 there is like 60 probability that this
+17:44 person will will convert they will buy
+17:46 from us
+17:47 but now we don't know if they will buy
+17:49 if we target them
+17:51 or if we don't Target them
+17:53 or maybe they will they probability will
+17:55 drop actually if we target them so for
+17:58 this we need to model something that is
+18:00 called counter factuals we need to model
+18:02 how they behave under
+18:04 under the campaign and under no campaign
+18:07 and then
+18:08 by comparing these two outcomes we can
+18:11 make a we can make a decision
+18:15 contraction what does it exactly mean
+18:17 like in broader terms counterfunctional
+18:20 it's a complex word
+18:23 yeah so counterfacture so factual means
+18:25 something that happens in
+18:27 actually happens in the world and
+18:29 counter factual means something that
+18:32 something that is not happening in the
+18:34 world so we change something in in the
+18:36 Berlin language which means perilian
+18:39 comes from Judea Pearl who is a computer
+18:41 scientist
+18:43 um
+18:43 who is the Godfather or even a father of
+18:47 modern modern causality or graph based
+18:49 causality
+18:51 and and in this terms this means that we
+18:54 perform in a minimal intervention as
+18:56 they call it in the world so for
+18:58 instance you have you have a red shirt
+19:00 today every t-shirt Maybe
+19:02 and now I'm I'm picking certain examples
+19:07 when you ask me and we could ask a
+19:08 question would I pick different examples
+19:10 if you if you wore a blue shirt right
+19:15 would that Prime is somehow differently
+19:18 and now if we have a very rich causal
+19:20 model we could answer this question this
+19:22 is not not always very simple but at
+19:24 least theoretically it's possible
+19:30 so but we don't know what would happen
+19:32 if I were a blue shirt a blue t-shirt
+19:34 right that's why it's controversial we
+19:37 don't know
+19:38 what would happen if we will and we will
+19:40 never observe it more moreover right we
+19:42 will never observe you in the same
+19:44 situation you and me in the same
+19:46 situation and you wearing a blue t-shirt
+19:49 instead of a red t-shirt
+19:51 so the other example you gave earlier
+19:53 was
+19:55 with let's say we targeted somebody and
+19:58 we saw how they reacted to you
+20:00 the advertisement but we don't know how
+20:04 they would have reacted if we did not
+20:06 had we not targeted them right yes
+20:08 or another example maybe could be let's
+20:12 say we have a recommender system and we
+20:15 show certain items right but there are
+20:17 other items we don't don't show maybe if
+20:19 we showed
+20:21 other items they would have clicked
+20:23 right but they did not because we did
+20:25 not show them and we have no idea right
+20:27 what would have happened if we
+20:29 did that thing yes exactly that's that's
+20:32 a that's a that's an amazing amazing
+20:33 example recommend assistance it's it's
+20:35 the same yeah
+20:38 it's the same it's the same structure as
+20:40 you as you noticed yeah
+20:43 and uh yeah so I guess uh our typical
+20:48 classical models like I don't know
+20:50 logistic regression decision trees
+20:53 extra boost whatever neural network uh
+20:56 classical neural networks they do not
+20:58 really
+20:59 cover these cases right so we don't know
+21:02 um
+21:03 like in this example in the example of
+21:05 targeting somebody
+21:07 all we know is how people reacted to a
+21:10 campaign right
+21:12 we don't know how people people who did
+21:14 not who weren't targeted how they would
+21:16 have reacted so what kind of models do
+21:18 we need to use
+21:19 to model this specific case
+21:22 that's a great question you are correct
+21:25 so out of the box
+21:27 supervised models do not are do not have
+21:31 capabilities to
+21:33 reason causally
+21:35 um and there are many different types of
+21:37 causal models but the one that I think
+21:40 is relatively the easiest to to to grasp
+21:44 and that also behind the scenes uses
+21:47 traditional machine learning models
+21:50 um is a family of Mal there's a family
+21:52 of models called metal learners
+21:54 the name is maybe a little bit
+21:56 unfortunate because we also have metal
+21:58 Learners in in machine learning
+22:00 traditional non-causal machine learning
+22:02 sorry again like Ensemble Learners is it
+22:05 the same thing
+22:07 no no I think it's it's slightly
+22:10 different but um anyway causal machine
+22:12 causing metal Learners are called metal
+22:15 learners for a very particular reason
+22:18 because they took regular machine
+22:20 learning models
+22:21 and they use and use them to
+22:25 produce those counterfactual worlds
+22:28 of course there are estimated
+22:30 counterfactual words right and
+22:33 um
+22:34 so
+22:36 probably the easiest uh the easiest
+22:38 example of a metal learner a very simple
+22:41 metal and it's called t-learner
+22:43 T learner stands for two learner like
+22:46 one two
+22:47 and it's because it uses two machine
+22:50 learning models
+22:51 so it uses one machine learning model to
+22:54 learn the response function for
+22:57 under no treatment let's let's assume
+23:00 that the treatment is binary so we do
+23:02 something that we don't do it
+23:04 and the second model
+23:06 is used to
+23:08 learn the response function which means
+23:11 mapping from the treatment and maybe
+23:13 some features to the outcome
+23:15 it learns the response function under
+23:18 treatment so we have one model that
+23:20 lands response function under no
+23:21 treatment another one under under the
+23:24 treatment
+23:26 and of course I just want to make sure I
+23:28 understood yeah so we have two models
+23:30 the first model for the first model we
+23:33 see let's say if we talk about this
+23:35 campaign example when we targeted people
+23:38 when we target people with an
+23:40 advertisement
+23:41 we have this pool of people who Target
+23:43 our audience right we send them some
+23:45 sort of campaign and we collect the data
+23:48 we know who opened the email or whatever
+23:51 who ended up clicking I don't know who
+23:53 did not do this right so we have this
+23:56 um
+23:56 data set right with um with the target
+24:00 variable but then we also have other
+24:02 people who we did not set to the
+24:04 campaign
+24:05 and we can observe what they do on the
+24:07 platform right so we know that we did
+24:09 not send to this pool of people but they
+24:13 still might may buy they think we are
+24:16 advertising right so we just take all
+24:18 the other people and see who actually
+24:19 bought this thing at the end right so
+24:22 yeah we have two models yeah so we take
+24:25 these two groups people groups of people
+24:26 one that we sent the campaign to and the
+24:29 other one that were that did not receive
+24:32 the campaign and we trained one model on
+24:34 one group another model on another group
+24:36 now
+24:38 uh you also said about clicking emails
+24:40 and so on so there is compliance which
+24:42 means that if somebody clicked or not it
+24:43 makes the thing a little bit more
+24:45 complex so let's let's put it aside for
+24:47 now
+24:49 um
+24:50 and and just let's focus on those two
+24:51 models so so we take those two models
+24:54 and then for any new observation
+24:57 we make prediction for using both models
+25:01 okay so uh so we have some
+25:05 um
+25:06 so it only makes sense if we also have
+25:08 some features that I describing our
+25:12 um are describing our our population
+25:16 and then we for each individual
+25:18 we predict we make a prediction using
+25:21 the the treated the treatment model and
+25:25 the non-treatment model
+25:27 and we take the outcomes from both
+25:28 models and we subtract the outcome from
+25:32 the non-treated model from the treated
+25:35 model
+25:36 and this gives us something a quantity
+25:38 that is called a conditional average
+25:40 treatment effect
+25:42 now this can be interpreted this outcome
+25:45 can be interpreted as a conditional
+25:46 average treatment effect
+25:48 only on the settings in circumstances
+25:51 which means that
+25:52 the original data that we trained the
+25:54 model on
+25:55 has to be unconfounded which means that
+25:58 there is no causal bias in this data
+26:02 and this might be accomplished in two
+26:05 ways either by
+26:07 randomizing the treatment in the
+26:09 training data which means that we
+26:11 basically perform an experiment
+26:15 or in the same way as say A B test right
+26:17 yes yes
+26:19 a welcome back to daily test well
+26:21 designed a B test or the second option
+26:23 is to perform causal feature selection
+26:25 which might be a little bit more
+26:27 difficult because we need to observe all
+26:30 the variables that can have impact on
+26:33 the treatment and the outcome at the
+26:35 same time and we need to exclude certain
+26:37 other variables that might have certain
+26:40 structural relation to other variables
+26:42 in the model
+26:45 and basically that there are these two
+26:47 ways to do it what do we do with the
+26:50 results so we subtract one from the
+26:52 other we get some quantity so I guess
+26:54 there could be three
+26:56 possibilities like negative
+26:58 zero and positive right so what do we do
+27:01 in each of these cases
+27:03 so so uh
+27:05 well so it all depends on on the setting
+27:08 right if we just say the outcome is
+27:10 binary they either buy or they not buy
+27:13 um
+27:14 so negative I understand it it would be
+27:16 like if if somebody would have bought
+27:19 unless wheat targeted him right yeah
+27:24 so so if you want to if you want to make
+27:26 a an optimal decision from your budget
+27:29 allocation point of view you should only
+27:32 treat people who
+27:34 holds by if targeted
+27:39 that would be an optimal decision for
+27:41 you so only if it's positive right only
+27:43 if it's positive and if it would be
+27:45 positive and if it would be positive
+27:47 otherwise if it would be negative
+27:49 otherwise yeah
+27:52 okay yeah so I think I think we I think
+27:55 we had different understandings so let
+27:57 me let me expand on this
+28:00 we should only target people
+28:04 who are positive under the treatment
+28:06 model
+28:07 and are negative or like zero under
+28:09 non-treatment model
+28:11 which which if we apply this ate formula
+28:15 average treatment effects formula that
+28:16 would be 1 minus 0 which means one their
+28:19 outcome is one
+28:20 okay
+28:22 so one model predicts the treatment
+28:23 models predicts that this person will
+28:26 buy the non-treatment model predicts
+28:28 that this person would not buy yes in
+28:30 this case we go ahead and Target in
+28:33 other cases we do not
+28:35 yes in other cases we do not because
+28:36 people who would buy under no treatment
+28:40 and treatment it doesn't make sense to
+28:42 to Target them because it doesn't make
+28:44 difference to them
+28:45 based on our estimation of course
+28:48 and we don't Target people who who don't
+28:52 buy anyway because it seems it doesn't
+28:55 matter to them as well and of course we
+28:58 don't want to Target people who who are
+29:01 buying and the no treatment and stop
+29:03 buying up that treatment right because
+29:04 this is just generating
+29:07 a loss on both ends for us like losing a
+29:10 client and also losing money to
+29:12 actually paying to lose a client it's
+29:15 like paying tool as a client yeah it's
+29:17 like the worst possible thing right yeah
+29:19 you spent money but he also with the
+29:21 client yes exactly I imagine it can
+29:23 introduce some problems like let's say
+29:25 we take this model we deployed we apply
+29:28 it to oral the entire population to all
+29:31 our customers and start using it and
+29:33 then we continue collecting data and
+29:36 then the data we collect
+29:37 might be well because we applied the
+29:40 model and try it now we
+29:45 uh
+29:47 I could don't reintroduce some bias
+29:49 right by
+29:50 starting to apply this model should we
+29:53 maybe always do some sort of randomized
+29:55 test trial
+29:56 when we deploy this model or we it's
+29:59 okay to go ahead and apply to everyone
+30:02 so uh well so this this is a great
+30:06 question now a short answer is that if
+30:09 you use a model like t-learner you might
+30:11 have certain you might have certain
+30:13 problems right so for instance you can
+30:15 show that uh those simple meta learners
+30:20 they will have a little bit of
+30:22 estimation bias which is different from
+30:24 causal bias right so we assume that
+30:26 causally we are we are okay so our data
+30:28 was either randomized or
+30:30 or it was structurally the variables
+30:34 were chosen in a causally meaningful way
+30:39 and then we still might have some
+30:41 estimation bias from from those models
+30:43 so there are different models other
+30:44 models like double machine learning for
+30:47 instance now trying to remove this
+30:50 estimation bias from from those models
+30:54 now just last week
+30:57 I think last Wonderland published
+31:02 another paper where he introduced a
+31:04 triple machine learning
+31:06 that uses another another piece of
+31:09 statistical information let's say to
+31:12 debias the the model and this is uh and
+31:16 he achieved something that is called a
+31:18 super efficient estimator which means
+31:20 that
+31:21 it converges to the True Value
+31:24 much faster with the sample size than
+31:27 the traditional estimator
+31:29 and um yeah so so this is one thing but
+31:34 I think what is what is more important
+31:36 is that sometimes it might be difficult
+31:39 for us to also get rid of this causal
+31:41 bias
+31:42 and in this sense if we are not sure
+31:44 that we that we were able to get rid of
+31:47 the causal bias we definitely it will be
+31:51 definitely a good practice
+31:53 to
+31:54 uh
+31:56 before
+31:58 the ultimate deployment
+32:01 to deploy this model to a part of your
+32:03 customer base if that's possible so this
+32:06 is something that I usually recommend to
+32:08 my clients that we
+32:10 deploy a model to
+32:13 do it to a part of the of the customer
+32:15 base and we always compare it to the to
+32:18 the Baseline
+32:20 whatever our Baseline is right so a
+32:22 baseline might be just a simple machine
+32:25 learning predictive model
+32:29 um just yeah
+32:30 in this case compare means we compare
+32:34 using some sort of business metric like
+32:36 how what's the revenue that these two
+32:38 groups uh brought right
+32:40 yeah we basically we basically evaluate
+32:43 the policy right so we can think about a
+32:45 causal model like this this is often
+32:48 called applied modeling uplifts because
+32:50 the change that whatever whatever metric
+32:53 goes up when we
+32:56 um when we when we use this causal
+32:58 modeling technique
+33:00 um
+33:02 so yeah this this is uh evaluating based
+33:04 on whatever metric matters to us right
+33:06 this might be Revenue this might be uh
+33:09 churn this might be
+33:11 anything that would be relevant because
+33:14 there is a question from
+33:15 asking is how do we estimate the quality
+33:19 of a causal model and if the Matrix
+33:23 that we use are the same as for plane
+33:25 regression
+33:27 or playing like you know traditional ml
+33:29 models or the metrics are different
+33:33 so so let's unpack this question
+33:36 um
+33:39 there are a couple of levels of
+33:42 evaluation of causal models so the first
+33:46 one is regarding
+33:49 uh causal unbiasedness or is there a
+33:54 causal bias in our in our data set
+33:56 there are no uh and here traditional
+33:59 machine learning metrics or traditional
+34:01 machine learning evaluation approaches
+34:04 like like
+34:05 um
+34:06 cross-validation for instance are not
+34:08 really useful
+34:10 why because
+34:13 the observational distribution
+34:15 associational distribution
+34:17 we can get the same type the same
+34:19 associational distribution from
+34:20 different Interventional distributions
+34:22 or different kind of factual
+34:24 distributions
+34:25 which means that we can have different
+34:27 data generating processes that end up
+34:31 giving us exactly the same observational
+34:34 distribution
+34:37 so this is not very this is not very
+34:39 useful uh and we need other other stuff
+34:43 to to make sure that it works so one of
+34:46 those one of the ideas that we can use
+34:49 is actually what we just discussed so
+34:52 deploying the model and looking how it
+34:55 works another way is using so-called
+34:58 refutation tests
+35:00 so refutation tests
+35:02 are trying to falsify
+35:07 the causal structure within the model
+35:11 which means
+35:12 these tests usually are changing
+35:14 something in the data for instance
+35:16 and they check if the coefficient that
+35:20 we are the causal coefficient that we
+35:22 are finding is also changing or not
+35:25 and they're like so this is like a
+35:26 scientific method preparing scientific
+35:29 methodology we're trying to change
+35:31 something in the world and we say like
+35:32 hey if this model will react to this in
+35:35 a certain way it means that it's almost
+35:37 certainly wrong
+35:39 so those tests cannot confirm that the
+35:41 model is correct
+35:43 but they can falsify the hypothesis that
+35:46 the model is correct
+35:48 and then we have statistical so then we
+35:51 have statistical estimates and now
+35:54 um
+35:55 the question from tasks was if I
+35:57 remember correctly uh
+35:59 if we use the same set of metrics for
+36:01 both for both models so yeah we can do
+36:05 if we want to
+36:07 if we want to evaluate the policy which
+36:09 means if you want to evaluate if we make
+36:12 better decisions based on the causal
+36:15 model versus on on a non-causal model
+36:19 then we definitely should use the same
+36:21 metric
+36:22 right because if we use different
+36:24 metrics then then we are not comparing
+36:27 Apples to Apples and there's also a
+36:30 third
+36:30 and there's also a third dimension
+36:34 which is
+36:35 the quality of the estimator itself so
+36:38 assuming that the color part is okay we
+36:40 don't have any causal bias in the model
+36:43 we might be also interested and we
+36:45 should be interested in think what is
+36:48 the quality of estimation of statistical
+36:50 parameters within the causal
+36:53 structure
+36:54 and here uh
+36:57 and here things like cross validation
+37:00 and all those traditional metrics can be
+37:03 helpful because now we assume that we
+37:06 split something we split the data set
+37:08 into the training and test part
+37:10 we assume that they are IID
+37:13 and we just want to see how well our
+37:16 estimators are estimating model
+37:18 parameters
+37:19 in the in the in the model based on the
+37:24 performance on the test set
+37:26 while the model was trained on the train
+37:28 set
+37:29 so in my book you will find a multiple
+37:32 examples of of these procedures
+37:37 yeah I was going to ask about your book
+37:39 because like to me it sounded quite
+37:42 abstract in general metrics uh like it's
+37:44 such a topic that without examples and
+37:47 without
+37:48 um
+37:49 for me personally illustrations and
+37:52 actually going there and trying to
+37:53 implement these things play with them
+37:55 like they are just too abstract and what
+37:58 you say is if somebody felt lost
+38:01 during this description or wants to know
+38:03 more about this wants to learn more
+38:05 about that they should check out your
+38:06 book right so there you describe it with
+38:08 more details on this things that you
+38:11 just talked about
+38:12 yes definitely so in the book we go from
+38:15 actually from almost from the scratch
+38:17 we're starting uh we talk about basic
+38:20 fundamental causal Concepts and then we
+38:23 move gradually step by step towards
+38:26 machine learning methods uh
+38:28 heterogeneous treatment effect
+38:29 estimation which is another name for for
+38:32 appliff modeling let's say plus or minus
+38:34 this this terminology is maybe not
+38:37 always consistent and then we also talk
+38:39 about another topic which is called
+38:40 causal discovery when we are trying to
+38:43 discover causal structure within our
+38:46 data set from observational data or
+38:49 observational and Interventional data
+38:54 so from what I understood so these
+38:56 causal models they are pretty useful
+38:59 and we should use them when possible
+39:02 when needed but they introduce another
+39:04 an extra layer of complexity right so
+39:07 right now let's say you have a
+39:09 traditional model you have just one
+39:10 model you deploy you use it and it seems
+39:12 to be working fine
+39:14 now but then if you start thinking about
+39:16 this causality and causal models then in
+39:21 the simplest case you at least have two
+39:23 models right and it becomes kind of two
+39:25 times more complex like your your system
+39:29 becomes two times more complex like is
+39:31 it always worth it to introduce this
+39:33 complexity or maybe there are cases when
+39:36 we shouldn't worry about causality yet
+39:38 and postpone this to some later point
+39:43 great question uh great question and a
+39:46 very loaded question
+39:48 um
+39:49 so starting from is it worth it uh
+39:53 answer to this question depends on
+39:56 what you are trying to achieve
+39:58 so if if you only if you're only
+40:01 interested in predicting something
+40:03 and you say hey this is an IID case and
+40:06 I just want to predict if this will be
+40:08 more than 5 or less than five
+40:11 uh
+40:13 there's no need for causal models
+40:15 because
+40:16 maybe Zillow was thinking in exact same
+40:19 way right we're just predicting we are
+40:22 not interested in you know yeah but they
+40:24 were making decisions right they were
+40:25 making actually counterfactual bets on
+40:28 reality based on single uh single model
+40:31 prediction
+40:32 but don't we always in most cases we
+40:36 have a model a machine learning model
+40:39 to make a decision to act on this
+40:41 decision should we
+40:43 give money or we should not give money
+40:46 to like a prospective client right
+40:49 should we target somebody or should we
+40:52 not Target I can most cases like
+40:54 logistics for like for classification we
+40:58 want to have a decision right so should
+41:00 we put this email in spam or not spam
+41:04 or should we I don't know write a
+41:06 recommender system should we display it
+41:08 or should we not display it like in most
+41:10 of these cases
+41:12 um yeah there is a decision
+41:14 yeah yeah so always when there is a
+41:16 decision and you also have some
+41:18 treatment that is under your control
+41:19 which means that you can change
+41:21 something in the world
+41:22 there is a potential of benefit for you
+41:25 in using cuddle models
+41:30 and now if it's work you ask me if it's
+41:33 worth it right and that's I'm smiling
+41:35 because like just I think two weeks ago
+41:38 I got a message from my colleague and he
+41:40 told me hey you know I just at my
+41:43 company
+41:44 I just uh started analyzing
+41:47 the machine learning model from the the
+41:50 mark that the whole Marketing in the
+41:52 company is working on
+41:53 is based on
+41:56 and I just discovered that for three
+41:57 years
+41:58 we we just have losses on our marketing
+42:02 right and this is making decisions based
+42:05 on the machine learning model and it
+42:07 works it's easy because it's just one
+42:08 model maybe right probably they have
+42:10 more but it's relatively easy and
+42:13 everybody's happy and then somebody
+42:15 comes and just do them and they do the
+42:17 math and it seems that the marketing is
+42:20 actually they are throwing the money
+42:22 away
+42:24 um and then he started analyzing this so
+42:26 he sent me a screenshot of his like hey
+42:30 this is my causal model how it works
+42:32 what do you think about it you know uh
+42:34 so every time you have this kind of a
+42:37 problem I think it's worth it to go go
+42:39 into causal models now there is a
+42:42 psychological block I I suppose in some
+42:45 people because they think hey we have
+42:47 some status quo it works like I don't
+42:49 know maybe even how it works but it
+42:51 seems it's okay we are we are live right
+42:53 we're moving forward
+42:54 uh so so maybe let's not touch it
+42:59 but then it depends exactly and it
+43:02 depends again on what are your goals
+43:04 what are your long-term goals
+43:06 if you really want to maximize your
+43:08 gains and and minimize losses in the
+43:10 long run
+43:11 maybe it's worth to just stop for a
+43:13 while and say okay let's see how it
+43:16 works
+43:17 let's see how much is the investment
+43:19 today
+43:20 and then what we can expect in the
+43:22 future
+43:25 okay so we should think
+43:28 right and I think one of the example or
+43:31 one of the things you mentioned
+43:33 previously is when we deploy a causal
+43:36 model typically there is a baseline
+43:38 right it's always a good idea to compare
+43:40 this causal model to the Baseline right
+43:42 so maybe
+43:45 um so this is like a data-driven way to
+43:48 see if this adding uh one extra layer of
+43:50 complexity is actually worth it right
+43:52 definitely
+43:54 I I think even if you feel even if you
+43:56 feel internally
+43:58 convinced that
+44:00 your data is causally unbiased I would
+44:03 always always recommend this because
+44:05 sometimes we just cannot think about
+44:07 something there's maybe a little thing
+44:08 we missed
+44:10 yeah so so I I think it's always an
+44:14 incremental work really to you know make
+44:17 things better and so on but I think this
+44:19 you know this is the same as in life and
+44:21 in business
+44:23 yeah and um there is one quite Hot Topic
+44:28 these days these llms right so everyone
+44:30 is talking about the lamps large
+44:32 language models we actually we were in
+44:35 our podcast we were pretty late to the
+44:37 party but recently we had two podcast
+44:39 interviews that were about our lamps so
+44:42 better late than never
+44:44 and yeah I guess all the lamps are kind
+44:46 of hot because of charge BT
+44:49 um at least this is when I noticed them
+44:53 so before when it was just gpt3 it was
+44:56 like okay so what but when I saw chargpd
+44:59 it like completely changed my perception
+45:01 off yeah what these models could do and
+45:05 you recently gave a talk I don't know
+45:07 how recently but you did at some point
+45:09 give a talk about causality and the note
+45:12 B and you tested LMS with causal
+45:15 questions
+45:16 can you tell us more about this talk can
+45:19 you summarize it for us
+45:21 yeah sure so so since the the stock a
+45:26 lot has changed in the research
+45:27 community and also in the llm space
+45:29 something has changed so
+45:31 um so I will give you a summary of the
+45:33 talk and then also a short summary of
+45:35 where we are today
+45:37 um in the talk we we discussed the idea
+45:41 of
+45:43 combining natural language processing
+45:45 with with causality in particular large
+45:48 language models with causality
+45:51 and
+45:54 there are a couple of ways that you can
+45:56 think about this intersection of those
+45:58 two areas
+46:00 one is about
+46:01 uh using large language models
+46:06 as elements of a causal system
+46:09 perhaps it's some kind of a feature
+46:11 extractor in the role of a feature
+46:14 extractors
+46:18 yeah okay so so let's let's think about
+46:21 let's think about a more concrete
+46:23 example maybe we have a situation that
+46:27 we have a
+46:29 a program
+46:31 that helps people that that aims to help
+46:35 people
+46:36 write more clearly
+46:39 okay so so there's a maybe a two maybe a
+46:42 one week or two week Workshop people are
+46:45 uh sitting writing you know learning how
+46:48 to write more clearly and so on and so
+46:50 on without llms just a workshop like
+46:53 just people yeah just people right so
+46:55 they learn and then it's the outcome of
+46:57 this Workshop they work out knowing how
+46:59 to create a better copy create a better
+47:02 article yes yes and now and now we might
+47:06 be interested in evaluating if this
+47:08 Workshop worked so if if they are
+47:11 writing more clearly really and if you
+47:13 want to do it at scale it's it's
+47:15 challenging
+47:16 to and to engage to hire many people
+47:18 that will do the evaluation for us
+47:21 because they will need to read many
+47:23 pages of text and so on and so on so we
+47:25 could potentially use here LL and llm a
+47:28 large language model and ask it if for
+47:31 the clarity score score for those essays
+47:34 right
+47:36 and then we we could say if we
+47:38 randomized the treatment so some people
+47:40 got to the workshop and others did not
+47:43 based on a random assignment we could
+47:46 basically compute the average treatment
+47:48 effect
+47:50 so that's that's one way it's the
+47:52 scenario is called sometimes the text as
+47:54 as an outcome because the text is is the
+47:58 outcome of some experiment
+48:01 and also maybe text as um as a
+48:04 mediator
+48:06 which means
+48:08 which means that we have some treatment
+48:10 then then we have then that's the text
+48:13 produced and caused by this treatment or
+48:16 some aspects of this text are caused by
+48:18 this treatment and then we have some
+48:21 other outcome so it's understood
+48:23 correctly so there are two groups of
+48:25 people one is that kind of the treatment
+48:29 group people who went through the
+48:31 workshop the other group is people who
+48:34 did not go through the workshop and then
+48:36 each person in these two groups produces
+48:40 some text and then for each of the texts
+48:43 we ask nlm hey what's the clarity score
+48:46 or yeah like how to is that stack this
+48:50 text and then we just compare like using
+48:52 some sort of t-test or whatever to see
+48:55 that okay Workshop actually was helpful
+48:57 right yes exactly that would be an
+49:00 example of the scenario that is called
+49:01 text as as an outcome because test is
+49:05 the out text is the outcome that where
+49:07 we expect some some change some
+49:09 difference
+49:10 okay so what's wrong with that
+49:13 sorry what's wrong with that sounds like
+49:16 a good approach yeah this is a good this
+49:18 is a good approach so so so so now we
+49:20 are talking about a scenario where we
+49:22 are using llms as
+49:24 as a an element as a decoder or encoder
+49:28 within a system that we know that the
+49:30 system is causal we know the causal
+49:31 structure of the system and then the llm
+49:34 is just like one of the elements within
+49:36 the system that helps us
+49:38 turn this multi-dimensional
+49:41 entity that a text is into a some maybe
+49:46 numerical summary
+49:47 we can also use it uh we can also use it
+49:52 in another way so maybe text is a
+49:54 confounder which means that we have some
+49:57 treatment and we have some outcome and
+49:59 the some aspect of the text
+50:02 is
+50:03 affecting both
+50:06 the treatment and the outcome
+50:09 and
+50:11 this is interesting because sometimes
+50:14 it's difficult to actually say hey this
+50:17 is one outcome this is this is just one
+50:20 a thing in the text that is
+50:22 uh that is influencing something
+50:26 and how to how and how we extract this
+50:28 information maybe this maybe it's style
+50:30 right so it's very difficult to quantify
+50:33 Style
+50:34 and large language models can be helpful
+50:36 with this so let me give you let me give
+50:39 you another example with Texas treatment
+50:41 so maybe we have a copy
+50:44 maybe we have a copy of Texas co-founder
+50:47 or a treatment it will be Texas
+50:48 treatment I think it will be the same as
+50:50 previously right no it so previously was
+50:53 Texas outcome
+50:55 outcome and now it's test taxes
+50:58 treatment so maybe we have a marketing
+51:00 copy
+51:01 and we have a bunch of people receiving
+51:03 this copy
+51:04 and there's another version of version
+51:07 of this copy
+51:08 and another bunch of people are
+51:10 receiving this copy and then we want to
+51:12 compare if I don't know they bought or
+51:14 they subscribed for for data talks clap
+51:17 right
+51:19 um
+51:20 and and maybe the copies are different
+51:22 they have the same semantics right they
+51:25 are talking about the same stuff but
+51:26 they have just different style
+51:28 and maybe just one is just like more for
+51:31 example so usually so we have a
+51:33 newsletter in the inbox Club there is a
+51:35 sponsored slot right sponsored block
+51:37 yeah and usually our sponsors they give
+51:39 us some text but then what we do is we
+51:42 look at this text and say hey we don't
+51:44 think this way of speaking will appeal
+51:47 to our community so let's rewrite it
+51:50 right so usually it's um the marketing
+51:52 marketing department who gives us the
+51:54 copy right and we rewrite it slightly so
+51:57 it's it doesn't have like this boards
+51:59 that marketing people like because they
+52:01 are like a journal for engineers right
+52:04 so in this case really work the copy and
+52:06 then we include it in the newsletter but
+52:09 maybe what we should do is take the
+52:11 original one take the reworked one and
+52:14 test which one is better right because
+52:15 right now it's just our gut feeling that
+52:18 yeah you know the engineers or our
+52:20 community members like the reworked
+52:23 version really really worked version
+52:25 more than the original one right yeah
+52:28 but it's just some gut feeling right so
+52:29 we did not actually evaluate it yeah so
+52:33 that's a great that's a great scenario
+52:35 for for an A B test yeah but in this
+52:38 case it's people who do this but if we
+52:40 talk about another lamp could be like
+52:42 okay there is a copy that a sponsor
+52:45 gives us and then there is another llm
+52:47 that rewrites this thread
+52:49 so there could be an element that
+52:51 rewrites this and the code could be also
+52:53 if you if you take many different copies
+52:56 um that have
+52:58 like some of those copies are Written In
+53:00 Style a and some in style B
+53:03 the llm could be would be able to maybe
+53:05 extract the style property right because
+53:09 the embeddings in the embedding space it
+53:11 could be encoded in a certain way that
+53:13 could be that could be useful style can
+53:16 be like I don't know marketing language
+53:19 or engineering language right or yeah
+53:22 for instance yeah formal informal right
+53:25 formal yeah instead of people going
+53:27 through this and saying okay this is
+53:29 probably like okay maybe this text was
+53:32 written by data scientists this text was
+53:34 written by a marketing person right so
+53:37 instead of a person going through this
+53:39 we can ask an LM to say what kind of
+53:42 style it is right
+53:43 yeah so we could yeah so we could do
+53:45 this we could also use it just to
+53:46 classify the style yes yes
+53:50 um
+53:51 so so that's one way of thinking about
+53:53 this right so we can have this text as
+53:55 in as in as treatment as outcome as a
+53:58 confounder as a co-variate and so on we
+54:02 could also Imagine like a situation just
+54:04 to give you one more example uh that
+54:06 there's a person
+54:09 um there's a person
+54:11 we are interested let's say in if gender
+54:15 predicts popularity of of your post on
+54:18 social media
+54:20 and maybe you have maybe you have gender
+54:23 is unobserved but you have some
+54:25 description and we can assume that
+54:28 gender influences the style of your
+54:31 description right but
+54:33 what do we mean by gender in this case
+54:35 if text was written by a male or a
+54:37 female yeah a male or female like what
+54:40 whatever person identifies right yes
+54:43 um so so so yeah so
+54:45 we might be interested though the way
+54:47 hypothesis like this and you can observe
+54:49 uh like this like a phenomenon like this
+54:52 in scientific citations as well right so
+54:54 for for instance it seems that from the
+54:57 observational point of view female
+54:59 researchers are just getting less
+55:01 citations than male researchers and it
+55:04 seems that this effect is stronger
+55:08 when those female researchers can be
+55:11 identified easily as female researchers
+55:13 so maybe there's a full name in the in
+55:16 the abstract
+55:18 and this full name suggests to to to
+55:21 another person that this person is
+55:23 female right so in the western culture
+55:25 if somebody is called
+55:27 um Stephanie for instance and most
+55:30 people will assume that that this person
+55:32 is female right
+55:33 mm-hmm so so so we might have might be
+55:37 interested if if gender
+55:39 um influences the number of citations or
+55:42 either popularity of a post on on
+55:44 LinkedIn
+55:46 um but it might be the case that this
+55:48 gender is unobserved but there is style
+55:50 of text for instance right
+55:52 that is influenced by gender to what
+55:55 extent this is realistic well probably
+55:57 in certain circumstances more in certain
+55:59 circumstances less but this is just an
+56:02 example
+56:03 and then this text style or like the way
+56:07 the the the the way that gender
+56:09 manifests itself in the text is very
+56:11 hard to capture
+56:13 now if we do if we use an LM uh and in
+56:18 particular we pre-train this fine tune
+56:20 this this model on this Coral task
+56:23 then we can assume that it will learn
+56:28 the important characteristics of how
+56:30 gender relates to the style of text
+56:33 even if gender is unobserved and and
+56:35 then we can do causal reasoning
+56:38 um on this
+56:39 on the system and uh and and llm in this
+56:45 situation is just like a very fancy
+56:48 feature extractor right so it extracts
+56:50 from the text anything that was related
+56:54 to the to the gender
+56:56 so in this case there's a variable we do
+57:00 not observe
+57:01 and typically what we would do without
+57:04 maybe like an llm we will build a model
+57:07 for extracting text so for over
+57:09 extraction style right so we would
+57:11 collect training examples we would label
+57:15 them we would train a model but with an
+57:16 llm machinoma if we just take gpt4 or
+57:19 whatever with the instructions we can
+57:21 use it to
+57:23 extract these things
+57:24 right and this is yeah it's what we do
+57:27 with extract the variable we do not
+57:29 observe yes we could try you could try
+57:31 approach like this uh no the problem
+57:34 here is also also that this gender is is
+57:36 unobserved right so uh so then it would
+57:39 might be complicated to to label this in
+57:42 automated manner
+57:44 um how do we know if this uh
+57:48 the conclusion the decision or The
+57:51 Verdict by nlm is correct right
+57:54 so if we have causal structure then then
+57:56 we can we can do like a smart
+57:59 architecture that will that yeah I don't
+58:03 want to go into too much detail because
+58:04 I think this this is very abstract
+58:06 without like visualizations and and and
+58:08 other stuff but does the talk talk about
+58:13 that yes yes this example is in the talk
+58:16 and we we discuss an architecture that
+58:19 is called causal bird
+58:20 uh
+58:22 so you can so you can find a talk on
+58:24 YouTube it was a talk given on on Pi
+58:26 data Berlin
+58:28 2023.
+58:33 okay yeah and if you if you decide to
+58:35 watch this talk uh I want to give you
+58:38 one one more Pro tip that uh in the
+58:42 library that we use there was there was
+58:44 a there was a bug in the code
+58:47 and I changed the implementation right
+58:49 before I think the presentation uh so if
+58:53 you want the the code that works
+58:55 properly you can go to my books
+58:57 repository and look for causal bears and
+58:59 there's there's an implementation that
+59:01 doesn't have this back
+59:04 oh we should be wrapping up but I'm
+59:06 wondering if you have a few more minutes
+59:08 because there is another interesting
+59:09 question and maybe you can try to answer
+59:12 this question
+59:13 uh let me let me quickly check I know
+59:15 that I have some meeting but
+59:17 I have yeah we can we can stay for uh 10
+59:22 minutes more 10 minutes okay well I hope
+59:25 this this question like depended on how
+59:27 deep you want to answer because the
+59:29 answer could take another hour
+59:32 so this is a question from Akil
+59:35 can we use causal ml when we cannot use
+59:38 a b experiments and if yes what kind of
+59:40 methods can be leveraged so I guess like
+59:42 this is quite the first part of this
+59:45 question is are there cases when we
+59:47 can't use a b
+59:49 like a B test so I imagine that there
+59:51 are and in these cases like how exactly
+59:54 we approach this station
+59:56 great question
+59:58 yes there are cases where using a b
+1:00:01 tests might be difficult for ethical
+1:00:03 Financial or whatever technical reasons
+1:00:06 yeah if we can use causal machine
+1:00:08 learning in those cases this short
+1:00:11 answer is yes
+1:00:12 a longer answer is it really depends to
+1:00:16 what extent you are able to
+1:00:19 fulfill causal assumptions
+1:00:21 so we didn't discuss this too much but
+1:00:23 in order to make causal model causally
+1:00:27 unbiased we need to fulfill certain
+1:00:30 assumptions regarding which variables
+1:00:32 are observed
+1:00:34 if we have some variables that are
+1:00:36 unobserved we might
+1:00:38 use certain methods for something that
+1:00:43 is called partial identification
+1:00:45 or we can perform things like causal
+1:00:48 sensitivity analysis and so on and we
+1:00:50 might still get
+1:00:51 useful information out of those models
+1:00:53 even if we cannot get a precise uh Point
+1:00:57 estimate or precise confidence intervals
+1:01:01 so the short answer is yes the longer
+1:01:03 answer is
+1:01:05 in certain cases when you cannot observe
+1:01:08 certain variables
+1:01:09 this might be a little bit more
+1:01:12 difficult in certain cases might be also
+1:01:15 impossible
+1:01:16 uh
+1:01:17 but I think
+1:01:19 a great power of causal thinking if you
+1:01:22 understand how those graphical
+1:01:24 structures relate to the problem of
+1:01:26 estimation and so on
+1:01:27 is that
+1:01:30 you can very clearly State your problem
+1:01:34 and understand to what extent this
+1:01:37 problem is solvable right if you
+1:01:40 just drop a machine learning algorithm
+1:01:42 on your problem you will get some answer
+1:01:45 but if you don't analyze this problem in
+1:01:48 advance
+1:01:50 you might not really be
+1:01:53 know or understand fully what what this
+1:01:56 answer is
+1:01:57 and to what extent it's useful for
+1:01:59 decision making and thinking causally
+1:02:03 gives a lot of clarity in this regard
+1:02:07 and especially in particular I'm talking
+1:02:10 about graphical models or structural
+1:02:12 color models that 2D apparel proposed I
+1:02:15 think that's a great tool for clarity so
+1:02:17 even even for people who are not
+1:02:21 planning to use causal inference or
+1:02:24 causal reasoning in the business
+1:02:26 problems directly today
+1:02:28 the idea of understanding this is
+1:02:31 something that that can give them
+1:02:32 long-term and very very important
+1:02:35 benefits
+1:02:37 until you mentioned was one thing here
+1:02:40 in your answer you mentioned graphical
+1:02:42 structures
+1:02:44 and previous part when we talked about
+1:02:48 llms you mentioned an architecture so I
+1:02:51 guess in both cases you mean a way of
+1:02:54 Designing a model in such a way that
+1:02:56 it's clear
+1:02:57 which thing cause a switch right and
+1:03:00 then you have this kind of causality
+1:03:01 chain or whatever and probably we don't
+1:03:04 have time to go into this but your book
+1:03:06 I assume covers this in more details
+1:03:08 right yes definitely my book covers this
+1:03:11 and and your intuition is absolutely
+1:03:13 correct so so graphical model encodes
+1:03:16 the the causal structure between
+1:03:19 variables so it says like hey if we
+1:03:22 let me take a step back uh and and let's
+1:03:25 variable for this cast the the Pearly
+1:03:27 and definition of causality so the basic
+1:03:29 parallel definition of causality is a
+1:03:31 causes B if B listens to a
+1:03:35 listens to means that if we change
+1:03:37 something in a
+1:03:38 we expect to also see change in b
+1:03:43 and we could have a deeper discussion on
+1:03:46 this but I'm sure this is not for this
+1:03:48 format
+1:03:49 um one of the examples he gave was about
+1:03:52 temperature ice cream sales and number
+1:03:54 of people who drown right yeah so here
+1:03:56 if we
+1:03:58 change if we adjust temperature than
+1:04:00 both these variables would change too
+1:04:03 that's what that's what we would expect
+1:04:06 yeah yeah on average of course there are
+1:04:08 people who are drowning in Winter and
+1:04:09 eating ice cream in Winter right but on
+1:04:13 a statistical in a statistical sense
+1:04:15 they we would expect that it's
+1:04:17 reasonable they go that they go also
+1:04:19 down
+1:04:20 okay and then we express it in a
+1:04:23 graphical form
+1:04:24 think like hey this is temperature and
+1:04:26 there's an arrow there's a temperature
+1:04:28 and there's an arrow to ice cream sales
+1:04:30 and there's an arrow too number of
+1:04:32 drownings
+1:04:33 and the interesting fact is
+1:04:36 that those
+1:04:38 graphical structures they have certain
+1:04:40 properties
+1:04:43 where we can identify causal structure
+1:04:47 without without even looking at the data
+1:04:51 so if we know the causal structure
+1:04:53 itself but we don't know anything about
+1:04:56 the data we can already say something
+1:04:58 about the system this is sometimes
+1:05:00 called non-parametric identification
+1:05:03 so we can based on a structure like this
+1:05:06 we can say
+1:05:07 we actually don't need to observe this
+1:05:09 very costly variable and this one as
+1:05:11 well
+1:05:12 it's sufficient that we just observed
+1:05:14 these three variables
+1:05:16 and if we have these three variables we
+1:05:18 can build a causally unbiased model
+1:05:21 and this is a great tool because
+1:05:24 some organization tend to
+1:05:27 some organization that treats the data
+1:05:30 stuff very seriously they tend to invest
+1:05:33 a lot of money in observing as much
+1:05:35 stuff as possible
+1:05:37 and sometimes some of those variables
+1:05:39 might not be very helpful in answering
+1:05:42 their most pressing questions
+1:05:46 okay yeah thank you so I guess the to go
+1:05:50 reference for everything we discussed
+1:05:51 today would be your book
+1:05:54 um then also the talk that you gave at
+1:05:56 uh Berlin by data which I missed I was
+1:06:00 on the conference oh yeah so we were
+1:06:03 very close we were close maybe next year
+1:06:05 we will meet uh can you recommend any
+1:06:08 other resources for people who want to
+1:06:11 learn more about the topic I guess one
+1:06:12 of the things you mentioned you
+1:06:14 mentioned uh
+1:06:16 Pearl like what was his full name to the
+1:06:20 office book yeah and if you're just
+1:06:22 starting it's called The Book of why I
+1:06:24 don't know if you will be able to see
+1:06:26 this yeah yeah
+1:06:28 that's it that's a that's a great book
+1:06:30 for for starter
+1:06:33 um and
+1:06:35 um where am I back oh maybe not like I
+1:06:37 will be able to do it yeah so it looks
+1:06:39 like this
+1:06:40 it's a great book for if you're just
+1:06:43 starting
+1:06:45 um and then if you want to go into more
+1:06:47 practical stuff especially in Python
+1:06:49 there's my book called causal inference
+1:06:51 and causal Discovery in Python looks
+1:06:53 like this
+1:06:54 uh it also goes like from from almost
+1:06:58 from scratch right so
+1:07:00 I wrote it
+1:07:02 um for people who have like three five
+1:07:04 years of experience in machine learning
+1:07:06 and they want to learn about causality
+1:07:09 um
+1:07:11 but the book of Y will give you also a
+1:07:13 lot of uh very very nice motivation
+1:07:16 beautiful examples from The History of
+1:07:18 Science how non-causal thinking failed
+1:07:22 and how causal thinking thanks to couple
+1:07:24 thinking people were able to solve
+1:07:26 problems
+1:07:28 thank you very much thanks for staying a
+1:07:30 bit longer with us and answer this very
+1:07:33 interesting question from Akil and yeah
+1:07:36 thanks Alexander for being with us today
+1:07:38 and thanks everyone for joining us today
+1:07:39 too uh listening in and asking your
+1:07:42 question questions
+1:07:44 thank you so much thank you for having
+1:07:45 me it was a pleasure to have a
+1:07:47 conversation with you Alexia well let's
+1:07:49 hope we meet next time uh from on the
+1:07:52 next by data Berlin
+1:07:54 or maybe some other conference yeah
+1:07:58 yeah well um
+1:08:00 have a great week and

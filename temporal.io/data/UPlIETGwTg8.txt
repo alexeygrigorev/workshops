@@ -1,0 +1,1711 @@
+Working in Open Source - Probabl.ai and sklearn
+
+0:00 hi everyone Welcome to our event this
+0:02 event is brought to you by data do club
+0:04 which is a community of people who love
+0:06 data we have weekly events and today is
+0:09 one of such events if you want to find
+0:11 out more about the events we have there
+0:12 is a link in the description go there
+0:15 check it out you'll see I think we have
+0:18 currently only one event in our pipeline
+0:22 that is already published which is about
+0:25 getting a job as a data engineer so
+0:27 check it out if you're a dat engineer
+0:30 who needs to find a job but um anyways
+0:34 uh do not forget to subscribe to our
+0:36 YouTube channel if you haven't done this
+0:39 yet this way you'll stay up to date with
+0:41 all the things we have you'll get a
+0:42 notification when a future stream like
+0:44 the one we have today will start and
+0:47 last but not least we have an amazing
+0:48 slack Community where you can hang out
+0:51 with other data enthusiasts check it out
+0:54 during today's interview you can ask any
+0:56 question there is a pin Link in the live
+0:58 chat for that click on the link ask your
+1:01 questions and we will be covering these
+1:03 questions during the
+1:05 interview now I will stop sharing that I
+1:09 will open the questions that Johanna
+1:14 prepared
+1:20 and so I'm just fighting the okay so I
+1:23 was fighting the side bar panel in Zoom
+1:27 that takes like half the monitor let me
+1:30 guess you are fighting the recording
+1:32 software yeah yeah I am anyways um I
+1:37 think I'm ready are you ready to yeah
+1:39 yeah okay this week we'll talk about
+1:43 open source again and we have a very
+1:45 special guest second time Vincent so
+1:48 it's not the first time Vincent appears
+1:50 here uh we
+1:53 already I think you were one of the
+1:55 first guests ever on this podcast it was
+1:59 more than 3 years ago three to four yeah
+2:02 something like yeah back I think so it
+2:04 was already I was checking uh the the
+2:07 podcast episode before we
+2:09 started and it was already season 2 so
+2:14 season 1 was only five episodes I think
+2:16 and you were the the one of the first
+2:19 recording of season
+2:21 2 and we didn't have transcriptions back
+2:25 then so I had no idea what we talked
+2:27 about but the topic was getting started
+2:30 with open source so I assume we talked
+2:32 about
+2:32 that and today we will talk again about
+2:36 open source and actually Vincent you are
+2:39 like when I think about open source you
+2:41 are the first person who I think about
+2:43 because of the Thousand thousands of
+2:46 small libraries you have created and
+2:49 talk about it's it's not thousands just
+2:51 to be really clear it's not thousands
+2:52 but hundreds n it's a small I mean it's
+2:55 a small dozen for sure though like it is
+2:57 a bunch that is definitely true but
+2:58 thousand thousand is a lot really is a
+3:00 lot no well compared to an average
+3:05 person in the
+3:07 industry um it's probably above aage
+3:10 number yes yes like maybe 99th
+3:14 percentile so I actually um I don't know
+3:17 about so there's a I don't know some
+3:19 sort of get up actions thing that
+3:21 actually per country like they they
+3:23 check where you live you can do that on
+3:24 on um on GitHub uh and they I did at one
+3:28 point learn that I in the top 10 like
+3:31 top 10 people doing stuff on Open Source
+3:32 on GitHub in the Netherlands like in
+3:34 some year I know that I was in the top
+3:36 10 and I also noticed like I I knew
+3:38 three other people that were also in
+3:39 that top 10 so I'm I know that I'm kind
+3:41 of up there uh not thousands though okay
+3:46 okay fair enough okay so that was the
+3:49 bio so I promised you I would improvise
+3:51 CU we don't have the bio in show notes I
+3:53 hope um you will tell us more so anyways
+3:58 thanks thanks for the intro lovely intro
+3:59 than so yeah thanks for being here
+4:01 before we start I actually want to make
+4:04 a shout a shout out to Johanna so this
+4:07 the questions for today's interview are
+4:08 prepared by Johanna B thanks Johanna for
+4:11 your help again and the reason we're
+4:13 actually speaking here again is because
+4:16 she met with you at a conference right
+4:19 there was a pie ladies coach Sprint um
+4:22 and there were like a bunch of projects
+4:24 that were uh you know there and on
+4:27 behalf of sort of psychic learning stuff
+4:28 I was also there to help people get
+4:30 their first PR in and she was kind of in
+4:31 my psych could learn bubble doing docs
+4:33 work and then she said hey Vincent have
+4:36 you do you want to come on this podcast
+4:37 called Data talks and I was like I think
+4:39 I've heard about that one
+4:41 before can I could I see a logo and I
+4:43 saw the logo like oh I've been on that
+4:44 thing before but yeah I don't mind
+4:46 coming back again one thing that is kind
+4:48 of interesting also with the interview
+4:49 just said I think a couple years ago we
+4:52 talked about psyched Lego probably there
+4:54 was like one of the projects that we end
+4:55 up talking about and that project
+4:57 actually had a role in getting me the
+4:59 job that I've got now um so psyched Lego
+5:02 were basically these Lego bricks that
+5:04 I've built back in the day with like
+5:05 some psyched learn trick that I really
+5:07 like to use and it's it's kind of a
+5:10 project that I've been maintaining on
+5:11 the side but five years later it has
+5:13 like 30,000 downloads a month or so like
+5:15 it's in production in a bunch of places
+5:18 um and it's one of the reasons why when
+5:21 this some of the psyched learn core
+5:22 maintainers started thinking about
+5:23 having a company they thought well
+5:25 having someone like Vincent around might
+5:27 be useful um so like that would it's an
+5:30 interesting Arc in that sense because
+5:31 back then I was just thinking oh this is
+5:32 just some sort of cute plugin um but
+5:35 when it came to the job interview there
+5:37 were these oh but he's the guy behind
+5:38 psyched Lego oh okay uh so it's it's
+5:41 interesting where five years later you
+5:43 start something it can actually take you
+5:44 places as well that you can't predict um
+5:47 an interesting flashback so maybe what
+5:50 we should start with and this is what we
+5:52 usually start
+5:54 with in our interviews is your
+5:58 background and can can you talk about
+6:01 your career Journey so far sure uh so
+6:04 the short story is I was in uh I studied
+6:06 econometrics and operations research and
+6:08 pretty math heavy stuff and when I was
+6:10 just around graduating I learned about
+6:13 this machine learning thing and I was
+6:15 kind of eager to try it out so uh the
+6:18 goal I set to myself was I'm going to go
+6:19 backpacking for a bit and I'm going to
+6:21 take some client work with with
+6:22 programming with me and if I think
+6:24 clubbing is as fun as programming then
+6:26 that's a sign that I should pivot my
+6:28 career a little bit closer to Techie
+6:30 stuff as opposed to like wear a suit and
+6:32 be a consultant stuff turned out uh
+6:35 actually thought programming was pretty
+6:36 neat so that was a nice signal I did
+6:39 some tech Consulting for a while uh and
+6:42 then at some point uh I got a job off
+6:44 from a company called razza um when they
+6:46 wanted me to be like a developer
+6:48 Advocate I had never heard of that
+6:50 before but it sounded pretty interesting
+6:51 because it was kind of a gateway to NLP
+6:53 for me like I I really wanted to do NLP
+6:55 stuff and the consultancy company that I
+6:57 was working at I mean there's many
+6:59 reasons y left but um I couldn't do
+7:01 really do NLP stuff there at that time
+7:03 so that was a good reason for me to sort
+7:04 of switch um around that time I was also
+7:07 a pretty big fan of Spacey and two years
+7:10 after having worked at razza uh the the
+7:13 Spacey people the explosion AI people
+7:15 they got a around of funding and they
+7:16 could also use sort of a uh developer e
+7:19 Advocate e person and someone who could
+7:21 also be like a cev so uh I did develop a
+7:24 relations stuff there and I was a cordev
+7:26 on their Prodigy product for two years
+7:29 um
+7:30 at some point um then it was also time
+7:32 to leave there but around the same time
+7:35 there were these people from the psy
+7:36 could learn maintainer group that were
+7:38 starting this company called probable um
+7:41 and that ball got rolling pretty quickly
+7:42 as well so now I'm still doing open
+7:44 sourcy stuff there but also developer
+7:46 relation stuff there that's kind of the
+7:48 The quick summary of all the stuff that
+7:50 happened and in between I've also done
+7:52 I've organized conferences I've organize
+7:53 meetups I build a bunch of Open Source
+7:55 projects that's like stuff you do on the
+7:56 side but um in short that's kind of the
+7:59 cookie
+8:01 crumbled how what yeah that's like
+8:04 American saying that's how the cookie
+8:05 crumbles like
+8:07 the oh I mean so it's um it's kind of
+8:11 like Bob's your uncle like that's the
+8:12 short story like a cookie can can only
+8:14 crumble in one way like the crumbs will
+8:16 fall down they will ever split in other
+8:18 direction so yeah that's the way the
+8:19 cookie
+8:21 crumbles I've done MLP let me say like
+8:24 sayings are weird just in general but uh
+8:27 the cookie crumbles I think if if I
+8:29 recall correctly it's still like an
+8:31 American saying I think and I I was
+8:34 wondering so there are companies behind
+8:37 Open Source Products and typically these
+8:41 companies do not have the same name as
+8:43 the open source product like for example
+8:45 explosion AI Spacey probable second
+8:49 learn then like bunch of other Raza has
+8:53 braa in their product though so like
+8:55 some companies actually do that they do
+8:57 yeah so I'm wondering like why didn't
+9:00 they just call it psych learn instead of
+9:03 probable well so okay so in the case of
+9:06 probable I can actually def I a little
+9:08 bit of an explainer like um psyched
+9:10 learn is a huge project with a huge
+9:12 community and some of it's I would say
+9:15 core maintainers work at a company
+9:17 called probable but it's not like the
+9:19 company probable is psyched learn
+9:21 there's like a distinction there I see
+9:23 you could say that you know problem
+9:26 could maybe be seen as a brand operator
+9:27 of sorts because we do intend to hire
+9:29 lots of these open source maintainers to
+9:30 sort of work on this but it's a larger
+9:33 community so like claiming the name for
+9:34 a company would really not make sense I
+9:37 see that makes sense yeah and and also I
+9:40 guess similar to what in the case of
+9:42 explosion explosion does Spacey sure but
+9:44 they also do other stuff for the G right
+9:46 yeah so they have a product and you know
+9:48 if you by really calling yourself the
+9:51 name of your open source thing you're
+9:52 also limiting yourself to not doing
+9:54 anything else and also probable I mean
+9:57 uh we will probably do more than just
+9:59 could learn we're probably also going to
+10:02 uh do trainings maybe a bit of
+10:03 consultancy maybe also a product so like
+10:06 there's many reasons not to call
+10:07 yourself psyched learn and I'm not not
+10:09 even mentioning the legal aspect of it
+10:11 because it's a it's a trade like I
+10:12 believe it's a a yeah it's a name that
+10:16 already exists yeah well I don't know
+10:18 the full details there like trademarks I
+10:20 think are for companies but it is like
+10:21 it is registered let me put it that way
+10:24 you cannot just call yourself psyched
+10:25 learn going forward it is a it is a
+10:27 brand that already exists I'm just check
+10:29 in the website second it learn I don't
+10:31 see any TM there but like it's probably
+10:34 it probably belongs to num Focus or some
+10:38 other I to my knowledge it's it's its
+10:41 own thing so and also uh I I
+10:45 believe I need to okay so need to double
+10:48 check this but num focus is like a an
+10:50 umbrella that tries to do um like
+10:53 funding for some open source projects
+10:55 but you've got uh like non focused
+10:58 projects and you've got Associated
+11:00 projects and if I'm not mistaken I
+11:02 believe psych learn is an Associated
+11:03 project not a project that's is an
+11:06 unfocused project right and psych learn
+11:09 is only
+11:10 Associated that that is my understanding
+11:14 yes and and and these things can change
+11:16 over time I'm not necessarily uh like on
+11:19 top of that but there are these subtle
+11:21 differences that again do matter because
+11:24 um scy could learn has been like a large
+11:26 community for for like decades at this
+11:28 point um so it's not necessarily for a
+11:31 company to go ahead and claim like
+11:33 that's a I do think that's an important
+11:35 yeah and before that it was mainly so I
+11:38 I know that the Creator and like
+11:41 originally um initially it originated
+11:44 from indria right research lab in
+11:46 France or what's the story of there
+11:50 maybe you know that I I only know um I
+11:52 want I know parts of it like part I do
+11:54 think it was something of an
+11:55 experimental thing during a Google
+11:56 summer of code project maybe the most
+11:58 original version of that was there was
+12:00 something about that in the story that I
+12:01 heard but very quickly it did sort of it
+12:05 didn't become an inria project fully but
+12:07 like a lot of the maintainers certainly
+12:09 did come from inria I think so like um I
+12:12 could be wrong but I think like four or
+12:13 five people semi full-time from India
+12:16 were working on Psy could learn and also
+12:18 writing papers about some of the stuff
+12:19 that they were doing via that work um it
+12:21 should also be said that like at some
+12:23 point companies also sponsored
+12:24 developers so um Andreas Mueller for
+12:28 example he's one of the core people who
+12:31 I think he he taught at NYU for a bit
+12:33 and that University basically also
+12:34 sponsored his open source work in py
+12:36 could learn um I believe Microsoft has a
+12:40 similar thing now uh there are people
+12:41 over quanite Labs that have a very
+12:43 similar deal uh they do some Consulting
+12:45 but also have some time to like add a PR
+12:48 or two
+12:50 um I think that's kind of how it's sort
+12:52 of naturally evolved if if you're a
+12:54 somewhat bigger company in the machine
+12:56 learning space having a core developer
+12:58 be part of your team
+12:59 is kind of nice right so it's actually
+13:03 kind of an okay investment to say to go
+13:05 to that person and say Hey you work for
+13:06 us but one day a week you're able to
+13:08 sort of do the open source thing there
+13:09 and all the lessons that you've got in
+13:10 your mind are just going to project onto
+13:12 the rest of the team and that can still
+13:13 make sense but but again it's like a
+13:15 huge effort uh many different uh people
+13:19 from different Vantage points and also
+13:21 um there's tons of plugins in psyched
+13:22 learn as well so Lego like my so my
+13:27 experiment is a thing but also I don't
+13:28 know you map like the if you want to use
+13:31 the umu map to the um like clustering
+13:34 visualization algorithm that's
+13:36 technically seen a psyched learn plugin
+13:38 you have to install it by pip installing
+13:39 umap dlearn um and there are so many
+13:42 projects like it um and sure you could
+13:45 argue that maybe that author who was
+13:47 working on umap didn't directly
+13:50 contribute lines of code uh to psyched
+13:52 learn when he was working on umap but it
+13:54 is part of the ecosystem and therefore
+13:56 still very valuable to like uh the
+13:59 project I would
+14:00 say and one of the reasons um I know
+14:03 that it's not really easy to contribute
+14:07 something in new to I could learn cuz
+14:09 like let's say there is a new method and
+14:12 it's awesome and I want to implement it
+14:15 second learn most likely my request will
+14:17 be rejected because the maintainers
+14:20 don't want to keep maintaining it right
+14:23 that's why it's easier to just create a
+14:26 plugin and follow the API and install
+14:29 separately rather than to put this load
+14:32 of maintaining this new thing on the
+14:34 maintainers of Psy learn sort of so the
+14:37 there's a couple of concerns um so one
+14:39 one of course is well I have a new fancy
+14:42 method but then okay did you Benchmark
+14:44 it the right way right like uh it can be
+14:48 seen as a career boost to have your
+14:49 algorithm move into psyched learn and we
+14:51 and sort of people will acknowledge that
+14:52 but it's uh it's not just the the burden
+14:55 of maintaining it it's also the well
+14:57 people look at psyched learn as kind of
+14:58 the example to copy so the stuff that is
+15:01 in there should be like good and there's
+15:03 a couple of algorithms you want to
+15:05 there's a couple of algorithms you want
+15:06 to have around for historical reasons
+15:07 like naive Bay I think it's somewhat
+15:09 safe to say that's not the State ofth
+15:11 art anymore but it is one of the core
+15:13 algorithms so it has to be in psyched
+15:14 learn that's a good reason to keep it in
+15:16 but you can't really do that for every
+15:18 single Paper out there like it would
+15:19 just get unmaintainable very quickly and
+15:22 one one reason um I could be wrong but
+15:25 like one reason why I think umap for
+15:27 example isn't in py could learn is
+15:29 related to the fact that umap relies on
+15:31 number which is this uh really cool llvm
+15:35 compiler trick to get your python code
+15:36 super quick but py could learn I mean
+15:39 then you're introducing a whole new back
+15:41 end as well for your compute and oh it's
+15:44 so sometimes it's also the dependencies
+15:45 that could be the issue and like a fun
+15:49 thing now I would say is so psych learn
+15:51 again Psy Lego the project I help
+15:53 maintain has a new maintainer now and
+15:55 one thing that he really likes to do
+15:57 which is awesome is he likes to look at
+15:59 the psyched learn issue list and there's
+16:01 a couple of things where some of the
+16:03 psyched learn maintainers say well we're
+16:04 not going to implement this now because
+16:06 we don't you know for lots of reasons
+16:08 but a project like psyched Lego can go
+16:10 well that sounds like a fun thing to
+16:11 implement Let's Do It um the goal of
+16:14 psyched Lego is to be fun for the
+16:15 maintainers and be useful um so we can
+16:18 like uh so all some of the stuff that
+16:20 psych could learn cannot have like as
+16:22 long as it's fun to implement we can
+16:23 kind of go about
+16:25 it but psyched Lego is also something
+16:27 not to be taken as serious as Psych
+16:29 learn just to be really clear on that um
+16:31 but it's very I think it's very fair for
+16:33 a project like psych learn like if you
+16:34 want to be the stable core of everything
+16:36 um you got to be a bit careful with what
+16:38 you let in like otherwise it might be
+16:40 detrimental to the
+16:42 project okay can you tell us more about
+16:44 py Lego how it appeared and then how
+16:47 maintaining this library and working on
+16:49 this Library actually led to working at
+16:52 probable so the when I was a consultant
+16:55 at some point I noticed that like you go
+16:57 to a client and oh we need to have
+16:59 something that can select columns from
+17:01 pandas I'll write a custom thing that
+17:03 can do that you go to the next client
+17:05 and back then definitely still pandas
+17:07 definitely still need that component and
+17:09 at some point I was just kind of done
+17:11 with reimplementing the same thing over
+17:12 and over and over again and there were
+17:13 just these components that are something
+17:18 kind of I get that psychic learn
+17:20 wouldn't want to have it but it just
+17:21 made sense for this one use case and I
+17:23 figured well if I just have a collection
+17:25 of Lego bricks that I made myself then
+17:27 maybe building that in the just makes a
+17:29 whole lot of sense and I had a colleague
+17:32 mati Browns he was also really into it
+17:35 both of us gave a lot of training and
+17:36 then at some point I also noed that if I
+17:38 want to give a course on how to do open
+17:40 source I have a merge button and it's on
+17:42 the public library so I can during a
+17:44 course tell students like if you want to
+17:46 learn open source we're just going to do
+17:47 a bunch of get today so it's just kind
+17:50 of a nice utility if you're giving
+17:51 corporate trainings to have an open
+17:53 source project with lots of these Lego
+17:54 bricks and that also helped me get like
+17:56 a ton of
+17:57 contributors uh because if you go like
+18:00 if you go to a bunch of students for a
+18:01 traine ship and you go would you like to
+18:02 spend a day uh committing to open source
+18:05 and that'll be the lesson for the day
+18:07 they tend to say yes like it's probably
+18:10 yeah it's like one of the least boring
+18:12 things you could do and it's kind of a
+18:13 nice win-win because you actively you
+18:15 know uh you help people get started with
+18:17 their next contribution this way and
+18:19 they actually learn something and my
+18:20 library becomes a bit better now fast
+18:23 forward a few years I I started working
+18:24 at razza then I started working at
+18:26 explosion and as time kind of moved
+18:28 forward I was using the library less and
+18:30 less and the same thing happened with my
+18:32 other maintainer like we were still
+18:33 maintaining it but there's there was
+18:35 this awkward moment when we were
+18:36 maintaining a library that we ourselves
+18:38 were not really using so Pi data
+18:41 Amsterdam happened again last year and I
+18:43 just started telling people like hey if
+18:44 you're interested in learning how to
+18:46 sort of be a maintainer like we are
+18:48 looking for a new
+18:52 one
+18:55 oh think you're back oh okay yeah yeah I
+18:59 think yeah we had a we had a hiccup
+19:00 there but where did you lose
+19:01 me uh I almost didn't lose you so you
+19:04 said you in dat Amsterdam and you were
+19:07 telling people hey do you want to learn
+19:09 how to maintain a library because I have
+19:10 a library I don't want to maintain and
+19:12 maybe you can do it so it's not so much
+19:14 that I don't want to maintain it it's
+19:16 just that In fairness I I was just
+19:18 looking for someone who actually uses it
+19:19 like that's more the thing and um and
+19:21 again like back then I wasn't working at
+19:23 probable yet and like the prospect was
+19:26 that you know I might still be doing NLP
+19:27 for the next uh next year or so and then
+19:30 you know psyched Lego is tabular data
+19:32 instead so it helps to have someone
+19:33 around and someone volunteered and uh
+19:37 Franchesco and it's it's been great um
+19:39 he's picked up stuff that I wouldn't and
+19:41 he's added things to the library that I
+19:42 also wouldn't do but it's better because
+19:44 of it um uh but moreover he has fun in
+19:48 doing this as well so we're both on the
+19:50 same slack and we just have fun
+19:51 maintaining it together uh way more than
+19:53 I did before um so that like uh so
+19:56 that's also just kind of nice like
+19:57 there's sort of fresh blood in the
+19:59 project I guess you could
+20:01 say so again the way you did this is you
+20:05 were just randomly approaching people at
+20:07 the conference you were talking to them
+20:09 and then you started asking hey I have
+20:11 this Library I'm looking for maintainers
+20:13 cuz I'm no longer using it it
+20:16 needs it's kind of the other way around
+20:18 so so part of it was that I was uh
+20:20 people would walk up to me about psyched
+20:21 Lego stuff because I was a maintainer
+20:23 and I do know people using it so every
+20:25 time that someone would mention that to
+20:26 me I would say by the way we are looking
+20:28 for new maintainer like so that was
+20:30 something I would do in the case of
+20:31 Franchesco though we met before because
+20:33 he actually made a PR to psyched Lego so
+20:36 before like I I did tell him like Hey if
+20:39 thanks it was he made some solid PRS and
+20:41 I did say look if this is fun let's talk
+20:43 about that at P Amsterdam so in the case
+20:45 of Franchesco like he did um like we we
+20:48 kind of met virtually before and he
+20:49 already told me that he was somewhat
+20:52 interested uh it's just that it also
+20:54 helps to meet in person so like having
+20:56 that moment at psychic uh sort of at the
+20:58 the Pata event was also just
+21:02 great and he uses that he uses py Lego
+21:07 at work right yeah so I'm um he's not at
+21:10 Liberty to confirm to what extent U
+21:13 because some of that is you know bit
+21:14 private but he did confirm to me that
+21:16 there were some tricks in there that he
+21:17 definitely used if only uh to like
+21:19 explore stuff in a notebook and he found
+21:21 it like a fun little Library um like one
+21:24 thing I I do imagine that's like
+21:26 appealing if this is like a first
+21:27 project that you maintain
+21:29 like I'm kind of explicit that I would
+21:31 really prefer the library just to be fun
+21:33 to maintain and be useful as a second
+21:36 goal uh so we are critical in what we
+21:38 kind of accept but um there's also this
+21:41 realization that if it's not fun for the
+21:43 maintainers it will just not be
+21:44 maintained anymore and that's the bigger
+21:45 risk at this
+21:47 point um so how to make a library fun to
+21:51 maintain um so part also part of that is
+21:53 just to celebrate well um you know we're
+21:56 all doing this as volunteer work right
+21:59 so I'm not so if something is
+22:00 fundamentally broken then you kind of
+22:02 feel obliged to have a look but I'm not
+22:05 going to pressure anyone into
+22:06 implementing anything and in fact I
+22:08 would prefers people to like consider
+22:09 implementing things if it's either in
+22:11 their domain or if it sounds like a fun
+22:13 experiment um and like I do have a
+22:16 reasonable
+22:18 requirement that like if you're going to
+22:19 add something to our library we want to
+22:21 have some sort of Benchmark that
+22:23 confirms that it works better than like
+22:24 the standard way of doing it right um
+22:27 because like I don't want to maint we we
+22:28 have a couple of silly components but uh
+22:31 like having the Benchmark is also great
+22:33 for documentation like it helps to
+22:34 motivate people to sort of explore it um
+22:38 but really that's about it I'm not going
+22:39 to tell any maintainer that they must do
+22:41 something um and also for myself I've
+22:43 got a kid now who's a handful and I'm
+22:46 not going to spend my precious evenings
+22:48 implementing stuff that I don't think is
+22:50 fun like I don't think that that's
+22:51 reasonable um so uh I like to think that
+22:55 that also helps the appeal but uh in the
+22:58 case of frch Tesco like if from my
+23:00 perspective um it's just fun to see how
+23:02 he picks stuff up and does stuff that I
+23:04 wouldn't do like I also think that
+23:05 that's just kind of nice for the project
+23:08 um so yeah have him have him as a
+23:11 podcast podcast guest maybe because he
+23:12 can tell you his perspective but uh
+23:14 that's the cool thing in this case about
+23:15 having the extra maintainer who who
+23:18 hasn't been around for a while like he
+23:19 really has a fresh perspective and also
+23:21 ideas of his own and that's kind of a
+23:23 nice combo because it keeps it fun for
+23:25 both of us I like to think
+23:29 okay and then like I asked you multiple
+23:31 questions in one question and then the
+23:33 first you told us about second
+23:36 Lego and how did actually did it
+23:39 actually lead
+23:41 to right your current job
+23:44 position so um you would have to ask the
+23:47 people on the other side of the fence
+23:49 for their part end of the story but one
+23:50 thing I will uh like it it was more of a
+23:53 thing of like okay we like to have like
+23:57 it's a psyched learn maintainer uh group
+24:01 basically there's some very senior
+24:02 people from the psyched learn project
+24:04 and you can kind of Imagine um if you go
+24:07 to YouTube and you type psych learn
+24:09 tutorial some of that stuff is going to
+24:10 be really
+24:12 hypy uh because data science is just so
+24:14 hot right now right like like that kind
+24:16 of a thing and um from my impression was
+24:19 that they were really looking for
+24:20 someone if if we're going to do Dev rail
+24:22 stuff there was a very strong preference
+24:23 for someone who could still explain very
+24:25 clearly just not the hypy thing uh to do
+24:28 data science and machine learning you
+24:29 got to take benchmarking serious and
+24:31 there's a lot of Tom Foolery we'd like
+24:33 to not have that and then uh when I when
+24:37 when people started interviewing me uh
+24:38 one thing that I do think really helped
+24:40 was oh looking at Vincent's resume he
+24:43 wrote psyched Lego that is actually one
+24:45 of the larger plugins and oh he takes
+24:48 testing seriously and like there's all
+24:49 these things that we are usually worried
+24:51 about but okay that seems to check out
+24:53 qu kind of nicely honestly I think that
+24:55 if I didn't maintain psyched Lego there
+24:57 was still a PR good chance that I would
+24:59 get in but the but the interviews would
+25:00 have gone way
+25:01 differently um so like basically the
+25:04 technical interview bit uh was really
+25:06 light weight because I just looked at
+25:07 psyched Lego and kind of went yep
+25:10 legit um so that that's I think how it
+25:14 helped me in that sense but other stuff
+25:16 helped me as well it's not just psychic
+25:17 Lego it's also the conference talks that
+25:19 I've done um I gave a keynote at P to
+25:21 Amsterdam that's that some of them
+25:23 really liked you know stuff like that
+25:24 also really
+25:26 helps I I was talking about thousands of
+25:29 small um open source libraries and you
+25:32 said it's not true it's not thousands
+25:34 but like when it comes to talks I think
+25:36 if I I was just doing this the other day
+25:39 I typed your name in YouTube search yeah
+25:43 like I couldn't finish
+25:45 scrolling I mean yeah so I so I am a
+25:47 frequent speaker at a pi data that is
+25:49 definitely true I mean um it's something
+25:52 that I enjoy doing and whenever I send
+25:53 in a proposal they so far accept so it's
+25:56 it's easy for me to hit repeat on that
+25:58 um I I guess like another thing that
+26:00 also plays in with this is um during Co
+26:04 I started this project called calm code
+26:06 which is kind of like a a tutorial
+26:08 website if you will I kind of designed
+26:10 it to be uh like an alternative to data
+26:14 Camp because there's some some stuff I
+26:15 didn't like about them like the way they
+26:17 teach the fact there's there's I'm sure
+26:20 the company has changed but there was a
+26:21 time when data Camp said oh you must
+26:23 learn these skills in order to be future
+26:24 proof and I always just thought it was
+26:25 just kind of nonsense so I figured well
+26:28 what about a learning platform where you
+26:29 just learn well here's a trick and if
+26:31 you know that that's great and that's
+26:32 enough like kind of have that Vibe a bit
+26:35 more it's yeah pressure you to learn to
+26:39 learning things it's like you can learn
+26:41 whatever you want yeah here's just some
+26:45 stuff to make your day-to-day nicer like
+26:46 that's it um so that so the thing about
+26:49 that like if if you're the person who
+26:51 like me took that serious and had been
+26:53 making that for like over the year you
+26:54 you kind of gain a skill of like okay
+26:56 how do I communicate things clearly cuz
+26:58 it's something you actively practice
+27:00 it's like a problem you're exposed to
+27:02 and I and part of it is also of course
+27:04 like if you've done lots of
+27:05 presentations the next presentation is
+27:07 going to be less scary but if I've made
+27:09 over 700 videos for that platform and
+27:12 making a video now for me is like a
+27:15 takes me an hour kind of a exercise it's
+27:17 like writing a for Loop in a way um like
+27:20 the Thousand is actually not too far
+27:23 from the truth right if if we're talking
+27:25 about videos then yes I do think if you
+27:27 take all of them together then we might
+27:29 be close to a thousand also counting
+27:32 your all your work as a def advocat
+27:36 traza uh explosion right yeah so the
+27:40 yeah so at Braza that that must that's
+27:42 like a 100 videos or so and like an
+27:45 education platform as well as plugins
+27:46 and then at explosion um I mean at
+27:49 explosion we did have a preference for
+27:51 quantity quality over quantity so I
+27:53 think I made way less videos but each
+27:54 video I made was like more polished um
+27:58 but it's it's basically like when you
+27:59 learn python the first time it is super
+28:01 scary because there's like oh my God how
+28:03 does pip pip and virtual ends what is
+28:05 this but after a year or two you just
+28:07 kind of oh it's a pip install and you
+28:08 just don't think about it anymore and
+28:10 very similarly it's like oh how does
+28:11 this recording software work God and
+28:13 then at some point oh wait this is the
+28:15 shortcut click click click done uh so
+28:18 it's I'm a little bit more worried about
+28:20 do I have a fun example or like a good
+28:22 Insight because record if I have one
+28:24 then recording it is just not the hard
+28:25 part anymore that's kind of the easy B
+28:29 coming up with examples is the most
+28:31 difficult part right yes yes I mean and
+28:33 one thing that does help like um I do
+28:36 have access to some of the psyched learn
+28:38 sort of core maintainers so I can at
+28:40 poke them a bit like hey what's what's
+28:42 the most annoying question you've seen
+28:43 pop up on the get up issue and that that
+28:45 could be a good thing to pick up um a
+28:48 lot of these maintainers are also like
+28:50 you know kind happy nerds on the inside
+28:53 right like there's some crazy
+28:54 experiments that I can do that they're
+28:56 they'd still be interested in like
+28:58 exercise but they wouldn't do it
+28:59 themselves because they're too busy and
+29:00 that's stuff that I can pick up uh so
+29:03 there are some crazy benchmarks that I'm
+29:05 running right now like on uh like a 100
+29:07 tabular data sets just to sort of
+29:08 Benchmark our hyper parameters because
+29:10 I'm curious like if we make a change
+29:13 does it like can we measure that
+29:16 um so there is enough inspiration to go
+29:19 around if you have a team like that is
+29:20 also kind of a lesson
+29:22 um I would say yeah when it comes to C
+29:26 code do you still actively
+29:29 put things out there so yeah so uh for
+29:32 column code I came to a similar
+29:34 conclusion with psych Lego like I could
+29:35 do that I could do this thing on my own
+29:37 but like from a sustainability
+29:40 perspective on one end there's also a
+29:42 limit to my knowledge so having a
+29:44 collaborator around just for that would
+29:45 make sense you know um someone who's a
+29:48 bit more in depth into databases and
+29:50 stuff like that would be useful I think
+29:52 and it's um I could learn I could teach
+29:54 myself but like it would be more
+29:56 effective if I have someone around who
+29:57 just knows stuff that I don't um also
+30:00 for the motivation I just noticed it'd
+30:01 be more fun to collaborate with someone
+30:04 um so what has been happening is there
+30:06 is now a collaborator and we have we're
+30:08 actually building a proper platform for
+30:09 column code because up until now it was
+30:11 like two for loops and a bunch of
+30:13 markdown files um that's amazing when
+30:15 you are working on your own but it's not
+30:17 as amazing when you want to have like
+30:19 well like at some point maybe you want
+30:21 to have like a login and a payment thing
+30:23 and you know stuff like that um so the
+30:25 thinking here is to make that thing
+30:27 sustainable I will would like that to be
+30:28 a hobby project that just gives a
+30:30 trickle of income so me and this
+30:32 collaborator can like hire someone
+30:34 externally who can give us like uh
+30:38 notebooks that we can turn into videos
+30:40 let's say like something like that I
+30:41 think would be a really cool end game
+30:43 something we could do longer term um so
+30:45 we're building this right now like the
+30:47 the Django app is live like people have
+30:49 not noticed it going down or anything
+30:50 even though we made tons and tons of
+30:52 changes now it's Jango it's yeah so it
+30:55 was yeah so it's ajango full Django
+30:59 yeah so and we're adding all sorts of
+31:01 stuff to it right now but we're learning
+31:02 how to do payments which is a huge pain
+31:05 uh but um but the goal will be that this
+31:07 will just be uh I would like to do more
+31:10 content on that thing I have been adding
+31:12 like once a month a new sort of short
+31:15 course so I'm sly still doing stuff um
+31:18 but the hope will be that this will be
+31:19 like a still a calm place but maybe we
+31:23 can do more about databases and maybe we
+31:24 can do a little bit more data analytics
+31:26 and maybe a little bit more Cloud a
+31:27 little bit more doer and kubernetes and
+31:30 uh not just have Vincent do his Vincent
+31:32 thing but just a more General here's
+31:34 just calm code uh that's kind of the
+31:36 next phase of the project I see that
+31:39 there's already some Docker stuff right
+31:42 uh barely uh I have in my mind what I
+31:45 would like to add so there's like a few
+31:47 mini Docker things on there but there's
+31:49 like way more that we would want to do
+31:51 yeah like like one of the things I'm
+31:52 interested in doing is I would love to
+31:54 have a sort of insights and benchmarks
+31:57 section where it's more about the demo
+31:59 and an idea it's not about being optimal
+32:02 and one thing I am interested in doing
+32:03 there with Docker is um so you know get
+32:05 up actions
+32:07 right uh when does it make sense to have
+32:09 a custom Runner like you're not goingon
+32:11 to uh give your compute costs to GitHub
+32:15 you're going to give it your own VM like
+32:16 when does it make sense to sort of do
+32:18 stuff some Runner is when the action is
+32:20 executed on your yes your environment
+32:23 not in GitHub on not on GitHub
+32:26 environment yes so but the thing if you
+32:28 do that there's actually a trick you can
+32:29 pull off because if it's a VM that you
+32:31 own and you have Docker on it it does
+32:33 the caching for you on that machine so
+32:37 if you have insane Docker containers
+32:38 with like sentence uh Transformer big
+32:42 big ass pie torch models
+32:43 Etc um assuming you don't make any big
+32:46 changes to like the core library that
+32:48 entire thing is going to be cached no
+32:50 download needed and sure you could do
+32:53 something like that with a GitHub
+32:54 registry and you could hook up the
+32:56 GitHub registry s of the the the docker
+32:58 registry to your get up actions you
+33:00 could go there oh but hang on if you
+33:02 just do this on a VM you just kind of
+33:03 get this for free that's kind of an nice
+33:06 little Benchmark and insight except the
+33:07 VM is not free EX well sure but like um
+33:11 but you can pick your own VM and if it's
+33:13 some it could be something that you've
+33:14 paid ahead of time with like a good
+33:16 rebate it can also be something that you
+33:17 have in your kubernetes cluster anyway
+33:20 and and this is the thing I kind of want
+33:22 to pitch there it can also be a VM from
+33:24 a cloud provider that has carbon
+33:25 negative compute and they do exist
+33:28 so the big cloud providers don't do this
+33:30 but there's a startup here in the
+33:31 Netherlands called Leaf cloud and I do
+33:32 want to give them a shout out because
+33:33 it's a badass idea they put server racks
+33:36 in basements of apartment buildings
+33:38 there's a glass fiber connection to a
+33:40 data center they have all the dis there
+33:42 but the compute happens like in the
+33:44 basement and all the heat that comes
+33:46 from that is used to preheat water
+33:48 therefore saving gas use and when you do
+33:51 the math it turns out that that's
+33:52 actually carbon negative because it
+33:54 reduces the uh the gas
+33:56 usage another benefit is that um you
+33:59 know you only pay for the compute and um
+34:01 dealing with the heat is now paid for by
+34:03 another party so it's actually
+34:04 economically competitive as well and
+34:07 when you put all of that together then
+34:08 you kind of go like okay that that's all
+34:10 that's all sorts of cool stuff you can
+34:12 do if you just own it yourself a bit uh
+34:14 and I would like to have more of those
+34:16 examples where you don't need a cloud
+34:18 provider for everything sometimes you
+34:19 just need to be aware of the fact that
+34:20 you can really still do everything it's
+34:23 code it's yours that that that
+34:25 intellectual freedom is something I
+34:26 would like to celebrate more on conf
+34:27 code going forward M yeah and speaking
+34:30 of Docker so you mentioned that for us
+34:33 for people who have been around the
+34:36 python ecosystem for for some time um
+34:39 people sty is the everyday thing you do
+34:42 you don't even realize like it's your
+34:43 MUSC memory like create virutal
+34:45 environment do people install and the
+34:48 same thing is with Docker but for people
+34:50 who just start yes Docker is super
+34:54 difficult and this is what I see in our
+34:55 courses uh so in our engineering course
+34:59 the first module is about Docker and
+35:01 this is the most problematic module in
+35:04 the entire course right so yeah so so
+35:08 the I think there's three things usually
+35:11 that someone fresh out of college that's
+35:12 like a Thumbling block so pip is one
+35:15 Docker is one and git I think those are
+35:17 kind of the big three you want to cover
+35:20 the all three right eventually yes but
+35:22 like designing a git course is something
+35:25 I want to do in my life only once
+35:28 if that makes sense okay uh you already
+35:31 have because I I think I saw a logo of
+35:34 GitHub on your I mean yeah so I I use
+35:37 GitHub in a bunch of courses but I've
+35:39 not uh so calm code at the moment
+35:42 doesn't assume that you're a full-on
+35:43 beginner like that's not the platform
+35:44 for you it's like if you you need to
+35:46 have read your first programming book
+35:47 and done your first thing that's what we
+35:49 do too yeah I'm wondering like where at
+35:51 the end people actually learn all that
+35:54 stuff well so so one thing this is hypo
+35:57 hpis of mine right when it comes to
+35:59 teaching but sometimes I wonder maybe
+36:00 it's not so much the tool that I got to
+36:02 teach you but the way you should think
+36:03 about the tool so I can teach you the
+36:05 commands of G right but what I can also
+36:08 sort of teach you is just conceptually
+36:10 how you should think about it um or like
+36:13 uh oh if something goes wrong it's
+36:14 probably this and it's not really a a
+36:16 syntax thing it's more of a does it
+36:18 click in your mind kind of a thing uh
+36:21 and also like hey some issue like don't
+36:23 use git for data maybe uh like use a
+36:26 different system for that if you have
+36:28 huge CSV files and you want to do
+36:29 versioning yeah you can do some of that
+36:31 in get maybe if the data is not big
+36:33 enough but don't use it for everything
+36:34 and here's why um that context I think
+36:37 is something I also want to try to focus
+36:39 on with com code
+36:41 things especially because a lot of these
+36:44 YouTube tutorials they just regurgitate
+36:45 the docs anyway and I do want to do
+36:47 something more than just
+36:49 that yeah so
+36:51 interestingly while we were talking
+36:53 about that I realized that I never took
+36:55 a git course I never took a Docker
+36:57 course and never took python course it
+36:59 was just I need to do something and then
+37:02 like okay how do I do this I do this and
+37:04 I learn and I guess like following this
+37:08 approach like okay I can assume that
+37:10 they know Docker if they don't then they
+37:13 will learn maybe it's also a good way so
+37:16 I I guess like so I've been if this is
+37:19 like thinking out loud right I'm kind of
+37:20 curious about your opinion as well here
+37:21 so like okay what can I do to make it as
+37:24 sort of easy or enjoyable as possible to
+37:27 learn Docker I mean I can teach you the
+37:30 basic syntax and that's a way to do it
+37:33 maybe what would be nicest if I can
+37:34 figure
+37:35 out uh 20 minutes that you have to spend
+37:38 watching my things but after that you
+37:40 kind of understand the basics and you're
+37:41 in a position where you're able to
+37:43 Tinker around I think part of me is
+37:44 wondering if maybe that's the key so in
+37:47 the beginning you're not comfortable
+37:48 tinkering around yet because you you
+37:50 don't know how the Lego B bricks click
+37:52 together but once you're there then I
+37:54 actually really want to encourage you to
+37:56 Tinker as much as possible
+37:58 I that's also kind of a kind of a
+38:00 philosophy I'm playing with here like I
+38:02 can imagine like getting to minimum
+38:04 viable tinkerability or something like
+38:06 that the something about that feels
+38:09 appealing to me I want to give that more
+38:10 of a spin I gotta know if that's
+38:11 something you're also considering
+38:13 but that's a nice idea I realized that
+38:16 actually the topic of today is not
+38:18 Docker and irigation even though this is
+38:20 actually great stuff to talk about segy
+38:23 way back to Psy learn stuff I guess yeah
+38:26 so like one of the things you mentioned
+38:28 that um so you worked at Raza as a Dev
+38:31 def Advocate and you worked at explosion
+38:36 as a de Advocate and also a core defa
+38:38 and this is what you also do now at
+38:40 probable right so
+38:41 you you wear two hats right so one is
+38:44 the educator head where you talk about
+38:47 the product you promote it you educate
+38:51 this product but also at the same time
+38:54 you actually work on I don't know in
+38:57 implementing core features can you tell
+38:59 us how does it actually work like how do
+39:01 you manage to do both of these things
+39:03 and
+39:05 uh yeah maybe that so um I will say so
+39:10 back at explosion um the way I at least
+39:13 the way I experienced it we the company
+39:16 experimented a little bit with like a
+39:18 Dev ra team but at some point we also
+39:19 just knew that okay but maybe we should
+39:21 just assume that everyone's a machine
+39:22 learning engineer so like my title also
+39:24 wasn't devell or anything it was just
+39:26 machine learning engineer
+39:27 and if you're a good devil you also know
+39:30 your stuff so you should also be a
+39:31 machine learning engineer anyway it's
+39:32 just you're also more comfortable and
+39:35 well equipped to sort of make content
+39:36 and to educate like it's kind of more
+39:38 like an extra but it's not that
+39:40 different than oh yeah I'm a I'm a full
+39:42 stack developer and I do a fair bit of
+39:44 kubernetes well it's like the dungeon
+39:46 dragons character sheet has got you more
+39:48 points into kubernetes but it's not like
+39:50 you're not a full stag Dev and similarly
+39:52 I still like to think about myself as a
+39:54 machine learning engineer it's just I'm
+39:56 a bit more comfortable and a bit more
+39:57 skilled perhaps in making some of that
+39:59 content stuff so in that sense uh at
+40:03 some point within explosion there was
+40:05 just more need for me to do proy stuff
+40:07 and I'm still the same person so I would
+40:09 just do more proy stuff and do less
+40:10 content and something similar is
+40:12 happening here over probable I think
+40:14 it's just that um right now I'm like the
+40:18 main developer Advocate like thing
+40:20 within the company so it makes sense
+40:23 that most of my time right now in this
+40:24 phase is spent bootstrapping a whole
+40:26 bunch of things
+40:27 um so uh I have a whiteboarding playlist
+40:32 on our YouTube thing I have a live
+40:33 stream we also just set up a podcast
+40:36 we're going to do a second one at some
+40:37 point that's just that's not going to be
+40:39 just me it's going to be me with a
+40:41 colleague but uh right now the company's
+40:43 in a bootstrapping the death ra practice
+40:45 phase and once that once that ball kind
+40:47 of gets rolling I will probably do more
+40:49 open sourcy stuff than I'm doing now uh
+40:52 right now I am helping out with the
+40:53 scrub effort doing benchmarks and some
+40:56 of those things and sharing ideas is uh
+40:58 there's an interest to Port some stuff
+40:59 from pyed Lego to scrub maybe so like
+41:02 makes sense that I think along there but
+41:04 I really wouldn't see it as uh oh I'm
+41:07 I'm I'm I have two different hats that
+41:08 I'm juggling it's I guess it's way more
+41:10 well my name is Vincent I'm a senior
+41:12 person and I work on stuff that matters
+41:14 to the company right now like that's the
+41:16 I think the best way to also think about
+41:17 it yet your title is a dep gate right or
+41:20 what's your title it's developer
+41:22 relations engineer when they hired me I
+41:24 made a joke that I would really prefer
+41:25 senior person as the but they did say
+41:28 well Vin we have to pick something
+41:29 better than that which I do think is
+41:31 fair but the way I alsoe like I I do
+41:35 still appreciate the way that explosions
+41:37 just went about it just call everyone a
+41:38 machine learning engineer also not fuff
+41:40 too much around with like senior or
+41:42 Junior anything um because you are just
+41:44 a person in the end and you just try to
+41:46 fix problems for the company in the end
+41:48 that's usually what you end up doing and
+41:50 constraining yourself to like one and
+41:52 only one role just feels very
+41:55 counterproductive but sure uh I do a
+41:58 whole bunch of devell stuff now a a
+42:00 senior relations engineer I guess also
+42:02 it's totally fine by me it's just I
+42:04 would have had a preference to be a
+42:05 senior person instead fully aware of the
+42:07 fact that that's also a jokey
+42:09 title totally cool with them not going
+42:12 with it by the way like why does psych
+42:15 learn actually need a de like is there
+42:20 back two prob so the company probable
+42:22 right so the company probable has hired
+42:25 me it's not psyched learn to be clear
+42:27 probable is not the same entity right
+42:29 and but you are right in the sense that
+42:31 um you know uh scy could learn is a
+42:34 pretty good project where you look at
+42:36 the documentation like it is one of the
+42:39 best documentation uh that I can think
+42:42 of like for me this is a good example of
+42:45 how documentation should look like how
+42:47 you should document API it's so it's so
+42:50 it's funny you mentioned that so we so
+42:52 there's a person that's a colleague of
+42:53 mine Arturo he um so he actually in not
+42:56 necessarily in but he's kind of a lead
+42:58 on the docs like that's sort of one of
+42:59 his main concerns in his day-to-day and
+43:02 yeah the docs are amazing but imagine
+43:04 being on the other side and thinking oh
+43:06 but there's so much more stuff that we
+43:07 could do of course it would be it would
+43:10 be amazing if we could just run the code
+43:11 examples interactively in the browser
+43:13 we're not there yet but we would like to
+43:15 and similarly um the podcast is a nice
+43:19 example too because maybe there is just
+43:20 the experience from the maintainers that
+43:22 we just want to have archived and
+43:23 documented as well so it's it's you are
+43:26 definitely correct in saying the docs
+43:28 are very good and we should celebrate
+43:30 that but there are also more things that
+43:32 we could do and that's kind of the idea
+43:34 first and foremost like um YouTube
+43:37 videos I think do contribute a bunch of
+43:39 things like we just reached uh 10,000
+43:41 views on our YouTube channel where I
+43:43 just explain some algorithmic details
+43:45 that people aren't necessarily aware of
+43:47 and that's still very valuable to the
+43:48 psyched learn
+43:49 project You could argue that that some
+43:52 of this is in the nice to have
+43:53 department but I would still argue it
+43:54 adds value if something is confusing
+43:57 right or best practice is not relatively
+43:59 not known that's a good thing to still
+44:01 have tutorials for and sometimes video
+44:03 is a nice medium for it mhm cuz like
+44:07 people like me and other Educators they
+44:11 have courses they have content they have
+44:13 articles about so learn you don't need
+44:15 to do anything there's already like a
+44:17 ton of content that explains it like
+44:20 this but I guess you said we need to
+44:22 make distinction between probable and
+44:24 psychic learn right so your job to
+44:27 promote probable um and uh and and Via
+44:31 probable I will promote psychic learn
+44:33 yes but like I do think it's an
+44:34 important distinction because psyched
+44:36 learn has a moo for example right and I
+44:38 had no part in that uh that's something
+44:40 that was done by community members it
+44:41 wasn't wasn't something me or probable
+44:43 did um but I guess like one thing that I
+44:45 do try to do which is um this is kind of
+44:49 hard to do on the docs page but I do
+44:50 think it's very
+44:52 valuable so you know how in psyched
+44:54 learn we have
+44:55 scalers yeah like
+44:58 normalization right yeah so we've got
+44:59 the minmax scaler we've got the standard
+45:01 scaler and the idea is you've got your
+45:03 tab data frame one column has super high
+45:06 values the other column has super low
+45:07 values and there's numerical stuff that
+45:09 could go wrong when you give that to a
+45:11 linear regression after or k KNN
+45:13 classifier or something like that that
+45:15 you want that to be standardized in
+45:16 Subway or form so uh a lot of people
+45:19 like to use a standard scaler that takes
+45:20 the mean per column subtracts it and
+45:22 also scales the variance such that the
+45:24 variance is always equal to one or
+45:25 standard deviation I should say but okay
+45:28 fine
+45:29 great but the thing with that standard
+45:31 scaler is it's actually not standard at
+45:33 all when you think of all the stuff it
+45:35 has to do so what if the data that's
+45:39 going in what if that's a sparse Matrix
+45:41 instead of a normal numpy
+45:43 one oh well we can't subtract the mean
+45:45 anymore because that would turn that uh
+45:47 sparse Matrix into something non-sparse
+45:49 but we can normalize the
+45:51 variance oh okay so that should be a
+45:53 feature we should be able to do that
+45:55 actually that'd be like super nice all
+45:57 right what if it's a data frame instead
+45:58 of an Umpire aray okay we got to handle
+46:00 that obviously and not just pandas by
+46:02 the way but also polers these days like
+46:04 all right all right we got to be able to
+46:05 account for that oh but there's also
+46:07 this other thing where um it has a
+46:09 partial fit method because technically
+46:12 from a mathematical standpoint nothing
+46:13 is STO like usually you calculate these
+46:15 things in a batch right you take the
+46:16 mean of the column but what if the user
+46:19 is interested in doing micro batching
+46:20 because the data set doesn't fit in
+46:22 memory well psyched learn has a partial
+46:24 fit API that allows you to take those
+46:26 batches is and do it sort of on an
+46:28 online learning way oh okay so that has
+46:31 to be implemented on the standard scaler
+46:33 are there many ways of doing it yeah and
+46:35 a bunch of methods are numerically super
+46:37 unstable so you have to be really
+46:38 careful about the method that you pick
+46:40 because otherwise the whole thing is
+46:41 just going to explode and like this is a
+46:43 video that's coming out this week
+46:45 there's so many of those little details
+46:47 that are kind of hard to put in the
+46:49 psyched learn tutorial because as a user
+46:51 the whole point of psyched learn is that
+46:52 you're not worried about that but I do
+46:55 think it's valuable to the project that
+46:57 uh I'm able to spend at least a little
+46:58 bit of time making a good video about it
+47:00 so people appreciate it uhuh cuz I was
+47:03 going to ask okay yes this is a very
+47:06 difficult problem like why would I
+47:10 actually need to learn the details so
+47:13 the beauty of it is you don't but it
+47:15 might still be useful for you to
+47:16 appreciate some of these details like
+47:18 that's I think larger point is the case
+47:21 like I have never realized that such a
+47:22 simple thing could be that difficult the
+47:25 standard scaler is not standard is the
+47:27 title of the video it's coming out this
+47:28 week it is not
+47:30 standard like it's too mathematical two
+47:34 three like compute the mean right then
+47:36 you subtract the mean on the spectrum of
+47:38 math this is still relatively
+47:39 lightweight but still the fact that it's
+47:41 a lightweight mathematical not too
+47:43 complex thing so much can still go wrong
+47:45 yeah like I never realized that yeah now
+47:48 so and again like I'm um the psychic
+47:51 Lego thing definitely helps here because
+47:52 I've looked at the source code of
+47:53 psyched learn sometimes to understand
+47:55 how I should implement it in psyched
+47:56 Lego so I'm kind of well equipped to
+47:58 sort of know which
+48:03 part are worth diving into a
+48:07 bit definitely stuff for me to do there
+48:10 but I should also mention like uh
+48:12 probably probably it is very probable uh
+48:16 that in like uh let's say a month or two
+48:18 when we when we have the new quarter in
+48:20 the summer that the ball for the content
+48:22 is rolling and rolling and then I can
+48:24 dive a bit more deeper into like scrub
+48:25 stuff and I I probably will like what is
+48:27 scrub you mention it like three four
+48:29 times what is that yeah so it's a pretty
+48:31 cool Library um so scrub at the moment
+48:34 is a psych learn plugin it's still an
+48:36 experimental phase but uh like Gail Gail
+48:39 Vu is one of the maintainers of it
+48:41 there's a bunch of other people that's
+48:43 how you pronounce his last name okay I
+48:44 don't know I so I I um one thing to
+48:47 remember is Gail is French and for
+48:50 example V Vincent is pronounced vanan in
+48:52 France right so don't take my
+48:55 pronunciation as accurate
+48:57 but I believe that's how it's I I I
+49:00 don't recall being corrected but uh yeah
+49:02 let's let's just call him Gail because
+49:04 that's also just his name um now so Gail
+49:07 um like the the dream kind of of that
+49:09 project is
+49:11 that let me put this way there's one
+49:13 feature in that library right now that
+49:15 sort of is is the The Guiding Arrow
+49:18 towards the dream we're trying to chase
+49:20 so there's this thing called a table
+49:22 vectorizer you give it your data frame
+49:25 and it just figures out what it should
+49:27 probably do and it's kind of the 8020
+49:29 thing where okay we the there's only
+49:33 three categories in this column so we
+49:35 one halt en code that oh there's over
+49:37 100 in this one okay let's do a topic
+49:39 model thing instead because we probably
+49:41 don't want to have that sparse of an
+49:42 input like that there's a couple of
+49:44 tricks like that um and the idea is we
+49:47 just have enough features for you to
+49:48 handle the tabular
+49:50 stuff H such that your pipeline is just
+49:52 a few components without having to be
+49:54 very elaborate and this should give you
+49:56 a very reasonable Benchmark like the
+49:58 dream is kind of that if you just use a
+50:00 table vectorizer let's say and then
+50:03 gradi histogram gradient boosted
+50:05 regressor or classifier depending on
+50:06 your use case that you're kind of 80% of
+50:09 the way
+50:10 there like and those components almost
+50:13 yeah well so so these components are
+50:15 definitely a little bit too experimental
+50:16 to go into psych could learn directly
+50:18 right now but you can imagine that like
+50:19 some of there's stuff to be gained here
+50:21 that will be very pragmatic and useful
+50:23 so that's kind of the the overwatching
+50:24 goal of that effort s was quite cool the
+50:28 U like one thing I do think is a there's
+50:30 there's one trick in there that I do
+50:31 think is um maybe nice to mention so
+50:33 there's a thing in there called a gap
+50:35 encoder uh yeah so yeah so
+50:39 Gap yeah so Gap actually stands for uh
+50:43 gamma like it's it's a it's a
+50:44 distribution name it's it doesn't have
+50:46 anything to do with a gap in the literal
+50:48 sense but it's more of a topic modeling
+50:51 thing that's happening in there so uh
+50:53 let's say that you've got a column with
+50:54 a dirty category let's say so there are
+50:56 typos in there and the the example we
+50:58 have on the docs is we have uh job
+51:01 titles so you're a senior programmer or
+51:04 senior fireman export expert or and then
+51:07 there's like typos in there as well well
+51:09 we could want not encode all of that we
+51:11 could but you can also look at that and
+51:12 say well senior has meaning like almost
+51:15 as if we're modeling this as text right
+51:18 and maybe there are clusters in there so
+51:20 instead of one H encoding it let's just
+51:23 tell the algorithm well try to figure
+51:24 out 20 topics or so and have that
+51:27 returned that as a dense array where um
+51:30 probably a all the senior firemen or
+51:34 police officers they're in one topic and
+51:36 Etc and this is kind of a nice way to
+51:38 prevent that explosion of one hot
+51:40 encoding from happening so tools like
+51:42 that are also being used under the hood
+51:44 here and there's also a bit of research
+51:46 uh behind this as well so like um again
+51:50 like before we aren't expecting you to
+51:51 be aware of all the algorithms under the
+51:53 hood we would like it if you appreciate
+51:55 them but we're really trying make it
+51:56 easier for you to just dunk a data frame
+51:58 in there and have a solid Benchmark uh
+52:01 without and then from there you can
+52:02 fiddle but like have that solid
+52:03 Benchmark there uh also to compare
+52:06 approaches from academic
+52:08 articles yeah that's does sound awesome
+52:12 and also answers like in our courses we
+52:14 have question okay like I realize with
+52:17 10 categories I can use that but like
+52:19 what we we have a thousand categories
+52:20 and then there are million of ways there
+52:23 are many ways you can deal with
+52:25 thousands of categories right
+52:27 like you can do topic modeling you can
+52:29 do mean average encoding or whatever
+52:32 like there are many many different ways
+52:34 you can model it as text you know lots
+52:36 of stuff that you could do you can use
+52:37 uh embeddings even but the the hope of
+52:39 scrub is that we are necessarily going
+52:41 to be perfect for a use case but it
+52:43 should at least be a reasonable place to
+52:44 start with very little effort that's
+52:46 what I was thinking like instead of like
+52:48 telling okay look there are these and
+52:50 this and these options the answer could
+52:53 be said try this library and see what it
+52:55 comes up with
+52:57 and try to understand what are the
+52:59 encoders it uses for encoding your table
+53:03 right and then you will understand how
+53:05 it works yeah and and thing the thing
+53:08 also to remember here is we will never
+53:09 be able to do it perfectly um so because
+53:12 suddenly oh this is a string yeah but in
+53:13 the string it's it's an IP address all
+53:15 right
+53:17 maybe not sure if we can detect that
+53:19 right some of that stuff still needs to
+53:20 be custom but like another Avenue that
+53:22 I'm helping out with there is just the
+53:24 time series stuff so how do you encode a
+53:26 date or date time and can we make that
+53:28 distinction and what are sensible
+53:30 defaults there that's also something
+53:32 I've got an opinion
+53:35 on so psychic learn existed for quite
+53:37 some time without the company behind it
+53:43 why all of a
+53:44 sudden um so what I'm about to do is I'm
+53:47 about to give like a perspective and uh
+53:49 for many people in the company they
+53:51 might have a slightly different
+53:52 perspective like why would you start a
+53:53 company um but I I can imagine there
+53:56 were when they started this there were a
+53:58 couple of concerns one of them was well
+54:00 it is an open source project and a lot
+54:02 of it is sort of funded via uh like I I
+54:05 do think indria definitely did a lot of
+54:07 good stuff with funding it but you can
+54:08 Wonder do we really want the open source
+54:10 project py could learn which is at the
+54:12 center of everything to be dependent on
+54:13 academic funding
+54:15 models I mean it it it's worked out
+54:18 pretty okay from what I can gather U not
+54:20 being a maintainer but uh there is
+54:22 something to be said like okay there's
+54:23 still a funding concern no matter what
+54:25 and maybe a company could make sense
+54:27 there and then there's also the matter
+54:29 of the fact that like you know uh it it
+54:31 adds tremendous value and there might be
+54:34 companies willing to pay for it right uh
+54:36 some companies have a lot of time and
+54:38 not a lot of money uh some people some
+54:40 companies have not a lot of time but a
+54:41 lot of money it would be kind of nice if
+54:43 we can figure out a company structure
+54:44 such that that money actually is spent
+54:46 on maintaining psyched learn and its uh
+54:48 you know little ecosystem so that that
+54:50 definitely is part of it um another idea
+54:53 is also that um it will be cool if maybe
+54:55 there are just more European companies
+54:57 doing this sort of stuff and France is
+55:00 trying to position itself into this a
+55:01 bit huging face there's mistol there's a
+55:04 bunch but like that like probably also
+55:06 kind of fits that story like let's have
+55:07 more European Centric tech companies as
+55:09 well because it's uh yeah it feels like
+55:12 all the cloud providers are from the US
+55:13 these days and would be kind of nice to
+55:15 have more stuff from Europe um and and
+55:19 then there's also like um if you're a
+55:23 company this this still needs to be
+55:25 proven but like I can also Imagine by
+55:28 putting some of this stuff in the
+55:29 company you are also exposing yourself a
+55:31 little bit more to uh industry problems
+55:35 because uh I don't know for sure but I
+55:38 do think it's fair to say that a large
+55:39 chunk of the psych learn maintainers
+55:40 they do have an academic background some
+55:42 of them will definitely also have
+55:43 industry exposure but there is also
+55:45 something about the fact that like Yeah
+55:47 by actually being a company you are
+55:48 going to be doing company stuff and to
+55:50 be just exposed to that is probably also
+55:52 going to be good for the
+55:54 project so and again like these are just
+55:57 reasons uh I everyone within the company
+56:00 favors one reason a bit more than the
+56:02 other maybe but like this is the general
+56:03 Vibe and then at some point you do kind
+56:05 of go like yeah okay company makes sense
+56:08 uh we this is something that should be
+56:09 tried uh that's that's at least a Vibe
+56:11 check of the origin story that I as I
+56:14 understand it and the business model is
+56:16 still yet to be determined the exact
+56:18 business model um there's some stuff
+56:20 that I can share I mean uh like um you
+56:24 can definitely imagine us doing training
+56:25 and Consulting like that's going to be a
+56:26 thing right yeah um you kind of
+56:29 mentioned that it's on the website yeah
+56:32 I mean it's on the website and um and
+56:35 there are also these collaborations that
+56:37 uh that may or may not happen right like
+56:38 there might be a cloud provider wants to
+56:40 sort of integrate with us you know
+56:42 there's there's all sorts of ideas that
+56:43 could happen there but it's definitely
+56:45 early so there's not like an official
+56:47 announcement I can do or anything like
+56:48 that but you can um there's a tech
+56:50 crunch article where our CEO uh says a
+56:53 bunch of things I mean those things you
+56:55 can check out yeah
+56:56 yeah which was published on February the
+57:02 1st uh yeah February January early this
+57:05 year something AR that I think that's
+57:07 that's when all the official
+57:08 announcements kind of
+57:09 started yeah so what we do product open
+57:12 source Services provide training
+57:14 certification and expert solution for
+57:16 Enterprise AI
+57:18 challenges yeah
+57:21 that's just about covers it yeah so
+57:26 well we don't have a lot of time and I
+57:29 still want to ask you this what is your
+57:32 next personal
+57:33 project oh I can't uh so yeah so there's
+57:37 one that there's what can I talk about
+57:39 there so there's one that I can't talk
+57:41 about yet um oh there's one that I can
+57:44 talk about actually uh CM code will have
+57:46 a
+57:47 book C code will have a book yeah so
+57:50 we're we're writing a book uh and the I
+57:53 can't share the title just yet but it's
+57:55 about
+57:56 uh expectations clashing with reality in
+57:59 the field of data it's going to be the
+58:01 title of the book there's just been too
+58:03 many of these stories where like
+58:05 remember back in the day when people
+58:06 told us data science is going to be the
+58:08 sexiest profession of all time that's
+58:12 why uh yes I was tuned I I want well Alo
+58:17 like but but then you look back at the
+58:19 last 10 years and you do kind of go like
+58:20 gee a bunch of things were over
+58:23 promised and there's lots of these
+58:25 failure stories that people tell me when
+58:26 they're drunk and maybe uh I should be
+58:28 the one that writes some of them down um
+58:31 because I also think that maybe there's
+58:33 an overemphasis on tools and not enough
+58:35 about like you know culture and how do
+58:37 humans work how can we actually prevent
+58:38 failures and I think just having a
+58:40 little bit of a a book that just has a
+58:42 couple of these anecdotes and stories
+58:44 are going to do a bunch of good so like
+58:45 that that's a project that is definitely
+58:47 going to happen um but I should also say
+58:49 like the way that my um sort of site
+58:52 projects work these days is I do a live
+58:54 stream over at probable and basically
+58:56 every week I just pick kind of a new
+58:57 technology where I could do something
+58:59 interesting in two weeks time I'm going
+59:02 to experiment with gradient boosted
+59:04 machines so you know that tree based
+59:06 models you can stack them
+59:08 together a tree based model could be
+59:10 turned into a SQL
+59:12 query and a whole stack of them can be
+59:15 turned into a SQL query yeah yeah the
+59:17 SQL query will be big but these boosted
+59:20 machines are some of they are some of
+59:22 the most performant models so being able
+59:23 to squize that will be cool and I wonder
+59:26 for large batch jobs is this
+59:29 quicker okay quicker than loading the
+59:33 data turning into a sending it to the
+59:36 python process like maybe this could be
+59:38 handled better inside of a database or
+59:40 like a query engine that's optimized for
+59:41 this sending it to a python process
+59:43 feels expensive houses like for bigquery
+59:46 for example or for other Alternatives
+59:48 you pay for the data scan right yeah
+59:51 well but also like you have to move it
+59:53 into Python and back out like that's
+59:54 also there's there's all sorts of stuff
+59:56 there um and I have no idea if this will
+59:59 work but that's what the live stream is
+1:00:01 for um so you going to figure this out
+1:00:04 on the live stream uh the way it works I
+1:00:07 uh every Wednesday I have an afternoon
+1:00:09 where I prepare the live stream and then
+1:00:11 during the live stream part of it is
+1:00:12 life coding but part of it is just okay
+1:00:13 here's some stuff I've seen some lessons
+1:00:15 I've learned just from doing this and
+1:00:17 then um a conversation starts with cute
+1:00:20 people and then uh either I pick it up
+1:00:21 again next week or I pick a different
+1:00:23 topic It's Kind I'm prepared it's not
+1:00:25 like
+1:00:27 no I think I think I think it's
+1:00:28 reasonable if people are going to spend
+1:00:29 their lunch watching me I do think it's
+1:00:31 fair that I do prepare at least
+1:00:32 something yeah yeah I was curious how it
+1:00:34 how exactly it works I would be nervous
+1:00:37 to be unprepared to do a stream it it
+1:00:40 can so I've also done a few streams
+1:00:41 unprepared but then I I it was about
+1:00:44 like EMB better a library that I wrote
+1:00:46 so that I can do that for yeah so that's
+1:00:48 an easy
+1:00:49 demo but uh I can also another thing I
+1:00:52 do want to do my homework because let's
+1:00:54 say last week I did something on IBU
+1:00:56 and you know I do want to give a fair
+1:00:58 representation of what IIs can or can't
+1:01:00 do I shouldn't say nonsense so also
+1:01:03 because I'm sometimes demoing other
+1:01:04 projects that aren't from within my
+1:01:06 company I also think it's fair that I at
+1:01:08 least do some of my homework and also
+1:01:09 like post an issue on GitHub and like
+1:01:11 get their feedback and that sort of a
+1:01:14 thing makes sense okay I think that's
+1:01:16 all we have time for today amazing
+1:01:19 having you again so actually like this
+1:01:21 is our second interview with you but you
+1:01:25 also did a demo you mentioned uh um dou
+1:01:28 lab and a better I
+1:01:30 guess I'm not sure about second Lego
+1:01:33 maybe two but they
+1:01:35 better certainly okay so thanks again
+1:01:39 for joining us today for sharing the
+1:01:42 experience with us for sharing your
+1:01:43 opinion on things for talking about your
+1:01:46 future plans and thanks everyone to for
+1:01:49 joining us today and listening in so
+1:01:52 yeah that was fun have a good one yeah
+1:01:55 you too have a great week
+1:02:01 goodbye trying to figure out

@@ -1,0 +1,1781 @@
+Effective Communication with Business for Data Professionals
+
+0:00 welcome everyone thanks for joining us
+0:02 today
+0:03 this event is brought to you by data
+0:04 talks club which is a
+0:06 community of people who love data and we
+0:09 have
+0:09 weekly events today is one of such
+0:11 events and if you want to find
+0:14 out more about our events you can go to
+0:17 our website data talks club slash events
+0:20 so if you go there if you click on this
+0:23 link you will see
+0:24 what we have planned and today by the
+0:26 way uh today is a live podcast
+0:29 kind of talk interview style so we don't
+0:32 have any slides it's a
+0:33 relaxed conversation
+0:36 and then we have a different kind of
+0:38 events which happen on
+0:40 tuesdays so next tuesday we'll have a
+0:42 talk about reinforcement learning for
+0:44 search
+0:45 and then next friday we will have
+0:47 another talk about um
+0:50 alec will talk what he learned from
+0:52 interviewing 300 data scientists
+0:54 and that's very exciting so
+0:58 moving on if you want to stay up to date
+1:00 with
+1:01 our events the best way is to join our
+1:03 slack
+1:04 then you can also subscribe to our
+1:06 newsletter and subscribe to our youtube
+1:08 channel
+1:09 last but not least if you have any
+1:11 questions today
+1:12 during our chat we have a
+1:15 pinned link in the live chat so you can
+1:19 just click on this link
+1:20 and ask any question you want
+1:24 and that's all for the introduction
+1:28 um are you ready okay
+1:31 so let us start so this week we'll talk
+1:34 about
+1:35 the disconnection between data folks and
+1:38 the management
+1:38 and how to pre bridge this gap between
+1:41 between
+1:42 the two and we have a special guest
+1:44 today leo leor has experience of over 12
+1:47 years
+1:47 in building data teams leveraging data
+1:50 for growth
+1:51 and he learned a lot from that he
+1:53 experienced a lot of pains
+1:55 and he even has written a book about
+1:57 this
+1:58 and he also hosts a podcast the podcast
+2:02 has a name what the data
+2:04 and i full disclosure i was a guest on
+2:08 this podcast once so go and check it out
+2:10 so welcome to our event
+2:15 i am so happy to be here actually i
+2:17 think that
+2:18 one of my my happiest moment is when i'm
+2:21 talking to data scientists
+2:23 and data engineers and i was like yes we
+2:25 can do some
+2:26 so many cool things together so i'm
+2:29 happy to be here
+2:30 yes welcome so before we go into our
+2:34 main topic
+2:35 of communicating with business let's
+2:37 talk a bit about your background because
+2:39 well i know with 12 years of experience
+2:42 you probably
+2:43 saw a lot of things so can you tell us a
+2:45 bit about your career journey so far
+2:49 so i'm a dinosaur as as we call it i
+2:52 started my
+2:52 data career even before there was uh
+2:56 any google analytics or any id of google
+2:58 analytics on board we used very simple
+3:01 uh and now analytics tools that were
+3:04 installed locally by us uh
+3:08 and then in the last couple of years i
+3:11 was working for zalando
+3:14 and they're basically done the entire
+3:15 transformation of the data
+3:17 for the marketing department was working
+3:20 for la vu
+3:20 a dating app to the ones who don't know
+3:22 it a quite cool
+3:24 company and they're also kind of a
+3:28 project manager product manager to help
+3:30 constructing data and now
+3:34 lately i am running the podcast water
+3:36 data where i'm interviewing quite a lot
+3:37 of
+3:38 data and business people and trying to
+3:39 actually bridge the communication
+3:41 between these two functions to actually
+3:43 drive or leverage the data for growth
+3:47 and then also i'm managing director of
+3:48 terabit data which basically
+3:51 is a company that we started as an
+3:53 agency now we're moving more towards a
+3:55 product
+3:56 approach that helping companies to set
+3:59 up their data infrastructure in a quick
+4:00 way so they can
+4:02 focus on hiring good data engineers and
+4:04 not being under pressure
+4:05 to run around yes
+4:08 thanks so your profile i checked your
+4:10 linkedin profile
+4:12 and it says that your position your
+4:13 title now is a data strategist
+4:16 and which makes me wonder what does a
+4:19 data strategist do
+4:21 so as i said data strategist is the
+4:23 person who sits between the data
+4:25 engineering the data science
+4:27 and the business and trying to find the
+4:30 right approach
+4:32 to use the data so one of the biggest
+4:36 pains that i suffered as a product
+4:37 manager for data for very long time
+4:40 was that i need a dashboard i need it
+4:41 now i need it tomorrow ah the
+4:43 calculation is wrong i don't trust it
+4:45 it's supposed to be eight why is it four
+4:47 and
+4:48 what a data strategist as i see it needs
+4:50 to do it needs to balance between the
+4:52 two
+4:53 uh functions of the tech and the
+4:55 business and ensure that both of them
+4:57 actually speak in the right language
+4:58 and on the second on the second part
+5:00 they also have the right strategy so
+5:02 they're actually understanding
+5:03 when we're talking about installs what
+5:05 do we mean when we're saying install
+5:07 what do we mean when we're talking about
+5:08 session
+5:09 and when we're running a model for
+5:11 forecasting for example revenues
+5:14 how is it being calculated so the
+5:15 business not going to go into the
+5:17 details of is it a
+5:18 random forest or a linear calculation or
+5:21 they will ask but they're not really
+5:23 understanding what's stand behind it
+5:24 what they care about is how accurate it
+5:26 is
+5:27 and this is where you need to come in
+5:29 and actually
+5:30 make sure that the understanding level
+5:32 is correct between everybody
+5:34 and there is also a trust to the data
+5:37 because because
+5:38 i think a lot of business people don't
+5:40 trust the data and this is something i
+5:42 always
+5:43 i always suffered from so i know it
+5:45 cannot be the data is correct
+5:46 check it again i'm missing something
+5:48 here and and this is this is where that
+5:50 strategy
+5:50 actually should come in and support
+5:52 organization in its any better how to
+5:54 use it
+5:55 so as understood you have
+5:59 you do two things so one you're the
+6:02 bridge between uh
+6:03 the technical people and the business
+6:05 people right so you help communicate
+6:08 so you have translate
+6:11 translate i don't know the requirements
+6:13 maybe and develop
+6:15 trust for business so business people
+6:16 don't trust in data
+6:19 and you help them to to have this trust
+6:21 so you have you you
+6:23 help you help them understand what's
+6:25 going on behind the hood
+6:27 and then at the same time you also
+6:28 probably do that the other way around
+6:30 you help
+6:31 the technical people to understand what
+6:34 business wants from them right
+6:36 yeah so i like to say that i'm the idiot
+6:38 in the room
+6:39 that asking all the idiotic questions
+6:41 that everybody else are afraid to ask
+6:43 that's how i see it myself at the end if
+6:45 i need to sum it up
+6:48 and you also you as i understood you
+6:51 you are coming from the product
+6:52 management background right so you are
+6:54 more from the business side coming into
+6:57 tech rather than from tech to the
+6:58 business side right
+6:59 so i actually i started my way in the
+7:01 tech i was uh
+7:03 in the path of being a developer then i
+7:06 decided that
+7:08 life too short for me to sit down and
+7:11 debug code
+7:12 i think this was one of my biggest
+7:14 frustration always
+7:17 and then i moved more towards the
+7:18 product but i'm still
+7:20 coding so i'm still writing python i'm
+7:22 still also i know sql is not a code but
+7:24 i'm still writing sql queries
+7:26 i'm still running r queries sometimes
+7:29 using r for different parts
+7:32 so i'm still connected to the code but
+7:33 i'm trying not to develop because i know
+7:35 i'm
+7:36 embedding it but i also understand
+7:38 enough code to be able to actually
+7:40 translate it into something that people
+7:41 can understand
+7:42 or i can at least look at it and see
+7:44 what's going on in there
+7:46 so you basically have background of a
+7:49 technical person you also
+7:51 have a background of a product manager
+7:54 which puts you in this unique position
+7:56 of being able to understand both
+7:59 speak the same language to like not the
+8:02 same language but uh
+8:05 be able to translate from one world to
+8:07 another from one
+8:08 function to another and uh
+8:12 from your point of view how can we
+8:13 improve communication between
+8:16 within the technical side and the
+8:17 business side what are the things we can
+8:19 do
+8:19 to to make it better smoother
+8:22 so you know one one of the the most
+8:25 idiotic things that
+8:27 i noticed that improving communication
+8:30 is when something goes wrong with the
+8:32 data or with the
+8:33 formula a small email that being sent
+8:37 out and saying guys
+8:39 don't use it we're checking what went
+8:40 wrong and only even if it was triggered
+8:43 automatically so to try to trigger it
+8:44 automatically before people even
+8:46 starting using the data
+8:48 uh in today's world we're trying to
+8:50 finish processes before people arrive to
+8:51 the office also we don't have any office
+8:53 any
+8:54 anymore we're all sitting at home but
+8:56 we're trying to make it
+8:58 available for people from let's say from
+8:59 around 8 a.m 9 00
+9:01 a.m 10 a.m whatever you're setting it up
+9:03 and people are expecting to have the
+9:05 data at this point
+9:06 and one of the key components here and
+9:08 especially when we're talking about
+9:10 creating trust is to trigger this
+9:13 small email that's saying everything was
+9:15 working fine you can use the data
+9:17 or there was an issue don't use the data
+9:19 because it may cause you to make the
+9:21 wrong
+9:22 decisions and once somebody starting to
+9:24 suspect your data you lost this trust
+9:26 and to buy it again
+9:28 will take you a long long time longer
+9:30 than what you even expect
+9:32 it's just creating more frustration it's
+9:34 just causing
+9:35 more backlogs on on you as a as a
+9:38 developer
+9:40 and in the in the long run you got just
+9:42 gonna find yourself
+9:44 running into an issue of they don't
+9:46 trust me
+9:47 i still do my job i'm traded sorry i'm
+9:50 i'm frustrated for my job and basically
+9:53 it
+9:54 you also the data scientist and all the
+9:56 data data engineer becoming very
+9:58 frustrated this is something i noticed
+9:59 and
+10:00 i wasn't aware of it because for me at
+10:02 the beginning when i started was like
+10:03 okay there is a request
+10:05 you need to make it happen i don't care
+10:07 how it happens it needs to happen
+10:09 but very quickly i realized that a lot
+10:12 of these requests are coming actually
+10:14 from frustration from the business
+10:15 person
+10:16 who is transferring it now to the
+10:18 technical guy who
+10:21 could have solved it just by sending an
+10:22 email saying listen dude
+10:24 i checked the data everything is looking
+10:25 good if you have complaints we can check
+10:28 it but there is no reason for you
+10:29 because i did the qa for you
+10:31 i checked that the data is correct and
+10:34 is
+10:34 to the best of my knowledge if you
+10:36 spotted something
+10:37 i would be more than happy to do to have
+10:39 a conversation about it
+10:40 and it's going to reduce 60 of the of
+10:42 the wasting of the time
+10:44 back and forth between the tech and the
+10:46 business in many cases
+10:48 so the main uh the main thing here is
+10:51 building trust so business people need
+10:54 to have trust
+10:55 in the work of data engineer data
+10:57 analysts data scientists
+10:59 and one of the ways of doing this is
+11:03 be upfront be transparent if something
+11:05 happens
+11:06 just inform immediately right hey
+11:08 exactly our job failed
+11:10 so today expect some inconsistency in
+11:12 the in the data we're working on fixing
+11:14 this
+11:15 sorry about that right um
+11:18 think about think about something else
+11:20 so you have a forecast model that you're
+11:21 running on a database right
+11:23 that's supposed to forecast revenues uh
+11:26 let's say that you need to forecast 30
+11:27 days ahead or even
+11:28 360 days ahead and if you're
+11:32 showing a certain number there and the
+11:34 people don't trust the number you give
+11:36 them
+11:37 how can you make them trust it so either
+11:40 you're creating some graph that's
+11:41 showing them
+11:42 what is your confidence level in the
+11:44 information
+11:46 or either you telling them this is based
+11:49 on the most accurate data i have right
+11:50 now
+11:52 and this is this is what i'm predicting
+11:53 because for example
+11:55 in many cases when i worked on
+11:56 forecasting models
+11:58 suddenly a model was crashing it used to
+12:00 be very stable on a certain level
+12:02 and then one day it crashed and yes
+12:05 sometimes marketing have
+12:06 changed for example their campaigns or
+12:08 stop them and
+12:10 the entire model went to to go to the
+12:11 garbage because he was counting on a
+12:13 certain
+12:14 a traffic that's going to happen in some
+12:17 other cases it's just that
+12:18 the model is not relevant anymore
+12:20 because somehow the users that arrive
+12:22 completely changed the picture of how he
+12:25 is
+12:26 observing the operation or some features
+12:28 were changing
+12:29 and they are not relevant anymore they
+12:30 are not available anymore
+12:32 and this is the way for the
+12:36 the data scientist to create a small
+12:39 dashboard even and put it somewhere so
+12:40 whenever
+12:41 people are suspecting that number is
+12:42 wrong they can go there they can curate
+12:45 quickly and see immediately if there is
+12:46 a problem or not
+12:48 and this is really small stuff that
+12:51 will take us half an hour one hour two
+12:54 hours to do
+12:56 and it can increase the trust of people
+12:58 in terms like
+12:59 hugely just because they have access now
+13:02 to the data to the back end and they
+13:03 know how the calculation going
+13:05 and they will be able to themselves
+13:06 already see if something went wrong or
+13:08 not
+13:09 your job is to build a model but also to
+13:11 create in certain way
+13:15 okay so one so you mentioned that to
+13:18 build good communication we need to
+13:20 to build trust and then uh
+13:24 building trust is informing being
+13:26 transparent and the second thing
+13:27 is uh just showing
+13:31 let's say that even this small things
+13:34 like confidence intervals and our
+13:35 predictions
+13:36 right these things so uh being up front
+13:40 that
+13:40 our model might be wrong and these are
+13:42 potential
+13:43 you know boundaries and all that um so
+13:48 is there something else that we should
+13:49 do
+13:50 to uh because i think for good
+13:52 communication there should be somebody
+13:54 who can speak
+13:55 uh the language so in addition to tools
+13:57 in addition to
+13:58 all this alerting we need to have
+14:01 somebody who
+14:02 who can do this uh you can call it the
+14:04 data strategist or
+14:06 um i think usually it can be like maybe
+14:09 at the
+14:10 product manager who maybe was previously
+14:13 somebody technical or maybe a data
+14:15 scientist who is going
+14:16 more the product side but somebody needs
+14:18 to play this translator all right
+14:20 not necessarily not necessarily
+14:22 necessarily no you can have this
+14:24 translator in the middle
+14:26 but you as a as a somebody who's
+14:29 touching the data
+14:30 and basically most of us
+14:33 or most of the data engineer data
+14:36 scientists looking at themselves as a
+14:38 enabler's functions i'm just enabling
+14:40 somebody to do his job so he can do
+14:42 something better
+14:43 the reality is that without you
+14:45 understanding
+14:46 what the product manager or what the
+14:50 marketing or what the finance team or or
+14:52 any other team out there
+14:54 wants to achieve you won't be able to do
+14:57 your job
+14:58 as good as you want it to be and i think
+15:00 that
+15:02 one of the things that i noticed many
+15:03 times is that the communication
+15:06 is always going either above somebody's
+15:09 head or is going
+15:10 around it and we're trying to avoid
+15:12 because i'm talking tech
+15:13 and i will explain the tech side and
+15:15 he's talking business he's going to
+15:17 explain the business side
+15:18 but this is not true and one of the
+15:20 things that i actually created
+15:22 in many cases when i was working with
+15:25 data people
+15:26 is i put the data people the data
+15:28 engineers the analysts or the
+15:30 even the data scientists to sit with the
+15:33 business for a day or two
+15:34 so they can see what they are doing and
+15:38 if you're looking transparency in in how
+15:41 you're writing the code and how you're
+15:42 creating it
+15:43 notifying people it's a great thing that
+15:46 save a lot of time for everybody and
+15:48 increase the trust qa in the data is a
+15:50 great thing instead
+15:52 also creating an advantage but also
+15:54 sitting with the people that gonna use
+15:56 your data at the end
+15:57 and understand their problems and what
+15:59 they do
+16:00 gonna help you to actually communicate
+16:02 with them better because then you can
+16:03 tell them i listen i was sitting with
+16:04 you
+16:05 i saw that you're doing x y and z and
+16:07 this is why i change actually my process
+16:09 to adapt it better to what you do or
+16:11 maybe this is something wrong let's try
+16:13 to do a different approach
+16:15 and it doesn't always to go through a
+16:18 third party you're gonna we're gonna
+16:19 manage everybody
+16:20 there is a one function as i see it
+16:24 that is a grow function that is built
+16:27 with
+16:27 the tech side and the business side and
+16:29 both of them should enrich each other
+16:31 and give them basically the ability to
+16:34 grow and
+16:35 learn new stuff the business can come
+16:37 with new ideas of automation
+16:39 or how to improve the models the data
+16:41 side
+16:42 should come to the business and tell
+16:43 them listen i see that you're doing this
+16:45 in these
+16:46 operations usually why don't we change
+16:48 it why don't we do it better so for
+16:50 example
+16:51 the most stupid thing that i i i saw was
+16:55 uh somebody was
+16:58 having five to six clicks to to change
+17:00 his bidding
+17:01 on on a certain platform and the data
+17:04 engineer who was sitting with them was
+17:06 like
+17:06 hold on but why do you do this i can i
+17:08 there is an api i can write it for you
+17:10 i can throw you a front end it's going
+17:12 to take me maybe a week to build
+17:13 something for you an mvp
+17:15 and you don't need to do all of these
+17:17 clicks around and you just can
+17:19 optimize it from one place and it came
+17:21 only from the fact that they were
+17:22 sitting one next to each other
+17:24 and communicated on a level that i
+17:27 showed you what i'm doing
+17:29 and i will show you what i can do for
+17:31 you afterwards
+17:33 yeah which which i can totally relate as
+17:36 a data scientist i remember
+17:38 that once i worked in a team that was
+17:41 creating tools for moderators so
+17:43 moderators are people who look at uh
+17:46 in our in my case uh i work at helix so
+17:49 this is a company where you can sell
+17:51 things
+17:52 and there are people who actually look
+17:53 at the content that users produce
+17:56 at the listings that people produce
+17:59 and they see okay this is something that
+18:02 shouldn't go live on the platform
+18:03 and they reject they they remove it from
+18:05 the platform
+18:06 and we were building things for for
+18:09 these moderators and remember for me the
+18:11 most
+18:12 enlightening uh experience was actually
+18:15 talking to the moderators sitting or
+18:18 watching them how they work
+18:19 uh working with them together and
+18:21 actually using the system
+18:22 uh together with them to to moderate
+18:24 content
+18:25 so just sitting with the users with the
+18:28 the with those people who are going to
+18:31 consume the data products consume the
+18:33 machine learning services
+18:34 i think this is uh i can totally agree
+18:37 that it's it brings the understanding on
+18:39 the next level
+18:40 and also this experience that you see
+18:43 the first hand
+18:44 what kind of problems they have uh
+18:47 like it gives you a different
+18:49 perspective right
+18:50 yeah and to remember data
+18:54 is not an enabling function it's a
+18:56 leading function at the end of the day
+18:58 without having the right data having the
+19:01 right
+19:02 outcome of the data nobody will be able
+19:05 to do anything
+19:06 it's not only enabling it's also growing
+19:08 it's also part of the growth
+19:10 of the organization and and making the
+19:12 organization much stronger even if
+19:13 you're working so for example for me
+19:15 i was working as a as a freelancer for a
+19:18 while for cisco
+19:19 in the recruitment team and one of the
+19:22 most
+19:22 important parts for the recruitment team
+19:24 was actually
+19:26 the recruitment process and to analyze
+19:29 it and to understand
+19:30 which positions actually were issues or
+19:32 not or which position can be improved
+19:35 with the candidate so maybe we are
+19:36 missing something that we don't see
+19:37 today
+19:38 and you can only drive this stuff
+19:42 when you're sitting with the recruiter
+19:44 together and you're understanding how
+19:45 he's working
+19:47 and the same thing goes to the marketing
+19:48 and the same thing goes to every place
+19:50 and a lot of these recruiters are also
+19:52 frustrated many times from their job
+19:54 because
+19:55 there is a hiring manager that's stuck
+19:57 in the process
+19:59 and maybe you can actually create some
+20:02 panel of some dashboard for them that
+20:03 they can go and say okay
+20:05 you are stuck in my process let's see
+20:07 how we can move faster
+20:08 how we can improve the process and
+20:10 actually bring better candidates or if
+20:11 candidates feeling that they are
+20:13 suffering
+20:14 how can you actually improve it and i
+20:16 think that this is one of the points
+20:18 that
+20:19 only by sitting together and combining
+20:20 forces you can actually try this
+20:22 this growth and
+20:25 then i was just thinking about the
+20:29 example you gave like when somebody was
+20:31 taking six clicks and the data engineer
+20:33 approached and said
+20:34 hey we can make it easier for you
+20:38 but i imagine then there are some cases
+20:40 when the data engineer would have a
+20:42 pushback
+20:43 like maybe in cases when there is not
+20:45 enough trust between
+20:46 between the technical part and the
+20:48 business part yet
+20:50 uh when they think okay this is some
+20:53 uh i don't know somebody coming from
+20:56 outside
+20:57 who's telling us how to do things
+21:00 uh like no we will keep doing things the
+21:03 old way
+21:04 so how how to deal with these sort of
+21:06 pushbacks like
+21:07 uh when you say hey i want to help you
+21:10 do your job better
+21:11 but yeah so not everyone
+21:16 gets immediately excited about this idea
+21:20 go to the juniors no i'm joking
+21:25 one one of the key things that i i was
+21:28 encouraging people is actually to go
+21:30 into either to do it on the hackathons
+21:32 then
+21:34 and use a hackathon as an opportunity to
+21:35 actually present it to a
+21:37 larger crowd the other part is that if
+21:41 you think that this is something that
+21:42 really not going to take you that
+21:44 long work on it as a side hustle uh
+21:48 when you have some free time and then
+21:50 present it and tell him like
+21:51 you can keep doing your own stuff there
+21:53 but let's try
+21:55 let's let's give this one a try for a
+21:56 week or week and half and see what
+21:58 happens
+21:59 if you trust enough that what you
+22:00 constructed and what you created is
+22:02 actually something that's going to
+22:03 serve them to the better and you're
+22:07 going to give it to them and then i'm
+22:08 like
+22:08 let's try for a week what can go wrong
+22:10 right nothing can go wrong if you're
+22:12 going to try it for a week
+22:13 there is no chance that they're going to
+22:15 push it back
+22:17 and i think yes there is a lot of
+22:19 pushbacks for tech people no don't do
+22:21 that
+22:22 i have a i have a bigger strategy that i
+22:24 need you to to work on
+22:26 but right now i see that there is a
+22:28 problem that i can solve you quite
+22:30 quickly so why
+22:30 don't you let me work on it for a week
+22:33 so we're gonna have a seed back of a
+22:34 week and
+22:35 a lot of companies that working for
+22:36 example with okrs and stuff like this
+22:39 okay so you're going to reach out to 0.5
+22:41 instead of 0.7 because you
+22:43 had an extra week working on something
+22:46 else
+22:47 but it saved you the amount of time that
+22:49 you saved you
+22:50 this is what actually counting at the
+22:52 end of the day if you're thinking about
+22:54 an organization that have 14 people that
+22:57 all their job is just to download
+22:58 reports from different
+23:00 platforms and then do copy paste of them
+23:03 into excel sheet
+23:05 this doesn't make any sense right it's a
+23:07 waste of time it's 14 employees that
+23:09 working an entire month
+23:10 or half of the month just on downloading
+23:12 data no organization gonna come and tell
+23:15 you like you know what
+23:15 no that's a that's a stupid idea to
+23:18 automate it why would we do it
+23:19 on the contrary organization wants to
+23:21 automate this process so these employees
+23:23 can actually do their
+23:24 actual job which is not sitting there
+23:28 and download reporting but actually
+23:29 going over the data make the right
+23:31 decision change the bds
+23:33 change the right the right approach
+23:36 for for the growth so if it's for
+23:38 example removing items or adding items
+23:40 to the shop
+23:41 this is what their job is their job is
+23:43 not to download the data and just
+23:44 copy paste it into excel and this is
+23:47 where we're coming into the picture and
+23:48 we should
+23:49 push quite hard and find our right way
+23:52 to actually
+23:53 present stuff but we also need to think
+23:55 always in a lean way in an mpvp way
+23:58 which this is another point that i will
+24:01 add here
+24:02 don't get complicated with stuff don't
+24:03 go into development now of three months
+24:05 or six months for a product
+24:07 because in the industry that we're
+24:08 working in sometimes
+24:10 three or six months means the end cycle
+24:13 of of feature of a product maybe by the
+24:15 time you're going to finish it it's not
+24:16 going to be relevant so you need to
+24:17 think about
+24:18 what can i achieve in a week or week and
+24:20 a half or maximum two weeks
+24:23 and i can release it outside and
+24:26 showcase
+24:26 what it's used to and then on top of it
+24:29 start building it so start with a lean
+24:31 approach
+24:32 and then if it's catching move into an
+24:34 agile approach
+24:35 and again this is this is what i i
+24:37 always hate like using these
+24:39 okrs or lean or agile because there is
+24:42 no one
+24:43 one system that fits everybody but we
+24:46 need to think about it
+24:47 as a cycle you're starting with a lean
+24:49 you move into an agile
+24:50 after you have agile for a while you can
+24:52 move into okay hours because it's
+24:53 already more stable and it's more
+24:54 morbid and i look at it like a plant
+24:57 when i'm starting sitting for example my
+24:59 tomatoes to put in the garden
+25:01 i'm starting it from the seed and it's
+25:02 slowly growing and i need to move it
+25:04 into a new pot
+25:05 and then when it's in this pot i need to
+25:07 let it grow there and i need to move it
+25:09 to another pot
+25:10 and only in i'm starting it in february
+25:13 and only
+25:13 may june i'm going to put it into the
+25:15 ground and it's going to
+25:17 catch with the roots into the soil
+25:19 itself
+25:20 but until i'm arriving to this point i
+25:22 need to have different approaches to the
+25:24 plant right when i'm
+25:25 seating it i need to make sure it's dark
+25:27 and moist for him
+25:28 when it's opening up and the leaves are
+25:30 coming out i already need to change my
+25:32 approach and start
+25:33 growing it in a different way and and
+25:36 this is also when i'm talking about
+25:38 hummus in my book i'm talking exactly
+25:40 about that hummus is so simple it's just
+25:43 chickpeas tahina lemon a little bit of
+25:46 salt
+25:47 and garlic and that's it there is no
+25:50 magic behind it
+25:51 it's so simple and so fast and this is
+25:53 how data should be this is how
+25:55 people should actually think about their
+25:57 their approach to that it should be
+25:59 simple but it's filling you up so much
+26:01 that you don't want to eat anything else
+26:03 afterwards
+26:04 it's that simple yeah i'm not sure if it
+26:07 makes any sense for me to ask what's
+26:09 your favorite food because i think it's
+26:11 clear
+26:12 [Laughter]
+26:14 i will go with hummus most likely yeah
+26:18 yeah i thought so yes we will talk a bit
+26:21 about who will send your book later but
+26:25 i like the metaphor you had like about
+26:28 the
+26:29 gardening plant but i'm wondering what
+26:33 could be the right how can we
+26:36 find the right balance between
+26:39 complexity and simplicity like
+26:41 because i understand that this
+26:43 development mvp
+26:44 have this hackathon create something
+26:47 quick and dirty that just
+26:48 to prove value but then at some point it
+26:50 becomes a project that
+26:52 needs to be maintained and if i as a
+26:55 data scientist hack something together
+26:57 then any sane engineer would look at
+26:59 this and say uh
+27:00 i don't want to touch this code right
+27:02 but on the other hand
+27:04 maybe this is something that i hacked in
+27:06 a week
+27:07 that works it's far from ideal
+27:10 but it doesn't fail all the time uh
+27:13 so how do we find the the balance
+27:15 between you know this moving fast
+27:17 um and doing things may be simple
+27:22 versus something complex like how do we
+27:25 make sure that we're
+27:26 uh you know not doing too much but doing
+27:29 right now
+27:30 just enough so if if we're looking at it
+27:34 it's really it's it should be very very
+27:36 simple at the beginning and yes it's
+27:37 going to be
+27:38 bad it's not going to be beautiful code
+27:40 will never be beautiful
+27:42 and this is why i stopped coding as well
+27:44 because at some point i realized that my
+27:46 code is horrible people didn't want to
+27:47 deal with it
+27:48 and i don't want i didn't want to have
+27:50 this feeling of oh i did a really
+27:51 really bad job
+27:53 i wanted max i want to make it much
+27:55 nicer and
+27:57 you start with something ugly you see
+27:59 that it works if it works
+28:01 then you're creating this approach of
+28:03 somebody taking over
+28:04 fixing the code building it up creating
+28:06 the system of how we're going to grow it
+28:08 so what is the end goal of it
+28:10 and and how it's going to become a
+28:12 better process for us in the future
+28:14 and i think that this is basically the
+28:16 points that are most relevant for us
+28:19 take it the ugly as much as it is check
+28:22 that it's
+28:22 actually working and you know you know
+28:24 what and and i know that a lot of people
+28:26 say
+28:26 yeah you're talking about about tech and
+28:28 needs to work it's going the same thing
+28:30 for the business if business wants to
+28:31 have a dashboard or they want to have
+28:33 some calculation being done
+28:34 they need to do it on an excel sheet and
+28:36 run with it for several times
+28:38 and i am i am my my philosophy is kill
+28:41 excel
+28:42 there is no use of excel but there are
+28:44 certain cases when you want to
+28:45 start something and even if the tech
+28:48 don't trust it
+28:49 you need to start it on an excel sheet
+28:51 show that it's actually working you're
+28:52 actually using it
+28:53 and only then send it up for development
+28:56 and it goes
+28:57 both sides on the code back disgusting
+29:00 code at the beginning
+29:01 you're making better or you're starting
+29:02 with an excel sheet horrible
+29:04 i will kill somebody if i'm gonna see
+29:06 him using excel but i have to accept it
+29:08 and then it's gonna move into automation
+29:10 we need to convince each other and show
+29:12 them that actually there is a purpose
+29:14 and there is a use for what we do
+29:15 and this is the only approach for us
+29:18 yeah so as i understood
+29:20 having ugly code is fine if we know that
+29:23 it's going to be rewritten
+29:24 and then even before that even before
+29:26 having any code
+29:28 try simpler things try excel
+29:32 try to see that the idea you have like
+29:34 maybe try to solve the problem
+29:36 without any code at all at first and see
+29:38 if it's valuable
+29:40 if it's valid uh i think i heard this
+29:42 expression
+29:43 uh do things that don't scale first and
+29:46 then
+29:46 try to automate them right so maybe this
+29:49 is uh
+29:50 yeah but other thing i am also i'm also
+29:53 wondering and this is also it's
+29:56 something i experienced in the past
+29:59 so you said okay there is some ugly code
+30:02 yes
+30:03 and then somebody will take this over
+30:06 and make it better but how do can we to
+30:08 convince somebody to take this over
+30:11 uh because i usually have problems with
+30:14 uh with that like how do i convince that
+30:17 uh
+30:18 okay this is my quote i know it's ugly i
+30:20 know it's bad
+30:21 but it's also a problem how do we
+30:24 convince people to actually take this
+30:26 over
+30:26 and you know make it better
+30:30 look at your code and look at it as an
+30:33 excel sheet at the end of the day
+30:34 it will go to the garbage because we're
+30:36 going to automate it you wrote the code
+30:38 just to prove a point the pro the point
+30:40 was proven
+30:41 there is now a use case for it there is
+30:43 a business
+30:44 uh that's standing behind it that can
+30:46 actually push for it
+30:48 then start rebuilding it from scratch or
+30:50 take the old code and try to improve it
+30:52 but
+30:53 don't also don't get insulted if
+30:55 somebody tells you okay listen i don't
+30:56 like your code i want to rebuild it
+30:58 it's completely fine he's taking
+30:59 ownership and at the end of the day when
+31:01 he own it
+31:02 it's his responsibility to make sure
+31:03 that the court is looking better
+31:05 and it's his responsibility to also
+31:06 understand and being able to explain to
+31:08 others
+31:09 what is he doing uh and and this is
+31:12 again something that
+31:13 i learned quite heavily when i'm running
+31:16 now my company so we're using a lot of
+31:18 external resources for different parts
+31:21 of our code
+31:22 we cannot always run all over it and
+31:24 ensure that
+31:25 we can cover everything and sometimes
+31:27 this code is not
+31:29 the best but at least he's doing the
+31:31 function
+31:32 is is creating the id it's creating the
+31:34 concept and the demand
+31:36 and then from there we're gonna take it
+31:37 and we're gonna streamline it we're
+31:39 gonna fix it we're gonna
+31:40 we're gonna create something that can be
+31:42 used in the future
+31:44 but we need to start somewhere and then
+31:46 from the moment that there is enough
+31:47 clear
+31:48 use case and an ownership everything can
+31:51 run smoothly and i think
+31:52 nobody going to come and tell you like
+31:54 nah i don't think that
+31:56 there is i want to use this tool if
+31:58 there is a used case
+32:00 this is the reason why you're developing
+32:02 code you're not developing code just to
+32:03 to say
+32:04 yeah i'm sitting here and i'm writing
+32:06 python no
+32:08 you're sitting here because you want to
+32:10 solve a problem that's going to help
+32:11 your company to grow
+32:13 and this is exactly the reason why
+32:14 you're there this exactly the reason why
+32:16 you should take this now
+32:18 and start working on it and fix it yes
+32:20 and
+32:21 basically don't get attached to the to
+32:23 the code so if i
+32:24 wrote my code and somebody says um
+32:27 yeah just don't get attached to this
+32:29 right so
+32:32 if somebody wants to rewrite and it's a
+32:34 reasonable
+32:35 time frame right so it doesn't take it
+32:38 doesn't it's not going to take six
+32:39 months
+32:40 then it's fine right you know how many
+32:43 times people were telling me that
+32:45 something i was
+32:46 doing looked disgusting so i was for
+32:48 example
+32:49 in in many many times i used to be the
+32:51 first one to build dashboards
+32:53 my color picking is horrible okay
+32:56 let's let's put it this way uh when i
+32:59 was 18 years old i was requested to do
+33:01 some presentation for somebody
+33:03 and the only reaction that i received
+33:05 was the colors you picked
+33:07 were the most horrible colors i've ever
+33:09 seen in my life and i don't know how
+33:11 somebody can survive with such a call or
+33:13 a call or pet
+33:14 and i didn't care and i told him like it
+33:17 doesn't matter did you understand
+33:18 the message i tried to transfer to you
+33:20 through the presentation
+33:21 and he was like yes and i was like great
+33:23 so now you can take it you can
+33:25 create the right color schema for that
+33:27 you can add whatever images you want and
+33:30 cut them whatever way you want
+33:32 the the most important part is that the
+33:34 message and the use case here are
+33:36 transferred
+33:37 and i think that this this is life this
+33:40 is life at the end of the day and
+33:42 since then every time i'm building a
+33:43 dashboard i know already it's not going
+33:45 to be beautiful somebody's going to come
+33:46 and make it much more beautiful than
+33:47 what i do
+33:48 and i accept it i accept it i don't i
+33:51 don't fight against it
+33:54 yeah that's uh
+33:59 i i was again going back to this ugly
+34:01 code and when we
+34:02 moving fast so it creates uh
+34:06 a reaction from engineers okay this is
+34:08 called this
+34:09 is a bad code we want to rewrite but
+34:12 the other thing it might create it might
+34:14 cause business to think
+34:17 that this speed is the usual speed so
+34:19 this is the speed you can
+34:21 expect things to happen in the future
+34:23 right so
+34:24 next time the new thing the new feature
+34:27 added to this
+34:28 uh raw prototype it will also be added
+34:31 in a week it will also be added
+34:33 i don't know after a couple of days and
+34:36 so i think it creates this
+34:37 false sense of you know moving very fast
+34:41 so do you have some tips how to handle
+34:45 expectations from from business when it
+34:47 comes to
+34:48 you know mvp versus development
+34:52 so one of the one of the things that
+34:55 i'm talking about a lot is is
+34:58 and almost
+35:03 you can do it in the slow way the quick
+35:05 way you're just going to go and buy
+35:07 chickpeas in a can you're going to wash
+35:09 them a little bit ground them at some
+35:10 tahina and here you go you have humus
+35:12 and it's hummus i'm not gonna fight with
+35:16 you it's hummus at the end of the day
+35:17 you have chickpeas you have the hina you
+35:18 have the mess the basic ingredients
+35:20 and it's great but is it actually
+35:24 the taste you were after no if you
+35:27 really want to get this taste you will
+35:29 need to
+35:30 soak the chickpeas for 24 hours you will
+35:32 need to cook them for
+35:33 two to three hours until they're getting
+35:35 soft you need to grind them you need to
+35:37 cool them down
+35:38 you need to mix them with tahini there
+35:40 is a large large large process and what
+35:42 i'm always explaining is that
+35:43 yes this one is my who moves from from
+35:46 from a can
+35:47 this is just to give you a taste of what
+35:50 hummus can be
+35:52 now let's move and work on the hummus
+35:54 itself
+35:55 and if i'm going outside of this
+35:56 metaphor of almost the reality is that
+35:58 yes
+35:59 the beginning is always fast because
+36:00 you're doing the minimal things that you
+36:02 need to do
+36:03 but now every feature that you need to
+36:05 develop on top of it
+36:06 going to take time it's going to take
+36:07 much more thinking because hold on
+36:09 now we made sure that it's relevant and
+36:11 it's needed and required
+36:13 now let's figure out actually how we're
+36:15 making it not only
+36:16 needed and required but also used and
+36:18 loved and this is
+36:20 two different stories it's a
+36:23 chickpeas from a can a chickpeas you
+36:25 cook yourself they will have two
+36:27 different tastes it's gonna be this
+36:29 completely different and this is exactly
+36:30 how i'm looking at development of code
+36:33 i know what i will use next time when i
+36:35 explain why it's
+36:36 taken so long
+36:42 yeah great i was also i wanted to ask
+36:46 you a bit
+36:47 i i really loved the metaphor i even
+36:49 forgot what i wanted to talk about
+36:51 so i think i wanted to also cover
+36:54 talking to people who do not know how to
+36:57 code
+36:58 right so let's say again
+37:01 we're talking to business but they don't
+37:03 always
+37:04 understand the effort you put so maybe
+37:07 they don't care that
+37:08 between the difference between you know
+37:10 this fast hummus and
+37:11 uh uh proper hummus right
+37:14 so because they don't see all these
+37:17 intricacies they are not into hummus
+37:18 they
+37:19 they are not into coding so how do you
+37:22 talk to people
+37:24 uh who don't understand all these
+37:27 complexities about
+37:28 coding um how
+37:31 how to structure the conversation uh
+37:35 with them so so if they don't understand
+37:38 coding and this is
+37:39 a lot of people don't understand coding
+37:40 and to be honest i i think i'm very
+37:43 lucky that i had a chance to actually
+37:45 sit down and understand how to write
+37:46 code and how to work with it
+37:48 but uh if we're looking at how we're
+37:51 creating basically a process
+37:54 that is meaningful it's to go and sit
+37:57 down
+37:58 with the people who don't understand
+38:00 code and explain to them
+38:01 why you're doing what you do and why is
+38:03 it taking time
+38:04 and speak to them in their language that
+38:06 they're going to understand but on the
+38:07 other side also
+38:08 show them your code explain to them bro
+38:11 bring them into your process
+38:12 explain to them there is a certain way
+38:15 of how i'm working so there is the
+38:16 definition of done
+38:18 but this is how my code look like and
+38:21 when you sing for example that you
+38:22 committed for something that gonna take
+38:24 you two weeks
+38:25 and you don't think you can make it in
+38:27 two weeks come
+38:28 early enough to them and tell them like
+38:30 listen guys i have this this and this
+38:32 right now that disturbing me
+38:33 i have this issue that don't allow me to
+38:35 keep developing
+38:37 and i won't be able to i won't be able
+38:39 to deliver it on time
+38:40 they gonna understand it and not only
+38:42 that you know what i had a
+38:44 very very uh non-technical director i
+38:47 was working with
+38:48 uh and every time he got he saw a code
+38:52 he started to have a rush he couldn't
+38:53 sit in the room anymore once he saw the
+38:55 code
+38:55 but when a developer came to a material
+38:57 like listen i'm blocked because x and y
+39:01 you could have seen him sitting there
+39:02 not have not understanding
+39:04 one line of code and asking questions in
+39:06 a very structured way of okay why
+39:08 doesn't it work
+39:09 what are the issues where is it blocked
+39:11 what can i do to actually help you
+39:13 and then go and back then it was it was
+39:16 calling to facebook
+39:18 to talk to them about an issue that the
+39:19 developer had with an api
+39:21 and it's just because he had the right
+39:23 connection and he knew exactly the right
+39:24 people to reach out to
+39:25 and and sometimes this can
+39:29 create this good communication also
+39:31 between the business and the tech
+39:33 even if it doesn't understand code
+39:35 you're going to understand problems
+39:36 you're going to understand brokers you
+39:37 understand why
+39:38 this is not going to be ready right time
+39:40 and this i think what is important to
+39:41 actually make sure that we're doing
+39:44 yes again uh back to the point we
+39:46 discussed at the beginning is
+39:48 just sitting together uh trying to build
+39:51 trust
+39:52 trying to show uh trying to learn from
+39:55 each other
+39:55 like i as a data scientist and willing
+39:57 to learn from
+39:59 uh from you i want to see what kind of
+40:02 problems you have
+40:03 and then if i am a business person
+40:06 i am willing to learn what kind of
+40:09 problems the data scientist
+40:10 has right or data engineer and then if
+40:13 we do that
+40:14 if we sit together and try to understand
+40:17 what's on our mind what's on the mind of
+40:20 uh
+40:21 you know the opposite sort of not
+40:23 opposite but uh
+40:24 like for business to understand tech
+40:26 protect to understand business
+40:28 uh what kind of problems we have then it
+40:31 will develop this sort of trust it will
+40:32 develop this sort of connection
+40:34 it will develop deeper understanding of
+40:37 uh problems
+40:38 we have right and then
+40:42 then we will not need to explain why
+40:44 last time it took one hour to prepare
+40:46 something but now it takes one
+40:47 one month right because we can show them
+40:50 these are the processes this is what we
+40:52 need to do this is the the kind of code
+40:54 we need to write
+40:55 and they will believe us because there
+40:56 is trust between us right
+40:59 break down the silos so for example one
+41:01 of the things that i really loved when i
+41:03 worked at
+41:04 la vu and also when i worked for the
+41:06 lando and also when i worked at cisco
+41:08 if there were no stylos between the
+41:10 different functions so if i'm
+41:12 developing something in code or when i
+41:15 am need to deliver some dashboard
+41:18 i gonna sit down with my consumers
+41:20 together
+41:21 and we're gonna have conversations
+41:23 together we're gonna go for lunch
+41:24 together
+41:25 and it sounds a little bit stupid but
+41:27 it's working
+41:28 because suddenly you have a common
+41:30 language because you have a common goal
+41:32 together to do
+41:33 and and when you don't have these silos
+41:36 of okay i'm sitting there i'm in the bi
+41:38 team and i'm sitting in my corner
+41:41 it's you all the time it's happening
+41:43 that will never you will never have a
+41:44 good communication once you're gonna go
+41:46 down from your i'm sitting in my corner
+41:50 and i'm going now sitting with the
+41:51 marketing for one day
+41:53 and i'm joining their chats and i'm
+41:55 listening to what they're talking about
+41:57 now when we're working from home for
+41:58 example
+41:59 one of the key components is actually to
+42:01 join or ask to join to their chat so you
+42:03 can see what they're talking about what
+42:04 is concerning them
+42:06 and find your connection points to them
+42:08 through that
+42:10 and when you are working on something
+42:12 that is
+42:13 managed by them or needs to be delivered
+42:15 to them
+42:16 try to also share it on their channels
+42:20 not only in the bi channels great we
+42:22 finish the sprint will release it no
+42:23 go to the marketing or go to the finance
+42:26 and tell them hey guys i finished it
+42:28 i would love to get the feedback before
+42:29 i'm announcing it to my team
+42:32 think how it's changing suddenly the way
+42:33 that they're looking at you because
+42:35 you came to them before you even went to
+42:37 your team because you want to get their
+42:38 feedback
+42:39 so you can actually release something
+42:42 you develop for them it's showing them
+42:44 also that
+42:45 you value their feedback and you value
+42:47 their communication
+42:50 and it's changing the game completely in
+42:52 many cases
+42:55 yeah yeah yeah now it's a bit more
+42:58 difficult to
+42:59 to have these lunches uh together like
+43:02 uh
+43:03 yeah i remember at some point we had
+43:04 this uh uh
+43:08 donut in slack this is something like an
+43:10 app that randomly connects people
+43:12 uh and oftentimes what happened was that
+43:16 i am connected with somebody from
+43:19 marketing
+43:20 or advertisement or some other
+43:21 department that i usually
+43:24 don't interact with right but they still
+43:27 they use data science uh
+43:29 products in their work and then having
+43:31 this conversation with them
+43:33 understanding what kind of things they
+43:35 worry about
+43:37 even if it's remotely connected to my
+43:39 work develops this
+43:40 i don't know what's the right word
+43:42 empathy understanding what they do
+43:45 and deep thinking as well right because
+43:48 it's sitting somewhere here in your
+43:49 brain
+43:50 thinking about it and now since
+43:53 everything is remote so one thing
+43:55 you suggested to do is uh asking to
+43:58 take part in their meetings or maybe
+44:00 just uh
+44:01 i know maybe having uh random zoom calls
+44:04 at some point or whatever to
+44:06 we use for for meetings just
+44:09 have a conversation maybe a coffee chat
+44:11 or something
+44:12 don't waste too much of your time
+44:14 because your time is is important
+44:16 and you still need to to work on other
+44:18 stuff but yes at least
+44:20 sit in their chat room and see and then
+44:22 if you see some something that is
+44:23 relevant
+44:24 you can always ask them to jump on a
+44:25 call or jump on a conversation and then
+44:28 you have a trigger and you have a
+44:29 connection
+44:31 so it's not that joining the meetings
+44:33 because i don't believe that
+44:35 joining for every week or every second
+44:37 week meeting
+44:38 going to give you an advantage because
+44:40 most of the communication runs through
+44:42 today through the chat rooms and then
+44:44 when you arrive into the meeting it's
+44:46 either already solved or it's already in
+44:47 the process to get solved
+44:49 it's already too late or it's not
+44:50 relevant you're just going to sit there
+44:52 and you're going to be bored and you're
+44:52 going to start
+44:53 coding or you're going to do other stuff
+44:55 and you're not going to be focused and
+44:56 this is not what we want to
+44:58 create we want to create a communication
+45:00 that is triggered based on
+45:03 important parts so something that
+45:04 happened is relevant right now
+45:06 yeah clear more clear now so basically
+45:09 it could be
+45:10 if we use like it could be a slack
+45:11 channel right that
+45:13 yeah and then just looking what kind of
+45:15 problems they talk about
+45:16 if something is broken then just pay
+45:18 attention to these kind of things
+45:20 exactly clear then
+45:23 moving on to your favorite topic which
+45:26 is uh
+45:27 you know what almost
+45:30 yes so one of the questions
+45:35 uh we have is why data specialists
+45:39 don't like hummus but business people do
+45:41 and i think you asked me to ask
+45:44 you this question because i don't know
+45:47 but i'm really curious too a little
+45:50 curious to know
+45:51 what you what do you have in mind so
+45:54 yeah why data specialists don't like
+45:55 hummus but business people do
+45:58 can you guess
+46:00 [Music]
+46:03 no because i i am as a data specialist i
+46:06 do like hummus do you so
+46:10 my my the reason for the expression is
+46:13 that business people most of the time
+46:15 looking at the very
+46:16 end product and the very simple one
+46:20 and they don't care about all the nodes
+46:23 that goes around
+46:24 it and this is why they like hummus and
+46:26 data engineers don't like humans because
+46:28 they want to see all the details around
+46:29 it and they want to
+46:30 to understand how the rooms was created
+46:32 as well otherwise they're not going to
+46:34 trust it
+46:35 and this is where we're going on the
+46:36 code right you want to know how your
+46:38 hummus was created you need to see the
+46:39 code that's happening behind me and
+46:42 this is why i said it but the reality is
+46:44 that
+46:45 we need to create this there is love for
+46:47 humans for both sides
+46:49 just that each of us looking at it in a
+46:50 different way me as a business person
+46:53 going to look at it only on the top of
+46:54 like okay the rooms looks really good
+46:56 there is chickpeas there there is a lot
+46:58 of olive oil like i like
+47:00 and there is some sumac that i really
+47:01 enjoying
+47:03 and the engineer will look at it in a
+47:05 different way is going to start okay so
+47:06 what is the hummus made of
+47:08 and how can i make it better and this is
+47:10 the biggest difference
+47:12 when we're talking to each other as well
+47:14 when we're communicating
+47:15 the view of the of the data engineer or
+47:19 the data scientist
+47:20 is very deep into the understanding of
+47:23 what
+47:24 stands behind it the businessman at the
+47:26 end of the day his goal is to understand
+47:27 that
+47:28 what he sees in front of him fitting to
+47:30 what he needs
+47:31 and he can start using it he can eat it
+47:33 he can start consuming it
+47:34 and we need to it's really important for
+47:36 all of us to actually remember this
+47:38 in every process that we're doing that
+47:41 yes there is
+47:42 looking backwards on the code and
+47:44 understand how it works
+47:45 but there is also people that looking at
+47:47 the end only
+47:49 on your end product they don't see what
+47:50 happened behind it and they will never
+47:52 maybe even understand the process
+47:54 why do you suck it for 24 hours or not
+47:57 for 12. but they don't have also the
+48:00 experience and this is what we need to
+48:01 explain to them i did it for 24 hours
+48:03 because
+48:04 i was switching water in between them so
+48:06 i had 12 hours in
+48:07 with water that had baking powder inside
+48:10 it
+48:10 and then i washed it and i put it for
+48:12 another 12 hours with the baking
+48:14 without the baking powder and this is
+48:17 what causing actually the chickpeas to
+48:19 be
+48:19 software when i'm cooking them and
+48:22 we need to really really focus on
+48:26 both views and use
+48:29 hummus as the main
+48:32 way that we're looking at stuff think
+48:34 always about the hummus when you're
+48:35 dealing with data
+48:36 simple as that okay yeah so let's say if
+48:40 our company is a kitchen
+48:42 then the data engineer is the chief
+48:44 right this is the person who prepares
+48:46 who cooks the comments right exactly
+48:49 then who are the business people are
+48:51 they the the visitors right so they
+48:54 are the consumers consumed yes so the
+48:57 data engineer produces
+48:58 a product almost and then the business
+49:01 people
+49:02 they are actually visitors they go and
+49:05 eat hummus and they say oh this is uh
+49:08 delicious
+49:08 humorous right oh it's a shitty one and
+49:11 then you should be ready for that you
+49:13 know reviews on google don't lie
+49:16 and i always say that in israel in many
+49:19 many places where you go to eat homes
+49:21 you're gonna go into a place that looks
+49:24 really really shitty you're gonna see
+49:27 dog peas
+49:28 on the floor around the place it's not
+49:30 going to look the most attractive one
+49:32 but when you're going to go inside
+49:33 you're going to eat the best foods for
+49:35 your life
+49:35 and it's because they have the same
+49:37 recipe for the last 50 or 60 years that
+49:39 they were working on and they created an
+49:41 experience they understood
+49:43 how each ingredient that they included
+49:46 is
+49:46 changing their end issue and me as a
+49:49 consumer what i'm after
+49:50 is an experience that i'm going to
+49:51 remember and when i'm using data
+49:54 i need to remember this experience it's
+49:56 not just that i'm using data
+49:57 don't just create dashboards don't just
+49:59 create more kpis don't just create
+50:01 another
+50:01 forecasting think about what
+50:05 you the client will want to eat and be
+50:08 very very precise in the way working for
+50:10 you
+50:12 yes which reminds me of my future of
+50:14 sorry
+50:15 x manager from former manager from my
+50:18 previous company
+50:19 he's in israeli and he suggested me
+50:22 uh the best place to try hummus in
+50:24 berlin so i went to that place
+50:27 and it looked super shady like i wasn't
+50:29 sure i want to be there in that place
+50:33 let me guess azam
+50:36 yeah i don't remember it's somewhere in
+50:38 um
+50:40 in british slaughter burke so near
+50:41 chicago
+50:43 yeah okay but that was a strange place
+50:47 so but hummus was delicious
+50:50 so if there are people in berlin that
+50:52 wants to go to really really good place
+50:53 they should try either
+50:55 ako if they want to have like a good
+50:59 experience
+51:00 or azam which for me is like the top of
+51:02 the woman's
+51:03 and there is another nice place in the
+51:06 middle which is called the eatery
+51:09 it's iranian guy strangely enough is
+51:12 making really really good hummus
+51:14 and he he created the right experience
+51:17 for people
+51:18 we should add this to the show notes i
+51:20 don't know how many people listen
+51:22 uh for it from berlin i see one
+51:25 uh ankush uh so he commented in uh chat
+51:29 i know that he's from berlin
+51:31 so yeah if you're into humus ankush you
+51:33 know now where to go and
+51:36 yeah so why did you call your book uh
+51:40 data is like a plate of hummus i think
+51:42 i'm getting some ideas from our
+51:44 conversation
+51:45 uh so this is a great metaphor but maybe
+51:48 there's uh
+51:49 maybe you have like a short answer to
+51:51 that question like why did you call it
+51:52 this way
+51:53 the the idea behind the book was that i
+51:56 wanted to have a book that combining my
+51:58 passion to cooking and my passion for
+52:01 data
+52:02 and i i think that data is like cooking
+52:04 at the end of the day you need to cook
+52:06 it
+52:06 the right way and you need to serve the
+52:08 right dish
+52:09 one day in the future maybe i will be
+52:11 able to actually create some
+52:12 a very nice restaurant instead of
+52:14 working in the startup world
+52:16 if anybody wants to patron me i'm open
+52:19 we can talk about that
+52:21 but the idea of the book was actually
+52:23 that let's try to
+52:25 simplify it for people that do not deal
+52:28 with data
+52:28 so business people they don't understand
+52:30 sql they don't
+52:32 understand data warehousing they don't
+52:35 understand
+52:35 aws versus google these views for them
+52:39 are very
+52:40 banalic of like okay this either these
+52:41 two or these two tell me how much it
+52:43 cost and we're going to make a decision
+52:44 what is the difference between tableau
+52:46 and
+52:48 aws quick side they they don't have this
+52:51 feeling and i
+52:52 in my book what i want to say is like
+52:54 guys it's really simple
+52:56 if you're going to cook it correctly and
+52:57 you're going to follow the orders you
+52:59 can create create
+53:00 great experience and this where i'm
+53:01 coming from actually trying to bridge
+53:03 these two different worlds into
+53:05 a very easy to process
+53:09 i would say yes so your main
+53:12 the main target audience for the book
+53:14 are the business people or
+53:17 the tech people or both it's it's mostly
+53:20 for the business people but it's also
+53:22 for tech people who actually wants to
+53:23 understand a little bit better about
+53:25 how they should direct the business
+53:27 people to work
+53:28 so if you think about it there is a
+53:30 business strategy
+53:32 that goes somewhere there and the tech
+53:35 is somehow involved
+53:36 but the problem is that the business is
+53:39 creating a lot of pressure
+53:41 on the tech side and what i'm trying to
+53:43 do in my book i'm talking about creating
+53:45 the
+53:46 or forming the data strategy so how do
+53:48 you actually understanding what is
+53:49 important and what not
+53:51 and where you should put your emphasis
+53:53 on as
+53:54 a data engineer at the end of the day as
+53:57 a data scientist
+53:58 is it on the models or is it on on apis
+54:01 and
+54:01 cleaning the data and sorting it and the
+54:04 only way to achieve it
+54:05 is by getting the people into
+54:08 the understanding of there is a process
+54:10 let's let's try to create a
+54:12 some flow where we all agree on what we
+54:15 are doing and what is important and what
+54:16 not
+54:17 and then slowly we're gonna we're gonna
+54:19 increase it but first let's
+54:21 let's feel comfortable with what we do
+54:22 let's create the base and then on top of
+54:24 it we can beat whatever we want and this
+54:26 is i think my my main philosophy in life
+54:28 start with something that is very simple
+54:30 and stable
+54:32 and then build on top of it whatever
+54:35 models
+54:37 breakouts call it whatever you want
+54:39 buildings
+54:40 you won't be able to build a building in
+54:42 the middle of the river right
+54:45 you need to have a ground that you can
+54:47 build it on so
+54:48 let's start with creating this ground
+54:50 cleaning the river from the water
+54:52 drying him out and then creating the
+54:53 space for the building
+54:55 before you starting building it and i
+54:56 think that is one of the most important
+54:58 parts
+54:58 where i'm trying to talk about in my
+54:59 book will i also learn how to cook
+55:02 hummus from the book there is a recipe
+55:05 uh
+55:06 my recipe there you are more than
+55:08 welcome to try and let me know how it
+55:10 came out
+55:12 some people were complaining that it was
+55:16 good but not as good as they expected
+55:21 but but as i mentioned it's really i
+55:23 think it's really about
+55:24 the taste of people so for example for
+55:26 me as i said azam is the top of the
+55:29 of the hummus place in berlin
+55:33 for others they're going to say it's
+55:34 really bad homes they don't like it they
+55:35 prefer to go someplace else and
+55:37 it's completely fine it's our taste buds
+55:40 that at the end of the day controlling
+55:41 what we like and what not
+55:43 and it's completely fine if we will
+55:46 decide to go in a different direction
+55:49 okay thanks that was great um do you
+55:52 have any
+55:53 last words any tips and tricks maybe you
+55:55 want to share
+55:56 more i i just want to say one thing that
+56:00 i think is really really important to
+56:01 know
+56:02 or to send it out there we are
+56:06 living in a world that is controlled by
+56:09 data chaos
+56:11 and we all getting underwater with the
+56:14 amount of requests for data that we have
+56:17 and i think that we
+56:20 as data people our job
+56:24 is actually to clear this mess for
+56:26 people
+56:27 it's to educate them on the one side and
+56:29 on the other side is also to
+56:31 make them feel comfortable with data
+56:34 a lot of people don't use data or don't
+56:36 trust data and go by their
+56:38 guts feeling just because of simple
+56:41 stuff that happened in the past and they
+56:44 don't trust it
+56:45 or they now on everything that they see
+56:47 they're asking for 500
+56:49 other requirements just to trust the
+56:51 number
+56:52 and our job at the end of the day is not
+56:55 to be the the
+56:58 sec that getting beaten every day it's
+57:00 actually
+57:01 to be the ones who's going there and
+57:02 showing people how it should be done
+57:05 and we should be the leaders of the
+57:06 company when it's coming to growth
+57:07 because we are the only one we actually
+57:09 can find
+57:10 the gyms inside this entire surrounding
+57:13 of
+57:14 mud and and find it out for them and let
+57:16 them grow
+57:17 without us nothing gonna happen and this
+57:19 is something we all need to remember
+57:21 we're working in a world of chaos and
+57:25 our job is to bring the light for the
+57:26 people and actually make sure that they
+57:27 were going the right direction
+57:30 okay yeah thanks a lot
+57:33 uh one last thing i want to ask you
+57:36 how can people find you on social media
+57:40 you can reach out on linkedin it's leo
+57:43 barack
+57:44 you can find me on twitter leor b
+57:48 this is the most active places i am in
+57:52 they can also check out the podcast
+57:54 we're always happy to
+57:56 have people on there if anybody
+57:58 interested to come and talk about it
+58:01 okay yeah please send me the links i'll
+58:03 put them in the description
+58:05 and thanks again for joining us today
+58:09 for
+58:09 to share your experience and to share
+58:11 your passion for cooking and
+58:13 hummus and sharing this wonderful
+58:15 metaphors that
+58:16 i am sure i am going to use next time
+58:18 somebody is asking why it takes so long
+58:20 i that was my takeaway from this
+58:23 conversation so i
+58:24 i really took a note and i will use that
+58:26 so thanks a lot for
+58:28 uh for sharing all this with us and uh
+58:31 i think that's all for today so thanks
+58:34 everyone for joining us and
+58:37 watching this team today and i wish
+58:40 everyone
+58:40 great friday great rest of the day and a
+58:43 great
+58:44 weekend and we'll see each other next
+58:47 week
+58:47 on tuesday thank you for having me it's
+58:50 been a pleasure
+58:51 happy friday bye

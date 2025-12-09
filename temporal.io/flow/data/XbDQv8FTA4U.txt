@@ -1,0 +1,1497 @@
+Building Data Science Practice
+
+0:00 hi everyone Welcome to our event this
+0:02 event is brought to you by data talks
+0:04 club which is a community of people who
+0:06 love data we have weekly events and this
+0:08 is one of such events if you want to
+0:10 find out more about the events we have
+0:12 there is a link in the description go
+0:14 there click on this link and you'll see
+0:16 all the events we have on our schedule
+0:19 then if you haven't subscribed to our
+0:21 YouTube channel do it now you will not
+0:23 regret we have a lot of amazing videos
+0:25 and you will not miss any of them if you
+0:27 subscribe
+0:28 and finally last but not least don't
+0:31 forget that we have an amazing slack
+0:33 Community if for some reasons you're not
+0:35 there yet you're missing out
+0:37 joined to hang out with other data
+0:39 enthusias the link is also in the
+0:41 description during today's interview you
+0:43 can ask any question you want there is a
+0:45 pinned Link in the live chat please ask
+0:48 please use this link and I'll be
+0:50 covering these questions during
+0:51 interview also you might notice that
+0:54 there is a poll right now in in the live
+0:57 chat which asks what's your role so
+1:00 please take a moment to answer this
+1:02 question because now I will stop sharing
+1:06 my screen
+1:07 and what I will do is I will stop the
+1:11 pole
+1:12 because I actually do this
+1:16 okay I'm trying to figure out the
+1:18 interface and Paul we broke we broke
+1:21 your workflow
+1:23 yeah don't do this often
+1:26 so we have 21 vote so engineer
+1:29 scientists the individual contributor is
+1:32 85 not working yet nine percent manager
+1:36 four percent and director is how many do
+1:39 you think
+1:41 zero
+1:46 zero all right yeah so I guess I guess
+1:48 this would be very very helpful uh you
+1:50 know I mean I you know with my team I
+1:53 always like to
+1:54 uh even with with the individual
+1:57 contributors uh you know every time we
+1:59 we we we speak and and you know do our
+2:02 sessions kind of give an Outlook of what
+2:05 uh you know your job could look like uh
+2:08 as you progress as you grow as you as
+2:10 it's going to be the next next and and
+2:12 really understand how organizations work
+2:14 and I think that could could be helpful
+2:17 for everybody even in individual
+2:19 contributor role
+2:22 I can't so to the start
+2:27 okay let's let's roll
+2:29 so this week we'll talk about building
+2:31 data science practice and we have a
+2:33 special guest today Andrei Andrei is a
+2:35 director of engineering at Honeywell
+2:37 where he leads the Advanced Technology
+2:39 Group within the safety and sensing
+2:41 business he is working on developing
+2:43 Technologies and solution based on
+2:45 Signal processing perception computer
+2:47 vision AI machine learning for
+2:49 healthcare industrial logistical Market
+2:52 protocols so that's uh you're doing
+2:54 quite a lot of work and you've been with
+2:57 Honeywell for five years right and Andre
+3:02 also leaves his wife and son in Dallas
+3:05 Texas so it's pleasure to have you here
+3:08 Andre
+3:10 thanks Alex say it's uh it's a pleasure
+3:12 to be here I hope people will have a
+3:14 great session here
+3:16 yeah we definitely will before we go
+3:18 into our main topic of building data
+3:21 science practice let's start with your
+3:22 background can you tell us about your
+3:24 career Journey so far
+3:26 sure
+3:27 um so like you say
+3:29 um I'm director of engineering Honeywell
+3:32 um I live lead with and support with
+3:34 what's called Advanced Technology Group
+3:36 which is uh sort of like a composition
+3:38 of uh several teams we are working on
+3:42 novel technologies that we later
+3:45 introduce into our uh product line so we
+3:49 work with a lot of signal processing
+3:51 like a cell perception
+3:54 um vision and
+3:57 across in the last five years I worked
+3:59 across multiple Sports multiple
+4:01 organizations I came
+4:03 uh to lead our AI adoption initiative
+4:08 and later transferred to build our
+4:11 robotics group were a LED our perception
+4:14 team uh for for a year
+4:17 so it's been it's been a good journey of
+4:18 uh working through you know multiple
+4:21 Advanced uh teams and building maturity
+4:24 and building practice into those teams
+4:26 in terms of my career you know I've been
+4:29 coding since I remember myself probably
+4:31 seven seven years old
+4:33 and I've been I've been always uh you
+4:36 know kind of engineer at my heart but my
+4:38 formal background is actually not the
+4:40 computer science my formal background is
+4:42 organizational development Management in
+4:45 the context of I.T and Technology
+4:47 organizations I have a scholarship and
+4:51 multiple um multiple degrees in
+4:55 organizational development and
+4:56 management
+4:58 um overall Mike I started as a software
+5:00 engineer
+5:02 uh and uh I used uh you know I I I I
+5:06 saved my paycheck on the site to to fund
+5:10 uh a few businesses
+5:12 uh some of them that I successfully
+5:15 failed and some of them I uh some of
+5:17 them were later Acquired and during one
+5:20 of those uh businesses so I were I was I
+5:23 was there as a technical co-founder
+5:26 um we did that that business was around
+5:28 they were actually scanning and
+5:30 digitizing retailer catalogs for coupons
+5:34 uh it was back in Europe and we were
+5:37 essentially scanning those coupon uh
+5:40 printed paper catalogs and we were
+5:42 extracting the information from those
+5:44 catalogs and we were kind of um offering
+5:47 that on our website and that required a
+5:49 lot of uh you know first of all image
+5:51 image analysis and also um sort of
+5:53 recommendation models and this is where
+5:55 I you know that was 2014 2013-14 this is
+6:00 where I fell in love with with data with
+6:03 data science
+6:05 and uh starting then this is where
+6:09 um I I really started my journey with
+6:11 with data science uh with conventional
+6:13 data science data analytics and then
+6:15 later into the neural networks of course
+6:18 and that led me it was interesting
+6:21 because uh you know after I had my own
+6:24 uh sort of set of businesses I went to
+6:27 another extreme I went to Honeywell and
+6:29 Honeywell
+6:30 um you know in in Europe and the Middle
+6:33 East it's it might not be as
+6:35 as as well known in in U.S it's
+6:38 Honeywell is a Fortune 100 company with
+6:41 a 100 year old history and Heritage uh
+6:45 being known for mostly before it was
+6:49 well known mostly for industrial
+6:52 hardware industrial equipment
+6:54 and some of you might ask you know what
+6:57 what brought you from you know doing
+6:59 your own startups into you know a
+7:02 multinational conglomerate with hundred
+7:05 thousand people but I joined Hannibal
+7:07 five years ago when um so the company
+7:10 got its uh new CEO who put a company on
+7:15 the trajectory of digital transformation
+7:18 it's it's really what it meant uh you
+7:20 know from a moving company from being
+7:23 Hardware oriented into more software
+7:26 industrial oriented essentially changing
+7:29 our model from selling one-time Hardware
+7:33 to selling services and subscription
+7:35 that is enabled by by that hardware and
+7:38 that meant really you know sensorizing
+7:42 connecting all of that equipment pushing
+7:45 data into the cloud and doing a lot of
+7:47 analytics doing a lot of signal process
+7:49 and doing a lot of intelligence in the
+7:51 cloud that you can actually multiply the
+7:54 the the value of those Solutions and
+7:56 that really sold me on that I realized
+7:58 that would be a lot of uh a lot of scope
+8:01 of doing analytics doing Ai and we could
+8:05 be really at the at the beginning of it
+8:08 and so that that that really sold me it
+8:10 sold me on on my role and it's just uh
+8:13 you know everything that we work here is
+8:15 is really high impact you are in your
+8:18 day your everyday job impacted millions
+8:20 of of of
+8:22 customers and so I work with
+8:25 over my last five years I've worked in
+8:27 you know with the logistics uh Warehouse
+8:30 robotics I work with smart cameras or
+8:34 some cool Technologies for for sensing
+8:37 and most of uh what we do is uh is
+8:41 vision and perception
+8:43 but we also worked into other modalities
+8:47 like natural language and voice and and
+8:50 Predictive Analytics overall
+8:54 so I'm just wondering what kind of
+8:56 industrial equipment uh do you work with
+8:59 is it like conveyor belts or things like
+9:02 that so this is one and yeah this is one
+9:04 of one of the one of the product lines
+9:06 and animal is a really distributed
+9:08 organization you can think of it's
+9:10 really it's actually like you know a
+9:12 Russian doll where you have like things
+9:14 like you have five big business groups
+9:16 at the top airspace smart connection
+9:19 space performance materials
+9:22 Safety Products uh our own cloud
+9:25 platforms so it's really it's it's five
+9:27 big companies with an umbrella one
+9:30 company and then each of those companies
+9:32 they split into their own businesses and
+9:34 units and it's a very complex structure
+9:36 of you know businesses and uh and part
+9:39 follows that you that you need to
+9:40 navigate
+9:42 that's a very interesting name I was I
+9:45 would assume if that they do like
+9:47 cereals breakfast uh because the name is
+9:50 you know tasty
+9:55 but uh in U.S a company known well known
+9:59 for well you know every every building
+10:01 mostly you know almost every building
+10:03 has some sort of Animal product every
+10:06 commercial building I bought a house
+10:08 last last year I found a gas meter from
+10:11 Honeywell and the the honeymoon
+10:14 thermostat so
+10:16 um like when when I try to sell
+10:18 Honeywell to the engineers and managers
+10:22 that I hire I usually talk about that
+10:24 which is true that essentially you know
+10:27 anywhere you go any building the
+10:29 airplane car you would find even you
+10:33 know space shuttles you would find
+10:35 something something from Carnival
+10:38 and you develop some things for for this
+10:41 gas meters for things on airplanes or or
+10:46 only like I guess for these assembly
+10:48 lines right your uh that's why I work I
+10:52 work uh in the business Group which is
+10:54 called the safety and productivity
+10:55 Solutions and there are things like
+10:57 again smart cameras smart sensors
+10:59 robotics for warehouses uh you go to
+11:03 Starbucks or you go to IKEA you would
+11:05 see at the at the
+11:07 um at the uh the the barcode scanner at
+11:10 the at the post terminal would be will
+11:12 be from from Honeywell so it's really
+11:14 you know in your daily you you won't
+11:17 notice it but but really you touch
+11:19 Animal product on a daily basis
+11:21 yeah quite interesting okay I know
+11:25 nothing about this company until now so
+11:27 that's uh we are doing quite a lot of
+11:29 interesting stuff
+11:31 and
+11:32 um
+11:33 yeah so the topic today is building data
+11:36 science practice but I was wondering so
+11:39 what does actually what does it actually
+11:41 mean data science practice is it a data
+11:44 science team or there is more to that
+11:48 well when when when I think about
+11:50 practice it's I think about sort of like
+11:53 a widespread adoption of
+11:56 best data science and machine learning
+11:58 engineering practices
+12:00 across the organization
+12:02 and it might not seem something special
+12:06 in the context of you know small
+12:08 organizations where you have you know
+12:09 just one product team but when you think
+12:11 about
+12:12 multi-product team organizations
+12:14 organizations that are distributed
+12:18 um it's not a straightforward thing to
+12:21 to to make data science work efficiently
+12:25 and really you know it's about breaking
+12:30 organizational barriers uh not allowing
+12:33 for Silas you don't really have a way to
+12:37 um you know if you want really to you
+12:39 you your your data science strategy run
+12:42 efficiently especially in the very
+12:43 beginning you won't you don't you cannot
+12:46 allow for teams uh using multiple
+12:48 Frameworks or using multiple tools or
+12:51 using multiple
+12:52 um clouds and uh
+12:55 really it's that that makes things in
+12:58 inefficient and so this is what I think
+13:01 when I talk about data science practices
+13:03 all is it's aligning everybody
+13:07 um on on the same page so teams work not
+13:11 only efficiently within the team context
+13:13 but also within a with an organizational
+13:15 with an organizational context and
+13:19 yeah so it's it's just a maturing up the
+13:22 organization and to shift
+13:24 you know from ad hoc like pilot uh where
+13:28 you you know teams constantly are
+13:31 building pilots pilots pilots but they
+13:33 don't push those Pilots into production
+13:34 and that's how to how to shift uh from
+13:38 uh from the sort of uh constant pilot
+13:40 stage to mature stage when you ship and
+13:43 a new productize
+13:46 and then wondering in your particular
+13:48 case at Honeywell so Honeywell to me
+13:50 strikes uh which tracks me as a more
+13:53 like traditional company where it comes
+13:57 second AI comes second while there are
+14:00 companies like um
+14:01 like internet companies where it's much
+14:04 much easier right to get data and start
+14:06 using machine learning like for you I
+14:10 guess that was an extra
+14:12 layer of challenges right
+14:15 exactly exactly and that was when I was
+14:18 talking about you know when I started
+14:20 five years ago and the company took a
+14:22 turn of saying you're no longer going to
+14:24 be focused just on the hardware and with
+14:26 Hardware you can think of you know you
+14:28 build a hardware you sell it one let's
+14:31 say a gas meter
+14:32 you still at one time
+14:34 and then you maybe support it you might
+14:37 maintain it there's no there's really
+14:39 there's there's a software component but
+14:41 this is like sort of like six five years
+14:43 ago the company turned and said we're
+14:45 going to be doing a lot more software
+14:47 now
+14:48 and uh
+14:49 essentially we're this is the complexity
+14:52 of uh you know integrating of uh data
+14:55 workflows and and and algorithms that
+14:58 are based on on data come come and place
+15:01 and so really you know it was such an
+15:05 honor of being a part of you know
+15:07 putting the company on on the trajectory
+15:09 of change and I won't say that first of
+15:12 all I won't say that everything went you
+15:15 know perfectly well we will learn from
+15:17 we learn from our mistakes but it's also
+15:20 always you know it's a very difficult
+15:22 thing to
+15:24 to make a shift like that in a company
+15:26 with a 100 year old history and and 100
+15:29 000 people it's uh it's it's humongous
+15:32 it's humongous separate
+15:33 and this is where you make sure that you
+15:36 know you learn there's so there's so
+15:38 much complexity here that you learn
+15:40 really fast
+15:42 and I'm really curious now that you
+15:44 mentioned this is not what I was going
+15:46 to ask initially but now that you
+15:48 mentioned that a gas meter you just sell
+15:51 it and support it
+15:52 right and there is no way you can
+15:54 include software
+15:56 so can you actually include software
+15:58 into the gas meter
+16:00 or it's just you know
+16:03 right well you know you and you have of
+16:07 course like a lawn tail you have
+16:08 products that are more
+16:11 um
+16:12 more conventional and uh less
+16:15 intelligent which is just start building
+16:17 intelligence into them well I I can I
+16:20 can a better example would be uh for
+16:23 example we we work we started working on
+16:26 some Advanced sensors for the quality of
+16:29 of the air for example
+16:32 um and uh before I worked on this
+16:35 problem I really you know I didn't think
+16:37 that that was such a such a problem well
+16:39 you're breathing air right I mean how
+16:41 could that be dangerous but then when we
+16:43 started actually looking under the
+16:44 microscope what are the different things
+16:46 that that we are breathing in uh like
+16:49 mold and and pollen and pet dander and
+16:53 dust uh you get you get really scared
+16:55 you know what what you're really prison
+16:57 with or things like when you buy a house
+17:00 and and you you realize that you know I
+17:02 had a cat allergy and I realized when I
+17:05 moved in that there was a cat living
+17:07 here and we had to do a deep cleaning
+17:09 here but so and so we're for example uh
+17:12 building um that sensor that with the
+17:15 push of a button can tell you all the
+17:17 micro allergens that are that are in the
+17:19 air and so what what you're actually
+17:22 getting from making those things
+17:24 connected is first of all you now can
+17:27 process the data in the cloud and you
+17:30 can run massive massive uh signal
+17:34 processing and the the the analysis on
+17:37 the data that you that you process and
+17:39 you're able not only run the workflows
+17:42 and workloads in the cloud but you can
+17:44 actually you know get this data and
+17:46 fine-tune your your model of course and
+17:49 so that that allows you to to Really
+17:51 build in you know the algorithms that
+17:53 you wouldn't be able to literally and
+17:55 you know otherwise you would need a
+17:57 whole computer with it you know an
+18:00 industrial GPU on it and that this
+18:02 device would would cost you know like
+18:04 several thousand dollars and things like
+18:05 that the you cannot put it physically in
+18:09 a gas meter right
+18:10 yeah exactly exactly exactly
+18:13 so coming back to data science practice
+18:16 so you mentioned that the data science
+18:17 practice is a set of data science and
+18:20 machine learning practices uh more like
+18:23 a yeah how do you spread the adoption of
+18:26 these practices right and then you
+18:27 mentioned
+18:29 um like not having silos having the same
+18:31 tools and processes in different teams
+18:34 and
+18:36 sounds like a very good thing to have
+18:39 and I'm wondering
+18:41 I'm joining a company it is a data
+18:44 science uh I don't know at the first
+18:47 data scientist I don't know data science
+18:48 manager or maybe director or just as a
+18:51 data scientist and we want to build it
+18:55 so how do we build
+18:58 this data science practices and what are
+19:00 the steps to get there right
+19:04 um
+19:06 so here of course
+19:08 yeah I might say it depends but um
+19:12 it really depends on multiple factors
+19:15 um I won't say there's just a I sort of
+19:18 have like a mental model of going from
+19:20 low maturity to a high maturity or like
+19:23 I say you know you you crawl you walk
+19:26 and then you then then you run
+19:29 um a lot depends on you know um the the
+19:33 size of the organization of course a lot
+19:36 depends on uh whether
+19:38 um you know where you would want to
+19:41 um what would be the focus so where are
+19:42 you going to deliver the value and or in
+19:45 other words actually the the the first
+19:48 major
+19:49 and then if you know when you're
+19:51 interviewing with a company where you're
+19:53 working in a company it's good to
+19:54 reflect on uh who uh in the
+19:58 organizational hierarchy the data the
+20:01 data science team is reporting into
+20:04 and um you know actually you know I
+20:08 never asked myself when when think
+20:11 questions like this when when I was just
+20:13 an individual contributor but it's it's
+20:15 hugely important and it's important
+20:17 because uh depending on you know to each
+20:20 executive uh the the data function rolls
+20:23 into uh this data group could could
+20:27 actually do very different things and
+20:30 the example would be so if if the data
+20:33 function rolls into the CTO or the the
+20:37 chief chief technical officer that would
+20:40 um most probably mean that the data the
+20:43 data group will be focused on enhancing
+20:45 the the product product capabilities
+20:48 right so CTO is responsible for building
+20:51 building an offering or building a
+20:53 product right so if you are reporting to
+20:55 CTO that means that your function goals
+20:59 would be to enhance the capability of um
+21:02 of your of the actual product that you
+21:04 the that you work on but this is not the
+21:06 only thing because you could also for
+21:08 example report into CIO Chief
+21:11 Information officer and in this case
+21:14 very likely you would be working a lot
+21:17 on the internal optimization
+21:22 workflows like optimization of
+21:24 efficiencies of of your internal
+21:28 ecosystem instead of working on the
+21:30 product or the data team could report
+21:33 into Chief marketing officer and then it
+21:36 would mean that it's mostly analytics
+21:39 function around marketing and sales and
+21:42 customer interaction and so that's
+21:45 that's an interesting question to
+21:46 reflect on and because really whoever
+21:49 you report into that means that the
+21:52 goals of that particular executive you
+21:55 will be helping to to achieve and so
+21:58 when when it's probably the Step Zero to
+22:01 to Really reflect on this and say okay
+22:03 where the data can you know provide the
+22:07 the biggest value and it does not
+22:09 necessarily need to be either or
+22:11 there are you know organizations that
+22:15 report into the CEO or and then in this
+22:18 case it would really mean if you're
+22:20 important to CEO most likely it would
+22:22 mean that you will work across all of
+22:24 those functions so the data will have
+22:26 their own place both in in product
+22:28 engineering both in internal
+22:30 optimization both with um you know sales
+22:33 and marketing and customer interaction
+22:36 um but this is very important question
+22:37 to reflect because that would really
+22:39 Define what kind of uh what what is the
+22:42 profile of the um you know talent that
+22:44 you'll be working with what are the
+22:46 profile of algorithms that will you will
+22:48 be working with the example is so we
+22:51 work on on product and the modality of
+22:53 the algorithms that we work is is mostly
+22:55 signal processing and computer vision
+22:57 this is because we work a lot with
+22:59 sensing aspect of of our work but then
+23:03 we also have a team in Honeywell that
+23:04 that works on
+23:07 uh optimization of internal processes
+23:09 like demand prediction for example and
+23:13 that team doesn't do any computer vision
+23:14 that team only works with essentially
+23:17 you know a fairly conventional
+23:19 Predictive Analytics algorithm there's
+23:21 nothing there is nothing wrong about it
+23:23 but it's just a different type of of uh
+23:26 algorithms that you will be working on
+23:28 and so it's good to actually understand
+23:30 you know because you that that question
+23:31 that answered with align you what kind
+23:33 of talent what kind of algorithms what
+23:36 kind of technology and the
+23:37 infrastructure that you will have to
+23:39 build in order to to fulfill those goals
+23:42 I hope it makes sense yeah it does I'm
+23:44 just wondering um so the company where I
+23:46 work it's called toilet so we're doing
+23:49 like it's on land Marketplace when I
+23:51 joined the company the data functional I
+23:54 don't know how to call it like my
+23:56 manager was reporting to a CPO Chief
+23:58 product officer in this case I think
+24:01 it's a similar idea like reporting to a
+24:04 CTO so improving the pro product right
+24:07 but here in this case product has its
+24:10 own uh I don't know vertical or how to
+24:14 how to call it
+24:16 and I guess in case if you report
+24:20 directly to CEO it makes you a chief
+24:22 data officer in this case
+24:25 uh now it could be not yet I mean some
+24:28 organization call it formally Chief data
+24:31 officer
+24:32 um it could be you know it could be
+24:34 still VP of uh of
+24:38 the VP of data or yes right but
+24:42 reporting to CEO mean that you would
+24:44 it's it's it's that you would not only
+24:47 have a focus on engineering or you would
+24:49 not only have a focus on on internal um
+24:52 I.T and things like that so your
+24:53 function will will go
+24:56 um will go much much broader
+24:58 and it's it's really about who is going
+25:00 to be your executive sponsor well and
+25:03 you know which and your executive
+25:06 sponsor is going to lead and assign
+25:09 particular goals and particular
+25:10 initiatives for you so it's it's hugely
+25:13 important but um as we as we go through
+25:15 this and and you talk um you know um so
+25:19 you you ask about sort of like the steps
+25:22 right but I my mental model is that you
+25:25 you go through low maturity and medium
+25:28 maturity and high maturity and the low
+25:31 maturity would mean that
+25:33 um you know you come into the team and
+25:35 you start building a team that usually
+25:36 you know um uh it and it depends on on
+25:40 the you know who drives that there are
+25:43 situations when the executives drive
+25:45 that and they would hire a senior senior
+25:49 roles and sort of like uh the the the
+25:51 initiative of developing this practice
+25:54 would come from the executive level but
+25:56 many times the the initiative of
+25:58 building data into products or internal
+26:02 capabilities would come from
+26:04 from Engineers themselves right and I've
+26:08 been I've been there myself when I came
+26:10 to Carnival we had a sort of similar
+26:13 situation some of the initiatives that
+26:16 we were building really came from from
+26:18 the software Engineers who at some point
+26:21 of time got inspired by data and they
+26:24 started working uh you know was was with
+26:26 machine learning algorithms or other
+26:29 conventional data algorithms or another
+26:33 approach would be engineering managers
+26:36 would would think of additional
+26:37 capabilities and they would start hiring
+26:41 um data scientists and thinking that you
+26:44 can just hire a data scientist plug them
+26:47 into the team
+26:49 and then overnight
+26:51 you know magic will happen and overnight
+26:54 the products will get you know some
+26:57 magic magic intelligence artificial
+26:59 intelligence diet type a lot of profit
+27:01 yes yes yes but it it doesn't happen
+27:04 this way and you know data science or
+27:07 artificial intelligence it's it's a very
+27:09 multi or cross-functional type of uh
+27:12 stacks and this is one of the
+27:15 misconceptions where you can just hire a
+27:17 PhD and overnight you'll get to get the
+27:20 benefit and I think many organizations
+27:22 underestimate the complexity of it
+27:24 because it really impacts
+27:27 you know the the talent that you have
+27:31 and there is more than just data
+27:33 scientists right and we can talk about
+27:35 this there are more research scientists
+27:37 there are machine learning Engineers
+27:38 there are data Engineers
+27:40 um there are there are impact into the
+27:42 infrastructure and there's impact into
+27:45 you know how you run processes there is
+27:47 an impact in the whole mindset shift
+27:49 where you know going from a sort of
+27:53 pre-planned waterfall type of approach
+27:56 to engineering into into more iterative
+27:58 engineering and so there are those
+28:00 things that you you don't really many
+28:02 people sometimes from the conventional
+28:04 software background they don't know
+28:07 about and this is why there is just High
+28:09 expectation uh and and this is why
+28:12 things take take so much so much long
+28:15 long time than I originally assumed
+28:18 I'm just curious um in in your opinion
+28:22 what is more what happens more often
+28:25 that it comes from the engineers from
+28:27 the you know bottom-up approach or more
+28:30 like executive decides they listen to
+28:32 some Consultants from McKinsey and
+28:34 decide to build this uh practice what
+28:38 does happen more often
+28:40 yeah I I don't have that you know being
+28:43 data driven I don't have those stats but
+28:47 um I think it's anecdotally right and I
+28:51 I think it's it's a combination of of
+28:53 that uh you know I see I see both of
+28:57 those situations the same way like
+28:59 you're talking about you know both
+29:01 McKinsey Consultants but you know CEOs
+29:04 and ctOS you know we are not talking
+29:06 about something that came just just
+29:08 yesterday right the the the the data
+29:10 science got popularized
+29:13 you know um
+29:15 I I think the peak was roughly around
+29:17 five five four years ago when it was
+29:19 really at the peak uh right now
+29:21 everybody knows about it almost um but
+29:24 but also I see a lot of uh Engineers who
+29:27 are who software Engineers with
+29:29 conventional backgrounds that that uh
+29:31 you know because AI becomes such a hot
+29:34 topic that and there is so much of
+29:37 democratization you know there are the
+29:38 tools that we have right now when you
+29:40 can you know like the example was you
+29:44 know stable diffusion when you can just
+29:46 download a Google collab notebook run a
+29:49 few cells and and you know and and you
+29:51 would have the whole the whole thing in
+29:53 front of you and and I think many people
+29:55 were just really feel very empowered by
+29:58 that and and want to
+30:01 um you know will get get excited and
+30:03 over excited sometimes about it and this
+30:05 is something I I really often you know
+30:07 try to try to watch out for both for
+30:10 myself and for my team because if you
+30:12 get over excited about something
+30:14 you sometimes get really biased
+30:17 and instead of really you know working
+30:19 through what's what's important for the
+30:21 customer you start working on something
+30:24 just because you want to try this
+30:25 technology
+30:27 and AI becomes you know not a solution
+30:31 for some customer problem but it becomes
+30:34 you know a shiny things that that nobody
+30:36 knows so when you think about you know
+30:39 integrating you know data science
+30:41 workload or building up data science
+30:43 capabilities you really need to start
+30:45 from what's really how can I really
+30:48 improve my customer experience instead
+30:50 of hey I have this shiny technology hey
+30:52 let's find where we can where we can
+30:55 plug this technology into yeah I mean I
+30:58 think so many people just get done super
+31:00 super biased about this
+31:01 speaking of stable diffusion set this is
+31:04 indeed super cool so the other day I
+31:07 played with this and generated the data
+31:09 set with dragons and dinosaurs so to me
+31:13 they always looked the same and they
+31:15 thought okay maybe we can just get some
+31:18 data with uh dinosaurs and dragons and
+31:21 then like they're like it's still like
+31:24 the pictures are creepy still but
+31:27 sometimes they're really good
+31:29 okay we're coming back to this building
+31:31 the practice so let's say we join a
+31:34 company and we figure out what that we
+31:36 report to like which executive we report
+31:39 to
+31:40 um like the options as you mentioned the
+31:44 CTO CMO CIO
+31:48 um C CEO all of them all of them right
+31:52 so what happens next like what do we do
+31:55 next so we figure out that let's say
+31:56 it's a CTO well what's next
+32:00 yeah so usually you know you you get to
+32:03 you get to really understand and and you
+32:05 know the way you usually works is that
+32:09 um you know the the right thing of
+32:10 course is understand you know what what
+32:12 kind of uh what kind of problems we want
+32:15 to solve was data or what kind of
+32:18 capabilities we want to build with that
+32:21 um but it's not always it doesn't always
+32:24 work like this as I said there are some
+32:26 grassroot efforts bottom up when
+32:28 Engineers start start coming up with new
+32:31 ideas right there you know um and and
+32:34 start building some uh some proof of
+32:37 Concepts
+32:38 and and usually the first stage is what
+32:40 I call Crawl stage right um before you
+32:43 walk you you go you gotta crawl this is
+32:45 where teams start to kind of build uh
+32:49 build those proof of Concepts and
+32:52 usually it's uh with a with a company
+32:54 that still has not built a mature data
+32:57 practice uh this is a big really big big
+33:01 challenge is to move some of those proof
+33:04 of Concepts in into production because
+33:07 again the expectation is hey let's just
+33:09 hire a PhD data scientist they will just
+33:11 build a model
+33:13 there we go we'll we'll have this new
+33:16 magic functionality but again it it
+33:18 doesn't work like this project and then
+33:21 this is what exactly the the situation
+33:24 when I came to Honeywell five years ago
+33:26 when we had some data scientists here
+33:28 and there they were hired by
+33:30 conventional software engineering
+33:32 managers who didn't know anything about
+33:34 the data and so the expectation though
+33:36 was that we're just going to hire them
+33:38 plug them and they will they will start
+33:41 working on them but it's it's more than
+33:43 that and you know first of all it's it's
+33:45 really about the fact that it's very
+33:48 easy to build um flashy proof of concept
+33:51 demos
+33:52 but it's very difficult to to get them
+33:56 into the production because as you know
+33:59 well um
+34:01 first of all building a model
+34:04 um is on you know a small data set for
+34:08 the flashy demo
+34:10 uh you can you can probably get some
+34:13 some data points that you can that you
+34:14 can build the model but really to make
+34:16 it a robust model you gotta have a
+34:19 different level of uh volume of of your
+34:22 data set and that's that's always a
+34:25 problem where are we we're gonna get get
+34:27 the data and unfortunately the companies
+34:29 that are not as mature they don't
+34:31 prioritize build collecting data early
+34:34 enough and uh which has to be really
+34:38 prioritized right there when you when
+34:40 you when you actually build a project
+34:43 passport right you know the the Step
+34:45 Zero when you're thinking about the
+34:47 project when were you thinking about the
+34:49 the feature or function that you're
+34:51 going to integrate into the existing
+34:52 project you gotta you gotta start
+34:55 thinking you know where are we going to
+34:56 get the data on top of which we are
+34:58 going to build build our model and
+35:01 companies don't prioritize that so to
+35:03 build a you know a initial model you
+35:06 know it takes it takes some time but it
+35:08 takes 10x more time too and then you
+35:11 know many other many other reasons you
+35:13 know that uh
+35:15 a really uh things like you know the
+35:19 engineering component of uh of uh
+35:22 building data products is uh is
+35:25 different from conventional uh software
+35:27 engineering
+35:29 um and uh just by building a model you
+35:31 cannot enable the feature right you need
+35:33 to integrate this model
+35:34 you need to deploy this model you need
+35:38 to watch and or personalize this model
+35:40 you need to be able to have the closed
+35:42 loop of retraining this model based on
+35:45 the the new data that is coming in and
+35:47 so usually this is not how conventional
+35:49 software engineering work so you really
+35:51 need to change the processes change the
+35:54 infrastructure and so that takes time
+35:56 and so this is why often you know the
+35:59 you know you have you know hard time
+36:02 really to to deploy those demos and I've
+36:05 been I've been myself grown many times
+36:07 on this and this is exactly how I
+36:10 started myself
+36:11 but you you reflect on on all of those
+36:15 issues and you you start fixing them by
+36:18 one by one and so in this scroll stage
+36:20 in the beginning stage I'm not a big fan
+36:22 of having many different projects and
+36:24 seeing what actually works out because
+36:27 you have multiple teams and when you
+36:29 have multiple teams and multiple
+36:31 scientists and engineers and it's more
+36:33 difficult to to manage them my Approach
+36:36 is having a few
+36:39 fewer projects as possible on which you
+36:42 can build the whole end-to-end process
+36:47 and so in in the scroll stage the idea
+36:50 is usually
+36:51 just get one project out of the door end
+36:55 to end one project that would become
+36:57 sort of like a poster child an example
+36:59 for
+37:01 for the for the full full
+37:04 cycle of uh running of collecting data
+37:08 running experiments identifying which
+37:10 model is the best knowing changing the
+37:13 infrastructure and having the roles of
+37:16 people who would work on the
+37:17 infrastructure to be able to product uh
+37:19 productize those models monitor those
+37:22 models retrain those models essentially
+37:24 having a whole end-to-end and end-to-end
+37:27 cycle and this is where you know I would
+37:30 say you know put the major focus on
+37:32 having at least one project that is that
+37:35 is successful instead of having 10
+37:37 projects that that fail
+37:39 because if you have 10 projects that
+37:40 fail what actually also what happens is
+37:42 that data science gets a bad reputation
+37:45 and and people get actually a lot more
+37:48 negative about uh building uh data
+37:51 enabled products so I would here put put
+37:55 most of my ads in one basket and running
+37:58 and end to end and this is where you
+38:00 switch into the next phase phase of data
+38:04 maturity and you build a centralized
+38:08 centralized practice that means you want
+38:10 to
+38:12 um now get all the all the efforts and
+38:16 all the scientists in one organization
+38:19 and really start building when working
+38:22 on your photos you mean like a team
+38:24 right right
+38:26 and in in early stages it's good to to
+38:29 collect all of them in one team or all
+38:32 in one organization
+38:33 and centralize them and what I mean by
+38:36 that is that you need to build uh you
+38:38 know a set of best practices
+38:40 and you need within one team what makes
+38:43 it easier that if this all of those
+38:46 people under one team it's easier to
+38:48 popularize those best practices and
+38:51 integrate and deploy those best practice
+38:52 and what I mean by Best Practices it
+38:54 starts with Talent Acquisitions and
+38:57 hiring of understanding vichar what are
+38:59 the actual roles what are the difference
+39:02 between research scientists machine
+39:04 learning engineer data engineer quality
+39:07 data quality engineer and other
+39:09 professions and really understanding
+39:12 what the qual what what the difference
+39:13 between those having actually job
+39:15 descriptions for those because when you
+39:18 start actually HR you come to HR and
+39:19 they don't know what you know who would
+39:22 who do we need to hire and when you hire
+39:23 wrong people everything is wrong after
+39:25 that it starts from you know aligning on
+39:29 a particular set of infrastructure and
+39:31 tools right so which Cloud are we going
+39:34 to be using are we going to be using
+39:36 Cloud are we going to be using on-prem
+39:38 we can be using our own
+39:41 deployments what kind of tools we are
+39:43 going to be using are we going to write
+39:44 our own experiment tracking system or
+39:47 we're going to be using uh you know
+39:49 other tools on the markets from weights
+39:52 and biases Neptune call Matt and and so
+39:54 on and so forth whatever how we're going
+39:57 to be productizing uh and deploying
+39:59 those models and things like that so you
+40:02 when when you are within one team it's
+40:04 it's a lot easier to uh and faster to
+40:07 build those those best practices
+40:09 and and really align the team on on
+40:12 those best practices but the trick is to
+40:15 centralized approach is actually it's
+40:18 it's uh
+40:20 how I think and I could be it's it's
+40:22 really subjective it's not the moment
+40:24 it's not the best way of of managing uh
+40:27 data organizations but it's it's the the
+40:29 step that you have to go through you
+40:32 know on the way to to more to higher
+40:34 maturity
+40:35 so
+40:36 in in the way you start with ad hoc
+40:39 approach where you build uh you know one
+40:41 major proof of concept you go to a
+40:43 centralized model where you get the team
+40:46 together and you build set of practices
+40:48 by working on on more projects but this
+40:52 is not the most efficient way of of
+40:54 running data teams most in most cases
+40:57 just because when when you have a
+41:00 centralized team and let's say a product
+41:03 manager comes to you and say hey we need
+41:05 to build this let's say a recommendation
+41:07 engine for for our website can you give
+41:10 us you know a data scientist and so you
+41:13 have a list of projects that you work on
+41:16 as a centralized team and then you you
+41:19 need to you know Market your team
+41:21 internally so product managers or
+41:23 engineering managers come to you and you
+41:25 use and you and you act sort of like a
+41:27 resource pool but then it doesn't work
+41:30 most most efficient because
+41:33 um there is a queue essentially you need
+41:35 to prioritize those projects and how do
+41:37 you prioritize those projects right but
+41:40 also you get a a data scientist or a
+41:43 machine learning engineer or data
+41:45 engineer that they today they work on
+41:47 one project and tomorrow they work on a
+41:49 different project
+41:50 and so they don't really work with
+41:53 consistently with one team they not
+41:56 necessarily know how people or how those
+41:59 teams operate and act right they don't
+42:02 establish trust and respect with those
+42:05 teams and what I also found out you know
+42:09 through
+42:09 through a lot of mistakes and hard
+42:12 experiences that
+42:14 when you have a centralized team
+42:16 your scientists
+42:19 uh their performance is treated by their
+42:23 own scope and let me I'll it's going to
+42:26 get clearer now but if you actually push
+42:30 that scientist and actually right there
+42:33 into the team and having that scientist
+42:36 actually report
+42:37 into that team and be formally a part of
+42:40 that team
+42:42 the performance of that scientist is
+42:44 going to be treated more like on based
+42:46 on the performance of the whole project
+42:48 right so we on one side you have a
+42:50 centralized team and performance of the
+42:52 scientists is is rated on the
+42:55 performance of their work but if they
+42:57 work in in
+43:00 for for a particular team a report for a
+43:03 particular engineering manager for
+43:04 example their performance is more going
+43:06 to be treated as a performance of
+43:09 overall project which you actually want
+43:11 you don't want them to you don't want
+43:13 your your engineers and scientists only
+43:16 to say hey this is my type of work
+43:19 this is only what I'm responsible for I
+43:21 don't care about anything else you
+43:23 actually want them to be
+43:25 um you know
+43:27 drivers and and the fans of the project
+43:30 itself and and think like the project
+43:32 success fully relies on them and so this
+43:36 is where the Third
+43:38 uh model just
+43:41 um that's a lot of information and I
+43:43 want to try to summarize everything you
+43:46 said before we move to the uh what you
+43:48 call around Facebook yep decentralized
+43:52 yeah so first
+43:54 um we need to figure out who is our
+43:56 executive sponsor and then that it also
+43:58 helps us to understand which problems to
+44:01 solve with data what kind of things we
+44:03 work on and then we start with a proof
+44:06 of concept not many proof of Concepts
+44:10 as few as possible uh let's say a single
+44:14 one but we need to make sure that
+44:16 it is successful at the end right so we
+44:19 don't want to fail because if we fail
+44:21 then data science gets bad reputation
+44:24 and then we might lose trust of our
+44:27 executive sponsor who was rooting for us
+44:29 right so we don't want to do that so
+44:31 because the executive sponsor really
+44:33 believed in us so we need to try to
+44:37 um
+44:37 topic well meet the expectations right
+44:40 and then so we do this POC and this POC
+44:43 you mentioned that it often comes from
+44:45 Engineers who want to do something cool
+44:48 and then they pitch it to I don't know
+44:50 the managers and then this thing starts
+44:53 and then eventually we have a POC and
+44:56 then it goes to the next phase
+44:59 which is uh I don't know we see
+45:03 yeah we don't close the approach yeah
+45:05 yeah we don't have any data right we
+45:08 need to build all these pipelines and
+45:09 then we need to productionize the model
+45:10 and we do this centrally because we want
+45:14 to make sure that we build this set of
+45:16 practices that you mentioned uh
+45:18 and then I think it's important to
+45:20 understand what kind of roles we need
+45:21 what kind of tools we want to use right
+45:25 and all these things that you just
+45:27 talked about but then decentral
+45:30 centralized approach creates problems
+45:31 right because you act as a resource pool
+45:33 pool and then sometimes there are not
+45:36 enough resources in the poll so then we
+45:39 need to and all these other problems you
+45:41 mentioned that I don't remember uh but
+45:44 like there were epiclists right which
+45:47 brings us to the next phase the embedded
+45:51 teams right where all decentralized
+45:53 teams were essential data scientists
+45:55 decentralized teams where data
+45:57 scientists or data person sits in the
+46:00 team right and then this is where I
+46:03 stopped you and when you say when it
+46:05 sits the importance is who they report
+46:08 into
+46:09 they could still work on those projects
+46:13 but the problem is or the the question
+46:15 is who who do they report to do they
+46:18 report into let's say the organization
+46:20 of Chief data officer
+46:22 who is um kind of a central or they
+46:25 report to the engineering manager of
+46:28 that particular product
+46:31 and and it's a big difference because
+46:33 you worry your manager is the one who
+46:36 rates your performance
+46:38 and so uh in in this case it's it's it's
+46:42 it's better that usually and you know
+46:45 that you you actually push
+46:48 you move from a centralized model by
+46:50 taking all those people who used to be
+46:52 who used to be in your centralized model
+46:54 in your own team
+46:55 and then you say uh you're now going to
+46:58 report uh to this engineering manager
+47:00 and you're going to be working for for
+47:02 that product or that function
+47:05 and uh it's not that it might sound like
+47:08 something difficult or heartbreaking
+47:10 right you used to report to one manager
+47:12 and now you report to a different
+47:13 manager but really it's it in in in in
+47:16 in my experience many times it actually
+47:19 came very naturally because as as people
+47:22 work with with different teams they
+47:24 create some affinity and some experience
+47:27 towards particular problems or
+47:28 particular teams or particular business
+47:30 domains and it's it's when you
+47:33 transition from this centralized to
+47:34 decentralized it's actually a much
+47:36 easier approach because many times
+47:38 people will say yes I want to work for
+47:40 that for that product right now
+47:42 and so that doesn't create as as main
+47:43 friction frictions and this is what we
+47:46 went through we we used to have one
+47:47 centralized team and then we said this
+47:50 you for example you used to work on this
+47:53 particular set of problems for this
+47:54 particular business for this particular
+47:55 product line you are now going to report
+47:58 to that engineering manager and you're
+48:00 going to be working for them and
+48:01 essentially spread your team across and
+48:04 you you have them work on on a
+48:06 particular folk project
+48:08 do you just kick back and don't do
+48:11 anything
+48:12 oh no no no no well you and this is
+48:15 where this is why I say um when
+48:17 decentralized models they're not I I've
+48:20 never seen fully decentralized models
+48:23 work ideally and usually what I call
+48:25 Semi decentralized so you still have to
+48:28 leave some space you still need to have
+48:30 uh one Central function that will be
+48:33 responsible for for some of the for some
+48:36 of the functions because like for
+48:37 example the hiring
+48:39 um you know or the the infrastructure
+48:41 some of those things have to be still
+48:43 Central
+48:44 but but the engineering for example
+48:47 engineering teams and product
+48:48 engineering teams it's better than they
+48:50 work with their engineering engineering
+48:52 managers and their product teams and so
+48:55 there's still some level of sometimes
+48:57 this model is called Hub and spokes
+48:59 meaning that there is one Hub
+49:02 which you still have a chief data
+49:04 officer that's responsible for some of
+49:06 the high level functions and standards
+49:09 but you still then you have different
+49:11 team across the organizations
+49:13 and that that work all almost
+49:16 autonomously you still build Bridges
+49:18 between them you still kind of
+49:21 work with them to understand what kind
+49:23 of problems they have what kind of uh
+49:25 you know roadmaps they work on but
+49:27 what's what's really important I think
+49:29 that it's it's it's you have to have the
+49:33 right set of steps and you have to go
+49:35 first to centralized and then
+49:37 decentralized and the reason for that
+49:38 when you are centralized you need to
+49:41 build that sets of practices and then
+49:43 those people take those practices to
+49:45 their own teams
+49:46 and they don't start from zero when they
+49:49 start when when they are product teams
+49:51 and this is hugely important and and
+49:53 here your role I guess is still trying
+49:56 to make sure that uh or making sure that
+49:59 uh they have this common set of
+50:01 practices now they are spread and that
+50:03 they they might come up with
+50:05 their own thing yeah which is fine right
+50:07 but you don't want to uh like you still
+50:10 want to maintain the same set of tools
+50:12 the same set of practices there's still
+50:14 some some things and it's not always the
+50:16 same like it doesn't mean that everybody
+50:18 needs to have to to use Pi torch right
+50:20 they're real there's still you know some
+50:22 some will use pointers and some of them
+50:23 will use tensor but I'll give you a good
+50:25 example
+50:27 um vendor relationships right when you
+50:29 work with tools
+50:30 and and procurement of of tools when you
+50:34 work uh you know Central function is
+50:37 much more efficient in identifying which
+50:40 tools we want to procure for those teams
+50:43 to to use rather than having those teams
+50:46 actually decide what tools they do
+50:49 because you don't want to have let's say
+50:51 like uh different vendors for the same
+50:53 things in different in different groups
+50:55 again it's not that black and white but
+50:57 usually this is this is how it use it
+51:00 works more efficiently see you as a
+51:01 central function knowing what kind of
+51:04 um what kind of problems your teams are
+51:06 dealing you can say hey how about where
+51:09 we're using you know I don't know uh
+51:12 this particular experiment tracking or
+51:14 mlops platform
+51:16 and then because this is the way you can
+51:18 actually get the best deal and then you
+51:21 can help those those teams consume
+51:24 um those products so this is one of the
+51:26 examples that that work very well or
+51:28 like with data annotation or image
+51:30 annotation we do a lot of image
+51:32 annotation you know what vendor is going
+51:34 to be you what vendor are we going to be
+51:36 using for data annotation right things
+51:38 like that so there are still some
+51:39 functions in the central org that is
+51:43 more efficient to to to be sold
+51:46 it will have quite a bunch of questions
+51:48 and not so much time so probably we
+51:50 should go to the questions and try to
+51:52 answer them and the first question was
+51:54 uh which book would you recommend to
+51:57 learn more about building a data science
+51:59 practice
+52:00 other books like that at all
+52:03 I
+52:05 I have
+52:07 I could probably should can I can I post
+52:10 a few a few suggestions uh in the
+52:13 LinkedIn post to to this event
+52:16 there are quite a few I I read a lot on
+52:18 this
+52:20 um
+52:21 I I get some book that I read some time
+52:24 ago that that I wanted to recommend
+52:26 which was that that was fairly fairly
+52:28 amazing I'll have a hard time right now
+52:31 to to quickly identify it yeah we can
+52:33 include the links in the description
+52:35 later we'll find out I promise I promise
+52:37 to get back to you
+52:39 yeah okay okay another question from
+52:42 Adonis you mentioned that software
+52:45 Engineers pivot into data science
+52:47 and how do they actually convince their
+52:50 manager to do this
+52:55 um
+52:56 it's it's actually so it's it's a good
+52:58 question if if you're a software
+53:00 engineer you want to Pivot into data
+53:02 science
+53:03 I have the whole I have actually a long
+53:05 post on the LinkedIn about this but my
+53:08 advice is always about this is
+53:10 uh you it would be very hard for you to
+53:13 to get hired as a data scientist from
+53:16 scratch if your previous position as a
+53:18 software engineer
+53:19 so my advice to you is try to convert
+53:21 into the data scientist at the same
+53:24 company you're currently working it
+53:27 so you get actually formally data
+53:30 scientist title and you work through and
+53:32 get some experience in it you get a few
+53:34 years of experience and then you can you
+53:36 can either stay in this company or
+53:38 speech and get hired into another
+53:39 company with a formal row of data
+53:42 scientists now what you get can get
+53:45 transferred is is really you know it's
+53:47 all about finding right problems to
+53:49 solve
+53:51 and really solving them and if yeah you
+53:54 can come and you know and offer let's
+53:57 say You're Building I don't know a
+53:59 product recommendation algorithm
+54:01 and um you know your team doesn't have
+54:03 an experience with it
+54:05 and you can really in your free time
+54:08 dive into this subject
+54:10 get you know uh build uh build a
+54:12 prototype gather the data build a
+54:15 prototype and and and really show to
+54:17 your team that you can build a mature
+54:20 model it's not going to be easy but it
+54:23 will take some time
+54:25 uh it's not that the your engineering
+54:27 manager you know uh just because you're
+54:30 a software engineer they will say no
+54:32 sometimes they will say but it's it's
+54:33 about being actually uh um
+54:37 uh
+54:38 persistent in offering yourself as a
+54:42 problem solver for uh data habit uh data
+54:46 have a problems and within your
+54:48 organizations moving to teams that have
+54:52 more data so think about from a
+54:54 perspective where do I have the data and
+54:56 you know what are the problems that I
+54:58 can solve with that data and the teams
+55:00 that have abundance of data usually have
+55:03 problems that you can solve with with
+55:04 this data
+55:06 that doesn't usually happen at the POC
+55:09 stage the centralized stage or
+55:11 decentralized stage or does it even
+55:13 matter
+55:14 it does not but the moment Yeah the more
+55:19 mature the organization is the the
+55:20 harder it would be to release switch but
+55:23 it's not that you won't be able to
+55:24 switch so it's we have we I have a few
+55:27 examples on people who were uh software
+55:30 Engineers actually just were persistent
+55:32 and and helping solve hard problems
+55:35 using data
+55:36 and then at some point of time they you
+55:38 know you come to your manager and say
+55:40 hey I've been sold I've been essentially
+55:41 data scientist for the last two years
+55:43 can we work with you for me to formally
+55:45 change the title we had we had we had
+55:48 use cases like this
+55:51 Yeah we actually also had use cases like
+55:53 that that in the company where I work a
+55:55 person was a data engineer and then he
+55:57 said okay look I'm actually doing the
+56:00 melody engineering for the last two
+56:01 years and can we exactly make the switch
+56:04 formally exactly then I guess at the POC
+56:08 stage it's the simplest right so just
+56:10 okay there's this cool thing let us try
+56:12 and then this thing works and all of a
+56:15 sudden one year later you're just doing
+56:17 this thing right but but if if your
+56:21 software engineer Google pro most likely
+56:23 underestimate the complexity of it yeah
+56:26 you might build again a model that works
+56:28 for the demo but really integrating it
+56:30 in a robust way there's a long way to
+56:33 from from a demo to robust model
+56:36 and you will probably underestimate that
+56:37 so that it's it's not weeks and it's not
+56:40 months um yeah from that level yeah so
+56:44 another question we have is what is your
+56:48 favorite data science practice so far
+56:51 like I guess we talked about all this
+56:53 best practices uh no like what do you
+56:56 think is the most important one to have
+57:00 uh
+57:01 practice as a interesting interesting
+57:05 question I mean
+57:09 I mean I think what's what's most
+57:11 impactful is
+57:13 um and and where many people are making
+57:15 mistakes is is really that
+57:19 if you hire a PhD scientist
+57:23 you should not rely on what they make to
+57:26 product or not product onize because and
+57:29 you don't sure you should not rely that
+57:30 the code that they write in a in a
+57:33 Jupiter notebook could be transferred
+57:36 into production for this you will need
+57:39 another stage of a machine learning
+57:41 engineer
+57:42 and or applied data Sciences who would
+57:45 then re-crunch all of that code and put
+57:48 it under production and I think many
+57:51 organizations many people or many many
+57:53 managers was with the conventional
+57:54 background they don't understand that
+57:57 that there is there is actually these
+57:59 are the two extremes of developing a
+58:01 model
+58:03 and having that model run in in
+58:05 production
+58:06 and you have to put in place other roles
+58:09 to ensure that you can drop make this
+58:12 code robust
+58:13 uh to to productalize it yeah it's
+58:17 probably not like uh the best practice
+58:19 but more like realization and a way to
+58:22 set expectations that look if we hire
+58:25 this person who has a PHD in machine
+58:29 learning it doesn't mean that we
+58:31 automatically get rich tomorrow right so
+58:34 managing these expectations and I'm
+58:36 saying that okay we actually need a team
+58:38 of Engineers to make it work that's uh
+58:43 that would be your answer right the the
+58:45 the that essentially comes down to
+58:47 having a clear roles
+58:49 that there is a research scientist and
+58:51 distinguished in research scientist from
+58:54 machine learning engineer I can tell you
+58:56 one example we're running out of time
+58:57 but I used to work with PhD research
+59:00 scientists and every time I come with a
+59:03 problem to them they say let me go and
+59:06 read white papers
+59:08 and that you know many times you don't
+59:09 need to read white papers there is this
+59:12 solution up front for you that you can
+59:15 do but I I see a heavy Reliance on hey
+59:18 let me let me go and I'm gonna go you
+59:20 know for two weeks and I'm gonna read
+59:21 white papers before I'll give you a
+59:24 solution
+59:25 and this is what I clearly is like
+59:27 research scientist mindset that does not
+59:30 work well when you productize anything
+59:34 it's great to have them
+59:36 but it's you have to plug additional
+59:38 roles in order to to transition to the
+59:41 to production
+59:42 okay well before we finish today do you
+59:47 want to maybe you wanted to mention
+59:48 something but didn't have a chance
+59:52 oh well we spoke uh we talked about so
+59:54 so much already uh I hope it uh yeah it
+59:58 uh
+1:00:00 it resonated and I know we had a lot of
+1:00:03 uh you know scientists and Engineers uh
+1:00:06 in in the audience
+1:00:07 again my my advice would be you know if
+1:00:11 you if you want to grow
+1:00:14 um you need to think from the
+1:00:15 perspective of the higher you go in your
+1:00:18 seniority the more impact you have
+1:00:21 across
+1:00:22 the the stack across the team across the
+1:00:25 business across the organization and so
+1:00:29 my advice is uh
+1:00:32 you know spend some little amount of
+1:00:34 time of learning of what actually
+1:00:37 happens just beyond of your of your
+1:00:41 scope of your role
+1:00:43 um that will Propel you faster to to the
+1:00:47 next level
+1:00:48 um and again uh
+1:00:50 the the people are promoted
+1:00:53 not because they will want they will
+1:00:56 learn the the skills they will require
+1:00:59 at the next level they are promoted
+1:01:02 because they already
+1:01:04 exercise the skills that need to be at
+1:01:08 the next level
+1:01:09 so this is why you know be be more uh
+1:01:13 forth looking into you know what are
+1:01:15 other teams or enrolls are are doing and
+1:01:18 be more open about you know how do I
+1:01:21 make a broader scope type of impact
+1:01:23 beyond what what just I'm currently
+1:01:27 working on and thanks for this chat uh I
+1:01:29 hope that was uh that was uh that was
+1:01:31 interesting
+1:01:32 am I right at the best way to reach out
+1:01:34 to you is LinkedIn
+1:01:36 LinkedIn would be would be the best yeah
+1:01:38 I'm fairly active on LinkedIn so uh
+1:01:40 please please do connect
+1:01:42 okay thanks for
+1:01:44 join us today thanks for sharing all
+1:01:46 your expertise experience with us and
+1:01:48 also thank you everyone for joining us
+1:01:50 for asking questions for being active I
+1:01:52 see that there is a long discussion in
+1:01:54 live chat so yeah thanks for joining us
+1:01:56 today and everyone have a great weekend

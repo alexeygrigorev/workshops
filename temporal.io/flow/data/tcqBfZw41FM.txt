@@ -1,0 +1,1563 @@
+Innovation and Design for Machine Learning
+
+0:00 Hello everyone, welcome to our event.
+0:02 This event is brought to you by data
+0:04 talks club which is a community of
+0:05 people who love data. We have weekly
+0:07 events. Today is one of such events. If
+0:10 you want to find out more about the
+0:11 events we have, we have a special web
+0:14 page on our website. The link is in the
+0:16 description. Go there, check it out. We
+0:18 have quite a few events lined up. For
+0:20 example, next [snorts] week we have a
+0:22 cool event about uh data observability.
+0:26 So check it out. It will be a workshop.
+0:29 And if you haven't subscribed to our
+0:30 YouTube channel, now it's the best time
+0:32 to do this. So when you subscribe, you
+0:34 will get notified about all our videos
+0:37 and then join our amazing Slack
+0:39 community where you can hang out with
+0:41 other data enthusiasts. During today's
+0:44 interview, you can ask any question you
+0:46 want. There is a link in the live chat.
+0:48 Click on this link, ask your question,
+0:51 and I will be covering these questions
+0:53 during the interview.
+0:55 So that's it for the introduction. Now I
+1:00 need to open the questions I prepared
+1:06 and
+1:07 I'm ready. Are you?
+1:09 I am.
+1:11 Okay. So let's start.
+1:14 So yeah, just one second. Okay, I'm
+1:17 ready. This week we'll talk about
+1:19 innovation and design for machine
+1:21 learning. And we have a special guest
+1:23 today, Elizabeth. Elizabeth has been
+1:25 working on topics related to strategy,
+1:27 product and AI for the last six years.
+1:30 First at McKenzie and then at process
+1:32 and process is the parent company of
+1:34 Elix. This is where I work. So Elizabeth
+1:37 and I were we were working together and
+1:41 Elizabeth led an innovation division at
+1:43 Elix. So now she is joining a new
+1:46 company and she will work on climate
+1:49 resilient agriculture.
+1:52 It's a difficult word. So maybe you'll
+1:54 tell us a few words about that. But
+1:56 yeah, welcome to our event.
+1:59 Thank you and thanks so much for
+2:01 inviting me. I'm very happy to be here
+2:04 and I think you already gave a very nice
+2:06 overview of some of the things that I've
+2:08 been doing in the past year. So I won't
+2:09 spend too much time on this but as you
+2:11 said be to see kind of you know past few
+2:13 years I've been working on where
+2:15 strategy, AI and kind of product meet.
+2:19 Uh I'm an engineer by training. So I
+2:21 have a master's degree in um applied
+2:23 physics but I am also an art historian
+2:27 and uh ever since my studies I've really
+2:30 enjoyed kind of trying to meet at art
+2:33 and science or at least try to find ways
+2:35 in which more technical topics merge
+2:37 with more softer topics like uh more
+2:39 strategy or product or design or
+2:41 innovation. So the ones that we'll we'll
+2:43 talk about today. Yeah. and as you
+2:45 mentioned spent some years working as a
+2:47 strategy consultant but then uh worked
+2:50 on all sorts of topics but I really
+2:51 wanted to dive deeper into the topic of
+2:53 AI machine learning that's when I joined
+2:56 process and also there I've been doing
+2:58 many things but I think you can kind of
+2:59 summarize it as trying to find ways um
+3:02 to scale the impact that AI and machine
+3:05 learning have across organizations. Uh
+3:08 so that's where I've been working on uh
+3:10 topics like you know how does AI
+3:12 actually fit into your overall business
+3:13 strategy of a company um or um how can
+3:18 you kind of design and optimize your
+3:19 products in such a way that you have
+3:21 amazing feedback loops going or how can
+3:23 you upskill a whole organization uh to
+3:27 understand for them to understand the
+3:29 basics of AI machine learning um and
+3:31 help enable the work of the data
+3:32 scientists in an organization. So lot of
+3:35 different topics that we're working on
+3:36 and very happy to be talking about
+3:38 design and innovation today.
+3:41 And uh so you had a double degree right
+3:44 or how or first you got one and then
+3:46 another.
+3:47 Yeah. So I have my uh art history degree
+3:50 is undergraduate so just a bachelor
+3:52 degree and I did that together with my
+3:54 physics and then I did the masters in
+3:56 applied physics. Yeah
+3:59 that's that's pretty cool. So did you
+4:01 say it was quite useful in your career
+4:03 that you have like both perspectives
+4:05 sort of on things?
+4:08 I would say that um the humanities or
+4:10 art history definitely has a completely
+4:13 different way of thinking about um
+4:15 problems. So it's much more about you
+4:18 know in physics it was always the case
+4:20 that you had sort of a challenge and
+4:22 there's only one possible answer whereas
+4:25 in history or arts there's always you
+4:27 know a single topic that you can look at
+4:30 from different perspective. So that's
+4:32 much more about trying to also
+4:33 understand other people's perspective on
+4:36 a certain situation and really being
+4:37 able to kind of maybe convince someone
+4:40 of of your perspective. So I would say
+4:42 it's a very nice and complimentary skill
+4:44 set.
+4:45 Yeah. Especially with history, right? So
+4:47 the textbook is not enough, right?
+4:49 Because you always have different
+4:51 opinions and you need to learn to work
+4:53 with sources to really find out what
+4:55 happened
+4:56 cuz text books are always written
+4:58 like they sometimes admit some things.
+5:01 Yes, there's always, you know, someone
+5:03 always has their own view on on a
+5:05 certain situation. Definitely.
+5:07 Okay. So what is design? Um like is it
+5:10 about making websites look good or there
+5:13 is more to that?
+5:15 Right. So you're you know you're asking
+5:17 a physicist here to to define design and
+5:20 probably designer will have a different
+5:21 perspective but because I'm I'm not a
+5:24 designer by training I actually very
+5:26 nicely I'm able to see design really as
+5:28 a tool and then um for me more
+5:31 specifically as a tool to help build um
+5:35 user centered products. So I see it as a
+5:38 whole set of processes that you can
+5:41 apply to make sure that whenever you
+5:44 build a product, a feature or an AI
+5:47 application um that you really start
+5:49 from the problem that you're trying to
+5:51 solve and really always take into
+5:53 account sort of the customer view or the
+5:57 well whoever is going to use this this
+5:59 uh this application that you're building
+6:00 that you always make sure that you take
+6:02 that into account. That for me is is
+6:04 what design is about. And why is it
+6:06 called design? To me, design is like,
+6:08 okay, let's design a car that looks that
+6:11 is beautiful or let's design a dress
+6:13 that looks beautiful or let's design a
+6:15 website. like it's always to me it's
+6:18 about I I like aesthetical component of
+6:23 it like I don't know but when I started
+6:26 working at Twix I learned that designers
+6:29 to elix and in other companies
+6:30 especially UX designers right so they
+6:34 it's not only about making buttons look
+6:36 good right but also definitely how easy
+6:39 it is to find a button on the website
+6:41 right and other things
+6:43 yeah and especially U when you try to
+6:47 combine that with AI, data science,
+6:50 machine learning, for me it becomes
+6:52 about much more than just you know what
+6:53 the button needs to look like, what
+6:55 color it should be. Um and I have some
+6:58 examples that I can share with you that
+7:00 how that might work. So uh maybe the
+7:03 closest to UX I have an example of what
+7:06 you would call um algorithm friendly
+7:09 design or uh it's also sometimes called
+7:13 seeing as an algorithm. It's a very nice
+7:16 uh article that I can recommend by an
+7:18 author named Eugene Wei. when he talks
+7:21 about it's almost as if you know when
+7:23 you think about a certain product
+7:24 experience or the way in which a
+7:26 customer interacts with the product why
+7:28 don't you also see the algorithm as
+7:31 stakeholder in that because you know for
+7:34 an algorithm to work very well needs to
+7:36 have very clear signals so why not build
+7:40 your product in such a way that the
+7:42 algorithm can actually uh collect all of
+7:45 the signals that it needs and I think
+7:47 you know this is kind of a new way of of
+7:50 thinking about maybe the interaction
+7:52 between design or product design and and
+7:54 data science but I think it's a very
+7:56 powerful one also fits into this broader
+7:59 story of maybe data centric AI so you
+8:02 know back in the days three years ago
+8:04 when I joined pros I had this feeling
+8:05 that a lot of data science teams they
+8:07 would build AI applications using the
+8:09 data that was already there that was
+8:11 usually generated um for a different
+8:14 purpose not necessarily for the purpose
+8:16 of training their models but imagine
+8:18 that you move to a different scenario
+8:21 where from the beginning of designing a
+8:25 product you take into account that
+8:27 algorithm and what it might need. So you
+8:29 know think about ox it's about buying
+8:31 and selling uh and sometimes buyers and
+8:34 sellers have have different incentives.
+8:36 So a seller just wants things to be very
+8:38 easy. They don't want to provide that
+8:40 much information because you know they
+8:42 it takes too much time. But a buyer
+8:44 might want to know a lot of details. So
+8:46 there's already a little bit of conflict
+8:47 that usually when you design a product
+8:49 you take into account both the needs of
+8:50 the buyer and the seller. But imagine
+8:53 that you maybe also take into account
+8:55 the needs of the algorithm there and
+8:56 maybe the algorithm is it's all about
+8:59 you know understanding um uh the
+9:02 preferences of a certain buyer. So maybe
+9:05 really in detail understanding you know
+9:07 what style of secondhand clothing they
+9:09 might like or what style of furniture
+9:11 they might like and maybe in a way
+9:13 designing also the product to collect
+9:16 really strong signals about exactly
+9:18 exactly that. So you know that's an
+9:21 example for me where where data science
+9:22 and and design come together.
+9:25 I think you mentioned one important word
+9:27 that I um I took a note of this word. So
+9:31 you mentioned it's this is about
+9:32 interaction right design it's about how
+9:35 you interact with something be it a
+9:37 piece of furniture or a website right u
+9:41 like physical or virtual product
+9:43 and u so it's about making website easy
+9:47 to use and then when we talk about
+9:50 design and machine learning it's also
+9:52 about thinking how this thing will
+9:55 interact with an algorithm right not
+9:57 only with the human with the user but
+9:59 also with our algorithm that we will use
+10:02 to make user experience better, right?
+10:04 Yeah. And and especially, you know, how
+10:07 can we collect the signals that the
+10:10 algorithm might need in order to train
+10:12 faster and this article that I just
+10:14 mentioned about seeing as an algorithm
+10:16 that very nicely described the
+10:18 difference between Instagram and Tik Tok
+10:19 here, right? So imagine scrolling an
+10:22 Instagram feed. I think a lot of people
+10:24 will be familiar with that. Well, you
+10:26 know, you scroll past a lot of different
+10:28 posts, but if you reason from the
+10:30 perspective of an algorithm, it's kind
+10:31 of hard to understand if someone likes a
+10:33 post or not because typically, you know,
+10:36 you might see one bit of a post here and
+10:39 you see a bit of a post below it. You're
+10:41 looking at the comments. So, what is it
+10:42 actually that a user is interacting
+10:44 with? Whereas if you look at Tik Tok
+10:46 there it's about short videos and
+10:48 someone's looking at one video at the
+10:51 time and maybe clicked on the creator
+10:53 maybe clicks on um a heart right and
+10:57 then you collect much uh more sharp
+11:01 signals about that one particular video
+11:04 which actually allows Tik Tok and its
+11:06 algorithms to learn much faster what it
+11:08 is that you like and that you don't
+11:09 like. So that's where you know in the
+11:11 way that you design your interaction
+11:13 with the user um you're taking into
+11:15 account how you can speed up the
+11:17 learning of the algorithm and actually
+11:18 extracting what the interests are of a
+11:20 particular user.
+11:22 Yeah I guess in case of Instagram and
+11:24 other social networks. So there are
+11:27 multiple ways you can interact with a
+11:30 piece of content. You can like it,
+11:31 right? You can also comment or you can
+11:34 reshare it or you can just watch it,
+11:37 right? And then people the the
+11:40 developers, data scientists in that
+11:42 company now need to figure out, okay,
+11:44 now we have this uh a ton of signals
+11:47 coming out of this. How do we actually
+11:50 now get all these signals and combine
+11:52 them in such a way that we can put this
+11:54 into our recommener system and we get a
+11:57 good fit? While as you said in Tik Tok
+11:59 uh so maybe in these social networks
+12:01 they first designed the feed and then
+12:03 thought okay now how do we add the the
+12:06 ranking here right while in Tik Tok they
+12:09 first they thought about this in the
+12:11 first place right
+12:12 exactly exactly yeah but might be nice
+12:16 if I mention another example of how for
+12:18 me design and machine learning come
+12:20 together because what we've just been
+12:21 talking about is really bit more about
+12:24 design as a way that you maybe shape the
+12:26 interface between um the user and the
+12:28 the product. But for me, design can also
+12:31 be much more, let's say, a process or a
+12:34 way of working that you agree on with
+12:35 each other. And an example of a
+12:37 technique that's used a lot by designers
+12:39 is called um the double diamond. It's
+12:42 kind of a way to go from, you know, a
+12:45 rough problem area, something that you
+12:48 might want to solve or something that
+12:50 you think you want to build to an actual
+12:52 working solution. and then you know
+12:55 imagine shape of two diamonds. So it's
+12:57 kind of like diverging and and
+12:59 converging and that's how that way of
+13:01 working works. So you start with
+13:04 something like hey I want to reduce
+13:07 fraud in in my business or in my
+13:09 product. Then you diverge and you start
+13:11 to research okay what is fraud really
+13:14 about? What ways of fraud do we see on
+13:16 the platform? Um what do users care
+13:19 about when they think about fraud? And
+13:21 then you uh converge again and you say
+13:24 okay you know if I want to solve fraud
+13:26 there's this particular sub problem that
+13:28 I actually should be solving because
+13:29 it's most important to my users. And
+13:31 then you start to diverge again and you
+13:33 look at all of these different uh
+13:35 potential solutions in which you can
+13:37 solve that type of fraud and you start
+13:40 experimenting and you start testing them
+13:42 and then you converge to a particular
+13:44 solution that works. And that for me is
+13:46 another design method that's actually
+13:48 used to make sure that um you're solving
+13:51 the right problem and also you're
+13:53 solving the problem in the right way.
+13:54 And some of this might seem a little bit
+13:57 obvious, but to me again it touches also
+14:00 to some of the core challenges that I
+14:03 still see in data science teams that
+14:05 I've worked with. Namely, um what's
+14:07 really the problem that we're trying to
+14:09 solve here, first of all, and also
+14:11 second of all, is machine learning
+14:12 really the right way of solving it? And
+14:15 I have seen a lot of data science teams
+14:17 that you know go to the solution very
+14:19 quickly. But if as a team you agree on
+14:21 these type of design practices might
+14:24 help you to make sure that you're
+14:26 solving the right problem and you're
+14:29 using the the right tools to do so.
+14:31 So I was taking notes about this dable
+14:34 diamond. This is not the first time I
+14:36 hear this but let me try to summarize it
+14:38 to make sure I understood it. So you
+14:40 have like this sort of two big
+14:43 steps in the process right the first
+14:45 step
+14:46 is you really need to understand the
+14:48 problem what is the problem you're
+14:49 trying to solve right so first you do a
+14:51 bit of brainstorming and you try to
+14:53 understand okay fraud what does it
+14:55 actually mean right and then you do
+14:57 brainstorming you talk to people uh then
+15:00 you collect a lot of data right and then
+15:02 out of this data you actually want to
+15:04 pick one area and focus on that and then
+15:07 by doing this you really understand the
+15:09 problem you want to solve the problem
+15:10 that your users have right so first you
+15:13 start with the problem and then the
+15:15 second diamond the second step is okay
+15:17 now we found out what the problem is now
+15:20 let's find a solution and then you again
+15:22 go into the brainstorming mode and you
+15:25 say okay I can solve it with neural
+15:26 network I can solve it with I don't know
+15:28 gradient boosting I can solve it without
+15:30 any machine learning I can solve it just
+15:31 by sitting there and labeling data
+15:33 myself or I don't know I can hire a
+15:36 vendor to do this or like you list all
+15:39 these possible things
+15:40 right and then at the end okay now we
+15:43 have all these possible solutions like
+15:45 we can build thing inhouse we can solve
+15:48 it without machine learning we can I
+15:50 don't know hire a vendor let's evaluate
+15:52 all these solutions and find the right
+15:54 one right and then at the end of this
+15:55 process you know what the problem is and
+16:00 you know what's the best way to solve it
+16:02 right
+16:02 exactly hopefully
+16:03 and and hopefully I think that was a
+16:06 very nice way of describing it
+16:08 It of course depends on the team and the
+16:10 organization how exactly they might
+16:12 apply a process like this. But what you
+16:14 also often see is when you go through
+16:15 that solution phase there's a lot of
+16:16 experimentation. So out of these you
+16:18 know six possible ways that we've
+16:20 identified um maybe let's start three of
+16:23 them. Let's see if they actually work if
+16:25 they work as easily as we thought they
+16:27 would. Um, so it's not, you know, a lot
+16:30 of this is trying to also uh
+16:33 substantiate your ideas with data,
+16:35 whether it comes from your user or from
+16:37 tests to try to see what really is the
+16:40 problem you're solving and what the best
+16:41 solution could be.
+16:43 So I guess this is a part of the second
+16:46 step, the second diamond is okay, now we
+16:49 have a couple of possible solutions. We
+16:51 can evaluate this vendor. Let's try and
+16:54 build a proof of concept, right? or we
+16:56 can see how to solve it without any
+16:58 machine learning. Let me just sit down
+17:00 and label all this data myself and see
+17:02 what happens, right? How can I actually
+17:03 make a decision based on that? And then
+17:06 I don't know the third option could be
+17:07 something else. Let's just I don't know
+17:09 open my Jupyter notebook and train a
+17:12 simple model myself, right? And then we
+17:14 do this in parallel. We have three proof
+17:15 of concepts and then at the end of this
+17:18 uh step we can also see okay this seems
+17:21 to be more viable, right? It's also a
+17:23 part of the process. Exactly. Yeah.
+17:26 Yeah. And then usually along the way you
+17:28 have different criteria, right? Because
+17:29 sometimes, you know, you just have
+17:31 budget constraints. So that's when you
+17:32 eliminate one of the options. Sometimes
+17:35 you have an idea, but you know, you put
+17:37 it in front of a user and it turns out
+17:39 they don't like it at all. So maybe
+17:41 that's why you eliminate another idea.
+17:43 Or as you said, you know, you try to at
+17:45 least build it, but you figure out you
+17:47 really have none of the data to get
+17:49 started. And to collect the data would
+17:51 take you so long that that idea is not
+17:53 feasible. So then for different reasons
+17:55 you can start to eliminate um some of
+17:57 your potential solutions. But at least
+18:01 I like it because it's a very conscious
+18:04 uh approach to make sure that you are
+18:06 really doing the right thing and you're
+18:08 not spending your whole team's time
+18:10 solving a problem that could have been
+18:11 solved in a much easier way or maybe
+18:14 that you know wasn't the most important
+18:16 step to actually solving that fraud
+18:18 issue that you started off with. M and
+18:21 at the beginning when you were
+18:23 describing this it looked like a thing
+18:25 that could be done in a couple of days
+18:26 but now when we talked about creating a
+18:28 pro proof of concept multiple of them
+18:30 then also showing to the user and then
+18:32 at the beginning you also mentioned I
+18:34 think user research I think which
+18:36 involves talking to actual people and
+18:38 then showing them some things right so
+18:40 how long does it actually take from the
+18:44 moment let's say when a management
+18:46 management comes in and says hey we have
+18:48 a lot of fraud let's solve it to the
+18:50 moment when you you know finish the
+18:52 second diamond.
+18:55 Well, ideally this takes two days,
+18:57 right? You have an amazing [laughter]
+18:58 team, you put all of them together in a
+19:00 room and solved it today. So, yeah, it
+19:03 depends a lot on how many customers you
+19:06 have, how elaborately you want to do
+19:09 user research or how much of that is
+19:11 already there in your organization. Uh
+19:13 it also depends on how complex you want
+19:15 to make the solution. Um and when you
+19:17 would say it's done, right? Is it done
+19:19 when you have some sort of a small proof
+19:21 of concept or is it done when you've
+19:22 actually scaled that across all of your
+19:24 customers in all of the countries that
+19:26 you might be operating in? So, you know
+19:29 that I think it's it's difficult to say
+19:31 how long a process like this takes. But,
+19:34 you know, I do want to stress that when
+19:37 a team that includes data scientists
+19:39 starts to work with these type of let's
+19:41 say design techniques doesn't mean that
+19:43 they'll spend 90% of their time in
+19:46 brainstorming sessions, right?
+19:48 I think it's very nice to uh use some of
+19:51 these techniques to try to make sure
+19:54 that you as a team and as an
+19:56 organization you keep working in a user
+19:58 centered or problem centered way. You
+20:02 don't go to a solution too quickly. Also
+20:04 doesn't mean that you have to kind of
+20:06 throw away you know all of the ways of
+20:08 working that you had before. I think it
+20:10 can be a very nice add-on um to some of
+20:13 the the ways of working that teams
+20:14 already have.
+20:17 So I heard this diable diamond in
+20:20 context of another thing another term
+20:21 called design thinking. Uh so what is
+20:24 design thinking and how these two things
+20:26 are related.
+20:28 So you know if you maybe thought that
+20:30 this concept of double diamond was
+20:32 really a little bit fluffy then I would
+20:34 say that you know design thinking is is
+20:37 the overarching term even above some of
+20:39 these different processes. I would say
+20:42 that design thinking is you know the
+20:45 overall ambition to make sure that
+20:48 whatever products you build or features
+20:50 or models that they again take into
+20:54 account um this this user and then as an
+20:58 organization anyone could do that in
+21:00 different ways maybe what's actually a
+21:02 nice example is how Google does this so
+21:06 if you're interested to know a little
+21:07 bit more of what some of these design
+21:09 processes might look like to make sure
+21:11 that you're um working in a kind of
+21:15 design thinking way. You could look up
+21:17 pair with Google. I think it stands for
+21:21 people in AI research. They have a whole
+21:24 set of tools uh from kind of scoping
+21:28 exercises to more ways of prototyping
+21:32 that very nicely combine um making sure
+21:36 that you understand the user uh but also
+21:38 working towards actual AI machine
+21:41 learning solutions for some of the
+21:43 problems that you might identify. So
+21:45 yeah, it's a whole I would say it's a
+21:46 whole set of processes to make sure that
+21:48 you are you are user centered, but as I
+21:51 said, it's not Yeah, I think it's a nice
+21:53 add-on and a nice tool uh to have, but
+21:56 it's not, you know, something that makes
+21:59 you have to throw away everything that
+22:01 you've learned before, right?
+22:03 So it's spare like P A IR, right?
+22:08 Yes. People AI research. Yes.
+22:12 Mhm. And you said it covers things like
+22:15 scoping. I guess this is the first
+22:16 diamond we talked about. Yeah. Right. So
+22:18 how do we make sure that we're solving
+22:21 the right problem and then prototyping I
+22:24 guess this is the second part. Right. So
+22:25 when we
+22:27 try to find the the solution and there
+22:30 they talk about different tools how to
+22:32 actually or processes how to actually
+22:36 organize our sessions in such a way that
+22:39 we successfully uh find the problem and
+22:42 then we successfully find the solution
+22:44 right
+22:45 yes yes and it's just more I would say
+22:48 an overview of some inspiring resources
+22:52 uh because
+22:54 I would as a team that has an ambition
+22:57 to do more with AI, it's not as if
+23:00 there's already, you know, very strictly
+23:03 written handbook of exactly how you
+23:05 should be doing it. So, it's typically
+23:08 up to a team to just find inspiration
+23:11 in how others might have approached this
+23:13 and then this research from Google might
+23:15 be an interesting one. [clears throat]
+23:17 And what is the design sprint? Is it
+23:19 related to what we talked about?
+23:22 Yeah, sometimes uh teams go through a
+23:25 process like this kind of centered in I
+23:28 don't know a one week for example. So
+23:30 before they might have already done a
+23:32 lot of interviews. So in one week with a
+23:34 team they'll try to analyze those
+23:37 interviews and you say hey here is
+23:38 really the problem that we want to
+23:40 solve. They'll do a whole bunch of
+23:42 creation ideation type of workshops and
+23:45 they'll come to a prioritized list of
+23:47 solutions that they might might want to
+23:49 be trying. So sometimes teams try to
+23:52 really um put a lot of brain power
+23:55 together and try to answer a whole bunch
+23:57 of these type of questions around the
+23:59 problem and the solution together in in
+24:01 one week. But yeah, that again depends a
+24:03 little bit on what it is that you're
+24:06 trying to solve. Sometimes you know hey
+24:08 let's solve fraud that might be such a
+24:10 big challenge that a design sprint is
+24:12 not really the right method for a team
+24:14 to do that.
+24:15 So this is one of the tools of this
+24:17 design thinking thing right? Yes.
+24:21 Yes.
+24:21 Okay. So I guess uh from what you
+24:24 mentioned what you talked about so let's
+24:26 say when we understand the problem when
+24:28 we did a bit of homework already when we
+24:30 interviewed the users users about the
+24:32 problem that they have with our product
+24:35 um and we already have some materials
+24:38 and then in order to go through this
+24:40 material and process it as effectively
+24:42 as possible we put together a team like
+24:46 a bunch of people together and uh tell
+24:49 them okay you have a
+24:51 Now figure out what to do with it,
+24:53 right? And this is called a design
+24:54 sprint.
+24:56 Yeah, I think that's how you could say
+24:57 it. Yes.
+24:59 Okay. And what are the things that we
+25:01 need to do in this design sprint to to
+25:03 be able to do this successfully? And who
+25:07 do we need that there in the sprint?
+25:09 Like I think we need data scientists,
+25:12 right? Do we need designers, product
+25:14 managers, like who should be there?
+25:18 Well, um, definitely if if you're
+25:21 thinking about solutions that involve
+25:23 data science, um, definitely helpful to
+25:26 have data scientists in the room. And I
+25:28 also what I appreciate about these ways
+25:30 of working is that you'll try to involve
+25:34 the full team in the whole process,
+25:36 right? So it's not just like, oh, okay,
+25:38 I think there's a solution with AI here.
+25:40 This is the problem that we call the
+25:42 data scientist. No, I always really
+25:44 appreciate it if data scientists maybe
+25:47 sat in on some of the interviews with
+25:49 customers or helped at least really also
+25:52 understand and own the problem that that
+25:54 you're trying to solve. So that's why
+25:56 everyone that you might need for the
+25:58 solution, I really appreciate it if all
+26:00 of them are there in the full process.
+26:02 Um but yeah for these type of sessions
+26:04 it is very helpful to have someone that
+26:06 can facilitate them so that understands
+26:08 like hey when should we be diverging and
+26:11 and we keep researching and trying to
+26:13 keep understand the the problem space
+26:16 and when do we start to diverge and say
+26:18 like hey this is really the core problem
+26:20 that we're trying to solve for example
+26:22 uh and it could be a designer or the
+26:24 surface designer who are very well
+26:27 equipped to facilitate processes like
+26:29 that but it could also be a product
+26:31 manager who has done that before, right?
+26:33 This is I would say a skill that is
+26:36 definitely uh you can definitely learn
+26:38 this data scientist could also be the
+26:40 ones that facilitate a session like
+26:42 that. Um and um yeah, whoever you might
+26:46 need uh on the on the solution side uh
+26:49 you would want to involve them in a in a
+26:51 session like this. All the engineers,
+26:53 right? Front end engineers, back end
+26:55 engineers, uh m like if we need machine
+26:58 learning, then data scientist, then the
+27:00 facilitator, could be product manager,
+27:02 could be designer or both, right?
+27:05 Yes.
+27:06 So basically the entire team, the the
+27:08 product team that will work on
+27:10 implementing this, they all should be
+27:12 there, right?
+27:13 Ideally, I would say so. Yeah. And this
+27:15 is something that I haven't always seen.
+27:19 I do see often a tendency you know that
+27:22 the user research is done by user
+27:24 researchers or designers uh and then um
+27:28 you know once you actually start
+27:29 building that's when you call the
+27:31 engineers but I would say that you build
+27:35 better products or better features or
+27:37 better AI applications if you have all
+27:39 of that brain power involved both in the
+27:42 problem definition and in the solution
+27:45 uh definition as I mentioned before you
+27:48 know this idea of seeing as an algorithm
+27:51 and maybe optimizing the interaction
+27:54 with the user in such a way that you
+27:56 really collect these laser sharp signals
+27:58 that you might need in your models.
+28:00 Well, that is quite a complicated task.
+28:03 So, you probably need all of the
+28:06 different, you know, mindsets and all of
+28:09 the different uh specialties uh involved
+28:13 in the whole process there to be able to
+28:15 achieve something like that.
+28:17 Yeah. the the next question I had was
+28:19 about uh like as a data scientist why
+28:22 should I care about all that sounds like
+28:25 my job but I think you answered that
+28:27 right so in this process when we talk
+28:30 about potential solution uh as a well
+28:33 even before that first data science for
+28:36 data scientist it's very helpful to
+28:37 understand the problem right because it
+28:39 will influence how exactly you solve it
+28:41 but then also during the sort of
+28:44 solution phase when let's say we're
+28:46 thinking about the interface how exactly
+28:48 the interface will look like. If I as a
+28:51 data scientist not there not in this
+28:54 meeting then I might not be able to say
+28:56 hey what a minute how
+28:59 wait a minute how exactly we're going to
+29:01 collect this data that we actually will
+29:03 need for solving this.
+29:04 Exactly. Exactly. Yeah. And I would
+29:07 almost turn around the question and say,
+29:10 you know, as a data scientist or a
+29:12 machine learning engineer or maybe data
+29:14 engineer, have you ever felt like you
+29:16 were working on an initiative where it
+29:20 wasn't 100% clear to you why you were
+29:22 even doing this and why this problem had
+29:25 to be solved or why it was an important
+29:26 problem or you know as a if you ever
+29:30 find yourself having this tendency of
+29:32 just going to the solution a little bit
+29:34 too quickly.
+29:36 um then you know that might be an
+29:39 indication that there's definitely some
+29:41 value for you and the rest of the team
+29:42 to get in in techniques like this.
+29:45 Yeah, definitely. I remember being in
+29:47 this situation and even worse than
+29:49 somebody when somebody already comes
+29:51 with a solution like let's say a manager
+29:53 comes and says hey like we have this
+29:55 problem and I read an article and the
+29:57 article says you can solve this with
+29:59 deep learning so here I go
+30:02 go figure out how to do to do this and
+30:04 then you spend a couple of months then
+30:06 you come up with some solution it turns
+30:09 out that the problem is wrong and the
+30:11 solution to this problem is uh yeah not
+30:14 correct and then it's just two months
+30:16 waste
+30:17 Yes. Exactly.
+30:19 Yes.
+30:20 Yeah. And of course, you know, some of
+30:22 those dynamics you cannot just solve by
+30:24 having a brainstorming session, right?
+30:26 If you work in a company where that's
+30:28 the tendency that uh product direction
+30:32 is established somewhere by really high
+30:34 management and you're really in an
+30:35 execution f focused role. Um then of
+30:39 course there might be some some bigger
+30:41 challenges to solve. Uh but at least
+30:44 this way of working with your team might
+30:46 allow you to um well start the
+30:50 conversation with managers about these
+30:52 type of topics where you say hey but
+30:54 look we did the research and this is not
+30:56 even the right problem to to be solved
+30:59 you know anyway or this might not be the
+31:02 right technique to to solve it. Let's
+31:04 imagine we have this situation like a
+31:06 manager u comes to me or to a team to
+31:11 product manager and says hey this is the
+31:13 problem we think we have let's solve it
+31:16 with a neural network so how do we
+31:18 challenge that person how do we
+31:21 challenge the uh let's say this or
+31:24 whoever um to say no no no let's let's
+31:28 first figure out um what the problem is
+31:31 like how do we go about
+31:34 Yeah. So, you know, I also in my times
+31:37 working as a consultant, I think I've
+31:39 I've gained some experience [laughter]
+31:41 with, you know, saying no. But maybe a
+31:43 friendlier way of saying no is asking
+31:45 why. So, it's almost as if you know your
+31:49 manager or the CTO, whoever gives you
+31:51 this assignment is also kind of like a
+31:53 customer, right? So just like you want
+31:56 to resent the customer and their needs
+31:57 and their priorities, uh you might also
+32:00 want to do the same with uh whoever is
+32:02 giving you these type of assignments.
+32:04 And then it turns out, you know, they
+32:06 say to you build solution X, but what it
+32:08 really is, again, you know, maybe what
+32:11 they're actually trying to do is solve
+32:12 fraud or improve their monetization or
+32:15 improve the engagement between the the
+32:18 different users on the platform. So
+32:20 that's maybe the underlying why that you
+32:23 also need to get to with whoever gave
+32:24 you that assignment and then with your
+32:27 team you can try to figure out okay if
+32:28 that's what we're trying to do again
+32:31 trying to solve fraud then I can go back
+32:34 and understand what within fraud is
+32:37 really um the best thing to be
+32:40 addressing. So yeah, I would also see
+32:43 that as kind of an engagement where you
+32:45 want to get to the bottom of why someone
+32:47 is giving you a certain task.
+32:50 So I guess then uh in this situation um
+32:55 I or somebody else would ask why right
+32:57 and then understand and where this is
+32:59 coming from like why do you come to meet
+33:01 with this problem who where did you hear
+33:04 about this and then maybe it's best to
+33:06 also involve that person right or maybe
+33:09 if this is something that coming in
+33:11 directly from CTO and then I don't know
+33:13 do we start a design sprint or how how
+33:16 do we do this or double diamond um or
+33:19 like maybe there is even a bigger
+33:21 problem and we need to think about
+33:22 something else before we start.
+33:25 Yeah. Uh yeah. So large organizations,
+33:28 maybe others might not recognize this.
+33:30 If they work in smaller teams where, you
+33:32 know, the CTO just sits at the desk
+33:33 right next to you, then you might not
+33:35 have these situations. But yeah, large
+33:37 organizations sometimes remind me of
+33:39 this, you know, Chinese whispering game
+33:41 where you all sit in a circle and one
+33:43 person, you know, whispers something in
+33:45 the ear of the person sitting next to
+33:47 them and the the story keeps traveling
+33:48 throughout the room and by the end the
+33:50 time that it ends up at the end of the
+33:52 line, the the story has completely
+33:53 changed. I think this sometimes does
+33:56 happen in organizations. So, you know,
+33:59 everyone gives their own interpretation
+34:01 [laughter]
+34:02 of of what it actually is that that
+34:04 we're trying to achieve. Um, so, you
+34:06 know, again, that's one of the bigger
+34:08 challenges that can't necessarily solve
+34:10 through um design thinking or any sort
+34:13 of design process. um that is probably
+34:15 just you know an organization that's in
+34:17 need of a very clear uh product
+34:20 definition or a very clear strategy
+34:22 statement. But yeah again you go into
+34:25 these meetings like that try to
+34:27 understand what the bigger problem is
+34:29 that you're trying to solve and then
+34:31 whoever is responsible for building a
+34:34 solution needs to make sure that he or
+34:36 she has the team that they need to try
+34:39 to achieve that. So involve their
+34:42 product teams usually and then
+34:44 facilitate the right process. Could be a
+34:46 design sprint if the problem is slightly
+34:49 smaller and slightly more clear-cut.
+34:51 Could be also launching user research if
+34:54 you don't have that understanding yet of
+34:55 the problem that you're trying to solve.
+34:57 Or maybe it's just a lot of analytics
+34:59 because sometimes that can be what you
+35:01 need to understand what it is that that
+35:04 we're actually talking about. Yeah. And
+35:05 then combining those into an insight
+35:07 about the problem to solve and then
+35:09 taking it from there.
+35:11 Yeah, this Chinese whispering um I think
+35:13 it happens quite often especially in
+35:15 larger companies where we have let's say
+35:18 multiple uh how to say multiple
+35:20 departments and then the problem is
+35:23 coming from one department then somebody
+35:25 tells to their manager to their manager
+35:27 to their manager and then the manager at
+35:29 the top talks to other manager and then
+35:32 you know there could be like I don't
+35:33 know uh five six hops before it reaches
+35:37 the data scientist who actually needs to
+35:38 solve it. Yes.
+35:40 And then I guess here the right way to
+35:42 do this would be to try to backtrack,
+35:45 right? And then get together and try to
+35:48 solve it.
+35:49 Yeah. And and also as a data scientist,
+35:51 don't be afraid to, you know, okay, I'm
+35:54 just going to write down what I think
+35:55 the scope is and what I think the
+35:57 problem is that we're trying to solve
+35:59 and why we're doing this. So just put
+36:01 together a very short scoping document,
+36:04 can even be an email, and just send it
+36:06 back to, you know, all the way up to
+36:10 where you think it actually came from,
+36:12 and see how they how they respond to
+36:14 that. So just kind of those basic
+36:16 projects management tools sound kind of
+36:19 boring, but they can maybe save you a
+36:22 few months of work uh if if it helps you
+36:24 focus on the the right topic. Mhm. So
+36:27 [clears throat] when somebody comes with
+36:28 the solution, you need to find out why
+36:31 and then you need to document this and
+36:33 then you need to say okay this is what I
+36:36 think the problem is and this is the
+36:37 solution I propose right or even without
+36:40 the solution just the problem right and
+36:42 then you have this document and you you
+36:43 send it and then you want to get an uh
+36:46 okay saying okay yes this is indeed the
+36:49 problem right [laughter]
+36:50 in an ideal world this is how it would
+36:52 work. Yes.
+36:54 Do we need to have some sort of
+36:56 processes in our organization like and
+36:59 how exactly this should happen like I
+37:01 imagine if there are such ad hoc
+37:03 requests coming in I guess there should
+37:06 be some process like how exactly we
+37:07 define the road map how we prioritize
+37:10 things right how do how should it work
+37:15 yeah so that's maybe
+37:18 you know a broader question also around
+37:20 who defines priorities in an
+37:23 organization that specifically when you
+37:25 talk about data science who defines what
+37:28 the road map looks like and what you
+37:31 know models the teams are going to build
+37:33 uh and who leads that and I think what
+37:37 you're describing is one situation that
+37:39 I've sometimes seen that it's you know
+37:41 decided by management okay we need deep
+37:43 learning here and then let's build it
+37:46 without maybe a detailed understanding
+37:47 of of the problems or the total solution
+37:50 space um but what I've also seen is
+37:52 maybe more the opposite that it's data
+37:54 scientists that pitch ideas maybe mostly
+37:58 from a technical perspective like hey we
+38:00 have this data available in the company
+38:02 and I see that we can build I don't know
+38:05 a computer vision model here based on
+38:07 whatever data we have available let's
+38:09 build it and that's not always wrong but
+38:14 I do sometimes see a missed opportunity
+38:17 also for product managers to play a
+38:18 larger role in defining um these AI and
+38:23 data science applications simply because
+38:26 you know the data the the product
+38:27 managers are usually the ones that kind
+38:30 of at the center that have an overview
+38:32 of all of the different problems that
+38:34 are out there that need solving. Uh and
+38:37 they could be the ones that very nicely
+38:39 say like hey here I see a problem area
+38:42 that my customers are struggling with
+38:44 and you know maybe we can use AI machine
+38:47 learning as a as a tool for solving it.
+38:49 So when it comes to priority setting,
+38:52 it's of course a very difficult broader
+38:54 topic and also organizations have
+38:57 different uh processes in place for
+38:59 that. But sometimes I see that maybe
+39:01 product managers can also take a leading
+39:04 role in um at least understanding where
+39:07 AI might make sense.
+39:12 Yeah. And uh one other thing we wanted
+39:15 to talk about here. So we talked about
+39:17 design but we also wanted to talk about
+39:19 innovation right and uh how is it all
+39:23 that we talked about design and all that
+39:26 communication between different people
+39:29 how is it related to innovation
+39:32 and whatnovation
+39:34 from
+39:35 again you know we just discussed a very
+39:37 broad topic David design and now an even
+39:40 broader one called innovation um
+39:44 maybe and from my perspective how I see
+39:46 this topic. So, especially in large
+39:49 organizations, a lot of the data
+39:51 scientists work on uh they work
+39:55 typically on on goals for the next three
+39:57 months, right? A lot of large tech
+39:59 organizations have these things called
+40:01 OKRs, objectives, and key results that
+40:03 are established on a three-monthly
+40:05 basis, which means that a lot of the
+40:07 data the science work usually fit in a
+40:10 three-month block, which means that they
+40:13 are not huge crazy endeavors, but
+40:16 there's something that's quite tangible
+40:18 and just has a direct impact on a
+40:20 certain metric like let's try to, you
+40:22 know, tweak the the search and
+40:24 recommendation models for this
+40:26 particular part of the s to try to get
+40:28 the performance from a to you know 5%
+40:31 better than that and of course if all of
+40:33 the data scientists working in an
+40:35 organization all have these sort of
+40:38 projects where they get you know from A
+40:40 to B in a kind of incremental way at
+40:42 scale that has a large impact
+40:45 but I do think that that can be a bit of
+40:48 a missed opportunity because there might
+40:50 be completely new business opportunities
+40:52 or completely new product opportunities
+40:55 that just don't fit into a three month
+40:58 time period. They will take more time.
+41:00 So innovation for me is trying to find a
+41:03 way of working to spend part of your
+41:07 organization's resources and also
+41:09 figuring out you know where might the
+41:11 product or the business go in six months
+41:14 or a year from now and how might AI
+41:17 machine learning actually enable a huge
+41:20 opportunity that that wasn't there
+41:22 before like you know when you talk about
+41:25 Ox how can we
+41:28 try to do personalization to an extent
+41:31 that we don't do right now. How can we
+41:34 really in detail understand your
+41:36 particular taste when it comes to
+41:40 furniture in such a way that we can find
+41:42 the perfect couch that fits into your
+41:44 house or when you talk about maybe food
+41:47 delivery. How can I really understand,
+41:50 you know, exactly what type of flavors
+41:53 you like in such a way that I can find
+41:56 this dish that you've never tried
+41:58 before, but I'm sure you're absolutely
+42:00 going to love it. Those could be really
+42:02 cool and powerful ideas that very much
+42:04 change the business, but it's hard to do
+42:07 them, you know, in a three-month
+42:08 project. So that's why sometimes at
+42:10 least I would say you need a bit of
+42:12 space uh in an organization to try out
+42:16 the more radical ideas and that for me
+42:18 is innovation.
+42:20 Yeah. Because I think we usually work in
+42:22 this uh think increments in these
+42:25 sprints in these time blocks. I think
+42:28 like the whole agile thing is about
+42:30 moving in small things, right? So you
+42:32 don't I don't know spend uh a lot of
+42:35 time working on something ambiguous when
+42:38 you can work on something tangible that
+42:41 will bring results right now. Right? So
+42:43 this is the usual way of working, right?
+42:46 So this is the whole agile thing. But as
+42:48 I understood you correctly, maybe I'm
+42:50 wrong, innovation is not about making
+42:52 these small incremental steps, but
+42:54 instead of, you know, backing up and
+42:56 saying, okay, let's instead of doing the
+43:00 next thing we need to do for this
+43:02 project, let's just start from the
+43:04 beginning and see if there is a
+43:06 different way of solving this problem.
+43:09 not something that we build on top of
+43:10 what we already have, but maybe there is
+43:12 something like a completely different
+43:14 road that will take us closer to what
+43:17 people actually need. Right.
+43:19 Exactly. Yeah. Yeah. So, you know, as an
+43:22 example, um secondhand cars, right?
+43:27 Within Alexa, there are a lot of
+43:28 platforms where people can buy and sell
+43:30 secondhand cars. But the core problem
+43:32 when you're buying a secondhand car is
+43:35 trust. Not very surprisingly. number one
+43:38 emotion when you buy a secondhand car is
+43:40 fear that you know the seller is lying
+43:42 to you the car has been in a huge
+43:44 accident and uh they're trying to to
+43:47 hide that or actually the car has driven
+43:50 twice the amount of kilometers that the
+43:52 seller says it has. So of course you can
+43:56 try to solve for some of these issues in
+43:58 kind of an incremental way. So you'll
+44:00 try to make you know um a model to test
+44:06 the reliability of the seller for
+44:07 example but you can also say okay can we
+44:10 use AI and machine learning or any other
+44:12 technique to solve that trust issue in a
+44:16 radically different way you know maybe
+44:18 we should build this huge scanner where
+44:20 you drive the car into the scanner kind
+44:22 of like a car wash has a lot of AI
+44:24 machine learning and at at the end of it
+44:26 you know every possible detail about the
+44:28 car that would be a radically different
+44:30 way of solving it. Now, I'm not saying
+44:32 that that is the way to solve it because
+44:33 then I would be going immediately to,
+44:35 you know, a solution. That's not what
+44:37 you try to do in innovation. Again, it's
+44:39 that same type of design thinking where
+44:41 you really try to understand the
+44:43 problems and all of the solutions before
+44:44 you pick one. But at least, you know, if
+44:47 you just have three months, no one is
+44:49 going to try to think about building
+44:50 that scanner because it just wouldn't
+44:52 fit into the road map. And of course you
+44:54 also don't want everyone in your
+44:56 organization thinking about this kind of
+44:59 crazy and out of the box idea all the
+45:00 time because then of course you know
+45:02 nothing actually gets built on a daily
+45:04 basis but you might want a few people
+45:07 that worry about completely different
+45:10 directions.
+45:13 I heard this story many times that let's
+45:15 say somebody works at Amazon or Facebook
+45:17 or some other company and they have a
+45:20 problem with something but they because
+45:24 they don't have freedom of solving this
+45:27 like in in innovative way so they need
+45:31 to make this incremental steps. So what
+45:33 they do is they leave and start a
+45:36 startup right and in the startup they
+45:38 try to in a way to sort of rethink
+45:42 exactly how they do things and then
+45:44 there is a startup which tries to take
+45:47 one of the things that this big company
+45:49 does but do it differently and then some
+45:51 of these startups become bigger right
+45:54 because they solve it in a more original
+45:57 way in a better way that users like more
+46:00 right I I heard many stories like that
+46:04 not necessarily Amazon. Uh the reason I
+46:06 brought up Amazon is because uh I
+46:08 remember
+46:10 hearing listening to an interview
+46:12 somebody who had a problem with Amazon
+46:14 with some internal machine learning
+46:15 platform and then they thought okay this
+46:18 seems like a problem that many customers
+46:19 have. So they left Amazon and they
+46:21 started the company. So this is
+46:24 innovation right? So when you
+46:26 see a problem and you try to find a new
+46:28 way of solving this problem.
+46:30 Yeah. Yeah. I I definitely think a lot
+46:32 of startups start in that way. It starts
+46:35 from a personal frustration. Something
+46:37 that you've encountered and maybe
+46:39 couldn't solve in the job that you have
+46:41 and you say, "Okay, let me just do this
+46:43 myself."
+46:44 Uh though, you know, I don't think you
+46:46 always have to leave a company
+46:48 [laughter] to to solve a problem like
+46:50 that.
+46:51 Yeah. And maybe my recommendation would
+46:54 be of course you know if you have a you
+46:58 see a big problem and you think of an
+47:00 innovative solution um it's not as if
+47:02 you know when you pitch it to the
+47:04 manager that he immediately says perfect
+47:06 here you have a million and a team and
+47:08 and let's build it but what you can do
+47:10 is try to again
+47:12 it would be nice
+47:14 but again what you can try to do is in
+47:16 that similar way as what I just
+47:18 mentioned about the double diamond you
+47:19 can try to collect evidence so you can
+47:21 try to collect evidence about why this
+47:24 is really an important problem to be
+47:25 solved and also evidence about why your
+47:28 solution might be the right one. So if
+47:30 you just have a little bit of time and
+47:32 opportunity to for example experiment uh
+47:35 and collect some data in that way uh
+47:37 then that might help you build a really
+47:39 cool business case and then you pitch it
+47:41 to your manager and then you get that
+47:42 million and you can solve the problem.
+47:46 I guess if you're an Amazon, you don't
+47:48 want your people to leave and start a
+47:50 startup, right? So, you want to keep
+47:52 them in the company and you want to
+47:55 encourage them to do it because you know
+47:58 um you don't know maybe this will become
+48:00 a new uh big thing, right? So, you
+48:03 probably want to this to happen inside
+48:05 your company and not have a competitor
+48:08 who is doing something similar
+48:09 ideally. Yes. Yeah. And it's, you know,
+48:12 I hope that that is also part of an
+48:16 interesting culture for people to work
+48:17 in where they feel like, hey, if I have
+48:19 an idea and I'm actually able to prove
+48:21 that it might be working and I have the
+48:25 opportunity, you know, maybe to
+48:27 experiment a little bit uh and my idea
+48:30 actually makes it. So I can prove that
+48:32 maybe my idea is even better than the
+48:33 one that's already on the road map that
+48:35 they get that opportunity to go and
+48:38 further develop it. It's kind of also
+48:40 that maybe back in the days from
+48:42 Facebook that whenever you had a good
+48:44 idea, you would get you know 10,000
+48:46 users to test that idea on. That sort of
+48:49 mindset I think is very interesting for
+48:51 tech companies to have if there is a
+48:54 good idea that somewhere in the
+48:55 organization pops up that people get a
+48:57 little bit of opportunity to um to to
+49:00 run with it. And sometimes it works
+49:03 within existing product teams. Sometimes
+49:05 you maybe need a separate team to to
+49:08 work on it because you know otherwise it
+49:10 interferes too much whatever whatever
+49:12 needs to be delivered in a certain
+49:14 quarter.
+49:16 I heard there's a company in Germany I
+49:19 think in the whole Europe called Zanda.
+49:20 They're selling
+49:23 clothes and what they have um is
+49:27 they have some freedom to work on small
+49:30 projects. So they see a problem and they
+49:33 form a small task force. So that the
+49:34 person who sees a problem uh they pitch
+49:37 to I don't know to who they pitch okay
+49:40 we see this problem give us a couple of
+49:43 I don't know one month to try it out to
+49:46 see how we can solve it and then uh they
+49:48 would get some people they would work
+49:51 only for this limited amount of time on
+49:53 this problem and then they would show
+49:55 the results and then based on that they
+49:58 will decide if they want to keep doing
+49:59 what they do and then actually build a
+50:01 team around that or just everyone goes
+50:04 back to their team. So I think this is a
+50:06 pretty cool concept. I don't know how
+50:07 popular it is, but I remember a
+50:09 recruiter from Zanda was pitching me
+50:11 this concept and I found it pretty
+50:13 [laughter] interesting. Uh do you do you
+50:15 know if this is something companies
+50:17 often do and do you think this is a good
+50:20 thing?
+50:21 Yeah. So, as I mentioned, you know,
+50:23 there's different ways in which you
+50:24 could um make sure that you spend part
+50:26 of your resources on looking, you know,
+50:29 a little bit further than just next
+50:30 three months and maybe going to ideas
+50:33 that are a bit more radical. One of them
+50:35 would indeed be these ad hoc task force
+50:39 like teams also worked with food
+50:42 delivery company from Brazil and they
+50:44 have a similar setup and they call it
+50:46 jet skis. So imagine that you know most
+50:48 of the company is this huge oil tanker
+50:52 that's very difficult to steer and if
+50:54 you steer it it's just going to make a
+50:56 small movement and then you have sort of
+50:57 the jet ski and it can go anywhere and
+50:59 it can try out new and different ideas
+51:01 and that definitely works but it
+51:04 sometimes depends a bit on the
+51:06 organization also the type of challenges
+51:08 that you have. Sometimes it makes sense
+51:10 to really have a dedicated team instead
+51:13 of these kind of ad hoc task force like
+51:16 kind of oh we'll spend a few hours a
+51:18 week on this type of teams because
+51:20 sometimes you really want to make sure
+51:22 that you have um enough resources that
+51:25 um that there's really a dedicated team
+51:29 with kind of a structured way of working
+51:32 that always takes into account you know
+51:33 the user size and make sure that your
+51:36 ideas are linked to the overall
+51:37 ambitions of the
+51:39 rather than leaving it kind of up to
+51:41 these smaller teams to hopefully come up
+51:43 with something cool.
+51:46 So let me try to summarize. So
+51:48 innovation is about finding new ways of
+51:50 solving um the problem you already have
+51:53 or maybe new problems but not in small
+51:55 steps but trying to maybe radically uh
+51:58 trying to find a radically different way
+52:01 of doing this. But then you need to give
+52:03 people some time to actually work on
+52:06 this because if all 100% of their time
+52:10 is taken by these incremental things by
+52:12 these OKRs and other things they will
+52:15 not have time to work on innovation
+52:16 right so you need to somehow give them
+52:19 the space to work on this and this is
+52:21 how you innovate and then as a tool for
+52:24 innovation you use these things that we
+52:26 discussed in the first half like all
+52:28 these dable diamonds design thinking
+52:30 design sprints to actually Make sure you
+52:32 understand the problem. Build a use
+52:35 build a business case and then present
+52:36 this business case to whoever decides if
+52:38 they want to invest in this team. Right.
+52:41 And then based on that um the company
+52:43 decides what to do. Is it an accurate
+52:46 summary?
+52:47 Definitely a very nice summary.
+52:52 No no I think that that makes a lot of
+52:54 sense. Yeah. And the way in which
+52:56 companies do this could be different.
+52:57 could be dedicated team, could be, you
+52:59 know, as you say, something that people
+53:01 spend their Friday afternoons on in kind
+53:03 of a project by project um team. Uh but
+53:09 you know, my encouragement would
+53:10 definitely be try to discuss these type
+53:12 of ideas with your direct team or maybe
+53:15 the broader data science community. If
+53:17 you see an opportunity for more
+53:20 innovation or more user centered product
+53:24 development or AI application
+53:25 development, try to get together and try
+53:28 to see if there are techniques out there
+53:30 that you want to try out
+53:33 and I imagine a different challenge. So
+53:35 let's say I'm a manager and I have a lot
+53:37 of fires to to fight and then now
+53:40 somebody comes to me and says, "Hey, I
+53:41 have this amazing idea. we can
+53:43 completely revolutionize the way we are
+53:46 solving this problem but I have these
+53:48 fires and I don't have enough people so
+53:51 how can I tell them because I probably
+53:53 need to tell yeah cool idea but let's go
+53:55 back back to work right so how do I
+53:57 [laughter] solve this problem here with
+53:58 innovation do I need to talk to my
+54:00 manager to ask for I don't know more
+54:02 people in the team or I need maybe to
+54:04 rethink priorities um is there a
+54:07 solution to this at all
+54:10 but I mean if you're always putting out
+54:12 fires And yeah, there might be some
+54:14 underlying bigger issues [laughter] to
+54:16 fix maybe around the resourcing because
+54:18 you know that that's not an ideal work
+54:21 way of working for anyone. But I do
+54:24 believe that in order to keep teams
+54:26 motivated, they need to have a little
+54:28 bit of space and a little bit of a say
+54:30 in what they actually work on and what
+54:32 the broader team works on. So hopefully
+54:34 there's definitely an opportunity for
+54:36 for a conversation um there. Uh but
+54:41 yeah, I'm not sure if there's, you know,
+54:43 a one sizefits-all solution to be able
+54:46 to both work on really cool one-off
+54:49 project and make sure that whatever the
+54:52 team needs to deliver actually um gets
+54:55 delivered.
+54:56 A solution direction that I believe in
+55:00 is definitely experimentation.
+55:02 So, you know, if I pitch a really cool
+55:05 idea, but my proof point is uh me
+55:07 talking to another colleague over a
+55:08 beer, then that's not a very convincing
+55:11 idea. If my proof point is, hey, I
+55:13 actually very quickly ran a survey and
+55:15 it turns out that 90% of the customers
+55:17 deal with this issue or hey, I very
+55:19 quickly changed this, I don't know,
+55:21 button from A to B, and through that I
+55:24 could actually measure that people
+55:25 really clicked on it, so they're really
+55:26 interested in it. Then you have a much
+55:28 better story. But in order to be able to
+55:31 quickly do that type of data collection
+55:33 or that type of experimentation, you
+55:35 need quite advanced capability. So that
+55:38 you know it's not um possible anywhere
+55:42 but I believe it's definitely a
+55:44 direction that more mature tech
+55:46 companies need to move into in order to
+55:48 be able to together prioritize all the
+55:51 resources in the right way.
+55:54 Yeah. I imagine there could be a
+55:55 situation when you come to a manager
+55:57 with a good idea and the manager says
+55:59 yeah cool idea but I don't like it right
+56:02 but if instead uh well maybe not in this
+56:05 direct manner but I can imagine that
+56:07 something like this happens and we have
+56:09 other priorities and we have more things
+56:11 to do than we can fit in a sprint in a
+56:14 in 3 months. Um but I guess the other
+56:17 story would be if you use a bit of I
+56:20 don't know Friday afternoon to get hard
+56:24 evidence that this is a good solution
+56:26 through maybe experimentation or
+56:28 something else and then you bring this
+56:30 evidence
+56:30 to your discussion and it's very
+56:33 difficult to say uh yeah work on
+56:35 something else right
+56:36 yes yeah and maybe one more
+56:38 recommendation for an article to read is
+56:40 a recent article by StitchFix they very
+56:44 nicely describe as organizations are
+56:46 moving towards using more data science,
+56:48 AI, machine learning, everything becomes
+56:50 more measurable as well. And then people
+56:54 find out that their ideas for product
+56:57 directions, you know, if they're based
+56:59 on intuition, sometimes they work, but
+57:01 sometimes they also don't work. So
+57:03 actually if you do 100 data size and
+57:05 everything becomes measurable, you have
+57:07 a much better tool to um prioritize
+57:10 based on actual facts and data rather
+57:13 than someone's gut feeling, which can
+57:16 also be a bit confrontational, right?
+57:17 Turns out that your ideas don't always
+57:19 work, but for the overall impact that
+57:22 you're trying to achieve, I think that's
+57:23 that's the direction that you need to be
+57:25 going into. And uh it's a an interesting
+57:28 feeling when you think that idea works
+57:30 but then you look at the data and it
+57:32 doesn't. [laughter]
+57:34 At first it's hard to accept but then
+57:36 over time you learn that. I think it's
+57:40 it's a good thing to
+57:42 you know even when you put some time
+57:43 into this thing to accept that this
+57:46 thing is not working instead of trying
+57:47 to uh let me tweak this thing like let
+57:50 me tweak that thing to just accept okay
+57:52 it's not working. Let's try something
+57:54 else. Let's move on.
+57:55 It also it also helps to see hard
+57:58 evidence that okay, this is a dead end.
+58:00 Don't don't try to keep working on this
+58:04 thing.
+58:05 Okay, I think we should be wrapping up.
+58:08 Uh
+58:10 I didn't ask you all the questions I
+58:11 wanted, but is there anything you want
+58:13 to say before we finish? Maybe something
+58:15 you wanted to bring up, but we didn't
+58:17 have a chance to talk.
+58:19 Yeah, plenty of [laughter] interesting
+58:22 topics, right? I guess if you work on
+58:24 design and innovation, you can keep
+58:26 talking about them for a long time. But
+58:28 maybe one um encouragement for anyone
+58:31 listening in and you know they're kind
+58:34 of interested but they maybe don't know
+58:36 where to get started. I would just say
+58:38 these type of skills are definitely very
+58:41 learnable. So
+58:43 you know three years ago when I joined
+58:45 process
+58:47 maybe the playbook for a successful
+58:49 machine learning project hadn't really
+58:51 been written and now three years later I
+58:53 think there's so much documentation and
+58:55 so many podcasts like this one and so
+58:58 many courses out there that exactly
+58:59 describe uh how to do a successful
+59:02 machine learning project and it's maybe
+59:04 the same with these topics related to
+59:06 design and innovation. Uh at the moment
+59:08 there's no playbook written yet, but you
+59:10 can definitely uh read about it, see if
+59:14 you can find a course, get familiar with
+59:16 the topic, and maybe you might be the
+59:18 one that's later on writing the playbook
+59:21 for how to incorporate design into a
+59:23 data science team. So definitely
+59:25 encouraged to keep learning about topics
+59:28 like this.
+59:29 And a good starting point, I think you
+59:30 mentioned, is this pair from Google,
+59:32 right?
+59:33 Yes, definitely. Yep.
+59:36 Okay. So if somebody has questions,
+59:38 what's the best way to reach out to you?
+59:41 Uh LinkedIn might be the best channel.
+59:45 Okay. Well, yeah, the there is a
+59:50 comment. Can we have links to learn
+59:52 more? Maybe you can send us uh this
+59:55 links there that these articles you
+59:56 mentioned. I think you mentioned
+59:58 um about this Tik Tok and um
+1:00:01 Yes.
+1:00:02 Instagram.
+1:00:02 See you guys in algorithm. Yeah.
+1:00:04 Yeah. Then the other one about was
+1:00:06 stitch fix, right?
+1:00:08 Yeah,
+1:00:09 there's something else. And then this
+1:00:10 pair
+1:00:10 and the pair at Google. Yes.
+1:00:12 Yeah. Maybe if you can send us and I
+1:00:14 will
+1:00:15 put this in the description. And I think
+1:00:18 that's uh all for today. So thanks again
+1:00:21 Elizabeth for joining us today. Thanks
+1:00:23 for sharing your knowledge. Thanks
+1:00:24 everyone for joining us today as well
+1:00:26 for listening in. And yeah, that's all
+1:00:31 for today.
+1:00:32 Thank you. Thanks for joining. We have

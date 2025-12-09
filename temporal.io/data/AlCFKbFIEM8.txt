@@ -1,0 +1,1422 @@
+Trends in Data Engineering
+
+0:01 hi everyone Welcome to our event this
+0:03 event is brought to you by dat do club
+0:05 which is a community of people who love
+0:07 data we have weekly events and today is
+0:09 one of such events if you want to find
+0:10 out more about the events we have there
+0:12 is a link in the description click on
+0:14 that link and you'll see all the other
+0:16 events we have in our pipeline um do not
+0:19 forget to subscribe to our YouTube
+0:20 channel this way you'll stay up to date
+0:22 with all our future events and you'll
+0:25 get notifications when they start and
+0:27 last but not least don't forget to join
+0:30 our slack Community where you can hang
+0:33 out with other data into US during
+0:35 today's interview you can ask any
+0:37 question you want there is a pin Link in
+0:39 the live chat click on that link ask
+0:42 your questions and we will be covering
+0:43 these questions during the
+0:47 interview I also
+0:50 open this on my mobile phone so I'm
+0:54 still sharing my screen right um so then
+0:57 uh I see if something is in the live
+1:02 chat but yeah ad if you're ready we can
+1:05 start
+1:07 definitely so this week we'll talk about
+1:10 Trends in data engineering and we have a
+1:12 special guest today Adrian
+1:14 Adrian is a returning guest now
+1:18 it's third time if we just count
+1:21 podcasts but if we count other things
+1:23 like workshops open source demos and
+1:26 like I don't know what
+1:28 else people probably know you already
+1:31 and have seen so many times so Adrian is
+1:35 a co-founder of DT Hub and which is the
+1:39 company behind DLT and this is one of
+1:42 the things we will talk about today too
+1:44 uh but in general we wanted to talk
+1:45 about transends of data engineering
+1:47 because this is um when we launched our
+1:50 course recently data engineering Zoom
+1:52 Camp uh one of the questions um there
+1:56 from the audience from the participants
+1:58 was
+2:00 how do you see data engineering evolving
+2:03 and what are the trends in data
+2:05 engineering and I realized that I don't
+2:09 know the answer to this question I
+2:11 cannot really answer and I thought who
+2:12 might have the answer and then of course
+2:15 I thought about you Adrian so welcome to
+2:18 our event Welcome to our podcast
+2:19 interview it's a really great pleasure
+2:21 to have you again here pleasure is mine
+2:24 to join um I don't have the answers
+2:27 either you know I just have my view of
+2:29 what I can see and you know I can
+2:31 speculate a little bit I can talk about
+2:33 what I
+2:34 observed and this is what
+2:37 it was what makes it interesting right I
+2:40 mean everyone has opinions uh so uh and
+2:44 you're way closer to date engineering
+2:46 than I am uh so we can talk about that
+2:51 and as always the questions for today's
+2:53 interview are prepared by johana Bayer
+2:55 thanks Johanna for your help and before
+2:57 we go into talking about Trends in
+3:00 engineering maybe I know it's third time
+3:03 you will need to do this but maybe you
+3:04 can give us uh tell us about your
+3:08 background can you tell us about your
+3:09 career Journey so far sure um so um I
+3:13 was born in 1987 no I'm joking um so
+3:18 basically um I started in data in 2012 I
+3:21 did five years of startups in Berlin um
+3:25 so building lots of data warehouses then
+3:27 I joined um uh Enterprise I didn't enjoy
+3:31 working for an Enterprise so I became a
+3:33 freelancer for five years and after five
+3:36 years I wanted to do more than just
+3:38 being a freelancer an agency wasn't it
+3:41 since I don't enjoy managing agencies um
+3:44 so I decided to go for uh building DT
+3:47 which is the tool that I wish I had as a
+3:49 data engineer um and um I guess this is
+3:54 the
+3:56 introduction I I like tool I wish I had
+3:59 as a datting ER is it something you
+4:01 often use I use it all the time so um
+4:05 you know when it comes to data
+4:07 engineering you probably mostly do data
+4:10 ingestion as a data engineer and there
+4:12 the challenge is getting data from an
+4:15 weakly structured format like Json from
+4:17 an API into a strongly structured format
+4:20 so since DT automates this process and
+4:22 much more there's really no reason to do
+4:25 something else mhm do you remember last
+4:27 time we spoke when was it on on the
+4:30 podcast just over a year ago I think
+4:33 over a year ago so you already were at
+4:35 DLT and we were talking how um yeah so I
+4:39 I'm just looking it up quickly the
+4:41 entrepreneurship Journey from
+4:42 freelancing to starting a company so DT
+4:45 was already there and we were talking
+4:46 about your journey like how exactly the
+4:49 switch from being a freelancer to being
+4:52 a Founder co-founder how it happened so
+4:56 I'm just looking it's season 17 episode
+4:58 1 so you can go to our podcast and check
+5:01 it out um so what changed since then so
+5:04 it's been a year and uh it's for me
+5:07 personally like before you answer this
+5:09 question uh I really like coming to your
+5:11 office and you organize you always
+5:13 organize this nice uh events meetups and
+5:17 then I really liked coming to your old
+5:19 office and for me it was like cool you
+5:22 have such a cool office and then more
+5:24 and more people were joining the LT Hub
+5:26 and then at some point it was just the
+5:28 office the old office was just too small
+5:30 and then you move to another one which
+5:32 is like even cooler and it's always such
+5:34 a big pleasure for me to come to your
+5:36 office and like see like this vibrant
+5:39 company that you built so it's amazing U
+5:42 but this is just an outsider view of
+5:44 somebody who just comes to your office
+5:46 maybe once per in a couple of months so
+5:49 can you tell us more what exactly has
+5:50 been happening since uh last time I
+5:53 spoke so you know the office view is
+5:56 interesting cuz we started with
+5:57 squatting uh like no joke we were
+6:00 basically working from other people's
+6:02 offices but uh what happened was if you
+6:04 remember I was talking about uh trying
+6:06 to create a standard in ingestion with
+6:09 DT and essentially I think we succeeded
+6:11 with that um DT has become an ingestion
+6:14 standard with python um and I would say
+6:17 we managed to truly commoditize this
+6:19 market so what do I mean by
+6:22 commoditization because to some people
+6:25 say it but they don't really understand
+6:27 what it means and let me spell it out
+6:29 what are the
+6:30 implications well commoditization in any
+6:33 Market when you do that it means that
+6:35 you are turning um you you are basically
+6:40 lowering the cost of production of
+6:42 something uh to become accessible for
+6:45 everyone um and basically we've achieved
+6:48 to do this with dldt not only on short
+6:50 tale where vendors are already uh
+6:53 competing so like on SQL databases
+6:55 Salesforce and you know the general
+6:57 connectors but on longtail as well so
+7:01 basically people creating their own
+7:03 sources and what this means
+7:05 fundamentally for the industry it means
+7:06 that the value of what vendors offer
+7:09 currently these days is going down so
+7:12 this is a challenge to the entire Market
+7:15 to um let's say get better at their
+7:18 offering and offer things that are not
+7:21 just uh here's a connector which is kind
+7:24 of like low value but actually a value
+7:27 proposition that is beyond just moving
+7:29 some
+7:32 data yeah and U so right now you are not
+7:36 like can we say that you're
+7:39 active working as a data engineer these
+7:41 days or like what do you actually do at
+7:44 work uh to be honest what I'm doing
+7:46 right now at work is I'm working on DT
+7:49 plus and figuring out what how we can
+7:52 make a meaningful product there and uh
+7:55 what I mean basically we've been um
+8:00 we've been uh building DT and we've been
+8:02 looking at what people build around DLT
+8:05 and um essentially we are building the
+8:08 same thing that uh all these other smart
+8:10 people are doing uh just in our version
+8:14 and our version basically means the same
+8:16 thing that it means for dldt so like
+8:18 best
+8:19 practices um high quality and we try to
+8:21 go for Innovation so you know just like
+8:24 DT basically offers superior quality to
+8:28 almost and I think to any integration
+8:30 that you can currently buy because of
+8:32 schema Evolution alerting
+8:34 metadata um DT plus aims to do the same
+8:38 uh D plus basically being the let's say
+8:41 data platform that you'd end up building
+8:43 with
+8:46 dld u but in terms of so your actual
+8:49 work is figuring this out like how
+8:51 exactly the dld plus will work as a yes
+8:55 as a Founder basically it's all kinds of
+8:58 things from um let's say deciding which
+9:01 risks you're going to take to explore
+9:02 different initiatives right um listening
+9:05 to people um testing
+9:11 things sorry one of the things that I'm
+9:14 actually working on in preparation for
+9:16 our DT uh plus product is opening up a
+9:19 partnership Network so basically just
+9:22 like I wanted to create a
+9:24 freelance um agency if you remember back
+9:27 when I was a freelancer now I'm trying
+9:29 to create a partnership Network where
+9:31 let's say everybody wins so basically
+9:34 that is aimed at maximizing value
+9:36 delivered to the customer um which will
+9:39 also be let's say the it's the current
+9:43 uh Consulting partners are basically
+9:44 people who are already deploying DT and
+9:47 want to get more value out of
+9:49 it and uh well since you mentioned that
+9:52 this is not something we plan to talk
+9:53 about but I'm I'm sure maybe there are
+9:56 some Freelancers who are listening to
+9:58 that to our conversation right now so if
+10:00 they want to reach out and learn more
+10:02 about like this partnership Network what
+10:04 how should they find you
+10:06 LinkedIn um they can reach out on
+10:09 LinkedIn they can find the partnership
+10:11 links on our website and apply
+10:13 essentially this is mostly something for
+10:15 people who already use the LT so if you
+10:17 already use the LT you know just come
+10:19 forward okay and as you said part of
+10:24 your job is listening to people and I
+10:26 imagine it's also listening to their
+10:27 problems and you've been in the industry
+10:30 in the data engineering industry for 10
+10:33 years or more cuz you mentioned like
+10:34 working at startups for 5 years then
+10:37 Enterprise and also 5 years of
+10:39 freelancing and now you're running a
+10:41 company so you've been in the industry
+10:44 for quite some time and you probably
+10:46 remember like Hadoop times and uh I
+10:48 don't know um so what's happening in the
+10:51 industry right now like if you compare
+10:52 dat engineering 5 years ago and data
+10:55 engineering now um how does it look like
+10:59 like what are the what things changed we
+11:03 have multiple fronts to discuss so I
+11:05 would first start with the people the
+11:07 data engineer so I would say five years
+11:10 ago um there was a huge shortage of data
+11:13 engineers and just about let's say
+11:15 anyone who could do um let's say
+11:18 functioning integration could be called
+11:20 the data engineer back then um I would
+11:22 say this is slowly changing so the field
+11:25 is transitioning from um I can make
+11:28 something run to Specialists so what I
+11:31 mean here is I'm seeing more and more
+11:33 data Engineers specialize into let's say
+11:35 data governance Engineers or data
+11:38 quality Engineers or um streaming data
+11:42 engineers and many of these skill sets
+11:45 actually have very little overlap
+11:46 outside of
+11:47 engineering
+11:49 um part of this is driven basically by
+11:53 uh requirements of the industry like how
+11:56 you should deal sens with sensitive data
+11:58 or things things like that um or for
+12:01 example the energy changes in Europe
+12:04 where now everyone in their Grandma can
+12:07 have a solar panel on their house and
+12:09 the system needs to understand what is
+12:11 the production how can we bid for this
+12:13 right so it's completely different use
+12:17 cases and in terms of um well since we
+12:19 have a course on data engineering like
+12:21 in terms of um let's say junior data
+12:25 engineering um like is a junior dat
+12:29 engineer I think these days
+12:31 or so you need to be an experienced
+12:34 software engineer now to enter the field
+12:37 so I would say yes but it um depends you
+12:40 basically need to find a sweet spot of
+12:43 where you can help people um so
+12:46 specifically I would say there is
+12:48 actually a huge opportunity now um just
+12:50 like it used to be seven years ago with
+12:53 data science when people didn't know
+12:54 what data science was and they just hire
+12:57 a data scientist don't know what for but
+13:00 you know just get them on board um
+13:03 something similar is happening with AI
+13:05 and I would say this is not happening
+13:06 yet in Europe uh I'm seeing it happen in
+13:09 us and Asia and um basically people
+13:14 are they have this idea that um they
+13:18 will get huge Roi out of AI um and
+13:22 they're trying to figure out how to do
+13:24 that how to go there
+13:26 basically uh speaking of this is another
+13:29 um of those Specialties it's kind of
+13:31 like data Engineers that build for AI I
+13:34 think this is an opportunity for some um
+13:37 another opportunity could be just you
+13:39 know um there are still new startups
+13:42 being opened every day and they need to
+13:44 build a modern data stack um this has
+13:47 become way easier now you can literally
+13:49 if you look for example in DTS uh
+13:52 dependence on GitHub you will find
+13:54 multiple free open source data platforms
+13:56 you can just drop in um yeah so the help
+14:01 here is basically being the person that
+14:03 can interface between Technical and
+14:05 business it will
+14:07 always Yeah you mentioned One Thing This
+14:10 Modern Data stock so how modern is it it
+14:14 actually is cuz like I've heard this
+14:16 term some time ago and I guess it was
+14:19 created like as uh kind of the opposite
+14:22 of like this slow Hadoop uh stuff uh
+14:26 perhaps maybe correct me if I'm wrong
+14:28 but like what it actually is and how
+14:30 modern is it basically modern data stack
+14:34 is pure marketing it's not modern it's
+14:37 just um before modern data stack there
+14:40 were people doing all kinds of things to
+14:43 build data
+14:44 warehouses uh vendors came and they
+14:47 created let's say packages of software
+14:51 um between other vendors that you can
+14:53 put together to build the data platform
+14:55 so for example five Tran with Snowflake
+14:58 and uh looker I don't know just an
+15:02 example and basically vendors needed a
+15:05 way to communicate this and to be able
+15:07 to sell together this is what the modern
+15:09 data stack is I would say it was very
+15:11 effective as marketing because people
+15:12 identified and they talk about this
+15:14 concept now is it modern I would say it
+15:17 never was uh
+15:19 to now people are talking about
+15:21 postmodern data Stacks I would say a
+15:23 modern data stack is a data stack where
+15:25 you're not just like human middleware
+15:28 deploying some kind of vendor software
+15:30 but rather something that is way more
+15:33 efficient than we were doing things 10
+15:35 years ago so this is actually something
+15:36 that we think we're working on people
+15:39 call this we don't call it anything
+15:41 people call it the postmodern data stack
+15:43 which is basically using open source
+15:45 Technologies uh put together to achieve
+15:49 way better higher quality better
+15:51 efficiency lower cost than anything you
+15:53 can get from the cuz what you mentioned
+15:56 is five TR uh snowflake
+15:59 uh what was looker none of this is open
+16:02 source right yes pretty much I mean um
+16:07 not not those actual tools right but you
+16:09 can put together various stacks of such
+16:12 tools that will bu the same purpose MH
+16:16 okay and what do you think um which
+16:19 things we will see more and more so you
+16:21 said that there's this uh postmodern air
+16:24 codes Data stock uh I guess references
+16:28 uh like that there was some Modern
+16:30 postmodern in art
+16:32 right so which things do you think we'll
+16:35 see more uh as like in 2025 and
+16:39 Beyond so I think we'll see a lot more
+16:42 AI like uh the whole field is just
+16:44 starting um there is let's say a
+16:47 baseline level of use cases that can be
+16:50 solved currently but this is growing
+16:53 with knowledge graphs so basically you
+16:55 know going in the direction of being
+16:57 able to solve more complex tasks um with
+17:01 less
+17:02 hallucination um from what I can tell I
+17:05 would say this is
+17:06 probably the biggest thing happening
+17:09 right now in the data market and I would
+17:11 say AI is entering the field of data
+17:14 Engineers so basically it used to be
+17:16 first that oh only AI Engineers whatever
+17:19 those are um are doing AI uh right now
+17:23 it's going into the direction of
+17:25 software Engineers are doing AI
+17:27 engineering and this is now data
+17:29 engineers in many teams and prompt
+17:31 Engineers are building uh Last Mile
+17:34 products right so it's kind of like two
+17:36 different groups um another technology
+17:39 direction is basically
+17:41 Iceberg uh so I would say this is also
+17:44 big what we're seeing is before it used
+17:46 to be mostly hype uh somehow this hype
+17:49 is basically transforming into uh
+17:53 reality and production deployments so in
+17:56 the beginning of the year we were
+17:57 hearing every now and then about iceberg
+17:59 people were getting excited about let's
+18:01 say what by Iceberg could
+18:04 mean um so you know pythonic
+18:07 Iceberg can you tell us more what this
+18:10 actually is what is Iceberg because I've
+18:11 heard Iceberg people throw this uh like
+18:16 what is it exactly okay so um basically
+18:20 you know databases like special database
+18:22 for example these databases have
+18:24 multiple layers they have a storage
+18:26 layer they have a compute layer and they
+18:28 have an X layer metadata you know we can
+18:32 describe them in many ways but
+18:33 essentially what uh iceberg is it's a
+18:36 file format it's a table format we call
+18:39 it uh it's a way of storing data
+18:41 independent of these databases that
+18:44 simulates uh let's say the storage layer
+18:46 of a SQL database so it's kind of like a
+18:49 file but you can have some Logic on top
+18:53 of it that allows you to update it
+18:55 you're not actually updating it right
+18:57 you're actually just writing some data
+18:59 and invalidating the old one uh unless
+19:01 you do cleanup
+19:03 operations so it's uh would I be correct
+19:06 saying it's just a bunch of parket files
+19:08 on S3 organized in a special way you
+19:11 could say it's a bunch of parket files
+19:13 along with some metadata files yes okay
+19:16 that tell you basically which records
+19:19 from which parket files are valid um so
+19:23 yes it's very similar to Delta it's very
+19:26 similar to hoodie and I would say the
+19:29 industry is super excited because this
+19:31 means the decomposition of the database
+19:34 and you might be aware that in software
+19:37 engineering databases are heavily vendor
+19:41 locked uh so basically what this means
+19:43 is they are not competitive because
+19:46 vendor lock allow vendors to set prices
+19:48 that are maybe 10 or 100 times higher
+19:51 than what the product is worth so
+19:55 breaking this uh apart would mean um
+19:59 freeing this in the software space but
+20:03 one thing that people are kind of
+20:05 getting wrong is here we're talking
+20:08 about the storage layer we're talking
+20:09 about data but really the way we
+20:12 interact with data will always be on the
+20:14 access layer right and we have vendors
+20:16 that are trying to sell us their compute
+20:18 in the middle but fundamentally um this
+20:22 whole movement and this whole discussion
+20:24 about file formats table formats and
+20:26 where this is going is driven by vendor
+20:30 uh so
+20:32 while basically vendors are still trying
+20:35 to use these stable formats and capture
+20:37 value through a vendor lock through the
+20:40 catalog and I guess what is really big
+20:42 and what people are really excited about
+20:45 is the concept of
+20:47 headless uh table formats so basically
+20:50 what this would mean is that you're no
+20:51 longer using a catalog that you are
+20:54 really free from the vendors and that
+20:57 you are writing let's say Iceberg files
+21:00 uh without using any kind of vendor
+21:02 service you're just using those files
+21:04 with open source Technologies on Top
+21:07 This is actually something that we're
+21:08 working on as
+21:09 well I just want to take a step back so
+21:13 you said that a database are four things
+21:16 if
+21:17 we abstract many things but like
+21:19 essentially it's four things storage
+21:21 compute access and metadata right and by
+21:24 catalog you mean this metadata
+21:26 right yes in fact actually no I mean
+21:30 access um there are like what so storage
+21:33 is let's say a bunch of parket files on
+21:36 S3 right so this is storage compute is
+21:38 what we use to actually go through these
+21:41 files and take things out of there right
+21:44 could be
+21:45 parkb or python
+21:48 MH okay and then we have uh metadata and
+21:52 access metadata is like hi or something
+21:54 like that or what it's more like an
+21:55 information schema from the database
+21:57 that is telling you know what you can
+21:59 find there and also it's just like
+22:01 imagine when you are writing to a table
+22:05 when you're updating a record to do that
+22:07 to a file you would need to read the
+22:09 file rewrite the file and delete the old
+22:12 file so this is like a huge amount of
+22:14 data being throughput it when all you
+22:16 want to change is one record so actually
+22:18 how this is handled is you add the
+22:21 information in another file and then you
+22:24 say that this specific record should be
+22:25 consumed from the new file instead of
+22:27 the old file M basically this this is
+22:30 also a layer of metadata that solves the
+22:32 problem that files cannot be
+22:35 updated
+22:36 MH okay and access is
+22:39 what access is basically the online
+22:42 thing that allows you to you know access
+22:44 the data query control who has access to
+22:47 it package it with compute engine that
+22:49 will be used M so it's basically the
+22:53 thing that puts storage computer and
+22:54 metadata together yes it's the thing
+22:57 that basically turns it into a usable
+22:59 product
+23:01 online and when you say catalog what is
+23:04 it exactly there are two types of
+23:06 cataloges basically some cataloges serve
+23:09 the function of access so it's just like
+23:10 a service that maps to data somewhere
+23:15 and to compute somewhere and allows you
+23:17 to access this data with this compute
+23:19 you have access control so you can
+23:21 actually manage that and then there are
+23:24 cataloges that actually handle metadata
+23:26 that do all kinds of interesting things
+23:29 like lineage and so on those actually
+23:31 have a lot of you know built-in utility
+23:33 that is useful for the developer MH okay
+23:37 and in terms of tools uh what would it
+23:40 be um I off the top of my head I don't
+23:44 know all the tool names so like let's
+23:47 say um so I remember from my days when I
+23:50 worked um so for metadata we use these
+23:53 Hive tables I think and then the files
+23:56 were parket files on S3
+23:59 right um so catalog is kind of similar
+24:02 to these hi tables or there was another
+24:05 tool where it was actually described if
+24:08 you were doing um data L you might not
+24:12 have had the concept of catalog but if
+24:15 you've ever worked with data L on Amazon
+24:17 maybe you worked with the glue catalog
+24:19 yeah okay right so this is just like
+24:22 access um but other cataloges have stuff
+24:26 like lineage so you can understand you
+24:28 know uh where is pii data or something
+24:30 like
+24:31 that and by lineage you mean U there's a
+24:35 table and then there is something we
+24:36 compute based on this table and maybe
+24:38 some other
+24:40 table imagine you have a data source it
+24:42 contains pii and this data source is
+24:45 then consumed to create various reports
+24:47 or data products so you want to know
+24:49 that the pi probably ended up there yeah
+24:52 personal information yes mhm and um so
+24:58 and and so iceberg is the storage player
+25:02 in this case compute could be anything
+25:04 could be I don't know data brick
+25:06 snowflake uh duck DB I don't know bunch
+25:09 of like a pandas python script right so
+25:12 something that gets the data
+25:15 um DB would be compute right yes this
+25:19 case it would also be like a local
+25:22 access but you know that's irrelevant
+25:25 because uh you want an online catalog
+25:28 not
+25:29 local okay what do you think about ddb
+25:33 will we see cuz what ddb allows maybe
+25:35 I'm again not correct in understanding
+25:37 what it's doing but it allows you to
+25:41 do uh things locally that previously
+25:43 would overwise not be possible like you
+25:45 would need to have like a spark cluster
+25:48 or I don't know use big query but now
+25:50 with ddb it can just fetch a bunch of
+25:53 parket files and quickly go through
+25:55 these files and uh give you the results
+25:59 I think it's amazing and for us it's
+26:01 actually a key technology uh so what I
+26:04 really love about it is think about SQL
+26:07 Alchemy databas sorry um sqi databases
+26:11 right if you're using a mobile phone
+26:13 which I believe everyone is you probably
+26:15 have a few dozen or a few hundred skite
+26:17 databases running on your
+26:19 phone right this what what this is
+26:23 talking about it's talking about the
+26:24 embeddability of this compute engine so
+26:28 what does this mean for us it means that
+26:31 we can actually assemble this as a
+26:32 building block into our own product so
+26:35 one of the things that we do with ddb
+26:37 besides you know just using it for demos
+26:39 and stuff like that
+26:41 is basically I was telling you about
+26:44 putting these layers together uh we
+26:48 released an interface in dldt where you
+26:51 can query the loaded data through uh a
+26:55 universal interface like SQL or Python
+26:57 and um why I say Universal is because
+27:01 whether you're loading to file system
+27:03 creating a data lake or a SQL database
+27:06 it behaves the same and what we do
+27:08 basically is when you don't have a real
+27:12 SQL database we use an in memory uh doc
+27:15 Deb for that and we have an abstraction
+27:17 layer on top to basically make
+27:19 everything behave the same way under the
+27:21 hood whatever under and yeah basically
+27:25 this enables you to access data
+27:29 on the Fly
+27:32 anywhere do you think
+27:34 DB uh the appearance of ddb is changing
+27:37 How We Do data engineering these days
+27:40 yes uh absolutely so one of the things
+27:43 that I noticed is
+27:45 um people are really challenging the
+27:48 concept of having to pay silly amounts
+27:50 of money to vendors for data movement uh
+27:54 or for data work and uh one of my
+27:57 favorite setups that I seen using docdb
+28:00 is basically uh leveraging D docdb and
+28:03 files on GitHub actions so literally
+28:06 there is no database it's just all
+28:09 python code duck DB running on GitHub
+28:12 actions uh free tier an entire data
+28:15 stack data L for sizable
+28:18 company cents per month over free tier
+28:21 right
+28:22 so so what with ddb what we can do is
+28:25 let's say we have some sort of data Lake
+28:27 which
+28:29 a bunch of files in uh S3 or Google
+28:32 storage or whatever right with ddb we
+28:34 can get them process them save the
+28:37 result somewhere again maybe back to
+28:39 this storage exactly and then have
+28:41 another script that gets the result and
+28:43 runs it and because it's portable this
+28:45 means you can take advantage so just
+28:48 like the LT plus by the way uh it means
+28:50 you can take advantage of um let's say
+28:53 arbitration between compute vendors
+28:56 right so if I want to use GitHub
+28:58 serverless which is probably 100 times
+29:00 cheaper than doing the same operation on
+29:03 a rent always on machine whatever it is
+29:08 whether it's you know running snowflake
+29:10 or postgress it doesn't even matter at
+29:12 that point um yeah it it helps you you
+29:16 know do new patterns and
+29:18 uh um take advantage of Technologies and
+29:23 compute that you couldn't do before
+29:26 mhm and is it relate it in any way to
+29:29 this headless uh tables format that you
+29:32 mentioned um yes
+29:37 basically look uh when I'm talking about
+29:39 these three three layers you have the
+29:41 access layer and the access layer is
+29:44 typically online because this is where
+29:46 the tools are because this is where the
+29:48 consumers are but when you're actually
+29:50 working in the data pipeline you don't
+29:52 need to go online if you had a local
+29:54 access layer this would be good enough
+29:56 and data uh sorry dub gives you this so
+29:59 basically you know it enables you to do
+30:02 whatever you want on local which local
+30:06 to me means something that's deployed on
+30:08 production running on a production
+30:09 worker or it could also mean on my
+30:12 machine when I'm developing um sorry I
+30:16 lost my track got excited but uh so you
+30:19 were talking about this headless uh
+30:21 table format and you were talking about
+30:23 that uh with DBT uh DT sorry with DLT
+30:28 this something where you want to go yes
+30:32 so basically this is something that
+30:33 we're already serving so last year we
+30:36 were working with post hog uh they're
+30:39 like an open source um Analytics tool
+30:43 and uh they wanted uh headless Delta
+30:46 Lake uh so we worked with them on this
+30:50 uh we did this for them basically and um
+30:53 you know this this is kind of like um
+30:57 common pattern that we see uh we uh help
+31:01 create these data legs whether it's
+31:04 Iceberg uh Delta or whatever um then
+31:07 people do some kind of compute with
+31:09 their own compute engines whether it's
+31:11 click house or duck DB or something else
+31:14 and then they push this data to an
+31:15 access layer and this access layer might
+31:17 be snowflake at this point right because
+31:19 this is where the business people
+31:20 interact with the
+31:23 data instead of processing everything in
+31:25 Snowflake and paying a fortune exactly
+31:29 uhuh cuz like in Snowflake uh what's the
+31:32 what's the business model like you
+31:35 paper St or what you you you pay for
+31:39 well I don't want to go into details
+31:41 because I will probably say something
+31:43 wrong uh okay but it's expensive right
+31:46 expensive and um fundamentally there are
+31:50 also benefits of doing it on your side
+31:53 uh that relate to portability so what I
+31:55 mean is there are many organizations
+31:57 that use diverse data stacks and they
+32:01 have multiple access interfaces so
+32:03 ultimately they would like to do the
+32:05 compute in a portable way that is
+32:07 technology agnostic and then just serve
+32:08 it where people use
+32:10 it yeah and other thing that appeared uh
+32:14 maybe not as recently as ddb but fairly
+32:17 recently if we talk about grand scheme
+32:19 of things like for example you've been
+32:21 around the in the the engineering um
+32:24 industry for quite some time is it's DBT
+32:27 right so five years ago nobody used it
+32:30 um people were trying to come up with
+32:32 their sort of schedule or whatever for
+32:35 SQL queries um but now we have um I
+32:39 don't know if I can call it a standard
+32:40 but uh we have this tool now which is
+32:43 quite popular so how did DBT change the
+32:46 way we do data engineering and do you
+32:48 think it's going to continue changing
+32:52 that
+32:54 um that is a good question I cannot
+32:56 speak for the future of theb BT um they
+32:59 have some very interesting plans and I
+33:02 don't quite understand them because
+33:03 there are a couple of directions maybe
+33:06 they're trying to broaden their offering
+33:08 um but essentially yes DBT changed a lot
+33:12 not just how we do data engineering but
+33:14 how people think about it uh so before
+33:16 it used to be that people orchestrated
+33:18 their own SQL queries and um this led to
+33:23 people writing boilerplate code all the
+33:27 time and it was horrible lots of to
+33:29 maintain lots of bugs uh and you know
+33:31 you're reduced to like a typing person
+33:34 at that point
+33:36 um and what what it changed it kind of
+33:40 made people think how can I do this
+33:41 better right so when it comes to the
+33:43 actual like SQL person I would say for
+33:46 them probably not much changed they're
+33:48 not thinking about the overall picture
+33:49 they're just trying to do their work in
+33:51 the SQL database but for the people
+33:54 outside of that um you know now there's
+33:56 no more boiler PL code there's no more
+33:59 garbage to maintain so it significantly
+34:02 improved let's say the quality of
+34:04 Engineering in a project
+34:08 MH and there are alternatives to DPT
+34:11 right like C mesh and others like what
+34:12 do you think about them well just like
+34:15 any product there are you know many
+34:17 Alternatives and um that's not a problem
+34:20 right um what competition is healthy uh
+34:25 it means there is demand and it means
+34:27 that there are diverse groups of people
+34:28 with different needs um what I think
+34:32 about DBT is that DBT is in a unique
+34:35 place because they were
+34:37 first so you know
+34:40 the let's say growth was rather because
+34:43 of the concept than the product um I
+34:46 would say and at this point uh DBT is
+34:50 pivoting in a different direction right
+34:52 so they're doing more uh of an open core
+34:56 offering where they're offering things
+34:57 around DBT and then there are tools like
+35:00 SQL mesh that are actually doubling down
+35:02 on what DBT was DBT core was offering
+35:05 which is a way for developers to work
+35:08 with their transformation code more
+35:10 effectively and for example if you're a
+35:12 data engineer that does a lot of SQL
+35:15 development work you might be more
+35:16 effective in uh SQL
+35:20 mesh okay yeah and so we spoke a bit
+35:23 about SQL orchestration but what would
+35:25 what about workflow orchestration if we
+35:29 wanted to start a data engineer project
+35:32 today what should we use as workflow
+35:34 orchestrator should we use
+35:37 any so that is a great question um we
+35:41 actually explored this topic in depth
+35:44 and the conclusion is um basically it's
+35:47 like ice cream pick the flavor that you
+35:49 want and I would say it's not you
+35:51 picking the flavor that you want but
+35:53 it's rather pick the flavor that your
+35:55 entire team can eat right so um
+35:59 different or vanilla right sorry vanilla
+36:03 vanilla so actually you know this is the
+36:05 reason why people uh choose airflow many
+36:08 times because it's the it's basically
+36:10 the common denominator that everybody
+36:12 want and I would argue just like with
+36:15 DBT there are many competitors out there
+36:18 that do specific things better uh when
+36:21 it comes to our team for example
+36:25 um if they haven't been exposed to
+36:28 airflow before I would say they
+36:30 gravitate to Dexter simply because kind
+36:33 of captures their software development
+36:36 uh way of thinking and so on if they
+36:39 have used airflow and they want
+36:40 something better they might go to prefa
+36:43 right
+36:45 so it's yeah U personally we actually
+36:49 often use GitHub actions so know it's
+36:52 really like it depends what do and
+36:56 there's no unless you have very specific
+36:59 use case if you need a simple
+37:02 workflow um sequential workflow then
+37:05 GitHub actions would be sufficient right
+37:08 the reason why I love GitHub actions is
+37:10 because it's actually serverless so it's
+37:13 literally like a 100 times cheaper than
+37:15 you know putting it on some kind of
+37:17 always on
+37:20 orchestrator we have a few questions I
+37:22 think it's uh it would be good if we go
+37:24 to the questions from the audience um
+37:28 would it be effective for my Learning
+37:29 Journey and career development if I
+37:31 pursue multiple disciplines for example
+37:34 data engineering data science and theyi
+37:35 engineering at the same time I don't
+37:38 think so I think you should get clear on
+37:41 the type of role that you want to uh do
+37:44 so basically look what kind of company
+37:46 do you want to work in what kind of
+37:47 colleagues do you want to have what kind
+37:49 of challenge do you want and what kind
+37:51 of problems that you want to solve and
+37:53 then learn for that space uh you have
+37:56 time in your career to learn the other
+37:58 stuff just when you're starting out stay
+38:01 focused yeah and also when it comes to
+38:04 AI um a lot of AI engineering is
+38:08 actually data engineering but called
+38:10 differently cuz like for example if we
+38:12 take rck and if we think what exactly we
+38:14 need to do that to do there is
+38:17 connecting a bunch of things and one of
+38:18 these things is a database where we
+38:20 store like where our knowledge B our
+38:23 knowledge is right our knowledge base
+38:25 and at the end if you look at this and
+38:27 it's like okay we move data from here
+38:30 this point to this point and then from
+38:31 here and then we need to retrieve this
+38:33 data it's kind of like you know B
+38:37 engineering it's kind of like thinking
+38:40 right so what I mean is fundamentally
+38:44 you have a few moving pieces you have
+38:46 data uh you
+38:48 have some kind of algorithm which is the
+38:52 llm and then I would say there's
+38:55 something you haven't mentioned and
+38:57 that's semantics so what I mean is you
+39:00 know there is this concept of raw
+39:01 intelligence so like if you have some
+39:03 neurons in a Petri dish they will do
+39:05 things they can solve problems but you
+39:07 know it's a very basic thing that they
+39:09 can do and if all the neurons are the
+39:11 same then you know there's no
+39:13 specialization but in a human brain uh
+39:16 sometime I think like 60,000 years ago
+39:19 um because humans evolved in the context
+39:21 of Concepts we started to develop
+39:24 specialized brain structures that deal
+39:26 with these Concepts so so the way you
+39:28 could think about it is the brain has a
+39:30 semantic map data should also have a
+39:33 semantic map and basically this would
+39:35 help an llm understand how to work with
+39:38 the data to give you an example if you
+39:42 are trying to let's say work with an llm
+39:46 to place an order for a screw and you
+39:48 give it a text it doesn't actually
+39:51 understand what you want because the
+39:53 screw has Dimensions it has diameter
+39:55 length it has a type of cap so in order
+39:58 for the llm to understand how to work
+39:59 with that you need to tell it hey this
+40:01 is a screw this is what can be done with
+40:04 a screw it has Dimensions it has
+40:06 diameter and so on and then the llm can
+40:08 actually help you place an order for the
+40:12 screw yeah and that's a deep thought but
+40:16 um speaking of uh well again coming back
+40:19 to the to the topic we're talking about
+40:21 Trends uh another question is like there
+40:23 are so many tools in the field of data
+40:25 engineering and also we have some so
+40:27 many companies and the companies
+40:29 promoted like the I don't know snowflake
+40:31 will say ah our computer is the best one
+40:34 then data bricks will say no our is
+40:35 better and then you have like I don't
+40:37 know five TR and Aires and like there
+40:40 are many tools and then there's this
+40:42 postmodern Data stock right where we
+40:45 talk about um TLT and other tools
+40:49 so there are many tools and it's
+40:52 confusing like I'm just let's say I'm
+40:54 just entering the field and I want to
+40:59 select which tools I need to master in
+41:01 each domain uh how do I select
+41:05 them so if you're just entering the
+41:08 field I would discourage you from
+41:09 attempting to master any tools at this
+41:11 point so I would say the most important
+41:14 thing is that you get the concepts of
+41:17 what you're doing right so kind of like
+41:20 understand the problems in a generic way
+41:22 and you are a that you are able to add
+41:25 value to a company by solving problems
+41:27 then when it comes to actual tooling you
+41:29 know you can decide that later um
+41:33 ultimately you if you want to work in
+41:35 software engineering you need to adopt a
+41:37 different uh attitude than learning up
+41:40 front and that is you need to learn how
+41:41 to learn and you need to have the
+41:43 attitude that uh this is how you succeed
+41:46 because you will have to learn every day
+41:48 and you shouldn't be afraid to say hey
+41:51 we're going to solve this problem I
+41:52 haven't reached the technology decision
+41:54 yet and when you get there you might
+41:56 spend half a day to explore options and
+41:59 then MH let say I don't work yet so okay
+42:03 like adding values to the company is a
+42:05 good thing right there is a problem I
+42:08 want to solve this problem and then like
+42:09 together with the team we select the
+42:11 best way to solve this problem but I'm
+42:14 just I just want to let's say build a
+42:17 portfolio Okay
+42:21 how um ignore the
+42:24 vendors uh don't worry about it too much
+42:27 um no one will hire you as a specialist
+42:30 on snowflake when you're just starting
+42:32 out so you know don't don't go there
+42:35 rather learn SQL right Learn Python
+42:37 learn data ingestion learn data
+42:40 transformation modeling but most
+42:43 importantly learn how to capture
+42:45 business requirements and solve problems
+42:47 because this is what you're hired for
+42:50 and um the reality is that unless you're
+42:55 joining a senior team that can give you
+42:57 framework uh you're you're going to have
+42:59 to figure that out and technology is
+43:02 secondary and would you say just picking
+43:06 for example we have a course right and
+43:08 the course we say hey there are these
+43:09 components like I don't know you need to
+43:13 um have a data Lake you need to have
+43:15 some sort of workflow registration you
+43:17 need to know SQL right and then like I
+43:19 don't know present data somehow would
+43:21 you say just selecting any tool for each
+43:24 of these uh sub problems would be okay
+43:28 so I would say when you are solving
+43:30 problems you will have requirements that
+43:32 come up right so I encourage you to try
+43:34 these tools and learn them up front any
+43:37 in each category ultimately but when it
+43:40 comes to
+43:41 visualization you have a decision to
+43:43 make how am I going to deliver data to
+43:45 this company and depending on who the
+43:47 consumer is you should consider them as
+43:49 a person and can I get them to access
+43:51 data through this interface will they
+43:53 understand what they're doing right so
+43:57 like I keep saying um if you know some
+44:01 basics of how to do things that's enough
+44:03 to start right so if you're joining a
+44:05 company and your idea is that I will
+44:08 display data in notebooks this is not
+44:11 wrong it's not the best way but it's
+44:13 better than what they have probably
+44:15 right so ask them do you want your data
+44:18 in notebooks and they're going to say
+44:19 what's a notebook I don't know what a
+44:21 notebook is I have a dashboard and then
+44:23 maybe you're going to go to free Google
+44:26 data Studio and you're going to do some
+44:28 dashboards there and then you're going
+44:29 to find some limitations then maybe
+44:32 you'll ask somebody who has more
+44:33 knowledge and they will give you a way
+44:36 to think about it so basically just try
+44:40 things and see where it's going yes
+44:43 basically the modern data stack is
+44:44 extremely interchangeable it's extremely
+44:47 commoditized um many I would say if
+44:49 there's one thing to take care of is
+44:52 that in a commoditized
+44:54 market revenue is hard which
+44:57 incentivizes vendors to adopt blackhead
+45:00 tactics so this is something that I
+45:02 would look out for I would look out are
+45:05 these reputable vendors or are they
+45:07 going to rip me off what does their cost
+45:09 structure look
+45:12 like yeah interesting and um well you
+45:15 said that um at the end you're an
+45:19 engineer and then you think you should
+45:21 think
+45:22 about problems and how you solve these
+45:24 problems and how you add value to the
+45:27 company and then you don't need to be a
+45:29 data engineer for that right so and uh
+45:33 so the reason where I'm like I'm going
+45:37 so there is a question how challenging
+45:39 it is for a senior backend engineer to
+45:41 transition into a senior data
+45:42 engineering role and I was thinking that
+45:45 as a senior backend engineer so they
+45:48 probably already know how to translate
+45:50 uh you know these problems into
+45:53 Solutions and thinking about adding
+45:55 value to the company right I had the
+45:57 specific experience so actually when we
+45:59 were building uh DT we tried it with
+46:02 different people um and I would say the
+46:04 knowledge gap for a software engineer is
+46:08 of course not software right but it's
+46:10 going to be in understanding the
+46:12 business case of what they need to do so
+46:15 what I mean is if you ask a random
+46:17 software developer give me a pipeline
+46:19 that brings my HubSpot data into
+46:22 bigquery they will do that and you will
+46:24 have some kind of output and then you'll
+46:26 have have to chase them hey this is not
+46:29 fine this is not fine this is different
+46:32 this is not logically working properly
+46:34 the business logic here is wrong and um
+46:38 if you give it to a data engineer they
+46:40 will work back from the requirement I
+46:43 need to produce these reports because
+46:44 this is the business requirement for
+46:46 this I need to grab this data this data
+46:48 has this logic of incrementing and then
+46:51 you work back and you build the pipeline
+46:52 and it's usually fine
+46:55 MH yeah
+46:57 okay so basically like u a senior
+47:00 backend engineer can transition into a
+47:03 senior dat engineer role right I would
+47:05 say it's quite easy so and I would say
+47:09 technology is not the obstacle usually
+47:12 unless you're going for something like
+47:14 super specialized but you know that's
+47:16 not at
+47:17 entry okay so if you want to position
+47:20 yourself as a like spark expert and
+47:22 maybe you'll need some time to actually
+47:26 understand sparking detail but if you
+47:27 want to position yourself as a engineer
+47:30 who can solve data problems then it's
+47:32 another thing right I would say if
+47:34 you're trying to position yourself as a
+47:36 spark expert I will look at the
+47:38 portfolio of your work so if you're
+47:41 doing this as a junior I will have a
+47:44 bigle yeah understand uh another
+47:48 question I'm a senior data engineer from
+47:49 the UK and I don't see any data
+47:52 engineering jobs here is the situation
+47:56 same across acoss Europe and elsewhere
+47:58 how is the job market world I don't know
+48:00 if you have exposure to that but maybe
+48:01 you have some visibility you have some
+48:03 ideas I don't have firsthand uh exposure
+48:06 since I'm not looking uh but I hear
+48:09 about it from people and U basically
+48:12 what I hear about is that if you're a
+48:14 senior in the field there's no problem
+48:16 to find work um and I actually have
+48:18 former colleagues that um have recently
+48:23 uh gotten jobs like because they wanted
+48:25 to transition or change um
+48:27 um so I would
+48:30 say I would try to look at where those
+48:32 jobs are what kind of jobs these are um
+48:36 then maybe try to look at what could I
+48:39 do so if I'm a senior uh sorry if I'm a
+48:42 junior data engineer in the UK and I
+48:44 cannot find any Jer data engineering
+48:46 jobs maybe I can find I don't know bi
+48:49 manager maybe data scientist maybe
+48:51 something that will allow me to you know
+48:53 get a job and then once you have a job
+48:56 it's way to get a second One
+48:59 MH yeah right and then there are quite a
+49:03 few other questions I wanted to ask you
+49:05 personally and I wanted to come back to
+49:07 them and um so first of all uh we talked
+49:11 about Apache Iceberg and then we also
+49:13 you mentioned Delta and hoodie
+49:17 um like what are these things so iceberg
+49:20 is this as uh we talked about this is
+49:23 special ways of organizing parket files
+49:25 in such a way that if you want to change
+49:28 something instead of changing you append
+49:30 to this data and then there is like a
+49:31 smart way of saying that this record is
+49:34 not longer uh good there's another more
+49:38 fresh one right so this is a pach iberg
+49:40 so what are Delta and Hoodie the same
+49:43 thing and basically where they differ is
+49:46 a little bit in design like where is the
+49:48 metadata stored what kind of it what
+49:52 kind of things is it good at is it
+49:53 optimized for streaming is it optimized
+49:56 for badge what does the maintenance look
+49:58 like because there is the maintenance
+50:00 operation of cleaning up the Redundant
+50:02 data right um so I would say Delta is
+50:07 probably the most mature
+50:09 implementation
+50:11 um hoodie is quite specialized in the
+50:14 open source um Iceberg I would say if
+50:17 you're using spark it's fine if you are
+50:21 waiting for pi Iceberg maturity I would
+50:23 say don't hold your breath um yeah so uh
+50:29 I would say these file formats you
+50:31 should consider them more or less
+50:32 interchangeable and go for whatever you
+50:35 can work with right now um you can
+50:38 always convert them
+50:40 later okay and um are they all so since
+50:46 it's a bunch of files at the end in some
+50:49 sort of file storage I assume the way we
+50:52 process these files and access these
+50:54 files is in a batch way right so there
+50:57 are a b there there are some files we
+50:59 scan these files we produce some answer
+51:02 and we maybe do this every hour or every
+51:05 day or
+51:07 like um are
+51:09 there like this is bch but what are what
+51:13 what what what about streaming like can
+51:15 we use these things if we have a a
+51:18 stream of data yes it's basically
+51:20 exactly the same thing uh what is
+51:23 streaming unless you have a very hard
+51:26 SLA
+51:27 it's micr
+51:28 batching right so everything that is
+51:31 streaming without a hard SLA is micr
+51:33 batching so you know when it comes to
+51:36 these file formats I would say the
+51:38 distinctions of how well they can handle
+51:40 streaming is on let's say the speed of
+51:43 read write operations and
+51:47 maintenance okay um but um don't try
+51:51 Iceberg with streaming right now you
+51:54 know have lots of people telling us it's
+51:56 a bad idea so it will produce a ton of
+51:59 small files right uh performance is a
+52:02 problem basically but um you can use
+52:06 Delta for
+52:08 example Delta so what I was trying to
+52:11 say is or figure out uh find out is if
+52:15 we need to do something like this and if
+52:18 want to use this sort of um was it
+52:22 access storage layer then it's mostly
+52:24 suited for batch workloads right for
+52:26 stream we need something else uh what do
+52:29 people use for streaming these days for
+52:31 streaming first of all you need a buffer
+52:33 right so because you need to have some
+52:35 kind of service that is always available
+52:37 very quickly um that use that ideally
+52:42 implements some kind of protocol with
+52:45 retrives um so that's going to be
+52:48 probably Kafka or
+52:50 sqs um and downstream of that it could
+52:54 be anything so for example I would say
+52:56 Kafka is actually one of our top sources
+52:58 in DT right so you talk about streaming
+53:02 I would say people don't think about
+53:04 streaming in terms of strict slas and
+53:06 it's usually micro batching uh I would
+53:09 say the tightest deadline that I've seen
+53:12 um outside of pure streaming is 60
+53:15 seconds um many people talk about
+53:18 streaming on 15 minute
+53:21 intervals okay um so what what kind of U
+53:25 tools do so we use Kafka sqs right
+53:30 fors for for streaming but what do we
+53:33 usually solve what kind of problems so
+53:36 what I'm trying to ask you is okay we
+53:38 have B we have streaming when do we
+53:41 actually need streaming and uh like have
+53:44 the tool changed because kka has been
+53:46 around for long time right see sqs also
+53:52 has been around for a very long time
+53:54 like are these tools going to stay or
+53:56 you see some other trends when it comes
+53:58 to streaming and like new tools
+54:00 appearing
+54:02 um you need you need the buffer it's not
+54:06 negotiable so buffer is right yes so you
+54:10 can use a different buffer you could
+54:11 write things to S3 for example but if
+54:14 you do that the API cost of doing that
+54:17 will be
+54:18 ridiculous right so it's just I don't
+54:20 think these will go away I think what
+54:22 will change is um maybe how people use
+54:26 it and what I mean is initially Kafka
+54:28 was very much used for streaming for
+54:31 capturing events and then doing
+54:32 something with them nowadays I'm seeing
+54:34 people literally throw everything in
+54:36 Kafka um just now they have a
+54:39 standardized layer and they work with
+54:40 that is it a good
+54:43 idea depends on the team if you can only
+54:46 handle Kafka then yeah it's a great
+54:49 idea and uh then in order so Kafka is
+54:53 just a buffer right so we can put some
+54:56 data there and it can stay there for
+54:57 some time uh but then usually we use
+55:00 something else to read data from Kafka
+55:02 so it could be
+55:05 iink yeah I don't actually know that
+55:08 much about uh how Flink is used but uh I
+55:12 know that some people use ksql uh to
+55:15 read from kka uh other people use uh
+55:18 basically just docdb uh to take data out
+55:21 and process it before loading it
+55:23 somewhere else DB can also do that can
+55:25 it yeah I mean you BW everything with
+55:29 python ultimately so okay and uh dt2
+55:34 right you can connect to I think you
+55:36 mentioned that okay um so basically yeah
+55:42 we are quite heavily used as a Kafka
+55:45 sync because you know if you're using uh
+55:48 Kafka as a standard layer then you know
+55:50 having a standard ingestion Downstream
+55:52 is just nice MH yeah okay
+55:57 and um yeah I see a question which is
+56:00 related to what I also prepared so the
+56:03 question is will do you think data
+56:05 engineering will be automated by Ai and
+56:09 like in general how does AI affect data
+56:14 engineering great question I think it
+56:17 goes in the direction of this
+56:20 commoditization and having to offer
+56:23 Innovation so basically AI is speeding
+56:25 up the Comm
+56:26 monetization by making it easier for
+56:29 developers to work with AI so for
+56:31 example we see some of our users are
+56:33 using um cursor or continue or windmill
+56:38 IDs uh to develop um two times faster
+56:43 essentially
+56:44 [Music]
+56:45 um and basically what this will do
+56:49 is I like to call this the era of
+56:52 disposable code basically where people
+56:55 are generating let's say basic code that
+56:58 is very
+56:59 disposable um
+57:02 and the let's
+57:05 say differentiate differentiators that
+57:08 will uh have to exist will be around use
+57:11 cases so basically I think data
+57:14 Engineers will go deeper into their
+57:16 Specialties they will learn how to use
+57:18 AI more one of the things that we're
+57:20 doing is um many people in the industry
+57:22 call us AI
+57:24 enablers um the reason for that is
+57:26 basically because we provide an easy way
+57:28 to feed data to llms AI stuff like that
+57:33 we're also working um as part of this U
+57:37 on topic uh startup program uh for the
+57:41 mCP uh so basically what this does is
+57:44 this adds that semantic layer that I was
+57:46 talking about that you need together
+57:48 with your data and with the algorithm uh
+57:51 to be able to create intelligent AI
+57:54 agents I mean Beyond just the bag or
+57:56 just a you know simp engineering
+58:00 um yeah this this is something that I'm
+58:02 actually quite excited about because it
+58:03 will enable you to uh feed the LT data
+58:07 into a standard that uh accepts metadata
+58:11 that will then be used by the a
+58:14 a so I think data Engineers will end up
+58:17 building AI
+58:19 agents okay yeah interesting I think
+58:23 recently I think you published an
+58:25 article right
+58:27 uh I saw it on your LinkedIn from
+58:29 somebody um maybe from this
+58:33 um from your from the network you
+58:36 mentioned or from the partnership um
+58:40 companies who use the to make things way
+58:43 faster right
+58:45 yes um so basically the uh what that
+58:48 article talks about you can find out
+58:50 find it on our blog it's literally a
+58:53 guide of how to do it yourself uh coming
+58:55 from a data senior data engineer that is
+58:57 using DT and cser together okay okay
+59:03 open have do you have a couple of more
+59:05 minutes yes because um so the last
+59:09 question I wanted to ask is the place of
+59:12 DT in the Eos system so you said it's
+59:15 already it has already become a standard
+59:17 of for ingestion and right now you also
+59:21 shared some plans that you want to maybe
+59:24 go uh
+59:26 to to give more Focus uh to become this
+59:29 AI enabler enabler you already are but
+59:32 like maybe double down on that um so
+59:35 what are your plans for let's say one
+59:38 year and where you see DLT in five
+59:41 years so one year is DT plus it's
+59:45 basically building out this data
+59:47 platform around DLT um it's portable
+59:50 it's really cool it enables new things
+59:53 um what it also does is it enables you
+59:55 to package data products in a portable
+59:57 way so um and this is the reason I
+1:00:01 mention it is because it plays into the
+1:00:02 bigger Vision what I mean is I was
+1:00:05 telling you about this Tech agnostic
+1:00:07 access right so if you build on top of
+1:00:09 this Tech agnostic access it means that
+1:00:11 you can use the same code on any
+1:00:13 technology which means that now you can
+1:00:16 reuse things across
+1:00:18 organizations uh so this is actually you
+1:00:21 know um part of the commoditization
+1:00:23 story is five TR
+1:00:26 um and all the other vendors
+1:00:28 commoditized maybe 300 sources and if we
+1:00:32 are to talk about them in the concept of
+1:00:35 raw data or bronze as data bricks would
+1:00:39 call it and then silver and gold you
+1:00:41 could say that the industry is currently
+1:00:43 selling bronze or silver data sets and
+1:00:45 it's 300 of them what we're trying to
+1:00:47 create is the infrastructure that will
+1:00:50 enable uh participants to the industry
+1:00:52 to create a Marketplace for
+1:00:56 bronze silver and gold data sets so what
+1:00:59 I mean is essentially data products
+1:01:01 whether they are sources Transformers or
+1:01:06 um AI agents uh we want to create a
+1:01:08 Marketplace that will enable people to
+1:01:10 offer uh their creations and have them
+1:01:15 reused so that's the LD Hub that's the
+1:01:17 long-term
+1:01:19 Vision so this is in five years I hope
+1:01:23 sooner than that but uh yeah in 5 years
+1:01:27 hopefully it will already have been
+1:01:28 around for some time and uh gotten to
+1:01:31 some side well um so since uh it looks
+1:01:35 like U we already have a tradition to
+1:01:38 talk in January every year so probably
+1:01:43 we will have another interview in one
+1:01:45 year and see uh how things uh will have
+1:01:49 played out by then so it was amazing as
+1:01:51 always talking to you um thanks Adrian
+1:01:54 for joining sharing your opinion uh on
+1:01:58 how things have developed and will um
+1:02:01 develop it's very interesting for me
+1:02:03 personally for the students I see a lot
+1:02:05 of actually engagement um so thanks
+1:02:07 everyone for also joining us today um
+1:02:10 and being active uh for questions and
+1:02:13 yeah it's been fun thanks Adrian thanks
+1:02:15 Alex see you later goodbye bye everyone

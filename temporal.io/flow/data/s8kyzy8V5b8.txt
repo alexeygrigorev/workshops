@@ -1,0 +1,1264 @@
+From Algorithms to Agents: Lessons from Building Copilot
+
+0:00 So you have everyone welcome to our
+0:02 event. This event is brought to you by
+0:04 data dogs club which is a community of
+0:05 people who love data. Typically I have
+0:07 the slides but I think you'll understand
+0:10 what I'm talking about cuz we have a lot
+0:12 of events and in the description to this
+0:15 video we have a link to our website
+0:17 where you can find other events. And if
+0:18 you found out about this event from Luma
+0:22 you will probably get notified about our
+0:24 future events. Anyways, um then um on do
+0:29 not forget to subscribe to this YouTube
+0:30 channel. This way you will stay up to
+0:32 date with all the streams uh that will
+0:34 help including future streams. And uh
+0:38 what else? Last but not least, we have a
+0:41 slack community where you can hang out
+0:43 with other data enthusiasts. Uh there is
+0:45 a link in the description too. And then
+0:48 during today's interview, you can ask
+0:49 any question you want. There is a pint
+0:51 link in the live chat. Click on that
+0:54 link, ask your questions and I will be
+0:56 covering these questions. We will be
+0:58 covering these questions during the
+0:59 interview.
+1:01 So uh yeah, I see that um
+1:06 I am barely moving on uh YouTube maybe
+1:09 because my quality is uh great. So I'll
+1:14 close some links. I will be keeping an
+1:16 eye on the live chat too but please ask
+1:19 uh use slider for asking questions
+1:22 and yeah right now let me open the
+1:26 questions for Vim and Vim if you're
+1:29 ready we can start
+1:32 >> sounds good
+1:33 >> yeah so let's start so today we will
+1:36 talk about uh building AI agents and
+1:40 many other things and we have a special
+1:42 guest today Vadim Vadim is a machine
+1:44 learning engineer at Microsoft working
+1:46 on copilot AI. He is a former PhD
+1:49 student at MIT with interest in
+1:51 generative AI. Vedim is the author of
+1:53 the book machine learning algorithms in
+1:55 depth which focuses which focuses on
+1:58 algorithmic machine learning. And by the
+2:00 way, if you're an active participant of
+2:02 our Slack community recently, we had
+2:04 Vadim answering questions in our book of
+2:07 the week channel. uh if you didn't have
+2:09 a chance to participate, you can go
+2:11 there and see all the answers from Vim.
+2:14 So, thanks Vim for doing that and thanks
+2:17 and thanks for accepting this invite and
+2:19 joining our interview today.
+2:22 >> Yeah, thank you. It it was a lot of fun
+2:24 answering questions and uh enjoy enjoy
+2:27 connecting with the community. Yeah.
+2:31 So you are a former PhD student at MIT
+2:34 means you didn't finish your PhD or you
+2:38 completed
+2:40 >> um well um I mean I I like to say that
+2:44 I'm a former PhD student. So that's just
+2:46 how I like to introduce myself cuz I
+2:49 think
+2:50 >> graduate graduate studies is like an
+2:52 important uh
+2:53 >> you know uh part of my life. So yeah.
+2:57 >> Mhm. And you were at MIT. I was in
+2:59 Boston. I didn't uh um so MIT was on the
+3:04 other side of Boston, but it's a very
+3:06 nice city.
+3:08 >> Yeah. Yeah. Boston is uh I love Boston.
+3:11 Yeah.
+3:12 >> Yeah. So, can you tell us about your
+3:14 career journey so far? So, I outlined um
+3:17 a few things in your bio, but uh maybe
+3:20 we can go a little bit deeper. So, can
+3:22 you tell us about your career journey so
+3:24 far?
+3:26 >> Uh yeah. So I've always been kind of
+3:30 fascinated with algorithms and uh um
+3:35 you know this is one of the reasons I I
+3:37 wanted to study them in more depth and
+3:39 one of the reasons I uh got into
+3:44 graduate school
+3:46 and um yeah first it was computer
+3:49 science algorithms then I got into
+3:51 machine learning and now generative AI
+3:54 and um I always been attracted to
+3:58 um
+4:00 latest technology and that led me to my
+4:03 present team uh you know working on
+4:06 generative AI at Microsoft.
+4:10 >> Yeah that's that's amazing actually when
+4:12 I was a kid I was um I am from far east
+4:16 of Russia from a very small city and as
+4:19 a kid my dream was to work at Microsoft
+4:22 as a software engineer. M
+4:24 >> so cool I never got the chance to work
+4:26 at Microsoft but yeah it's cool that um
+4:31 some of us managed so for me it was the
+4:34 only company I knew back then so it was
+4:36 cool
+4:38 >> and um and speaking of MIT so I remember
+4:42 I think it was like around 2009 or 10
+4:45 when I accidentally come across this
+4:47 course from MIT about algorithms it was
+4:50 like super bad quality but I
+4:53 for today's standard it was like a very
+4:56 small um video but that was such an
+5:01 interesting
+5:03 um bunch of videos like I so enjoyed
+5:06 them so much so probably studying and
+5:08 working at MIT must be really nice right
+5:13 >> well it's uh you know it's a challenging
+5:15 experience right it kind of um I would
+5:18 say graduate studies is a little bit
+5:20 individualistic right like um varies a
+5:23 lot based on
+5:26 the group, your interests and uh yeah
+5:29 it's uh you know
+5:33 challenging.
+5:36 >> Can you tell us about your book? So you
+5:39 wrote a book
+5:41 uh you um when did you actually write
+5:44 it? How recent is the book?
+5:47 >> Uh yeah it came out in print last year.
+5:50 Um I started writing it way back in grad
+5:53 school when I was working on algorithms
+5:55 and kind of uh building up a library of
+5:58 um
+6:00 uh you know different from scratch
+6:02 implementations
+6:04 and uh I got into writing a book by just
+6:07 blogging at first.
+6:09 Um so I would um
+6:13 um you know I always like to share what
+6:14 I learned. So in grad school there's
+6:16 time to kind of read in depth and uh
+6:22 um yeah I also like writing. So I got
+6:25 into blogging and uh I started thinking
+6:29 you know I was I um I was invited to be
+6:32 an editor for a few books and then I
+6:34 kind of realized that there's a gap in
+6:36 the literature where
+6:38 um
+6:41 uh some books are theoretical and others
+6:43 are kind of uh import from libraries
+6:46 without really explaining what's
+6:48 happening underneath.
+6:50 Uh so I found there's there's like a
+6:52 missing piece where I can come in and
+6:54 kind of explain the inner workings of
+6:56 algorithms.
+6:58 Um
+7:00 yeah and uh so I went ahead with a book
+7:03 proposal and uh put together a draft and
+7:06 it was it was a it is a timeconuming
+7:08 process. Took several years to get the
+7:10 book out but I'm happy it's it's out
+7:12 there and uh hopefully folks enjoy it.
+7:16 How many years did it take?
+7:20 >> Um, I'd say about three to three to
+7:22 four. Yeah,
+7:24 >> three to four. Wow, that's that's a lot
+7:26 of time. So, I thought I also wrote a
+7:29 book also with mining and it took two
+7:32 years and I thought it's insanely long.
+7:35 >> Yeah,
+7:36 >> that's true.
+7:38 It's actually like the book was ready in
+7:40 maybe like 9 months but the rest was uh
+7:44 published in editing
+7:46 editing again
+7:49 in feedback like all these um
+7:53 how to say extra things on top to make
+7:57 it better right so the the remaining uh
+7:59 I don't know 20% like the book was
+8:01 almost ready but like the remaining 20%
+8:03 took so much time I guess maybe for you
+8:05 the experience was similar
+8:08 Oh. Um,
+8:11 what do you mean by like almost ready or
+8:13 20%.
+8:14 >> Yeah. You know this like the par rule
+8:17 you spend like%
+8:19 of time on the 80%.
+8:22 >> Yeah.
+8:22 >> Yeah. Yeah. So I think with my book it
+8:24 was uh like you kind I kind of quickly
+8:26 wrote almost everything but then the
+8:28 rest I spent you know on just little
+8:30 things feedback from the reviewers uh
+8:33 like polishing editing what they call
+8:35 also production um
+8:39 >> yeah I understand I see um
+8:42 yeah I mean editing is important process
+8:45 and does does take some time but then
+8:47 overall the quality of book improves
+8:49 it's nice to get feedback from people
+8:50 like what they think is working, what's
+8:53 not working. Um, I yeah, for me it was
+8:59 mostly like a a linear process. I would
+9:02 say
+9:07 there wasn't a particular part of the
+9:10 book that would take a super long time.
+9:14 So for you, would you say that the best
+9:16 way to learn an algorithm is to actually
+9:20 implement it and then describe it in
+9:22 words?
+9:24 >> Yeah, that's a good question. So I would
+9:26 uh
+9:28 uh yeah, I tend to prioritize depth over
+9:31 breath. Like if you look at all the
+9:32 machine learning algorithms, there's
+9:34 just so many and uh for people who are
+9:36 starting in the field, it's kind of
+9:37 unclear where to start. Could be
+9:39 overwhelming. And uh I felt that way in
+9:42 grad school, too. And uh I find there's
+9:45 more learning value in going in depth
+9:48 first.
+9:49 Um yeah so
+9:53 uh the way I like to approach like
+9:56 figuring out how an algorithm works is
+9:58 in stages. Um so I would start with like
+10:01 kind of high level
+10:04 um getting some experience if if it's an
+10:06 existing algorithm I would start getting
+10:08 some experience with it like
+10:09 understanding um
+10:12 you know what uh data it's work uh uh
+10:16 you can use um I would start by just
+10:20 like reading about it
+10:22 um not necessarily with deep dive into
+10:25 mathematical details but just getting
+10:26 some exposure to it and the next stage I
+10:28 would you think about different
+10:31 instances where it could be applied.
+10:33 um maybe
+10:36 um getting more into
+10:41 um you know the applications of it and
+10:44 uh and if if if I want to understand it
+10:47 more detail I would then ask questions
+10:48 about trade-offs
+10:51 um
+10:54 you know uh understand what features
+10:55 could be improved added extended
+10:58 um you know it's nice to have a it's
+11:00 good to have a perspective of um trying
+11:02 to invent new algorithms or build new
+11:05 algorithms and for that you need to
+11:07 really understand um how the existence
+11:10 existing ones are derived and how to
+11:11 extend them.
+11:14 Um yeah and like you said you know
+11:16 summarizing what you learned in words
+11:20 and even teaching um uh is a great way
+11:24 to learn yourself too.
+11:27 So right now we have a course which
+11:29 actually starts today and there are many
+11:32 people who are interested in learning
+11:34 machine learning that's why they take
+11:36 the course. Uh how would you suggest for
+11:40 them to actually approach it? So how
+11:42 because when I remember when I just
+11:44 started machine learning and then I had
+11:46 this book I think the author was uh
+11:48 Bishop I had two Murphy and Bishop maybe
+11:50 you know this uh people there like big
+11:53 theoretical books and like you open you
+11:56 look at these formulas and I'm like okay
+11:59 what do I do right so it's very
+12:02 confusing so well in our course it's um
+12:05 we're kind of leaning towards like you
+12:07 said there are two kind of books one is
+12:10 very theoretical which is this Mercury
+12:12 and Bishop. The other is import from
+12:14 Second Learn and do this. So we are
+12:16 leaning towards like maybe the second
+12:19 one with a bit of theory. Um so we
+12:22 definitely show people how to use these
+12:24 things. But let's say somebody is taking
+12:27 our course and they're interested in
+12:29 going deeper and let's say I don't know
+12:32 we cover things like linear regression,
+12:33 logistic regression. So with logistic
+12:35 regression if somebody wants to go
+12:37 deeper and really understand it like
+12:39 what should they do in your opinion?
+12:42 >> Yeah. Um I I understand how you
+12:44 approaching the course. I think it's
+12:45 fine you know as a first someone who's
+12:47 new to the field can start out by you
+12:50 know importing libraries and uh trying
+12:52 out algorithms for themselves looking at
+12:54 like predictions evaluations
+12:58 and then as a next stage of iteration
+13:00 you could go deeper like let's say uh
+13:02 formulate the problem mathematically
+13:04 uh look at the equations try to
+13:06 understand them um figure out like um
+13:11 you know the benefits of this particular
+13:14 model. Um
+13:17 and uh if you want to uh you know next
+13:20 stage of iteration you would go into
+13:22 maybe implementing from scratch. Uh if
+13:25 you're interested in this particular
+13:27 algorithm I don't recommend implementing
+13:28 everything from scratch but uh whatever
+13:32 um you feel passionate about or drives
+13:34 you. I mean right now generative AI is
+13:37 um
+13:39 uh very popular powerful and uh yeah if
+13:43 you're interested in let's say
+13:44 implementing
+13:47 um part of from scratch in PyTorch
+13:50 that's a that's a great example too
+13:52 >> uh to dig into uh learn about uh
+13:56 attention mechanisms and uh see how
+13:58 they're played out but yeah if you're
+14:00 starting out you know simp like simple
+14:02 algorithms say if Um yeah, I would um
+14:09 um I would take an iterative approach.
+14:11 Get some experience exposure with that
+14:13 first, get some application knowledge
+14:16 and then dig deeper.
+14:21 >> Okay. Yeah, that's interesting. But
+14:22 speaking of um so the example I used the
+14:25 logistic regression which seems very
+14:28 simple thing until you start digging
+14:31 deep and uh realizing how many things
+14:35 are there cuz um like there are so many
+14:38 ways to implement like such a simple
+14:40 algorithm as logistic regression like
+14:41 you have like different solvers
+14:43 different things um
+14:46 >> how deep we should go into these things
+14:49 like in general so let's say you were
+14:52 talking about generative AI. So, okay,
+14:55 everyone can just make a call to open
+14:57 AI. Um, but let's say I want to
+15:00 understand how these things work.
+15:04 How deep I should go and like how do I
+15:06 decide when to stop? Uh, what kind of
+15:08 resources I can use for this? Um,
+15:10 because implementing things from scratch
+15:12 is not always easy, I guess. Well, for
+15:14 some things it could be your book, but
+15:16 how do you usually approach this? Do you
+15:18 have some sort of process for that?
+15:21 Oh yeah. Um yeah. So it all depends on
+15:24 like your interests and goals. Um
+15:27 so
+15:29 um
+15:32 you know I would focus like as as a as a
+15:35 guideline I would focus on what you're
+15:37 really interested in and passionate
+15:38 about and pursue that to whatever degree
+15:41 you feel you need. Right? Right? If your
+15:44 goal is to innovate for example and your
+15:46 goal is to research and uh come up with
+15:48 new uh methods, techniques, algorithms,
+15:51 learning systems, then um you want to
+15:55 dig deeper, right?
+15:58 um
+16:00 if your goal is to apply you know um
+16:05 what you learn and uh uh kind of create
+16:10 like a product then you want to go to
+16:12 the extent that's necessary so there's
+16:14 there's no right answer it's really
+16:15 tailored to individual and their their
+16:18 like goals and ambitions
+16:21 >> what did you actually do at MIT like
+16:23 what what was your research about like
+16:25 your research at MIT what was it about
+16:29 >> uh it was uh focused on bas inference uh
+16:32 some elements deep learning it was um I
+16:35 guess prejai er era um algorithmic ML.
+16:43 >> Yeah. I was just curious because you
+16:44 mentioned this multiple times that if
+16:47 your goal is to come up with new
+16:49 algorithms that you need to go really
+16:51 deep to understand how the existing ones
+16:53 work so then you can build upon that
+16:56 knowledge
+16:57 >> and I thought maybe the reason you're
+16:59 bringing this up is because you yourself
+17:01 needed to do this when you
+17:05 >> researching right you need to come up
+17:07 with new methods
+17:09 >> yeah yeah that's that that was that was
+17:12 the goal
+17:16 And uh how did you end up at Microsoft
+17:18 after working at uh with Beijian
+17:22 inference?
+17:24 >> Um well I uh I was like working latest
+17:28 technology. So, you know, with it when
+17:31 it comes to choosing like uh
+17:36 a position and role to work in, I just
+17:38 uh you know, I I'm two factors that come
+17:42 to mind are
+17:44 working on interesting projects and with
+17:46 interesting people and uh that's you
+17:48 know, that's what led me to Microsoft.
+17:51 So it wasn't like any particular
+17:53 collaboration between the research lab
+17:56 you were working on and some researcher
+17:57 from Microsoft. It was just okay what
+18:00 are the places where I want to work? So
+18:02 and then you apply and you work right.
+18:05 >> Right. Yeah. Yeah.
+18:07 >> Okay. I see. Um cuz uh what you work on
+18:10 right now is uh it's a it's copilot from
+18:13 Microsoft. Right.
+18:15 >> Yes.
+18:18 And um
+18:20 you work as ML engineer, correct?
+18:23 >> Correct. Yeah.
+18:24 >> Yeah. As a ML engineer, do you need to
+18:26 actually
+18:28 go deeper and come up with uh new
+18:32 methods, new algorithms,
+18:35 or your task is more like, okay, here's
+18:39 some stuff that researchers come up
+18:40 with. I need to know how to use it in
+18:43 the most effective way.
+18:46 uh I think there's always an element of
+18:48 you know uh improvement thinking about
+18:50 how existing processes can be improved
+18:53 algorithms can be improved
+18:56 um methods
+18:58 um you know there's definitely an
+18:59 element of research the the what's
+19:02 different is in the like in in the
+19:04 industry the things have to work in
+19:07 production right and uh so there's a lot
+19:10 of responsibility around it um our goal
+19:14 is you know and the the team I'm working
+19:16 on is not to publish papers but to uh
+19:19 generate high quality products. Um
+19:22 yeah so
+19:24 um
+19:26 yeah I think it's important to keep keep
+19:28 that in mind.
+19:29 >> Mhm. Well would you say um you would
+19:32 still be able to do what you do right
+19:34 now without your um research experience
+19:39 in Beijian methods and your PhD.
+19:44 Um
+19:46 I mean again it depends on like person's
+19:48 goals and interests. I recommend people
+19:50 to pursue passion.
+19:52 >> Yeah.
+19:52 >> The reason I'm asking is because this is
+19:54 a fairly common question like do I need
+19:56 PhD for being a machine learning
+19:58 engineer and I usually answer no but I
+20:00 guess the answer is it depends. And I'm
+20:02 wondering in your particular situation
+20:05 um
+20:06 >> like do you need to have this
+20:09 foundational knowledge that you acquired
+20:11 and like deep knowledge that you
+20:13 acquired through your uh graduate
+20:15 studies and doing a PhD uh while you're
+20:18 doing this uh genai stuff or
+20:22 um this is more like engineering
+20:25 experience and other things that you can
+20:27 acquire elsewhere outside of academia.
+20:31 I see. Um
+20:36 well um you really need to um yeah I
+20:40 mean PhD is kind of focused on on mostly
+20:43 research right and gives you kind of um
+20:45 tools and time to think and uh ask
+20:50 deeper questions and uh experiment
+20:52 explore. Um,
+20:56 it also leads you to, you know, path in
+20:59 academia if you're interested in in
+21:02 research and teaching. Um,
+21:06 do you absolutely need it to be an
+21:07 Emily? I don't think so. Um
+21:12 but you know it's important to ask
+21:13 yourself what your uh what your
+21:16 interests are and uh yeah so I do
+21:19 recommend uh getting some research
+21:21 exposure through masters at least.
+21:24 >> Mhm.
+21:25 >> Um I think pursuing masters is a really
+21:27 good idea. It leads to interesting work.
+21:29 It gives you um
+21:33 you know a chance to think about
+21:34 research pro problems and uh maybe teach
+21:39 a course like as a teaching assistant.
+21:43 Um yeah but PhD is like up to up to
+21:47 individual to to decide.
+21:49 >> Mhm. Yeah. Okay.
+21:52 And now you work on all this um
+21:55 how can I say cool stuff because I mean
+21:57 to me all the AI stuff seems really cool
+22:02 because of all the applications of all
+22:04 the things we can do with uh LLMs
+22:08 >> and u like we have this intelligent
+22:12 assistance everywhere right so like
+22:15 other things everyone is putting AI in
+22:17 their products uh which I think is a
+22:20 really good thing So cuz some things
+22:22 become really more convenient. Um
+22:27 >> Mhm.
+22:27 >> but um there is this obsession I think
+22:29 not obsession but um I would say hype
+22:31 with agents
+22:33 >> and I remember I was uh doing some um uh
+22:39 I was taking online course about
+22:40 reinforcement learning and there they um
+22:44 like in AI in traditional AI before
+22:47 genai era we had this
+22:51 concept of agent, right? So, agent is a
+22:53 thing that can interact with the
+22:55 environment. Uh, it has memory, it has
+22:58 some set of actions. Um,
+23:01 like all these things, right? So this is
+23:04 usually like an independent thing that
+23:07 explores the world by trying things,
+23:11 getting feedback and then learning from
+23:13 this feedback and uh
+23:17 um yeah doing something. But what I
+23:21 think now we mean by an agent is just
+23:25 making a call to OpenAI with a bunch of
+23:28 tools and that's basically it, right? So
+23:32 you're just making a a call. You say
+23:35 okay these are my tools and then uh your
+23:38 memory is like uh you know all the
+23:40 messages history messages. Is it the
+23:43 case or I'm missing something like and
+23:44 why do we call these things agents?
+23:48 Uh yeah, I would take a like a you know
+23:52 high level view you know agents as um
+23:55 yeah I mean in the context of large
+23:58 language models uh
+24:01 um agents are um you know able to reason
+24:05 over multi-tonone conversations with
+24:07 users and uh able to make tool calls to
+24:10 satisfy user queries,
+24:12 right?
+24:14 Um you also mentioned uh you know RL
+24:18 environments and that's you know that's
+24:20 that's quite interesting to
+24:22 um for training
+24:25 um and uh yeah there's many ways in
+24:31 which we could like explore this topic
+24:34 um but yeah right now kind of the the
+24:37 focus is on um automating certain tasks
+24:41 um like responding to user queries is
+24:44 like a good agent will be able to um
+24:47 reason
+24:50 um reason over multi-turn conversations
+24:53 and uh for example if there's ambiguity
+24:56 in the query to ask user for feedback
+24:59 um get all the information that one
+25:02 needs to resolve uh the the query
+25:05 including
+25:06 uh call in the necessary uh tools right
+25:09 and get back to the user.
+25:11 Um yeah, but in general I would say um
+25:15 you know we talk about
+25:18 I you know I envision the future as like
+25:21 with um
+25:24 um you know agents operating in in the
+25:28 physical world you know like physical AI
+25:32 um
+25:34 learning by interacting with
+25:35 environments right um so right now
+25:38 there's a lot of learning happening
+25:40 during training but not as much during
+25:42 inference,
+25:44 right? But if you imagine a physical AI
+25:47 agent walking around in the world
+25:49 interacting with the environment and uh
+25:52 uh it's important to construct these
+25:54 algorithms that learn through
+25:56 interaction just like humans do, right?
+25:58 We're not,
+26:00 you know, when we're born, we're born
+26:02 with certain
+26:04 uh built-in knowledge uh into us, but
+26:07 when we walk around and learn stuff, we
+26:10 do it in real time in runtime, right?
+26:13 And that's currently kind of missing. Um
+26:18 yeah, so that's my take on it right now.
+26:22 I think the way we kind of mimic it or
+26:26 the way we implement right now this
+26:28 behavior
+26:30 by including the history in the prompt.
+26:34 Well, let's say like we have an agent
+26:36 and agent did something and it led to a
+26:39 certain outcome
+26:41 and um I don't know it made a call u I
+26:46 don't know invoked a bash script and it
+26:48 found out that bash doesn't work because
+26:50 it turns out we're running on Windows
+26:52 right and because of this we keep this
+26:55 in kind of memory in our history saying
+26:57 that bash doesn't work then the next
+27:00 time we send a call to um our LLM
+27:03 provider where they know okay we cannot
+27:05 usually actually use bash we need to use
+27:07 I don't know powershell or right so this
+27:10 is how we kind of learn from environment
+27:12 but in practice is just adding more and
+27:14 more things to our prompt right
+27:19 >> um well I mean yes in the context of
+27:22 language models
+27:25 um
+27:29 yeah it's important to provide the right
+27:31 context right for the LM if you give the
+27:34 right output. Um
+27:38 yeah, but like outside of computer use
+27:40 example you just provided, right?
+27:42 There's there's more to interaction.
+27:46 >> Um like just thinking about like um
+27:51 you know agents walking around. There's
+27:53 a lot of like other information that
+27:54 could be provided like the the sensor
+27:56 information the you know this um
+28:00 there's a lot that could be integrated
+28:04 going forward.
+28:06 >> I came across a video on YouTube where
+28:10 they have like these cubes
+28:12 and um the cubes are learning to kick a
+28:16 ball so they can move. So that they have
+28:19 this uh uh environment which is like a
+28:22 football field. So they kick uh they can
+28:25 kick a ball and their goal is to
+28:28 actually win the opponent but they have
+28:30 no idea about the rules. So what they
+28:32 need to do is they need to figure it out
+28:36 when they kick the ball and the ball
+28:39 hits the gate or how do you call it like
+28:42 basically like you hit the score right
+28:44 >> that you get positive reinforcement and
+28:47 when somebody hits the ball and hits
+28:49 your gate
+28:51 >> uh then you get negative reinforcement
+28:53 and they show it across multiple like
+28:55 many thousands and thousands of epochs
+28:57 how these little cubes um learn these
+29:01 rules. So this is really like amazing
+29:04 and u amusing to watch. I guess this is
+29:08 what you mean right by agents uh in real
+29:10 world. I mean this one is not the real
+29:12 world but still um I think in this
+29:15 particular case it was reinforcement
+29:16 learning algorithm something relatively
+29:20 simple I guess not like LLM or anything
+29:22 like that. Um but yeah um
+29:25 >> yeah I mean totally I think um
+29:29 yeah um I mean there's
+29:32 uh I recently recently reread um the
+29:36 better lesson paper by uh Sutton and he
+29:39 talks about how we need to
+29:43 um kind of create these environments
+29:45 where we could learn like search and
+29:47 learn learning is very paralyzable
+29:50 um and uh if We, you know, the winning
+29:54 algorithms are the ones that take
+29:55 advantage of highly paralyzable compute.
+29:59 And what is
+30:03 useful to do is um
+30:08 uh focus on learning algorithms and just
+30:11 let and sort of like get out of models
+30:13 way and let let them
+30:16 agents learn
+30:19 um and come up with interesting
+30:21 strategies by themselves just through
+30:23 reinforcement learning. Mhm.
+30:26 >> Um I think that's very powerful that uh
+30:28 you know that
+30:30 um the bitter lesson article had a kind
+30:33 of profound impact on me on how I view
+30:35 algorithms and uh um
+30:39 I think that's the way to go. You know
+30:41 just recognizing that there's no need to
+30:44 um necessarily put human limitations on
+30:47 um
+30:49 training and learning. You know for
+30:51 instance we are um in the arrow of
+30:55 experience
+30:56 paper they the authors talk how we are
+31:01 running out of um human training data
+31:03 right kind of supervised fine tuning SFT
+31:07 >> um and instead there's so much more um
+31:11 inter in the environment to learn from
+31:13 right likel based methods where we can
+31:16 extract
+31:18 uh
+31:20 you know reward signals from the
+31:22 environment. It's just it's very rich.
+31:24 Um.
+31:24 >> Mhm.
+31:25 >> So, so the the idea here kind of high
+31:28 level is to not not impose
+31:33 ceiling learning ceilings based on human
+31:36 kind of annotation and
+31:38 >> letting humans dictate what machines
+31:41 should do but rather uh creating
+31:43 learning environments and letting
+31:46 intelligent machine learn on their own.
+31:50 Was it what uh they did uh with chess
+31:53 and go like cuz uh with chess you have a
+31:57 large cor like large corpus of data with
+32:00 all the games that have ever been
+32:03 played. So you can learn from that. Uh
+32:06 but I think the current best model was
+32:09 not learned on this but more like
+32:11 simulating and trying different things
+32:13 right. So you have the environment, the
+32:14 chessboard, and then you can play as
+32:17 many games as possible, right? And then
+32:20 let's say two AIs are playing against
+32:21 each other, so they can potentially
+32:24 improve forever, right?
+32:25 >> Exactly. Yeah. like uh through selfplay,
+32:27 through like exploring search um you
+32:31 know because humans we we kind of um
+32:36 early on we prune possib like in search
+32:39 space we prune the search space to make
+32:42 sure that we don't do things that do not
+32:44 lead to certain outcomes. Um, but if you
+32:48 just let let this parallel search run
+32:51 and uh figure out uh new you can figure
+32:55 out new connections that are like
+32:56 nonobvious to to humans like the famous
+33:00 that that in game of go there's like the
+33:02 special move that caused uh
+33:04 >> that was unexpected and uh uh unexpected
+33:08 to humans but at the same time it was uh
+33:11 you know
+33:13 uh something that uh
+33:16 uh
+33:18 the the system predicted.
+33:21 >> Mhm.
+33:22 Are you referring to the game between
+33:25 like the AI thing and like a human in Go
+33:29 when
+33:30 [Music]
+33:32 >> computer?
+33:33 >> Yes. Yeah.
+33:36 I like to be honest I don't know much
+33:38 about go except that it's very difficult
+33:40 and like it was cracked way later than
+33:43 chess like I mean computers were able to
+33:46 beat humans.
+33:47 >> Yeah that's true.
+33:49 >> You play go or chess or anything.
+33:52 >> Uh yeah I do play chess and I I tried go
+33:55 as well. Um I forgot what the spe
+33:59 there's a measure of complexity for a
+34:00 game I think based on the branching
+34:02 factor of possible moves and I think go
+34:06 is more complex like you said. Yeah. So
+34:09 yeah both interesting games.
+34:11 >> Mhm. Do you play chess regularly?
+34:15 Um not not regularly when I uh I don't
+34:19 know when last time I played chess was
+34:22 like on the flight
+34:25 >> sometimes. Yeah.
+34:26 >> Okay. Do you play like on chess.com or
+34:29 something?
+34:30 >> No. No, I do not.
+34:31 >> No.
+34:33 No. Yeah. I was just curious. I play
+34:35 sometimes like maybe a few times per
+34:37 week, but my rating there is pretty low.
+34:41 So make a lot of key mistakes. But what
+34:44 I observed is uh when I ask Chad GPT for
+34:48 advice regarding chess I it's better
+34:51 than me but I wouldn't say it's
+34:53 significantly better right so I don't
+34:55 think Chad GPT is actually very good at
+34:58 chess um I don't know have you
+35:01 experimented with it like have you tried
+35:03 to play or because this is a language
+35:05 model right it's just by accident by
+35:08 learning from all the information that
+35:10 humans produced it was able to learn the
+35:14 rules for chess, but it's not like a
+35:17 thing that specifically were was created
+35:19 to play chess, right?
+35:22 >> Uh I mean that's that's true. Yes. I I
+35:25 haven't asked Chip about uh like a chess
+35:30 uh uh you know query. Um I did find uh
+35:36 it helpful to um you know the the way I
+35:39 use it I guess is to
+35:41 >> um help me do research online like
+35:44 sometimes you look you ask question and
+35:46 then you look at all the links that it
+35:47 sites and it's like went through you
+35:49 know 30 plus websites to give me an
+35:51 answer and it's like wow that thank you
+35:53 for saving me all that time. Mhm.
+35:55 >> Um I do use it for um I guess part of
+35:58 GitHub copilot to uh help me um you know
+36:03 ask questions about the code. Um
+36:07 sometimes automating tasks that take a
+36:09 lot of writing by hand. You know you
+36:12 could just write a function
+36:14 uh and ask an agent to kind of um
+36:18 replicate similar structure of that
+36:20 function. give it an example and uh it
+36:23 does it automatically. That's a good
+36:25 use. If you're doing uh
+36:30 um a deployment and you get a deployment
+36:34 log, you know, you can upload your
+36:35 deployment log and ask question like say
+36:37 what's uh
+36:39 >> what's
+36:41 Yeah, it's pretty quick at analyzing
+36:44 uh you know, large amounts of data and
+36:46 usually comes up with good solutions.
+36:48 >> Mhm.
+36:50 So you use do you use GitHub copilot to
+36:52 work on Microsoft copilot
+36:59 if you can fine
+37:01 >> yeah you have to be uh I find that um
+37:04 you know for high level tasks it um it's
+37:08 better to to use uh like GitHub copilot
+37:11 for like lower level tasks it could be
+37:13 automated u but if you describe a very
+37:16 high generic pro problem I I I don't
+37:19 think you'll get a good output. And of
+37:21 course, it's important to review and
+37:22 have
+37:24 >> uh have good understanding of um
+37:27 programming yourself, right? Um know
+37:30 what it what it's like to um
+37:34 you know have a good understand
+37:35 algorithms, data structures
+37:38 um because sometimes you may get a code
+37:41 that looks good but it may not do what
+37:44 you intended to do. So it's you know
+37:46 human aspect of it is still important.
+37:48 has happened to me many times.
+37:50 >> Yeah.
+37:53 >> What I noticed you mentioned that when
+37:55 you give low-level task, it's better
+37:58 than high level tasks. There are some
+38:00 agents
+38:01 >> like I don't know maybe you came across
+38:02 them too lovable or both where you give
+38:05 like a super high level uh task but then
+38:09 the they have multiple agents. So one
+38:11 agent is a planning agent which task is
+38:14 to get this um
+38:17 like high level thing and break it down
+38:20 and like really describe very well and
+38:23 go lower level. So this like planning or
+38:27 requirements agents they call them
+38:28 differently. Um yeah that's pretty
+38:31 interesting. And then uh once you have
+38:33 this from high level you have low level
+38:35 then the coding agent implements the low
+38:38 level. But of course, you need to make
+38:40 sure that it's actually doing what you
+38:42 want because when it goes from high
+38:44 level to low level, maybe it can include
+38:46 things you don't need, right?
+38:49 >> Yeah. Yeah, that's true. And I think
+38:51 with like um latest reasoning models
+38:54 like O series let's say from OpenAI
+38:57 um the planning like it does a lot of it
+39:01 by itself like you don't need separate
+39:03 planning and stages like it's it's
+39:06 pretty good at uh uh respond to user
+39:09 query.
+39:14 >> I'm pretty pretty curious about um your
+39:17 work and what you do. I don't know to
+39:18 what extent you can actually talk about
+39:20 that but if you can uh like can you tell
+39:23 us what you actually do in copilot?
+39:27 Um
+39:29 yeah sure so like I mean we're
+39:31 interested in um
+39:34 uh like fine-tuning
+39:36 uh data synthe training data generation
+39:40 um interested in improving quality of
+39:42 response measuring that quality
+39:44 evaluating um
+39:48 um you know we're uh
+39:55 also interested in serving
+39:57 these products to multiple end users
+40:04 >> um to all the work associated with those
+40:06 areas.
+40:10 >> Okay, that's that's pretty interesting.
+40:11 Uh but um it's also quite um how to say
+40:16 this Microsoft cop is integraing many
+40:19 products, right?
+40:21 >> I can see it everywhere. I can see it on
+40:23 Windows. I can see it. Yeah, I from what
+40:26 I understood this copilot is integrated
+40:28 in pretty much everything. So I can see
+40:30 it in uh the Edge browser. I can see it
+40:34 in uh Windows. Uh I don't have office
+40:37 but probably if I had I would see it
+40:38 there too. So probably you're
+40:43 working on quite a lot of things, right?
+40:44 So quite a lot of products are using
+40:46 this copilot.
+40:48 >> Uh yeah, every product has a like an
+40:50 associated co-pilot with it. So um yeah
+40:54 it really depend different teams work on
+40:56 different
+40:58 yeah uh
+41:01 uh specializations of that um
+41:05 >> right
+41:06 >> do you work with any specific tools like
+41:08 I don't know like I suppose if you want
+41:11 to have an agent that works with
+41:14 PowerPoint is very different
+41:17 uh compared to an agent that works with
+41:20 uh spreadsheets
+41:25 Um
+41:27 yes I mean the
+41:29 yes you would need to specialize it like
+41:32 uh I guess fine-tune it and uh um
+41:37 based on certain foundation model
+41:43 >> okay yeah
+41:45 um yeah I was just curious to know a
+41:48 little more but I don't know to what
+41:50 extent they and ask about these things.
+41:52 Uh because for me it's really it's
+41:56 really interesting to see how AI is
+41:59 applied to different things. So I use
+42:00 Google products, I use Google documents,
+42:05 uh spreadsheets to uh I don't know
+42:07 Google forms and now they started adding
+42:09 Gemini everywhere
+42:12 and it saves so much time like it's it's
+42:15 it's really such a good thing. So
+42:17 recently I had this experience with um I
+42:20 wanted to create a form
+42:22 um and then just like can you describe
+42:24 the form you want to create? So I
+42:25 described and then clicked create and
+42:27 then it just created me the form. So I
+42:29 saved like it saved me like I don't know
+42:30 10 minutes. So I assume you are working
+42:33 on some similar stuff for like Microsoft
+42:36 Office and stuff and this is really
+42:38 cool. Um can you tell us about like one
+42:41 of the recent things you did like maybe
+42:44 a challenge u that you managed to solve?
+42:50 Um
+42:53 well an interesting challenge is in
+42:55 general like evaluating AI products
+42:58 right so for example
+43:01 um how do you improve the quality
+43:04 right so that requires uh coming up with
+43:07 metrics
+43:09 uh some most of these metrics you would
+43:11 want to
+43:13 probably use LM as a judge to kind of uh
+43:18 you know rank how well you're doing,
+43:20 right? And even the metric design itself
+43:22 is is is interesting because uh you want
+43:26 to come up with metrics that you could
+43:28 base uh make informed decisions on.
+43:33 Um
+43:36 yeah, so that's you know that's like a
+43:38 huge area just like evaluating the
+43:40 quality improving quality.
+43:43 Um
+43:50 yeah and um let's say I want to build um
+43:54 evaluation
+43:56 uh set for my product like what's the
+43:58 best way of doing this. So right now
+44:00 what I'm doing is I just ask an LM to
+44:02 generate a data set and then I use this
+44:04 data set to um to run my system against
+44:09 and then I compare the results. I gained
+44:11 usem to compare the results and at the
+44:14 end it feels like h like most of the
+44:17 stuff is done by AI like where is the
+44:19 human involvement here um is this how
+44:23 it's done or there are other best
+44:25 practices for like doing
+44:30 uh yeah and what you describe um
+44:34 you know you want to probably use
+44:36 different models for judging versus the
+44:38 one that you use for synthetic data
+44:40 generation For instance,
+44:43 uh because of um you know intra family
+44:47 bias like if you use the same judge
+44:49 model as as the the one that basically
+44:53 what what the bias is is uh
+44:56 models uh judges tend to prefer answers
+45:00 from the same family of models, right?
+45:02 So you want to diversify that and uh
+45:06 reduce that bi bias. um
+45:10 um
+45:12 >> how different this model should be like
+45:14 let's say uh one is GPD for O and
+45:16 another one is GPD for OM mini would it
+45:19 cut it or I should go I don't know
+45:21 anthropic versus GPD
+45:25 >> I mean there's um
+45:30 I I'm wondering if there's like a right
+45:32 answer for this uh but um
+45:36 I would not mix like mini models with
+45:38 non- mini. Uh
+45:40 >> yeah. Okay.
+45:40 >> Uh
+45:42 >> um it all depends on the task too. Um
+45:46 you know there's the right model for the
+45:47 right task.
+45:49 >> Um
+45:55 um yeah I guess just using using your
+45:58 best judgment and
+46:00 >> choosing the right model for the right
+46:01 task.
+46:02 How much should we involve humans in
+46:05 this process in the evalation process
+46:08 like just sticking to LM as a judge is
+46:11 it enough because uh in the past I
+46:13 worked a lot with crowd sourcing
+46:15 platforms
+46:16 >> and it was very useful for relating
+46:19 search results for evalating like
+46:21 different things for collecting data
+46:25 but now with LLMs it seems like it's
+46:27 easier it's faster it's cheaper like why
+46:31 for some things like there's no need to
+46:33 use humans anymore, right? So I think
+46:35 with LLMs, OpenAI and other providers,
+46:37 they kind of killed many many um
+46:41 say areas that were solved with crowd
+46:45 sourcing.
+46:47 Um do we still need crowd sourcing? Like
+46:49 in which areas we still need humans to
+46:52 help us uh with that?
+46:55 >> Yeah, I mean that's that's a complex
+46:58 question. And I think the first area is
+47:00 coming up with the metrics, right? Uh uh
+47:03 uh an LLM is not going to come up with
+47:05 metrics for you. And then second, you
+47:07 know, because it's tailored to a product
+47:10 and uh second coming up with metrics you
+47:12 can make decisions on. Uh that's very
+47:14 important. And usually it's an iterative
+47:16 process.
+47:18 Um and then uh you know writing judge
+47:22 prompts that's another area where humans
+47:27 are involved.
+47:29 Um
+47:32 yeah you mentioned crowd sourcing.
+47:35 Um well in
+47:39 you know the whole field of alignment
+47:41 right language model alignment
+47:45 uh
+47:48 talks about um align aligning LLM
+47:52 responses with human preferences right
+47:54 and that's that's heavily involved with
+47:57 with
+47:59 uh humans let's say ranking you know
+48:01 sideby-side comparisons like is is this
+48:05 uh answer better than the other. Um
+48:13 you know ranking uh different choices
+48:19 so all this requires human human
+48:21 involvement.
+48:22 >> Mhm.
+48:24 >> You mentioned this alignment. I have
+48:26 heard this term uh but I haven't really
+48:30 explored it. Can you tell us in few in a
+48:33 few word in a few sentences what it
+48:35 actually is? You you mentioned that yeah
+48:37 we want to align LM responses with human
+48:40 preferences. What what does it actually
+48:42 mean? Uh yeah like maybe you have a
+48:46 simple example to explain what it is.
+48:50 >> Um
+48:52 yeah I mean a simple example is like uh
+48:55 a format for example you you prefer
+48:57 certain format over the other. Like if
+49:00 you're if you ask a question and you're
+49:01 given a lot of text that's hard to
+49:03 visually interpret. That's you know not
+49:06 not as good as for example um kind of a
+49:09 bullet point response with highlighted
+49:12 sections and bold and etc. So a simple
+49:14 example is just you know like
+49:15 formatting. Um another example is like
+49:18 tone. Um you know what kind of do you
+49:21 want to have a helpful response versus
+49:24 um you know like more stricter response?
+49:28 Do you want to have more creative
+49:29 response versus not? Uh um
+49:38 >> yeah, it's really uh refining the
+49:41 response to uh to suit humans who are
+49:45 the primary users. So when I speak when
+49:49 I communicate with charged and then it
+49:52 shows two responses and I can select one
+49:55 or the other. Is this what is happening?
+49:57 Is it the alignment process?
+50:01 >> Well alignment happens during like post
+50:03 training and there are many ways
+50:06 different algorithms for it right. um
+50:09 you know like RHF for instance where um
+50:14 um human preference
+50:18 ranking is is included as part of the
+50:21 feedback for in the in the post-
+50:23 training process right there's the the G
+50:25 gr for example where
+50:28 um uh algorithm used for you know
+50:31 training deepseek um
+50:35 talks about where to include the
+50:39 um you know in the PRL scenario where to
+50:42 include the reasoning tokens versus the
+50:43 output tokens um
+50:47 um there's the DPO algorithm which takes
+50:51 in uh kind of accepted rejected pairs
+50:54 preference pairs right you want to see
+50:56 more of this result less of that result
+50:59 um
+51:02 yeah
+51:05 >> okay So basically
+51:09 coming to the example I uh mentioned
+51:12 when chipd is doing like do you prefer
+51:14 this response or that response. So this
+51:16 is definitely um so the model is already
+51:18 trained but they're collecting this data
+51:21 in order to
+51:26 what does it actually mean post training
+51:28 fine. Yeah. So what do you mean post
+51:29 training? Post training to me means
+51:33 seems like something that happens after
+51:35 training, right? But like is it before
+51:37 the user can use the model or it's in
+51:40 parallel?
+51:43 Um yeah, I think you want to um you want
+51:46 to do
+51:48 well there's many there's several stages
+51:50 right you pre-training stage you're
+51:52 basically looking for completion for the
+51:54 next token you train a lot of data then
+51:56 there's
+51:57 >> that's usually language model right
+51:58 train
+52:00 >> uh yeah except that you know it doesn't
+52:02 use instruction following yet so you
+52:04 know you want to be able to use of uh
+52:07 have the model ask uh answer your
+52:10 questions So
+52:12 you include instruction following and
+52:14 you include alignment to get good better
+52:17 answers out of the model. Uh safety
+52:20 guard guard rails super important you
+52:22 know make sure that
+52:24 um
+52:26 the model is refusing to answer certain
+52:29 queries and uh you know all of that
+52:32 needs to happen before it goes to the
+52:35 user.
+52:36 >> Mhm. Mhm. Mhm. Okay. That's interesting.
+52:40 How do you keep up with all these
+52:41 things? Like um is it something you need
+52:44 to uh use for work and know for work? Is
+52:48 it something that you're reading in uh
+52:51 uh your spare time? Like how do you in
+52:53 your free time, how do you
+52:56 track all these things? Like how do you
+52:58 stay up to date?
+53:00 >> Um yeah, I mean all of the above. So it
+53:03 help it's helpful if you're working in
+53:04 genative AI because that's part of what
+53:06 you do dayto-day but also outside you
+53:09 know outside of work hours you could you
+53:11 basically follow your passion interests
+53:13 and uh could dig deep into areas that
+53:16 interest you um
+53:19 it could be like what's interesting to
+53:21 me is for example right now
+53:24 um RL algorithms
+53:26 um highly paralyzable algorithms that
+53:28 leverage computation well
+53:31 Um
+53:34 yeah and just kind of this all of it
+53:37 keeps evolving
+53:41 you know the
+53:43 it's a fast moving field so it's it's
+53:46 tricky to keep up right but uh
+53:48 >> you kind of pick an areas you're
+53:49 interested in and do a deep dive in in
+53:53 it. It's good to be a you know have some
+53:55 practice with that. I recommend uh you
+53:58 know if you're um get into L um agents
+54:03 and LMS I recommend uh
+54:06 um
+54:09 you know several texts in that area like
+54:11 LM engineers handbook is a good one
+54:14 building LM from scratch the reasoning
+54:16 version that's out now too uh just to
+54:20 get a grasp of fundamentals and then um
+54:22 experimenting with it on your own for
+54:24 example you could
+54:26 um build an agent
+54:29 uh without any without any frameworks
+54:32 that uh um able to handle multi-turn
+54:37 conversations and call tools
+54:40 in Python using
+54:43 you know just just the required
+54:45 libraries.
+54:47 >> That's a good example. multi-turn
+54:49 conversation is uh when I ask uh the
+54:53 model something, the model replies and
+54:55 then I reply back, right?
+54:57 >> Yeah.
+54:57 >> Or this is something different. Okay.
+55:00 >> Yes.
+55:01 >> Um another good resource is um you know
+55:06 for people who are want to get more
+55:08 experience I think is uh um the haggen
+55:11 phase documentation like the um TRL
+55:15 library for instance.
+55:18 uh getting some experience with uh
+55:20 parameter efficient finetuning
+55:24 uh like lower adapters.
+55:26 Um
+55:28 yeah, and keeping an eye on literature,
+55:33 doing your own experiments.
+55:39 Uh there's a a good book um online book
+55:43 rlfbook.com
+55:46 uh which talks about some of the uh
+55:49 interesting topics about you know RL and
+55:51 LLM that I recommend as well. Um yeah,
+55:56 there's a lot of resources like um
+56:01 >> yes
+56:04 >> uh deep learn
+56:09 >> book.com.
+56:10 >> Yeah, I just put it in uh my browser.
+56:14 Ah, it's book rf book.
+56:18 Yeah, my internet is slow. I cannot I
+56:20 think if I am trying to load Google and
+56:22 book at the same time it's
+56:25 book by Nathan Lbert. Okay. It's
+56:28 interesting. I haven't
+56:31 stands for reinforcement learning for
+56:33 human right.
+56:34 >> Yes.
+56:39 >> Yeah. Yeah. My internet gave up. I
+56:42 cannot load it. Well, I hope it
+56:44 improves. Uh thank you Vim. Uh I was
+56:47 going to ask you if you can recommend
+56:49 any resources but you just did. So
+56:51 thanks a lot for joining us today um
+56:54 answering my questions. Uh despite my
+56:57 bad internet I think we managed. Um um
+57:00 so thanks a lot uh was pleasure to have
+57:02 you and thanks everyone for joining us
+57:04 today too. Yeah thank you.

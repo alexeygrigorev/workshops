@@ -1,0 +1,1701 @@
+Developer Advocacy for Data Science
+
+0:00 hello everyone thanks for coming to our
+0:02 event so this event is brought to you by
+0:04 data talks club which is a
+0:06 community of people who like data
+0:09 and we have two types of events so today
+0:12 we have
+0:12 a less technical event which we usually
+0:15 have on fridays so this is like what we
+0:17 call
+0:18 live podcasts when we talk about
+0:20 different topics it's just a
+0:21 conversation
+0:22 um without slides just talking
+0:26 and today we'll talk about developer
+0:29 advocacy in data science
+0:30 then the next we usually have them on
+0:32 friday then the next week on friday we
+0:34 will talk about
+0:35 ml ops what this is and we have
+0:39 two a little bit unusual meetings in in
+0:42 the sense that they are not on friday
+0:44 so one will be next thursday
+0:47 about open source how to get started
+0:49 with open source
+0:50 and then we'll have another one on
+0:53 tuesday
+0:54 in on february 12th to second
+0:57 about feature stores he we intended to
+1:00 do it as a technical webinar but
+1:02 william who will be our guest didn't
+1:04 have time to present
+1:05 so we'll just have a little bit more
+1:07 casual chat
+1:08 and then we have a different type of
+1:10 event on tuesdays
+1:12 where it's a technical webinar so this
+1:15 week we talked
+1:16 on tuesday about model monitoring and
+1:19 then the next week we'll talk about
+1:21 using machine learning for customer
+1:23 service so it's about chatbots
+1:25 but not just how you make chatbots but
+1:28 also how you
+1:29 deploy them so the end-to-end
+1:33 project of developing a board for
+1:36 customer service
+1:37 service and after that
+1:40 we will have a conference um it will be
+1:43 every friday there will be four talks um
+1:47 on every day um there will be
+1:50 one track or about use cases of machine
+1:53 learning
+1:54 then next friday we will talk about
+1:56 product and processes then we'll talk
+1:58 about career and data
+2:00 and then we will talk about machine
+2:01 learning production
+2:03 and this event is supported by our
+2:05 friends from o'reilly and machine
+2:07 envelopes community um so thank you um
+2:10 for supporting us and uh you can find
+2:14 out more on our uh website
+2:16 datatalks.club
+2:17 and by the way l speaks at one of these
+2:20 tracks
+2:23 about machine learning production
+2:26 and today when we talk
+2:31 you might have some questions while
+2:33 we're talking feel free to ask these
+2:35 questions through slido
+2:36 so you can just go up there post your
+2:39 question there or if you see a question
+2:41 you like you can just
+2:42 upload it i will post a link right now
+2:46 and i'll post it to chat
+2:50 and just a little bit of preparation
+2:55 okay yeah so um this week we'll talk
+2:58 about
+2:58 the role of a developer advocate and not
+3:00 just a usual developer advocate but a
+3:02 developer advocate
+3:04 in data science and we have a special
+3:06 guest today
+3:07 l o'brien l is a data scientist at
+3:11 iterative
+3:13 which is a company behind dvc and cml
+3:15 and if you don't know what these
+3:17 three letter obligations mean dvc is
+3:20 data version control and html is
+3:22 continuous machine learning
+3:24 and i've been following l4 uh for a
+3:26 while on twitter
+3:27 and recently we got connected on
+3:29 linkedin
+3:30 and when i was looking through through
+3:33 her profile i noticed
+3:34 um that one of the line was um developer
+3:37 advocacy and outreach
+3:39 available for speaking engagements it
+3:41 wasn't just the only line there but it
+3:43 got my
+3:44 attention because uh this is something
+3:46 i've been um
+3:47 curious about this role what it means
+3:49 what they do
+3:50 and i wanted to talk to somebody about
+3:52 that
+3:53 and i decided to reach out to elle
+3:55 invite her to our chat and talk more
+3:57 about this
+3:58 welcome thanks a lot for joining us
+4:01 today
+4:01 uh it's pleasure uh to have a chat with
+4:04 you
+4:05 yes thanks so much for having me this is
+4:07 this is exciting
+4:10 um before we go into our main topic of
+4:12 developer advocacy
+4:14 maybe you can tell us a bit about your
+4:17 your background
+4:18 what have you done so far and how did
+4:21 you get into data science
+4:22 sure um it was all kind of indirect i'm
+4:25 an
+4:26 ex-academic researcher um
+4:29 like many people that get into data
+4:30 science um so i
+4:32 have worked for for the last about a
+4:35 decade i worked in various areas of
+4:38 neuroscience research i was a math major
+4:41 in college and so
+4:43 i was doing computational models
+4:46 um of you know biological systems
+4:50 um and i did that as an undergraduate
+4:52 for a few years in research there
+4:53 i did a master's degree at the
+4:55 university of washington
+4:57 and then i did a phd and i kind of got
+5:00 all over i worked in a lot of different
+5:02 labs
+5:03 and a lot of a lot of different
+5:07 systems we were modeling but always
+5:09 using the same kind of core tools of
+5:11 making computational models
+5:13 um and by the end of that time i could
+5:17 see that there was
+5:18 a really there was a kind of growing
+5:22 i don't know there was something i
+5:23 really didn't want to miss in machine
+5:25 learning and data science
+5:26 um and part of it is that there's a lot
+5:28 of methods that get used there
+5:30 like non-parametric statistics um
+5:33 and the approach of prediction rather
+5:37 than inferential
+5:38 statistics and i really wanted to
+5:41 get deeper into that at the same time
+5:44 i was also feeling a bit troubled by
+5:47 the way that in all like so many labs
+5:50 i've worked in
+5:51 you know code and data sharing and
+5:54 collaboration
+5:55 and management is still really difficult
+5:59 and it's kind of like every lab has
+6:01 their own way of doing it and it's a
+6:03 considerable burden
+6:04 and you know it's like you have a bunch
+6:06 of scientists and none of us are really
+6:08 trained for how to manage data that we
+6:10 have to keep for years and years or
+6:12 share with the collaborator or
+6:13 completely reproduce our code for
+6:15 somebody else
+6:16 um and so i feel like there definitely
+6:19 has to be
+6:20 you know a systemic change in the tools
+6:23 that we give
+6:23 scientists um and so i wanted to go into
+6:27 you know something addressing that
+6:29 problem and that's why when i was done
+6:31 with my phd
+6:33 um not this past november but the one
+6:35 before that i i
+6:36 joined i joined iterative i wanted to
+6:39 work on data version control
+6:42 um and so i that was kind of
+6:45 it you know all of my data science
+6:47 proper is kind of self-taught the way
+6:49 that so many data scientists are you
+6:51 know you follow tutorials you learn
+6:53 um and i and i really
+6:56 like getting to you know work in the
+6:58 mlaps space now
+7:00 um although i am in march so
+7:03 just in a few weeks going to be joining
+7:06 university of michigan as a full-time
+7:08 lecturer and research investigator in
+7:11 the school of information
+7:12 and so i'm going to be doing um you know
+7:15 leading some classes and developing
+7:16 curriculum for the applied data science
+7:19 master's program so
+7:20 i'm leaning even harder into you know
+7:23 how can we teach this
+7:24 effectively and at scale
+7:28 so you mentioned so one thing you
+7:30 mentioned you said
+7:32 uh that you got in another phd not the
+7:36 one you got in november
+7:37 does it mean you have two oh no i only
+7:39 have one phd
+7:44 no i was just trying to think of dates i
+7:46 think then but um
+7:47 yes i only have one phd okay
+7:51 and so you'll be teaching uh among other
+7:54 things the the tools like how to make
+7:55 research
+7:57 reproducible right or yeah so i'm going
+8:00 to be
+8:01 you know some of it is going to be
+8:02 teaching statistics some is going to be
+8:04 supervising
+8:05 um you know students as they you know
+8:08 are trying to do
+8:09 end-to-end data science projects so a
+8:11 lot of these people you know in an
+8:12 applied data science program a lot of
+8:14 them
+8:14 want to go on to be data scientists and
+8:16 not academic researchers
+8:18 um so i'm i'm gonna do you know
+8:22 i think maybe pursuing tools for
+8:24 academic researchers is maybe a research
+8:26 area that i like
+8:28 and then my day-to-day teaching will
+8:30 probably be very applied
+8:31 you know how do we get junior data
+8:34 scientists data scientists that are just
+8:35 about to go to the workforce in a few
+8:37 months
+8:38 um you know at a pretty high level you
+8:42 know of awareness of the issues the
+8:44 knowledge of the tools in the space
+8:46 you know able to make some educated
+8:49 choices
+8:50 about how to manage their data science
+8:52 projects
+8:54 yeah that's something that universities
+8:56 from what i see
+8:57 are missing right now this end-to-end uh
+9:00 overview of of data science projects so
+9:03 this is
+9:04 uh this is really great this is
+9:05 something that
+9:07 yeah i'm so excited to do it but it's
+9:09 like making a data science curriculum
+9:12 it's like a lot of the work is still to
+9:13 be done like we have to lay out what is
+9:15 a data science curriculum and what
+9:17 has to be there um and i suspect a lot
+9:20 of universities are going to be doing
+9:22 this in the next couple of years
+9:24 um because of it's like you said i mean
+9:27 and like it was in my experience most of
+9:29 data science i just learned it
+9:31 by googling things when i talk to you on
+9:34 twitter and ask you about this
+9:36 so when i reached out to you saying hey
+9:39 like i want to talk to somebody about
+9:41 this role of developer advocacy
+9:43 and you said you replied to me that
+9:47 this is such an interesting job and that
+9:49 you had no idea
+9:51 that this job existed until you you got
+9:54 it so can you tell us this story a bit
+9:56 in more details how did it happen yeah
+10:00 um so i i really enjoyed you know
+10:02 throughout my phd
+10:04 when i wanted to get to work on data
+10:06 science i would often just make myself
+10:08 like weekend projects
+10:10 um and so for one of them i had taken
+10:13 style gan which is a big beautiful gan
+10:16 that was released by nvidia with all the
+10:18 code and the trained model too
+10:20 um and i i trained it on
+10:23 a bunch of frames from videos of myself
+10:26 and different outfits i had in my closet
+10:29 um and then i i made you know after it
+10:31 was trained i
+10:32 just moved around you know the latent
+10:34 space and i patched it together and i
+10:36 made a video that was just like you know
+10:37 morphing on my face
+10:39 with different accessories around it and
+10:42 i posted it on twitter
+10:44 just because i was like look at this
+10:45 cool thing i made
+10:47 and it did it did low-key viral it got
+10:50 like
+10:51 a thousand something likes which was
+10:54 pretty good for my twitter at the time
+10:56 and uh you know then a bunch of people
+10:59 noticed it
+11:00 and um oh i think we have one more troll
+11:04 here
+11:04 i think okay cool um
+11:08 so um i had posted this thing on twitter
+11:11 and um i got just a
+11:14 message actually no it was after that i
+11:16 just said hey and by the way i'm looking
+11:18 for jobs i figured since i was one month
+11:20 away from graduating did not have a job
+11:22 and i had this thing on twitter that was
+11:24 doing well i just made a tweet
+11:25 by the way consider hiring me and
+11:29 um then dimitri who's the ceo
+11:32 at iterative saw it and he said hey
+11:34 we're looking for somebody for devrel
+11:35 and i guess the audition that i had done
+11:38 was i made a piece of content involving
+11:40 machine learning that people
+11:42 you know wanted to
+11:45 wanted to see um so that that started it
+11:49 so i learned from him
+11:50 that there are in fact teams that make
+11:52 things that are looking for people who
+11:54 will take the tools they make make
+11:56 something cool with them to show other
+11:58 people
+11:59 um and just getting attention on the
+12:02 internet
+12:03 is a viable career path okay so
+12:06 basically you
+12:07 [Music]
+12:08 play it with a tool you put it on
+12:10 twitter
+12:12 it went viral and then you mentioned
+12:14 okay i'm
+12:15 looking for a job and boom you got it
+12:17 right yes exactly
+12:18 so that's a nice uh nice story
+12:22 uh yeah but uh
+12:26 your job is uh not just the devrel right
+12:28 so you're also doing uh
+12:30 data science things you're also involved
+12:33 in uh
+12:33 creating these tools right so how does
+12:35 your day look like what do you do
+12:39 there's a lot of different stuff um
+12:42 so i also work on the product team for
+12:45 continuous machine learning or cml
+12:47 so i help you know kind of organize the
+12:50 launch for that
+12:51 you know making the website all of our
+12:53 examples our tutorials so
+12:55 a lot of the work i also do is you know
+12:57 in our docs for that project
+12:59 um you know and trying to understand
+13:02 user feedback on it
+13:04 so making some new features um i'm very
+13:08 proud i i added a pr for support
+13:11 for bitbucket cloud um recently to that
+13:15 so um you know so i do a little bit of
+13:18 development but i'm really learning
+13:20 software development you know i
+13:22 developed software for years as an
+13:24 academic but it is just not the same as
+13:26 doing
+13:27 development for an open source project
+13:29 so i'm kind of like i treat this almost
+13:31 as an apprenticeship that i get to learn
+13:33 that
+13:34 um as i go um
+13:37 and yeah so you know there's a lot of a
+13:40 lot of conferences that i go to
+13:42 so i do a lot of speaking gigs i do
+13:45 videos
+13:46 i try to shoot a video at least every
+13:47 few weeks um
+13:49 you know now i kind of have like a list
+13:51 of things that some users want
+13:53 and trying to you know trying to hit
+13:55 those
+13:56 um what else do i do
+13:59 um quite a lot right now we're hiring
+14:02 more developer advocates
+14:04 so right now i'm a team of one so you
+14:06 know we're growing and also because i'm
+14:08 gonna be reducing
+14:09 my my time as i you know am at a
+14:12 university
+14:12 um so we're working on hiring so the
+14:15 hiring process takes quite a bit
+14:18 um i do a lot of blog post writing um
+14:21 another thing that takes time that you
+14:23 know like you don't really
+14:25 see or expect is you know you have to
+14:27 create code examples for everything
+14:30 so when we have a new you know new tool
+14:32 or a feature that i want to highlight
+14:34 um you know it often takes a couple days
+14:36 to create
+14:37 you know a good technical use case and
+14:40 so it's like you know you're sitting
+14:41 there you're coding you're getting a
+14:42 data set
+14:43 um you know it's kind of like a mini
+14:45 mini data science project and then at
+14:47 the end you have to make sure it's all
+14:48 completely reproducible readable it's
+14:50 like turning in a
+14:51 a report um so those those are kind of
+14:54 fun
+14:55 um but that's some like you know labor
+14:57 that i didn't expect
+14:58 but you know it's it's part of it
+15:02 so you're doing a lot of blog posts a
+15:04 lot of speaking
+15:06 videos and videos i see that you post
+15:08 constantly on youtube channel
+15:10 then creating this um reproducible code
+15:14 snippets
+15:14 that's a lot of things how do you decide
+15:16 which to work on next
+15:18 like and also assuming that uh
+15:22 just you said just you're just a team of
+15:25 one right
+15:26 and there are so many things to do like
+15:27 how do you decide what should be
+15:29 the next most important thing it's hard
+15:33 it's really hard you know what i often
+15:35 do is i kind of have a schedule in mind
+15:38 of when are we planning to release this
+15:40 and i know when we have a release of
+15:41 something then i'm probably going to
+15:43 have to really
+15:44 pitch in on that maybe on you know
+15:46 adding some area of docs perhaps
+15:48 you know something like that and working
+15:51 on all the messaging around the release
+15:52 and blogs for that so those are like big
+15:54 landmarks in my time like i know i've
+15:56 got to work on a release then
+15:58 and in between those then i get a bit
+15:59 more freedom to you know
+16:01 we're going to make a video about a
+16:02 topic that is kind of timeless doesn't
+16:04 matter i could release this now or next
+16:06 year and it would be you know
+16:07 still interesting um but
+16:10 it is quite hard to keep them all
+16:14 going you know and so sometimes i feel
+16:16 like i'm actually debating for the first
+16:18 time ever like maybe i need to put a
+16:20 limit on how many talks i
+16:22 accept because of you know it it does
+16:25 take away from the time that you can be
+16:27 writing
+16:28 um and they're all important activities
+16:31 so
+16:32 you know it's it's it's really not
+16:34 obvious or easy a lot of it is just like
+16:36 it's an experiment on the run
+16:38 and i just feel i feel like we're due
+16:39 for a blog now i feel like we're due for
+16:41 a video
+16:44 so it's more like a feeling and plus
+16:46 like you know that there is a certain
+16:48 release
+16:48 so you know that you need to prepare for
+16:50 this release to prepare some supporting
+16:51 material
+16:52 good documentations good use cases and
+16:54 then
+16:56 we also need to stick around like on
+16:58 hacker news or
+16:59 reddit or do things like that like when
+17:02 you release something then you publish
+17:04 an article
+17:05 and then you know i i think
+17:08 your post ended up on hiking news a
+17:10 couple of times right
+17:12 yeah yeah we've had that a few times and
+17:14 this is another thing i didn't expect
+17:16 but
+17:16 when you put something on hacker news or
+17:18 reddit but you know
+17:20 whether you posted it or it's just
+17:21 trending there you have to be there
+17:24 it actually is like a whole day event
+17:26 when something goes big on social
+17:28 um which i did not expect to be a thing
+17:31 that takes up
+17:32 time like if i post a little thing on
+17:34 social like hey
+17:35 we have a newsletter out like i don't
+17:37 have to monitor that but when it's like
+17:38 we have a release
+17:40 it's like the next eight hours is like
+17:42 i'm on three different social networks
+17:44 like tabbing back and forth going okay
+17:46 answer any questions answering ques you
+17:47 know respond um
+17:50 so it's it's actually a pretty big
+17:52 production
+17:53 and in hiking news also like because uh
+17:57 it's anonymous many people i can just
+18:00 register there and
+18:01 put all kind of things there like write
+18:03 all kind of things there
+18:04 like sometimes the level of toxicity
+18:06 there in this community is
+18:08 pretty high i would say yeah how do you
+18:11 deal with that as well
+18:12 like it's probably not easy it's not
+18:15 actually that is another thing i didn't
+18:17 expect is that you really have to pick
+18:19 and choose what internet communities you
+18:21 can be on
+18:22 and i find hacker news and our machine
+18:25 learning
+18:25 are both like there is a high level of
+18:28 toxicity and it's usually
+18:29 not not long if i'm just browsing them
+18:32 before i find something that i'm like
+18:34 oh i really wish i hadn't read this
+18:36 today
+18:38 um this does not make me feel great um
+18:41 and i
+18:42 thought that i would like over time get
+18:44 a thicker skin for them
+18:45 and i didn't like it actually never gets
+18:47 easier i find for that so i find like i
+18:49 dig in harder on twitter
+18:51 because i like twitter better you know
+18:54 the data science community
+18:56 there um and for hacker news i kind of
+18:59 go
+18:59 as needed i know it would be better if i
+19:02 was like a regular participant
+19:04 and got more you know internet points um
+19:07 but i i i don't do that too much
+19:11 um and reddit machine learning i do i
+19:13 answer a couple questions like
+19:16 every month to kind of keep the account
+19:18 current but other than that i don't
+19:19 really
+19:20 hang out there which is a little bit
+19:22 weird when you're advocating in
+19:23 communities that
+19:24 you're not really a part of um
+19:27 but luckily we do have you know i'm
+19:30 pretty well embedded on twitter
+19:31 and you know i have a couple of data
+19:33 science slacks and you have a data
+19:34 science slacks and those are kind of
+19:36 more comfortable safe spaces i feel like
+19:38 to
+19:38 you know share something get feedback um
+19:41 and so i definitely like you know i take
+19:43 advantage of those too
+19:47 yeah thank you um i i was
+19:50 since i was pretty curious about this
+19:52 throw so what i decided to do is just
+19:54 take a random job description of a
+19:57 developer advocate
+19:58 for a company and see what it says
+20:02 and i found this it was just i found it
+20:06 in some slug
+20:07 and it was saying that in
+20:09 responsibilities so the first point was
+20:12 um you need to build an open source
+20:13 community for the company from scratch
+20:16 not for the company but for the product
+20:18 they have so that was one thing so
+20:20 building an open source community then
+20:21 the second point was to drive a
+20:24 awareness of this product by speaking at
+20:27 three to six industry events quarterly
+20:29 writing blog posts
+20:31 tutorials creating videos building
+20:33 examples of using
+20:34 um this product for demonstration
+20:36 purposes
+20:37 and building excitement around this
+20:40 product
+20:41 and then there was a third product third
+20:43 point sorry
+20:44 be the voice of the community in our
+20:46 development process
+20:48 um like is this uh a representative
+20:51 description
+20:51 of uh of a of a position or it's maybe
+20:55 something like
+20:56 more a full stack what do you think it
+20:59 is quite representative um and
+21:03 i would say that it's because i think
+21:05 companies still have a lot of work to do
+21:08 learning how to hire devrel and what
+21:11 devrel should do
+21:12 like this is probably pretty close to
+21:14 what i expected i would be able to do
+21:17 um as one devrel and i very quickly
+21:20 realized that this is not
+21:22 actually that realistic if you want to
+21:25 do a good job on all three of those
+21:27 and part of that is that i think that
+21:29 people tend to believe especially people
+21:30 that like
+21:31 don't do devrel or don't have experience
+21:33 in it so like i think a lot of like
+21:36 a lot of you know technical founders
+21:38 probably um
+21:40 believe that community building is the
+21:41 same as content creation and
+21:43 presentation
+21:44 and they're just completely different
+21:45 skill sets like
+21:47 and i've i've worked with um you know
+21:49 i've kind of
+21:50 had a lot of discussions with other
+21:52 devrels that have helped me kind of
+21:54 appreciate the distinction which is not
+21:58 appreciated by all or even most
+22:00 companies that are hiring i think but
+22:02 that like creating building a community
+22:05 is something that you know it's it
+22:07 requires a great deal of face to face
+22:09 not face to face but like you know
+22:11 interaction like real-time interaction
+22:13 like you actually have to be
+22:14 in the slack or in the subreddit you
+22:16 know or twitter you have to be there you
+22:18 have to be responding to people
+22:19 constantly
+22:20 having conversations facilitating bigger
+22:23 discussions
+22:24 um and you have to do a lot of
+22:26 moderation
+22:27 you know you have to you really have to
+22:29 be a
+22:31 leader of you know a lot of interactions
+22:34 and but on the other hand creating
+22:37 content
+22:38 and videos and demonstrations requires a
+22:41 great deal of
+22:42 independent solo and focused time
+22:45 like you cannot really do a good job you
+22:48 know unless you're gonna just switch
+22:50 them up constantly like
+22:51 which i do but it's very very hectic um
+22:54 and i don't think it's sustainable in
+22:55 the long term and that's part of why
+22:57 we're growing our
+22:58 devrel so i guess if i could say one
+23:00 thing to people that want to hire devrel
+23:02 it's
+23:02 you know consider separating people who
+23:04 are really strong content creators
+23:06 from people who are community managers
+23:09 because of
+23:10 managing community reaching out to
+23:12 people and keeping them engaged
+23:14 is like a kind of engineering almost
+23:16 it's like a social engineering of how do
+23:17 i create the right conditions for cool
+23:19 things to happen and people will want to
+23:21 show up
+23:22 and content creation is it's just a much
+23:26 more like
+23:26 almost solo like focused activity
+23:30 and those are i'm not sure why those got
+23:31 put on the same
+23:33 like oh obviously the same person would
+23:35 do these other than maybe
+23:36 they're just you know activities that
+23:39 aren't engineering
+23:41 and there is also this third point uh
+23:44 like
+23:44 be the voice of the community is this uh
+23:47 something that
+23:48 uh the developer advocates do yeah i
+23:51 mean i
+23:51 try well so the idea i think
+23:55 is that you know if you hang around the
+23:57 community a lot
+23:58 you will pick up on what issues people
+24:01 are having what bugs they have what
+24:03 feature requests
+24:04 what what are the big like blocks for
+24:06 them you know
+24:07 in getting engaged with what you make
+24:09 because right you want it to be so easy
+24:11 that you know
+24:12 to get started and you know you learn
+24:14 pretty quickly if you're
+24:15 around like the support channel perhaps
+24:17 you know
+24:18 um like we have a discord where people
+24:20 come ask questions and you learn pretty
+24:21 quickly like okay what are the common
+24:23 stumbling blocks that people are facing
+24:25 and what are the things that people ask
+24:27 for over and over again that we would be
+24:30 really silly to miss those signals
+24:32 um and to some extent you know
+24:35 i can do that but on the other hand it's
+24:37 it's the same issue of
+24:39 if i'm in this you know support channel
+24:42 then i'm
+24:43 not on twitter or i'm not giving a talk
+24:46 or i'm not
+24:47 creating content um and
+24:50 also building a community is different
+24:53 from
+24:54 answering technical questions from users
+24:56 so
+24:57 it's actually it's something i can do
+24:59 but
+25:00 i feel like to really excel at it i
+25:02 might need to be more full-time embedded
+25:04 you know in support or in a you know
+25:07 with the users more of the time and with
+25:10 that said
+25:11 my team is very you know software
+25:13 engineer heavy and
+25:15 i might be the only one who has
+25:18 like i don't know if this is true but
+25:21 there's not a lot of people who have
+25:22 experience
+25:24 doing like data science and i would also
+25:26 include my academic research in this
+25:28 where we have data sets we're
+25:29 you know modeling it analyzing it and we
+25:32 want to have like a reproducible
+25:33 pipeline
+25:34 you know that generates our results and
+25:36 since i do have that experience and
+25:38 my technical background is probably like
+25:40 a lot of data scientists i can try out
+25:42 our tools you know be like
+25:44 a beta tester and you know give pretty
+25:47 pretty incisive feedback i think about
+25:49 you know
+25:49 what part of this would just not be
+25:51 intuitive you know
+25:52 for for a typical data scientist with
+25:55 our highly variable backgrounds
+26:00 okay it makes sense so basically uh it's
+26:02 more like a full stack
+26:03 right like in full data science we have
+26:06 somebody
+26:07 who can do talking to stakeholders then
+26:10 build data pipelines then train a model
+26:13 then
+26:14 roll the model out to production and
+26:16 then i don't know
+26:17 support this model so it's in a way like
+26:20 it's five different people like when we
+26:21 talk about a full stack data scientist
+26:23 in
+26:24 and here it's the same right so you have
+26:25 like a community manager
+26:27 you have a uh i don't know how you call
+26:30 it like
+26:31 not content manager but somebody who who
+26:33 is creating content
+26:34 who's producing content right and then
+26:36 uh like the third point would be
+26:39 um i don't know like uh
+26:42 not customer support but in in a way
+26:44 something similar right
+26:46 yeah really you can analyze a lot of
+26:48 signals coming out of your community
+26:50 you know and we don't even make use of a
+26:52 lot of you know there's so much
+26:54 information you can get from your
+26:55 community in so many ways metrics
+26:57 and interactions you could easily have a
+27:00 full-time job doing that
+27:03 and i could often come across
+27:07 uh this uh so there is a developer
+27:10 advocates and then there is a role also
+27:12 called uh devrel like are they similar
+27:15 are they the same
+27:16 uh are they different uh
+27:20 i am not completely sure and i i hope if
+27:24 i'm wrong somebody will come and
+27:25 go actually it's this but
+27:28 i think they're the same
+27:32 and evangelists is it also something in
+27:34 that
+27:35 uh in that area i
+27:38 think so yeah i i feel like
+27:42 i would feel pretty sim you know like oh
+27:44 i have a lot in common with you if i met
+27:46 somebody who was an evangelist i would
+27:47 feel like it's quite similar
+27:50 yeah to me it seems like evangelists
+27:52 they more uh
+27:53 they're more often on the stage uh you
+27:55 know giving talks
+27:56 and then uh you know even evangelizing
+28:00 is it the word like basically talking
+28:02 about uh about the product and then
+28:04 getting people excited
+28:05 uh so this is actually one one of the
+28:08 points in this uh
+28:09 in this job description was building
+28:11 excitement around uh
+28:13 the product so probably this is what an
+28:16 evangelist would do right like getting
+28:18 people excited about
+28:20 uh about things
+28:23 yes it's interesting in the us um the
+28:26 word evangelist is mostly used with
+28:28 religious
+28:29 like preachers so i think of somebody
+28:31 who'd be like on tv
+28:32 on sunday morning you know preaching and
+28:35 being like
+28:36 call in for your free bible today so and
+28:39 it gets people extremely excited and you
+28:41 know
+28:42 i i think of it like that but for but
+28:45 for something
+28:46 in tech so call today for
+28:49 your free aws credits writers yes
+28:53 yeah the yeah actually
+28:56 um i the the reason i'm interested in
+29:00 this uh in this
+29:01 role is um some time ago somebody from
+29:04 aws reached out to me saying hey we have
+29:07 this
+29:07 position called developer advocate and
+29:10 then i never
+29:11 actually thought about this position at
+29:13 all um
+29:14 but then i thought okay like uh
+29:18 the description looks kind of similar to
+29:20 what i'm doing uh like you know
+29:22 giving talks and then you know producing
+29:25 content
+29:26 and i thought okay this uh this could be
+29:28 interesting
+29:29 um like an interesting an interesting
+29:31 position
+29:33 um and then i also i ask this
+29:36 i talk to some people and many of them
+29:41 said like mentioned things like you did
+29:43 like
+29:44 that the people in the aws they have to
+29:47 go to
+29:47 trade it hacker news and see
+29:50 all this uh toxicity and deal with that
+29:54 especially like there's a certain amount
+29:56 of hatred towards aws in these
+29:58 communities for some reasons i don't
+30:00 know
+30:01 um so it's not that glorious right it's
+30:05 not just
+30:07 from what i understood so some people
+30:09 think it's like a springboard
+30:10 to being famous right like you're on the
+30:13 stage you're talking all the time
+30:15 uh but also there there are downsides
+30:18 um really true it's
+30:22 really true and i did not plan for that
+30:25 i think i always thought internet points
+30:27 good and then when it was my job i have
+30:30 to say like
+30:31 there's it's really scary when something
+30:33 is trending or going big
+30:35 because of there's just a tremendous
+30:37 amount of online abuse
+30:39 and you know it it just it happens quite
+30:43 a lot and so i actually experience like
+30:45 a great deal of fear sometimes when
+30:47 things are going big or
+30:48 you know sometimes it's kind of panicky
+30:50 and it's not really that fun
+30:52 and like you said i mean there are i
+30:55 know hacker news is like the place to be
+30:57 but it's not a place i i really feel
+31:00 great reading i don't feel
+31:02 better you know and sometimes i'll come
+31:03 across stuff that's quite extreme on it
+31:06 and i'm really troubled by
+31:07 um and it's really hard to you know feel
+31:11 like
+31:11 every day i'm gonna show up and try to
+31:13 evangelize there when i
+31:15 don't even wanna be there um and so
+31:18 those those things are really really
+31:22 difficult
+31:22 and like you said they're not glorious
+31:26 and how to deal with that let's say
+31:27 somebody is really excited about this
+31:31 uh position but uh this role but there
+31:33 are
+31:34 these downsides so how like do you have
+31:36 any recommendations to people
+31:38 like how to deal with this uh online and
+31:41 use on the internet
+31:44 i mean i i don't i mean part of it is
+31:46 just like because of
+31:48 i don't know that many devils yet like
+31:50 i'm still kind of growing into the
+31:52 community a bit
+31:53 you know i feel like there's got to be
+31:55 some solidarity and experience in that
+31:57 you know
+31:58 and people supporting one another part
+32:00 of it is that i think platforms have to
+32:02 you know get better
+32:03 at moderating and you know i i feel like
+32:06 it is really easy to get
+32:07 harassed on even you know places that
+32:10 have a nicer community like twitter
+32:12 where you know
+32:13 everybody has their face and their name
+32:15 most of the time it's very easy to get
+32:16 harassed and i've seen it happen to a
+32:18 lot of people in machine learning
+32:20 you know devrel or not when you have a
+32:21 big opinion
+32:23 people will come for you and i think
+32:25 that you know if you
+32:26 are underrepresented in some way like if
+32:29 you're a woman or
+32:30 you know you you are not white i feel
+32:32 like they can come for you even harder
+32:34 um and so that can be pretty tough
+32:37 like on some forums i'm anonymous like
+32:40 my hacker knows i
+32:41 make it pretty not traceable to you know
+32:44 who i
+32:44 am but then sometimes you can't avoid it
+32:46 you know um
+32:48 so you know if you're posting like i
+32:51 made this and there's only three people
+32:53 on this project you know
+32:57 i mean they can figure it out um
+33:00 but i also just make sure i have like i
+33:02 try to make a safe online presence like
+33:03 i try to make it i check pretty
+33:05 regularly like okay if somebody were to
+33:06 try to harass me or dox me what could
+33:08 they find
+33:09 and i try to keep that pretty minimal so
+33:11 sometimes i'll like
+33:12 make sure that you know if i see an
+33:14 embarrassing picture of me somewhere
+33:16 that's from like 2009 i will like write
+33:18 that
+33:19 right that website and be like will you
+33:21 please take down this picture of me
+33:22 you know things like that but i i just i
+33:25 feel like there has to be some
+33:26 solidarity you know for that being a
+33:28 rough experience for anybody
+33:30 devrel professionally or not who makes
+33:33 things for the internet
+33:34 um and so commiserating with people
+33:36 helps a bit um
+33:38 and it has to be known that it's a job
+33:40 hazard like i feel like
+33:42 you know if i were supervising on
+33:44 somebody
+33:45 with this and they said i really need a
+33:47 break from hacker news for a bit
+33:49 you know i would grant that because
+33:53 i would i think that's valid because you
+33:55 can't burn out
+33:56 you know and i'd even say if you're not
+33:58 okay posting here
+34:00 i mean maybe we gotta find other avenues
+34:03 but i know that for early stage startups
+34:05 i mean it's really it is a material
+34:07 benefit
+34:08 being on the front page of hacker news
+34:10 it does change things for you so it's
+34:12 it's like i recognize the business value
+34:14 of it and i will still do it because of
+34:16 i'm
+34:16 i'm all in on my startup you know but
+34:19 it's
+34:21 you know i just made a piece i guess
+34:24 there that like okay
+34:25 i'm doing this for what it takes you
+34:27 know yeah it's
+34:28 uh it's sad but there are definitely
+34:30 advantages of this role right and uh
+34:33 do you think is it is a springboard to
+34:35 being famous
+34:36 or uh or not really i mean
+34:40 like maybe a low-key kind of fame
+34:44 like you know in the community not like
+34:46 uh on national tv
+34:48 or anything yeah yeah
+34:51 it's like i feel like it's really
+34:52 interesting that like as i've done this
+34:54 job like i've done
+34:56 i get a lot more followers i get a lot
+34:58 more talk invitations and i love that
+35:00 but then like my family has no idea what
+35:02 that means you know it's not like to the
+35:04 people that
+35:05 i'm close with that they sense anything
+35:07 different
+35:08 other than that i'm invited to a lot
+35:10 more talks
+35:11 um but getting invited to talks is
+35:13 really rewarding and like you get to be
+35:14 on panels with amazing
+35:16 people and the more talks you're in like
+35:17 the more you meet people and you hear
+35:19 from people
+35:20 you know like perspectives that you
+35:21 would never have heard before
+35:23 and so the benefit i mean other than the
+35:26 risk of
+35:27 burnout that part is so cool um
+35:31 you know it's it is cool but at the same
+35:34 time having a lot of followers gets
+35:36 scary because of the more followers you
+35:38 get the more you're worried about
+35:39 disappointing them
+35:40 so sometimes i feel like i post less
+35:42 risky or adventurous things than i might
+35:44 if i was had like a hundred twitter
+35:46 followers
+35:48 and then again you have some
+35:50 responsibility right and it
+35:52 it also can turn bad uh because of the
+35:54 things we just talked about and the
+35:56 online abuse and all that right
+35:58 right like they're actually here for
+36:00 your brand like you know you
+36:02 when you are a devrel what you're
+36:04 monetizing is your brand
+36:06 and for some people that's very close to
+36:08 their personal life but like for me it's
+36:10 not like i don't you know want to tweet
+36:12 a lot about my
+36:13 my personal life um you know
+36:17 so they really are here for a certain
+36:19 brand of things and so
+36:20 you know it's kind of a personal choice
+36:22 about how much do you want to reveal
+36:24 about yourself
+36:25 um but in a sense it means like yeah
+36:27 it's
+36:28 it's me but it's also not me it's it's
+36:32 it's cultivated and it's intentional and
+36:34 it's like you know i
+36:35 i do edit you know it's it's it's all
+36:38 very intentional
+36:39 and i think that if you're a devrel and
+36:41 you want to have like you know
+36:42 sustainability
+36:43 you know you have to be careful about
+36:45 like what kind of things do you want to
+36:47 share regularly
+36:50 yeah and for somebody who wants to
+36:53 become
+36:54 a devrel um so what kind of skills they
+36:57 need to develop
+36:59 so i mean the big one it's it's both the
+37:02 technical work and the communication
+37:04 like you have to be credible you know as
+37:06 somebody who
+37:08 knows tech but i don't think it's
+37:10 important that you know
+37:11 you know that you start working at a
+37:13 team or a company knowing everything
+37:15 about their
+37:15 their product i feel like if you know
+37:18 how to learn
+37:19 like i feel like the biggest skill i got
+37:21 from
+37:22 my years and years of academic research
+37:24 was like okay i can jump into a new lab
+37:26 or a new project and i don't know
+37:28 anything in their stack but i can learn
+37:29 it pretty quickly
+37:31 um and so i'm not like an expert in any
+37:33 of these but i can get started
+37:35 in a couple minutes and i just like i
+37:37 know how to be a beginner
+37:39 and i feel like that you know
+37:42 anything new that comes across the desk
+37:44 like i'm not afraid to try i'm not
+37:45 afraid to ask stupid questions and you
+37:48 know figure it out
+37:49 and you know the kind of experience that
+37:51 you get not necessarily knowing like i
+37:53 don't know everything in the ml ops
+37:55 world like there are lots of tools in
+37:56 the space that i've never tried
+37:58 and i'm pretty comfortable saying yeah i
+38:00 don't know how that works i don't know
+38:01 what it is
+38:02 um but you have to have some credibility
+38:06 you know about your own knowledge of the
+38:09 space
+38:09 that you know people will trust you as
+38:12 as an expert so someone that should have
+38:14 influence
+38:15 um and there's lots of ways to get that
+38:17 um you know
+38:19 there are lots of different ways to do
+38:20 it um
+38:22 and and on the other hand i mean you
+38:25 just you have to be clear
+38:27 um a lot of people who write you know
+38:30 i don't know i think the biggest
+38:31 difference between experienced technical
+38:33 communicators and
+38:34 not experienced technical communicators
+38:36 is you know
+38:38 after a while you learn what details to
+38:41 cut
+38:41 so that people really just focus on
+38:43 what's important
+38:44 um and it's you know you just sometimes
+38:47 you have to
+38:48 not be afraid to be simple and plain in
+38:50 your language
+38:52 um because of that's getting people to
+38:55 understand is much more important than
+38:57 showing everything you know um
+39:00 and so you know the communication has to
+39:02 be there so it's it's a combination of
+39:04 like
+39:06 can you at least do you look like you
+39:08 know something about what you're doing
+39:10 and can you be clear to people who are
+39:13 really coming from a lot of different
+39:15 very different backgrounds you know can
+39:17 you try to put yourself in the shoes of
+39:18 somebody new
+39:20 and say things how how they need to hear
+39:22 it
+39:23 okay so basically being able to learn
+39:25 and being able to teach her two key
+39:27 skills right i think so yeah okay
+39:31 yeah and
+39:34 how important is to have
+39:37 like a technical background so for
+39:39 example uh
+39:40 you uh like the videos you do they're
+39:44 about a technical tool right so you need
+39:46 to know
+39:47 all these things so at a good level
+39:50 right so you need to also to be able to
+39:51 answer questions
+39:52 so not just a beginner but also
+39:54 especially about your
+39:56 own product but how this product can
+39:58 work with some other things
+39:59 so you need to have this technical
+40:01 background right
+40:02 uh to to be able to do that yeah
+40:07 and if somebody without that technical
+40:09 background wants to start
+40:12 to be a devrel um would be a problem for
+40:15 them or
+40:16 what do you think like how important it
+40:18 is to have that
+40:19 i think it is not important to have a
+40:22 formal technical background
+40:24 um i think that there are a lot of ways
+40:27 to learn
+40:28 you know the things that i would want to
+40:29 see would be
+40:32 blogs about you know like start with a
+40:33 blog about something that you're
+40:34 teaching yourself like teach yourself
+40:36 something and it can be you know
+40:38 something that's kind of basic
+40:40 and then you can write a blog about it
+40:42 and how you learned it and you know
+40:43 what did you do like make a little
+40:45 tutorial for somebody else and it kind
+40:46 of serves as like a note for yourself
+40:48 and a bit of a lesson because when you
+40:49 try to teach someone
+40:50 you learn it even better um you know it
+40:54 really can be
+40:55 you know fairly simple stuff that you
+40:57 start with um
+40:59 i think that that kind of technical
+41:01 skills i really really think it can be
+41:04 gained and i know people that have
+41:06 transitioned into data science
+41:08 you know jobs devrel and not that
+41:11 you know their background is like i have
+41:12 a master's in marine biology
+41:14 or you know something that's kind of
+41:15 like maybe tech adjacent
+41:17 i also know people that like gosh i mean
+41:20 i work with a guy who um
+41:22 not at not at iterative but um at uh
+41:25 what's it called
+41:26 um at michigan he has like a history phd
+41:30 and he taught himself you know software
+41:32 development and data science
+41:34 skills and now he's one of the
+41:35 instructors um so
+41:37 i i think there is a lot of room
+41:41 for people who are coming in from a
+41:43 non-technical background and in fact
+41:45 when it can be an asset in a way
+41:48 that you really do get the experience of
+41:51 being a beginner
+41:52 and you can learn like what was it like
+41:54 like when i was a beginner at this
+41:55 what parts of this were really confusing
+41:58 for me and then
+41:59 you take note of that and then you know
+42:01 that you know you take that with you
+42:03 um and that i think for me like all the
+42:06 times i didn't know is actually the most
+42:08 informative for this job
+42:11 so basically like if somebody who is not
+42:14 super technical who doesn't work as a
+42:16 software engineer right now
+42:18 one way of of getting this position of
+42:21 becoming a developer advocate would be
+42:23 learning in public right so you just
+42:26 learn something put it to
+42:30 put it online uh write an article about
+42:33 this
+42:34 and this is how you do this right so you
+42:36 start communicating about your learning
+42:38 process
+42:39 then people notice you and then maybe
+42:42 your tweet goes viral and then you
+42:43 mention that
+42:44 you know by the way i'm looking for a
+42:46 job and this is
+42:48 this is a good recipe of uh getting a
+42:50 job in
+42:51 in in as a developer as a kid
+42:55 yeah it's definitely what i recommend to
+42:57 people is start
+42:58 blogging you know in a platform that
+43:00 you'd like medium is a good one there's
+43:02 towards data science you know is a
+43:04 really good
+43:05 place for you know there's a lot of
+43:07 beginner ones there
+43:08 um yeah post on twitter
+43:12 if you're in the r community i really
+43:14 recommend like our bloggers you can also
+43:16 go like you know language specific sites
+43:18 and aggregators
+43:19 um but just start just start making
+43:22 things
+43:25 yeah it makes sense but usually you talk
+43:28 to
+43:29 to other developer advocates the rails
+43:31 what kind of backgrounds
+43:33 do they have what kind of background did
+43:35 they have before becoming
+43:36 the rail is there some pattern that you
+43:38 saw like
+43:40 are they usually uh you know like were
+43:44 they in the past software engineers or
+43:46 it's really there is no pattern in my
+43:49 experience they tend to be
+43:51 and this is not all by far
+43:54 but i noticed that there's a lot of
+43:55 people that are kind of
+43:57 creative like working on a lot of
+43:59 different things like learning things
+44:01 um there's kind of a i don't know
+44:04 there's often a little bit of silliness
+44:05 too
+44:06 you know like a lot of us really like i
+44:08 think
+44:09 you know having a lighthearted tone and
+44:12 we like making things that are going to
+44:13 make people laugh
+44:15 i think a lot of the best deverells are
+44:17 people that like
+44:18 i don't know maybe would have been
+44:20 comedians or something
+44:22 you know in another life
+44:26 but it's you don't have to be funny to
+44:28 be a devrel but i do notice
+44:30 a lot of my favorites you know they
+44:33 really
+44:34 they're funny people but other than that
+44:36 i mean i really
+44:38 i do think one of the cool things about
+44:39 data science in general you know devrel
+44:41 or not
+44:42 is that there's just a lot of different
+44:44 backgrounds here
+44:46 yeah being funny is probably one of the
+44:48 ways of building connection with the
+44:50 audience
+44:51 and this is what you need to do as a
+44:52 developer right to build this connection
+44:55 so people can relate to what you're
+44:56 saying to listen to your stories and
+44:59 actually
+45:00 go and want to try the product your um
+45:04 you're advocating for yeah this is
+45:06 probably uh
+45:08 this is the pattern you're seeing that
+45:10 these people are
+45:11 relatable and easy to connect okay so
+45:14 and the background doesn't really matter
+45:16 in this case right
+45:17 the person can be a software engineer in
+45:19 the past
+45:20 or somebody from marketing or
+45:24 somebody with background in history
+45:26 right
+45:28 um but let's say
+45:32 i i this role sounds interesting so
+45:36 like i want to become famous talk to uh
+45:39 you know go to conferences talk to
+45:42 people
+45:43 um be on the stage in the spotlight but
+45:45 how to understand that this is indeed
+45:47 for me
+45:50 because it does sound amazing except for
+45:52 the parts
+45:53 that we talked about
+45:57 let's say i i think it might be for me
+45:59 but i don't want to quit my job right
+46:01 now
+46:02 and go ahead and try it just to find out
+46:04 two months after that that
+46:06 it's not for me is there a way to check
+46:09 if i would enjoy this kind of work or
+46:10 not
+46:11 i mean to some extent yes if you a lot
+46:14 of people who
+46:15 you know are full-time developers
+46:17 they're data scientists they maintain
+46:18 blogs and they maintain twitter
+46:20 presences
+46:21 um and i feel like that is very close to
+46:23 what it's like
+46:24 but at the same time it's kind of like
+46:28 you know it's like any time you take
+46:29 something that was your hobby and you
+46:30 turned it into your full-time job
+46:32 it's just completely different it's like
+46:34 people on instagram who are like i'm
+46:36 quitting my job to be a full-time baker
+46:39 and post videos on instagram and then
+46:41 they go oh man
+46:42 i didn't expect there to be so much like
+46:43 growth hacking and all these things i do
+46:45 just to try to
+46:47 get content you know get people to look
+46:49 and i didn't really know about that you
+46:51 know
+46:52 and in that way i think it's actually
+46:54 harder for me than i expected but maybe
+46:57 if you're somebody who's really
+46:58 strategic
+46:59 and enjoys being strategic about your
+47:02 content that could be a good signal
+47:04 um if you find you know that you want to
+47:07 be blogging
+47:08 all the time that is a good sign
+47:12 um you know or if you're into the
+47:14 community management side like
+47:16 if you really want to be leading a
+47:18 community and interacting with people
+47:20 all day
+47:20 like you know if you just want to hang
+47:22 out on your discord server
+47:24 you know much more than you want to code
+47:26 that that could be a good
+47:27 sign um but it's kind of it's kind of
+47:30 like
+47:31 it's just it's a little hard i think
+47:33 until you're really putting in a lot of
+47:35 hours over a long time because for me i
+47:37 mean it's like
+47:39 just that all these things take up more
+47:41 time than i ever expected
+47:43 um is maybe the biggest downside
+47:46 like it's it's definitely a job i would
+47:48 still recommend to a lot of people
+47:51 but to be totally honest about it i mean
+47:53 it is hard to
+47:54 not have time for no or not as much time
+47:57 for like research and development
+47:59 um because of you are spending so much
+48:01 on content and growing your audience so
+48:06 this was one of the
+48:07 you mentioned that people don't consider
+48:09 that it will involve a lot of growth
+48:10 hiking and things like that
+48:12 but it actually does involve these
+48:14 things right
+48:15 it can yeah do you have any
+48:18 tips like for growth hacking none i am
+48:22 not a good growth hacker
+48:24 um i after a certain point i just you
+48:26 know i i talked to a dimitri and i was
+48:28 just like i really don't know how to
+48:30 growth hack
+48:31 i don't have that skill set and i'm not
+48:33 really that interested in learning it
+48:35 either
+48:36 um so i think if you want that
+48:39 it's going to have to come from somebody
+48:40 else okay
+48:42 so yeah i simply don't and that's
+48:44 another thing like that's a skill set
+48:46 that people might assume like oh because
+48:48 of i write blogs and make videos i know
+48:50 all about social media you know and how
+48:52 to keep up an audience
+48:54 and i really don't um so you know it's
+48:58 just like i just go by and i guess my
+49:00 philosophy is i don't believe in like
+49:02 cheap views you know like i know you can
+49:04 write a click bait title to get people
+49:06 to
+49:07 show up but i don't believe they'll keep
+49:09 showing up if you do that
+49:11 and um that's another thing like
+49:13 sometimes people
+49:14 really care about metrics they want to
+49:15 see your audience taking off
+49:17 you know or like yeah i did have more
+49:20 views on my youtube channel when i
+49:21 could release a video every single week
+49:23 but i simply can't keep up that pace
+49:26 so i mean i'm really like
+49:29 absolutely dogmatically like maybe
+49:32 i will do things sustainably and slowly
+49:35 and i do not want my metrics to spike i
+49:38 want a
+49:39 organic real growth that i could sustain
+49:42 and i will do that by continuing
+49:44 to release quality content at a schedule
+49:46 i can manage
+49:47 um so that's my philosophy but it is
+49:51 i mean if you're a startup yeah you want
+49:53 big numbers sometimes and you want to be
+49:54 able to show your investors big numbers
+49:57 um so there's there's a whole other side
+50:00 of it that
+50:02 other devrels are probably more
+50:05 qualified to answer that than me
+50:08 but you do make your videos quite
+50:11 entertaining and interesting and one of
+50:13 the things i don't know you if you have
+50:15 this uh
+50:15 rainbow colored uh owl why don't you
+50:18 have the owl yeah yes i always have the
+50:22 owl with
+50:23 me yeah oh great that that is
+50:26 maybe one of the growth hacks because
+50:28 this is like uh one of the
+50:29 housekeeping mascot or like yeah
+50:33 yeah so this is like uh like every time
+50:36 i go to
+50:37 the dvc channel i see this uh
+50:40 this little guy is it a guy or a girl dv
+50:44 yes it really is um i just love dv so
+50:48 much
+50:48 i mean actually when i was a kid i used
+50:50 to make a lot of videos that i would
+50:52 post on my social networks of just being
+50:54 silly
+50:55 and this feels like that i just get to
+50:57 like goof off with this completely
+50:59 ridiculous technicolor owl
+51:01 you know i just like i wish i could be
+51:03 in the room when they decided like we're
+51:04 going to sell
+51:05 this owl i just love it and i want
+51:09 everybody to see this
+51:11 but that could be one of the grow hacks
+51:13 that you can share
+51:14 next time somebody asks you okay just
+51:16 bring the
+51:18 the rainbow color towel or something
+51:20 else something that
+51:21 attracts people because this is like uh
+51:24 it's on every video right
+51:25 was that yeah without uh
+51:29 oh i'm completely committed to featuring
+51:31 dv in every video
+51:32 i mean i also just want people to know
+51:34 like this isn't that
+51:36 serious you know it it's
+51:39 i don't know like i i used to go to a
+51:41 data visualization meetup group
+51:43 back when we could meet in person and it
+51:45 was held in a cupcake shop
+51:47 it was this bright pink cupcake shop and
+51:49 it was just the perfect kind of like
+51:52 it's cool we don't all have to have like
+51:54 we don't have to be
+51:55 like hackers you know we can just be
+51:59 people who are going to try this
+52:01 together
+52:03 and so i like comedy that way we don't
+52:06 have a lot of time left
+52:07 uh so let me check if we have questions
+52:10 yeah we don't accept from uh angel who
+52:14 was saying that
+52:14 uh he wasn't a troll
+52:18 sorry about that yeah so um
+52:22 i um so what i'm also
+52:25 interested about this uh that
+52:28 you mentioned that you're going to be
+52:30 teaching soon and uh
+52:32 in your opinion how this is these two
+52:35 things are related like being a
+52:36 developer and being a good teacher
+52:38 like uh does a debra always need to be a
+52:41 good teacher
+52:44 i think at some level yes but not in the
+52:47 same sense of being able to put together
+52:49 like
+52:50 a classroom lecture and of course you
+52:52 don't have to grade anybody
+52:54 but you you do have to spot like where
+52:57 are people struggling to learn something
+52:59 you know what are what are the spots
+53:01 that i really need to help them on
+53:03 and honestly being like when i make
+53:06 youtube videos one of the coolest things
+53:07 about it was that like i would get
+53:09 questions from students in other
+53:11 countries and they would write and be
+53:12 like hi i'm an undergrad
+53:14 doing this like you know what should i
+53:15 do um and you end up kind of advising a
+53:18 lot of people
+53:19 and that part is really sweet and really
+53:22 rewarding
+53:24 um you know it's it's cool um
+53:27 and so that part i think is
+53:30 a lot like teaching um of course
+53:33 teaching comes with like a lot more you
+53:35 know
+53:35 you have to make a syllabus and you have
+53:37 to grade you know all that and you have
+53:39 to create a curriculum
+53:40 but i kind of wanted that like i wanted
+53:42 to make sure
+53:44 like i think everybody who does data
+53:46 science needs to know something about
+53:48 like
+53:48 the craft of it like how do you manage
+53:51 developing
+53:52 your code and your data you know and
+53:55 i want to make sure that that's not just
+53:57 the thing that data scientists learn
+53:59 like after the fact on the job like i
+54:01 want to be intentional about like what's
+54:02 in the curriculum
+54:04 and if you pay for a data science
+54:06 master's what do you get like i want to
+54:08 control that
+54:09 you know and so that's kind of why i'm
+54:11 i'm going back into a university is
+54:13 because i want to help standardize this
+54:15 a bit
+54:16 um but where was i going honestly one of
+54:20 the things i was most worried about was
+54:21 losing the international audience
+54:22 because i feel like actually as a devrel
+54:24 you have students all over the world and
+54:26 it's all free
+54:27 like it's all accessible for them so one
+54:30 of the things i made sure of when i
+54:31 took the job was that i would maintain
+54:33 like contain continue to have copyright
+54:36 over all of my teaching materials so
+54:37 that i could share them
+54:39 because of i don't want to stop
+54:40 providing materials
+54:42 to students that happen to be outside of
+54:44 the university
+54:46 so you you plan to record the videos and
+54:49 put them online
+54:50 definitely some um i have found that
+54:52 youtube is is a really good channel
+54:55 and i like it a lot i'd also for me
+54:58 like i don't have the same kind of like
+55:00 i find it less
+55:01 there's less toxicity as a creator there
+55:04 um
+55:04 and it's you know really fun interacting
+55:06 with people and you know people wait for
+55:08 your videos and you get regulars and
+55:10 and that's really cool um so i'm
+55:13 definitely planning on continuing to
+55:15 have youtube
+55:15 videos like you know if people are
+55:17 asking a question in class a lot i'll
+55:19 probably just make up a video explaining
+55:21 it
+55:21 put out like a three minute video you
+55:23 know i i it's just a great reusable
+55:26 resource for people
+55:28 yeah that's that's great to hear that
+55:29 you managed to convince the university
+55:31 to allow you to do that
+55:33 and i'm personally looking forward to
+55:35 seeing those videos and i think we need
+55:37 more of videos like that um and
+55:40 especially we need
+55:42 i get university we need more lectures
+55:44 like that that prepare
+55:45 students for real life because uh most
+55:48 of the time what happens
+55:49 like you said people just learn at work
+55:52 but the university is supposed to
+55:54 prepare them for work right
+55:56 yeah it's it's definitely i mean like i
+55:59 said i mean i
+56:00 i was in school for like 10 years and i
+56:03 still never had anybody really
+56:05 teach me how to use git even though like
+56:07 every lab
+56:08 wrote code you know and
+56:11 yeah it's i think they realize now that
+56:14 there's a gap but like
+56:16 i mean one of the worst things was that
+56:17 everybody when i was doing my phd you'd
+56:19 hear people say constantly like oh yeah
+56:21 you'll be ready for industry
+56:22 and then i got there and i just wasn't
+56:24 [Laughter]
+56:26 yeah i've heard that story so many times
+56:28 and i was also the one who was
+56:31 saying that story well except except phd
+56:34 i was
+56:34 saying masters but this is pretty common
+56:37 uh
+56:38 theme yeah thanks a lot for for coming
+56:41 today
+56:41 and share your experience with us do you
+56:44 have any last words
+56:46 where can i find you so last words yeah
+56:49 you can follow me on twitter
+56:50 or linkedin um you know we've got a
+56:53 youtube channel um which we can probably
+56:55 provide
+56:56 a link for um and
+56:59 basically i i hope that you know
+57:04 i hope more people become devils
+57:06 especially people
+57:07 who have really different backgrounds
+57:09 because of i just tend to find
+57:11 that sometimes when you're an outsider
+57:13 from somewhere it gives you a really
+57:15 good perspective about what it's like to
+57:17 learn and that can make you one of the
+57:18 most effective teachers
+57:20 and people who you know really
+57:22 understand how to tell stories
+57:24 how to make great graphics great videos
+57:27 you know all of that like it's like
+57:29 getting to be like your own little
+57:31 video studio you know
+57:34 it's it's it can be really creative and
+57:37 really rewarding
+57:38 and that is why it can be worth
+57:41 you know all of the all the really
+57:43 difficult parts too
+57:45 um so i hope that this has been helpful
+57:47 for you in figuring out if it might be
+57:49 something
+57:49 or if you're a company that is looking
+57:51 to hire i hope it's helped clarify
+57:54 you know some of the different parts of
+57:56 devrel and how you know
+57:58 it's it's actually got quite a few maybe
+58:00 you know independent facets and
+58:02 you know sometimes you'll find a unicorn
+58:04 who can do it all and sometimes
+58:06 you know sometimes it takes it takes a
+58:08 team
+58:10 yes thanks a lot for for being here
+58:13 today sharing your experience
+58:14 and uh yeah thanks everyone else
+58:18 for being here as well and yeah let's
+58:21 see each other again next week
+58:23 and think so goodbye

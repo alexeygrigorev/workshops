@@ -1,0 +1,1691 @@
+Launching a Startup: From Idea to First Hire
+
+0:01 Yeah. Hi everyone. Thanks for joining us
+0:03 today. This event is brought to you by
+0:05 Data Talks Club which is a community of
+0:06 people who love data and we have uh
+0:10 weekly events two of them. You can
+0:12 actually go to the description and check
+0:14 what we have prepared. Um so today we
+0:17 have a live podcast which is an
+0:20 interview and we have that every Friday
+0:22 and on uh Tuesdays we have webinars
+0:25 which are more like presentation. Um so
+0:29 go check it out. So just click on this
+0:31 link and see the events we prepared. Uh
+0:34 yeah so we have a bunch of them.
+0:36 Actually it's not updated. Uh so this
+0:38 event will be the week after. But
+0:40 anyways you can go there and register
+0:43 for our events. If you want to register
+0:45 for all events at the same time, you can
+0:48 subscribe to our calendar. Many people
+0:49 said it's awesome. So just go click this
+0:52 link and you'll get an indication every
+0:54 time we uh have an event. Of course,
+0:57 subscribe to our YouTube channel not to
+0:59 miss anything and join our Slack to have
+1:02 awesome discussions about all things
+1:04 data. For questions, um you use you can
+1:08 use slider. There is a pin linked in the
+1:10 live chat. So just go there and ask any
+1:12 question you want and I'll be covering
+1:14 these questions in the interview. So
+1:17 finally I know that many people watch
+1:19 this um video in uh recording so when
+1:23 it's not live if you have any question
+1:26 uh and you didn't get a chance to uh ask
+1:29 it during the live event you can go to
+1:31 our slack and ask a channel there and I
+1:34 ask Carmen to keep an eye for a couple
+1:36 of days on this channel and yeah so if
+1:39 you have any questions you can just ask
+1:41 it there and that's all for the
+1:44 introduction.
+1:45 Um yeah so this this week we'll talk
+1:48 about building a startup as a technical
+1:50 person and we have a special guest today
+1:53 Carmen and u Carmen and I are actually
+1:57 colleagues ex-col
+1:59 worked with me at Elix as a senior data
+2:01 scientist then at some point he left
+2:03 Elix joined entrepreneur first which is
+2:06 I think uh like a startup factory sort
+2:09 of so so to say and now he's a co-ound
+2:12 founder and CTO at Freshflow. So,
+2:15 welcome.
+2:16 Thank you. Thank you, Alexi. I'm glad
+2:18 that you could invite me and I could see
+2:19 you again. Um, so yeah, um, great uh,
+2:23 great introduction uh, just to get to
+2:26 know me a little bit better. So, I
+2:27 started um, basically programming when I
+2:29 was a kid at the age of five. Um, and
+2:32 then I continued this passion like my
+2:35 entire life and uh, obviously I went to
+2:37 university. I think I I felt quite um
+2:41 you know um fortunate that I could
+2:43 actually know what I wanted to do uh in
+2:46 university. I know a lot of people
+2:47 struggle with that. Uh I went directly
+2:49 to uh computer science and did computer
+2:52 science
+2:53 um uh bachelor in uh University of
+2:56 Bolognia and did also like uh some gigs
+3:00 as a freelance web developer uh for
+3:02 around a year and uh then I published my
+3:05 thesis uh also in a book uh which is the
+3:09 name of the thesis is called large scale
+3:10 social network analysis. It was about
+3:14 how to parallelize uh social network
+3:16 analysis algorithms using uh NPI lot of
+3:19 C++. I'm glad that I don't have to do
+3:21 that again. Um but it was really fun. If
+3:23 you want to check it out is published on
+3:25 Springer. Um and then I joined my master
+3:29 in um university uh free university of
+3:32 of uh Amsterdam uh which was in
+3:35 artificial intelligence and then since
+3:37 then I just fell in love with it and uh
+3:39 continued doing data science for five
+3:41 years including at Ox at another
+3:43 consultancy before and uh at another
+3:46 startup before and then after Ox
+3:49 uh well during Ox actually I went to Ox
+3:51 squared which is the moonshot team of Ox
+3:54 where you can innovate as as much as you
+3:56 want. Um and then after that I joined
+3:59 the data science for social good at the
+4:01 Alanering Institute which is a research
+4:04 institution uh in the UK uh for data
+4:07 science and machine learning. Um so
+4:09 mentored some students there and we
+4:10 helped the World Bank and uh Offstead
+4:14 which is the office of standards for
+4:16 early years childcare in the UK uh with
+4:19 uh some really exciting data analytics
+4:22 uh which maybe I can show later. And uh
+4:25 after that I uh decided to join
+4:27 entrepreneur first but of course the
+4:29 story doesn't doesn't start like that
+4:31 right uh you just don't want to start a
+4:33 company from the one day to another.
+4:36 Yeah. So I also have a five like you you
+4:39 said you started programming as a five
+4:41 year old kid and my kid now is 5year-old
+4:44 so maybe in another uh some other time
+4:47 I'll pick your brain how to actually
+4:49 teach him a bit of programming. Uh, it
+4:51 just has to be really not excited about
+4:53 watching TV. That was I think that was
+4:55 the key.
+4:57 Interesting. Not the case.
+5:01 Everybody's on.
+5:04 Okay. Um, yeah. So, tell us a bit about
+5:07 your stuff startup. What do you do
+5:09 there?
+5:09 Sure. So, um, as you said, I'm a
+5:12 co-founder CTO of Freshflow. Uh,
+5:13 Freshflow is a complete ordering system
+5:17 for supermarkets. And what we want to
+5:20 solve is the enormous food waste problem
+5:22 that we have in the world. So uh and
+5:26 also make more money for supermarkets
+5:28 and make more money for us. So we have
+5:30 this really nice triple bottom line uh
+5:32 which makes us a profitable business.
+5:34 Well not yet but we will in the future
+5:36 hopefully and also will make more money
+5:38 for for the supermarkets and benefit the
+5:40 the planet. So the problem that we saw
+5:44 uh and especially um Avik saw actually
+5:47 when which is my co-founder which when
+5:49 uh he was trying to sell to supermarkets
+5:54 um another solution which was based on
+5:56 uh computer vision he saw that actually
+5:59 a bigger problem that they used to have
+6:01 and they still have is what to order
+6:04 exactly especially for fresh products.
+6:06 So the problem with fresh products is
+6:08 that they have varying shelf lives. Um
+6:11 and there's highly variable shelf lives.
+6:14 So even the same I don't know type of
+6:17 product like mangoes uh one batch could
+6:19 have like a week left another batch
+6:23 could have like two days left. Um and it
+6:26 is really really hard to predict all of
+6:27 that and to predict how many you need at
+6:30 what time etc etc. But uh most
+6:33 supermarkets we found that uh they still
+6:35 use people on the floor. So there are
+6:37 like so-called fresh product managers
+6:40 that they actually every single day they
+6:42 spend two hours looking at the shelves
+6:45 and looking at what they have in the
+6:47 back uh to figure out what they actually
+6:49 have to order. And um we when we started
+6:53 our pilot our first pilot with uh with
+6:55 Edica uh here which is the largest
+6:58 German supermarket. If anyone is
+7:00 watching from
+7:01 you have a pilot with them. That's
+7:02 that's awesome.
+7:03 Yeah. With one uh one store right now
+7:06 and they we're signing with other stores
+7:09 uh
+7:10 so that's cool.
+7:10 Uh in the future. Yeah. Uh and uh yeah
+7:14 we we went there we did user research
+7:16 which is a thing that uh um actually we
+7:18 learned at ox squared. It was a great
+7:20 experience there uh working with the
+7:22 designers from coast. Um
+7:25 and um
+7:28 we saw that the fresh product people uh
+7:31 they go there at 6:00 a.m. in the
+7:33 morning. Uh they have a lot of like
+7:35 boxes to move around. Uh and then once
+7:38 they move around all these boxes
+7:40 uh which takes a couple of hours uh they
+7:43 put all the things in place and then
+7:45 they start the ordering process for the
+7:47 next day. So they have to calculate what
+7:49 is going to be the demand you know the
+7:51 next day they have to think about it in
+7:53 their head they have to think about
+7:54 weather they have to think about uh
+7:56 seasonality differences uh is for
+7:59 example I don't know is there a big
+8:01 event in the in the town uh in the
+8:04 specific town where we're doing the
+8:05 pilot for example there is a big like um
+8:09 ramp let's say uh to go to the to the
+8:12 supermarket and if that ramp for example
+8:14 is full of snow will go to the
+8:17 supermarket. So all of these kind of
+8:18 things in their heads for 200 products.
+8:21 It's insane. It is really an incredible
+8:23 work and I'm amazed actually that that
+8:26 works at all. Uh so they're doing a
+8:29 great job. But of course, you know, as
+8:32 we are humans and we're not we're not
+8:34 calculators. Uh so basically we create
+8:37 um ordering system uh that it lives in
+8:40 an iPad app for all they know.
+8:43 Lives mostly in the cloud to be honest.
+8:45 uh which uh uses machine learning and
+8:48 reinforcement learning actually.
+8:49 Oh wow.
+8:50 Uh to to figure out the perfect order.
+8:54 Oh, cool. So I heard that this uh
+8:56 position is called fresh product
+8:58 manager, right? So I know uh product
+9:01 managers what they do at Elix. So it's a
+9:03 different kind of product manager,
+9:05 right?
+9:05 Absolutely.
+9:06 Manage actually manage manage pro
+9:08 products, right?
+9:09 Yeah. It's a lot less about politics and
+9:11 a lot more about what is what how many
+9:15 uh strawberries you have to order for
+9:17 the next
+9:17 basically every store in every company
+9:21 like every supermarket they have this
+9:23 sort of position right so they have to
+9:24 wake up at 6:00 a.m. in the morning they
+9:26 have to do go like around look at the
+9:30 shelves and see okay like these mangoes
+9:33 are getting spoiled we need to do
+9:34 something about them right they do this
+9:37 every day and uh it's a lot of manual
+9:39 work they also have to uh you know wake
+9:42 up early while I guess everyone is uh at
+9:45 home still like before the shop opens
+9:47 right
+9:48 yeah exactly it's a very tough work uh
+9:50 we were amazed that uh uh you know the
+9:53 were these these ladies that could do
+9:55 that um at that early in the morning and
+10:00 also keep fresh to you know think about
+10:02 all these other factors and uh honestly
+10:05 we were struggling with me my co-ounder
+10:07 to follow them they were so fast uh it
+10:10 was it was really amazing really amazing
+10:11 so you was you were just sitting with
+10:13 them watching how they work and then
+10:15 trying to replicate it
+10:17 uh yeah we were shadowing them uh for a
+10:19 couple of days so we went there for a
+10:21 week um this is actually how we work in
+10:24 general it's called design thinking. So
+10:26 uh we do a few steps that you see in the
+10:29 design thinking uh methodologies. There
+10:31 are many design thinking methodologies.
+10:33 Uh so uh we follow usually from my
+10:37 experience with the ox squared and with
+10:39 the book uh design thinking by cure
+10:43 highly recommended by the way uh and it
+10:45 also it's very much appreciated uh by
+10:48 our clients that we do that because uh
+10:50 we are able to really figure out what
+10:53 are the processes how things go on in
+10:56 the store and then deliver the solution
+10:58 that they actually need instead of that
+10:59 we think they need which is a big
+11:02 learning that I had from from from that
+11:03 experience in X squ um and also to be
+11:06 honest from from EF uh they also push
+11:08 another book which is really interesting
+11:09 which I also recommend it's called the
+11:12 mom test I would say it's a much lighter
+11:14 version of design thinking um and uh
+11:18 it's mostly to gather towards um you
+11:22 know entrepreneurs and to do how to do
+11:24 sales calls and stuff like that. Uh but
+11:27 it does help you figure out what to ask
+11:30 and you want to ask things that actually
+11:33 make the user tell you uh all their
+11:35 processes and not tell you the solution
+11:37 that they want. Uh because between what
+11:40 they want and what they need, there's
+11:41 always like a bit of a difference to be
+11:43 honest.
+11:43 Mhm. Okay. Interesting. And uh I don't
+11:47 think you just woke up one day and
+11:49 realized okay there is this problem uh
+11:52 let's just you know uh leave for elix
+11:55 and solve it right so there probably
+11:57 something happened like uh so I'm
+12:00 curious how did you actually come uh up
+12:03 with this idea what did the process look
+12:06 like? Yeah, it was uh very interesting.
+12:09 So, I joined entrepreneur first because
+12:11 I wanted to be uh I wanted to have a
+12:14 startup. Uh this was a desire that I had
+12:16 since I was in my bachelor but I never
+12:19 really thought
+12:20 you didn't know what exactly you'll do,
+12:22 right?
+12:22 Yeah, exactly. There's there were a few
+12:24 ideas that I had um but I didn't I I
+12:28 tried to like um have some people and
+12:32 try to ideulate with some people and
+12:34 maybe come up with some some uh I don't
+12:36 know ideas for a startup and stuff but
+12:39 um in the end it didn't really
+12:41 materialize. Um shout out to Shander as
+12:43 well.
+12:45 And uh the the problem is that you're
+12:49 always so busy. So uh we were trying
+12:51 during you know also having a job at the
+12:54 same time and um uh it was it was really
+12:58 hard. Um you need to really dedicate
+13:00 your life to it and to find like what is
+13:03 a what is a good idea unless you have a
+13:05 good idea already. Uh and also like to
+13:07 find a co-founder is really hard that
+13:08 also has the same amount of time and the
+13:10 same like life circumstances.
+13:13 Um and so in the end uh when I received
+13:17 the call from entrepreneur first I
+13:20 didn't know about them and this was
+13:21 around February when I was in Olex
+13:23 squared in February 2020. Um and uh I
+13:28 was already um I already uh got the
+13:32 position at the Alening Institute at the
+13:34 time. So I was uh really keen on like
+13:37 first doing these two things because
+13:38 they were so cool. uh and they told me
+13:40 that actually uh the other cohort uh
+13:43 would start in September and that would
+13:45 be exactly in line with uh with the rest
+13:47 of my timeline. So I thought that's
+13:49 perfect fine. Um so I reapplied uh then
+13:53 for the September cohort uh got in and
+13:56 um yeah I had like an amazing time to be
+13:58 honest. Um so in entrepreneur first is
+14:02 really interesting because they so the
+14:04 tagline is the word um leader talent
+14:07 investor um so the they call themselves
+14:11 talent investor because essentially they
+14:12 take you in because you don't have you
+14:15 have the potential to be a co-founder
+14:17 because of your career path what you did
+14:20 in the past is quite interesting the uh
+14:22 the growth that you have is pretty uh
+14:24 big uh or you I don't know know
+14:27 something very specific that nobody else
+14:28 knows. in the world
+14:31 and um
+14:33 uh they basically take a bunch of people
+14:35 like that in the same like space. Uh
+14:38 they give you a bunch of talks on how to
+14:39 do sales, how to do uh marketing, how to
+14:43 this uh like this is something that
+14:45 technical people like you, like me, we
+14:48 usually don't know these things, right?
+14:50 We don't know how to
+14:52 uh like marketing is a I have no idea
+14:55 like what marketing people do, right? So
+14:57 it's pretty nice of them that they uh
+15:00 also teach you um these things.
+15:03 Yeah, absolutely. Uh they have like they
+15:06 have experts that uh they are either
+15:08 called in or they're already in
+15:10 entrepreneur first. Um for example for
+15:13 sales um like guys that exited companies
+15:16 for many many times they're are venture
+15:17 partners there uh because essentially
+15:19 it's a ultimately it's a kind of venture
+15:21 capital um for preede companies but they
+15:25 operate quite differently and uh so they
+15:28 have uh these venture partners that are
+15:29 very experienced and they will talk
+15:30 about these these topics uh absolutely
+15:33 recommended. Uh there were even talks by
+15:36 um Ben Evans for example which is one of
+15:38 the uh best um people in the VC space.
+15:42 Uh he used to be uh at uh Andress on
+15:45 Auroritz as well.
+15:46 He's now a global venture partner there.
+15:49 Uh and many other people that are
+15:50 perhaps less known but uh really really
+15:52 good.
+15:54 Yeah.
+15:54 Interesting.
+15:55 So
+15:56 So they put you through this training,
+15:57 right? Yeah. But I guess that's not the
+15:59 only thing they do, right?
+16:01 No, no, no, no. Of course. uh well they
+16:06 um they assist you with like some sort
+16:09 of um framework on how to find a
+16:12 co-founder. So first of all you go there
+16:14 and you kind of know if you're a CTO
+16:16 type or a CEO type even though like
+16:19 there may be some uh exception spoiler
+16:21 alert. Um so
+16:25 usually um you know if you if you have a
+16:28 technical background you're a CTO type
+16:29 if you have a more businessminded
+16:31 background or a domain edge what they
+16:33 call it uh you're a CEO type
+16:36 and data scientist maybe would be a CTO
+16:38 and product manager would be a CEO
+16:40 roughly
+16:41 yeah roughly absolutely um it could also
+16:45 change
+16:46 um but uh let's see let's go there later
+16:49 so
+16:50 the idea is that they have so-called
+16:53 edges and uh you fit in one or two
+16:56 edges. Um so the edges that uh EF has
+17:01 are um catalyst edge uh domain edge and
+17:05 technical edge. And so uh catalyst edge
+17:09 they're actually further defined as
+17:10 catalyst doers and catalyst talkers. So
+17:13 the catalyst doers are the ones that are
+17:15 very energetic. Uh they can make
+17:18 basically almost anything. uh they don't
+17:21 have like a specific technical edge that
+17:24 is so sharp that only like 10 people in
+17:27 the world have uh but they're more
+17:29 widespread like data science for example
+17:31 would be
+17:31 full stack person right
+17:32 full stack person uh us for example
+17:35 we're catalyst doers for for EF
+17:39 um and catalyst talkers are like you
+17:43 know flexible business people
+17:44 essentially right so they kind kind of
+17:46 the same thing but on the business side
+17:48 uh and then there are domain edges
+17:51 And domain edges are basically people
+17:53 that have very very specific in-depth
+17:56 knowledge of a specific domain. Um so
+17:59 for example one of my uh let's say
+18:01 co-founders so at the time we were
+18:04 starting uh a company with him uh with
+18:07 UNF
+18:09 um he had deep expertise in the pharma
+18:12 space. So he worked he was a general
+18:14 manager at uh Definians which then got
+18:17 acquired by Astroenica
+18:19 uh and then he worked there for like 20
+18:21 years uh absolute master about um you
+18:25 know computer vision in pharma and
+18:28 that's a definite domain edge and then
+18:31 tech edges are people that have very
+18:34 very specific skills in uh something uh
+18:37 in some tech uh so for example there was
+18:39 a guy that did this PhD thesis on 3D
+18:42 printing uh human hearts. Like I don't
+18:45 know that many people that do that.
+18:48 That's as specific as it can get, right?
+18:50 Yeah, absolutely. Yeah. Um yeah, shout
+18:54 out to Martin uh and and Javier
+18:57 and uh yeah um they give you this
+19:00 framework in order to start the
+19:03 conversation with the other people. So
+19:05 then if you are let's say a domain edge,
+19:08 you would definitely talk about your
+19:09 domain.
+19:11 Um, if you're a tech edge, you
+19:13 definitely talk about that specific uh
+19:15 thing. If you're a catalyst, it's a bit
+19:17 more fluffy. You talk about what you are
+19:20 most uh expert at and um see what are
+19:25 the inter interweaving uh threads that
+19:28 you can find with the other people.
+19:31 Uh and yeah, they're very interesting
+19:34 conversations. So, it's it's really like
+19:35 one of the best times ever. Um you can
+19:39 talk about crazy things from one day to
+19:42 another. you can have like 10
+19:43 conversation in one day where they span
+19:45 between uh I don't know like how to
+19:48 solve the climate issue uh to I don't
+19:51 know how to make uh specific dashboard
+19:54 for fintech companies you know there
+19:56 could be anything in between and so you
+19:58 also go with your own gut feeling trying
+20:00 to see who you think you will fit with
+20:04 um and what kind of like what kind of
+20:07 ideas are you most drawn to and then of
+20:09 course you bring your own ideas uh and
+20:12 and you see you test them a little bit
+20:14 and then they have mentors uh which
+20:16 every single week they have a call with
+20:19 you so there are two mentors actually
+20:21 one is the let's call it the
+20:23 relationship mentor so you can ask about
+20:26 hey what what what can I how can I
+20:28 approach people between that or uh I
+20:31 don't know like um my current co-founder
+20:34 I don't know there's something wrong
+20:36 with our relationship how can we fix it
+20:38 uh and um then the other mentor which
+20:41 you that only if you have a team. Um
+20:44 it's uh it's a quite experienced usually
+20:48 in the startup space. Um
+20:51 and it will tell you a lot about like uh
+20:54 what are you doing good or what are you
+20:56 doing wrong in terms of like uh market
+20:58 sizing uh figuring out if the idea has
+21:01 any chance of of working essentially. Uh
+21:04 and they give you a score also every
+21:06 single week which is between 1 and four
+21:09 um which tells you more or less like how
+21:12 they think you're going to do at the
+21:15 final examination
+21:17 uh which is called investment committee
+21:20 which is in uh January. So this entire
+21:23 thing starts in September in January
+21:25 then uh you you're in the investment
+21:28 committee and actually I should say this
+21:29 is divided in few phases. So the first
+21:32 phase is called the form phase which is
+21:34 I think eight weeks and uh the form
+21:38 phase is the phase where you try to find
+21:39 your co-founder
+21:41 uh and then after the form phase you
+21:44 just have to say this is my co-founder
+21:46 and then you can pass through the uh
+21:48 company building phase and then the
+21:50 company building phase basically you
+21:52 have to prepare all the material that
+21:53 you need for the investment committee
+21:55 and the investment committee is a bunch
+21:57 of venture partners from from EF and we
+21:59 had actually Benedict Deans in our
+22:02 committee uh amongst others.
+22:05 Uh so it it was a bit uh intimidating
+22:08 but it was very very helpful and very u
+22:11 very useful for us also in the future.
+22:14 Fortunately we passed. So
+22:15 yeah so they decide basically if they
+22:17 want to invest or not right that's the
+22:18 finalation.
+22:20 That's the final examination. Yeah.
+22:21 Yeah. And if they want to invest they
+22:23 you know you get money. If they don't
+22:26 then
+22:26 then bye-bye.
+22:28 But I guess some people still try to
+22:30 pursue their idea, right? Just to find
+22:33 other way to to like find other
+22:37 investors, right?
+22:38 Yeah. Yeah. Um so some other people that
+22:41 didn't get investments, they got uh
+22:43 other grants or they were incubated in
+22:46 other incubators uh or they went for
+22:48 competitors of EVF like
+22:50 Entler. Um so in the end, you know, if
+22:53 you want if you want it, you can do it.
+22:56 That's a that's a big lesson actually.
+22:58 You you mentioned that your co-founder
+23:00 has experience in pharma right
+23:04 that was my previous co-founder. So we I
+23:06 had a few teams in EF um um and uh my
+23:11 current co-founder which is I should say
+23:13 the co-founder because it's my
+23:15 co-founder uh and it was not just a team
+23:18 uh in EF uh is actually a machine
+23:21 learning scientist also
+23:23 uh similar background um much younger
+23:25 he's 26 uh he just graduated from ETH
+23:29 Zurich and uh he was actually quite
+23:31 active in the uh entrepreneur space so
+23:34 he founded I think This is now his third
+23:36 company.
+23:37 Oh, which
+23:37 is quite insane at 26. So
+23:39 yes,
+23:40 shout out to AIC.
+23:42 Awesome.
+23:43 More insane is programming at five for
+23:49 Thanks, man. I hope that all of these
+23:50 credentials will come up in
+23:54 in our products. Um so yeah, he's uh
+23:58 he's also very impressive in that sense.
+24:00 Um and um it he founded a company in um
+24:05 uh motion analysis uh then another one
+24:08 in uh cryptocurrency in China actually
+24:11 while he was studying and now Freshflow
+24:13 as well and he's the CEO so he's
+24:15 handling the business um side uh and we
+24:19 decided like that just because uh I I
+24:21 think uh it fits more with what our our
+24:24 backgrounds are so like um I have uh
+24:27 longer uh technical experience and he
+24:30 has longer entrepreneurial experience.
+24:32 So I think it's just it just works and
+24:33 it's great to have a technical
+24:34 co-founder. So we were kind of also the
+24:36 exception. That's why I said spoiler
+24:38 alert before.
+24:39 Yeah. And I see already we have quite a
+24:41 few questions in live chat and uh I am
+24:44 wondering so one question from Medi is
+24:46 uh how when and why this idea of your
+24:50 business come to your mind because from
+24:52 what I understood about your co-founder
+24:54 he's also not like he doesn't strike me
+24:56 like as a person who spent his life in
+24:59 uh you know overseeing the supermarket
+25:02 right
+25:03 so how did you actually get this idea
+25:06 yeah that's a good question so um as I
+25:09 said before, he was developing this um
+25:12 um computer vision product recognition
+25:15 uh thing um during his thesis and um he
+25:21 basically started to sell it to
+25:23 different supermarkets.
+25:25 He started to have calls with different
+25:26 supermarkets being entrepreneurial
+25:28 minded as he is, right?
+25:30 uh and uh during these calls uh he
+25:32 realized that actually there is a lot of
+25:34 there are a lot of problems also in how
+25:36 these supermarkets order food
+25:39 right so there was already something in
+25:41 his mind then uh at the same time like
+25:44 when I broke up with the uh my team so
+25:47 the the pharma um guy he also broke up
+25:51 with his uh teammate at the time which
+25:54 was also in healthcare by the way um and
+25:56 uh we found each other at basically the
+26:00 last week before the closing of the of
+26:02 the program of the forum phase and we
+26:05 really wanted to have a startup like
+26:07 absolutely 100% there was no question uh
+26:10 in my mind that I was not going to go
+26:12 out with a startup out of that and uh we
+26:15 were friends from the beginning with
+26:17 Aric uh so we were always having beers
+26:20 uh and the
+26:22 uh the thing that we were also trying to
+26:25 ideate with other people obviously
+26:26 because you want to stick to what the EF
+26:28 people say, you know, try to find a
+26:30 business uh like a business person that
+26:32 started from business. Uh right. So, we
+26:35 were talking with a couple of people,
+26:36 but we found that, you know, we were
+26:38 actually ideulating much faster between
+26:40 each other. And so, we started ideating
+26:43 about like uh product recognition uh if
+26:47 we could use perhaps what is done in his
+26:49 thesis. Uh and we started thinking about
+26:52 uh oh, can we do something uh for
+26:54 pricing for example, right? So we can
+26:57 recognize uh what these products if
+27:00 these products are going bad like I was
+27:01 thinking also in a um let's say social
+27:05 good sense uh a little bit because it's
+27:07 kind of dear to my heart to do something
+27:09 for the for climate change uh that was a
+27:11 big topic also between my projects and
+27:13 ENF
+27:15 and uh in the end we we we started to
+27:19 see that uh there are a lot of problems
+27:21 with uh shelf life um with estimating
+27:24 shelf lives and and and keeping track of
+27:27 what is going bad etc etc. So we started
+27:30 ideating in that sense. Can we do
+27:32 something with computer vision that
+27:34 looks at fresh products and um you know
+27:37 tells you know the people that are
+27:40 buying the fresh products um are these
+27:43 going bad and we started ideating on
+27:46 that and we thought oh maybe we can do
+27:47 an app uh that can do that and uh on we
+27:52 we went actually to so-called super
+27:54 check-in which is like a mini IC a mini
+27:56 investment committee.
+27:58 Mhm. uh with that idea, which is
+28:00 basically a um an app that um you can
+28:04 use as a consumer and you can go in the
+28:07 store with uh and then you would take a
+28:09 photo of like um a fresh product or like
+28:12 a a packaged product, you will take a
+28:14 photo of the barcode or something and
+28:16 the and the um expir expiration date.
+28:20 And instead of fresh products, we will
+28:22 do the analysis of the ripeness in in
+28:24 the app using computer vision. uh and
+28:27 then it will give you a discount that
+28:28 then you can apply at checkout.
+28:31 Didn't fly very well with the investment
+28:33 committee to be honest. So we went back
+28:36 to the drawing board and we honestly we
+28:38 learned from that. We learned that um it
+28:41 was first of all it was really hard for
+28:43 people to get another app just to get
+28:46 some discounts even though there are
+28:47 discounts sometimes is not enough. Um
+28:51 and then we learned that um yeah it's
+28:54 not that easy actually to figure out the
+28:56 shelf life of fresh bars just using
+28:58 computer vision. Um so we we pivoted uh
+29:03 and uh we started like thinking and
+29:06 while thinking he realized oh wait I
+29:08 remember this conversation that I had
+29:10 with these uh these people and I
+29:12 remember that actually uh waste and
+29:15 stockouts are a huge problem and we kind
+29:19 of wanted to avoid all of that because
+29:20 both let's say our edges are definitely
+29:23 in computer vision like we we did a lot
+29:25 of computer vision um but we um we we
+29:29 saw that uh this could actually be a
+29:32 much bigger problem. Um and when we
+29:35 started looking at the numbers and then
+29:36 we started looking about the numbers
+29:38 about food waste and it's completely
+29:40 mindboggling. Um just to give you uh
+29:43 like an idea. So food waste uh is
+29:47 actually accounting for six times more
+29:49 carbon emissions per year than the
+29:52 entire aviation industry.
+29:53 W
+29:55 uh that's a lot, right?
+29:56 It's insane. Like when I read that I was
+29:59 like I cannot believe this. This is
+30:00 crazy.
+30:01 Yeah. This is uh very crazy.
+30:03 Yeah. And uh we wasting like 1.7
+30:06 trillion dollars per year in food like
+30:09 food that gets never sold basically. But
+30:12 someone has to buy it, right? The
+30:14 supermarkets have to buy it.
+30:16 Uh and supermarkets out of all food
+30:18 waste contribute to 10% of that. So if
+30:21 we can contribute to 10%
+30:24 of uh six times the aviation industry,
+30:27 we're almost like fixing the aviation
+30:30 industry right there. So that would be
+30:32 fantastic. Um and um so we we got really
+30:37 really excited and then we saw that also
+30:38 there are some uh exceptional companies
+30:41 in the US that are doing something
+30:43 similar to us. Um some of them are Shelf
+30:46 Engine and AFresh and uh they are uh
+30:49 they're doing really well. uh and um we
+30:52 really really appreciate what they're
+30:53 doing and we just wanted to follow suit
+30:56 and uh started our own company as
+30:57 freshly here.
+30:59 Nice. Uh
+31:02 and I'm also wondering um how important
+31:05 is to go through a startup accelerator
+31:07 in this case would you be able to do
+31:09 this without entrepreneur first or no
+31:11 way?
+31:11 No.
+31:13 As simple as that. uh to I think to have
+31:17 the kind of connections that
+31:18 entrepreneur first gives you um you need
+31:22 to be extremely lucky um maybe go to a
+31:26 very specific place um in life uh like
+31:29 for example I think in AIC's case uh ETH
+31:33 helped a lot because they have a
+31:34 entrepreneur uh kind of club and so if
+31:38 you're already interested in that you
+31:39 join the club and you see like a lot of
+31:41 people that have ideas professors that
+31:43 can help etc. etc. people that actually
+31:45 create their startups uh during
+31:47 university time. If you're in the Ivy
+31:50 League, of course, there are a lot of
+31:51 people that also uh in these university
+31:53 they they startups. But uh you know from
+31:57 free university of Amsterdam, there was
+31:58 no such thing. Uh and from uh University
+32:01 of Amsterdam, sorry, University of
+32:03 Bologna uh I didn't find uh anything
+32:06 like that. Um and I didn't look around
+32:08 at my brief time at University of
+32:10 Amsterdam. So like I didn't have these
+32:12 kind of possibilities. So that really
+32:15 changes the game completely. Like uh I
+32:18 have a lot of friends now from
+32:19 Entrepreneur First just because we vibe
+32:20 so much together. It's like we're also
+32:23 ambitious and creative and kind of
+32:25 risk-taking. So
+32:27 yeah, definitely you need you need the
+32:29 kind of right.
+32:29 It's about uh building connections. It's
+32:32 about networking, right? So if you have
+32:34 already a strong network from your
+32:36 university or maybe I know and I I know
+32:39 that in Berlin for example there are
+32:42 startup uh meetups for example or
+32:45 founder dating meetups. So if you're in
+32:47 this area maybe it's possible right to
+32:49 build this network but uh entrepreneur
+32:52 first helps you to do that. Yeah, and I
+32:54 would say it's still hard uh even though
+32:56 you would have the network then you need
+32:58 to find a co-founder that is really
+33:01 driving with you and uh you need to have
+33:03 the time to also think about uh the the
+33:06 idea and really develop it and kind of
+33:08 try to do it as quickly as possible. Uh
+33:10 that's always the conundrum of being in
+33:12 a startup. You want to always be one
+33:14 step ahead than you are and so that
+33:16 requires a lot of time. So
+33:19 um yeah I would say without entrepreneur
+33:21 first would have been really really
+33:22 hard.
+33:23 So how did you find your first client?
+33:26 So G like running a pilot with Etica I
+33:29 think it's awesome. So is it your first
+33:31 client?
+33:32 Yeah. Uh well technically we had also
+33:34 another client uh which came from uh uh
+33:38 AIC's previous dwellings in uh in the
+33:40 supermarket space. So this other client
+33:42 is actually Vog which is the third
+33:44 largest supermarket chain in uh in
+33:46 Switzerland. Um but in V we tried like
+33:51 um a slightly different product. So uh
+33:53 for Vogue though uh we did like a pilot
+33:56 and it all went well. uh but for the
+34:00 let's say uh the the first client in
+34:02 Germany um which is EDA we actually
+34:05 entered through the EDA futa campus
+34:07 which is a startup accelerator by EDA um
+34:11 where they also give you mentorship and
+34:14 they try to connect you to the right uh
+34:16 EDIA stores that are perhaps more
+34:18 open-minded to new things uh and um yeah
+34:22 after explaining our idea they we got in
+34:25 uh really nice people at the foot
+34:27 compost they connected to the right uh
+34:29 to the right people in uh in Edica and
+34:31 uh we refined our idea and we refined
+34:34 our product and then we started working
+34:36 with um with Edica Pesios.
+34:39 Was it before you graduated entrepreneur
+34:42 first or after?
+34:43 After after
+34:44 after. Okay. Yeah.
+34:45 So you don't need to get a client to
+34:48 graduate, right?
+34:50 Well, it would be beneficial.
+34:53 Um but they bet on us. First of all, we
+34:55 we formed at the last week of form. So,
+34:58 we had only like three weeks uh four
+35:01 four weeks to really like uh get all of
+35:05 the narrative together, get the SL the
+35:07 pitch deck, uh get the all of all of the
+35:10 things together. Um all of the
+35:13 possibilities for the future, the
+35:14 business model, blah blah blah. So,
+35:16 quite a lot of work in a short amount of
+35:18 time. uh and then
+35:21 after that yeah you start with uh with
+35:23 really building but and also we started
+35:25 building the the algorithms and stuff at
+35:28 the same time. So it was quite busy
+35:29 anyway. Uh but yeah other startups uh
+35:32 they also may need to show that they
+35:35 have some traction early on. We already
+35:36 had some traction at the time actually
+35:38 uh now that I remember uh we had quite a
+35:40 few leads uh with uh other supermarket
+35:43 chains in Italy and in Germany uh which
+35:47 in the end it didn't uh didn't go
+35:49 through but uh yeah we had actually like
+35:51 around four or five leads. So yeah there
+35:54 needs to be some traction for sure.
+35:56 So how much time uh like be like between
+36:00 the time you came up an idea and the
+36:02 time you secured the first client. How
+36:05 much time uh was that?
+36:07 Yeah. Uh unfortunately the supermarket
+36:09 space is not that fast. So the sales
+36:11 cycle is quite long. Um so we got um we
+36:16 got ultimately uh our contract signed
+36:18 and all with uh with our first ADA store
+36:21 in April. Um and we graduated from EF in
+36:26 um in uh January.
+36:29 Mhm.
+36:30 Yeah. But we're officially like
+36:31 registered as a company and all from
+36:33 April as well. just okay
+36:34 also takes time to do that
+36:36 there a lot of paperwork here in Germany
+36:38 Germany right
+36:39 and yeah I also prepared a question
+36:41 about investors um I guess you answered
+36:44 that so entrepreneur first acts as an
+36:46 investor there are there is a board and
+36:49 then they decide whether they should
+36:50 invest or not is it the only investor
+36:53 you have
+36:54 uh
+36:57 is
+37:00 you don't have
+37:01 so there there are things that we will
+37:02 announce later. But uh at the moment
+37:05 officially there is only them. Yeah.
+37:07 Uh there is we're lining up actually
+37:10 angel investors at the moment and we
+37:12 have uh an amazing guy as an angel
+37:15 investor which we would love to announce
+37:17 but it's in the works.
+37:19 Mhm. Well, you don't have to announce
+37:21 but maybe you can tell us about the
+37:23 process like how do you actually do? So
+37:26 with entrepreneur first okay they have
+37:28 this committee that decide if they
+37:30 invest or not but once you graduated
+37:33 once you don't have the support from EF
+37:35 how do you go about finding an investor
+37:38 right uh actually EF uh gives you a
+37:40 fundraising manager after you graduate
+37:43 um and um they help you a lot with like
+37:46 how to structure the narrative uh how to
+37:49 find the investors and stuff they also
+37:51 give you a platform called demo day uh
+37:53 which is basically like a Well, in
+37:55 corona times it's just like a web page
+37:57 with some YouTube videos, but it used to
+38:00 be that you go to a theater and there
+38:01 are 100 investors invited and then they
+38:04 will basically like talk to you after
+38:06 the um the the talk that you give the
+38:09 pitch. Um we decided to not go for demo
+38:12 day. Uh interestingly because we found
+38:15 that um in our specific case um you know
+38:19 we need to be proven with the numbers
+38:22 and the uh measures that we get from the
+38:25 pilots themselves in order to gain
+38:27 traction since it's such a slow industry
+38:30 and it's such a core competency of the
+38:35 supermarkets. So very hard actually to
+38:37 sell um because imagine you're you're
+38:41 substituting a really like core part of
+38:44 the entire ordering system or of the
+38:46 entire of what the supermarket does. If
+38:47 you think about a supermarket is you get
+38:50 stuff in and you get stuff out and you
+38:53 have to present them well. Okay. So we
+38:55 fix the get stuff in and then they have
+38:58 to think about present them well and get
+39:00 stuff out, right? So pretty hard to
+39:02 sell.
+39:03 Okay. Yeah. So,
+39:06 and we want to raise on our terms later.
+39:07 That's also why
+39:09 by having more traction. Yeah.
+39:12 So, if you didn't go through this demo
+39:14 day, like are there like what kind of
+39:17 places where people can look for
+39:19 investors? Like are there meetups or
+39:22 Right. Um well, investors approach you
+39:24 actually. Okay.
+39:26 Uh how do you do they find you? like do
+39:29 you just post on LinkedIn hey I'm
+39:31 looking for investors or
+39:33 I think uh just by the fact that you
+39:35 have co-founder in the name uh they they
+39:38 they search for you um okay
+39:40 in LinkedIn and also I believe they may
+39:43 have some bots from the handles register
+39:46 um so the the register of companies in
+39:49 Germany they may actually get scraped by
+39:53 them and they know of all the companies
+39:56 so they probably have a bunch of
+39:57 analysts in the VC uh firm and they go
+40:01 through all these companies. They look
+40:02 it up. They see what they're doing. If
+40:04 they they think it's good enough, they
+40:05 will definitely shoot an email. So, not
+40:08 that hard to find any investor. To find
+40:11 the good investors, it's up to you. So,
+40:13 you um there are certain investors that
+40:17 um you know, you want to have uh in your
+40:20 board because they have specific
+40:21 expertise, right? So, for example,
+40:23 investors that usually are in the food
+40:26 tech industry are great for us. Um, and
+40:30 um, other investors that are like
+40:33 high-profile, they usually like less um,
+40:37 hands-on, more like um, you know, they
+40:40 they care rather than they try to
+40:42 control. So, um, these kind of
+40:45 investors, yeah, you need to do a little
+40:46 bit of the work yourself perhaps
+40:48 sometimes and try to try to approach
+40:50 them and stuff.
+40:52 Yeah. I'm curious. So you said like
+40:53 there are investors and there are good
+40:55 investors. So what could be the
+40:58 consequences of going with bad investor?
+41:02 Well um you may get like a bad turn
+41:05 sheet uh where basically um they take a
+41:10 lot of your equity uh for not so much
+41:12 money. uh you um you may get uh I don't
+41:18 know some other little caveats in the
+41:20 term sheet uh that you may not like. Uh
+41:23 you may get like uh people in the board
+41:26 that perhaps are uh trying to control
+41:28 too much
+41:29 uh of your company. Um, and there's not
+41:32 so much a culture of trust, but it's
+41:34 rather a culture of like, uh, hey, we
+41:37 give you the money, like we want the
+41:38 money back immediately, kind of like try
+41:40 to grow as fast as possible, blah, blah,
+41:42 which is going to be, you know, it is
+41:44 pretty common with investors that they
+41:46 want to do that. I mean, it's their job
+41:47 ultimately, but there's some of them
+41:48 they do it in a more kind of um
+41:52 empathetic, nurturing
+41:54 um way that is more enjoyable for
+41:56 everybody. uh and some of them they
+41:58 might do it in a more predatorial way
+42:00 but I've we we at the moment we don't
+42:03 have uh anybody in the board because EF
+42:06 gave us a convertible note so uh it's
+42:08 very it's very chill and very quiet
+42:10 maybe a actually if he was my co-founder
+42:14 uh would have more insights into this
+42:16 question actually
+42:18 okay yeah understand
+42:21 and uh I'm curious what uh so you have
+42:25 pretty similar profiles even though it's
+42:26 more entrepreneurial uh but at the end
+42:29 you're both kind of engineers right you
+42:31 both coders
+42:33 so how do you split so first of all what
+42:35 do you do
+42:36 what does he do and how do you split
+42:38 these possibilities
+42:40 yeah um good question so of course at
+42:43 first we wanted to do everything
+42:44 together uh but then we decided that
+42:47 actually that was not going to like
+42:49 really help uh that much because then
+42:50 you have to synchronize ideas on every
+42:52 single little thing so and I don't think
+42:55 the productivity gains are very much
+42:57 higher. But it's good at first I think
+42:59 to think about the major the major
+43:01 things together and to continue to do
+43:03 that all the time and we continue to do
+43:05 that every day. Um
+43:08 but uh of course right now I'm fully the
+43:10 CTO so I do uh all of the tech uh almost
+43:14 all of the tech. I didn't do the mobile
+43:15 app. Um
+43:18 and um he uh is doing all of the sales
+43:21 and business development.
+43:23 Mhm. So all the outreach to possible
+43:25 clients uh talking to them talking to
+43:28 investors making the pitch deck uh and I
+43:30 do all of the uh pipelines and the uh
+43:34 code and uh uh data mangling and the
+43:38 dashboards and connections to the app
+43:41 and the machine learning algorithms and
+43:42 the experiments.
+43:43 All the engineering stuff, right?
+43:45 All the engineering stuff. Yeah. Yeah.
+43:47 Do you have other people in the company
+43:49 now?
+43:50 Yeah, we we do. So uh we have a mobile
+43:53 developer
+43:55 who created the the app right
+43:56 the one who created the app uh amazing
+43:59 guy uh fantastic
+44:01 um unfortunately the the contract for
+44:03 the freelancer ended but uh we hope that
+44:05 maybe in the future we can uh we can
+44:07 come back and work together. Um and um
+44:11 yeah he he is um yeah he did an amazing
+44:14 job. Uh we uh uh also have a working
+44:19 student uh which is from University of
+44:21 Manim. Um he's uh also in uh in the
+44:24 business side
+44:26 and he helps AVIC with that.
+44:28 Yeah. But we're going to start hiring
+44:30 actually more people soon.
+44:31 Mhm.
+44:32 Um so since uh maybe this topic is
+44:36 already on your mind about hiring,
+44:38 how how do you decide who to to hire
+44:41 first? So you needed an app. So you
+44:43 hired a freelancer who did the app and
+44:45 then uh you know he went on for working
+44:48 for another gig.
+44:49 But for a permanent employee, how do you
+44:51 decide who to hire first?
+44:54 That's a good question. So um I would
+44:57 say it's the same thing. Uh for the app
+44:59 or like the the permanent person um the
+45:05 it's very simple. Uh it feels like like
+45:08 when you are in the in the job you kind
+45:10 of know what you need, right? Uh but I
+45:13 think the a good principle to think
+45:15 about is like don't necessarily try to
+45:18 do everything yourself if you're not an
+45:20 expert in it. So like feel compelled to
+45:24 uh actually ask for help and ask for
+45:26 help in this case means hiring someone.
+45:28 So, uh, at first I thought, oh, maybe I
+45:31 can also like pick up Flutter and do the
+45:33 app and blah blah blah. But then
+45:35 honestly, like by thinking about it, it
+45:36 would have pushed us, you know, several
+45:39 months uh back just because I would need
+45:43 to like learn a new language uh then
+45:46 code the app in that language, blah blah
+45:48 blah. Uh, I would probably do a worse
+45:50 job than what Jeremiah did. So, like
+45:53 Jeremiah is the amazing mobile
+45:55 developer. Um and yeah in the end it
+45:59 doesn't doesn't really make sense. Uh we
+46:01 had the investment uh already so why not
+46:04 use it and uh spare my time to do
+46:06 something that I can do much better. So
+46:09 basically as a founder as a co-ounder
+46:13 one of the things you need to uh do is
+46:16 uh know how to delegate right and know
+46:18 how to let things go like not try to do
+46:21 things yourself. I am pretty sure you
+46:22 would do enough but it would just take
+46:24 more time right. Exactly. Yeah. So, um
+46:28 asking for help uh is a great thing. Uh
+46:31 it's a
+46:33 I know that uh if especially if you're
+46:35 entrepreneurally minded, you want to be
+46:37 the one doing all of it, but it's not
+46:40 shameful at all. Uh and it actually it
+46:44 is quite pretty appreciated by the
+46:45 clients because they see the product
+46:46 faster, by the investors because they
+46:48 see their money back faster by basically
+46:50 everybody. Mhm. And uh I don't know if
+46:54 this is a problem you had you have had
+46:56 or not but I imagine that u you as a
+47:00 startup um when you need to hire people
+47:03 maybe the package you can offer to
+47:06 candidates is less attractive than you
+47:08 know big well established companies such
+47:10 as Zanda or Amazon or I don't know leaks
+47:13 for example. So uh how do you manage to
+47:18 make this uh offer package attractive?
+47:21 Have you thought about this already?
+47:22 Like how do you attract people to work
+47:24 at startup?
+47:25 Uh we hired internationally so we we
+47:27 were not afraid to go into different
+47:29 countries. Um and um fortunately in in
+47:33 the end uh our mobile dev uh basically
+47:37 joined because he just loves the
+47:38 technology and he wanted to do something
+47:41 in uh in that technology. he because he
+47:43 used to do it in his free time. Uh and
+47:46 uh he um he felt like you know he can at
+47:50 least have some money out of it. Um and
+47:54 so I think this is a very special case
+47:55 of a extremely passionate person who
+47:58 really wanted to bring something to the
+47:59 world and maybe you know have also some
+48:01 fun and some money um in that in flatter
+48:04 specifically. But um I would say for in
+48:09 in general like uh our offer was
+48:11 attractive because for example we will
+48:13 pay the same rate in all parts of the
+48:15 world.
+48:16 Mhm.
+48:16 So um so for example for an Indian
+48:19 developer that would be like an amazing
+48:20 salary.
+48:21 Mhm. Okay. So maybe for somebody from
+48:24 Berlin it will be like an okayish one
+48:26 but if they go to a bigger company maybe
+48:29 they would offer more but for somebody
+48:31 from uh like where the average salary is
+48:34 not as uh like lower than in Germany
+48:37 then for them it's
+48:38 yeah I think co opened this amazing
+48:41 possibility of remote working uh to
+48:43 everybody just we just open our eyes and
+48:45 we were like oh right we can do this. So
+48:47 uh we just kind of took advantage of of
+48:49 that fact. Mhm. Okay. Yeah. Nice. So,
+48:53 what are your plans for the future?
+48:55 Great question. Uh more clients, more
+48:57 product, uh more shipping, more
+48:59 launches,
+49:01 uh more money, more investors, more
+49:04 hires, uh bigger clients,
+49:08 and grow from there. Yeah. And this is
+49:11 kind of this is of course uh of course
+49:14 the plan, but I'd say um we want to in
+49:20 the longer term future uh be kind of the
+49:23 um the grocery food retailer OS
+49:28 uh where it's a one-stop shop for all of
+49:31 their uh logistics and supply chain
+49:33 needs. And we want to also go um in uh
+49:38 the other steps in the chain. So go up
+49:41 to the distribution centers, the
+49:43 fulfillment centers, the uh perhaps
+49:46 sometimes even go beyond that and go as
+49:50 much as possible towards even the
+49:51 farmers and the um the the people with
+49:55 the um the grow the cows and uh the pigs
+49:59 and stuff. Um because there is so much
+50:02 that can be done at all these levels to
+50:06 uh predict what uh kind of food needs to
+50:10 be on the on the shelves ultimately of
+50:12 the supermarkets and uh we feel like we
+50:15 can have so much impact by having one
+50:19 solution that would actually kind of
+50:21 enable what is the uh just in time
+50:23 supply chain of Toyota. Right? So like
+50:25 when for example uh there is um you know
+50:29 I need a banana right now cuz I'm
+50:32 hungry. Uh then my system will know oh
+50:35 carina it's okay it's Friday it's 6 p.m.
+50:38 uh you know you just had a long day once
+50:40 a banana. So then uh preemptively would
+50:44 actually predict all of that months in
+50:46 advance and the farmer will be like okay
+50:49 I need to produce this many bananas.
+50:51 I think Amazon is doing that already. I
+50:54 think I I sometimes feel like Amazon can
+50:56 read my mind because I ran out of
+50:58 shampoo recently. I went to to buy and
+51:00 then on the first page it was already
+51:02 recommending me shampoo.
+51:04 Ah interesting. But see the that's
+51:06 another side which is the recommendation
+51:08 side.
+51:09 Um which is uh yeah quite similar
+51:12 actually to forecasting. So there's a
+51:13 lot of things that I learned in Alex
+51:16 come back uh here in this work. Um but
+51:20 yeah it will be much more towards
+51:21 forecasting. Mhm.
+51:23 specifically. Um and with the just in
+51:26 time supply chain, uh what you have is a
+51:28 lot less inventory space.
+51:31 Uh so that means also like less needs
+51:33 for huge warehouses, less need for um
+51:36 transportation.
+51:38 So also trucking and all that uh
+51:40 actually spends a lot of you know they
+51:42 burn a lot of uh fossil fuels. Uh not
+51:44 great for the environment. So it's not
+51:48 just the problem of like you know the
+51:50 rotten food that has CO2 that gets
+51:52 released to the planet.
+51:53 There's a lot going on actually in the
+51:55 supply chain that can be fixed by having
+51:58 uh by ordering the exact amount. The
+52:01 exact amount is really really hard
+52:03 because if you order too much you're
+52:05 producing just waste
+52:07 and the retailers try to do that because
+52:10 they don't like uh to have their shelves
+52:12 empty.
+52:13 That's really bad. that means that
+52:14 they're losing customers. Uh you know,
+52:17 the customers will go to another store
+52:19 if their shelves are empty. And with
+52:21 fresh products specifically, you have
+52:24 all of them in boxes, right? So if you
+52:26 have, let's say, the last bananas or the
+52:28 last two bananas, it's basically like
+52:30 the shelf is empty because the last two
+52:32 bananas, nobody picks them up.
+52:36 Yeah, I know. I wouldn't.
+52:39 Exactly. You think something's wrong
+52:41 with them.
+52:42 Exactly.
+52:43 Exactly. So um given consumer behavior
+52:47 and um these other factors, they need to
+52:49 keep stocking the shelves.
+52:52 Um but then it's really really hard to
+52:54 stock him exactly that they look kind of
+52:56 full even at the end of the day. But yet
+52:58 in the back room there's nothing
+53:01 and what we found is that that's not the
+53:03 case obviously because it's really
+53:04 really tough. So we try to to fix that
+53:06 problem.
+53:08 Okay. Interesting. Would you do anything
+53:10 differently now like if you were
+53:12 starting a game?
+53:13 Yes. Um I would not use open source
+53:17 infrastructure. I would directly use
+53:19 GCP. That was
+53:23 uh we switched from um from an open-
+53:26 source uh MLOps infrastructure that you
+53:29 may know what it is. It's called Qflow.
+53:33 It was uh giving us it was fantastic
+53:35 when it worked uh to be honest. Then we
+53:38 uh we uh upgraded to I think 1.3 and it
+53:42 started breaking in different ways and
+53:44 1.2 also gave us a lot of troubles um
+53:47 with um with the installation and stuff
+53:50 and I I spent I think like just one
+53:53 month or one and a half months just just
+53:58 taking care of CubeFlow
+54:02 which I think for a startup is not a
+54:04 great idea. Uh so at the end I just said
+54:07 okay fine we're in GCP we used the GCP
+54:10 stuff and uh so glad that we went for
+54:12 GCP also uh much better interfaces and
+54:16 uh and software that we're used to in in
+54:19 AWS. Uh we're using BigQuery uh cloud
+54:23 run cloud functions event arc. It's an
+54:26 event-driven architecture so everything
+54:28 that comes in gets pushed around in
+54:30 these pipelines. Uh we use fire store
+54:33 for the uh for the app API which is
+54:37 lightning fast. Uh it it's beautiful uh
+54:39 and it just works.
+54:42 Yeah. I guess one advice that you would
+54:44 uh one piece you would give to um
+54:48 somebody who is starting a startup. So
+54:49 go with a managed solution right for
+54:51 Yeah. Go with a managed solution instead
+54:53 of a instead of a open source solution
+54:56 at least at first.
+54:58 Okay. And um the good thing is that for
+55:00 a startup uh the uh the folks at Google
+55:04 and the folks at AWS if you are in
+55:07 anredit if if you're invested by an
+55:09 accredited investor of them um they will
+55:12 actually give you some credits. Uh so we
+55:14 received 100k uh in credits uh from
+55:18 Google. Uh so that that means that we
+55:20 can we can you know use their most
+55:23 expensive solutions uh and and yet not
+55:26 like sleep well at night. Okay. Yeah.
+55:28 So, basically they bet on you that uh
+55:30 you know you will grow. That's why they
+55:32 invest uh 100k in their services. That's
+55:36 that's very nice of them.
+55:37 Yeah. Yeah. And at the end if you really
+55:39 like their services you will you will
+55:42 continue.
+55:42 Yeah. Exactly.
+55:44 Yeah. So this this is I think one of the
+55:47 things that in the tech space Yeah. we
+55:50 could have done differently.
+55:51 Do you have any other advice for people
+55:53 who would like to start building a
+55:55 startup now?
+55:58 Wow. Um, where do we start? Um,
+56:03 I would say that uh it's it's going to
+56:06 be okay. Everybody says the same uh that
+56:09 it's going to be hard and you're going
+56:10 to have tough times. Uh, and it is true.
+56:14 And just be prepared and uh be just um
+56:18 very um yeah emotionally uh intelligent
+56:23 that uh um you know sometimes let's say
+56:26 a sales calls doesn't go well. Uh it may
+56:29 not be you. Okay. So it's not don't it's
+56:32 not personal it's not a personal thing.
+56:33 It is rather like perhaps that uh you
+56:36 could
+56:38 um I don't know not talk about the
+56:40 specifics of your solution. There's no
+56:42 need. Sometimes you can say it's just
+56:43 IP. Uh there is perhaps like another
+56:47 concern that you cannot address at the
+56:49 moment because you're just too small and
+56:51 you don't know certain things, right? So
+56:53 uh the the struggle at first is
+56:56 basically a mismatch between the fact
+56:58 that you want to have the best clients
+57:00 in order to have the best contracts, in
+57:02 order to have the best uh investors, in
+57:05 order to be able to hire the best
+57:07 people, etc., etc., but you're not there
+57:09 yet. And so you're always like trying to
+57:13 get to that point and it is really
+57:15 really hard to cope with all that load
+57:18 that you put on yourself. Uh so be
+57:20 mindful of that and um I would say uh
+57:24 find a co-founder that is on the same
+57:27 page as you uh that you can communicate
+57:30 really well with.
+57:32 uh and not necessarily
+57:34 um you know it doesn't have to be the
+57:36 best salesperson in the world if he's on
+57:38 the business side or it doesn't have to
+57:40 be the best um technical person in the
+57:42 world although it kind of helps but uh
+57:45 it only helps up to a certain
+57:46 percentage. Um so there was actually
+57:50 like a presentation that my girlfriend
+57:51 did. She's a recruiter uh that says that
+57:54 uh you should hire at least in
+57:56 behavioral interview you should hire for
+57:58 um 10% skills
+58:01 at least 10. Okay. Okay. So the
+58:03 framework is uh how much uh skills and
+58:07 um
+58:09 competency so like behaviors and how
+58:13 much um motivation actually plays out in
+58:18 uh the uh final performance of
+58:20 employees. So skills is about 10 to 20%.
+58:23 And then the rest is motivation and
+58:25 behavior. So like try to get people try
+58:28 to hire people for motivation and
+58:29 behavior.
+58:31 Uh, and if you get motivation, behavior,
+58:33 skills, you're just golden.
+58:35 Uh, but with your co-founder, you're
+58:36 going to speak every day. And if he's
+58:38 motivated enough, he's going to figure
+58:40 it out.
+58:41 He's uh if he's behavior is great also,
+58:44 he's going to figure it out. So that's
+58:46 another advice. Try to get these kind of
+58:47 people. Don't fix too much on skills.
+58:50 Yeah. Thanks. Do you have like five 10
+58:52 more minutes? I realized we have a lot
+58:54 of questions and uh
+58:56 Sure. Happy to uh some of them. So the
+58:59 first question is about books that you
+59:01 mentioned. I think it was design
+59:02 thinking and the M tests, right?
+59:04 That's right.
+59:06 I'll just put them in the description
+59:08 after we finish that talk.
+59:10 Um then the second question from Ali is
+59:13 about how do you get uh continuous
+59:16 motivation to to do this stuff? Uh
+59:20 coming from you know a software
+59:22 engineering kind of background. Uh how
+59:24 do you do this? I guess in a startup
+59:26 when things don't work as well you said
+59:30 you need to think about like maybe it's
+59:31 not you right it's them but like how do
+59:34 you get this continuous motivation
+59:35 probably you manage to keep doing this
+59:39 it's kind of in you uh so I don't know
+59:42 if there is a way to get motivation uh
+59:46 like for me for example I really care
+59:49 about uh like climate change and the
+59:52 food waste problem uh it seems to be the
+59:56 kind of the underdog of the climate
+59:58 change spectrum of problems, right? It's
+1:00:00 it's actually right there is in front of
+1:00:02 us. Uh and it is massive like again like
+1:00:06 that six times the number of uh uh CO2
+1:00:10 emissions than the aviation industry is
+1:00:12 a massive number. If you think about it
+1:00:14 differently, it is if you think about
+1:00:18 food waste as a country in terms of
+1:00:20 carbon emission, it will be the third
+1:00:22 country in the world. Uh so after US and
+1:00:26 China, there will be food waste and then
+1:00:28 there will be India with half of the
+1:00:31 carbon emission of food waste which is
+1:00:34 that's just insane. It seems like we
+1:00:36 have to do this. Uh and it seems like
+1:00:39 also the opportunity space is is pretty
+1:00:42 big like the food retail industry is um
+1:00:46 is now just now like in this process of
+1:00:49 digitalization and the opportunity for
+1:00:53 you know companies like ours is just is
+1:00:55 just great. Um and then yeah you work
+1:00:58 with the right people and I guess that
+1:01:02 that's what you need. But I guess
+1:01:03 motivation comes from the inside of what
+1:01:05 you care about. Mhm. Okay. Thank you. So
+1:01:08 there is a question from Isak is uh I'm
+1:01:11 30 years old. I want to be a CTO in a
+1:01:14 startup uh launching my own with a CEO I
+1:01:17 guess very similar to what he did. So
+1:01:20 his main focus is machine learning and
+1:01:22 he knows little about front end
+1:01:24 development devops and all these things.
+1:01:28 So the question is do you think it's
+1:01:31 enough to start as ZTO or or not? Um it
+1:01:35 it could be it could be getting tough
+1:01:37 sometimes I guess. Um uh but honestly if
+1:01:40 you use like a managed solution and you
+1:01:43 can spend some time like figuring out
+1:01:45 like new concepts um I don't think it's
+1:01:49 a problem that you have only like the
+1:01:50 machine learning background. Again like
+1:01:52 what I said before the framework that
+1:01:55 they used in my my girlfriend's company
+1:01:57 uh 10% to 20% skill uh 50% motivation
+1:02:02 and then the rest is uh behavior. Mhm.
+1:02:04 Do you think um he should learn
+1:02:06 something now before becoming a founder
+1:02:08 or
+1:02:09 Yeah, sure. Yeah, much better now
+1:02:11 because then you have pressures from
+1:02:13 investors, from clients, from your
+1:02:14 co-founder, from your hires. So like
+1:02:17 please start as soon as possible
+1:02:19 but then you will never start like you
+1:02:21 will always think okay I'm not ready
+1:02:23 yet. I need to learn this thing like
+1:02:25 there is this new framework that you
+1:02:26 need to learn and there is this new book
+1:02:28 that everyone says it's good then like
+1:02:31 how do you know that you're ready? uh
+1:02:33 you don't but uh you will will never
+1:02:37 feel ready to be honest like even uh
+1:02:40 honestly I have more than 10 years of
+1:02:41 experience in software engineering and
+1:02:43 yet like I don't I didn't think I was
+1:02:46 ready for a startup until I joined the F
+1:02:48 and I was like wait a second I'm
+1:02:49 actually not that bad I can actually do
+1:02:52 this so um like you can also just jump
+1:02:56 in and figure it out on the spot
+1:02:58 absolutely um I would say maybe uh if
+1:03:02 you for example go for entrepreneur
+1:03:04 first. Um if you get in uh like start as
+1:03:07 early as possible.
+1:03:09 Um and start as early as possible doing
+1:03:12 um maybe not necessarily technical stuff
+1:03:15 but um even just like figuring out the
+1:03:18 problem space and stuff like that. Like
+1:03:21 start doing something if you if you can.
+1:03:24 But um don't be afraid of also just
+1:03:26 jumping in. actually think that just
+1:03:29 jumping in will propel you to know these
+1:03:31 things by itself. It's a bit of a
+1:03:33 balance. I know it's I know this answer
+1:03:35 sucks because I it's what is it exactly
+1:03:39 that you're trying to recommend but uh
+1:03:41 either works if you have enough
+1:03:42 motivation I would say
+1:03:44 and uh what do you think about
+1:03:46 importance of a business school?
+1:03:49 Um not important whatsoever.
+1:03:52 Okay. Okay. So you be fine without going
+1:03:56 to a business school without an MBA
+1:03:58 right?
+1:03:59 Yeah. Uh so the the thing about MBAs
+1:04:02 from what I learned from other friends
+1:04:04 that did MBAs even at big MBA firms like
+1:04:07 inad etc. like you don't need one for a
+1:04:10 startup. Um and what they teach you
+1:04:14 there are concepts for running like
+1:04:16 largecale businesses. You know, in a
+1:04:19 startup, you have such a specific set of
+1:04:22 challenges that are specific to your
+1:04:23 markets and and all and um don't need to
+1:04:27 have like, you know, these grand scheme
+1:04:30 of things uh kind of overviews or, you
+1:04:32 know, how to do like a specific business
+1:04:36 uh case or a specific thing in a very
+1:04:38 structured way is much more like um ship
+1:04:42 it as soon as possible. That's what you
+1:04:45 want to do.
+1:04:46 Okay. Yeah. So it's more about the
+1:04:47 mindset, right?
+1:04:48 Yeah,
+1:04:50 absolutely.
+1:04:50 I think there is a book called ship it.
+1:04:52 I think it's about that.
+1:04:53 There must be at least one. Yeah.
+1:04:55 I think it's this is how it's called
+1:04:57 ship it.
+1:04:58 Yeah, I think I heard about it. Yeah.
+1:05:00 Yeah, I haven't read that, but I imagine
+1:05:02 it's good.
+1:05:03 Yeah.
+1:05:04 Okay. Uh oh, we have another question.
+1:05:06 So, what happens if you don't find a
+1:05:08 co-founder at EF?
+1:05:10 Well, you're out also. Yeah.
+1:05:13 Yeah. Um
+1:05:15 so you have to have a co-founder.
+1:05:17 You have to have a co-founder when you
+1:05:18 are in the in the form phase. So they
+1:05:20 give you these eight weeks just uh use
+1:05:23 them correctly. Try to uh if you go for
+1:05:25 EF um like try to get into a team as
+1:05:29 soon as possible. Don't like waste your
+1:05:31 time thinking is this the right person?
+1:05:33 is this not is am I blah blah blah like
+1:05:37 um figure it out like let's say get some
+1:05:41 answers of course don't get to with the
+1:05:43 first person that you meet but um if you
+1:05:46 vibe enough just go for it
+1:05:49 that's kind of the startup mentality
+1:05:51 just just go for it
+1:05:52 and another another question that uh we
+1:05:56 just got is uh would you recommend to
+1:05:58 start uh with EF if you already have a
+1:06:02 pretty clear idea I think you just said
+1:06:04 just go for it. Would you answer that as
+1:06:06 well?
+1:06:07 Ah um I would actually start with EF
+1:06:11 even though you have a pre-existing
+1:06:12 idea. Uh I also had a pre-existing idea
+1:06:15 which is I I actually tried it in the
+1:06:17 first uh few weeks of EF uh with another
+1:06:20 team right uh and
+1:06:23 we also figured out that the market may
+1:06:26 have not been exactly ready or the best
+1:06:29 kind of market for for that kind of
+1:06:32 idea. Okay.
+1:06:33 Um, so being in EF will also like teach
+1:06:36 you uh how things work in the real world
+1:06:40 because sometimes before you you're
+1:06:42 stuck in your own uh bubble, right? So
+1:06:45 for example, when we're working at Olex,
+1:06:47 you know, we may know a lot about
+1:06:48 marketplaces and about data science, but
+1:06:51 not about like uh you know the all the
+1:06:53 business side uh in in of things in
+1:06:56 general, how uh investors think about
+1:06:58 who to invest in etc etc. So
+1:07:01 it will give you that kind of mentality.
+1:07:03 Mhm.
+1:07:04 Okay. We have another question and that
+1:07:06 will be the last one. So uh did you
+1:07:09 already have a prototype before your
+1:07:11 pitch?
+1:07:12 Um no we had uh like a demo of um so for
+1:07:18 the for the first pitch so for the super
+1:07:20 checkin we had a demo of the computer
+1:07:23 vision uh recognition of uh ripeness uh
+1:07:28 on bananas only and it was web- based
+1:07:31 so it works with TensorFlowJS. Uh but
+1:07:34 then for the forecasting solution no we
+1:07:36 didn't have a demo. Mhm. Okay. So, you
+1:07:39 just basically need to be able to pitch
+1:07:40 this idea and have this idea very clear,
+1:07:42 right? So that the investors can already
+1:07:44 imagine uh like what are you going to
+1:07:49 solve, right?
+1:07:50 Yeah. They so they want to see like uh
+1:07:52 that the market is big enough.
+1:07:54 Mhm.
+1:07:55 Uh and that you can you are the right
+1:07:57 people for the job. Um and that uh the
+1:08:05 yeah you can find clients and uh they
+1:08:08 they usually trust you on the tech side.
+1:08:10 Mhm.
+1:08:11 If you have the credentials for it,
+1:08:12 right? So they look rather your CV.
+1:08:15 They're not going to make a technical
+1:08:16 interview.
+1:08:17 Okay, that's good. So you can maybe put
+1:08:20 a few things more.
+1:08:23 No, that's bad advice. Uh so maybe last
+1:08:26 one. Uh how do people find you? Oh,
+1:08:29 sure. Uh, so I'm on Twitter at Palino.
+1:08:32 Uh, I'm also on LinkedIn. Um, so you can
+1:08:35 just search for my name, Carina Palino.
+1:08:38 Uh, I have a website which I don't
+1:08:39 update ever, but it's powino.me.
+1:08:42 Um, and uh, then at freshflow.ai. Uh,
+1:08:46 that's our website of Freshflow. Uh, and
+1:08:49 if you want to email me, uh, my personal
+1:08:51 email is carminina palino.me. And if you
+1:08:54 want to email me for work, it's
+1:08:55 carfreshflow.ai.
+1:08:57 Okay, thank you very much for joining us
+1:09:00 today, for sharing your experience with
+1:09:02 us and also thanks everyone for
+1:09:03 watching, for being active, for asking
+1:09:05 all these questions and yeah,
+1:09:08 thank you so much Alexi. It was really
+1:09:10 nice.
+1:09:10 Yeah, it was really great. Thanks a lot.
+1:09:12 And um have

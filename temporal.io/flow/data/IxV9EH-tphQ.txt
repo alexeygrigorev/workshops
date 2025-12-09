@@ -1,0 +1,2158 @@
+Getting Started with Open Source
+
+0:02 um
+0:03 hi welcome everyone this event is
+0:05 brought to you by data talks
+0:07 club which is a community of people who
+0:09 love data
+0:11 we have two types of events we
+0:14 on tuesday we usually have more
+0:16 technical events where we talk about
+0:18 technical topics usually it's with a
+0:20 presentation with slides
+0:22 like a webinar we will not have many of
+0:25 those
+0:26 in the coming month so in february
+0:28 because we have a conference which i'll
+0:29 talk
+0:30 more about next in february we will not
+0:33 have many of those
+0:35 but we'll come back with them on march
+0:37 and we already have one plant
+0:40 for the second of march which is about
+0:43 building scalable end-to-end
+0:44 data learning pipelines in the cloud um
+0:47 that's a long title
+0:50 we also have a different kind of events
+0:53 which happen on friday
+0:56 usually on friday today we have this
+0:58 kind of event even though today is
+1:00 thursday where it's more like a
+1:02 conversation we talk about different
+1:04 things today the topic is open source
+1:05 tomorrow we'll talk about envelopes then
+1:08 uh
+1:08 on february 2nd which is again not
+1:10 friday it's
+1:12 tuesday we will talk about future stores
+1:14 and then again in
+1:16 february we will not have many
+1:19 uh we will have a conference that's why
+1:21 we have a break and usual
+1:23 webinars and we will come back in march
+1:26 with a topic of public speaking and then
+1:29 talking about conference we have a
+1:31 conference every
+1:33 friday every friday in february we'll
+1:35 have
+1:36 four tracks each day in february is a
+1:38 track
+1:40 first we will talk about different use
+1:42 cases of machine learning
+1:44 then we'll talk about products and
+1:46 processes
+1:47 [Laughter]
+1:49 then we'll talk about career in data and
+1:53 then in february we'll talk about
+1:55 machine learning in production
+1:57 so the link is here you can just go to
+2:00 our website
+2:00 datatalks.com and then find more about
+2:04 this
+2:05 for questions today who will use slider
+2:08 i will share this link now with you
+2:12 just right now
+2:18 okay so i'll share the link now
+2:21 just put it to chat
+2:29 so i'm getting a bit distracted so here
+2:34 okay so this is the link we can use for
+2:38 asking
+2:38 vincent any question today and
+2:42 um
+2:46 i mean if you gotta say the kid for just
+2:48 a brief moment that's fine
+2:50 by my account i'm just just saying it's
+2:51 fine
+2:56 so people listening i think there's a
+2:58 kid
+2:59 yes there is a kid so we will start
+3:02 shortly
+3:04 okay so i'm just getting my notes
+3:09 um yeah so where is to start now
+3:13 yes we are
+3:17 okay he likes to appear on podcasts
+3:21 i i i have a cat who will do similar
+3:23 things in a moment i think
+3:25 but anyway it's fine
+3:30 today we'll talk about uh open source
+3:32 and we have a special guest
+3:34 guest today vincent uh barmadam
+3:37 and vincent works as a research advocate
+3:41 at rasa
+3:42 and if you check his linkedin profile
+3:45 there are quite a few things there so he
+3:48 has been on the front page of reddit
+3:51 he is making a resource for people who
+3:53 want to learn coding
+3:54 calmcod.io he is also an organize
+3:58 an organizer he organized the pi data
+4:00 amsterdam conference and
+4:01 saturdays amsterdam i think it's in our
+4:03 conference right
+4:05 on top of that he is also a data
+4:08 evangelist
+4:09 and an open source image list he is a
+4:10 creator and maintainer of some open
+4:12 source packages so that's why we
+4:15 invited you today here to
+4:18 our chat and last but not least he has
+4:20 over 80 indoor
+4:21 endorsements for awesomeness on linkedin
+4:25 so welcome vincent thanks for coming to
+4:28 our event
+4:29 hi um so the thing with the uh
+4:31 endorsements for awesomeness uh
+4:33 at a previous company i kind of had this
+4:35 bet with a cto like we played a game who
+4:37 could get the most points for
+4:38 awesomeness on linkedin
+4:39 without asking for them um
+4:42 i'm cheating a little bit there but
+4:46 not necessarily that i'm trying to brag
+4:48 as much it's more that i actually have
+4:49 this bet with this person
+4:50 that is has been ongoing for years yeah
+4:53 but yeah
+4:54 and when i was reading your bio in
+4:56 linkedin i saw okay
+4:58 awesomeness let me check okay let me
+5:00 just uh
+5:01 of course that one sentence does have an
+5:05 influence on the score that's true
+5:08 now before we get into our main topic on
+5:11 open source uh
+5:12 let's uh talk a bit about your
+5:14 background can you tell us
+5:15 a bit about yourself and your journey so
+5:17 far um
+5:18 yeah it's so i i don't have a typical
+5:20 background i guess but
+5:22 uh when i was done with high school uh
+5:24 so first of all
+5:25 uh i was raised bilingually so i've uh i
+5:28 was born united states uh
+5:30 lived there for a little bit that i did
+5:31 most of my youth here in the netherlands
+5:33 but
+5:33 um i definitely traveled to the united
+5:35 states and that's where the accent comes
+5:37 from
+5:38 um but then when i was done with high
+5:39 school i wanted to study design uh that
+5:41 was
+5:42 something i was keenly interested in um
+5:44 but then i remember getting a bad grade
+5:47 because uh the feedback that i got was
+5:49 vincent you're very creative but you're
+5:51 not using our 12-step
+5:52 program on brainstorming i'm kind of
+5:54 like well i don't like where this is
+5:55 going
+5:56 um so then i learned about this field
+5:58 called econometrics
+6:00 there's like this applied math thing and
+6:01 they promised me that if i state that
+6:03 that i could
+6:04 predict stocks and i thought oh super
+6:06 awesome because i don't think you can
+6:07 actually do that but apparently you can
+6:08 so
+6:09 study that and then after you were done
+6:11 with the bachelors you find out that
+6:12 it's kind of bohogi like
+6:13 you can't predict stocks it's just this
+6:15 marketing term that they use
+6:17 so then i quickly decided to take my
+6:19 masters in operations research
+6:21 and around that time there was also this
+6:23 field called ai and machine learning was
+6:24 kind of becoming a bit more hypey
+6:27 and there was this free stanford course
+6:29 the peter norvik
+6:30 and the sebastian throne won i was the
+6:32 first student in that
+6:34 and then i kind of figured you know i
+6:35 like this programming more than i
+6:37 like being a consultant guy wearing a
+6:39 suit so
+6:40 i decided well i don't know if i'm going
+6:42 to do a full transition career switch
+6:44 but i figured i should at least try so
+6:46 after i did college i wanted to do
+6:48 backpacking through latin america and i
+6:50 kind of told myself you know what i'll
+6:51 bring a laptop with me
+6:53 and i'll do some consulting while
+6:55 backpacking and if i
+6:57 and if i prefer to do like the
+6:59 programming
+7:00 over going into clubs every single
+7:02 evening that's like a sign
+7:03 that this programming deaf thing is
+7:05 maybe something i need to take serious
+7:08 um and it turns out it's something i
+7:10 took seriously it's like
+7:11 at some point you have these people at
+7:13 the hostel they want to go drinking
+7:14 every night and at some point drinking
+7:16 became way more boring than
+7:18 uh you know doing code there's a little
+7:20 bit of passion i found there
+7:22 so when i came back to the netherlands i
+7:23 kind of i was like my main thing was i
+7:26 was teaching
+7:26 oculus at this business school and i
+7:29 thought you know it's good money
+7:31 uh but i need to do this data science
+7:32 thing and just so happened that
+7:35 a person i met at a meetup was starting
+7:37 a company doing hadoop stuff and they
+7:39 needed someone who actually understood
+7:40 the math behind machine learning
+7:42 so i got myself a gig there the ball got
+7:45 rolling
+7:45 um i wanted a pi data to happen in the
+7:48 netherlands so then i started doing a
+7:50 little bit of community stuff around it
+7:52 i'm no longer formally involved with pi
+7:53 data this took over
+7:55 mauricio and matthias are doing cool
+7:56 stuff um
+7:58 but i'm still around and um i the blog
+8:01 thing and i had lots of side projects
+8:03 and at some point uh you know that
+8:06 caught the attention from the people
+8:07 over at raza
+8:08 and they kind of said hey you know could
+8:10 you do your vincent stuff
+8:12 but do it on like our stack because we
+8:14 think you might be a person
+8:16 who can help us out there that's the
+8:18 path i guess so they reached out to you
+8:21 um it's the way i got hired there i'm
+8:25 it's a little bit interesting because it
+8:27 took me a while
+8:29 to realize that they actually wanted to
+8:31 hire me like
+8:32 for for a very long time i was actually
+8:35 of the impression
+8:35 they just wanted to do something like a
+8:37 collaborative project or something like
+8:38 that was
+8:39 that was my impression um uh so at some
+8:42 point
+8:42 they actually said none of it's like
+8:44 just just to be super clear like uh
+8:46 we're talking about a career here not
+8:48 like a side project and
+8:49 it took me like a month before i
+8:51 actually realized that um
+8:53 but it's it's been a ride like i've been
+8:55 there for like almost a year now um
+8:57 i really dig the culture like they it's
+9:00 a really lovely diverse mix of people
+9:03 that's what's making it fun
+9:04 um like it's not just the machine
+9:06 learning part but i'm
+9:08 necessarily in charge like we're all in
+9:10 charge but one of the things i'm trying
+9:11 to pick up is how to do more in
+9:13 non-english languages um which is really
+9:16 cool
+9:16 because you know there's plenty of deep
+9:18 learning stuff out there but
+9:20 let's say you train word embeddings that
+9:22 go from left to right because english
+9:23 well then that trick's not going to work
+9:25 for arabic because that's right to left
+9:27 and you know i get to actually reach out
+9:29 to like communities and say look here's
+9:30 some tools
+9:31 please tell me if i need to do more um
+9:34 so that led to a couple of open source
+9:35 projects i got to
+9:36 do which led to some articles about open
+9:39 source projects that i got to do
+9:41 um and the main thing that i kind of try
+9:44 to do there is
+9:45 we have super clever engineers and we
+9:47 have super clever researchers doing
+9:49 a lot of stuff but it's one thing to
+9:51 have a tool that has cool features and
+9:53 that's another thing to have people
+9:55 understand how the tool works and
+9:56 there's a lot of nitty-gritty stuff in
+9:58 there
+9:59 and i'm the kind of person who likes
+10:00 teaching so
+10:02 that's what i try to do there is it your
+10:06 job to
+10:06 like i said so you work as a research
+10:09 advocate
+10:10 right yes that that's the title that we
+10:13 came up with
+10:14 um so what do you do there what are your
+10:16 responsibilities
+10:18 so it's so it's um the only way for me
+10:21 to properly explain it is to make this a
+10:23 joke
+10:23 um because i don't know when you started
+10:26 this because you're also familiar with
+10:27 the data science field i'm assuming
+10:29 yes it's not like you started yesterday
+10:30 i think um
+10:32 but i think like i started like six
+10:33 years ago and back then
+10:35 the whole point of you being a data
+10:36 scientist if we're honest
+10:38 was to figure out what it meant to be a
+10:40 data scientist like it was
+10:41 a little bit of programming it's a
+10:43 little bit of this it's a little bit of
+10:44 that
+10:45 um something like that i think it's
+10:46 still like that but but people have more
+10:48 feeling for what it exactly is
+10:50 but if you're asking me like what do i
+10:51 do as a research advocate it's this
+10:53 i'm trying to figure out what it means
+10:55 but there's some but there's something
+10:57 about that that's really liberating so
+10:59 um the thing is
+11:00 um especially with non-english right i
+11:03 really like the attitude that this job
+11:05 allows me i really do my best to make
+11:08 sure that a lot of these non-english
+11:09 tools are well supported in raza
+11:11 but i don't want to give the impression
+11:13 that i know what i'm doing someone who's
+11:15 fluent in arabic
+11:16 knows way more about arabic than i ever
+11:18 will
+11:19 so a lot of what i'm trying to do is
+11:21 just listen to people like hey
+11:24 you're trying to make this digital
+11:25 assistant work with open source tools
+11:27 like what are your problems
+11:28 and maybe i can help you benchmark some
+11:30 stuff or i can proxy stuff to the
+11:31 research team
+11:32 or the research team has like a really
+11:34 cool tool and they would like me to
+11:36 make sure it's well understood um like
+11:39 that's
+11:39 that's my focus area and sometimes that
+11:42 means that the best thing i can do is
+11:43 make a youtube video
+11:45 or a blog post and sometimes some open
+11:46 source tools
+11:48 but that's that's the the ground i'm
+11:50 trying to uh to cover
+11:52 and um it's a little bit of
+11:55 improvisation to be really honest um but
+11:58 uh but it's good improvisation because
+11:59 i'm
+12:00 all the time and i don't get to and i
+12:02 don't have to pretend like i know
+12:03 everything either right like sometimes
+12:05 when you're a consultant you're supposed
+12:06 to
+12:07 be the authority figure all the time but
+12:09 here i can just say look
+12:11 i would love to make sure that if you
+12:13 want to make a virtual assistant that we
+12:14 can do in every language
+12:16 community tell me what i need to do and
+12:18 i'll gladly help
+12:19 that's that's the main focus i have i
+12:22 guess
+12:23 yes sir basically you're basically
+12:25 somebody between the
+12:26 the technical team and the user right
+12:28 and you're trying to
+12:29 yeah it's like like a developer advocate
+12:33 with a little bit more focus towards
+12:34 research
+12:35 so that means that i have written i've
+12:38 actually written a research paper by
+12:40 accident this year
+12:40 turns out i made an open source package
+12:42 that's super useful to some researchers
+12:44 uh but that's like like i make a lot of
+12:46 byproducts i guess that's also another
+12:48 way of saying it
+12:49 like the company has a big mission and
+12:51 um
+12:52 my role is definitely to do them uh but
+12:54 one of the core things that i
+12:56 you know do is i have a lot of buy
+12:57 products that are useful to a lot of
+12:59 people
+13:00 so like some machine learning debugging
+13:01 tools that work on top of razda
+13:03 some tools to help you explore what's in
+13:04 word embeddings also to investigate the
+13:06 bias that's in them
+13:08 these are all things that are not
+13:09 necessarily super at the core of what we
+13:11 do
+13:12 but they tend to help our community
+13:13 which is great and i know
+13:16 a bit about the company about raza
+13:19 basically developing a chatbot right uh
+13:22 it's a little bit different
+13:24 yeah so the thing is it's um
+13:27 elasticsearch helps you do search but
+13:30 elasticsearch the company is not
+13:32 implementing that
+13:34 for everyone directly i mean they have
+13:35 support contracts and stuff but at the
+13:37 same time like so
+13:38 our side yes we help companies make
+13:40 virtual assistants but we are
+13:43 building the infrastructure so like hey
+13:45 the standard pipeline for a virtual
+13:47 assistant
+13:47 uh and the and then if you need a very
+13:50 specific component you can make that but
+13:51 we're trying to do the infrastructure
+13:53 layer
+13:53 that's the uh um yeah that's the main
+13:57 thing we're trying to do we're trying to
+13:58 make sure that that is
+13:59 source and pragmatic and that you can
+14:01 work with that
+14:03 okay yeah so like you want to host it on
+14:06 your own servers for example like for a
+14:07 lot of medicine applications healthcare
+14:09 you care about that so we we are trying
+14:11 to make sure that if you're interested
+14:12 in doing this in open source way
+14:13 we have the tools for you that it's just
+14:15 a pip install okay yeah that makes sense
+14:17 so speaking about open source so what is
+14:20 open source what we can call open source
+14:22 so the thing is i kind of have to admit
+14:25 i'm not uh
+14:26 the cat wants to leave the room
+14:30 sorry about that um so the thing is uh i
+14:33 don't consider myself
+14:34 super duper knowledgeable about the
+14:36 details of this because there are
+14:37 different licenses for example
+14:39 and i also know that there's a couple of
+14:40 people who um
+14:42 you know take these licenses like really
+14:44 really serious um
+14:46 the way i've always kind of approached
+14:47 it is uh
+14:49 hey people made these bag of tools and
+14:51 this bag of tricks that's useful for me
+14:53 super cool uh and sometimes i have a
+14:56 bunch of tricks that i feel that are
+14:57 missing
+14:58 and i'm you know people did a lot of
+15:00 work for me so
+15:01 i have this career that's possible but i
+15:03 think it's fair that if i've got some
+15:04 pretty cool tools that i can just
+15:06 put that out there um the best example
+15:09 of this
+15:09 i guess is like psychic lego that's the
+15:11 thing that i started with uh
+15:12 matais who's doing padded amsterdam by
+15:14 the way um
+15:16 and second learn is amazing but there
+15:18 are like some of these tricks that you
+15:19 know i tend to use like
+15:21 a lot of the time that i use i could
+15:22 learn but they're a bit experimental
+15:24 they won't apply for everyone so i
+15:26 understand that psychic learn will never
+15:27 host
+15:28 those tools but nothing is stopping me
+15:31 from making these custom lego bricks for
+15:34 psychic learn and then just hosting them
+15:35 myself
+15:37 so that's how i at least approach a lot
+15:39 of this open source stuff like hey
+15:41 i kind of have an itch i kind of want to
+15:42 scratch it and it's just more pragmatic
+15:44 to open source it
+15:46 because then other people can find edge
+15:48 cases we can make the code better
+15:50 together
+15:51 which wouldn't happen if i was just
+15:52 maintaining my own library
+15:54 so basically like everything you put on
+15:56 github automatically becomes open source
+15:58 right
+15:58 at least if it's not private yeah i mean
+16:02 there are so i will say that i do make
+16:03 this this um
+16:05 i try to make this one distinction
+16:06 though that i can have something on
+16:08 github and that's fine
+16:09 but i do like i have this one open
+16:12 source project called brent which is
+16:13 i think's really cool idea but i do
+16:15 regret slightly that i put it up on pi
+16:17 pi
+16:18 because it's just not ready if you think
+16:20 about it
+16:22 i know that there's going to be too many
+16:23 edge cases for it to fail and
+16:25 i do think at some point before you put
+16:27 it on pi pi it needs to be mature enough
+16:29 so brent like i'd love to work on that
+16:32 someday when i've got time again but i
+16:33 already have all these other open source
+16:34 projects
+16:35 so i do think if you host them github
+16:37 that's always fine but there is this
+16:38 maturity step
+16:39 i think you want to consider before you
+16:41 put it up on like a public package index
+16:44 so to say
+16:45 okay what are these so you mentioned
+16:48 psychic lego
+16:49 and then the this other library right
+16:52 brad
+16:53 uh there's a bunch which one did you say
+16:55 yeah psychic lego then uh the the
+16:58 one you just mentioned so maybe yeah you
+17:00 can tell us a bit more about these tools
+17:02 so what
+17:03 what do they do and how did you come
+17:05 come up with this
+17:06 ideas how did you did it occur to you to
+17:08 start actually developing them and
+17:11 yeah so open source so usually
+17:14 um like either it's a curiosity like hey
+17:18 i want to explore this
+17:19 idea a bit further and see where it goes
+17:21 um
+17:22 and something that'll be the category of
+17:25 i think i found a nice user a better
+17:26 user interface for a problem
+17:29 and i think a nice example for that is
+17:30 this library called evil
+17:32 it's an evolutionary uh algorithm
+17:34 library okay um
+17:36 i thought the name was was already quite
+17:38 nice because it's an anagram for love
+17:40 love evil right um but
+17:43 what's in seriousness like uh i made
+17:45 that together with go here and
+17:47 uh from here what was really cool about
+17:49 that is we actually said okay what do
+17:50 most people want to do with a genic
+17:52 algorithm
+17:52 and how can we make it much simpler
+17:54 because we notice that generic
+17:55 algorithms are usually like a for loop
+17:56 in a for loop in a for loop
+17:58 and it's easy to write but it's hard to
+18:00 maintain so
+18:01 we said oh maybe if we have like a
+18:03 population object and an evolution
+18:05 object and we
+18:06 we kind of come up with a functional api
+18:07 for that that just might be a more
+18:09 convenient way to think about
+18:10 evolutionary algorithms
+18:12 um i haven't touched the library in
+18:14 years i think
+18:15 but we got like a couple hundred
+18:17 downloads a week um
+18:19 and people blog about it just because
+18:21 the api is much simpler and
+18:23 and i like to think that uh another
+18:24 library clumper which is like
+18:26 pandas but for json objects that can be
+18:28 nested and it also
+18:30 has that feel of hey i want to have a
+18:32 better api and i've got this thing
+18:34 called memo which is
+18:35 a set of decorators that just log the
+18:38 output of functions
+18:39 so if you're doing grid search stuff you
+18:40 just want everything in a nice little
+18:42 json file
+18:42 memo just makes that easy like the api
+18:45 like that's
+18:46 that's like one branch of packages that
+18:48 i've made
+18:49 that just tries to make that easier and
+18:51 i guess the other kind of package that i
+18:53 make is
+18:53 just more tools that integrate with
+18:55 existing ecosystems
+18:57 so for scikit-learn for example i've got
+19:00 psychic lego which is like my
+19:01 building brick thing i've got human
+19:04 learn which is
+19:06 making it easier to have rule-based
+19:08 systems inside of
+19:09 learn so you can just have your domain
+19:11 person say
+19:12 oh if this then that and that's useful
+19:16 that's yeah you know it's just uh making
+19:18 if statements
+19:19 grit searchable that's pretty useful
+19:22 and i've also got this package called
+19:23 what lies now what lies
+19:25 is trying to figure out what lies in
+19:28 word embeddings
+19:30 double meaning um but the the point
+19:33 visualization tool right
+19:34 well yeah but also to make all these
+19:36 word embeddings
+19:38 available as psychic learn so i'm able
+19:40 to load in all these word embeddings and
+19:42 visualize them
+19:42 but you can also just chug it into a
+19:44 cycle and pipeline for your first
+19:45 benchmarks
+19:47 and in the end like that scikit-learn
+19:49 feature is the feature that i tend to
+19:50 use quite often
+19:52 like hey this model is like 10 times as
+19:54 slow but is it also 10 times as accurate
+19:56 can i just quickly benchmark that
+19:58 and it helps if you can just click it
+20:00 into psychic learn for this
+20:01 so one of the main features of what lies
+20:03 i would argue just
+20:05 it's pipeline compatible so you can
+20:07 quickly do
+20:08 uh comparisons okay well you mentioned
+20:11 quite a few i don't know i
+20:13 i was trying to count but then i at some
+20:15 point it was just too
+20:16 difficult you mentioned like 10 of them
+20:18 or
+20:24 on my blog here but so i mean i okay i
+20:26 also do lots of stuff for raza but
+20:28 that's my employer so that's cheating
+20:30 um no i'd like i have to be honest like
+20:32 i do write my packages in such a way
+20:34 that i don't expect them to
+20:36 cause lots of maintenance um like i've
+20:39 got one thing called schedule lord but
+20:40 it's like
+20:42 a thing that i've made that makes it
+20:43 easier for me to maintain my crown jobs
+20:45 on my raspberry pi's um
+20:48 like yes i made documentation but in
+20:50 reality it has like five users
+20:52 and that's fine um i also have this
+20:55 other tool called make test docs but
+20:56 that's a that's a package has two
+20:58 functions
+20:59 um and it just makes it easier for you
+21:01 to write
+21:02 unit tests uh for like your markdown
+21:05 files
+21:06 so like if you have uh python example
+21:08 your readme file or in your make docs
+21:09 template
+21:10 um you can just add one or two functions
+21:13 and then you can also have your
+21:14 documentation
+21:14 be your unit test okay so
+21:18 it's easy to maintain two functions like
+21:19 that's that's that's not too bad
+21:21 but what is interesting like when you
+21:24 were saying naming all these things
+21:26 like what caught my attention was the
+21:27 names of these packages i see
+21:29 i feel they are all very creative so how
+21:32 do you pick up the names for the for
+21:33 for your projects it's funny you say
+21:35 that so um
+21:37 what i usually do like my approach is
+21:40 pretty
+21:41 pretty silly so a while ago together
+21:43 with a buddy of mine i made a website
+21:45 called makenames.io
+21:48 it's a really silly idea and the idea
+21:50 behind the website is that we just use
+21:52 pokemon names
+21:55 as like a training dataset to generate
+21:56 new names i think we also
+21:58 have the ikea catalog as a corpus that
+22:01 we use for this
+22:03 you can you can smell from a distance
+22:04 here like this is not meant to be a
+22:05 serious project but we host
+22:07 but we you know the whole point of the
+22:09 project is come up with a better name
+22:11 but we call it make names i o because
+22:12 it's really obvious what it does so what
+22:14 i usually try and do is i just spend
+22:16 like 10 minutes generating names
+22:18 and then part of me gets frustrated
+22:20 because all the names are kind of silly
+22:21 and then usually the frustration you
+22:23 know accumulates into a sentence that
+22:25 just says i just want my package to make
+22:27 it clear i'm trying to do
+22:28 x oh x that's a pretty good name so
+22:32 so for psychic lego it was hey i just
+22:34 want to have like lego bricks that you
+22:35 could just click at the cycle oh so i
+22:36 could learn so i could lego okay that
+22:38 works
+22:39 oh i want to have like oh i kind of want
+22:41 to have humans put rules into psychic
+22:43 learn
+22:43 human rule i want to know what lies and
+22:45 word embeddings okay what lies i just
+22:47 want my json to clump together okay
+22:49 clumper
+22:50 i want something that helps me memorize
+22:51 stuff okay memo um
+22:54 yeah that that makes sense for me
+22:56 usually this is the most
+22:57 difficult part of creating a project
+22:59 like how do i name it so it gets
+23:01 attention um and then i come up with
+23:04 like the most boring names possible
+23:07 so a thing that you can do here and i'm
+23:10 not suggesting this will make you more
+23:11 productive
+23:12 but um but i i really have some great
+23:15 memories of this uh i
+23:17 in a past career i've done some
+23:18 consultancy work for the dutch flower
+23:20 auction
+23:21 and and eventually the team that i was
+23:23 in was just amazing like
+23:24 really cool people we had a great time
+23:26 like every day there was like
+23:27 someone with a good joke and we laughed
+23:28 about it but the reason why we had that
+23:30 vibe also is the culture that we created
+23:33 because you know every time we had a
+23:34 service we had to come up with a name
+23:36 for the service
+23:38 so we actually ended up trying to
+23:39 celebrate that every time there was a
+23:40 new service we got to have like the
+23:42 conversation again
+23:44 just give you an impression of the names
+23:45 that we came up with so there was this
+23:47 sql database service like it was a back
+23:49 end
+23:50 and we had to come up with a name so we
+23:52 said oh let's call it uh
+23:54 steven sequal you know steven sequel
+23:56 that's great
+23:57 and then and then we had to upgrade it
+24:00 so then
+24:00 we had a meeting we literally had a
+24:02 meeting about this like a competition of
+24:04 names so version two of this thing was
+24:06 called steven c call the sequel
+24:09 you know and then we had this sort of
+24:11 document store which we called
+24:13 jason bourne
+24:16 like this is a really silly thing like i
+24:17 don't think you should run your company
+24:19 based off of like this weird cultural
+24:21 thing but the thing with this was
+24:23 the team actually got excited for every
+24:25 service we got to add
+24:28 because for like a full week while
+24:29 making the service there'd be a
+24:30 competition internally for who could
+24:32 come up with the funniest name
+24:34 and the and the thing is like because
+24:36 you come up with this funny name you're
+24:38 actually thinking like oh what should
+24:39 the servers actually do
+24:40 oh it's like a butler okay famous
+24:42 butlers
+24:44 um like it turned it turned out to be
+24:46 really enjoyable and
+24:48 surprisingly communication became super
+24:50 clear because we always came up with
+24:51 like a really clear name of what the
+24:53 server should be doing
+24:54 and make sense like you say like they do
+24:58 make sense like i can
+24:59 psych it like okay yeah so you have
+25:01 building blocks uh
+25:02 of uh yeah i actually wanted to ask you
+25:05 what does it do
+25:06 i get an impression from the name that
+25:08 you have like some building blocks and
+25:10 you can
+25:11 like put together some sort of a
+25:13 pipeline or
+25:14 whatever it's all pipe it's psyched
+25:17 learn compatible pipeline components
+25:19 uh some of them are really fancy some of
+25:20 them are not uh i mean so a simple
+25:22 example is we have um
+25:25 so let's say you train a machine
+25:26 learning model and then
+25:28 during prediction there's an outlier so
+25:30 like usually values are between zero and
+25:32 one
+25:32 suddenly during inference there's like a
+25:34 million so your model is going to do
+25:36 something bad there
+25:37 um so we have one feature that just says
+25:39 hey take the max value and let's clip it
+25:41 so if we ever get a million it's going
+25:42 to get truncated down to one again
+25:45 you know that's a pipeline component
+25:46 it's not useful for everyone but might
+25:48 be useful to some people someday
+25:50 okay so instead of reinventing
+25:52 reinventing the wheel you can just get
+25:54 this thing plugged into existing
+25:55 pipeline and
+25:57 use it yeah and i mean there are some we
+25:59 have some meta components that are
+26:01 pretty interesting like if you've never
+26:02 seen meta components before definitely
+26:03 check that out
+26:04 so one thing that you can do you know
+26:06 how a classifier says like if the
+26:07 probability is above 0.5 it's one and
+26:09 it's one class and otherwise it's zero
+26:12 it won't be nice if you can grit search
+26:13 on where that threshold value is right
+26:16 so it would be nice if you could say oh
+26:17 i want more precision so then we're
+26:18 going to move that to 0.8 instead of 0.5
+26:21 so we also have tools where you can grid
+26:22 search this and investigate
+26:24 okay makes sense yeah we have a question
+26:26 about
+26:28 like getting started at with open source
+26:31 so the question is i've been coding for
+26:33 a while
+26:34 and going to study computer science at
+26:36 university next level if you
+26:38 were this person how would you begin
+26:40 contributing to open source
+26:43 uh it depends on what you're trying to
+26:44 achieve like um
+26:46 one thing that typically should be said
+26:49 is like if you want to have an open
+26:50 source project that other people use and
+26:52 you're going to come up with from
+26:53 scratch
+26:54 you could probably the first thing you
+26:55 should wonder is well is it going to be
+26:58 easier for me to maintain a tool and
+26:59 convince other people that they should
+27:00 use it
+27:01 or is it going to be easier for me to
+27:04 sort of go to an
+27:05 existing project and talking to the
+27:07 maintainers there like hey maybe i can
+27:08 make a contribution there
+27:10 oh that's also fine um another thing
+27:12 that i would argue here is
+27:14 um like if i'm a maintainer of a project
+27:18 then i tend to understand the project
+27:19 really well what i tend to not
+27:22 understand
+27:23 is what it's like not to understand the
+27:24 project so it might be that
+27:26 yeah there's an error message somewhere
+27:28 but that's really intuitive only if you
+27:30 understand how the entire thing works
+27:32 um so if you're trying to
+27:35 commit to open source and you just
+27:37 notice that you're learning a tool and
+27:38 you're
+27:39 frustrated because there's an unclear
+27:41 error message
+27:42 that's an excellent thing to keep in the
+27:44 back of your mind because what you can
+27:45 do is you can then open up a github
+27:47 issue and say look i hit my head 10
+27:48 times on this thing
+27:50 can i please change the error message
+27:51 here um
+27:54 like if you want to start contributing
+27:57 to open source the first
+27:58 first thing you can do is you know just
+28:00 start using two
+28:01 you have a problem and then you create
+28:04 an issue
+28:04 this is already a contribution to open
+28:06 source right yeah
+28:08 like at rasa for example we actually
+28:09 have this uh contributor program like we
+28:12 like like people put genuine effort into
+28:14 maybe talking about razada so we like to
+28:16 give rewards for that
+28:17 um so we have like an internal slack
+28:19 forum where you can ask questions to
+28:20 each other
+28:21 and if you want to become a part of that
+28:22 uh you can if you get like a pr merge
+28:25 then you're in
+28:26 but also if you give like a good talk or
+28:27 like a couple of good blog posts and
+28:29 we also consider you contributors so to
+28:30 say
+28:32 um but another thing that might help
+28:35 like especially if you're making your
+28:36 first actual commit though
+28:38 um maybe don't worry too much about
+28:40 making your first commit maybe also
+28:42 think about like hey do i understand how
+28:43 setup that pi works
+28:45 and do i understand tools like uh flake
+28:47 and black and pie test and
+28:50 pre-commit hooks like usually i've
+28:52 noticed
+28:53 you can understanding python and
+28:55 scripting a little bit is one thing
+28:56 but actually understanding all the stuff
+28:58 around it like also how does git work
+29:00 right
+29:00 um i realize that it doesn't make it
+29:02 less intimidating to make a pr but i
+29:04 do want to acknowledge like investing in
+29:06 that is still very sensible
+29:09 so basically he invest into
+29:12 understanding how python works like all
+29:14 these
+29:14 uh you know simple tools that we have in
+29:16 python
+29:17 plus learn a bit of git git and github
+29:20 right
+29:21 like how they actually commit merge push
+29:25 create a merge request things like that
+29:27 right yeah and what is continuous
+29:29 integration good about actions i mean
+29:31 i realized that by naming all of these
+29:32 tools i'm not necessarily making it
+29:34 easier for people to get started
+29:35 um but but and also like a
+29:39 disclaimer it's my website calm code has
+29:41 tutorials for all of these things
+29:43 because i've noticed that a lot of
+29:44 people you know teaching yourself all
+29:46 these tools isn't necessarily
+29:47 arbitrarily easy
+29:50 but but it but it does make sense to
+29:53 invest a little bit more in programming
+29:54 maturity
+29:55 such that you're comfortable outside of
+29:57 it you put a notebook as well like i
+29:58 think that might be a thing that a lot
+30:00 that stops a lot of people like if
+30:01 you're used to just staying inside of a
+30:03 jupiter notebook
+30:04 uh you're missing out a little bit
+30:07 yeah let's say i use psychic learn or
+30:10 any other library
+30:11 doesn't matter and then i see like okay
+30:13 i want to contribute to this library but
+30:16 i don't
+30:16 know how exactly let's say i already
+30:18 know a bit of
+30:19 git i already know a bit of python so
+30:22 what are
+30:23 my next steps um
+30:25 [Music]
+30:27 i mean so the path i walked is a little
+30:30 bit different
+30:32 because i organized all these events so
+30:34 most of the packages that i contribute
+30:36 to
+30:36 are maintained by a person i've actually
+30:38 met in real life right and that makes it
+30:41 easy
+30:42 um because they're they're kind of like
+30:44 oh it's the guy from amsterdam
+30:45 and oh he has an idea okay i'll listen
+30:47 to it um the unfortunate truth is also
+30:51 like if you have a big project right
+30:52 like that's you like a lot of people
+30:54 want to contribute to the big projects
+30:55 um i mean pandas has like thousands
+30:59 of issues if not contributors right so
+31:01 it's also like just maintaining that
+31:03 is tricky um so
+31:06 maybe it will be more interesting to
+31:08 just go for a smaller library
+31:10 that you think like hey that's a pretty
+31:11 good idea and just reach out on the
+31:13 github issues to say hey i'm thinking
+31:15 about
+31:16 maybe adding this feature is something
+31:18 you're interested in
+31:19 um like don't start working on the
+31:21 feature if the maintainer hasn't shown
+31:23 interest in it because otherwise you
+31:24 might be wasting time right
+31:26 um but go for smaller projects uh
+31:29 a project i contributed to a while ago
+31:31 um
+31:32 that's uh the the checklist one
+31:35 uh i think was called dino a dion that's
+31:38 the one
+31:39 so dion is a checklist for like hey
+31:41 you're starting a machine learning
+31:42 project
+31:43 here's all the unintended side effects
+31:44 that might happen just check them off
+31:46 before you actually deploy it
+31:48 um and they're interested in just you
+31:50 know stories of things that failed in
+31:51 the past
+31:53 they accept anecdotes for the
+31:55 documentation page and i had a few
+31:57 um that's some awesome projects yep no i
+32:00 can
+32:00 uh like dion is uh as far i'm almost
+32:04 at the point where i think that uh it's
+32:06 one of the most impactful projects when
+32:07 it comes to preventing a whole lot of
+32:09 bad things with machine learning
+32:10 dion is amazing if you haven't checked
+32:12 it out check it yeah we will share the
+32:14 links after
+32:15 after that okay
+32:18 so your suggestion basically is uh okay
+32:20 there are big projects like pandas like
+32:22 circuit learn maybe they're just too big
+32:24 and i know
+32:25 for example in psychic learn they also
+32:26 have like a special policy if you want
+32:28 to submit a new algorithm
+32:30 they have to stand like the proof of
+32:33 time or something like that
+32:35 the test time yes exactly you cannot
+32:37 just submit a random
+32:38 algorithm let's say that you created
+32:41 yesterday and you think that it's great
+32:43 so
+32:43 like there is a certain process but
+32:45 maybe for smaller projects
+32:48 like it's just easier to get started
+32:50 because the code base
+32:51 is smaller right there are fewer issues
+32:54 and then it's just
+32:55 maybe easier to just the main thing that
+32:58 i suppose
+32:59 it's also a psychological thing i guess
+33:01 so let's say that someone is interested
+33:02 in contributing a psychic lego
+33:05 like the main concern there's two
+33:06 concerns that i don't have as a
+33:07 maintainer one of them is
+33:08 is this actually useful in a more
+33:10 general crowd setting or is just this
+33:12 useful for this one person
+33:14 and second um if something breaks is
+33:17 that person gonna be around or do i have
+33:19 to maintain this
+33:20 right so it the the thing you have to do
+33:23 in the issue list is also
+33:25 maybe check if you're interested in
+33:26 helping out maintaining it and also to
+33:28 sort of
+33:29 explain that to the maintainer um
+33:31 because no one likes to inherit legacy
+33:33 right
+33:33 so that's also a part of it i suppose
+33:35 but it's easier to have a conversation
+33:38 in a more smaller setting
+33:41 that's definitely true okay and we have
+33:45 another question like how do you time
+33:47 how do you find time and energy to work
+33:49 on so many side projects because you
+33:51 mentioned
+33:52 quite a few i don't know 10 20 oh quite
+33:55 a few right yeah in addition to
+33:56 the stuff you're doing at work like at
+33:58 work you're also contributing to open
+34:00 source and then you
+34:01 uh come from work to home which i guess
+34:04 happens in the same room these days and
+34:05 then this is
+34:06 yes yes then you start working on your
+34:08 personal project so
+34:10 do you have any uh productivity tips uh
+34:13 um so one one thing i do want to
+34:16 acknowledge is that i'm certainly like
+34:17 a lot of my open source projects are
+34:19 done during my employer's time like i
+34:21 do i should acknowledge that right first
+34:23 and foremost and the reason why that
+34:25 matters is
+34:26 um even if i'm not working on a project
+34:28 that's personal
+34:29 i'm still exposed to maintaining a
+34:31 product and
+34:32 learning on the job a little bit which i
+34:33 can also apply in my open source stuff
+34:36 no it's also the other way around like i
+34:37 think my employer really doesn't mind
+34:39 that i have these open source projects
+34:40 but it's it's worth to mention like
+34:41 it's easier for me i suppose i mean the
+34:44 other thing is like at some point i
+34:46 became older than 30
+34:48 and i also just looked at what i do
+34:50 during the day and and
+34:51 you know you look at your life and you
+34:52 kind of go jesus finally you're spending
+34:54 a lot of time playing video games are
+34:55 they really fun
+34:56 is that is it really it's like is that
+34:58 like quality of life and then you just
+35:00 at least i realized that they're not
+35:02 that fun anymore
+35:04 like the stuff that i love doing these
+35:05 days is hanging out with friends that's
+35:07 amazing do a little bit of exercise
+35:09 being
+35:09 you know at my house with my wife and
+35:11 cats but the video games just
+35:13 yeah they're not that fun anymore so
+35:15 instead what i try to do is i try to
+35:17 you know look at consider some open
+35:19 source work and just think okay that's
+35:20 that's good to maybe
+35:21 think about and another thing that i
+35:24 i find that really helps me is i have
+35:27 one of these
+35:28 like e-ink drawing tablets um
+35:31 and the most productive thing you can do
+35:33 is not program
+35:35 like if you're working on a technical
+35:36 problem you need to have the solution in
+35:37 your head before you even type a
+35:39 character right
+35:40 so what i really try to do is i try to
+35:42 have the implementation
+35:44 at least conceptually down before i
+35:46 start writing
+35:47 it doesn't work for every feature
+35:48 sometimes you need to do a bit in the
+35:50 notebook to explore
+35:51 but i have found that a lot of people
+35:54 just start writing code without
+35:56 thinking up front what they're supposed
+35:57 to do and a lot of time it's wasted
+36:00 solving the
+36:00 problem so if you can prevent that i
+36:03 mean
+36:03 it's pretty easy to be productive i
+36:05 think yeah
+36:07 like speaking of that i remember your
+36:08 pin tweet from your profile
+36:10 like uh the problem you well how does it
+36:13 go
+36:13 like that um i'll i need to check
+36:16 twitter to make sure i'm not
+36:16 mispronouncing but
+36:18 uh i got um let's
+36:21 uh yeah so there's there's a picture but
+36:23 the my
+36:24 my quote on twitter is uh vincent
+36:26 prefers common sense over hype let's not
+36:28 solve the wrong problem
+36:30 yeah exactly yeah and i really stand by
+36:33 that like i think especially in data
+36:35 science it's a genuine risk
+36:37 um because you have like the the actual
+36:40 problem that your business is trying to
+36:41 solve
+36:42 which then gets translated in this
+36:43 analytical problem which
+36:45 has a number that you can optimize and
+36:47 then people do a lot of great search to
+36:48 get like a one percent reduction in that
+36:50 cost function
+36:51 without worrying about the 10 error in
+36:53 translation that happened in the first
+36:54 place
+36:55 um like that i if there's ever been a
+36:58 problem in data science it's this
+37:00 yeah that's that's a huge problem so
+37:03 coming back to open source um like how
+37:05 in your opinion
+37:06 does a good open source project look
+37:08 like what are
+37:09 the attributes of a good project like
+37:12 maybe do you have some sort of checklist
+37:13 uh
+37:14 for for that yeah i have some things i
+37:17 mean um
+37:18 so there's a um i think i saw um there
+37:21 was a blog post where someone was
+37:23 analyzing the spacey project and sort of
+37:25 how they work and they
+37:27 were using a term i think they call it
+37:29 uh stewardship
+37:30 uh if that makes sense yes being a
+37:34 steward for a project
+37:35 right yeah something like that but also
+37:37 like uh
+37:38 suppose that your algorithm works twice
+37:40 as fast but it's not in the docs
+37:42 no one's going to care right the whole
+37:45 point of a project is to help people
+37:46 solve a problem
+37:48 and if your docs aren't up to scratch
+37:50 for that if
+37:51 your github is all over the place if
+37:53 there's you know it's not just about
+37:55 your code there's stuff around that that
+37:56 you got to take care of
+37:58 and i like seeing people take an effort
+38:00 in that like it is a little bit weird to
+38:02 go to a documentation
+38:04 page it has like all the api things
+38:05 described but no getting started guide
+38:08 like that really grinds my gears like if
+38:09 there's no getting started guide
+38:11 how am i supposed to get started and
+38:13 there are like projects we'll just do
+38:15 functions so they don't
+38:15 need one but like come on like you need
+38:18 a place to get started
+38:19 and i i like seeing projects where
+38:21 they've thought about this where
+38:22 how do i actually get a person from
+38:24 knowing nothing to
+38:26 solve a problem like that that path
+38:28 needs to be defined in a way
+38:30 um so i my rule for like bigger projects
+38:33 uh let's take clumper as an example um
+38:36 so i really like having like the first
+38:38 page that you land on
+38:39 i'd just be like an overview of stuff
+38:41 that you can expect it's like the home
+38:42 page
+38:43 then i have me or yeah read me like the
+38:46 installation some of the
+38:47 like what problem is what problem am i
+38:49 trying to solve maybe a logo
+38:51 uh maybe also like a contribution thing
+38:53 but then i have
+38:54 uh so that's one of the four pages then
+38:56 i have one page called
+38:58 guides which is just getting started
+39:00 doing the advanced thing
+39:02 like i try to have some markdown files
+39:03 for that
+39:05 then i try to have an api where just
+39:08 every
+39:09 function is described clearly preferably
+39:11 with like a picture in every function
+39:13 just to give like an overview that's
+39:15 also why i'm really proud of the clumper
+39:17 docs because every method has a
+39:18 picture showing what's happening and
+39:20 then i if if possible i try to have like
+39:23 an
+39:23 examples list as well where you can see
+39:26 the package being used for like a
+39:27 particular problem
+39:29 so if you go to the lies documentation
+39:31 page um
+39:33 there's one page on like how can you use
+39:35 this tool to do research
+39:37 and bias in word embeddings which is a
+39:39 problem and there's another one where i
+39:41 show like hey
+39:42 let's say you're working on arabic and
+39:43 you're looking for embeddings here's a
+39:45 benchmarking guide
+39:47 i like to think that those examples give
+39:49 like a little bit of extra context to
+39:50 make it easier for people to repeat what
+39:52 you're doing
+39:53 um but like that that works well for my
+39:56 projects and that works well for me like
+39:58 if i documentation is not done unless it
+39:59 has an api and examples
+40:01 um so packages that have that have more
+40:04 complex
+40:04 um parts to them uh this is what i try
+40:07 to do
+40:08 so basically for readme that states
+40:12 clearly what the project
+40:13 can do for you right and then having a
+40:15 bunch of tutorials like getting start
+40:17 guide
+40:18 and then some advanced things and then
+40:20 some examples
+40:21 how this library can be used
+40:25 what about contribution guide like for
+40:27 people who want to contribute like is it
+40:28 also something that you should think
+40:30 about and
+40:31 it should be on the checklist so i
+40:34 usually have it on the uh
+40:38 to be honest i'm looking at the what
+40:39 lies uh example here and i don't see
+40:41 anything mentioning about a contribution
+40:44 there if you go to the
+40:45 the read me on github it is there so
+40:47 okay issue um
+40:48 now so so one thing um i'm i try to make
+40:52 it clear that every uh like issue will
+40:55 be considered
+40:56 but i want to be a little bit careful
+40:58 that i don't make the suggestion that
+40:59 every issue
+41:01 is immediately going to be implemented
+41:02 or that i have the time to do that
+41:04 um one thing also in terms of
+41:07 stewardship that i want to
+41:09 pay attention to because i've started
+41:10 noticing that on some of my repos
+41:12 um some people are really unfriendly
+41:15 like you
+41:16 just wondering like are you sitting on a
+41:17 bag of nails like what is wrong with you
+41:19 why are you so unfriendly
+41:20 i'm doing volunteer work maintaining
+41:22 this stuff like why are you so angry
+41:23 about this one particular feature not
+41:24 being in there
+41:25 so one thing in terms of like
+41:27 contribution guide and that sort of
+41:28 thing i really
+41:29 if people are on github i really do try
+41:31 to emphasize like
+41:32 it's small things like don't write
+41:34 sentences at all caps it's like
+41:35 it reads as if you're shouting to me and
+41:37 i'm doing volunteer work don't do that
+41:39 so i i do try to uh steer conversations
+41:43 on my issue list in that direction if
+41:44 people uh
+41:45 i remember one guy on what lies saying
+41:48 like hey you're using
+41:49 altair but you should be using bokeh
+41:51 it's way better
+41:53 which would lead to like this really
+41:54 heated debate and like he wasn't even
+41:56 willing to contribute so it's like a
+41:58 really weird thing
+41:59 um but that's also something that uh i
+42:01 try to pay attention to but if you're
+42:02 starting out you should
+42:03 probably not worry too much about this
+42:05 it's a but don't use all caps when
+42:07 you're
+42:09 adding an issue like that's rude number
+42:10 one think on the contribution guys right
+42:12 yeah don't use caps and many of
+42:16 us us of you get paid
+42:20 to work on open source but most of us do
+42:22 not so most of us work on uh
+42:24 private projects for the company but
+42:27 sometimes
+42:28 we get to work on some libraries
+42:30 internally at our companies
+42:32 that aren't necessarily specific to this
+42:34 company
+42:36 let's say i'm working on a project on
+42:39 some
+42:39 library and i think it's useful so it's
+42:42 not
+42:42 too specific to this company and i think
+42:44 other people will find it useful as well
+42:47 and i want to release this thing as an
+42:48 open source project because i think
+42:50 other people will benefit from that
+42:53 do you have any tips any recommendations
+42:55 how do i go about convincing my employer
+42:58 to to let me do it
+43:00 i mean so i again i consider myself a
+43:02 little bit lucky because i
+43:04 i've been organizing conferences and
+43:05 stuff so it makes it easier for me to
+43:07 make this claim
+43:08 but i've always been able to go to my
+43:09 employer and kind of go like you know
+43:11 you want to hire people
+43:13 it means marketing like if you're the
+43:15 company who's sort of doing a really
+43:17 even if it's a silly little project like
+43:20 i i
+43:21 a simple example i just saw this new
+43:23 library
+43:24 that allows you to make matplot lip
+43:26 charts in the command line
+43:27 like it's all ascii art but it's like an
+43:29 actual genuine chart that follows the
+43:31 the maple lib api
+43:33 the thing is like if that it's really
+43:35 silly but you
+43:36 if you see that project you see there's
+43:37 a company behind it you are gonna like
+43:39 just check them out real quick right
+43:40 that's
+43:41 that's the thing you're just gonna do
+43:42 you're like hey if this sort of stuff is
+43:44 a byproduct of the people working there
+43:45 that might be a fun place to work
+43:47 was it the bible project i think so like
+43:49 um
+43:51 i i i like uh like i didn't fully go
+43:54 down the rabbit hole on that one
+43:55 but it's but the thing it definitely is
+43:57 like if you make a couple of cool open
+43:58 source projects
+43:59 you're gonna get attention from people
+44:00 and also if memories
+44:02 like experience is any indication here
+44:04 uh a lot of these open source projects
+44:06 have been topics of talks that were well
+44:08 received
+44:08 um and if you're presenting a package
+44:11 that you maintain together with
+44:13 uh you know your colleagues a it's good
+44:15 for morale but b
+44:16 it might be content for talks which in
+44:18 turn is also pretty good for hiring and
+44:19 you know
+44:20 um it's like what the base camp people
+44:23 did i don't know if you saw that they
+44:24 decided not to spend any
+44:26 uh money anymore on marketing and
+44:29 instead what they did is they built this
+44:31 garbage fire which they literally did
+44:32 like it's a
+44:33 it's a big garbage um like bin
+44:36 with a giant flame in it and you could
+44:38 send them an email and they would print
+44:40 the thing that you want to burn
+44:41 and it would literally like be on a
+44:43 conveyor belt and would fall in and they
+44:44 had a webcam
+44:45 it's a really silly thing but they had a
+44:48 blog post about how they built this
+44:50 they got a whole lot of traffic and they
+44:52 actually got like people buying their
+44:53 product because of this
+44:55 um there's something there yeah so how
+44:58 do i convince my employer instead of you
+45:00 know
+45:00 investing in marketing invest in
+45:02 building this
+45:04 garbage fire
+45:07 before people interpret this as build a
+45:10 garbage truck
+45:11 fire thing uh but like it depends on
+45:14 your company of course and i know for
+45:16 example if you're in
+45:17 in financials people tend to be a little
+45:19 bit more strict
+45:21 because they want to be careful that
+45:22 whatever you do in your
+45:24 work time is not associated as like
+45:25 financial advice i mean there's legal
+45:27 reasons
+45:29 it's perfectly fine to respect those but
+45:32 um
+45:33 every tech company i think is hiring
+45:36 right
+45:36 um so it's you don't want to be the one
+45:39 company who's sponsoring an event
+45:42 but doesn't do any tech talks it's that
+45:45 and you get an extra bonus if you do
+45:46 some open source work if you can kind of
+45:48 brag about that
+45:49 and if i can um i used to work at this
+45:51 company and they kind of that was
+45:53 i think they still do that i'm not sure
+45:55 but um i know some companies who go as
+45:57 far as say
+45:58 you get one day a month to do open
+46:01 source work
+46:02 and the thing is um you can also look at
+46:05 it as training if i'm honest
+46:07 because if in the beginning of the year
+46:08 you haven't you're not good enough
+46:10 uh good enough's not the right word but
+46:12 you're not at the spot yet where you're
+46:13 comfortable
+46:14 making open source requests but by the
+46:15 end of the year you are
+46:17 i mean yeah i can send you to a two-day
+46:19 training but
+46:20 i think it's gonna be more meaningful if
+46:22 we can get you maybe there right
+46:24 um so yes you're investing time but
+46:27 you're getting
+46:28 stuff back and i i think your odds are
+46:31 that you're going to end up with
+46:32 something more original
+46:33 uh if you invest in your team this way
+46:37 and so you mentioned the
+46:41 conference speaking and we have a
+46:43 question from mikhail
+46:44 do you have any advice for somebody who
+46:46 who is starting
+46:47 their data science career and want to do
+46:50 their first conference talk
+46:52 yeah um so what do we do
+46:55 to be honest it's a strange thing like
+46:57 um so two things i guess
+46:59 one of them is imagine what it's like
+47:00 for the person reviewing you
+47:03 because in the end like every conference
+47:05 there's a group of people
+47:06 looking at the proposal and just going
+47:08 would i would i go to this talk
+47:10 so anything you can do sort of there
+47:12 would be good and you know it's kind of
+47:14 hard to
+47:15 maybe guess who's going to be reviewing
+47:16 because every conference is different
+47:18 but at the pi data amsterdam one when i
+47:20 was around we just had a simple rule
+47:21 like would you go to this talk
+47:23 it's interesting would you go there um
+47:27 and in amsterdam we were a little bit
+47:28 cheeky because uh
+47:30 like if you went to london it's a bit
+47:31 more financial a little more consult a
+47:33 little bit more serious
+47:34 and if you go to amsterdam one like we
+47:36 have a ball pit sponsor
+47:38 so like the vibe of the conference is
+47:40 also if you did something amazingly
+47:42 silly but
+47:43 crazily educational tell us about it uh
+47:46 so my favorite example
+47:47 that's the second point i want to make
+47:49 um there was a person who had a blog
+47:51 post in amsterdam
+47:53 and he did research on which words in
+47:56 metal lyrics
+47:57 are the most metal like for all like of
+48:01 all the english words in the dictionary
+48:03 which words are the most metal and can i
+48:04 do something semi-scientific to figure
+48:06 that out
+48:07 and he wrote a blog post about it but he
+48:09 never considered that this would be like
+48:11 an amazing python talk
+48:12 and to me this is still one of my
+48:14 favorite examples because
+48:15 i remember going up to the person like
+48:17 explicitly saying look
+48:19 if you're uncomfortable on stage like
+48:20 let me know i'd love to maybe help you
+48:22 with that
+48:22 but you have to send that in as a talk
+48:24 it's an amazing topic
+48:26 and there's so many people who just
+48:27 don't recognize that what they have to
+48:28 say is actually
+48:30 pretty interesting to a whole lot of
+48:31 people um
+48:33 and throughout pi data i've had to do
+48:34 this a bunch of times i was actually
+48:36 a little bit shocked that a lot of
+48:38 people who have super interesting ideas
+48:39 don't talk about them
+48:41 so first of all if you've never done
+48:44 this before
+48:44 um it is pretty interesting like hey
+48:46 what what is the weirdest thing about
+48:48 the pandas api that saved your date is
+48:50 one time
+48:50 i think that can be super interesting i
+48:53 also remember this one talk about
+48:55 like how does the nitty gritty details
+48:57 of parsing jason actually work
+49:00 and then at the end someone says and by
+49:01 the way they didn't accept my pr for
+49:03 pandas which i'm bummed about but this
+49:04 is how you should do it
+49:05 i mean you want to get something that
+49:07 you you care about and
+49:08 uh odds are it's gonna be interesting to
+49:10 more people like recognizing that is one
+49:12 thing
+49:12 um and the other thing is just try to
+49:14 write your proposal in such a way
+49:16 that if you were to read it out of the
+49:17 blue you would actually go to the talk
+49:18 because that's what people go for
+49:21 so basically contribute to open source
+49:23 but don't stop there
+49:24 like it's also a good idea to submit a
+49:28 conference talk proposal and especially
+49:30 like if you work and you
+49:32 want to release something you work on uh
+49:35 at work
+49:36 as an open source project it's good for
+49:38 employer
+49:39 employer branding right especially like
+49:41 if you add to just releasing the package
+49:43 if you can also go somewhere and talk
+49:45 about this then
+49:47 employer probably will agree to that
+49:49 right yeah it depends on the conference
+49:51 of course i mean there are companies
+49:52 that are a little bit more enterprisey
+49:53 and there's pi data which is a little
+49:54 bit
+49:55 more community focused but uh but even
+49:58 you know even if there's an interesting
+49:59 data set that you've just found and
+50:01 you're just playing with
+50:02 um i remember um the first pi data
+50:05 conference i hosted we had
+50:07 uh my former boss who just said hey i
+50:09 scraped the entire meetup api
+50:12 and there's a couple of meetups that are
+50:13 just outliers and i would like to figure
+50:15 out what
+50:16 why which is just an entertaining talk
+50:18 and
+50:19 the thing also is i guess um the cool
+50:22 thing about talks like that is
+50:24 you're being entertained and you're
+50:25 learning like that's the golden thing if
+50:27 you can do both that's amazing
+50:28 but the way that you the people were
+50:30 learning was uh he was just showing how
+50:32 the tools could be used in combination
+50:34 so yeah he built a scraper but then he
+50:36 put it into neo4j and that
+50:38 and he did that in a clever way which
+50:40 made like exploring the data just a
+50:41 little bit easier
+50:42 and then he had a couple of like good
+50:43 looking charts or some interesting
+50:44 conclusions
+50:45 um and then half the room was
+50:49 entertained because the data set was
+50:50 interesting and they already knew the
+50:51 tools but the other half of the room
+50:53 learned something because you know a lot
+50:55 of the stuff that people take for
+50:56 granted
+50:56 is going to be useful to a whole bunch
+50:58 of newcomers that's also fact of life
+51:02 yeah we have another related question
+51:04 from
+51:05 i don't know if i'm sorry if i
+51:06 mispronounced your name
+51:09 um how open source can help you
+51:13 to land a job or establish a company do
+51:16 you have any idea how it can
+51:17 do that i like i would i'm going to try
+51:20 to give some advice here but the one
+51:21 thing i do want to mention
+51:23 is that i have been ridiculously
+51:24 privileged in the way that i've been
+51:26 hired so i it's hard for me to like
+51:28 i'll get i'll try to give some advice
+51:30 but i simply don't know what it's like
+51:31 to start out because every time
+51:33 the last 10 years every company that
+51:35 hired me did i didn't have to talk to a
+51:37 recruiter was always the cto
+51:39 like reaching out to me that's how the
+51:40 ball got rolling so it's it's hard for
+51:42 me to give like proper advice
+51:45 but um i mean in the end it's all about
+51:50 explaining to the other party that you
+51:52 might be
+51:53 a team member that's going to make them
+51:55 better in something
+51:57 um i wouldn't worry too much about like
+51:59 uh
+52:00 you know established company i mean
+52:02 there's lots of interesting things that
+52:04 you can do
+52:04 and you might be surprised i know
+52:06 someone for example
+52:08 um who was really looking for a job
+52:10 where there was someone around where
+52:12 they could learn from
+52:13 but then he realized like there was this
+52:15 analyst job at a local municipality
+52:18 but the thing with the municipality was
+52:20 like they really had zero
+52:21 talent uh like in that area so they were
+52:24 really just getting started
+52:25 and then the person just thought you
+52:26 know that also means that i have a lot
+52:28 of control over what i learn
+52:31 and that also means that if i'm the
+52:33 person around who has to figure
+52:34 everything out like i'm being paid to
+52:36 learn
+52:37 so i don't have to necessarily join a
+52:38 established company you can also just
+52:40 join
+52:40 maybe something that's smaller more
+52:42 local and sort of
+52:44 learn that way how does contributing to
+52:47 open source can help me
+52:49 get let's say a better job or just a job
+52:52 like
+52:52 let's say i'm looking for a job now and
+52:54 i heard that this recommendation
+52:56 hey if you really want to stand out from
+52:58 the rest of applicants
+53:00 what you can do is go contribute to open
+53:02 source like is it something
+53:03 do you think it's something helpful to
+53:05 do i think i mean it's
+53:06 it's i mean just like uh
+53:10 if i uh i don't interview people for
+53:12 jobs that often anymore but like back
+53:14 when i was a consultant
+53:15 um if there's a couple of open source
+53:18 projects that we use with clients a lot
+53:20 and you've contributed a couple of
+53:21 meaningful things there okay then you'll
+53:23 probably understand the tool like that's
+53:24 just not a concern
+53:26 that's probably not enough to like say
+53:28 oh we're going to hire you instantly
+53:29 right
+53:30 you also want to check some other things
+53:31 i guess um but it's certainly a boon
+53:34 um i wouldn't over stress it though like
+53:37 there's other things that you can do as
+53:38 well
+53:39 one thing that is a downside of open
+53:41 source commits if you like if you're
+53:42 recruiting for just that
+53:44 um if you have a family right you have
+53:47 kids at home
+53:48 and you're not going to spend your
+53:49 evenings doing open source
+53:51 and that's fine so one thing that that
+53:54 you should be mindful of is there are a
+53:56 lot of people who don't have open source
+53:57 in their resume especially when they're
+53:58 somewhat older and it's fine
+54:00 um if there's if there's a company that
+54:02 has like a good career path for you
+54:03 they're probably just interested in a
+54:05 capable and enjoyable colleague
+54:07 and open source is a way to at least
+54:09 sort of help you be able to convince the
+54:11 other side that you're indeed capable
+54:13 um probably giving toxic confidence
+54:16 about this
+54:17 like the most metal word in english
+54:20 is another way of doing that right yeah
+54:23 i mean so
+54:24 and and all yeah uh like and also just
+54:26 the thing about the conferences thing i
+54:28 just
+54:28 wanna admit my my most popular talk was
+54:32 the one about
+54:32 uh simple models like how to win with
+54:35 simple even linear models a title
+54:38 and to be honest let's talk about linear
+54:40 regression that's literally the only
+54:41 thing i'm really talking about during
+54:43 that talk
+54:44 most views ever like um you might be of
+54:46 the impression
+54:47 that you have to do something super
+54:49 fancy state of the art
+54:51 if you can just explain yourself the
+54:52 problem that's more than enough
+54:55 so entertain and teach right
+54:58 yeah so talks that do well on well you
+55:00 don't have to do both like if you if
+55:02 you're really good at teaching and
+55:03 you're not that entertaining it's still
+55:04 a very valuable talk of course right
+55:06 and we can't have a conference with just
+55:07 entertaining talks that aren't
+55:08 educational anyway
+55:09 uh because that will be a comedy show
+55:11 but um but yeah like
+55:13 those two things always did well for me
+55:14 when i was reviewing i would say yeah
+55:17 you should probably share the link to
+55:19 this talk
+55:20 i uh yes after the show yes
+55:24 that's a bunch of talks but yeah so you
+55:26 did you mentioned one thing that
+55:28 really caught my attention that in
+55:31 in your career throughout your career
+55:33 you got
+55:35 jobs in a bit of in conventional
+55:38 way that it would the cto who who
+55:41 reaches
+55:42 so it was cto who reaches out to you and
+55:45 like hey
+55:46 do you want to work with us so how did
+55:48 you end up
+55:49 in this position that ctos
+55:52 reach out to you but like you also did
+55:54 something in addition to luck right so
+55:56 how does that happen
+55:57 but i mean so i mean that i don't want
+56:00 to
+56:01 but i still want to admit i think a
+56:02 large chunk of it is luck so
+56:04 um usually this happened because of
+56:06 meetups right and
+56:07 also like the cto didn't come up to me
+56:08 and say you have the job like this is
+56:10 the conversation gets started the ball
+56:12 gets rolling but um
+56:14 no so i remember um there was a meet up
+56:17 called amsterdam
+56:18 um yeah it was back when the app
+56:22 uh like when iphones were new back in
+56:24 those days
+56:25 uh and i just and i remember sort of
+56:27 saying like hey maybe i should talk at
+56:28 these events and start to meet people
+56:30 who can program
+56:31 so what i started doing is just give
+56:33 free training in r
+56:34 like i told app developers like hey if
+56:36 you've got data you can analyze and
+56:37 understand your users
+56:39 i want to practice this craft so i'll
+56:40 just give free trainings
+56:42 and you know people people remember the
+56:45 cat
+56:45 the kid who did that and if the training
+56:47 was good they would refer you
+56:49 so that sort of helps and i guess
+56:52 uh i've always i've always understood
+56:54 that it's much
+56:55 more scalable if you can organize your
+56:57 life such that people know you
+56:59 because otherwise you have to remember
+57:00 everyone like if people know you that's
+57:02 easier
+57:03 um and you know it's just meeting people
+57:06 at meetups
+57:07 saying yes to a bunch of things
+57:08 experimenting here and there
+57:10 um yeah that's how people find you
+57:14 so it's not just open source right no
+57:17 also
+57:18 teaching giving three trainings that's
+57:20 just being there being out there being
+57:23 more visible and then this is how you
+57:25 got lucky air quotes
+57:27 yeah but also if i really think back i
+57:29 mean when i got started i was like the
+57:31 first person
+57:32 i knew in my social circles that called
+57:33 themselves a data scientist
+57:35 um the skills i had back then were good
+57:38 enough for me to get started they're not
+57:39 now
+57:40 like if you're a data just now but
+57:41 you've never worked with the cloud
+57:42 provider
+57:43 it's already a lot trickier to get a job
+57:45 than back then
+57:46 but then if you knew what a random
+57:47 forest was you already had like a pretty
+57:49 good salary
+57:50 which is crazy but uh that is how it
+57:52 worked back then
+57:54 uh similarly uh i think
+57:57 i mean also back then a lot of companies
+57:59 didn't have their first recommender yet
+58:01 so i was part of that generation that
+58:03 got to build recommenders for the first
+58:04 time which is also just experience that
+58:06 a lot of other people don't have
+58:08 like i can literally say that the dutch
+58:11 bbc
+58:11 has a recommender that i just designed
+58:13 for a large extent which you know
+58:16 it's easier to get a bigger snowball
+58:18 going if the snowball's already going
+58:20 and i was i was there at the right
+58:22 moment at the right time
+58:23 and i also like don't underestimate um
+58:26 living in amsterdam like
+58:27 if you want to attract speakers to your
+58:28 conference i think it's a lot easier to
+58:31 attract great speakers if you live in
+58:32 amsterdam
+58:33 than if you live in a small town in
+58:35 france somewhere right i mean
+58:36 all that stuff also you know a lot of
+58:39 luck
+58:40 okay so probably now if you want to get
+58:42 noticed instead of free
+58:44 free trainings about r you should use a
+58:46 free training about cloud tools
+58:49 uh yeah true but also
+58:53 a thing to remember uh i think seven
+58:55 years ago
+58:57 like now you have like a bazillion
+58:58 people on youtube teaching you how to
+58:59 use
+59:00 cloud tools right you didn't have that
+59:01 back then as well so that is also
+59:03 different
+59:05 um but i guess also like
+59:08 one thing i will say back then i wasn't
+59:10 necessarily really hustling but
+59:12 i remember going like oh i want to do
+59:13 free trainings well i need i need a room
+59:16 i'll just call a bunch of companies
+59:19 and like um just by like but you know
+59:22 you give it a try but i gave it like a
+59:23 serious try
+59:25 and you do look like you do turn it into
+59:27 a little game like how do i convince
+59:28 people to like give me
+59:29 their office during the weekend and oh
+59:32 i'll train two of your people
+59:35 you know you learn negotiating a bit
+59:36 like all these are life skills i guess
+59:38 right
+59:38 um but um
+59:42 yeah but another thing i think might be
+59:44 good like
+59:47 i remember when i got started doing
+59:48 talks i was also thinking like hey what
+59:50 are just topics that will be good in
+59:51 general
+59:51 and also stuff that i can do like i have
+59:54 my own limits i'm not an academic for
+59:55 example so i shouldn't do those kinds of
+59:56 talks
+59:57 like other talks that give me energy
+59:59 that i love doing
+1:00:00 so in the beginning i had a simple
+1:00:02 recipe i would find data on video games
+1:00:05 and i would use that data to find a hack
+1:00:08 to make you better at playing the video
+1:00:09 game
+1:00:10 um so my first talk on spark like my
+1:00:13 first actual conference
+1:00:14 talk was about world of warcraft's
+1:00:15 auction house system
+1:00:17 okay and you know i i like the thing
+1:00:21 that i kind of planned that because i
+1:00:22 was like
+1:00:22 mentally reflecting and thinking like oh
+1:00:25 okay like what might be like a good step
+1:00:26 up here i could try and
+1:00:28 i think i have to do data science talks
+1:00:29 on data sets and video games that has to
+1:00:31 be accepted somewhere
+1:00:32 like planning ahead a little bit like
+1:00:34 that is good um
+1:00:37 but again i think the world has changed
+1:00:38 a little bit there
+1:00:40 but there aren't so many talks about
+1:00:42 still if you go to buy
+1:00:43 data you don't see many talks about um
+1:00:46 you know word of warcraft data
+1:00:49 you see like different kind of talks
+1:00:52 like more technical more about like you
+1:00:54 know business cases and this is how we
+1:00:56 use
+1:00:56 library x to build why et cetera but
+1:00:59 this is more fun right
+1:01:01 and this is not the usual talk that we
+1:01:03 have
+1:01:04 it's not the usual talk no i mean the
+1:01:06 really funny thing was like i was doing
+1:01:08 the world of warcraft talk
+1:01:09 and like the room was packed but i
+1:01:11 thought people were interested in tech
+1:01:12 but these were all world of warcraft
+1:01:14 like i actually left the room it was
+1:01:16 like a kind of a small key like a pretty
+1:01:17 big queue actually people asking
+1:01:18 questions
+1:01:19 uh and they were all like active world
+1:01:21 of warcraft players
+1:01:22 it's actually pretty funny like
+1:01:25 discussing if my part of the analysis
+1:01:26 was even accurate and that sort of thing
+1:01:29 i shouldn't expect so we need to
+1:01:32 to wrap it up a bit we do we have one
+1:01:35 more question
+1:01:36 from about not
+1:01:39 about open source but about your role as
+1:01:41 a research advocate
+1:01:43 so how this role would be called in some
+1:01:46 other places so it sounds like
+1:01:49 evangelism position
+1:01:51 do you have any idea how it would be
+1:01:52 called in other companies
+1:01:54 um well it's funny because um you know
+1:01:56 when i joined
+1:01:57 so something i learned about being at
+1:01:59 raza here did you
+1:02:00 did you know there's conferences for
+1:02:02 developer advocates
+1:02:03 yeah yeah so i i had no idea
+1:02:07 um but it's like a thing like and it
+1:02:08 makes sense because um
+1:02:12 there's companies out there that kind of
+1:02:13 say well you know our devel team doesn't
+1:02:15 do conferences because we can do other
+1:02:17 stuff that seems to scale better
+1:02:19 because open source becoming kind of a
+1:02:20 norm more and more people can you know
+1:02:22 pick up open source tools and stuff
+1:02:23 so it helps to have people on top of
+1:02:25 that um
+1:02:26 so that's something i totally didn't
+1:02:28 recognize like deaf rel's actually a
+1:02:30 career path
+1:02:31 i was completely oblivious to it um
+1:02:35 but it depends like um we
+1:02:39 i uh in the marketing team we have the
+1:02:42 person who has a developer advocate like
+1:02:43 title
+1:02:44 uh rachel who's in my team has like
+1:02:46 senior developer advocate title she was
+1:02:47 a
+1:02:48 developer advocate at kaggle before um
+1:02:52 my boss is sort of leading the team
+1:02:55 she's on developer episode as well
+1:02:57 i know that i do know that a lot of
+1:02:59 people
+1:03:01 uh are interested in doing deaf or else
+1:03:03 stuff and if i
+1:03:05 consider the people who tend to get jobs
+1:03:06 in this field i do see a bit of a
+1:03:08 correlation with
+1:03:09 past experience doing talks at
+1:03:11 conferences and like getting a career in
+1:03:14 developer
+1:03:14 advocacy like i do see a bit of a
+1:03:16 correlation there um
+1:03:18 it depends on the company like i think
+1:03:19 nowadays they're not expecting you to do
+1:03:21 traveling
+1:03:22 your developer advocate but i do know
+1:03:24 that certain companies they do
+1:03:27 so you know databricks for example i do
+1:03:30 know i've heard stories there that if
+1:03:32 you're developer advocate there you're
+1:03:33 expected to go like the big conferences
+1:03:34 around europe and the u.s so people do a
+1:03:36 lot of travel
+1:03:37 and things like that yeah the o'reilly
+1:03:38 things
+1:03:41 but now like i'm still learning the
+1:03:42 developer advocate bit but
+1:03:44 again if i'm being completely honest i'm
+1:03:46 still trying to figure out what it
+1:03:47 actually means to be a research advocate
+1:03:49 like
+1:03:49 um uh there are some ideas that i have
+1:03:53 that i might want to be doing like one
+1:03:56 thought i'm i'm thinking about doing now
+1:03:57 is
+1:03:58 i'm teaching people how to make virtual
+1:04:00 assistants and that's that's great
+1:04:01 um but now i'm sort of wondering i think
+1:04:03 it might be more fun
+1:04:04 if i come up with a very specific
+1:04:07 virtual assistant i would like to have
+1:04:08 in my own slack
+1:04:10 this is some stuff that automates some
+1:04:11 things away from me that are super
+1:04:13 personal to me
+1:04:14 but i think it would be interesting for
+1:04:15 like developers to maybe see that like
+1:04:17 how can you automate your life with
+1:04:19 slack using raza like i think that
+1:04:20 that'd be
+1:04:20 they'll be like a fun little experiment
+1:04:22 um
+1:04:24 and you know there i would also
+1:04:27 this is active research of course but i
+1:04:29 would also like to be able to say like
+1:04:30 hey you know here's like
+1:04:32 the the standard manual of stuff that i
+1:04:33 sometimes have to do
+1:04:35 can i like how hard is it to go from
+1:04:37 like markdown files to
+1:04:38 slackbot like that's also stuff that i'm
+1:04:41 working on and like i have no idea how
+1:04:42 to do that yet but that's like
+1:04:44 active areas of things that i'll be
+1:04:46 picking so that's the difference between
+1:04:47 a deaf advocate and research advocate
+1:04:49 that you have this a bit of research
+1:04:51 component
+1:04:53 like okay how do you go from this uh a
+1:04:55 bunch of markdown files to a slide board
+1:04:57 that
+1:04:58 you know just helps with library and
+1:05:01 also like
+1:05:02 uh it's it's too okay so i come up with
+1:05:04 some crazy research ideas i give it a
+1:05:06 bit of a go
+1:05:07 and then i show it to the researchers
+1:05:08 and kind of go do i have something here
+1:05:09 like or is this a little bit crazy
+1:05:11 and half the time it's crazy um but but
+1:05:14 sometimes i'm on to something
+1:05:15 and uh the other way around like the
+1:05:18 research team kind of goes like hey
+1:05:19 vincent
+1:05:20 we like to think this algorithm works
+1:05:21 really really well and then on english
+1:05:23 we can
+1:05:23 prove it does uh could you ask around
+1:05:26 the community
+1:05:26 uh to check like we would love to get
+1:05:28 maybe some non-english and could you
+1:05:29 maybe
+1:05:30 ask around and do that this is like a
+1:05:32 two-way communication thing
+1:05:34 okay yeah that was great thanks a lot
+1:05:38 for for coming to our event and sharing
+1:05:40 your experience uh with
+1:05:41 us even though we beat sidetracked from
+1:05:43 the open source topic i still
+1:05:45 enjoy it a lot talking to you yeah same
+1:05:47 really
+1:05:48 i learned many new things uh especially
+1:05:51 how to come up with a name
+1:05:53 for the open source library make names
+1:05:55 io make names yes
+1:05:58 yeah thanks a lot and yes
+1:06:02 i guess that's it thanks everyone else
+1:06:04 everybody
+1:06:06 who attended the event thanks for coming
+1:06:08 as well
+1:06:09 and see you around
+1:06:13 yeah oh

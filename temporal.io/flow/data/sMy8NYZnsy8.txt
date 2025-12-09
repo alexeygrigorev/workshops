@@ -1,0 +1,2123 @@
+Running from Complexity
+
+0:00 welcome to our second week of our
+0:03 awesome mini conference
+0:05 so in this second week it's actually our
+0:08 second day of our second week
+0:09 and we talk about machine learning
+0:11 production so yesterday
+0:13 jan talked about approaching uh
+0:17 ml machine learning and ai projects
+0:19 about how you can do this
+0:21 uh from collecting the requirements
+0:23 perspective so today
+0:25 with ben we'll talk about uh how to
+0:28 avoid complexity and
+0:31 tomorrow lena will talk about keeping
+0:34 humans in the book it's more about
+0:36 communicating with stakeholders
+0:39 on thursday we'll have duke
+0:42 telling us about search projects and how
+0:45 to
+0:46 go about creating them and finally on
+0:48 friday we will finish the week
+0:50 talking about the importance of data
+0:52 quality
+0:54 i would like to say thank you to our
+0:56 partners who
+0:57 made this event possible and advertised
+0:59 it in
+1:00 their channels so thanks to you because
+1:03 of
+1:03 your help it was possible to attract a
+1:06 lot of people
+1:06 thanks a lot so for those who are
+1:10 watching from youtube
+1:11 please subscribe to our youtube channel
+1:13 to stay up to date with all our events
+1:15 and then of course join our slack
+1:17 community where we
+1:19 talk about uh all the data related
+1:22 things
+1:23 and finally during today you can ask any
+1:26 questions
+1:26 you want there is a link it's not
+1:29 actually so this slide may be
+1:30 incorrect so the link now is in the
+1:32 description
+1:34 uh because in linkedin there is no way
+1:36 to pin
+1:37 a link to a chat so i put this to
+1:40 description
+1:41 on both linkedin and youtube so just
+1:44 if you have any question during this
+1:47 conversation
+1:48 click on this link and ask any question
+1:50 you want
+1:51 and finally thanks to mining
+1:55 we have five copies of ben's book
+1:58 and these five lucky people won
+2:02 a copy so i will
+2:05 contact you and we'll tell you how to
+2:08 get the book
+2:08 congratulations now
+2:12 ready so today we'll talk about
+2:16 running from complexity and
+2:19 which means starting with simpler things
+2:21 for our machine learning projects
+2:23 and we have a special guest today ben
+2:25 wilson ben is a practice lead
+2:28 resident solution architect at
+2:30 databricks that's probably the longest
+2:32 title
+2:34 i on this show
+2:37 uh ben is based in north carolina yes
+2:41 and he is doing data science work for
+2:43 the past 12 years
+2:45 in companies ranging from semiconductors
+2:47 semiconductor manufacturing to
+2:49 fashion companies and he is working on a
+2:52 book for mining titled machine learning
+2:54 engineer in action
+2:55 which focuses on how to get machine
+2:57 learning projects in production
+2:59 and help them stay there welcome ben
+3:03 great uh great to be here yes uh it's
+3:06 our pleasure
+3:07 so before we go into our main topic
+3:09 let's start with your background
+3:10 can you tell us about your career
+3:12 journey so far
+3:14 oh one of the weirdest ones it's even
+3:16 weirder than my job title right now
+3:18 um started straight out of high school
+3:21 went into the the united states navy and
+3:26 went for a program called basically it's
+3:29 involving nuclear engineering as a
+3:31 technician
+3:33 so did that for a number of years got
+3:36 kind of
+3:36 tired of doing that did a bunch of other
+3:38 things in the navy but
+3:40 eventually exposed me to a position in
+3:42 my last year and a half
+3:44 that i was on active duty where i was a
+3:46 communications officer interim
+3:47 communications officer
+3:49 dealing with message traffic and
+3:50 computers and it started to fascinate me
+3:53 at just how mind-numbingly boring
+3:57 doing manual tasks in a computer can be
+4:00 so i started to learn automation
+4:02 of i'm so lazy i want a computer to just
+4:05 kind of do things for me
+4:07 so i started to learn scripting and
+4:08 stuff that catapulted me
+4:11 once i got out of the military after
+4:15 almost 12 years to get my first job as a
+4:19 process engineer
+4:20 just dealing with complex manufacturing
+4:23 processes
+4:24 so running tools and equipment lines
+4:27 and having to craft recipes
+4:31 i got tired of that company went on to
+4:33 another company doing a very similar
+4:35 task but
+4:36 working more in the r d side of things
+4:39 with emerging products with a much more
+4:42 complex system that's where i started to
+4:44 learn
+4:46 even greater tools to maximize my own
+4:49 personal laziness
+4:51 so i started to figure out hey
+4:54 i hate doing this thing so much it's
+4:56 really complicated
+4:57 uh and we had a a contract with a
+5:00 company actually here in north carolina
+5:02 uh less than 10 minutes from my house
+5:04 at the sas institute and they had all
+5:08 these great
+5:08 training programs and allowed us to use
+5:10 their tooling
+5:12 for a fee of course and i started to
+5:15 learn the basics of statistical
+5:18 process control and what we used to call
+5:21 as
+5:21 statistics or the applied statistics
+5:25 and now we call it data science start to
+5:28 learn all that from those great
+5:29 instructors and that that tooling
+5:31 and this is years ago over a decade ago
+5:34 but that started me down a path of
+5:36 working for
+5:37 another series of companies where i
+5:40 started to do
+5:41 data science work uh everything from
+5:43 another the largest semiconductor
+5:45 factory
+5:45 in north america to um a fashion company
+5:50 which i learned more intense data
+5:52 science techniques and got exposure to
+5:54 apache spark
+5:56 uh and my current company databricks
+5:58 we're a very
+6:00 relatively early customer of theirs and
+6:02 i decided to make the
+6:04 the journey to learn more about my field
+6:06 and my profession at
+6:08 a company like databricks so that long
+6:11 job title
+6:12 is what i call a field nerd
+6:15 we help companies build stuff
+6:18 uh everything from etl to
+6:21 traditional statistics applications
+6:24 analytics and truly
+6:28 cutting edge ridiculous deep learning
+6:30 distributed
+6:32 ml applications so that's my career
+6:35 journey in the nutshell
+6:36 and i've been doing that for just over
+6:38 three years now
+6:40 okay so this uh long title practice lead
+6:43 resident solutions architect
+6:46 uh you said it's uh field nerd yeah
+6:49 okay so basically helping customers to
+6:53 um to build what they need
+6:56 yeah whatever they need um
+7:00 and the topic of today's discussion is
+7:02 highly relevant to that because that's
+7:03 that's a narrative that i try to push
+7:05 with teams particularly when they're
+7:06 just getting into
+7:08 uh new tooling in particular and
+7:11 uh people have a penchant for wanting to
+7:16 latch onto complexity i think and
+7:19 they really want they see the shiny
+7:20 thing in the distance like i really want
+7:22 to do that
+7:23 without thinking about what is involved
+7:26 in that and how complex that could be
+7:28 um so one of the things that we do is
+7:31 work with them and say
+7:33 yeah that's cool the shiny thing over
+7:35 there is is really fascinating but
+7:37 let's think about what we're trying to
+7:40 solve here
+7:41 um let's analyze the process
+7:44 within the frame of vision of who the
+7:48 customer is our internal customer
+7:49 what problem are they trying to solve
+7:52 they just want the problem solved
+7:54 we're there to help try to solve it so
+7:57 they're not maintaining code they're not
+7:59 maintaining a solution we are
+8:01 so the simpler we make our lives and
+8:03 that goes back to what i was saying
+8:04 earlier about my own
+8:06 personality of trying to be as lazy as
+8:08 possible laziness is good i think
+8:10 data science and engineering work
+8:11 because it means you can go and do other
+8:14 stuff
+8:15 because what you built is easier to
+8:16 maintain so you said you help
+8:19 your customers from everything from etl
+8:22 to traditional statistics analytics and
+8:26 this shiny deep learning new stuff i
+8:29 don't i guess when
+8:30 somebody comes to you with a request hey
+8:33 can you please
+8:34 take this data with the art library
+8:38 or model and deploy
+8:41 or train it have it uh for us
+8:45 uh yeah you probably start thinking
+8:48 maybe they need something simpler right
+8:51 or
+8:52 maybe the the code that we're looking at
+8:54 is
+8:56 so over engineered and complex that the
+8:59 solution is
+9:00 hey let's refactor this to make it more
+9:02 maintainable uh let's take this
+9:04 a theme in in the book that i wrote that
+9:07 you were talking about
+9:08 is walls of text and i see that very
+9:10 frequently in data science code
+9:12 which is you know the god function
+9:15 it's a function that is potentially
+9:18 hundreds if not thousands of lines
+9:20 of imperative code that is so
+9:23 complicated and hard to follow
+9:25 that the simpler thing is is to start
+9:27 breaking it up into smaller pieces
+9:29 in the process of refactoring that you
+9:31 can simplify the code
+9:33 not just in the sense of yeah it's
+9:36 easier to maintain but
+9:37 there might be dead code in there there
+9:39 may be code that could be handled in a
+9:41 more efficient cheaper
+9:43 more understandable way and that's
+9:45 that's something that we do on the
+9:47 the professional services side help
+9:49 customers
+9:51 sometimes we rewrite the code for them
+9:53 um other times we pair up with them and
+9:56 and build it together and the end goal
+9:58 is is not just to get something into
+10:00 production
+10:01 uh because that doesn't make successful
+10:02 mel the end goal is to
+10:05 build something together with some
+10:08 with a customer that they can maintain
+10:11 that is going to be running in
+10:12 production hopefully for years
+10:14 and that they fully understand they can
+10:17 improve
+10:18 it over time instead of having this
+10:21 massively complex code base
+10:22 that if something breaks or they need to
+10:25 you know put
+10:25 some new functionality into it they kind
+10:28 of throw their hands up and say
+10:31 no idea where to begin okay
+10:35 um so in your opinion um what do you
+10:38 think is the most
+10:39 common reason that projects then
+10:42 don't make into production fail
+10:45 ooh so not making it into production
+10:49 is generally
+10:53 one of two things from what i see one is
+10:56 nobody cares so there's no business
+10:58 buy-in you haven't actually
+11:00 paired up with your internal customer to
+11:03 make sure that
+11:04 they're comfortable with what you're
+11:06 building that they've bought into what
+11:08 you're building
+11:08 and you've demonstrated in terms that
+11:10 they understand
+11:12 exactly what this is bringing to the
+11:14 table whatever the solution is
+11:16 the second one is
+11:19 either picking a
+11:23 a solution that you're going to be
+11:25 solving a problem with that's too
+11:27 complicated
+11:28 to maintain or even get to the point
+11:30 where you can stay
+11:31 like run it with stability in production
+11:34 or it's it becomes so expensive
+11:38 to run that the return on investment
+11:41 just isn't there
+11:42 i see that a lot with people trying to
+11:44 apply deep learning
+11:46 to problems that probably didn't need it
+11:50 and people are like well to get my model
+11:52 to train i need
+11:54 you know i have a terabyte of training
+11:55 data okay that's a lot um
+11:58 and i need to you know get my my model
+12:01 iterations faster so i need
+12:04 a gpu cluster on spark and i need
+12:06 horovod to distribute the training
+12:08 just to be able to get training cycles
+12:10 to work fast enough
+12:12 and sometimes when you go in and see
+12:15 that
+12:16 they're talking tech they're they're
+12:17 focusing on technical issues that
+12:19 they're
+12:19 having like how do i get this to run
+12:21 faster and nobody's
+12:23 taking a step back and saying what's the
+12:24 problem you're trying to solve oh
+12:27 churn prediction why do you need an lstm
+12:30 to do that
+12:31 like here's a pareto mbd model
+12:35 that uses you know bayesian inference to
+12:38 determine what the probability of
+12:40 somebody churning
+12:41 by the way we can run that on your
+12:42 entire terabyte of data
+12:44 in less than five minutes let's go that
+12:46 route
+12:47 like so that's sometimes people find
+12:51 them at that point mere weeks before
+12:54 they're about to go into production
+12:56 where
+12:56 when somebody gets the bill uh from the
+12:58 cloud vendor
+12:59 they say why is this project costing a
+13:02 hundred thousand dollars
+13:03 a month to run in training
+13:06 the use case is not going to make us a
+13:08 hundred thousand dollars
+13:10 turn it off and that's really
+13:12 demoralizing uh when a team
+13:13 faces that so so those are the two most
+13:16 common ones that i see
+13:19 why do you think it happens why do you
+13:20 think uh um
+13:23 somebody wants to run a complex lstm
+13:26 using a cluster of gpus on spark using
+13:29 hara what
+13:30 uh when they need uh churn prediction so
+13:33 why
+13:34 things like this happen do you know
+13:38 uh here's a contentious opinion
+13:42 this is just my opinion but um
+13:45 i think it's people wanting to flex
+13:50 people wanting to be noticed
+13:53 all of us are you know fascinated by
+13:56 technology and that's why we get into
+13:58 this field we want to do
+13:59 cool stuff and that stuff is cool
+14:02 lstms deep learning they're fascinating
+14:06 implementations the tech is really
+14:08 complex and cool and
+14:10 it's interesting to use that stuff it's
+14:13 also really hyped up everybody's talking
+14:15 about
+14:16 building cool things with with those
+14:18 algorithms
+14:20 but what people don't understand in this
+14:22 field
+14:24 or they they're not focused on it
+14:26 primarily
+14:27 and it's something that i mentor people
+14:29 about
+14:30 is don't focus on the tech
+14:34 don't focus on the tooling don't focus
+14:36 on the platform
+14:38 that's what blogs talk about you get
+14:41 vendors and creators of open source
+14:43 packages they're pushing this narrative
+14:45 because they want people to succeed with
+14:47 their tools
+14:48 but take a step back and
+14:52 i always recommend people take a step
+14:53 back from what you're doing and
+14:55 just focus on being an engineer
+14:59 don't don't try to be a scientist don't
+15:01 go into research mode
+15:03 and try to implement a white paper just
+15:05 because you can
+15:06 or because you think it's a cool thing
+15:08 to do
+15:09 think of applying ml as an engineer
+15:13 would
+15:13 uh the parallel
+15:17 or the corollary that i use when i'm
+15:19 talking about this is
+15:20 is bridge building
+15:23 if you're if you're talking about
+15:26 building a bridge it costs a 20-foot gap
+15:29 a scientist may approach that and say
+15:31 hey we can we can construct this bridge
+15:33 out of carbon nanotubes and
+15:36 we can have you know ultra highway
+15:40 molecular weight polyethylene
+15:43 wrapping around these carbon nanotubes
+15:45 and we can make a bridge that
+15:46 that weighs less than a car that can
+15:48 support
+15:49 uh the space shuttle and
+15:53 it'll work amazingly well uh an engineer
+15:56 would never even attempt to do something
+15:58 like that like
+16:00 this is going to be ludicrously
+16:01 expensive and it's going to be
+16:03 we're going to do all this research to
+16:04 figure out how to even do that and we're
+16:06 going to build tooling
+16:08 in order to support the construction of
+16:10 the materials to make the bridge out of
+16:12 an engineer's gonna say no no steel's
+16:14 good like
+16:16 we've done this for over two centuries
+16:18 building
+16:19 bridges this way some engineers that are
+16:22 more
+16:23 luddite type that might say
+16:26 no we can just concrete and rebar let's
+16:28 do that
+16:29 because it works as a 20-foot gap let's
+16:31 build the minimum required
+16:32 complexity in order to support this and
+16:34 let's use proven techniques to solve the
+16:37 problem
+16:37 of getting cars from one side of a hill
+16:40 to another side of a hill and i see data
+16:42 science works the same way
+16:44 when you're working as a professional in
+16:46 a company
+16:48 in an ml team or a data science team
+16:51 we're there to solve problems
+16:52 nobody cares how we solve them and
+16:55 solving it
+16:55 in proven ways that are consistently
+16:58 proven to work
+17:00 is the more wise decision that doesn't
+17:02 say don't play around with the cool new
+17:04 stuff just do that on your own time
+17:06 that's what a lot of us do have been in
+17:08 the industry i'm sure you do it as well
+17:09 you know some new cool tech comes out
+17:11 you're like i'm gonna try that out this
+17:13 friday evening or saturday morning i'm
+17:15 gonna block three hours i'm gonna play
+17:16 with this new tech
+17:18 um but generally you don't do it when
+17:21 you're working on a project for a
+17:22 company
+17:23 that's a fast ticket to get fired you
+17:25 know
+17:26 if you're experienced but i guess uh
+17:29 other problem could be that maybe
+17:31 somebody hasn't done this problem before
+17:34 so maybe they don't have experience so
+17:36 they start
+17:38 looking things up and then they see
+17:41 lstm here with tm there like all these
+17:44 transformers and uh yeah
+17:46 okay maybe i'll just go with this and
+17:48 then when they need to definitely see
+17:50 that okay
+17:51 and uh you mentioned this method uh
+17:54 i don't remember the name like the the
+17:57 motor additional one bayesian one
+18:00 i haven't really heard about this so
+18:02 when i
+18:03 google things and so i see okay this is
+18:07 your theme and this is some
+18:09 thing i never heard about what do you
+18:11 choose
+18:12 and then maybe people end up with these
+18:15 complex solutions
+18:17 exactly uh search engine optimization
+18:20 creates technical debt
+18:22 in data science work so what i always
+18:25 recommend and what i've always done
+18:26 is if i'm working on a new project that
+18:29 i have
+18:30 no experience on and news flash to the
+18:33 viewers
+18:34 even people with 12 15 20 30 years
+18:36 experience in
+18:37 ml you're still gonna find that
+18:41 constantly the our industry or our
+18:44 profession is
+18:45 so broad in the amount of things that
+18:48 you could possibly specialize in
+18:50 nobody's going to know it all i'm not an
+18:53 expert on nlp
+18:55 but i know people who are experts on nlp
+18:57 so if i'm working on an nlp project
+18:59 right i'm gonna go talk to them
+19:02 like hey if you were gonna you know if
+19:05 i'm talking about a customer project
+19:07 i'm going to anonymize it i'm not going
+19:09 to say hey i'm working with this
+19:10 customer but
+19:11 i'll say here's a problem that i'm
+19:13 trying to solve
+19:15 and here's the expected outcome
+19:18 this is what the customer the internal
+19:20 customer
+19:22 wants to see out of this how would you
+19:23 solve this
+19:25 and then i'll ask a couple other people
+19:26 maybe i'll assemble a group of experts
+19:28 and the communities that we have
+19:32 that you've built and some of those
+19:34 other communities that you listed at the
+19:36 beginning of this
+19:38 there's amazing talent uh globally of
+19:41 people that are just
+19:42 willing to to come together and help
+19:44 each other out
+19:45 because we all struggle with every bit
+19:47 of this about knowing where do i even
+19:49 begin
+19:50 if i if i do a google search um
+19:53 for how to solve this particular problem
+19:56 i know that the first couple pages are
+19:58 probably going to be
+20:00 hype they're going to be a lot of blog
+20:02 posts that are sponsored by companies
+20:04 that
+20:04 might not be the right solution and some
+20:07 of the original research
+20:09 of maybe perhaps the best way to solve
+20:11 it the simplest way to solve it
+20:14 it predates the internet by so many
+20:16 decades if not centuries
+20:18 bayesian methodology this stuff is
+20:22 19th century a lot of the the research
+20:24 was done
+20:25 the original papers that implement this
+20:27 stuff
+20:28 predates computers so
+20:31 finding that those resources of knowing
+20:33 okay how would i deal with
+20:35 a non-parametric distribution if i'm
+20:38 trying to estimate
+20:40 you know this prediction it might it's
+20:42 highly esoteric information
+20:44 and it's really hard to find when you're
+20:46 just searching on the internet
+20:48 it's much easier to join a community and
+20:51 just
+20:51 ask people that may have done it before
+20:54 send out a
+20:55 a flare and so some of these communities
+20:57 everybody's so helpful
+20:59 somebody will chime in and be like oh i
+21:01 solved that same problem before and
+21:03 here's what i used you'll still get some
+21:05 people to be like oh yeah use deep
+21:07 learning
+21:07 but you might get somebody who's you
+21:10 know
+21:11 kind of been there done that and is a
+21:13 little a little older more experienced
+21:16 and be like no no you can solve this
+21:18 with this statistical inference
+21:20 method uh that's really old but it's
+21:23 really powerful and fast
+21:26 and yeah that's how i approach that to
+21:29 avoid that that trap
+21:30 that's uh maybe something uh i'll use as
+21:33 a pitch for
+21:34 data docs club definitely shut your
+21:37 words
+21:38 thanks and the other reason of why
+21:41 projects isn't making the production you
+21:42 mentioned that nobody cares there is no
+21:44 buy-in
+21:45 and then you also said that we need to
+21:47 focus on being
+21:48 engineers but sometimes i think when we
+21:51 focus
+21:51 only on being engineers sometimes we get
+21:54 into this trap of
+21:55 uh we have this tool let's uh
+21:59 try to find the solution for this tool
+22:01 when we're isolated from
+22:03 let's say from business people from
+22:06 business units for who we solve uh
+22:10 this so how dangerous is it
+22:13 when we become isolated uh and work on
+22:16 machine learning projects
+22:19 silos of data science is the
+22:22 the fastest track that you can have at a
+22:24 company to never
+22:26 getting any of your your projects
+22:29 actually used
+22:30 they may be in production they may be
+22:31 running every hour on the hour
+22:34 but the chances that people are actually
+22:37 getting value out of that is going to be
+22:38 super low
+22:40 if you're not involving yourself with
+22:42 the business
+22:44 i see the modern data scientist as you
+22:47 know people think of it
+22:48 who are coming from a post-grad research
+22:51 position
+22:52 that is highly isolated you're on your
+22:54 own doing your research
+22:56 you're using the scientific method to
+22:58 prove a
+22:59 point or to come up with some conclusion
+23:03 of original research
+23:05 when you come into a business
+23:06 environment from that
+23:08 it's it's like night and day some people
+23:12 want to default into what they're
+23:13 comfortable with
+23:14 which is isolation siloing off hey i
+23:17 only speak
+23:18 in the terms of data science and
+23:20 mathematics and physics
+23:22 the rest of the business doesn't speak
+23:24 like that they don't some of them don't
+23:26 understand that because they don't need
+23:27 to
+23:28 to do their jobs and that's not what
+23:30 drives the company
+23:31 there are companies that are driven by
+23:33 that but they're relatively rare um
+23:36 so an important message
+23:39 that i always have for data scientists
+23:41 coming into that into the field is
+23:44 you have to work on interpersonal skills
+23:47 you have to get to know people
+23:49 know how to build a relationship with
+23:51 them in the business
+23:52 you don't have to be their best friend
+23:54 but uh
+23:55 getting to a point where you can have a
+23:57 frank and open honest conversation
+24:00 with the business unit and say how can i
+24:03 help you and how can you help me make
+24:06 this better
+24:07 that collaboration is super critical for
+24:10 any project
+24:11 and that's where you're going to get all
+24:13 your best ideas anyway
+24:15 a model is going to produce some output
+24:17 whether it's supervisor unsupervised
+24:19 deep learning or traditional or
+24:21 statistical it's going to produce some
+24:23 numeric output
+24:25 the chances that that numeric output are
+24:27 going to be perfect for the business use
+24:29 case
+24:29 are slim to none there's usually some
+24:32 post-processing that you need to do some
+24:33 decision
+24:34 engine that you have to run that
+24:35 prediction through all the logic of that
+24:38 comes from the business from the subject
+24:41 matter experts they're the ones that are
+24:43 helping you do your qa hopefully they're
+24:45 the ones that are saying hey
+24:47 data scientist this is good or
+24:50 hey this sucks and you need to
+24:52 completely change this
+24:54 the earlier and the more frequent that
+24:57 that relationship
+24:58 is built and nurtured and maintained
+25:02 the more successful every project is
+25:04 going to be
+25:05 because you're customer focused at that
+25:07 point you're really thinking about that
+25:09 internal relationship of
+25:10 regardless of who's going to use it
+25:12 having them involved is going to
+25:16 not only make the project have a higher
+25:19 probability of making into production
+25:21 but it's also going to make the project
+25:22 simpler because
+25:24 you have to explain what you're building
+25:26 to them to a lay person
+25:28 and if and they're like the ultimate
+25:31 rubber duck in that sense
+25:32 uh you're explaining through what you're
+25:34 building cause they're gonna ask
+25:35 questions like well how does this work
+25:38 if you can't explain that to them it's
+25:40 probably too complicated
+25:42 and it's going to be a nightmare for the
+25:44 next person that comes into the team to
+25:46 maintain that
+25:47 if you can't explain it to the business
+25:50 so
+25:50 i i always see it as a win-win the
+25:52 closer that
+25:54 that relationship is between the data
+25:57 science team and the business
+25:58 and silo walls need to come down if you
+26:01 want to be a successful
+26:02 data science team why do you need to
+26:05 explain
+26:06 something to business why do they even
+26:09 care how this
+26:10 thing works inside so i can say hey just
+26:13 give us your data then we do some magic
+26:15 and you get the output and
+26:17 trust us this output is good you can use
+26:20 it
+26:21 so why do we need to care about uh okay
+26:25 they understand or not like why
+26:28 they're gonna want to understand if you
+26:29 build that relationship correctly
+26:31 and they're emotionally invested in this
+26:34 project
+26:34 which is the goal of the data scientists
+26:36 working on it you got to get them hyped
+26:38 up about it and
+26:40 they're going to want to know humans are
+26:41 naturally curious if you show them
+26:43 a little peek behind the curtain they're
+26:45 going to want to step right through that
+26:46 curtain with you
+26:47 and say hey i can't speak in your terms
+26:50 right
+26:51 i don't want to hear the nerd talk but
+26:54 explain it to me like i'm a
+26:55 five-year-old
+26:57 and that even though that is kind of an
+26:58 insulting you know phrase but explain it
+27:01 to me in terms that
+27:03 that means something to them in the
+27:05 context of the business and the problem
+27:07 because even though they might not
+27:09 understand how we
+27:10 discuss data science work we don't
+27:14 discuss in the terms we wouldn't
+27:16 understand how they talk about what they
+27:17 do
+27:17 and their understanding of the business
+27:20 so it's
+27:21 it's a partnership of you have those
+27:24 people have expertise in how the company
+27:26 is run
+27:26 or how finance operates or how sales
+27:28 operates or operations
+27:30 lean on them while they lean on you to
+27:33 both jointly understand the project and
+27:36 explaining it in a way that you both
+27:37 understand fluently
+27:39 is going to make sure that help ensure
+27:42 that the project is more successful
+27:45 so basically if you can explain to them
+27:48 if they can understand then
+27:51 yeah maybe they will also have more
+27:52 trust in what you will
+27:54 yes so and they'll come up with ideas
+27:57 that's
+27:58 some of the best ideas i've ever had for
+28:01 any projects
+28:02 throughout my career have always come
+28:04 from the subject matter experts
+28:06 it doesn't come from my head i think of
+28:08 crazy stuff
+28:09 that it might seem like it makes sense
+28:12 looking at the data
+28:13 like oh there's a correlation here
+28:15 between you know
+28:17 this you know value and this and then
+28:20 show that to the business and they're
+28:21 like what are you talking about those
+28:22 have nothing to do with one another like
+28:24 oh
+28:25 so what is important and they're like
+28:27 well you might want to think
+28:28 oh i didn't know we collected that data
+28:30 let me bring that in
+28:31 oh wow that just made the model like 30
+28:34 better and it actually solves a problem
+28:36 and it's simpler i can do that in sql so
+28:39 it
+28:39 yeah it's super important so basically
+28:43 we need to involve subject
+28:44 matter experts as early as as possible
+28:47 then we need to get a buy-in
+28:49 and then we need to make sure that our
+28:50 model is not as complex so we can
+28:53 actually
+28:54 safely predictionize it in such a way
+28:57 that we can maintain it afterwards in
+28:59 one year
+29:00 in two years it's not too expensive
+29:02 right so then we see the other
+29:04 right right so how do we go uh
+29:09 how do we go about this so let's say we
+29:11 have some project idea
+29:13 so how does it look like how do we go
+29:15 from
+29:16 the idea to production in such a way
+29:18 that we maximize
+29:20 our chances at them to be in production
+29:23 and have something that is maintainable
+29:26 who
+29:27 you said we have an idea somebody
+29:30 comes to us and says hey there's this
+29:33 awesome thing
+29:34 if you do this or company will have
+29:36 millions
+29:37 or it can be coming from a data
+29:39 scientist it doesn't matter we just have
+29:40 an idea
+29:42 somebody of us yeah i find it different
+29:45 if it's
+29:46 a subject matter expert engaging with
+29:48 the ml team
+29:49 um because they already have the
+29:52 emotional investment it's their idea
+29:54 they're going to actively want to work
+29:56 with the data science team
+29:57 and it's in that relationship it's on
+29:59 the data scientists
+30:01 to maintain openness to support that
+30:04 that collaborative discussion and
+30:09 include them in all of the testing
+30:11 that's done and all of the validation
+30:13 and
+30:14 all the way up until production release
+30:15 and after production release
+30:18 but if it's if it's the data science
+30:21 team coming up with the idea
+30:23 you have to sell that you have to get
+30:25 that buy-in
+30:26 and getting that buy-in means
+30:29 immediately after you do your
+30:31 your first rough experiment
+30:34 and i i always say the time box these
+30:36 things you have this
+30:37 this idea like oh if if we could only
+30:41 you know classify cats and dogs better
+30:43 then our company is going to make
+30:44 millions of dollars
+30:46 uh so we need to build a cnn that
+30:49 we can detect these so we need to do we
+30:51 need to test out a mask rcnn
+30:53 and we're going to use tensorflow and
+30:54 cares to do that cool
+30:56 take two days block it out on your
+30:58 schedule
+30:59 to try to build a rough rough rough
+31:01 prototype and that can just be
+31:03 just nasty script code in a notebook
+31:06 just get something that
+31:07 does kind of what you're thinking so
+31:09 that you can produce an
+31:10 output that you could put into a
+31:13 presentation and sell it to the business
+31:15 don't spend months working on one of
+31:17 these skunk works projects
+31:19 that you want to get it to perfection
+31:21 before you show it to anybody
+31:23 be very open and honest and say hey we
+31:25 only spent 48 hours on this or we spent
+31:28 you know a week on this it's really
+31:30 rough but here's our concept
+31:33 and at that point you have to go into
+31:34 business selling mode you have to say
+31:36 here's what we're proposing here's how
+31:38 we're going to do it we think
+31:40 we have to do some experimentation but
+31:43 here's the general idea
+31:44 here's what you know what our company we
+31:48 believe our company is going to get out
+31:49 of this
+31:50 and then sell it to i always recommend
+31:52 to sell it to
+31:53 the business unit that cares most about
+31:55 that data or who owns the data
+31:57 owns that business process sell it to
+31:59 them first before
+32:00 selling it to executives because what
+32:03 you don't want to do is
+32:04 is have a high level elevator pitch that
+32:07 an executive buys into
+32:08 thinking that this is going to be a
+32:10 panacea to all the companies woes
+32:12 and then talk to the the sme team later
+32:15 on and they're like what are you guys
+32:16 doing
+32:17 this is nonsense this is not gonna work
+32:20 um
+32:21 so talk to them first the people that
+32:22 know the boots on the ground
+32:24 and once they say yeah this is awesome
+32:26 we're on board we'll totally support
+32:28 this we'll we'll work with you
+32:29 to make this good um then pitch it to
+32:32 the executives
+32:33 see if you get a buy-in you need some
+32:35 sort of executive sponsor because these
+32:37 things
+32:37 most ml projects are expensive from
+32:41 not just computationally and hardware
+32:43 and vms and stuff in the cloud
+32:45 but also just time and effort there's so
+32:47 many other things you could be doing
+32:49 this one had better be pretty important
+32:51 so if they sponsor it and say yes this
+32:53 is good this is
+32:54 where we want to go then it's constant
+32:59 involvement of that smb group from
+33:02 the pre-ideation phase to the planning
+33:04 meetings that you're doing to say
+33:06 what do we need built how long do we
+33:09 think this is going to take to do these
+33:10 different phases of this project
+33:13 what are we going to test when's our
+33:15 next meeting when's our presentation
+33:17 cycle
+33:18 and once that's all formalized and
+33:21 understood
+33:22 go off to do two weeks of experimenting
+33:24 like hey we're gonna try out these five
+33:26 different approaches
+33:27 and we're gonna split the team up each
+33:30 sub team is gonna do
+33:31 one of these things and then we're gonna
+33:33 have a bake off internally
+33:35 and then we're gonna have a bake off in
+33:36 front of the smes and they're gonna say
+33:39 oh we really like number three there
+33:41 that's super awesome
+33:43 and then you present them the cost
+33:45 benefit analysis of each of the
+33:46 approaches like hey number five that we
+33:49 tested
+33:50 it could be ten times cheaper than
+33:52 number three but
+33:53 one percent less accurate well what's
+33:56 what's the trade-off there
+33:57 how fast can we get it out how easy is
+33:59 it going to be maintained
+34:01 and do that analysis beforehand to have
+34:03 that ready for the meeting
+34:05 and then make a group decision i don't
+34:07 ever recommend the data scientists are
+34:09 the ones making that decision
+34:11 we're there to provide basically the
+34:14 scientific evidence of what the results
+34:16 of our experimentation are
+34:18 and then let the business decide like oh
+34:20 if this is cheaper and faster we want
+34:22 that
+34:22 business might say no we really care
+34:24 about accuracy here we need you to build
+34:26 this
+34:27 then go and build it but periodically
+34:30 in sort of ml ml agile approaches i
+34:34 always recommend that
+34:36 throughout that development process
+34:38 after experimentation and this
+34:40 decision is made each one of those
+34:41 sprints that you conclude
+34:43 whether it be two weeks or three weeks
+34:46 you should have a working version of
+34:47 whatever
+34:48 you're you're building uh push for that
+34:51 that basic mvp at every time every uh
+34:54 sprint conclusion so when you cut that
+34:56 feature branch and merge it to master
+34:57 and run
+34:58 everything and get that the artifact as
+35:01 well as a bunch of demonstrated
+35:02 predictions
+35:03 that's used as a presentation for the
+35:05 business at a meeting say
+35:07 here's the status right now what
+35:09 problems do you see
+35:11 and they might say well you're supposed
+35:12 to be predicting cats and dogs but
+35:14 we threw a penguin in here and it says
+35:16 that it's a dog so there's a problem
+35:17 here
+35:18 so show them that show them the results
+35:22 get their ideas of what to test and
+35:25 eventually by the time you hit
+35:27 production readiness
+35:28 level the model will be good
+35:32 it'll be good to solve the problem but
+35:34 it'll be good because the smes have
+35:36 faith in it
+35:37 because they they have skin in the game
+35:39 it's their ideas
+35:40 in code being shown they're going to
+35:42 want to see it succeed
+35:44 and that's that inclusive aspect with
+35:46 the business that becomes so important
+35:48 because people we're emotional creatures
+35:51 so when you get somebody who has
+35:54 ownership of a project even if they're
+35:55 not the one writing the code they're
+35:58 going to want to see it succeed and
+35:59 they're going to be the champions of it
+36:01 and they'll use it and they'll help make
+36:02 it better and that's how you make
+36:04 successful ml and the same is our
+36:06 subject matter experts right yes
+36:08 yep whoever the geniuses are for that
+36:12 domain i heard this thing called
+36:15 ikea effect maybe you heard about this
+36:17 so here in fact
+36:19 yes so like in ikea you buy a thing but
+36:22 it's
+36:22 not assembled yet so you have to
+36:24 assemble it yourself and it's pretty
+36:26 simple usually like they have an
+36:27 instruction
+36:28 so let's say you bought a desk then they
+36:31 just uh
+36:32 there is a very simple instruction that
+36:34 was tested
+36:35 on many many people so you just put this
+36:38 together and at the end maybe you have
+36:39 this
+36:40 ugly desk but you really love it because
+36:43 you build it yourself
+36:46 you develop this kind of attachment to
+36:48 this uh
+36:49 to this table so because you put it in a
+36:52 pack you devote yourself
+36:54 uh you build it yourself and then it's
+36:56 standing there you can maybe put
+36:58 your laptop there or you know eat from
+37:00 this
+37:02 maybe it's not the same quality as if
+37:04 somebody would build it for you but you
+37:06 you love it definitely
+37:08 i i think that's that's a perfect
+37:10 analogy
+37:11 and there's i think there's a difference
+37:14 with that effect if you're buying that
+37:18 desk
+37:18 and it comes in 10 pieces versus that
+37:21 desk that comes in 10
+37:22 000 pieces yeah so you're going to love
+37:25 the 10 piece
+37:26 desk no matter how boring and simple and
+37:30 you know it might not be fancy but it
+37:34 gets the job done
+37:35 you're gonna love it because you helped
+37:36 build it the ten thousand piece desk
+37:39 that might
+37:39 be made out of uh some rare
+37:43 somewhere and rare earth metals and
+37:46 might be super fancy
+37:47 but it costs 10 000 times more than the
+37:50 simple desk
+37:52 you're going to be emotionally attached
+37:53 to that but you're not that's not a
+37:56 healthy attachment
+37:57 because you're going to have everything
+37:58 invested in that and you're going to be
+38:00 stressed out about how complex it is
+38:02 and when it breaks you're going to be
+38:04 trying to fix it because you built it
+38:06 your baby the whole company can be in
+38:08 that
+38:09 that mindset too and i do see that
+38:12 with with certain companies that i've
+38:15 interacted with
+38:15 where they've built that 10 000 piece
+38:18 desk
+38:19 they love it but they also hate it
+38:22 because they can't build any more desks
+38:24 they can't build the chair that goes
+38:26 along with it because they're too busy
+38:28 fixing the desk over and over and over
+38:30 that's
+38:31 the whole data science team spends 90
+38:33 percent of their time
+38:35 just fixing and gluing back on little
+38:38 pieces
+38:38 they keep on falling off yeah i
+38:42 remember i once bought something not
+38:43 from ikea but from art store
+38:47 it was a german store so i had high
+38:49 expectations um
+38:51 in terms of simplicity uh
+38:54 like how simple it would be to collect
+38:56 or to build the thing
+38:58 but it was not like it wasn't as simple
+39:00 it was more complex and
+39:02 i hated that thing and then i think i
+39:04 gave up
+39:05 like it's still in the basement not
+39:08 assembled
+39:11 so yeah that can happen with ml as well
+39:14 yes so let's say we have something more
+39:17 complex maybe a
+39:19 novel algorithm that we want to try all
+39:22 right so we hear
+39:23 like right now deep learning is very
+39:25 popular so we want to
+39:27 try it for our problem
+39:31 should we do this what uh like is this
+39:34 necessary like what kind of risk we have
+39:35 for
+39:36 for doing this i'd say proven
+39:40 deep learning algorithms if we're
+39:42 talking about cnns
+39:44 if you've got an architecture that
+39:46 somebody has spent time
+39:47 building and has proven out that it
+39:49 actually works i'd say it's pretty low
+39:51 risk
+39:52 that's the benefit of transfer learning
+39:54 you can say i'm going to take
+39:56 inception v3 i'm going to lock
+39:59 the first 90 of the layers for
+40:02 non-training
+40:03 open up the last 10 percent add on my
+40:05 own classifier stage and retrain it on
+40:07 my data
+40:08 fairly low risk um because
+40:12 thousands of people are doing that i
+40:14 i've done it dozens of times it it works
+40:17 um building some something from scratch
+40:20 where you
+40:21 find a white paper there's novel
+40:24 algorithms
+40:24 that's where the risk comes in when
+40:28 and i'm guilty of it myself of not only
+40:32 implementing those but also creating
+40:34 them from scratch
+40:35 myself it's fun right
+40:38 it is very fun but
+40:42 it's important to make sure that there's
+40:43 not a solution out there that
+40:45 does what you're trying to do in
+40:48 existence
+40:49 a lot of things that get published
+40:50 particularly in our field
+40:52 a lot of people need to publish because
+40:55 this is a burgeoning growing field
+40:58 and there's a lot of exciting research
+41:00 being done there's also a lot of
+41:02 non-repeatable research being done
+41:04 it's a lot of stuff that gets published
+41:05 that even if you were to try to
+41:07 reimplement
+41:08 exactly what they did even if they show
+41:10 code which most of them don't
+41:12 uh but sometimes they they will have a
+41:13 github repository
+41:15 like hey check out the code that i had
+41:16 for my research and you take that code
+41:19 and you run it on
+41:20 the exact same data set on a different
+41:22 environment and it doesn't work
+41:24 it doesn't produce the same results it's
+41:26 dangerous um
+41:27 so what i usually recommend if
+41:30 somebody's
+41:31 thinking of implementing novel
+41:33 algorithms
+41:34 uh check to make sure it's possible see
+41:37 if other people have done it
+41:39 you don't want to be the guinea pig
+41:41 unless you've established street cred
+41:43 at your company and
+41:46 what i mean by street cred is
+41:49 you've already done all low hanging
+41:51 fruit you've got
+41:52 dozens of models in production solving
+41:55 actual real world business use cases at
+41:57 a company
+41:58 you're working for an ecommerce site
+41:59 you've got clv you've got churn you've
+42:02 got fraud prediction
+42:03 you've got rlv you've got rfm
+42:07 clustering you've got recommendation
+42:09 engines
+42:10 you have you know targeted messaging for
+42:12 marketing
+42:13 you've got all these these models that
+42:15 are currently running and working and
+42:17 doing great
+42:18 and now you're out of the easy stuff
+42:21 you're like oh
+42:21 i don't know what to do next the
+42:23 business wants us to do this really
+42:24 crazy thing
+42:25 that i spent two weeks trying to
+42:28 research how other people might
+42:30 tackle this i've talked to my people
+42:32 over in
+42:33 data talks club i asked a couple data
+42:35 scientists saying like hey has anybody
+42:37 tackled this
+42:38 and the only response that i got was
+42:41 good luck
+42:42 or hey that's np complete we have no
+42:46 idea how to do that
+42:47 um if you've gotten to that point
+42:50 that's when you're you're going into the
+42:52 white paper zone of saying
+42:54 hey maybe somebody's done research or
+42:56 maybe i can actually contact
+42:58 a university uh and see if any other
+43:02 postgrad researchers
+43:03 are working on this problem and
+43:07 try to assume that risk if you if you
+43:09 have no other option
+43:11 but the important thing to do there is
+43:13 communicate to the business
+43:15 and your management and probably all the
+43:18 way up to your cto
+43:20 of how risky this is and if everybody's
+43:22 on board saying yes this is
+43:24 the direction that we want to go put on
+43:26 your research hat and figure it out
+43:28 that's when you're doing you know novel
+43:30 work uh
+43:32 and maybe publish your results when
+43:34 you're done you know help out somebody
+43:35 else in the future
+43:37 because we are that sort of community um
+43:41 but if it's if it's a problem that has
+43:43 been solved
+43:44 by somebody some way or particularly
+43:47 problems that have been solved
+43:49 by many people over many decades using
+43:53 what some people might think of as
+43:55 uncool tech
+43:57 like oh i don't want to use stats models
+43:58 in python i'm like oh
+44:00 i want to use machine learning it's like
+44:03 everything is stats and what we do so
+44:06 what's wrong with statistical inference
+44:08 like just learn about it
+44:10 use it try it if it works great
+44:14 you just made the business happy you
+44:15 solved the problem now you get to move
+44:17 on to something cool
+44:18 or cooler that's kind of how i say that
+44:21 the original
+44:22 research so this is how you earn street
+44:24 cred
+44:25 so by doing uncool stuff first
+44:28 by not using machine learning maybe
+44:30 using the stats model
+44:32 uh library before even moving to psychic
+44:34 secular
+44:35 and then eventually you maybe
+44:39 get into this area where no one has
+44:42 solved this problem before and then you
+44:44 start figuring out how to do this yeah
+44:47 and even before the stats packages uh
+44:51 there's a shocking number of what people
+44:54 would classify as data science work or
+44:56 ml work
+44:58 that you can solve and see cool uh
+45:03 yeah quantile bucketing windowing
+45:07 operations uh building
+45:11 linear equations uh that you can say hey
+45:14 i just need to interpolate this point
+45:16 between these two other points
+45:18 in order to provide an inference
+45:21 it might execute in seconds versus the
+45:25 ml approach we could take
+45:26 you know an hour of training and then 10
+45:29 minutes of validation and all of this
+45:31 code that you have to maintain
+45:33 whereas if you can solve the business
+45:35 use case with simple sql statement
+45:38 do it we're here to solve problems
+45:41 not to get fancy and i think
+45:45 what what you mentioned is you can see
+45:47 at how many people have solved this
+45:49 previously to understand how risky it is
+45:52 if thousands of people have done this
+45:54 have done this like
+45:55 this transfer learning cnn example then
+45:58 it's low risk
+46:00 tons of resources you can maybe do this
+46:02 with your
+46:03 eyes closed because you did this 12
+46:06 times already
+46:07 but if it's only 10 people who have done
+46:10 this and
+46:10 they are the authors of the paper you're
+46:12 reading then yeah maybe it's
+46:14 a lot more risky and you should try to
+46:17 solve
+46:18 other easier problems first before
+46:22 yeah and if those 10 people publish
+46:24 something
+46:25 check to see how many other papers
+46:27 reference that paper
+46:29 that's always something that i do i
+46:31 learned that the hard way
+46:32 several times i'm like oh it's published
+46:35 by this university
+46:36 you know they definitely know what
+46:37 they're talking about and
+46:39 then try to implement it or take the
+46:42 actual code and try to run it
+46:43 like wait a minute there's an issue here
+46:47 with how this works
+46:48 or they did it in a language that you
+46:51 can't transfer it easily to another
+46:52 language because of
+46:54 you know floating point precision or
+46:56 something uh and you're like oh geez
+46:59 uh i would have to re-implement how
+47:02 this particular package that i would
+47:04 require to interface with does
+47:06 its calculation here so now i have to
+47:08 write my own
+47:10 core mathematical algorithm to support
+47:12 this
+47:13 algorithm that i'm now building on top
+47:14 of that it's turtles all the way down
+47:17 when you're in
+47:18 in that uh that space and i do
+47:21 sometimes see that in certain customers
+47:25 like
+47:25 databricks of course the company i work
+47:27 for the creators of apache spark so
+47:29 distributed computing
+47:32 a lot of large-scale ml use cases people
+47:36 put
+47:36 on spark because it can support
+47:40 truly ludicrous amounts of data not
+47:42 every algorithm is distributable
+47:44 so i've worked with people before who
+47:48 are like hey we need to do non-native
+47:50 a non-negative matrix factorization on
+47:52 on spark
+47:54 like okay well we have
+47:57 ways of doing matrix inversion in
+48:01 in spark through an iterative process
+48:02 and they're like no no we can't use that
+48:04 we need to actually invert the matrix
+48:06 all at one time
+48:07 like uh that's going to shuffle all the
+48:10 data to every other executor this is
+48:12 going to be super expensive and you're
+48:14 going to need this massive cluster that
+48:15 can handle this
+48:16 they're like well we read a paper and
+48:18 it's like okay
+48:20 you read a paper on somebody doing this
+48:23 let's
+48:23 let's give it a shot we'll give it a
+48:24 week we'll play around with it try to
+48:26 write some code
+48:27 and then later on you realize that oh
+48:30 the reason it worked was because the
+48:33 hadoop cluster that this was running on
+48:34 that had spark running on it
+48:37 had 10 000 nodes available this company
+48:40 can't afford that amount of vms to be
+48:42 started
+48:43 in their aws instance so we had to
+48:46 backpedal and say we can't do this
+48:48 and here's why so it's important
+48:52 when looking through those papers to
+48:54 read the fine print
+48:55 and then see if other people have been
+48:57 successful in doing it and that's
+48:58 actually what i found
+49:00 a week later was other people
+49:02 referencing that paper saying
+49:03 yeah this is cool but this was the
+49:06 environment that they ran this on so
+49:08 unless you have this amount of
+49:09 horsepower behind you
+49:10 unless you're google sure maybe not do
+49:13 this
+49:15 yeah i think i saw something similar so
+49:17 there is a company called cretel
+49:19 or krateo i don't know how to pronounce
+49:21 they they actively use spark they have
+49:23 i don't know if they still have their
+49:25 hadoop cluster but they
+49:26 they were they like
+49:30 the fact that they have like the largest
+49:32 hadoop cluster in europe
+49:33 and uh yeah so they would do a lot of
+49:35 talks like this
+49:36 but maybe for smaller tech companies not
+49:39 of not all these things are
+49:41 as easily implementable as for criteria
+49:44 because they have this hadoop cluster
+49:46 and
+49:46 they don't i didn't realize
+49:49 we have so many questions we have
+49:51 actually six questions uh
+49:53 so arizona says that my impression is
+49:56 that a lot of companies
+49:57 slept through needing people with basic
+49:59 stat skills
+50:00 and now are throwing data science at it
+50:03 do you agree or disagree
+50:04 100 agree 100
+50:08 i think there's two core critical
+50:11 skill sets that some companies don't
+50:14 realize that they need
+50:15 to make successful data science or ml
+50:20 use cases the first one is statisticians
+50:23 or people with a statistics background
+50:25 it's it's such an important con like
+50:28 aspect of our work that we do you don't
+50:31 need
+50:32 everybody to have that background but
+50:34 you need at least one or two people
+50:35 to really understand statistics at a
+50:39 extremely deep level
+50:42 and the second one is coders get a
+50:45 developer to train up the data science
+50:46 team
+50:47 to create ml engineers
+50:51 and i know that that that term is thrown
+50:53 around a lot of people like well i'm all
+50:54 engineer and engineers do mlap stuff
+50:57 what i mean by ml engineer my own
+50:58 personal definition is a data scientist
+51:00 who can code
+51:02 somebody who can do soup to nuts like
+51:05 you can do the etl
+51:06 and you can deploy to production
+51:08 everything in between
+51:10 and having statistics background as
+51:12 fursona said
+51:14 is also super critical as part of that
+51:17 even if you're not an expert you should
+51:19 have exposure to that and do continuing
+51:21 learning
+51:22 on sometimes reading the old school
+51:25 textbooks
+51:26 that were rented written far before
+51:29 digital printing was a thing
+51:31 yeah i think i had one of those
+51:34 textbooks i tried to read it
+51:36 and it was so difficult
+51:39 yeah some of them are pretty dry and
+51:41 pretty complex
+51:43 particularly the pure theory ones yeah
+51:47 the alternative to that is wait for
+51:50 you to write a a book about
+51:53 translating that there's a lot of people
+51:56 writing books like that
+51:57 like hey here's the foundation of this
+52:00 like crazy technology
+52:02 in theory but let's let's talk about it
+52:04 from an application standpoint
+52:06 and that's really what people needed to
+52:08 know um but having somebody who
+52:10 understands the theory is
+52:11 is also helpful thanks
+52:15 so question from chat now it's could you
+52:17 please advise
+52:19 how to structure an agile scrum team
+52:21 specifically
+52:22 for machine learning or data science
+52:24 work
+52:25 so my experience says that typical
+52:27 software scrum doesn't fit well to data
+52:30 science
+52:30 but i think the example you gave was
+52:32 very similar to scrum
+52:34 in a sense that every two weeks or every
+52:37 end of sprint
+52:38 you have something that you can show to
+52:40 uh
+52:41 to the stakeholders to subject matter
+52:43 experts and every time
+52:45 you finish your sprint you have a
+52:46 working thing which is very scrum-like
+52:50 yeah and people don't like to hear that
+52:52 uh teams that i've talked to
+52:53 are like we can't do that that's not how
+52:55 we work
+52:56 it can be uh and it's about iterative
+52:59 development
+53:00 in ml and the only way to make that
+53:02 successful
+53:03 to have that that scrum mentality
+53:07 follows along with what we've been
+53:09 talking about today
+53:10 is you have to keep it simple it has to
+53:14 be
+53:14 lightweight it has to be just just
+53:16 barely functional at first
+53:19 but the scrum mentality of having
+53:22 buildable usable
+53:23 executable code supports you in keeping
+53:27 the complexity down during that
+53:29 development
+53:30 because you're not going to have enough
+53:31 time and by the way that's why
+53:33 software developers do that as well is
+53:36 and you know that you come from a
+53:38 software development background
+53:41 if you're just left to do whatever you
+53:43 wanted to do like hey the project is
+53:45 like come back in six months and we'll
+53:46 show you you know show us what you've
+53:48 built
+53:49 you could build some of the most
+53:50 unmaintainable crazy code that's so over
+53:53 engineered that
+53:54 it's yeah it meets the requirements but
+53:57 it does 10 000 things that
+53:58 they never asked for um
+54:02 so that's why you do that scrum process
+54:04 of saying
+54:05 just build what you really need to hit
+54:07 the target for this sprint
+54:09 and you can do that with ml projects but
+54:12 it involves building
+54:14 like very bare bones experiment
+54:16 experimental code
+54:18 that goes into that mvp process where
+54:20 you're just building on
+54:22 iteratively the new functionality might
+54:24 say we just want
+54:26 like the data to be loaded somewhere
+54:29 and we need to do some just basic
+54:31 feature engineering let's get the
+54:32 feature engineering work
+54:33 and run it through this placeholder
+54:34 model that placeholder model doesn't
+54:37 have to be an algorithm
+54:38 it doesn't have to be ml it can be
+54:42 an if else statement it can be you know
+54:45 a simple
+54:46 linear model that is
+54:50 coded like hand coded by taking your
+54:52 feature vector and passing it through
+54:55 just offset weights that you're applying
+54:57 keep it as simple as possible and then
+55:00 once you get the feature engineering all
+55:01 worked out so that you can create a
+55:03 feature
+55:04 vector maybe the next sprint is all
+55:06 right we
+55:07 we know which algorithm we're going to
+55:08 go through go to let's build all that
+55:10 code out and let's
+55:12 let's tune all the hyper parameters in
+55:14 an automated way let's use optuna or
+55:16 hyperopt
+55:17 that's this sprint at the end of that
+55:19 you still have a result
+55:21 you have predictions that you can show
+55:22 people the next one might be all right
+55:24 now we're doing unit testing
+55:26 let's let's unit test all that feature
+55:28 engineering code let's write all those
+55:29 tests
+55:30 let's make sure that we have an
+55:31 integration test from
+55:33 ingest to prediction so it's possible
+55:38 i know it's possible because i've done
+55:39 it many many times
+55:41 so the main concern i hear when somebody
+55:43 is
+55:44 saying hey let's use scrum for research
+55:47 is that research is very undeterministic
+55:49 so you don't
+55:50 know if something you do is going to
+55:53 succeed
+55:53 to be successful or not right but i
+55:56 think it's still a good idea to time box
+55:58 this thing
+55:59 so yeah you'd rather spend two
+56:02 weeks to conclude that it's uh not
+56:04 possible rather than you spend two
+56:06 months or
+56:07 or more to conclude that it's possible
+56:10 right
+56:11 so yeah i hear that from people
+56:14 all the time i've gotten that as
+56:15 feedback from the book the first couple
+56:17 of chapters people like whoa
+56:18 how can you tell in in just three weeks
+56:20 whether something's gonna work or not
+56:22 like maybe you can't maybe if you spent
+56:25 three years working on the problem
+56:26 you'll figure it out
+56:27 you'll get something that's workable and
+56:29 stuff
+56:31 but as data scientists companies aren't
+56:33 ma aren't expecting us to do original
+56:36 research
+56:36 generally some are
+56:40 they want a problem solved and
+56:43 it's not just the problem that you're
+56:45 working on right now they want solved
+56:47 they probably have a hundred two hundred
+56:49 thousand problems they want solved
+56:51 if you're not time boxing that research
+56:53 and saying hey
+56:54 we're gonna we're gonna either shelve
+56:56 all of our research for a later date
+56:59 so we can work on something else or
+57:01 we're just going to say hey
+57:02 we've given it our best shot and we've
+57:05 tried it out
+57:06 we can't figure it out maybe we need to
+57:08 hire somebody with experience in this
+57:10 field
+57:11 maybe we need to you know have more
+57:14 discussions
+57:15 in the community and say hey how do
+57:17 other people solve this
+57:18 that might take time but if you have
+57:20 that time box you can now move over to
+57:22 another project
+57:23 while somebody's taking a couple of
+57:26 hours a week of just continuing that
+57:28 research phase
+57:30 but not devoting an entire team to try
+57:32 to figure something out over
+57:34 months
+57:37 yeah yeah there's another question from
+57:39 arizona about
+57:41 your mentoring i don't
+57:44 remember if you mentioned something
+57:46 about mentoring during today
+57:49 but is it a formal thing or something
+57:51 through databricks
+57:54 uh i do a number of different things but
+57:57 um
+57:58 for mentoring we have programs with
+58:00 databricks that that we do that
+58:02 we have several for software development
+58:05 where we have people in the field that
+58:08 come from a data science or statistics
+58:10 background that are trying to
+58:12 learn how to get better at software
+58:14 development skills
+58:16 so there's a bunch of programs that we
+58:18 do like that
+58:20 which are formalized meetups and project
+58:22 work
+58:23 so we allow people to learn in the best
+58:26 way
+58:26 that they can which is learn by breaking
+58:29 it and then fixing it
+58:30 we also have programs where we're
+58:32 teaching people from a data engineering
+58:34 background
+58:34 and a software development background ml
+58:38 there's a kickoff that we're doing and
+58:40 we just started this week actually for
+58:42 the next round
+58:42 which is formalized at the end with a
+58:45 capstone project
+58:46 and that capstone project is full
+58:49 end-to-end production ml
+58:51 which is this is unit tested
+58:54 integration tested monitored with a b
+58:57 testing built around it
+59:00 deployment ci cd like
+59:03 everything that you can think about from
+59:05 production ml that's what we help
+59:07 somebody build
+59:08 so they focus on solving a problem with
+59:10 an open source data set
+59:13 thanks so i know we should be wrapping
+59:16 up what i also want to ask you about
+59:18 your book maybe you can tell us
+59:22 a bit about this and how is it related
+59:24 to the topic today
+59:27 i think everything that we talked about
+59:28 today is covered in the book in some way
+59:31 and then another 610 pages on top of
+59:34 that
+59:36 so it yeah it's kind of a monster of a
+59:38 book
+59:39 um but yeah the first part of the book
+59:42 is talking about process
+59:44 about how do we think through a problem
+59:46 how do we have those conversations with
+59:47 the business
+59:48 how do we uh do that scrum
+59:52 implementation from
+59:53 ml and talking about what is actually
+59:56 important about solving problems and
+59:58 and how do we engage with people to help
+1:00:01 collectively and collaboratively
+1:00:03 solve those problems section two
+1:00:06 part two is more focused on
+1:00:08 implementation of esoteric things that a
+1:00:11 lot of people don't focus on
+1:00:13 it's not the fun cool stuff
+1:00:16 like people really like reading books
+1:00:18 about like hey how do i
+1:00:20 build an algorithm and that's that's key
+1:00:22 core
+1:00:23 data science work you need to know how
+1:00:24 to build your
+1:00:26 your random forest or your logistic
+1:00:27 regression or how to implement a
+1:00:29 statistical model but so many people
+1:00:33 have written books about that
+1:00:34 i wasn't interested in writing that in
+1:00:36 fact what i normally do is hey go read
+1:00:38 alexis book
+1:00:39 on how to do this if you want to see it
+1:00:43 in applications of ml algorithms and
+1:00:45 then the
+1:00:46 explanation of how to do that i'm
+1:00:48 focusing more on
+1:00:49 how do you automate away the annoying
+1:00:51 part of that
+1:00:52 which is how do you do automated tuning
+1:00:55 when you have
+1:00:56 a thousand time series models that you
+1:00:57 need to predict
+1:01:00 how do you automate that how do you
+1:01:01 distribute the training and
+1:01:03 auto tuning of each of those and then
+1:01:05 what do you do with them
+1:01:06 how do you produce visualizations that
+1:01:10 are not specifically for data scientists
+1:01:12 how do you produce a visualization that
+1:01:14 tells a story to a business and then
+1:01:17 part three is more
+1:01:18 the uh development stuff like hey
+1:01:22 why is code quality so important why is
+1:01:24 testing so important here's how to do
+1:01:26 this type of stuff
+1:01:28 here's some gotchas that i see because
+1:01:31 i'm kind of spoiled being a consultant
+1:01:33 at a pretty big company i interact with
+1:01:36 a lot of companies so i see how a lot of
+1:01:37 data scientists do stuff
+1:01:40 and there's a there's repeated patterns
+1:01:42 that i see so i just try to address
+1:01:43 those
+1:01:44 like hey think about computational and
+1:01:46 space complexity this is why it's
+1:01:48 important
+1:01:49 this is why code quality is important
+1:01:51 this is my modularity abstraction
+1:01:54 if you're not doing these things in your
+1:01:55 ml code it's going to be a nightmare to
+1:01:58 maintain
+1:02:00 that's pretty much the book it's like
+1:02:01 it's all the stuff that people usually
+1:02:03 don't talk about
+1:02:04 about ml so you said 600
+1:02:07 pages yeah something like that
+1:02:11 they're trying to get me to get make it
+1:02:12 go down yeah i
+1:02:14 know what you think it's so expensive to
+1:02:18 print
+1:02:19 do you have a couple of more minutes
+1:02:21 because we have three
+1:02:22 more questions sure okay yeah
+1:02:26 so uh one um comment from
+1:02:29 akshat or question so it makes sense to
+1:02:31 solve problems with uncool techniques
+1:02:34 techniques but there are companies who
+1:02:36 are
+1:02:38 i would say ai first they want to show
+1:02:40 off and say that they have ai
+1:02:41 capabilities
+1:02:42 so what about them good luck
+1:02:46 i mean you're gonna have to spend for
+1:02:48 that talent
+1:02:50 and that's i'd say less than five
+1:02:53 percent of companies that i'm aware of
+1:02:56 or that i've interacted with have the
+1:02:58 budget
+1:03:00 and the resources to acquire
+1:03:03 and retain that level of talent so if
+1:03:06 you're an ai first company and all you
+1:03:08 want to do is the most
+1:03:09 cutting edge most complex
+1:03:11 implementations of things
+1:03:13 that's that's great more power to you i
+1:03:15 just hope you have the budget
+1:03:17 for each of those people you're going to
+1:03:19 need what they call
+1:03:20 full stack data scientists or what i
+1:03:22 call ml engineers you're going to need
+1:03:24 people that have been there done that
+1:03:27 and know how to do that complex
+1:03:29 implementation or it can build novel
+1:03:31 algorithms
+1:03:32 and they're they're not cheap
+1:03:36 here in the united states at least you
+1:03:39 could be
+1:03:39 looking at having to pay somebody half a
+1:03:42 million dollars
+1:03:43 a year in salary who knows how to do
+1:03:45 that
+1:03:46 who can successfully do that but most
+1:03:49 companies don't have that budget
+1:03:51 or they see that price tag and they're
+1:03:53 like whoa wait a minute
+1:03:55 that's more than we pay like our
+1:03:58 senior staff developers um
+1:04:01 no we're not going to do that we're
+1:04:02 going to hire people straight out of a
+1:04:04 phd program
+1:04:04 and then we're just going to tell them
+1:04:06 to do this good luck
+1:04:08 like it's not going to go well those
+1:04:10 people are probably going to quit
+1:04:12 because they're going to be under so
+1:04:13 much stress they're not going to really
+1:04:14 know how to do all of that
+1:04:16 so you need you need the right talent
+1:04:20 you need to bring in the new people so
+1:04:21 that they can train but you need to have
+1:04:23 processes built around mentoring and
+1:04:25 cross training
+1:04:26 pair programming yeah
+1:04:30 all i can say is good luck right
+1:04:34 thanks the comment from anonymous is i
+1:04:37 always hear
+1:04:38 about data scientists have having to
+1:04:40 explain
+1:04:41 their managers uh things in simple
+1:04:44 language
+1:04:45 do you think it's a high time that
+1:04:47 managers have a crash course on data
+1:04:49 science
+1:04:52 i think it's important for a data
+1:04:54 scientist
+1:04:56 i think it's important for any engineer
+1:04:57 a software developer
+1:05:00 from a front-end software developer all
+1:05:02 the way to you know
+1:05:04 an ml engineer anybody who's working
+1:05:07 with tech
+1:05:08 that is esoteric in nature uh
+1:05:11 you should be able to explain it to your
+1:05:12 parents or to your children
+1:05:14 or to your spouse or you should be able
+1:05:17 to explain what you do
+1:05:18 and how you build something in terms
+1:05:21 that any
+1:05:22 human who has sufficient understanding
+1:05:25 of
+1:05:26 business operations can understand what
+1:05:28 you're doing
+1:05:30 now that's not the question that was
+1:05:32 asked it's
+1:05:33 should my manager be able to understand
+1:05:36 terms in what i'm doing
+1:05:41 yes and no i mean it's up to the tech
+1:05:44 lead
+1:05:44 i think whoever the most senior data
+1:05:46 scientist is
+1:05:48 to work with that manager and educate
+1:05:51 them
+1:05:51 say like hey when we're in our stand-ups
+1:05:53 and we're talking about these things
+1:05:55 this is what that actually means
+1:05:57 um i've done that at companies i've
+1:05:59 worked for in the past i don't have to
+1:06:01 data breaks because of what we do and
+1:06:04 who we hire but
+1:06:06 at previous companies yeah um
+1:06:09 sometimes the managers doesn't want to
+1:06:11 ask or they're they're saying hey i need
+1:06:12 this explained in these simple terms
+1:06:15 it could be because they are afraid to
+1:06:19 ask
+1:06:19 what somebody is talking about in a
+1:06:21 meeting they don't want to look like
+1:06:22 they don't know what they're talking
+1:06:23 about
+1:06:24 so the tech lead should be the one
+1:06:26 telling them like hey i'm willing to
+1:06:27 teach you all of this stuff so that
+1:06:29 you can follow along exactly with what
+1:06:31 the team is talking about
+1:06:33 um they'll probably be grateful and if
+1:06:35 they get angry at that
+1:06:36 then maybe your company sucks and he
+1:06:39 needed
+1:06:39 a new job like i mean i would
+1:06:43 i would extend the olive branch to that
+1:06:45 manager and say hey
+1:06:46 do you want to learn more about this and
+1:06:48 every single time that i've had that
+1:06:50 interaction
+1:06:51 they're usually so grateful and they're
+1:06:53 like oh
+1:06:54 this is amazing this is exactly what i
+1:06:55 was hoping for can we meet for an hour
+1:06:57 after work and like yeah
+1:06:59 let's create a cheat sheet for you
+1:07:01 that's here's this concept here's what
+1:07:03 it actually means
+1:07:04 in laypersons terms and
+1:07:07 people that i've worked with in the past
+1:07:09 have filled multiple pages front and
+1:07:11 back with that
+1:07:12 that translation it's their rosetta
+1:07:14 stone to talk
+1:07:15 data science nerd talk and i think
+1:07:18 uh it's not reasonably reasonable to exp
+1:07:21 to expect from a manager that
+1:07:23 if you just send them a course uh of
+1:07:25 android inc
+1:07:26 or somebody else that they will do this
+1:07:29 i don't think they will ever
+1:07:31 do this because they are busy they're
+1:07:33 busy with uh
+1:07:35 planning budgets and uh hiring that
+1:07:39 i don't know a ton of things they're
+1:07:41 just too busy for learning machine
+1:07:42 learning
+1:07:43 right and it's not their core competency
+1:07:47 so right it's your job to educate them
+1:07:49 to
+1:07:50 to tell them okay we mentioned this
+1:07:52 thing during the stand up
+1:07:53 this is what it actually means yes right
+1:07:56 okay last one
+1:08:00 so from chetna i've often heard
+1:08:03 people suggesting that to be successful
+1:08:05 as a data scientist one should find a
+1:08:07 niche for example become an
+1:08:08 nlp expert recommendations expert etc
+1:08:11 what are your thoughts about this uh
+1:08:15 depends on what you want to do with your
+1:08:16 career
+1:08:18 some companies will only ever do one
+1:08:20 thing
+1:08:22 if if you're working at a an e-commerce
+1:08:25 site you'll be exposed to a handful of
+1:08:28 of algorithms that you'll you'll be
+1:08:30 working with
+1:08:31 um if you go and work for
+1:08:34 a social media site you may have some
+1:08:37 overlap
+1:08:38 of those fields of speciality
+1:08:41 but there'll be additional ones that
+1:08:42 will add it and there'll be some that
+1:08:43 that won't be done
+1:08:45 if you go work for cern in the south of
+1:08:47 france
+1:08:48 uh you're not gonna be using any of that
+1:08:50 stuff so
+1:08:52 there's differences between you know
+1:08:54 pure scientific data science work
+1:08:56 and you know commercial data science
+1:08:59 work it really depends on what you want
+1:09:01 to do
+1:09:03 but what i always recommend is get
+1:09:05 really good with the core
+1:09:07 basics of data science work
+1:09:11 um and what i mean by core basics is
+1:09:14 bayesian modeling you don't have to be
+1:09:16 an expert in it but know
+1:09:18 how those things work why to use them
+1:09:21 when to use them
+1:09:23 learn ensembles like when i say learn
+1:09:27 ensembles i don't mean learn how to
+1:09:28 apply an
+1:09:29 api anybody can learn that i mean
+1:09:33 learn how a decision tree is built why
+1:09:36 it's built that way
+1:09:37 what the hyper parameters do what does
+1:09:40 that mean that your feature vector has
+1:09:42 to look like
+1:09:43 uh when you move on to from decision
+1:09:46 trees
+1:09:47 how do a random forest made like what
+1:09:49 does the code actually look like for
+1:09:51 constructing that
+1:09:52 and then everybody should know how
+1:09:55 linear systems like generalized linear
+1:09:57 models
+1:09:57 should understand how they're how they
+1:09:59 optimize
+1:10:01 why they're built the way that they are
+1:10:02 and what all those hyper parameters do
+1:10:05 and once you have that as an i think
+1:10:07 every data scientist should strive
+1:10:08 within the first
+1:10:09 two years of their employment to become
+1:10:11 experts in those three
+1:10:12 areas and then move into growing that
+1:10:15 knowledge
+1:10:16 with advanced statistics of statistical
+1:10:18 models like
+1:10:19 how how do time series models work you
+1:10:22 don't have to know all of them
+1:10:23 there's dozens and dozens of them but
+1:10:26 know
+1:10:26 a few of them and then as you're moving
+1:10:31 in knowledge from that that's when
+1:10:32 specialty usually happens
+1:10:34 four or five years i don't know alex if
+1:10:36 you say that's about right
+1:10:38 four or five years when you start to
+1:10:39 specialize uh
+1:10:41 if your company's working on nlp you may
+1:10:43 become the nlp guru
+1:10:47 if you're working on computer vision
+1:10:49 problems you may become
+1:10:51 really good with opencv and tensorflow
+1:10:54 and keras with cnns and that might be
+1:10:56 your bread and butter
+1:10:58 if you want to do that and that's what
+1:11:00 you're passionate about
+1:11:02 yeah go all in but when you get to
+1:11:05 the 10 to 15 year mark as a data
+1:11:07 scientist
+1:11:09 i find most people branch out and try to
+1:11:11 become a specialist in another field as
+1:11:13 well
+1:11:15 it's just good for career progression to
+1:11:18 be able to mentor more people and
+1:11:20 be able to contribute more to different
+1:11:22 problems
+1:11:23 and it also paves the way to what i
+1:11:25 expect eventually will become more
+1:11:27 ubiquitous which is
+1:11:28 like the chief ai officer or chief
+1:11:32 chief ml officer at companies like
+1:11:33 that's the sort of the pinnacle of a
+1:11:35 career growth for people if they want to
+1:11:37 stay in the field
+1:11:39 you have to know how a lot of different
+1:11:40 things work
+1:11:42 and you probably can still be successful
+1:11:44 as a data scientist without
+1:11:46 specialization with authenticity yeah
+1:11:49 general lists work really
+1:11:51 great you don't have to have
+1:11:55 the ability to implement you know
+1:11:58 some package from scratch from memory
+1:12:02 like having that level of deep
+1:12:03 understanding of something that's not
+1:12:05 required
+1:12:06 some nerds like myself are like hey i
+1:12:08 want to create a new algorithm that
+1:12:10 solves this problem where i want to
+1:12:11 port you know single node or single
+1:12:14 machine
+1:12:16 algorithm to a distributed system i just
+1:12:18 find stuff like that fun
+1:12:19 so i do it if customers have a use case
+1:12:22 for it
+1:12:23 but you don't have to go into that level
+1:12:25 of specialization you can be a
+1:12:27 generalist and say
+1:12:28 yeah i know how to build nlp models i
+1:12:30 know how to do association rules i know
+1:12:32 how to do
+1:12:33 collaborative filtering and you know i
+1:12:36 can implement xg boost on
+1:12:38 any problem that you have and i know how
+1:12:40 to tune that properly and i know
+1:12:42 how to monitor that um yeah
+1:12:45 general lists are pretty successful okay
+1:12:48 thanks um so
+1:12:51 let's uh finish how people can find you
+1:12:56 uh linkedin um
+1:12:59 i'm also the uh a new co-host to the
+1:13:02 podcast
+1:13:03 uh on devchat tv adventures and machine
+1:13:05 learning you can hear me
+1:13:06 ask a bunch of people you've been on
+1:13:08 that show actually yes
+1:13:09 and we're probably going to have you
+1:13:10 back for you around yes
+1:13:13 and so yeah come check me out there
+1:13:16 find me on linkedin and uh yeah check
+1:13:19 out
+1:13:19 the book if it sounds interesting and uh
+1:13:22 it's it's in early access
+1:13:23 and i think it's getting published in
+1:13:25 november is the plan right now
+1:13:27 um so yeah you can buy it now okay cool
+1:13:30 thanks a lot for joining us today for
+1:13:32 sharing all your knowledge and thanks
+1:13:34 everyone
+1:13:35 uh for watching us and asking questions
+1:13:38 and
+1:13:38 uh do remember that we have three more
+1:13:41 talks this week
+1:13:42 they're all amazing uh check them out if
+1:13:45 you haven't then
+1:13:46 register for the remaining events well
+1:13:49 that's all and uh thanks again it was
+1:13:52 nice chatting with you
+1:13:54 yeah it was nice for me as well thanks
+1:13:56 alexey

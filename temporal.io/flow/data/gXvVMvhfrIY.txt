@@ -1,0 +1,1429 @@
+From Theme Parks to Tesla: Building Data Products That Work
+
+0:00 Hi everyone, welcome to our event. This
+0:02 event is brought to you by Data Docs
+0:04 Club which is a community of people who
+0:06 love data. We have weekly events and
+0:08 today is one of such events. Uh this is
+0:10 a bit unusual. We usually have them on
+0:12 Mondays. Um but uh actually this week we
+0:15 have quite a few of um these different
+0:17 events. I hope you're enjoying it. If
+0:20 you want to find out more about the
+0:21 events we have, uh there's a link in the
+0:24 description. Click on that link and
+0:26 check it out. You'll see all the events
+0:28 we have in our pipeline.
+0:30 Then do not forget to subscribe to our
+0:32 YouTube channel. This way you'll get up
+0:33 to date with all the streams of future
+0:36 interviews that we will have. And last
+0:38 but not least, do not forget to join our
+0:41 Slack community where you can hang out
+0:42 with other data enthusiasts. During
+0:45 today's interview, you can ask any
+0:46 question you want. There is a pinned
+0:48 link in the live chat. Click on that
+0:50 link, ask your questions, and we will be
+0:52 covering these questions during the
+0:53 interview.
+0:55 Okay, that's the mandatory slides that
+0:58 we have before
+1:02 each interview.
+1:05 Now I am opening the questions we
+1:07 prepared for you.
+1:09 >> And Abuzar, if you're ready, we can
+1:11 start.
+1:13 >> Yeah, let's do it.
+1:14 >> Today on the podcast, we are joined by
+1:17 Abazar. He's worked on data and ML
+1:19 projects in very different places from
+1:21 amusement parks to e-commerce and now
+1:23 Tesla. We'll talk about how to turn data
+1:26 into real products, what it means to
+1:28 productionize machine learning and what
+1:30 is the future of data and ML
+1:31 engineering. So, welcome to our event.
+1:35 >> Thank you. Happy to be here.
+1:38 >> So, let's start with um your career
+1:41 journey so far. Can you tell us about
+1:42 this?
+1:44 Uh yeah so uh my background is software
+1:48 engineering. uh I got my bachelor and
+1:51 master in software engineering basically
+1:55 computer engineering from Iran and then
+1:58 I worked for a couple of years in a
+2:00 telecom company and after a while I
+2:03 thought okay this is getting boring
+2:06 uh since you have to develop a lot of
+2:08 things and you have to also support it
+2:11 and if it's like for a couple of years
+2:13 it's going to be a lot of things that
+2:14 you have to support. So I thought okay
+2:18 um maybe it's time to go after something
+2:23 like that I like more and I worked on my
+2:26 master thesis is also on the same topic.
+2:29 It was like machine learning uh like
+2:32 more like data science
+2:35 uh topics. So I was looking just for
+2:39 like different universities that have uh
+2:42 like a similar program or I can like
+2:45 further study data science to understand
+2:47 it more. uh so I came across a program
+2:51 in otovan tu otoven university that is
+2:55 called uh it was called actually
+2:58 professional doctorate in data science
+3:01 now it's called engineering doctorate
+3:05 actually they changed the name because
+3:07 of some overlap issues uh yeah I applied
+3:11 >> when was it huh
+3:13 >> sorry
+3:13 >> when when was it
+3:15 >> this was 2018 18
+3:19 >> 18 yeah I was applying a little earlier
+3:21 as we spoke a little before the
+3:23 interview so I was also considering
+3:25 Einhovven University for my masters and
+3:28 I I think I have a very similar
+3:32 at least the beginning of my career
+3:33 journey was quite similar so I was a
+3:34 software engineer and I was getting
+3:36 bored like I was working at a bank and
+3:39 I'm like do I really want to do this for
+3:41 the rest of my life and then I found out
+3:43 that there is this machine learning
+3:45 thing and I thought oh that's so school
+3:47 and I and Hoen University was one of the
+3:49 universities I was considering uh
+3:52 applying. It's very interesting.
+3:55 >> Yeah. Yeah. I I don't remember how it
+3:57 was called though. Um yeah, but I I
+4:00 remember it was um
+4:03 that university and yeah, I really like
+4:06 the program, but I I chose a different
+4:07 one at the end.
+4:09 >> Okay. Which which university did you go
+4:10 to?
+4:11 >> So um I graduated from TU Berlin.
+4:14 >> Oh, okay. And now I am in Berlin.
+4:17 >> Nice, nice, nice.
+4:19 >> Yeah. So those years I guess it was like
+4:23 OpenAI just launched their thing and
+4:26 like they started like two or three
+4:28 years before and it was like a hot topic
+4:32 in especially in the Netherlands or I
+4:34 think also in the in Germany it was like
+4:37 very hot topic. So also you could go
+4:40 around and see all the companies that
+4:42 whether they are mature to use these
+4:44 models or not. So it was a fun I think
+4:48 those years fun years to start actually.
+4:51 So yeah I started that program. Uh I was
+4:55 it's it was like a two-year program. It
+4:58 was like it it's not a PhD obviously but
+5:00 it's like a
+5:01 >> we call it doctorate. It's confusing
+5:03 right? Yeah, it's confusing actually,
+5:05 but it's like research plus practical
+5:08 practical work. So, they pay you
+5:12 basically to study. That was that's that
+5:14 was amazing opportunity.
+5:16 >> Ah, that's a good deal. I I didn't have
+5:18 this deal. So, what they offered me is
+5:20 uh partial scholarship.
+5:24 >> Yeah, that was not enough.
+5:26 >> Yeah, this is was also like you get the
+5:29 minimum wage.
+5:30 >> Uhhuh. Yeah, that's that's really cool.
+5:32 That's awesome.
+5:33 >> Was enough I think for like a student
+5:36 life it was enough I think.
+5:38 >> Yeah. And yeah I during that program
+5:41 it's basically like you work with a lot
+5:43 of Dutch companies that kind of sponsor
+5:45 the program. Uh
+5:48 like yeah like I think
+5:50 >> Philips right
+5:51 >> four or five sorry
+5:52 >> like Philips.
+5:54 >> Yeah Philillips ASML
+5:56 uh like we worked with Hendricks
+5:59 Genetics. They were like breeding
+6:00 turkeys and stuff. Uh it was a lot of
+6:04 cool companies that you got to work with
+6:06 even municipalities.
+6:07 >> Mhm.
+6:08 >> Uh yeah, a lot of companies actually
+6:10 worked very closely with TOE. So it was
+6:13 really cool.
+6:15 >> That's
+6:17 went to Etink then want to went to
+6:20 Bulpoint and now
+6:23 >> Okay. And this uh you just oh at the end
+6:27 after that I went to Eel was link
+6:32 >> and then b.com but like these are um I
+6:35 have no knowledge about this
+6:39 link but this is an amusement park from
+6:41 what I see. What is this? What did you
+6:44 do there?
+6:45 >> Cuz I also like sorry for interrupting
+6:48 you. I also worked at an amusement park
+6:50 but
+6:51 >> I was an right operator. So, I was
+6:54 actually like letting kids in and then I
+6:56 was making sure they don't kill
+6:58 themselves. That was my job.
+7:00 >> I think yours was different, right?
+7:02 >> A bit different. Uh
+7:05 I mean, yeah. So, it was the story like
+7:09 basically starts from my second year. In
+7:11 the second year of our program, we had
+7:13 to have a long project, right? So, for
+7:16 that one year project, I either had to
+7:19 go uh with the banks. So it was like a
+7:22 collision between banks and police that
+7:24 they wanted to do money laundering and
+7:26 stuff, right? Because I did like graph
+7:28 theory and those things uh on couple of
+7:32 projects. So they thought okay maybe
+7:33 this is suitable and the second option
+7:36 was going to have the link to the
+7:38 amusement park. Uh I didn't like the
+7:42 like duh that's obvious right? Uh I
+7:46 didn't like the banking so I went to the
+7:49 second uh choice and at first I was
+7:53 quite lost. It was like what the hell am
+7:55 I doing here? How did I end up here?
+7:57 Right? because my background is like uh
+8:01 I love technology and technological
+8:03 companies and like how can I cross over
+8:07 to that again when I land in Eftilling
+8:09 right uh so yeah I went there and I
+8:13 started like trying to understand what
+8:15 the problem is there that I can really
+8:17 help right yeah you are going to be
+8:20 quite shocked when you land there and
+8:22 you think okay what kind of data that
+8:25 like an amusement could have amuse ment
+8:28 park could have that I can like
+8:30 basically
+8:32 design a model or train a model on.
+8:34 Right.
+8:35 >> Mhm.
+8:36 >> So it started from there. Uh
+8:40 and yeah the their problem their main
+8:43 problem was crowd control.
+8:44 >> Mhm. Cuz I imagine this is uh like
+8:47 Disneyland, right? So where you have a
+8:49 lot of rides
+8:50 >> and then for each uh right you need to
+8:53 stand in the queue and then yeah
+8:57 basically you wait in the queue until
+8:59 it's your turn then you go there 5
+9:01 seconds and then you have to like at
+9:03 least this is the experience from
+9:04 Disneyland right so you probably had a
+9:07 similar problem there right?
+9:08 >> Yeah exactly I think you know the
+9:10 business better than me
+9:12 because you were on the on the floor so
+9:16 uh
+9:18 giving a bit of background about Fing
+9:20 after is like the biggest uh theme park
+9:24 in the Netherlands and I think it's
+9:26 probably in terms of revenue and stuff
+9:28 it's the second in Europe
+9:30 >> okay
+9:31 >> maybe the third I don't know maybe after
+9:33 Europe and Disney
+9:36 >> it's the third uh I have to check but
+9:39 still it's very popular I mean in the
+9:41 Netherlands or in like the part of
+9:45 Germany that is close to Netherlands
+9:46 everybody knows it.
+9:48 >> Uh, and it has a lot of stories. The
+9:51 most important part like the significant
+9:53 thing about thing is that every ride has
+9:56 a story. Almost every ride has a story
+9:58 behind it. So, it's not just like a ride
+10:01 that you go to to be a scared or like to
+10:04 like get adrenaline pump and stuff rush.
+10:07 But like everything has a story behind
+10:09 it. It's a mine. It's a story about the
+10:12 mine. It's a roller coaster, but it's a
+10:13 story about the like a minor that got
+10:15 stuck there or it got haunted or Yeah.
+10:18 So, that was the cool part. That was
+10:20 like the the thing that could trigger me
+10:23 like, okay, who did who came up with
+10:26 this idea, right? And
+10:30 the the most uh interesting thing for me
+10:33 there or the most impactful for me there
+10:35 was that I learned that there was a guy
+10:37 called Peter Rinders
+10:40 >> and he was like the mind behind how to
+10:45 create like these motors and movements
+10:48 and how put this mechanical stuff
+10:50 together to bring the magic to life
+10:52 basically without without showing the
+10:55 technology actually. uh but it's still
+10:59 uh presented in a way that is it looks
+11:02 magical.
+11:03 >> Mhm.
+11:04 I think that was like uh very like I I
+11:08 found myself a bit I mean I'm not saying
+11:11 I'm the innovator of the time but he was
+11:15 like he was the in innovator of he was a
+11:18 I think a big Dutch innovator and he
+11:22 basically laid the foundation for all
+11:24 the innovations that you can see in the
+11:26 park. For example, uh,
+11:30 Snow White in in Eterling. If you go
+11:32 there, you can see she's just laying
+11:36 there, right? Very subtle. She's just
+11:38 laying there and every kid is looking at
+11:41 her behind the window, but she's
+11:44 breathing.
+11:46 So, that small thing that she's
+11:48 breathing, it adds a lot of magic to
+11:51 like when you look at her behind the
+11:53 window uh for a kid, right? So yeah,
+11:57 those like subtle stuff is like really
+12:00 important. This can be in our job as
+12:02 well, right? When you're presenting
+12:04 something or when you have like a the
+12:06 product, right? They don't need to know
+12:08 the
+12:10 the back end or how complicated the back
+12:12 end is. It just needs to function well.
+12:15 >> Mhm. Mhm. Yeah. Uh that's uh the story
+12:18 of all software engineers, right?
+12:21 >> Yeah. Right.
+12:23 >> Like you don't need to know how it
+12:24 works. Yeah.
+12:26 >> Uh but what did you do there? Like you
+12:29 did some uh analytics and data science
+12:32 and machine learning, right?
+12:33 >> Yeah. So the problem was how they can
+12:36 control the crowd in different places in
+12:38 the park or how they can drive the um
+12:43 group of people in different places in
+12:45 the park because usually people will
+12:47 rush to the roller coaster area for
+12:49 example. Uh but there are like the
+12:52 places that they tell a stories. It's
+12:54 like there there are places that are
+12:56 suitable for families or small kids. So
+12:59 the goal was in in our definition, the
+13:03 goal was to create a recommendation
+13:05 system to like basically drive people
+13:10 uh and plan their day or plan the next
+13:13 move actually.
+13:14 >> Mhm.
+13:15 >> In order to
+13:16 >> to to avoid long waiting times or
+13:20 >> so that was the ultimate goal.
+13:22 >> Yeah. Yeah. To have better experience
+13:24 because I guess if you go to an
+13:25 amusement park and all you do is spend
+13:28 time in cues at 10, it's not fun, right?
+13:31 >> Yeah. Exactly. Yeah. In order to do that
+13:34 also we needed to predict
+13:36 uh how like how long the queue will be,
+13:40 right? Then you need the capacity of the
+13:42 ride, right? Mhm.
+13:44 >> Or you can also guess how crowded uh the
+13:49 roundabout or a place in the park will
+13:53 be by looking at the transactions of a
+13:56 restaurant a specific a bigger
+13:58 restaurant there or
+14:00 a stand that is selling I don't know
+14:03 drinks right so we had couple of models
+14:07 one coming from trans transactions and
+14:09 the other ones coming from uh the rights
+14:12 and These two will they gave us an index
+14:16 of how crowded the place is. Then we
+14:19 could use that in another model that
+14:21 would uh try to predict and recommend
+14:26 the next best move
+14:28 >> to to each uh group.
+14:32 >> Mhm. Is it um
+14:35 from the user point of view the user
+14:37 experience do they have an app and they
+14:38 say okay now go here now go there?
+14:41 >> Yeah. So
+14:42 >> Uhhuh. Okay. And then this way you can
+14:43 redistribute the crowd to different
+14:45 rides so they don't have they don't
+14:48 stand in one queue.
+14:50 >> Yeah. Exactly. Exactly.
+14:51 >> Ah that's cool.
+14:52 >> Fing has a like a very popular app also.
+14:55 I think 60% of the people back then at
+14:58 least uh used the app.
+15:00 >> Mhm.
+15:01 >> Yeah. Makes sense. Especially if you
+15:02 advertise it as like hey do you want to
+15:04 wait less? Don't load our app and
+15:06 everyone Yeah. We we want to wait less.
+15:08 >> Actually we gave another incentive. They
+15:12 for the start when we wanted to survey
+15:14 everybody we told them that okay do you
+15:16 want a free coffee
+15:18 >> okay
+15:19 >> they you can participate in this survey
+15:21 so they installed the app and they did
+15:23 the survey and they got their free
+15:25 coffee at the start
+15:27 >> yeah which what you were describing
+15:30 reminds me of one of the classes I had
+15:34 back in my bachelor studies it was a
+15:36 modeling class and I don't remember the
+15:38 tools we use I think it was SPSS
+15:40 modeling modeler or something like this.
+15:43 So, we would model supermarkets
+15:46 and in supermarkets you had some people
+15:49 that were coming at random times to the
+15:51 cashiers, right? And we wanted to see
+15:53 what's the most effective way of dealing
+15:55 with um the customers, right? How can we
+15:59 process them as effectively as possible?
+16:01 And we were trying like uh different uh
+16:06 ways of arranging the cashiers. And what
+16:09 worked best I remember was one Q for all
+16:13 the cashiers.
+16:15 >> So you have one common queue and then
+16:17 they split uh uh you know now you go to
+16:21 uh I don't know cashier number six you
+16:22 go to cash number eight. So this is in
+16:25 our modeling what work best. Did you use
+16:28 a similar system for for that like uh I
+16:32 imagine it's some sort of person process
+16:34 that generates uh visitors and you can
+16:37 emulate all these things or it was
+16:38 something completely different
+16:40 >> actually what we did it was a bit
+16:43 different uh um so from the survey
+16:49 uh like 3,000 people participated in it
+16:53 and uh we got all the moves that they
+16:58 have during the day.
+17:00 >> So like
+17:00 >> Oh, that's cool.
+17:01 >> Right. And we had like uh maybe like
+17:07 less than a bit less than 3,000
+17:10 variations of the routes that people
+17:13 will take, right? Based on their
+17:15 preferences, right? If they're group of
+17:17 two, they could specify in the app. They
+17:20 could say if they had launch or not. All
+17:22 those things we knew right about the
+17:24 group and if they they were like
+17:25 daredevils or they would just like want
+17:28 a chill day and stuff. So we had all
+17:32 these
+17:33 variations for each group of people and
+17:37 we just built a model based on that. So
+17:40 if you gave your preference right uh
+17:44 whichever lands closer to one of these
+17:47 variations or aggregation of these
+17:50 variations uh the model would give you
+17:53 probability uh for like basically a list
+17:56 of attractions that you you could take
+17:59 and what we would show on the app is the
+18:01 first the highest probability.
+18:04 >> So that's cool. I mean it was like
+18:07 pretty simple right but yeah
+18:11 >> yeah it is like many things right
+18:14 usually the simplest thing works
+18:16 >> really good
+18:18 >> yeah especially when you want to show it
+18:20 to like you don't know who is going to
+18:21 go to the park right it could be like a
+18:23 15y old or it could be like a 60 year
+18:25 old that
+18:26 >> not so much familiar with the technology
+18:29 >> yeah and then you worked at ball so even
+18:32 so I don't live in the Netherlands but I
+18:34 know about ball so first of Well, I know
+18:36 cuz they frequently attend people from
+18:38 there. They frequently attend Berlin
+18:40 buzzwords. I don't know if you ever did
+18:42 this. Uh Berlin buzzwords is a
+18:45 conference in Berlin about uh uh search
+18:48 and then other hot topics like machine
+18:50 learning. Um this year was uh AI but
+18:54 typically search. So people from B come
+18:56 to Berlin uh to Berlin buzzwords uh and
+18:59 like every year there is a talk from
+19:02 them about some challenges that they
+19:04 solve. So that's how I know about ball
+19:07 and I know that this is a big company uh
+19:09 this is like Dutch Amazon right
+19:12 >> u and you like this company they sell
+19:15 books right and other things
+19:17 >> yeah they started exactly like Amazon
+19:19 selling books but now it's like
+19:22 everything
+19:23 >> yeah and you work there and uh what did
+19:26 you work on
+19:28 >> we so
+19:31 we I worked specifically on the like
+19:34 Most of it it was like favorite brand uh
+19:39 carousel basically that you could see in
+19:41 the app and the web shop website. Uh
+19:46 yeah, that was like I think my biggest
+19:48 uh product there. So you could basically
+19:52 browse the favorite brands.
+19:55 uh back back then it was a big push from
+19:59 uh like the managers to so that we need
+20:03 to like uh in integrate like the brands
+20:08 into our websites uh and apps. So that
+20:14 the algorithm was basically was showing
+20:16 the what is the favorite brand right now
+20:18 and uh if it's related to you.
+20:21 >> Mhm. And brands is like if I read is it
+20:24 book related? Let's say if I read books
+20:26 then my favorite brands would be like
+20:28 mending and or
+20:30 >> kind of yeah but this is everything
+20:32 right. It could be like I don't know
+20:34 >> Nike right
+20:37 >> yeah it could be clothing brand or like
+20:39 book brands or like publisher I mean uh
+20:42 or anything. Yeah.
+20:44 >> So yeah that that was like the biggest
+20:46 one. Uh
+20:49 uh but yeah, I did also small stuff like
+20:51 >> I just open ball and I see Well, first
+20:54 of all, everything is in Dutch, but
+20:56 since I speak German, uh it's kind of
+20:58 understandable for me. And I see
+21:01 watches, uh coffee machines, uh wash uh
+21:05 washing machines, smartphones, uh lamps,
+21:10 uh furniture, basically everything. So
+21:13 >> yeah. Yeah. Yeah, it has everything. the
+21:16 film stools.
+21:19 Okay.
+21:21 So that's why like let's say if we talk
+21:24 about uh clothes it could be Nikes or
+21:26 Adidases, right?
+21:27 >> Yeah. Exactly. So, it could be more
+21:30 related to what you purchased before,
+21:34 but also it has an element of
+21:37 uh how popular the brand is because you
+21:40 don't want to maybe you bought like a
+21:43 screen protector for your phone, right?
+21:46 >> But it's not your favorite brand,
+21:49 >> although it's popular,
+21:51 >> right?
+21:51 >> But it's not your favorite. Favorite is
+21:53 more like this is in the realm of like
+21:56 more like sociology and those things,
+21:58 but it's more like you would really
+22:01 spend money without caring about how
+22:03 much you spend.
+22:06 >> Yeah. Like Apple has a good fan base,
+22:08 right? Like they
+22:10 without like thinking, okay, how much
+22:12 does it
+22:14 >> like how much does it cost? And it's
+22:17 like a perception of value.
+22:19 >> Mhm.
+22:21 >> Okay. But uh let's say I like Nikes cuz
+22:24 they are really comfortable. But if Nike
+22:26 is Nike increases the price, I would be
+22:29 like, "Yeah, maybe I check these ones."
+22:32 Like does it mean it's my favorite brand
+22:34 or not?
+22:36 >> Uh I think it then again depends like
+22:39 >> when it comes to shoes, I would prefer
+22:41 having shoes from Nike because uh I know
+22:43 that when I wear the sneakers, they will
+22:46 just fit my feet.
+22:48 >> Yeah. What what counts as favorite is
+22:50 like probably you'll check it's like
+22:53 behavioral also a bit right you'll check
+22:55 their maybe the trend from Nike right or
+22:59 you check their latest release right
+23:03 >> or you favoriteed them
+23:06 >> I don't do any of these things
+23:08 >> just any choose and if I need shoes I go
+23:11 check what kind of models are there
+23:14 >> but usually I go with the same model but
+23:16 what they do and I really hate this they
+23:19 retire models. So the model I like I
+23:22 want to buy but it's no longer available
+23:24 and I'm like okay what do I do now?
+23:26 >> Yeah it happens to me as well. Yeah
+23:29 >> this is
+23:31 >> yeah then but I think Zolando does it
+23:33 best in that category. It has really
+23:38 nice uh way of I mean a nice model
+23:41 probably in the background as well but
+23:43 also a nice way of showing the similar
+23:45 products.
+23:46 >> Mhm. So I think they are I mean they are
+23:50 doing really good. I think we also in
+23:52 bowl had like a similar products u
+23:57 carousel I think uh but yeah I think
+24:01 they are doing pretty well in terms of
+24:03 like exploring the similar products.
+24:06 >> Mhm. And uh since you worked in the
+24:09 recommener systems uh was it something
+24:12 simple or more complex like neural
+24:14 networks? I think the biggest challenge
+24:16 in recommendation systems is how do you
+24:19 validate it really?
+24:20 >> Yeah. Right. AB tests or what was it?
+24:23 >> Yeah. Then AB test is also like biased
+24:26 to how you define the AB test, right?
+24:28 >> Uh right. uh the real performance of I
+24:31 think that's really challenging like how
+24:33 do you say okay uh you can't say okay
+24:37 how much did I sell right from the
+24:40 recommendations that I or how much click
+24:42 did I get uh from the recommendations
+24:46 that I showed but uh like then again
+24:49 what's the experience it was really was
+24:52 it really like they the things that they
+24:54 wanted or could have done better so it's
+24:58 like the validation S is a bit but we
+25:00 actually one interesting thing about the
+25:04 favorite brand project was that we
+25:06 thought about this and we thought okay
+25:08 how can we test this? So we created
+25:11 something like uh a swiping game
+25:15 >> so we would show this thing the swiping
+25:19 thing to uh all the employees involved.
+25:22 >> Mhm. And that's how actually we tested
+25:26 the algorithm and we were convinced okay
+25:29 this is working and then we released it.
+25:32 >> Maybe I can share this.
+25:34 >> Yeah.
+25:38 >> Okay. I hope you can see my screen.
+25:42 >> Yeah. But um so we will release this as
+25:44 audio only. So if you can also describe
+25:46 what's happening on the screen would be
+25:48 helpful.
+25:49 >> You can see my screen.
+25:50 >> Yeah. Yeah. It's loading.
+25:53 Okay. Yeah, we try to make it also fun
+25:56 with like adding like Star Wars loading
+25:58 gifts and all the things. Uh so it won't
+26:01 be boring. Uh before the employees see
+26:05 this page uh we did some process like
+26:09 streaming actually so that because we
+26:12 didn't want to process like three
+26:13 million users or six million users. We
+26:15 just wanted to do it for our employees,
+26:18 right? Otherwise it would be very
+26:19 costly. uh and we didn't know which
+26:23 users are our employees involved, right?
+26:25 So, we had to do all the calculations on
+26:27 the fly just before them seeing this
+26:29 page and it took like 45.
+26:31 >> So, the experience for the users was uh
+26:35 uh they go to the website and if they're
+26:38 employees then they see this.
+26:41 >> It was some website was internal. Yeah.
+26:44 >> Okay. Okay. Okay.
+26:45 >> Yeah. Yeah. Uh so we did all the process
+26:48 there and they could easily say okay
+26:50 this is my favorite band what what
+26:52 you're showing me is my favorite.
+26:53 >> So right now you show can you describe
+26:56 so
+26:57 >> do you want to see stabilo Ubisoft
+27:00 >> exactly is is for example on a card we
+27:04 are having three buttons that says okay
+27:06 it's not my favorite button I super like
+27:09 it or it is my favorite uh brand.
+27:11 >> It seems very random. So, Stabilo, they
+27:15 create markers and Tubisoft is a game uh
+27:19 software company, right?
+27:21 >> Yeah.
+27:22 >> Syomi is um they produce what? They
+27:26 produce fonts and variable devices,
+27:28 right?
+27:28 >> Yeah. Yeah. But but I mean your your way
+27:32 of buying a stuff, you don't buy like
+27:35 only books from B. You usually buy like
+27:38 a different uh
+27:41 variation. But like if I need markers
+27:43 and I see different ones, I would go
+27:45 with this stabilo. I don't know how
+27:47 actually I pronounce it.
+27:49 >> Um
+27:51 cuz I know that they are good. And if
+27:53 there are some other ones that I don't
+27:55 know about, I'll just go with these
+27:56 ones.
+27:58 >> Yeah. That basically
+28:00 it it you want to see what's the
+28:03 perception about this brand.
+28:05 >> Okay. Okay.
+28:06 >> Like or do you even know the brand,
+28:07 right? like if you
+28:09 >> I have no idea what is that. What is 999
+28:11 games?
+28:12 >> This is like a board game. Uh
+28:14 >> okay. Yeah. I have no idea.
+28:16 >> Yeah. I mean like if you're into board
+28:19 games, you obviously know them. Like if
+28:21 you like Lego and stuff.
+28:24 >> So they would easily swipe right and
+28:26 left each individual and we could see if
+28:30 our favorite brand
+28:32 >> algorithm works towards them or not.
+28:34 There is a comment from um Adonis. Hi
+28:37 Adonis by the way. Uh it looks uh like
+28:40 Tinder for brands.
+28:42 >> Exactly.
+28:43 >> I guess we all know where you got the
+28:46 inspiration from.
+28:47 >> Yeah, exactly.
+28:52 >> So yeah, that was the
+28:54 >> how But how did it So I worked at
+28:57 something at a similar company. It
+28:59 wasn't the commerce. It was online
+29:01 marketplace but the idea is similar. You
+29:03 have items, you have people to who
+29:06 recommend these items and then you let's
+29:09 say you develop a uh recommendation
+29:12 system, recommener system and then you
+29:15 already have some basic recommener and
+29:17 then you improve uh the recommener and
+29:20 then you split your groups into you your
+29:22 visitors your traffic into two groups.
+29:25 One is test group, another is control
+29:26 group, right? So uh the control group
+29:29 sees the new algorithm, the test group
+29:31 sees the old algorithm and then you
+29:33 check metrics like in our case the
+29:35 metric was how many um so we wanted to
+29:39 improve conversion of course right and
+29:42 for that uh company the conversion meant
+29:45 that people write each other so let's
+29:47 say it's like uh mark plots I think in
+29:51 the Netherlands so
+29:53 >> so you want to buy I don't know this
+29:56 loudspeaker
+29:58 So you write to the person who is um
+30:00 selling it right. So that's the
+30:02 conversion they're writing thing. Um and
+30:05 then we would just measure okay like in
+30:07 the test group uh we saw uh in the test
+30:11 group we saw more uh than in the control
+30:13 group right more conversions and then it
+30:16 means that this algorithm is good so we
+30:18 can roll it out. So I I guess this is
+30:20 the basic uh AB test. But why did you
+30:23 need to do this Tinder for brands? Like
+30:26 what's the point? Why you couldn't do
+30:28 the usual way?
+30:31 >> The the the other there was nothing
+30:35 similar to this like there was nothing
+30:37 before this.
+30:38 >> Okay.
+30:39 >> So your control group would be nothing
+30:41 and test group would be this thing.
+30:43 >> Yeah. Basically
+30:45 >> or we could we could have also done the
+30:46 same. We would have just like maybe
+30:49 aggregated the purchases on a brand or
+30:51 views on a brand and show the random
+30:55 items right from those brands and then
+30:57 test it with this one right that could
+30:59 have also been done. Uh but this is was
+31:02 just like convincing our team that this
+31:05 can work.
+31:06 >> Uhhuh. Makes sense. So it's like to have
+31:08 an internal
+31:10 um agreement that okay this is actually
+31:13 worth our time. Let's spend a quarter
+31:16 developing this idea further, right?
+31:18 >> Exactly. Yeah.
+31:19 >> Okay. Makes sense.
+31:20 >> Yeah. Three, two, three months.
+31:22 >> Yeah. Okay. Like how and how did you use
+31:25 the results? Like how was it actually
+31:28 helping with your case?
+31:30 >> Cuz it's fun. Yeah. But like at the end
+31:32 you swiped left and right and what was
+31:34 the outcome?
+31:35 >> Uh basically we used how accurate we
+31:39 were actually in uh showing the brands.
+31:43 So I think what we did was also couple
+31:46 of the items in that list was not
+31:48 actually their favorite brand. So we
+31:51 could at the end say okay I don't know
+31:53 85% of the items that they swiped was
+31:57 actually their like favorite brand.
+31:59 >> I see understand. So this thing you
+32:02 already knew from your algorithm. So you
+32:04 had the output of the algorithm and the
+32:06 algorithm says okay like for this person
+32:08 they like Lego, they like Komi, they
+32:12 like Nike, right? But then in addition
+32:14 to this you add three more brands that
+32:17 that are not in the output of the
+32:19 algorithm and ideally they would swipe I
+32:23 don't remember this like they would like
+32:26 uh the onesh that the algorithm
+32:29 recommended and they would dislike the
+32:31 ones that it didn't recommend. Yeah.
+32:33 Yeah. Yeah.
+32:34 >> Oh, that's cool.
+32:35 >> Yeah. So, that's how we found out, okay,
+32:37 this is going to basically a way to
+32:40 validate it again, the model again to be
+32:43 able to release it for like something
+32:45 that didn't wasn't uh there in the first
+32:49 place.
+32:49 >> Okay. And then uh what the user they see
+32:52 a brand, they click and they can buy
+32:54 stuff from this brand, right?
+32:56 >> Yeah. Exactly. So the
+32:58 the the purpose of this uh component was
+33:02 that they click on the brand and they
+33:05 see a list of uh featured or popular
+33:08 product from that brand.
+33:11 >> Okay.
+33:12 >> And then the engagement on the brands
+33:15 will go higher in B. That was like the
+33:17 thing kind.
+33:19 >> What what do you know? What do you do
+33:21 now?
+33:22 >> Uh currently
+33:24 >> yeah.
+33:24 >> Oh yeah. So yeah, I work as a basically
+33:27 a data engineer in Tesla.
+33:30 >> Yeah.
+33:32 >> Sorry. Um at B you worked as ML engineer
+33:35 or was a data data engineer.
+33:38 >> So I did like both actually. I did data
+33:42 science plus data engineering.
+33:45 So yeah I I when I go there it's like
+33:48 okay we have this project I'm also
+33:51 interested to work on it. That's it. Uh
+33:55 I think that's also a mix that is coming
+33:58 from my background because I'm I'm like
+34:00 you never transition to you can say okay
+34:03 I'm data scientist now right
+34:05 >> you have you carry your background with
+34:07 you right you you have a software
+34:08 engineer background
+34:09 >> that's the story of my life
+34:11 >> yeah exactly right so either you want it
+34:14 or not you want to like you have some
+34:17 interest from your previous background
+34:19 right you you try to involve that so
+34:21 that was always uh same for me like in
+34:24 link and the app that did we did the
+34:27 survey I wrote the Android app I was
+34:30 data scientist there right but that
+34:33 helped the data collection so um you try
+34:37 to pick those tasks up in the same uh um
+34:43 like I'm interested in machine learning
+34:45 so I like deploying I like training the
+34:48 the models so if I see that uh it can
+34:52 really help And that's that's another
+34:54 thing, right? You really to need to
+34:57 understand if it it is going to help or
+35:00 not or you're just making it complicated
+35:02 for nothing. Uh
+35:05 yeah, if it helps, I I'll try to do that
+35:08 as well.
+35:09 >> Mhm.
+35:10 >> Okay. And uh
+35:12 >> is mixing like the roles and stuff.
+35:16 >> But the idea is even though you're a
+35:18 data engineer, you can do pretty much
+35:20 everything that needs to be done.
+35:24 Yeah. So in Tesla especially that's the
+35:26 case. I mean it's pretty hands-on and
+35:30 you just like you need to create some
+35:32 stuff that are functional and you don't
+35:35 think about making it fancy. Uh
+35:40 I think maybe in other software
+35:41 companies it's a bit different but yeah
+35:44 I want to also state that I'm not at all
+35:47 talking on behalf of Tesla.
+35:50 >> Yeah that's important. But can you
+35:52 actually talk about the things you do at
+35:54 work?
+35:55 >> Not so much to be honest. The Yeah, I
+35:58 can take generally about like who am I
+36:03 and what's my background is but the
+36:04 projects in Tesla I cannot really talk
+36:06 about
+36:08 >> detail. Yeah.
+36:09 >> Yeah. But u what is interesting from
+36:12 what you described is the combination of
+36:15 skills you have. So and for me it was
+36:18 pretty similar. So actually a story I
+36:22 don't know maybe you can relate my first
+36:24 job as a data scientist I got hired
+36:26 because I knew Java right and so I was a
+36:29 software engineer I was working with
+36:31 Java and when I started when I already
+36:34 did my masters and I already graduated
+36:37 the first job they were only interested
+36:39 in my Java skills they say yeah like we
+36:41 have this data scientists but they
+36:43 create code in R and Python and they
+36:46 don't want to uh touch any Java. So we
+36:49 know we need somebody who knows Java and
+36:51 I'm like okay whatever.
+36:54 >> Yeah that's that that's exactly how it
+36:56 is I think. I mean um yeah I don't know
+37:00 it's like every everything that is
+37:03 sometimes
+37:04 when the like the fields are advancing
+37:08 it diverges right like at first it's
+37:12 software engineering right then it
+37:13 becomes back end front end I don't know
+37:15 DevOps right all those things it
+37:18 diverges but at some point it also
+37:20 converges again like it comes back
+37:22 together like a data scientist okay you
+37:24 need to now if they need like uh I don't
+37:27 know even what it's going to be called
+37:29 but if you don't know deployment right
+37:32 or you just know some stat statistical
+37:36 methods uh you cannot transform the data
+37:39 is that so data scientist or you need to
+37:42 know all of these all together right
+37:46 >> but how would you call so when I ask you
+37:49 what you do now you said I'm a data
+37:51 engineer so you would identify yourself
+37:53 as uh like with data engineering or you
+37:56 would say I'm like a
+37:59 generalist.
+38:01 >> Uh
+38:02 I think what I'm good at is at uh being
+38:06 a machine learning engineer.
+38:09 My day-to-day tasks maybe is like 60%
+38:12 70% data engineering and the the last
+38:16 30% is like software engineering,
+38:18 machine learning engineering, all those
+38:19 things or data scientists.
+38:23 So yeah it depends on what my employer
+38:26 wants to be honest.
+38:27 >> I understand. Uh so is it uh
+38:31 >> but is it so for me when I was a data
+38:35 scientist the uh problem and problem for
+38:39 companies and uh I guess an opportunity
+38:42 for me was that data scientists they
+38:45 weren't good at deploying models
+38:47 >> and they actually didn't want to do this
+38:49 and because of my background it was not
+38:51 that difficult to like I for example I
+38:55 didn't know Kubernetes
+38:57 uh before my previous job and then I
+38:59 joined the company and they are like uh
+39:02 yeah we need we have now this model we
+39:05 have this Kubernetes cluster and the
+39:07 SRES the people who are looking after
+39:09 the cluster they are super busy so we
+39:11 cannot get their time to deploy the
+39:13 models and then like okay like how can
+39:15 it be difficult let's uh figure this out
+39:19 um
+39:20 but sometimes it's not always possible
+39:24 right for data scientists to just go
+39:26 ahead and do this Um,
+39:29 >> so and you said like you do whatever
+39:31 your employer wants you to do. I I'm
+39:34 just wondering how how does it work in
+39:36 practice cuz there are some things you
+39:38 want to do but maybe cannot. There are
+39:40 things you want to do or maybe there are
+39:42 some things you don't want to do but you
+39:44 need to do like how do you find the
+39:46 balance? How do you actually uh go out
+39:48 of this um uh
+39:53 I don't know how do you even prove
+39:54 yourself that okay like yes I am a ML
+39:57 junior but I can do these other things
+40:00 and then you prove yourself and then you
+40:02 get more and more responsibilities.
+40:05 >> Yeah. So yeah that's a good question. I
+40:07 mean I don't probably know the exact
+40:09 answer but uh
+40:13 yeah sometimes you need to get yourself
+40:14 out of the trap right? It's like, oh, I
+40:17 don't need to do this, right? I don't
+40:18 need to fix this dashboard for you or uh
+40:23 but I think it's all about like, yeah,
+40:26 it's opportunity, right? Uh you find
+40:29 something that oh yeah, this when they
+40:32 the other people cannot see that, right?
+40:34 See the opportunity and you see the
+40:35 opportunity, you're obliged to take it,
+40:38 right? you can take it or you can do
+40:41 just do the standard uh maybe the
+40:45 problem is solved with a script right
+40:47 not with a like a training a model but
+40:50 if you think that training a model works
+40:52 better why not so that's that's how it
+40:55 works currently for me so if I see that
+40:58 okay there is opportunity that it can
+41:00 improve it exponentially right uh I try
+41:05 to do it uh I mean obviously there are
+41:08 some bound boundaries, right? You you
+41:10 look at your like how much time do I
+41:13 have to work on it and but it's all
+41:15 about being uh like underpromising and
+41:19 overd delivering most of the time. So,
+41:22 >> okay, that's a good approach, right?
+41:25 >> Because if you overpromise and underdel,
+41:27 it's way worse.
+41:28 >> That's that's way worse. But it takes a
+41:30 lot of effort, right? It takes a lot of
+41:32 energy from you.
+41:35 >> Yeah.
+41:36 And uh
+41:39 so you you're still doing some machine
+41:40 learning right?
+41:41 >> Yes.
+41:43 >> And u always engage myself with that and
+41:46 yeah now with like LM agents and all
+41:50 those things that are being used across
+41:52 all the companies including Tesla. It's
+41:55 like a really like nice opportunity to
+42:00 uh improve your task as well as the
+42:02 platforms that you're providing for
+42:05 others uh other colleagues. Yeah, it's
+42:08 great. I think it's a great time to be
+42:11 >> and you been in the industry for quite
+42:14 some time. So you also saw this uh race
+42:18 of LLMs and AI in the recent years. Um,
+42:22 how did your work change with that? Cuz
+42:25 I guess now the challenges are a little
+42:27 different. The models we deploy,
+42:29 especially when it comes to LMS, they
+42:31 come with their own set of challenges.
+42:33 So, what are these challenges for you
+42:34 and how do you deal with them?
+42:37 >> I think uh first it drastically changes
+42:43 sometimes. Like also I'm shocked like
+42:46 wow this this this might have t taken me
+42:49 like 4 days but now I can just solve
+42:52 this in like couple of hours right
+42:55 >> especially for developers I think that's
+42:57 that's amazing the other pitfall that it
+42:59 has is actually everybody thinking that
+43:02 oh yeah AI can solve this
+43:05 >> right
+43:05 >> but are you talking about using AI for
+43:09 creating code or you're talking about
+43:11 using the models for actually solving
+43:13 this problems.
+43:15 >> I think mostly about creating code.
+43:17 >> Uh-huh. Okay. So like W coding or create
+43:20 Oh, the the correct way of doing of
+43:22 saying is AI assisted development,
+43:24 right?
+43:25 >> Yeah. W coding and also I like web
+43:28 coding more.
+43:29 >> Yeah. W coding means that you just uh
+43:32 you know you leave only once uh and uh
+43:35 you know whatever code is produced you
+43:36 shipped.
+43:37 >> Okay.
+43:37 >> And then sometimes it drops your
+43:39 database and you're like oops.
+43:41 >> Not that. Not that. Uh so then AI
+43:44 assisted development.
+43:46 >> At least this is how I understand the
+43:47 term.
+43:48 >> Okay.
+43:49 >> So it just wipe coding is uh yeah it
+43:53 kind of sort of works. I don't really
+43:55 care what's inside.
+43:56 >> Yeah. True. I think that's true. Yeah.
+43:58 But I mean in the sense of it can help
+44:00 you develop code and also like refactor
+44:03 like documentation those things. I to be
+44:07 honest like
+44:09 the most significant usage that LLMs has
+44:13 what what is it actually?
+44:17 >> What do you mean?
+44:18 >> Well, for me I use it for um if we talk
+44:21 about me using them as a user not as a
+44:24 machine learning engineer who needs to
+44:26 deploy them. Uh cuz I don't need to
+44:28 deploy them. Start with that. Uh but for
+44:30 me it's uh coding yes but also a lot of
+44:33 u um
+44:36 editing like writing texts um and this
+44:40 is how I started using it in like two
+44:42 two more than two years ago when GPT
+44:44 disappeared uh I started using it for
+44:47 copyrightiting for editing texts
+44:49 >> cuz back then it wasn't really useful
+44:51 for writing code it was GPT 3.5 like it
+44:54 would produce code that doesn't work
+44:57 >> it didn't work then but now with these
+44:59 models Today you can just uh
+45:02 maybe you know lovable right?
+45:05 >> No
+45:05 >> no lovable is a platform um there are
+45:08 multiple of them there's bolt lovable
+45:10 replete uh where you go and you say I
+45:14 want to build um application where I can
+45:17 swipe brands left and right and then I
+45:20 can see which brand I like. So it's just
+45:22 simple prompt like that and then uh five
+45:25 minutes later you have a application
+45:27 that is deployed uh to the internet.
+45:30 >> True. Yeah, I saw that. Uh
+45:34 yeah, I mean uh I have my opinions about
+45:38 it I must say but uh I think
+45:44 yeah but I think it's hard to believe. I
+45:47 think the biggest thing would be the
+45:48 physical AI to be honest. Uh
+45:52 uh but also I agree with like this guy
+45:56 Lamikun Lanyun from Meta that he says
+46:00 okay maybe the AGI is not coming from
+46:02 just LLMs.
+46:04 >> Mhm.
+46:04 >> So
+46:06 yeah.
+46:07 >> Mhm. Yeah. because you need um hardware,
+46:11 you need physical stuff like um I'm I
+46:15 will not refer to your employer but in
+46:17 general like cars they need to make some
+46:20 decisions when it's self-driving. Um so
+46:23 this is where it could be useful. I was
+46:26 wondering if you actually um I don't
+46:29 know to what extent you can talk but
+46:31 maybe we can just talk about this
+46:32 hypothetically
+46:34 um because you work with LLMs um and now
+46:38 when we uh self-host an LLM it comes up
+46:42 with a lot of different challenges right
+46:45 um cuz previously I would just I don't
+46:47 know put my scikitlearn in a docker
+46:50 container put it in Kubernetes and then
+46:51 it's done right but now I cannot do this
+46:55 anymore it's way more difficult. Um,
+46:59 did you find any tools or things that
+47:02 were helpful to you personally to uh
+47:05 understand this topic and like be better
+47:07 at that?
+47:09 >> Yeah, for inference I think yeah uh I I
+47:13 like on the weekend and stuff I work
+47:15 like on these projects. Uh the VLM thing
+47:20 >> they think pretty optimized for
+47:22 inference. you can just get a Raspberry
+47:24 Pi and
+47:26 like do inference. uh I mean it's very
+47:29 slow but now I saw that uh Nvidia Orian
+47:33 I think uh I think it's called Nvidia
+47:35 Orian plus or something that is released
+47:37 by Nvidia that is uh yeah for inference
+47:41 it's a good inference machine uh it's
+47:44 like a dev kit or even the Mac minis uh
+47:47 I think they are amazing actually
+47:50 they're like yeah amazing for they also
+47:55 there are some projects that they
+47:56 cluster all together and uh they are
+48:00 having like a really good speed on
+48:03 token per second like a lot of yeah it's
+48:07 it's it's doing well actually I think
+48:09 it's going to be
+48:11 way easier maybe in the future it can be
+48:13 like the hardware is going to catch up
+48:15 right it's all about the architecture on
+48:18 on the hardware side as well so
+48:21 >> yeah I checked this Nvidia Jetson Orin
+48:25 it cost 2,000 A little more expensive
+48:28 than Raspberry Pi.
+48:31 >> Is it? I thought it's like 700.
+48:33 >> No, no, no. There is another one. So, I
+48:35 see um Jetson Nano Orin which has
+48:38 instead of uh 64 gigs, it has only eight
+48:41 which costs like 350. Yeah, it's
+48:44 cheaper.
+48:45 >> That's still more expensive than
+48:47 Raspberry Pi. And like when you said you
+48:49 were deploying LLMs on Raspberry Pi, I
+48:51 was like, "Wow, can you tell us more
+48:53 about that?"
+48:55 But that's that's going to be like
+48:57 imagine you have a group of people like
+49:00 five software developers, right? And
+49:03 they are in a team. You don't want to
+49:05 pay
+49:06 €200 per month, right?
+49:09 >> Uh you just deploy one model on a like
+49:12 two Nvidia orients, right? Or one Nvidia
+49:15 Orient and they just like maybe
+49:19 sometimes they want to query it, right?
+49:21 They want to ask some questions. Why
+49:23 not? But it works, right?
+49:25 >> Yeah, cuz it has 8 gigs and this is
+49:28 enough for a reasonably sized LLM,
+49:31 right? Cuz especially these days we have
+49:33 this um
+49:36 Chinese LLMs that are pretty small
+49:38 >> that should fit 8 gigs, right?
+49:41 >> Yeah. Also like more like a specialized
+49:43 model that is just for coding. So you
+49:46 can just put it in there and they all
+49:48 the questions are for coding. So I think
+49:51 it's going to bring the cost down like
+49:53 for a startup for example.
+49:55 >> Yeah. Do do you know any models like
+49:57 that?
+49:59 >> I think 2.7 billion parameter from LMO
+50:02 is working well. I mean there are other
+50:04 ones like Gro and stuff uh like cloud is
+50:07 amazing but yeah uh open source ones I
+50:11 think LMO.
+50:12 >> Okay. And do you do you need to do any
+50:15 like I'm specifically interested in your
+50:17 comment that you have specialized models
+50:19 for code but if you just take lama this
+50:23 2.7 billion parameters uh it's not
+50:26 specialized for code so you need to to
+50:28 do some sort of fine tuning right do you
+50:30 know if there are any models that are
+50:32 available already that are already
+50:35 fine-tuned
+50:36 >> uh for coding
+50:38 >> I think uh I think Gemini these these
+50:42 models all I think have uh not all but
+50:45 some of them have version for code. So I
+50:49 think Gemini also has it. I think
+50:50 replicate is the best place right? You
+50:53 can just go there and see the model and
+50:56 yeah you can
+50:57 >> how do you say replicate
+50:59 >> replicate? Yeah.
+51:00 >> What's that?
+51:01 >> It's it's my favorite website right now.
+51:03 I mean
+51:04 >> replicate.com.
+51:06 >> Yeah.
+51:07 >> Run AI with an API.
+51:09 >> Yeah. They basically they host
+51:11 everything and you can test the model.
+51:14 You can get an API from it and they have
+51:17 a price uh for every request that you
+51:19 send or every couple of requests that
+51:20 you send and they charge you like that
+51:24 and they have like like a big range of
+51:27 models like for videos for photos.
+51:32 >> Yeah, I see that this is quite
+51:34 interesting. Okay, I am adding it to my
+51:37 bookmarks.
+51:39 This probably gonna end up in a lot of
+51:42 ideas for application for you.
+51:45 >> Yeah, maybe. Ah, so I see some questions
+51:49 um from Adonis. Uh, amazing to hear your
+51:52 story, Abuzar. What factors do you
+51:53 believe had the greatest impact on
+51:55 advancing your career?
+51:58 >> Okay.
+52:00 >> He likes asking these kind of questions.
+52:02 So, thank you.
+52:04 >> I know. Hi, Denise. I know. I don't was
+52:07 my classmate.
+52:08 Uh-huh.
+52:09 >> Uh
+52:12 um I think
+52:14 yeah just I I think yeah just finding
+52:18 like the north star like right what they
+52:20 call it. I I think I I really liked like
+52:24 working for Tesla to be honest. Like
+52:27 >> uh a company that has a vision, right?
+52:31 Coming from up to down and that vision
+52:34 drives the whole technology and and the
+52:38 business. So I love that about a
+52:40 company. So if there is a great vision,
+52:43 I think in a company it will drive
+52:45 everything like how I think Steve Jobs
+52:47 was right in Apple, right? So it's like
+52:50 nice to hear the goals right it looks
+52:54 impossible it sounds impossible but
+52:57 somebody is believing in it so it
+52:59 carries everybody it carries the whole
+53:01 company
+53:04 >> so I think this uh had the greatest
+53:06 impact to work in a company like that
+53:10 where there is this great vision and
+53:13 people are motivated to actually
+53:17 um go there and do these things even
+53:20 though they might sound impossible.
+53:23 >> Yeah. Exactly. So
+53:25 yeah also I think that you have to also
+53:28 think about okay I mean at this point of
+53:31 life that I am I think mostly I think
+53:34 okay how much impact like uh I can have
+53:38 right uh and like which companies are
+53:42 more aligned to the impacts that I can
+53:44 have. Maybe when I was younger, I just
+53:46 wanted to sit in a room and just code
+53:49 247, right?
+53:51 >> But now you also look at, okay, who am I
+53:54 going to impact? How much impact do I
+53:57 have? And where can I find that job and
+54:01 or it's most aligned to to those to
+54:03 those goals that I have. So yeah, that
+54:06 was was great for me.
+54:07 >> Was it difficult to get a position at
+54:10 Tesla?
+54:11 >> Uh, I think so. Yeah, it was quite
+54:14 difficult I think. Yeah.
+54:15 >> How did you prepare? Like what did you
+54:17 actually need to know to get this job?
+54:22 >> Uh yeah, obviously you don't know much
+54:25 about what they're going to ask you.
+54:27 >> Yeah.
+54:28 >> But uh yeah, just I I just tried to like
+54:32 look out for all the other people that
+54:35 uh posting their interview questions or
+54:38 uh their experience interviewing the
+54:40 company. that plus I read I read like a
+54:46 list of everything back then there was
+54:49 like I think not a big like it wasn't
+54:52 actually I think open AI didn't release
+54:54 actually the chat yet so I couldn't ask
+54:56 questions okay give me all the questions
+54:58 that are probable to be asked for like a
+55:01 data engineering job right uh that was
+55:04 that is easy but I printed the whole
+55:07 list of everything that a data engineer
+55:09 should know and I read like a 10 page of
+55:13 and then you go into technology and you
+55:15 say okay they should know distributed
+55:17 system what is a distributed system
+55:19 right you have to look and see okay
+55:21 what's an example of this system what is
+55:23 actually a distributed system what is
+55:25 currently used in the companies
+55:29 regarding that so
+55:31 yeah that's how I prepared
+55:33 >> I just did exactly what you said I asked
+55:36 GPT give me questions ask Tesla for data
+55:38 engineering candidates and you gave me a
+55:41 Well, you didn't have charg back then,
+55:44 but uh where was it actually? For how
+55:47 long have you been working at Tesla?
+55:49 >> I think it's almost two years. Two
+55:52 years, I think.
+55:54 >> Well, yeah, back then it couldn't do
+55:57 search in the internet. Yeah.
+55:59 And so it said there's SQL data
+56:02 manipulation questions, coding uh script
+56:04 in ETL, uh system design, data
+56:07 architecture questions, behavioral
+56:09 cultural feed questions. Uh yeah, was
+56:12 there a lot of emphasis on coding? Like
+56:14 did you need to grind through lead code
+56:16 to be able to clear the interview?
+56:18 >> Not that much actually. No, not code.
+56:21 Yeah, I think that's more specific to
+56:22 Google, right?
+56:24 >> Okay.
+56:25 >> But not this. Yeah.
+56:27 >> Okay. So there was more emphasis on
+56:29 system design and uh these kind of
+56:31 things.
+56:32 >> Yeah. Yeah. Mostly like architecture
+56:34 like scripting and all those things.
+56:38 >> Okay. I imagine I don't know I'm just
+56:41 making it up like there's a car that
+56:43 there are a lot of sensors right and so
+56:45 the car is producing a lot of data like
+56:47 what's the best way of actually
+56:49 capturing this data and then storing
+56:50 this data so that later you can analyze
+56:53 it and then it's already so much to talk
+56:56 about on the interview right like how
+56:58 you do how you capture how you store
+57:00 this data how you design and design a
+57:03 data collection system actually uh I can
+57:06 see it right now it's one of the
+57:07 questions
+57:09 and that uh charg suggested like how
+57:11 would you design a data collection
+57:13 system including data ingestion storage
+57:15 and pipelines you don't need to comment
+57:17 on it I know you shouldn't right
+57:21 uh okay u there's another question from
+57:26 >> sorry I'm joking
+57:29 >> I I didn't hear your joke
+57:31 >> I'm unmuted
+57:33 >> okay
+57:35 um so another question you said if you
+57:38 see an opportunity to improve
+57:40 exponentially, you take it. But you have
+57:43 everyday task like how do you actually
+57:47 find time and how you prioritize this uh
+57:50 opportunities
+57:52 >> in terms of what do you mean by
+57:54 opportunity?
+57:55 >> I think we were talking about um
+57:58 we were talking about um things you do
+58:02 as a data engineer. As a data engineer,
+58:04 you do many many different things. Uh
+58:06 not only data engineering and I also
+58:08 shared um a story of from my career when
+58:10 I was data scientist and I was able to
+58:13 work on other things that also included
+58:15 Kubernetes and so on. I think this is
+58:18 when Donis asked the question and um we
+58:21 were talking about this and u probably
+58:24 it's a quote then you see an opportunity
+58:26 to improve exponentially you take it and
+58:30 this is good. Um so for example in my
+58:32 case um
+58:35 the decision of
+58:37 working with Kubernetes was a very good
+58:39 decision because I improved a lot by
+58:42 just doing that by forcing myself by
+58:44 first convincing other people to let me
+58:46 do this and then actually doing it. But
+58:48 I had everyday tasks. Um so I wonder how
+58:52 do you prioritize like the things you
+58:54 have to do and the things you think you
+58:56 need to do to improve exponentially?
+58:59 >> Yeah. So I think that goes back saying
+59:05 under promising and overd delivering a
+59:08 bit because uh you have to put way more
+59:11 effort right maybe in your free time
+59:15 also you have to work right to deliver
+59:17 something that is exponentially can make
+59:21 make the solve the problem exponentially
+59:24 like make it better. So yeah, it goes
+59:28 back to like try like even putting some
+59:31 your personal time to u delivering the
+59:35 solution. I think
+59:37 >> I I like this answer. I mean under
+59:39 promising overd delivering because you
+59:42 under promise you already account for
+59:44 okay I might need to do this thing right
+59:46 and then if it actually works out you
+59:48 show and they're like wow so cool.
+59:51 >> Yeah exactly. Yeah. Yeah. So I mean it's
+59:54 not doing the minimum
+59:56 but it's like doing something that is
+59:58 acceptable right but doing even more. Uh
+1:00:02 so yeah that's usually I think how it
+1:00:05 works for me.
+1:00:06 >> Yeah. Okay. Um Abuzar thanks a lot for
+1:00:10 um joining us today and Adonis thanks
+1:00:14 for your questions. It was fun. Uh uh so
+1:00:17 anyways yeah thanks a lot for joining us
+1:00:19 today for sharing all your stories. Um
+1:00:22 uh so it was fun. I really like the
+1:00:24 interview. Thanks everyone for joining
+1:00:26 us today. And um
+1:00:29 >> yeah, I guess that's it.
+1:00:32 >> Thank you for having me. It was fun
+1:00:33 actually.
+1:00:35 >> Yeah. So um

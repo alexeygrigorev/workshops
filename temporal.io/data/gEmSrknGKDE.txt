@@ -1,0 +1,1479 @@
+Building Production Search Systems
+
+0:00 everyone Welcome to our event this event
+0:02 is brought to you by dat club which is a
+0:04 community of people who love data we
+0:06 have weekly events and today is one of
+0:08 such events if you want to find out more
+0:11 about the events we have there is Link
+0:13 in the description click on that link
+0:15 and you'll see all the events we have in
+0:17 our
+0:18 pipeline then do not forget to subscribe
+0:20 to our YouTube channel if you don't want
+0:23 to miss out on any future streams CU
+0:26 they will be as awesome as the one we
+0:28 have today and and we have a great slack
+0:31 Community where you can hang out with
+0:33 other data into that so don't forget to
+0:36 check it out too during today's
+0:38 interview you can ask any question there
+0:40 is a pined link in the live chat so
+0:43 click on that link ask your questions
+0:46 and we will be covering these questions
+0:47 during the
+0:48 interview and typically this is the time
+0:51 when I sto sharing my screen but I want
+0:53 to add a bit more so this podcast
+0:56 interview is actually sponsored we don't
+0:59 often have have sponsored interviews so
+1:01 today is a special interview especially
+1:03 for me too and for the community and the
+1:07 interview is sponsored by Vector Hub so
+1:10 I included the link in the description
+1:12 you can check it out but basically here
+1:14 you can find everything about vectors
+1:17 and databases and this is also the topic
+1:20 today so you will learn more about that
+1:22 but check the link too and thanks Vector
+1:25 hub for supporting
+1:27 us now I will stop sharing my
+1:31 screen
+1:36 and okay I now have the
+1:40 questions and Danielle if you're ready
+1:42 to start let's start
+1:46 yeah okay so this week we'll talk about
+1:49 building production seice systems and we
+1:52 have a special guest today Daniel Daniel
+1:54 is an entrepreneurial technologist with
+1:57 a 20 years career he is a co-founder of
+2:01 super
+2:02 link.com and what we saw Vector Hub is
+2:05 one of the projects by superlink so it's
+2:09 a machine learning infrastructure
+2:10 startup that helps build information
+2:12 retrieval systems from recommender
+2:14 engines to Enterprise focused LM apps
+2:17 and before starting his own company he
+2:19 was a tech lead for machine learning
+2:21 infra at YouTube ads so welcome
+2:24 Daniel hey hey happy to be here thanks
+2:27 for having
+2:28 me so before we go into our main topic
+2:32 of building search systems let's start
+2:34 with your background can you tell us
+2:36 about your career Journey so far yes um
+2:40 very happy to yes this kind of 20y year
+2:44 time Horizon is maybe a little bit of
+2:46 exaggeration but uh basically I'm you
+2:50 know originally from Slovakia this kind
+2:53 of uh typical Eastern European uh
+2:56 technical background of sort of coding
+2:59 competitions since high school um I've
+3:02 been through a couple of internships
+3:04 during University I did Google and IBM
+3:07 research um eventually decided to start
+3:11 my own company the first one out of
+3:13 University uh because both of those
+3:16 companies were very big and it took
+3:18 months to launch new things um so I
+3:22 started my first start up already after
+3:25 I moved to
+3:27 Switzerland um and then eventually ended
+3:30 up back at Google as you said in YouTube
+3:34 ads uh Building Systems that predict uh
+3:37 ad campaign performance so when people
+3:40 buy these ad campaigns uh they like to
+3:43 get feedback of okay if you run this
+3:46 campaign you'll get thousand clicks or
+3:49 something like that and then they see
+3:50 the forecast they they tweak it um and
+3:54 then once they're happy with the
+3:55 forecast they buy uh and eventually uh
+3:58 yeah uh the systems I was working on
+4:01 powered or power um all of YouTube at
+4:06 buying which there is reservation ads
+4:08 and auction ads and you know it's a the
+4:10 ads world it's uh not so transparent for
+4:13 many people but uh it's it's there is a
+4:15 lot of uh rabbit holes you can fall into
+4:19 um and then towards the end of 2018 I
+4:22 left and and started you know working on
+4:25 my second startup and we went through
+4:27 many different ideas and uh a couple
+4:30 years uh into that process we landed on
+4:34 uh super link and you know that's the um
+4:38 project or company I'm working on
+4:42 now and I loved how casually you dropped
+4:46 this that ah yeah I just have this
+4:48 typical Eastern European background
+4:50 where people do competitive programming
+4:53 at
+4:55 school yes like seriously did you do
+4:57 this at school yes so in I think about
+5:00 second year of uh High School um I had
+5:05 this kind of realization that if I don't
+5:07 do something uh like competitive
+5:12 programming it will be very difficult to
+5:14 kind of leave the country and work on
+5:16 some interesting problems so I always
+5:19 did some math uh kind of competition but
+5:23 competitions but basically programming
+5:25 seemed like the thing you can actually
+5:27 get a job right um
+5:30 and so and so I decided to take it more
+5:33 seriously and um yeah eventually it did
+5:36 land me those internships and but it was
+5:39 a few years kind of Journey of getting
+5:42 up at 3:00 a.m. and doing top coder
+5:45 competitions that are that were kind of
+5:47 us time friendly and also meeting lots
+5:50 of people um who eventually ended up all
+5:54 in California optimizing the ads kind of
+5:58 w with me in one way or another right so
+6:00 that cohort of the competitive
+6:02 programming folks uh is a small one and
+6:05 I kind of keep running into those people
+6:08 still which is
+6:10 fun and uh it's probably still easy for
+6:13 you to pass all this programming
+6:15 interviews at Google met and the like
+6:19 right um well luckily I didn't have to
+6:23 do it for quite a while um in in that uh
+6:27 sense but you would be maybe surprised
+6:30 how many of such problems I encounter
+6:33 quite often now that we work at the
+6:36 infrastructure focused product right so
+6:39 all of those tasks that maybe for many
+6:43 people are hard to connect to real work
+6:48 you know doing some rotations of uh
+6:51 three data structures and things like
+6:53 that um actually if you work on
+6:56 infrastructure and these hard problems
+6:59 um you find many applications
+7:03 uh for those types of uh you know like
+7:06 dynamic programming for example has been
+7:09 always a little bit uh out there right
+7:12 in terms of applications um but actually
+7:16 uh now we have this chuning problem as a
+7:19 part of this search uh problem overall
+7:23 and uh I find like certain types of
+7:28 chuning can be solved by dynamic
+7:30 programming so it it all kind of uh
+7:32 comes together in the end which is fun I
+7:35 added a note because this is something I
+7:36 want to ask you but probably towards
+7:38 then because we have like quite a few
+7:40 questions that cover first and since we
+7:44 talk about production search systems
+7:48 today so what is actually
+7:52 search uh depending on how philosophical
+7:55 we want to get here I not too much not
+8:00 so one way you can frame search is
+8:03 actually a decision problem uh so you
+8:06 have a lot of information somewhere and
+8:09 you want to
+8:10 decide which pieces of that information
+8:13 matter in a given situation right which
+8:17 are the most relevant pieces of that
+8:19 information um to to so that's kind of
+8:22 the first decision and then we are
+8:24 typically kind of uh navigating some
+8:27 broader problem right so somebody uh
+8:30 wants to buy something on the Internet
+8:34 um or discover their next article to
+8:36 read um or you are looking for a machine
+8:39 part that is required to fix a machine
+8:42 right like all of those situations
+8:45 probably contain information
+8:47 retrieval uh sub problem in there
+8:50 somewhere um so yeah isolating relevant
+8:55 data within a bigger pile of data and
+8:58 then we can talk about what is relevant
+9:00 and what is a pile
+9:03 right yeah so I asked you about search
+9:05 and in your answer you mentioned the
+9:07 information Thal system which is like
+9:09 the same thing right basically basically
+9:12 uh by the way these boundaries are often
+9:15 quite arbitrary um of like where
+9:18 recommender systems start and and
+9:21 personalized search uh or or ends right
+9:25 for example or now we have the retrieval
+9:27 augmented generation like how is that
+9:29 any different at all um yeah I think we
+9:34 try to put some backets of functionality
+9:38 just to make it easier to talk about it
+9:39 but at the end of the day yeah like
+9:41 information retrieval is the common name
+9:44 for the field um and maybe one other
+9:47 kind of keyword when people are
+9:49 searching for learning materials I would
+9:51 say it's a representation learning right
+9:54 uh so that's a domain of machine
+9:55 learning where we are trying to uh build
+9:59 models that uh help us encode this
+10:02 information we are uh trying to find or
+10:05 search through right in a way that makes
+10:07 it more efficient uh to to search it
+10:10 right
+10:12 basically then I I think in Berlin there
+10:15 is a conference called hastac which is
+10:17 about search and I think that the reason
+10:21 they use it because like you have a
+10:24 pile of grass hay right and then there
+10:28 is a needle there and you want to find
+10:29 it right so this is the search problem
+10:32 uh so this pile of information this is
+10:34 what you have like the internet and then
+10:36 the needle is what you want to find
+10:38 right because you can see through the
+10:40 entire pile you need smart method of
+10:42 finding the needle like a magnet or
+10:44 whatever yes because usually there is a
+10:46 constraint of like finite amount of time
+10:49 right so if we had uh forever then we
+10:53 could always go through the whole pile
+10:55 and very carefully look at each blade of
+10:58 grass but typically there is a
+10:59 constraint of uh you know they say that
+11:02 every 10 milliseconds uh added to um
+11:07 shopping interface significantly impacts
+11:10 the revenue right so uh and these kind
+11:13 of situations repeat across many domains
+11:15 so latency is kind of a big factor and
+11:18 you know search existed like the problem
+11:20 existed since the beginning of kind of
+11:23 computer science right so U these
+11:26 concepts are not new at all
+11:29 yeah I think there is a paper about
+11:31 Vector spaces which is like from '
+11:34 70s where they explain this bag of words
+11:38 and yeah I wanted to talk about um um so
+11:41 there is a very good book which is
+11:43 called information introduction to
+11:44 information retrieval I think one of the
+11:46 authors is is Christoph Manning or
+11:48 Christopher like this is a very good
+11:50 book and this is one of the books I
+11:53 started my journey into NLP with and
+11:57 this is super well written and there the
+12:00 idea is that you have a document
+12:03 document contains words and then you
+12:05 have a phrase let's say the document is
+12:07 about U I don't
+12:10 know uh search right and then we look
+12:13 for a word search right and then it's
+12:16 okay like this document contains a word
+12:17 search thousand times must be relevant
+12:20 let's show it right so this is so the
+12:22 book is about mostly is about uh this um
+12:27 text search right mhm
+12:29 yet today we talk so much
+12:32 about Vector search vector edings and
+12:35 all of that like what are these things
+12:37 and how they related and how this Vector
+12:40 search is relevant to what I mentioned
+12:43 to the text
+12:44 search so if we kind of talk about
+12:49 search world before uh vectors became uh
+12:53 very popular um and they have always
+12:56 been there right I I I think the
+12:59 difference is have they been used in
+13:01 production systems right or did people
+13:03 keep the production systems a bit
+13:05 simpler um until recently uh which I
+13:09 think is the case so for previous
+13:11 generation of search systems right you
+13:14 try to build data structures that helped
+13:16 you find uh you know there is always a
+13:19 concept of query and then you want to do
+13:22 things to this query to prepare it for
+13:26 the evaluation right so you might uh
+13:29 expand the synonyms you might rewrite
+13:31 the query to make it efficient more
+13:33 efficient to evaluate um and you will
+13:36 end with some object that describes your
+13:40 objective like what do you want right um
+13:43 and then on the search index s right
+13:45 there is this whole field of kind of
+13:47 infrastructure work uh in which you have
+13:50 your Hast stack right you want to um
+13:53 process it you want to ingest it and
+13:55 build some kind of data structure on top
+13:56 of it we call index with which um makes
+14:01 it very efficient to take that query
+14:03 object and match it against uh the the
+14:08 whole Hy stack but like as fast as
+14:10 possible right and so three vectors uh
+14:14 the the core idea of that index
+14:16 structure was this revers list right
+14:19 where basically you have a list of
+14:20 keywords with pointers to where those
+14:23 keywords appear in the orig c um and you
+14:27 know those keywords can be kind of parts
+14:29 of the words they can be whole key words
+14:31 they can be normalized in different ways
+14:33 but that's kind of the basic idea right
+14:34 you make kind of like a dictionary um
+14:38 and then you use that to match the
+14:40 queries to the to the text and the you
+14:43 know obvious problems are uh this kind
+14:46 of brittleness of this setup right
+14:48 because you rely on very specific
+14:51 handcrafted uh heuristic of how to
+14:54 create the dictionary and what to do to
+14:56 those queries to kind of match the two s
+14:59 together um and by the way this is still
+15:02 in the realm of the underlying kind of
+15:05 retrieval step right so we should
+15:07 probably also mention that there are
+15:09 kind of usually two distinct steps in
+15:11 each of these search systems so you have
+15:14 this um initial retrieval step you can
+15:17 call it candidate generation where you
+15:19 want to like quickly figure out okay
+15:21 here are the uh potential good results
+15:25 um so we are narrowing the whole htech
+15:27 to some tiny fraction of it um and then
+15:32 you have the second step of ranking
+15:33 right people consider these problems
+15:35 very differently uh and the ranking step
+15:38 um in its final most sophisticated form
+15:42 you can think about it as a machine
+15:43 learning problem that's usually framed
+15:46 as okay for this query and this
+15:49 potential candidate result um what is
+15:52 the probability that they actually uh
+15:55 match right uh so it could be what is
+15:58 the probability that the user that's
+16:00 doing the search actually clicks on on
+16:02 this particular result right there are
+16:04 different ways to frame the problem but
+16:07 this this part sounds more like machine
+16:09 learning and the first part sounds more
+16:11 like engineering right so we had kind of
+16:15 in a way stupid uh retrieval and smart
+16:19 uh
+16:20 ranking um and then in the dranking step
+16:23 is usually where those models get
+16:25 complicated you have all the mlops
+16:27 issues uh that's where you bring all
+16:30 that context into the picture right and
+16:32 you try to run that model on all the
+16:34 candidates and reorder them and serve
+16:36 that to the user or to the system that's
+16:39 doing the searching so so that's the
+16:42 anatomy you have those two parts usually
+16:44 um so I have this book those who watch
+16:47 this in Rec listen to this in recording
+16:49 don't see this is a German grammatic
+16:52 grammar
+16:53 book and yeah so like there's a lot of
+16:57 information
+16:59 and let's say I want to find something
+17:00 in it right so how would we build a
+17:04 search system for that so we need two
+17:06 steps right you mentioned like this
+17:08 candidate generation and binary
+17:09 classification but also we even before
+17:11 that we need
+17:12 to index the entire book right build
+17:15 index so how would we go about that step
+17:19 by
+17:20 step yeah I mean uh you basically
+17:23 actually at the end of that book there
+17:24 is most likely uh such uh lookup t
+17:29 right uh maybe called the reference or
+17:32 maybe this one doesn't have it but it
+17:34 doesn't have it only has table of
+17:36 contents but some PE some books do yeah
+17:39 yeah some some books do so I mean the
+17:43 the
+17:44 Practical uh use Lucin right or one you
+17:48 know there are uh big open source
+17:50 projects out there that um help you
+17:54 solve this problem of ingesting whole
+17:57 bnch of documents uh cutting them map
+17:59 and building that uh uh that index
+18:03 structure um and these things are buil
+18:05 into databases now there also exist as
+18:09 Standalone uh Solutions so yeah you
+18:13 should really really not build uh
+18:16 reverse kind of keyword Lookout system I
+18:18 found this in German it's called
+18:22 register
+18:24 isix and then like it's like for abber
+18:29 which is but like go to page 108 for
+18:32 word Gigan go to page
+18:35 84 for no go to page 126 right yeah and
+18:40 you will notice that that an interesting
+18:42 aspect of this page is that these words
+18:45 are usually ordered alphabetically right
+18:47 yeah they are yeah yeah and so that's
+18:51 like a very basic way to make it easy to
+18:54 find the word in the list is you can
+18:56 basically binary search for an index in
+18:59 that list right uh if you know that's
+19:02 the data structure that works for a
+19:04 person looking at a book normally you
+19:06 would have some kind of tree structure
+19:08 where you go down a tree following the
+19:11 letters right so the the uh you would
+19:16 have the first letter and then the
+19:18 second letter and as you go through that
+19:20 word you follow down the three and
+19:23 eventually the leaf of the tree or the
+19:25 node where you end would have a list of
+19:28 places where uh the the kind of keyword
+19:31 matching that prefix that took you to
+19:33 that Noe um exists in the original data
+19:37 right and then the whole game is like
+19:40 how do you keep this thing updated when
+19:42 you inest new documents um but again
+19:46 Lucine is your friend for this um and so
+19:50 okay so we talked a little bit about the
+19:52 first part of your question right like
+19:53 how you know if you parachute into uh uh
+19:58 the the 2000s uh kind of SC right yes um
+20:04 and now the question is okay why do we
+20:07 need something new right the the
+20:09 deficiency of this system is um I would
+20:13 focus on maybe two elements one is that
+20:15 it's brittle so it relies on very
+20:18 specific forms of these keywords
+20:20 appearing both in the query and in the
+20:23 original document even though you maybe
+20:25 expand the synonyms uh the practice
+20:28 reality of managing a search system in
+20:31 production is that you have very many
+20:33 special cases and very long
+20:34 configuration files that help you I want
+20:37 to use English for searching for
+20:40 something in the German book right I
+20:43 mean that's that's yeah that's whole
+20:44 another type of problem uh you could
+20:47 consider the synonym expansion to maybe
+20:49 go cross language right um but there is
+20:52 always a set of queries that you will
+20:54 find in your logs where you didn't
+20:57 return any result results for example or
+20:59 return the wrong results uh so the
+21:02 day-to-day life of a searge relevance
+21:04 engineer um is to kind of look at that
+21:08 log uh somehow figure out which type of
+21:11 queries make the most impact and are
+21:14 still handled poorly and then you go and
+21:16 you try to create rules and uh you know
+21:19 you try to address that problem uh and
+21:22 this increases the complexity of your
+21:24 system and then this kind of goes
+21:26 forward and then this person and quits
+21:28 and the new one joins and sees all the
+21:30 rules and you know it's it's kind of
+21:32 layers of complexity um so so that's
+21:35 kind of the first problem right it's
+21:36 very brittle and very kind of euristic
+21:39 based um and then you know there is the
+21:43 other side of the problem which is okay
+21:45 but in reality we rarely just have text
+21:50 right um we don't we rarely have just
+21:54 documents there there pictures there um
+21:58 uh if you imagine uh database of an
+22:01 Enterprise company uh with you know
+22:05 hundreds of columns somewhere sitting in
+22:07 myql or postgress that this company
+22:10 literally runs on and it's a critical
+22:12 table right some of these columns Will
+22:15 Be Strings probably but there will be
+22:18 all kinds of other things in there right
+22:21 and then you have your data warehouse
+22:22 with all the logs right generated by
+22:25 your infrastructure by your users um so
+22:29 that's kind of the data reality right
+22:32 and then you somehow want to do
+22:34 retrieval that uses all the data so
+22:37 that's kind of the second part of the
+22:38 problem how do you kind of go beyond
+22:40 just matching some strings to Strings
+22:43 first specific way you encounter this
+22:46 often is personalization right okay so
+22:49 we have some users we have some data
+22:51 about these users and maybe they send as
+22:54 a search query or maybe they just show
+22:55 up on the website or in the app how do
+22:58 we show them the product they want to
+23:00 buy or the document they want to read or
+23:03 you know all of this stuff how do we
+23:06 combine the behavioral data with the
+23:09 content um and this typically happens in
+23:11 the ranking step so that's why it's so
+23:14 complicated um and and you have all the
+23:17 kind of problems machine learning type
+23:18 problems there um so I would say that's
+23:21 the state of the world and now we can
+23:23 kind of switch to vectors and and talk
+23:26 about the difference right like what
+23:27 what what's what's going on right um I
+23:32 would
+23:33 say the the first problem that gets
+23:36 addressed is this brittleness right like
+23:38 how do we make this problem of matching
+23:40 the query to the indexed object more
+23:44 robust right so that when we say a
+23:46 manager U and the document says uh
+23:50 whatever uh
+23:51 leader there will be a match right um
+23:55 yes you can handle this specific case
+23:57 with the S
+23:58 expansion uh but there is basically
+24:01 infinite such cases um and so how do we
+24:04 make it more robust and the idea is that
+24:07 okay so instead of trying to figure out
+24:09 all the possible rules in which we can
+24:11 match the words what about instead we
+24:14 come up with some
+24:16 representation that will exist in the
+24:18 middle of those two kind of documents
+24:20 and queries um where we will kind of
+24:24 project both sides into this shared
+24:27 representation
+24:28 and this projection will be more robust
+24:31 right um and that's what basically
+24:34 embedding models help us do is do this
+24:37 kind of projection such that when things
+24:41 on the input of that projection are
+24:43 similar for some definition of similar
+24:45 uh they'll land in a similar place that
+24:48 representation and that's this
+24:50 representation is vectors right um so in
+24:54 a in a way vectors make that initial
+24:58 matching candidate retrieval problem
+25:00 more robust right and that then scales
+25:04 across modalities because it turns out
+25:06 that we can uh index on one side uh
+25:11 images into this representation and then
+25:14 from the other side we still uh embed
+25:18 queries text queries right so now we are
+25:20 matching text to image somehow through
+25:23 this common place in the middle um and
+25:26 in principle you can kind of make do
+25:29 this for anything right in principle you
+25:31 can kind of take all kinds of data on
+25:33 the left side uh all kinds of context on
+25:37 the right side not just the text query
+25:38 but also the history of the user
+25:41 whatever it might be uh and you can kind
+25:44 of have a model that encodes or you know
+25:48 one model for the left side one model
+25:50 for the right side and then uh they
+25:53 encode those two pieces in the middle
+25:55 and then you do the matching and you
+25:57 know the whole all kind of hype around
+25:59 Vector
+26:00 databases uh comes from this that like
+26:02 that matching and doing it very
+26:05 efficiently uh seems pretty important
+26:08 right um so so that also kind of helps
+26:12 you understand that okay like in this
+26:13 new world of vector based search or
+26:17 dense Vector based search there will
+26:19 probably be two main problems right uh
+26:23 one is how do you make vectors from data
+26:27 such that that those vectors represent
+26:30 the different properties of your data
+26:31 that you care about and then how do you
+26:34 index and match those vectors very
+26:36 quickly so there will be some compute
+26:38 problem and there will be some kind of
+26:40 search SL database problem right uh and
+26:44 and that broadly is how I think people
+26:46 should think about the space um and just
+26:49 to kind of finish that thought uh you
+26:52 know we managed we mentioned kind of my
+26:55 newest startup that you know I and a
+26:58 bunch of clever people have been working
+27:00 on for the last couple years we work on
+27:02 the compute problem right so we are not
+27:04 building a vector database we actually
+27:06 work with Vector databases because uh
+27:09 the idea is that together we can solve
+27:12 those two parts of the problem uh and
+27:14 then the end client gets the solution
+27:17 that both can do the compute and can do
+27:20 the search what do you actually mean by
+27:22 the computer so maybe I'll take a bit of
+27:25 a step back because like there was quite
+27:26 a lot of and I want to make sure I
+27:29 understood it so if I go back to my
+27:33 German grammar book example so
+27:35 previously we would index each page or
+27:38 maybe each part each section U of the
+27:42 book with an word Index right so we put
+27:47 this into Lucine and then Lucine would
+27:49 like we would have a bunch of rules but
+27:51 basically for each word that I have on
+27:53 the page here like we would have a link
+27:56 to that page or to that section right so
+27:59 if I'm interested in uh um I don't know
+28:03 the word but uper then I know that I
+28:06 need to go to section two unit two of
+28:09 the book right that works up to some
+28:13 point when there are so many rules
+28:15 synonyms and all that so for example
+28:17 what if I want to use English to search
+28:20 for German or Russian or Slovakian right
+28:24 then like we
+28:25 cannot uh infinitely expand like our
+28:29 indexing include all these uh synonyms
+28:32 and other languages for example you
+28:35 would want to search for swear words
+28:37 like somebody comes and says like okay
+28:39 what are the swear words and uh that
+28:43 concept doesn't necessarily exist in
+28:45 your index but it exists in how we
+28:48 understand languages right so you know
+28:50 you need some strategy for handling that
+28:52 query and that's where yeah I think it
+28:54 becomes quite obvious that you can
+28:57 anticipate all these questions that
+28:59 people might be asking so then we can we
+29:01 come up with some sort of numerical
+29:03 representation for each word or document
+29:06 and basically each document becomes a
+29:10 large um array of numbers right such
+29:13 that if two things are similar then the
+29:16 numbers are similar so for example I
+29:18 have a query which is sp in English and
+29:21 then I have a section unit in my book
+29:24 which talks about this prepositions
+29:27 right then they would have similar
+29:30 representation right so then we have
+29:34 this a different way of looking for
+29:37 information then each word each document
+29:41 is a sequence of numbers is an array of
+29:43 numbers and then we use Vector databases
+29:46 to store the documents right and then
+29:48 the document would say okay you need to
+29:51 go to page 110 and read about that right
+29:54 so this is how we would do now with
+29:56 Vector databases and then you mention
+29:58 compute okay I understand what Vector
+30:00 that way is right so this
+30:02 is a think then that stores vectors
+30:07 right and then I have a
+30:09 vector and then I say okay I need to
+30:11 find top 10 vectors that are similar to
+30:14 this Vector give them to me right so
+30:17 this is what the vector database is
+30:18 doing but what exactly is the computed
+30:20 that you mentioned right so uh you have
+30:24 two places where you are uh running some
+30:28 models right uh the first place is the
+30:31 ingestion into the vector database right
+30:33 you have some document somewhere you
+30:35 need to compute all the vectors that
+30:38 correspond to these documents and maybe
+30:41 when the documents change you need to
+30:43 recompute these
+30:44 vectors um and maybe when you want to
+30:49 use the some metadata of these documents
+30:51 like for example which documents are
+30:54 people actually clicking on right or
+30:57 when were these documents created um
+31:01 this creates some kind of data landscape
+31:03 on the input and then you have your
+31:05 vector database on the kind of
+31:08 destination and somehow you need to
+31:09 connect uh these two uh sides so there
+31:13 will be some data engineering work
+31:15 happening right some kind of pipeline
+31:18 work uh that's half of the problem and
+31:20 the other half of the problem is the
+31:22 modeling work like okay how which kind
+31:25 of models are we running on this day
+31:27 data um you know how are we rolling out
+31:31 new model versions and do we need to
+31:33 recompute the database when we do it or
+31:35 not or partially so you have this kind
+31:38 of inest ingestion problem where there
+31:40 is kind of a big compute component uh
+31:43 basically running models on some data
+31:45 and then there is the query handling uh
+31:48 path right where you have let's say uh
+31:52 your user uh who uh put in a query and
+31:57 and you need to also turn that into a
+31:59 vector so that the database can match
+32:02 those two vectors against each other the
+32:04 kind of document PA Vector let's say
+32:08 with the query Vector so you need to on
+32:11 in both of those Pathways basically
+32:14 constract vectors um from some inputs um
+32:19 and of course these have kind of
+32:20 different requirements because for the
+32:22 ingestion maybe you can batch these
+32:23 workloads for the query handling maybe
+32:25 you want to be fast
+32:27 uh but somehow always you need to be
+32:29 consistent because you are landing into
+32:31 the same Vector space uh because you
+32:34 want to be matching those two sides
+32:36 together um so those are the two
+32:38 instances of the what we call the vector
+32:40 compute
+32:42 problem yeah so if I talk about a
+32:45 specific example if I think about a
+32:46 specific example so there is a model
+32:49 from open AI called clip and this model
+32:52 what it can do it can turn text into
+32:55 vectors and and images into vectors in
+32:59 such a way that you can use text to look
+33:02 for images like you can just write I
+33:04 don't know
+33:05 blue wait Black Cat and then you would
+33:08 get images of black cat right black cats
+33:11 right that's right and let's say we used
+33:15 clip or we used the
+33:16 usual I don't know sound way of
+33:19 embedding let's say we used uh bird for
+33:23 embedding our uh book right so for in
+33:27 all the words uh creating this vector
+33:30 and indexing right but then we heard
+33:33 about this clip and we thought okay we
+33:35 also have images in the book now we want
+33:38 to switch our embedding strategy we want
+33:40 to use a different model for embedding
+33:42 right and instead of rewriting the whole
+33:45 pipeline if we use like a special
+33:47 framework for creating this pipeline for
+33:50 indexing reindexing and all that right
+33:53 so for us placing one model with another
+33:56 and add images would be much easier if
+33:58 we use a frame right yeah that's exactly
+34:02 right and this we are still in the kind
+34:04 of basic level of this problem because
+34:07 you you kind of used an example where we
+34:10 just replace the old model with the new
+34:12 one right um the thing is that in
+34:15 practice it's not so easy um at some
+34:19 point basically your data that you want
+34:21 to process in this way just starts to
+34:24 not just be one big string or one image
+34:28 right and you start to have this uh you
+34:30 know let's say your product manager
+34:32 comes in and says hey the search that we
+34:34 have built for our news website when I
+34:37 type car I'm getting results which are
+34:40 kind of uh too
+34:42 old right uh and we are News website we
+34:45 need to have kind of fresh results right
+34:48 and then okay then what do you do right
+34:50 and um one of the concepts of how people
+34:54 deal with this kind of stuff is called
+34:55 hybrid search right you start to combine
+34:57 okay I'll have my kind of vector
+35:01 similarity search and I layer on top of
+35:04 it uh some other constraints and I say
+35:07 okay prefilter all the news articles
+35:10 that are newer than one month and then
+35:13 within those uh match with the kind of
+35:16 vector proximity to the query let's say
+35:20 um now the problem with that is that
+35:23 what if there is a super relevant
+35:25 article that's 32 days
+35:28 right you will miss it um so the the and
+35:31 then of course there are many such
+35:33 instances right the product managers are
+35:36 creative they come up with all kinds of
+35:38 constraints and if you layer all of
+35:40 these in this kind of classic kind of
+35:42 like waterfall of constraints type model
+35:46 it will over constrain your results and
+35:49 it will ultimately not actually work for
+35:52 the end user uh because what the end
+35:54 user is looking for is some combination
+35:57 some uh compromise right I want kind of
+36:01 new stuff but also relevant and probably
+36:05 a good idea from the recommender engine
+36:07 uh side of things is like some of these
+36:09 results should be quite popular or maybe
+36:12 popular for people like me U and then
+36:15 you get into this kind of complicated uh
+36:18 and also real world popular right yeah
+36:21 yeah so so that's the real world right
+36:23 like that's kind of how yes you you
+36:25 start with this like okay Let's uh embed
+36:28 some text let's embed the query let's
+36:31 match the two maybe use another language
+36:33 model to reorder uh the results because
+36:37 that can be then refining the match
+36:40 between the query and the document uh
+36:43 but that whole uh system will still just
+36:46 take the text part of the data into
+36:50 account and you know as I said in my
+36:52 examples that you very quickly run out
+36:55 of uh kind of uh the levers to uh move
+36:59 to actually get to a result that you can
+37:03 run in production and it can power a
+37:05 sign significant part of your um product
+37:09 at scale and what people do then is they
+37:11 go custom right like okay custom
+37:14 embedding models custom ranking models
+37:16 uh you know TI torch uh all the
+37:19 associated kind of mlops problems again
+37:22 how do we have enough data how do we
+37:24 train this thing uh now should we train
+37:26 embeddings for each retrieval task
+37:29 separately or have some general
+37:31 embedding and then maybe have ranking
+37:33 model separate for the use cases and
+37:36 that's where we are looking at kind of
+37:37 six to nine months project with some ml
+37:41 data science folks
+37:43 um and that precisely is the point where
+37:47 you should come talk to us because we
+37:49 have a way to embed complicated data but
+37:53 we product productized that process
+37:56 right and and so um we our goal is to
+37:59 make it much easier to deal with those
+38:02 more complicated uh
+38:04 situations um and make it not take nine
+38:08 months
+38:09 right so you said that it's possible
+38:12 that you have multiple embeddings for a
+38:16 single document right so there could be
+38:18 embedding for I don't know titles and
+38:21 betting for Content betting for images
+38:23 and betting for some parameters and then
+38:27 like you have maybe five Bings and a lot
+38:29 of extra meta information like
+38:32 popularity tags um like where the user
+38:37 clicked or clicked similar items I don't
+38:39 know like all this kind of stuff right
+38:41 and then it's
+38:43 all there in database or databases right
+38:47 and then you need to link it together
+38:50 somehow exactly exactly and ideally at
+38:53 the end of the day you have for your
+38:55 articles or pieces of the Articles and
+38:58 your
+39:00 users one vector each and this Vector
+39:04 encodes everything you know right uh all
+39:08 the information that you have about your
+39:10 articles all of the stuff you named
+39:12 somehow needs to eventually make it into
+39:14 the article Chun vector and everything
+39:17 you know about your
+39:19 user uh needs to make it into the user
+39:21 preference Vector um and then the
+39:25 question is okay how
+39:27 so and then you know and then you have
+39:29 the ETL problem of make it in there in
+39:31 terms of you know getting the data from
+39:34 whatever it is out and into your kind of
+39:37 processing pipeline right and then the
+39:40 modeling problem of okay how do we deal
+39:42 with those clicks those categories those
+39:45 separate vectors how can we bring it all
+39:50 together and um yeah I I know that in
+39:54 Lucine so we talked about this problem
+39:57 of recency right so what if we are in
+40:00 use website and it means that we want to
+40:03 show something that is recent but what
+40:05 if there is a super relevant article
+40:08 related to my search that is more than
+40:10 one month old right and I know in Lucine
+40:13 there are this type of queries that
+40:15 filters should and must like you can say
+40:20 the article must be at least less than
+40:22 one month old right and then it would
+40:24 just filter completely Al together
+40:26 all the old articles right or you can
+40:28 say it should and then if it's super
+40:31 relevant then Lucine would still bring
+40:32 it up but when it comes to Vector
+40:36 databases I don't know if they can have
+40:38 this sort of functionality right so does
+40:41 it mean we need to always have
+40:43 multiple databases when we want to to do
+40:47 things like that so that's an
+40:49 interesting question and our view at
+40:52 this problem is that we we believe that
+40:55 you can basically replicate a lot of
+40:58 that shoot type functionality in kind of
+41:01 pure Vector
+41:03 form uh so you can basically say hey I
+41:06 want relevant result towards this query
+41:10 and bias it towards what the type of
+41:12 Staff the user clicked on before and
+41:14 also bias it towards like popular staff
+41:16 and recent staff with these kind of
+41:18 weights for example or you can you know
+41:21 tune the weights with another model for
+41:23 example right and you can express these
+41:26 of queries U purely in the in the
+41:31 embedding um such that like with dat but
+41:36 how do you do it with a date with
+41:38 recency because like let's say we have a
+41:41 model that embeds a document and somehow
+41:44 contains the recency information but in
+41:48 one
+41:48 month it will no longer be recent
+41:51 doesn't mean we will need to always
+41:52 recalculate the vectors for the alt if
+41:55 you do do it naively then yes you will
+41:58 and uh so that's a bad idea right um but
+42:02 there is a way to encode a time stamp uh
+42:07 into couple of uh basically Vector
+42:11 Dimensions such that when you do a
+42:14 cosine similarity between two such
+42:17 encoded time stamps it behaves like a
+42:20 normal time
+42:22 Delta and you know coine similarity is
+42:24 basically like angle between vectors uh
+42:26 and there is like math uh which is by
+42:29 the way spoiler alert for the people
+42:31 listening the math is somewhat similar
+42:33 to the to how the POS Transformer model
+42:38 does positional encoding so when the
+42:40 Transformer model eat uh big string
+42:43 right The Innovation there that is
+42:46 happening uh in parallel right it eats
+42:48 all the words in parallel instead of a
+42:51 sequence like lsms um but if it only ate
+42:56 like embeddings of all the words on the
+42:58 input in parallel it would lose the
+43:00 sequence information right it would no
+43:02 longer kind of uh understand in which
+43:06 order the words came in and the
+43:08 Transformer architecture solves this
+43:10 with a trick called positional encoding
+43:12 where basically you add into the same
+43:15 set of
+43:17 Dimensions um information of the
+43:20 ordering uh and you know this is like a
+43:23 little bit crazy because you add it into
+43:25 literally the same set of Dimensions
+43:27 which means you uh basically it's
+43:30 translation is you move you prur each
+43:33 word in the semantic
+43:36 space uh with some kind of Delta and
+43:39 then the model the next layers of the
+43:41 model disentangle this information
+43:44 somehow right um but we do it uh using
+43:48 separate set of Dimensions right we
+43:50 literally Dimension wise concatenate all
+43:53 these signals into one big Vector for
+43:56 you know content and users and other
+43:58 entities um but yeah this is this is the
+44:01 type of puzzles that uh you have to
+44:05 solve when you decide okay I want to
+44:06 express these complicated objectives and
+44:09 these complicated data objects purely in
+44:11 the vector form each new property type
+44:15 will generate uh this kind of puzzle or
+44:18 then you go completely custom like let's
+44:21 just make a custom embedding model let's
+44:23 feature engineer all these inputs uh and
+44:26 let's train a model that encodes all
+44:28 this data into embedding and let's
+44:31 figure out how to constraint and train
+44:32 that model and you kind of go that way
+44:36 yeah interesting so basically summary is
+44:38 that you can encode the time stamp in
+44:41 also the vector form and then the
+44:43 similarity between now and the time
+44:45 stamp in the past gives a sense of
+44:48 recency right and then you can also
+44:50 prioritize recent articles if it makes
+44:53 sense or prioritize relevancy if it
+44:56 makes sense right and then exactly the
+44:58 model would be smart enough to figure
+45:00 out like what is more because like I
+45:03 guess there will be one vector and then
+45:04 part one part of this Vector is recency
+45:06 one part is relevancy right and then and
+45:11 the kind of key observation is to uh
+45:15 normalize all these components so when
+45:17 you index any kind of data you want to
+45:21 do this uh as bias free as possible
+45:24 right and this means that uh you would
+45:28 you will not be recomputing the index as
+45:30 match when you find your favorite biases
+45:32 right you want to postpone the decision
+45:34 of which signal matters how much in
+45:36 which context as late as possible at the
+45:39 query time ideally right and so in our
+45:41 system basically when we uh embed these
+45:45 complicated uh entities we normalize
+45:48 those components and then when uh you
+45:51 use rdk to formulate those queries uh
+45:55 that's where you can start applying
+45:57 weights and that's where you can also
+45:58 start to train the weights right because
+46:01 in different contexts the weights will
+46:04 be different right like your landing
+46:06 page is probably different than for you
+46:08 page uh and the category page and um and
+46:13 obviously this depends very much on the
+46:15 on the use case as
+46:16 well and which like speaking of this um
+46:20 so I'm I'm thinking about G Char GPT so
+46:22 I know gpts they don't have this
+46:24 information about the time
+46:26 right so they don't like if you say uh
+46:30 you somehow need to to be explicit you
+46:32 say in your prompt you say today is this
+46:36 day right then you add a bunch of
+46:38 Articles and then you say okay like I
+46:39 want to um when you answer my question
+46:43 keep in mind that today is this day and
+46:47 the things that the time stamps you have
+46:49 in the prompt are this right and then I
+46:51 can figure out that uh okay this is my
+46:54 answer so I know like for example we
+46:56 haven't talked about
+46:58 that in data talks club we have a bot
+47:01 one of the community members Alex he
+47:03 created this chatbot for our courses to
+47:05 help students find the answers so we
+47:08 have long fq documents which are very
+47:10 far hard to to use to find things so we
+47:13 have a b that answers questions right
+47:16 and then in the prompt what Alex is
+47:18 doing is it says today's this
+47:20 day and keep in mind when answering
+47:23 questions right and when somebody asks
+47:26 uh can I still get enrolled in the
+47:28 course or something like that and it
+47:31 knows uh that's it's I think it's
+47:34 similar
+47:35 to what you said right right right
+47:38 so um this kind of thought of basically
+47:44 stringifying of time stamps and then
+47:46 eating them with the language mod
+47:48 exactly um is within the broader braet
+47:51 of thoughts of hey let's stringify
+47:53 things and en code them with the llm
+47:56 um this has limitations because the
+47:59 underlying model doesn't have like the
+48:02 exactly same understanding as you or me
+48:05 of how time stamps increment right so
+48:09 there can be like surprising uh results
+48:12 of like holes for example right that or
+48:15 kind of Mis orderings um so yeah I think
+48:20 the main problem of yeah let's just you
+48:22 know take this complicated entity let's
+48:24 say user with all their history
+48:26 make big string and run it through a
+48:28 language model is that um you lose the
+48:31 control right you don't get to say like
+48:33 what is how much important um and you
+48:37 you lose the kind of efficiency of using
+48:41 specialized models to
+48:44 encode subsets of the data because each
+48:48 there are separate basically research
+48:50 fields in how do you turn graph
+48:52 structures into vectors or how do you
+48:55 turn time series into vectors or you
+48:58 know other types of data so you know
+49:00 they are kind of dedicated models for
+49:03 for doing that for different data types
+49:05 and if you try to do the whole thing
+49:07 with the llm is computationally
+49:09 inefficient hard to
+49:11 control um and the resulting retrial
+49:14 quality won't be as good so I think
+49:17 those are the three main
+49:18 issues I see an interesting question
+49:20 from Demetrius so Demetrius is asking if
+49:24 uh you have any publication s that go
+49:26 into detail about the approaches you
+49:29 described on how to combine various
+49:32 signals into a single
+49:35 Vector so we have a few
+49:39 um uh pieces that you can understand
+49:42 kind of between tutorial and like a
+49:44 research exploration on Vector Hab so if
+49:47 you go to Hab dosup link.com and I think
+49:51 you'll also include the link in the in
+49:52 the notes um we already have article out
+49:56 there that uh illustrates how to combine
+49:59 graph and text embeddings together and
+50:02 also image and text text embeddings um
+50:06 so yeah hopefully that can serve as an
+50:09 inspiration um the name so I found one
+50:13 retrieval from image and text modalities
+50:15 is this the one yeah there is that one
+50:18 and also another article that's worth
+50:20 checking out is called representation
+50:23 learning on graphs or something like
+50:25 that
+50:26 yeah I can see it representation
+50:28 learning on graph structure data yeah
+50:32 you see this in the navigation panel
+50:36 yeah to the it's under the block section
+50:40 yeah and and again this is not the idea
+50:43 that to take structured and unstructured
+50:45 data and put them into a vector is not
+50:48 new right like uh in the big Tech uh
+50:52 people have been building custom
+50:53 embedding models that com combine
+50:55 structured and unstructured information
+50:58 into a shared Vector representation for
+51:02 very long time right uh the question is
+51:05 now more about how do we productize it
+51:08 how do we let people quickly experiment
+51:12 iterate um and you know we are very
+51:16 close to launching uh our actual product
+51:20 right we have been in private and I
+51:22 don't want to be like too salesy um but
+51:24 basically
+51:26 we have a framework that's coming out
+51:27 that helps you do this
+51:30 right and I'm looking at the article at
+51:33 the blog post you mentioned this
+51:35 representation learning on graph
+51:36 structure data so from what I see you
+51:39 show how to use py torch yeah so in in
+51:43 all of those
+51:44 examples we we use uh standard tools out
+51:48 there Psy learn numai py Tor so right
+51:51 now there is you know our goal with
+51:54 Vector Hab is to help people kind of
+51:56 learn the techniques and not uh you know
+51:59 push our product there will be separate
+52:02 place for uh kind of describing what our
+52:05 product does and how it relates to all
+52:06 of this uh but this you will notice on
+52:09 Vector Hab it's kind of external
+52:11 contributor driven um and it's kind of a
+52:16 compromise between entertaining the
+52:19 research thoughts of uh practitioners
+52:22 out there and steering them towards okay
+52:24 let's look at kind of vectors and
+52:26 information retrieval
+52:28 um yeah so so I think that's just a good
+52:31 place to start learning about the
+52:34 concepts and then I see that you also
+52:36 have Vector DB comparison which is super
+52:41 relevant thing because like if you
+52:43 Google or if you just open any article
+52:46 about llm or also take our
+52:49 interviews I think that there are so
+52:51 many different uh Vector databases and
+52:55 from what I understood this uh this
+52:58 article that you have here or not
+52:59 article this um comparison
+53:03 database actually helps us to pick the
+53:07 right database for our use case right
+53:09 that's right so we crowd sourced uh this
+53:13 uh it's you know it's powered by git
+53:16 repository the same same as Vector uh
+53:19 and we crowdsource this uh and also we
+53:23 got a bunch of contributions from the
+53:25 vendors uh and it's basically a compar
+53:28 feature comparison of vector databases
+53:31 um you know for different types of
+53:33 search constraints and operational
+53:36 questions you know can I run this in the
+53:38 process with my app uh and separate and
+53:41 is there a managed offering what is the
+53:43 open source license we also have stats
+53:46 now of GitHub stars and you know mpm
+53:49 pools and uh pin Styles and all of that
+53:52 stuff um and look like people people
+53:55 sort of look at the table and they think
+53:57 okay this is like way too many offerings
+53:59 in the market um but actually I think I
+54:02 think that uh we haven't
+54:06 really uh you know seen the full
+54:10 potential that this technology enables
+54:13 and I think as we go and apply the
+54:15 technology there will be bunch of
+54:17 different specializations and different
+54:19 backets where different solutions
+54:21 perform better like do you want few big
+54:24 indices versus many small ones this
+54:27 alone is you know one of those decisions
+54:30 that make that Inspire completely
+54:32 different design of the underlying
+54:34 system so I believe there will be a
+54:36 bunch of these things and obviously the
+54:39 the incumbent databases they all
+54:42 basically launch the vector index as
+54:43 well and there are different tradeoffs
+54:45 of of that of course um but yeah I think
+54:48 that table so vdbs dosup link.com is a
+54:52 good starting point for that exploration
+54:56 I see that we have another interesting
+54:57 question from vishaka so the question
+55:01 is is there any reason why I wouldn't
+55:04 use you wouldn't use a database that
+55:06 goes beyond just Vector search and then
+55:09 I immediately thinking about databases
+55:11 like elastic search or Lucine right
+55:14 where we can actually combine like we
+55:16 have this uh must and should type of
+55:19 queries we have the the inverted index
+55:22 like the word index then we have bunch
+55:25 of other things right and then also in
+55:27 elastic search I don't remember if you
+55:30 still need to install a plugin I think
+55:31 like now it's um it comes in with Lucine
+55:36 so then you organically have Vector
+55:39 search in all Lucin based databases then
+55:42 you can just use Vector search in your
+55:44 database so like why can't we just put
+55:46 everything in Lucine and like let it do
+55:49 its
+55:50 magic um you might maybe that's a good
+55:54 place to start right because it's right
+55:56 there uh the question I think the the
+55:59 considerations break into a few
+56:01 different categories um for a while it
+56:04 used to be performance like okay if you
+56:07 have couple million vectors uh the PG
+56:11 vector and other Solutions were uh
+56:14 consider orders of magnitude slower than
+56:16 the dedicated Solutions right um I think
+56:20 there is still some difference people
+56:22 should check out if the difference is
+56:25 big enough for them that it matters um
+56:28 so performance the other category of
+56:30 thought is what is the right set of
+56:33 tools and abstractions around this new
+56:35 type of search right for example query
+56:38 language um to what extent you can tap
+56:43 into right I
+56:47 mean yeah so people had similar Thoughts
+56:50 with uh graph databases right um I you
+56:54 know the that's I think we have some
+56:56 successes and some challenges to to
+56:58 learn um uh from from from that era as
+57:02 well right um I would say the question
+57:07 is what you are optimizing for are you
+57:09 optimizing for only ever having one
+57:11 database or are you optimizing for so
+57:15 you know solving business problems and
+57:16 building stuff that works as fast as
+57:19 possible um then you know if the new
+57:23 abstraction helps you deliver faster
+57:26 still gives you the expressive power you
+57:28 need but also uh gets you to the
+57:30 destination faster then maybe you should
+57:33 look at the tool right
+57:36 um yeah I think that's kind of the
+57:38 decision space do you have uh more time
+57:41 or you need to go yeah we can we can
+57:44 keep going for a couple more minutes
+57:47 yeah well maybe this is a longer this
+57:50 will require longer time so question
+57:53 from aai is if I'm a midsized d2c brand
+57:57 direct to Consumer I think brand what
+58:01 would be the best way to build my search
+58:03 Tech I'm looking only to add
+58:05 personalization and switch from pricey
+58:07 third party
+58:11 vendors okay that's a that's a big one
+58:14 yeah um they probably need a
+58:16 consultation right or yeah I mean very
+58:19 happy to also you know for for for any
+58:21 questions that remain unanswered uh I
+58:25 think there will be a link to my
+58:26 LinkedIn people should connect to me and
+58:29 and and shoot those questions over um
+58:33 for the for e-commerce I think there is
+58:37 a huge opportunity to um do realtime
+58:41 personalization across many different
+58:42 surfaces feeds category Pages product
+58:46 detail Pages basket Pages personalized
+58:49 emails right um in fact our first kind
+58:53 of production deployment is of this type
+58:56 and we see uh um large lifts of of
+59:02 Revenue and so on so I think there is a
+59:04 big opportunity there um also because of
+59:07 the multimodality of the e-commerce data
+59:10 right you often have product images and
+59:12 descriptions and behavioral data um I
+59:16 think there isn't you know like go to
+59:18 stack uh that you should absolutely use
+59:22 um yeah I think it depends somewhat on
+59:25 the constraints look like if you have uh
+59:28 let's say
+59:30 [Music]
+59:32 um 100,000 data points across all your
+59:35 stuff right behavioral events and
+59:37 products and users and everything is
+59:39 kind of on that order of 100 thousand
+59:42 couple hundreds of thousands then I
+59:44 would just uh pull the data into a
+59:46 python notebook and just kind of see
+59:48 what you can do with basic tools out
+59:51 there right do some embeddings do some
+59:53 matching pull
+59:55 uh frequent queries that you get on
+59:58 search um see if you can make embeddings
+1:00:01 of users and cluster them to see if um
+1:00:04 you know there there is there are some
+1:00:06 clusters to be exploited I think you can
+1:00:09 explore quite a lot in this way and then
+1:00:12 if you are getting results that are
+1:00:14 dramatically different from what your
+1:00:15 current production system is uh doing
+1:00:18 right like this you can literally just
+1:00:20 eyeball right like for example the clip
+1:00:23 model that you mentioned from open AI I
+1:00:26 think this is like eye opener for many
+1:00:28 people that they can ingest a bunch of
+1:00:31 photos of clothes and then they get the
+1:00:33 search query like blue T-shirt with
+1:00:35 short sleeves and it actually works and
+1:00:39 it differentiates between short sleeves
+1:00:40 and long sleeves like this feels kind of
+1:00:43 magical um so I would yeah like most
+1:00:47 people St this way right they kind of
+1:00:49 create a demo of some queries that are
+1:00:52 dramatically better than the the current
+1:00:55 system um and then they figure out how
+1:00:57 to productize that right probably some
+1:01:00 kind of python server um you know
+1:01:04 getting all this data on the input
+1:01:06 handling those queries there's probably
+1:01:08 a vector database uh or vector enabled
+1:01:12 traditional database somewhere in
+1:01:14 there um I think that's a cool cool
+1:01:17 place to
+1:01:19 start maybe maybe we can do one more and
+1:01:21 then I'll have to jump yeah well um so
+1:01:26 we have other questions I they are not I
+1:01:29 don't know how they are so this one is
+1:01:32 also big so the question is like what
+1:01:34 are some metrics that can be used to
+1:01:37 monitor search
+1:01:40 performance yeah I mean that's a that's
+1:01:43 a huge one because performance is very
+1:01:45 ambiguous right um actually our Chief
+1:01:49 Architect likes to say uh that the main
+1:01:53 metric that should be used this
+1:01:56 USB and I I love this joke because
+1:02:00 people exactly because people mean
+1:02:04 square error you know they try to figure
+1:02:06 out like what what abbreviation is that
+1:02:08 of USD but yes it's dollars in the end
+1:02:11 right um
+1:02:13 so high level thought on this very long
+1:02:17 question
+1:02:18 is you'll get more funding for your
+1:02:20 project uh as a data scientist as an
+1:02:23 engineer in your company
+1:02:25 if you can connect your metrics to the
+1:02:28 actual business
+1:02:29 performance um and then uh yeah do AB
+1:02:33 testing um carefully and uh
+1:02:37 intentionally um and uh I mean there
+1:02:42 is there is so much content about this
+1:02:44 out there that I don't think I can you
+1:02:46 know do it justice um but yeah I think
+1:02:50 the the dollars uh I think that's my
+1:02:52 kind of that's the Delta to most of the
+1:02:54 content that I see out there is uh
+1:02:57 connected to something that the business
+1:02:58 cares about not have 50 grafana charts
+1:03:02 that uh only you care about MH yeah so
+1:03:07 like sometimes it's not immediately
+1:03:10 possible
+1:03:11 to to calculate the impact in dollars
+1:03:14 but sometimes you have some you can have
+1:03:16 some other business metrics that is
+1:03:18 important too so for example in the
+1:03:20 company where I used to work we cared
+1:03:22 about contacts so it's it was like a
+1:03:25 Marketplace MH and what we wanted is
+1:03:28 from search if somebody is looking for
+1:03:31 something then they contact the sellers
+1:03:33 right so this is one of the important
+1:03:35 things or
+1:03:36 click at a certain thing like order a
+1:03:40 delivery right so these are two metrics
+1:03:42 that are important and then for each of
+1:03:44 these successful events we can attribute
+1:03:47 some money value right those are proxies
+1:03:51 yeah proxies for the dollars right like
+1:03:53 that's the only reason that you would
+1:03:55 care about somebody contacting a seller
+1:03:58 is that somebody figured out that there
+1:04:01 is some probability of that leading to
+1:04:04 uh transaction down the line right and
+1:04:07 then you think about that funnel and
+1:04:09 those probabilities and kind of all
+1:04:11 things being equal more clicks probably
+1:04:13 means more money um usually the all
+1:04:16 things being equal does a lot of heavy
+1:04:17 lifting because we have experiments that
+1:04:19 are not fully isolated and all kinds of
+1:04:22 seasonal effects that upset uh this uh
+1:04:26 equalness right this why we run control
+1:04:29 groups um you know the the yeah like
+1:04:33 search search relevance uh monitoring is
+1:04:37 is
+1:04:38 definitely
+1:04:41 um maybe one more thing I'll say on this
+1:04:44 topic is
+1:04:47 that having metrics that uh Engineers
+1:04:52 can affect
+1:04:55 without going through the data
+1:04:57 scientist um and iterate on them quickly
+1:05:01 I think that's interesting so um
+1:05:03 basically how can you create metrics
+1:05:05 that facilitate fast iteration and
+1:05:08 sometimes that could be offline
+1:05:10 evaluation tests right sometimes it can
+1:05:12 be AB test uh
+1:05:15 but one of my kind of goals or our goals
+1:05:19 with superlink is to enable the
+1:05:21 engineers to solve a lot of these
+1:05:23 challenges right without going through
+1:05:25 the data scientist because the data
+1:05:27 scientist is busy has many problems
+1:05:30 should work on them um but for the some
+1:05:34 of the more basic stuff or clearer stuff
+1:05:37 um we want to give Engineers the levers
+1:05:40 to explore and uh and uh still have the
+1:05:44 the power but also uh the the kind of
+1:05:49 abstraction that helps them actually
+1:05:51 navigate the problem and it feels more
+1:05:53 like engineering and less like magic
+1:05:56 right um I think with the pre-train
+1:05:59 models this is one way to understand the
+1:06:01 current opportunity in the you know
+1:06:04 current sort of ml high wave right is
+1:06:07 that Engineers can solve information
+1:06:11 retrieval
+1:06:12 problems directly um this this I think
+1:06:15 will unlock a lot of
+1:06:18 value yeah Sly we didn't talk about uh
+1:06:21 the algorithms and uh competitive
+1:06:24 programming and their relevance to
+1:06:26 Everyday work maybe some other time and
+1:06:28 I see actually by the way I see right
+1:06:31 behind your head I see a bluish patch of
+1:06:37 Sky yeah that's okay I'll play with your
+1:06:40 optimism and say that I also see it but
+1:06:43 I'm tuning in from London today and it's
+1:06:46 beginning of March so yeah I was going
+1:06:48 to say maybe you can now go celebrate
+1:06:51 this uh blue sky
+1:06:55 maybe okay yeah thanks a lot for joining
+1:06:58 us today thanks everyone too for joining
+1:07:02 us today and for asking your questions
+1:07:04 tuning in and also thanks super link and
+1:07:07 Vector hub for supporting this podcast
+1:07:10 inter thank you Alexa uh big fan of the
+1:07:13 community of the podcast I actually
+1:07:15 binged a few episodes uh just recently
+1:07:18 uh please keep doing what you're doing
+1:07:20 always good to have this kind of
+1:07:21 engineer first view you know
+1:07:24 um and hopefully we get to chat soon
+1:07:28 yeah

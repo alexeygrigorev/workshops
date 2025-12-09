@@ -1,0 +1,1850 @@
+Using Data for Asteroid Mining
+
+0:00 hi everyone welcome to our event this
+0:01 event is brought to you by later talks
+0:03 club which is a community of people who
+0:05 love data we have weekly events this is
+0:07 one of such events if you want to find
+0:09 out more about the events we have
+0:11 click on the link in the description
+0:13 check it out we have quite a lot of
+0:15 events if for whatever reason you
+0:17 haven't subscribed to our youtube
+0:18 channel do it now you will not regret
+0:21 you will get a lot of nice videos in
+0:23 your feed like this one
+0:25 and then of course the most important
+0:27 thing if you haven't joined our slack
+0:28 community do it now
+0:31 you can hang out with other data into
+0:33 just there
+0:35 um yeah last thing we started the course
+0:38 last week already or was it this week
+0:40 yeah i think this week so there is a
+0:42 course free course about envelopes so if
+0:45 you're interested in this kind of stuff
+0:46 there is also a link in the description
+0:49 and check it out it's quite interesting
+0:51 and then
+0:53 lastly if you have any questions during
+0:55 today's interview there is a pinned link
+0:58 in the live chat click on this link ask
+1:00 your question and i will be covering
+1:02 your questions during the interview
+1:05 so that is the introduction now i
+1:08 stopped sharing my screen
+1:09 i find the questions that i prepared for
+1:12 you
+1:14 so i have the questions
+1:17 should we start
+1:19 yeah let's do it
+1:21 okay so this week we'll talk about
+1:24 extracting space resources from
+1:26 asteroids and we have a special guest
+1:28 today danan danan and his co-founders
+1:30 created carmen plus to mine near-earth
+1:33 asteroids
+1:34 and previously he worked as a data
+1:36 scientist so i thought it would be a
+1:38 great idea to invite him to talk about
+1:40 applications of data science
+1:42 for
+1:43 mining asteroids specifically and for
+1:46 astronomy in general welcome
+1:48 thank you good to be here
+1:51 before we go into our main topic of
+1:53 astronomy and data and mining asteroids
+1:56 let's start with your background can you
+1:58 tell us about your career journey so far
+2:00 yeah so i you know when i was younger i
+2:03 was very interested in astronomy and
+2:05 science and as an undergrad uh took a
+2:08 heavy course load in physics and
+2:10 astronomy and cosmology actually was one
+2:12 of my favorite classes and i also uh
+2:15 took some courses in neuropsychology and
+2:19 cognitive perception um and was
+2:21 interested in research and thought very
+2:23 heavily about going into a career in
+2:25 academics but for a number of reasons
+2:27 just didn't feel that that was the path
+2:29 for me i was also interested in public
+2:30 service and so when i graduated i ended
+2:32 up doing work with a non-profit here in
+2:34 new york city where i live and i kind of
+2:36 spun my career into you know combination
+2:38 of public service uh finance uh
+2:41 politics i ran a congressional campaign
+2:43 that's a whole other podcast uh i'll
+2:46 spare you uh but i ended up working for
+2:47 the new york city mayor's office under
+2:49 michael bloomberg
+2:50 about 10 years ago after hurricane sandy
+2:53 hit the city and it was you know a very
+2:56 impactful job and i love the people i
+2:58 worked with and it was a trajectory
+3:00 where i could see a lot of possibility
+3:01 in the future and interesting work but
+3:03 my heart wasn't in it and i realized
+3:05 when i thought back to the fork in the
+3:06 road for me that was
+3:08 leaving science and i wanted to get back
+3:10 to that i wanted to work
+3:11 and problem solve with data and i went
+3:14 back to school at nyu to sort of pivot
+3:17 my career and uh got a degree in
+3:18 informatics and a couple of very close
+3:21 advisors of mine were actually
+3:22 astrophysicists at practicing academics
+3:25 and
+3:26 must much of what i learned as a data
+3:27 science scientist i learned from them uh
+3:30 and uh really appreciated it uh and uh
+3:32 after i graduated i ended up working and
+3:34 i thought about getting a phd but at
+3:36 that point it was just not feasible
+3:38 economically or otherwise and i also
+3:40 wanted to kind of jump in and get my
+3:41 hands dirty so i ended up working in
+3:43 industry uh worked for a great company
+3:46 called geophy worked with the world bank
+3:48 i worked with the united states federal
+3:50 emergency management agency uh with a
+3:53 company called new light technologies uh
+3:56 mostly working with remote sensing and
+3:58 so the last several years i've been able
+4:00 to do a lot of work with um
+4:02 data analysis and machine learning
+4:03 related to remote sensing and making
+4:05 sense of that data uh and about a year
+4:07 ago i got a call from a former colleague
+4:09 of mine who said hey i'm
+4:11 starting an asteroid mining company uh
+4:14 resources are important we want to go
+4:15 find them at asteroids do you want to
+4:17 help me build the science and
+4:18 engineering team and i said sure i'm in
+4:20 uh
+4:21 it was maybe a little bit longer
+4:22 conversation than that but it basically
+4:24 kind of came down to that
+4:26 and so a few months ago i quit my job
+4:28 full-time and have been doing this and
+4:29 building the team out and helping design
+4:31 our strategy and uh uh you know some
+4:34 things are the same i still on my best
+4:36 days work with data and it's a big messy
+4:38 soup and i'm looking for patterns uh
+4:40 some things are different i now as a
+4:42 co-founder i have to think about the
+4:44 business a lot more as and we're looking
+4:46 for asteroids that's a new thing for me
+4:48 so uh so yeah that's what brings us here
+4:52 so you mentioned a couple of interesting
+4:54 things and i wanted to go way back when
+4:56 you said you studied astronomy and also
+4:59 cosmology
+5:01 are there any differences isn't it the
+5:03 same thing
+5:04 oh good question well uh i guess one big
+5:07 difference is uh time scales and
+5:09 astronomy are pretty massive but you can
+5:11 even think about it in millions of years
+5:13 whereas cosmology we were talking
+5:16 billions of years
+5:17 um my sister is an academic and studies
+5:20 uh she's a philosopher in physics and
+5:22 she looks at things like quantum field
+5:24 theory and in cosmology and there you're
+5:26 really pushing the edge of theory um
+5:29 because you're thinking about things
+5:30 that we don't even know how well our
+5:32 physical laws hold up in certain states
+5:34 or what we can know about them
+5:36 it gets interesting you certainly aren't
+5:38 able to do experiments in the same way
+5:40 whereas astronomy is at least a little
+5:42 bit more focused in my mind i guess on
+5:44 on what you can observe
+5:46 immediately and so they're very closely
+5:49 related but i i yeah i see cosmology is
+5:51 is uh
+5:52 um
+5:53 i don't know so it's fascinating to
+5:55 think about our universe and that broad
+5:56 perspective uh very related of course
+5:59 and and and one drives the other for
+6:01 sure
+6:03 okay so i the next question i wanted to
+6:05 ask you was about applications of data
+6:08 science and machine learning for
+6:09 astronomy
+6:10 but before that
+6:13 other applications for cosmology of data
+6:16 science and machine learning um
+6:18 well um you know i i think whenever
+6:21 you're looking at massive amounts of
+6:23 data and we're getting more data um
+6:26 uh the answer is always yes if you need
+6:28 if you have a lot of data that you need
+6:29 to understand data science
+6:31 is
+6:32 i think directly at the applicable there
+6:34 and cosmology is probably in need of it
+6:36 um i i love talking about ligo the the
+6:40 light interferometer gravitational wave
+6:41 observatory and the detection of
+6:44 gravitational waves which are traveling
+6:46 across billions of light years uh that
+6:49 is pretty fascinating and there's so
+6:50 much we can learn about the creation of
+6:52 our universe i believe and how it exists
+6:54 and where and how it's moving uh and
+6:57 obviously parsing that data as with the
+6:59 large hadron collider you're dealing
+7:00 with a pretty massive amount of data
+7:02 information how much of that is noise
+7:04 how much that is some signal what is the
+7:06 signal telling us so i think from a
+7:08 cosmological perspective there certainly
+7:10 are a certain need for data science and
+7:12 machine learning
+7:14 and i'm sure someone could speak more
+7:15 intelligently on that than i but um but
+7:17 yeah
+7:18 it's there
+7:20 yeah so gravitational waves and yeah i'm
+7:23 wondering like how much we
+7:25 people from earth can observe
+7:28 like with this gravitational waves like
+7:30 how much signal is there how much noise
+7:32 is there and how well there's there's
+7:34 there's uh enough to actually make some
+7:36 pretty interesting discoveries so the
+7:37 fact that we're now with some regularity
+7:39 detecting not only black holes crashing
+7:42 into each other which is a thing that
+7:43 happens by the way if you didn't know
+7:45 that um but neutron stars uh and so uh
+7:48 it's pretty fascinating there's even an
+7:50 anecdote i know a few years ago in 2017
+7:52 they had detected what they thought was
+7:54 neutron stars colliding there are two
+7:56 detectors in the us in washington state
+7:58 and in louisiana one of them detected
+8:00 this
+8:01 unmistakable signal or so they thought
+8:03 the other detector did not so by their
+8:05 own rules they thought well this is an
+8:07 anomaly or it's not a true detection but
+8:10 it was confusing because there there was
+8:12 so clear there's a third detector in
+8:14 italy that also didn't detect it well it
+8:16 turns out the one in louisiana had uh
+8:18 what they call a glitch which is a noise
+8:20 these are very sensitive instruments and
+8:22 so maybe a jackhammer was going off or
+8:24 something
+8:25 and they scrubbed the noise at just the
+8:28 right time that the the the signal
+8:30 happened which is a low
+8:32 frequent probability but it it can
+8:34 happen
+8:35 uh and sure enough when a postdoc went
+8:37 back and looked at the data they saw
+8:38 that that glitch was there and when they
+8:40 were able to um
+8:42 mask around it they were able to see the
+8:43 signal so indeed it had been there but
+8:45 the automated and this is a sort of i
+8:47 use this as an anecdote for why you need
+8:49 science in addition to machine learning
+8:51 the automated pipeline obviously
+8:53 didn't detect it and didn't understand
+8:55 that that was a signal
+8:57 what's also fascinating about this story
+8:59 is that third detector in italy also
+9:00 didn't detect it and the reason there is
+9:03 likely because as gravity
+9:05 is oscillating through space in three
+9:07 dimensions well four i guess if you
+9:09 include time
+9:11 the detectors are actually two lasers
+9:13 that are
+9:14 optimized for two dimensions and so if
+9:16 they're oriented in just the right spot
+9:18 there's a blind spot so it just so
+9:20 happened that this italian detector was
+9:23 the blind spot was where the gravity
+9:25 waves were coming from so you have the
+9:27 sort of combination of coincidences and
+9:29 physics and all kinds of things around
+9:30 the story that i find quite fascinating
+9:32 but uh not to go into tangible to answer
+9:34 your question yes as humans we can
+9:36 detect gravity that's pretty cool nice
+9:39 okay so going back to astronomy so there
+9:42 are
+9:43 applications of machine learning and
+9:45 data science there as well can you tell
+9:46 us how it's used yeah so you know data
+9:50 science you know i look at it data
+9:51 analysis you know information theory
+9:53 there's a lot of things related to that
+9:55 and so generative processes are
+9:56 important part of how i think about data
+9:58 science so if you're an astronomer your
+10:00 proximate generative processes are
+10:02 usually involving some detector you know
+10:04 a sensor a camera maybe a radio antenna
+10:07 you're measuring energy that's been
+10:09 collected and how that energy is
+10:10 measured and put into a numerical array
+10:12 is critically important for you to
+10:14 understand so understanding those
+10:15 generative processes i mean even beyond
+10:17 that you know what are you observing
+10:19 what natural phenomena
+10:21 obviously deep space astronomers are
+10:22 looking at you know quasars galaxies
+10:25 black holes uh pulsars all kinds of
+10:27 things exoplanets in solar system
+10:29 astronomy we're looking at objects
+10:30 moving around the sun and so
+10:32 uh we're seeing light reflected from the
+10:35 sun off an object and that can tell us a
+10:37 great deal about that object uh
+10:38 certainly for asteroids that's a big
+10:40 part of what we're interested in um how
+10:42 you pull these things together across
+10:43 different platforms takes on more of the
+10:45 data engineering need because there are
+10:47 a lot of complex science and data
+10:49 pipelines built around these
+10:51 observatories that you have to really
+10:53 understand and structure
+10:54 signal processing is a major component
+10:57 certainly of the data science side
+10:58 exploratory data analysis
+11:00 i think is pretty underrated i love
+11:02 doing exploratory data analysis you can
+11:03 see patterns and things in the in the
+11:05 data you're looking at
+11:07 um and then in machine learning i mean
+11:09 there's so many different tasks that are
+11:11 applicable but i think a lot of it can
+11:12 kind of come down to you know machine
+11:14 learning you know labels things there's
+11:16 a lot of things to label in astronomy um
+11:19 and if you're looking at computer vision
+11:20 you want to find sources is this pixel
+11:23 part of a source is it the adjacent
+11:24 pixel part of the same source how do you
+11:26 know
+11:28 you know exercise is related to that
+11:31 signal processing again when you're
+11:32 trying to figure out how to denoise an
+11:34 image and make some choices about what
+11:36 is noise because everything is
+11:37 information some information you can
+11:39 ignore
+11:40 machine learning is great for scaling
+11:42 those tasks out uh time series analysis
+11:44 is a major one clustering uh of all
+11:47 kinds of things spectral data you name
+11:49 it dimension reduction i've used quite a
+11:51 bit you know where probably a lot of
+11:52 people data scientists at least are
+11:55 familiar with principal component
+11:56 analysis it's a bit finicky you have to
+11:58 have data that's fairly well normalized
+12:01 that's well conditioned
+12:03 i like looking at auto encoders have
+12:04 been very popular in terms of techniques
+12:06 for dealing with dimension reduction
+12:08 among other things
+12:10 so i think there's a lot of opportunity
+12:11 there
+12:12 super resolution using generative
+12:14 adversarial networks uh i haven't worked
+12:16 with myself directly but i i see a lot
+12:19 of promise there
+12:20 to sort of artificially sharpen low-res
+12:22 images see some structure
+12:24 any any any sort of task where you need
+12:26 to scale things out and you're talking
+12:28 about petabytes worth of data you need
+12:29 to scale a lot of tasks out so it could
+12:31 be you know a task where an astronomer
+12:33 might be able to identify some some
+12:36 artifact or something that's of interest
+12:37 can that be scaled out and i think
+12:39 that's i think that's called for machine
+12:41 learning and deep learning so there's a
+12:42 lot of promise there
+12:45 i'm just wondering how the data looks
+12:46 like is it not our usual
+12:49 i don't know jpeg images with three
+12:53 channels rgb it's something different
+12:55 right
+12:57 great question so yeah if you think
+12:59 about even just an image right what is
+13:00 an image well it's usually organized in
+13:02 pixels or if you want to think of it as
+13:04 a matrix you have cells of data and yeah
+13:07 as you mentioned most images we're used
+13:08 to have three channels red green and
+13:11 blue
+13:12 and if you just look at an image the
+13:14 combination of those at a pixel level
+13:16 will give you a lot of information
+13:18 visually
+13:19 if you were doing image analysis you
+13:20 also know that looking at the histogram
+13:22 of those channels is incredibly helpful
+13:25 information
+13:26 and seeing what the distribution of red
+13:28 green and blue is well if you're
+13:29 thinking about
+13:30 hyperspectral imagery which is a which
+13:32 is fairly common in earth observation
+13:34 that i've been working in as well as
+13:36 astronomy
+13:37 you're looking across a number of
+13:38 channels so it's hard for us as humans
+13:41 to visualize something like that so
+13:43 that's where your data visualization
+13:45 takes on an importance and again you
+13:46 might look at things like histograms um
+13:49 or or other ways to sort of show uh that
+13:52 data that that are not just sort of
+13:54 image data
+13:55 and that takes on a lot of importance
+13:57 and then that might be something that
+13:58 you're trying to optimize some machine
+14:00 learning algorithm to look for patterns
+14:02 in that sense
+14:04 uh and so it's it's uh yeah i mean at
+14:06 the end of the day they're really just
+14:07 numerical matrices uh if you want to
+14:09 think of it that way but the the amount
+14:11 of information packed into these images
+14:14 is pretty intense and don't forget time
+14:17 is a factor here as well so
+14:19 spatiotemporal images
+14:21 are are a pretty big factor in astronomy
+14:24 and this
+14:25 hyperspectral image images
+14:28 i hope i pronounce it correctly um so i
+14:30 guess there are more than three channels
+14:32 right so what are these channels usually
+14:34 are yeah are there i don't know infrared
+14:36 channels or
+14:40 they they they certainly can be so when
+14:42 i was in uh grad school we worked with a
+14:44 camera that had 172 channels across
+14:47 mostly the visible spectrum and a little
+14:48 bit into the infrared so you're getting
+14:50 into
+14:50 uh you know eight to nine hundred
+14:52 nanometers uh
+14:54 the visible spectrum that we colors we
+14:57 see are i think
+14:58 something like 350 or 400 nanometers to
+15:00 about 800 or something in that range
+15:03 infrared then goes beyond that
+15:05 um so you can you know if you have uh if
+15:08 you know spatial resolution you can
+15:10 think of a high-res image as having
+15:12 pixels that represent a much much more
+15:14 precise amount of information spatially
+15:16 well you can also have that with with
+15:18 spectral images so a red green and blue
+15:22 uh resolute images is obviously not very
+15:24 resolute you just have three general
+15:26 channels uh if you have a high
+15:28 hyperspectral camera you can divide that
+15:30 electromagnetic spectrum which is
+15:32 continuous of course
+15:33 you can divide that into much much
+15:35 smaller
+15:37 segments in which case you have a lot
+15:38 more information that you're looking at
+15:40 just as you would with a high-res image
+15:42 um and that certainly can extend into
+15:45 the near mid or even long infrared and
+15:47 that's actually fascinating for us in
+15:49 astronomy because you know we're looking
+15:51 and i'll get into this more later but
+15:53 we're looking for water actually and
+15:56 turns out if you understand the physics
+15:57 of it that that hydroxyl bonds hydrogen
+16:00 oxygen um absorb water at about three
+16:03 microns which is way beyond what we can
+16:05 see visually
+16:08 and if you can look at the spectra of of
+16:10 of an object that's got water in it
+16:12 you'll see an absorption line or some
+16:14 feature at about three microns and so
+16:16 that's useful certainly for us if we're
+16:18 looking at spectral signatures to say
+16:19 hey there's potentially water in the
+16:21 material that's reflecting sunlight that
+16:23 we're looking at and that's useful
+16:25 information and of course stellar
+16:26 astronomers are interested in stars and
+16:28 all kinds of things we're looking at
+16:29 emission lines and
+16:30 all manner of of information that you're
+16:32 seeing across the spectrum
+16:34 and certainly you know radio waves are
+16:35 in the spectrum as well just they're
+16:37 much larger uh way down the road but um
+16:40 yeah it's
+16:42 fascinating
+16:44 so uh maybe we'll get to that a bit
+16:47 later but from what i understood so
+16:49 there is an object in space uh
+16:52 like an asteroid and then it reflects
+16:54 sun so there are
+16:56 sun is shining on it right so there are
+16:59 sun rays or exactly like the light is
+17:01 there and then it reflects light so the
+17:03 light goes towards the earth where we
+17:05 capture the light
+17:07 and different uh
+17:09 different objects in space reflect
+17:12 the light differently
+17:13 and by how they reflect you can
+17:17 make
+17:18 you can understand what this thing is
+17:20 made of right and if there is water
+17:22 exactly if there is something else
+17:25 absolutely absolutely yeah so
+17:28 uh uh photometry is basically the
+17:30 analysis of the the flux of of light of
+17:34 photons that can help give you a sense
+17:36 of brightness and potentially size but
+17:38 if you think about size is important
+17:41 because it's variable depending uh
+17:43 anything but you could have a very small
+17:45 but very bright object you could also
+17:47 have an object that's very bright that's
+17:48 very close to you uh or if it's very dim
+17:51 is it far away or is it dim because it's
+17:54 small or is it dim because it's just
+17:56 darker material
+17:58 you have to know these things so if
+18:00 we're looking at asteroids it's really
+18:02 really important for us to know where
+18:03 that asteroid is meaning we have an
+18:05 understanding of its orbit and if we
+18:07 know where it is relative to us as the
+18:10 observer and we know the angle of the
+18:12 sun in us that gives us at least some
+18:15 sort of constant and then if we look at
+18:17 the brightness of the object we can
+18:19 start to derive things like the size of
+18:21 the object
+18:22 as well as the reflectiveness of the
+18:24 material of the object and that is also
+18:27 you know because we don't know one of
+18:29 those
+18:30 for sure
+18:31 there has to be uh you know some level
+18:33 of estimation that goes into that and
+18:36 that that that can be interesting you
+18:37 also can see even
+18:39 in some instances the rotational speed
+18:42 of the asteroid as it's tumbling uh
+18:44 based on the light curve if you look at
+18:46 the changes in the light over a period
+18:48 of time and now we're talking minutes or
+18:49 hours really you can see that that light
+18:52 curve and infer rotational speed and
+18:54 potentially even shape the object
+18:57 um the light the polarization of light
+18:59 polarimetry uh is another potentially
+19:02 under
+19:02 estimated tool i think in terms of
+19:04 understanding how the reflected light
+19:06 can tell us about the shape of the
+19:08 object uh so and of course spectroscopy
+19:10 obviously if you're looking at what the
+19:12 material is that's being reflected
+19:15 and of course that doesn't necessarily
+19:16 mean that's the material inside the
+19:18 object
+19:19 to do that you might want to look at
+19:21 you know muons or magnetoscopes or all
+19:24 kinds of interesting things that are
+19:26 possible but potentially expensive so
+19:28 we're not we're not necessarily doing
+19:30 that right off the bat but those are
+19:32 things that we might look at down the
+19:33 road
+19:34 so the features in this case are this
+19:36 rotational speed like
+19:38 how
+19:39 light reflects from this uh from this
+19:41 object also over time and all these
+19:44 things polarization of light dimension
+19:46 and then i guess
+19:48 if we think about classical machine
+19:50 learning so these are the features and
+19:52 then the target is one if there is water
+19:54 zero if there is no water
+19:56 yeah
+19:57 and i think
+19:58 and there's another angle of this that's
+20:00 that's also interesting from the machine
+20:01 learning context so
+20:03 when you're looking for water
+20:05 you can't really look at it from a
+20:07 telescope on the surface of the earth
+20:09 and the reason is you have to look
+20:10 through the atmosphere which as we know
+20:12 is full of water so most of those
+20:13 telescopes don't they don't even have a
+20:15 filter at that wavelength uh and if they
+20:17 did that you just see a bunch you just
+20:18 see white noise uh so unfortunately
+20:22 there's not a lot of data we can get in
+20:23 the three micron range from earth
+20:25 however we've noticed that there's a
+20:27 high correlation
+20:28 of features around
+20:30 700 nanometers that may represent iron
+20:33 oxides or something i i don't know off
+20:35 the top of my head but there's a high
+20:36 correlation of those with
+20:38 uh water varying objects um
+20:41 so there's a potential opportunity to
+20:42 think about classifying an object based
+20:44 on features of its spectral signature in
+20:47 which case and its spectral signatures
+20:49 sequential data similar to a time series
+20:52 uh so you do have to be careful because
+20:53 you're not looking at individual
+20:55 dimensions that are independent as you
+20:56 would maybe in other scenarios
+20:58 and if you know about time series you
+21:00 know that there's a lot you have to
+21:01 think about in terms of how one um you
+21:03 know one component relates to the
+21:05 preceding and following components but
+21:07 but if you do that to some degree you
+21:09 can classify objects using spectral
+21:11 signatures and that's a big area that
+21:13 we're looking into because there is only
+21:15 a small relative sample size of objects
+21:18 that we have spectral signals signals
+21:19 for and some of those are sparse and
+21:22 depending on the object's location
+21:24 relative to us they might look
+21:25 differently so there's an opportunity
+21:27 for us to sort of use machine learning
+21:29 to help identify and classify those
+21:30 patterns in a way that may be more
+21:32 challenging for a human to do and can we
+21:34 extrapolate that against objects that we
+21:37 don't have spectral data for but we may
+21:39 have other data on in terms of their
+21:41 albedo or their or their even their
+21:43 orbits will give us information about
+21:45 where they're coming from so
+21:47 pulling that all together and making
+21:49 some inference around it is is a big
+21:51 part of the job and i think
+21:53 a lot of it can can be supplemented and
+21:56 enhanced quite a bit by some machine
+21:58 learning techniques
+21:59 and where do the labels come from like
+22:02 do you actually go there
+22:04 uh and check if there's water or there
+22:06 is a
+22:07 way another great question so ground
+22:09 truth right uh
+22:11 very difficult to find in astronomy if
+22:13 you're looking at objects that are
+22:14 measured in uh uh you know millions of
+22:18 kilometers is a pretty short distance
+22:20 when you're in a domain that measures
+22:22 things in light years um so yeah ground
+22:26 truth is not something we have a lot of
+22:27 but it's not zero we do have some so as
+22:30 a matter of fact and some folks don't
+22:31 know this
+22:32 um the japanese space agency has sent a
+22:34 couple missions the hayabusa missions
+22:36 that have collected samples from from
+22:38 asteroids recently an asteroid called
+22:41 ryugu uh they brought back samples and
+22:43 they published some analysis on that so
+22:45 we've actually been able to look at
+22:46 material they brought back from an
+22:47 asteroid and it's really fascinating
+22:49 because you can see you know the some
+22:52 subtle differences in the material not
+22:54 only from what we're looking at from
+22:55 telescopes on the ground but even the
+22:57 spacecraft itself that was hovering
+22:59 around the asteroid for a couple weeks
+23:02 and doing remote characterization work
+23:04 you know there were even things that
+23:05 that uh that that we're finding from the
+23:07 sample that were slightly different than
+23:09 what we'd anticipated there so there is
+23:12 ground truth uh and there's also
+23:14 osiris-rex is a nasa mission that's
+23:16 returning and we'll get that sample
+23:18 sometime later this year so there
+23:20 actually is data that we can look at to
+23:22 compare but a sample size of two three
+23:25 is
+23:25 pretty small
+23:27 the other thing that we can actually
+23:28 look at are meteorites
+23:30 so meteorites are of course asteroids
+23:33 that made it through
+23:34 an impact impacted the earth
+23:36 and there's a lot we can learn from that
+23:38 and of course if you have a physical
+23:40 sample and there are tens of thousands
+23:41 of samples that we have so far you can
+23:43 analyze that in any manner of ways with
+23:46 uh very very intense laboratory
+23:48 instruments and there's a lot of that
+23:49 work that's been done and you can
+23:51 potentially use that to extrapolate to
+23:54 the families of asteroids that that we
+23:56 think are out there
+23:57 in space
+23:58 we have to be aware of some very
+23:59 important things like if it came through
+24:01 the atmosphere that intense process has
+24:04 changed the chemistry of that object or
+24:06 potentially changed it so it's not a
+24:08 direct comparison but there is some way
+24:10 that you can look at that detailed data
+24:12 in a meteorite and link it to asteroids
+24:15 and we're actually now more people are
+24:17 watching the skies we're able to in fact
+24:19 see trajectories of meteorites as
+24:22 they're entering the atmosphere and then
+24:24 if we actually find that object because
+24:26 we have videotaped we can actually see
+24:28 its orbit and that gives us more
+24:30 information about where this thing is
+24:31 coming from
+24:32 um so um yeah it's ground truth is very
+24:35 difficult and this also you know a big
+24:38 part of my job is really thinking about
+24:39 how we can validate our models when we
+24:42 are absent that information and so
+24:44 de-biasing the models based on what
+24:46 observational data we have is critical
+24:48 um but you know you know candidly
+24:51 understanding bias in our models is a
+24:53 major challenge
+24:54 we can find consistency
+24:56 in terms of uh spectral classification
+24:59 for example we may find a classifier
+25:01 that
+25:02 very consistently produces results and
+25:04 results and then therefore reduces
+25:05 variance well that's great but as many
+25:08 know reducing variance uh is only okay
+25:11 as long as you're not increasing bias or
+25:13 if you're not paying attention to bias
+25:14 um
+25:15 we don't want to be more certain about
+25:16 something that's wrong uh so that is a
+25:20 not an easy not an easy thing to answer
+25:22 but it is uh you know the the it's also
+25:25 an emphasis why we're thinking about
+25:27 cheap cheaper ways to send spacecraft to
+25:30 analyze these objects to get more ground
+25:32 truth data because that's really uh the
+25:35 best way we think to understand these
+25:37 mysterious beasts that we're after
+25:42 yeah i'm
+25:43 i think many of us are wondering now
+25:46 like why
+25:48 would you
+25:49 care about water in asteroids like why
+25:52 not i thought like when i first time
+25:54 heard about what you do
+25:56 i thought okay mine and asteroids you're
+25:58 probably you probably want to extract
+25:59 some precious metals and then sell it
+26:01 here like on earth
+26:03 yeah why water like we have a lot of
+26:05 water on there
+26:06 about this well very good question um
+26:10 well water well scientifically water is
+26:12 really really interesting water is so
+26:14 important obviously to life and it may
+26:17 contain other things that including
+26:19 organic compounds or other things that
+26:20 tell us about how the solar system is
+26:22 generated but from from a commercial
+26:24 standpoint
+26:25 water is important for a concept that i
+26:27 think is really important that not many
+26:29 people have heard about which is in-situ
+26:31 resource utilization or isru
+26:33 and the idea with this concept is that
+26:36 the space economy itself is it's real it
+26:39 exists and it is growing so when we
+26:41 think space we think um you know
+26:44 satellites which are of course important
+26:46 they if the satellites failed we would
+26:49 our life would come to a halt the
+26:50 infrastructure that they produce in
+26:52 terms of communication and
+26:53 infrastructure
+26:54 internet is is immense among other
+26:56 things so
+26:58 these are starting to potentially crash
+27:00 into each other figuring out how to
+27:01 clear the debris how to service these
+27:03 satellites this is becoming an industry
+27:05 in and of itself that's incredibly
+27:07 important
+27:08 um but even related to that our idea is
+27:09 how to refuel these satellites um
+27:12 how to do more in manufacturing and
+27:15 activities and research in space there
+27:17 are currently i believe four
+27:19 private space stations being planned in
+27:21 the coming years they will be up there
+27:23 as we know the international space
+27:25 station's end of life is in the next few
+27:27 years and there's not a there's no
+27:28 government
+27:29 plan to replace it uh so
+27:32 all these commercial activities are are
+27:35 in process and and manufacturing of
+27:37 certain things fiber optic cables you
+27:39 name it uh may benefit from low gravity
+27:41 uh and not even to mention activity on
+27:43 the moon or mars you know if we think
+27:45 about as a species expanding
+27:47 none of this happens without resources
+27:50 resources that we currently have to
+27:51 bring from the earth
+27:53 and uh including water which is a
+27:55 terrible cargo to to lift from the
+27:58 ground it's heavy it takes up a lot of
+28:00 space
+28:02 rocket fuel is uh dependent on oxygen so
+28:05 of course water can be
+28:06 decomposed into hydrogen and oxygen
+28:09 and i i don't know the exact numbers but
+28:11 something like for every one part of
+28:12 rocket fuel you need several parts of
+28:14 oxygen so these rockets that are
+28:16 launching are the weight a lot of it is
+28:18 oxygen itself
+28:20 if we can find a way to get water from
+28:23 asteroids
+28:24 that are actually pretty accessible in
+28:26 terms of gravity
+28:28 if we can find them and go to them the
+28:30 delta v the change in velocity required
+28:32 to do that maybe less so than even going
+28:34 to the mood and coming back from the
+28:36 surface of the moon just given gravity
+28:38 then we think we have a viable option in
+28:40 terms of finding water and bringing it
+28:41 back uh i you know it costs several
+28:44 thousand dollars to get a liter of water
+28:46 up into orbit right now um
+28:48 way more to get it beyond that and so if
+28:50 we're able to bring that to the space
+28:52 economy uh and deliver it to customers
+28:55 who use it for various things
+28:57 you know that's the that's the business
+28:58 model we're working towards and of
+29:00 course the long-term view is
+29:02 certainly resources
+29:04 writ large you know and if we if we come
+29:06 up with the flywheel that it allows us
+29:08 to find these asteroids bring back
+29:10 material refine it and deliver it um and
+29:13 we can do that scalably yes now we're
+29:15 looking at other materials rare earth
+29:17 elements precious metals um and and
+29:20 there's something that we can think
+29:21 about there uh it's yeah the sensation
+29:23 is oh we're gonna find an asteroid full
+29:25 of platinum yeah i
+29:27 that certainly they certainly have those
+29:29 resources we believe um
+29:31 most of the material we're digging up in
+29:33 the earth's crust came from asteroids we
+29:35 also believe uh uh or at least that's a
+29:37 heavy source of that um but there are
+29:40 you know i think the infrastructure has
+29:41 to be in place there has to be an
+29:43 ability to actually sustainably get that
+29:45 stuff
+29:46 um not to mention how you would bring
+29:48 that back to earth i mean there's a big
+29:49 big challenges and then even the
+29:51 economics of it you know what's the cost
+29:53 of platinum now versus what it'll be in
+29:54 15 years
+29:56 i don't know it's a good question i know
+29:58 diesel engines are a big driver of
+29:59 platinum are we going to be driving
+30:01 diesel engines as much
+30:02 maybe maybe not so there's a there's
+30:04 sort of an economics question there that
+30:06 we don't want to have to tackle if we
+30:08 know that there's an immediate need for
+30:10 certain resources like water that are
+30:12 more attractive to customers that
+30:14 currently exist actually and so that's
+30:16 kind of our focus
+30:18 what else can you find on asteroids so
+30:20 you mentioned platinum but i think it
+30:22 was a good example of
+30:24 a an expensive thing on nerf
+30:26 that
+30:28 you know potentially you can sell but
+30:30 it's just too difficult to extract but
+30:32 what is there as well in addition to
+30:34 water that could be
+30:36 immediately useful
+30:38 yeah i mean
+30:39 the um
+30:42 that there's a lot of unknowns there and
+30:44 i think that's the the big question is
+30:45 what what materials uh really are
+30:48 available
+30:49 there this isn't an asteroid that we're
+30:51 going to go after it's it's in the main
+30:53 belt so it's too far away for us but
+30:55 psyche uh is um and there's a mission
+30:58 that's going after psyche which we
+30:59 believe is a uh
+31:01 potentially a planetesimal core might be
+31:03 the core of a of a sm of a of a planet
+31:06 or planetesimal object where the rocky
+31:08 layer was was smashed away um and it's
+31:13 full of metal all right so iron all
+31:15 kinds of metal that you can think of
+31:17 and there may be other asteroids that
+31:19 are you know components of that so any
+31:21 type of metal uh that you're interested
+31:23 including precious metals uh are
+31:25 certainly to be found there um from a
+31:28 scientific perspective the idea of
+31:29 organic compounds is pretty intriguing
+31:31 you know you can think of these
+31:32 asteroids as essentially fossil records
+31:34 of the solar system they're essentially
+31:36 as old as the solar system but unlike
+31:38 the earth and other planets they have
+31:40 not been um
+31:41 well they've experienced some space
+31:43 weathering and collisions and other
+31:45 things but they're they're probably more
+31:46 of a pure record of of compounds um
+31:50 that is more of a scientific value than
+31:52 anything else but yeah i think uh rare
+31:54 earth elements and precious metals which
+31:56 are all things that were excavating from
+31:58 the earth excavating from the earth
+31:59 right now are um assumed to be embedded
+32:02 in these objects but we just don't know
+32:05 for sure so that's some that's part of
+32:07 the part of the
+32:08 you know part of the impetus to us going
+32:10 and finding out
+32:12 where do these asteroids come from like
+32:14 do they just appear and then you see
+32:16 them and you think okay we are going to
+32:18 mine that one
+32:20 uh
+32:21 yeah one of the first things we did is
+32:23 we will hire a planetary scientist an
+32:25 astronomer uh and one of the reasons we
+32:27 did is he's been working with uh the
+32:29 modeling that answers that question so
+32:32 most people i think are familiar with
+32:34 the main belt of asteroids so it's
+32:35 beyond mars and there are a lot of
+32:38 theories about you know the the source
+32:40 of the material was it a planet that was
+32:42 broken up is it just sort of a
+32:43 collection of
+32:44 of of stuff if you think about the solar
+32:46 system being a sort of chaos for much of
+32:49 its early state that eventually as
+32:51 things uh you know collected into
+32:53 planets and they found their groove i
+32:56 love to think about the solar system in
+32:57 terms of resonances you know
+33:00 everything is just sort of resonating
+33:01 and as the planets are going around
+33:03 they're creating these resonance
+33:04 patterns which are critically important
+33:06 for us so jupiter is a
+33:08 massive animal and as it's revolving
+33:10 around the sun it's creating resonances
+33:12 with the other planets
+33:14 every so often this asteroid belt you
+33:16 know there may be a collision or
+33:17 something or maybe some something will
+33:19 get perturbed but an asteroid will will
+33:21 get thrown into an area of resonance
+33:24 where because of the gravity of the
+33:26 planets it will basically kind of
+33:28 continue to shape the orbit of this
+33:30 asteroid such that it'll bring it into a
+33:33 near-earth orbit
+33:35 so when we're looking at near-earth
+33:37 asteroids our assumption is that their
+33:39 original source was from elsewhere in
+33:41 the solar system uh the main belt or
+33:43 even beyond that in the outer regions um
+33:46 there's a region around
+33:48 jupiter that that the trojans uh based
+33:51 on um lagrange points there may be a
+33:54 collection of items there
+33:56 that we think for some reason or other
+33:57 were thrown into the
+33:59 into the near space we think there may
+34:01 be three to four hundred million
+34:02 asteroids in the near earth space uh
+34:05 ranging to very small unless people get
+34:07 concerned about that but
+34:09 uh but we think the source of those is
+34:10 all coming from the from the main belt
+34:12 and so our modeling is is basically
+34:14 trying to understand those gravitational
+34:16 dynamics uh and there are other dynamics
+34:18 too this solar wind is a dynamic to to
+34:21 pay attention to
+34:22 uh and and collisions of other asteroids
+34:24 of course uh but we think that's
+34:26 actually the source and um you know
+34:29 nasa's jpl has cataloged something like
+34:31 29 000 near-earth asteroids um
+34:34 we so if we think there are 300 to 400
+34:37 million of them we're only scratching
+34:39 the surface um
+34:41 thankfully i think most people should
+34:42 feel assured that anything that's large
+34:44 enough to maybe do any damage we've
+34:46 mostly seen those there is a pretty
+34:48 intense effort to document more of those
+34:51 um so most of these are fairly small
+34:53 objects but um but yeah finding them
+34:56 exactly uh statistical modeling is
+34:58 really helpful for us but as i like to
+35:00 tell our team i mean we're not able to
+35:01 statistically mine an asteroid uh so we
+35:04 do need to find an actual uh anomaly uh
+35:07 that we can that we can that we can get
+35:09 so uh yeah it's it's we think
+35:12 probabilistically and i think we're
+35:13 comfortable with that and that helps us
+35:15 i think make choices and decisions about
+35:17 where we're sending spacecraft and what
+35:19 we're going to find when we get there
+35:20 but the real question is what are we
+35:22 going to find is it going to be there
+35:24 what is it going to be so
+35:26 we'll have to start with a sample of
+35:27 asteroids that we have observed and that
+35:29 we do have some information on that's
+35:31 probably the easiest way to do this um
+35:34 but there's hopefully going to be
+35:36 in the near future you know more
+35:38 telescopes we know of a couple that are
+35:39 going to be coming online
+35:41 that will be able to see a lot more of
+35:42 these objects
+35:44 and that'll be very useful for everybody
+35:46 including ourselves
+35:48 so as i understood your business model
+35:51 is
+35:52 so there is
+35:53 there is this main belt of asteroid
+35:55 asteroids right and then jupiter passes
+35:57 by and then it pushes some of the
+35:59 asteroids towards the earth so you want
+36:02 to detect it on this asteroid that is
+36:04 coming towards
+36:06 us right or somewhere in the uh
+36:08 that process that i described that can
+36:10 happen over many probably millions of
+36:12 years so we're okay astronomy are much
+36:14 larger so we're looking at the asteroids
+36:16 that that's already happened to so
+36:18 they're already here they're in the
+36:19 neighborhood
+36:20 now if you think about the earth going
+36:22 around the sun and it's following an
+36:23 orbit uh you know a certain velocity
+36:26 finds a groove like in a record groove
+36:28 where it's going around um there's no
+36:31 you know we have reason to believe
+36:32 there's a lot of other asteroids that
+36:34 are also in that same groove and they're
+36:36 going around the sun in that orbit um we
+36:40 don't see them because
+36:42 it's you know we're on the surface of an
+36:44 earth and so if you think about if you
+36:45 can visualize the orbit coming around
+36:47 the earth if you were to look at an
+36:49 object that's on the line of that orbit
+36:50 that means you're looking at an object
+36:52 that is you know you got the sun right
+36:55 here so in order to see that object if
+36:57 you're looking at it dead on it's going
+36:59 to have to be during dusk or dawn and
+37:02 the light conditions are not good for
+37:03 seeing faint objects or if you're
+37:05 looking in the middle of the night when
+37:07 it's a lot darker you're going to have
+37:09 to look really near the horizon in order
+37:11 to just because of the angles
+37:13 and then of course you're looking
+37:14 through a much larger column of air and
+37:16 that's also not great for when you're
+37:18 trying to find things so it's hard to
+37:20 see these objects but
+37:22 but for gravitational reasons we think
+37:25 that there's a lot of them in that orbit
+37:27 um going around the earth and most of
+37:29 the things that end up making it to
+37:31 earth were probably in the sort of
+37:32 debris pile kind of floating around so i
+37:35 think the question is not necessarily
+37:36 that we're looking at asteroids coming
+37:38 to us from the main belt that we're
+37:40 looking for asteroids that are already
+37:42 here
+37:43 um it's helpful for us to look at the
+37:44 main belt to understand those asteroids
+37:47 what they're made out of
+37:48 because a lot of them are larger we have
+37:50 more data on that and because we
+37:52 theorize that a lot of the smaller
+37:54 asteroids are just fragments or pieces
+37:55 of the larger ones
+37:57 if we know about the larger ones that
+37:59 are in the main belt can we extrapolate
+38:01 what we think the smaller ones in the
+38:03 nearest space are
+38:05 that's maybe an open hypothesis in some
+38:08 senses but that's the working hypothesis
+38:10 that we're dealing with
+38:13 yeah and i assume to do that to be able
+38:15 to do all that you don't just keep your
+38:18 data in excel spreadsheets and analyze
+38:20 there so you need to collect store
+38:22 process all this data
+38:24 yeah
+38:25 we are actually talking about a data
+38:28 department right a team a team who does
+38:31 all that so can we talk about that a
+38:33 little bit so how does your data team
+38:35 look like who are there in the team and
+38:38 what do they do
+38:39 yeah so you know we're we're uh we're
+38:42 just starting out so we're young small
+38:43 team
+38:44 and act people actively working with the
+38:46 data we have two research scientists one
+38:48 as i mentioned is an astronomer
+38:50 planetary scientist focusing on asteroid
+38:52 characterization so where are these what
+38:54 do they look like um and then we have
+38:57 another uh research scientist who's a
+38:58 well she's a mission design specialist
+39:00 and as an engineer she's thinking about
+39:02 the spacecraft mission that we will need
+39:05 to help develop to actually access these
+39:08 um uh and
+39:10 and then myself of course um looking at
+39:12 the data modeling uh overall um one of
+39:15 the reasons we're looking to we are
+39:17 looking to hire a data engineer is
+39:18 because uh i've been at many
+39:20 organizations where i've lamented that
+39:21 we didn't put enough emphasis on data
+39:23 engineering
+39:24 that should really be one of the first
+39:25 data team members hired and so i'm in a
+39:27 position now to to do something about
+39:29 that so we are looking to bring someone
+39:32 we have um um we have somebody who's
+39:34 helping us with with some
+39:35 really important work but we're we're
+39:37 still open for for interested folks
+39:40 and i think this person hopefully will
+39:42 help us think about the architecture and
+39:44 the vision of how we're doing this so
+39:46 um there is a lot of data that exists
+39:49 uh some of it is in catalogs um the
+39:51 minor planet center uh you know nasa jpl
+39:54 esa the european space agency there's a
+39:56 lot of public agencies that have done an
+39:58 incredible job
+40:00 organizing this data doing even some
+40:02 derived uh
+40:03 attributes including orbit determination
+40:05 and other characteristics
+40:07 excuse me um but uh it still is a field
+40:11 of a lot of specialists you know so you
+40:13 have astronomers who are focusing on one
+40:15 component of of astronomy and they're
+40:18 working with data related to that um in
+40:20 a contrast with say earth observation
+40:22 which is the world that i was in before
+40:25 that has you've seen a market explode in
+40:28 terms of consumers of the data which has
+40:30 helped make a lot of that data a little
+40:31 bit more usable more analysis ready if
+40:34 you will i haven't seen that in the
+40:35 astronomical community yet not that
+40:37 there's not a lot of open collaboration
+40:39 but um a lot of the data that is
+40:41 provided is in fairly
+40:44 complicated file structures produced by
+40:46 fairly complicated processes as i've
+40:48 mentioned before
+40:49 and if we're going to look at analyzing
+40:51 things across these platforms there's a
+40:54 real need for for some folks who are
+40:56 used to working with data in in more
+40:58 complicated file structures obviously
+41:00 image data is a pretty big part of that
+41:02 but there's a lot of catalog data where
+41:04 um you know the statistics of images and
+41:06 other um
+41:08 and other detectors has been
+41:10 pretty um
+41:11 methodically and comprehensively laid
+41:13 out in table uh so
+41:16 uh table data so thinking about the
+41:17 architecture of how this comes together
+41:18 and how we can have a really big view i
+41:21 mean we're building a bayesian engine
+41:22 really and the more information we can
+41:25 get helps improve our understanding of
+41:27 of the asteroids that we're looking at
+41:29 uh and all the pipelines related to that
+41:32 you know the analytical pipelines
+41:33 related to getting that data and being
+41:35 able to analyze it
+41:37 as well as of course the infrastructure
+41:38 to support the machine learning modeling
+41:40 that we're going to need to be doing and
+41:41 already have started uh it's all part of
+41:44 that so i guess the answer to your
+41:46 question is the data team is is in a
+41:48 future tense right now uh and that's
+41:50 what i'm hoping to change very very
+41:51 quickly um i mean we're all working with
+41:53 data but someone who's really focused on
+41:55 helping us build the uh you know build
+41:58 the pipelines for that
+41:59 and uh
+42:01 is our website and we have a job posting
+42:03 there so obviously i'll make a pitch for
+42:06 people who are interested uh as data
+42:07 engineers we'll also be looking for data
+42:09 scientists and machine learning
+42:10 engineers in the future for sure um and
+42:13 so i opened any everyone interested
+42:16 please you know let me know i'll give
+42:17 you my contact info but um but data
+42:20 engineering specifically is the key
+42:21 focus okay i'll make sure to include the
+42:24 link to the description
+42:25 and uh
+42:27 i was wondering like do you use cloud
+42:30 because i think cloud here may
+42:32 so i think uh the uh uh you know where
+42:35 we're um we'll probably be set up in aws
+42:38 ecosystem um i've used google cloud
+42:42 i'm not as familiar with with microsoft
+42:44 um
+42:45 but um
+42:46 yeah we are going to be uh i want to say
+42:49 as close to cloud native as possible
+42:50 we'll probably still be doing some
+42:52 prototyping locally
+42:53 uh it's just it's easier to kind of play
+42:56 around with some of the exploratory
+42:57 stuff but um no the big emphasis is in
+43:00 cloud for many many good reasons we
+43:02 don't want to have to do infrastructure
+43:03 that we don't need to do
+43:04 we don't we don't want to have to deal
+43:06 with the security infosec issues that
+43:08 that are going to be very important to
+43:10 understand and so if we're able to use
+43:12 um you know the infrastructure that is
+43:14 provided by a service company like that
+43:16 um that's very useful on that on the
+43:19 other hand we need people and we'll need
+43:21 devops and our cloud architects who can
+43:22 help us when we're implementing make
+43:24 sure that this is set up correctly and
+43:26 that we're doing this
+43:27 especially when you're dealing with
+43:28 image data which is similar to the earth
+43:30 observation scenario um sort of
+43:32 scientific mindset that i've seen at
+43:34 least in astronomy is you're doing some
+43:36 kind of analysis you download all the
+43:38 data you might potentially need locally
+43:40 so
+43:40 that's a massive amount of data takes
+43:43 forever and now you're in the data
+43:44 management business on your laptop or
+43:46 your computer if if even you can do that
+43:48 unless you're lucky enough to have
+43:49 access to a high-powered computing
+43:51 cluster
+43:52 you're going to have to be doing some
+43:53 kind of analysis with that
+43:55 or if that data's in the cloud then you
+43:57 still have communication costs where
+43:58 you're having to move that data when you
+44:00 need it
+44:02 i think cloud optimized geotips in the
+44:04 earth observation domain are incredibly
+44:06 useful i think watch for that to grow
+44:09 uh and stack the spatial temporal asset
+44:11 catalog convention
+44:13 makes it a lot more usable user friendly
+44:15 for analysts to query certain tiles of
+44:18 satellite data without having to
+44:20 download the whole file and that way
+44:22 they can do analysis in a much more
+44:24 precise manner i have not seen anything
+44:26 like that in the astronomical community
+44:28 yet um
+44:29 and so
+44:30 and maybe the the incentive isn't there
+44:32 but the ability to
+44:34 uh query some of these dense files as
+44:36 opposed to having to process this in a
+44:38 server where the where the images are
+44:40 cut to spec by some user in a process
+44:43 that's queued up and then may take you
+44:45 know quite some time and also puts a
+44:47 pretty big burden on the data provider
+44:50 or you download all this information do
+44:52 it yourself which is a challenge too um
+44:55 so i think
+44:56 i hopefully will see more conventions
+44:58 like cogs and stack take off in this
+45:01 astronomical community but but for our
+45:04 perspective as a company absolutely
+45:06 cloud cloud infrastructure is is
+45:08 critical
+45:09 yeah i was just going to make a silly
+45:11 joke about like you know cloud is closer
+45:13 to the asteroids because it's in the sky
+45:16 and then i took it off and i rambled on
+45:17 the whole thing yeah
+45:20 okay i see that they're good for
+45:21 computing but they're terrible for
+45:23 astronomy yeah it's uh
+45:26 we have
+45:27 quite a few questions so the first
+45:28 question is uh are there open data sets
+45:32 that are interesting to explore as a
+45:33 hobbyist and actually the question is
+45:36 asking specifically about tabular data
+45:38 sets but maybe we can
+45:40 talk about data sets in general
+45:42 absolutely so i mentioned the minor
+45:44 planet center
+45:45 and i can send you a link or how to
+45:47 spell this or anything but it's
+45:50 minorplanetcenter.net and they have what
+45:52 i believe is probably the database of
+45:54 record of asteroids and comets too
+45:57 and so if there's a an observation
+45:59 that's reported it
+46:00 that's the place that people report it
+46:02 to so in its tabular data so they have
+46:06 records of all the asteroids that we
+46:07 know of there's over a million of them
+46:09 um and including as i mentioned the
+46:11 nearest asteroids of which there's about
+46:13 thirty thousand um
+46:15 and then there's some attributes based
+46:16 on the orbital elements that we know
+46:18 from those objects as well as uh the
+46:21 brightness absolute magnitude um and
+46:24 there's also um an archive of all the
+46:27 observations right so some of these
+46:28 asteroids we have observations going
+46:29 back to the 1800s
+46:32 and those are being updated you know
+46:34 hourly every day there's people finding
+46:36 more observations in these topics so if
+46:38 you're interested in just kind of taking
+46:39 a look at that and there's if you're if
+46:41 you tool around in python which is a
+46:42 popular language for astronomers because
+46:44 of the open source nature there are even
+46:46 a number of packages um
+46:48 um that are developed and i'll follow up
+46:51 with you alexi just to link some some of
+46:53 these but there's packages that allow
+46:55 you to query the minor planet center and
+46:57 then you can even propagate orbits and
+46:58 you can do all kinds of interesting
+47:00 stuff uh with them um if you're
+47:02 interested in digging into the data
+47:03 itself um the the the neo-wise so
+47:06 there's a satellite the wise um uh why
+47:10 is wide infrared survey i forget what it
+47:13 stands for exactly there's some uh um it
+47:16 was a satellite platform that has
+47:19 infrared um uh bands uh that it's
+47:22 capturing and the it was reactivated
+47:25 several years ago to actually look for
+47:27 near-earth objects so the neo-wise data
+47:29 set
+47:30 is cataloged in something called the uh
+47:32 irsa the uh
+47:34 um i forgot what that stands for
+47:36 infrared something catalog i'll send
+47:39 these links but yes
+47:41 image data would be much easier all data
+47:43 if you're if you want to go and sort of
+47:44 query you know the source table uh for
+47:48 single exposures of of known objects not
+47:51 just asteroids but a lot of other stuff
+47:53 too um that's a pretty fun catalog to
+47:55 play around with um
+47:57 boy there's a lot i could spend a lot of
+47:58 time doing that but um but yeah i would
+48:01 start with the minor planet center if
+48:02 you're sort of interested in
+48:03 understanding specifically asteroids and
+48:06 just kind of getting a feel for it
+48:08 the jpl jet propulsion laboratory
+48:10 horizons system
+48:13 they've set up they've recently spun up
+48:15 a few apis that make interacting with
+48:16 that data very useful
+48:18 and so they also are providing
+48:20 additional information uh including a
+48:22 diameter or maybe some other attributes
+48:24 that they're deriving about these
+48:25 asteroids their source data largely is
+48:27 still the minor planet center but uh
+48:29 they also there's additional information
+48:32 you can get that people have provided
+48:33 and uh again they have a nice api and
+48:36 it's very well documented and i know
+48:38 they put a lot of work into that the
+48:39 solar system dynamics group at jpl
+48:42 did a tremendous job pulling a lot of
+48:44 stuff together there
+48:46 i also know that topcoder this is a
+48:48 website uh one of the things they do is
+48:51 also hosts data science competitions
+48:54 and
+48:55 lately
+48:56 recently like maybe two three months ago
+48:58 they hosted two competitions from
+49:01 nasa
+49:02 so they
+49:04 i think both were related to asteroids
+49:06 ah also check that out check it out yeah
+49:08 so maybe you just look up uh top coder
+49:11 and asa competitions and yeah yeah i
+49:13 think you'll find uh some stuff there
+49:15 yeah and there's you know if you're
+49:17 interested in getting into some of the
+49:18 more interesting machine learning stuff
+49:19 i mean tracking
+49:21 orbit determination is a challenge if
+49:23 you think about looking at observations
+49:25 of an object over time being able to
+49:27 link them
+49:28 uh together and say well these aren't
+49:30 separate objects these are the same
+49:31 objects i'm seeing and not only is it
+49:33 the same object but i can now determine
+49:35 what its orbit is uh the process of
+49:37 linking those is is uh
+49:39 you know traditionally you need several
+49:42 observations and you can verify it's the
+49:44 same object but
+49:45 um there are you know synthetic tracking
+49:47 techniques there are things that people
+49:48 are looking at and exploring where
+49:50 you're basically shifting images in
+49:52 different directions and different
+49:53 magnitudes and trying to see if you can
+49:55 identify objects that have shifted in a
+49:57 consistent way that indicates that
+49:59 they're moving in a direction um and
+50:01 being and as you can imagine doing that
+50:03 over the scale of many many many
+50:04 millions or even billions of images is
+50:07 not a human problem that's a machine
+50:08 problem uh so there's a lot of things
+50:10 that i think are pretty interesting in
+50:11 that whole arena there are a lot of
+50:13 astronomers and uh
+50:15 you know scientific researchers who are
+50:18 doing elements of this so the nice thing
+50:20 about the scientific community is if
+50:22 we're interested in playing around with
+50:23 this data you know google scholar
+50:25 find out put in some terms and see what
+50:27 what's being done and um i personally
+50:30 find it fascinating to look up papers of
+50:32 things that people have done and try to
+50:33 replicate their methods
+50:35 and and then
+50:37 you try to experiment with maybe some
+50:38 more you know enhanced probabilistic
+50:41 models or throw in some some interesting
+50:43 ways to do what they did and see if that
+50:46 that changes anything and uh i i mean
+50:48 that's a great place to start and if you
+50:50 find anything let me know maybe we'll
+50:51 hire you
+50:53 you also mentioned that one of the
+50:55 person
+50:56 on your team is
+50:59 taking care of mission design yes and
+51:02 there is a question from matt is
+51:04 matt how do you plan to interact with
+51:07 the folks going to get the asteroids is
+51:09 it actually are you going to do this
+51:11 yourself like the person who is doing
+51:13 the mission design going to come up with
+51:16 a rocket or you're going to partner with
+51:18 somebody or what are the options there
+51:20 yeah that's a very good question and so
+51:22 thankfully there has been such an
+51:24 interest in space activity in general
+51:26 that there are
+51:27 quite a few commercial companies uh in
+51:30 addition to the public agencies
+51:32 uh that are building spacecraft um so we
+51:35 know famous examples like spacex blue
+51:37 origin that are launching uh building
+51:39 rockets that are launching things into
+51:41 space uh and they're doing other things
+51:43 as well uh but there's a whole ecosystem
+51:45 of companies that are building uh we're
+51:47 pretty interested in cubesats right so
+51:49 they're
+51:50 usually fairly small satellites uh and
+51:53 those are being deployed to do a number
+51:55 of different things but uh everything
+51:57 from the instrumentation to the
+51:58 propulsion to the computing systems
+52:01 there's a lot of companies that are
+52:02 assembling and building that so we don't
+52:04 find that we're going to need to build
+52:05 anything ourselves in the sense that we
+52:08 don't want to be in the business of
+52:09 creating hardware um but we would
+52:12 certainly want to work with suppliers
+52:13 and vendors who are
+52:15 what we need to do is set up our mission
+52:17 profile so that we understand what what
+52:20 it is that we need to develop some
+52:22 things will be off the shelf right so
+52:23 cots commercial off the shelf
+52:25 technology is our philosophy as much as
+52:28 we can use that it's cheaper flexible
+52:31 there's probably a lot you could do by
+52:32 you know flying your cell phone through
+52:34 space um but there's certain things
+52:37 especially related to the idea of
+52:38 actually extracting material from an
+52:40 object uh
+52:42 we have some you know certainly some
+52:43 very smart people at jaxa nasa and esa
+52:47 who have done that and we want to learn
+52:49 from them as much as we can
+52:51 but there's also some aspects that we're
+52:53 going to have to r d ourselves and we're
+52:55 working with a couple research
+52:56 universities to do just that uh and
+52:58 develop that but yeah in general if it
+53:01 exists and there's somebody making
+53:03 something or doing something that we can
+53:05 partner with or use
+53:06 that's our preference and then that
+53:08 since we're developing you know the
+53:10 architecture for the mission that's
+53:12 needed
+53:13 and if we have to we'll look at
+53:14 developing ourselves but um but that's
+53:17 the
+53:17 uh you know
+53:19 that's that's the idea
+53:21 and this mission would not only involve
+53:24 like uh
+53:25 thinking how to get there to the
+53:26 asteroid but also how to actually drill
+53:28 the hole in the asteroid absolutely the
+53:30 water right yeah and i would and i would
+53:32 say that really for most of what we're
+53:33 looking at uh
+53:35 drilling is is a problematic way to look
+53:38 at it because you don't have really
+53:39 gravity and you also don't have a very
+53:41 solid material that you're drilling into
+53:44 uh you really need to think of a lot of
+53:46 these asteroids as being rubble pots uh
+53:48 so if if you're if any of you are
+53:50 familiar with uh
+53:51 mcdonald's restaurants at least in the
+53:53 u.s they used to have ball pits where
+53:55 you have just these plastic balls you
+53:57 could jump in and play around
+53:59 you might need to think of these
+54:00 asteroids as being somewhat like that so
+54:03 it's
+54:03 it's uh it would be more of a matter of
+54:06 scooping or scraping or somehow
+54:09 collecting that material but that's a
+54:10 major engineering challenge uh it's
+54:12 something that we're really trying to
+54:14 think about maybe we'll find a larger
+54:15 boulder that will pluck i don't know
+54:17 there's a lot of things that we're
+54:18 looking at um that are related to that
+54:20 um but yeah that's that's part of this
+54:23 uh overall r d processes how we get the
+54:25 material and return it it's a it's a
+54:28 major
+54:29 that's a major challenge
+54:30 yeah because i guess you cannot just you
+54:32 know uh travel there with a ship and
+54:35 then
+54:36 tractor use tractor beamer to pull it
+54:39 we're not there yet alexi i would like
+54:41 to think that we can be and uh
+54:43 and if we are doing our job to build
+54:45 space infrastructure you know god
+54:47 willing we'll be doing things like that
+54:48 at some point the future
+54:52 so what century is uh spice trek uh
+54:55 set up uh
+54:57 our 24th century first okay we still got
+55:00 time right
+55:02 yeah we got some time we got some time
+55:04 um
+55:05 yeah uh you know warp engines is a big
+55:08 one i don't know if we're we're already
+55:09 behind the ball on that one i think uh
+55:11 um
+55:12 if i'm not mistaken we're not we're only
+55:14 a couple decades from needing to
+55:15 actually pioneer some early space flight
+55:17 according to star trek lore so we got to
+55:20 get on it
+55:22 yeah there is the comment from danielle
+55:24 that interesting conversation i'm an
+55:27 astronomer currently researching on
+55:29 multi-wavelength counterpart
+55:33 like there are some words i don't
+55:34 understand and uh good to know that
+55:36 there is a business case for asteroids
+55:38 so this is uh absolutely yeah i mean one
+55:40 of the things that i find really most
+55:42 satisfying about this work is that there
+55:44 are so many people uh including the
+55:46 people we've hired who are really
+55:48 interested in putting their skills to
+55:49 use uh and and not not to deride other
+55:52 domains you know if you're looking at
+55:54 you know energy trading or other things
+55:56 that are very very quantitative fields
+55:58 but sometimes people that i've spoken to
+56:00 have found that their skill sets in
+56:02 working with derivatives or doing this
+56:04 modeling um
+56:06 aren't they don't have a home in the
+56:07 sort of applied science area so they
+56:09 apply them in other areas well hopefully
+56:11 we can be a home for people that are
+56:12 looking to put their skills to use in
+56:15 astrophysics and scientific computing
+56:17 looking at some of these challenges
+56:19 because it's a need that we have for
+56:20 sure
+56:22 and then i don't know if the name new
+56:25 light technologies incorporated tell you
+56:27 anything yeah
+56:30 i know he was going to join but yeah i
+56:32 used to work for new light technologies
+56:33 great very smart wonderful people yeah
+56:36 yeah so
+56:37 they ask if you have a partner program
+56:41 in the
+56:42 works question uh we should talk about
+56:45 that yeah we we obviously are doing a
+56:47 lot of collaborations uh at this point
+56:49 mostly with research universities and
+56:50 there's a couple commercial uh
+56:52 organizations that we're partnering with
+56:54 in terms of uh mission design um
+56:56 [Music]
+56:58 new light i'll make a pitch i mean you
+56:59 have a lot of really incredible devops
+57:01 uh and data engineers and some folks
+57:02 that are really used to working with uh
+57:05 enterprise uh data um
+57:08 you know data modeling so uh yeah let's
+57:10 talk uh there may be an opportunity
+57:12 there
+57:14 okay
+57:15 so i'm just trying to see now because
+57:18 there are quite a few things we didn't
+57:20 cover i'm just checking
+57:24 what else we missed
+57:27 uh yeah so the this interesting one what
+57:29 kind of mathematical models do you build
+57:32 i remember we talked a bit about that uh
+57:34 before before this
+57:36 yeah yeah
+57:37 yeah so you know i mentioned i would say
+57:39 our overall approach to understanding
+57:40 asteroids is taking on the form of a
+57:43 sort of asian engine of source that's a
+57:44 very general kind of way to describe it
+57:46 but i i think you know when we try to
+57:48 when we're trying to understand how
+57:50 each additional piece of data or new
+57:53 method that we use to improve
+57:55 whether we're trying to understand the
+57:56 albedo the reflective nature of these
+57:58 asteroids or their orbital elements or
+58:01 the spectral classification there might
+58:03 be independent models that we're using
+58:04 to derive that
+58:07 um but overall we want to be able to
+58:08 understand well how how
+58:10 how does each new piece of information
+58:11 affect our overall understanding of this
+58:13 and then sort of the bayesian framework
+58:15 is really well suited for that and so
+58:17 that can also help us quantify things a
+58:19 little bit more in terms of the
+58:20 individual model excuse me you know some
+58:22 things are simple so if you look at the
+58:24 size frequency distribution of asteroids
+58:26 it generally seems to follow a power law
+58:28 pretty closely so with uh basic
+58:30 polynomial linear regression you can you
+58:32 can model the size frequency
+58:34 distribution uh
+58:36 fairly well um other things like looking
+58:39 at um you know albedo for example are
+58:41 more complicated because you're looking
+58:43 at sunlight being radiated from a from a
+58:45 body that is not necessarily a sphere so
+58:47 thermal models that are being used to do
+58:49 that and there's certainly folks uh that
+58:52 are doing that research and thinking
+58:53 about that but um you know some some
+58:55 things there are getting more complex uh
+58:57 people don't know this there's something
+58:58 called the yarkovsky effect which is
+59:00 essentially that the actual
+59:03 energy from radiating
+59:04 uh the radiation from uh thermal
+59:07 radiation from an asteroid based on
+59:09 reflected sunlight is enough to actually
+59:11 push that asteroid
+59:13 over the course of many years of course
+59:14 but if it's a small enough asteroid
+59:16 that's a meaningful uh force that's
+59:18 being pushed on that asteroid so and how
+59:21 the asteroid's rotating and what its
+59:22 surface looks like has a lot to do with
+59:24 that um
+59:26 i you know i touched on a couple you
+59:28 know some deep learning and machine
+59:29 learning techniques certainly in terms
+59:31 of vision and object detection but
+59:34 spectral
+59:35 analysis is really really big uh it's
+59:38 going to be very important for us and
+59:39 trying to understand the composition of
+59:40 these and as i mentioned there's just
+59:42 not a lot of observed data so we're
+59:44 really going to need to think about
+59:45 where we can um extrapolate the known
+59:48 data uh and apply to
+59:51 objects that we may know something about
+59:53 but we don't know their spectroscopy for
+59:54 example uh and so there's there's
+59:56 certainly some modeling that's going to
+59:58 need to go into that but
+1:00:00 yeah it's we're dealing in probabilities
+1:00:02 here so a lot of it is just how we can
+1:00:05 define those probabilities in ways that
+1:00:06 make enough sense for us to make
+1:00:08 decisions name of the game right
+1:00:10 yeah i prepared another joke for you
+1:00:12 another silly joke about jupiter
+1:00:14 notebooks
+1:00:18 jupiter yeah uh it takes a different
+1:00:20 meaning when you're using jupiter
+1:00:21 notebooks to sort of model jupiter
+1:00:23 orbits right um uh
+1:00:26 yeah yeah uh well i don't know if you
+1:00:28 have a joke there i mean jupiter i use
+1:00:30 notebooks they're useful for
+1:00:32 uh telling the story of data i don't
+1:00:34 develop in them because i think it
+1:00:36 teaches bad habits for developers but uh
+1:00:39 myself included so uh but uh
+1:00:42 yeah it takes on a little different
+1:00:44 meaning
+1:00:45 yeah yeah i think we should be wrapping
+1:00:47 up um so thanks a lot for joining us
+1:00:50 today for sharing your
+1:00:52 expertise also a couple of stories for
+1:00:55 sharing all that that he shared with us
+1:00:56 today thanks everyone else for joining
+1:00:59 us today for watching us for asking
+1:01:01 questions
+1:01:02 and
+1:01:03 yeah i guess you will give
+1:01:05 me some links i will post them in the
+1:01:07 description yeah i'll do that yeah
+1:01:08 definitely including my uh you know dot
+1:01:11 dot
+1:01:12 d crawl d dot c r u l l at
+1:01:14 carmenplus.com and um i'll send you
+1:01:16 links but yeah i certainly if you're
+1:01:18 doing research in this area um i want to
+1:01:21 talk to you um and as we're growing our
+1:01:23 team you know there's a lot of areas
+1:01:25 there and certainly we're looking for
+1:01:26 data engineers i mentioned we'll be
+1:01:27 looking for some other data focused
+1:01:29 folks uh for sure but um let's uh hey
+1:01:32 let's talk see what happens
+1:01:35 yeah thanks a lot yeah thanks a lot have
+1:01:37 a great weekend
+1:01:38 you too goodbye

@@ -1,0 +1,1576 @@
+Lessons from Two Decades of AI
+
+0:00 Hi everyone, welcome to our event. This
+0:02 event is brought to you by data talks
+0:04 club which is a community of people who
+0:07 love data. We have weekly events. If you
+0:09 want to find out more about the events
+0:11 we plan, there's a link in the
+0:13 description. Click on that link, check
+0:15 it out. You'll see all the events that
+0:16 we have in our pipeline. Then do not
+0:19 forget to subscribe to our YouTube
+0:20 channel. This way you'll stay up to date
+0:22 with all our streams, future streams
+0:25 like the one we have today. And last but
+0:27 not least, if you haven't joined our
+0:29 community yet, do it now. There you can
+0:32 hang out with other data enthusiasts.
+0:35 During today's interview, you can ask
+0:37 any question you want. There is a pinned
+0:39 link in the live chat. Click on that
+0:40 link, ask your questions, and we will be
+0:43 covering these questions during the
+0:44 interview.
+0:46 So that's the usual intro.
+0:49 Now I am opening the questions we
+0:52 prepared.
+0:55 And if you're ready, Michael, we can
+0:57 start.
+0:58 >> Yeah, sure thing.
+1:00 >> Yeah. Hi everyone. Today, uh, we are
+1:04 joined by Michael. Um, Michael's career
+1:07 span two decades from building game AI
+1:09 with neural networks and evolutionary
+1:12 algorithms to write in more than 10
+1:14 books on AR, VR, AR, augmented reality,
+1:18 right? VR, virtual reality,
+1:21 reinforcement learning, AI agents. Today
+1:24 he focuses on advanced deep learning,
+1:26 evolutionary methods and building
+1:27 intelligent systems that go beyond LLMs.
+1:31 So today we will talk about what makes
+1:33 AI agents different from simple chat
+1:34 bots, how games and simulations continue
+1:37 to shape AI research and what has
+1:39 changed in the practice in the field in
+1:42 last two decades. So welcome Michael.
+1:46 >> Well, thank you. Thank you for having
+1:48 me.
+1:49 >> Yeah, evolutionary methods. That's uh
+1:51 been a while since I last heard about
+1:53 this thing. Uh this is something I
+1:55 remember studying at university which
+1:57 was um
+2:00 200
+2:02 six seven yeah quite a while ago and I
+2:05 haven't really seen this used in
+2:07 practice. I have of course a very
+2:10 limited uh um how to say visibility on
+2:13 the things I was uh personally exposed
+2:15 to and many of which we was just um
+2:19 software engineering. So I'm really
+2:20 curious to know more about this cuz I
+2:22 remember doing these simulations and it
+2:24 was very fun. Um but I first want to
+2:27 start with uh just asking you about your
+2:29 career journey. Can you tell us about
+2:31 your career journey so far?
+2:33 >> Uh from well for the last few decades
+2:36 I've been working in uh various data
+2:40 science and machine learning. um started
+2:42 out sort of in a more of an academic uh
+2:45 career working with a group of Harvard
+2:47 scientists where we built a game with
+2:50 tested children for executive function
+2:52 meaning testing them for um
+2:55 symptoms like ADHD for instance
+2:58 behavioral problems or just being able
+3:00 to not not being able to focus where we
+3:02 use some simple neural networks at the
+3:04 time and even some evolutionary
+3:06 algorithms to sort of create these tests
+3:09 and these patterns for the players. ers
+3:11 to to go through and then analyze the
+3:13 data from there. Since Calgary is more
+3:15 of a oil and gas town, I joined the only
+3:18 oil and gas uh group of the small
+3:21 consulting company initially with the
+3:22 software product.
+3:25 uh I worked with them for a number of
+3:28 years in the academic around a lot of
+3:31 academics building geomechanic
+3:33 applications heavily with data science
+3:36 evolutionary algorithms to do some
+3:39 analysis and and back sort of
+3:42 investigation of input parameters we
+3:45 developed a couple products one was
+3:47 called stab you the other was called
+3:49 Roxbank for oil and gas so we did a lot
+3:52 of that um that company was purchased
+3:55 just by a larger oil and gas provider
+3:58 where I then sort of moved up from
+4:00 managing a small group of people to 80
+4:02 80 people over
+4:04 um 11 cities in seven different
+4:06 countries and Scotland
+4:12 >> um but lots of travel moving around and
+4:15 stuff like that but a lot of exposure to
+4:17 different techniques data science
+4:19 engineering building engineering
+4:21 applications all that sort of fun stuff.
+4:24 Uh I left that position because of
+4:27 because a lot of the travel went to do
+4:29 more consulting again worked on some
+4:32 evolutionary algorithms for optimizing
+4:36 um numerical analysis. So pipe and
+4:39 pipeline sort of corrosion. um the
+4:42 evolutionary algorithms were b were able
+4:44 to adapt a lot quicker at the time and
+4:48 able to process data more efficiently,
+4:50 but that sense has sort of evolved. And
+4:53 the real reason evolutionary algorithms
+4:55 aren't so popular anymore is because
+4:57 they're very computationally intensive
+4:59 and they're not or haven't been designed
+5:01 to use a lot of the sort of the same
+5:03 technologies deep learning would benefit
+5:05 from the frameworks and stuff like that.
+5:08 So that's why they've been sort of
+5:10 pushed to the side. It doesn't mean I
+5:12 don't think they can come back. Um
+5:16 over that journey working for another
+5:17 oil number of oil and gas providers.
+5:20 I've worked in the cannabis industry um
+5:22 doing business intelligence. have worked
+5:25 in financial tech and now I'm working in
+5:28 a tech where we build a AI support
+5:31 assistant who's powered by a number of
+5:33 agents and we have ability for the
+5:35 agents to do things stuff like we're
+5:37 getting into is deep research operator
+5:39 agents and stuff like that so a lot of
+5:41 cool work there um but during that time
+5:45 2015 or 16 I started writing one of my
+5:49 first books was
+5:51 um I contacted a publisher asked him
+5:54 what I could write about. I gave him
+5:56 three ideas. Two of them were one of
+5:58 them was geospatial analysis and data.
+6:01 Another one was a data analysis or
+6:03 something like that. And the third one
+6:04 was reverse engineering Pokemon Go. So I
+6:06 had kids at the time. They're
+6:08 interesting, very interested in playing
+6:10 the game. I have a a lot of GIS
+6:12 background. So I and Unity background
+6:15 game development experience. So I was
+6:18 easily able to sort of reverse engineer
+6:20 it. And then I sort of proposed that as
+6:22 a here I can write a book about this and
+6:24 that became a my first book and was very
+6:27 popular. It was translated to 14
+6:29 languages and it was was really popular.
+6:32 >> Was it like I remember it was I I was I
+6:34 think I was already in Berlin. Uh I
+6:37 remember people were like um crazy doing
+6:41 some things with their phones and like
+6:44 I'm what's happening and then turned out
+6:45 that this there's this new thing Pokémon
+6:47 Go. So it's like augmented reality sort
+6:50 of thing.
+6:51 >> Yeah.
+6:51 >> Where people could uh like with their
+6:53 phones they just take out their phones
+6:56 go and then on the screen they can see a
+6:58 Pokemon so they can catch it.
+7:00 >> It was very funny but then it lasted
+7:02 like for a month maybe and then it stops
+7:05 at least from my point of view of a
+7:07 usual observer. I guess some user base
+7:10 state but uh yeah
+7:13 >> I think I think one of my kids kids
+7:14 still play the game to be honest but
+7:16 yeah it's it's still around. That's
+7:17 still but it was quite big, right? It
+7:19 was sort of
+7:20 >> AR was the next big thing at the time.
+7:22 Yeah. And and so I I went into writing
+7:25 another AR book.
+7:27 >> Um a little more into AI. So I see a lot
+7:31 of benefits from using AI even at that
+7:33 time. Um but then I sort of got on to
+7:36 write another book about sound that
+7:38 became very popular. It was just sort of
+7:40 a text that was used in a lot of
+7:42 colleges to teach sound design, sound
+7:45 design and games. Um, and a lot of my
+7:47 experience in sound design, handling um,
+7:50 waveforms and stuff like that is in the
+7:52 oil and gas industry, right? There's a
+7:54 lot of waveform handling, analysis of
+7:56 waveform data because essentially when
+7:58 you're going down under the ground,
+8:01 you're shooting waveforms out of the
+8:02 rock to see what the rock is, right? So,
+8:04 >> a lot of that experience was able to
+8:06 translate to that sound design book and
+8:08 that became quite popular. And then from
+8:11 there went into reinforcement learning.
+8:13 Um, Alberta is the capital was the
+8:17 capital of reinforcement learning with
+8:19 Richard Sutton. Uh, he was he was the
+8:22 one that actually introduced me to
+8:23 reinforcement learning. Well, him and
+8:26 David Silver. So, David Silver was a
+8:28 student of his at the time. They had
+8:29 come down to Calgary and they were
+8:31 teaching uh reinforcement learning.
+8:33 Right. The really beginning of it like
+8:34 it was 2002 2003. So, getting right
+8:38 right into
+8:39 >> state was the capital of reinforcement
+8:42 learning. Well, it's I mean it's
+8:45 >> well David's moved to I think California
+8:48 and he's really sort of taken on the you
+8:50 know
+8:51 >> the roots the roots are definitely in
+8:53 Calgary the University of Albert Alberta
+8:55 but uh yeah that sort of ship has moved
+8:58 on if you will
+9:00 >> um yeah so and then just just working
+9:04 through a number of things and and um on
+9:06 to books
+9:09 so I've I've number of reinforcement
+9:11 learning books books, deep learning
+9:12 books. Um, and then I decided to go back
+9:17 to some of my earlier roots of
+9:18 evolutionary algorithms and I wrote a
+9:20 book called evolutionary deep learning
+9:22 which was which was a pairing of deep
+9:25 learning and evolutionary algorithms. So
+9:27 it could be as simple as hyper
+9:29 hyperparameter search where you're
+9:30 looking for sort of ways of optimizing
+9:32 your hyperparameters to actually
+9:33 changing the network and modifying the
+9:35 network itself and ways of different
+9:38 combinations of networks at the time.
+9:40 Again, a very computationally intensive,
+9:43 but it's it's quite a popular method. It
+9:45 can be quite successful for
+9:47 hyperparameter and different
+9:48 architecture designs. Used it at the
+9:51 time for convolutional neural networks
+9:53 for optimizing those because those were
+9:55 always tricky to get right um to a
+9:58 number of things. I had started to look
+10:00 at using large language models at the
+10:02 time, but they weren't a big thing,
+10:04 right? So then language m language
+10:06 models exploded and I um was doing a lot
+10:10 of NLP work investigating
+10:13 responses or implies at my my work my
+10:16 job and the AI AI agent stuff came about
+10:20 because chatbt it was maybe four or five
+10:23 months after people sort of developed
+10:24 this agent concept in 2023 and I really
+10:28 started to embrace it. I found every use
+10:30 for agents and we had even back then
+10:33 started to build agent pipelines using
+10:35 agents to build code. I had written
+10:38 another book about using AI to learn how
+10:41 to do game development was essentially
+10:45 vibe coding for games but that was in
+10:47 2023 24. Um but yeah so from that using
+10:52 the agents in 2023 I started writing the
+10:54 book um through to 2024
+10:58 number of iterations and stuff like that
+11:00 and then uh I had finished most of the
+11:02 book in 2024 but it was just it was just
+11:06 sort of eased out and nobody was sort of
+11:08 excited about agents and then all a
+11:10 sudden became excited and when the book
+11:11 was published
+11:13 >> um became very popular but but the a lot
+11:16 of the concepts in the book were routed
+11:18 you
+11:19 rooted in 2023. So by the time it was
+11:23 released, it was pretty much almost uh a
+11:25 lot of it was good principles and good
+11:28 practices, but it wasn't really the
+11:29 cutting edge of the time. So I'm
+11:30 currently running the second edition of
+11:32 AI agents and actions. So
+11:34 >> yeah, you've been quite productive uh
+11:36 last few decades
+11:40 and like speaking of evolutionary
+11:42 algorithms. So I think we call them
+11:45 genetic algorithms. I think it's just
+11:47 one of the algorithms, right?
+11:49 >> And I remember that the main idea uh of
+11:53 these algorithms is you have some sort
+11:55 of so first you have some population and
+11:59 in the population some um species right
+12:02 they kind of fit some of them are not
+12:05 fit. So those who are not fit they die.
+12:08 The ones who feed they multiply right?
+12:10 So they can uh produce new like they can
+12:13 produce offspring I guess. And when they
+12:15 produce the offspring
+12:17 uh there are some random mutations when
+12:21 in the that that happen right?
+12:22 >> Mutations. Mutations.
+12:24 >> Yeah. Mutations. And when these children
+12:27 appear they can be again either fit or
+12:30 not fit. And um those who are not fit
+12:34 they die. And then we repeat the cycle.
+12:35 So what we need here is are two
+12:37 functions. Um first the goodness of fit
+12:41 right like how fit they are. And second
+12:43 is the mutation function, right?
+12:47 >> And and sometimes there's a pairing
+12:48 function, right? So how you pair up your
+12:51 how you pair up your your parents
+12:53 essentially and how you can and
+12:55 essentially how you're combining their
+12:56 their genetics. Right. Uh-huh. And
+12:59 basically you then have a while through
+13:01 true loop and repeat it until um I don't
+13:05 know you run out of uh resources or I
+13:08 don't know for one day or whatever right
+13:10 until certain uh like I guess there's
+13:13 also like a fitness function uh and then
+13:16 until maybe you converge or whatever
+13:18 happens.
+13:19 >> Yeah. Exactly. Exactly. Yeah. And and so
+13:21 like evolutionary algorithms are very
+13:23 popular for wide variety of
+13:25 applications. As I said, they're very
+13:27 computationally intensive, but they can
+13:29 find a lot of different ways of doing
+13:32 things, right? Because they're not
+13:33 constrained by things. And way back when
+13:36 2006, I mean, the evolutionary
+13:38 algorithms were thought to be one of our
+13:41 ways that we're going to develop AI and
+13:43 intelligence at
+13:44 >> Yeah, this is what we studied in my AI
+13:46 class. We use lips, prologue, like other
+13:49 things. Um, yeah, it was kind of old
+13:53 school AI, a lot of rulebased domain. um
+13:56 how do we call them like expert
+13:58 knowledge like all these rules prologue
+14:01 was fun and then we also had a lecture
+14:03 about um genetic algorithms that was
+14:06 very interesting but then like I never
+14:09 actually used them outside of classes
+14:11 >> so I don't know if you follow but there
+14:13 is a couple things people have done with
+14:15 LMS and agents and stuff like that where
+14:17 they've used evolutionary algorithms to
+14:20 tune the prompts the instruction and
+14:22 find different ways of optimizing those
+14:25 instructions.
+14:26 >> No, I did not.
+14:28 >> Yeah. So, that that's been sort of shown
+14:30 to be quite popular, but again, you
+14:33 know, very computationally intensive,
+14:34 but you can really get
+14:37 things out of a prompt that you never
+14:39 thought, right? Because there's a whole
+14:40 big space within an LLM that we don't
+14:43 understand and map and you can get very,
+14:46 you know, different combinations of what
+14:47 your input is to what could be the
+14:49 output. So it's really could have you
+14:53 know really exciting applications. We
+14:55 just have to get over the computational
+14:57 problem. What I'm trying to look up
+14:59 right now is prompt engineering and
+15:01 evolution algorithms in Google. Uh
+15:06 yeah there is uh this post on Reddit
+15:09 evolutionary only evolutionary
+15:11 algorithms meets proper engineering. Can
+15:14 you explain us the main idea behind this
+15:17 like in a few u sentences like what's
+15:20 the main idea? How do we actually do
+15:22 this?
+15:23 >> Well, I mean you did a really good
+15:24 description of what sort of evolutionary
+15:26 algorithms are and using the you know
+15:29 the best fit. So essentially you have a
+15:32 prompt and you have ways of manipulating
+15:34 that prompt, right? they're coming up
+15:36 with variations of that prompt and in
+15:38 some cases you can even have a prompt
+15:40 that generates that prompt and that
+15:42 generation prompt is what you're doing
+15:44 the manipulation the genetic
+15:45 manipulation art. So it could be things
+15:47 like your genetic sequence might
+15:50 describe the words in that prompt, might
+15:52 describe the sentences in the prompt,
+15:53 might describe the instructions or
+15:55 various different structure. And then
+15:57 you just use evolutionary algorithms to
+15:59 find the best sort of um what that
+16:02 output is for generating either the
+16:04 prompt itself or generating
+16:08 you know set of instructions that can
+16:10 generate the prompt as an example.
+16:14 >> Yeah. Uh I think I found genetic prompt
+16:17 lab
+16:18 uh repo on GitHub. It has 20 28 stars. I
+16:22 don't know how.
+16:25 >> Yeah.
+16:26 >> Well, as as I said, it's it's pretty
+16:29 computationally intensive. So you could
+16:31 be running it for a week before you get
+16:33 something.
+16:35 >> Yeah. But the idea is interesting
+16:36 because like for me uh well I also I'm
+16:40 doing some AI stuff and prompt
+16:42 engineering. This is what makes
+16:43 difference with later models it's the
+16:46 difference is not as big like but with
+16:48 models with old older models like GPT
+16:51 3.5
+16:52 like you could achieve a lot by just
+16:55 tuning your prompt now the difference is
+16:57 less drastic but still like the more you
+17:00 put in the prompt the more precise the
+17:02 prompt is usually the better the answer
+17:05 and coming up with a good prompt right
+17:08 now it's more art than science at least
+17:10 for me I'm just you know trying things
+17:14 um and seeing like you know like
+17:16 throwing spaghetti at the wall and
+17:17 seeing what sticks but probably there
+17:19 are better ways like more science based
+17:25 >> no but I think this is a lot of how
+17:26 these things come about right and it's
+17:28 not just LMS it's all generative AI it's
+17:32 using a textbased input can benefit from
+17:34 something like this right so yeah I mean
+17:37 um it's it's an interesting application
+17:40 of it and finding ways
+17:42 to you said like you said it's almost
+17:44 sometimes you feel like it's an art some
+17:47 you know you're writing a prompt and
+17:48 you're trying to get it to do something
+17:50 exactly and and one day you just come up
+17:52 with a sentence that hits and it's all
+17:54 of a sudden it starts working I've had
+17:56 that tons of time
+17:57 >> until they updated version of the LM
+18:01 >> yeah so but but generative AI like video
+18:05 prompts and image prompts and stuff like
+18:06 that so a lot of different applications
+18:08 it's just not caught on I thought about
+18:10 writing that as my next book. We'll see.
+18:13 >> How many books do you actually have?
+18:15 >> I've written 11.
+18:17 >> 11. Okay. So, you're working on the
+18:19 12th.
+18:21 >> I'm working on the second edition, which
+18:22 may Yeah, consider the 12th and maybe a
+18:25 13th to be evolutionary something.
+18:28 >> So, this book is about AI agents for
+18:30 game development, right?
+18:32 >> No, it's just AI agents and all overall.
+18:34 So, just AI agents for development and
+18:36 anything.
+18:37 >> Okay.
+18:38 >> Any sort of application or whatever. But
+18:40 you mentioned uh a book. I guess this is
+18:43 where you started using this. You
+18:46 started using agents for you call it VIP
+18:48 coding for games 2023. Um but then um
+18:52 right now agents became big in 2025 and
+18:56 that's why you're writing this second
+18:57 edition, right?
+18:59 >> Yeah. So I sort of blurred things
+19:00 together a bit. I was working in fintech
+19:02 at the time. We were doing a lot of NLP
+19:06 uh old school NLP determining um what
+19:09 sort of customer responses what the
+19:11 sentiment was different classifications
+19:13 etc. It was uh co at the time. So we
+19:16 wanted to sort of understand if they
+19:18 could pay or had problems paying you
+19:20 know this the basic sort of
+19:22 classification exercises we used to do
+19:24 with deep learning.
+19:27 >> We found that LLMs could do a much
+19:29 better job for that and a number of
+19:31 things and then LLM's powered agents can
+19:34 even do better. So we started to build
+19:37 AI agents to do these types of
+19:39 classification exercises, automations
+19:42 and stuff like that. Um at the same time
+19:45 because of my background in games I also
+19:47 used some agents and chat GBT another
+19:51 book about learning how to write um
+19:53 Python games. So using F game and those
+19:57 types of things.
+19:58 >> So this is a different book.
+20:00 >> This is this is a different book on
+20:02 teaching people how to essentially vibe
+20:04 code how to learn how to play games. Um,
+20:08 at the time I was using GPT35
+20:11 and just starting to use four. So there
+20:14 was a lot of prompt iteration. There was
+20:16 a lot of stuff like that. Stuff that you
+20:18 probably wouldn't even have to do now.
+20:19 Like you could probably go to GPT5 and
+20:21 enter one of those prompts and the game
+20:23 would come out, right?
+20:24 >> So we are talking about AI agents in
+20:27 action, right? That's the
+20:28 >> Yes. Yes.
+20:29 >> Okay. I'm just I just looked it up. It's
+20:31 a book by Ming,
+20:33 >> right? He already published it in March,
+20:35 but now you're working on the second
+20:37 edition.
+20:38 >> Yes.
+20:38 >> Cuz things move so so fast with these
+20:40 agents, right?
+20:42 We did a course about our lamps last
+20:45 year, but this year I needed to redo
+20:47 like many things.
+20:49 >> Yeah. Um AI agents have have come up
+20:54 really fast, but I think we've used them
+20:57 differently over over periods of time.
+20:59 So the way I teach AI agents now is sort
+21:02 of embrace the idea of minimalism and
+21:05 that is that as you minimalism yes so
+21:08 keeping your agents as as lean as
+21:10 possible.
+21:11 >> So I've seen a lot of um people
+21:14 developing agents but they sort of bulk
+21:16 them up with tons of tools tons of sort
+21:19 of instructions ways of trying to do
+21:21 things. And what I generally recommend
+21:22 is if you're de developing an agent
+21:25 workflow is to break that workflow up
+21:27 into patterns
+21:29 uh or or sort of tasks if you will that
+21:32 can be assigned to individual agents
+21:34 that then could either run in a flow. So
+21:36 like sort of an assembly line or run as
+21:39 through an orchestration, right? So one
+21:41 of one of the you have an agent that
+21:43 sort of orchestrates things and it calls
+21:45 each of the task agents to do whatever
+21:47 it needs to do.
+21:49 >> Okay, maybe let me ask you this. Um so
+21:52 right now uh I um have a and a pet
+21:56 project uh an agent that uh can write
+21:59 code that can create create jungle
+22:01 websites. So this is right now a single
+22:05 agent and I use some reasoning model
+22:08 it's doing fairly well right so I can
+22:10 give it a prompt then it's doing some
+22:12 planning and then it's executing on this
+22:14 planning. So the tool it has is like
+22:17 reading from a file writing to a file
+22:20 seeing the file list executing a bash
+22:22 command and doing grab like I think
+22:24 that's all it has and uh when I thought
+22:28 okay like I have one agent it kind of
+22:31 works but how can I make it better so
+22:33 then I started to split this agent into
+22:35 multiple agents. So then I have a
+22:37 planning agent or like requirements
+22:40 agent. Uh so first is requirements agent
+22:42 because I want to understand uh make
+22:44 sure that agent and user they really on
+22:46 the same page of what should be done
+22:48 because when I tell the agent hey
+22:50 implement me to-do list there are like
+22:52 millions and millions of ways of
+22:54 implementing the to list but what are
+22:56 the right requirements so the first
+22:57 agent is collecting requirements. The
+23:00 second agent is then comes up with the
+23:02 execution plan. So it's the planning
+23:04 agent based on the requirements. It
+23:05 comes up with that and then the final
+23:07 agent is actually the execution agent uh
+23:10 gets the requirements and then executes
+23:12 them. Is this how you would do this or
+23:15 there are maybe other
+23:16 >> abs? No, absolutely. That's absolutely
+23:18 one way of sort of breaking it up task
+23:21 by task and then um it sounds like you
+23:24 have a flow, but you could have an
+23:26 orchestration agent that sort of decides
+23:29 maybe at the end it looks at the output
+23:31 of the last agent and compares it
+23:33 against the requirements and decides
+23:35 that's good or that's not good enough
+23:37 and then pushes it through the whole
+23:38 flow again and calls each of the
+23:40 individual agents to do pieces.
+23:42 >> So can you tell us a little more about
+23:45 this? what is flow and what is this
+23:46 orchestration?
+23:48 >> So, so I'm calling what you just
+23:50 described as an agent flow and an agent
+23:52 flow is essentially an assembly line of
+23:55 agents, right? So, one agent
+23:57 >> does something, it passes on to the next
+23:58 agent and passes on to the you know
+24:02 >> requirements technical plan and then
+24:04 execution. So, that's the flow, right?
+24:06 >> That would be the flow, right? An
+24:08 orchestration agent.
+24:09 >> Okay, go ahead.
+24:10 >> I'm just wondering so usually there is a
+24:13 bit of back and forth, right, with
+24:14 agent. So a bit of conversation. So
+24:16 first I start talking with uh the agent
+24:18 and usually this is the requirements
+24:20 agent. So I talk talk I say okay I want
+24:23 to do to implement a to-do list. It says
+24:25 okay these are the requirements. Do you
+24:27 want to make some corrections or did I
+24:29 understand you correctly? So there's a
+24:31 bit of back and forth until we agree
+24:33 that okay this is it. And then the this
+24:36 the kind of the stage is the microphone
+24:38 is passed to the second agent right
+24:40 somewhere under the hood for me as a
+24:42 user all I see is like the same um kind
+24:45 of chat right
+24:47 >> but then under the hood
+24:48 >> actually the second agent takes over and
+24:50 it comes up with a plan
+24:52 >> and then we can see this as a I don't
+24:54 know a bunch of to-do lists to-do items
+24:56 in the list and then it comes up with a
+24:58 plan and then the third agent takes a
+25:00 plan and now executes one by one right
+25:02 and then for the user the experience is
+25:04 is just one chat application but for us
+25:07 uh for the developers like um we pass
+25:11 the I don't know the microphone or
+25:13 whatever like the the current active
+25:15 currently active agent is different all
+25:17 the time so this is what you call a flow
+25:20 right
+25:20 >> yeah yeah yeah but so the communication
+25:25 patterns underneath could be different
+25:26 and the ways of passing off control
+25:28 could be different but essentially a
+25:30 flow is a sequence of agents right in an
+25:33 in an orchestration pattern. You have
+25:35 one agent that would be sort of your
+25:37 front-facing agent. Maybe it is sort of
+25:40 your requirements agent.
+25:43 Um that is the one that's doing the back
+25:45 and forth human sort of interaction. And
+25:48 then it's calling the planning agent to
+25:50 build the plan. And then from the plan,
+25:53 it's calling the the builder agent to do
+25:55 the building, right? And then when it
+25:58 when the builder agent returns, it can
+26:01 inspect the output of that, decide if
+26:03 it's meeting requirements and push that
+26:05 out. So you have sort of that uh
+26:08 feedback loop, if you will, but it's
+26:09 sort of in an orchestration pattern. You
+26:11 could do the same thing with flow. You
+26:13 could have sort of a gate at the end
+26:14 where you have another agent that's
+26:16 doing a check to say that it's meeting
+26:18 the requirements. But in an
+26:20 orchestration pattern, you're sort of
+26:21 doing that loop yourself where it's
+26:23 giving you some more controls.
+26:25 Orchestration agents though are are a
+26:27 little more complex to get right because
+26:29 you have to sort of under it it has to
+26:31 understand what the other agents are
+26:33 doing and why it needs to lose the other
+26:34 agents.
+26:36 that that's sort of a more advanced
+26:37 thing. And then there's uh you know
+26:39 you've heard of platforms like Peru AAI
+26:41 or Autogen or sorry AutoGPT
+26:45 um those are platforms that more use a
+26:48 collaboration pattern right so you have
+26:50 agents that are always or can
+26:52 communicate with each other they can
+26:54 communicate across each other um you
+26:57 know some agents might be only
+26:58 restricted to talking to each other but
+27:01 there's a feedback there's a sort of um
+27:04 a feedback loop or an internal mechanism
+27:06 where the agents are talking to each
+27:08 other, right? The problem with those
+27:09 types of systems is they be really
+27:11 expensive. So you can have them doing
+27:14 feedback loops. They can they can almost
+27:16 reprocess the same thought sometimes. I
+27:19 mean more advanced a more advanced LMS
+27:22 would probably give you better
+27:24 capabilities. But collaboration can be
+27:26 really powerful for finding new things
+27:28 and doing new things. But it also can be
+27:30 very expensive and it and it's not
+27:32 really good for real time or if you're
+27:34 expecting an answer really quickly.
+27:37 you have examples where this calibration
+27:40 um is actually
+27:42 a good pattern to use like what could be
+27:45 the use cases?
+27:46 >> Yeah. So like if I have a really really
+27:49 complex programming problem, I know what
+27:51 the input should be and I know what the
+27:52 output should be but getting there is
+27:54 going to be a whole bunch of work. I've
+27:56 used collaboration agents to say here's
+27:58 my input, here's the output I want. you
+28:01 figure out what you need to do and you
+28:04 know even using I think these a lot of
+28:06 these patterns were established back in
+28:08 35 and four they can really work
+28:11 effectively with with less intelligent
+28:13 models because they're doing this
+28:14 feedback they're doing this interaction
+28:16 right they're they're sort of prompting
+28:18 themselves engineering their prompts
+28:21 themselves between themselves but it is
+28:24 as I said somewhat expensive because
+28:26 they're doing a lot of these loops
+28:28 they're doing a lot of repetitive
+28:29 thoughts But it can be quite powerful
+28:32 because they're they they're that's what
+28:35 they do. They just sort of keep looping.
+28:37 They keep iterating. They keep sort of
+28:39 improving themselves.
+28:40 >> It's kind of like a a closed loop
+28:42 evolutionary sort of algorithm feel,
+28:44 right? They're just collaborating to
+28:46 till they
+28:47 >> For me it's a little abstract like I
+28:49 just want to make it a little more
+28:51 concrete. So let's say let's say if we
+28:53 talk about again our coding agents. So
+28:56 then it could be like maybe one agent is
+28:58 a designer, another agent is front- end
+29:00 developer, another agent is backend
+29:02 developer, right? So they are somehow
+29:05 collaborating between each other, right?
+29:08 Or would it be?
+29:09 >> Yeah. So so you could have them
+29:11 collaborating with each other and the
+29:13 collaboration mechanism is usually they
+29:15 can talk to each other, right? So when
+29:16 they're outputting something that output
+29:18 goes to other agents and then those
+29:21 other agents can respond and output. So
+29:23 you can think of it as like there's one
+29:24 thread message channel. if you will and
+29:27 all the agents are feeding into that
+29:30 message channel and pulling messages
+29:31 from that channel and the context from
+29:33 that channel. That's typically how this
+29:35 collaboration parallel, right? So what
+29:37 we talked about before flow in the flow
+29:39 it was first requirements then um what
+29:44 uh plan and then execution right but
+29:47 here like let's say if we talk about
+29:48 execution execution could be like three
+29:51 agents running in parallels because we
+29:52 first need design or not first we need
+29:55 design and then and front end and then
+29:57 in parallel we can develop back end
+29:59 right
+30:00 >> and the front end uh/designer
+30:03 implements certain things and then posts
+30:05 a message somewhere where saying hey
+30:07 like I implemented this so then the back
+30:09 end agent knows about that right is this
+30:12 how it's implemented
+30:13 >> well so that could be a collaboration
+30:15 pattern or that could be an
+30:16 orchestration pen right like so you can
+30:18 have sort of a manager agent that is
+30:21 then you know taking the requirements
+30:23 and then knowing for instance well from
+30:25 those requirements I can have my backend
+30:27 developed and I can have my front end
+30:29 developed in parallel and then throwing
+30:31 those things to both agents and waiting
+30:33 for the responses so there's a number of
+30:35 different patterns that are quite
+30:37 useful. Um, often sort of combining
+30:40 patterns can be quite useful, right? So
+30:41 you could have a sequential flow of
+30:43 agents
+30:45 and then you want to add that sequential
+30:47 flow to another sequential flow of
+30:48 agents but maybe at the top you want an
+30:51 orchestrator to orchestrate between
+30:53 sequential flows for instance. So one of
+30:55 them might be you know a lot of back-end
+30:57 development and ways of deving doing
+30:59 that backend development. One of them
+31:01 might be the whole front-end development
+31:02 and then having an orchestration agent
+31:04 to be able to switch between either and
+31:06 making sure that it's meeting
+31:07 requirements.
+31:09 >> It's cool. And this is what you talk
+31:10 about in your book, right? You talk
+31:13 about all those.
+31:14 >> Yeah. Yeah. I show a number of
+31:15 architectural patterns, communication
+31:17 patterns, ways to manage and control and
+31:19 stuff like that. There's a whole chapter
+31:21 in the second edition about this.
+31:24 Do
+31:24 >> you use a library for it or you show how
+31:26 to implement this from scratch just
+31:28 using the plan API? Um, so one of the
+31:31 one of the lean nice little libraries I
+31:33 like to use is the OpenAI agent SDK
+31:36 because it's quite simple. It has a few
+31:39 facilities like guardrails and handoffs,
+31:41 but uh generally it's quite simple to
+31:44 sort of show and demonstrate how things
+31:46 work.
+31:47 >> Yeah, I agree. I like it too.
+31:49 >> Yeah, it has access to MCP servers and
+31:51 stuff like that. So like taking your
+31:53 example one step further, we could
+31:55 introduce a reasoning, right? So for
+31:58 each of the agents, we might have them
+32:00 talking to a sequential thinking server.
+32:03 So with a sequential thinking server,
+32:05 what you're then asking your agent as
+32:07 it's doing its tasks or its work is that
+32:09 I want you to think through those tasks
+32:11 and I want you to write um your plan out
+32:14 to the sequential thinking server. So
+32:16 the sequential thinking server then
+32:18 becomes a works a work pad if you will
+32:20 for each of the agents. So it can sort
+32:22 of reason through and plan. um you we
+32:26 have these reasoning agents that do this
+32:27 already, but for some models and and
+32:30 some applications actually providing
+32:32 this reasoning mentality and for it to
+32:34 work through and think through the
+32:36 problem, it makes it very powerful.
+32:38 Right? So you can have these three
+32:39 agents each writing to a sequential
+32:41 thinking server
+32:43 and then capturing those thoughts from
+32:45 the sequential thinking server and
+32:46 giving them back to the user. So the
+32:48 user could see the flow of the reasoning
+32:51 for each of the agents while it it
+32:53 really is only interacting with the one
+32:55 agent. It can actually see the reasoning
+32:57 and planning for all the agents in the
+32:59 process.
+33:00 >> Yeah, that's interesting. And you can do
+33:04 it this with just the agents SDK, right?
+33:08 >> Yeah. Yeah. And an MCP server. So
+33:10 there's a a reference sequential
+33:13 thinking uh MTP server
+33:15 >> and sequential thinking is just a
+33:17 essentially just a scratch pad for
+33:18 writing reasoning and thoughts and
+33:20 plans.
+33:20 >> Okay. So this is the way for the agents
+33:22 to communicate between each other,
+33:24 right?
+33:25 >> No, it's essentially a way for them to
+33:27 think through. So a lot of the times
+33:29 when we're developing prompts um you'll
+33:32 use tech techniques like think step by
+33:35 step.
+33:36 >> So you you'll ask the agent to think
+33:38 step by step. So if you give the ability
+33:41 for the agent to write tokens as it's
+33:43 thinking step by step, it's going to
+33:45 produce better answers, right? It's
+33:46 going to produce things because it's
+33:48 using those tokens to give itself
+33:50 feedback on what it's outputting and
+33:52 sort of getting to that the pinpoint of
+33:55 the problem, if you will, and the output
+33:57 the the right solution. So that's one
+33:59 reasoning trick that we use. By
+34:02 introducing a sequential thinking
+34:03 server, you're essentially giving the
+34:06 agent the ability to write thoughts out,
+34:08 but not to the main channel. Right? So
+34:11 that the the output that you're going to
+34:13 send to the next agent isn't going to be
+34:15 the reasoning steps, but the agent has
+34:17 the ability to reason and output
+34:19 reasoning steps. And then the the output
+34:22 from the agent continues to the next
+34:23 agent, but it doesn't share its
+34:25 reasoning steps. It could share its
+34:27 reasoning steps, but usually it doesn't
+34:29 share its reasoning steps.
+34:31 Okay. Interesting. Which chapter is it
+34:34 that where you talk about this?
+34:36 >> Oh, so that's in my second edition and
+34:38 that's chapter four. So, yeah. So, not
+34:40 not in that edition. I think I I do
+34:43 touch on reasoning and using evaluation
+34:46 patterns and some stuff like that in
+34:47 later chapters of that book. But again,
+34:50 it's it's just sort of the start of how
+34:51 we were thinking about it. In this book,
+34:53 I go in depth in how how to use
+34:56 reasoning and planning and how to use
+34:58 stuff like sequential thinking servers
+35:00 etc.
+35:01 >> Is it already in meep or is it already
+35:04 available?
+35:04 >> Uh I believe it comes comes to meep on
+35:08 is it yesterday or this week? I think
+35:09 it's going to go to meep pretty soon.
+35:11 >> Okay. Okay. So, we're keeping an eye on
+35:14 that. Good.
+35:17 Uh yeah, that that's that's interesting.
+35:20 Thanks uh a lot for sharing that. Um and
+35:26 uh this um I'm also interested about
+35:28 game development cuz for me game
+35:31 development seems um
+35:34 I know closer to hardware which is more
+35:37 difficult cuz you need to use things
+35:39 like I don't know maybe C++ or um things
+35:42 like that. uh which there are more ways
+35:47 to
+35:49 how to say make a mistake right
+35:53 uh and then like the mistake you make in
+35:55 uh when writing C++ can just result in
+35:58 segmentation fault and then yeah like
+36:00 it's very hard to debug and also C++ is
+36:04 not
+36:05 it's kind of famous for
+36:08 difficult to read code so how does it uh
+36:12 how do agents deal with this like um do
+36:16 games that get created with this uh with
+36:19 the the current coding agents like how
+36:23 easy is it to maintain them to I don't
+36:25 know to work with them to actually play
+36:27 them.
+36:29 >> Yeah, I mean you can do some really
+36:30 powerful things with with you know agent
+36:32 patterns now for building games. I mean,
+36:34 I I like occasionally playing spider
+36:37 solitaire, but I got tired of seeing I
+36:40 would go on to a site all the time would
+36:43 have a bunch of ads running and I just
+36:45 got tired of seeing that all the time.
+36:46 So,
+36:47 >> yeah,
+36:47 >> for every release of agents, I'll go on,
+36:50 you know, Claude or LLMs, I'll go on and
+36:53 ask Claude to create me a spider or
+36:55 solitary and
+36:58 not okay was okay. I I asked GPT5 Pro
+37:04 just recently to create me a Spider
+37:06 Solitaire game. It's now one I play
+37:08 because it it actually completed end to
+37:10 end. I gave it a GitHub reference for
+37:13 card images. It's got the card images.
+37:16 It's got everything. It's it's a
+37:17 complete game and it even written things
+37:20 in that I didn't even ask for any
+37:22 requirements. I just said, you know, the
+37:24 prompt was create me a Spider Solitire
+37:26 game. I worked through a couple
+37:27 iterations just fixing some bugs and
+37:30 stuff like that. But yeah, like it's
+37:32 very powerful in what they can do.
+37:34 >> Was it a React app?
+37:36 >> Yeah. Yeah, it's a it was a just a HTML
+37:41 app, a JavaScript react and
+37:43 >> Okay. And uh you just did this in the
+37:46 web interface of JBT.
+37:48 >> Yep. Yeah. Okay.
+37:49 >> So was not like any coding agent or
+37:51 whatever.
+37:52 >> No. No.
+37:54 And GPT5 Mini is pretty good used in
+37:56 cursor and VS Code, but I actually
+37:58 prefer GPT5 Pro. It it's its coding is
+38:02 really really good. It
+38:03 >> it does take a a while. You have to be
+38:05 patient because it's it takes its time,
+38:07 but it can be it's really powerful. like
+38:09 I've I've asked it to build
+38:13 um an interface agent as an
+38:15 orchestrator, a backend agent to create
+38:17 an image, a backend agent to search the
+38:19 web, a backend agent um to do a couple
+38:22 other things all in microservices, a
+38:24 docker containers and orchestrating that
+38:27 with the docker compose.
+38:29 >> I asked chat gpt pro to build me that.
+38:32 It built it in a zip package. I
+38:35 downloaded the package doc do you know
+38:38 docker compose up build and it went yeah
+38:42 >> and that was it just worked
+38:45 >> and I think there was again a couple
+38:46 iterations of bug fixes and stuff like
+38:48 that but yeah it produced the whole
+38:49 package and it worked
+38:51 >> that's so cool
+38:52 >> just yeah you can you can do a lot but
+38:55 getting back to getting back to game
+38:57 programming game development so as I've
+39:00 said a couple years ago when I was doing
+39:02 writing a book called generating reality
+39:04 generating a new reality. And it was
+39:07 really sort of a a whole embrace of what
+39:09 generative AI was going to be able to
+39:11 do. One of the things I was saying back
+39:14 then was generative AI is really going
+39:17 to change the gaming landscape and it's
+39:18 already being done, right? You're
+39:20 already seeing these generative AI real
+39:22 world models trying to make games. And I
+39:26 think that the next platform isn't going
+39:28 to be a code. It's going to be
+39:30 generative AI of some form that's going
+39:32 to allow you to produce and build this
+39:34 game because you think you don't have to
+39:36 have artists building this stuff. You
+39:38 don't have to have scenarios or
+39:40 different things. You can write this all
+39:42 into the generated AI to produce your
+39:44 world. It can be very very powerful
+39:48 and and infinitely playable and really
+39:51 you could really sort of embed a lot of
+39:53 discovery in there. It could be really
+39:55 exciting to play these games, you know,
+39:58 not not the simple versions we have
+39:59 right now, but some of the games you
+40:01 could ultimately produce could be really
+40:04 really interesting and exciting and
+40:06 >> Yeah.
+40:06 >> And they they look almost like, you
+40:08 know, you're watching a video or
+40:10 something like that. It's like the best
+40:11 graphics ever, right?
+40:13 >> Yeah. Yeah. I just imagined like I spent
+40:15 so much time when I was uh younger
+40:18 playing Diab Diablo Diablo I Diablo I
+40:22 don't know. Have you played this? Um, I
+40:24 think that's that's a top down one.
+40:27 >> Uh, it's like an RPG game where you like
+40:31 you have a character
+40:32 >> and then there are like different
+40:34 monsters.
+40:35 >> And I imagine I right now as we speak, I
+40:39 imagine what would be if like all the
+40:42 levels and all the quests and all the
+40:44 things you need to do would be
+40:45 automatically generated every time,
+40:47 right? That's cool.
+40:51 Like because like every time you play
+40:52 it's something different. So then you
+40:54 can just play this game forever.
+40:57 >> Well, or or you could just say prompt
+40:59 level one, right? And then it creates a
+41:01 version of level one. You could prompt
+41:03 level 99 and it gives you a version of
+41:05 whatever 99 is, right?
+41:08 it becomes I'm not saying it's going to
+41:10 happen next year, but it's I think
+41:12 that's definitely the way we're we're
+41:14 heading and and if not just entirely
+41:18 generative AI applications, maybe
+41:21 generative AI for producing the front
+41:23 end, maybe generative AI for producing
+41:26 or AI agents for doing some backend
+41:28 work, and then AI for doing some, you
+41:31 know, stuff that we've been craving as
+41:33 gamers for a long time to actually have
+41:34 a competent AI.
+41:36 appointments and stuff like that, right?
+41:39 >> Yeah. The test I was given to LMS like
+41:42 similar to spider solitaire. Um, so the
+41:46 test I was given implement uh space
+41:49 invaders.
+41:50 >> Mhm.
+41:50 >> And with Space Invaders, you it's not
+41:52 the most it's not super challenging
+41:54 game, but still you have a few things to
+41:58 solve like when you have like the thing
+42:00 that shoots the bullets, right? So you
+42:02 need to model the physics of the bullet.
+42:05 Uh so then it hits like the space
+42:07 invader and then it doesn't like
+42:09 continue and then like it actually uh
+42:12 you know when it collides like hand in
+42:15 all these uh cases and then like
+42:19 everything has to move at the same time.
+42:20 So there's there should be a bit of
+42:22 multi-threading.
+42:24 So GPT4 was not able to
+42:28 um solve it. Uh I mean with like maybe
+42:32 10 15 prompts like I could get it to
+42:35 work.
+42:36 >> Um with cloth onet also uh like it
+42:40 required quite a few iterations and now
+42:43 like when you were speaking when you
+42:45 were saying when you were telling us
+42:46 this story about spider solitary um that
+42:50 it was able to just produce hc pile and
+42:53 you just needed to do docker compose up
+42:55 and it worked. Um, which made me think
+43:00 about this space invaders. Maybe I
+43:02 should give it a try and see how far it
+43:04 can go.
+43:06 >> Yeah. Yeah. Well, you might be quite
+43:07 surprised.
+43:08 >> Yeah,
+43:09 >> they have been quite capable. Yeah.
+43:11 >> So, this is you have a it's just usual
+43:14 chat GPT. Ah, for pro. I need to
+43:18 upgrade. It's not enough.
+43:19 >> Sorry. Sorry.
+43:22 Not not that I want to sell pro, but
+43:24 yeah.
+43:26 So because like I already have a paid
+43:28 version, but I guess it's not enough,
+43:29 right? So it has to be.
+43:31 >> Yeah. Yeah. I I I sort of spend a lot of
+43:34 money on AI services a month.
+43:37 >> It's kind of
+43:39 >> maybe it's available through API. No.
+43:43 >> I think yeah, if you turn the reasoning
+43:45 on high, it should be available. Yeah.
+43:47 If you can access from then you just
+43:50 have to pay, right? So it's not from
+43:51 your subscription but from your API
+43:54 money.
+43:55 Yeah. And I think there's a whole you
+43:57 have to verify who you are now on OpenAI
+44:00 and show your ID and all that good
+44:01 stuff.
+44:02 >> Okay. Okay. Yeah. Um yeah, I tried to
+44:06 access the reasoning tokens, the reason
+44:10 output and it says, "Hey, are you sure
+44:12 you're not a Chinese spy?" I'm like,
+44:17 >> I guess the reason they hide this uh
+44:20 reasoning uh messages is so others don't
+44:23 train on them, right?
+44:26 Yeah, that's
+44:27 >> that's what happened deep, right? So
+44:29 they just scraped the output, just
+44:31 trained on them and then Yeah. Oh,
+44:33 allegedly nobody knows what happened.
+44:37 >> Something like that though. Yeah.
+44:38 >> Yeah.
+44:39 >> We tested um some of these new models
+44:42 coming out of China.
+44:45 >> Um some of the is vision and image
+44:48 models I've played with, not so much for
+44:50 LM. um what I'm doing daytoday right now
+44:54 we have to be pretty careful on what
+44:57 we're doing with L1 so we're we're doing
+45:00 the corporate mindset of you know using
+45:02 >> Azure your professional uh um for for
+45:07 your professional life you you kind of
+45:09 need to stay away from that right
+45:11 >> uh for now I yeah I for now but I do
+45:14 think there's going to be some some
+45:18 models coming out you got to think that
+45:20 the billion millions and billions of
+45:22 parameters we have with models right now
+45:25 are sort of a
+45:27 like it's just there's too much right
+45:29 like we can definitely trim down a model
+45:32 to be a lot more intelligent and focused
+45:34 on a particular task
+45:36 >> and I think that's the next evolution of
+45:38 these LMS and agents and stuff like that
+45:40 where we're going to be producing models
+45:43 that are very capable of one particular
+45:44 task they don't have a whole bunch of
+45:46 knowledge about other stuff but then
+45:48 you're going to see them running on
+45:49 hardware or local systems and stuff like
+45:51 that. And I think that's where people
+45:53 are going to want to go because people
+45:54 are going to get tired of paying for
+45:56 these foundational models and hosting
+45:59 and stuff like that. And I think it's
+46:01 just going to make sense that people are
+46:02 going to have, you know, at at a point
+46:05 they're going to have the the GPUs and
+46:07 the computational power to run a half
+46:09 decent model and they're going to start
+46:11 pulling these things down, right? So um
+46:14 I've played with the OpenAI 120 billion
+46:16 parameter model. That is one model we
+46:18 use and it's very capable, right? So
+46:21 >> that's the open source one, right?
+46:22 >> That's the open source one. Um, we use
+46:24 it with Brock Labs, GR OQ, um, which is
+46:28 a really excellent provider. It provides
+46:30 a number of different of these models
+46:31 that you're talking about. Um, and like
+46:34 this open source model, we use it for a
+46:38 lot of things in our workflows because
+46:40 it's the latency of it is like a one or
+46:42 two seconds compared to 40 which is like
+46:45 four or five seconds for the same time
+46:47 same type of task and G GPT5 as much as
+46:51 it's really fast on when using chat GBT
+46:54 it's really slow behind the scenes like
+46:56 it's almost double what 40 is in my
+46:59 experience. So latency is becoming a big
+47:02 issue. Oh, okay.
+47:05 >> Um, yeah. Well, we are still streaming
+47:07 the recording. Recording stopped cuz I
+47:10 run out of disk space, I guess. Weird.
+47:13 Okay.
+47:15 Like for people who are watching, just
+47:17 ignore us. Slack. We're still live. I
+47:19 mean, ignore this. Um, yeah. Pity. I'll
+47:23 figure this out. Um I just uh I recently
+47:27 tried this new
+47:30 LLM from company called Z AI. They are
+47:33 Chinese company. I just accidentally
+47:35 came across a tweet from somebody about
+47:38 it cuz you know these things they grow
+47:40 like mushrooms after rain. like there
+47:42 are all these startups and then like all
+47:44 of them are beating the benchmarks and
+47:46 then then next week there's another one
+47:48 that is beating like uh um this
+47:52 I don't know getting high scores in all
+47:54 the evaluations we have. So I just
+47:57 decided I randomly come across came
+48:00 across one decided to give it a try and
+48:02 I was surprised how good it is. So like
+48:06 I just like I was talking this about the
+48:08 coding agents. I just replaced one with
+48:11 um
+48:13 like replaced clonet with this Z that AI
+48:16 model and it just became so much better.
+48:20 >> Oh really? Yeah.
+48:21 >> Yeah.
+48:22 >> Yeah. Well,
+48:23 >> like it was a simple model, a simple
+48:25 agent like I didn't have like a lot of
+48:28 it wasn't multiple agents, it was just
+48:30 one, but it was able to actually do all
+48:34 the steps of um like a more complex
+48:36 architecture. So, it was able to come up
+48:38 with requirements first and with a plan
+48:40 and then actually execute.
+48:43 >> Yeah. and and and like I said, I think a
+48:45 lot more of those things are going to
+48:46 come out because you got to think, you
+48:50 know, the OpenAI models, they're huge.
+48:52 They're huge. They're trained on tons of
+48:55 material. They're very general purpose,
+48:57 but not everybody needs this big huge
+48:59 general purpose model. And we've seen
+49:01 that, you know, if you can focus
+49:04 reasoning and coding for a particular
+49:05 task that you can produce a much smaller
+49:08 and more efficient model that uh can do
+49:10 the do the same work even better. as you
+49:13 as you mentioned right
+49:15 >> I noticed we have quite a few questions
+49:18 uh for you Michael so one of the
+49:20 questions I see what was your career
+49:22 before you got into AI and how did you
+49:24 start with AI I think you mentioned them
+49:27 right that it's slightly so you worked
+49:29 as a developer with oil and gas
+49:31 companies
+49:33 >> well actually I was even back then I was
+49:34 doing machine learning data science
+49:36 which is what we sort of call some some
+49:39 would call AI now sometimes Um before
+49:42 that though I was doing game development
+49:44 course. So that's why a lot of my roots
+49:46 are doing game development, doing a lot
+49:48 of 2D and 3D graphics, which I actually
+49:50 continued through my career and it's
+49:52 given me a leg up for understanding a
+49:54 lot of AI sort of and deep learning
+49:56 applications because it's a lot of the
+49:58 same math and it's mathematics, right?
+50:01 Maybe algebra, matrices, tensor. uh it's
+50:04 the quite a common career how to say
+50:07 career pattern or trajectory for people
+50:10 in game development to go to work with
+50:12 deep learning cuz like under the hood is
+50:16 just smart multiplication everywhere
+50:18 right and using
+50:19 >> GPS yeah exactly exactly
+50:23 >> um so there is also a question about
+50:25 ADHD that you mentioned uh you mentioned
+50:28 that you were working on uh games or
+50:32 diagnosing or for detecting the science
+50:34 of uh things like ADHD. Um
+50:38 did you continue to work or do you do do
+50:41 some research in these uh areas?
+50:43 >> No, I was working with a group of
+50:45 Harvard uh professors and and uh
+50:49 researchers at the time. This was back
+50:51 in early 2000s and they had developed
+50:54 the application.
+50:56 um I stopped working with them and then
+50:58 went to oil and gas, but I think they
+51:00 continued and I I don't know where
+51:01 that's gone since, but I certainly I
+51:05 think using the technologies we have to
+51:07 sort of diagnose children and stuff like
+51:09 that or or
+51:11 >> people I think that's very uh very
+51:14 capable. I think there at some
+51:16 applications or some games that do that
+51:19 >> but but gaming gaming is fun, right?
+51:22 Some people can be really sort of
+51:24 aligned with a game and playing a game,
+51:27 but not everybody is. And and not
+51:29 everybody is with the same theme or
+51:31 different themes.
+51:32 >> You can have some pretty common themes,
+51:34 but if if it's not Mario Kart or
+51:37 something like that, kids may not be
+51:39 interested. So that's
+51:41 >> Yeah, I can imagine that. Um, so I
+51:44 worked at um
+51:47 how was it called? Basically um
+51:51 we were doing different tests, cognitive
+51:53 tests. Uh uh it was my summer
+51:58 uh project at uh the Boston University
+52:01 was also way back when I was um a
+52:03 bachelor student.
+52:05 So we were developing different things
+52:08 but I would not call them entertaining.
+52:12 Right? So for kids is like uh where is
+52:15 my I don't know what kids play Mario
+52:18 Karts, right? Or where's my Minecraft?
+52:22 >> Yeah. Yeah. Well, that that's just it,
+52:24 right? That like like you know is the
+52:27 kid not interested because they don't
+52:28 like the theme of the game. They're not
+52:31 >> That sort of skews your experiment right
+52:33 there. So I think it was a good idea. It
+52:35 was a really sort of interesting idea
+52:37 for the time. Um I'm sure maybe you know
+52:41 if you actually used an open source
+52:43 version of meart or something maybe you
+52:45 could do something better
+52:47 >> but what we did was uh for students uh
+52:49 so the we were creating tests for
+52:51 students so the students were doing this
+52:53 because they were getting credits that
+52:56 for the education right so um it wasn't
+52:59 like real money but they would come make
+53:01 a test uh take a test and then receive
+53:03 some credits so for kids I guess like if
+53:06 they receive a cookie or thing that
+53:08 would also
+53:09 >> would be less boring than, you know,
+53:11 just going through a formula with like
+53:15 questionnaire and feeling it, right?
+53:18 >> If if there was a formula to make a game
+53:20 that people would want to play,
+53:22 >> I think every would be overused, right?
+53:25 Because the game industry has got to be
+53:27 one of the most competitive industries
+53:29 ever.
+53:29 >> Okay. Yeah. Right.
+53:31 >> I think it's still more competitive than
+53:33 AI, but AI is coming up quick.
+53:36 So for Albin who asked this question, uh
+53:39 maybe you can recommend a few keywords
+53:42 that uh they can I don't know check on
+53:44 Google to to follow up to to find out
+53:47 more about this research that you're
+53:49 doing.
+53:49 >> Yeah. So the the actual sort of area of
+53:53 cognitive sort of theory is executive
+53:55 function. So in our brain we have this
+53:57 executive function capacity essentially
+53:59 planning and reasoning. um and that that
+54:02 covers a lot of these sort of
+54:04 disabilities ADHD and others where the
+54:07 executive function of somebody's brain
+54:09 is not they they can't focus right they
+54:11 can't reason and plan effectively
+54:14 um so it aligns well with what we're
+54:16 talking about now with reason and
+54:17 planning so yeah executive function is
+54:20 very sort of interesting piece to look
+54:23 at
+54:25 >> okay another question we have um so as a
+54:30 fresher
+54:31 in data science with a master's what
+54:34 should I focus on machine learning AI or
+54:36 LLMs to secure a job and um yeah I'm
+54:40 curious about this cuz uh I also see
+54:44 that right now some of my colleagues who
+54:47 were data scientists who are data
+54:49 scientists they were laid off and for
+54:52 data scientists specifically it was more
+54:54 difficult to find a job compared to
+54:58 let's say engineers like ML engineers or
+55:00 just engineers. So what do you think
+55:03 like for somebody who just graduated
+55:05 should they
+55:08 do data science or should they focus on
+55:10 AI engineering? Should they focus on
+55:11 just engineering? What do you think?
+55:13 What is what should be better?
+55:16 >> I I would suggest focusing on AI
+55:18 engineering. Um because
+55:22 there's a lot of knowledge embedded in
+55:24 in LLMs and AI today that can do data
+55:27 science. Like there's a whole you can
+55:29 almost ask you could throw a spreadsheet
+55:32 at Chip Grow ask it to perform some
+55:36 rudimentary data science and maybe some
+55:38 more investigative pro that
+55:41 >> no you don't even need pro right right
+55:44 sub like still it requires subscription
+55:47 so with the free one you cannot do this
+55:49 but I can just get few Excel files and
+55:51 say hey can you do a merge and then
+55:54 calculate some some statistics and then
+55:56 show me the graphs and then it would
+55:57 just do this.
+55:58 >> Yeah. So, I think doing data science
+56:01 itself is probably not a path you want
+56:04 to continue. But I do think there's a
+56:06 lot of sort of um things that you've
+56:09 been taught as a data scientist working
+56:11 with data um you know ways of evaluating
+56:15 experiments and stuff like that and all
+56:17 those applications can be really well
+56:19 applied to AI engineering.
+56:22 >> Yeah, this is what I also noticed. So
+56:24 when I this AI thing started to appear
+56:28 uh and then then later rock. So for me
+56:31 at first I was like what the hell is
+56:33 this rack? But when I started um
+56:36 learning more I noticed that this is
+56:38 nothing else but search
+56:42 information retrieval and then like all
+56:44 of a sudden I realized that I know so
+56:46 much about this. I mean already about
+56:48 rack by just learning that this is
+56:50 information retrieval plus prompt plus
+56:52 prompt engineering. And then all the
+56:55 experience they had in the past working
+56:57 with search, working with
+56:59 recommendations because this is ranking
+57:01 and then you can apply all the um like
+57:05 cranking evalation methods and like
+57:09 >> all of a sudden like these things that I
+57:10 knew like the background I had was
+57:13 really useful and I guess this is what
+57:15 you're referring to right as as data
+57:17 scientists as data scientists we have a
+57:20 lot of knowledge that is very helpful
+57:23 Now with LLMs with just a little twist,
+57:26 right? So we still need to evate the
+57:28 thing. We still need to experiment with
+57:30 the thing, right? And as a data
+57:32 scientist, we know how to do that.
+57:34 >> Well, so that and that's fundamental. So
+57:36 that's fundamental to one of the
+57:37 concepts I teach in my book is you want
+57:39 to set up evaluation and feedback
+57:41 mechanisms, right? You want to be able
+57:42 to evaluate how your agents performing
+57:45 and making sure that they're consistent
+57:46 and repeatable and you can understand
+57:48 the variance, right? because there's
+57:50 variability in the LM and you want to be
+57:52 able to if you're building a c, you
+57:54 know, a production application, you want
+57:56 to control those variables. You want to
+57:58 make sure that you can answer to your
+58:00 boss, why is the agent tell me this,
+58:03 right? When it should be telling me
+58:04 something else. So, um, what I always
+58:08 say is build an evaluation pipeline.
+58:10 Make sure that you're evaluating each of
+58:12 your agents using tools like Arise
+58:14 Phoenix. Phoenix is a great tool if
+58:17 you're using any or developing any of
+58:18 these workflows. It can push all the LLM
+58:22 communication information up. You can
+58:24 look at that. You can investigate the
+58:26 prompts. You can evaluate the prompts.
+58:27 You can put a lot of other data science,
+58:31 you know, background of work and sort of
+58:33 doing the evaluations in determining
+58:36 success and failure and stuff like that.
+58:38 >> Yeah, we actually cover Phoenix in our
+58:40 LLM course. So for those who are
+58:42 interested uh you can look up LLM Zoom
+58:45 camp and the monitoring model we talk
+58:47 about Phoenix. Um last question I want
+58:50 to ask you before we wrap up. So you're
+58:53 you're you're telling us that you're
+58:56 working on the second edition of the
+58:57 book AI agents in action. So if I b buy
+59:00 now the first edition, will I
+59:02 automatically get the second one once
+59:04 it's released or I should wait?
+59:07 >> Um
+59:09 I'm not sure. I think my publisher was
+59:11 going to say they're going to give
+59:13 probably the second edition free or as
+59:16 part of that, but I would have to
+59:17 confirm with them. I think
+59:20 >> um
+59:21 yeah, I would have to confirm with them,
+59:23 but I think yeah, since since it's
+59:25 almost within the same year that second
+59:27 edition is coming out, I think they're
+59:29 going to make concessions that way, but
+59:30 I don't know exact details. Mhm.
+59:32 >> Maybe to be on the safe side, we can
+59:34 just wait till the MEP announcement,
+59:37 which maybe has already happened or will
+59:39 happen in a few days, right? And then we
+59:41 just get that one.
+59:44 >> Yeah. Yeah. Yeah. Yeah. I would if you
+59:46 you have a pretty good understanding of
+59:48 agents. If your other sort of viewers
+59:51 also have a pretty good understanding of
+59:52 agents, I would have worked I would wait
+59:54 for the second edition. The first
+59:55 edition covers a lot of fundamentals, a
+59:58 lot of basics, but you're probably well
+59:59 beyond that. And the second edition is
+1:00:01 probably something much more beneficial.
+1:00:04 >> Okay. So, and we follow you on LinkedIn
+1:00:06 before updates, right?
+1:00:08 >> Yeah.
+1:00:09 >> Are there many people with your first
+1:00:10 last name or is just you?
+1:00:13 >> The my spelling of it there's pretty
+1:00:15 unique, but there's still there's still
+1:00:17 quite a few people out there.
+1:00:19 >> You are very recognizable. So if you see
+1:00:23 somebody with a beard beard right like
+1:00:26 big one then but we will include your
+1:00:29 LinkedIn in the description to this uh
+1:00:32 interview so you'll be able to find
+1:00:35 Michael easily. Okay. Thanks Michael a
+1:00:37 lot for sharing all this uh expert
+1:00:40 expertise experience with us. Um I
+1:00:43 really enjoyed this conversation. I'm
+1:00:45 pretty sure the listeners enjoy it too.
+1:00:48 So thanks a lot for joining us today.
+1:00:50 >> Okay. Well, thank you very much for
+1:00:51 having me.

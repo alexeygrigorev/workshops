@@ -1,0 +1,1829 @@
+The Importance of Writing in a Tech Career
+
+0:02 well
+0:03 hello everyone thanks for have coming
+0:05 today to our event
+0:07 so this event is brought to you by
+0:09 datatalks.club
+0:10 which is a community of people who like
+0:12 to talk about data
+0:14 so we have regular events like this one
+0:17 and we have two types of events so
+0:19 usually on tuesday we have more
+0:21 technical events
+0:22 with uh presentations like technical
+0:25 talks
+0:26 and this week we had a talk about data
+0:29 versioning
+0:29 next week we'll talk about model
+0:32 monitoring
+0:33 then we will um the topic is still not
+0:35 clear but the week after we will
+0:36 probably talk about
+0:39 how you can deploy a chatbot um like
+0:42 this is
+0:42 quite a complex system so how do you do
+0:44 that
+0:45 and in february uh first tuesday of
+0:48 february we will talk about feast which
+0:50 is
+0:50 a feature store like a special
+0:54 system from envelopes and then we also
+0:56 have events like today
+0:58 which are less technical so there are no
+1:01 slides
+1:01 just people talking so this
+1:05 less technical topics today we'll talk
+1:08 about
+1:09 writing and then next friday we will
+1:12 talk about
+1:13 this role of a developer advocate for
+1:16 data science then we will talk about uh
+1:19 open source and
+1:20 it will be an unusual meeting it will be
+1:22 on thursday
+1:23 not on friday like usually and then we
+1:25 will talk about envelopes
+1:27 what is envelopes and what emel office
+1:29 engineers do
+1:31 and then today at any point of time if
+1:34 you have any question
+1:35 you can ask it through slido that will
+1:38 probably be
+1:39 the most convenient way so you can just
+1:41 go there put your question
+1:42 or if you see a question that is similar
+1:44 to what you want to ask
+1:46 you can just about this question and
+1:49 i will share this link now with you in
+1:52 chat
+1:59 okay sure
+2:02 and just give me a moment i'll
+2:06 pull my notes and we'll start
+2:18 okay yeah so today
+2:22 uh we will talk about uh technical
+2:24 writing
+2:25 login documentation all that and we have
+2:28 a special guest today
+2:29 eugene yan and eugene uh works
+2:32 at the intersection of machine learning
+2:34 and product he likes building pragmatic
+2:36 machine learning systems
+2:38 and he also writes and speaks about
+2:39 effective data science machine learning
+2:41 and production and career growth
+2:43 and if you follow eugene you know that
+2:46 he writes a lot
+2:47 every week on his personal blog there is
+2:50 a new article sometimes even more than
+2:51 one
+2:52 and naturally it was very difficult for
+2:54 me to think of
+2:55 anyone else who is more suited for this
+2:58 podcast episode
+3:00 so thank you eugene welcome thank you
+3:03 thank you alexei um it's a pleasure to
+3:05 be here
+3:06 yeah um so before we go into our main
+3:10 topic of writing
+3:12 uh let's start with your background so
+3:15 could you tell us a bit about your
+3:18 journey so far about your career how you
+3:20 started
+3:21 that yeah it's a bit of an unusual
+3:25 journey
+3:26 so i graduated with a psych degree about
+3:29 10 years ago
+3:30 i spent a few years working on
+3:32 investment policy
+3:33 so i decided i didn't really like that
+3:35 um i was writing a lot of text i was
+3:37 doing a lot of contracts and agreements
+3:38 and i wanted to work more with data so i
+3:41 took
+3:42 about 20 to 30 moocs and interviewed a
+3:45 few places and very lucky i got accepted
+3:47 at ibm
+3:49 so while i was at ibm i did a
+3:52 competition on product classification
+3:55 and then i my team and i managed to get
+3:58 into the top three percent and we
+3:59 happened to share about our attempt at a
+4:01 meet up
+4:03 so then it happens that an e-commerce
+4:05 startup was facing a similar problem
+4:07 about how to categorize products
+4:09 correctly
+4:10 and they had someone in the audience so
+4:12 they invited me in for lunch
+4:14 and asked how i would solve the problem
+4:16 for them you know different
+4:17 different different languages in vietnam
+4:19 and indonesia and english
+4:21 and and the next day they offered me a
+4:23 job and
+4:24 i was excited to experience how startup
+4:27 was like i was pretty early in my career
+4:29 then
+4:29 and i joined as their third data
+4:31 scientist
+4:33 so that startup was lazada a few years
+4:36 later
+4:36 alibaba acquired us and i moved on to a
+4:38 health tech startup
+4:39 unfortunately that didn't work out very
+4:41 well but so
+4:42 now here i am i'm now an applied
+4:44 scientist at amazon in seattle
+4:47 so i'm working on recommendation and
+4:48 machine learning systems right now
+4:50 so if anyone tells you that kaggle is a
+4:53 waste of time you're
+4:54 leaving proof and i was really lucky
+4:58 yeah actually there is an article about
+5:01 your career journey right and this is
+5:03 one of your most
+5:04 viewed one right from uh how is it
+5:06 called
+5:07 uh i i i'll post the link later i'll
+5:10 find the link and i'll share it later
+5:12 it's a pretty detailed uh career journey
+5:15 like uh
+5:16 that's uh that's an awesome read i
+5:17 recommend everyone to
+5:19 to go like pretty much every other
+5:21 article that you wrote
+5:23 and you know since we talked about
+5:25 writing today i'm curious when did you
+5:27 start
+5:28 writing and by writing i mean like
+5:31 internal not necessarily like technical
+5:33 documentation because like when you just
+5:35 start your career i guess you need to
+5:38 write a bit uh but like
+5:41 something external like blogging uh
+5:44 when did you start doing that yeah so
+5:46 i'm looking at my
+5:48 and my site now and my first post is
+5:50 from september 2015
+5:52 uh so this was uh sort of a report for
+5:56 datakind which is an
+5:57 ngo that works on projects so this was a
+6:01 project accelerator with a few ngos that
+6:03 we were trying to help out
+6:04 so and why did i write that they were
+6:07 just asking for volunteers to write so i
+6:09 volunteered
+6:10 um why did i volunteer i'll admit
+6:14 that my reason for volunteering was not
+6:16 entirely altruistic
+6:17 i volunteered because i wanted to
+6:19 practice writing
+6:21 so now i know i know alexa asks when did
+6:23 i start writing
+6:24 but i also want to answer the question
+6:26 of why did i start writing
+6:28 which i think is a very important one um
+6:30 so why do i want to
+6:32 volunteer and practice my writing so
+6:34 back then
+6:35 i interviewed data scientists and data
+6:38 science leads that i admired some of
+6:40 them two to three steps ahead of me
+6:42 similar to how i interviewed alexa a few
+6:44 months ago for the informal mentors
+6:46 series
+6:46 yes i'm not steps ahead of you
+6:50 so the key question i asked them was
+6:54 what skills do i need to be an effective
+6:56 data scientist
+6:58 so was it domain expertise ninja hacking
+7:00 skills
+7:01 phd level research data pipelining what
+7:04 was it
+7:06 the answer i got really surprised me um
+7:09 anyone want to make a guess
+7:12 i guess not everyone's too shy i can try
+7:17 business skills or no you know
+7:20 they say that all that all that could be
+7:22 learned but the thing that
+7:23 really made someone on their team
+7:25 someone they know really stand out was
+7:27 the ability to communicate
+7:29 the ability to write the ability to
+7:31 speak with non-technical speakers
+7:33 with that so that at least things could
+7:36 happen
+7:37 so to be honest when he first told me
+7:40 when they first told me that i i thought
+7:42 they were just bullshitting they were
+7:44 just kidding kidding me
+7:46 so but then i just decided okay i asked
+7:47 them this 80
+7:49 of them say the same thing i'm gonna try
+7:51 it for one year so for one year any time
+7:53 that people need something to
+7:54 be written i'm gonna do that so i wrote
+7:57 that for a year
+7:58 and in that same year i also spoke at my
+8:00 very first meet up
+8:02 which is about the cargo competition and
+8:05 in that
+8:06 one year so many good things happened to
+8:08 me and i decided that hey you know i'm
+8:10 gonna
+8:10 try this again for another year and so
+8:13 that eventually became a habit
+8:15 so i guess a long long answer i started
+8:18 writing about five years ago because
+8:19 people told me to
+8:20 write because they said that this is
+8:22 important for you to be effective
+8:24 and that's why i did it and actually
+8:27 ricky in chad
+8:28 wrote that communication so he correctly
+8:31 got it yes he got it um
+8:35 yeah and so this is i guess what keeps
+8:38 you motivated right because i think it's
+8:40 pretty
+8:41 like for me personally like i know that
+8:44 writing
+8:44 is important right i know all these
+8:46 benefits that it can give me
+8:48 like all these connections and every
+8:49 time i post something
+8:51 like some people reach out to me and ask
+8:53 things but still it's very difficult to
+8:56 uh because you know writing is difficult
+8:58 it takes a lot of time like it takes
+9:00 preparation and
+9:01 sometimes like you even interview some
+9:04 people right to actually get material to
+9:07 it takes a lot of time a lot of effort
+9:10 so
+9:11 and reward is not immediate right so
+9:13 yeah
+9:14 you still need to put to put a lot of
+9:16 effort and then you need to do this
+9:18 regularly
+9:18 so what keeps you motivated like this
+9:21 reward
+9:22 or something something else that's a
+9:25 that's a good question actually
+9:26 so at the end of 2020 i actually did um
+9:29 some reflection i went back through all
+9:31 my posts and
+9:33 one thing really stood out uh i was
+9:36 trying to ask myself why is it that you
+9:37 write eugene you need to understand your
+9:39 reason
+9:40 so i i realized that the main reason why
+9:42 i write
+9:43 is to share for example i would do my
+9:46 projects
+9:47 and i would share with people this is
+9:48 how i clean the amazon data this is how
+9:50 i deploy an api
+9:51 i also wrote about the classes that i
+9:53 took at the online masters of
+9:54 computer science at georgia tech i wrote
+9:57 a
+9:58 i wrote a summary for each class because
+10:01 a lot of people asking me questions
+10:02 about which classes are good which
+10:03 professors are good so i wrote that
+10:05 and i when i attend conferences and some
+10:08 of these conferences are expensive
+10:10 so i want to share my notes as well so i
+10:11 just write that and just put it there
+10:13 and that was the one reason that
+10:16 and it's it's a very satisfying reason
+10:18 because when i share and people other
+10:19 people find helpful
+10:21 it it motivates me to write more so
+10:24 thankfully uh i happen to be motivated
+10:26 by this and that continues me
+10:28 right but along the way i also found
+10:30 other reasons to write
+10:32 um so you know and like if you've
+10:34 mentioned about this before you know
+10:36 sometimes you think
+10:37 you know about something you know about
+10:39 something enough to write about it
+10:41 and then when you actually write about
+10:43 it you realize that you know nothing
+10:45 yeah so that happens to me a lot like
+10:47 you forget the details
+10:49 and you know so i write to consolidate
+10:52 all these details and you know to fill
+10:54 the gaps
+10:55 and that's another reason to write to
+10:57 learn to consolidate your knowledge
+10:59 so recently i applied this technique to
+11:01 topics that
+11:02 i had some familiarity with but i wanted
+11:04 to consolidate my knowledge
+11:05 such as the survey on natural language
+11:08 processing since
+11:09 rnns up to big bird and also on some
+11:13 topics that are new to me such as the
+11:14 discovery on data
+11:15 discovery platforms and also you know uh
+11:18 consolating my knowledge
+11:19 and sharing about real-time
+11:20 recommendations so by forcing myself to
+11:23 write i was
+11:24 forcing myself to learn and that's
+11:26 awesome
+11:28 so i write to share i write to learn and
+11:30 i guess the very last reason
+11:31 which is really awesome and is what is
+11:34 leading to this right now
+11:35 is something really interesting happens
+11:37 when you write online
+11:40 people start reaching out to you for
+11:42 feedback to discuss ideas they say
+11:43 you know this is really useful or this
+11:45 part could be improved
+11:47 and some of these people i'm really
+11:49 inspired by
+11:50 and i'm really humbled to have a chance
+11:52 to even have a chance to chat with these
+11:54 people my idols
+11:56 that i admire online and this is also
+11:59 what led to
+12:00 the current chat i'm having with alexa
+12:02 right now to share about writing online
+12:03 and to
+12:04 help people to help people more so the
+12:07 third reason why i write
+12:08 is to be a lighthouse i'm saying this is
+12:10 what i'm interested about
+12:12 if you're interested about this i hope
+12:15 you talk to me about it i hope to have a
+12:16 conversation about it so we can mutually
+12:19 learn and mutually inspire each other
+12:22 so i write to to share to learn and to
+12:25 be a lighthouse
+12:26 yeah that's that's awesome and actually
+12:28 now i'm uh
+12:29 i remember the first time we spoke on
+12:32 twitter
+12:33 and my first question was do you
+12:34 remember what i asked
+12:37 no i can't was did you reach out to me
+12:39 or did i reach out to you
+12:40 i think i reached out to you i actually
+12:42 asked hey
+12:43 what do you use for blogging because i
+12:45 also want to say oh yeah yeah
+12:47 oh yeah yeah yeah like what do you use
+12:49 so that's uh
+12:52 and by the way you'll be in the
+12:54 lighthouse maybe
+12:56 by the way if anyone's interested i use
+12:57 a very simple jackal
+12:59 jackal framework and i just host it on
+13:01 github pages
+13:04 yeah so yeah that's uh that's pretty
+13:07 amazing and especially like
+13:08 learning uh part i can 100 relate to
+13:11 that that
+13:12 uh like i think okay this will take me
+13:14 two hours to write because i know
+13:16 everything then i sit down and then like
+13:18 a week after the post still not
+13:20 finished right because like there are so
+13:21 many things i need to
+13:23 to look up especially if it's something
+13:24 technical and things like
+13:26 frameworks evolve they no longer work
+13:29 that's uh but yeah it also helps to
+13:32 learn a lot
+13:34 and hi eugene
+13:38 can you repeat what did you say uh
+13:40 previously
+13:41 you write are you right to learn
+13:44 to share to what else to be a lighthouse
+13:49 to find like-minded people to us i'm
+13:52 sorry
+13:53 to to be a beacon to be a to be a light
+13:55 bulb i'm saying that hey guys i'm
+13:57 interested in this
+13:58 if you are interested in as well find me
+14:01 to be a lighthouse
+14:03 what is a big big uh i don't know this
+14:06 word i'm sorry oh how do i say that
+14:09 um to be a broadcasting station
+14:13 i'm sending out a signal i'm sending out
+14:15 signal i like this
+14:16 come and talk to me about this perfect
+14:19 perfect
+14:20 explanation thank you you're welcome
+14:24 yeah i'm curious to know um like
+14:28 how you write like now we understand the
+14:31 motivation right so
+14:32 and this is awesome i can totally relate
+14:34 to that and
+14:36 but um it's also interesting how
+14:40 do you write like yeah you have an
+14:43 article about that
+14:44 but uh i just wanted to hear it from you
+14:47 like
+14:47 what uh what is uh like do you have any
+14:51 process maybe
+14:52 like how do you go about writing
+14:56 that's a good question so
+14:59 let me share with you how i went about
+15:00 writing the wrong way
+15:03 so when i first started writing i
+15:05 thought that you know writing is
+15:06 sitting in front of a computer typing it
+15:08 out something beautiful will come out
+15:11 it doesn't happen that way um and i
+15:14 thought that
+15:15 whatever i write must be 100 original no
+15:17 one would have written about it
+15:19 it must be 100 useful and i realized
+15:22 that looking back on it this is a very
+15:24 very very high bar
+15:26 it's very difficult made it very
+15:28 difficult for me to write
+15:29 and so how i write i realize
+15:33 it's not first not to have that mindset
+15:36 right and in my mind so now my mindset
+15:39 is i write to share and everything to
+15:41 share to learn to be a lighthouse and i
+15:43 realize that
+15:43 writing doesn't start with writing you
+15:46 start with reading
+15:47 reading things you're interested in
+15:48 learning things you're interested in and
+15:50 you think about it
+15:51 and then you write notes and now that i
+15:54 view it this way my writing doesn't have
+15:55 to be original it doesn't have to be
+15:56 perfect
+15:57 it doesn't have to be 100 useful it
+15:59 makes it a lot easier for me to write
+16:02 um so how do i write do you mean about
+16:05 how i select
+16:06 topics or how i how i actually craft a
+16:09 post what do you mean
+16:11 yeah like uh basically your process
+16:13 let's say
+16:14 uh you want to write about something
+16:16 then you all of a sudden i don't know
+16:18 you're taking a walk
+16:19 and then an idea occurs to you or you
+16:21 see like a tweet about
+16:23 real-time um machine learning in china
+16:25 and then you think okay this is
+16:27 something i can write about
+16:29 so now you have this idea right so you
+16:31 used okay
+16:32 i have some some knowledge about this
+16:34 topic i want to write and what happens
+16:36 next after this
+16:39 so usually when i see a lot of all these
+16:42 topics i'm just going to put it
+16:43 put a title in my in my in my notes i'm
+16:46 going to say hey you know here's a
+16:47 possible topic and right now my note has
+16:49 like 50 topics that i just need to
+16:51 go through week by week to write about
+16:53 it and pick um
+16:54 so how i write it my process is pretty
+16:57 straightforward
+16:58 it starts from the timeline and said to
+17:00 myself i set myself a timeline of seven
+17:02 days
+17:04 every week i aim to publish regardless
+17:06 of what state is in
+17:07 so i worship every week so starting from
+17:10 day one
+17:11 i just pick a topic that i want to
+17:12 tackle i write an outline of
+17:15 how i want to structure it so for
+17:16 example let's take real-time machine
+17:17 learning
+17:18 uh i want to write about why you should
+17:20 not do real-time recommendations
+17:22 and why would be useful and after how
+17:25 real-time recommendations look right
+17:26 and then how to do an mvp yourself so
+17:29 that's the big picture
+17:30 and then i started at bullet points so
+17:32 that takes about two hours
+17:34 then day two i look at that outline
+17:37 again
+17:37 and i rewrite it from memory so all the
+17:41 crap
+17:41 all the bad ideas go out and then the
+17:43 new ideas go in
+17:44 and then maybe at day three i look if i
+17:47 if i'm okay the outline maybe i stop
+17:49 maybe
+17:49 if i'm not okay at day three i do this
+17:51 again so i do this
+17:53 several times at on the outline section
+17:56 um until i'm satisfied so usually by the
+18:00 time it is a saturday which is day six
+18:03 when i have no more time to iterate on
+18:04 outline i'm forced to
+18:06 write the pros so how writing the pros
+18:09 is just
+18:11 just take the outline essentially the
+18:13 outline is is pretty detailed it's
+18:15 everything is there i just need to write
+18:16 it in proper human language
+18:18 instead of just bullet points so people
+18:20 can can read it
+18:21 and find images so by the end of day six
+18:24 i will always have a pro sometimes this
+18:26 takes 12 hours
+18:27 sometimes it takes six hours but i will
+18:30 always have it
+18:31 on day seven after a night of sleep i
+18:34 will read through it again
+18:35 organize my ideas organize the
+18:37 paragraphs organize the sentences
+18:40 find images and all that uh so by day
+18:43 seven uh
+18:44 my time is up i must publish it i might
+18:46 still make if people give me feedback i
+18:48 might still make more tweaks
+18:50 on the next monday and tuesday but
+18:52 usually after that i stop
+18:55 so the key part of this is the iteration
+18:59 so i iterate on the outline why do i
+19:01 iterate on an outline because
+19:02 iterating on the pros takes too long for
+19:04 me um i
+19:05 i care too much about the language the
+19:07 sentence structure the right words
+19:09 so by focusing myself forcing myself to
+19:11 only focus on the ideas on the outline
+19:14 i improve it and then i only leave very
+19:16 little time to iterate in the pros
+19:19 um so that's my process that's that's
+19:22 pretty interesting so basically like
+19:24 if you let's say look at the amount of
+19:27 time you spent
+19:29 writing an article like how much time uh
+19:32 let's say you spent uh
+19:33 on this outline like 50 or something
+19:36 like that
+19:36 it's definitely more i would say that
+19:38 the outline is at least 50
+19:40 sometimes 70 percent 70
+19:44 so like the most of the time goes like
+19:47 and you said it's five days right
+19:50 so most of the time goes to this outline
+19:52 and then that makes me really curious to
+19:55 to know like
+19:56 how this outline looks like because to
+19:59 me like when i hear outline it's just i
+20:01 don't know
+20:01 three four bullet points um yeah so
+20:05 like how do you structure this outline
+20:07 uh
+20:09 i can show you
+20:12 yeah but maybe like this will also be
+20:14 released as a
+20:16 an episode without video so maybe if you
+20:18 can just describe in
+20:20 oh okay okay yeah so the outline really
+20:22 is the key section headers and then for
+20:24 a section header each paragraph
+20:26 what should the key topic sentence of
+20:28 each paragraph be
+20:29 and then maybe i have supporting
+20:32 evidence
+20:33 et cetera um so that's it so essentially
+20:36 the outline is
+20:37 you can think of an at the later stages
+20:40 of the outline the outline really
+20:41 becomes
+20:42 sort of like the actual content itself
+20:45 it's just that it's not in paragraph
+20:46 form
+20:47 and then it makes it easier for me to
+20:48 write i just force myself to write in
+20:50 bullet points instead of
+20:51 you know the connecting structure like
+20:52 the butt and the however and although
+20:54 yeah okay yeah so basically you have all
+20:57 like
+20:58 the idea is already there you already
+21:00 know what to write about
+21:02 like probably you have already sections
+21:04 subsections
+21:05 uh even paragraphs maybe you already
+21:08 have in that outline
+21:09 and what you need to do on day six is
+21:12 just
+21:13 take these bullet points that you have
+21:15 and make them
+21:16 like uh you know translate them into
+21:20 normal natural language like i mean
+21:24 exactly okay okay makes all sense
+21:27 yeah that's pretty interesting because
+21:29 it's very it's
+21:31 not very similar to what i do so i i
+21:33 actually write
+21:34 prose as you say and then i have to okay
+21:37 like this too much i need to delete it
+21:39 and this is super ineffective and takes
+21:41 ages
+21:42 and then also deleting things from an
+21:44 article
+21:45 is uh it's very difficult right i spent
+21:49 so much time
+21:50 writing this piece and then i see that
+21:52 it's 20 minutes i know that
+21:54 nobody is going to read this this thing
+21:56 right because it takes just too much
+21:58 time to read
+21:59 and then i have to edit i have to delete
+22:02 it and that makes
+22:04 the writing process very difficult right
+22:07 and what you have i think
+22:08 i should definitely try that fully
+22:11 understand yeah
+22:12 i recommend it i have the same problem
+22:13 writing a paragraph just takes me
+22:15 20 30 minutes whereas writing blood
+22:17 points is just so easy
+22:19 because i don't care right and i'm going
+22:20 to throw it away anyway so
+22:23 yeah this uh i'm also curious like you
+22:26 said
+22:26 um that uh you try to reconstruct an
+22:29 outline from memory
+22:31 why do you do that um so
+22:35 sometimes okay so let's say you read a
+22:37 book right and
+22:38 your fri your friend asks you what is
+22:40 that book about
+22:41 you tell him the best parts the most
+22:43 important parts right
+22:44 that's what reconstructing an outline
+22:46 from memory does um
+22:48 i remember only the best parts the best
+22:50 parts of my argument
+22:51 the best parts of the story i'm trying
+22:52 to tell and that's it
+22:55 and sometimes after after i reconstruct
+22:57 it i would look at it side by side hey
+22:58 you know did i really miss out any key
+23:00 evidence
+23:01 if i couldn't quite remember it maybe
+23:02 it's not important
+23:04 um so it's like reconstructing it from
+23:06 memory is like you know putting it
+23:08 through
+23:08 a neural network only the important
+23:10 stuff filters through
+23:12 um and i do that several times yeah
+23:16 yeah that's interesting because uh yeah
+23:19 i also have this problem that
+23:20 like i cannot simply rely on my memory
+23:23 and i was going to ask you about that
+23:24 but you also mentioned that you
+23:26 then still look back at the original
+23:28 thinking okay did i forget anything
+23:30 and how often you forgot things
+23:33 uh quite often um i would always do a
+23:35 regression analysis
+23:36 like hey you know is this new one better
+23:38 than the old one
+23:40 um it gets to a certain point in time
+23:42 the difference is very small that's when
+23:43 you know you can sort of start
+23:44 converting it to pros
+23:46 yeah okay so you do this every day every
+23:49 day you try to
+23:50 uh to start from scratch basically
+23:53 from a blank page not necessary i it
+23:56 depends
+23:57 okay so some days there are some days
+24:00 where i can't finish the outline so that
+24:02 will be when i continue um on the days
+24:04 where the previous day i completed an
+24:05 outline
+24:06 and if i'm not satisfied with it yet i
+24:08 would try to rewrite it that's when
+24:09 if i'm satisfied with it i would just
+24:11 start writing my pros earlier
+24:13 you know so i gotta have a bit of a
+24:14 break on the weekends
+24:16 okay having a break is important right
+24:18 especially if you
+24:19 spend that much time on writing yeah
+24:22 i the the problem i can tell you the
+24:24 problem with me is
+24:26 i'm a very slow writer um i'm a very
+24:29 slow thinker
+24:30 so that's why i need to spend a lot of
+24:31 time on it i hope that um if any of you
+24:33 here are trying to write
+24:34 i hope that you won't have the same
+24:35 problem but this is the problem that i
+24:37 have that's why
+24:38 iterating to the outline helps me a lot
+24:41 yeah that's interesting because on this
+24:42 like when you read a post and then you
+24:46 know that this person publishes every
+24:48 week
+24:49 it's very difficult to you know see this
+24:52 process like all this
+24:54 all this work that the writer has to do
+24:57 and then you say you're a slow writer
+24:59 and then if i go to your
+25:01 book and then i see the number of things
+25:03 you publish that
+25:05 that makes it i mean if you think about
+25:08 it
+25:08 it's like one to two hours every weekday
+25:11 in the morning
+25:12 that's like seven hours and then over
+25:14 the weekends i say it's like
+25:16 13 hours plus enough five hours for
+25:18 final editing that's like 25 hours a
+25:20 week
+25:22 uh so it does take a bit of time yeah
+25:26 and we also mentioned you have a some
+25:29 list of topics like
+25:30 as i understood the list of ideas you
+25:32 mentioned
+25:33 you have around 50 right yeah
+25:36 how how do you i'm curious like
+25:40 even before that like before you start
+25:42 writing
+25:43 how do you like you have some sort of
+25:46 backlog let's say right and how do you
+25:47 put things on that backlog and
+25:49 where do you take ideas from so
+25:52 a lot of times um when i look back at
+25:55 what i write so
+25:56 uh when i see people are uncertain
+26:00 about such topics for example one thing
+26:02 that frankly remind me is
+26:04 whenever i share that my team runs on
+26:07 scrum we use agile instagram people
+26:08 always ask
+26:09 how do you do that how is it like and i
+26:11 was like okay
+26:12 when enough people ask me about it i'm
+26:14 gonna write about people always ask me
+26:16 how did you get from a psychology degree
+26:18 into data science so many people asked
+26:20 about it
+26:20 i just decided to write it so i get a
+26:23 lot of questions
+26:24 so i decide write it and then you can
+26:25 scale indefinitely right
+26:28 um that's one way sometimes i also write
+26:30 about topics
+26:31 i would like to disagree on
+26:34 for example i saw this reddit post which
+26:36 had 10 different roles in data science
+26:38 we have scientists decision scientists
+26:40 product data scientists ai engineer ml
+26:42 engineer ai product manager all this
+26:45 i i disagree i think data science data
+26:48 scientists should be more end to end
+26:50 and alexa feels the same way he thinks
+26:52 that data scientist should be more full
+26:53 stack
+26:54 i don't think that's a good direction i
+26:56 was writing in i thought what i was
+26:57 writing is
+26:58 was an unpopular opinion but netflix and
+27:02 stitch fix adopts the same approach but
+27:04 turned out to be surprisingly popular
+27:07 um sometimes i also see people focusing
+27:09 on the wrong things
+27:11 for example a lot of my men people reach
+27:13 out to me they ask me is coding
+27:15 important
+27:16 is writing they're important they say
+27:17 writing documentation takes a lot of
+27:18 time
+27:20 i disagree i think writing becomes more
+27:22 important
+27:23 in your career as you progress sometimes
+27:27 people ask me what's the point of
+27:28 reading papers
+27:29 i disagree you need to read papers to
+27:31 keep up in your field
+27:33 so i write to answer questions that
+27:36 people get
+27:37 i have and occasionally if i may
+27:40 i mean once i build up enough trust with
+27:42 the community
+27:44 i disagree on something and to try to
+27:46 share my my differing opinion
+27:48 okay yeah makes all sense um
+27:51 but you said you have
+27:54 three can ask a question and because it
+27:58 kind of relates
+27:59 to what alexia was asking so you said
+28:01 you
+28:02 are kind of thinking about 50 topics but
+28:05 then
+28:05 let's say you have to finish a topic in
+28:07 a week's time how do you prioritize
+28:10 these 50 topics or n number of topics
+28:13 that you're thinking about
+28:16 okay so here's my trick i realized that
+28:20 people on my that come to my site right
+28:23 they really like enjoying the reading
+28:24 the machine learning stuff
+28:26 but i to be honest guys i can't write
+28:29 about machine learning
+28:30 every week um i'm really interested in
+28:33 it but not to the extent i'm writing
+28:34 about it every week so
+28:36 um i would try to make sure that i write
+28:37 about machine learning once or twice a
+28:38 week
+28:39 and then i add in some other stuff which
+28:41 i think is really important
+28:43 for example um next week i want to write
+28:46 something about
+28:46 why you should not be doing online
+28:49 courses
+28:49 in 2021 i know it's very controversial
+28:53 but i think alex and i talk a lot about
+28:55 this as well and he probably knows the
+28:57 reason why i'm saying this
+28:58 i want to write that to just tell people
+29:01 guys there's a better way to learn
+29:03 uh because a lot of people when people
+29:05 talk to me they ask me you know is this
+29:06 course good is that course good should i
+29:08 do this masters
+29:10 yeah so i how i prioritize to be honest
+29:13 i
+29:14 i the only prioritization i have is at
+29:15 least one or two machine learning topics
+29:18 a month the rest of the time is is
+29:20 messages that i want to try to get
+29:22 across i imagine
+29:23 writing for my teammates i imagine
+29:25 writing for my mentees
+29:27 what is my view that i want to share
+29:30 with them
+29:31 to help them be more effective data
+29:32 scientists and this might not be related
+29:34 to machine learning at all sometimes
+29:37 so you basically have an image in your
+29:40 head
+29:40 of the target audience right of the
+29:43 person who is going to read that
+29:45 um and do you use this somehow in your
+29:48 writing like when you prepare this
+29:50 outline
+29:51 how do you use it that's a great
+29:54 question so
+29:55 um i write mainly for three groups of
+29:58 people the first person i write for
+29:59 is myself um when you write you should
+30:02 write for yourself because
+30:04 let's be honest no one's gonna read it
+30:06 if you write for yourself
+30:07 you're going to benefit from it the
+30:09 second person i write for is my wife
+30:11 i hope to actually at least help her
+30:12 understand what is it i do
+30:14 the third person i write for is my
+30:17 current team members my future team
+30:19 members
+30:20 my like-minded friends of community so
+30:21 i'm going to assume that these are
+30:22 people
+30:23 with a bit of a technical background
+30:25 maybe a bit of machine learning
+30:26 background
+30:27 people who are driven to learn to level
+30:29 up
+30:30 so i sort of assume that and you know um
+30:34 sometimes some of the topics i write
+30:36 about uh don't get a lot of traction
+30:38 not not very popular like the the the
+30:40 topic i wrote about the importance of
+30:42 uh writing versus coding i think that's
+30:44 a very important topic
+30:46 but it didn't get as much fraction as i
+30:47 like but maybe the community is not
+30:49 ready for it yet
+30:50 but maybe some time so yes i do have a
+30:53 specific group of people
+30:54 my future teammates and my current
+30:56 teammates in my industry
+31:00 okay and like um
+31:06 sorry i get a bit of a destruction uh
+31:09 yeah the kindergartens are closed
+31:13 okay can i ask a question in the
+31:15 meantime please
+31:16 yes uh you have a very very uh
+31:19 first of all thanks for the all the
+31:20 detail and um it resonates in in
+31:23 a lot of respects and you have a very
+31:25 organized uh
+31:27 workflow for for go for reviewing the
+31:30 draft reviewing the concept
+31:32 and i was wondering does it ever happen
+31:36 that
+31:36 there's some tipping point then
+31:39 editing it more makes your text
+31:43 worse like
+31:46 sometimes like you you know that you
+31:48 would have to release it and
+31:50 you know that the extra time spent on
+31:52 the on editing
+31:54 or drafting would just make things worse
+31:57 or it's always kind of linear so do you
+32:00 see any non-linearities in your writing
+32:03 process
+32:04 that's a good question so let me answer
+32:06 when is the tipping point the tipping
+32:08 point is usually sunday night
+32:10 i would love to edit it past sunday
+32:12 night i can't i must release it by
+32:13 sunday night
+32:15 so do further iterations make it worse
+32:18 yes further iterations can make it worse
+32:20 that's why when i iterate on outlines i
+32:22 always compare them side by side
+32:24 which one communicates my story the the
+32:27 message i'm trying to get across better
+32:28 when i'm editing paragraphs um i will
+32:32 just type a new paragraph above the old
+32:33 paragraph i compare two paragraphs
+32:36 um usually my metric for success is it
+32:38 shorter
+32:39 and conveys all the key ideas if it is
+32:41 yes if it's longer
+32:43 and it gets a bit more messed up it's a
+32:44 bit harder to write that's when you know
+32:46 it's worse and you delete it
+32:47 um so it can regress you can regress and
+32:50 you should always
+32:51 try to do some sort of regression
+32:52 analysis to this check
+32:54 is it better okay
+32:57 this is what we mean by regression
+32:59 analysis i was going to ask that
+33:01 i'm sorry if it has to do anything with
+33:05 linear regression
+33:06 no no yeah it's like testing regression
+33:08 yeah
+33:09 okay yeah so do you also see your result
+33:12 as a product
+33:14 oh yes uh design product life
+33:18 and life you know versioning
+33:21 yeah i i do i i imagine
+33:25 every everything i write is like a small
+33:27 package of love
+33:30 so if
+33:33 see when i write about stuff i really
+33:36 want to
+33:36 help people understand about it if they
+33:39 don't understand about it then i fail
+33:41 so that means my product ux is bad if i
+33:43 write about a product and the substance
+33:45 is not there it's not useful
+33:46 that means the back end is bad so it's
+33:50 very difficult
+33:51 and i don't think i will ever get there
+33:53 but the way for me to do this
+33:54 is to just force myself to write every
+33:56 week and
+33:58 every week there'll be 50 iterations or
+34:01 rather 50 different products and i would
+34:02 have getting enough practice
+34:04 maybe in five ten years i would be good
+34:06 enough um i don't know
+34:09 five ten years like if now your articles
+34:12 are that good like what will happen in
+34:14 five ten years
+34:15 um in five ten years i can write the
+34:17 same thing in
+34:18 five hours instead of 20. yeah
+34:22 do you somehow try to control the length
+34:24 because for me
+34:25 personally this is a problem because
+34:27 like i have this idea but to actually
+34:29 elaborate
+34:30 um this idea like it takes just too much
+34:33 space like i need too many pages and
+34:35 then i know that people
+34:36 with the attention span we have today
+34:39 like people will not just
+34:40 will not read this um how do you over
+34:42 like
+34:43 first of all is this a problem for you
+34:45 and if it is like how do you overcome
+34:47 this
+34:49 um this is an interesting question so
+34:51 i've i've read
+34:52 and a lot of people have told me that
+34:54 the ideal length for an article
+34:56 is about 1 500 words that's about 10
+34:59 minutes and that's the
+35:00 average attention span of you can get
+35:02 from reading online
+35:04 but honestly before this and even right
+35:07 now after this i i don't really think
+35:09 about it
+35:10 i want to write just enough to
+35:13 communicate
+35:14 the substance and the content and the
+35:16 message across
+35:17 um sometimes this is just 600 words or a
+35:20 thousand
+35:21 and if that's it perfect sometimes i
+35:24 need to go into
+35:25 four thousand words five thousand words
+35:27 like the one about my
+35:29 the recent one about real-time
+35:30 recommendations
+35:32 i feel that if i cut out anything if i
+35:34 cut off any paragraph
+35:35 it loses the big picture and that's fine
+35:39 because the assumption is this i assume
+35:41 that my audience are people
+35:42 like me my future team members my
+35:44 current team members
+35:46 people who want to learn about real-time
+35:47 recommendations i assume that they are
+35:49 already
+35:49 highly interested in it and they will
+35:51 read it and i don't expect them to read
+35:52 it all at once
+35:53 they can really refer to it anytime but
+35:56 to be honest i don't have a
+35:58 i don't have a maximum length yeah and i
+36:01 just try to keep it as short as i can
+36:03 because it's also um courteous courtesy
+36:06 on the reader's time
+36:08 and i guess having this deadline of one
+36:11 week helps not to
+36:13 uh you know not to put too much
+36:16 information there
+36:17 yes definitely and
+36:20 for me one of the most difficult parts
+36:23 is
+36:23 like let's say i already finished
+36:26 writing something
+36:28 how do you call this thing like how do
+36:29 you come up with the title or maybe you
+36:31 even do this before you start writing or
+36:34 how does the process
+36:36 look for you when you come up with a
+36:38 title
+36:39 that's a good question um i
+36:42 named my blog post how i would name my
+36:45 functions
+36:47 in the easiest way that no one would
+36:48 misunderstand
+36:51 so this is a difficult thing which i'm
+36:53 still trying to learn
+36:54 and i just try to come up with the
+36:57 sentence that explains what this is
+36:58 about it's just like how you write
+36:59 documentation how you write code
+37:01 however i've heard that there are other
+37:03 things to consider such as seo
+37:05 or how to get people click on your title
+37:07 more
+37:08 but usually by the time it's sunday
+37:11 night
+37:11 i'm publishing it i just don't have the
+37:14 energy to think about a title anymore
+37:15 honestly speaking
+37:17 so i don't i don't i don't put a lot of
+37:20 effort into
+37:21 yeah because like when we were planning
+37:24 this event
+37:25 i uh was talking to eugene and then i
+37:27 said
+37:28 like i want to call the event blogging
+37:30 and technical writing
+37:32 but then you said no no like this title
+37:35 you didn't say that it's boring but you
+37:37 said okay like
+37:38 you should write it the importance of
+37:40 writing in a tech career
+37:42 and then that sounds much much better
+37:44 than what i
+37:45 suggested like it's sort of it's not
+37:48 just the essence
+37:49 because i think like blogging and
+37:50 technical writing also capture the
+37:52 essence right but this is
+37:54 you made it sound so much more
+37:56 interesting right
+37:57 and we can see that uh like if we look
+38:00 at the number
+38:01 of people who registered for this uh for
+38:03 this event like
+38:04 that like this is more than usual so you
+38:08 really nailed
+38:09 the uh probably it's the title also
+38:12 probably did play the role but yeah
+38:15 like do you think yeah but
+38:19 yes i wanted to try to explain why i
+38:21 named it that way
+38:22 um so when alexa first reached out to me
+38:25 for this i was like hey this is a great
+38:27 opportunity
+38:28 to get people to write more and how do i
+38:31 get people to write more i say it's
+38:33 important
+38:34 and this is of course a very specific
+38:36 audience right in a tech career and you
+38:38 know tech people
+38:39 are very focused about their careers so
+38:42 guys this is
+38:42 important i want you to write more so
+38:45 listen to me
+38:46 i'm going to talk about why writing is
+38:47 important in a tech career
+38:50 um hopefully i convince you
+38:53 to start writing and practicing and
+38:54 that's why that's the essence of the
+38:56 title
+38:57 yeah that makes sense you again keep the
+38:59 audience in mind when coming
+39:01 and let's say you convinced now we have
+39:03 right now
+39:04 uh 34 people and you convinced now
+39:07 everybody on this call to start writing
+39:09 right and what do they do next so now
+39:12 they
+39:12 they understand um okay writing is
+39:15 important
+39:16 i want to write more what do i do next
+39:18 like how do i start working
+39:21 just start writing um i i get i
+39:24 i know it's it's a very uh
+39:28 not a very good answer but you know okay
+39:29 let me share people
+39:31 these are the questions i ask people to
+39:33 start writing and then this this is this
+39:35 this is how they respond oh you know
+39:37 they say oh i'm afraid of writing online
+39:39 if i write about this it's just a
+39:40 summary of articles it's just a book
+39:42 summary
+39:42 will it be useful will it be worthy of
+39:45 writing online
+39:47 i mean i'm going to share with you a
+39:49 pretty brutal truth um
+39:51 and in the sense that your first article
+39:54 no one is going to read it
+39:56 so just like they say dance like nobody
+39:58 is watching
+39:59 write like nobody's reading it doesn't
+40:01 matter you're writing for yourself
+40:03 to practice for yourself just right
+40:06 second
+40:06 what to write about a lot of people ask
+40:08 about this as well
+40:10 write about what you're thinking about
+40:11 now write about what's on your mind
+40:14 what keeps you out up at night um it
+40:16 doesn't have to be
+40:17 related to your career it could be about
+40:19 gardening it could be about
+40:20 i don't know recipes it doesn't matter
+40:23 just just right
+40:25 um so some people say oh i need to find
+40:27 my topic
+40:28 my my team to write about right and i'll
+40:31 share with you about this example of
+40:32 patrick mckenzie i don't know if you
+40:33 know him he goes by patio 11
+40:35 on twitter so for years he just wrote
+40:38 about what's on his mind i think
+40:40 compilers or drew
+40:41 ruby or java whatever happening in japan
+40:44 but
+40:44 after he looked back and he's written
+40:46 about 500 over
+40:48 pieces after he looked back after
+40:51 several years he found that
+40:53 he the things he wrote that's at the
+40:55 intersection of engineering
+40:57 and marketing were really really
+40:59 resonated with his audience and that's
+41:01 how he found his team
+41:02 but it took him several several pieces
+41:05 and one or two years to figure that out
+41:07 it's just the same way you cannot
+41:09 connect the dots looking forward
+41:11 it's only after you've written a lot
+41:13 then you realize you look back hey what
+41:14 is your motivation what are the topics
+41:16 that you sort of write about
+41:17 and then it happens so it's going to be
+41:21 a long-term process
+41:22 okay and uh one recommendation i often
+41:25 see
+41:26 uh on the internet in blog posts is like
+41:29 first you need to find your niche then i
+41:31 don't know blah blah blah
+41:33 so just what you're saying is
+41:36 don't care about this finding your niche
+41:38 just whatever is on your mind just
+41:41 go sit on your computer and you know
+41:44 start writing
+41:46 i would say that it's useful to find
+41:47 your niche but you won't find your niche
+41:50 before you write a lot and that's where
+41:53 you find your niche right
+41:54 so it's sort of a circular thing they
+41:56 don't say that you you first fight on
+41:58 you you write a lot then you find your
+41:59 niche but you after you write a lot then
+42:01 you reflect
+42:02 back that's where you see your niches
+42:04 but then also writing about the same
+42:06 thing
+42:07 over and over again is pretty boring
+42:09 right
+42:11 okay exactly so so that means i can't
+42:13 write about machine learning
+42:15 every single week right i'm interested
+42:17 in it but i have other interests too
+42:19 that are important like about career
+42:21 about um
+42:23 data science processes so i try to write
+42:25 about that so i haven't found my
+42:27 my topic of focus yet and that's fine
+42:30 because i'm just writing for myself and
+42:32 my topic of focus is whatever eugene is
+42:34 thinking about
+42:35 that's it and what
+42:38 tool specifically would you recommend to
+42:40 use like
+42:42 should it be medium should it be
+42:43 wordpress should it be jko
+42:45 uh like what would you recommend
+42:49 um for this i recommend whatever is easy
+42:52 for you to use
+42:53 um a lot of people spend too much time
+42:55 oh i need to find the perfect domain
+42:58 and you have the perfect hugo or gatsby
+43:00 or jaco setup
+43:02 it needs to be ci cd come on guys
+43:05 the time that you spend on that just
+43:06 spend it on writing so just pick
+43:08 whatever's
+43:09 the least amount of work writing is
+43:11 already really really difficult
+43:13 remove all the excess work and just
+43:15 focus on writing
+43:17 so honestly when i started i use
+43:20 wordpress
+43:21 it was really easy and just write in it
+43:23 it got to some point in time where i
+43:25 wanted to customize my team and
+43:27 wordpress didn't allow me to do that
+43:28 that's why i
+43:29 switched to hosting my new site but by
+43:31 then i already written like 50 60.
+43:33 so the tool is the least of a concern
+43:35 just write
+43:36 and just push it online substack
+43:38 wordpress medium whatever whatever
+43:40 reduces your uh barriers to entry
+43:44 i think medium is pretty easy like you
+43:46 don't need to
+43:48 uh to do much there just get an account
+43:50 and start writing right with wordpress
+43:53 it might require some setup right but
+43:55 with me
+43:57 and um so we have a question um
+44:00 um the question is i assume you're busy
+44:03 how do you schedule and prioritize
+44:05 this writing work into your daily
+44:07 routine
+44:08 uh yeah well i am busy but
+44:12 um i guess so
+44:15 let me share a bit
+44:18 in 2017 to 2019 i was doing an online
+44:21 masters
+44:22 of computer science so at that time i
+44:25 was spending 20 to 40 hours
+44:27 a week on that online masters while i
+44:28 was working part time
+44:30 so after i graduated from that suddenly
+44:33 i had a lot of time
+44:35 so that's when i decide okay i need to
+44:37 pour this energy somewhere else and i
+44:39 decide to pour it into writing so it's
+44:41 one two hours
+44:43 uh one to two hours a day early in the
+44:46 morning
+44:47 um it's just like it's just the same
+44:49 thing as
+44:50 exercise as meditation it's just a daily
+44:53 habit
+44:54 and then also um maybe on my saturday is
+44:56 just hammering out the pros
+44:58 and sundays um just trying to edit a bit
+45:01 so
+45:01 i do make time to go out and i
+45:03 thankfully have a very understanding
+45:05 wife
+45:06 um but i i think it's possible and you
+45:08 don't have to spend so much time you can
+45:10 just write short snippets uh maybe 500
+45:12 words just start small start with
+45:13 whatever you're comfortable with tweet
+45:15 all right yeah just tweet but actually
+45:18 tweets
+45:19 are even more difficult right because of
+45:21 the limitation you have
+45:22 or you have to use threats right yeah
+45:25 yeah and um so in
+45:28 by the way speaking of twitter like
+45:30 yesterday i posted a tweet saying that
+45:32 you will tell us the secret sauce of
+45:35 writing
+45:36 what is it i have no secret sauce
+45:39 honestly when
+45:40 i i woke up today and i saw alex and i
+45:42 said crap i have no secret sauce
+45:47 but i have been i hope i have been
+45:48 completely transparent and honest enough
+45:50 and that
+45:51 um maybe the the outline iteration
+45:53 approach is my secret sauce i don't know
+45:54 it's something that
+45:55 i i'm i hear from you that this is
+45:57 something new
+45:58 um but yeah i don't have a secret sauce
+46:00 really yeah because we have a question
+46:03 like how did you make your blog popular
+46:06 so
+46:06 how what did you do to uh
+46:10 to attract people so they go and read
+46:12 and then get in touch with you
+46:16 i don't know um i wish i wish i had i
+46:19 had answered that so i could repeat it
+46:20 but
+46:21 um i would write there
+46:25 and then i would write a tweet about it
+46:28 and then i would write a copy that same
+46:29 tweet and post it on linkedin
+46:32 and that's it and people who saw it
+46:36 would
+46:37 maybe circulate it and that's it that's
+46:38 my only distribution channel because
+46:40 it's already so much effort to just
+46:42 compose tweets right i just
+46:44 i'm just gonna write 200 word 200
+46:46 characters and just post it there
+46:48 and that's it and um
+46:51 eventually i sort of find um like-minded
+46:54 people who who
+46:56 who just who just uh read my stuff and i
+46:59 i didn't really put a lot of effort into
+47:00 that honestly and i don't think it's
+47:01 very popular
+47:02 um but i'm at least thankful that i can
+47:05 find uh people
+47:06 who have the same interests that can
+47:08 engage with me on that
+47:10 well you're saying not popular but how
+47:13 many times
+47:13 did you end up on the first page of high
+47:15 kill news
+47:17 uh i can't remember honestly but so many
+47:20 times
+47:22 hacker news is a completely different
+47:23 thing um hacker news really likes uh
+47:26 really likes disagreements i think my
+47:28 post was like
+47:30 stop taking regular notes right like
+47:32 stop taking notes use as a tailcaster
+47:34 instead and you know people are debating
+47:35 about it oh this is a new fad and that's
+47:38 why
+47:38 um so it's a heck of a completely
+47:41 different thing
+47:42 yeah yeah but um i think it wasn't just
+47:45 one post that ended up there that
+47:47 also your post about uh
+47:51 this uh like the data science should be
+47:53 more end-to-end
+47:54 right oh okay up there no
+47:57 but at least i think this article
+48:01 so basically the secret sauce is uh
+48:04 disagreement right so find what people
+48:06 disagree about
+48:07 them it could be and i think maybe
+48:10 now that i think about it that the real
+48:11 secret sauce is that
+48:13 um through a lot of that i think last
+48:16 year i threw
+48:17 i shot 55 arrows and you know three of
+48:20 them
+48:21 hit the mark so my my heat rate is about
+48:24 i don't know
+48:25 2.5 so if you shoot a lot things happen
+48:29 so basically consistency right yeah
+48:33 okay and uh we also wanted to talk today
+48:35 about not just writing for
+48:37 uh let's say external audience for the
+48:40 internet but also
+48:41 internal like at work and uh
+48:44 this is also an important part right uh
+48:46 for your career not just
+48:48 we are not just in just writing code uh
+48:52 for entire day right so we also need to
+48:54 communicate with other people
+48:56 and uh writing is a form of
+48:59 communication right
+49:00 so and when we write documentation right
+49:03 we all
+49:04 always need to think about the reader so
+49:06 it's not just you know
+49:07 an afterthought right so what what do
+49:09 you think about
+49:10 writing at work like why is it important
+49:12 and how you should
+49:14 go about doing that
+49:17 so why is writing and what important
+49:21 well that's that's a very difficult uh
+49:24 there's a very different that's a very
+49:26 big question to answer
+49:28 uh why why a project should need uh
+49:32 why does the project need documentation
+49:35 so let me let me share it this way um
+49:40 before you start a project you sort of
+49:42 need to socialize
+49:44 your idea and check your idea with other
+49:46 people so so so let's just take uh
+49:49 uh a document that amazon is very famous
+49:51 for it's called the press release
+49:54 before we start a project we would write
+49:56 a press release um and you know maybe
+49:58 the press release for amazon s3 is like
+50:01 hey no
+50:01 highly scalable um i don't know storage
+50:04 at a very cheap price
+50:06 and we send it out internally are people
+50:08 excited about this
+50:09 um if people are excited about this hey
+50:12 maybe this product could work
+50:13 and this is before we even do any coding
+50:16 so we first do this to test the audience
+50:18 to check the audience right
+50:20 and this is how uh the same thing you
+50:23 you test the audience you type to your
+50:24 users
+50:25 and after you decide to write it um
+50:28 if the press release document works well
+50:31 then maybe you write something called
+50:32 the design document um i know software
+50:35 engineers are very familiar with this
+50:36 but the design dock is essentially
+50:38 hey let's just say i'm going to write
+50:39 the design document for real-time
+50:41 recommendations
+50:42 um how i would train the model
+50:46 how i would serve the model what are my
+50:49 business and technical requirements
+50:51 uh in terms of latency in terms of
+50:52 throughput in terms of cost
+50:55 i would write that and again i would
+50:56 circulate that so this gives you
+50:59 writing at work gives you a way to test
+51:01 your ideas
+51:02 at scale before writing any code
+51:05 so that's really powerful right
+51:09 um you test first you test it from the
+51:11 customer perspective is the idea
+51:12 exciting then you test it from the
+51:14 implementation is it uh
+51:16 is it useful uh is it possible you're
+51:18 gonna check it with
+51:19 your principal engineers your fellow
+51:21 engineers and make sure
+51:23 it works and documentation right i mean
+51:27 so alexa mentioned about augmentation i
+51:28 mean for me
+51:30 uh personally i'm a very forgetful guy
+51:34 if i write some code six months later i
+51:36 look at it uh i would definitely forget
+51:38 it and i will be looking at my code and
+51:40 be thinking
+51:41 what is this idiot eugene writing about
+51:44 why did he implement it this way so
+51:47 documenting my code is like me in the
+51:49 past sending to myself hey you know you
+51:51 might think this is really stupid
+51:52 but here's the reason for this because
+51:54 the data before this date is like this
+51:56 or you know because this is the only way
+51:58 uh this is the way i had to optimize the
+52:00 code so you meet the latency
+52:01 requirements
+52:02 and this is what it does documenting
+52:04 your code does that
+52:05 similarly documenting your projects why
+52:08 did we decide to go with
+52:10 um i don't know dynamodb instead of
+52:13 redis
+52:14 what's the pros and cons of each what's
+52:16 the decision log uh why did we decide to
+52:19 go with flink instead of spark
+52:22 so you know all this uh i mean at least
+52:24 you would have done the research for
+52:26 this it would
+52:26 all be in your head but you want to
+52:28 write it down so that you remember
+52:29 and you want to write it down to share
+52:30 the knowledge with your friends
+52:33 so i think i hope that answers the
+52:35 question uh but okay
+52:36 you write at work writing is important
+52:38 at work to you know test your ideas
+52:39 through a press release
+52:41 test your ideas through the design doc
+52:42 whether it fly uh you document that work
+52:45 you document your
+52:46 stuff so that the knowledge is not lost
+52:48 and you know you scale the knowledge
+52:50 more effectively
+52:51 and then also like you said uh you're
+52:54 right for your future self right
+52:56 because you can forget things and this
+52:58 is uh that also resonates with me
+53:01 because
+53:01 uh like i know that if i do this uh
+53:05 sequence of uh common light commands
+53:08 right
+53:08 like terminal commands i know that in a
+53:11 few days i will forget them
+53:12 exactly i need to write them down so
+53:15 next time i need to execute the same
+53:16 like create do the same thing
+53:18 i have reference and i just can copy
+53:20 paste things
+53:22 um i also wanted to ask you like you
+53:25 mentioned
+53:25 um like this uh press release and then
+53:28 design document
+53:30 is it something that uh i think in
+53:32 amazon is
+53:33 called working backwards is it that
+53:35 thing
+53:36 uh so like yeah the work like
+53:40 this backwards process what what is it
+53:44 the press release is part of the working
+53:45 backwards process so the working
+53:46 backwards process is it's not exactly a
+53:48 secret i mean
+53:49 it's online so essentially working
+53:51 backwards is what it is
+53:53 we work backwards from the customer
+53:57 and that's the right way to work right
+53:59 so it means that we understand try to
+54:00 understand what the
+54:01 customer problem is what the customer
+54:02 potential demand is and we walk
+54:04 backwards
+54:05 from it the other way of doing this is
+54:07 you know
+54:08 we build it and people use it because
+54:10 what we build is so awesome but you know
+54:12 often that doesn't work um so that's the
+54:16 working break was process and alexa you
+54:17 talked about this a lot
+54:18 first um first do some research what is
+54:21 the problem customer has
+54:22 before you even train a model to try to
+54:23 solve that problem if that's not a
+54:25 problem or if
+54:26 the the potential effort say for the
+54:28 cost save or the potential
+54:30 uh revenue is too minor it's not
+54:34 we shouldn't do an effort for that right
+54:37 so we work backwards
+54:38 so the press release um in the working
+54:41 backwards process helps us to
+54:43 solidify our idea around something
+54:45 single uh so
+54:47 in the s3 the s3 approaches we want to
+54:50 provide highly scalable
+54:51 load latency low cost and so
+54:54 if the team is going to build around
+54:56 that i think i think for alexa
+54:58 initially the press release was
+54:59 something like uh i don't know you can
+55:02 start music with your voice command
+55:04 initially it was just that starting
+55:06 music via voice
+55:07 but you know and over time of course he
+55:09 has been very popular and he has grown
+55:11 and grown
+55:12 such that you can shop for groceries you
+55:13 can ask questions you can control
+55:15 lighting
+55:16 but the press release the first one it
+55:17 just tests the market
+55:19 are people interested in internal
+55:20 stakeholders interesting are your vps
+55:23 are your directors interested in it to
+55:27 channel resources into this research if
+55:29 that
+55:31 that is important yeah makes sense and
+55:34 writing is uh an important part of
+55:37 this uh this process right yeah so
+55:41 i think interesting i think i'm sure
+55:43 everyone knows most people know that
+55:45 amazon doesn't have
+55:46 slides uh we don't use powerpoint at
+55:48 least most of the time so you write in a
+55:49 document
+55:50 and that makes it very easy to scale
+55:52 right to share something
+55:54 you don't need to be there to present
+55:55 for half an hour you can just send them
+55:57 the document and they can just read it
+55:58 so it really saves a lot of time on the
+56:01 person
+56:02 of course you know writing that document
+56:03 takes a lot of time um but once you have
+56:05 written it it's upfront course that you
+56:06 almost never have to repeat again unlike
+56:09 a unlike uh
+56:10 uh like a presentation you always have
+56:12 to be there to present or you could be
+56:14 yourself i don't know but i can tell
+56:16 this document writing process
+56:18 is very useful and i it will follow me
+56:21 wherever i go i will adopt this same
+56:23 practice
+56:25 and i think we still have a bit of time
+56:29 and i have another question for you um
+56:32 so you and remember you can ask
+56:34 questions in
+56:35 uh slider we still have time for a
+56:38 couple of questions i guess
+56:39 so what i want to ask you is
+56:43 writing for portfolio so let's say you
+56:45 made you
+56:46 you did an awesome project uh let's say
+56:49 it was a kaggle competition
+56:50 you finished in i don't know top
+56:54 20 top 30 like with a medal and you want
+56:58 to put all your code to
+56:59 github what do you do what do you need
+57:03 to put in readme so people
+57:05 can immediately see the the value of
+57:08 this thing
+57:12 so let's think about it let's say i'm
+57:14 searching on github
+57:16 right for i don't know solution to i
+57:18 don't know something uh some cargo
+57:20 competition
+57:21 and what would i find i would find
+57:23 hundreds of repos
+57:25 on that on that cargo competition so
+57:27 what distinguishes
+57:28 so right now i'm thinking what would
+57:29 distinguish one repository from another
+57:32 i think uh clearly a readme is useful a
+57:35 readme that says
+57:37 how to start using this code how to
+57:39 quick start how to install this code
+57:41 um if it has a requirements that will be
+57:43 really useful
+57:45 and maybe it explains you through the
+57:46 big processes you know the data prep
+57:48 step is in this folder
+57:50 the machine learning step is in this
+57:51 folder the validation step is in this
+57:54 folder
+57:54 so a re i think a basic readme that sort
+57:57 of explains it
+57:58 that would be good enough so now if
+58:01 you're thinking of it from a
+58:03 i don't know building a portfolio to get
+58:05 a job perspective
+58:06 now think of it from the manager's point
+58:07 of view clearly i mean if they're going
+58:09 to hire you you're definitely going to
+58:11 be able to write code
+58:12 clearly but the question is are you able
+58:14 to document code and share about it
+58:16 like what we spoke about um when they
+58:19 read your code does the documentation
+58:21 recess where they read your read me and
+58:22 does it make sense do you explain
+58:24 uh explain it well enough that they feel
+58:27 confident that you can do the same thing
+58:28 at work
+58:29 so i think that's that's something that
+58:31 will be helpful
+58:44 am i audible i think yeah yeah audible i
+58:46 can
+58:47 i can hear you here but i can see the
+58:49 connection is a bit choppy
+58:51 hi am i here yes you are here
+59:02 oh
+59:05 sorry uh yes i
+59:09 i guess actually now we are
+59:12 uh we're already um like it's already
+59:16 6 p.m here so it means we finished
+59:20 um so maybe you have any last words
+59:23 uh no not really oh i i do have one
+59:27 um if i had if i had to share about it
+59:30 um
+59:33 i'm gonna paste a link in the chat
+59:36 so for those of you who are regular
+59:40 readers on my site
+59:41 um please go to that link and
+59:44 tell me what you would like what can i
+59:46 write that will be useful for you
+59:48 um uh so i i'm always trying to
+59:52 to figure out what my audience wants so
+59:54 this is a topic poll
+59:55 there are a few topics there already you
+59:56 can just thumbs up thumbs down or if
+59:58 there's a new topic that you want to
+59:59 propose that you don't know you can just
+1:00:01 share that
+1:00:02 that's it okay question again
+1:00:06 alexa may i ask him
+1:00:09 yes sure okay um
+1:00:13 why some linkedin profiles i can
+1:00:16 uh ask for a connection because i try to
+1:00:19 ask your connection and one of the
+1:00:22 things is uh i should say why i'm trying
+1:00:26 to connect
+1:00:26 you second i the
+1:00:30 second option was follow your content
+1:00:34 but usually i when i like
+1:00:37 the content person i prefer
+1:00:40 ask for ask a connection then just
+1:00:43 follow
+1:00:43 and what's the main difference between
+1:00:46 these two
+1:00:48 thanks um so that's a important that's a
+1:00:51 good question i guess
+1:00:52 for me what i do is on linkedin you can
+1:00:54 sort of set your default
+1:00:56 to uh so the default is connect but i
+1:01:00 set it to follow
+1:01:01 uh because the connection just keep
+1:01:04 building up and
+1:01:05 it just gets a lot however if you click
+1:01:07 the plus sign that's a small plus button
+1:01:09 you can click on it and
+1:01:11 the the ability to connect is still
+1:01:12 there
+1:01:20 yeah but my question you didn't answer
+1:01:22 me
+1:01:24 what's the main difference in between
+1:01:27 follow
+1:01:28 a person then ask a connection
+1:01:32 uh so following a person is just
+1:01:35 just like twitter you would follow that
+1:01:36 person but the person wouldn't follow
+1:01:38 you
+1:01:39 a connection is a two-way follow it's a
+1:01:42 bi-direction and you you would have a
+1:01:43 like a connection to show that you're
+1:01:45 actually friends
+1:01:49 okay are there more questions
+1:01:55 yeah i guess uh since we're running out
+1:01:57 of time and probably you need to go
+1:01:58 so thanks a lot for uh coming today for
+1:02:02 sharing your knowledge uh with us and
+1:02:05 for sharing
+1:02:06 also your secret sauce i think like what
+1:02:08 you shared with us definitely
+1:02:10 deserves uh this this name so now i know
+1:02:14 like next time i'll write
+1:02:15 i'll try to follow uh your process and
+1:02:18 see
+1:02:19 what happens and i think it will be a
+1:02:21 lot better than what i
+1:02:23 previously wrote thank you i i hope so
+1:02:26 so um thanks alexey thanks everyone
+1:02:30 thank you everyone good way
+1:02:33 yeah let's say could you also send me
+1:02:34 the the the video or clip
+1:02:37 after this so i could sort of write a
+1:02:38 transcript
+1:02:40 uh

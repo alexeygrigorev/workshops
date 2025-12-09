@@ -1,0 +1,1483 @@
+Machine Learning Engineering in Finance
+
+0:00 hi everyone Welcome to our event this
+0:02 event is brought to you by data talks
+0:04 club which is a community of people who
+0:05 love data we have weekly events and
+0:08 today is one of such events we had a
+0:10 break with events for roughly a month
+0:12 now we are returning and if you want to
+0:15 find out more about the events we have
+0:17 there is a link in the description click
+0:19 on that link and you'll see all the
+0:21 events we have in our
+0:23 pipeline which is not maybe right now I
+0:27 don't think we published everything
+0:28 announced everything but we have quite a
+0:30 few events in the
+0:32 pipeline um and a couple of months ago I
+0:36 went to Porto and I met a few amazing
+0:39 people and finally we are scheduling all
+0:42 this uh interviews with people from PTO
+0:46 so today n is one of them but anyways so
+0:48 you'll see more events also coming from
+0:50 that for the conference uh do not forget
+0:53 to subscribe to our YouTube channel this
+0:54 way you'll stay up to date with all our
+0:57 future streams amazing like the one we
+0:58 have today and we have a great slack
+1:02 Community where you can hang out with
+1:03 other datting
+1:05 US during today's interview you can ask
+1:07 any question you want there is a Pinn
+1:09 Link in live chat click on that link ask
+1:12 your questions and we will be covering
+1:14 these questions to you in the
+1:15 interview and this is the last slide I
+1:18 will stop sharing my
+1:22 screen
+1:24 and
+1:28 now if you're ready we can
+1:31 start ready ready Freddy okay this week
+1:35 we'll talk about machine learning
+1:36 Engineering in finances and we have a
+1:38 special guest today nania nania is born
+1:42 and raised in Belgrade Serbia but since
+1:46 2014 he's living in Belgium Len do I
+1:50 pronounce it correctly L okay yeah so
+1:54 he's electrical engineer who turned data
+1:57 scientist and then turned to to an mops
+2:00 engineer and this is what we will talk
+2:02 about today machine learning engineering
+2:04 mlops and I met with neia on Amazing
+2:08 conference in Porto when was it October
+2:12 2023 yeah it took a while to schedule
+2:15 this meeting yeah uh and there yeah
+2:20 there he gave a talk about
+2:23 mops and I also had a chance to
+2:26 interview him among other people on
+2:28 stage it was the first time for me I
+2:30 interviewed people live on stage that
+2:32 was a very interesting experience so
+2:35 today we finally get back to this
+2:38 discussion and talk about machine
+2:40 learning engineering
+2:42 mlops maybe Brazilian jiujitsu and
+2:45 purple belt um who knows so yeah welcome
+2:48 thank you thank you for having
+2:51 me yeah so before we go into our main
+2:54 topic of machine learning Engineering in
+2:56 finances let's start with your
+2:58 background can you tell us about your
+3:00 career Journey so
+3:02 far um okay so it was a pretty I would
+3:06 say nonlinear career Journey uh so I
+3:09 first obtained my uh let say formal
+3:12 education in the domain of electrical
+3:14 engineering as I already mentioned uh in
+3:16 Belgrade Serbia where I I was born and
+3:19 raised and then my first job was
+3:21 actually uh a salesperson I was like a
+3:23 traveling salesman for uh for some
+3:26 automation equipment for for the
+3:28 industry for sensors and controllers and
+3:30 so forth um and then after that yeah I
+3:34 realized that I don't want to stay or in
+3:36 that career I wanted to do something
+3:38 more technical again and that's when I
+3:40 came to Belgium and I actually came to
+3:42 do a PhD in the domain of bio
+3:44 engineering so switching from electrical
+3:46 engineering to sale sales now to bio
+3:48 engineering um and there I stayed for
+3:52 for about a year and a half and I
+3:54 realized that again Academia is not
+3:56 really a place for me because especially
+3:58 I worked first a bit in the industry and
+4:01 yeah we didn't click let's say together
+4:03 and so that's why I wrote I'm a PhD
+4:05 Dropout I stopped with a PhD and I moved
+4:08 to deoe Consulting here in in Belgium
+4:11 and I stayed there for I think almost
+4:13 three years then switched to a smaller
+4:15 consultancy called the data root now
+4:17 then it was much smaller now they grew a
+4:18 lot um so uh yeah that was also a nice
+4:23 very nice time uh from then on I went
+4:25 briefly to
+4:26 ining uh I worked before sorry I forgot
+4:29 to mentioned I worked for BM paza that
+4:31 was my first experience in the financial
+4:32 industry and then I worked for ING for a
+4:35 year and now hopefully I
+4:38 settled in Euro clear uh Euro clear in
+4:41 Brussels this is a company which uh
+4:43 maintains the infrastructure for trading
+4:47 Securities so basically I think like the
+4:49 US the easiest way to explain to people
+4:51 what we do is uh people usually know
+4:53 Swift company which uh you use to send
+4:57 money internationally uh which maintains
+4:59 this Network through which you send uh
+5:01 yeah basically your money hops between
+5:03 different banks and and lands in the
+5:04 right place in the end uh but we are
+5:06 like Swift but for bonds for stocks and
+5:08 bonds and so big companies buy and sell
+5:11 stocks and bonds through us and we also
+5:13 keep uh National bonds for many European
+5:16 countries like um Ireland I don't know
+5:19 if is it Belgium and France and so forth
+5:21 I will make a mistake here I'm just the
+5:23 ml guy I'm not the business guy but yeah
+5:26 this is where I am currently and I am um
+5:29 I'm in some kind of uh mlops lead
+5:32 function I would call it like that uh in
+5:35 in Duro clear and I'm helping to
+5:37 increase the the overall I would say
+5:39 maturity the mlops maturity of um of my
+5:43 current company and this is for the last
+5:45 five years um my title was usually a
+5:47 data scientist but I was in practice an
+5:50 ml engineer and so now now this is
+5:52 formalized uh with with the title also
+5:54 we didn't call it mlops 5 years ago but
+5:58 it was just oh how call end to endend
+6:00 machine learning engineering machine
+6:02 learning so yeah that's it shortly my
+6:04 short
+6:05 trajectory yeah and back then like I
+6:07 don't think even ml engineer the role of
+6:10 ml engineer was actually there it was I
+6:14 think it was more like data first time
+6:16 first time my job was called ml engineer
+6:18 was in
+6:19 201 19 19 and I know it was um companies
+6:23 that wanted to differentiate because um
+6:26 data scientist it was and still is I
+6:28 would say a very vague term it doesn't
+6:31 mean a lot so people use it to to
+6:33 describe many different things but when
+6:34 you say you're a machine learning
+6:35 engineer it's pretty specific you're
+6:37 doing you're not doing stats you're not
+6:39 you know you're doing machine learning
+6:41 um you're not doing dashboarding because
+6:43 people hire data scientists and then
+6:44 give them to do the dashboards and so I
+6:47 I I like this term machine learning uh
+6:49 engineer but still I would consider it a
+6:51 different role compared to a data
+6:53 scientist yeah yeah definitely yeah I
+6:57 want to add a few notes so I see
+6:58 questions to for some people it might be
+7:01 confusing so because here today in our
+7:04 community and by the way this for
+7:07 editors please cut this later so today
+7:10 we actually have a course launch we are
+7:13 launching our data engineering course
+7:14 and I see people who joined the stream
+7:17 today thinking that this is this is
+7:18 related to the course it is not related
+7:21 so the lunch the course launch will
+7:24 happen at 5: p.m. tonight so this is
+7:27 just an interview s disappoint you it's
+7:30 not a waste of your time you can stay
+7:32 yeah this is a very good conversation
+7:36 you will definitely learn a lot but it's
+7:37 not about data engineering it's not
+7:38 about the course so this is a podcast
+7:41 interview so now I hope the C of people
+7:46 who joined will not drop too much and
+7:49 then another thing I forgot to mention
+7:51 because it has been a month since the
+7:54 last
+7:55 interview I forgot to give a shout out
+7:58 to Johanna Bayer berer
+8:02 who helped preparing all these amazing
+8:05 questions we will talk about today so
+8:07 thanks you Hanna for your help and for
+8:10 editors please move it before the the
+8:14 first question okay now we continue so
+8:17 you by the way so your first job as a
+8:22 kind of data person was Deo right I
+8:25 would count already uh already the PHD
+8:28 because it's like a job of a research
+8:30 and teaching assistant and there
+8:32 already there was a lot of data science
+8:35 modeling systems modeling control and
+8:38 that's when I started using python
+8:39 intensively see and already you did it
+8:42 before but this is like when I was
+8:43 getting paid to do
+8:45 python okay and Deo is a consulting
+8:50 company right so you probably need to
+8:53 speak French or no or no no actually no
+8:57 actually not in Belgium not really
+9:00 it's desired it's always advised and I
+9:02 think it will certainly open up many
+9:04 more doors if you speak the local
+9:06 language but in Belgium it's dutch and
+9:09 French and you should speak English but
+9:11 for the more technical positions like
+9:13 technology Consulting they um it's it's
+9:17 okay if you speak only English but for
+9:19 certain clients for example if you're
+9:21 working with the
+9:22 government you need to this big flu or
+9:26 Nat right I remember this uh
+9:29 headquarters right in yeah in Brussels
+9:31 is the n headquarters yeah yeah I
+9:33 remember going from the city center to
+9:36 the IBM office and
+9:38 the yeah yeah like it's huge they have a
+9:41 new new fancy building even fancier one
+9:43 yeah okay yeah anyways
+9:47 um so you have worked at a variety of
+9:50 different companies deoe in data Roots
+9:54 BNP yes now it's hero clear right um so
+9:58 most of them if not all involve finances
+10:02 and banking right in the last four five
+10:05 years yes so not not all of them but
+10:08 yeah I worked also with at De you know
+10:10 you're a consultant you
+10:12 switches relatively frequently and so I
+10:14 worked also in the U how do you call it
+10:17 biomedical how do you call it for the
+10:18 vaccines GSK glus mcline vaccines we
+10:21 also did projects with uh with Amazon
+10:23 with Abbe which is the industrial
+10:25 manufacturer so there's there's a lot
+10:26 there was a lot of variety there which
+10:29 time to mention but yeah let's say I
+10:31 settled I settled last four or five
+10:33 years in the financial industry that's
+10:35 important so what are the typical
+10:37 problems that data scientists machine
+10:39 learning Engineers orops
+10:42 folks usually solve in the financial
+10:45 sector you mean use cases so let's from
+10:48 the business perspective I would say
+10:51 there was a clear common line between
+10:54 all the companies where I was in the in
+10:56 the financial industry okay on one side
+10:58 all of these companies have very strong
+11:00 regulation and they have very strong
+11:02 compliance requirements so these fraud
+11:06 and and money laundering cases are
+11:08 always there it's it's simply imposed
+11:11 you have to do it um on the other side I
+11:13 think where most of the business value
+11:16 comes from so for this compliance fraud
+11:18 ml um sorry AML um you have to do it if
+11:23 you don't do it you have to pay like
+11:25 billions in fines but it's like an
+11:27 overhead which does does not give some
+11:29 concrete value added value just saves
+11:32 you from a certain very big penalty that
+11:34 you have to pay uh on the other side
+11:36 things which really uh give value in the
+11:38 financial industry um are so-called
+11:41 smart automation projects and in Ence
+11:44 it's usually
+11:46 processing semi-structured and
+11:48 unstructured data like documents like
+11:51 emails and so forth and whether it is
+11:54 like information extraction extract an
+11:56 account number extract a signature uh
+11:59 route the email or a case to to the
+12:01 right Department it's also very
+12:03 important and all these companies have a
+12:05 lot a lot of people who are manually
+12:07 processing all these things still there
+12:09 is still a lack of uh I would say proper
+12:12 forms for data information uh so so
+12:15 things are arriving in some kind of
+12:17 semi-structured Orly structured uh
+12:20 formats and then you have a lot of
+12:22 parsing a lot of interpretation and so
+12:24 forth so those are the main things I
+12:26 would say definitely I think it's 18 90%
+12:29 of cases that we work on mhm so first
+12:32 regulations compliance if you don't do
+12:34 this you yeah you huge penalty so you
+12:38 kind of like all the companies have to
+12:40 do that they don't want to lose money
+12:43 and then the second category is more
+12:46 like internal right so imagine yeah yeah
+12:48 it's it's like process efficiency it's
+12:50 it's really but in the end it impacts
+12:51 your customer also because if you're do
+12:54 doing this uh slowly and manually you're
+12:56 the whole Pace processing takes a lot of
+12:59 time you know so the faster you can do
+13:02 it like also I didn't mention RPA this
+13:04 is not something I do but robotic
+13:06 process automation is also very big in
+13:08 the financial industry uh the thing is
+13:10 that what what also connects all these
+13:12 companies is that they were in some way
+13:14 all pioneers of this like digital era
+13:18 and they all had they all had very early
+13:20 their uh mainframes and and all the
+13:23 digital you know Frameworks and um this
+13:26 is now a bit of a curse so because they
+13:29 have all the they had all those systems
+13:30 they were the first ones to have all
+13:32 those systems uh they have a lot of
+13:34 Legacy code they have a lot of Legacy
+13:35 infrastructure and it's very hard to um
+13:38 modify to improve many of these things
+13:40 they were not really built say in a
+13:44 Forward Thinking in a forward compatible
+13:45 Manner and yeah so now that that's a lot
+13:48 of that's a lot of let's say trouble is
+13:50 caused by by that fact yeah I imagine
+13:54 there are also some customer facing
+13:56 locations like I don't know um like I
+13:59 don't know I want to make a transfer and
+14:01 then I have an up and then they just
+14:03 take a picture of my yeah the mobile
+14:07 applications the mobile applications are
+14:09 also a big thing yeah indeed indeed you
+14:12 dare you see a large variety so may the
+14:13 mobile applications I mainly saw as a
+14:15 user because I'm I'm currently using two
+14:17 banks in in Belgium and yeah I could see
+14:20 there is a big difference some like some
+14:21 banks really pick this really I would
+14:23 call it lean simple approach uh like
+14:26 like in in in Belgium and um like kvc
+14:30 Bank approaches takes a completely
+14:32 different approach where they put
+14:34 everything in the app literally I think
+14:36 you can almost uh I don't know make
+14:38 lunch for your kids in the app it's it's
+14:40 like you can pay the parking you can pay
+14:42 the the train tickets you can uh order
+14:45 food I think you can do so many things
+14:47 in the KBC app and in N app they just
+14:49 chosen this like oh we just give you the
+14:50 banking thing so yeah
+14:54 so they have their reasons probably yeah
+14:58 and there's a an mlops person ml
+15:01 engineer what do you actually do cuz I
+15:04 imagine like we talked about more use
+15:06 Cas but then um like as an M engineer
+15:09 mops person you
+15:10 don't work on the model that I don't
+15:13 know recognizes the the Account Details
+15:17 right yes yes correct correct so that's
+15:19 that was the the second part which I
+15:21 wanted to say so on one side you have
+15:23 the typical business uh use cases and
+15:26 the other side you have the typical work
+15:27 of an ml engineer in finance which is uh
+15:30 mainly I would say mainly
+15:33 modernization mainly getting things to
+15:35 work and so in general an mlops engineer
+15:38 is a person that in my view tries to
+15:42 abstract all the non-m modeling part of
+15:45 work from the data scientist so my my
+15:47 idea is I want to be like a kind of a
+15:49 service to data scientist to make like
+15:50 kind of a platform or a framework so
+15:52 that they can focus on their data
+15:55 science the difficulties that they have
+15:58 in in extracting the right entities and
+16:00 uh making the right models and then I
+16:02 basically handle all the rest I give
+16:04 them like U like a St standard project
+16:07 structure for the project I give them I
+16:10 the on the one that makes the sorry data
+16:13 scientist them data scientists or who
+16:16 sorry I didn't I didn't understand the
+16:17 question yeah you give them you refer
+16:20 you said to them like data scientists
+16:22 right yeah yeah yeah get data science we
+16:25 work together in a team so we have
+16:26 usually like two three data science and
+16:28 an mlops engineer pro project and uh we
+16:32 work together it's not like passing
+16:34 things over the over the fence it's
+16:36 really working together and uh you know
+16:39 reviewing the code together and
+16:40 everything is in in very close very
+16:43 closely coupled so but yeah my my part
+16:46 is create the repo create the project
+16:48 structure create the cicd pipelines uh
+16:51 figure out how do you need to deploy uh
+16:54 which what will be the target deployment
+16:56 platform for this will it be the cluster
+16:58 or now we are looking into some also
+17:00 like the cloud one also thing to mention
+17:02 here like a side note in financial
+17:04 industry I think still it's mainly on
+17:06 premise architecture so there are some
+17:08 movements towards the cloud and it's
+17:10 there there's like I would say
+17:12 definitely a persistent Direction there
+17:15 but still it's there's a lot a lot of uh
+17:18 core systems which are which are on
+17:19 premise um so yeah for me it's also so
+17:22 will I deploy it on the cloud or will I
+17:24 deploy it on the on premise cluster or
+17:26 on the open shift cluster and and uh
+17:29 then there's like networking how do you
+17:31 open up certain firewalls to for this
+17:34 application to communicate with this uh
+17:36 API and yeah on and on those are the
+17:39 main
+17:40 things so it sounds like uh it's more or
+17:43 less a typical job of ANL engineer
+17:46 except that you like you said that there
+17:49 is a lot of modernization work which I
+17:52 don't know like depends it is I think
+17:57 definitely the M Engineering role it's
+17:59 like a software engineering role yeah
+18:01 which is very generic and the more you
+18:03 go to data science the more it becomes
+18:05 business specific and I can really see
+18:08 that that I do I have very little
+18:10 exposure to the actual business side of
+18:13 of all the projects which I miss pretty
+18:15 much when I was doing the data science
+18:17 work I was always much deeper into
+18:19 communic in the communication with the
+18:21 business but here no I can live in my uh
+18:24 my bubble of uh of code and and the
+18:27 devops platform
+18:28 U so yeah it's it's pretty much similar
+18:30 but yeah there is this thing of
+18:32 modernization of change management of
+18:34 seeing how to how to now fit mlops into
+18:37 the classical devops because it has a
+18:39 pretty these companies have a pretty
+18:41 established devops practices and
+18:43 governance and now you need to see how
+18:46 to somehow integrate how to smuggle in
+18:49 ml uh in in this whole
+18:51 thing and this uh existing devops
+18:56 processes platforms existing governance
+18:59 um like what is it there so I assume
+19:02 that it's not like the most modern
+19:05 solutions probably it's like time proven
+19:08 things that you mentioned open shift
+19:10 it's pretty it's a mix it's really a mix
+19:13 of things so when they I think when they
+19:16 buy
+19:17 something it's the newest one it's
+19:19 usually so when they say now we're going
+19:21 to go with this we take the best one but
+19:25 that will probably not change for the
+19:27 next 10 years
+19:29 that's the thing so the things are
+19:30 slowly moving slowly changing and I
+19:32 think just just the landscape the
+19:35 internal it landscape is so big that
+19:37 everything has a big impact and you
+19:38 already have a lot of applications so to
+19:40 move let's say from one logging like
+19:42 centralized logging we have Splunk now
+19:45 and so this this is a modern solution I
+19:47 would say I don't know if there's
+19:49 something especially better uh but
+19:51 imagine if suddenly you want to switch
+19:53 to another thing that would be a bigger
+19:54 big cost you know so um that that's I
+19:58 think think the the main uh the main
+20:00 issue the main obstacle there is the
+20:01 slowness and uh the whole planning needs
+20:04 to go into big big time time
+20:08 Windows yeah is it specific to the
+20:10 financial
+20:12 industry or it's more like
+20:15 maybe corporate environments it's not in
+20:18 all corporate environments definitely
+20:21 not I think it's very specific to the
+20:22 financial industry uh I think for any
+20:26 over regulated industry and industry
+20:28 which has like a very big involvement of
+20:30 regulators of of governments and and
+20:32 international bodies they are very very
+20:34 risk averse so for it's it's above it's
+20:37 better not to do something than to
+20:39 introduce some kind of a risk and in
+20:41 these companies you also have all these
+20:44 trainings like every month or so you
+20:46 have some kind of a risk training risk
+20:47 how to spot risk how to handle the risk
+20:49 how to manage the risk risk risk risk
+20:51 mitigation everywhere and uh yeah you
+20:54 learn to always think about
+20:57 that yeah I remember I worked at UBS uh
+21:01 that's a bank I think it's United Bank
+21:04 of Switzerland but it doesn't matter
+21:05 it's a finance financial
+21:08 institution um very conservative
+21:11 institution I was there working as a
+21:13 Java
+21:14 developer and we would release every
+21:16 month and if a release doesn't go
+21:18 through that month it means it will go
+21:20 the next month next month okay we're not
+21:22 that that rigid so for us it's still so
+21:26 the release Cycles yeah there's a whole
+21:28 Department which is called change and
+21:29 release management and when you want to
+21:31 release something to production you
+21:32 first need a review like from your own
+21:34 team then to create this kind of a
+21:36 change and to say which exact commit
+21:39 which exact build will you release and
+21:42 and you need to show that it was first
+21:43 released to test and that it worked and
+21:46 that this was released let's say at
+21:48 least a week before the release to Pro
+21:50 to test that it was properly tested and
+21:53 then you have like some three different
+21:55 teams where one person from that team
+21:57 needs to approve like like mhm yeah
+21:59 there are these but if it failed uh you
+22:01 can do a roll back there's like a
+22:03 procedure to do a roll back and you can
+22:05 have like an emergency change if it's
+22:08 like shortly if you need a bug fix to do
+22:11 something you can have an emergency
+22:12 change of course you have to need to
+22:13 follow the procedure for the Emergency
+22:15 change then but uh yeah the important
+22:18 thing is for them that you always know
+22:20 what is in production and who put it and
+22:22 when they put it and um okay so so these
+22:26 are this existing
+22:28 uh devops processes and the governance
+22:31 governance framework that you mentioned
+22:33 right yeah which sounds like um a bit of
+22:38 hustle to be honest right but like there
+22:40 are reasons for that right it slows you
+22:41 down but I would say you get you learn
+22:44 how to do it you learn how to do it
+22:46 quickly it's every time it's faster
+22:48 because uh also you get first time you
+22:50 do it people don't know you it's all
+22:52 about people trust and the first couple
+22:54 of times people are really looking at
+22:57 your pool request in detail and you're
+22:59 changing what what is this guy doing who
+23:01 is this guy what does his code look like
+23:03 and every next time when you start
+23:05 deploying frequently you get all these
+23:07 approvals much faster because people say
+23:08 okay this guy never crashed anything
+23:10 there were no incidents and so forth and
+23:12 you know who to ping you know it's even
+23:14 like little the the people connections
+23:16 you really know who to ask on Ms teams
+23:19 hey man I have this change can you
+23:20 please approve and so yeah lately this
+23:24 was this was not really an obstacle yeah
+23:26 in these corporations it's always is you
+23:28 need to know people you need to after a
+23:31 couple of years you become really
+23:32 productive when you get when you really
+23:34 make your network MH things start going
+23:37 very
+23:38 fast yeah and I imagine since are these
+23:41 processes that
+23:42 are that were set up like ages ago and
+23:48 they're like they're thought through and
+23:51 they exist for reason and he as anal
+23:53 engineer mops person you need to stick
+23:56 to these processes right so you work on
+23:58 envelops you work on this uh machine
+24:01 learning pipelines ICD pipelines or
+24:03 whatever and what you do need
+24:07 to stick to the guidelines from the
+24:10 devop people right from the yeah how
+24:13 difficult it this like how difficult was
+24:17 it to map like the mops processes to
+24:21 this devops framework well I would say
+24:23 that we still are not fully not there
+24:26 where I want us to be definitely so
+24:29 there is still there is still
+24:30 Improvement there to be done uh but it's
+24:33 a journey it was in the beginning as I
+24:35 said just a moment ago it was hard at
+24:37 the beginning but luckily I mean I did
+24:39 not come into an empty room so there was
+24:40 already people in the company who did a
+24:43 lot of previous deployments uh so we U
+24:45 let's say piggybacked for a while on the
+24:47 team of data Engineers who are doing
+24:49 really frequent deployments and so they
+24:52 explained us they guided us through the
+24:54 whole uh through the whole process and
+24:56 until we are we became independent to do
+24:58 it ourselves but um yeah you know what
+25:01 we say uh a living person gets used to
+25:05 everything so this is this is also true
+25:08 here H you don't you stop noticing it at
+25:10 one point you know when I talk to
+25:11 somebody and they hear for somebody from
+25:13 a startup and they hear oh you have to
+25:15 do all these things for us it's no
+25:16 longer something which is an issue you
+25:19 know of it's like okay this is how you
+25:21 do it it's more like muscle memory you
+25:23 know you click here you make this you
+25:24 prepare that and you go you go to
+25:26 production I heard even I heard um much
+25:29 worse stories uh from certain companies
+25:32 where yeah you you have to literally uh
+25:35 have like a sheet of explanations for
+25:38 every little change and and you need to
+25:39 have use like this whatever is it jira
+25:41 tickets or some kind of service now uh
+25:44 TFS ticket what what doesn't matter but
+25:46 um yeah there is much more bureaucracy
+25:49 uh in certain other places so I think we
+25:51 have a decent sweet spot here yeah okay
+25:55 yeah I remember so back to my uh UBS
+26:00 experience it was to be fair it was long
+26:03 time ago like it was 10 years ago or
+26:06 more so then there is a comment that
+26:08 today in finance likely cicd is a part
+26:11 of daily routine which is a good thing I
+26:14 hope it's
+26:15 everywhere um but I remember one thing
+26:18 that we were super careful with open
+26:22 source tools we
+26:24 used and like we had to you do these
+26:28 things you mentioned but instead of like
+26:31 every change like if you want to
+26:32 introduce a new open source package that
+26:36 wasn't used before library and we had to
+26:39 write an explanation why this Library
+26:40 what kind of license is it a good
+26:42 license like they
+26:44 have yes there is a there is to a
+26:46 certain extent but uh currently the
+26:49 default is that we so we have
+26:51 artifactory which is like an internal
+26:53 package registry jrog artifactory and it
+26:55 mirrors the public pipie
+26:58 and I think only if it registers some
+27:00 kind of a vulnerability some kind of a
+27:01 critical vulnerability it's going to
+27:03 Blacklist a certain
+27:05 package and recently there was a
+27:08 situation where I had to I wanted to ask
+27:10 for a another package index so not a
+27:12 package from piie but it was a separate
+27:15 index and there I had to give an
+27:16 explanation but it was it was like a
+27:19 short chat the person that was in charge
+27:22 of this to really just fill out the form
+27:24 and and then it worked so it was not not
+27:26 too hard yeah okay so imagine if you use
+27:30 if you want to use I know P Arrow
+27:32 instead of playing pandas you don't we
+27:35 don't have no it's it's okay we don't
+27:37 have a we don't have an issue with that
+27:39 yeah but if it's like a completely
+27:41 separate thing which is is like not on
+27:43 any kind of a public
+27:45 repository yeah you have to justify why
+27:47 you need to manually import
+27:50 something and how difficult it is to
+27:53 work on premise so imagine that there is
+27:55 this open shift cluster and then like I
+27:58 guess there are all these uh procedures
+28:01 standards templates so like it should be
+28:04 pretty smooth right or yeah so so
+28:07 currently we are working mainly on the
+28:09 like a classical I would say Hadoop
+28:11 cluster so there's the open shift
+28:12 cluster is something next to it we're
+28:14 not currently deploying there um but
+28:18 yeah there is there is like a certain
+28:21 kind of a project structure for
+28:23 deployment there there is a standard
+28:25 pipeline if you want to go there so it's
+28:27 pretty much already I would say ironed
+28:29 out by the data Engineers before us and
+28:31 we are just reusing uh that same
+28:33 approach and working on
+28:35 premise is uh I don't know I like it uh
+28:40 it's it's like really close to the metal
+28:42 it's simple in a way
+28:45 um yeah you have the machine you have
+28:47 the operating system and you don't have
+28:49 all these dis array of of services that
+28:52 you have on the on the cloud which which
+28:55 are also helpful you know many many
+28:57 cases but you you get to learn a lot
+29:00 about like Linux you get to learn a lot
+29:01 about bash scripting uh about networking
+29:04 SCP sshing and and these things and um
+29:09 yeah I I like it I I got used to it but
+29:11 it's it's I would say much simpler in in
+29:14 ways much simpler but in other ways it
+29:16 requires I would say more knowledge of
+29:17 computers and operating systems like of
+29:19 Linux and networking but that's the main
+29:23 difference I would say but do you
+29:25 actually need to order Hardware like
+29:27 imagine that you want to deploy anything
+29:29 not my team not my team so there's a
+29:31 whole the thing is like
+29:34 Platform One premise requires a team to
+29:37 maintain that infrastructure and that's
+29:39 the main deal with I would say smaller
+29:41 companies is that they would have to
+29:43 hire somebody to maintain a Data Center
+29:45 and for for smaller companies it's a
+29:47 problem for bigger companies especially
+29:48 in the financial industry that's really
+29:50 not the problem so I think that's the
+29:51 main uh attractiveness of of cloud comes
+29:54 that you can easily start and have some
+29:56 kind of a data center
+29:58 a rented one and then you can expand it
+30:00 and so forth but recently we had um
+30:03 there there was a certain number of
+30:04 machines being added or you say oh I
+30:07 don't have the capacity and there's like
+30:08 a whole team which manages that so
+30:10 there's like a platform engineering team
+30:12 you say guys this is what we need here's
+30:14 the money and please please do the do
+30:18 the work and they they just tell you
+30:19 okay now you have all these machines
+30:21 added and include them in the pipeline
+30:23 that's it so M so for your needs you can
+30:26 just assume that it kind of works like
+30:29 Cloud when you need resources you'll
+30:31 have them unless it's like super
+30:34 gigantic that you need to ask in advance
+30:37 yeah yeah so in a way it's like a cloud
+30:40 but you don't have like the you don't
+30:42 click and make things you ask people you
+30:45 have make a request to the people and
+30:47 they they do these things for you and
+30:49 usually that's also one of the things
+30:50 like to find the right request to make
+30:53 you know to know who is in charge of
+30:55 what and where that's that's a bit of of
+30:57 uh a journey to learn and understand
+31:00 yeah so we met in Porto at a conference
+31:04 the data makers fast and you gave a talk
+31:08 yes and it was a very nice talk so I
+31:11 attended that talk I think I was even a
+31:13 moderator I don't remember yes you were
+31:16 yes you
+31:18 were um yeah yeah and in that talk you
+31:22 showed that you don't need a lot of
+31:24 fancy stuff to start with hops right
+31:27 yeah so maybe can you
+31:29 talk give us the main ideas from that
+31:32 talk and what is also interesting for me
+31:34 personally it's like how did you arrive
+31:36 at this idea why and what cost you so it
+31:40 connects with my experience in the
+31:42 financial industry so uh the title of
+31:44 the par was uh mlops on a Sho string and
+31:48 I think it's now since two days ago it's
+31:50 available on YouTube If you Google data
+31:52 makers Fest n or we will put it in the
+31:56 description yeah yeah yeah it's there so
+31:59 basically the idea is was as I say there
+32:02 uh we all operate on a certain budget
+32:04 and so it can be a time budget it can be
+32:06 a money budget whatever or uh people
+32:08 budget and so forth and uh if you're in
+32:11 a large organization you want to
+32:12 implement
+32:14 melops um you need some kind of a
+32:17 prioritization schema some kind of
+32:19 prioritization exercise and that talk
+32:21 was about that like how do you start
+32:23 what would be the minimal set of mlops
+32:25 features of uh environment of components
+32:28 that you need to implement in order to
+32:30 say okay now we're doing some kind of
+32:32 fops uh and if I remember correctly I
+32:34 would just I would don't want to repeat
+32:35 the whole talk
+32:37 here but uh in general we said okay
+32:39 first thing you need to have a
+32:40 development environment and a production
+32:42 environment that's the basic thing and
+32:44 ideally you should have a test
+32:46 environment so that you can
+32:48 independently develop independently
+32:50 productional IE inde dependently test uh
+32:52 in the middle as the central control
+32:54 tower you need to have a devops platform
+32:56 where you integrate create all your code
+32:58 uh where you launch where you have the
+33:00 whole audit trail of all the changes of
+33:02 what anybody did how I call it then I
+33:05 remember um cover your ass Ops basically
+33:08 or in order to playay play the the git
+33:11 Blame Game ultimately and um next to
+33:14 that you need to have I would say as a
+33:16 very bare minimum you need to have some
+33:17 kind of a monitoring solution to know if
+33:20 your application is
+33:22 alive if it just dies it will not tell
+33:24 you that um you need to have I would say
+33:27 model registry um and you need to have
+33:29 some kind of a version data registry I
+33:31 think that's that was one of the things
+33:32 I stressed two times and this is also
+33:34 something where um it's often like an
+33:38 afterthought uh that we don't realize
+33:41 often that data produces code and that
+33:44 not versioning data means not versioning
+33:46 your code in
+33:48 ml and so that that was one of the
+33:50 things if you have to have if you want
+33:51 to have the what I call them the CR
+33:53 Crown Jewel which is having repr
+33:55 producible uh ml pipeline so and why
+33:58 reproducible ml pipines are necessary
+34:00 not because you will actually have to
+34:02 reproduce a model I was I never had to
+34:04 reproduce a Model A year later or
+34:06 something that was never a requirement
+34:07 they always say yeah we should be ready
+34:09 to reproduce a model but actually if you
+34:12 can reproduce a model that means you
+34:14 have control over your ml process that's
+34:16 the main thing so that just proves that
+34:19 you know what you're doing and if you
+34:20 cannot then who knows what's in
+34:23 production if you cannot reproduce
+34:24 anything uh so that was that was the
+34:26 main thing it not I I did not say oh you
+34:29 should do it like this and this is the
+34:30 very you should stop here but if you had
+34:33 to
+34:33 choose the minimum set of of mlops
+34:36 components this was that was my proposal
+34:39 yeah but not only that now if somebody
+34:42 has not seen the talk and
+34:45 hears uh listens to us talking about
+34:47 that they imagine like this complex
+34:50 thing with all this tools that do like
+34:52 all the things that you mentioned but
+34:55 what you showed us in the talk was that
+34:58 these components although they sound
+35:00 like complex they're actually not and
+35:03 you can start super simple yeah yeah
+35:05 yeah like for the model registry I said
+35:06 the model registry can be just an EST bu
+35:09 yeah and that's okay for Beginnings I
+35:11 like this this is more like what they
+35:12 call a consultancy talk I I learned
+35:14 recently uh um I mean recently a term
+35:18 they call a tactical solution and it's a
+35:21 it's
+35:22 basically an ugly solution which works
+35:26 until you reach your strategic Solution
+35:28 that's why it's called tactical you know
+35:30 it's like you have what you really want
+35:31 is like I don't know ml flow or data
+35:33 braks but in the meantime you have just
+35:35 some kind of a mess of whatever Excel
+35:37 files or something but then you call it
+35:39 a tactical solution immediately sounds
+35:41 like a solution and like something
+35:43 tactical something clever and thought
+35:45 out you know so I I would say this um
+35:48 yeah this S3 bucket is a good tactical
+35:51 solution for for model reg stre yeah and
+35:54 also for versioning data and and for
+35:56 whatever yeah I love how it sounds
+35:58 tactical solution just you would call
+36:00 this temporary solution here quotes
+36:02 temporary but like then 5 years later
+36:05 it's still there yeah there's the famous
+36:08 quote they say there's nothing more
+36:09 permanent than temporary solutions yeah
+36:12 so there's nothing more strategical than
+36:14 a tactical
+36:15 [Laughter]
+36:18 Solution that's nice okay yeah so what
+36:21 led you to this idea like uh what did
+36:24 you see in your experience to with the
+36:27 stock so what did you see in your
+36:29 experience that cost you as I said I
+36:32 work in the financial industry where
+36:33 you're moving very slowly so imagine you
+36:37 know you you you have a bunch of bad
+36:40 guys and you every bullet is cost you
+36:43 101,000 EUR you know so you need to
+36:46 think very carefully how you're going to
+36:48 use your ammo you know and so that was
+36:50 the thing so if what is the bare minimum
+36:52 so that you just tick the boxes and you
+36:55 can say okay I'm safe my my process is
+36:57 controlled I have reproducible training
+37:00 and then I will move forward to like
+37:01 user experience and have oh a nice uh
+37:05 dashboard for example if you need to
+37:07 implement monitoring you you know your
+37:09 boss says hey do we have monitoring of
+37:10 our ml models at the very minimum you
+37:14 need to have some kind of a log of your
+37:17 models and of their predictions even if
+37:20 it's in a text form you can spin up a j
+37:23 Jupiter and hbook and analyze but if you
+37:25 don't have that then nothing no powerbi
+37:28 fancy dashboard will help you so you
+37:31 know start from the very bare minimum so
+37:33 to You Know cover your butt and then uh
+37:35 then move forward to the to the fancy
+37:38 things and making your life easier so
+37:41 the idea here if I try to summarize the
+37:45 idea here is to kind of close the loop
+37:47 on the process as far as possible say
+37:50 have to have a complete framework in a
+37:52 simple manner it's like what they in
+37:55 agile that whole thing you know which I
+37:57 I don't really like aile but I like this
+38:00 Pro I I I don't call it aile I would
+38:02 call it the prototyping approach which
+38:03 means you make a first end to end
+38:06 prototype and then you iterate and
+38:08 improve bits and pieces you know but as
+38:10 a whole it needs to be you cannot have a
+38:12 Porche without one one tire or you know
+38:14 so you have all you have the fancy doors
+38:16 you have the fancy motor but without one
+38:18 tire it's not going to go so first make
+38:20 it you know operational and then pimp it
+38:24 m okay yeah like aile yeah I mean it's
+38:29 good to be able to start like let's say
+38:32 there's a new team and you want to make
+38:34 sure the processes are there so people
+38:37 not that what they are doing it's not
+38:39 chaotic right so you establish the
+38:42 framework you start using it and then
+38:44 you make it complex as you grow as you
+38:47 more mature yeah but I would say the
+38:49 main the main issue I have with agile is
+38:52 that it forces you in a way to to tr try
+38:56 to make something uh I would call it
+38:59 like demo driven development you know so
+39:01 like you need to immediately have
+39:03 something to show and then you I think
+39:05 it it forces you in a way to create some
+39:07 kind of technical debt because you you
+39:08 want to make something weak and dirty
+39:10 and you're thinking from demo to demo
+39:12 and if you're Sprint is like two weeks
+39:14 um I I think the beginning of a project
+39:16 should start in some kind of a not a
+39:19 waterfall mode but something okay let's
+39:22 set it up let's set up the groundwork
+39:23 you know if you're building a bridge you
+39:25 cannot first throw a log over the river
+39:28 and then build a bridge on top of that
+39:29 log you know so you need to do a lot of
+39:32 groundwork and things you you cannot do
+39:34 it in Sprints you know so many things U
+39:37 it's also like you have the standard uh
+39:39 you know the diagram which they show in
+39:41 agile trainings like you have first like
+39:42 a a tricycle then you have a bicycle
+39:45 then you have a car then you have an
+39:46 airpl but what I what I always ask is
+39:49 like okay have you ever seen an airplane
+39:50 which started as a
+39:54 tricycle it doesn't exist you know so
+39:56 you at one point you had to break down
+39:58 the whole tricycle and make a make an
+39:59 airplane so uh I think that's that's a
+40:02 bit of um I see what you mean I mean we
+40:04 can just say everyone can deploy to
+40:06 production whatever they work on it's
+40:08 kind of process right but like does it
+40:11 bring us anywhere so you what do you
+40:14 know what do you really know about a
+40:15 complex problem in two weeks yeah right
+40:18 I mean there's so many things to explore
+40:20 and I I'm fine I think you can you can
+40:22 set up some kind of if it's like the
+40:24 fifth project you're doing if you're
+40:26 doing like some kind of a mobile app or
+40:28 or doing you know something which you
+40:31 know there is a certain kind of let's
+40:32 say 50 60% of it you can already start
+40:35 and do it and then later you will tweak
+40:37 the the guey or or something fine but in
+40:40 machine learning so many times you start
+40:42 you need to take takes you a month to
+40:44 get the data to understand the business
+40:46 to do this and that so on my envelops
+40:48 part okay I can make immediately the
+40:50 project I can make cicd pipelines I can
+40:52 make the API function and then have like
+40:55 a hello world model say hello from the
+40:58 API but then it's going to wait for a
+41:01 month or two for for a concrete model to
+41:03 sit in there so certain parts yes but
+41:05 the exploratory research and development
+41:07 things I don't think they fit very well
+41:09 into into the whole agile
+41:11 philosophy that's why you have two three
+41:14 data scientists per Oneal engineer
+41:17 usually because the doing the data
+41:21 science stuff takes more time yeah yeah
+41:25 yeah yeah indeed indeed because there is
+41:27 a my work is usually more reusable so
+41:31 they all develop similar models but they
+41:33 all have to go and to talk to other
+41:37 people in the business and understand
+41:38 their needs and back and forth back and
+41:40 forth they have many more meetings with
+41:41 the business people then I have I don't
+41:43 have meeting with the business people I
+41:45 just I just talk to them to the data
+41:47 scientists and um yeah there's the data
+41:49 there's the cleaning the understanding
+41:51 and this iterative process is is is much
+41:54 more for me it's pretty exact my API
+41:56 works or it doesn't work and uh you know
+41:59 it doesn't deploy or it doesn't start or
+42:02 you know it's very uh I don't need
+42:04 another person's opinion to know if my
+42:06 API works or authentication or or
+42:10 whatever so that's my fortune I would
+42:12 say so if I simplify it overly
+42:15 simplified then let's say you have three
+42:17 data scientist after a month uh of work
+42:21 they come with three models but your
+42:24 role here is to make sure that that all
+42:27 these three models can be deployed in a
+42:29 similar fashion these three models are
+42:31 different they solve very different
+42:33 business problems but your role is to
+42:35 make sure that there is one Platform One
+42:38 Piece of infrastructure whatever where
+42:41 all these three models can easily fit
+42:42 and for you it kind of doesn't matter
+42:44 what these models do indeed indeed I
+42:46 mean we agree from the beginning we say
+42:48 okay let's see what you want to do you
+42:49 want to use Spacey do you want to use
+42:50 pyit learn pie torch and and whatnot and
+42:53 then we immediately start to accommodate
+42:56 for this their approaches their ml
+42:58 Frameworks in this overall framework um
+43:01 and also a lot of my work is really like
+43:03 code review like also the ml code review
+43:06 because uh you don't want um I don't
+43:09 know just any kind of code there like
+43:10 data pipelines uh I try to make sure
+43:12 that they are always modular that they
+43:14 are testable that they are you know like
+43:16 not like just one giant script and so
+43:19 there is really there's really a lot of
+43:20 interaction and it's not really a
+43:21 one-way process because also when I have
+43:23 my own uh pull requests I also submit to
+43:26 review for them because they also use
+43:28 Python and they also help me sometimes
+43:31 SP mistakes uh in my my code so yeah
+43:34 it's it's really like a it's really like
+43:36 a teamwork in that sense so do I
+43:40 understand correctly that you have kind
+43:43 of two categories of work you have the
+43:45 platform work and then you also have
+43:48 like the Cod standardization kind of pro
+43:52 code review work where you help data
+43:55 scientist with their projects and then
+43:57 in addition you maintain the platform
+43:59 where data scientists can deploy well I
+44:01 don't maintain really the platform so I
+44:03 me what I actually created in this
+44:05 company is like the approach and uh so I
+44:08 maintain the applications in production
+44:09 so I'm the one that deploys and I'm the
+44:12 one that pays attention if there's
+44:13 there's alerts if something doesn't work
+44:15 and I go there and if I need to fix
+44:16 something that's what I do it's not
+44:18 their problem um but the platform is
+44:20 like in terms of the hardware it's not
+44:22 my it's not my part of work uh but I
+44:24 also something approach sorry
+44:26 it's more like not a physical physical
+44:30 indeed indeed approach and there's also
+44:33 like a library which I'm maintaining
+44:35 with my fellow mlops colleague uh which
+44:38 let's say we we created this Library
+44:41 which is like a framework on top of fast
+44:43 API which then also allows for
+44:46 simpler re let's say creation of new
+44:48 projects because we saw okay every other
+44:50 project we're doing this and so we put
+44:52 it all in one Library so that tomorrow
+44:54 data scientist could May maybe even
+44:56 independently create a whole API with
+44:59 their models that would be that would be
+45:00 some kind of ultimate ultimate goal yeah
+45:04 I noticed that we have quite a few
+45:06 questions from the audience so the
+45:10 question number one and two I'll combine
+45:12 them what kind of programming skills and
+45:14 soft skills do you need to have as an ml
+45:18 engineer okay so I think ml engineering
+45:22 is first and foremost more on the art
+45:26 skill side I would I I I think it's very
+45:29 close it's very distant from I would say
+45:32 data science I think it's useful to know
+45:34 data science because you need to talk to
+45:36 data data scientists they're your
+45:38 clients let's call it like that um but I
+45:41 would say Python Programming if you're
+45:44 in the cloud then knowing the cloud uh
+45:46 cloud services of that specific Cloud
+45:48 you're working on if you're on premise
+45:50 then it's uh Linux commands bash
+45:52 scripting networking a bit of networking
+45:54 you don't have to be an expert but yeah
+45:56 to to be able to to survive in that in
+45:59 that environment and um so that's that's
+46:02 when just working on the projects but I
+46:03 think also soft skills are important for
+46:06 this change work I would call it like
+46:08 that for um if you want to bring
+46:11 something new to your company and you
+46:13 want to to raise the maturity of mlops
+46:15 in your company uh you need to have this
+46:17 kind of
+46:19 Evangelical trait to go around and you
+46:23 know missionary how to call it you know
+46:24 you need to go around and and talk to
+46:26 people and bother people and ask and
+46:28 pull their sleeve and uh you need to be
+46:31 persistent and then ultimately um a nice
+46:34 person not get into conflicts with
+46:36 people because you're annoyed something
+46:38 doesn't exist exist in Cas you have aan
+46:45 jiujitsu that would be the end of the
+46:49 story I I would not get anything I would
+46:52 not get a simple python pipeline in the
+46:54 end uh but yeah I I I think it's uh
+46:56 these these skills are important on the
+46:58 to create a change in any kind of
+47:00 organization to be able to build
+47:01 networks and um present things if if you
+47:05 want to get a certain kind of let's say
+47:07 I don't know you want to get a fancy
+47:10 vendor based project uh sorry um model
+47:15 registry you need to convince your boss
+47:17 and your boss speaks business language
+47:19 and so there something I want to make a
+47:21 talk out of is like how to change hard
+47:23 to change organizations you know and how
+47:26 to really sell internally certain
+47:30 Technology Solutions and and how to you
+47:32 know fight for for those things and one
+47:34 of the main things I think I think is to
+47:36 align your goals with the goals of your
+47:39 superiors and to to talk to speak their
+47:41 language and if you here it's like I
+47:44 don't know I said in financial industry
+47:45 it's about risk so if you can show how
+47:47 your solution reduces risk for example
+47:50 for the company that's what they like to
+47:51 hear that's what they can sell upwards
+47:53 you know so you need to help them sell
+47:55 that
+47:56 upwards and uh yeah I think those are
+47:59 the main skills MH that sounds like your
+48:03 skills your experience working as a
+48:06 salesperson helps now right yeah yeah a
+48:09 bit a bit that helps Consulting also
+48:12 helps because in Consulting there's a
+48:13 lot of sales also so in Consulting like
+48:16 you have like a day job of implementing
+48:19 the things you need to do and then you
+48:20 have a lot of work in selling new
+48:22 proposals to new clients and explaining
+48:25 how you bring value how you do this and
+48:27 that and that that there's always this
+48:28 translation work there if you just talk
+48:31 about technology nobody cares I mean
+48:34 nobody car it's it's hard to follow you
+48:36 know but if if you data scientists maybe
+48:38 care but if you talk about top
+48:39 management they the people that open up
+48:42 the purse the people that open up the
+48:44 purse to to pay for your solution they
+48:46 want to know how do you how do you make
+48:48 me sleep better at night I think that's
+48:51 the that's the main
+48:54 thing okay and there's an interesting
+48:56 question from debor which we talked
+48:59 about sales a little bit so what was the
+49:01 most challenging aspect of transitioning
+49:03 from doing sales and doing electrical
+49:06 engineering to your machine learning
+49:08 role especially in terms of technical
+49:11 skills well I think for me the sales
+49:15 part was more a deviation in a way so
+49:18 already my let's say formal education in
+49:21 electrical engineering was I already had
+49:23 machine learning there I already had the
+49:26 okay yeah so I'm electrical engineer in
+49:28 the domain of signals and systems so
+49:30 it's like systems modeling already
+49:31 that's something I already did there
+49:33 machine learning was like still an
+49:34 emerging uh term but then later when I
+49:38 started doing machine learning I was
+49:39 like oh wait I know these things we have
+49:42 you know the the mathematics the the all
+49:44 the signal modeling signal processing um
+49:47 control on top of that we did control so
+49:49 how do you go from modeling assistant to
+49:51 controlling assistant which is I would
+49:52 say an extra extra Next Step so
+49:56 um for me I I I can't say I had some
+49:59 kind of a big struggle and battle to get
+50:01 into it but for me yeah maybe the
+50:03 hardest thing for me was uh
+50:07 understanding this like probabilistic
+50:08 way of thinking because most of my
+50:10 engineering was like it's really exact
+50:12 you calculate a number and you calculate
+50:14 a solution to this and then to
+50:17 understand like distributions and and
+50:19 how for example you add two
+50:21 probabilities I still remember that I
+50:23 just could not get my head around it
+50:25 like you know when you have one
+50:26 distribution and another distribution if
+50:27 you add it together does is it one on
+50:29 top of the other is it like how does it
+50:32 look like and I remember yeah I was
+50:34 actually arguing with my professor and I
+50:36 was wrong you know
+50:38 but I was convinced he's
+50:41 wrong but yeah he he found a gentle way
+50:43 to tell me
+50:45 no yeah that's why U that person is a
+50:49 professor right yeah it could have you
+50:52 know come to my mind maybe but no I was
+50:54 so convinced that he's wrong
+50:56 but sometimes it also helps not to how
+50:59 to say put anyone on a pedestal just
+51:02 because of the formal role yeah yeah
+51:04 indeed but this guy pres doesn't mean
+51:07 that they're right right yeah yeah I I
+51:10 guess for you this sales rooll this
+51:12 deviation that you mentioned was more
+51:14 difficult than transition like it's
+51:18 different yeah so it's was like a first
+51:20 job I was like okay let's do something
+51:23 whatever it's close to it's was sales of
+51:25 the technical equipment you know so what
+51:27 I what I should have programmed I was
+51:29 just selling that you know and uh I was
+51:32 good in that because uh I was not a
+51:35 typical sales guy because I was like a
+51:37 nerdy guy that actually knew the
+51:39 equipment I actually knew what you need
+51:40 to do with that and then the technical
+51:42 guys I was selling it to they were like
+51:44 oh you really know something oh you have
+51:45 a degree because and so
+51:49 I configure configure and I even helped
+51:52 them solve technical problems with that
+51:54 equipment and that's something they
+51:55 appreciated and uh I would say if we
+51:57 were talking about busines to business
+51:59 sales like this was uh it's very
+52:01 important to like to work on long-term
+52:03 relationships and not just like push
+52:05 push push to sell but really even to
+52:08 decline a sales if you really think it's
+52:10 uh it's not solving
+52:13 somebody yeah but I imagine the work of
+52:16 a electrical engineer is not
+52:18 actually um soldering components but
+52:21 more like computer right that's an
+52:24 electrician that's electrician but
+52:26 electrical engineers I mean you have
+52:28 like the power line you say the high
+52:30 voltage electricity you have Micro
+52:32 Electronics uh you have like a physical
+52:35 Electronics biomedical Engineering also
+52:37 was there so we learned about like uh
+52:40 Medical Imaging for example that's also
+52:42 very interesting uh domain but
+52:46 yeah not
+52:48 soering
+52:50 okay okay uh another question what is
+52:52 the general Tech stack for machine
+52:55 learning for a noice
+52:59 beginner you repeat what's the yeah yeah
+53:02 yeah so the question is what is what is
+53:05 the tech stack for machine learning for
+53:08 a novice beginner so I'm just wondering
+53:10 like it's a quite a broad
+53:13 question so I guess the question is
+53:15 asking what kind of Technology if you're
+53:17 a beginner Tex stack text Tech yeah if
+53:20 you're
+53:21 a for
+53:24 beginners I would still stay say
+53:27 python above everything so python is
+53:30 like the definitely like the glue
+53:31 language which connects
+53:34 everything and it's even getting
+53:36 injected into browsers and into uh Excel
+53:42 recently so I think you cannot make a
+53:44 mistake if you invest your time to learn
+53:46 P python
+53:51 properly I don't know with libraries it
+53:53 changes all the time it changes all the
+53:56 time so your basic skill needs to be
+54:00 Googling and being ready to change SQL
+54:02 is definitely something which stays you
+54:04 know like pandas has like a long
+54:06 tradition but now you see people using
+54:08 more and more polers and this and that
+54:10 but still you see the pandas has such a
+54:12 strong Legacy that some other projects
+54:15 have accepted the pandas API like the
+54:17 pandas way of doing things although it's
+54:19 not pandas like on by spark I think you
+54:21 have now also some kind of a pandas API
+54:23 like you can use mod than on Ray also as
+54:26 a panda looks like pandas but it's not
+54:28 pandas you know so in that that sense I
+54:32 think it's also just fine to start with
+54:34 that but
+54:37 um it's I think it's
+54:39 good I would say open up the jobs the
+54:42 job postings and look what people are
+54:44 looking for you know definitely search
+54:48 that that's like how I did it every time
+54:50 you know you open it up and for example
+54:52 how I started learning python is uh at
+54:55 University we did a lot of um matlb you
+54:58 know and I was like okay I was I I liked
+55:00 matlb actually it's a really cool tool
+55:03 but then I was like looking for jobs and
+55:04 I was like okay who looks for mat lab
+55:06 person I was like nobody apart from some
+55:09 uh German car manufacturers or like part
+55:13 manufacturers for cars um nobody was
+55:16 using matl and I was like let's look for
+55:18 the positions I want oh everybody asked
+55:20 for python let's let's learn python you
+55:21 know so um and I would say don't obsess
+55:25 I would say no one tool maybe across the
+55:26 stack that would be good and then they
+55:28 are all pretty similar you know in easy
+55:32 to transition from one to the other um
+55:35 yeah psychic learn pandas python those
+55:38 are the basics and still they're being
+55:41 used everywhere and all the rest is I
+55:44 think just deres from there it's good
+55:45 it's good to know to to do something in
+55:46 the cloud so I had a lot of pet projects
+55:49 I I made like websites I think it's good
+55:51 to know how to make a simple website
+55:53 like just basic HTML CSS JavaScript it
+55:56 can look as ugly as hell but if you know
+55:58 just a bit of that how to compose
+56:00 everything together uh I think it's it's
+56:02 value depends on how much time you have
+56:04 if you have unlimited time and you're
+56:06 young I would just say go wild and learn
+56:08 everything you know
+56:11 but but yeah focus focus on projects
+56:14 focus on making something end to end and
+56:16 you will see what's required there you
+56:19 will be I think that's the the best like
+56:21 instead of thinking what kind of tech I
+56:22 need to learn think what kind of
+56:25 projects I want to make yeah what kind
+56:28 of problems I want to solve yeah and
+56:30 then okay like this is the problem I
+56:31 want to solve like I want to I don't
+56:34 know detect when uh if I had a car a car
+56:38 a cat and then like the water for
+56:42 drinking yeah is gone right it's not
+56:45 there anymore yeah you maybe want to
+56:47 detect that moment right so then you
+56:49 have an idea what you can Implement and
+56:51 then you think okay what do I need to
+56:52 implement that yeah no but but the thing
+56:55 is it's I think it's mainly a question
+56:58 about not what's the best tool for the
+57:00 job because you have many Rich domain
+57:02 you have many tools which are good for
+57:04 the job but then the question is what
+57:07 will get me
+57:08 hired I think that's when I think about
+57:11 what to learn I think what's going to
+57:12 increase my chances of getting higher
+57:13 and then then you need to just explore
+57:15 do the be a data scientist about the
+57:18 tech stack and what's the best way to be
+57:20 a data scientist about the text stack is
+57:22 to go and look for job descriptions and
+57:25 see what people are asking for and
+57:27 always know that every job description
+57:29 has three times the required the ACT
+57:34 needed stack so if they find something
+57:37 somebody that knows a third of that
+57:38 which they ask they will hire him
+57:40 immediately they always just write a
+57:42 nice wish list for Santa but nobody
+57:44 knows all these things so and in the end
+57:47 Googling and thinking I would say
+57:50 thinking on your feet this is this is
+57:52 usually um yeah what gets you I think I
+57:57 remember so for my first job well
+57:59 actually I was on already on my first
+58:00 job for the second job what I did I I
+58:04 was a Java developer so I opened like 20
+58:07 30 different job descriptions and then
+58:10 noted what is common among them cuz like
+58:13 every single them had a job had a tech
+58:16 piece of technology that no one else had
+58:19 and then like there's the data science
+58:21 project there's the data science project
+58:23 make a web scraping application which
+58:26 scrapes uh whatever LinkedIn jobs or or
+58:30 monster. de or whatever you're using and
+58:34 do some kind of NLP and analyze what are
+58:37 the best and make a website out of it
+58:38 and you can maybe earn money out of it
+58:40 so that people can every day follow the
+58:42 trends in the Tex stack for per domain
+58:45 you say okay for a machine learning
+58:47 engineer these are the most common
+58:49 keywords excluding the stop wordss of
+58:51 course and uh yeah there it is gave you
+58:54 an idea perfect pay us pay us when you
+58:57 earn money give us a cut we have the
+59:02 recording okay I think that's uh all we
+59:06 have time yeah for today W up so thanks
+59:11 thank you it's always pleasure talking
+59:13 to you likewise yeah thanks for joining
+59:16 us today and sharing your experience
+59:19 with us uh giving all that advice so
+59:22 thanks a lot and yeah looking forward to
+59:25 connecting with you again either in
+59:27 person in port or on some other
+59:30 conference or you know s so yeah thanks
+59:34 and thanks everyone for joining too yeah
+59:37 everyone so
+59:39 bye

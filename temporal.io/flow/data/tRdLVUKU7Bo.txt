@@ -1,0 +1,1940 @@
+Ace Non-Technical Data Science Interviews
+
+0:00 um hi everyone welcome to our event this
+0:02 event is brought to you by data talks
+0:04 club which is a community of people who
+0:06 love data we have weekly events and this
+0:08 is one of such events if you want to
+0:10 find out more about the events we have
+0:12 go to the description there is a link
+0:14 click on this and you will see all the
+0:16 events we have in the pipeline you can
+0:18 also subscribe to our calendar and this
+0:20 way you will not miss any event that you
+0:22 have
+0:23 and if you haven't subscribed to our
+0:24 youtube channel please do now there is a
+0:27 button under the video click on this and
+0:29 you
+0:30 get to know about all the videos we
+0:32 publish
+0:33 and finally join our amazing slack
+0:36 which have a lot of interesting channels
+0:38 one of the channels is book of the week
+0:40 channel where nick will answer questions
+0:43 in a couple of weeks maybe in a month i
+0:45 don't know
+0:45 because nick is a book author and we
+0:47 will talk about this a bit later but he
+0:49 will also be answering questions uh in
+0:51 our slack so join it
+0:53 and finally today during our
+0:55 conversation you can ask any question
+0:57 you want there is a link in the live
+0:59 chat click on this link and ask your
+1:02 question
+1:03 and that's it
+1:05 for the introduction so i just
+1:08 also what i usually do is i take
+1:10 pictures and then post them to twitter
+1:13 and we didn't have time for that uh
+1:15 before
+1:16 the the thing so how about doing it
+1:18 right now
+1:19 great yeah
+1:21 so let me get
+1:24 let me grab a copy of my book
+1:26 okay yes of course that's even better
+1:31 done so let me just quickly post it
+1:37 then
+1:38 how many live viewers do we have now
+1:40 i don't know let me check the first time
+1:43 posted
+1:44 yeah yeah
+1:45 17.
+1:47 amazing
+1:48 okay so now i have my notes
+1:52 and are you ready
+1:55 yeah let's do it yeah
+1:58 um this week we'll talk about
+1:59 non-technical parts of the data science
+2:01 interview we already had an episode
+2:04 where we talked about
+2:05 cv like how do you prepare your cv and
+2:08 other aspects of the interview process
+2:10 you can go and check our website
+2:12 we didn't talk a lot about the
+2:15 behavioral interviews and other less
+2:16 technical parts of the data science
+2:19 interview which is what we
+2:20 we are going to cover today
+2:23 so we have a special guest today nick
+2:26 nick started his career as software
+2:28 engineer on facebook's growth team and
+2:31 then he worked as safegraph started like
+2:34 application analytics startup
+2:36 um
+2:37 he graduated from the university of
+2:38 virginia with a degree in system
+2:41 engineering
+2:42 and uh yeah so you interned at microsoft
+2:46 and uh at google google
+2:49 and as we already know nick is an author
+2:52 of a book about past async data science
+2:55 interview i think this is the name ace
+2:57 the data science interview we can see
+2:59 exactly around there are like twin and
+3:01 yeah right here and actually
+3:04 i also have
+3:06 yeah amazing just just left
+3:08 amazing i mean yeah just in time for the
+3:10 for that okay anyways welcome nick
+3:14 thank you for having me i'm really
+3:15 excited to be part of your community and
+3:17 give a little talk as well as do the
+3:18 book of the week a little bit later on
+3:20 in the month
+3:21 yeah thanks so before we go into our
+3:24 main topic of icing ace in the
+3:25 interviews specifically behavioral
+3:27 interviews let's start with your
+3:29 background can you tell us about your
+3:31 career journey so far
+3:32 yeah absolutely so i've had a pretty
+3:34 interesting background that's all around
+3:37 data but um in indirect ways so in
+3:39 school i studied systems engineering
+3:41 which is sort of a mix of like
+3:43 operations research business math i was
+3:46 on the data infrastructure team as an
+3:48 intern at google i was a growth engineer
+3:51 and did
+3:52 data driven experimentation ran and
+3:54 implemented many a b tests at facebook
+3:56 and then i joined a location analytics
+3:59 startup safe graph that sold alternative
+4:02 data to hedge funds and retail analytics
+4:04 companies and most recently i wrote the
+4:06 book ace the data science interview
+4:07 which is kind of like the cracking the
+4:09 coding interview or the lead code
+4:11 for data scientists machine learning
+4:13 engineers and data analysts so that's
+4:15 kind of my background around data
+4:17 and when i read your
+4:20 bio i think in a book has your biography
+4:23 and then it says that you're a career
+4:25 coach called sure so what do you do as a
+4:28 career coach
+4:30 absolutely so these days i'm super
+4:31 passionate when covet hit i left my job
+4:34 and i thought hmm a lot of people got
+4:36 laid off they had their offers rescinded
+4:39 and i knew that there was a lot of
+4:40 advice given on how to break into
+4:42 product management software engineering
+4:44 but just not that much around data
+4:46 science so these days what i do is i
+4:48 work with different people who are
+4:49 trying to improve themselves in their
+4:51 interview and help them and coach them
+4:53 on positioning themselves for success in
+4:56 the job market and how to build
+4:57 portfolio projects improve their resume
+5:00 and build up those technical skills to
+5:02 land their dream jobs in tech as a data
+5:04 scientist machine learning engineer or
+5:06 data analyst
+5:07 so you basically help people get a job
+5:09 right exactly that's my goal nowadays
+5:12 okay and how does uh like let's say
+5:16 i want to find a job i want to find a
+5:18 data science job
+5:19 and then usually i apply right that's
+5:22 not my cv and then i talk to recruiter
+5:25 and then
+5:27 like it's actually a whole process like
+5:29 many many many different steps so what
+5:31 are the typical steps there in this
+5:33 process totally so of course it depends
+5:35 company to company but some of these
+5:36 larger fan type companies like facebook
+5:38 and google amazon what they do is they
+5:41 would have a phone screen with a
+5:42 recruiter maybe even the hiring manager
+5:45 if it was a smaller company
+5:46 they just assess you then they might
+5:48 give you an online assessment
+5:50 where they would often ask either a
+5:51 coding question or a sql question
+5:55 and then they usually after these bring
+5:57 you on site um of course in kobe times
+5:59 no on site so just like a panel of three
+6:01 or four more interviews that encompass
+6:03 technical
+6:05 more system design open-ended case type
+6:07 problems as well as of course a
+6:09 behavioral interview with your probably
+6:11 soon-to-be hiring manager um or director
+6:15 or someone else like that so it's it
+6:17 varies but usually it sticks to this
+6:18 script so there are like four or five
+6:22 interviews in total right yeah these
+6:23 days most companies are running four or
+6:25 five interviews by the end of it
+6:28 yeah i remember like six seven years ago
+6:31 when i got my first data science job i
+6:33 actually had just one interview sure and
+6:36 that interview was a bit long it was one
+6:38 hour and a half i mean now by today's
+6:41 standard maybe it's a short one yeah but
+6:43 it was just one interview
+6:44 yeah or maybe it was two i don't
+6:46 remember exactly but yeah after that
+6:48 interview a couple of hours i got a call
+6:51 about an offer
+6:53 yeah yeah now things like even smaller
+6:55 companies don't do that anymore
+6:57 exactly
+6:58 exactly so so definitely when i'm
+7:00 talking about this like four or five
+7:02 round thing it's definitely more around
+7:04 those like unicorn silicon valley
+7:06 startups or fan type companies um at
+7:08 smaller companies you might have a more
+7:10 expedited process partly because they
+7:12 realize talent doesn't put up with like
+7:15 a week's worth of interviewing right um
+7:18 so that's one thing and um another thing
+7:20 there's a very interesting mindset they
+7:22 have in hiring is like they don't want
+7:24 false positives they'd rather turn down
+7:27 people who are good than have
+7:29 hired somebody who suddenly turned out
+7:32 to be bad because it's very cumbersome
+7:34 to fire somebody and put them on a
+7:37 performance improvement plan so that's
+7:39 why to weed out these false positives
+7:42 one easy way is just make a tougher
+7:43 screening and like screen them multiple
+7:45 times so that's kind of where the
+7:46 industry is headed recently so it's a
+7:48 pain for candidates so i have complete
+7:50 empathy there it's a pain but it's just
+7:53 what it is these days so but also for
+7:55 companies it's
+7:56 not very easy to find so many people you
+7:59 know you have to find at least four or
+8:01 five people who can interview the
+8:03 candidate it's very difficult
+8:05 even smaller startups do that these days
+8:08 it's a tough matching problem so some
+8:11 days you hear oh all the companies can't
+8:13 find enough talent people are raising
+8:15 their wages on the other hand you still
+8:16 have a lot of folks who study data
+8:18 science who are like dude how do i break
+8:20 in they're only hiring phds they're only
+8:22 hiring people with years of experience
+8:24 how do i break in as a fresh new
+8:25 graduate from my master's or bachelor's
+8:28 program so i mean it's a tough matching
+8:30 problem and like companies are
+8:31 complaining about talent and talents
+8:33 complaining about companies and
+8:35 i hope that with what work i do and what
+8:37 the book does is it at least bridges the
+8:39 gap a little closer so that companies
+8:42 are better able to ask questions and
+8:43 assess talent
+8:45 and talent who's super
+8:47 skilled technically is able to better
+8:49 portray their own skills and experience
+8:52 so that they don't get dinged for some
+8:54 arbitrary random reason that could have
+8:55 been prevented
+8:57 and we already talked a bit like when
+9:00 you described the interview process you
+9:02 mentioned this behavior in three part
+9:04 which is an interview with a hiring
+9:06 manager or a director uh that
+9:11 like that assesses how
+9:13 good you as a person or i don't know how
+9:15 you feed the company of the company
+9:17 culture well and i think not there are
+9:19 not so many
+9:21 materials out there that prepare you for
+9:23 that like
+9:25 technical part like it's a bit easier
+9:27 because if you just go to your favorite
+9:29 search engine and then type uh like
+9:32 you'll find dozens like i don't know
+9:34 hundreds of different resources but if
+9:36 you go and type something about
+9:37 behavioral interview then maybe it's uh
+9:40 tougher right yeah no so so i think
+9:43 there is enough reading about behavioral
+9:45 interviews but it's not really geared
+9:47 towards data scientists and machine
+9:48 learning engineers because
+9:50 this kind of arbitrary questions were
+9:52 just like tell me about your like
+9:53 biggest weakness it's just sort of like
+9:55 something you ask like a salesperson or
+9:57 something like that but it's like it's
+9:58 kind of random to be asking really smart
+10:00 technical people that kind of question
+10:02 because often a lot of your hiring is
+10:03 actually around your strengths not even
+10:05 your weaknesses so there's definitely a
+10:07 lot of bs and like people who haven't
+10:08 been in the game but um behavioral
+10:11 interviews are really important and like
+10:12 definitely as technical people we just
+10:14 think oh grind leak code oh just
+10:17 practice your data structures or sql or
+10:19 you know get really good at kaggle and
+10:21 then you'll be fine but there's this
+10:23 behavioral component that is important
+10:25 so behavioral interviews what they look
+10:26 for
+10:27 is soft skills
+10:29 because let's be honest alexi part of
+10:31 being a data scientist isn't just
+10:32 sitting there and building a model it's
+10:34 working with so many different
+10:35 stakeholders so if you're not able to
+10:37 hold yourself talk confidently argue for
+10:40 your position or argue for your business
+10:42 recommendation
+10:43 you're not going to be an effective data
+10:46 scientist because so much of it is the
+10:48 soft skills and communication and
+10:50 ability to present your results so what
+10:52 else these behavioral owners look for is
+10:54 also position fit and culture fit let's
+10:57 be honest like
+10:59 people you want people want to work with
+11:01 you you want to work with other people
+11:02 who like you and you like them
+11:05 so
+11:06 you know we're not robots we're not
+11:07 machines and we're humans at the end of
+11:09 the day so there is of course this
+11:11 aspect of like do they fit in well and i
+11:13 think it is a real component people
+11:15 think oh that's just like a bs but i
+11:17 think like
+11:18 amazon for example has these amazonian
+11:20 principles that they really adhere to
+11:22 that are not for everybody okay and then
+11:24 startups have their own set of
+11:26 principles often where someone from a
+11:28 company like google i'm sure they're
+11:30 very smart just might not be a good fit
+11:32 so of course these behavioral interviews
+11:34 also assess not just your soft skills
+11:36 but just like how good you are for this
+11:38 specific role and this specific company
+11:41 and there is an art to it um but we can
+11:43 talk a little bit more but yeah
+11:46 yeah so basically it's not enough just
+11:48 to grant it code to learn i don't know
+11:50 sql and then learn all the probability
+11:54 theory all the machine learning and
+11:55 expect that this is enough to
+11:58 get a job right because then even though
+12:00 you pass all the others there is this uh
+12:03 45 minute interview where they don't ask
+12:06 about theory they don't ask technical
+12:08 part but actually i i remember so i
+12:12 interviewed with the company that uh
+12:15 then the name of the company starts with
+12:16 f
+12:17 a couple of years ago
+12:19 and uh it ends with k
+12:21 and uh
+12:24 but
+12:25 what they asked me is like uh i have a
+12:27 list here because i usually after
+12:29 interviews i try to take a note of what
+12:31 they ask for the reference
+12:34 so they ask me tell me about something
+12:36 you're proud of then the second one was
+12:39 tell me about the time you disagreed and
+12:40 turned right
+12:42 then tell me about the project that got
+12:44 delayed what was the impact and what did
+12:46 i learn from that
+12:48 and then tell me about time something
+12:50 changed you're okay here and then the
+12:52 last one was what are your personal
+12:54 areas were for improvement and why
+12:57 and yeah
+12:58 yeah so this was uh it wasn't out of the
+13:00 blue for me because i interviewed with
+13:02 big corp companies before
+13:04 um especially in amazon i think that
+13:06 amazon there like really they interviews
+13:08 they like really homeless and yeah their
+13:11 leadership principles are really
+13:12 important so i was expecting that but
+13:14 this still is very hard to prepare right
+13:16 so without code that's clear you just go
+13:18 to lead code and then you solve this
+13:19 problem yeah
+13:20 so
+13:22 yeah there no there is a way to prepare
+13:24 so it's good news and bad news the bad
+13:25 news is it is work it's going to take
+13:28 some time good news is there is a
+13:29 process it's not like some arbitrary
+13:31 thing that you can't predict right so in
+13:33 the book i talk about some of these very
+13:35 common questions and you actually got
+13:36 hit with some of these common questions
+13:38 like tell me about your proudest career
+13:39 moment or something you're most you know
+13:41 they're looking for you to show off
+13:43 that's a kind of well-known question and
+13:45 another one is like talk about an
+13:47 unpopular or hard decision you had to
+13:49 make and how did you deal with it that's
+13:50 another one that they're trying to see
+13:52 can you go against the grain can you do
+13:54 it tactfully because of course you know
+13:56 as a data scientist you're going to be
+13:58 making some recommendations that rob
+13:59 other people the wrong way or like we'll
+14:01 get a little bit of a pushback right so
+14:03 i think these are very reasonable
+14:05 questions so my advice for you to
+14:07 prepare
+14:08 is first of all think about your most
+14:11 three most significant experiences
+14:13 maybe those are two jobs and one
+14:15 portfolio project or if you're still in
+14:17 school maybe they're all just projects
+14:19 and internships but
+14:21 think about your three most important
+14:23 experiences that you love to talk about
+14:25 and then go look up and my book we talk
+14:28 about some of the common questions asked
+14:29 but you can find these on the internet
+14:31 what you should do is just simply make a
+14:32 grid
+14:33 so that for each of these questions you
+14:35 can answer them like what are you most
+14:37 proud of in this job this job or this
+14:39 project same way what was the hardest
+14:41 part what was the biggest bug what was
+14:43 something that went haywire and how did
+14:45 you recover what was the setback because
+14:47 really they fall into these kind of
+14:48 patterns of like what did good what did
+14:51 bad and how did you deal with it both
+14:53 ways so that's the first thing like just
+14:56 systemize it with a grid
+14:58 put in an excel sheet and suddenly that
+15:01 will help you now i know some people
+15:02 might listening might be thinking
+15:04 hey
+15:05 like
+15:06 oh like why do you have to prepare so
+15:07 much this is my own experience i know it
+15:09 but let's be honest
+15:11 some of these things you talk about are
+15:12 from a job you did a year or two ago you
+15:14 forgot about it it's been a year or two
+15:16 right and like let's be honest we don't
+15:18 talk about ourselves all the time like
+15:20 oh the best thing i ever did was this
+15:22 this this right we're like used to being
+15:23 a little shyer a little bit more humble
+15:26 but this is not the time for that so
+15:28 there is some element of practicing to
+15:31 be a little bit boastful to get those
+15:33 points across of like why you're a
+15:36 kick-ass data scientist like it does
+15:39 require practice it's not
+15:41 gonna come easy and it requires you to
+15:42 talk to the mirror or talk to a friend
+15:44 or like you know talk to yourself and
+15:46 like verbalize these things and get
+15:48 those talking points down but you can
+15:50 prepare so that's my first thing make a
+15:52 grid now what do we put in the grid for
+15:54 these questions right um alexia are you
+15:56 familiar with the star format by any
+15:58 chance
+15:59 yeah that's a common one so for people
+16:01 who might not have heard of it and
+16:02 there's really great resources out there
+16:04 on the internet also in my book but out
+16:06 there on the internet i don't want to
+16:08 just keep plugging my book
+16:09 the star format is basically situation
+16:12 task action result it's a way to
+16:15 structure your story so i'll give you an
+16:16 example
+16:17 i had facebook they asked me like what's
+16:20 the time you use data
+16:22 to make a decision or like let's say
+16:24 this is a kind of common question for a
+16:25 data-oriented person like tell me about
+16:27 time you use data to make a decision
+16:29 right because they want to hear that you
+16:30 do data informed decision making right
+16:33 that's a big part of our jobs
+16:35 so my answer in the star format would be
+16:37 the situation i was at facebook
+16:39 and i was on the growth team
+16:42 and i was tasked
+16:44 with figuring out is facebook stories
+16:47 good for new user retention
+16:50 meaning is this product
+16:52 helping people who are new to the app
+16:55 stay on facebook longer the retention
+16:57 rate
+16:58 right so that's the situation i was at
+17:00 facebook the task i need to figure out
+17:02 this so i the actions i took
+17:05 i analyzed a whole bunch of data
+17:08 writing lots of sql queries
+17:10 to understand how do new users interact
+17:14 with this feature set
+17:15 and look for gaps that i thought could
+17:18 be good opportunities the result
+17:20 i was able to actually find real bugs
+17:23 that affected new users and since i was
+17:25 a software engineer i fixed these bugs
+17:28 i also made recommendations to the
+17:30 facebook stories team
+17:32 because they didn't really think about
+17:33 new users they just thought about the
+17:35 all the users in general they weren't
+17:36 worried about the people who were new to
+17:37 the platform
+17:38 that actually impacted their next
+17:40 quarters roadmap
+17:42 right
+17:43 and you see how i kind of like really
+17:45 forced myself to say situation task
+17:47 action result maybe you don't have to be
+17:49 as hard-hitting but did you see just how
+17:51 i kind of narrowed down like the success
+17:53 story of like wow this guy actually did
+17:55 something with data and like impacted
+17:57 facebook's roadmap like great and i kind
+17:59 of said that in
+18:00 probably
+18:01 eight sentences ten of course i said a
+18:03 little bit more but i think you know you
+18:05 can get these stories down to a minute
+18:06 and a half and those punchy exact
+18:09 stories that say hey i improved the user
+18:11 retention rate
+18:13 and i changed the whole orgs roadmap
+18:16 are the things that you want to get
+18:17 across and work really well when you
+18:19 narrow down your story to the star
+18:21 format
+18:22 yeah i guess here like even though even
+18:24 if during the interview you don't follow
+18:26 this exact format but when you prepare
+18:29 to an interview and try to stick to this
+18:31 structure this structure will just pop
+18:33 up when you
+18:35 like maybe even
+18:37 you will not follow exactly like
+18:38 situation tasks maybe like it will be a
+18:41 bit different but still like because you
+18:43 prepared when you were preparing you
+18:45 were using this format
+18:47 100
+18:48 and actually you touched on a good point
+18:50 so i know some people in the audience
+18:52 are thinking oh um i don't want to sound
+18:54 like a robot i don't wanna sound so
+18:56 scripted i don't wanna sound rehearsed
+18:58 you wish you were that good you wish you
+19:00 were an actor who just you know they did
+19:02 two minutes of prep and star format and
+19:03 then they hit it verbatim right you're
+19:06 not that good so
+19:08 practicing beforehand won't make you
+19:09 sound like a robot it will only get your
+19:11 point across better you're not gonna
+19:13 sound robotic it's not like you know
+19:15 people have this mindset like oh if i
+19:17 prepare it'll
+19:19 hurt me actually probably not now if
+19:21 you're the world's best salesman
+19:23 maybe maybe you might sound too salesy
+19:25 but let's be honest most of the data
+19:26 scientists machine learning engineers
+19:28 reading this stuff or like listening to
+19:30 our podcast right now they're not you're
+19:32 not in that position that you just spit
+19:34 out things so prepare preparation is
+19:36 possible
+19:37 it takes some work but if you go
+19:39 systemized
+19:40 it'll work out and you'll put present
+19:42 yourself much much better
+19:44 and what about this tricky
+19:47 tricky question so for me the tricky one
+19:49 that i wasn't able to answer during that
+19:51 interview i mentioned was tell me about
+19:53 the time you disagreed and weren't right
+19:55 and for me i was like
+19:57 i don't remember
+19:59 and yeah
+20:00 so how do you go about these tricky ones
+20:02 and for example
+20:04 the other one was about a project that
+20:06 got delayed so it's a very specific one
+20:09 and then okay like which project i had
+20:12 in my career actually got delayed well
+20:14 all of them right all of them right
+20:17 so actually yeah i mean i i wish i had a
+20:19 better answer but just don't get tricked
+20:21 like what you you're calling these
+20:23 tricky but i think i have some of these
+20:25 in my book they're not that tricky like
+20:27 a delay is a very common thing and the
+20:29 disagreement with somebody else like a
+20:31 common one i wrote in the book is tell
+20:33 me about a time you disagreed with a
+20:34 product manager or business stakeholder
+20:36 like that's like that's what your job is
+20:38 you're gonna be working with these
+20:39 people so they're actually not that
+20:41 tricky i think
+20:42 tricky in this sense would be like tell
+20:44 me about your three biggest weaknesses
+20:46 but these days honestly that kind of
+20:48 question is a little taboo like people
+20:49 people think it's kind of dumb because
+20:51 it's it's a sort of like the typical
+20:53 answer is like oh i work too hard that's
+20:55 my biggest weakness i care too much it's
+20:57 like so people have like shied away from
+20:59 that question um and of course you know
+21:01 at some level
+21:02 they're looking for you to be you so
+21:04 like it's okay if it's not you know if
+21:06 you get stumped but definitely
+21:08 preparation makes perfect and like
+21:10 these are not actually that tricky like
+21:12 they're tricky in the moment but like
+21:14 stepping back
+21:15 every project gets delayed and every
+21:16 project has their disagreements and it's
+21:18 up to you to think about these things
+21:19 before you even step into the interview
+21:21 room
+21:22 and i think
+21:24 you mentioned these amazon leadership
+21:25 principles and amazon using
+21:28 a user's interviews to actually find out
+21:30 if people
+21:31 um are you know
+21:34 they
+21:35 fit to these principles
+21:37 and i think these principles they are
+21:40 kind of they make sense like i mean they
+21:42 make sense for most for many companies
+21:45 yeah maybe like uh you know frugality i
+21:47 don't know about every company but in
+21:49 general they make sense right yep and
+21:51 what i found useful for me personally
+21:53 when preparing is taking these
+21:55 leadership principles
+21:57 and then i was selecting i think i
+21:59 selected two not three projects and then
+22:01 i had a grid sort of like with two
+22:03 projects and then leadership principles
+22:05 from amazon and then i would put like in
+22:08 this grid like how i showed this
+22:10 leadership principle in this particular
+22:12 project and that's very helpful not just
+22:14 for amazon but for a bunch of other
+22:16 companies as well absolutely absolutely
+22:19 make a grid and as you hint it on
+22:22 every company thinks that they're really
+22:23 unique but a lot of these things these
+22:25 questions that are asked
+22:28 are repetitive and a lot of the
+22:29 principles of like oh we care customer
+22:31 first
+22:33 you know half the companies in silicon
+22:34 valley say oh we're customer first you
+22:36 know profit second right and i mean i
+22:38 think amazon does live by that a little
+22:40 bit better but i'm just trying to say
+22:42 you're right that
+22:43 putting your work in putting it that
+22:45 grid and really spelling it out in the
+22:47 star format beforehand won't just help
+22:49 you on amazon will just help you with
+22:51 any company and this is the type of work
+22:52 you should be doing
+22:54 before you interview and this is why i
+22:55 always say like this whole interview
+22:57 thing is in art some people just want to
+22:58 show up and think they'll ace the
+23:00 interview but
+23:02 there's an art to preparing and it's not
+23:04 rocket science but it is work and it is
+23:06 you know sometimes unintuitive
+23:09 and uh yeah i think so another good
+23:12 thing about these amazon leadership
+23:14 principles is that they are available
+23:16 available publicly
+23:18 not many other you know similar um you
+23:22 know values of other companies are also
+23:24 publicly real yeah i would i would i
+23:27 would say that that's because a lot of
+23:29 companies might not even have those
+23:30 values or be as value driven but i would
+23:32 say if there's a company that is value
+23:34 driven they will publicize it usually on
+23:36 their careers page or on their about
+23:38 page for example where i worked last
+23:40 safegraph
+23:41 was super careers driven to the point
+23:43 that we had our
+23:46 mission and values
+23:47 put on posters in every single room
+23:50 every single conference room and
+23:52 in the bathroom so while you're peeing
+23:55 at the urinal you're it's right in front
+23:57 of you one foot in front and you can't
+23:59 help but look at it every day and read
+24:00 it and like kind of live by it right so
+24:03 i mean of course ghost company the
+24:04 company but at my company you know if
+24:06 you're pooping you you'd be reading the
+24:08 principles right so
+24:10 um
+24:11 i think like
+24:12 i think it'll be easy most companies try
+24:15 their best to publicize it and the ones
+24:17 that do you better expect that they're
+24:19 going to ask you those same kind of
+24:20 questions right so this is the kind of
+24:22 prep work you can do beforehand so you
+24:24 don't get stumped because like you know
+24:26 if they publicize it that much they're
+24:28 going to be asking you about it in
+24:30 pretty much every interview and that's
+24:31 another thing i wanted to bring up
+24:33 alexis like
+24:34 often on an on-site for 45 minutes you
+24:37 might have a strictly behavioral
+24:39 interview with
+24:40 a hiring manager but let's be honest
+24:42 most interviews will start with like
+24:44 kind of a hey tell me about yourself
+24:46 like tell me about your project tell me
+24:48 about a failure right so these kind of
+24:49 things seep in not just with your last
+24:51 round with the hiring manager they seep
+24:53 into almost every interview even at the
+24:54 beginning with the recruiter that says
+24:56 oh like we're data driven like tell me
+24:58 about how you use data to make decisions
+24:59 like you might be hit with that like
+25:02 right from the beginning
+25:04 yeah right
+25:05 but that's not the only non-technical
+25:07 part
+25:09 of the interview right there are other
+25:11 parts so what are they yeah yeah so
+25:14 another really popular one especially in
+25:16 data science are these project
+25:18 walk-through questions where they ask
+25:19 you lots of details about a work you've
+25:21 done in the past
+25:23 right
+25:23 so you might be thinking oh but doesn't
+25:26 every industry have that kind of
+25:27 question um i think in coding you'll
+25:29 definitely see more of an emphasis on
+25:31 like hey listen nice that you did this
+25:33 project but uh
+25:35 reverse this linked list you know or
+25:37 like hey that's cool but like
+25:39 you know like do this graph theory
+25:40 problem write dfs right
+25:42 data science because it's such a broad
+25:44 field especially in things like machine
+25:46 learning it's such a broad field you
+25:47 know you can't really just hit you with
+25:49 like uh okay let's do linear regression
+25:51 now you know they can't just do that
+25:53 right so what they often do is they ask
+25:56 you about your project and then if you
+25:57 happen to use let's say logistic
+25:59 regression then they'll ask you lots
+26:00 more follow-up on questions like oh like
+26:03 oh you use logistic regression why why
+26:05 not other techniques
+26:06 how did you validate assumptions
+26:09 what performance metrics do you use
+26:11 did your model overfit why or why not
+26:14 how do you deal with overfitting right
+26:15 so this starts getting into the
+26:16 technical realm
+26:18 but again it usually starts out
+26:21 kind of just more like telling me about
+26:23 your project and like what actually
+26:25 happened and alexi the biggest thing
+26:27 i've noticed
+26:29 amongst data scientists data-driven
+26:31 people is they don't talk about the
+26:33 results nearly enough they talk too much
+26:36 about their technical details about a
+26:38 project and not enough
+26:40 with oh and i did this work and it saved
+26:42 the company a million dollars or oh i
+26:44 helped do this and it became the world's
+26:47 best selling this you know
+26:49 usually
+26:50 you see even the star format result is
+26:53 at the end
+26:54 um often though when you're talking
+26:56 about a project that's called like
+26:57 bearing the lead like if you if you like
+27:00 talk about like the impact of it at the
+27:02 end that's like not interesting like i'd
+27:03 rather first you have to tell me like
+27:05 yeah so this project made a million
+27:06 dollars let me tell you about like what
+27:08 i actually did right that's like oh wow
+27:09 like that's super cool because at the
+27:11 end of the day alexi you're being hired
+27:13 to a business
+27:15 and we just want to see business impact
+27:17 sometimes you know i hate to tell data
+27:19 scientists this but like how you did it
+27:21 sometimes might not even matter right
+27:22 it's more about like what actually
+27:23 happened right exactly so
+27:26 preparing
+27:27 your answers to these project
+27:29 walk-through questions and like really
+27:30 understanding
+27:31 what is the quantifiable business impact
+27:34 what actually happened
+27:36 and trying to make that at the start of
+27:38 your story is a real skill and as a real
+27:41 art and this has nothing to do with your
+27:42 technical abilities and it has to do
+27:44 with your preparation and your ability
+27:46 to like kind of convey
+27:48 you know it's a behavioral kind of thing
+27:50 right i think it's there is this pyramid
+27:52 principle um
+27:53 from folks from mckinsey yeah basically
+27:56 when they do a presentation to
+27:58 executives executives don't have time
+28:00 for you know a lot of stuff so they just
+28:02 start with the
+28:04 end like okay this is what we want to do
+28:06 at the end like
+28:08 or this is what the project achieved at
+28:09 the end right so they start with that
+28:11 and then you build the pyramid from that
+28:13 so you then you go into details so you
+28:15 start with the most important thing and
+28:17 then you build this is how we did it
+28:19 these are the three things that actually
+28:20 helped and for these three things this
+28:22 is like uh what we did for these things
+28:25 before right so you start with the most
+28:26 important thing
+28:28 yeah yeah exactly so these project
+28:31 walkthrough questions are
+28:33 oftentimes just like let's hear about
+28:34 your project but they can also be good
+28:36 jumping points into technical things so
+28:38 it's something you'll see at most
+28:40 companies um and a sort of a blend of
+28:42 like they'll ask you one time about
+28:44 logistic regression in your project but
+28:46 then they'll also ask about like oh like
+28:48 how did you make sure the model got
+28:49 productionized or like how do you like
+28:51 prevent disagreements so like you know
+28:53 they'll mix it in but it's another one
+28:55 that if you put the grid out and you
+28:57 really kind of anticipate some of these
+28:59 questions like hey how did you know it
+29:01 was successful what was the hardest part
+29:03 about the project like there are some
+29:04 very standard questions that i talk
+29:05 about in the book that people ask about
+29:07 your projects
+29:09 as long as you make a grid
+29:11 start it out and like anticipate these
+29:13 things again
+29:15 you'll not only do well in behavioral
+29:16 you'll also do well on these sort of
+29:18 semi-technical questions because you can
+29:20 anticipate they're going to ask you like
+29:22 if you use this type of model why not
+29:24 that
+29:25 yeah and i am also taking part
+29:28 in interviews quite often i'm
+29:30 interviewing people and usually these
+29:32 kind of questions i ask in the screening
+29:34 interview so the first or the very first
+29:35 interview i ask hey let's talk about
+29:38 your background what kind of things you
+29:39 worked on and then okay now let's select
+29:41 one of the projects and do a deep dive
+29:43 in that project
+29:44 and then we would do
+29:46 what you call project walkthrough i
+29:49 think okay this is the project you
+29:52 took part in let's talk about that or
+29:54 right actually i usually ask uh what
+29:56 kind of project you want to talk about
+29:58 let's pick one and let's talk about that
+30:01 and this is how it usually happens yep
+30:04 yeah that's that's exactly you're
+30:05 falling into what most companies do
+30:08 because at the end of the day they're
+30:09 not really trying to do a gotcha so
+30:11 they'll let you talk about what
+30:14 you know what you want to talk about but
+30:16 then if if that's the trade-off like if
+30:18 they're gonna let you pick then you
+30:20 better come damn prepared to talk about
+30:22 your favorite project and usually like
+30:23 pick two things right usually like your
+30:25 most important work experience and then
+30:27 if you're junior career maybe also a
+30:29 portfolio project or side project that's
+30:31 really interesting so you come dan
+30:33 prepared because exactly like if they're
+30:35 gonna let you pick your project you
+30:36 better know every detail and often these
+30:39 are like trying to just see like
+30:41 you know are you bsing on your project
+30:43 it's so easy to be like oh yeah i did
+30:44 all this and then it turns out no you
+30:46 and a team of seven people
+30:48 did this right you know back in the day
+30:50 in those school projects you know they'd
+30:51 all you know you'd be in a group of four
+30:53 usually only two of the four people even
+30:55 did the work right and that's why they
+30:57 do these project walkthrough questions
+30:58 just to see like did you actually do
+31:00 what you said you did and like do you
+31:01 actually understand things
+31:03 um
+31:04 yeah
+31:05 and what i often notice uh when we talk
+31:09 about uh
+31:10 projects and what i often notice
+31:12 candidates don't give enough business
+31:13 context like they immediately jump into
+31:16 technical things say okay logistically i
+31:18 use logistic regression and it had like
+31:21 nine seventy percent accuracy it wasn't
+31:22 good enough so i used exit boost and it
+31:24 had eighty percent of accuracy oh cool
+31:27 but tell me why why did you do this like
+31:29 what was the business problem you were
+31:30 selling what were you trying to achieve
+31:32 with this exactly and then yeah at the
+31:35 end what you actually achieved so that's
+31:37 kind of the problem um
+31:40 helps and and see if they started with
+31:42 the result yeah they wouldn't even just
+31:44 say i achieved this percent accuracy
+31:46 right because then i'd push them to say
+31:48 well the business doesn't get paid in
+31:50 accuracy they get paid in like oh it
+31:51 like drove this many dollars or like it
+31:54 reduced false negatives here by x
+31:56 percentage which like reduced costs of
+31:58 this manual review process you know like
+32:00 so once you bring what you said the
+32:02 pyramid principle bring up that result
+32:04 higher and then like make that result a
+32:06 business result a product result not
+32:09 like a technical result you'll find
+32:11 yourself coming across as a much more
+32:14 mature
+32:15 data person
+32:16 because at the end of the day like
+32:17 you're here to drive business results
+32:19 not to improve the accuracy of some
+32:21 small thing
+32:22 by x percentage without the context of
+32:25 you know without the product or business
+32:27 contacts
+32:29 how much time do you think um
+32:31 you should spend on giving the business
+32:33 context when you answer these kind of
+32:35 questions so nobody loves people who
+32:38 ramble right so just try to keep your
+32:40 whole
+32:41 answer to like two minutes and one
+32:43 interesting thing i've noticed alexia is
+32:45 coaching different people is uh in some
+32:47 cultures
+32:48 people try to be exhaustive and give
+32:50 every single detail because they think
+32:52 that if they don't hit every point
+32:54 they're gonna get
+32:55 points dinged but i think what you got
+32:57 to think about is this is a conversation
+32:59 you're having a conversation with your
+33:00 future boss or your future co-worker
+33:02 so you don't just like rapid fire
+33:05 oh here's everything i did hear all the
+33:06 technical details blah blah blah like if
+33:08 you're talking to a normal person it's
+33:09 just like dude i don't even need to hit
+33:11 all these technical details let's first
+33:12 talk about like oh yeah this is what i
+33:14 did it was really cool because of this
+33:16 right so i think if people framed it as
+33:17 like a conversation with their future
+33:19 co-worker and less of like uh oh they're
+33:22 trying to quiz me and like get me
+33:24 that mindset change will itself lend you
+33:27 to have better answers okay
+33:30 um and then your specific question sorry
+33:32 what was your specific question again
+33:33 was uh don't remember i don't like how
+33:35 much time we should spend oh how much
+33:37 time so yeah don't ramble so keep it two
+33:39 minutes first of all keep it two minutes
+33:41 and then business context like
+33:43 i don't know it could be a good 45
+33:45 seconds and of course if they're curious
+33:47 about one thing or another they're going
+33:49 to ask for all questions because it's a
+33:50 conversation so
+33:52 yeah keep things on the shorter end and
+33:54 this is again where it's like
+33:56 preparing beforehand will stop you from
+33:58 rambling
+33:59 and that's actually you brought up a
+34:01 good point
+34:02 when somebody is trying to cover every
+34:05 single detail and when i interview i
+34:09 i feel like i don't feel very good to
+34:11 say hey stop like let's not go into
+34:13 details because i have to interrupt and
+34:16 then i often have to do this because you
+34:18 know like we have limited amount of time
+34:20 right so we want to cover many things
+34:22 like and then i don't feel good about
+34:24 you know shutting the person uh
+34:27 no it's like
+34:28 asking them to stop okay
+34:30 and alexa you're not unique and feeling
+34:32 bad so you know what happens you just
+34:34 let them ramble
+34:36 and then you walk away and you say oh i
+34:38 didn't really like this person and they
+34:39 get rejected and they're like oh whoa i
+34:41 hit every point i said everything
+34:43 amazing like i wonder you know f that
+34:45 company like i did amazing right and
+34:47 what you because people are feel awkward
+34:49 to shut down somebody and then people
+34:51 are also not self-aware
+34:53 that they've been talking for seven
+34:55 minutes eight minutes and not even
+34:56 making sense people use so much jargon
+34:59 in this and that um i have some like
+35:01 crazy stories of that where it's just
+35:02 like um i'll give you an example um
+35:04 hopefully she's not listening um
+35:07 this person worked on a male
+35:09 contraceptive device so instead of uh
+35:12 yeah male contraceptive right so that's
+35:15 already an interesting topic
+35:17 but they like didn't even talk about
+35:18 that they said oh i'm doing some testing
+35:20 around a medical device blah blah blah
+35:22 survival analysis i couldn't keep track
+35:25 of what they're saying and i'm like yo
+35:26 i'm in data i have no idea what you're
+35:28 saying and i happen to know this person
+35:30 personally and i'm like dude like why
+35:31 don't you just start from the top like
+35:33 oh i work at a company that's making a
+35:35 male contraceptive and one of the
+35:37 biggest things is
+35:39 how long will it work will it work for a
+35:41 year or two so i did survival analysis
+35:43 if they just said that
+35:45 then i'd be like oh yeah survival
+35:46 analysis great like let's talk about the
+35:48 results but they like buried the lead
+35:49 and they just said oh uh
+35:51 obscure medical device this is this and
+35:53 they rant it on i could not understand
+35:56 it it's so easy to fall into the trap
+35:57 and everyone thinks like oh yeah that's
+35:59 that's other people making that mistake
+36:01 i will never make that mistake but my
+36:03 goodness it is so easy especially for
+36:05 people who don't talk for a living you
+36:07 know if you're not a sales person or a
+36:09 marketing expert like you're going to
+36:11 fall under these traps so all you can do
+36:13 is prepare yeah exactly because if i
+36:16 don't prepare then
+36:18 like
+36:18 questions like i just mentioned
+36:20 behavioral ones
+36:22 they get me
+36:23 puzzled like i'm like okay what do i
+36:25 answer like i don't know
+36:28 like and then i answer yeah sorry and
+36:30 then like even worse i can start you
+36:32 know rambling and then
+36:34 lose 10 minutes of time without really
+36:36 answering the thing yup yup yeah
+36:39 okay yeah and uh you mentioned this like
+36:42 uh sometimes people start you know
+36:44 sprinkling buzzwords like mentioning all
+36:46 the things and uh so there is a comment
+36:48 uh that i once interviewed somebody who
+36:50 said they use this vm in a project but
+36:53 they couldn't really walk through
+36:55 what the model is what is the reason
+36:57 they chose this model and i think this
+37:00 is the reason we have this kind of
+37:02 interview questions right to understand
+37:04 how much the person actually knows so
+37:06 this is guess i guess it's getting on
+37:08 the technical side
+37:10 but the non-technical part of this would
+37:12 be maybe if you don't
+37:14 know much about these things maybe you
+37:16 don't say about them right right right
+37:19 right real bullets on your thing because
+37:21 you're going to be asked about them and
+37:23 let's be honest like let's say you did
+37:25 do svm and you just don't know
+37:26 everything about it well go prepare that
+37:28 before your interview because you better
+37:30 believe they're going to ask about it
+37:31 right so that's why some people who know
+37:33 linear regression do a linear regression
+37:35 project but really understand that
+37:37 might do better than someone who made
+37:39 some crazy
+37:40 rnn or cnn using tensorflow and keras
+37:43 but like literally doesn't know what are
+37:45 the foundations of this field you know
+37:47 and like that's how you like assess them
+37:49 so
+37:50 you know it it goes both technically and
+37:52 behavioral because
+37:54 yeah in our field we just can't ask you
+37:55 know elite code type question that's
+37:57 like oh like tell me everything you know
+37:58 about svm or like let's test you so
+38:01 it can implement this vm right yeah so
+38:04 that's why they come through these like
+38:06 conversations and then if you're having
+38:08 a conversation there's no right or wrong
+38:09 answer suddenly this behavioral stuff
+38:12 around pacing not rambling preparing
+38:14 star format starts to matter
+38:17 yeah and uh i remember in one interview
+38:19 the interviewer asked me hey what's your
+38:21 favorite model and then i thought okay
+38:23 the next question would be tell me uh
+38:26 how this model actually works and then i
+38:27 answered linear regression and then he
+38:29 was about oh what's your second favorite
+38:32 one
+38:33 you wanted me to pick something like
+38:35 complex
+38:36 ah okay yeah usually what i've seen and
+38:38 i talk about it in the book um ac data
+38:40 science interview what what i've seen is
+38:42 what's your favorite model then they say
+38:44 something really crazy and then the
+38:46 follow-up question is like okay so what
+38:47 do you know about it and they're like oh
+38:49 i read a research paper like seven
+38:50 months ago i never used it and it's just
+38:52 like oh you know so you're better off
+38:54 using something that you've actually
+38:55 used in a project because think about
+38:57 this like oh yeah i love linear
+39:00 aggression i made a million dollars with
+39:01 it in the stock market right suddenly
+39:04 even if they don't they want something
+39:05 more complex right do you see how i just
+39:07 twisted that they're like oh wait what
+39:10 tell me more like oh okay yeah it's like
+39:11 oh it turns out you know predicting the
+39:13 oil price is just like a linear
+39:15 regression based on these four variables
+39:16 and i did pca to find that these four
+39:18 variables were the best predictive and i
+39:20 made a million dollars wow
+39:22 suddenly your project was amazing even
+39:24 though it's a linear regression so
+39:26 maybe sometimes people push you to do
+39:28 something more complex but i think
+39:29 linear aggression honestly is a great
+39:30 answer for what's your favorite model or
+39:32 decision trees random forest great
+39:35 what if i haven't worked in a project
+39:37 that brought one million dollars like
+39:40 what do i pick yeah that's a real
+39:43 question right because let's say you're
+39:44 a student right all you've done is
+39:46 internships are not even any internships
+39:48 right i feel like there's an art to
+39:50 being able to quantify your impact right
+39:52 so i talk a ton about in my book the
+39:56 value of making kick-ass portfolio
+39:58 projects right so you can always
+40:00 quantify your impact like oh seven
+40:02 thousand people used my little web app
+40:04 or like downloaded my chrome extension
+40:06 or like um
+40:08 you know my mo like yeah something like
+40:11 that right
+40:12 so you can always like find some clever
+40:14 way to quantify it so it doesn't even
+40:16 have to be a million dollars maybe it's
+40:17 like i reduced the latency by five
+40:20 percent or like i increased auc by seven
+40:22 percent i mean those are a little bit
+40:24 more technical and like yes if you don't
+40:25 have a real business impact because it's
+40:27 a pet project let's go with the
+40:28 technical impact because at least some
+40:30 impact is better than like i just did
+40:32 something and there's no impact
+40:34 but you're right like um there's a
+40:36 benefit to doing real business things um
+40:38 so
+40:40 yeah where you can like try to work on
+40:42 more real things like scrape
+40:44 your favorite websites
+40:46 look at their data so that at least it's
+40:48 somewhat more realistic you know um than
+40:51 doing a very pet project and saying
+40:53 there was no business impact
+40:55 how do you think these questions vary uh
+40:58 how they are different for different
+40:59 levels so imagine that if somebody is
+41:01 interviewing for a junior position the
+41:03 questions they get
+41:05 uh are a bit different from somebody who
+41:07 is interviewing for a senior or even
+41:09 like you know after senior personality
+41:11 positions like staff or principal or
+41:13 yeah so i think on behavioral like
+41:15 questions about your biggest failure
+41:17 this and that are
+41:19 very are going to be asked at every
+41:21 level because everyone should have some
+41:23 kind of failure i think just at the
+41:25 higher levels you have to give more
+41:26 mature answers and often
+41:28 there you might be asked more like
+41:30 people
+41:31 type questions because often
+41:33 a lot of being a principal or director
+41:35 of data science is
+41:37 maybe less about being the world's best
+41:38 expert at one specific technique and
+41:40 more about
+41:42 hey like how do you work with others to
+41:44 like drive an initiative or business
+41:46 impact which is exactly why
+41:48 questions about your project delay or
+41:50 like dealing with tough personalities
+41:51 are so popular right so there might be
+41:54 more of an emphasis on the human aspect
+41:57 on
+41:58 the senior roles compared to a junior
+42:00 role you just want to know more about
+42:01 their technical details on a project or
+42:03 like how they dealt with failure but not
+42:05 necessarily like oh
+42:07 tell me about the 11 personalities
+42:09 you know responsible in like the seven
+42:11 year project you did you know
+42:13 um so i think i think that's one thing
+42:15 and then yeah and then um
+42:17 going technical for a second another
+42:20 thing is you might be asked you know
+42:21 some simple sql questions at all kinds
+42:23 of levels but i think
+42:25 more open-ended case studies are
+42:27 expected for
+42:29 senior talent so if you want we can talk
+42:31 about that um
+42:33 these open-ended case studies they often
+42:35 incorporate business or product sense so
+42:37 i'll give you an example one question
+42:39 might be like
+42:40 what metrics would you use to quantify
+42:42 the success of facebook dating right so
+42:46 that's an example of a question here's
+42:47 another question that's like an
+42:49 open-ended so that one is more like a
+42:51 product sensi one around like product
+42:53 metrics here's an open-ended one that's
+42:55 more like system designing which is like
+42:57 hey how would you go about building
+42:59 uber's surge pricing algorithm
+43:02 right
+43:03 so for both of these kind of open-ended
+43:05 questions for more senior roles you'll
+43:07 be
+43:09 asked to give more mature answers and
+43:11 like have more interesting thought and
+43:14 perspective every junior person might
+43:15 just jump into the answer and be like oh
+43:17 uber search pricing i'd use this
+43:18 algorithm you know and a more senior
+43:21 person would be like hey like why are we
+43:22 even building the search pricing
+43:23 algorithm
+43:25 is it to balance supply and demand is it
+43:27 that drivers are complaining that
+43:31 they're leaving money on the table or is
+43:32 it riders complaining that hey i can't
+43:35 get a cab
+43:37 because it's new year's eve and like
+43:38 there's just not enough drivers and i
+43:39 wish there were more cabs on the market
+43:41 you know like who is motivating this
+43:43 problem or is it uber who's like dude i
+43:46 think i could make more money things are
+43:47 working right now but if i just doubled
+43:49 my pricing
+43:51 i could probably make 50 more money
+43:53 without much drop off right like who is
+43:55 motivating this problem i mean all parts
+43:57 of it are probably real for surge
+43:59 pricing but these are the kind of
+44:00 maturity things
+44:02 you get for more senior questions sorry
+44:04 for more senior people
+44:06 um what kind of answer that yeah okay so
+44:08 for case studies basically if you're
+44:10 interviewing uh for a senior position
+44:13 you need to think uh like when they ask
+44:15 questions you do not jump into solution
+44:17 immediately yeah you first ask why so
+44:20 why are we even talking about this
+44:22 problem and then who is motivating this
+44:24 like from where this is coming from yeah
+44:27 exactly and i wanna
+44:29 i wanna caveat one thing though like
+44:31 this kind of framework of clarifying i
+44:32 think it's true for all levels right i'm
+44:35 just saying the way the senior
+44:36 management might clarify
+44:39 would be more interesting than a junior
+44:40 person junior person is like oh like
+44:42 what are the technical requirements and
+44:43 a senior person might be like hey is
+44:45 this a one year initiative or like are
+44:47 we just trying to mvp it right because
+44:48 they're used to like some projects being
+44:50 a two-month mvp and some might be a year
+44:53 long but a junior person is not even
+44:55 thinking like oh i didn't know there's a
+44:56 multi-year uber search pricing thing and
+44:59 i mean in uber there's gonna be a whole
+45:00 team around it it's probably like a
+45:02 multi-year project and keep improving it
+45:04 right so i don't want to like make it
+45:06 seem like oh if you're junior just jump
+45:08 in i think at all levels we should
+45:09 clarify and i think it's one of the
+45:11 biggest tips i give in chapters 10 and
+45:13 11 which are about product sense and
+45:16 case interviews it's the framework on
+45:18 how to approach these open-ended
+45:19 questions the first step as you
+45:21 said clarify clarify clarify that's
+45:24 exactly the first step maybe you can
+45:26 tell us a bit more what are these
+45:27 product sense interviews well what are
+45:29 they
+45:30 so yeah so um
+45:32 product sense interviews are not asked
+45:35 by every company but they are asked by
+45:37 more product driven companies like
+45:38 facebook for roles like product data
+45:42 science
+45:43 um
+45:44 for roles like business analytics
+45:47 marketing analytics so most analytic
+45:49 shops will have this
+45:51 um but then also more product oriented
+45:53 roles where you're actually supporting a
+45:55 pm and engineers so it's less of like
+45:58 you know
+46:00 yeah so companies like facebook uber
+46:02 snapchat airbnb will ask these more
+46:04 product oriented questions
+46:06 and they're kind of almost similar to
+46:08 what pms product managers will be asked
+46:11 in interviews
+46:12 um
+46:13 but often have a more data spin to them
+46:15 and the reason these questions are asked
+46:17 is because in these kind of companies
+46:19 product data scientists work hand in
+46:22 hand with pms to develop the roadmap
+46:25 so if
+46:27 you don't have a good product sense you
+46:29 know how are you going to help develop
+46:31 develop the product roadmap with the pm
+46:33 so that's why these products send
+46:35 questions like
+46:36 what would the success metrics you'd use
+46:39 for facebook dating or hey do you have
+46:41 any product improvement ideas to improve
+46:44 retention or engagement of this feature
+46:46 are asked to even data scientists not
+46:49 just product managers
+46:51 at these types of companies and
+46:53 like
+46:54 how
+46:55 so if i get a question like we have this
+46:57 feature what do you think how do you
+46:59 think about improving this what should
+47:01 we do what kind of answer is expected
+47:03 should i go oh let's change uh you know
+47:06 this button from red to blue maybe more
+47:08 people like it what kind of question
+47:10 what kind of answer is expected there
+47:13 yeah so let's say your question was
+47:16 how do we improve
+47:19 um
+47:21 engagement for facebook live right
+47:24 so
+47:25 the first step actually is
+47:27 and this is the kind of again where if
+47:29 you're going to notice a theme it's like
+47:30 you have to do your homework you have to
+47:32 do your prep work
+47:33 know the company and know their products
+47:35 right because
+47:37 you're allowed to clarify like oh can
+47:39 you tell me more about facebook live or
+47:40 like hey you know i don't really use
+47:41 facebook much but i'm guessing it's like
+47:43 a lot like youtube live
+47:45 and then you know the it's a
+47:46 conversation so the interviewer will be
+47:48 like yeah yeah it is like think of it as
+47:50 youtube live honestly but i mean that's
+47:52 the first thing like you have to prepare
+47:53 and know your products because otherwise
+47:55 like how the hell are you going to
+47:56 answer your question and let's be honest
+47:57 these companies are not going to ask
+47:59 uber's not going to ask about facebook
+48:00 live facebook's going to ask about
+48:02 facebook live
+48:03 and uber is going to ask about surge
+48:05 pricing or something to do with how
+48:06 would you improve the writer or driver
+48:07 app right
+48:09 so usually the first thing you try to do
+48:11 is again clarify so i talk about that
+48:14 framework in our book you first have to
+48:16 say hey when you say improve what are we
+48:18 trying to improve what's the key metric
+48:20 we're trying to improve right because
+48:22 improve is a very nebulous terms and at
+48:24 these large product-driven companies
+48:26 there's a metric like engagement or
+48:29 revenue or time spent that wants to be
+48:31 improved
+48:32 then you ask like hey like you know i
+48:36 think for an improvement thing that's
+48:37 like a little bit less popular yes but
+48:39 there then you just start brainstorming
+48:41 with like oh like you know
+48:42 i know for engagement this is
+48:44 has worked well in my past company so i
+48:46 could try this or like i know that you
+48:48 know pop-ups or notifications are always
+48:50 great for engagement so you know i look
+48:53 at youtube uh sorry i look at facebook
+48:55 live and like look at their
+48:56 notifications and see can we do more
+48:58 real-time notifications on the product
+49:00 right so there usually the interviewer
+49:03 will
+49:04 help navigate you to something that they
+49:06 want to talk about because i know like
+49:08 at such an open-ended question how do
+49:10 you improve facebook live
+49:12 engagement that's you know there's
+49:14 that's that's too hard of a question
+49:16 right so usually it's a conversation
+49:17 they'll narrow it down to you so it's
+49:18 not as daunting
+49:20 as it seems
+49:21 but definitely a mistake again is they
+49:23 just jump in like oh i'd add this
+49:25 feature you know without even clarifying
+49:27 what are we trying to do and what's the
+49:29 product and business goal
+49:31 that we need to align our answer with
+49:34 and this one of the things you mentioned
+49:37 is we need to say what is the key metric
+49:39 and i think this is a tricky one right
+49:41 especially if you don't have a lot of
+49:43 experience in this domain like even
+49:45 maybe you're a senior already and you're
+49:47 working so i work in online classifieds
+49:49 so i can understand what kind of things
+49:51 are important but if i go to a different
+49:54 website outside of my typical expertise
+49:57 i don't know let's say uber right so
+49:59 then i don't know my about uber i don't
+50:01 know much about this to my domain like
+50:04 how do i come up with
+50:06 good metrics a good
+50:07 or not just a set of metrics but the key
+50:09 metric
+50:10 i'll tell you i'll tell you a
+50:12 politically correct answer and i'll tell
+50:14 you the real answer okay and i talk
+50:15 about this in my book as well
+50:17 politically correct answers alexi
+50:20 you don't need to know about uber's
+50:21 business we're judging all candidates
+50:23 fairly and it's okay that you have a
+50:25 different background
+50:26 will give you the contacts needed to
+50:28 answer the question that's the
+50:29 politically correct answer
+50:31 and now here's the real answer
+50:34 i'm an interviewer i work at uber
+50:36 all day i'm thinking about this damn
+50:38 problem around surge pricing all day i'm
+50:40 thinking about this all day the
+50:42 management's beating my ass saying hey
+50:44 we're dropping like you know our driver
+50:46 numbers are not good like riders are
+50:48 happy to pay money but we can't recruit
+50:49 drivers fast enough in peak times we
+50:52 can't bring them online so they're
+50:53 worried about that all the time
+50:55 and then guess who they're interviewing
+50:57 you alexi against
+50:58 an internal candidate
+51:01 a intern who's now looking for a return
+51:03 offer
+51:05 two people who worked at lyft
+51:07 someone who worked at facebook and did a
+51:08 similar problem and then you who might
+51:10 not have contacts
+51:12 so they tell you oh we're all looking at
+51:14 you equally but let's be honest you know
+51:16 the internal uber candidate has a leg up
+51:18 right
+51:19 so how do you fix yourself like again
+51:22 for people watching at home like this is
+51:23 not to like discourage you to be like oh
+51:25 crap i'm never gonna job at uber because
+51:27 they're you know uber internal
+51:28 candidates you know it's not like that
+51:30 but it's like there is an art to
+51:32 preparing and again i talk about that in
+51:33 the book like some tactical ways to
+51:36 prepare for these product interviews one
+51:37 is
+51:38 uber's a public company
+51:40 you can read
+51:42 their reports you can see what are their
+51:44 financial metrics that they're reporting
+51:45 against you can see their ceo dara
+51:48 saying hey listen we're trying to focus
+51:49 on profit because we have great revenues
+51:52 but not good profit so we're working on
+51:53 that
+51:54 so that's one way that you can actually
+51:56 see these things broken down secondly go
+51:59 look on reddit go look on quora go read
+52:01 news stories around uber and you'll
+52:04 start seeing
+52:06 actual
+52:07 business analysts and like stock
+52:09 reporters and things like that talk
+52:10 about the metrics you need right so even
+52:13 if you don't have perfect context if
+52:15 you're a reasonably smart data scientist
+52:16 and you do your homework you look at
+52:19 their public reports you look at the
+52:20 news you look at what people are saying
+52:22 or let's pretend it was a private
+52:24 company right there's usually a public
+52:26 comparable that you can look at
+52:28 you know what i mean like so for a while
+52:30 you know doordash was private you could
+52:32 have always looked at ubereats data or
+52:33 grubhub data
+52:36 you know to know these answers so that's
+52:37 probably my first answer which is like
+52:40 do your damn homework yeah do your damn
+52:42 homework because it'll give you an
+52:44 unfair leg up and i hate to say that you
+52:47 know someone might be thinking hey
+52:48 that's not fair like that doesn't mean
+52:50 you're smart that just means you did
+52:51 your homework but like like let's face
+52:53 it like
+52:54 doing your homework is gonna give you a
+52:56 leg up and like if you're trying to get
+52:57 a job at uber knowing the ins and outs
+52:59 of the uber product is gonna help you
+53:01 for sure
+53:03 what if you're interviewed for google or
+53:06 microsoft or like some giant tech
+53:08 company that is doing everything
+53:10 yeah
+53:11 then i think you'd still want to know
+53:14 what their product set were and
+53:16 oftentimes you might under like know
+53:17 what team you're interviewing with so
+53:19 let's say you're in you know you're
+53:20 interviewing like honestly these days
+53:22 it's like data scientists on gcp google
+53:25 cloud platform there might be a hundred
+53:26 teams there but it's still a gcp it's
+53:29 not something else right so go read the
+53:31 earnings reports or go see what
+53:34 like um azure and aws are doing you know
+53:37 and then
+53:38 that will give you some leg up now of
+53:40 course like they can still hit you with
+53:42 something
+53:42 that surprises you or like they ask
+53:44 about something really weird but then of
+53:47 course they will be smart enough usually
+53:49 to give you a little bit more context
+53:51 um so it's not like you have to know
+53:52 every product and every product line but
+53:54 i'm just trying to tell you like hey if
+53:56 you know overall what gcp is struggling
+53:58 with
+53:59 you will have a better sense or if you
+54:01 know something more about cloud
+54:02 computing or how enterprises use the
+54:05 cloud and like what metrics they look at
+54:07 like total cost of ownership like even
+54:09 just knowing the term total cost of
+54:10 ownership
+54:11 is not something that a junior data
+54:13 scientist might know but like a senior
+54:15 business leader thinks about all the
+54:17 time
+54:18 all right so
+54:19 i think there's always a way and i think
+54:21 like there's no foolproof method for any
+54:23 of this you can always get stumped you
+54:24 can always be asked about a product in a
+54:26 weird way or interviewer might like not
+54:28 like your answer but all we can do is
+54:30 improve your odds
+54:31 um so it's a process but you know if you
+54:34 improve your odds significantly
+54:37 and you
+54:38 play the numbers game that is hiring
+54:40 right you're not just ever interviewing
+54:41 for one company or interviewing with 10
+54:44 if you can go from instead of getting
+54:45 like one offer out of 10 to like two
+54:48 we're in business you're making money
+54:50 this is great so
+54:51 there's no foolproof plan all we can do
+54:53 is up our chances
+54:55 there are also
+54:56 like each company usually has a tech
+54:58 block and they're in the block they
+55:00 talk about use cases right and often
+55:02 they mention at least we
+55:04 not
+55:05 always but sometimes in our tech block
+55:07 at least tech blog we say that this is
+55:09 the metric we care and this is how much
+55:11 like this is
+55:13 what we wanted to optimize right so the
+55:15 end goal for this project was to impact
+55:17 this method right so you can 100 yeah go
+55:20 go for that no 100 that's one of the
+55:23 best ways to prepare i i've i can't
+55:25 believe i forgot to mention this but i
+55:27 talk about in the book and on linkedin
+55:28 all the time
+55:30 case studies are one of the best ways to
+55:32 level up
+55:33 right because it
+55:34 it's more than just oh we use linear
+55:36 regression it's explaining you what was
+55:38 the business problem what was the
+55:40 product problem what were the technical
+55:42 techniques we used how did we
+55:44 productionize our system and you know in
+55:46 this era where ml ops is important and
+55:48 like people are talking about
+55:49 productionization
+55:51 and like deployment it's not just enough
+55:52 to build the models
+55:54 reading these technical blogs gives you
+55:56 this kind of depth of understanding
+55:58 around a business and like around this
+55:59 problem that simply reading about a
+56:01 textbook like oh here's how you do
+56:03 linear regression just doesn't give you
+56:05 so you're 100 right
+56:07 go read their tech blog
+56:09 before you interview with that company
+56:11 and they have a funny story about that
+56:13 so a friend of mine was interviewing
+56:14 with soundcloud uh do you know
+56:16 soundcloud
+56:17 i like spotify so
+56:19 he was uh being interviewed there and
+56:22 then he read their blog and then
+56:24 they had
+56:26 the system design
+56:27 interview and then they asked hey let's
+56:29 design search for soundcloud
+56:32 and then he did a design and then they
+56:33 said oh really cool like it's almost
+56:36 like it's
+56:37 like a storage system that we have and
+56:39 he said yes i read your block and they
+56:41 basically
+56:42 yeah just follow whatever you wrote in
+56:44 the block and then they just designed
+56:46 the system like you did in your blog
+56:48 post
+56:48 and then they said oops
+56:50 yeah
+56:51 that was fun yeah
+56:52 no it it it can happen and you might be
+56:55 thinking like oh did that guy like fail
+56:57 but actually no the guy one
+56:59 showed first of all that he knew
+57:02 their architecture and like
+57:04 cared enough to read their tech blog
+57:05 right so remember right at the beginning
+57:07 we talked about position culture fit
+57:10 alexi let's be honest some of being a
+57:12 good employee is just giving a damn
+57:14 right so if if you read about the their
+57:16 technical blog before you interviewed
+57:19 and they realized oh like this guy
+57:20 actually cared enough to read the blog
+57:22 you're already scoring high marks
+57:23 they're like oh this guy didn't just
+57:24 like shotgun applications just spray and
+57:27 pray they actually care about soundcloud
+57:30 and they care about engineering enough
+57:31 to read our soundcloud
+57:33 blog you know so that's the first thing
+57:35 and the second thing is
+57:37 dude
+57:39 he gave a correct answer because that's
+57:41 all these guys know that's all these
+57:43 engineers know as their own architecture
+57:45 so if someone just like regurgitates
+57:47 that
+57:49 it's just like oh wow like that's pretty
+57:51 good now of course they should have
+57:52 asked a better question not something
+57:53 from their thing but like you'd be
+57:55 surprised how often this happens
+57:57 and like listen i'm gonna look for any
+57:58 advantage i can right like politically
+58:01 correct answer would be like oh like
+58:02 they should have like nullified that and
+58:04 like said oh you know he read the blog
+58:06 so we should give him no marks but like
+58:07 let's be honest he crushed it right like
+58:09 i hate to say that but like yeah so it's
+58:11 on soundcloud to ask better question
+58:13 questions but as a candidate
+58:15 go go do that like yeah and you'll crush
+58:17 it and you know but just don't lie about
+58:19 it don't be like oh i had no idea to
+58:20 blog about this
+58:21 but as long as you're up front they're
+58:23 going to be like oh dope that's pretty
+58:25 cool
+58:26 yeah thanks so there was something i
+58:28 wanted to ask you about the book so when
+58:31 i was ordering this on amazon so i
+58:34 looked at the reviews just because i was
+58:35 curious and in the reviews uh many
+58:38 reviews actually mentioned the cold
+58:40 emailing tip and they said that this was
+58:44 the most useful thing from the book and
+58:46 i wanted to ask you what this thing is
+58:49 all right so i'm a little biased i think
+58:52 out of this book the most interesting
+58:54 part is the 201 real questions but i
+58:57 feel like questions are just questions
+58:59 right it's great practice but no one's
+59:01 like oh my god that changed my life i
+59:02 think the most thing that like put
+59:05 people's like
+59:06 like gave them like a light bulb moment
+59:07 something that like really changed their
+59:09 outlook was my chapter on sending cold
+59:11 emails so a cold email is an email sent
+59:14 to a stranger right someone you didn't
+59:17 know someone you need know would be like
+59:19 a warm introduction or like it was a
+59:20 friend of a friend that's warm cold
+59:22 emails to a complete stranger and it's
+59:24 not just even about email you could send
+59:26 it on linkedin you could send it as
+59:28 twitter like a cold twitter dm but the
+59:30 point is
+59:31 people are willing to help you
+59:33 and if you reach out to people you don't
+59:35 know you'll be surprised by the results
+59:37 i got my last job at safecraft by
+59:40 writing a cold email to the ceo and i
+59:42 put it up on my linkedin like what that
+59:44 email looked like and i talk about this
+59:45 all the time i think people just love
+59:48 this chapter because they thought that
+59:50 they had to apply online
+59:52 with 300 other people
+59:54 wait to get their resume screened often
+59:57 they never hear back they don't even get
+59:59 an interview
+1:00:00 so this kind of changes it up
+1:00:03 because you're actually doing the reach
+1:00:04 outs and when you write a good reach out
+1:00:06 to somebody and say hey listen i see you
+1:00:09 work at uber i analyzed the free data
+1:00:12 around new york city
+1:00:14 taxis and i analyzed this
+1:00:17 i made a public to blow dashboard here
+1:00:20 and i did some analysis
+1:00:22 with scikit-learn here
+1:00:25 it's on my github and you link those two
+1:00:27 things to a hiring manager who was
+1:00:28 working on search pricing they're going
+1:00:30 to be like oh that's awesome like cool
+1:00:32 we'll love to talk to you are like oh
+1:00:33 yeah i just forwarded you to the
+1:00:35 recruiter and people just don't know
+1:00:36 that they can build portfolio projects
+1:00:39 and then email people
+1:00:40 the right people to get ahead of this
+1:00:43 game of just applying online and just
+1:00:45 never hearing back so i think that's why
+1:00:47 people love it that's cool so this is
+1:00:49 basically the cover letter but you don't
+1:00:51 send this cover letter to the recruiter
+1:00:53 right you send this cover letter
+1:00:55 directly to the hiring manager right and
+1:00:57 you could and you could even send it to
+1:00:59 a recruiter too like i i
+1:01:01 i've had great luck with sending it to
+1:01:02 recruiters as well um
+1:01:05 ceos work too at smaller companies
+1:01:07 because they just want to hear from
+1:01:08 smart talented people i think the
+1:01:10 biggest thing is a cover letter is very
+1:01:12 formal and it's often generic for 99 of
+1:01:14 people so that's why so many jobs these
+1:01:16 days
+1:01:18 don't even ask for a cover letter if
+1:01:19 they do like nobody reads it no one has
+1:01:21 time for that but a crisp email
+1:01:24 plus cover letter is like formatted in
+1:01:26 like just a clean page a crisp email
+1:01:28 with like a hyperlink like hey
+1:01:31 here's my github link or like here's the
+1:01:32 project or they just embed the image
+1:01:35 like if you embed a gif
+1:01:36 or an image like hey look at this like
+1:01:40 visualization of all the taxis in new
+1:01:42 york city over 24 hours i love
+1:01:44 transportation and i want to help build
+1:01:45 the future of mobility at uber
+1:01:47 that's like a two sentence thing it's
+1:01:49 one gif
+1:01:51 that's way more alive and like showing
+1:01:53 that this person actually knows how to
+1:01:54 deal with like eight million
+1:01:56 taxi trip record data and like did
+1:01:58 something with it then like any cover
+1:01:59 letter that just says i'm a hard-working
+1:02:01 data scientist who's passionate about
+1:02:03 making a difference you know that's
+1:02:04  so that's why this cold email
+1:02:07 stuff works yeah thanks we should be
+1:02:09 wrapping up um just before we finish
+1:02:12 anything else you want to
+1:02:14 mention any tip you want to share
+1:02:16 uh no i would just say people who are
+1:02:19 about to interview or just want to know
+1:02:20 about how to ace their data science data
+1:02:22 analysts or machine learning interviews
+1:02:24 go check out the book on amazon
+1:02:26 it's basically the cracking the coding
+1:02:29 interview of our field it didn't exist
+1:02:31 so we made it happen and uh it's only a
+1:02:33 few months old but it's already getting
+1:02:35 some great reviews so i just tell any
+1:02:37 person who
+1:02:38 wants to break into these fang type
+1:02:40 companies or just level up in their
+1:02:42 career to go check it out
+1:02:44 how can people find you
+1:02:46 yeah so you can check out um the book on
+1:02:48 amazon of course just ace the data
+1:02:50 science interview you can find me
+1:02:53 uh and my blogs on nick singh.com
+1:02:57 i also talk a ton on linkedin i have
+1:02:59 about 65 000 followers on linkedin and i
+1:03:02 post tips daily around career job
+1:03:05 hunting and data science so you can
+1:03:06 always find me there at nick singh um
+1:03:09 yeah linkedin my website and buying the
+1:03:12 book are the best ways to go
+1:03:14 to learn more about me and my teammates
+1:03:17 yeah thanks a lot thanks for joining us
+1:03:19 today thanks for sharing your story
+1:03:21 thanks for
+1:03:22 sharing tips with us and thanks everyone
+1:03:25 for joining us today for
+1:03:27 watching us
+1:03:28 there was one question i didn't cover it
+1:03:30 but uh yeah sorry about that but yeah
+1:03:32 thanks a lot everyone and uh thanks nick
+1:03:35 and uh yeah yeah thanks for having me it
+1:03:37 was great to be on all right talk to you
+1:03:39 later bye

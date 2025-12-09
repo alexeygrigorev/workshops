@@ -1,0 +1,1687 @@
+Machine Learning in Marketing
+
+0:01 hello everyone welcome to our event this
+0:03 event is brought to you by data redux
+0:05 club which is a community of people who
+0:07 love data we have weekly events and this
+0:10 is one of such events if you want to
+0:12 find out more about the events we have
+0:14 there is a link in the description go to
+0:17 the description click on this link and
+0:18 you'll see all the events we have in our
+0:20 in our schedule
+0:22 then if you haven't subscribed to our
+0:25 youtube channel do it now just click on
+0:27 the subscribe button and then you will
+0:30 see all our videos that we have in our
+0:33 in our youtube channel then we have an
+0:35 amazing slack community it's also
+0:36 important that you join
+0:38 there you can hang out with other data
+0:40 into zests
+0:42 ask questions help others it's an
+0:44 amazing place check it out and then
+0:46 finally on monday we start a course
+0:48 about envelopes which it's called
+0:50 envelope zoop camp it's completely free
+0:53 check it out there is also a link in the
+0:55 description
+0:56 uh register we start on monday
+0:59 so it's going to be awesome if you're
+1:02 into machine learning data science and
+1:03 you're interested in the engineering
+1:05 component of that check it out
+1:08 and during today's interview you can ask
+1:11 any question you want there is a link in
+1:13 the live chat it's pinned click click on
+1:16 this link and ask your question and i
+1:18 will be covering these questions during
+1:19 the interview today
+1:22 okay i think that's
+1:24 all the slides i have
+1:27 and now i just need to open the document
+1:30 with questions
+1:36 are you ready
+1:37 yes
+1:40 okay so let's start
+1:42 this week we'll talk about machine
+1:44 learning in marketing and we have a
+1:46 special guest today one
+1:48 juan is a berlin-based mathematician and
+1:51 data scientist he is interested in
+1:53 statistical learning time series
+1:54 analysis bayesian and geometric metric
+1:57 methods in data analysis
+2:00 welcome juan
+2:01 yeah thank you very much i'm very happy
+2:04 to be here and yeah thank you again for
+2:06 the
+2:06 invitation okay so you recently gave a
+2:09 talk at pi data berlin and i thought
+2:12 that the talk is amazing i unfortunately
+2:14 couldn't i wasn't be i wasn't able to
+2:17 attend the talk because they didn't let
+2:18 me the talk was uh
+2:21 already full so the room was full they
+2:23 couldn't
+2:24 get in but i really wanted to talk to
+2:26 you to invite you here so well thanks a
+2:30 lot for agreeing
+2:31 and this is an amazing topic um i am
+2:34 very happy to talk about this topic with
+2:36 you today but before we go into main
+2:39 topic
+2:40 which is machine learning in marketing
+2:42 let's start with your background can i
+2:44 can you tell us about your career
+2:45 journey so far
+2:47 yeah of course before i jump in i just
+2:49 wanted to say that the video of the pi
+2:50 data talk is live so you can check it
+2:52 out it's online already yeah so i'm
+2:55 originally from colombia i came to
+2:58 berlin around 10 years ago to pursue my
+3:00 studies in mathematics so i
+3:02 i joined humboldt university so i did my
+3:05 master's
+3:06 a and phd in an area which has actually
+3:09 nothing to do with data science per se
+3:11 so it was some kind of geometric
+3:13 analysis
+3:14 which was very interesting it's it's
+3:17 something that i wanted to do just for
+3:18 the sake of doing research i especially
+3:21 because i really like geometry
+3:23 but uh yeah after doing some some
+3:25 sometime in academia i decided to do
+3:27 something else
+3:28 uh kind of my first
+3:30 position a like about data was a td
+3:34 replay which is a marketing consultancy
+3:36 and it was quite nice because this kind
+3:38 of first experience exposed me to
+3:40 different type of projects and clients
+3:43 in various industries and also give me
+3:45 kind of the business a point of view and
+3:49 because again data scientists is not
+3:51 just math and code but it's about how to
+3:53 make this useful for for people to
+3:56 to improve their businesses and that was
+3:58 quite fun that took almost three years
+4:00 but then i decided to to move back to a
+4:02 product company because we're
+4:05 essentially doing kind of the the more
+4:06 risky projects or the proof of concept
+4:08 for the clients and then we deliver that
+4:10 for in-house development but i was kind
+4:13 of missing this product development part
+4:14 a and that's why i joined hellofresh i
+4:17 was a yeah as probably we'll talk in a
+4:20 bit
+4:21 during my experience at td i did a lot
+4:23 of time serious analysis so what i i
+4:26 joined hellofresh uh to support the
+4:29 forecasting team
+4:30 and that was quite fun especially
+4:32 because it happened during covet so
+4:35 doing forecasting the record i was
+4:36 definitely challenging definitely
+4:38 interesting we couldn't of course rely
+4:40 on standard methods so a lot of kind of
+4:43 new techniques and kind of tricks had to
+4:45 be applied
+4:47 a but after that
+4:49 i really wanted to come back to
+4:51 marketing now again from a product
+4:53 perspective and yeah since around eight
+4:56 or nine months i am working at vault
+4:59 uh where i'm part of the marketing tech
+5:01 team yeah kind of leading the the data
+5:04 science uh project in the marketing
+5:06 domain
+5:09 can you tell us a few words about
+5:10 geometric analysis oh what is that
+5:14 yeah sure so geometric analysis
+5:17 is try to understand kind of
+5:20 topological invariants of kind of
+5:22 twisted surfaces i was especially
+5:24 working with surfaces with with corners
+5:26 so to say
+5:28 uh but if you see the surface you can
+5:29 see for example if they have corners if
+5:31 they have holes
+5:32 but if you have this in let's say very
+5:34 high up dimensions you cannot probably
+5:36 see that and you want to to detect this
+5:40 through integrals or through kind of
+5:42 matrices so the i think the one of the
+5:45 ways of understanding it uh
+5:48 it's ask said that you want like can you
+5:51 hear the shape of a drum
+5:53 and what he meant is like if i give you
+5:56 an operator on a manifold and i compute
+5:58 kind of the eigenvalues the spectrum can
+6:01 i detect some geometry and you can
+6:03 partially detect that so if you take
+6:06 these eigenvalues you can see for
+6:07 example what's the dimension
+6:09 or like the volume and yeah and that's
+6:11 this game to try to detect global
+6:13 properties through kind of more
+6:15 analytical methods
+6:17 quite unrelated to multiplan multiple
+6:19 visitors
+6:20 yeah
+6:22 but i mean the core is leaner algebra so
+6:24 linear algebra is definitely a core a
+6:26 part of both worlds so to say
+6:30 yeah i know this talk is about
+6:32 marketing but i'm just curious are there
+6:34 applications in uh like day to day
+6:38 of people like of the geometric uh
+6:41 analysis like can we see as usual people
+6:45 applications of this somewhere
+6:47 um
+6:48 i think as it said like the core
+6:50 components essentially linear algebra is
+6:52 always there
+6:53 something where i'm kind of particularly
+6:55 interested it's in this bayesian
+6:57 infant's approach
+6:59 and these kind of samplers
+7:02 to to to get kind of samples from the
+7:04 procedure distribution actually rely a
+7:06 lot on geometric properties so actually
+7:08 they're people which did kind of design
+7:11 these samplers based on on geometry and
+7:14 it has it's been quite fun to see how
+7:16 like all of these techniques of
+7:18 uh yeah remaining geometry and
+7:20 hamiltonian dynamics can be actually
+7:22 be
+7:23 or are the kind of tool to create this
+7:25 sampler so it's kind of a far connection
+7:28 but it exists it's very interesting
+7:30 interesting i did not know about i not
+7:33 that i know much about bayesian
+7:35 inference anyways but uh i also didn't
+7:38 know that there is any connection to
+7:40 geometry there
+7:42 but yeah yeah um let's let's go back to
+7:44 marketing so hopefully i do know a few
+7:46 things there
+7:48 not a lot that's why we have you here so
+7:50 maybe can you tell us what are the
+7:52 typical problems
+7:54 that we solve with machine learning in
+7:56 marketing yeah i think this is a very
+7:59 interesting question because a there's
+8:01 by no means a kind of a complete answer
+8:03 that i can give just because there are
+8:05 many kind of sub fields so on the one
+8:08 hand side like i guess the most common
+8:10 one to think it's about how to
+8:13 optimize media spend so to do better
+8:16 targeting to users so of course you want
+8:18 to see which targets to users kind of
+8:21 send personal personalized message and
+8:23 so on you also want to prevent a churn
+8:27 and for that of course you you have
+8:29 historical data and you probably have
+8:31 some early or like regressors that could
+8:33 be early predicted for that and then you
+8:35 can you want to take action
+8:37 uh
+8:38 upon these results but you can also do
+8:40 things for example using nlp and text
+8:42 mining through social listening and
+8:44 that's something that i did in the past
+8:47 let's try to see let's say how people
+8:50 talk about your brand or about certain
+8:52 campaign in social media and to see
+8:54 what's the sentiment what are the
+8:56 subtopics and actually if the campaign
+8:58 intention was actually reflected of how
+9:01 people a comment on that uh yeah so it's
+9:04 it's it's quite huge so maybe a couple
+9:07 of them which have been working at the
+9:09 moment are on the one hand side as i
+9:11 said on the user acquisition side which
+9:14 is how to better
+9:15 uh
+9:17 use our our
+9:19 monitor to say to efficiently boost your
+9:21 marketing activities and that is somehow
+9:24 related of course with attribution model
+9:26 you want to understand the kind of flow
+9:28 how kind of your eu that spend how does
+9:31 this work to bring new customers
+9:33 and on the they say other part you have
+9:35 retention right so once you have your
+9:38 customers you want to make sure that
+9:39 they're engaged with the product a and
+9:42 for that we can do yeah chain prevention
+9:44 model or as i talked about data talk a
+9:47 offline modeling to actually not just
+9:49 prevent prediction but actually prevent
+9:52 through a kind of taylor incentives
+9:57 so the the main ones are as i said user
+10:00 acquisition is we want to get new users
+10:03 and then once we got the users
+10:05 uh we want to keep them right or detect
+10:08 that if they're about to leave us
+10:11 and somehow prevent this and that the
+10:13 talk that you gave was about detecting
+10:15 this right
+10:16 yeah exactly
+10:18 and attribution model you mentioned this
+10:21 so as i understand so when we try to
+10:23 acquire a user there are multiple ways
+10:25 of doing this we can you know show
+10:27 a
+10:29 commercial on tv then we can put a
+10:31 banner on the street or we can you know
+10:34 go to facebook and show it up there
+10:37 there are there are many many different
+10:38 options right
+10:39 and the goal of attribution models is to
+10:42 understand
+10:44 how effective each channel is or a user
+10:46 came into our platform where did this
+10:49 person uh come from right
+10:52 yeah and and i think yeah kind of there
+10:54 are two parts so on the attribution side
+10:56 you want to kind of
+10:58 so you have you spend some euro in
+11:00 different kind of
+11:01 parts let's say it could be a tv ad or a
+11:03 facebook art and then someone registered
+11:06 right so the first thing is to connect
+11:09 let's say
+11:10 how or like what was the incentive or
+11:13 like
+11:14 trigger for this user to to come in and
+11:16 of course it's not unique and that's the
+11:18 fun part so to say because if you see a
+11:21 tv campaign
+11:22 a you'll probably won't react
+11:24 immediately but maybe you after a while
+11:26 maybe that same day you will google for
+11:28 that
+11:29 a and then
+11:30 let's say through the digital kind of
+11:32 tracking then you could essen let's say
+11:34 in principle attribute that to google
+11:37 but then this that will underestimate
+11:39 the effect of tv
+11:40 so in the attribution part which is also
+11:43 connected to measurement you want to
+11:45 detect this connection
+11:46 after you have done so let's say based
+11:49 on certain assumptions then you want to
+11:50 optimize that because uh
+11:53 let's say you cannot simply keep pushing
+11:55 let's say money or like putting more
+11:58 money in in in the same marketing
+12:00 channels because they saturate right we
+12:02 we have seen that in in practice because
+12:04 otherwise the strategy would be super
+12:06 simple you just keep pushing money
+12:08 and grow your company but we know that
+12:11 this doesn't work like this so yeah it's
+12:13 it's a little bit in that direction
+12:17 so you say if i start advertising now
+12:19 something on facebook in a month um i
+12:23 will see fewer users coming in from
+12:25 facebook right and then i need to go to
+12:27 a different channel
+12:29 yeah i mean
+12:30 especially because uh let's say there's
+12:32 an audience that is available on
+12:34 facebook so
+12:36 i mean you can try to to reach them but
+12:38 at some point kind of the the efficiency
+12:40 of each euro that you put
+12:42 on this channel is not going to to
+12:44 increase usually it just saturates
+12:47 uh but of course there are many
+12:49 components there so time as we'll see
+12:51 like
+12:52 what if you do it close to christmas or
+12:54 close to like summer and this also makes
+12:56 a huge impact so it's not just the
+12:58 euro per se but also kind of interaction
+13:00 of many features
+13:03 and i'm especially curious about tv so
+13:06 you said
+13:07 maybe you run commercial on tv
+13:09 but then so users
+13:12 see the brand right so they may be
+13:13 recognized brand and then the next time
+13:16 they google something and they see
+13:19 like i don't know
+13:20 uh
+13:21 food delivery one right and then we see
+13:23 vault and they click on this
+13:25 so how do they
+13:26 how do you know that this user actually
+13:29 first learned about you through tv and
+13:31 not through google
+13:33 yeah this is a tough problem is it even
+13:35 possible
+13:36 yeah i mean
+13:37 there are kind of a
+13:39 so statistical technique to try to infer
+13:41 that so actually
+13:43 this is connected to what is called
+13:45 media mix model so i mean let me take a
+13:47 step back so before we have all of the
+13:49 cookies and tracking actually marketers
+13:51 uh
+13:53 use these statistical models to try to
+13:55 estimate this uplift let's say a channel
+13:58 level then kind of all the cookie
+14:00 industry came in you had kind of
+14:02 semi-deterministic
+14:05 tracking for users so that kind of stay
+14:07 away a bit but i mean tv
+14:10 is a channel on which many companies
+14:12 just spend a lot of money
+14:14 uh
+14:15 sometimes they don't know let's say
+14:17 what's the efficiency they just know the
+14:18 work so now
+14:20 that new privacy measures are coming
+14:22 like for example the ios change in ios
+14:24 14 5 then all of these methods are
+14:27 coming back to life and there they can
+14:29 work pretty well but of course there are
+14:31 statistical methods
+14:33 so say
+14:35 it's hard to say if
+14:37 they work let's say perfectly i guess
+14:40 one of the main tools for that is of
+14:41 course a b testing or geolocation
+14:43 experiments uh yeah but we can talk
+14:45 about the details later but it's
+14:47 possible through kind of statistical
+14:49 methods to to measure this output
+14:53 and what is uplift in this case
+14:56 what do we actually measure
+14:58 so i mean there are kind of two ways of
+15:01 of doing this so and let's say level so
+15:04 you can do that as let's say
+15:05 holistically because the marketing kind
+15:07 of funnel is rather complex and
+15:10 in this case what you do is a regression
+15:12 model and that's kind of the core of a
+15:14 media mix model on which you put a
+15:16 target variable let's say conversions
+15:19 and you would try to explain that
+15:21 a through all channels as external
+15:24 regressors the tricky part is that if
+15:26 you put the raw data as it is it will
+15:28 probably not work for tv on for other
+15:31 channels as well because there are kind
+15:33 of two effects that
+15:35 that let's say get mixed
+15:38 in in this kind of regression like
+15:39 relation on the one hand side there's a
+15:41 saturation effect
+15:43 which means that again what we talked
+15:45 about that is it's not linear so it's
+15:48 not really a correlation that you're
+15:49 trying to make
+15:50 or to find and in addition there's a
+15:52 carryover effect and a carryover effect
+15:55 means you you must do something you show
+15:57 another day and probably
+15:59 a not all people that sorry out will
+16:02 react on the same day but on the week
+16:04 later
+16:05 so to say
+16:06 so in these miramix models what you want
+16:08 to do is to couple saturation
+16:10 transformations and this carryover
+16:12 effects which are sometimes called add
+16:14 stock transformations
+16:16 and put that into the mix uh
+16:19 in this kind of regression or a
+16:21 kind of setting and of course you can
+16:23 control positionality you can go fancy
+16:26 and go with time-wiring coefficients
+16:28 because the efficiency of marketing can
+16:30 change over time
+16:31 a but that's kind of more on on the
+16:34 holistic level and here by uplift coming
+16:36 back to your question it's really the
+16:38 kind of the coefficient of this
+16:39 regression
+16:40 whereas if you want to do this at
+16:42 campaign level but
+16:44 maybe you don't you don't have let's say
+16:46 all of
+16:47 these data all of these mix that you
+16:49 want to kind of detect and uplift then
+16:51 you can go through a slightly different
+16:52 approach which is the so-called cultural
+16:55 impact
+16:56 and what you do is a you you train a
+16:59 time series model of your kpi of
+17:02 interest let's say
+17:03 by controlling by a seasonality and
+17:06 maybe other
+17:08 regressors other type of media spend
+17:10 and then you generate a prediction
+17:12 assuming that there was no
+17:14 campaign and then you have the true
+17:16 values of of of of your kpi and then you
+17:20 should you would attribute this uplift
+17:23 again this is a big if if the only
+17:25 difference between or like in that
+17:27 period was the tv campaign
+17:30 so didn't maybe i
+17:32 didn't understand it just to make sure i
+17:34 did
+17:35 so uplift in the first case when we just
+17:38 uh
+17:39 look at the contribution of each of the
+17:42 channels so we have a regression model
+17:45 so the target variable here is
+17:47 conversion so somebody let's say
+17:49 registered in in an app or somewhere or
+17:52 download it enough some some action
+17:54 right
+17:55 so let's say registration
+17:57 and then there are multiple channels
+17:59 that led to these registrations so first
+18:01 the user could see an ad on tv then
+18:04 maybe they could hear this in radio
+18:06 maybe or in google or in facebook or
+18:11 there could be many channels right so
+18:12 you have all these channels so they are
+18:14 the features the regressors in this
+18:16 model and then the target is one of the
+18:18 user converter right
+18:21 and then
+18:22 and then you train this model
+18:24 and then you look at the coefficients
+18:25 and you see okay for tv the coefficient
+18:29 is so this gives you kind of
+18:30 contribution of each of the examples to
+18:32 the conversion and then you see okay for
+18:34 tv
+18:35 the
+18:36 uh the coefficient is two times more
+18:38 than let's say for
+18:40 radio i don't know okay tv must be two
+18:43 times more important more effective
+18:45 yeah in a sense i think that's the core
+18:48 there are two kind of things that i
+18:49 would like to add on the one hand side
+18:51 is that
+18:52 the raw kind of impression state or cost
+18:55 data that you put into the model again
+18:57 would not be enough so you need to put
+18:58 this saturation and add stock effect
+19:01 which actually have some hyper
+19:02 parameters that you will learn from the
+19:04 data so you will actually like to
+19:06 learn from the data when this channel
+19:08 saturates and the other is that in these
+19:10 medium exponents as you said there are
+19:13 direct and indirect
+19:15 effects so what you usually do is not
+19:18 have a just a one regression model but
+19:20 you have a couple of them to model
+19:22 different touch points so if your target
+19:24 variable is conversions then you have a
+19:26 model where tv is included
+19:29 but then you have yet another regression
+19:31 model on which your target variable is
+19:33 let's say google search and then you
+19:35 have tv as a regressor for that and then
+19:38 you do kind of an average to see the
+19:40 combine effect so so it's actually a
+19:43 sequence
+19:44 of regression models
+19:48 and another thing i'm really curious
+19:50 about so when it comes to google or
+19:52 facebook you have tracking you know that
+19:55 this user came from this channel but in
+19:57 term like when it comes to tv you don't
+19:59 really know about that so do you have
+20:01 another model that predicts
+20:03 if this user was exposed to a tv tv
+20:06 commercial or how does it work you don't
+20:09 you don't
+20:10 you don't do this at user level but you
+20:12 usually aggregate uh daily or weekly
+20:14 granularity so you you have kind of a a
+20:17 pool of like all of the users are
+20:19 aggregated and agencies that manage
+20:23 tv data they can give you cost which is
+20:26 how many they spend and also they have
+20:28 to like a way of estimating the audience
+20:31 which would be the impression
+20:33 so so this is what what you actually use
+20:35 so it's a it's a time series model so to
+20:37 say so time is component a component is
+20:39 important and you have weekly or or
+20:42 daily granularity
+20:44 so it's called media mix model right
+20:47 yeah
+20:49 and then you mentioned that
+20:51 so we have all these things that track
+20:54 us so every time we click on an ad
+20:56 our cookie or some identifier of us of
+21:00 each of us is somehow saved in the
+21:03 system right and we have access to this
+21:06 but you mentioned that there is a change
+21:08 in the
+21:09 in some privacy regulations that it's
+21:11 coming soon
+21:12 and
+21:13 my understanding is that
+21:15 this kind of tracking will not be
+21:17 possible in the future right
+21:19 yeah and actually
+21:20 it happened actually i think it was last
+21:23 year on the ios 14
+21:25 for example where you can actually in
+21:27 your in your iphone you can
+21:28 actually refuse to share that data with
+21:32 with google
+21:33 with a with apple so what apple actually
+21:35 report is not at user level but like an
+21:37 aggregate report
+21:39 so so in that regard like these type of
+21:41 statistical models are are not truly
+21:45 affected by this
+21:46 uh and i believe
+21:48 that this is going to continue to happen
+21:50 like privacy it's going to make that the
+21:52 these statistical models which work on
+21:54 aggregate data will be the the tools
+21:57 that marketers will need to use because
+21:58 the deterministic way it's probably not
+22:01 going to to work anymore
+22:03 but uh
+22:06 you still will know if somebody came
+22:08 from facebook or not you just don't know
+22:10 uh maybe the if this user maybe visited
+22:14 some other website right you still
+22:16 even i think you you don't know like you
+22:19 you know the aggregate number so but you
+22:21 cannot identify the user like you can
+22:23 say like before report would say okay 10
+22:26 uh users came from
+22:28 from ios but you don't know which ones
+22:31 okay okay but so then
+22:34 it makes the modeling more complex right
+22:37 yeah yeah but again if you think about
+22:40 tv you don't have that either so that's
+22:42 why you want to and this is the key
+22:44 component again i think the media mix
+22:46 model is not really about the model it
+22:48 is but it's really about which data can
+22:50 you find because uh like say already
+22:53 finding good tv spend data a
+22:56 it's like you need to have a common
+22:58 granularity and that's a big part of the
+23:00 project data collection
+23:03 okay so we do this we understand how
+23:06 each marketing channel or how effective
+23:09 each marketing channel and then we can
+23:11 decide to spend some time or some money
+23:13 in this channel then we also should keep
+23:15 in mind
+23:16 and the saturation as you mentioned
+23:19 right and then another area was
+23:21 optimizing how much
+23:23 money was spent on each on like what are
+23:25 the budgets right and then we acquired
+23:28 the user and now our goal is to try to
+23:31 keep this user as long as possible in
+23:34 our application or on our website so
+23:36 what are the
+23:38 things what are the models or what are
+23:40 the problems we're solving there when it
+23:41 comes to retention
+23:43 yeah so in retention actually it depends
+23:46 on the type of business if you have like
+23:48 a contract-based a business then kind of
+23:51 you have a well-defined notion of churn
+23:55 and then typically this is a
+23:56 classification problem
+23:58 on which you have certain features
+24:02 that would probably explain or like
+24:05 indicate
+24:06 a
+24:06 why this user a churn and if you think
+24:09 about a classification model that
+24:11 outputs up let's say a number between
+24:13 zero and one then you can run them on a
+24:16 new customer base and you set a
+24:18 threshold to say okay if it's more than
+24:19 0.7 i will send an email something like
+24:22 that this is kind of a very high level
+24:24 view
+24:25 in other businesses
+24:27 like for example vault there's no kind
+24:29 of definition of churn because you could
+24:33 let's order today or order an an order
+24:36 tomorrow but then go for vacations for a
+24:39 month that doesn't mean your churn that
+24:41 is mean that you're probably just not
+24:42 active
+24:44 so in this in this case there are other
+24:46 type of techniques
+24:47 there are many of them
+24:49 uh
+24:50 some techniques that i've been recently
+24:52 looking into are this more kind of a
+24:54 probabilistic type of model on which you
+24:58 try to simulate this kind of
+25:00 non-contractual behavior and try to
+25:02 estimate the probability of being active
+25:06 as a function of time so it doesn't it
+25:08 is not a typical classification problem
+25:11 uh but again that depends on on on the
+25:14 business model
+25:17 and i guess here you cannot there is no
+25:19 definition of charge because let's say
+25:21 it's an app right or it's a registration
+25:23 so unless users
+25:25 a user deletes their account you don't
+25:28 know whether they deleted an app or just
+25:31 stopped using it exactly right
+25:33 as you can track deletion right
+25:36 yeah but also you like at that time it's
+25:39 already too late so just to give you an
+25:41 example the whole idea is to model the
+25:43 the purchase frequency so there are
+25:45 customers for example that order every
+25:47 sunday and customers that order every
+25:50 day so if they order the the customer
+25:52 that orders every day stops for four
+25:54 days there's probably something wrong
+25:57 and you probably want to react that's an
+25:59 example but if a customer that just
+26:02 orders every sunday stop from four days
+26:05 it's the usual it's expected it's going
+26:07 to be
+26:08 more concerned if this user doesn't
+26:10 order in a month so to say so it's still
+26:13 try to find this kind of sweet point on
+26:15 which you expect like there's something
+26:18 weird from the user pattern and of
+26:20 course you want to learn this from
+26:21 historical data
+26:24 well i am from a different category of
+26:26 users so i
+26:28 order when i just feel like it when i
+26:30 don't feel like cooking so there is no
+26:32 really pattern into that one day i mar
+26:34 might order then maybe i will order next
+26:37 day but then maybe for a month or two i
+26:39 will not order anything
+26:40 but then i
+26:42 because i let's say when i go to work i
+26:44 will want to eat out but then i'm
+26:46 like i'm lazy or i have a meeting so
+26:49 then i just again order right
+26:51 so
+26:52 you describe users who order every
+26:54 sunday you describe users who order
+26:56 every day and then there are people like
+26:58 me who sometimes order
+27:00 so how do you have like a different
+27:01 approach
+27:02 to each of these
+27:04 segments of users yeah of course you
+27:06 will have to have external awareness so
+27:08 for example i would imagine that you
+27:10 order more in winter than in summer
+27:14 maybe maybe
+27:16 i don't i don't collect the data
+27:19 maybe just because you are let's say you
+27:20 are less kind of uh
+27:22 incentivized to go outside and maybe
+27:24 just caught under the ball it depends
+27:26 yeah so i mean i'm just trying to tell
+27:28 the fact that you can of course add
+27:29 seasonality features uh it depends on
+27:32 the customer as well so again as you
+27:35 will do in a churn like a problem where
+27:38 you have like a binary driver you will
+27:40 try to see
+27:41 from kind of a look-alike approach if
+27:43 you could detect some signal of course
+27:45 it's never going to be perfect but it
+27:47 it's at least something to to to make
+27:49 sure that
+27:50 we
+27:52 we target the right users at the right
+27:53 time you of course don't want to get
+27:55 emails every day it's super annoying
+27:58 and practically
+27:59 how is it implemented like do you have a
+28:02 different model for each segment or you
+28:04 have one model for all the users or
+28:08 like or it's too business specific that
+28:11 like every business needs to do it
+28:12 differently
+28:13 i think it depends on the business but
+28:15 you can think about this still as a
+28:17 regression like problem or where you can
+28:20 just add external regressors into that
+28:23 so just the the output probabilities so
+28:26 to say would be a function of this for
+28:28 example segment or external requests
+28:31 and then
+28:32 usually in this case let's say you
+28:34 detect that this user is about to churn
+28:37 because so i use
+28:39 a different app i will not say
+28:43 which up it is
+28:45 but i used to use it but then i stopped
+28:48 um because there is a competitor that i
+28:50 like more and they started sending me
+28:52 pushes so they detected that i am not
+28:54 active and these pushes are so annoying
+28:56 that i just want to delete the app
+28:59 so i guess
+29:00 my question is like do you also need to
+29:02 take this into account the cost of push
+29:04 because maybe i didn't delete the app
+29:07 yet
+29:08 but with a push you kinda
+29:11 annoy me so i go and delete it
+29:14 yeah this is i'm also very annoyed by
+29:16 this email so i think uh
+29:20 the these are kind of two different
+29:22 problems in the sense that on the one
+29:24 hand side you want to have a model that
+29:26 kind of predicts
+29:28 the probability that you're active but
+29:30 then you need to do something else to
+29:31 efficiently target the users that we
+29:33 that you
+29:35 can actually recover so to say because a
+29:38 if you are gone like you're going like
+29:40 why if i need to waste so to save money
+29:43 by sending you emails if that costs
+29:45 right so in that regard this is where
+29:47 uplift modeling comes in on which you
+29:51 really want to
+29:52 learn which users are the ones which are
+29:55 kind of useful to target again based on
+29:58 on historical data
+29:59 uh
+30:00 and and yeah that's why presented at pi
+30:02 data and and this is should be kind of
+30:04 built on top of the term
+30:06 prediction because again we don't want
+30:08 just to predict but we just want to
+30:10 prevent a and of course the output rate
+30:14 and
+30:15 it's something that
+30:16 companies have to take into
+30:18 consideration because like the strategy
+30:19 of just sending emails and hope it works
+30:23 it's a little bit too naive
+30:26 so you also need to be selective if
+30:28 model says
+30:29 this user is not active anymore
+30:32 then you need to see okay how much how
+30:36 hopeless is this user right if the user
+30:38 is hopeless you don't bother right
+30:40 because the user is gone long gone yeah
+30:43 exactly and
+30:44 and like the factors i guess you use
+30:46 here is like how
+30:48 often the user use this app right and uh
+30:51 what kind of patterns
+30:53 yeah
+30:54 but also you you these uplift models
+30:56 actually need kind of an id test so what
+30:59 you actually need to like the training
+31:01 data of these optimal links actually are
+31:03 coming from a from a trace control split
+31:06 so you do the stress control split
+31:08 and then you measure kind of the uplift
+31:11 and then you try to detect signals on
+31:13 which okay because the problem is that
+31:15 you cannot send and not send an email to
+31:18 an user
+31:19 that's what you would ideally like to
+31:21 measure but you cannot so what you try
+31:23 to do is to find similar users
+31:25 such as that in the control group you
+31:27 don't send anything and the treatment
+31:28 you send and then by comparing the
+31:31 object of these two
+31:32 you can estimate so if one of them with
+31:34 the treatment did convert again then you
+31:37 know that these type of users are the
+31:39 ones that you probably want to target
+31:40 but if they didn't for example like
+31:42 that's yet a hint that the model would
+31:44 have to say okay maybe this type of
+31:47 users based on external features
+31:49 is not the one that you want to target
+31:52 and practically i
+31:55 guess you take all your user base you
+31:58 somehow cluster them segment them right
+32:00 and then in each segment you split them
+32:02 into two groups a and b
+32:03 and then you think okay like let's say
+32:06 let's take this segment and then we will
+32:08 send a push or ema and email to this
+32:11 group and we will not send anything and
+32:13 we will see how many of them will
+32:15 actually return right and then this is
+32:16 how you measure um the effectiveness of
+32:19 the
+32:20 goddess
+32:22 but in real life i just wanted to say
+32:24 that in real life the data collection
+32:26 it's i think the most challenging part
+32:28 to be completely honest with you because
+32:30 i mean the models are kind of classical
+32:32 machinery model but of course kind of
+32:34 marketing department
+32:36 would like to just push a lot and to do
+32:38 this control experiments in in a way
+32:40 that you know that the only thing that
+32:42 is different is the treatment it's hard
+32:44 right you don't want to have compounded
+32:45 effects like i don't know
+32:47 like different regions for example or
+32:49 something weird happening in a city and
+32:51 and another thing didn't happen in that
+32:53 city so it's tricky
+32:57 and you said you said marketing is
+32:59 pushing so marketing wants to send
+33:00 emails to everyone
+33:02 so why don't you bother like splitting
+33:04 with amd justin to everyone and see
+33:07 i'm just saying that make doing
+33:09 experiment is it's a commitment that
+33:11 everyone should have in the company
+33:13 right it's not like the kind of crazy
+33:15 data scientists trying to do also but
+33:17 really like to think
+33:18 a and or for example also we need to
+33:21 make sure that the
+33:23 treatments that we send in the training
+33:26 phase are actually going to be
+33:27 consistent in the future right because
+33:29 if in my training period i send a
+33:32 uh an incentive without a voucher and in
+33:34 my
+33:35 to take tests or let's say in my life
+33:37 experience experiment where i'm going to
+33:38 apply that i applied voucher so
+33:41 then it's not really that consistent
+33:43 right
+33:44 and then i guess you can also take a
+33:46 segment and your a b test would be
+33:49 to one to one group you sent an email
+33:52 with a voucher to another you sent
+33:54 without a voucher and then because
+33:56 sending a voucher also has some cost
+33:58 drive
+33:59 yeah yeah exactly and you see like how
+34:01 much actually in each segment how much
+34:04 revenue it then generates right so does
+34:07 it make sense to send vouchers or maybe
+34:09 how large the voucher should be
+34:12 yeah and i think just to make it even
+34:14 harder let's say you want to optimize
+34:17 for kind of long-term retention because
+34:20 if you just if you offer a voucher and
+34:22 this person uses budget and then it
+34:24 doesn't come again
+34:25 i mean again it's debatable like it's a
+34:28 big question whether this was useful or
+34:30 not right you really want to
+34:32 make sure that there's a long-term
+34:34 engagement and like a short-term effect
+34:36 just driven by incentives
+34:39 but also
+34:41 there could be long-term engagement
+34:43 driven by incentives so there is an app
+34:45 that i use for fast grocery delivery the
+34:47 only reason i use is because there is
+34:49 free delivery and they give like 10
+34:52 years discount when it's over a certain
+34:55 threshold the moment they stop doing
+34:57 this i'll just go to a different
+35:00 different up yeah yeah it's it's it's
+35:03 yeah as i think every problem is really
+35:06 trying to understand the the customers
+35:08 that you have and that's uh yeah this
+35:10 diversity makes everything tricky but
+35:12 fun
+35:15 yeah we have an interesting question
+35:16 which approach is more efficient
+35:19 statistics statistical approach or
+35:21 machine learning
+35:24 i mean
+35:26 i
+35:27 don't have a kind of a clear difference
+35:29 between these two i would say you should
+35:31 always go with a baseline which is
+35:34 maybe not neither of those and to have
+35:37 that as a benchmark so i wouldn't jump
+35:39 into
+35:40 this kind of techniques unless it's
+35:42 necessary because
+35:43 this problems are surprisingly hard and
+35:45 if you have the right data
+35:48 you might actually go
+35:50 away with it with a simple kind of rule
+35:53 things
+35:55 become a little bit more complex if you
+35:56 don't have the data available so yeah
+35:59 keep it simple
+36:00 so what could be a good baseline could
+36:02 be benchmark for churn prediction
+36:06 um like for example if they were active
+36:09 last week
+36:10 or not okay that's pretty simple right
+36:13 yeah i mean and whatever you you you do
+36:17 a
+36:18 this is just the first example came to
+36:19 my mind it has to beat that because if
+36:21 not then just use that
+36:24 what do you think are the differences
+36:26 because i'm not completely sure like
+36:28 what are the differences here between
+36:30 statistical and machine learning
+36:32 approaches to me they look kind of
+36:35 the same
+36:36 i guess maybe machine learning is like
+36:37 when you're training boost and
+36:38 statistics is when you train linear
+36:41 regression
+36:42 [Applause]
+36:46 i don't know like i don't have a
+36:48 strong opinion like for me it's just
+36:50 kind of methods to solve a specific
+36:52 problem
+36:53 i do believe that for example
+36:55 in this medium x model it's really about
+36:57 doing a very good finer regression
+37:00 and that's a in practice hard actually
+37:05 yeah we have a question about this mmm
+37:07 model i think it's a
+37:09 mid-mix model right so how often do you
+37:12 retrain these mmo models and are there
+37:15 any significant gains in performance
+37:18 if you let's say retrain them weekly
+37:22 i mean usually if you think about
+37:24 measuring offline campaigns
+37:26 you don't have this every kind of every
+37:29 week or every day so probably what you
+37:32 typically do is to have a good baseline
+37:34 and maybe do it
+37:36 maybe
+37:37 every month or every
+37:39 two months that depends on the direct
+37:41 granularity because of course the
+37:43 digital
+37:44 kind of a
+37:46 challenge will keep going
+37:47 but a kind of the strategy are often to
+37:51 just go on and off because this is quite
+37:53 expensive
+37:54 so
+37:55 of course
+37:56 we really try to automate as much as
+37:58 possible like that our transformation
+38:00 data collection and things like this but
+38:02 we kind of retraining on a daily level
+38:06 it's not going to bring any any value
+38:10 and we talked about a good baseline for
+38:13 churn prediction
+38:15 what are good baselines here for this uh
+38:17 for attribution models
+38:21 um
+38:22 i mean again this is really about about
+38:24 the data that we have because a
+38:25 attribution like in in ideally
+38:27 attribution models it would be
+38:29 deterministic and you shouldn't have to
+38:31 model anything
+38:32 but for example in the ios case
+38:36 if you really want to attribute that at
+38:37 user level there should be a way of
+38:39 splitting this kind of report into
+38:41 individual
+38:43 users
+38:44 so i guess say the easiest one is just i
+38:47 don't know to uniformly distribute that
+38:49 but i guess there are other better
+38:51 methods maybe in like using look-alike
+38:55 approaches to do so
+38:58 uniformly you mean you just assume that
+39:00 every channel is
+39:02 um like if you have a
+39:04 that's a little bit tricky actually it's
+39:06 it's not that simple uh
+39:08 in an ideal case uh you you know that
+39:11 for example the report you say okay
+39:13 there are 100 users
+39:15 and then
+39:16 you have a
+39:18 a way of detecting
+39:20 you don't have per se which one they are
+39:22 but then you have a subset of which you
+39:24 know 100 are coming from this channel
+39:27 and 100 of these other and then you
+39:29 don't know which one so then you kind of
+39:30 randomly assign just so that the report
+39:33 makes sense but of course you cannot
+39:35 trace that back
+39:37 uh
+39:38 it's tricky
+39:41 and then there is another question from
+39:42 sybases
+39:44 about uh
+39:46 probably also this uh mmm model
+39:49 um
+39:50 or it's related to this saturation i
+39:52 think so the question is how do you
+39:54 choose the decay rate for each channels
+39:56 and what's the approach you follow
+39:59 er yeah so actually you don't need to
+40:01 choose that you will actually learn it
+40:03 from the data
+40:04 uh the techniques that you're using to
+40:06 be more concrete is kind of this base
+40:08 and linear regression
+40:10 and again this patient approaches allows
+40:12 you to pluck these type of
+40:13 transformations in a nice way and you
+40:15 can actually learn that from the data
+40:18 and
+40:19 the challenge of course is that
+40:21 you might not have enough data or like
+40:24 you could over parametrize your model
+40:25 just because you don't have enough data
+40:26 points and this is where this kind of
+40:29 basic techniques on which you use the
+40:31 price to shrink
+40:32 the the coefficients that you say
+40:35 based on i don't know the main knowledge
+40:36 for example or certain heuristics can
+40:38 help you a lot so ideally you could
+40:40 learn this from the data
+40:45 is there any good resource on learning
+40:48 all these things so we talked about
+40:49 media mix model we learned about you
+40:52 know this technique that you just
+40:53 mentioned
+40:54 uh bayesian linear regressions uplift
+40:57 modeling
+40:58 uh churn prediction is there a good book
+41:01 or course or something that talks
+41:04 in details about all these
+41:07 methods machine learning methods or in
+41:10 general like data methods in marketing
+41:14 i mean i guess there are many resources
+41:16 online
+41:17 i should say that
+41:19 they're kind of all over the place
+41:21 so
+41:22 just as a little disclaimer i have
+41:23 myself a little block on which i try to
+41:26 kind of run some simulations so that
+41:27 could be maybe a nice place to start but
+41:30 there are many blogs on online about
+41:32 this subject i have found a kind of a
+41:35 conceptually interesting book that is
+41:37 called introduction to algorithmic
+41:39 marketing
+41:40 uh and actually it's it's available
+41:43 online
+41:45 and and it gives a very nice overview of
+41:48 kind of
+41:49 the marketing domain talked about
+41:51 customer lifetime value this efficiency
+41:53 measurement through mmn
+41:55 and they go beyond and they have a nice
+41:57 github repo on which they also have some
+41:59 experiments uh so i found that a
+42:02 reference quite quite interesting
+42:06 yeah thank you i see a question from i
+42:08 mean we talked about bayesian linear
+42:11 regression and the question from amin is
+42:14 do you use bayesian approach for
+42:15 building your statistical models or
+42:17 you're more into the frequencies
+42:19 approach
+42:21 er
+42:22 so
+42:23 i i really like the patient
+42:26 approach because on the one hand side at
+42:29 least for me it's easier to understand
+42:31 it's a little bit more transparent so
+42:33 there's no like
+42:35 i know p values can be understood but i
+42:37 i just find it's a bit more transparent
+42:39 and actually it gives a lot of
+42:41 flexibility so
+42:43 again as i mentioned before you can also
+42:45 of course try to do this with maximum
+42:47 likelihood estimation but the fact that
+42:49 you can encode
+42:52 business knowledge
+42:53 in your priors it's something that comes
+42:55 very handy if you have a small data
+42:59 so it's just a very convenient approach
+43:02 and yeah i'm very
+43:04 yeah i use it but not just because it's
+43:06 fun or cool but it's just because in
+43:08 some situations it does
+43:10 show a big advantage
+43:13 in this specific statistical method
+43:16 you probably talk often or sometimes to
+43:19 your colleagues who from other companies
+43:21 who also work on marketing
+43:23 do you see any
+43:25 preference
+43:27 from your colleagues towards bayesian
+43:30 methods in general or it's like 50 50 or
+43:33 maybe
+43:34 frequencies is more popular usually
+43:38 i think people working on mm's on
+43:40 marketing mixed model i think most of
+43:43 them work with patient methods
+43:45 uh just because again it's about the
+43:48 the
+43:49 the flexibility it provides
+43:52 so in that regard
+43:54 i think it's very popular but for other
+43:56 applications for example like for churn
+43:59 prevention so to say i guess in this
+44:01 case you'll probably try to use a
+44:03 maximum likelihood estimation or a kind
+44:05 of tactical machine learning model just
+44:07 because
+44:08 you really want to aim for accuracy and
+44:10 also the scale a and the the data set is
+44:14 typically much bigger
+44:17 so i guess one explainability
+44:20 and ability to embellish to use the
+44:23 business knowledge
+44:25 uh
+44:25 business knowledge is more
+44:28 important than you go with beijing but
+44:30 when you care more about accuracy then
+44:32 you go with i don't know mixed boost or
+44:34 something and yeah i still believe for
+44:37 example that
+44:39 again this is some kind of early
+44:41 experiment that i i've been doing but
+44:43 for example one of the kind of uh
+44:46 benefits of bayesian modeling as well is
+44:48 that you can have this hierarchical
+44:49 structure
+44:50 and in some sense allows you to solve
+44:52 the culture problem so what happens if
+44:54 you have a new cohort you're doing that
+44:56 at cohort level
+44:57 uh well and you can pull information
+44:59 across categories
+45:01 uh
+45:02 so
+45:03 in this case actually i think even if
+45:05 you're just interested about prediction
+45:07 a or accuracy could be actually very
+45:10 useful
+45:12 so again the problem is about kind of
+45:14 speed and performance but i think the
+45:17 people working in probabilistic
+45:18 programming
+45:19 are really working hard and making a a
+45:21 great progress on scaling these methods
+45:24 so that they are they kind of run more
+45:26 efficiently
+45:28 and finally you said that bayesian
+45:30 approach is easier to understand but
+45:34 you probably mean like it's easier to
+45:35 understand the output and then explain
+45:38 it right because to me every time i try
+45:40 to understand how the agent methods work
+45:43 i see integrals all over the place and
+45:45 they have some mental vocal in my head
+45:47 because i didn't study geometric
+45:49 analysis maybe
+45:50 or maybe it was for some other reason
+45:53 but to me these bayesian methods
+45:56 they're more complex if i really want to
+45:58 understand how they work then i need to
+46:00 go through all these mathematics
+46:02 and
+46:03 yeah that's that's why maybe i'm not
+46:06 into
+46:07 bayesian methods much simply because i
+46:09 don't understand how they work and i
+46:11 totally i totally
+46:14 but i don't think actually it's the fact
+46:17 that like i like you definitely don't
+46:19 need a phd in geometric analysis to
+46:21 understand it's i think the approach and
+46:23 i need to be very honest there's a great
+46:26 reference and it's a book
+46:29 it's called statistical rethinking
+46:31 uh
+46:33 and and
+46:35 rethinking yeah
+46:37 and and
+46:39 the
+46:39 the author of this book provides online
+46:42 lectures online
+46:43 and
+46:45 it's it's a beautiful book just because
+46:46 it gives you the like it's a very
+46:49 complete a fulfillment analysis where
+46:51 you don't see an integral it's just
+46:53 intuition and simulations yeah and and
+46:57 it's it's really beautiful and i
+46:59 strongly recommend and i honestly
+47:02 i read through the math i read through
+47:03 the intervals but it was just by going
+47:07 through this specific
+47:09 book and and there's use of lectures
+47:11 where i grasped this and and then
+47:13 everything became quite transparent so
+47:15 it's it's quite kind of popular among
+47:17 a patient uh kind of practitioners uh
+47:21 yeah it's a it's a it's a book that i
+47:24 strongly strongly recommend
+47:26 i also heard about another book i think
+47:29 it's called think bias
+47:32 it's also
+47:33 i think i attempted to to to read it
+47:37 i don't remember a lot of formulas there
+47:39 um have you heard about this
+47:42 yeah i heard
+47:44 but let's say
+47:45 statistically thinking this boot kept me
+47:47 busy for a year
+47:49 so i i bet everything on it but of
+47:51 course there are many other reference
+47:52 but
+47:53 yeah try it out and let me know because
+47:55 it's really pleasant to to read and and
+47:58 if you don't have maybe the time because
+47:59 i didn't have the time at the moment
+48:00 also to go through the lectures it's
+48:02 also quite insightful
+48:06 well i see we don't have a lot of time
+48:08 left but there is a question i really
+48:10 wanted to ask you
+48:12 let's say i work at a startup
+48:15 and we just started building a team
+48:18 like there is some product we have a
+48:19 brand
+48:20 but we don't have a marketing department
+48:23 yet and we want to start doing this and
+48:25 we want to start uh
+48:27 well maybe there is a person who runs
+48:29 some campaigns on facebook but we're
+48:31 mostly in the dark and now we heard
+48:33 maybe from this talk or some some other
+48:35 talk that data science is helpful
+48:38 machine learning is helpful for
+48:39 marketing
+48:41 and we want to start doing this so what
+48:43 would you suggest how should we approach
+48:45 doing this
+48:47 yeah so of course there's there's a
+48:50 like there should be a business problem
+48:52 of course and and i guess the problem is
+48:54 clear like you want to be more efficient
+48:56 with respect to the marketing spend
+48:58 and everything i talked today
+49:00 it's let's say relies on a good data
+49:03 foundation
+49:04 so
+49:05 collect like you have different channels
+49:07 you have facebook api you have google
+49:10 and
+49:11 you have different formats different
+49:12 globalities
+49:14 i would strongly recommend to the vote
+49:16 sometime before jumping into any
+49:18 modeling to structure the data uh by
+49:21 just doing data integration from for
+49:23 example the api
+49:25 having a designing a
+49:28 data model in the sense of data
+49:30 warehousing and making sure that the
+49:32 data quality is a good enough so to say
+49:35 because of course it's not never going
+49:36 to be perfect
+49:37 and just by doing this and looking to
+49:40 the data kind of the
+49:42 data should guide the models and and the
+49:44 the techniques to be used because again
+49:47 yeah without data it's it's really
+49:50 really hard so spend some time building
+49:52 up the the marketing tech
+49:54 infrastructure to have reliable data
+49:58 so from what i understood so we first we
+50:01 shouldn't think about oh let's hire data
+50:03 scientists and let them
+50:05 data scientists figure out how to best
+50:07 spend our marketing money first we
+50:09 should invest into in infrastructure
+50:12 which means hiring a data engineer i
+50:13 guess and a data analyst right who would
+50:17 work together so the data engineer would
+50:19 build the foundation and then analyst
+50:21 would actually look into look at the
+50:23 data and try to make sense of this data
+50:26 maybe it could be even marketing uh
+50:29 analysts right so under example
+50:31 specializes in marketing and then
+50:33 together they will uh
+50:36 build the foundation people understand
+50:39 how things work
+50:40 and
+50:41 so
+50:42 let's say we have that so what would be
+50:44 the next steps
+50:45 is it are we ready to bring in a data
+50:48 scientist not yet
+50:50 i mean this is a little bit faster this
+50:53 definition because
+50:54 the the person if there was an analyst
+50:57 working
+50:58 in this type of data integration and kpi
+51:01 modeling
+51:02 uh i'm pretty sure that that person can
+51:04 can definitely do some of the
+51:06 fundamentals of the problems that i
+51:08 described because again
+51:10 i don't think like
+51:12 there's is of course but if that person
+51:14 already exists in the company
+51:16 i'll probably probably
+51:18 do a much better job starting with the
+51:21 baseline model than some external kind
+51:22 of data scientists just trying to get a
+51:25 cool models into a new data so so it's
+51:28 it's really like there's a lot of domain
+51:30 knowledge here and just to give you a
+51:32 concrete example a
+51:34 i i work in a kind of truly
+51:35 cross-functional team
+51:37 and and i need to close to work closely
+51:39 with the engineers and data and data
+51:41 analysts so because the media mix model
+51:44 it connects with the attribution and
+51:45 then we need to refine our attribution
+51:47 model and redefine the kpi they want to
+51:49 model so
+51:51 so yeah
+51:53 in a nutshell it's not that there's a
+51:55 specific point in time where you need to
+51:57 bring a phd with geometric analysis by
+51:59 no means necessary i think just by
+52:01 having a good data
+52:03 kind of
+52:04 foundation domain knowledge and a little
+52:06 bit of kind of statistics and linear
+52:08 algebra you can actually do a lot of
+52:10 interesting things
+52:12 so i guess the most important thing here
+52:14 is the main knowledge right which terms
+52:17 everything else and a good analyst who
+52:19 knows data well probably can pull
+52:22 together a python script for doing
+52:25 simple
+52:26 uh
+52:27 modeling right
+52:28 yeah yeah because of course if you want
+52:30 to productionize this let's say you want
+52:32 to deploy your churn model you probably
+52:33 need a little bit more help to spend to
+52:35 okay who is going to set up your let's
+52:37 say airflow server who is going to
+52:39 maintain that and so on and that becomes
+52:41 a little bit more tricky but at least in
+52:43 a very very early stage what you really
+52:45 need to to to stop going blind in your
+52:48 marketing span but maybe try to start
+52:50 with some reporting a and yeah some
+52:54 common sense all the same
+52:56 so i guess if we want to have
+53:00 not data science but in general if we
+53:02 want to start this marketing function
+53:05 in our data organization we need to
+53:07 start
+53:09 probably the first good use case would
+53:10 be
+53:12 to spend our money on marketing better
+53:16 more effective might be more effective
+53:18 in spending that could be a good use
+53:20 case and these are the methods that we
+53:21 talked about like about attribution
+53:23 right so let's say we want to acquire as
+53:25 many users as possible
+53:27 so what is the most effective channel
+53:29 right where we should put more money and
+53:31 then we also should keep in mind like
+53:33 all the things you mentioned about
+53:34 channel situation
+53:36 yeah maybe and something to add on top
+53:38 of that is that it's also key to define
+53:40 which are the kpis which i care about
+53:42 right because optimize respect to that
+53:44 like is it conversions it's kind of
+53:47 which type of conversion like because
+53:48 you can kind of register today and use
+53:51 the app today or in seven days so you
+53:54 get more than short term so defining
+53:56 what you want to optimize for by looking
+53:58 to the data that you have
+54:00 in place it's also an important step
+54:03 like really to see what do you like what
+54:05 do you want to to improve
+54:09 okay yeah interesting
+54:11 and uh
+54:12 how do we decide if retention is more
+54:14 important than the user acquisition or
+54:17 who who does make the who who makes
+54:19 these decisions
+54:21 yeah i think this is really strategic
+54:23 and i think it's not it shouldn't be
+54:25 just like there should be a vision right
+54:28 and
+54:29 there's of course value in acquiring
+54:31 customers
+54:32 uh but something that i truly believe is
+54:35 that no matter what you do marketing
+54:38 wise
+54:39 if your product is not solving or like
+54:41 helping users
+54:42 it's you're just kind of burning money
+54:44 so like it it's it's important focusing
+54:47 marketing but i think it's also key to
+54:50 to make sure that the product is
+54:52 actually going to be the best tool
+54:54 because as you said it's really about
+54:56 the product that drives who is going to
+54:58 join and if you are going to be engaged
+55:01 because no matter how many emails i send
+55:03 you or vouchers if the product is bad
+55:06 and it's buggy you're probably not going
+55:08 to use it so yeah focus on product
+55:10 development i would say as well
+55:13 so retention in this case is uh not only
+55:16 having a good churn model with having a
+55:17 good product right
+55:19 people
+55:20 want to use
+55:21 exactly if it crashes
+55:24 then
+55:25 exactly
+55:27 so in your opinion what are the most
+55:29 challenging problems in marketing
+55:32 um i think
+55:35 as i told you there are many uh
+55:37 something that i keep thinking about
+55:40 and reading a lot about it's about
+55:42 offline channels and media efficiency i
+55:45 think these mm models are in kind of
+55:48 paper
+55:49 quite
+55:50 good and they work beautifully in
+55:52 simulations but when you need to put
+55:54 this into practice
+55:56 this is a quite challenging it's quite
+55:58 fun because it's it's there's
+56:01 it's hard to find a template on which
+56:03 you can just run it
+56:05 uh because it really depends on the data
+56:07 and and often you don't have data data
+56:10 available so you need to find like
+56:12 proxies
+56:13 or like maybe try to do an experiment or
+56:16 maybe use previous experiments to adjust
+56:18 your priors
+56:19 so it's definitely a field which i
+56:21 believe it
+56:23 it requires a lot of kind of creativity
+56:26 and it's less about
+56:28 because to be completely honest i'm not
+56:30 really kind of driven by
+56:32 training fancy models or like on like
+56:35 super big models
+56:37 that require a lot of a computational
+56:39 power for me it's about kind of
+56:41 a solving these problems in
+56:44 that require kind of new ideas right so
+56:47 if it's not going to be a
+56:50 patient in regression okay what do i
+56:51 need and and
+56:53 and i think still there's a lot of room
+56:56 for for new techniques to to optimize
+56:58 media span
+57:02 how do you think it's
+57:03 how do you think it is important to know
+57:06 marketing for data scientists if
+57:08 somebody wants to work in marketing and
+57:10 by marketing i think like we talked
+57:12 about different terms like funnels
+57:14 conversions
+57:16 um like there are some metrics uh that
+57:19 uh
+57:21 ctr cpr like all these things and i
+57:24 guess for somebody who wants to go into
+57:26 marketing and hears all these
+57:28 abbreviations all these words
+57:31 can be quite
+57:32 challenging right so how in your opinion
+57:35 is knowledge is the main knowledge of
+57:37 marketing
+57:38 important
+57:39 yeah so this is something that i had to
+57:41 learn about so to say but the marketing
+57:45 managers are your best ally so i assure
+57:48 you that even if you have good data and
+57:50 if you have a good knowledge of machine
+57:53 learning if you're working by yourself
+57:55 without talking with the marketing
+57:57 department the marketing manager the
+57:59 project is going to fail because needs
+58:01 change requirements change
+58:04 and it's really about the strategy and
+58:05 the plan right so what if you optimize
+58:07 for a channel
+58:09 that they are going to stop using
+58:12 like it doesn't make any sense so
+58:14 it can be a little bit tricky but the
+58:17 the marketing team is there are your
+58:20 stakeholders and you need to have like a
+58:22 like a very
+58:23 transparent and continuous communication
+58:26 uh and it could be
+58:28 quite fun and and the they have a lot of
+58:30 knowledge that your model actually wants
+58:32 so
+58:33 it's super super important and actually
+58:36 for me coming from academia i was a
+58:38 little bit bored about just talking with
+58:41 mathematicians so also talking with
+58:43 people from different backgrounds makes
+58:45 things a little bit more fun
+58:47 yeah thank you so there is a question
+58:49 about your blog and i did a quick google
+58:52 search
+58:53 so the blog is uh
+58:55 who i need to who i need
+58:57 to work for those
+58:59 sorry i cannot pronounce it
+59:02 yeah
+59:15 i just shared the link
+59:17 we will also include the link in the
+59:18 description i think you also mentioned
+59:22 some of the resources like some books
+59:24 first one was introduction to
+59:26 statistical
+59:28 to marketing to algorithmic marketing
+59:30 marketplace the other one was
+59:33 statistic
+59:34 with something related with rethinking
+59:37 statistical rethinking statistical
+59:39 rethinking did you recommend anything
+59:41 else
+59:44 [Music]
+59:45 i there are many resources online uh
+59:48 there's a very nice talk uh let me
+59:52 try to look at and it was a pi data talk
+59:56 uh
+59:57 it was about churn prevention uh i can
+1:00:00 say that your talk
+1:00:01 no no no
+1:00:03 it's more like a holistic point of view
+1:00:05 of how like going from turn uplift and
+1:00:08 optimization
+1:00:09 uh
+1:00:10 i kind of looks check it out
+1:00:12 but it was i think yeah pi data 19
+1:00:15 somewhere like that if you find if you
+1:00:17 put churn prevention pi data in 2019
+1:00:20 you'll probably find it
+1:00:22 yeah maybe if you find it later send
+1:00:25 send us a link
+1:00:26 with
+1:00:27 so what's the best way to find you on
+1:00:30 the internet
+1:00:31 uh you can yeah find me or like my the
+1:00:35 blog and you can also find me on github
+1:00:37 you can like you can find my email quite
+1:00:39 easily so if you ever have a question or
+1:00:43 anything related to this or other topics
+1:00:45 around data science just drop me a line
+1:00:48 and twitter i guess also yeah on
+1:00:50 twitter's way to find it
+1:00:52 okay thanks a lot thanks for joining us
+1:00:54 today thanks for sharing your experience
+1:00:57 with us for telling
+1:00:59 about marketing
+1:01:00 and thanks everyone as well for joining
+1:01:03 us today for asking questions or
+1:01:05 watching us
+1:01:06 yeah i guess that's all from all right
+1:01:09 must be yeah thank you thank you very
+1:01:11 much for the invitation was a pleasure
+1:01:14 have a great weekend

@@ -1,0 +1,1595 @@
+From Supply Chain Management to Digital Warehousing and FinOps
+
+0:00 hi everyone Welcome to our event this
+0:02 event is brought to you by data do club
+0:04 which is a community of people who love
+0:05 data we have weekly events and today is
+0:08 one of such events and actually this
+0:10 week we have quite a few events so also
+0:14 later today we will have a a workshop
+0:19 about uh um time series prediction so we
+0:22 will be doing stock market predictions
+0:25 and then tomorrow we'll have another
+0:27 podcast interview so check it out
+0:29 actually this is is where you can find
+0:31 out more about the events we have there
+0:32 is a link in the description then do not
+0:34 forget to subscribe to our YouTube
+0:35 channel this way you'll get
+0:36 notifications about all the amazing
+0:38 streams we have including the ones we
+0:41 have today tomorrow and you
+0:44 know um and finally last but not least
+0:49 we have an amazing slack Community where
+0:50 you can hang out with other data
+0:52 enthusiasts so check it out uh there's a
+0:54 link in the description too and during
+0:57 today's interview you can ask any
+0:58 question you want there is a Link in the
+1:00 live chat click on that link ask your
+1:02 questions and we will be covering these
+1:04 questions during the
+1:05 interview so that's the usual intro I
+1:11 give now uh I have the questions in
+1:15 front of
+1:16 me and if you're ready we can
+1:20 start uh yep I think I'm all set Alexi
+1:23 yep let's go for it okay let's roll um
+1:26 this week we'll talk about Digital Data
+1:28 workare housing and pH Ops we have a
+1:30 special guest today Edie Edie is a staff
+1:32 data engineer at kinois did I pronounce
+1:35 it correctly uh Ed Isle and kis yep kis
+1:40 okay yes where he's building a robust
+1:42 data platform he has more than 10 years
+1:44 of experience in data and he gladly
+1:46 shares his experience as a mentor and as
+1:48 a teaching assistant previously he
+1:50 worked as a senior data scientist at
+1:51 Home Depot where he specialized in
+1:54 e-commerce and supply chain analytics
+1:56 welcome to the show
+1:57 Ed uh thank you Alexi it's a pleasure to
+2:00 be here um so I guess I'll just
+2:03 introduce myself briefly I think in
+2:05 terms of kind of like Alex you kind like
+2:08 talk through a little bit of my
+2:08 experience but I'll just see in maybe
+2:10 first like there's one thing I want to
+2:12 mention because the questions I'm going
+2:14 to ask you today are prepared by Johanna
+2:17 buer so thanks Johanna for your help and
+2:20 usually there is something I so I ask
+2:22 you to introduce yourself so I'll do
+2:24 this now and then you can do this oh
+2:26 okay got it got it yeah but don't worry
+2:28 so we actually so we release this as a
+2:31 Audio Only version and it will be edited
+2:34 so okay sounds good um so before we go
+2:39 into our main topic of Digital Data
+2:41 break housing and Bops let's start with
+2:43 your background can you can you tell us
+2:45 about your career Journey so far uh for
+2:48 sure so in this case I will definitely
+2:50 state by saying my journey into Data
+2:52 wasn't exactly a straight line uh
+2:54 initially I was uh supposed to uh do
+2:57 chemical engineering but uh me Midway
+3:00 through learning about my engineering
+3:01 options I was pulled into industrial
+3:03 engineering because of the psychology
+3:04 side basically how to design systems for
+3:07 people uh which is essentially a user
+3:09 experience I didn't know it then but uh
+3:12 kind of like that process of how do you
+3:13 build systems for people uh really
+3:16 shaped how I approach uh data today so
+3:20 uh my first uh foray into uh my job was
+3:25 an event in technology I started deep
+3:27 inside Supply chains working inside
+3:29 Distribution Center
+3:30 figuring out how to optimize space for
+3:33 um the warehouse uh working with Excel
+3:37 macros to optimize pallets figuring out
+3:40 how many containers was going to arrive
+3:42 next week next month and that relates to
+3:45 how many people we GNA staff inside the
+3:47 warehouse this demand for casting but
+3:50 you did this in Excel yep pretty much
+3:53 yep I moved through a lot of different
+3:54 roles uh I did uh supply chain
+3:56 e-commerce merchandising business
+3:59 intelligence
+4:00 uh early on however it wasn't
+4:01 necessarily uh Python and SQL it wasn't
+4:04 kind of the standard uh data analytics
+4:06 remote role that uh everyone thinks of
+4:08 today my first role was at a
+4:10 distribution center I had to move out of
+4:12 the city I had to come into the office
+4:14 but it was a very great experience
+4:15 because uh I learned kind of like how to
+4:17 apply data in a real life context uh
+4:20 looking back in my career so far uh I
+4:22 realized that was a very solid
+4:23 foundation for uh analytics Excel is
+4:26 still even today the universal language
+4:28 for business regardless of whatever nice
+4:31 dashboard you built the main question
+4:32 stakeholders will always ask can I have
+4:34 this in an Excel file so uh it was a
+4:38 very productive experience for me
+4:40 because whatever that we built we had to
+4:42 summarize or put it in an Excel file or
+4:44 if you had to convert it into a
+4:45 PowerPoint deck it's going to end up as
+4:47 a chart or as a bullet point um I would
+4:49 say that my journey into Data mainly
+4:52 came out of curiosity I didn't
+4:54 necessarily uh have access to Tableau so
+4:56 I had to pick up Tableau public and I
+4:58 learned watching from YouTube and from
+5:00 different creators uh eventually my org
+5:02 had access to alteric uh I really loved
+5:04 it because you could do uh analyss
+5:06 really quickly using kind of like a low
+5:08 code approach I even got certified
+5:11 eventually uh within my organization I
+5:14 moved into uh Google Cloud ambary uh I
+5:17 also was uh taking a masters in
+5:19 analytics at the time which led me to
+5:21 discovering python data Built tool and
+5:23 building uh the modern data stack using
+5:25 kind of the uh elt approach that we see
+5:28 today so right now uh working as a staff
+5:31 data engineer at kis it I mainly focus
+5:34 on building data sets and dashboards for
+5:36 our finops team to optimize Cloud span
+5:38 making sure that our data platform runs
+5:41 efficiently um the way how I think about
+5:43 finops is it's kind of like a process
+5:46 optimization again similar to my first
+5:48 role uh working at a physical warehouse
+5:51 but now I'm applying it in a uh in the
+5:54 cloud or in a digital warehousing
+5:56 context so a lot of the things I've
+5:58 learned still apply even today day um
+6:00 and looking back it was just um being
+6:03 open to learning and trying new things
+6:04 out and over time I think you build a
+6:07 lot of these skills as you go down the
+6:09 uh technical chain from Excel all the
+6:12 way to kind of like python uh git and
+6:15 the command
+6:16 line and what is uh what also picked um
+6:20 what I also noticed is right now you
+6:23 data engineer but previously you were uh
+6:27 you doing we were doing data science so
+6:28 how did the switch happen so in this Cas
+6:31 I I also kind of like preface I think uh
+6:33 my my title is data like a senior data
+6:36 engineer but I kind of like moved from a
+6:39 u business analyst role into more of
+6:42 like a data engineering role okay so you
+6:44 and yeah understand yeah yeah so in this
+6:47 case like working as a business analyst
+6:49 it was just mainly about building
+6:50 dashboards so that's where I picked up
+6:54 uh enough about Tableau public I uh
+6:57 attended some of these uh learning
+6:58 events that
+7:00 or at least some creators would organize
+7:01 it was called makeover Monday so
+7:03 somebody would give you like a data set
+7:05 you can just copy it over and then based
+7:07 on that you would create uh narratives
+7:09 and create the corresponding charts it
+7:10 was a very usual um it was a useful
+7:12 exercise for me to just figure out how
+7:14 would you kind of like present all this
+7:16 information and then moving into Data
+7:18 engineering it was also kind of like the
+7:20 understanding that um I had a really
+7:21 good manager at the time and she told me
+7:24 that I think um whenever I talked
+7:25 through about Tableau or the dashboards
+7:28 or whatever alteric pipeline that I
+7:29 built my eyes would always lit up so
+7:31 that was probably when I realized that
+7:33 my skill actually came from working on
+7:36 the technical side of things so that's
+7:38 why I feel that I kind of wanted to
+7:40 Pivot my career more into the uh backend
+7:43 side of data which is just data
+7:44 engineering Y and it's actually one of
+7:48 um a few common questions we had have in
+7:51 our data engineering course um so our
+7:55 course is designed for people who are
+7:56 coming from the software engineering
+7:58 background but the question we get is
+8:00 like I'm a data analyst can I like is it
+8:03 going to be easy for me to become a data
+8:04 engineer and I think it's pretty a
+8:06 pretty relevant background right yep
+8:09 from from an analyst to become a date
+8:12 engineer correct yep yep absolutely and
+8:15 I will definitely uh shout out uh to
+8:16 what you guys have have done as well
+8:18 because I think uh through kind of like
+8:21 my connections at my organization at
+8:23 Home Depot uh some of the folks that was
+8:26 working from the US told me about data
+8:27 talks Club that's how I heard about this
+8:29 data engineering Zoom camp and I
+8:31 remembered I think it was such an
+8:33 interesting approach because the first
+8:34 thing that you guys were teaching was
+8:36 Docker and terraform and for all of us
+8:38 kind of like data folks it's like what
+8:40 is this it was kind like working through
+8:41 the command line and it it it got like
+8:44 for us a little bit um uh what's it
+8:46 called overwhelming because I guess most
+8:48 data analysts work on a UI so I I think
+8:51 I came from that um alter X background
+8:53 you get like a low code approach but in
+8:54 this case because you're you're you're
+8:56 transitioning directly to a command line
+8:58 interface there there is is kind of like
+9:00 that uh beding in Period um but now I
+9:03 think as a function of just getting used
+9:05 to working in kind of like that data
+9:07 engineering mindset yeah uh Docker or
+9:09 terraform eventually all the languages
+9:12 are just the same and you just figure
+9:13 out what you need to do right and I
+9:14 think that that's kind of like the most
+9:15 interesting part about I guess uh
+9:17 working in the data engineering space is
+9:20 uh it doesn't really matter how you
+9:21 start but once you get comfortable with
+9:23 one language a lot of that just carries
+9:24 over to the
+9:26 other and funny thing with Docker is we
+9:29 kind of expected that people knew it
+9:31 people who were signing up uh so when we
+9:34 were building the course we thought
+9:35 everyone knows Docker like we'll just
+9:38 have it just in case uh so is a
+9:40 prerequisite is a sort of like warmup
+9:42 week where people who don't know Docker
+9:45 they will you know pick it up and then
+9:48 the the actual stuff will start later
+9:50 but it turned out to be the most
+9:51 difficult week and uh yeah we did not
+9:54 expect that and I I have a similar story
+9:58 to share as well because um So within
+10:00 the docker space uh I had folks in
+10:02 Toronto uh talking to me about death
+10:04 containers so in this case development
+10:06 containers I've been to a couple of
+10:08 meetups in the city where when they want
+10:09 to teach you tutorials you set up uh or
+10:12 they give you like a a Dev container
+10:13 Json which I read about and it's kind of
+10:17 an abstraction of Docker but even then
+10:19 because it's all in Json and when I try
+10:22 to explain to data folks uh when they
+10:24 see it it's like oh uh I've never worked
+10:26 in this before I'm not in Devo and I'm
+10:28 like this is not I mean I wouldn't call
+10:30 this devops per se it's just kind of
+10:31 like configuring like a file but it's
+10:34 it's a very different approach I think
+10:36 um working in Docker and working with
+10:39 these uh development containers so it
+10:41 it's it does require some form of
+10:44 getting used to I would say and
+10:46 understandably if before all you do is
+10:49 all you did is uh business analytics and
+10:53 now all of a sudden you need to do
+10:56 Docker like everything that is related
+10:58 to like to this kind of stuff feels like
+11:01 oh it's devops it's something
+11:02 complicated Y and once you get into this
+11:05 then you start understanding okay like
+11:07 this is not devops this is like devops
+11:09 is like this other complicated thing but
+11:11 this thing I already learned yep for
+11:13 sure yeah um so you worked at Home Depot
+11:18 and for me Home Depot uh was um so they
+11:21 hosted uh cugle competition a while back
+11:24 and for me it was one of the first
+11:26 kaggle competitions it was uh was it
+11:28 about the forecasting I don't remember
+11:30 but it was like awesome so I remember
+11:32 taking part in this competition so it's
+11:34 really cool that you uh were doing that
+11:37 can you tell us more what exactly you
+11:38 were doing there was it already uh was
+11:41 it still you were working in logistics
+11:43 and building like physical PR houses or
+11:46 you were already moving towards the
+11:48 digital ones yeah um so in this case my
+11:51 time at Home Depot I think was a uh
+11:54 Discovery process for me just to explore
+11:56 the different aspects of my degree so
+11:58 one part of my degree was uh talking
+12:00 about uh Logistics and optimization so I
+12:04 had phases where while I was working in
+12:06 the warehouse and I think uh like I want
+12:08 to give some context to the rest of the
+12:09 folks uh at least uh the equivalent of
+12:12 Home Depot in Europe would be something
+12:14 like an Obie or a bow house I did my
+12:16 research to figure out kind of like
+12:17 what's equivalent and then in Southeast
+12:19 Asia uh where I'm from there's also Mr
+12:22 DIY or Daiso so think of your screws
+12:24 your hammers uh outdoor furniture uh the
+12:28 most interesting time
+12:29 uh that I felt while I was working at
+12:31 Home Depot was usually during the uh
+12:33 holiday uh Seasons during September and
+12:35 December usually that's when uh Home
+12:38 Depot in particular would sell like a
+12:39 lot of different Halloween products so
+12:41 we had like skeletons we had dinosaurs
+12:43 kind of like inside the warehouse so a
+12:46 typical uh workflow for me during that
+12:48 time period was uh forecasting based on
+12:51 the orders how many containers of goods
+12:53 were arriving uh what did they come in
+12:56 uh were they did they come in multiple
+12:58 boxes were they multiple products in a
+13:00 box because that would kind of like
+13:01 change how we would treat the product
+13:02 inside the warehouse uh once we figured
+13:04 out the uh the size of the boxes we need
+13:07 to figure out how much space it would
+13:09 take uh inside the warehouse so from
+13:12 there you had like different approaches
+13:14 of okay so if it was going to take uh X
+13:17 much space uh X much space uh how much
+13:19 labor is required to store it and then
+13:21 down the line when you needed to send it
+13:23 to the stores how many people uh would
+13:25 be required to kind of like pick and
+13:27 package the product and send them to the
+13:29 the store so there were a lot of
+13:30 different questions that we kind of
+13:32 looked at and uh we used a variety of
+13:34 different tools we had uh something like
+13:38 an Excel macro to figure out what's the
+13:39 best configuration to store these
+13:41 products we also had and in this case I
+13:43 didn't realize it at the time but uh
+13:45 when these products needed to be shipped
+13:47 uh there was this whole uh process
+13:49 called like preload optimization where
+13:52 it was up to Engineers uh and folks in
+13:54 the warehouse to basically understand
+13:56 what were the requirements at each
+13:57 stores figuring out how to maximize the
+14:00 trailer space uh given the sizes of
+14:03 these products so we kind of essentially
+14:05 did in the inter integer napsack problem
+14:07 but by hand using Excel so it was very
+14:09 much like U manual problem solving that
+14:12 we kind of did at the time uh realizing
+14:15 kind of like looking that at my degree
+14:16 and knowing what software exists now we
+14:19 have companies like kis that kind like
+14:21 provide software that allows you to just
+14:23 kind of like do that automatically so it
+14:25 was interesting to know that
+14:27 um yeah um as much as uh it was a lot of
+14:31 manual work to do this there's also kind
+14:32 of like automation that helps you kind
+14:34 of like do the job easier yeah yeah
+14:37 interesting so you must be a pro at
+14:39 Excel macros uh yeah I had to pick pick
+14:43 up a lot of things I guess that that was
+14:44 kind of like the initial forray into
+14:46 like programming you had to kind of get
+14:48 familiar with macros and there was
+14:49 always a way you could just press the
+14:51 record button and then like press a
+14:53 bunch of different
+14:54 cells then you see your code right so
+14:57 that's like okay and then after it you
+14:59 look into the proper way to how would
+15:01 you define kind of like this object and
+15:03 you treat change it a little bit
+15:05 differently right but that was also how
+15:06 I guess how I yeah so I remember I even
+15:10 created a website from my so I had um um
+15:14 so I had a kind of database of um do you
+15:17 know what bootlegs are music bootlegs so
+15:20 when you go to a concert and you film
+15:22 the performance from your video camera
+15:25 so it's like kind of fan video it's not
+15:27 official video so this video are called
+15:29 bootlegs mhm and I was exchanging so I
+15:33 was filming them and there were people
+15:34 from I don't know Austria or Australia
+15:37 or the states who were also doing that
+15:40 and we would exchange them so I would
+15:43 send a DVD with my recording and they
+15:45 would send a DVD with their recording so
+15:47 I had a catalog dat base with all thisle
+15:50 and with Excel I could make a a website
+15:54 like I had a macro that publishes an
+15:56 HTML page and then using uh SF TP
+15:59 uploads it to a website so that for me
+16:01 back then it was like
+16:03 mind-blowing oh okay okay that's
+16:05 interesting I have a similar story to
+16:06 share down the line but we can talk
+16:08 about it ler yeah but like Excel is
+16:11 surprisingly very powerful when you
+16:13 think about that there are so many
+16:15 things you can do like probably you can
+16:17 even play I don't know Space Invaders or
+16:19 Doom or whatever in
+16:21 Excel yeah yeah I think I've seen people
+16:23 make art or there's even like Excel like
+16:26 like Excel competitions where there's
+16:27 some sort of formula or there's some
+16:29 sort of use case and then people have to
+16:31 have to build like Excel models for it
+16:33 so it's definitely something that you
+16:34 know if you can do it faster there this
+16:37 people that are willing to pay to see to
+16:39 turn into a competition yeah yeah so I I
+16:42 just while you were talking I checked
+16:43 the competition so the competition was
+16:45 Home Depot product search so it was
+16:47 about uh predicting the relevance of
+16:50 search results on Home Depot so there
+16:51 were like it it was for the website
+16:55 people type in some search and then
+16:56 there's uh um a pair search product and
+17:01 relevancy and the dask was to predict
+17:03 the relevancy so I think it was for me
+17:06 one of the
+17:07 first exposures like the first time I
+17:10 got exposed to these kind of
+17:12 problems yeah that was pretty
+17:15 interesting yeah yeah okay that's pretty
+17:18 neat yeah I think it's probably related
+17:19 to cosign similarity and
+17:22 I yeah okay and um I actually didn't
+17:27 realize that Home Depot is like Kobe I
+17:29 thought it's an online store cuz for me
+17:33 like I took part in these competitions
+17:35 and I know the name so they have a big
+17:38 team and I thought yeah must be just
+17:40 online store where you can buy screws
+17:42 but it's actually uh a bunch of physical
+17:44 stores too where you can go and buy all
+17:46 the stuff okay oh yeah yep there's a lot
+17:48 of stores in Canada the US and Mexico so
+17:51 it's quite a
+17:53 few and
+17:55 there it's a huge store and you you need
+17:59 a better house to keep all these things
+18:00 and then bring them to the stores and
+18:02 this is where your work was optimizing
+18:05 this stuff right the like warehouses
+18:08 right well in this case it would be kind
+18:10 of like on the back end so I guess maybe
+18:12 I can give some context of like how
+18:13 products got into the store so we have
+18:16 the Distribution Center that stores kind
+18:17 of like all the bigger products and then
+18:19 uh once it was shipped at the store uh
+18:21 that relates to my time working on the
+18:23 merchandising side so um a lot of these
+18:26 um stores have uh like planograms so
+18:29 basically um configurations of where
+18:31 would you put the products uh in the
+18:33 stores and like there's a whole science
+18:35 behind it so there were like heat maps
+18:37 that could generate kind of like where
+18:38 the most sales was coming from and then
+18:41 um there would be a whole team that was
+18:43 dedicated to figuring out how would you
+18:44 optimize the space even inside the
+18:47 stores to maximize kind of like your
+18:49 returns so that's why you have uh
+18:52 certain uh products that were kind of
+18:54 like closer to the exit you had certain
+18:56 products kind of like at the back so
+18:57 similar kind of like how grocery stores
+19:00 would build uh kind of like their stores
+19:01 to put the milk at the end or stuff that
+19:03 you usually buy at the end because they
+19:05 want you to walk as much as possible
+19:07 around to maximize your Revenue so I
+19:09 thought it was pretty interesting that
+19:10 we have kind of like those principles
+19:12 there as well did you also use Excel for
+19:14 that uh in this case uh I I was on a
+19:17 different team that uh they they were
+19:19 using kind of like more of alteric and
+19:21 Tableau but we actually did also have
+19:23 our own in-house software that would
+19:25 basically kind of like map the sales to
+19:28 the um layout of the individual
+19:31 planograms at the stores so there was a
+19:33 whole software thing behind that as well
+19:36 yeah called merchandising this art or
+19:40 science um the the the specific term was
+19:43 assortment planning so each yeah yeah so
+19:46 in each store um yeah each store's
+19:49 assortment plans were slightly different
+19:51 because uh the different regions in
+19:53 Canada kind of like all behave slightly
+19:54 differently some areas uh people
+19:57 preferred buying certain types of
+19:58 products so so a lot of the based on the
+20:00 sales we would tweak kind of like the
+20:02 plan games based on how people buy their
+20:05 products yeah yeah did you work in an an
+20:08 actual physical Warehouse I didn't mean
+20:10 like carrying stuff but like oh actually
+20:13 I did that too yeah yeah so my my first
+20:14 job at Home Depot was literally at a
+20:16 distribution center where uh people yeah
+20:19 uh it was very much like uh people kind
+20:21 of like loading stuff into the RS and
+20:23 then kind of like uh closer to the uh
+20:26 end of my time at Home Depot I was
+20:27 working closer to the corporate side
+20:28 where was uh looking at uh planograms at
+20:31 the stores and eventually moving into
+20:32 kind like the data analytics team there
+20:34 as well so I I've had experience on both
+20:35 sides didn't you use uh robots from
+20:40 Amazon
+20:40 robotics uh that one I'm not sure
+20:43 probably at the time I don't think uh
+20:44 they were testing that out at the moment
+20:47 uh but at the same time yeah uh yeah I
+20:49 don't think we were um so Amazon
+20:52 robotics is a company where they have
+20:54 these Bots or robots that can move
+20:57 around your warehouse and move things
+20:59 and before uh it was called Kaa systems
+21:02 and this is this was the first company
+21:04 where I worked as a Java developer and I
+21:07 think maybe I am wrong but I think Home
+21:09 Depot was one of the customers but maybe
+21:12 it didn't go anywhere oh interesting
+21:14 okay so iess bought and I guess uh like
+21:17 after Amazon bought the ska systems and
+21:18 it became Amazon robotics maybe all the
+21:21 clients couldn't use it anymore so CU
+21:23 Amazon just took all the
+21:25 robots ah okay that's interesting so I
+21:28 guess um I I'll probably also uh
+21:30 distinguish that like there's Home Depot
+21:32 us so that's like the the I think the
+21:34 bigger Home Depot and then we also have
+21:36 small subsidiaries and in this case I
+21:37 worked for the Canadian one uh so I
+21:40 guess it might have been a little bit
+21:40 different at least on that side yeah
+21:43 yeah but you work um at a later stage of
+21:46 your career involved optimizing these um
+21:49 how do you call them distribution
+21:51 centers which is practically a warehouse
+21:53 right yep it is very it is a warehouse
+21:57 yep and then we also wanted to talk
+21:59 about digital warehousing so what is
+22:02 that and how do they so maybe we start
+22:05 first with physical Warehouse so
+22:06 Warehouse is space with tracks where you
+22:10 have products and there are some
+22:12 processes for people or things or I know
+22:15 robots to take the things the products
+22:18 and move them to I don't know there CS
+22:21 going yep PRS going out of the
+22:24 distribution center right so you need to
+22:27 get this product from Iraq and move move
+22:29 it to the car right so that's a physical
+22:33 Warehouse right
+22:36 yep so I guess in this case I'd like to
+22:38 thank you for kind of like that context
+22:39 there so in this case uh the way how I
+22:41 think about digital warehouses is and I
+22:42 remembered kind of like having this
+22:44 realization it's like uh I've worked uh
+22:47 in my uh Home Depot for so long that I
+22:49 worked in a physical warehouse and I
+22:50 remembered but the last role I had at
+22:52 Home Depot as a senior data engineer was
+22:55 well technically I'm still in the
+22:56 warehouse but now I'm in a digital one
+22:58 because I kind of like thought through
+22:59 it it's like okay so when you think of
+23:01 uh uh moving data you're ingesting data
+23:05 so think of that as kind of like a
+23:07 trucks that was going to deliver data
+23:09 into your Warehouse so in this case uh
+23:11 we use Google cloud and there's like big
+23:13 query to lend data into the warehouse
+23:15 within the warehouse you have internal
+23:17 processes so we had like internal
+23:19 orchestrators to kind of like run SQL
+23:20 queries to kind of like transform and
+23:22 process the data and then when you kind
+23:24 of want to send the data to stores in
+23:26 this case you're sending it to kind of
+23:27 like uh a downstream consumption layer
+23:30 which is in this case like a bi tool so
+23:32 for example it could be Tableau it could
+23:33 be looker it can be many other things so
+23:36 um that's kind of like how I came to the
+23:38 conclusion that okay so in this case you
+23:41 know the data Engineers are the people
+23:42 that kind of like build um the p uh the
+23:45 pipeline or the Python scripts that move
+23:47 the data from uh the source into the
+23:50 warehouse and then inside the warehouse
+23:52 you have transformation tool systems uh
+23:54 such as a data build tool to transform
+23:56 the data clean it up put it inside the
+23:58 rack put it in like a yeah put it inside
+24:00 a rack or put it in a different um table
+24:03 to organize it a little bit and then uh
+24:06 at the end when you want to send it out
+24:08 uh you uh have like some sort of service
+24:10 account or you have some sort of process
+24:12 to land the data either in looker or in
+24:14 powerbi and there's somebody that's
+24:15 building kind of like the final kind of
+24:18 like uh dashboard that the end users
+24:21 will see and they will use to generate
+24:23 insights so I guess that that's kind of
+24:25 like we the analogy of working in kind
+24:27 of like the yeah working in the digital
+24:29 Warehouse is quite similar to a physical
+24:30 one as
+24:31 well just occurred to me that in the
+24:34 word data warehouse we we have the part
+24:37 Warehouse which is this uh distribution
+24:41 center right MH yeah that's interesting
+24:45 like the goal of a physical Warehouse is
+24:48 there are products like there are huge
+24:49 trucks that come in with a lot of
+24:52 products then you need to put these
+24:53 products in rocks in such a way that the
+24:56 products are easily accessible
+24:59 that's right yep and then they they're
+25:00 accessible so then they can be moved to
+25:03 smaller tracks that already go to stores
+25:06 or maybe bigger trucks doesn't matter
+25:08 but like they're already organized in
+25:09 such a way that you need you know okay
+25:12 like I need x amount of this why amount
+25:15 of this and then you just because it's
+25:17 easily accessible you can easily fetch
+25:19 this data and in the same way we do it
+25:22 in the physical Warehouse or digital
+25:24 Warehouse the data is well organized
+25:27 that's a really nice analogy
+25:28 I never thought about this y cool uh
+25:32 yeah and I guess we can also talk
+25:34 through a little bit like at least based
+25:35 on my experience of what meet the
+25:36 differences and I think this is I think
+25:38 for me the biggest kind of like takeaway
+25:40 between a digital and a physical
+25:41 Warehouse was just that I think uh
+25:44 because I my first role was in process
+25:46 Improvement it was basically
+25:47 understanding the processes and then uh
+25:49 there there's the whole change
+25:51 management piece that because uh the
+25:53 physical Warehouse is kind of like uh
+25:56 managed and uh run by people teams and
+25:59 departments there's always a process
+26:00 where you need to basically run your
+26:02 changes through the line of command it
+26:03 will take a while and you have to teach
+26:05 and educate people uh and another way to
+26:08 think about it as well is like inside
+26:09 the warehouse if you say for example uh
+26:12 you need more racks or you need more
+26:14 space that's a you know it will probably
+26:18 take a couple million a couple million
+26:19 dollars it requires like people to
+26:21 basically break some walls and add new
+26:23 ones um so in terms of like the feedback
+26:27 look it took a while and then in terms
+26:28 of like the actual cost that's required
+26:30 it does require a lot of resources and
+26:32 then when I think of kind of like the
+26:34 digital Warehouse it's a little bit
+26:35 different because in this case um if you
+26:38 have a new uh data requirement you can
+26:41 quickly create a new table create a new
+26:44 rack uh you can optimize it then and
+26:47 there and um you can also get feedback
+26:49 pretty quickly you can create your model
+26:51 you can send it out get feedback you can
+26:53 quickly iterate so in this case like the
+26:55 feedback loop was a lot quicker in the
+26:57 digital Warehouse another thought is in
+26:59 terms of getting information about the
+27:01 systems so in this case uh inside the
+27:03 physical Warehouse you would rely on
+27:05 either internal systems so we had like
+27:09 internal systems to track the processing
+27:11 of uh uh in this case uh curtains or
+27:14 boxes uh you also have uh you can use
+27:18 your eyes to make observations of like
+27:20 how people are working through the
+27:21 products but when you look at a digital
+27:23 Warehouse because you can't see it
+27:25 everything is kind of like in the cloud
+27:26 so to speak it requires obious avability
+27:28 systems you need monitoring to see uh
+27:31 you need to set up tests to see if
+27:33 anything is breaking or any assumptions
+27:35 that you've set on your data is failing
+27:37 so it it's a bit harder but it also
+27:39 requires more tooling for you to kind of
+27:41 like see what's happening behind the
+27:44 scenes interesting can you tell us more
+27:47 what exactly do you do now as a staff
+27:50 data engineer at uh can access uh yeah
+27:54 uh so in this case uh my dday definitely
+27:57 kind of like uh runs the gamut between
+27:59 kind like working with the uh business
+28:01 partners and I guess working more on the
+28:02 technical side of things um one thing
+28:05 that I've learn at least uh through the
+28:07 process uh of uh yeah implementing and
+28:10 building kind of like these platforms uh
+28:13 one of the things that I try to do is uh
+28:16 really understanding the business
+28:17 requirements so right now in the
+28:19 analytics space there's this uh whole
+28:21 thing about uh understanding or building
+28:24 a metric tree to understand what are the
+28:27 metrics uh that your the business cares
+28:29 about and what are the levers that are
+28:32 correlated and Associated to it we tried
+28:35 kind of like basically uh implementing
+28:38 the an exercise of building a a metric
+28:40 stre for a finops team so understanding
+28:43 uh what are the uh cost factors inside a
+28:46 data
+28:47 warehouse uh what are the cost factors
+28:50 kind of like inside the cloud platform
+28:52 how what are the things that you can
+28:53 control what are things that you cannot
+28:55 control uh and it was actually a very
+28:57 insightful activ just to kind of like
+28:59 like for everybody to share kind of like
+29:01 their knowledge and experience and
+29:02 perspective because once you kind of
+29:03 like put all of that together I think it
+29:05 gives everybody a good a frame of
+29:06 reference on how um to look at data and
+29:10 see how you can kind of like build uh
+29:13 data sets that kind of like help answer
+29:14 these type of questions another thing
+29:16 was also um in addition to building
+29:19 metric trees it was also uh and this is
+29:21 something that I kind of like picked up
+29:23 uh from Zack Wilson's course which is
+29:24 kind of using like a data spec because
+29:27 what I've learned uh when you work with
+29:29 uh a variety of different teams is that
+29:31 usually business requirements can be
+29:33 pretty vague and it's important for you
+29:34 to really try to uh contextualize a lot
+29:38 of the requirements into uh hard
+29:40 technical data requirements that you can
+29:41 kind of like figure out how does your
+29:44 business requirements met to data
+29:45 pipeline requirements metric definitions
+29:48 uh the frequency of your pipelines tests
+29:50 assumptions and any unknowns because
+29:52 once you kind of like have all that
+29:53 together you can kind of like
+29:54 communicate back to the business this is
+29:56 what we're building is this good yes or
+29:57 no and I think have part part of that
+29:59 that that getting alignment piece is
+30:01 probably the most important part of data
+30:02 Engineers because then once you know
+30:04 what needs to be built at least you have
+30:05 a sense of what direction you're going
+30:07 so I found that kind of like really
+30:09 important uh that would be kind of like
+30:10 one part of my job the other part is uh
+30:12 in this case uh we're standing up kind
+30:14 of a a digital Warehouse so uh setting
+30:18 up the our stack essentially using uh
+30:22 Cloud platforms uh and using kind of
+30:24 like a combination of open sour open
+30:26 source tools uh to kind of like maximize
+30:29 the business value but also making it uh
+30:31 easy to maintain uh for the engineers
+30:34 and the analysts within our team as
+30:36 well and while you were um answering I
+30:41 checked what kinexus is actually doing
+30:44 so it's a platform for supplying supply
+30:47 chain planning
+30:51 right supply chain and I think yeah all
+30:53 all aspects of uh supply chain so I
+30:55 think inside kind of like the website
+30:57 there are a bunch of different uh
+30:59 modules that we also provide yeah so
+31:01 there's I think uh I saw transportation
+31:03 and I think orders so it it is kind of
+31:05 like run uh kind of like a variety of
+31:07 different use cases within the supply
+31:09 chain yeah and for you you already had
+31:12 uh the background in supply chain so for
+31:14 you all these things all the uh how to
+31:17 say business domain it made sense for
+31:19 you right mhm yeah yeah in this case
+31:21 like I I have a sense of kind of like
+31:23 what problems uh our F solves uh but in
+31:26 this case uh I'm I'm working more on the
+31:28 infrastructure side of things so
+31:30 figuring out like how would you optimize
+31:32 costs uh for deploying all these uh all
+31:35 these tools to customers a little bit
+31:37 more yeah can you tell us more what
+31:40 exactly do you mean by optimizing costs
+31:42 is it so let's say I work at
+31:46 a I don't know something similar to Home
+31:48 Depot I don't know any names but like
+31:50 let's say there is a company that is
+31:51 similar that needs a solution like that
+31:54 right Supply supply chain planning so
+31:56 it's a rather large chain and uh we have
+32:01 warehouses we have stores so like we
+32:03 have U clients we need to optimize that
+32:06 right and now we want to use something
+32:09 like in Nexis right how do how do we
+32:12 optimize costs like what what does it
+32:14 exactly mean in this particular case oh
+32:17 so in this case I think uh then then we
+32:19 kind of move into kind of like the realm
+32:21 of um what is uh what is uh software as
+32:27 a service so so a lot of uh the
+32:30 solutions that we kind of like built all
+32:34 uh in this case yeah a lot of the uh
+32:36 products that we offer come in well
+32:40 everything that you build eventually has
+32:42 to run in some sort of server or data
+32:44 center so uh for any sort of component
+32:48 there must be like some requirement of
+32:51 uh some some sort of virtual machine
+32:53 that has like some set of ram some set
+32:55 of storage there's also considerations
+32:57 where in terms of kind of like when
+32:58 you're storing
+32:59 data uh in different regions we have
+33:02 clients globally um there's a bunch of
+33:05 different uh local data regulations so
+33:06 you need to store data in certain
+33:08 places um and there's also in this case
+33:12 like figuring out how do you keep your
+33:14 uh keep your data secure and keeping
+33:15 your data backed up so there's a lot of
+33:18 internal processes uh that you also have
+33:20 to keep in mind uh to ensure that our
+33:22 customers data is safe and is protected
+33:25 so it's just figuring out how do you do
+33:26 that in the most cost efficient way
+33:28 possible okay so it's optimization cost
+33:30 optimization for you not for the clients
+33:33 uh in this case it would be on on our
+33:34 side as well yeah yes see cuz um the
+33:37 impression I got was uh you offer a
+33:41 bunch of things and then the customer
+33:42 comes and says hey I Want Your solution
+33:44 and then you work with them to figure
+33:46 out what's the best setup for them oh I
+33:48 mean in this case we also kind of like
+33:50 do that too like when you sign with a
+33:51 client there's a whole uh engagement
+33:53 process where you're working with the
+33:54 customers to kind of like take their
+33:56 data we would basically kind of like
+33:57 have a process to uh integrate uh their
+34:00 systems to our platforms and there
+34:02 there's there is kind of like a whole
+34:03 team that's just dedicated to kind of
+34:05 like maintaining that and then pping it
+34:07 into kind of like our platform as
+34:10 well and this is probably related to
+34:12 phobs right so optimiz cost optimization
+34:15 and I remember so in the previous
+34:17 company where I worked um I think it was
+34:20 the procurement department so basically
+34:22 all the tools we needed to buy like I
+34:24 don't know klab or um
+34:29 Google Google workspace or whatever like
+34:32 there was basically like if I needed a
+34:34 tool that cost money I would need to
+34:36 talk to these people to figure out the
+34:39 say the logistics of this process so
+34:42 that was the procurement department and
+34:45 I think they were doing this kind of
+34:46 things so for example when it comes to
+34:49 AWS um so in AWS you can have like
+34:52 special contracts you can think like how
+34:54 many things in advance I want to order
+34:56 like there on demand instances and you
+34:58 can say I want I don't know 1,000 on
+35:01 demand
+35:02 instances with this kind of
+35:03 characteristics and then it becomes
+35:05 cheaper so this is optimizing costs and
+35:08 probably when you deal with AWS and you
+35:11 say that this is the amount of money I
+35:13 want to spend this is the things I want
+35:16 to get um you may have special contract
+35:20 so is this phobs uh yes that is correct
+35:23 so I guess one of the things that our
+35:24 team also does is um from using the data
+35:28 sets that we create we need to
+35:30 understand the cost and usage of our
+35:32 systems and then from there figuring out
+35:35 um how do you kind of like negotiate
+35:37 with Cloud vendors to um optimize the
+35:40 costs uh because uh usually uh you we
+35:45 would have kind of like uh an
+35:47 expectation on how long our servers
+35:49 would run so you can basically negotiate
+35:51 that discount to get a lower rate so yes
+35:54 that is
+35:55 true pretty similar to what I just uh
+35:57 described right mhh yeah reservation
+36:00 instances and yeah it is kind of like a
+36:02 part of kind the fos process as well so
+36:05 can you tell us more about what kind of
+36:07 problems you solve there and what kind
+36:08 of solutions you use for solving these
+36:11 problems um well in this case uh when it
+36:14 comes to kind of like looking at that it
+36:15 it really is a function of understanding
+36:18 cost and usage so there's one part where
+36:21 I think it does require for uh you to
+36:23 kind of like be uh have a good
+36:25 understanding of kind of like the
+36:26 business uh understand what's uh what's
+36:29 expected to happen in the next couple of
+36:31 months because then you kind of want to
+36:33 uh forecast out or understand kind of
+36:35 like what is going to happen inside the
+36:37 coud platforms uh in this case the
+36:39 things that uh generate uh a lot of
+36:42 costs would be uh running like virtual
+36:44 machines on Service uh so in this case
+36:46 you want to make sure that you have a
+36:47 good handle on uh when and how long you
+36:51 would probably need to stand up like
+36:52 your virtual machines and your
+36:54 servers so having kind like that is one
+36:57 input is important and then from there
+37:00 you'd also need to understand kind of
+37:01 like your um uh deployment requirements
+37:05 so your virtual machines can be
+37:07 configured to be uh at a certain level
+37:10 of RAM to a certain level of storage so
+37:12 figuring out what are the requirements
+37:13 for that because all of that are
+37:15 different cost factors another
+37:16 consideration is also uh depending if
+37:18 you're using something like Linux versus
+37:20 Windows so depending on the different
+37:22 operating systems some have licenses and
+37:25 uh the cloud platforms would also give
+37:27 you uh kind of like certain discounts uh
+37:29 or bundle uh licenses together so you
+37:32 can you get two licenses for the price
+37:34 of one so understanding kind of like how
+37:37 uh the uh Cloud platforms uh give you
+37:40 incentives and
+37:41 promotions um based on I guess how they
+37:45 want to sell their product so I guess we
+37:46 can talk a little bit about the variable
+37:49 nature of pricing in the cloud it's a
+37:51 very complex topic because uh there's so
+37:53 many different tools uh online that you
+37:56 can find in terms of of um how would you
+37:59 price like a certain product or service
+38:02 um so you would kind of have to like
+38:04 translate uh what the engineers are
+38:06 building into kind of like the
+38:07 components and then from there you'd
+38:09 also have to figure out how much uh uh
+38:14 like Ram do you think you're going to
+38:15 use how much uh gigabytes and all of
+38:17 that all of that translates into some
+38:20 sort of price and then if you kind of
+38:21 like go through the exercise of running
+38:23 it or running kind of like the same uh
+38:25 specs and models across all the
+38:26 different Cloud Bend is you can try and
+38:28 see which one offers the best value so
+38:30 that would be kind of like the exercise
+38:32 that we would kind of take as well as
+38:33 part of a Finos team okay and then you
+38:36 also evalate multiple clouds right so
+38:38 you know the requirements you know that
+38:39 you need x amount of virtual machines
+38:42 with certain character characteristics
+38:45 and then you can check uh what kind of
+38:47 deals you get from Google from Google
+38:50 cloud from adbs from Azure whatever
+38:53 right and then based on that you can
+38:54 decide where you go that's correct yep
+38:58 interesting and uh when it comes to the
+39:01 tools or solutions to these problems I
+39:03 guess it sounds like demand for casting
+39:05 to me uh right or uh yep uh there's the
+39:09 main need it's I think yeah there's
+39:11 demand forecasting there's inventory
+39:12 planning uh and there's a bunch of other
+39:15 different features there's also I think
+39:17 uh a notion of like doing kind of like
+39:19 what if analysis so in Excel you know
+39:21 how sometimes uh depending on kind of
+39:23 like the variable that you put in uh you
+39:25 get like different outputs I guess this
+39:27 is kind of like a very basic version of
+39:29 the optimization model so we kind of
+39:30 have something like that uh internally
+39:33 that kind of like looks at the different
+39:34 parameters and it adjust them to figure
+39:36 out how do you maximize your revenue or
+39:38 your
+39:40 profits so in inventory planning demand
+39:43 forecasting this sounds very similar to
+39:47 physical to the physical world right
+39:49 like all the things we talked about like
+39:52 optim the what was that distribution
+39:54 centers and uh okay
+39:58 interesting um so again your experience
+40:01 from that uh part of your career from
+40:04 that uh point of your career was helpful
+40:06 here too right y
+40:10 absolutely where can we learn more about
+40:13 this
+40:13 finops uh yep so uh there's a finops
+40:18 foundation and in this case I think uh
+40:20 they are kind of like the defacto player
+40:22 in the phop space uh there's like
+40:23 training courses that you can go online
+40:25 to kind of like upskill yourself in uh
+40:28 learning about fops so right now I'm
+40:30 also working my way towards getting like
+40:32 certifications as a fops practitioner to
+40:34 pretty much understand kind of like the
+40:36 whole um aspects of fops um it it it
+40:41 does feel like they they give you kind
+40:42 of like a nice um uh piece of uh it's a
+40:46 nice uh document like consisting of the
+40:48 framework of kind of like What phobs
+40:49 teams do there's a bunch of different
+40:51 shared principles uh for example like
+40:53 when you have clout costs you want to
+40:55 make sure that you uh uh make your teams
+40:59 that are using the cloud accountable for
+41:00 their cost so you have to set up like
+41:02 tagging systems to make sure that
+41:04 whatever VM that's uh being set up it's
+41:06 tied to a specific department and then
+41:08 there's a whole process of just
+41:09 reviewing costs um so there's that and
+41:13 there's also I think in terms of the
+41:14 phop side uh you want to make sure
+41:16 access to data is timely so that's kind
+41:18 of like where in the data engineering
+41:19 space you want to make sure your data is
+41:21 coming in fresh every day uh loaded into
+41:25 kind of like your data set so you can do
+41:26 kind of like a month or weekly reporting
+41:28 as
+41:30 required do I understand correctly that
+41:33 phobs is uh so let me take a step back
+41:37 so at the beginning when we just started
+41:39 talking about phobs my impression was
+41:42 that it's about cost optimiz
+41:44 optimization in
+41:46 general but the more we talk about this
+41:49 the more I realize that it's related to
+41:52 more specifically focuses on the cloud
+41:55 right yes correct yeah that that
+41:57 is how we use the cloud in the most cost
+42:00 effective way right correct yeah and I
+42:03 guess that that kind of like opens up
+42:04 the opportunity where I feel like
+42:06 working in the physical Warehouse I mean
+42:08 if you wanted to build up a rack you
+42:10 would need like some experience to you
+42:12 know uh uh you know get the resources to
+42:14 turn like uh Iron and Steel into a rack
+42:17 but in the cloud you can kind of like
+42:19 learn a little about data uh like Cloud
+42:20 architecture to figure out how would you
+42:23 kind of like make your processes more
+42:24 efficient so there's this notion of uh
+42:27 kind of like instead of relying on a
+42:29 servers uh you can take like a
+42:31 serverless architecture or just deploy
+42:32 containers so in this case rather than
+42:34 paying for a fixed asset you just kind
+42:37 of like pay as you go you can use in in
+42:40 like the different Cloud platforms
+42:41 there's a notion of like a cloud
+42:43 function or a Lambda function that runs
+42:45 something as and when you need it so I
+42:48 just found that really interesting that
+42:49 I think if you know enough about the
+42:50 cloud or if you know enough about
+42:51 architecture there's also opportunities
+42:53 that you can work with your team to
+42:55 figure out uh cost optimization unities
+42:58 there's a whole Space about like storage
+43:00 how do you minimize costs there's also
+43:02 um being able to kind of like reduce
+43:05 your costs by
+43:07 changing uh the type of uh storage that
+43:10 you're using inside uh your respective
+43:12 Cloud so I think in uh in Azure there's
+43:14 a hot storage and there's Cold Storage
+43:16 in gcp there's a similar uh definitions
+43:19 as well so there's a whole thing about
+43:21 just understanding the different uh
+43:23 aspects that you can cost optimize in
+43:24 the cloud and then just implementing it
+43:26 and that's kind like where you can also
+43:28 generate
+43:29 savings and the other thing I was uh
+43:32 thinking about is you know there's this
+43:34 thing called
+43:36 devops and uh then later we had mlops
+43:39 and data Ops which is u in simple terms
+43:43 mlops is machine learning operations
+43:45 which is kind of devops for ML and data
+43:48 Ops is uh data engineering operations
+43:50 which is yeah devops for data
+43:53 engineering yep and my understanding is
+43:55 phobs is the completely
+43:57 kind of parallel things so it's not
+43:59 related to devops per se it's just the
+44:02 name is kind of similar uh the same the
+44:05 name is kind of similar but the I think
+44:07 the the more specific typ is called
+44:08 Cloud cost management so in this case
+44:10 it's actually just more of like uh I
+44:12 would say it's more of kind of a
+44:13 business type role but you can kind of
+44:14 like spin it into something that's more
+44:17 technical if you want to so there's kind
+44:20 of like the interesting part about fops
+44:23 is I guess it can be as technical or as
+44:24 business focused as you want yeah and
+44:27 when it comes to the technical Focus
+44:29 what kind of uh tools and Technologies
+44:32 one needs to know in order to
+44:34 actually you know say I know
+44:37 phobs well in this case I think U
+44:39 knowing phobs is uh would consist kind
+44:41 of like the list of different processes
+44:43 that is related to phop so in this case
+44:46 um there's like a open source tagging
+44:49 software that you can use to implement
+44:51 tags inside your Cloud infrastructure so
+44:54 that's kind of like a notion of that uh
+44:56 in and I guess in terms of after uh you
+44:59 kind of like tag your resources then you
+45:00 kind of like rely on um the uh yeah data
+45:05 processing approaches so in this case
+45:06 you would have to know a little bit
+45:07 about uh data warehousing uh you'd have
+45:10 to know about setting up uh ingestion
+45:12 systems your Transformations and uh the
+45:15 power uh the visualizations aspect and
+45:19 uh I think in terms of the visualization
+45:20 aspect there is it's tied to kind of
+45:23 like the use cases for finops so the
+45:25 great thing that uh I've also learned
+45:27 about the fin Foundation is um there's
+45:29 this whole development ongoing for uh uh
+45:32 Focus or uh open usage cost
+45:35 specifications so the pinpoint that uh a
+45:38 lot of phoms folks have is uh you have
+45:41 these uh the three major kind of like
+45:43 Cloud platforms AWS ashure Google
+45:45 everyone reports their spend a little
+45:47 bit differently they use slightly
+45:48 different names they have slightly
+45:50 different calculations so there's an
+45:51 initiative within the final Foundation
+45:53 to kind of like create a standard data
+45:55 set uh across the cloud platform so that
+45:57 you can kind of just use all three and
+46:00 merge them into a single one so there's
+46:02 kind of like uh that piece that's
+46:04 ongoing within the finops foundation and
+46:06 we're also kind of like uh understanding
+46:07 ourselves how do we Implement that
+46:09 within our organization to make the
+46:11 reporting cost a lot
+46:14 easier but oh while you were saying that
+46:17 while you were answering my question I
+46:18 realized that even though it's a think
+46:21 that is kind of not related to The Bobs
+46:23 per se it's parallel thing still in
+46:27 devops the focus is not just on tools
+46:29 but on processes like how exactly we as
+46:32 a team make sure that we deliver the
+46:34 best possible software it's reliable
+46:36 it's
+46:37 testable um like all these processes and
+46:40 then um like how we as a team work um
+46:44 and then there like we have this
+46:46 continuous integration all these tools
+46:48 like testing all these approaches and
+46:51 what you just described sounds quite
+46:54 similar even though like it's not uh
+46:56 devop but again like the focus is more
+46:58 on processes you want
+47:02 to say streamline maybe all this
+47:04 processes and then there are tools you
+47:06 with that right uh yep yep exactly yeah
+47:09 there's yeah I think you got you hit the
+47:11 na on the head there in terms of the
+47:12 processes piece yeah and in this case
+47:15 yeah working in yeah because working in
+47:17 fops is still working with data a lot of
+47:19 those data Ops processes like cicd still
+47:22 apply in this case so even like just
+47:25 standing up like an action to just check
+47:27 based on any new data set that you
+47:29 create does it impact like any
+47:30 deployments or any dashboards that you
+47:32 have Downstream similar process as well
+47:34 pretty much and um if we go back to my
+47:38 previous question when I asked you what
+47:41 specifically do you do as a stff DAT
+47:42 engineer uh and you were talking about
+47:45 business and what was the second part
+47:49 like yous like I just given that the
+47:53 discussion we just had about phobs um
+47:56 maybe we can go back and revisit what
+47:58 you do there oh okay yeah so so in this
+48:01 case like uh I I definitely have like in
+48:03 addition to that there's always uh as
+48:05 part of a data engineer you're also kind
+48:07 of like working on the technical side of
+48:09 things fixing or deploying pipelines
+48:12 working through bugs there's also the
+48:13 part where in this case because uh We've
+48:16 set a kind of like our data platform uh
+48:17 it's also to train the data team on how
+48:19 to uh use some of the open source tools
+48:21 that we are developing and how do we uh
+48:24 Implement data Ops uh in our processes
+48:26 to ensure that our data sets are of good
+48:28 quality and then it's also I think the
+48:30 interesting bits as well within the phom
+48:32 faes uh there's also a notion of
+48:34 defining phoms metrics that are
+48:36 important to your business so in this
+48:38 case it would be uh a concept called
+48:40 like unit economics understanding uh
+48:42 what are the uh main metrics that you
+48:45 want to focus and optimize on uh for
+48:47 your specific
+48:49 organization so do I understand
+48:51 correctly that what you do is building a
+48:54 bun building a data platform
+48:57 for fops for making these decisions for
+49:00 optimizing costs and uh things like that
+49:04 um I I think that that that's pretty
+49:05 much yeah uh pretty much it like we have
+49:07 kind of like all this data that's coming
+49:09 from the cloud platforms uh we have to
+49:11 understand kind of like the what the
+49:12 business logic or our business logic and
+49:15 the metrics definitions and then we
+49:16 basically Implement them to generate
+49:18 kind of like some sort of unit economics
+49:20 that's used to kind of like evaluate
+49:21 where we're performing in terms of uh
+49:23 Club
+49:25 performance so at uh Conexis there is a
+49:29 this phobs team and you as data
+49:31 Engineers work with them to make sure
+49:33 you optimize all the spendings MH so in
+49:37 this case the business um owners or how
+49:40 to say the business people you talk to
+49:41 they're the finops folks right um in
+49:44 this case well uh we're we're we're
+49:47 generating kind of like the reporting
+49:49 and we're working with the business unit
+49:50 uh business users so the people that are
+49:52 developing in the cloud the people that
+49:55 are um setting up infrastructure in the
+49:58 cloud so we are working with Engineers
+50:00 we're working with product owners we're
+50:02 working with all folks in the business
+50:04 to kind of like um manage and control
+50:06 our uh
+50:08 spend and I think
+50:13 while you mentioned that you were doing
+50:16 a masters right are you still doing your
+50:18 Masters you're enrolled at a university
+50:22 right now yes yes right now so I am a uh
+50:25 I'm almost done with my Ms hopefully by
+50:27 the end of this year uh but uh I'm doing
+50:30 my masters uh it's called The Masters in
+50:32 analytics from uh Georgia Tech and so
+50:36 far I think uh in terms of kind of like
+50:37 my learnings it's been pretty cool uh
+50:39 because you kind of get to implement or
+50:42 it's basically more of like an applied
+50:44 analytics degree and because I work in
+50:45 data quite a bit uh you are exposed to
+50:47 kind of like uh the different approaches
+50:50 uh yeah the different approaches in
+50:52 analytics so you have kind of like your
+50:54 descriptive analytics you have
+50:55 prescriptive pred Ive so we kind of like
+50:58 uh explore all those different topics
+51:01 and we kind of like figuring out how do
+51:02 we Implement data to solve like a
+51:04 business problem in this
+51:06 case so since you're based in Toronto
+51:09 and this is Georgia Tech I assume it's
+51:11 in Atlanta uh the United States and I
+51:13 think it was also uh pretty interesting
+51:15 as well because U my my organization
+51:17 Home Depot is also based in Atlanta so
+51:19 uh while I was taking the program I did
+51:21 actually uh meet a lot of different Home
+51:23 Depot folks from the US that were also
+51:25 taking the program so that's also how I
+51:27 guess I learned about uh all these cool
+51:30 open source Technologies such as datab
+51:31 Built tool uh in this case like picking
+51:34 up python uh picking up on uh the cloud
+51:37 and a whole host of kind of like other
+51:39 tools that kind of like help me
+51:41 transition from kind of like being more
+51:42 of a business user to a uh software SL
+51:45 dat engineer in this case so when I was
+51:48 doing my masters my masters was in
+51:50 business intelligence was more than 10
+51:52 years ago no it will be 10 years uh soon
+51:56 this year when I graduated from my
+51:58 masters and when I was doing my masters
+52:01 I was um working as a freelancer so it
+52:03 was a parttime job sort of um so I would
+52:07 take a
+52:08 contract do something and then take the
+52:11 next one so it was a part-time job like
+52:13 I would spend like 20 hours per
+52:15 week and yeah I'm just thinking like you
+52:19 work full-time as a staff data engineer
+52:21 this
+52:22 is must be not easy to do both things at
+52:25 the same time right uh yeah uh exactly
+52:28 yeah it's definitely like the one thing
+52:30 that really interested me about the uh
+52:32 georia program was um it definitely
+52:34 based on the reviews that I read it's
+52:36 definitely more on the uh uh what's it
+52:39 called uh analytical rigor because they
+52:42 do expect you to kind of like pick up on
+52:44 the math they do expect you to kind of
+52:46 like Learn Python as required uh the
+52:49 most in uh one of the courses that I
+52:50 took uh we had to pick up uh D3 which is
+52:54 kind of like a JavaScript library that
+52:56 that was like a pretty intense as well
+52:59 because I I I at the moment I don't
+53:00 think people kind of like use D3 but it
+53:02 was just uh an opportunity for you to
+53:04 learn something new and pick it up and
+53:05 apply it um and in this case like U even
+53:09 when it comes to kind of like uh
+53:11 pursuing my masters uh it was also um
+53:14 important for me to kind of like just
+53:15 manage between my work and also just uh
+53:18 managing everything else that I have
+53:19 around me so in this case I try not to
+53:21 kind of like uh overwork myself I try to
+53:23 take maybe like one course a semester uh
+53:27 and I think it's also in this case
+53:28 trying to pick things that are related
+53:30 to my job uh just so that I find just so
+53:33 that I can find Opportunities to
+53:34 implement what I'm uh learning directly
+53:36 into my work so that's kind of like been
+53:39 the value add there in this case because
+53:40 as I'm learning whatever that I'm
+53:42 learning University because I work in a
+53:43 data space and analytics in particular I
+53:45 can just kind of like take it and apply
+53:47 it immediately so I guess that that also
+53:49 kind of like helps me encapsulate my
+53:50 learning a little bit
+53:52 better because uh this is something we
+53:55 talked about you also run so you're into
+53:58 running and you were running marathons U
+54:01 this year you're slow returning to that
+54:04 and like preparing for a marathon takes
+54:06 a lot of time y then also doing a
+54:08 masters and working and then probably
+54:11 you still want to do something else
+54:13 apart from these things right absolutely
+54:16 y uh so the secret is you take one
+54:19 course per semer uh yep uh taking one
+54:22 course and in this case like when I Was
+54:23 preparing for Marathon I I wasn't take I
+54:25 think I maybe just I took maybe like
+54:27 also potentially like a lighter course
+54:29 one thing I'll definitely say about my
+54:30 uh the analytics community at Georgia
+54:32 Tech is uh it's definitely uh really
+54:35 great as an online community because
+54:36 they have a Google sheet where they
+54:39 basically take uh the uh course reviews
+54:43 in and basically they do an average of
+54:45 how long or what's the estimated
+54:47 workload for each course so my rule is I
+54:50 try to basically kind like do the math
+54:52 if I want to double up my Max is 20
+54:54 hours if a course is like 10 or eight or
+54:57 12 I think I can probably just take one
+54:59 at the time so it's pretty interesting
+55:01 because there are people that kind of
+55:03 like spend the time to build these set
+55:05 of tools that kind of like help you
+55:07 figure out how do you manage your
+55:08 workload so I I found that really
+55:10 interesting within the community as well
+55:12 yeah it makes sense right so the course
+55:14 is about analytics or the program is
+55:16 about analytics so there should be
+55:19 some yeah analytical ways of make doing
+55:23 decision making in this case exactly yep
+55:26 I can see your cat ah
+55:31 yes um so maybe last thing uh that I ask
+55:35 and then we'll call it a day um so you
+55:37 mentioned that you're either recently or
+55:40 you're still preparing for a certificate
+55:42 in phobs um so you have quite a few
+55:46 certificates right yep so are you
+55:48 actively investing in uh your time in
+55:51 extra learning in addition to um what we
+55:56 just stocked in Masters and how you do
+55:58 this like because again like uh we have
+56:02 as humans only 24 hours per day yep
+56:05 exactly and I think uh that was
+56:07 something that yeah I think it's
+56:09 applicable to everyone so I I would
+56:10 definitely say that I I at least
+56:12 nowadays uh when I uh talk to folks that
+56:15 are kind of like interested in breaking
+56:17 into like data I know a lot of folks
+56:19 that can take certifications but at the
+56:21 same time it's important for you to
+56:22 understand what certificates align with
+56:24 your interest and also something that
+56:27 you are truly passionate about um so in
+56:30 terms of kind of like uh my learning I
+56:34 guess it also comes with the teritory
+56:35 that as a data engineer you kind of just
+56:36 have
+56:37 to the skill of learning is something
+56:39 that you kind of like build as you go
+56:41 right so I think doing all this has
+56:44 helped me at least become a lot more
+56:46 efficient in terms of my learning and
+56:47 being having a strategy on just learning
+56:50 what I need to get the job done so I
+56:51 think that was kind of like a really
+56:52 important skill as I was kind of like
+56:54 embarking on my um analy I Masters and
+56:57 as I kind of like learn to pick up the
+56:59 different certificates or uh the
+57:01 different programs that I'm doing um
+57:03 what I also found really helpful at
+57:04 least in terms of uh building this habit
+57:07 of learning it's also uh really uh
+57:10 finding your people so I think in this
+57:12 case uh I had a lot of um there there
+57:15 were a lot of things that kind of like
+57:17 were helpful for me in terms of um
+57:19 keeping me consistent in learning so one
+57:21 of the things that I only realized maybe
+57:24 a couple years back was Toronto is also
+57:26 like a really uh big uh Tech hub for
+57:29 data and analytics so uh in the last
+57:31 couple of years I've been doing my best
+57:33 to just attending meetups and learning
+57:34 from other people in the city that's how
+57:36 you kind of like build your
+57:36 relationships and also kind of like get
+57:38 a sense of what the market is looking
+57:39 for so you as you kind of like ask and
+57:41 talk to other people what are people
+57:42 using what are people learning that was
+57:44 kind of like
+57:45 how uh I kind of like at least built
+57:48 kind of like this support system around
+57:50 me to kind of like facilitate learning
+57:52 so uh there's also kind of like in this
+57:54 case like the D talk Club where you guys
+57:55 kind like post all these free learning
+57:57 sessions and uh just kind of like going
+57:59 online just kind of learning from other
+58:01 people uh the other part that I kind of
+58:03 also want to mention is also having the
+58:05 opportunity to apply what you learn so
+58:07 I'm really fortunate like in my
+58:08 organization canais there's a really uh
+58:10 there's an openness to building and
+58:12 applying the stuff that you learn from
+58:13 school so shout out to my team Amil and
+58:15 the rest of the books that canais for
+58:17 just making the environment really great
+58:18 for just being able to learn and pick up
+58:20 new things and lastly I would say just
+58:23 kind of like having an accountability
+58:24 partner so I have have kind of like a
+58:27 monthly call scheduled with a friend
+58:29 that we talk through kind of like our
+58:30 goals the person isn't uh even working
+58:32 in data it just can be anybody it can be
+58:33 your partner but it just is a good way
+58:35 for you to always set up some sort of
+58:38 accountability system that you're just
+58:39 kind of like slowly progressing to your
+58:40 goal yeah um yeah and last one I guess
+58:45 take this away Alexi is also just kind
+58:47 of like putting yourself out there and
+58:49 uh also giving back to the community so
+58:51 what I really liked about a data talks
+58:53 Club is you guys kind of like do this
+58:54 for free and you guys teach other people
+58:56 and for me the big step last year was
+58:58 just uh going on to ADP list and signing
+59:00 up to be a mentor so I've been also
+59:02 trying my best to just share what I know
+59:04 because I wished uh like in my career 10
+59:06 years ago I wish somebody told me what
+59:08 are the things that I needed to learn as
+59:10 a data engineer and how what can I do to
+59:12 get there faster right because I think a
+59:14 lot of the engineers are just too busy
+59:16 fixing stuff that uh there's not not
+59:18 really anybody to talk like talk to and
+59:20 share so I hope to kind of like at least
+59:22 be the person out there that can
+59:24 hopefully Inspire other people to kind
+59:26 like uh take this path as well yeah
+59:29 thank you Eddie it's been it was amazing
+59:32 talking to you thanks a lot for joining
+59:34 us today for sharing your experience um
+59:37 I took like there were a lot of notes so
+59:39 it was a very productive discussion uh
+59:42 so thanks a lot for doing that now I
+59:43 know what fops is uh I had no idea that
+59:46 this thing even existed um so thanks for
+59:48 taking your time and it was really
+59:51 amazing amazing thank you so much Alexi
+59:54 it was great to be part of the talk
+59:55 today yeah

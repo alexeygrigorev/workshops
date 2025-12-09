@@ -1,0 +1,1779 @@
+Storytime for DataOps
+
+0:01 some people call you the father of data
+0:03 ops
+0:07 oh yeah one guy called me the
+0:08 grandfather of data ops that that hurt
+0:13 i'm just thinking like about the
+0:14 introduction should he use that or you
+0:17 prefer i do not tell me whatever you
+0:19 want yeah
+0:20 okay
+0:22 okay so
+0:25 i've been doing it a while so yeah
+0:27 whatever term you want to use
+0:29 okay so i'll do a quick introduction and
+0:32 then we'll start so hi everyone welcome
+0:34 to our event this event is brought to
+0:36 you by data talks club which is a
+0:37 community of people who love data we
+0:39 have weekly events this event is one of
+0:41 such events
+0:43 if you want to find out more about the
+0:44 events we have go to the description
+0:46 there is a link click on this and you'll
+0:48 find out
+0:49 about all the events we have we have
+0:51 quite a lot of them check it out if you
+0:53 for some reasons haven't subscribed to
+0:55 our youtube channel do it now you will
+0:57 get notified about all our events and we
+0:59 have a lot of amazing events like this
+1:01 one today and join our amazing slack
+1:03 community where you can talk to other
+1:06 data enthusiasts during today's
+1:08 interview you can ask any question you
+1:10 want there is a link a pin linked in the
+1:13 live chat so just click on this link ask
+1:15 your question and i will be covering
+1:16 these questions during the interview
+1:19 so this week we'll talk about data ops
+1:22 and we have a special desk guest today
+1:24 chris
+1:25 uh chris is the ceo at hud chief
+1:29 at data kitchen and some people call
+1:32 chris uh the father of dateoffs maybe he
+1:35 will tell us why so welcome to our event
+1:37 today
+1:38 oh thank you yeah thank you for having
+1:40 me and i'm happy to be here and tell
+1:42 some stories um so get a blanket and
+1:45 some hot chocolate and uh hopefully you
+1:47 won't fall asleep
+1:49 okay
+1:50 i'm sure nobody will so before we go
+1:52 into our main topic of data ops let's
+1:54 start with your background can you tell
+1:57 us about your career journey so far and
+1:58 maybe you can also mention well um i
+2:01 guess
+2:02 yeah that's fine um
+2:04 so what's the headline is sort of old
+2:07 data nerd i guess that's the headline um
+2:10 so i i grew up in the central part of
+2:12 the united states wisconsin where
+2:14 there's a lot of people of german
+2:15 heritage and my last name berg probably
+2:19 is evidence of that um and so i worked
+2:21 my way through college and then i i
+2:23 spent 15 years kind of building software
+2:26 at companies like
+2:27 uh nasa a lab at mit um some internet
+2:31 startups
+2:32 um one microsoft and then i
+2:35 sort of got the management bug um
+2:37 and then about 2005 when my kids were
+2:40 young actually i think my
+2:42 son was seven um i was like oh i need a
+2:44 break i want to be home by five i'm a
+2:47 big software guy i'm gonna do this data
+2:49 stuff full time
+2:50 because i've done a little of it it'll
+2:52 be easy no problem
+2:54 and it wasn't actually and so i managed
+2:57 people who did data science data
+2:59 engineering data visualization and my
+3:02 life was bad it was just that things
+3:04 were breaking left and right and
+3:06 um
+3:07 you know we couldn't go fast enough
+3:09 people always had more insight questions
+3:11 and my team wanted to innovate
+3:13 and so in subways i've been on
+3:16 trying to solve that problem now for the
+3:18 last
+3:20 you know last many years and and so
+3:22 um
+3:24 in the interim i think i've really come
+3:26 to realize that the the problem is less
+3:29 because as an engineer who codes and has
+3:32 written a lot of code it's less about
+3:34 the production
+3:36 of code and more about the sort of
+3:38 processes around the building of the
+3:40 work
+3:41 and so um
+3:43 and really it's kind of that realization
+3:45 back in 2005 and 2006 that i ran a
+3:48 factory
+3:49 that data came in on one side and there
+3:51 were places where that data was
+3:54 assembled and models were applied and
+3:56 results were added to it
+3:58 and
+3:59 how to run a good factory was not
+4:01 something i knew as a software engineer
+4:03 and so i had to go back and
+4:06 read about industrial process automation
+4:08 and deming um and lean techniques um so
+4:12 it was an actual factory it wasn't a
+4:14 metaphor no no well was it a metaphor
+4:17 yeah but like
+4:18 in some ways
+4:20 i think when you have a lot of data
+4:22 pipelines in production and you have
+4:24 customers who will yell at you when
+4:25 they're late or when things are wrong
+4:27 having a good production process becomes
+4:30 really important
+4:32 but then on the other side
+4:34 so you run a factory so you have a hard
+4:36 hat but on the other side you really run
+4:38 a software team
+4:39 because
+4:40 changing
+4:41 the work that's in production the rate
+4:43 at which you can change the cycle time
+4:45 at which you can change is really an
+4:47 important determinant of
+4:49 customer success because you don't want
+4:51 to like have an idea and then spend
+4:53 three months working on it and then have
+4:54 your customer go ah that's not quite it
+4:59 and so you're on a factory which is sort
+5:01 of be a hard hat but you also run a
+5:02 software team that has to be agile and
+5:04 so how do you do both those things at
+5:06 the same time
+5:07 um you know kind of deal with sort of
+5:09 hipsters and hard hats with cycle time
+5:11 and error rates in production
+5:13 and and that's
+5:15 i think for me
+5:16 um we started this company about eight
+5:18 years ago and those issues were really
+5:22 sort of burned into my brain as a leader
+5:24 like like solve those
+5:26 um and so no one kind of understood what
+5:29 we were talking about then
+5:30 um in the sense that this sort of idea
+5:33 of automation and
+5:35 lean techniques and devops was really
+5:38 very um
+5:39 kind of out out there and so we had to
+5:42 talk and make a word for it we called it
+5:45 agile analytic operations for a while
+5:47 and devops for data science and
+5:50 um and then we in about five six years
+5:53 ago we wrote the we picked data ops we
+5:56 made a list and picked data ops because
+5:57 it was the shortest possible name
+5:59 and um
+6:00 [Music]
+6:02 uh and it had been in use before and we
+6:04 wrote the wikipedia article in a
+6:05 manifesto and
+6:07 over the years we've we've had to write
+6:08 quite a bit and talk about it um just to
+6:11 get this idea
+6:12 you know that the how
+6:14 how your team works rather than what you
+6:16 do and i mean what you do is cool like
+6:18 model selection or data transformation
+6:21 techniques and visualization those are
+6:22 all really good things
+6:24 you know the
+6:25 basic idea of data ops is
+6:27 if you build a system around that
+6:29 that automates a lot of the
+6:32 monitoring deployment
+6:34 collaboration your productivity goes way
+6:36 up and your customers are much happier
+6:38 and you end up doing better work
+6:41 so is this the essence of
+6:44 data ops yeah it's the essence yeah it's
+6:46 about the system it's about
+6:48 how you do things rather than what you
+6:50 do
+6:51 it's about the assembly line and not the
+6:54 not the individual assembly
+6:56 so is it more about tools or more like
+6:59 uh i know about the approach or or both
+7:02 uh like
+7:04 yeah maybe you can tell us what data ops
+7:06 actually is so you said it's a system
+7:08 that
+7:09 automates like all this mandatory that
+7:10 helps people be more productive so
+7:12 people don't need to i don't know worry
+7:14 about uh broken pipelines and when
+7:17 things get broken they
+7:19 you know you know how they know how to
+7:21 fix it right
+7:23 yeah
+7:23 yeah so i think it focuses really on
+7:26 on three things one is um
+7:28 lowering errors in production
+7:31 and so what do i mean by that i mean
+7:33 that the the value if you follow data
+7:36 from its source all the way to where it
+7:38 creates value
+7:39 and all the different tools and systems
+7:42 the metaphor i use for that is a factory
+7:44 right where
+7:45 you
+7:46 um
+7:47 take it and and put it in a
+7:49 you you put it in a bucket store you put
+7:52 in a database you aggregate it you run
+7:54 features on it and build a model it gets
+7:56 cached in a report it's governed all
+7:58 those pieces that go with it
+8:00 and that journey that data goes on
+8:02 metaphorically is a factory process and
+8:04 you want to have a factory that
+8:06 produces good things right that that has
+8:08 of high quality
+8:10 and low errors and so for us we think
+8:13 focusing on error reduction
+8:15 means you improve customer data trust
+8:18 um and if you notify about problems and
+8:20 that's really an observability problem
+8:23 if you want to use a devops term or a
+8:25 monitoring problem or a data quality
+8:27 problem the industry hasn't quite
+8:30 named what it is
+8:32 but really it's like check the stuff
+8:34 that you're doing
+8:35 and an example of that is
+8:37 about a month ago i talked to a guy
+8:38 who's one of the leaders of
+8:40 a data leader of one of the biggest
+8:41 companies in the united states and he
+8:44 got a call from the ceo of his company
+8:46 saying a report was blank
+8:48 and it took his team of it took 26
+8:51 people out of his team of hundreds to
+8:53 find the problems it took them six hours
+8:55 and it was like it was a dumb problem
+8:57 like a blank field this that it's it's a
+9:00 dumb problem but the point is you should
+9:02 know if um
+9:05 the results work and
+9:07 another story i tell is in 1990
+9:10 my first job out of graduate school was
+9:11 to work at nasa ames and at the time
+9:14 nasa had put the hubble telescope in
+9:16 and it was blurry right it didn't work
+9:19 and no one had sort of looked through it
+9:21 before it launched like no one had said
+9:23 oh let's go
+9:25 let's go look in that house next door um
+9:28 and i think that's a very true of our
+9:30 data and analytic teams we sort of put
+9:32 things and we do all these little
+9:34 individual stuff and and it doesn't work
+9:36 so error rates in production and then
+9:38 cycle time
+9:40 of deployment
+9:41 how fast you can get new models new data
+9:44 sets
+9:45 new visualizations kind of from your
+9:47 mind into production and that's it's
+9:49 both velocity and risk
+9:52 um
+9:53 and then and then the third part is is
+9:55 really focusing on
+9:57 on team productivity
+10:00 and reducing the amount of meetings
+10:03 and collaboration
+10:05 and so um and then the last is sort of a
+10:08 a principle that these processes that
+10:10 you do error rates and cycle time and
+10:12 productivity they're measurable
+10:15 then you should measure them and you
+10:16 should work on them and so
+10:19 um which is surprising that we work with
+10:22 people who are very analytically
+10:23 oriented but these incredible
+10:26 important metrics on their team success
+10:29 like how much you know how much work is
+10:31 your team doing um how often are things
+10:34 breaking um
+10:36 how fast are you getting new things into
+10:37 the into production those are really
+10:39 important metrics
+10:41 and and overall it's a very um
+10:45 uh value stream focused so it's not so
+10:47 much about data science or data
+10:50 engineering it's it's really about this
+10:53 lean principle that you don't you always
+10:55 optimize the whole and not the part
+10:58 and so um and the reason for that is
+11:00 like obviously in manufacturing you take
+11:03 an individual workstation and you make
+11:05 it superpowered there still could be a
+11:06 bottleneck later on
+11:08 and the same thing applies to data and
+11:10 analytic pipelines you know you um
+11:13 you get you could have the best model in
+11:14 the world but it's fed by bad data or it
+11:17 doesn't get in the hands of production
+11:19 and so over optimizing a part both from
+11:22 a
+11:22 throughput standpoint or the amount of
+11:24 insight it generates seldom works
+11:27 and so that is a very holistic
+11:29 discipline and so it's a and that also
+11:31 drives productivity so in some ways it's
+11:34 um an idea
+11:36 and you know we have a company and we
+11:37 have software that accelerates that idea
+11:40 but just like lean manufacturing is an
+11:43 idea or devops and software
+11:45 development's an idea
+11:47 there are tools to accelerate the
+11:48 implementation of that idea
+11:51 so
+11:52 correct me if i'm wrong maybe so you set
+11:54 the focus of data obscene is on is
+11:57 on three things so the first is you want
+12:00 to
+12:01 reduce the number of errors you have in
+12:03 production so we can think of this as a
+12:06 factory line and then like there is some
+12:08 you know assembly line and then we want
+12:10 to monitor that everything is fine there
+12:13 yeah and then you want to take your
+12:14 factory to produce a mercedes and not
+12:16 produce like an american motors car from
+12:19 1975
+12:20 [Laughter]
+12:22 then the second thing is reduce the
+12:26 cycle uh time of development of
+12:28 deployment right and then the third time
+12:30 is team productivity should increase
+12:33 right and i imagine that if you want to
+12:35 have like an
+12:36 effective uh factory right it's not only
+12:40 about the tools and then monitoring
+12:41 system you have but also how people
+12:43 operate there right so it's both about
+12:45 tools and the processes how exactly
+12:47 people use these tools
+12:51 error error rates cycle time
+12:54 um
+12:55 productivity and then the last thing is
+12:57 measurement of those things um
+13:00 because you can't improve what you can't
+13:01 measure
+13:03 and
+13:05 did you say that you actually you didn't
+13:08 know how to call it so i think there
+13:09 were a few names
+13:10 uh agile analytics and analytics
+13:13 analytics operations then devops for
+13:15 data science but then you
+13:17 it was actually you who came up with
+13:20 this term no no there was the term
+13:23 there's a company in the united states
+13:25 that has been using data ops for since
+13:28 the 80s
+13:29 um so you know the
+13:31 i think the term
+13:34 you know i guess people
+13:37 my thought was we're creating we're
+13:39 trying to get an idea across and so we
+13:41 needed a name for that idea
+13:43 and i'm pretty arbitrary on what the
+13:45 name is so i felt the shorter the better
+13:48 and so we could have called it tom and i
+13:49 would be happy but the idea has to be
+13:51 hooked up to a name and so we needed to
+13:54 and so people asked what what and the
+13:56 reason is when we went to conferences
+13:58 and we were wearing chef's hats and
+13:59 people were looking at us like we were
+14:01 aliens and because no one understood
+14:03 what we were talking about
+14:05 and it's frustrating to go and like work
+14:07 for years and build software and then
+14:10 like no one goes what are you an etl
+14:12 tool are you a data science tool do you
+14:14 build a data lake i'm like i know we do
+14:16 this thing called data oppositives
+14:17 what's that
+14:20 and i i think at that conference it was
+14:22 like a
+14:23 strata conference a big conference we
+14:25 like talked to hundreds of people and
+14:27 had all this is very frustrating um and
+14:30 we talked to finally one guy and i'm
+14:32 describing it to him in these terms
+14:34 and then he goes that sounds a lot like
+14:36 devops and i was like yeah yeah it's
+14:38 just devops for
+14:41 uh data analytic teams and he goes oh
+14:44 that makes sense you mean people don't
+14:45 do that already
+14:48 i was like no no
+14:50 and that's the problem like people
+14:52 there's a like there's a sense in if you
+14:55 come from a software development
+14:56 background that automating and testing
+14:59 and monitoring and the processes your
+15:02 team works on are really important and
+15:05 worthy of investment
+15:07 right and they're not just for lesser
+15:09 beings it's like if you can get those
+15:11 right and actually what's happened in
+15:14 software the the team percentage of
+15:16 people who are allocated to
+15:18 instead of doing the work working on the
+15:20 processes and automating around it is
+15:23 upwards of of 25 of the whole team
+15:27 and their pay is actually at
+15:29 sometimes higher than the people who are
+15:31 actually doing sort of javascript or you
+15:33 know building a web backend
+15:35 um because the system you get the system
+15:37 right actually it allows you to
+15:40 um make a lot of changes quickly
+15:43 and so if you look at a data and
+15:44 analytic team
+15:47 one percent two percent people are doing
+15:49 it on weekends it's like hey maybe
+15:51 someone's
+15:52 it's not seen as kind of worthy work um
+15:55 and so that's sort of partly my mission
+15:58 is that work is actually really worthy
+16:00 and you own the processes that you work
+16:02 on and you can control them and if you
+16:04 don't um
+16:07 what happens is your life sucks um and
+16:10 it's not good and i've suffered for many
+16:12 years and i suffered in two ways one is
+16:16 i had i i i was a i was a bad manager i
+16:20 blamed people
+16:21 instead of
+16:22 um the system because if you actually
+16:25 read deming and
+16:26 the the lean principles 95 of the time
+16:30 it's the system or the process you work
+16:32 in and not the person's fault
+16:34 and as a leader guess who owns the
+16:36 process that people work in
+16:38 you know
+16:39 the leader
+16:41 it's much easier to say oh this person
+16:43 sucked i'm gonna fire them
+16:44 they're letting us down
+16:46 and and so i did that and i'm ashamed
+16:48 actually that i did that sometimes um i
+16:51 think
+16:52 uh so and it's partly also when you are
+16:55 in a data and analytic team and your
+16:56 customers are
+16:58 rolling their eyes because you
+17:00 they ask you something simple
+17:02 you say it's going to take months
+17:05 or your data providers are giving you
+17:07 crappy data
+17:08 and you're just caught
+17:09 and
+17:10 it's not a fun job and i think there's a
+17:13 lot of evidence of that
+17:15 like you know gartner says 60 percent of
+17:17 projects fail
+17:18 um
+17:19 there's the model there's the model most
+17:21 models don't make it into production
+17:23 um there's our studies of the amount of
+17:24 errors that are happening
+17:27 and we even did a survey with
+17:29 data.world of the psychological state of
+17:31 data engineers and um it was actually a
+17:34 signifi
+17:36 we got 600 responses so it was a decent
+17:39 statistically relevant survey
+17:41 and 70 of them said their job was so
+17:43 stressful they wanted a therapist to go
+17:45 with it
+17:47 and like actually i kind of wasn't
+17:48 surprised um
+17:51 it's it's not a great job because you're
+17:53 sort of
+17:54 once you get something working you
+17:56 struggle to get something working
+17:59 then people ask you more and more and
+18:01 more
+18:03 and then
+18:04 things break left and right
+18:07 and then you know then you're like this
+18:09 sucks and then you quit and take it to
+18:10 the job
+18:12 and that's why you do the same thing
+18:13 right yeah you do the same thing again
+18:15 and like that sort of um
+18:17 you know that sort of complexity makes
+18:20 um and complications make your life not
+18:22 fun and i just don't think
+18:25 we need to live that way i think there's
+18:27 a better way
+18:28 um and i think it comes from this thing
+18:31 this idea that we as people and it own
+18:34 our process and we can take control and
+18:36 just don't have to suffer and we just
+18:38 don't have to live that way
+18:40 and so because i think it actually ends
+18:41 up hurting people's
+18:43 um
+18:44 psychology like when i was um
+18:48 my 42nd birthday wanted this was in i
+18:51 don't know 2007 or whatever one of my
+18:54 data engineers had his 24th birthday
+18:58 and so he was like he came in on a
+19:00 one-on-one and we're talking with him
+19:02 and he started crying
+19:04 because he just felt bad
+19:06 like i can't go fast enough things are
+19:07 breaking my customers are yelling at me
+19:10 and he was just like he's a really good
+19:12 guy and i felt like crap because like
+19:15 here he was like taking it very
+19:16 personally
+19:17 and actually that happens to a lot of
+19:19 people
+19:20 and so
+19:21 um
+19:22 and so like we have a backpack full of
+19:24 tasks we've got data providers who don't
+19:26 care we got systems that are
+19:28 that are funky and we're just told work
+19:31 harder
+19:32 you know and and that's not i just don't
+19:34 think i think if anything the idea of
+19:36 data ops is about taking control back
+19:39 and it's in saying look you can
+19:41 and saying these methods that worked in
+19:43 manufacturing these methods that worked
+19:45 in software let's just steal them and
+19:47 apply them to our jobs
+19:49 that's it
+19:51 so you have to own the process or the
+19:53 process will on you right exactly
+19:55 exactly all these funky systems uh but
+19:57 quality data
+19:59 that
+20:00 will keep you awake at night right you
+20:02 don't want to have that you want to be
+20:04 in control of these issues so you need
+20:07 to take control of that and
+20:09 yes we said that having these processes
+20:12 are important so we need to work on
+20:14 these processes and automate them but
+20:16 how do we actually do it so let's say
+20:18 i'm a data engineer i just joined a
+20:21 startup and i need to build a
+20:24 data pipeline because the management
+20:26 wants to have a dashboard
+20:29 so i do this i don't know i
+20:32 do it in spark or whatever it works and
+20:34 then
+20:35 the management of course is satisfied
+20:36 and then they start giving me more and
+20:38 more and more tasks so i don't have
+20:41 time let's say to
+20:43 to just slow down and then take control
+20:46 of this and make sure that it's not like
+20:48 duct tape and i don't know what no what
+20:51 not but actually like a solid thing that
+20:53 does not wake me up
+20:55 at night so how do i go about you know
+20:58 defining these processes and automating
+21:00 them well i think it's it's the
+21:03 definition of success and the definition
+21:05 of done
+21:06 right so i think there's definitional uh
+21:08 questions and so
+21:10 what running towards making your
+21:11 customer happy
+21:13 and being a hero is not in itself bad so
+21:16 that's a sort of heroic act of bolting
+21:18 together spark queries and
+21:20 and dashboards and however you want to
+21:22 do it right and and integrating data
+21:25 and having the higher ups go oh thank
+21:27 you that's great and then 10 follow-up
+21:29 questions and you're working the weekend
+21:31 and then
+21:32 somebody changed something in on the
+21:33 data feed and you're fixing it on sunday
+21:36 and so like um
+21:37 i think
+21:39 the that's not bad but the the saying of
+21:42 what what is good
+21:43 look like and what good looks like is a
+21:46 if you've done something that you can
+21:47 run it and it will tell you if
+21:48 something's wrong while it's running
+21:50 and it will you'll be able to make a
+21:53 change somewhere
+21:54 and you'll know if there's a problem in
+21:56 it and you can also
+21:58 hire a 22 year old who can start working
+22:01 on it
+22:02 um and
+22:03 and be able to make a change quickly
+22:06 and so
+22:07 what is done and what is good
+22:09 we have to talk about right because like
+22:13 a lot of times we think doneness means
+22:15 our customers are happy and then it's on
+22:17 to the next thing and the discussion
+22:18 with the customer comes is like look
+22:20 it's it's not done because
+22:23 of those situations i need to do more
+22:26 and so we need to set up
+22:28 a system to handle this complexity and
+22:31 so i think
+22:32 that discussion was like i was a
+22:34 software engineer in 1996 and i was like
+22:37 working on live websites like it was a
+22:39 very early sort of facebook website we
+22:41 had four million people on it i was like
+22:44 restarting the server kicking people off
+22:46 i was like there late at night and that
+22:48 was cool i was like hey you're a hero
+22:51 and like you know is that the is that do
+22:55 you want big companies doing that
+22:56 nowadays no
+22:58 and so i think um what's done and and um
+23:02 uh what what is good i think has you
+23:04 have to have discussion with people and
+23:05 and also it becomes a question of
+23:07 trade-offs like
+23:09 okay i can go really fast but i'm
+23:11 building some technical debt
+23:13 the next can i have some time to reduce
+23:15 that or else i'm going to be able to do
+23:17 less in the future
+23:18 right i'm gonna can i have some time to
+23:19 refactor
+23:20 and so can i have some time to write
+23:22 some documentation can i write some
+23:24 governance documents um we want to hire
+23:26 more people so i want to put in more
+23:28 automated tasks and more automation
+23:29 around it to make it easy it becomes a
+23:32 discussion
+23:33 of
+23:34 time allocation
+23:36 because
+23:37 um
+23:38 if you're in that situation where your
+23:39 value only comes from the insight you've
+23:41 generated and not this discussion of it
+23:44 it becomes a
+23:45 it just becomes a harder life because
+23:46 you get buried
+23:48 and then unhappy
+23:49 and
+23:50 then you know i've seen it people quit
+23:53 and a lot of people have entered the
+23:55 data and analytics field in the last
+23:56 five years and actually there's a lot of
+23:58 unhappy people
+23:59 um and so
+24:01 it's because of this situation
+24:05 okay and
+24:07 how do we
+24:08 so in this case uh i imagine i think you
+24:10 partly gave an answer to that as a data
+24:12 engineer who just developed this spark
+24:15 pipeline and put together like some
+24:18 stuff on the dashboard do i immediately
+24:20 go to the management and show that
+24:22 or i wait a little bit and then maybe
+24:25 think okay is it done is it ready to be
+24:27 shown and then maybe you know
+24:30 think about processes thinking think
+24:31 about
+24:33 how can i make sure that this thing is
+24:34 actually reliable so at what point do i
+24:37 go to management and say okay this is
+24:39 ready
+24:41 data ops is all about balance right
+24:43 between heroism and fear right and one
+24:46 way to do it is to have fear and sort of
+24:49 say i'm not going to show it to people
+24:50 for
+24:51 weeks and weeks while i do all the stuff
+24:55 and i can see how that might end up not
+24:58 really
+24:59 might not be good because why you may
+25:01 actually
+25:02 all that work that you're doing may
+25:04 actually you may capture the
+25:06 requirements wrong
+25:08 right and so it's really um like a lot
+25:11 of things in life it's about balance
+25:13 between heroism and fear
+25:15 and so i do think you should get early
+25:17 feedback from your customers
+25:19 and i think you should tell them look
+25:21 this is um i'm giving this to you i
+25:24 haven't checked the data perfectly i
+25:26 haven't automated i haven't tested it
+25:28 it's not been version control this isn't
+25:30 production ready yet
+25:32 um
+25:33 and so i've got some technical debt that
+25:35 i'm gonna have to
+25:36 um and because they may
+25:39 you don't know that may be good enough
+25:41 and then they're on to the next thing
+25:42 and they want you to throw it away
+25:44 or they may have six more things that
+25:47 are based on it this may be the
+25:48 cornerstone that you can build a whole
+25:49 infrastructure on
+25:51 and so you don't know what's in your
+25:52 customer's head and
+25:55 that's okay
+25:56 right it's okay to be humble
+25:58 and
+25:59 iterate your way into really
+26:01 understanding what your customer wants
+26:04 because if um
+26:06 like i've made this mistake
+26:08 you really you know you have a lot of
+26:10 calculus graduate degrees man i'm really
+26:12 smart i'm that my business customer
+26:15 drank beer and went to business school
+26:17 and like i i got to work for him and
+26:19 you're kind of pissed off like man i did
+26:20 all this calculus you know
+26:22 um but the reality is they know a lot of
+26:25 things right that you don't and so
+26:28 we happen to have this strange talent of
+26:31 high abstraction putting data together
+26:34 um and you know we like our beer but
+26:36 we're not you know we're not we're not
+26:38 good business people and so i think
+26:40 giving them early bits of what you've
+26:43 done
+26:44 helps and making a dialogue with your
+26:46 customer on what is on
+26:49 what you need to do is really and so
+26:51 partly it's it's that it's like
+26:54 our tendency as technical people is to
+26:56 build very complicated
+26:58 um very
+27:00 these sort of crystal castles
+27:02 like
+27:03 you know like i i stopped coding five
+27:06 years ago and i miss it like i want to
+27:08 go and like partly sometimes i like have
+27:10 to stop myself because it's like i want
+27:11 to go off for like a month and code
+27:13 because it's really fun
+27:15 but like
+27:17 how do you
+27:18 but i've learned that like if i do that
+27:20 i'm often wrong
+27:23 and like getting early feedback it helps
+27:27 you we're really just trying to maximize
+27:29 the amount of
+27:30 value you bring to the organization
+27:32 and that's what really matters it's not
+27:35 infrastructure it's not
+27:37 um it's not deferred value it's value
+27:42 and and i think this is one of the
+27:43 principles of you mentioned this lean
+27:45 approach right so in lim i think there
+27:47 is a booklet called clean startup right
+27:49 so there you
+27:51 exactly you don't do that you don't you
+27:53 know close yourself in a garage
+27:56 garage for i don't know
+27:57 for a year and implement something that
+28:00 maybe nobody cares about right so you
+28:03 actually show it to people and then you
+28:05 get feedback from them and then you
+28:07 iterate on this feedback and is this
+28:09 something
+28:10 one of the principles behind data ops as
+28:12 well and devops exactly yeah it's it's a
+28:14 very you know it's a very iterative
+28:17 methodology that's based in uh
+28:19 um
+28:22 finding the right balance between
+28:23 heroism and fear between uh being humble
+28:26 about what you know
+28:28 and forcing feedback from your customers
+28:30 so it comes from agile software and the
+28:32 agile manifesto and the data ops
+28:35 manifest that we wrote is sort of a
+28:36 blatant rip-off of agile manifesto
+28:39 because um
+28:40 you know we are it's a little the
+28:43 problem with data is a little more
+28:44 complicated than devops
+28:46 because we have two major cycles of
+28:48 iteration and not one so one is your
+28:51 iteration with the customer
+28:53 on
+28:54 is this data telling you what you want
+28:57 and am i showing it in the right way
+28:59 and then the second is you've got an
+29:00 iteration with the data itself like is
+29:03 it actually predictive
+29:04 is this the right data set and so you've
+29:06 got these two cycles of iteration that
+29:08 actually because in software you sort of
+29:10 build you know you build an application
+29:13 you send to someone they go no change
+29:15 this change that it's it's a you've got
+29:17 one you know you're really working on
+29:20 can they use it and do they understand
+29:22 it and we have that in data teams but
+29:24 it's also like does the data make can
+29:25 the data actually
+29:27 say what it is statistically relevant
+29:30 can it support the story that you you
+29:33 want the application to have so um it's
+29:35 a data problem and an application
+29:38 problem and it makes it complicated
+29:40 and also the value streams the the sort
+29:42 of the factory as data goes is much more
+29:46 organized organizationally complicated
+29:49 in in bigger companies you have a
+29:52 i t team you have a maybe a data
+29:54 warehouse team a data lake team you'll
+29:56 have a data science team you'll have um
+29:59 end user business analysts
+30:01 you have governance and then over here
+30:03 you'll have the person who's receiving
+30:04 the value
+30:06 and so you end up with these silos
+30:09 of optimization
+30:10 and there
+30:12 and so if you
+30:13 really believe in these lean principles
+30:15 like i do you need to optimize the whole
+30:16 you need to optimize across all the
+30:18 teams
+30:19 um
+30:20 and you need to deliver that as a
+30:24 p as
+30:26 you need to think about how if i'm going
+30:28 to change one piece it's effect on the
+30:30 other
+30:31 and so that's what happens a lot of
+30:32 times is that one person who has one
+30:35 pipeline for the startup startup gets
+30:37 successful they hire a data engineer and
+30:39 a data scientist they have business
+30:41 analysts on it they hire some more and
+30:42 pretty soon you've got the data
+30:44 engineering team and the data science
+30:45 team and you've got a couple of
+30:46 different lines of business with
+30:48 business analysts on and then you hire
+30:50 someone for governance and then you've
+30:51 got three definitions of metrics in
+30:53 three different places and
+30:55 um
+30:56 and you know people are running around
+30:57 crazy trying to get stuff done but you
+31:00 still don't
+31:01 you're still not achieving what you
+31:03 think you can
+31:04 um and so it becomes a
+31:08 you know sort of balkanization or
+31:10 separate separation of these teams
+31:12 actually makes people
+31:14 which makes sense
+31:15 but like um
+31:18 it's harder than to deliver iterative
+31:20 value
+31:21 so and then what happens sometimes
+31:23 everyone together right
+31:25 well they people
+31:28 they they put blinders on
+31:30 the data team worries i my job is to get
+31:32 value up to here and i don't really know
+31:34 what happens i wash my hands what does
+31:37 that data science team do i don't know
+31:40 and then the people who are doing
+31:41 visualization who's taken maybe a
+31:43 scoring model in the data they're like
+31:45 these people are too slow these data
+31:47 science people don't understand the
+31:48 business
+31:49 i'm just going to go
+31:51 make a
+31:52 make this segmentation and tableau and
+31:55 change it and throw all their stuff out
+31:56 and i'm going to go to the raw data and
+31:58 bypass all the stuff they've done
+32:00 and so
+32:02 everyone's optimizing their part
+32:05 and
+32:06 um i mean i've run into cases where
+32:09 teams have spent years working on
+32:11 something and it hasn't gotten to
+32:12 production like large deeps 400 teams or
+32:15 400 people they spent two years and
+32:16 nothing's in production nobody's
+32:18 receiving value
+32:20 and i think that's really what um
+32:24 like i i i've learned to desperately
+32:26 want to deliver value to people who use
+32:30 it sometimes those are people using
+32:32 tableau sometimes those are business
+32:34 people and if i don't
+32:36 i get really worried
+32:37 that i'm that something's wrong and that
+32:39 sort of instinct is what i want a lot of
+32:41 people to have
+32:42 and
+32:43 um
+32:44 it's not unfortunately it's not there uh
+32:46 to be blunt there's a lot of people are
+32:48 like ah
+32:50 i'm doing enterprise infrastructure
+32:52 and that's it i'm building i'm building
+32:54 a data lake well who's going to get
+32:56 value um i don't know we're going to get
+32:57 all the data in the lake and i'm going
+32:59 to build it and they'll come and things
+33:00 will be great
+33:02 and then there's the sort of techno
+33:03 fetishes of like hey we got in this new
+33:04 tool
+33:06 i went to their conference and had a
+33:07 great time and this tool is going to
+33:09 accomplish everything for us so if we
+33:10 just put all our data in this tool
+33:12 good things are going to happen hadoop
+33:14 right i think hadoop 10 years ago was
+33:16 10 years ago you know the cloud now we
+33:19 put all the data in the cloud good
+33:20 things are going to happen
+33:22 um you know uh it's hadoop it's spark
+33:24 it's it it's it was oracle before that
+33:27 and cartridges and and
+33:29 um
+33:30 it's it's a way to avoid it's a way to
+33:32 defer value it's a deferred value is a
+33:34 trap
+33:36 like i'm i'm gonna build something
+33:37 really good and that's going to be
+33:39 generative is is
+33:41 um
+33:42 is a is a trap that often hurts you
+33:46 so you describe this picture of
+33:50 isolated teams data analytics teams who
+33:52 doesn't care about data scientists and
+33:55 then this uh
+33:56 data engineers who just create data
+33:58 lakes because they want to
+34:00 and if we go back to that
+34:02 one data engineer from who everything
+34:05 started so what these data engineers
+34:08 could have done to actually avoid all
+34:11 that so we talked about automation and
+34:13 you know thinking of processes and
+34:15 automating them so what which things
+34:18 that data engineers should have
+34:19 automated to avoid all that and what are
+34:22 the things here
+34:23 they should have done not just the data
+34:25 engineer right but i guess the
+34:27 management also
+34:29 like what should have they should have
+34:31 done to
+34:33 to have to live happily after that
+34:37 well like we um
+34:39 we used to give this talk called the
+34:40 seven steps to data ops and and so i'll
+34:43 talk through that so the first step is
+34:44 like one of the first steps is like
+34:47 take your code and put it in version
+34:49 control
+34:50 like not don't have it
+34:52 on your hard disk somewhere or a file
+34:55 share so and and all the code the report
+34:58 the transformations
+34:59 um
+35:00 uh that's one thing and then second is
+35:03 write automated tests that run in
+35:06 production so you're expecting a
+35:07 thousand rows
+35:09 you're expecting this report to have
+35:11 this value on write a test to check it
+35:14 and and monitor it um and then third is
+35:17 um when you're changing something in
+35:20 development
+35:21 run automated tests against that to
+35:24 judge regression or impact analysis
+35:27 so be able to if you change something on
+35:30 the back end tell if the front end is
+35:31 broken
+35:34 in a very simple way
+35:36 so um it's testing
+35:38 it's automating deployment it's version
+35:41 control
+35:43 and then a lot of times it's counting
+35:46 when you have problems so if you have an
+35:48 error
+35:49 put make a jira ticket or put it in a
+35:51 spreadsheet
+35:52 um
+35:53 uh
+35:54 you could go and if you want to improve
+35:56 your cycle time like just met like every
+35:59 week start trying to deploy every week
+36:01 and if you don't
+36:02 uh note that
+36:04 um and and i think
+36:06 um
+36:08 i think those things are good and then
+36:09 have this case of like can i hand this
+36:12 off to someone else
+36:13 like do i have to own this for the rest
+36:15 of my career here
+36:16 like there's a lot of um
+36:18 [Music]
+36:19 sense there's a lot of times in these
+36:20 data processes where
+36:22 like i got my spark jobs
+36:24 they run and then i gotta hit a button
+36:26 on my reporting engine to refresh
+36:30 it's is that a problem well no and then
+36:32 you get these
+36:33 word documents that are these these uh
+36:36 documents that say do this on thursday
+36:38 do this on friday check this and they
+36:40 become these these sort of playbooks and
+36:42 um you know i'm sort of against
+36:44 checklists i'm more of uh i'm the
+36:47 anti-checklist manifesto i'm like write
+36:49 code that automates that
+36:52 so everything that you're doing in
+36:53 checklist automate away
+36:55 so that the system just runs without you
+36:57 and will tell you if something's wrong
+36:59 and the next thing is you can hire
+37:02 someone just out of college and they can
+37:04 make a change in their first week
+37:07 and without having to talk to you
+37:10 like that's the case
+37:14 does that help that's that hops or is it
+37:16 devops i don't know like i don't really
+37:18 care uh it's um
+37:20 it's very um focused on uh
+37:24 this sense of automation
+37:27 for and it's actually it's badly named
+37:29 it's more like
+37:32 code that acts upon data operations
+37:36 because it's not really about the data
+37:38 honestly it's about the things acting
+37:40 upon the data
+37:42 and you mentioned a checklist and if you
+37:44 have a checklist you don't like
+37:46 checklists you said but it's probably a
+37:48 good first step right to have this
+37:50 checklist before you can it's better to
+37:52 automate a checklist that exists rather
+37:55 than
+37:55 you know
+37:56 not automate anything absolutely yeah
+37:59 absolutely first step for that data
+38:01 engineer before they hire a
+38:05 college graduate right to actually yeah
+38:07 yeah yeah because you want to take a
+38:09 vacation right you want to have weekends
+38:10 off so writing a wiki page that says
+38:13 here's how you operate this thing is
+38:14 good
+38:15 and then having that discussion with
+38:16 your with your customers saying look
+38:18 this is
+38:19 um i know this is taking 10 minutes a
+38:21 week but if i quit you're going to be
+38:23 stuck and no one's going to be able to
+38:24 do this right and and or we want to hire
+38:27 some more people and you want me to do
+38:29 more things and i'm spending two hours a
+38:30 week on this production stuff and i
+38:32 should be spending two seconds or i
+38:34 should be spending no time and just have
+38:35 an email come
+38:37 and uh so i think that is a
+38:39 um the sense that um
+38:43 this idea that you're automating and
+38:45 also that you're running towards errors
+38:47 so inevitably
+38:49 like data systems break
+38:51 like that's just the fact of life
+38:53 and so
+38:54 what you want to do is when you have a
+38:56 problem you want to find out where it is
+38:58 as fast as possible and automate the fix
+39:00 to that
+39:01 a test and automation and then
+39:04 um
+39:05 that's a good thing and and so
+39:07 some organizations
+39:09 end up in shame and blame culture
+39:12 where errors happen and people don't
+39:13 want to talk about it i'm not that's why
+39:15 i think counting your errors is
+39:17 important and tracking them and i think
+39:19 there's a lot of organizations who have
+39:22 very poor data quality
+39:24 they're missing their slas no one trusts
+39:27 the data but ever but they're claiming
+39:29 great success
+39:31 it's like well uh
+39:34 and it's like no it's not working like
+39:36 maybe you should just have a report that
+39:38 actually has those things in
+39:40 um and so uh so i so anyways that is
+39:43 that helping
+39:45 no and i guess one of the things you
+39:47 mentioned which is a key here
+39:50 is as a data engineer that data that
+39:52 only data engineer you don't want to be
+39:54 indispensable right so you want to be
+39:56 replaceable right because you want to
+39:57 have locations and if you are the only
+39:59 person who knows how the system
+40:01 functions
+40:02 then maybe short term you're good like
+40:05 you can ask for a salary raise because
+40:07 they're not going to fire you but long
+40:09 term right this is not really good right
+40:11 because you want to have vacations you
+40:13 want to have
+40:14 you know to relax on weekends so you
+40:17 actually want to be replaceable right
+40:19 and all these things that you mentioned
+40:21 like automating
+40:23 checklists and
+40:25 like all the other things
+40:27 like they really help
+40:29 yeah and i think
+40:30 it's not wrong emotionally to want to be
+40:33 indispensable like i spent a lot of my
+40:34 20s
+40:35 wanting to be
+40:37 indispensable on a software team and
+40:38 wanting to be the
+40:40 studly guy who who built the cool thing
+40:43 right and get the praise from other
+40:44 people because i was good you know and i
+40:46 was like i'm gonna build a cool thing
+40:48 and um that's not wrong right it's
+40:51 it's normal um
+40:53 but yeah you don't want to build such
+40:55 complexity that
+40:58 you have to own it for the rest of your
+41:00 career or no one else can take it over
+41:02 and you know we have software's develop
+41:04 terms like technical debt my favorite
+41:06 term is hairball like you big a big hair
+41:08 ball of stuff and and like from a cat
+41:11 like a cat throwing up a hairball like i
+41:13 actually think that that's sort of true
+41:15 it's like you can very easily create a
+41:17 hairball that no one else can untangle
+41:20 and um
+41:23 your definition of what's good and
+41:25 what's done has to change you're not
+41:27 done when you've created a hairball it's
+41:28 not good
+41:31 and and so i think that's and so i think
+41:33 i'm also think when other people do that
+41:36 on your team you have to go ew
+41:39 you just you just
+41:41 i know all the business people are
+41:43 loving you but you just coughed up a
+41:45 huge hairball and like that's not good
+41:50 you're not done and it's not good
+41:53 do people like you after
+41:55 they hear it from you
+41:59 you know i think there's nice ways to
+42:00 say things you know
+42:03 business there's business language like
+42:05 let's talk about
+42:07 what done means and let's talk about
+42:08 what good means
+42:10 and say okay um and yeah you did this
+42:12 great but you're not done and it's not
+42:14 good because it can't be handed off
+42:15 because it's not version control let's
+42:17 write it down and let's agree
+42:19 on what done and good is for our team
+42:21 with our customers and i think there's
+42:23 um
+42:24 methods that you can go you know i'm
+42:26 being facetious on the emotional stuff
+42:28 but like i do find
+42:31 the sort of
+42:33 um
+42:34 almost as a as a manager and a leader
+42:36 i've had to
+42:38 um publicly praise and privately
+42:41 criticize people who are heroes like hey
+42:44 you worked all weekend fantastic
+42:46 and then like okay you worked all
+42:48 weekend
+42:49 sometimes we have to do that right
+42:51 sometimes you do have to work all
+42:53 weekend but that should be rare
+42:56 and and um sometimes you do have to
+42:58 create hair balls and that's okay right
+43:01 but like
+43:02 you shouldn't do that 95 of the time
+43:06 and all the steps that you described
+43:07 that this particular data engineer
+43:10 could take to improve the system they
+43:12 don't seem to be
+43:14 that difficult that complex like okay
+43:16 put the code in git i think everyone is
+43:17 doing this i i hope
+43:19 then at tests okay this step is a little
+43:22 bit
+43:23 less easy because you know nobody likes
+43:26 writing tests but then it's doable right
+43:28 and then integration tests you want to
+43:30 be certain that your system runs and
+43:32 then
+43:33 automating deployment this is actually
+43:35 fun for the engineer to figure out how
+43:37 ci cd works and then
+43:39 implement that so as a technical person
+43:41 i'm sure they will love that so it's not
+43:45 okay i i liked playing with github
+43:47 actions recently i didn't know how to
+43:49 use them so i spent like a weekend
+43:51 figuring this out and it was fun right
+43:53 yeah so all these things that we talked
+43:55 about they make sense and they're
+43:57 implementable
+43:58 but why
+44:00 do not
+44:01 like not everyone is actually
+44:02 implementing them why do we have this uh
+44:05 you know the all these problems that we
+44:07 talked about why do they still happen
+44:12 uh that's a good question um
+44:14 uh
+44:15 so i think
+44:17 there's a couple reasons one is
+44:19 the
+44:21 the
+44:22 writing
+44:23 there's some people who are on the
+44:24 journey they do get up to actions and
+44:26 they write a couple unit tests against
+44:28 their python code
+44:30 and then
+44:31 they automate the
+44:33 they they automate
+44:35 instead of manually deploying steps to
+44:37 steps they use ci and cd they have some
+44:39 unit tests and then they still run into
+44:41 problems
+44:42 right and i think there's um so it's
+44:45 partly
+44:46 devops they're sort of having this model
+44:48 of oh i use git i'm doing devops it's
+44:50 good but partly like how do you actually
+44:52 prove that things work
+44:55 like what's provable that a data system
+44:57 works and then how do you optimize how
+44:59 do you have the whole system as opposed
+45:01 to just your part
+45:03 those two things are hard for people and
+45:05 so number one is like to prove data
+45:08 systems work you have to pour data into
+45:10 them
+45:12 like you have to run them with data
+45:14 that's realistic and sometimes in a
+45:16 startup maybe you're dealing with
+45:18 marketing data you can just run the
+45:19 whole data set over again
+45:22 i'm a big fan of more functional
+45:24 data systems
+45:26 where the raw data is immutable you can
+45:28 run it from you know cloud resources are
+45:30 cheap disks is cheap if you can run your
+45:32 whole system
+45:34 from start to finish every time
+45:36 you know and so i would say that data
+45:38 engineer in development should
+45:40 have
+45:41 the raw data immutable and just run the
+45:43 whole thing
+45:44 the spark jobs the visualizations and
+45:46 and make sure that's what you can prove
+45:47 it
+45:48 and then have that be the new version of
+45:51 of production um
+45:53 and so other ways if you're deploying um
+45:55 so that's
+45:57 the end to ends a challenge the
+45:58 definition of what's a good test what's
+46:00 a good data test is a challenge getting
+46:03 um
+46:05 good and accurate refreshed test data
+46:07 that fits gdpr is is a challenge
+46:11 sometimes actually doing the automation
+46:13 of environments like i want to build uh
+46:16 you know to you know a github action
+46:18 means so if you've got a github action
+46:20 well what proves that that
+46:22 development system works well you've got
+46:24 to have test data you've got to run your
+46:26 system end to end against that test data
+46:29 so that means you've got some hardware
+46:31 disks start up shutdown you're doing
+46:32 some devopsy work and so you know that's
+46:36 i i'm none of that stuff is doable
+46:38 another stuff is not doable i'm just
+46:40 saying it's work and it's really
+46:42 important work and you shouldn't just
+46:44 devote one percent of your time to it
+46:46 you should think about 15 of your time
+46:49 on that
+46:50 and that may seem like a lot but it's
+46:52 not
+46:54 it's actually you end up
+46:56 companies who do that they end up doing
+46:58 more work
+47:00 they actually get more done
+47:02 and so you're stepping back to do more
+47:05 and so uh that's i think
+47:07 conceptually i think there's still some
+47:09 gaps in what people think on the
+47:12 application of devops principles to data
+47:14 and analytic systems i think there's
+47:16 still some gaps in optimizing the part
+47:18 versus the whole i think there's some
+47:19 gaps in environments um and i think
+47:21 there's just gaps in um leadership
+47:24 honestly i just don't think there's a
+47:25 lot of a lot of data and analytic
+47:27 leaders are
+47:30 there they don't get it yet then that's
+47:32 sort of why we're why i talk to people
+47:34 and i think it's still early i think
+47:37 um i used to run software teams in 1999
+47:40 and i could ship software every three
+47:42 months and i was hot like i was
+47:45 good in 1999. i ran a team of 30 people
+47:48 we could ship software every three
+47:49 months that was like good startup best
+47:52 practice right now
+47:54 i would not get a job
+47:56 like i would say i know how to ship code
+47:58 every three months people would go what
+48:00 uh and i'd say you can't do it any
+48:02 faster and then people would go ah no
+48:04 you should be able to press a button
+48:07 right and have the whole system actually
+48:09 when someone does a git commit the whole
+48:10 system should tell you if it's wrong and
+48:13 why well people have learned what's
+48:15 what's good and what's done makes is a
+48:17 very different um set of ideas and and
+48:20 that's what i want to have happen in
+48:22 data and analytic teams
+48:25 any tools you can recommend like you
+48:27 described all the difficulties that the
+48:29 teams face when implemented on these
+48:32 data obs principles so it's not just
+48:34 about you know having
+48:35 a
+48:38 cicd configured but you also need to
+48:39 think about this integration test with
+48:41 data the data has to be
+48:43 i don't know comply to gdpr
+48:46 like how do we actually run these tests
+48:48 on data other tools i know that there is
+48:50 a question so for example do we use
+48:52 things like great expectations or are
+48:55 there any other tools that we can use to
+48:57 make these uh steps easier yeah yeah a
+49:00 lot of um i was actually really you know
+49:02 i think dbt has tasks um great
+49:05 expectations a test engine
+49:07 um
+49:08 you know what and a lot of and you don't
+49:10 really need it you can write tests
+49:13 in a lot of ways pretty simply right you
+49:15 can do row count checks and
+49:17 um you can do
+49:19 write these expectations and write sql
+49:22 queries to do the tests and so the whole
+49:24 idea is that those tests themselves are
+49:27 not are done automatically
+49:29 that they're that they're in version
+49:30 control that they live fairly close to
+49:33 the code that you're running on
+49:34 and that they're run during production
+49:37 and that they're run during
+49:39 all those tests are run during
+49:40 development
+49:42 and so um i think that's it it's like
+49:44 think of
+49:46 10 of your work should be developing
+49:47 automated tasks and like if you're a
+49:49 software engineer and someone wrote
+49:51 you know 500 lines of software code and
+49:53 there were no automated tests and and
+49:56 tests are different like tests are
+49:58 it's not you know unit tests are nice
+50:00 but you also need system tests you need
+50:02 to
+50:03 run the whole thing
+50:05 from end to end
+50:07 and
+50:08 sometimes
+50:09 uh like when i when we first started the
+50:11 company
+50:12 um
+50:14 we had a small uh
+50:16 customer and i was the data engineer for
+50:17 it and i was sort of writing our product
+50:19 and doing data engineering and so
+50:21 you know i just
+50:22 uh there's the inevitable problems i
+50:24 just write more tests and and and you
+50:26 know and our product will help us do all
+50:28 that right so that's sort of why we have
+50:30 a why we're a product company why we
+50:31 built a product because we
+50:33 um we want to make those those
+50:35 automation things easy for people
+50:40 okay
+50:41 yeah and uh
+50:44 um
+50:45 there's another question um so what are
+50:47 the differences between data ops and
+50:49 envelopes are they the same thing or
+50:51 different
+50:53 uh
+50:55 so there's two answers to that one is as
+50:57 an engineer no it's the same freaking
+50:59 idea it's just devops and lean applied
+51:02 to data and so you call it data ops or
+51:05 mlaps gartner has been using this term
+51:07 xops so i don't really care the
+51:09 principles matter
+51:11 not the not the moniker right
+51:14 people are rolling their eyes and say no
+51:16 envelopes is different because it's
+51:18 about machine learning
+51:20 yeah you know um you're not different
+51:23 when you do machine learning i mean it's
+51:24 cool right but like it's code that's
+51:27 axon data just like etl code just like
+51:29 this code you're building an application
+51:31 so it's you know you have more
+51:32 investigating that those two cycles are
+51:34 a little bit different um but yeah i
+51:37 mean i've gone to conferences and had
+51:39 data scientists basically tell me i'm
+51:41 wrong
+51:42 that data science is different
+51:44 and it doesn't apply these sort of
+51:46 process devops principles don't apply
+51:48 and like
+51:49 no they don't apply directly
+51:52 like that you need to adapt the concepts
+51:54 to models and you can call that mlaps
+51:58 you need to adapt them to data science
+52:00 and
+52:01 visualization i use the term data ops to
+52:03 compass
+52:04 because i think
+52:06 the data the model the visualization the
+52:08 governance i think of those as a unit
+52:11 like and optimize the whole of that not
+52:13 just your part and so do ops on all of
+52:16 that and if you're gonna like think of
+52:18 just something really simple like i add
+52:21 a new table to a database
+52:23 right really simple so
+52:25 i want to add a new table to a database
+52:27 i got to change how it's maybe joined to
+52:29 another table maybe that ends up as a
+52:31 new feature in the model so the model's
+52:33 got to be retrained and then i want to
+52:34 take the result of that and change my
+52:36 visualization and then i've got to
+52:38 change my data catalog
+52:40 so the principles say automate all of
+52:42 that
+52:43 right put that all in version control
+52:46 deploy it all as a unit as once
+52:49 the new code the new model the new
+52:51 visualization
+52:52 um and the new governance the new data
+52:55 catalog
+52:56 like all those things are versionable
+52:57 they're all just code right and and so
+53:00 and then in development
+53:03 pour some good data in
+53:04 run tests against the new thing that you
+53:06 develop the new table and run all those
+53:08 other tests that you've had over the
+53:10 years to see if you've broken anything
+53:12 else
+53:14 and so you can't that that's it's
+53:17 it's a very um kind of simple concept
+53:20 but like i think that is
+53:22 it does take some work to do that
+53:24 and i think that's where um people are
+53:27 are struggling because they need some
+53:28 automation help to help them do it
+53:32 so your position your title
+53:35 is head head chief at data kitchen i'm
+53:38 heathcliff yeah yeah head chef yeah
+53:41 so can you tell us more about what you
+53:44 cook there
+53:44 [Laughter]
+53:47 uh you know i am a um
+53:50 i'm a suburban american man so my
+53:52 cooking is restricted to grilling
+53:54 outside grilling meats outside
+53:56 and so i do grew up i grew up in
+53:58 wisconsin so one of my favorite things
+54:00 is bratwurst uh
+54:02 uh
+54:03 with sauerkraut uh brewed and beer that
+54:05 was my in milwaukee wisconsin that's
+54:07 like that
+54:08 and i had braunschweiger for lunch
+54:10 yesterday so i'm like
+54:13 so typical in germany right
+54:17 there's a large uh
+54:19 german uh like a lot of germans live
+54:21 there right yeah in the central part of
+54:23 the u.s a lot of germans and
+54:24 scandinavians in the late 1800s yeah and
+54:27 where i live now in boston there's not i
+54:29 mean the germans germans themselves are
+54:31 sort of the largest ethnic group by by
+54:33 count in the united states or maybe they
+54:35 were i don't know maybe it's hispanic i
+54:36 don't know
+54:37 now but um yeah and so uh i you know i'm
+54:40 a head chef just because it's fun you
+54:42 know i'm
+54:43 my our company you know we're sort of 45
+54:45 people uh we've been around for eight
+54:47 years we're profitable we're growing um
+54:50 and we're on this mission to get um
+54:52 people to adopt data ops and we want to
+54:54 sell some software along the way yeah we
+54:56 do our we think our software is great
+54:58 but um more than that the reason i do
+55:00 this is i want people to get the idea
+55:02 and and see that they don't have to
+55:05 sort of live in this way
+55:07 and and i think there's
+55:09 um
+55:10 my feeling is that it's it's actually
+55:13 i'm very optimistic
+55:15 and so um like the fact that you're
+55:17 playing around with github actions
+55:19 that's fantastic like i just think
+55:21 people are getting it
+55:23 right
+55:24 and and it's they're going to get there
+55:26 and it's going to become common practice
+55:28 five years from now
+55:29 like
+55:30 you know
+55:31 the definition of good and done is just
+55:33 going to switch
+55:34 and people are going to go screw this i
+55:36 am not working
+55:37 and like you know there's like i
+55:39 remember um on stack overflow there was
+55:41 this
+55:43 joel's had this list of questions to ask
+55:46 on your team 12 questions today 12
+55:48 questions to ask yeah yeah there's going
+55:50 to be that for data teams and it's going
+55:52 to be very similar
+55:54 there's going to be data obstacles to
+55:55 put this together
+55:58 yeah it's that yeah ask these 12
+56:00 questions and don't take a job
+56:03 if they're like that
+56:04 and and all those were like all those
+56:06 questions were i remember most of muslim
+56:09 were like how devops how how how much
+56:11 devops are you doing really
+56:13 you know how agile are you how do devops
+56:15 and i think it's the same answer is
+56:16 going to come
+56:17 and i think there's more people who are
+56:21 they're going to stop and rebel against
+56:25 heroism and rebel against fear
+56:28 and say there's got to be a better way
+56:31 okay so you said the cook you like to
+56:34 grill data
+56:35 at data kitchen so what is the the
+56:37 software you mentioned or what what are
+56:39 you agreeing well it's a platform to
+56:41 automate so we do
+56:43 some of those things that we talked
+56:44 about so we do um
+56:46 we help people
+56:48 i guess the first thing is is we're the
+56:50 the factory so we allow you to plug in
+56:53 your data science tool your data
+56:55 engineering tool your data visualization
+56:57 tool your governance tool
+56:59 and then we we um
+57:01 can observe all those in production run
+57:04 tests against them
+57:05 we can help build environments for you
+57:08 um and then if you want we could do even
+57:10 more we could orchestrate all of them
+57:12 um
+57:13 and so we've
+57:15 what we're trying to do is help people
+57:17 um where they where they are and where
+57:20 they start and so we tend to sell um
+57:23 we have a different way of building the
+57:24 company we're profitable
+57:26 we never took any financing
+57:28 um and so we're trying to grow a
+57:31 reasonable company and and stay alone
+57:33 for the long term
+57:35 and so it's actually been good because
+57:36 there's a lot of companies in the data
+57:39 ops space we've been funded and growing
+57:41 and so like i like um
+57:43 superconductive just got an enormous
+57:44 amount of money um and a bunch of
+57:47 observability vendors that they put up
+57:49 right they raised quite a lot of money
+57:52 yeah yeah and so that's good right
+57:53 because that they'll be able to use that
+57:55 money
+57:56 to talk about these ideas
+57:58 right and that's a really good thing um
+58:00 and people are gonna hear it more and
+58:01 more and then they're eventually it'll
+58:03 change
+58:05 yeah we had bar on this podcast talking
+58:07 about that so yeah yeah yeah yeah
+58:10 yeah and i think that's that's fantastic
+58:12 right and so
+58:13 i i just yeah my my mindset is be i was
+58:16 so far out in the wilderness talking
+58:19 about these things six years ago
+58:20 like there's anyone else talking about
+58:22 him i'm like it warms my heart
+58:26 and so um i and i think it's going to be
+58:29 from a software standpoint open source
+58:31 closed source
+58:33 uh i actually think from a career path
+58:34 the sort of ops data ops engineer is a
+58:36 good career path actually because i
+58:38 think
+58:39 people are going to need them i think
+58:41 companies are starting projects and
+58:42 their people are are getting approaches
+58:44 and
+58:45 um you know and for me i guess just
+58:47 technically i did enough data and
+58:49 analytics that like okay
+58:50 i can do models maybe i'm not the
+58:52 world's best data scientist but i can do
+58:54 some i can do some visualization i can
+58:56 do some etl like i can do it but i like
+58:58 the
+58:59 and those are great but like
+59:02 my perspective is the system you get the
+59:04 system right
+59:06 you get iterations right and errors
+59:07 right and and productivity right and
+59:09 measurement right you get those four
+59:10 things right you're just gonna be able
+59:12 to you're gonna be able to power through
+59:15 yeah we should be wrapping up but there
+59:17 is one question i don't know do you need
+59:19 to go somewhere or you have a couple of
+59:20 minutes
+59:24 i know i have a couple minutes
+59:26 yeah so because i know that you have a
+59:28 book called data ops cookbook so i see
+59:31 that you love this cooking metaphors so
+59:33 of course what kind of books you would
+59:35 have in the kitchen so maybe you can
+59:38 briefly tell us what is in this book i
+59:40 know this this is a free book so
+59:42 everyone can just go to your website and
+59:44 download it so maybe you can briefly
+59:46 tell us about the table of contents and
+59:48 what people learn from this book
+59:50 yeah if you want to learn more there's
+59:53 the data ops manifesto that's 18 points
+59:55 one page there's a cookbook which is
+59:58 about 150 pages with lots of pictures
+1:00:00 um and it's sort of
+1:00:02 it's a
+1:00:04 it's goes one level deeper on what i
+1:00:06 talked about like how do you write a
+1:00:07 test what is a good test um
+1:00:10 uh how do you organize a team um how do
+1:00:12 you track errors and and it's got lots
+1:00:14 of pictures and examples um
+1:00:17 and then we've got even a three-hour
+1:00:19 sort of video with question
+1:00:21 certification if you're if you want to
+1:00:23 do that so we've invested a lot we have
+1:00:24 a second book too if you're more of a
+1:00:26 manager and you you're like these ideas
+1:00:28 are good how do i get my team to adopt
+1:00:29 them sort of how do i how do i
+1:00:32 lead data ops from the top down um
+1:00:35 and so
+1:00:36 so we have a lot of good
+1:00:38 you know we spent
+1:00:40 a lot of time making sure that people
+1:00:41 have these free resources to learn and
+1:00:44 and then to spread the ideas
+1:00:46 yeah thanks a lot for
+1:00:48 for putting this together these are
+1:00:50 invaluable resources i will make sure to
+1:00:52 include all these links in the
+1:00:53 description so everyone who is watching
+1:00:56 this can find them and thank you for
+1:00:59 joining us today for sharing your
+1:01:00 experience telling us your stories
+1:01:03 that is uh thanks a lot for that that's
+1:01:05 great
+1:01:06 and yeah also thank you everyone for
+1:01:08 joining us today for watching us and for
+1:01:10 asking questions
+1:01:12 all right thank you yeah thank you for
+1:01:13 the opportunity and uh
+1:01:15 to all the listeners that was good hope
+1:01:18 you enjoyed the story time and stayed
+1:01:19 awake
+1:01:22 okay
+1:01:23 well have a great weekend okay youtube
+1:01:25 bye

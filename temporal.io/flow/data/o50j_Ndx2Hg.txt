@@ -1,0 +1,1707 @@
+Humans in the Loop
+
+0:00 i think i forgot the slides and it's
+0:02 actually
+0:03 time to start so i'll improvise without
+0:05 slides so usually i do an introduction
+0:08 about the event but i think it will take
+0:11 too much time for me now to find the
+0:13 slides
+0:13 so welcome everyone this is the second
+0:16 week of
+0:17 our awesome conference our
+0:20 summer marathon so the first week was
+0:22 about career in beta if you haven't
+0:24 checked it
+0:25 go to our youtube channel and check the
+0:27 videos from the last week
+0:29 so this is the second week and we are
+0:30 talking about machine learning
+0:31 production
+0:32 and this is our third talk this is the
+0:35 third day of the conference and this is
+0:36 our third talk
+0:38 and we today will be talking about
+0:40 keeping human syndrome
+0:41 so how can we talk to stakeholders and
+0:44 keep them in the loop
+0:46 tomorrow we will talk about relevance
+0:50 projects
+0:50 so how can we make sure our search
+0:52 projects are successful
+0:54 and then on friday we will talk about
+0:58 data quality problem so there is a link
+1:00 in the description about the conference
+1:03 check it out and if you haven't
+1:05 registered yet
+1:06 make sure to do it for the remaining two
+1:08 days
+1:10 during uh today's conversation you can
+1:13 ask any question you want so there is
+1:15 a link in uh the live chat for those who
+1:18 are watching on youtube so there is a
+1:20 pin linkedin live chat
+1:21 for those who are watching on linkedin
+1:23 there is just a message
+1:25 in the chat find it and
+1:28 using this link you can ask any question
+1:30 you want and i'll
+1:31 make sure that we cover it during
+1:33 today's conversation
+1:35 i think i forgot to mention one thing
+1:37 that i would like to thanks
+1:39 to thank all the partners of the
+1:40 conference who made it possible
+1:42 and help to reach to a wider audience
+1:46 thanks a lot there is a link in the
+1:48 description uh to all the awesome
+1:50 communities that help to spread the word
+1:52 please check them out and
+1:56 yeah i probably got it pretty well
+1:58 without the
+1:59 slides i think um
+2:03 let's start are you ready i'm ready
+2:07 okay so i'm almost ready as well i just
+2:10 need to
+2:11 find my notes
+2:15 okay i have no notes
+2:21 let's start
+2:25 okay um so today we will talk about the
+2:29 people aspect in
+2:30 envelopes and we have a special guest
+2:32 today lina
+2:33 lina has over nine years of industry
+2:36 experience in developers
+2:38 developing scalable machine learning
+2:39 models and bringing them into production
+2:42 she currently works as a machine
+2:44 learning lead engineer in the data
+2:45 science group of
+2:46 a german online bank de de cabre
+2:53 yes that's it previously she worked at
+2:55 zalanda
+2:56 which is one of uh the biggest europe
+2:58 online fashion retailers
+3:00 where she work on a personalization
+3:03 model so
+3:04 it was a real-time deep learning
+3:06 personalization model for more than
+3:08 32 million users right i think now it's
+3:11 more right
+3:12 yes constantly growing orlando is
+3:15 popular
+3:16 yeah welcome thank you thank you for
+3:19 having me
+3:20 um before we go into our main topic uh
+3:23 let's
+3:24 start with your background can you tell
+3:26 us about your career journey so far
+3:28 yes um originally i am i was very
+3:31 entrepreneurial minded and i started to
+3:34 study business and i got hooked onto
+3:37 programming and basically never left
+3:41 and moved over to computer science
+3:45 and since then i worked a little bit as
+3:47 an architect
+3:48 than at zalando which was a very nice
+3:51 international
+3:52 big ambitious company with an awesome
+3:55 tech culture and since the year i've
+3:58 been working
+3:59 at the dkb so basically
+4:03 i have a bit of a business mind coming
+4:05 also from web analytics and online
+4:07 marketing so i'm always having
+4:09 a very customer-centric viewpoint on
+4:12 things which i think makes it
+4:13 interesting to marry
+4:14 the ideas from customer orientation into
+4:16 engineering
+4:19 that's how you know all this uh
+4:23 marketing stuff that we talked about
+4:26 yeah basically it's kind of like
+4:28 um they're my pet projects and interests
+4:31 how how can engineering get inspired by
+4:33 the different disciplines
+4:36 okay so uh
+4:39 over so you said you worked it as a as
+4:41 an architect
+4:43 right no that was before um
+4:46 i was worked as a basically a research
+4:48 engineer
+4:50 okay and uh so let's
+4:53 so for today we're talking about humans
+4:56 in the loop and keeping people in the
+4:57 loop
+4:58 and so when
+5:01 we start a project right so what are the
+5:06 important things we need to remember
+5:07 what
+5:09 what is the checklist that we need to to
+5:11 tick the boxes before we do this
+5:14 um so basically what i've observed over
+5:16 the last year is that
+5:18 there's no best practices yet what makes
+5:21 a good machine learning model
+5:24 that means it can be useful to apply
+5:28 certain checklists and help your
+5:31 stakeholders a little bit or when you
+5:32 come up with your own ideas to have
+5:35 a framework to see is does this make a
+5:37 good model a project
+5:40 so one thing i found quite useful
+5:43 is to write down the business case
+5:47 and check it with a stakeholder
+5:49 basically the stakeholders sometimes
+5:51 hears
+5:52 ai and they think oh this is cool
+5:54 self-learning system which will solve
+5:57 anything more like an automated human
+6:00 than
+6:00 a mathematical problem
+6:04 solving engine so what i've
+6:07 found useful is to basically formalize
+6:10 the business case with them
+6:11 in form of more like a user story
+6:14 and make sure i really understood what
+6:18 they want
+6:19 so sometimes they say things like they
+6:21 think in terms of the solution they say
+6:23 either
+6:24 i make it better without really
+6:26 specifying because they somehow think ai
+6:28 doesn't need a proper business case and
+6:30 it does
+6:31 so i need them to formalize how do they
+6:34 measure success
+6:36 what is being optimized what's the
+6:38 current way of doing it
+6:40 which kind of improvement is would it
+6:42 make it worth to the project
+6:44 are you looking at 10 would make it
+6:46 worth having an eye model there
+6:49 and did you consider other solutions
+6:51 than ai models
+6:53 and also make sure they don't fall into
+6:54 the trap of
+6:56 hearing about a cool new ai technology
+6:58 and thinking where you can use it
+7:00 so something like um for my practice at
+7:03 salandu people came like okay we want
+7:05 like a personalized
+7:06 recommender system that does this and
+7:08 this and i was like okay but
+7:09 for what problem do you need that tool
+7:12 like okay not like i have a cool new
+7:15 hammer
+7:16 and i will hit any nail with it and the
+7:18 outcome will be amazing so
+7:19 they it's better when they come with a
+7:21 business problem so for example
+7:24 um we have a new in carousel or a new in
+7:27 section with a lot of articles we don't
+7:29 know which articles to present to the
+7:31 user okay
+7:32 this is easy then i can also know how to
+7:35 let's say
+7:36 title this recommendation solution
+7:39 so basically i recommend you have a
+7:40 checklist that you go through to make
+7:42 sure that none of these steps are
+7:44 skipped and you really adhere to a
+7:47 really good business case
+7:49 and have kpis and have evaluated
+7:52 alternative solutions and you're all on
+7:53 the same page
+7:55 and the other thing is sometimes they
+7:57 kind of use you
+7:58 let's say for very experimental ideas so
+8:01 ah you're the ai team can you do a
+8:04 something something prototype
+8:06 which is not their core business so i
+8:09 would always
+8:10 insist on having providing core values
+8:13 because in the end if it doesn't work
+8:16 it's not that bad for them they will
+8:17 also not invest a lot of time in your
+8:19 project
+8:20 so have them have some skin in the game
+8:22 so you want something that is
+8:24 core to their business when you select
+8:26 [Music]
+8:28 a project that really makes a difference
+8:29 for them if you solve it
+8:31 and ideally you also ask them will you
+8:34 will you give me someone from your
+8:35 department let's
+8:36 say you're a group and you work with
+8:39 another part of the company
+8:41 will you give me capacity for this
+8:43 because if they're not willing to do
+8:45 this
+8:45 chances are it's not that important to
+8:47 them
+8:49 or you need to go one step higher to get
+8:51 buy-in because in the end if you do this
+8:53 even if it works your model works
+8:54 but they they do not have buy-in or the
+8:57 higher-ups in this area don't have
+8:59 buy-in
+8:59 then you will not have this successfully
+9:02 either bring it into production
+9:03 or have it have a engaged stakeholder on
+9:07 the other side when you want to run it
+9:09 so basically have a checklist of all
+9:11 these things which makes a good project
+9:14 so checklist is uh i hope i didn't miss
+9:18 anything so first you need to formalize
+9:20 your uh project in the form of a
+9:23 business story
+9:23 right so you don't say i'll just make it
+9:26 better you need to
+9:28 formalize success how does success look
+9:30 like
+9:31 uh which kind of improvement we're
+9:34 talking about like is it ten percent is
+9:36 it five percent
+9:37 like if we improve it by five percent is
+9:40 it worth the effort or not
+9:41 right what do you mean do you need ai
+9:44 some things really do not need ai
+9:46 sometimes stakeholders cannot
+9:48 understand the difference between let's
+9:50 say a personalized pipeline
+9:52 or just a data pipeline which puts some
+9:54 stuff together
+9:56 to them that's already an ai model so
+9:59 that we know the difference so
+10:01 yeah quantify alternatives
+10:04 you also said uh you need to be specific
+10:08 about the business problem you're
+10:09 solving
+10:10 it's not just hey do something cool here
+10:12 is this idea but
+10:13 what kind of business problem does it
+10:15 solve and closer
+10:17 to the core business the better if it's
+10:19 just some cool
+10:20 thing that some executive read uh um
+10:24 about something oh we read sometimes
+10:25 they have colleagues who come or i think
+10:27 like oh this is so cool we should do a
+10:29 algorithm where you know
+10:33 that rarely gives a successful product
+10:36 because in the end you cannot explain it
+10:38 you cannot give it a title
+10:40 it's hard to find a ui you have a lot of
+10:43 edge cases if you did not have
+10:45 a good business problem so let's say i
+10:47 have new products and i want to
+10:48 rank them in a certain way that gives me
+10:51 lots of ideas how to
+10:53 think of edge cases but if you have a
+10:55 very unspecified problem for example
+10:58 personalize the ranking then you will
+11:01 have a lot of weird
+11:03 outcomes that are very hard to fix in
+11:06 the end when you want to run it so the
+11:08 more specified your problem is the
+11:09 easiest for you to constrain it
+11:12 and to give it meaning and have a
+11:14 successful outcome in the end that
+11:15 everybody's happy with
+11:17 because it's if it's formalized you can
+11:18 clearly visualize it right you can see
+11:20 the ui
+11:21 you can see maybe you can even come up
+11:23 with some sort of mockup
+11:26 and when you have this understanding
+11:28 when you have this visualization
+11:30 even if it's in your mind then it's
+11:32 easier to
+11:33 imagine all these uh corner cases right
+11:36 yes okay and the last thing you said
+11:39 that you need to get a buy-in so you
+11:41 need to have
+11:41 somebody from the business team from the
+11:44 stakeholders
+11:45 engaged in the project so they
+11:49 need to make somebody available for your
+11:51 questions
+11:52 and maybe even for if you have a demo
+11:56 you want to show it to them so you need
+11:57 somebody available for that
+11:59 if they don't give you such a person
+12:02 if there is no point of contact then
+12:04 maybe they don't really care about this
+12:05 project
+12:06 exactly did they miss anything no that's
+12:10 the main points there are more points
+12:11 there are some cool checklists also on
+12:13 the internet that i can recommend you
+12:14 but these are some of the most
+12:16 overlooked points
+12:17 that's why i mentioned them so i
+12:19 recommend you write yourself your
+12:21 personal checklist
+12:22 so this is before you even uh start
+12:25 doing anything right
+12:26 so exactly you have an idea about
+12:29 something cool
+12:30 and then you sit down and you spend some
+12:33 time in front of
+12:34 a google document word document whatever
+12:37 uh or maybe just
+12:40 a notebook notebook and you try to write
+12:43 everything down
+12:44 then you share it with your colleagues
+12:46 with your
+12:47 stakeholders and you you need to get
+12:50 this bite
+12:50 in right before you do anything i also
+12:53 recommend that you pair with them
+12:54 to really understand their domain and
+12:56 the problem it's not bad idea to spend
+12:58 half a day i mean if the project is
+13:00 usually
+13:00 we are going after important projects
+13:03 right
+13:04 there's rarely a low-hanging fruit ml
+13:07 solution so it's also worth sitting with
+13:11 them
+13:12 then you you will find that you had some
+13:15 misunderstandings about the problem for
+13:17 example
+13:17 yeah so how do you so you mentioned i
+13:20 think one thing so maybe i'm asking a
+13:22 question that you just answered
+13:24 that uh the question is how do we
+13:26 communicate one thing is you just go and
+13:28 sit with them
+13:29 uh for half a day but i think it's
+13:32 difficult like
+13:34 let's say i'm a data scientist how do i
+13:36 even talk to
+13:37 these business people like they speak a
+13:39 completely different language they care
+13:41 about uh
+13:42 things i don't care about i care about
+13:43 logistic regression they care about
+13:45 yeah like profit i mean i mean it
+13:48 depends a little bit
+13:49 how involved how evolved they are if you
+13:52 have a very well
+13:53 functioning business team who knows
+13:55 about user stories
+13:56 and who who knows their kpis and so you
+13:59 can just
+14:00 tell them you don't need to know
+14:01 anything about machine learning in fact
+14:03 it's better if you don't
+14:05 just describe it to me in your terms and
+14:08 they can prepare the document and then
+14:09 you can
+14:10 sit together and you ask your questions
+14:13 if it's a stakeholder team which is not
+14:15 as well
+14:16 you know educated on user stories and
+14:20 how to think how to write a good
+14:21 business case you need to go
+14:22 sit with them more and basically you
+14:26 need to find out the business case a
+14:28 little bit
+14:29 with them together so it depends i would
+14:31 say on how mature they are
+14:37 what what can we do to actually build
+14:40 trust between us because it's not always
+14:44 that they trust us from the very
+14:46 beginning
+14:48 so how like i think in order to have
+14:51 this good communication
+14:52 with stakeholders they need to trust us
+14:54 and we need to trust them
+14:56 if we speak a different language then
+14:58 it's uh they don't understand us we
+15:00 don't understand them and we don't have
+15:01 this trust
+15:02 so how can we uh actually have it
+15:06 um yes so i also find that quite
+15:11 challenging there's probably on books
+15:13 how to develop
+15:15 stakeholder reputations i got a very
+15:16 good book recommendation if you guys
+15:18 care
+15:19 there's rebels at work it's called
+15:22 and it's about leading change from
+15:26 within so it's basically ideas how to
+15:28 convince people
+15:28 and if you have innovative ideas how to
+15:31 how to convince other people of that
+15:34 so um things i found useful in general
+15:36 is
+15:37 to not talk so much about what i can do
+15:41 for them but to first understand their
+15:43 domain
+15:44 and maybe help them with some of their
+15:47 unrelated data problems to my project
+15:50 so sometimes they ask me things about
+15:52 data questions they have which are
+15:54 unrelated to my project and i make
+15:56 myself available
+15:57 to be sort of a trusted expert
+16:01 to these people that of course is only
+16:02 useful if you
+16:04 plan working with them a bit longer but
+16:06 that's pretty good
+16:08 and when i first talk to them i not only
+16:11 focus
+16:11 on the upside i focus a lot also about
+16:14 on their concerns
+16:15 so when we talk about the business case
+16:18 i
+16:19 am pretty sure actually that i can these
+16:21 concerns are all not valid
+16:23 you know we come and we say they say
+16:26 oh this is gonna be slow and you're like
+16:29 no
+16:29 it's not gonna be slow it's gonna be
+16:31 really fast
+16:32 but maybe they had some bad experiences
+16:34 so what i do is
+16:36 um i i do not judge the technical
+16:39 knowledge or lack thereof but i go and
+16:42 basically
+16:43 tell them like okay what do you think
+16:47 definitely shouldn't happen when we
+16:49 introduce a very intelligent solution
+16:51 here
+16:52 and they say all kinds of their fears
+16:55 like okay
+16:56 oh it could be very slow or um
+16:59 weird things could drop entire cases or
+17:03 they could say we had also concrete
+17:05 concerns
+17:06 for example when i was optimizing
+17:08 process costs they were saying
+17:10 oh but please it should not reduce our
+17:13 sales let's say if you reject people
+17:15 because of certain process cost
+17:16 optimization we do not
+17:18 want the overall sales volume to be
+17:20 rejected
+17:21 and then some people who had already a
+17:23 bit more ideas about
+17:25 how algorithms work they were like okay
+17:27 but now if it only learns from the past
+17:29 what happens if we want to change
+17:31 something in the future
+17:32 are we then unable to to change the
+17:34 logic so they are they're asking
+17:36 questions like this which i would never
+17:37 address when i pitched them
+17:39 you know and the whole time you're
+17:42 focusing on the upside you're pitching
+17:43 your cool idea but they're sitting there
+17:45 and they don't have space to express
+17:48 their concerns which
+17:49 make them not want to buy into your
+17:51 solution because their basic questions
+17:53 have not been answered
+17:55 [Music]
+17:57 so this is actually a book we can also
+18:00 take a page from the book of marketing
+18:01 when you come to a really good
+18:03 website they do not sell you only on the
+18:06 upsides of a product they also tell you
+18:08 um
+18:10 what it's not you know it's a good
+18:12 quality because maybe we're worried that
+18:14 it could be cheap or um all that kind of
+18:17 stuff
+18:18 or like it doesn't require a credit card
+18:20 right because
+18:22 when i see that something is free i
+18:24 think okay but like they are probably
+18:26 sneakily
+18:27 they're going to charge me like
+18:28 afterwards and sometimes they're saying
+18:30 no extra charges so to make sure they
+18:32 basically it's a similar process so i'm
+18:35 i'm think
+18:36 i'm not asking them about what they want
+18:37 to achieve but also the constraints
+18:40 it should not be that i'm worried about
+18:41 that i make that into slides
+18:44 and for each of theirs their concerns
+18:46 i'm writing down
+18:48 what what am i doing to address that and
+18:51 then they feel very good they feel taken
+18:53 seriously
+18:53 not that i'm doing something over the
+18:55 head or their concerns are addressed and
+18:57 then we're moving on to the actual
+18:59 solution so basically you
+19:02 don't like when you pitch ideas you
+19:05 don't just focus on upsides
+19:07 right so you ask them what do you fear
+19:10 like what kind of fears you have and
+19:13 then
+19:13 i don't call it fear so they they don't
+19:15 feel condescending to
+19:17 that's a bit of a risk so you want to
+19:19 meet them on their level you don't want
+19:20 to talk down to them you're
+19:22 more like peers they know their stuff
+19:24 you know your stuff so you ask them
+19:26 what are your more like concerns or
+19:29 what is something when we develop a
+19:31 solution you definitely want us to avoid
+19:34 more like that like what uh
+19:38 what we should avoid right so yeah what
+19:40 should we avoid what
+19:41 what is your what is your worst case
+19:43 scenario if like
+19:44 if something goes really wrong what do
+19:46 you definitely want to avoid
+19:48 and we can even make that into that is
+19:51 also very useful for us to know because
+19:53 we know what is their worst fear
+19:55 we were developing for example um
+19:58 customized ocr
+19:59 for incoming invoices that are being
+20:01 scanned and we're thinking of of course
+20:04 that should give
+20:05 good quality or like the the tax
+20:08 part the supplier part it automatically
+20:11 gets put into
+20:12 sap and we are thinking okay this should
+20:14 be you know work well
+20:15 high accuracy blah blah blah and they
+20:17 were like you shouldn't lose an invoice
+20:21 like didn't occur to us we would not
+20:22 lose an invoice but
+20:24 they were like you shouldn't lose an
+20:26 invoice so basically
+20:27 a we know that they're worried about
+20:29 that what is helpful information
+20:31 b we can make sure we go through each
+20:33 step and say okay
+20:35 what's our scenario if it fails let's
+20:38 say
+20:39 we fail to read the invoice what do we
+20:42 actually do like in the ocr does that
+20:44 get stuck there
+20:46 is there a retry what if it fails
+20:48 permanently so it also helps us to think
+20:50 of our user stories we make this user
+20:52 story
+20:52 we shall not lose an invoice and then we
+20:54 go through the different steps
+20:56 we maybe even make a metric incoming
+20:58 invoices
+20:59 outgoing invoices and we have an alert
+21:01 that the difference between those two
+21:03 should
+21:03 be zero and this way we can both show
+21:06 them and we also make sure that
+21:08 we can actively proactively enjoy avoid
+21:12 their worst case scenarios
+21:13 because if you just do your their worst
+21:16 case scenario once
+21:17 maybe even you don't realize they call
+21:19 you you know this invoice the
+21:22 the customer called we never paid where
+21:24 is it and we were like
+21:25 uh it's laying there for two months no
+21:27 one noticed let's say
+21:29 making up this this scenario then you
+21:31 lose trust
+21:32 so by by even it's completely normal to
+21:36 have bugs
+21:36 in a in any software as we know you do
+21:39 not want to lose this trust
+21:41 so by collecting these user stories
+21:43 early on
+21:44 we can proactively avoid as many as
+21:47 these like worst case scenarios
+21:49 and we even use that for a demo so let's
+21:51 say that we worried about
+21:54 losing an invoice so when we demo the
+21:56 solution to them we cannot only say look
+21:58 at this amazing accuracy but we can also
+22:00 say
+22:01 oh no a corrupted format invoice
+22:05 what happens and then we show them here
+22:07 and there this is how the fallback works
+22:10 and it helps you with design also
+22:12 because you can already think of
+22:13 sometimes you forget to design
+22:17 the the bad outcome like how how does it
+22:20 need manual intervention yes or no who
+22:22 gets notified
+22:23 um so this really helps you to
+22:26 to have them put their trust in to do
+22:29 okay i've seen the
+22:30 the worst case scenario that would not
+22:32 lead to any invoice missing for example
+22:35 so you said a couple of interesting
+22:37 things first you turn
+22:39 this concerns into slides so i imagine
+22:43 that maybe for each concern you have a
+22:44 slide
+22:45 where you address so they know that
+22:49 you are listening to them and if you
+22:52 want to address the concerns right so
+22:54 that's the first step but you don't stop
+22:56 there you don't stop with slides so the
+22:59 next thing you can do is you can
+23:01 take each concern each year and turn it
+23:03 into a metric
+23:04 like for example with these lost
+23:06 invoices so you can take the number of
+23:08 invoices coming in and
+23:09 out and then if there is a difference
+23:12 you send an alert so you turn this
+23:14 concern into
+23:15 a metric and then you also demo them
+23:19 so it's not just only happy cases but
+23:21 also you
+23:22 show the worst case scenario you take a
+23:24 completely
+23:26 broken invoice and you try to process
+23:28 the system and then they say okay
+23:30 this is how the system behave and they
+23:33 are happy and they trust your system
+23:35 because
+23:35 now they've seen bad things right
+23:39 okay cool
+23:44 and yeah i'm just thinking
+23:48 so uh how how do we actually with this
+23:51 metrics um do they always need to
+23:55 uh to see the metrics or just demo is
+23:57 enough
+23:58 what what do we do next with this um
+24:02 so most business stakeholders just want
+24:04 to basically believe it works
+24:06 once you they believe you it works they
+24:09 will
+24:09 they will be fine and i guess it depends
+24:13 on your business stakeholders some might
+24:15 want regular reporting
+24:17 but most of the case once you have the
+24:19 trust and you have established also the
+24:21 procedures that you will need for
+24:23 example
+24:23 who takes care if there's manual
+24:25 intervention that will be fine
+24:28 so you have trust and they believe you
+24:30 and now you need to work on not losing
+24:32 it
+24:33 right yes and these procedures that you
+24:35 mentioned
+24:36 uh that um if something goes wrong
+24:39 how do i tell them about this how do i
+24:43 tell them about incidents however
+24:45 like maybe let's say we did loosen
+24:47 invoice because it was some corner case
+24:49 we didn't
+24:50 think about so how do you communicate
+24:52 that
+24:54 uh i would generally say transparently
+24:58 um it depends a little bit on your
+25:00 stakeholders
+25:01 um let's say uh when i worked at salandu
+25:04 the business teams were more
+25:07 evolved about knew more about software
+25:11 there you can have postmortem reports
+25:14 and you can estimate the impact and when
+25:17 you have
+25:18 internal teams which are mostly used to
+25:20 off the shelf software
+25:23 you need to communicate
+25:27 a bit differently they usually don't
+25:28 want details they just want to know that
+25:30 you are handling it
+25:34 you're handling it and when it was
+25:35 resolved
+25:37 but basically you need to keep them in
+25:39 the loop yes you need to keep them in
+25:41 the loop you need to find out
+25:44 who's responsible and you ideally also
+25:46 plan
+25:47 for that beforehand so for example what
+25:49 i asked my team is
+25:51 okay what's the impact when we have an
+25:53 incident and we're out for like
+25:55 one minute we're out for 10 minutes
+25:57 we're out for an hour we're out for 24
+25:59 hours let's say something
+26:00 terrible uh happens
+26:03 and to discuss with the stakeholder
+26:05 what's the impact on their business so
+26:07 we kind of have an idea about the
+26:09 service level we need to have
+26:11 and how about our alerting do we really
+26:12 need to have people on the weekend
+26:14 if that thing is down or really does no
+26:16 one care if we do fix this on
+26:19 if we have a slight delay as long as
+26:21 nothing is lost
+26:23 so basically you think a bit ahead
+26:25 beforehand and communicate with them
+26:27 sort of a service level um for the
+26:31 for the business people but more in
+26:34 terms of what they understand for
+26:35 example what's the impact on your
+26:37 business if that thing is down
+26:38 everybody should should be able to
+26:41 answer that
+26:43 so that's uh you just sit with your
+26:45 stakeholders and say
+26:47 imagine our thing goes down for one hour
+26:50 how bad it is for
+26:52 whatever process we automate or whatever
+26:54 thing we're doing exactly and how and
+26:56 also think about how would sort of
+26:58 starting up again do you have a queue do
+27:00 you have a cache does it
+27:02 start running from there on or does it
+27:04 catch up somehow
+27:06 yeah so basically think a bit ahead and
+27:08 then the impact of incidents should be
+27:11 minimal and
+27:15 yeah so let's say we have this uh we
+27:17 agreed on this and we say okay like
+27:19 system should be like
+27:22 responsive within one hour like if
+27:24 something happens for 10 minutes
+27:26 nothing that happens but it should come
+27:29 back to one hour so
+27:30 you defined all these service level
+27:32 agreements and you start
+27:34 running something and then something
+27:37 happens
+27:38 something that happens right it goes
+27:40 down it's weakened
+27:42 and then you spend i don't know somebody
+27:44 had to
+27:45 uh to fix this and what happens after
+27:49 that
+27:49 how do you communicate that
+27:53 to the stakeholders um like is there any
+27:57 thing any special framework we can use
+28:00 for that
+28:02 um so we internally of course we run a
+28:05 postmortem for that
+28:07 and how you communicate to the
+28:09 stakeholder like um
+28:12 and as i said i think it really depends
+28:14 a bit on the stakeholder
+28:16 our current business stakeholders they
+28:18 do not care about the postmoderns we do
+28:19 them for ourselves
+28:21 um it depends on your environment
+28:24 however i found that the postmortems for
+28:26 ml
+28:27 a little bit different than the regular
+28:29 postmortems
+28:30 so that's also an interesting
+28:33 um consideration when we how we debug
+28:37 these ml
+28:38 [Music]
+28:40 applications that there's definitely i
+28:42 noticed some differences to
+28:44 let's say regular incidents which are
+28:46 from a non-ml component
+28:49 so basically when the system is working
+28:52 but it's not working correctly so
+28:54 let's say if we take a credit risk
+28:58 scoring project
+28:59 somebody applies for a credit and then
+29:03 it we know that this person will be able
+29:06 to pay
+29:07 the loan back but the system says reject
+29:10 right yes
+29:11 without explaining anything so from the
+29:13 matrix point of view maybe
+29:15 like from standard standard operational
+29:17 matrix the system
+29:18 is running it's still up but it
+29:21 predicts garbage right yeah yeah that
+29:24 can happen so first you need to detect
+29:26 that
+29:26 so for example in the um in the credit
+29:29 example you had
+29:31 what is useful for cases like uh where
+29:34 the model is actually affecting the
+29:35 outcome
+29:36 like fraud prediction or this credit
+29:38 prediction you had is have a live
+29:40 test set where you do not reject people
+29:43 but you have it as a
+29:44 let's say some people call it a small
+29:46 running a b test with one percent or two
+29:48 percent
+29:49 other people call it a live test set so
+29:51 you can use that for detection and then
+29:54 you basically have to diagnose after you
+29:56 found out the model says
+29:58 absolutely no but this person actually
+30:00 was a great
+30:01 great credit uh loan taker what do you
+30:05 do
+30:05 so first thing my first message to
+30:08 everybody is
+30:09 please do use postmortem format
+30:12 for debugging uml solutions i've seen
+30:15 even very experienced colleagues jumping
+30:17 to complete conclusions
+30:19 based on some data same as sometimes our
+30:22 stakeholders probably this phenomenon
+30:25 who leads to
+30:26 this and that um so i can give you a
+30:29 very funny example that we had when i
+30:30 was working at cilando because
+30:32 such a nice example for um you know
+30:34 debugging um
+30:37 ml algorithm so sometimes people come to
+30:40 you and say
+30:40 what is this this is a bug this is not
+30:43 how it should be
+30:44 what did you do and then you get the
+30:46 screenshot or something or someone sends
+30:48 you an example and you have
+30:50 to find out what went wrong so we had
+30:52 this
+30:53 uh funny example where a colleague of us
+30:56 um he went to his home page and he
+30:59 saw on the man's home page he saw
+31:03 a bag and some woman's shirt
+31:07 and he told me this is a very very bad
+31:10 recommendation
+31:11 what were you thinking i'm offended
+31:16 what happened and we okay let's look
+31:18 into this uh what happened
+31:20 and uh so one thing you need to have you
+31:23 need to have some
+31:24 um tooling in place to be back your mr
+31:26 algorithm so
+31:28 maybe you need to lock the features that
+31:30 arrived to be able to later check what
+31:33 was the input into the model
+31:35 and um it's very important also that you
+31:39 don't jump to these conclusions so for
+31:41 example
+31:41 one other thing he's he saw so he saw
+31:44 the
+31:45 the the back and he saw the
+31:50 the woman's shirt and i was like okay
+31:52 that's very weird so first thing we had
+31:54 to check was
+31:55 um what did we do there interestingly
+31:59 enough
+32:00 i found out that this is not even a
+32:02 recommendation box this was a last scene
+32:04 box
+32:07 so he actually saw this item previously
+32:10 right
+32:11 i thought like he must have so let's
+32:13 let's use the postmortem format
+32:15 to debug this right okay it's the last
+32:17 scene box so a
+32:19 some of my colleagues spend some time
+32:20 debugging our problems not noticing it's
+32:22 not our box
+32:23 so first thing apply the strategy check
+32:26 check check okay then we find out it's
+32:28 actually not our box
+32:30 so we need to have all the information
+32:31 to debug this then we checked his
+32:33 history
+32:34 has he seen these items turns
+32:37 out he had not seen these items that
+32:40 would explain
+32:41 why he thought it was a recommendation
+32:45 when it wasn't because he was surprised
+32:47 to see this he had no recollection
+32:49 if we apply the postmortem format okay
+32:51 next step why
+32:52 why was this in his last steam box well
+32:55 because it wasn't a history check
+32:56 it was not in his history if it had been
+32:59 in his history we could have another
+33:00 hypothesis
+33:02 why did he not remember like the 5y why
+33:04 did he not remember
+33:06 then one reason could be that maybe this
+33:09 box keeps
+33:10 actions last seen actions from you from
+33:12 half a year ago
+33:13 and you come back and you don't remember
+33:15 then a product conclusion could be
+33:17 this box should only be so shown for
+33:19 five days
+33:21 for example this would with a very um
+33:24 different
+33:24 way to fix the problem then if you have
+33:28 the 5y and you come to another
+33:30 conclusion so
+33:31 okay he had not seen this so we were
+33:34 like so why was he seeing it
+33:37 we found out that he had a shared
+33:39 account with his wife
+33:42 and his wife had been browsing these
+33:45 items on her app
+33:48 and this last team box had a cool
+33:50 feature it collected desktop
+33:52 and app together and showed it to him
+33:55 and so we can have different conclusions
+33:57 based on this a
+33:59 should we maybe have a gender at home
+34:00 because he is on the men's section so
+34:03 maybe the last
+34:03 scene box should be made aware of its
+34:05 context and shown mail stuff on the mail
+34:08 so
+34:08 he would have only seen his stuff then
+34:11 we could think of
+34:12 hm what if it's a shared account so
+34:14 clearly multiple people browse on this
+34:16 should the last scene box behave somehow
+34:18 differently if we can detect that this
+34:20 is a shared account for multiple family
+34:22 members
+34:23 let's say when you think of netflix they
+34:25 found that this is a problem
+34:27 so they split the accounts so should
+34:30 something similar be considered are
+34:31 there other
+34:32 features that sort of need that or just
+34:34 this box
+34:35 so by going through the five wise you
+34:38 can
+34:39 immediately understand how you might
+34:43 accidentally go wrong um so if
+34:47 yeah i i had a few examples that where
+34:50 some colleagues jump to conclusions
+34:52 because it's an algorithm you just look
+34:53 at it and you say uh it's probably
+34:56 because of this and they are all
+34:58 engineers but somehow
+35:00 sometimes with ml we don't apply a very
+35:03 let's say structured approach to really
+35:05 making sure to check each step
+35:08 can this be would that make sense how
+35:10 could i find that out
+35:11 and maybe i need some tooling around
+35:13 that as well that i need to build
+35:15 so i do recommend very structured
+35:17 approach i recommend that you write
+35:19 yourself some tooling
+35:20 if you for example need to lock the
+35:22 input features
+35:24 um to do this kind of debugging than you
+35:26 should
+35:27 i also recommend that you get such user
+35:29 feedback to the back
+35:30 interestingly we have a lot of bugs in
+35:32 our ml solutions sometimes it's edge
+35:34 cases sometimes it's whole groups of
+35:36 people
+35:37 for example here it's uses the shared
+35:39 accounts
+35:40 sometimes it's people like special sizes
+35:43 to stay in the e-commerce area
+35:44 but it could be we have that sometimes
+35:46 when we look into bias
+35:48 to look how well the algorithm works on
+35:50 different subgroups like does it
+35:53 respect all small subgroups or do some
+35:56 of these subgroups have
+35:57 bad experience basically that get some
+35:59 user feedback
+36:00 either from colleagues i also recommend
+36:03 that you try
+36:04 to use your own product we know that
+36:06 from software engineering when you
+36:07 basically eat your own dog food
+36:09 you really should use your own service
+36:11 and
+36:12 and i did find uh quite a few bucks
+36:16 when we were using our own service so um
+36:19 and maybe make a channel so internal
+36:21 colleagues can easily report bugs to you
+36:23 like how would you get these back
+36:24 support how do you make it known that
+36:27 when you wrote something out maybe you
+36:28 add to your rollout
+36:30 announcement and all the internal
+36:32 colleagues if you see anything weird
+36:33 here's the email that we use for bugs
+36:35 like try anywhere to get these feedbacks
+36:40 yeah there was a funny story a few
+36:42 episodes ago
+36:43 um we had a guest uh he worked at the
+36:46 telecom company
+36:48 uh so the company was also selling
+36:50 phones and also we were doing some
+36:52 credit scoring so he worked there and he
+36:55 applied for a phone
+36:57 for an iphone and he got rejected so
+37:00 so he basically then went to his
+37:02 colleagues and asked hey
+37:04 what is going on and then he was able to
+37:07 debug the model that was uh
+37:09 excellent did he find the root cause
+37:11 yeah he was uh on a
+37:14 temporary residence permit so he just
+37:17 moved to the netherlands and uh that was
+37:19 the reason
+37:20 um like that was the strongest feature
+37:23 in the model
+37:24 which is interesting because people who
+37:25 just moved here probably all need a new
+37:28 phone
+37:30 right or a new phone plan so interesting
+37:32 question if that is
+37:33 uh rejection worthy or not yeah
+37:36 yeah but sometimes people who uh just
+37:39 move
+37:40 they maybe will buy a lot of phones and
+37:43 go back
+37:45 without paying the the credit so for me
+37:49 like it is interesting question maybe
+37:51 you need some other feature to
+37:53 to make sure you don't catch these users
+37:55 for example i don't know people who move
+37:57 in the eu for work for example
+38:02 probably not a problem i'm not sure but
+38:05 it's interesting question that you can
+38:06 then put back to the business person or
+38:08 you find it's a bug in your own
+38:10 application that you can solve or maybe
+38:12 it's not a bug
+38:13 you just have to live with uh knowing
+38:16 that
+38:16 you will not get that phone because for
+38:20 him it's probably back so i'm of the
+38:22 really strong opinion that
+38:24 if a lot of users say it's a bug
+38:27 like maybe not for the phone case there
+38:29 might be an argument for the company to
+38:31 trade off risk
+38:32 but in general um i've seen a lot that
+38:34 some people like not a bug won't fix
+38:37 like that is not a acceptable answer in
+38:39 my book for if a lot of people are
+38:41 complaining about this and you will not
+38:42 find out if a lot of people are
+38:44 complaining about this event is horrible
+38:45 if you do not go looking for these use
+38:47 cases
+38:48 i try to get my product people on board
+38:50 run sort of
+38:51 um uh user oriented debugging so like a
+38:56 user comes
+38:56 with with a sort of what the moment
+38:59 and you make this
+39:00 into a postmodern regularly that's good
+39:03 practice
+39:04 uh to to to do to improve the usability
+39:07 and the
+39:07 the awesomeness of your product now i'll
+39:10 have to beep
+39:12 sorry too late the vts
+39:15 moment you should you should hear me
+39:20 off video i'm way worse
+39:24 maybe so i wanted to ask
+39:28 you a bit about this modern format and
+39:30 we also have a question in chat
+39:32 um how does it look like so you i think
+39:34 one thing you mentioned is you need to
+39:36 ask five why's you don't jump into
+39:39 conclusion immediately
+39:41 so you need to spend some time trying to
+39:43 understand
+39:44 what is the actual root cause and this
+39:47 uh
+39:48 this framework so to say five wise can
+39:51 help you that so you don't stop at the
+39:52 first y
+39:53 and uh use this as a conclusion but
+39:57 you keep digging in yes is there any
+40:00 other um how to say
+40:03 what else do you need to do to have the
+40:05 structured approach
+40:06 in the postmortem for data science
+40:08 project
+40:11 so one thing you maybe need
+40:15 is more technical information so
+40:17 sometimes you need the cookie
+40:19 sometimes the screenshot is enough it
+40:21 depends a little bit on your
+40:23 on your domain
+40:27 basically try to find a way to get the
+40:29 necessary information to debug
+40:31 the issue in your application and maybe
+40:35 also an interesting hint is
+40:37 do not only use incidents also use these
+40:41 sort of very bad user experiences that
+40:43 you wouldn't need
+40:44 so there's no exception nothing is in
+40:47 the logs
+40:50 so you need these user inputs which are
+40:52 a little bit hard to get
+40:54 like these stories
+40:58 then you need the necessary information
+41:00 to be back sometimes it's a cookie
+41:02 information
+41:03 sometimes it's a login whatever your
+41:06 service
+41:06 is getting as relevant inputs
+41:13 and yeah i would say that's it otherwise
+41:15 it's a typical engineering
+41:18 postmortem format so i'm boring always
+41:21 from different disciplines so sometimes
+41:23 sml people can be software engineers but
+41:27 sometimes we have like physicists
+41:29 or econometrists and they might not know
+41:32 this format
+41:33 so for for these colleagues it's it's
+41:36 the base
+41:36 it's the typical format that the
+41:39 software backend engineers use to debug
+41:42 their incidents so we can really use
+41:43 that
+41:44 just adapt it a little bit and it's
+41:46 quite useful
+41:48 do you remember what the format uh how
+41:50 does it look like i think i i saw
+41:52 like usually you have uh some sort of
+41:54 time frame
+41:55 yeah what happened without any finger
+41:58 pointing on
+41:58 blaming yes uh so just actual
+42:01 description yeah
+42:02 so first what the effects first you put
+42:05 the facts
+42:06 if it's a backend service it's like the
+42:07 service was down from that time to that
+42:10 time
+42:11 and in our case it might be a screenshot
+42:13 or it might be a return value so you put
+42:15 all the factual information you gather
+42:18 and then this investigation where you go
+42:20 step by step through the steps so
+42:23 the user saw a blouse and a bag
+42:26 on the front end home and then um
+42:30 why okay so um the user was
+42:34 this is surprising and maybe you go
+42:36 through an investigation and
+42:37 then there's a lower part where you can
+42:39 add um
+42:41 uh details about um the different
+42:44 investigation parts for example logs
+42:47 and then there's a really important um
+42:49 section which is called action points
+42:51 so normally postmortems are called
+42:54 blemishes
+42:56 so you say no one is at fault so so
+42:59 there's action points
+43:00 and these action points um mean
+43:04 you try to make
+43:07 changes to your application that ensure
+43:09 that
+43:10 this kind of unfortunate chain of events
+43:13 doesn't happen again
+43:14 it can be a process change for example
+43:17 you found out um how you work
+43:21 there was no four eyes principle or you
+43:24 did not
+43:24 have a good unit test coverage of edge
+43:27 cases for your algorithm
+43:29 then you make these action points there
+43:30 i recommend
+43:33 edge case testing for example or i
+43:36 recommend a very specific
+43:38 change often it's also very um let's say
+43:42 process oriented you do not fix only
+43:44 this very specific back you think of
+43:47 like this category of bugs or this this
+43:49 this kind of type of problem
+43:51 is there a way to fix that and then you
+43:53 put action points
+43:54 someone from the team reviews it it's
+43:56 like a code change so they give you a
+43:58 review
+43:59 like which action points should be
+44:01 implement and then you implement then
+44:03 you make them into tickets and actually
+44:04 implement them
+44:05 so it helps with the constant cycle of
+44:08 improvements
+44:10 thank you and we have a question um so
+44:13 we talked about debugging
+44:15 debugging machine learning problems and
+44:17 figuring out
+44:19 okay the model made this decision why it
+44:21 happened
+44:22 do you know any of the shelf or open
+44:25 source
+44:25 debugging tools for that
+44:29 um yes so there's uh opening it depends
+44:32 what you want to do
+44:33 so there's model explanation that's a
+44:35 whole hot research area
+44:37 that is like sharp values and these
+44:40 kinds of libraries
+44:41 that you can use um
+44:43 [Music]
+44:44 the question is usually what you want to
+44:47 achieve
+44:48 with the explanations or the debugging
+44:51 like with debugging we want to find the
+44:53 root cause
+44:54 of a problem or an error usually it's
+44:57 not to explain the algorithm
+44:59 so there is no off the shelf to explain
+45:01 the root cause
+45:02 of a bug or of a design error so there
+45:05 you really just go through the format
+45:06 and you
+45:07 see what you can use to debug your own
+45:11 sort of logic what you mean is probably
+45:14 get
+45:14 explanations for the model that is often
+45:17 to explain
+45:18 to stakeholders or to reason about the
+45:21 internal workings of the model which is
+45:23 a slightly
+45:23 different purpose
+45:27 so for that you can use like you google
+45:30 explainable ai that explains it much
+45:33 better the results than i can
+45:36 there's a bunch of libraries but for the
+45:38 other thing it's really quite
+45:40 different usually the mistakes are that
+45:43 you didn't consider
+45:44 certain modeling assumptions so you
+45:46 actually have to change your model or
+45:48 you have
+45:48 certain filters in place or the ui is
+45:50 not correct
+45:52 it's much more broader and the the root
+45:56 causes
+45:57 are often not the model but a wrong
+45:59 assumption you made
+46:01 or you did not consider certain inputs
+46:05 that have to be treated separately it's
+46:08 seldomly the algorithm that was the
+46:10 problem
+46:12 or maybe data changed like or data
+46:15 problems exactly that can also be
+46:17 an issue yeah like for example one of
+46:20 the features
+46:21 uh instead of like maybe unit
+46:25 change instead of kilometers you have
+46:26 now mentors yes we actually had that in
+46:29 salando
+46:29 we have a colleague who was working on
+46:31 the fraud model and on the live
+46:33 path the unit of one of the very
+46:34 important features changed
+46:36 from seconds to milliseconds but not on
+46:39 the test data
+46:40 and that completely screwed everything
+46:42 up and for that you don't need like
+46:44 model explanation sleep monitoring of
+46:45 the input data distribution
+46:48 and compare them between training and
+46:50 life
+46:52 so you see it's um uh
+46:55 it depends what exactly we're talking
+46:56 about i hope that answers your question
+46:59 can you see there's a variety of things
+47:01 that we that can go wrong
+47:03 yes exactly can we go back to the
+47:07 to the person and see if their question
+47:09 was so
+47:10 bk 62 if you're listening
+47:13 can you please let us know if your
+47:15 question was answered or not if you want
+47:17 to add something yes
+47:19 please let us know and then there is
+47:20 another question also from the same
+47:23 person
+47:24 about any of the checklist you mentioned
+47:27 are there online versions of this
+47:30 checklist
+47:30 have you seen any of those
+47:32 [Music]
+47:35 maybe i should make a blog post so
+47:36 there's one checklist which is kind
+47:39 kind of nice it's a hands-on ml
+47:42 they have a checklist in the first
+47:44 chapter i think it's also online
+47:46 some of the editions are actually just
+47:48 from my
+47:49 personal experience so that is not um
+47:53 online yet but i i have seen different
+47:56 people have different forms of their
+47:57 checklist
+47:58 so you can combine to make your
+48:01 personal best off yesterday
+48:05 uh not yesterday on monday we talked
+48:07 about ai canvas
+48:08 uh like some sort of business canvas
+48:10 where you have uh maybe you saw this um
+48:13 canvases or i don't know how to make it
+48:15 plural but like you have this uh
+48:17 sort of uh piece of paper where like in
+48:21 the center you
+48:22 write a business value then like on the
+48:25 left you have data on the right and you
+48:27 have all these different blocks
+48:29 and maybe it also kind of acts as a
+48:31 checklist because you
+48:32 have to feel all these different blocks
+48:36 and then you can make sure that every
+48:38 every aspect is covered
+48:40 and then it can yeah that's a good point
+48:44 but yeah i also like to think about for
+48:46 us engineers maybe it's
+48:47 even simpler if you have
+48:51 a list a checklist and then you just
+48:53 tick tick tick okay here
+48:54 i'm missing something let's go and fix
+48:57 yeah probably you should write a blog
+49:02 you have to you know ping me on this
+49:04 yeah
+49:05 we will have a transcription of this and
+49:07 uh
+49:08 yeah maybe it will be easy to then
+49:11 convert it
+49:12 and uh yeah so the the the pk62
+49:17 said that yes you answered my question
+49:19 and you
+49:20 mentioned writing your own tooling so
+49:23 you want to see if there is anything
+49:24 already
+49:25 that can be built on top of uh it's so
+49:28 specific to your um
+49:30 to your machine okay so that was
+49:32 probably just his explanation
+49:33 so it's uh my answer just one addition
+49:36 is it's so specific to what your inputs
+49:38 are probably
+49:39 basically make it observable make sure
+49:42 you lock your features make sure you
+49:44 have some
+49:45 way to after the effect found
+49:48 find out what were the inputs what did
+49:51 your model say
+49:52 uh and how to connect to the necessary
+49:55 debugging system if you have a feature
+49:57 store
+49:58 um how to how to look up what were the
+50:00 features at the time or log them
+50:02 something like that
+50:04 and people are saying that everyone is
+50:07 waiting for your blog
+50:09 post on that oh okay yes if you would
+50:12 like it then
+50:12 if there's if there's interest then i
+50:15 might need to get into this
+50:16 yes um here we have two more questions
+50:19 so
+50:19 uh do you also talk to end users or just
+50:22 limit the research to project managers
+50:24 i think we talked about that you
+50:26 actually talked to to end users
+50:28 yes it depends on what project i'm
+50:32 working on
+50:33 i do and i also do mystery shopping so
+50:35 when i was working now on the credit
+50:37 process so mystery shopping is basically
+50:40 you go through the process so i was
+50:42 optimizing a
+50:43 credit process application in my current
+50:46 job so i applied for credits
+50:49 so just on check 24 and i went through
+50:52 the different process to see what the
+50:54 experience of user is what kind of
+50:55 values i have to give
+50:57 what what do the other banks are doing
+50:59 like what is the what's flow like so
+51:01 yes speak to end users also speak to
+51:04 experts
+51:06 about the topic because sometimes they
+51:08 act like a summary of a bunch of end
+51:10 users and they can also tell you a bit
+51:12 of meta information
+51:13 so all of the above yes i hope your
+51:17 shuffle
+51:17 score wasn't affected when you did this
+51:20 and
+51:20 this one thing i checked actually
+51:22 because i was like this should not be
+51:24 affected
+51:24 they always promise it won't and i
+51:26 checked that indeed
+51:28 when we do requests it does not get
+51:30 worse and they can confirm
+51:31 it is not affected and for those who are
+51:34 not from germany
+51:35 in germany there is this core uh credit
+51:38 score that uh
+51:39 tells how trustworthy a person is when
+51:42 it comes to credits
+51:43 and i think it's uh nationwide right yes
+51:46 i checked
+51:46 check our database i also got my free
+51:49 shuffle you can get it once a year for
+51:50 free they hide it on a sub page because
+51:52 they want to charge you for it
+51:54 a free free life hack of the day you can
+51:56 get on the sub page and once a year they
+51:58 send you a detailed information for free
+52:00 you just have to wait and it comes in
+52:01 paper 14 days later
+52:03 and i checked against that and i also
+52:05 had the output of all the other banks
+52:06 it's quite interesting they have
+52:08 different score cards
+52:09 that they calibrate based on their
+52:10 business case we get slightly different
+52:12 scores for each bank so it was quite
+52:14 fascinating to
+52:15 to sort of reverse engineer a little bit
+52:17 how this works
+52:18 and that person we talked about who
+52:20 applied for one i think he also did
+52:22 mystery shopping without realizing
+52:24 yes he did see and he uncovered a
+52:27 problem
+52:27 yeah and then there is a follow-up
+52:30 question
+52:31 it actually was two questions one do you
+52:34 add your own ideas when discussing the
+52:36 data project
+52:39 um to add problems to suggest problems
+52:42 to the stakeholders as projects
+52:44 also yes because i'm just observing the
+52:46 space see what other people are doing
+52:48 and basically try
+52:49 to go to the stakeholders do we need
+52:51 this
+52:52 you think this is useful because it's
+52:55 very hard to generate these project
+52:56 ideas sometimes the stakeholders don't
+52:58 know what they don't know it's like a
+53:00 hand egg problem
+53:01 i am looking what are possible
+53:03 applications that other people are doing
+53:05 and try to see
+53:06 do we have the same problem um but
+53:08 ideally
+53:09 the business people should come to you
+53:11 you should not come up with a problem
+53:12 because you're usually wrong
+53:14 you're just one person so to think
+53:17 you're the user
+53:18 it's usually wrong but definitely
+53:21 just by seeing okay these cool ml
+53:24 applications are possible does that make
+53:25 sense for my company yes
+53:29 maybe the person can clarify the
+53:30 question a little bit if i if i
+53:32 answered it uh i think it comes
+53:35 back to one of the checkpoints we
+53:38 discussed
+53:39 is about making the problem specific if
+53:42 you make it specific then uh
+53:44 yeah i mean and it's easier to talk to
+53:47 uh uh okay okay okay
+53:49 okay yeah it's so it can be a
+53:51 collaborative problem flashing out what
+53:52 the problem is we're actually very
+53:54 involved i think if you're very hands
+53:56 off ml really requires that the problem
+53:58 be very well defined
+54:00 i've seen quite a few projects like fail
+54:02 because the ml
+54:04 worked but the problem was kind of
+54:07 not well enough defined or it could
+54:09 never work because the problem was not
+54:11 well enough defined
+54:12 and then in the end the users will kind
+54:15 of blame you
+54:16 or the ml in general so i think it's
+54:18 really up to us to say
+54:21 this is the requirement the requirement
+54:23 is that the business case be well
+54:24 defined
+54:26 thanks so we have also a question about
+54:30 data knowledge
+54:31 uh i'm not sure we talked about this
+54:33 maybe a little bit
+54:34 um so regarding data knowledge within
+54:36 the company
+54:38 is it a data practitioner's
+54:39 responsibility to indicate the team on
+54:42 what data
+54:44 what data is there and what problems it
+54:46 can solve
+54:48 wow so your the person asking is
+54:51 probably
+54:52 working in such an organization i can
+54:54 hear the pain
+54:55 behind the question yeah
+54:59 um yeah i i feel you basically we need
+55:02 we need the counterpart to be
+55:04 well-versed in data but sometimes
+55:06 they're not
+55:07 so what do you do either you only take
+55:10 jobs and companies which are already
+55:12 quite advanced usually you stick we we
+55:15 still need to do a little bit of
+55:17 outreach and let's say educating people
+55:21 i do a part of my work is sort of let's
+55:24 say community building
+55:26 in the company and talking to other
+55:28 like-minded people and try
+55:30 to you know have a bit of a movement of
+55:33 like data
+55:34 people who like want to work in the same
+55:36 direction
+55:37 also get business people interested in
+55:39 using data i'd
+55:41 of course try to spend not too much time
+55:43 on it
+55:44 but it is unfortunately at the moment
+55:48 what the state of data literacy is it's
+55:50 kind of a little bit
+55:51 part also on us to
+55:54 to do a little bit of education
+55:58 or you pick a company where this is not
+56:00 a problem
+56:01 which is view
+56:05 i would say but then you learn how to
+56:07 deal with this you get experience and
+56:09 then maybe if you go to a company where
+56:12 that is less mature in terms of data
+56:14 literacy
+56:15 then you already have an experience you
+56:18 know how
+56:18 things should look like yes then you can
+56:21 share this experience of the company to
+56:23 move to
+56:25 to that level of maturity right so
+56:29 in general i think we always need to
+56:31 have quite good
+56:32 um people skills in our job because it's
+56:35 so
+56:36 cross-functional so i'm the main thing
+56:38 i'm working in the last years is not
+56:40 only the technical part but try to be
+56:42 better at convincing and
+56:44 motivating and i think that's
+56:47 sometimes we don't necessarily need that
+56:50 or have that as engineers when we start
+56:52 off
+56:52 and it's quite useful
+56:55 to to invest a little bit and also for
+56:58 this this data related problems
+57:00 and i have also some dirty hack
+57:04 tricks if you work with like dirty data
+57:06 i used to have
+57:07 techniques where i try to convince
+57:08 people to fix data so i can use it
+57:12 and that never worked because you don't
+57:13 use it it's not attached to big business
+57:15 case so now for example i have a set of
+57:17 dirty hacks i just apply
+57:19 for example i start using dirty dirty
+57:21 data
+57:22 which mostly works but not always and
+57:26 then i say i'm using this data
+57:28 please fix it so there's a bunch of
+57:32 things you
+57:32 also acquire on the way a bit of
+57:34 convincing but also a bit of dirty
+57:36 tricks that you just bring
+57:38 just to make sure i understand the dirty
+57:40 tick and i can use it
+57:42 later so there is a data source that is
+57:44 not cleaned
+57:45 yes and people don't want to clean it
+57:47 yeah the ones who produce it
+57:49 because nobody uses it so they say we
+57:51 don't want to
+57:52 spend our time because we don't see any
+57:54 impact so you start using it
+57:56 and then you come to them and say hey
+57:58 you see i
+57:59 actually use it it's going to be a nice
+58:01 product it mostly works but look at this
+58:03 very
+58:04 unfortunate side effect in 10 of the
+58:06 cases yes
+58:08 unfortunately i didn't used to do that i
+58:09 used to speak a lot and blah blah blah
+58:12 nothing happens but that was the way
+58:14 that got it done
+58:16 yes but also like okay be careful with
+58:19 this in general
+58:20 i'm also kind of careful so for example
+58:23 every new data source i add there's a
+58:24 cost to this there's a cost of
+58:26 maintaining this data source of having a
+58:28 new stakeholder
+58:29 of monitoring it so in general i apply
+58:33 a strategy of each data source or each
+58:35 feature needs to prove itself to be
+58:37 added especially new data sources
+58:39 but like every once in a while you
+58:41 really want that it's useful it's some
+58:43 sort of event that is very good so then
+58:45 yeah just to mix and match your approach
+58:48 maybe we should have a follow-up um
+58:50 conversation about dirty hacks
+58:54 i cannot tell you i would have to you
+58:56 know dispose of you afterwards
+59:00 okay i can imagine that this little
+59:01 title like
+59:03 dirty communication hacks
+59:08 don't try it on your colleagues and then
+59:10 we have 30 people tuning in
+59:12 after after 11 at night expecting a
+59:14 different content
+59:18 so do you have any last words before we
+59:20 finish
+59:22 um
+59:25 thank you for having me yeah that's it
+59:29 and if anyone wants to you know connect
+59:31 more i'm hanging
+59:32 out in the ml ops channel sometimes and
+59:35 also on linkedin or wants to write a
+59:37 blog post together or
+59:38 just generally chat yeah yeah
+59:42 okay great so because my next question
+59:44 was how people can find you and you just
+59:46 answered
+59:47 i think i ran out of questions and i
+59:49 just want to thank you in return for
+59:52 joining us today sharing your knowledge
+59:54 your
+59:55 checklist your one dirty hack maybe we
+59:58 will
+59:58 talk about others but i think that was
+1:00:00 uh already useful
+1:00:02 and thanks for everyone who joined and
+1:00:05 listened to our conversation
+1:00:06 ask questions uh and don't forget we
+1:00:09 have two more talks
+1:00:11 so tune in tomorrow and on friday and
+1:00:14 uh that's all thanks a lot tina
+1:00:17 see you goodbye have a great day

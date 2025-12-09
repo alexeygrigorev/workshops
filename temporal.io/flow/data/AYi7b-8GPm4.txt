@@ -1,0 +1,1916 @@
+What I Learned After Interviewing 300 Data Scientists
+
+0:00 hi everyone welcome this event is
+0:03 brought to you by data talks club which
+0:05 is a community of people who love data
+0:08 we have weekly events today is one of
+0:10 these events we have
+0:12 now podcast live forecast on friday and
+0:15 we have webinars on
+0:16 uh tuesday so if you want to learn more
+0:18 about our events
+0:19 go to our website datatalks.com events
+0:23 and you will find all the events we have
+0:25 so for example for the next week
+0:27 on tuesday we will talk about a b tests
+0:30 to stay up to date with our events you
+0:33 can do
+0:34 many things you can subscribe to our
+0:35 newsletter you can join our slack and
+0:38 you can subscribe
+0:40 to our youtube channel and that's
+0:44 probably it the last thing is today
+0:47 you can ask any question you want and
+0:50 please use slider for that
+0:51 i don't always see questions in the live
+0:54 channel
+0:54 in the live chat on youtube and to find
+0:57 the link for slider
+0:58 you go to the live chat and it's a
+1:01 themed link
+1:02 at the top to just click on this and ask
+1:04 any question you want
+1:07 and that's all for the introduction
+1:10 are you ready to start let's go
+1:15 so let me just open my notes
+1:18 so this week we'll talk about the
+1:20 interview process getting hired as a
+1:22 data scientist and not only data
+1:24 scientists and we have a special guest
+1:25 today alec
+1:26 elect workers data science worked as a
+1:29 data science manager at uber
+1:31 where he built data science teams he
+1:33 also has experience building
+1:34 several startups in europe and recently
+1:37 he created
+1:38 next round which is a company a free
+1:40 service for practicing
+1:41 interviews and receiving personalized
+1:43 feedback and learning materials
+1:46 welcome glad to be here thank you for
+1:49 having me
+1:50 so before we go into our main topic of
+1:52 recruitment and interviews
+1:53 let's start with your background can you
+1:55 tell us a bit
+1:56 about your career journey so far
+2:00 so i started as a software engineer i
+2:02 was
+2:03 building websites for a few years and
+2:05 then at some point i heard about the
+2:07 netflix prize
+2:08 it was uh one of the first open data
+2:11 science competitions
+2:12 uh a few years before cuddle i believe
+2:15 and i got some so engaged in this topic
+2:18 of personalization that
+2:19 ended up raising a phd phases about
+2:21 recommender agents
+2:23 and then i transitioned from an engineer
+2:25 to an analyst in a startup
+2:28 eventually i became a manager i led a
+2:31 team of data scientists and engineers
+2:33 working on recommender engine product
+2:36 analytics and
+2:37 building the data infrastructure in that
+2:39 company
+2:40 and after that i wanted to apply
+2:44 for another data science job in a
+2:46 startup called least
+2:48 and i thought
+2:51 i'm probably not the most experienced
+2:53 data scientist applying for the job
+2:55 uh i also needed the visa and i i just
+2:58 began
+2:58 brainstorming how do i make myself stand
+3:01 out so they
+3:03 don't reject me right away and i don't
+3:05 even get to
+3:07 to talk to anyone from the company and i
+3:09 try to reverse engineer the the process
+3:11 and think about it
+3:12 when someone applies for a job in my
+3:14 team
+3:16 what do i do what do i look at in in cvs
+3:20 uh what are the signals that i'm trying
+3:21 to to get
+3:24 and you know usually when you when you
+3:26 look at someone's cv and it says
+3:29 experience in python it doesn't really
+3:31 tell you much because
+3:33 it's very subjective maybe maybe the
+3:35 person read a blog post about this or
+3:38 invented the language you never know so
+3:39 i thought okay i need to stand out from
+3:41 the other candidates
+3:42 and i also need to somehow demonstrate
+3:46 that this buzzwords in my cv machine
+3:47 learning big data python
+3:49 um is actually something that i'm
+3:51 familiar with
+3:53 and this was an e-commerce website and
+3:56 they were carrying for
+3:57 a data scientist to improve their
+3:59 recommended agent
+4:00 and i thought okay i need to make
+4:03 something differently
+4:05 so instead of sending a cv i wrote a
+4:07 blog post about
+4:09 how i would improve the recommender
+4:10 engine if i worked there
+4:12 but since i did not work there
+4:16 i didn't have any data so i had to be
+4:19 creative and
+4:20 i found i basically took a list of
+4:22 brands that they were selling
+4:23 on this website and wrote a very simple
+4:27 python script that gets a list of their
+4:29 followers
+4:30 from twitter and then i implement the
+4:33 very simple
+4:34 recommender algorithm in python
+4:38 that basically lets you type your
+4:40 twitter nickname
+4:42 and then you will get recommendations
+4:44 based on who you follow
+4:45 and the model that has been trained on
+4:47 this designers that are being sold by
+4:49 this website
+4:51 so i wrote this blog post send it to
+4:52 them and
+4:54 what i had in mind was okay i want to
+4:56 show that i understand the very basics
+4:58 of machine learning i can program a
+5:00 little bit
+5:01 uh essentially to
+5:04 to to demonstrate this you know the very
+5:06 first chapter of any
+5:07 machine learning book assigned to them
+5:10 surprisingly it worked out and i got the
+5:11 job
+5:12 uh was it a public post did you just
+5:14 publish it on i don't know towards data
+5:16 science or you sent a document to them
+5:19 so i i put it on media on medium but i
+5:22 put it down afterwards because
+5:24 uh i didn't know how much of it
+5:28 uh can be public okay
+5:31 even though i used only uh the data
+5:34 accessible
+5:35 everywhere but you know i tried to do a
+5:36 little bit of reverse engineering like
+5:37 what kind of data
+5:38 is being sent from the website what kind
+5:40 of apis they're using and so on
+5:43 so i i put it down at some point there
+5:45 is there's actually an article about
+5:46 this
+5:48 from the other from the other side by
+5:50 recruiter that hired me and explained
+5:52 this uh hiring experience from there
+5:56 that was very interesting to it um but
+5:58 this is how i got that job
+6:00 um there i focused on deployment of
+6:03 machine learning models personalization
+6:05 ranking
+6:07 and a little bit of data engineering and
+6:09 scaling the the data infrastructure
+6:11 after it i joined uber in amsterdam as a
+6:14 product data scientist
+6:16 in a couple of years i became a manager
+6:20 again and led a team of data scientists
+6:23 that worked on
+6:24 forecasting models and the goal was to
+6:26 predict
+6:27 the lifetime value of a user and
+6:30 quantify the impact of different
+6:32 events on on user behavior
+6:36 and i like to
+6:39 last year and every time
+6:42 i applied for a job in data science
+6:45 there was one thing that i really hated
+6:48 when you get rejected and when you read
+6:51 this rejection email
+6:53 and it tells you nothing so you spend
+6:56 hours interviewing you
+6:58 you spend hours working some take home
+7:00 assignment
+7:01 and then you get some generic standard
+7:03 rejection email
+7:04 uh maybe maybe you even get some
+7:07 feedback but usually it's completely
+7:08 useless and not actionable you can't do
+7:10 anything out of it
+7:11 so i began to think okay what can be
+7:14 better
+7:15 how can i make this better
+7:18 and i ended up building this free
+7:20 service where
+7:21 you can practice data science interviews
+7:23 with the chatbot
+7:25 and then you will receive detailed
+7:27 personalized feedback
+7:28 based on your answers with some links to
+7:31 relevant materials to the topics where
+7:33 you can improve so this is
+7:36 what i've been working on in the past
+7:37 few months you can you can check this
+7:39 out i have
+7:40 mock interviews for for data scientists
+7:42 and product analysts uh
+7:44 so far it has been on this on this
+7:46 website
+7:47 uh there have been 500 little over 500
+7:52 more interviews so far
+7:55 and this is super interesting experience
+7:58 just to
+7:59 analyze and calibrate the questions
+8:02 because
+8:03 there is never there is never a correct
+8:06 answer
+8:07 like there is never a infinite number of
+8:10 uh correct answers
+8:11 if you ask some case study questions
+8:13 about how would you
+8:14 like build this kind of model uh
+8:17 so i keep dating i keep getting
+8:19 surprised in any positive way
+8:23 every day because you never know what to
+8:26 expect
+8:26 right yes indeed so these are rejections
+8:31 that you that you got do you have any
+8:34 idea why they are genetic i think i have
+8:36 some ideas also working as a
+8:39 hiding manager like also being a
+8:40 highland manager sometimes
+8:42 um but do you have some ideas why uh why
+8:45 these rejection letters are generic why
+8:47 can
+8:47 can companies give feedback well there
+8:50 can be
+8:50 many reasons right so first of all
+8:55 uh i don't know can we call it laziness
+8:58 but
+8:58 let's say to hire one person you need to
+9:01 interview 20.
+9:02 and this is realistic this can be higher
+9:04 this can be lower
+9:06 to provide detailed excellent feedback
+9:08 to everyone
+9:10 uh will take some time and then this is
+9:13 really up to you
+9:14 whether you think it is worth it or not
+9:18 i think it is worth it because who knows
+9:21 maybe these people join your company
+9:22 again like
+9:23 it's always it's a closed loop there are
+9:25 not so many so many data scientists
+9:27 uh in the world or in a given city
+9:30 um another reason apart from spending
+9:33 time on it another reason can be
+9:37 just being polite
+9:40 and because you never know when when you
+9:42 provide
+9:43 when you try to provide some
+9:44 constructive actionable feedback to
+9:47 a person you don't know how they will
+9:48 react to this
+9:51 so you try to be polite and it it brings
+9:53 you to
+9:56 some very standard some generic feedback
+9:58 that doesn't really
+10:01 pinpoint you into any certain weaknesses
+10:04 i think there might be some legal
+10:05 reasons about this as well
+10:08 what was your experience what what are
+10:10 your ideas
+10:12 yeah so basically what you said except i
+10:14 didn't think about being
+10:16 polite um because i think actually
+10:19 candidates are looking forward to
+10:20 receiving feedback
+10:22 so i didn't think about this angle maybe
+10:24 i should have but yeah i think uh
+10:27 this is the like the first one is
+10:31 time and then the second is uh legal
+10:33 reasons so you don't always
+10:35 cannot always give you back because of
+10:38 some
+10:38 legal stuff okay and then you decide
+10:41 okay
+10:42 like i hate not receiving feedback let's
+10:45 create
+10:46 a company a website
+10:50 where people can just practice and then
+10:52 we receive feedback attend
+10:54 right yeah so basically what i wanted to
+10:56 do i began thinking
+10:59 with my experience uh as a candidate
+11:02 as a hiring manager uh what will you can
+11:05 i
+11:06 offer right and then essentially what i
+11:09 did
+11:09 i wrote down a list of situations
+11:13 that kept happening uh from company to
+11:16 company from team to team
+11:18 um for example and then this was
+11:21 completely different stories like
+11:23 for example as a as a data scientist or
+11:25 especially as an analyst
+11:26 you're always balancing between working
+11:28 on some important model and
+11:31 stakeholders asking you to work on some
+11:33 urgent fixes or
+11:34 urgent ad hoc analysis or
+11:37 [Music]
+11:38 you're running an a b test and then you
+11:41 see that
+11:42 some of the metrics improved and some of
+11:44 the metrics actually got worse what do
+11:46 you do
+11:46 so i started just writing down a list of
+11:50 situations that happened in my life that
+11:52 required some some thinking
+11:55 and that was generic enough to
+11:59 to apply to any company and then
+12:02 from this situation from this case
+12:04 studies i created an interview plot
+12:06 that basically introduces you into some
+12:09 context you are working in this
+12:10 kind of company and then your goal is to
+12:13 do this and that
+12:15 stakeholder comes to you and asks you to
+12:17 work on this
+12:18 what do you do depending on your answer
+12:21 it will ask you
+12:23 different follow-up questions maybe
+12:25 switch a topic
+12:26 or maybe go in depth to to get more
+12:30 technical
+12:32 and i reached out to about
+12:35 30 data science hiring managers do to
+12:38 get their feedback
+12:39 on this interview questions that i
+12:40 prepare uh so that it's not
+12:43 completely biased by my by my personal
+12:45 experience
+12:46 uh in this companies that i work at i
+12:49 got a lot of very interesting feedback
+12:50 from them
+12:52 and then i just published this website
+12:56 and so far so good everyone likes it
+13:00 you said you had 500 more contributors
+13:03 but the title for this
+13:05 uh event today is what i learned after
+13:07 interviewing 300 data scientists
+13:10 we update it to 500 lives well
+13:13 we can walk into this yeah like this
+13:18 because the practice of practice
+13:20 interviews
+13:21 but then it's the same thing okay so
+13:24 speaking of
+13:25 uh interviews so um
+13:28 i imagine you did quite a few interviews
+13:30 at least 300
+13:32 so how does a typical interview process
+13:34 process look like
+13:35 what are the steps in this process so
+13:38 there is no standard here
+13:39 right it really depends on the company
+13:41 on on the size of the company
+13:43 but usually after you send your cd
+13:47 and a recruiter checks if you're seeing
+13:50 if your cd if your experience matches
+13:52 the the job description
+13:54 then they might have a call with you and
+13:56 ask a few things about your
+13:59 experience that were not clear from from
+14:01 your cv just
+14:02 again to make sure that your experience
+14:04 is relevant
+14:05 to a certain role in the company
+14:08 the recruiter might also ask you a few
+14:10 questions about the seller expectations
+14:12 and
+14:12 your availability for the new job
+14:16 after that if your experience
+14:19 seems relevant to this job some
+14:22 companies will send you a take home
+14:24 assignment
+14:24 expecting you to spend a few hours on
+14:26 that
+14:28 and after that there will be several
+14:30 rounds of interviews uh one of them
+14:33 will be with the hiring manager and most
+14:36 of the time
+14:37 you get to speak with the actual manager
+14:40 and
+14:42 after the interviews uh there will be a
+14:46 debrief when the hiring manager
+14:48 and everyone who interviews you will
+14:49 discuss
+14:51 uh we'll discuss your experience and
+14:52 make the final decision
+14:54 and you'll either get a job offer or
+14:57 receive
+14:58 this uh generic rejection email usually
+15:04 and in this so you mentioned case
+15:07 the screen by the recruiter home
+15:10 assignment
+15:11 and then a bunch of technical interviews
+15:13 uh
+15:14 with hiring manager so what kind of
+15:16 technical interviews are there
+15:18 so i imagine for data scientists so they
+15:21 should be developers i mean they should
+15:24 be able to code so i guess one of these
+15:25 checks coding
+15:26 right so what else well yeah it really
+15:29 depends on the role
+15:31 okay right and i even tried to visualize
+15:34 different types of
+15:36 job profiles
+15:39 and what what i did i did an exercise
+15:41 when i just took
+15:42 some random 50 data science jobs and i
+15:45 found a lot
+15:46 of data science jobs that have literally
+15:48 nothing in common
+15:50 right it's uh it's so generic
+15:54 and data science is a is just an
+15:56 umbrella term that includes
+15:58 machine learning engineers and product
+15:59 data scientists
+16:01 and on one side there is an expectation
+16:03 that you will code a lot but
+16:06 you will be building and deploying
+16:07 machine learning models that work in
+16:09 production on the other side the
+16:10 expectation is that you'll be running a
+16:12 b tests and writing a lot of sql and
+16:14 being more of a pm that is uh very
+16:17 confident when it comes to
+16:18 working with data so the technical
+16:21 interviews will depend on the role
+16:23 uh on the high level
+16:26 whichever company you interview probably
+16:28 at some point they will ask you about
+16:29 your
+16:30 previous experience uh it might be a
+16:33 question
+16:34 uh like tell us about some facility
+16:38 model that you built in the past and
+16:39 that you're proud of
+16:41 and at some point most likely you will
+16:44 be asked about some hypothetical case
+16:45 study
+16:47 and very often this is just some very
+16:49 weak and generic question like
+16:52 how would you predict user journal
+16:56 okay so uh you mentioned product data
+16:59 scientist this is somebody who is more
+17:01 like analytical and machine learning
+17:02 engineer is
+17:03 an engineer right and then there is
+17:04 whole spectrum of things and you need to
+17:06 look at the actual job description to
+17:08 figure out what exactly to
+17:10 uh to expect during the the process
+17:12 right i think that's that's the main
+17:14 advice in general like
+17:15 we can stop this podcast right here
+17:18 but the main advice is study the job
+17:22 just keep
+17:22 studying nothing in the job description
+17:24 learn as much as you can
+17:25 about the role and
+17:29 try to match your experience
+17:32 with with the role right
+17:37 and to explain is say you
+17:40 you have two years of experience for one
+17:42 year you worked as an accountant
+17:44 for for for the second year you worked
+17:46 as a machine learning engineer you
+17:48 you're applying from for machine
+17:49 learning engineering
+17:50 will you dedicate as much time to your
+17:52 accounting experience as to the machine
+17:54 learning
+17:55 engineering no right so
+17:58 if you have to put i don't know a year
+18:00 of your
+18:01 work experience or 10 years of your uh
+18:04 work experience
+18:05 on a piece of paper you need to make
+18:07 sure it is as relevant as possible
+18:09 to the role you're applying for and at
+18:11 the end this is all about
+18:12 the sequel and the noise you want to
+18:14 emphasize the things that are the most
+18:16 relevant
+18:17 uh to the job and just remove all the
+18:21 lies about
+18:22 your jobs that that you have after
+18:25 after college 10 years ago that are not
+18:27 relevant
+18:28 so yes this brings us to the to the
+18:31 question about cvs
+18:32 so and this is the very first uh step
+18:36 in uh in the job process right so
+18:38 recruiter
+18:39 or hiring manager somebody looks at your
+18:42 cv
+18:43 which is a piece of paper one or two or
+18:45 three pages right
+18:46 and they figure out if
+18:49 this candidate should go through the
+18:52 process or they reject
+18:54 them right away right so how do we make
+18:56 sure that
+18:58 we can pass this cv screen uh phase so
+19:00 you mentioned that
+19:02 you need to make cd as relevant as
+19:05 possible to the job
+19:07 and i guess for that you need to really
+19:10 read the job description and see
+19:11 how your experience matches uh what else
+19:14 can you do there like how can you
+19:17 make your cv stand out
+19:20 so i would think of cd as your
+19:24 landing page right
+19:28 and think about some website you
+19:32 you see an ad on the internet you click
+19:34 on the link you
+19:36 end up on some website that you have
+19:37 never seen before
+19:39 in two seconds you will decide to close
+19:41 it or not or this is something relevant
+19:43 and you will keep looking at it
+19:45 and the way
+19:48 websites are designed and implemented
+19:51 has changed a lot in the past 20 years
+19:52 right if you if you compare like
+19:54 internet 20 years ago just just next
+19:56 to what it is now there is a lot of
+19:58 change because
+20:00 there have been a lot of experimentation
+20:02 there have been a lot of
+20:04 improvements so think about cvs in the
+20:06 same way
+20:07 the recruiter that is looking at your cv
+20:10 so what what is their goal of the
+20:12 recruiter that will will
+20:13 look your cv when uh when you apply for
+20:15 a job the goal is to
+20:18 quickly estimate uh
+20:23 how valuable you will be in the company
+20:25 if you join
+20:27 and even more specific their goal is to
+20:30 estimate
+20:31 what will happen if they set up an
+20:33 interview between you and hiring manager
+20:36 how likely the hiring manager is to uh
+20:38 to offer your job
+20:40 or reject you right because
+20:43 if every candidate the goal of a resume
+20:47 or cv for you is to get to an interview
+20:50 it's not even to get a job it's just to
+20:52 make sure that the interviews will
+20:53 happen
+20:54 and you will get to talk to someone
+20:56 someone technical
+20:57 so when the recruiter looks at your cv
+21:01 they might even not be familiar with the
+21:04 with the technical side of it
+21:05 so what they have is the job description
+21:08 they spoke with the hiring manager about
+21:09 the skills required
+21:10 the skills required for the role they
+21:13 have on
+21:14 one hand and they have your cv on the
+21:15 other side and then you can think of it
+21:17 offer as a of a very simple
+21:21 classification model that just looks for
+21:24 for keywords that just does the the
+21:26 screen search
+21:28 the job description says no i don't know
+21:30 tensorflow
+21:32 do you have this word tensorflow in your
+21:33 cv the
+21:35 job description says i don't know be
+21:36 proactive are you proactive
+21:40 so we try to do this uh this matching in
+21:43 your mind understand what the role
+21:45 requires
+21:46 unfortunately job descriptions are also
+21:48 very generic most of the time
+21:49 but try to do this try to apply the the
+21:52 job description to your
+21:53 to your past experience and personalize
+21:56 std for every role you are planning
+21:59 because
+22:00 this is your goal to pass this screen
+22:02 and then
+22:03 you will you will be able to to chat
+22:05 about your
+22:06 your past experience
+22:10 and demonstrate your your technical
+22:12 skills recruiters are
+22:14 always on your side when when they look
+22:16 at at your city when
+22:18 they have a call with you recruiters are
+22:20 on your side because
+22:23 their goal is to fill the role
+22:26 to place someone in the role so
+22:30 it's in their interest for you to get
+22:31 this job
+22:33 so you can if you're having a call with
+22:36 recruiter
+22:37 ask them about the expectations ask them
+22:39 about the process they would be
+22:40 very happy to to help you
+22:44 but on the other side
+22:47 again if you think about the this very
+22:49 first step
+22:50 recruiters cv screen by recruiter
+22:53 if you think about it as a classifier
+22:57 there is a very high penalty for false
+23:00 positive
+23:01 for false positives if the company hires
+23:04 the person that
+23:06 is not relevant for a job maybe they're
+23:08 struggling something else but not for
+23:09 this certain role
+23:11 this is a big problem for both right uh
+23:14 guessing a job is a big commitment so
+23:16 there is a very big penalty
+23:18 for this kind of error
+23:21 but at the same time there is zero
+23:22 penalty for
+23:24 not hiring a good person uh a good
+23:27 candidate
+23:28 because no one will even know if they
+23:30 were good or not
+23:31 so this classifier tends to create a lot
+23:34 of
+23:36 false post negative errors and
+23:39 essentially a lot of candidates that
+23:42 would have got on their job
+23:43 if they passed the first the first stage
+23:47 get rejected at the very first stage so
+23:49 in your cv
+23:52 try to
+23:54 [Music]
+23:57 try to first understand what is
+23:59 important for this role
+24:00 and what have i done and the best that
+24:02 is important to this role
+24:04 and make sure you highlight it as much
+24:06 as possible and remove
+24:07 it and remove everything else move all
+24:10 the noise
+24:11 then whenever you are describing your
+24:14 past experience in in your car
+24:18 job or in your previous job try to be
+24:21 very specific
+24:22 about what was your personal
+24:24 contribution to a project
+24:25 because for example if you if you write
+24:28 on the cv
+24:30 i work on predictive models
+24:34 uh i don't know improving accuracy of
+24:37 predictive models like
+24:38 lit lists was nothing like okay your
+24:40 data scientists you are expected to do
+24:42 that
+24:42 what exactly did you do or even if you
+24:45 write
+24:47 something we improved the accuracy of a
+24:50 random forest model by x percent
+24:53 like what exactly did you do did you
+24:57 identify the problem did you decide to
+24:59 use random forest
+25:01 so try to be very specific in what
+25:04 exactly
+25:05 in what was your contribution to
+25:07 whatever project was
+25:09 and
+25:13 this is this is the main advice i think
+25:15 also if you're applying to a company
+25:19 to maximize your chances of pacing
+25:21 through this
+25:22 first step of the cd screening
+25:27 you can try to reach out to your
+25:28 recruiter directly you can try to reach
+25:30 out to someone from the team directly
+25:31 and ask them about the company
+25:33 ask them about the team in the company
+25:34 if you know someone ask for a referral
+25:37 it always helps to uh to pass this first
+25:41 step uh at least someone will definitely
+25:44 look at your cv and
+25:45 probably you will secure this this first
+25:48 press call be selling from the company i
+25:50 think it gives an extra signal that okay
+25:53 somebody from within the company
+25:54 somebody who already passed our
+25:56 hiring process deferred this person so
+25:59 this person must be good so let's take a
+26:00 closer look at the cv
+26:02 and exactly exactly and also
+26:06 this probably sounds very obvious but it
+26:08 happens uh
+26:10 check for typos and errors this this is
+26:12 really
+26:13 bad single because it just looks very
+26:16 unprofessional
+26:17 uh make sure the the formatting is
+26:20 is consistent throughout the throughout
+26:23 the document
+26:24 um don't try to
+26:28 lie about things uh and pretend that you
+26:32 you build something that single-handedly
+26:34 do something that
+26:35 that you haven't because this can
+26:37 backfire you never know maybe maybe this
+26:39 company is interviewing your company or
+26:40 your colleague
+26:42 if you haven't you don't know and you're
+26:44 both trying to pretend that you
+26:46 you did something that none of you that
+26:48 know what you did so this can really
+26:50 backfire
+26:54 and sometimes i see people that
+26:57 put the self evaluations like python
+27:00 five stars expert
+27:02 so it doesn't make a lot of sense
+27:06 yeah so basically just to summarize so
+27:08 cv is your landing page and people spend
+27:11 uh
+27:11 like on a landing page they don't spend
+27:13 more than two seconds so this is the
+27:15 time span uh you will get when recruiter
+27:17 looks at your cv so you need to maximize
+27:20 the chances that you will pass this
+27:22 stage and you do this by highlighting
+27:23 what is important for the role
+27:25 you remove everything else and you need
+27:28 to be specific about your personal
+27:30 contribution and then it will maximize
+27:34 the chances that within these two
+27:35 seconds the recruiter will take a look
+27:37 at your usb
+27:39 and then decide okay i want to look more
+27:42 at this cv and eventually
+27:44 you will pass the screen right after you
+27:46 pass the screening
+27:48 so what happens next
+27:51 so after you press the screen most
+27:53 likely there will be interviews
+27:55 there might be a take home assignment uh
+27:58 that will probably take a few hours for
+28:00 you to
+28:02 to implement
+28:04 [Music]
+28:06 there are controversial opinions about
+28:07 take home assignments
+28:10 because it takes a lot of time if you're
+28:11 applying to five different jobs then you
+28:13 need to work on five different take-home
+28:14 assignments and it will take the entire
+28:16 week
+28:16 uh i'm not a big fan of take home
+28:18 assignments for that reason because
+28:21 uh it's more of a signal like whether a
+28:24 person have time
+28:25 for them to expect them to work on the
+28:27 home assignment or not
+28:28 rather than the reaction skills but at
+28:31 the same time
+28:31 if you're given a take-home assignment
+28:34 uh think about it
+28:35 in this way what's the return of
+28:38 investment
+28:39 in spending your time on this day
+28:40 concern if you get this new job well
+28:44 you applied for this new job for a
+28:45 reason right probably you think it's
+28:48 uh it's it's a better team it's a better
+28:50 career opportunity
+28:52 most likely there will be some pay
+28:54 increase usually it's at least
+28:56 some 15 so if you spend this
+28:59 one day working on take home assignment
+29:01 it will pay off if you get the job
+29:03 so think about it from from this risky
+29:05 work perspective
+29:06 because it really pays off to invest
+29:08 into preparing for interviews and
+29:11 spending your time uh
+29:16 emphasizing your your strengths and
+29:18 demonstrating your your skills when
+29:20 you're interviewing because
+29:22 if you're not willing to if you think
+29:24 it's not worth time to
+29:26 to work on this then maybe this is not
+29:29 the job that you really want
+29:31 um anyway after the day after the take
+29:33 home assignment
+29:34 uh there will be interviews um most
+29:38 likely will be some
+29:39 from three to six rounds of interviews
+29:41 with different
+29:43 uh different potential colleagues and
+29:46 one of them will be with the hiring
+29:47 manager
+29:49 on the technical rounds i think you can
+29:52 split these two
+29:53 situations like uh at some point you
+29:55 will be asked about your
+29:57 past experience at some point it will be
+30:00 some hypothetical questions
+30:01 most likely about the company
+30:05 if you are asked about your past
+30:06 experience make sure you have
+30:10 not if it will happen
+30:13 make sure you have a couple of stories
+30:16 when
+30:18 a couple of stories from your past
+30:20 experience that help you
+30:23 demonstrate your skills you i think it's
+30:26 really important to practice
+30:28 uh to know exactly what you're going to
+30:31 say
+30:32 because when you're answering about your
+30:34 these questions about your past
+30:35 experience
+30:36 it's not only about i don't know i used
+30:39 i used random forest to predict
+30:41 house prices when you when you tell the
+30:43 story you can
+30:44 also highlight a lot more than your
+30:47 machine learning skills and again when
+30:50 you're telling
+30:51 about your past experience try to
+30:55 emphasize your strengths between the
+30:57 lines if you were the one who
+30:59 identified the problem and suggested to
+31:00 use a machine learning
+31:02 model to solve this problem save
+31:05 if you suggested several
+31:09 modeling approaches and ask stakeholders
+31:11 for the feedback
+31:13 and then identify the requirements say
+31:16 that you did
+31:18 if you found some interesting findings
+31:21 when you worked on this model and you
+31:22 decided to
+31:23 share it with your colleagues and made
+31:25 everyone more efficient
+31:27 mention it it's not just about the model
+31:30 even if
+31:31 even if it may be presented as a some
+31:34 technical
+31:35 interview even if you're asked about
+31:36 some model that you built in the past
+31:38 by answering this question you can
+31:40 highlight a lot more
+31:43 than just your modeling skills and those
+31:45 are the skills that
+31:46 really make the difference between say
+31:49 middle data scientist and
+31:50 senior data scientist because this
+31:52 really shows your
+31:54 how autonomous you are how breadth you
+31:56 are that you can
+31:57 make everyone else around you more
+32:00 efficient than
+32:01 encourage others this is really helpful
+32:04 and if you are asked about some
+32:07 hypothetical case
+32:11 usually well it's hard to say because
+32:15 again there are so many companies and so
+32:17 so everyone is doing it differently
+32:19 what is very common is you will get
+32:22 asked a question about some very awake
+32:25 problem statement it can be uh again
+32:28 predict the use return predict uh
+32:31 classify
+32:31 which users are uh fraudsters on our
+32:35 on our platform predict how many orders
+32:38 or
+32:39 subscriptions we will have next month
+32:42 and it's always intentionally some
+32:44 very vaguely defined problem statement
+32:47 and when you're answering this kind of
+32:49 questions
+32:50 i think the very first thing
+32:54 is to demonstrate that you're trying to
+32:56 understand the business goals
+32:57 like ask back what what do we do it for
+33:01 who will be using this
+33:02 uh model what are the use cases
+33:05 how do we define
+33:08 the the return if you are predicting
+33:12 which users will turn what is shown like
+33:13 is it people that will not
+33:15 place an order within two weeks make it
+33:16 more concrete so that you
+33:18 understand the problem before you rush
+33:20 into into the details
+33:22 and then try to make sure that your
+33:26 narrative is very structured so that you
+33:28 start to start by understanding the
+33:29 goals
+33:30 then okay like what kind of data do we
+33:32 need what kind of
+33:34 model do we choose uh
+33:37 we built the model how do we evaluate
+33:38 this try to not
+33:40 jump from some very abstract things well
+33:43 like what do we do
+33:44 into explaining how certain modeling
+33:46 approach works and then back to
+33:50 [Music]
+33:51 showing the results and talking about
+33:53 the the next steps with the model
+33:55 try to be very it's okay to take some
+33:57 time
+33:58 uh and think think about this uh
+34:02 but this is also this also lets you
+34:03 highlight your communication skills
+34:07 and at each step
+34:10 you want to think about okay what is the
+34:13 goal we are trying
+34:15 we are building the model we want to
+34:16 predict charm because of this and that
+34:18 um we need to get the data uh what kind
+34:22 of data do we need
+34:23 here you can demonstrate your business
+34:25 and product and common sense
+34:28 by by just thinking out loud which
+34:30 features
+34:31 will have impact on the output then you
+34:34 can
+34:34 you can start thinking about the
+34:35 modeling approach the goal is
+34:37 okay we do we need explainability yes do
+34:40 we need to run it real time
+34:42 yes no what kind of data do we have
+34:44 that's why i choose
+34:45 uh gradient boost injects
+34:48 so that it's not so that you always
+34:51 explain
+34:51 your choices and then what can happen is
+34:54 that the interviewer will
+34:57 sometimes interrupt you and give you
+34:59 some new piece of information because
+35:00 they want you
+35:01 to go deeper on some certain topics
+35:06 and see if you can identify some edge
+35:09 cases
+35:09 uh some limitations of the of the
+35:11 algorithm that you use some limitations
+35:13 of the
+35:14 evaluation metric that you chose
+35:17 but at every step you it's very it's
+35:20 it's it's a good practice to start with
+35:22 understanding the goals explaining the
+35:24 goals what i'm trying to achieve here
+35:26 and then go
+35:30 detailed enough so that it doesn't sound
+35:32 like common sense
+35:33 but it sounds you sound like an engineer
+35:35 right so for example
+35:36 when you're when um
+35:39 when you need to explain what features
+35:42 you would use to build a model
+35:44 don't say
+35:48 i don't know don't say churn rate say
+35:49 something like users that didn't play or
+35:51 orders within a certain period don't say
+35:53 conversion rates it's something that
+35:55 that that you can quantify something
+35:58 that you can
+35:58 implement in in sql or in python or
+36:01 whatever
+36:02 so it's not just a common sense sensor
+36:06 and you can really think this extra step
+36:10 and put it in gold and implement this
+36:14 this is this is a very common reason for
+36:16 rejections
+36:17 when um
+36:21 when data scientists just start throwing
+36:23 a lot of different ideas we can do this
+36:25 and this and that
+36:26 and do not go deep enough into
+36:29 any of them because
+36:33 at the end you need to implement things
+36:35 right
+36:38 okay so basically
+36:42 you can get uh from three to six rounds
+36:44 of different nature
+36:46 some of them will talk about uh will ask
+36:48 about your past experience you need to
+36:50 prepare some stories for that
+36:52 like how you did something how you
+36:54 identify the requirements how you help
+36:55 your colleagues
+36:57 um things like this then there are
+36:59 sometimes
+37:00 what you i think called hypothetical
+37:03 questions i usually call them case
+37:05 studies
+37:06 but like they ask you hey
+37:09 we want to predict we'd like to do to
+37:12 identify
+37:13 users who uh give our company uh like
+37:16 stop
+37:16 using our services for example like
+37:18 churn things like this they
+37:21 sound weak and this is on purpose so you
+37:23 need to figure out
+37:24 how to get more requirements
+37:27 and then yeah i guess
+37:30 this study mentioned there could be some
+37:33 other types of
+37:35 rounds like i guess sql
+37:38 maybe machine learning related maybe
+37:42 python and things like this right of
+37:44 course
+37:45 yeah it really depends on the company
+37:47 and on the role for some roles
+37:48 you will be asked
+37:51 about machine learning in details like
+37:53 how how broad is your knowledge of
+37:55 different algorithms
+37:56 and then if you say that you're familiar
+37:59 the most with one of them
+38:00 how deep do you know this certain
+38:02 algorithm
+38:03 the limitations you can explain how it
+38:06 works
+38:07 uh in what situations it works it works
+38:09 best
+38:10 and so on if you're applying for
+38:12 [Music]
+38:14 more like analytical or product data
+38:16 science rules then it's very likely that
+38:18 there will be some sql questions
+38:20 uh most likely you will not be asked
+38:23 like simple things about these things
+38:26 and
+38:26 joins expect questions on
+38:30 window functions i think it became a
+38:32 standard
+38:33 to see if they decided it's terrible i
+38:36 have to google this every time
+38:39 people expect you to know that no i
+38:42 think it's okay
+38:43 like this is my personal perspective i
+38:45 think it's okay that
+38:46 uh if your code doesn't work but at
+38:49 least you understand like
+38:51 what it is how it works and you can
+38:53 google it you know what to google for
+38:55 this is enough right because you will be
+38:56 able to google it at work
+38:59 but at least you know that there is such
+39:00 a thing that
+39:02 then you know that there is a rank or
+39:04 you know that there is a lag
+39:06 but you don't have to remember the exact
+39:07 syntax
+39:10 and uh yeah often happens then for
+39:13 example
+39:14 i forgot how to write how to use windows
+39:17 window functions but for this company
+39:19 this is a super important thing
+39:21 and they decide to reject me so how can
+39:23 i
+39:24 handle this rejection so how how can i
+39:27 uh
+39:27 yeah what happens if i get rejected uh
+39:31 so first of all don't take it personally
+39:35 because it's not an exam right uh it
+39:38 doesn't say that you are bad it doesn't
+39:39 say that you are not qualified uh
+39:42 it probably says that there was someone
+39:44 else who is
+39:45 more relevant for this certain role and
+39:47 nothing else
+39:48 and you never know who you are competing
+39:50 with
+39:51 maybe there was someone with five years
+39:55 more of experience than
+39:58 than than you have or maybe someone who
+40:01 have
+40:02 more relevant experience for for a
+40:03 certain campaign industry
+40:05 so it's never it's never
+40:09 uh it should never help you it should
+40:11 never harm your
+40:12 your self-esteem um also
+40:16 realistically interviews are far from
+40:18 perfect
+40:19 and the outcome is uh sometimes
+40:22 arbitrary
+40:22 so maybe they made a mistake so this
+40:25 this also happens
+40:26 so you never know uh if you get rejected
+40:30 ask for feedback if if if you were not
+40:33 given a feedback
+40:34 because this will hopefully help you
+40:37 identify
+40:38 what are the things that you can improve
+40:39 on also
+40:41 uh depending on the company maybe you
+40:43 can just reapply to the same company in
+40:45 a different team
+40:46 right away uh usually it is it is load
+40:50 and it again shows that maybe you are
+40:52 not a good fit for for a certain role
+40:54 but you are still a good fit for for
+40:55 some different role in the same company
+40:57 if you are thinking about free playing
+40:58 for the same role then maybe
+41:01 uh if it's a large enough company and it
+41:05 keeps hiring data scientists for for a
+41:06 certain role usually after some
+41:09 cool off period after a few months you
+41:10 can reply to the same role
+41:13 um so i think you can think of it as
+41:17 a learning experience try to get as much
+41:19 from it from from learning perspective
+41:21 write notes write down
+41:24 the questions that you were asked and it
+41:26 will help you become more confident on
+41:28 the future interviews
+41:29 the feedback will help you study and
+41:32 prepare for the future interviews
+41:36 and yeah let's say
+41:39 i had a couple of rejections but i
+41:41 learned from that
+41:42 and then on the fifth interview
+41:46 some other company i finally got the
+41:48 offer
+41:49 so what happens there like uh
+41:53 what do i do now do i jump into
+41:54 accepting and call all my friends
+41:57 uh saying hey i got this this job or
+42:00 do i need to do something there we
+42:02 celebrate so if you get an offer well
+42:04 first of all
+42:05 uh learn what you're offered
+42:09 the offers can be very different
+42:10 depending on depending on the country
+42:12 and
+42:13 a company it can be just the salary it
+42:15 can be salary
+42:17 and some equity compensation it can also
+42:20 mention some
+42:21 some bonus it can also have some
+42:24 sign-on bonus try to
+42:27 learn how does it compare to the
+42:30 to other companies there is glassdoor
+42:32 there are other websites where you can
+42:35 uh try to estimate and find some
+42:38 baselines on
+42:39 how how relevant this offer is for for
+42:41 this world
+42:42 and then i think it's always a good idea
+42:45 to negotiate
+42:47 because it doesn't harm like
+42:51 they will not change their mind if you
+42:54 try to negotiate a little bit
+42:57 uh but your success with negotiations
+43:00 really depends on whether you have
+43:02 another offer
+43:04 [Music]
+43:05 because if you have two competition
+43:08 offers then
+43:11 it can't happen that they will match the
+43:13 competing offer
+43:15 if uh it is still within some range
+43:18 if it is still within the budget that
+43:21 that that load for a certain world
+43:24 [Music]
+43:25 if you're negotiating and it sounds like
+43:29 it's not possible to negotiate on the
+43:31 base salary
+43:32 ask if it is possible to get assigned a
+43:35 sign on bonus
+43:37 but if you don't have competing offers
+43:39 then most likely
+43:43 you don't have a lot of negotiation
+43:44 power so maybe you will be able to get a
+43:46 few thousand extra
+43:48 maybe not uh that's why it's good to
+43:51 have
+43:51 to interview in a few companies at the
+43:53 same time to have this
+43:55 leverage yes
+43:58 having multiple offers is probably the
+44:00 best uh
+44:01 way you can negotiate other
+44:04 other ways like
+44:07 like that that doesn't really work so
+44:10 another offer is probably the best
+44:11 option
+44:12 yes we have quite a few questions um
+44:14 yeah i think maybe we can cover them
+44:17 so one of the questions i see in chat
+44:20 from natalia
+44:21 is uh about h so do you know if
+44:25 recruiters pay attention to the age of
+44:27 candidates
+44:27 so if somebody is 40 years old um
+44:31 like well is it a combat signal for the
+44:36 recruiter
+44:36 or they're not supposed to know
+44:40 just just don't put it on your cv don't
+44:41 put your picture don't put your age
+44:44 okay and that's uh that's that's what
+44:47 that's all you
+44:48 you can do or
+45:01 so they are not supposed to reject you
+45:02 on this basis
+45:05 right somebody younger okay i'll
+45:08 go with that person no of course
+45:12 no i think this is this is not a reason
+45:14 to not hire anyone
+45:16 but if you have your date of birth or
+45:18 even the picture in the cv i would just
+45:20 remove them because
+45:22 this kind of personal information on
+45:23 your cv it is noise
+45:25 right uh because it has nothing to do
+45:28 with how
+45:29 well you how valuable you will be
+45:32 in the for the for the company for the
+45:34 team then just remove it
+45:37 the same goes with picture i i guess so
+45:41 your marital status your address okay
+45:47 yeah so if this doesn't tell you how
+45:50 good you are at your job don't put it in
+45:53 your cv
+45:53 exactly probably you still need to keep
+45:56 the name because
+45:57 even though it doesn't
+46:03 so we have a question from dixa so i am
+46:06 a
+46:06 phd scholar with zero industry
+46:08 experience
+46:10 but i have knowledge required by
+46:11 industry expert so how
+46:13 do i land a good data science job
+46:17 so think about it as a cold start
+46:20 problem
+46:22 when you don't have initial data and you
+46:23 need to build some model
+46:25 you need to create some synthetic data
+46:27 right
+46:29 so you can go to google.com that's why
+46:33 you can go to some other places that
+46:36 offer you data
+46:37 ideally you want to be creative and come
+46:39 up with some
+46:41 problem that can be solved with the
+46:43 machine learning or whatever you
+46:45 whatever is your specialization so i
+46:48 started by by telling this story about
+46:50 how i got a job by building this
+46:52 fake and simple recommender engine this
+46:54 is exactly that
+46:55 because for the hiring manager what
+46:56 matters the most is whether or not you
+46:59 have some experience
+47:00 in um in the data science process like
+47:04 if you're
+47:05 building machine learning models then it
+47:07 starts with identifying the problem
+47:11 goes through building the model and
+47:12 evaluating the model and then
+47:14 communicating the results and
+47:16 identifying the next steps
+47:18 it's not as important whether it was
+47:22 your personal project or it was a
+47:24 commercial experience
+47:26 because what's important is the skills
+47:28 ideally
+47:29 this should be some commercial
+47:30 experience where when you work with the
+47:32 team of other data scientists that
+47:33 you have some supervision uh from from
+47:36 your colleagues
+47:38 uh if you don't have it just create this
+47:40 experience
+47:41 uh identify problem just try to be
+47:43 creative there is a lot of things to
+47:46 to be solved with uh with predictive
+47:48 models with
+47:49 different kinds of models write a blog
+47:51 post about this
+47:53 and mention it on your cv and the best
+47:57 thing you can do is uh
+47:58 try to build something for the company
+48:00 you are applying for because this will
+48:01 certainly make you stand out
+48:04 okay so what you're saying is uh kaggle
+48:07 is great but if you
+48:09 check what the company is doing and like
+48:11 you did
+48:12 you thought okay what kind of problems
+48:14 they have and you come up
+48:16 with a problem and then you solve this
+48:18 problem and you wrote the blog post and
+48:19 showed it to
+48:20 the parent manager and then they were
+48:22 amazed and hired
+48:24 exactly i mean it's not 100 that you
+48:27 will get hired
+48:28 but if you spend time building some
+48:30 models
+48:31 specifically to to have something in
+48:34 your cv
+48:35 to to have to be able to tell this story
+48:37 about your past experience
+48:39 you will also learn by doing this right
+48:42 don't think about this
+48:43 it's such a waste of time they will not
+48:44 hire me i will i will spend
+48:46 a weekend or i will spend the week
+48:48 working on this uh project and writing
+48:50 this blog post and then at the end
+48:52 it will not work out then it was a waste
+48:54 of time no you learned you're a data
+48:55 scientist you
+48:56 this is what you chose to do this is
+49:00 interesting this is exciting
+49:01 you you learn some new things
+49:04 so you will benefit in any way if you
+49:07 if you do yeah thank you
+49:10 so another question we have is that some
+49:13 email some rejection emails
+49:15 look quite human the question is is it
+49:18 worth
+49:18 answering such questions like when you
+49:21 get a rejection so what do you
+49:23 what should you actually answer to these
+49:25 questions
+49:26 do the recruiters even look at what you
+49:29 write them after the rejection
+49:31 oh just um right thank you like what
+49:34 i mean there is no point in arguing
+49:37 and that's probably the worst thing you
+49:39 can do
+49:41 no just say that you appreciate the
+49:43 feedback this is the best thing you can
+49:44 do because again
+49:45 maybe you will apply to the same company
+49:47 and it will be the same record maybe you
+49:49 will buy it to a different company and
+49:50 this recruiter will change jobs and will
+49:52 make you there
+49:52 this happens very often uh so just just
+49:56 try to not burn bridges even if
+49:59 you think it was unfair to you uh try to
+50:02 learn from it and
+50:04 yeah i think you can you can only
+50:06 appreciate and
+50:07 send the stuff thank you email to
+50:10 the feedback to entry feedback if if you
+50:13 found it
+50:14 actionable and useful thank you so
+50:17 another question we have
+50:18 from uh muhammad is uh
+50:21 related to negotiations so how do i
+50:24 negotiate offers
+50:26 when my current salary is quite low i
+50:28 think we kind of covered that
+50:30 by having two offers um but let's say
+50:34 i just have one offer and my current
+50:36 salary is low
+50:37 what can i do to make sure that i
+50:40 try to get the best possible offer from
+50:44 this company
+50:46 just try to put yourself in the shoes of
+50:48 the company
+50:50 and and think about them they offer you
+50:53 some
+50:54 uh some number you can
+50:58 you either accept it or not and then
+51:00 they lose you and they will need to hire
+51:01 someone else
+51:04 they are not supposed to know what your
+51:05 current seller is also i think i think
+51:08 in a lot of companies it's it's just so
+51:10 in a lot of countries it's just legal to
+51:12 request
+51:13 uh to request this if they ask you you
+51:16 don't have to
+51:17 to answer you can always just answer i
+51:20 think my salary would
+51:21 the offer uh i'm expecting you
+51:25 from you is a good signal of how
+51:27 important data science is for the
+51:28 company
+51:29 and how you well you meet as an employee
+51:31 which is true
+51:33 but you don't have to tell the exact
+51:35 number that you're making right now
+51:36 so try to make it more about like here's
+51:38 my skills you interviewed me you made me
+51:40 an offer
+51:40 you found me valuable for the company
+51:43 but i find it low
+51:44 so i'm hesitant about accepting
+51:48 uh what what can we do about this
+51:53 okay so just try to uh
+51:57 negotiate uh basically and say that
+52:01 oh i when you have another offer you can
+52:05 always say
+52:06 uh uh if you don't do this i'll go to
+52:08 the other company
+52:10 but uh in negotiations you have
+52:13 you always have an option of not
+52:15 accepting an offer so if you don't have
+52:17 another offer
+52:18 you just have one you always have an
+52:19 option of staying at your current place
+52:21 or
+52:22 not accepting and this is the best
+52:24 alternative you can
+52:25 just say okay for this number it doesn't
+52:27 make sense for me to change a job right
+52:30 you can always say uh if it is true you
+52:33 can say
+52:35 i have a good performance with you um
+52:37 there's a good chance that i will
+52:38 promote it next year
+52:40 so i'm not sure if it is worse for me to
+52:41 join with an offer like this
+52:44 maybe you could offer me a silent bonus
+52:46 that would offset
+52:47 this uh this bonus that i'm expecting in
+52:50 my current company
+52:51 um so try to explain
+52:56 that you're losing something you have a
+52:59 better option than the offer that
+53:00 they offered you and
+53:04 they have to offer something else for
+53:06 you to not choose this alvarez option
+53:09 yeah thank you so another question we
+53:12 have from
+53:13 somebody who just finished their phd
+53:17 and the job position they want to apply
+53:19 requires three or five years of
+53:21 experience
+53:21 in industry which they don't have
+53:23 obviously because they just graduated
+53:26 from phd so do you think it still makes
+53:29 sense to apply for this position that
+53:31 requires some
+53:32 industry experience or it's uh not worth
+53:36 spending the time
+53:38 well it sounds like it's it's some
+53:39 entry-level position like if it's uh
+53:42 three years of experience i think it
+53:44 won't harm if you play
+53:46 uh again depends on your depends on your
+53:48 pg like this definitely happens when
+53:50 people with no
+53:51 commercial experience uh get carried at
+53:54 this
+53:54 at this kind of roles uh as long
+53:58 as long as you do believe that
+54:01 you could perform well in this role
+54:04 right
+54:04 if your experience when if when working
+54:07 in your phd you've gotten the
+54:08 relevant experience so if you were
+54:11 working on something
+54:12 very theoretical and i don't know have
+54:14 never uh
+54:16 implemented machine learning models you
+54:17 think your programming skills are
+54:19 are not good enough and it is very clear
+54:22 that the role expects you to program a
+54:23 lot
+54:24 then do not apply but in general
+54:27 the it's very flexible job descriptions
+54:29 sometimes are just very standard
+54:31 uh if you have one one year of
+54:33 experience less
+54:34 it's i think you should definitely give
+54:36 it a try and
+54:39 and i liked your point uh in the the
+54:42 example you had about
+54:44 like it's a cold start problem and you
+54:46 need some synthetic data
+54:47 to bootstrap your profile sort of
+54:51 so just try to get some experience not
+54:54 necessarily from the industry
+54:56 and if this matches the
+55:00 [Music]
+55:01 the candidate profile they are looking
+55:02 for maybe the hiring manager will just
+55:04 go for this even though you don't have
+55:07 three years of experience but because
+55:09 the project you need is so great
+55:12 they will at least talk to even right
+55:16 okay so another question we have this
+55:20 i heard that these days uh uh named nd
+55:23 recognition and some other things uh
+55:25 i used for screening cvs like it's not a
+55:28 human
+55:28 that looks at the cd but some sort of
+55:30 robot
+55:32 do you need to just uh
+55:35 to maximize your chances for applying a
+55:38 job do you just need maybe to
+55:40 copy the keywords you see on the
+55:42 description and paste them in your cv
+55:44 to maximize your chances or what
+55:46 whatever you
+55:47 don't put the keywords that that you're
+55:49 not familiar with
+55:51 uh what i was saying is you probably
+55:53 have more experience
+55:54 than some five keywords or you cannot
+55:58 put a year of experience or more than a
+56:00 year of experience in
+56:01 in one page of paper right so try to
+56:03 really make it as relevant as possible
+56:06 and remove everything that is not
+56:07 relevant
+56:12 sorry i forgot what was the the question
+56:15 yeah i think uh like if you should
+56:17 just copy and paste things from okay uh
+56:19 what automatic screen is
+56:21 um so what happens often is uh you
+56:24 submit a cv in a pdf or whatever format
+56:27 then it is automatically parsed and it
+56:30 is
+56:31 stored in some other database applicant
+56:33 tracking system
+56:34 so the parsing is used to to just
+56:38 have a database with structured data
+56:40 this is a very clear
+56:41 data problem right you have a thousand
+56:43 cities in a very different format and
+56:44 pdfs and images
+56:46 you wanted to to have in some structured
+56:48 format in a table where
+56:50 you have first name you have ideally
+56:52 years of experience and current role
+56:54 so this happens the cvs are parsed by
+56:57 applicant tracking systems
+56:59 but i have never heard of some
+57:02 automatic tool that projects
+57:06 people based on their cvs i think this
+57:08 is a myth
+57:10 that for some reason became very popular
+57:12 even if it happens
+57:14 this is very rare so
+57:16 [Music]
+57:18 99 some like a human being will look at
+57:20 your city
+57:22 unless there is uh i know 300 or 400
+57:26 applicants
+57:27 for a position which happens these days
+57:30 now but uh yeah probably what recruiters
+57:33 do is just
+57:35 whoever applied first they just go
+57:36 through this as a backlog so they still
+57:38 don't
+57:39 reject uh automatically uh based on
+57:43 some tracking system that's true for
+57:45 some for some roles there's a lot of
+57:47 applicants and
+57:48 it's not that you get rejected
+57:49 automatically because your your cv was
+57:51 uh
+57:52 was not in the right format but just
+57:54 because there was a hundred other people
+57:55 and
+57:57 sometimes it's not humanly possible to
+57:58 look at all the applicants that's
+58:00 unfortunate but uh yeah still people
+58:03 look at this and
+58:04 uh they need to make a decision so i
+58:07 think
+58:08 so do you have time for more questions
+58:12 yeah absolutely yeah because i
+58:15 also wanted to ask you a few things
+58:19 so first what did you actually learn
+58:21 after interviewing 300
+58:22 data scientists oh so
+58:26 a lot of things um first of all
+58:32 that i cannot walk into an interview
+58:36 with some certain expectations and
+58:38 answers
+58:39 because sometimes the answers
+58:42 uh i hear are correct
+58:46 and probably are even better and more
+58:49 efficient than
+58:50 what i expected and this happens
+58:53 and uh the the inside is you should
+58:56 never
+58:57 have this uh this bias like this is the
+58:59 correct answer that that i'm expecting
+59:00 if it's not true then
+59:02 this is wrong right uh
+59:05 maybe this happens all the time but this
+59:07 is a very
+59:08 humbling experience um
+59:11 also for most of the questions like no
+59:15 matter how you phrase it
+59:16 even if it's some very vaguely
+59:20 defined case study usually there is some
+59:24 four five six different paths of
+59:27 answering the question
+59:28 some certain narratives and in
+59:30 addressing the problems some certain
+59:33 uh pitfalls uh when
+59:36 for example when choosing the model for
+59:39 very common reasons
+59:40 like one of the common reasons is one of
+59:42 the common
+59:44 uh uh mistakes
+59:47 is there is a number of uh
+59:51 ideas like for example random forests
+59:54 are always better than
+59:56 linear regression right like there is
+59:59 something something like this in the air
+1:00:02 but this is not true right and some in
+1:00:04 some cases parametric simple parametric
+1:00:06 models
+1:00:07 even if they require you to you do spend
+1:00:09 more time
+1:00:10 doing processing for even if they have a
+1:00:13 lot more
+1:00:14 other reasons to not perform well
+1:00:17 compared to
+1:00:18 using some certain cases there are cases
+1:00:20 when a parametric model is just better
+1:00:22 because i don't because it's an
+1:00:24 extrapolate and this cannot
+1:00:26 and this kind of answers i i receive
+1:00:29 quite often
+1:00:30 uh when you introduce some context when
+1:00:35 uh it is very clear when you need to
+1:00:37 extrapolate the data when
+1:00:39 it is very clear that the date you will
+1:00:40 be predicting on will be beyond
+1:00:43 the range of the training data set um
+1:00:46 but still there is this uh i don't know
+1:00:49 how to call it like
+1:00:51 it's not hyped it's just some common
+1:00:53 misconception that
+1:00:54 deep learning is better than trees and
+1:00:56 trees are better than parametric models
+1:00:58 uh try to understand the problem try to
+1:01:00 really understand the
+1:01:02 the limitations of algorithms so this
+1:01:05 uh i think the most also
+1:01:09 what did i learn at the 300 interviews i
+1:01:11 think
+1:01:13 one of the uh
+1:01:16 thoughts that i had is it would be very
+1:01:19 nice to be able to reverse
+1:01:21 the the timeline
+1:01:24 and to know what feedback you would get
+1:01:27 after the interview before going to the
+1:01:29 interview
+1:01:31 however it sounds like a plot for
+1:01:34 someone for some movie
+1:01:36 but uh but this is exactly what i'm
+1:01:40 trying to solve with the
+1:01:41 next round right you try interviewing
+1:01:44 you get your feedback on your like here
+1:01:46 are your strengths here your weaknesses
+1:01:47 here the materials to improve
+1:01:49 and then on the next iteration you go to
+1:01:52 a real interview
+1:01:54 having this feedback already and having
+1:01:56 applied this uh
+1:01:58 this feedback and having read this these
+1:02:00 materials to help improve
+1:02:02 because this is how modeling works right
+1:02:05 you
+1:02:06 you run iterations you you turn a few
+1:02:08 parameters and
+1:02:09 expect it to be better so
+1:02:13 i think interviews itself is a really
+1:02:16 good
+1:02:17 learning experience this is not very
+1:02:21 obvious because i think
+1:02:24 it is usually perceived as an example
+1:02:27 right
+1:02:28 it's some uh assessment
+1:02:31 also another thing is
+1:02:34 it is very important to ask questions
+1:02:38 on on the interviews as a candidate
+1:02:42 because this is a
+1:02:45 two-way street right uh you're getting
+1:02:48 you're choosing you're deciding if
+1:02:49 you will like working in the company the
+1:02:51 company decides whether you will
+1:02:52 be a valuable team member
+1:02:56 for some reason usually the time is
+1:02:58 distributed like
+1:03:00 for 45 minutes it's an exam and then
+1:03:02 five minutes for five minutes at the end
+1:03:04 if you're lucky you will be able to ask
+1:03:06 a few questions
+1:03:07 well if you get this five minutes or you
+1:03:10 if you get more
+1:03:11 use use as much of this time as possible
+1:03:14 because it's in your interest to learn
+1:03:16 about the company
+1:03:18 but by asking questions you can also
+1:03:20 highlight the strengths
+1:03:21 by by asking questions about
+1:03:24 uh the company about
+1:03:28 the workflow in the company about the
+1:03:30 teammates you can always
+1:03:31 highlight you can always demonstrate
+1:03:33 that you care about the culture
+1:03:36 that you care about um the flexibility
+1:03:39 that you're proactive
+1:03:40 you can ask uh if you're working as a
+1:03:42 data scientist and you
+1:03:44 ask um what happens if if a data
+1:03:46 scientist and the team
+1:03:47 suggest some product idea uh like what
+1:03:50 is the process like uh how bureaucratic
+1:03:52 it is or
+1:03:53 how how much time does it take from from
+1:03:55 an idea to
+1:03:58 the golden production if you ask these
+1:03:59 kind of questions
+1:04:01 it essentially you essentially try to
+1:04:05 demonstrate your strengths by asking
+1:04:06 these kind of questions so it's also
+1:04:09 a way of
+1:04:13 emphasizing some of your personality
+1:04:15 traits like proactiveness or
+1:04:17 being with a stakeholder management even
+1:04:19 if even even the last five minutes of
+1:04:21 the
+1:04:22 interview okay yeah that's uh that's a
+1:04:25 great tip
+1:04:26 to use questions to hide your own
+1:04:28 strengths that's great
+1:04:29 so one last thing because this is
+1:04:32 something we promised uh
+1:04:34 promised to people who registered for
+1:04:36 this event is to talk
+1:04:38 like this this teaser that he used like
+1:04:40 how a horse's ass
+1:04:42 determined the design of a space shuttle
+1:04:45 and
+1:04:46 what does it have to do with your cv
+1:04:49 yeah so
+1:04:49 this is a this is a very famous story
+1:04:53 uh so the legend says that
+1:04:56 the the width the distance between the
+1:05:00 rails
+1:05:01 uh on the railroad is the same as the
+1:05:04 width of a
+1:05:05 two horse carriage and this makes sense
+1:05:08 because people used to
+1:05:09 to carry goods and themselves on uh on
+1:05:12 carriages and
+1:05:14 they didn't have engines they had horses
+1:05:15 and then they just replied the same the
+1:05:17 same size with the same tools
+1:05:19 when they started using railroads
+1:05:22 but then several
+1:05:26 what decades or a century later
+1:05:30 a space shuttle was built but they had
+1:05:33 to carry
+1:05:34 the parts of the space shuttle from the
+1:05:36 factory to
+1:05:37 to the launch site and they couldn't do
+1:05:39 it by car
+1:05:41 they had to do it by by train
+1:05:45 and the the details of the space shuttle
+1:05:49 had to fit
+1:05:50 the the train so this is how the the
+1:05:53 width of two horse cage defined the
+1:05:57 the design of the space shuttle through
+1:05:59 this limitation on the beat
+1:06:01 i don't know if it's thrown out but this
+1:06:02 is a very famous story so
+1:06:05 every time i look at the cd i think
+1:06:08 about this story because
+1:06:09 cvs in this current format as a one or
+1:06:12 two pages of
+1:06:13 a4 paper became popular
+1:06:16 in the late 20th century when
+1:06:20 everyone has got a printer a microsoft
+1:06:22 office
+1:06:23 and this was a an easy way to
+1:06:27 uh to hand them on an interview to the
+1:06:30 interviewer and just just print your
+1:06:32 uh have this review of your experience
+1:06:35 on a piece of paper
+1:06:36 because this was the way people shared
+1:06:38 information before like there was no
+1:06:40 internet in that time
+1:06:41 now uh it doesn't make any sense because
+1:06:44 no one prints the video i don't even
+1:06:46 remember what was the last time i saw
+1:06:47 printed cd
+1:06:49 but the format is still the same and you
+1:06:52 can think about
+1:06:53 how other industries evolved in this
+1:06:55 time again you can think about landing
+1:06:57 pages
+1:06:58 how web page design has changed but at
+1:07:01 the end
+1:07:02 a cd is is a landing page the goal of a
+1:07:05 cv is to
+1:07:07 show your experience
+1:07:10 and to help recruiters to help companies
+1:07:14 see how relevant your experience is for
+1:07:16 a certain team
+1:07:18 uh and the format obviously hasn't
+1:07:21 changed at all during this time
+1:07:24 and we just spoke about putting your
+1:07:26 picture
+1:07:27 your your age and i don't know your home
+1:07:30 address on the cv
+1:07:31 these things are completely relevant
+1:07:34 um so this is this is just an example of
+1:07:38 something where a cake that that is
+1:07:40 still the case that defines how people
+1:07:42 play for jobs now
+1:07:44 uh as much as this two horses uh
+1:07:47 influence the the wind of a space
+1:07:49 shuttle
+1:07:50 so what you're saying is we should ditch
+1:07:52 our series and then build landing pages
+1:07:56 now what i'm saying is uh i would i
+1:07:58 would think of a cd
+1:08:00 for example like as a landing page
+1:08:01 something that can
+1:08:03 get your attention in the first few
+1:08:04 seconds and make you read further
+1:08:06 because there is something you see that
+1:08:08 uh
+1:08:09 it is something valuable for you for the
+1:08:11 company for recruiter
+1:08:13 and then maybe at the bottom somewhere
+1:08:14 you can you can add some details that
+1:08:16 are not as
+1:08:16 as relevant for the job but you can
+1:08:19 think of it as
+1:08:19 a webpage design on the other side you
+1:08:22 can think of
+1:08:23 officially as a as a future engineer
+1:08:26 because requiring and applying for a job
+1:08:30 is classification right there is
+1:08:33 binary outcome you either get an offer
+1:08:35 or don't get an offer
+1:08:36 and the decision is based on this
+1:08:39 prediction on how well you will perform
+1:08:41 at the job
+1:08:42 your past experience is your role on
+1:08:45 structured data your cv
+1:08:46 is is the features so
+1:08:50 what do we do with future engineering we
+1:08:52 try to find future importances we try to
+1:08:54 remove outliers we try to clean up the
+1:08:55 data
+1:08:56 think about the same like you have
+1:08:58 signal to noise ratio
+1:09:00 put as much signal relevant for the job
+1:09:02 for a certain role
+1:09:04 remove all the noise uh if you think
+1:09:07 about models again
+1:09:08 my background is uh in personalization
+1:09:11 try to personalize the cv for every role
+1:09:13 you apply try to maximize this
+1:09:15 relevancy score between the job
+1:09:17 description and your cv
+1:09:20 and not make it in the same way it was
+1:09:23 in in the 80s okay make sense
+1:09:27 we still have quite a few questions but
+1:09:29 i suggest to
+1:09:30 take these questions to slack and answer
+1:09:32 them there
+1:09:34 and i would like to thank you for
+1:09:35 joining us today and sharing your
+1:09:37 experience
+1:09:39 of what you learned from interviewing
+1:09:40 500 data scientists
+1:09:42 with us and thanks everyone else for
+1:09:45 joining us today
+1:09:46 and i wish everyone a great weekend and
+1:09:49 see you next week
+1:09:50 thank you for joining thank you for
+1:09:51 having me goodbye

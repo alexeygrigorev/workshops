@@ -1,0 +1,1976 @@
+Defining Success: Metrics and KPIs
+
+0:01 hi everyone thanks for joining us today
+0:04 this event is brought to you by data
+0:05 talks club which is a community of
+0:06 people who love data we have weekly
+0:09 events this event is one of such events
+0:11 so on fridays we have live interviews
+0:14 like today and on tuesdays we have
+0:16 webinars so there's a link in the
+0:17 description
+0:18 um just click on this link and go check
+0:21 the events that we have prepared in the
+0:22 future
+0:23 uh for the future we also have a google
+0:25 calendar if you like to
+0:28 watch
+0:29 if you want to stay up to date with all
+0:31 the events you can just subscribe to a
+0:33 calendar
+0:34 so you'll find the link to
+0:36 on our events page and then of course
+0:38 there is this big button that you need
+0:40 to click under the video this way you'll
+0:42 get notified about all our events all
+0:45 our videos and then of course join our
+0:47 slack where we talk about all nice data
+0:50 data things
+0:52 finally if you have any question
+0:56 feel free to ask it so there is a pin
+0:58 linked in the live chat so click on this
+1:01 and
+1:03 ask it and
+1:05 see there is a question if we are going
+1:07 to do some coding exercise adam what do
+1:08 you say about coding exercise today
+1:10 today no unfortunately i wanted to try
+1:13 it on the fly but it wasn't
+1:15 no not quite an exercise today sorry so
+1:17 i think that's uh
+1:20 that's it for the introduction so let me
+1:22 just
+1:24 bring my notes
+1:27 and i'm ready are you ready
+1:30 yep
+1:30 okay
+1:31 so this week we'll talk about metrics
+1:33 and kpis and we have a special guest
+1:35 today adam so adam is the head of
+1:37 machine learning engineering at origami
+1:40 energy he is an experienced data and ai
+1:43 leader he helps organizations unlock
+1:45 value from data by building high
+1:46 performing teams
+1:48 data teams and analytic teams from the
+1:50 ground up and adam also hosts a podcast
+1:53 right
+1:54 yeah among other things so forever so
+1:56 slightly related to data and technology
+1:58 but yeah look thanks very much for
+1:59 having me on yeah i am
+2:01 excited to kind of talk to talk about
+2:04 something i don't normally get a chance
+2:05 to talk about actually um kpis and how
+2:07 to like measure success and things like
+2:08 that yeah
+2:10 welcome
+2:11 yeah
+2:12 thanks for agreeing so before we go into
+2:15 our main topic of metrics uh let's start
+2:17 with your background can you tell us
+2:19 about your career journey so far
+2:21 yeah yeah so
+2:23 i always start way back in the midst of
+2:25 time i was uh a bartender the
+2:27 competition bartender absolutely loved
+2:29 that um traveled around europe making
+2:31 cocktails winning
+2:32 and sort of being drunk for a living
+2:34 which was good fun for a while realized
+2:36 i wasn't gonna make enough money to
+2:39 buy a bar by working in one because i
+2:41 wasn't that good um so i thought i'll go
+2:43 back to uni get proper job um
+2:45 went back to physics um
+2:48 really hot really enjoyed that towards
+2:49 the end of it did a bit coding we went
+2:51 on to do a computational doctorate at
+2:54 the university of strathclyde
+2:55 and that was modeling high power lasers
+2:57 so you might see some laser textbooks
+2:59 bookshelf behind me there um that was
+3:02 really good fun and it was towards the
+3:03 end of that i started looking at
+3:04 reinforcement learning and date like
+3:06 data science these things just out of
+3:07 interest um and actually use some
+3:10 reinforcement learning in
+3:12 designing sort of novel components for
+3:15 lasers
+3:16 as part of that research so that was
+3:18 really good fun and i kind of really
+3:19 opened my eyes up to what you could do
+3:22 with this kind of stuff um
+3:24 as much as i loved physics and working
+3:26 with lasers i kind of realized that i
+3:28 actually didn't care too much about the
+3:29 domain and i just liked doing numbers on
+3:31 the computer um and wanted to explore
+3:34 kind of
+3:35 what you could do with some of these
+3:36 tools what really appealed to me was the
+3:39 idea that you if you learn
+3:40 sort of the data science approach
+3:42 techniques and
+3:44 some of the ways of working you can
+3:47 step into almost any domain any
+3:48 organization and offer value so
+3:51 given
+3:52 a little bit of time and your data i can
+3:54 probably show you some charts or some
+3:56 models that might highlight some
+3:58 insights that you hadn't seen before
+4:00 without being an expert
+4:01 now
+4:02 it's quite a dangerous statement to make
+4:04 and i do stand by like the absolute best
+4:07 people in the field are those that know
+4:09 their domain inside out as well you
+4:11 can't really compete with those people
+4:12 if they have all the technical soft
+4:14 expertise in the tools and techniques as
+4:16 well but you can go quite a long way as
+4:18 being a bit of a generalist and just
+4:20 being very good at applying sort of
+4:21 statistical approaches and things like
+4:23 that
+4:24 so
+4:25 physical doctor went on to start a um an
+4:28 online retail startup of about six
+4:30 people in the east end of glasgow that
+4:32 was great fun looking at trying to
+4:34 predict um returns behavior so
+4:37 yeah something like 30 of all
+4:39 [Music]
+4:40 orders for fashion especially online um
+4:44 get returned and it was if you attribute
+4:46 say even like a two pound cost per
+4:48 return to each item actually for some
+4:50 organizations that that adds up to
+4:52 millions of pounds worth of return and
+4:54 you they did a lot of clustering
+4:56 actually and you can really quickly spot
+4:58 some sort of negative permanently
+5:00 negative lifetime value customers in
+5:04 by their early shopping behaviors and
+5:07 actually they're the same people that
+5:08 get flagged for like lots of marketing
+5:11 and promotional material because they
+5:12 spend a lot and it's all disjointed
+5:14 within it's actually it's a really good
+5:15 product it it kind of didn't do very
+5:17 well that company i left and then it
+5:19 kind of disappeared shortly after it was
+5:21 just a hard thing to sell to companies
+5:23 you're essentially telling
+5:24 sort of sales executives sell less stuff
+5:27 and that that's quite a hard message to
+5:29 get across from sort of yeah this
+5:31 upstart startup in
+5:33 glasgow so i went from there to
+5:34 insurance um
+5:36 absolutely love that that was kind of
+5:39 really eye-opening about because the
+5:40 amount of information you get doing car
+5:42 insurance it was um
+5:44 working in the pricing team
+5:46 you you can find out a lot about people
+5:48 and you can build some really cool
+5:49 interesting models and there's such a
+5:51 like there's a lot of money involved so
+5:53 there's lots of investment in there's
+5:55 lots of impact you can make by small
+5:57 changes and i talk a lot about that in
+5:59 some of the talks i do for like
+6:00 beginners like look at you're trying to
+6:02 make a big impact try and find like
+6:05 massive revenue numbers or huge numbers
+6:07 that you can make small percentage
+6:08 changes in because they're the easy wins
+6:10 to get started with trying to make like
+6:11 huge like 20 30 percent cuts in
+6:14 in in things from the get-go
+6:17 that
+6:18 i mean lot these are usually problems
+6:19 lots of clever people have really
+6:20 thought about so thinking you're going
+6:22 to come in and completely change the
+6:23 game it's a little bit hubris and things
+6:25 so i just think that with insurance
+6:27 there's loads of money involved so you
+6:28 can make a big impact
+6:30 that was a great i had a great time
+6:31 there um
+6:34 and then went on to working from
+6:36 consultancy and actually so that's kind
+6:37 of where my journey changed a little bit
+6:39 so i've been a data scientist now for a
+6:41 few years i was a senior data scientist
+6:43 incremental group in glasgow great
+6:45 consultancy um doing some really
+6:47 interesting stuff for sort of small to
+6:49 medium all the way out to enterprise
+6:51 customers
+6:52 and
+6:53 after a while there i got off the
+6:54 position so they restructured the
+6:55 business and i got offered the position
+6:57 to be to act as the data ai director
+7:00 so that meant taking on
+7:02 leadership like a leadership management
+7:04 role of the data science team but also
+7:07 data engineers had um
+7:10 bi consultants as well in that and a few
+7:13 devops people and things like that and
+7:14 so that was my first real exposure to bi
+7:19 actually and things like metrics and
+7:20 that kind of consultancy trying to help
+7:22 organizations turn
+7:24 their ways of working as they are their
+7:26 business as usual into stuff that was
+7:28 measurable that we could build into
+7:29 dashboards and charts because i wanted
+7:30 to try and sell them charts dashboards
+7:32 right that's what we or how we made our
+7:34 money but
+7:35 that's when i started to come across
+7:36 some of the techniques for helping
+7:38 people like these workshops you would do
+7:39 to help people that that like
+7:42 bakery as a customer a huge baker is a
+7:43 customer right and they know how to run
+7:45 their business really well but it's
+7:46 family owned it was a huge company been
+7:48 working fine for
+7:50 years
+7:51 why change anything so helping them
+7:53 take their kind of ingrained experience
+7:57 the gut feel and turn it into what the
+7:58 actual numbers the layman like me could
+8:01 come along and understand on a chart
+8:03 okay these are the things that drive
+8:04 performance that was quite quite
+8:06 enlightening for me to learn and i
+8:08 definitely wasn't the expert there um
+8:11 i'm definitely not sort of the b1 indoor
+8:13 export now i always think there's more
+8:14 to learn in that kind of space but
+8:17 learning to sort of work with the bi
+8:18 teams and the data teams in that regard
+8:20 was really helpful in a consultative
+8:22 role and then was there for three years
+8:24 and very recently got offered the
+8:26 position origami and had to basically
+8:29 the
+8:30 stuff they're doing origami super cool
+8:31 really interesting for me like trying to
+8:34 um
+8:35 help transform the energy sector to be
+8:37 to enable green energy to come in
+8:40 more easily more readily do lots of very
+8:43 big very complicated problems and again
+8:44 large scale staff high impact so i kind
+8:47 of
+8:48 jumped at the chance really
+8:50 i do miss consultancy though consultancy
+8:52 was great fun yeah that's cool
+8:54 doing reinforcement
+8:56 learning with lasers i think that's uh
+8:58 the coolest thing i hear today
+9:00 some of the stuff i did i did some cool
+9:02 stuff in my phd i won't lie like that so
+9:04 that was um
+9:06 yeah so the the core of my project was
+9:09 um looking at using ray tracing
+9:11 techniques to
+9:13 um
+9:15 for laser software sort of like using
+9:17 ray tracing software to design lasers
+9:19 right so the product called there's a
+9:21 few of them but zmax is the one that we
+9:22 use to work for a huge huge organization
+9:24 called tallest um
+9:27 so
+9:28 z-max is like a lens design software and
+9:30 like you can do you can build basically
+9:32 any kind of lens with it do lots of very
+9:33 clever stuff
+9:34 um but you can't model laser material
+9:37 like laser game material in it so that
+9:39 was always a big thing like it's a shame
+9:40 everybody in the company uses emacs but
+9:42 it doesn't do lasers and the laser team
+9:43 are upset i built a piece of software
+9:45 that allowed me to
+9:47 manipulate it using matlab so and it was
+9:50 all about what i did so
+9:52 that once i'm in matlab i can do what i
+9:54 like right so
+9:56 um i and it was annoying because i
+9:58 bought this stuff to automate z max then
+9:59 a couple years after i finished it
+10:00 became a part of the product they
+10:02 actually had like a big building library
+10:03 to do some of the stuff that i'd done so
+10:05 i'd spent months building that on my own
+10:06 and it was a bit ropey because i wasn't
+10:08 really a software engineer i'm still not
+10:10 but uh yeah it was great fun so anyway
+10:13 what we got to a point where
+10:15 i did a few really cool projects but one
+10:17 of them was looking at
+10:18 designing components that not not just
+10:21 gave the best performance for like laser
+10:24 output like beam shape and power and
+10:26 things like that but were actually
+10:28 really resilient to
+10:30 misalignment so lasers are suit lasers
+10:32 are basically rubbish all lasers rubbish
+10:33 right it's like there's an industry kind
+10:35 of joke and i actually think this
+10:36 crosses over to data science and machine
+10:38 learning but a lot like in laser
+10:40 manufacturing there's this thing that
+10:42 it's the it's the best way to do
+10:43 something if there's no other way of
+10:45 doing it like essentially lasers like if
+10:47 there's any other way of doing what
+10:48 you're trying to do don't use a laser
+10:49 but if you have to use a laser then go
+10:51 for it and i kind of feel like that's
+10:53 true of machine learning as well
+10:56 if there's no other way of doing it like
+10:58 if you can do it with a basic model
+10:59 something really simple try and use that
+11:01 first um and i kind of bring that into
+11:03 the way i work now
+11:05 so anyway yeah the designing these
+11:07 components is like typically you would
+11:09 go and ask someone that's done it for
+11:11 four years what did you use for these
+11:12 parameters blah blah blah use their
+11:14 experience and they wanted a bit of help
+11:16 and we
+11:17 so i've got this big piece of software
+11:19 that can simulate lasers now because
+11:20 i've built here and then i essentially
+11:22 attached some sort of very rudimentary
+11:24 reinforcement learning thing with a few
+11:26 parameters to allow it to churn through
+11:28 i actually started with genetic
+11:29 algorithms to design sort of
+11:32 the the system and i did a little bit of
+11:34 stuff with reinforcement learning but
+11:36 this was back in 2014 and i was kind of
+11:39 self-taught it wasn't i wasn't like it
+11:41 wasn't
+11:41 as far on as it is now um something i'd
+11:44 love to go back and do it came up with
+11:46 some interesting stuff some of it was um
+11:49 maybe poorly formulated and a little bit
+11:51 like okay within the realm of the
+11:52 software it was fine but it would have
+11:54 been impractical to manufacture but it
+11:56 gave some novel insights and some of
+11:58 that stuff's used or it's been
+11:59 investigated a bit further i think
+12:01 i'm not in the company anymore when i'm
+12:02 out of the loop so they what they've
+12:04 done with it who knows okay so
+12:07 coming back to the boring topic of
+12:09 metrics
+12:10 so i
+12:11 imagine that when you work on
+12:13 reinforcement learning with lasers you
+12:15 need to track some metrics right to
+12:17 measure the success of your project so
+12:19 what is a metric
+12:21 so why would why do we care about medics
+12:24 yeah and it's back to that thing of
+12:25 light is it peter says if it's if you
+12:27 can't express it numbers you can't
+12:28 manage it kind of thing it's it's
+12:32 there's a lot of ways to look at look at
+12:33 this right it's a it's a point in the
+12:35 sand and i'm actually a big fan of
+12:37 getting going with metrics before you've
+12:38 got the right one or before you've got
+12:41 them measured properly i feel that
+12:43 people sometimes fret and spend too long
+12:46 trying to find the perfect one they do
+12:47 too much planning without getting going
+12:49 and i think actually as long as you
+12:51 think about calibration errors as long
+12:53 as you you keep measuring the same way
+12:55 you can kind of see where it is and once
+12:57 you figure it out later you can go back
+12:58 and rectify things
+13:00 but yeah metric essentially just
+13:02 from to measure isn't it it's something
+13:04 to measure against to take an output and
+13:06 turn it into a number so that you can
+13:08 apply and chart and start start seeing
+13:11 where it goes so
+13:13 for example laser design right we
+13:15 you you want high power and that's got
+13:17 to be above a threshold and essentially
+13:19 in that it's a really easy example to
+13:20 use in that you have a technical
+13:22 specification the laser the piece of
+13:25 equipment that you're building must meet
+13:27 it must
+13:28 operate to minus 30 degrees and to plus
+13:31 70 degrees it must withstand a force of
+13:35 x it must have a pulse length no longer
+13:38 than this and no sure than this blah
+13:39 blah blah there's safety standards these
+13:41 are all numbers they're like threshold
+13:42 metrics a lot of them right you have to
+13:44 hit these threshold metrics so that's
+13:46 really handy for something like a
+13:47 reinforcement learner because then you
+13:49 just fire all those in
+13:50 and you say right building a system that
+13:53 hits these metrics now in a system like
+13:56 that where you've got maybe 10 threshold
+13:58 metrics there's probably an infinite
+13:59 number of solutions to that right you
+14:01 can find lots of lots of solutions
+14:03 within a space the challenge comes in
+14:05 when you want to find the optimal
+14:06 solution then you've got you've got
+14:08 really a difficult problem to solve and
+14:10 that is where you start comparing your
+14:12 metrics
+14:13 to
+14:14 each other to try and get them improved
+14:16 and
+14:17 actually when you're in high dimensional
+14:18 metrics it becomes a messy then and
+14:20 that's where a lot of things like in
+14:22 running businesses and turning your sort
+14:24 of models into business value
+14:27 big fan of using merit functions so
+14:31 essentially
+14:32 much as you would um with your models
+14:35 you take certain values and
+14:38 you take some of your metrics you give
+14:39 them a weighting you add them up and you
+14:40 give it that score now people can get
+14:43 really lost in the weeds with defining
+14:45 what those weightings are and how things
+14:46 are important and you can game your own
+14:49 metrics by
+14:51 just keep tweaking the
+14:53 nodules until until you get what you
+14:54 want and there's a there's a really good
+14:56 xkcd comic about that that says you can
+14:58 just keep stirring the numbers until it
+15:00 gives you the output you desire like
+15:01 don't do that obviously pick something
+15:03 and go for it
+15:05 that's what you do in machine learning
+15:06 right yeah yeah no exactly yeah you walk
+15:08 it with a stick until it works
+15:10 yeah so yeah and that's it trying to try
+15:13 to convert things into a valid merit
+15:15 function and i think
+15:16 that
+15:17 that gives you certain number to to push
+15:20 to
+15:21 to measure against and it allows you to
+15:22 say well this thing is objectively
+15:24 better than that thing because
+15:26 of x and if you can even go back to like
+15:28 basic consulting right any consultant
+15:31 you ever get into your company will
+15:32 always draw the grid of um like impact
+15:36 and cost of as their two axes and then
+15:38 you plot all your potential projects and
+15:40 this is a good thing to do with your
+15:41 potential data science or data projects
+15:43 that you might be doing as well right
+15:45 this is generally a worthwhile approach
+15:47 but you plot how hard is this thing to
+15:49 do against how much impact is it going
+15:51 to have right and then you just pick all
+15:53 the ones in the top
+15:54 all the ones that are high impact and
+15:56 low cost right you do them first and you
+15:57 work your way through but if you
+15:59 calculate those axes and put numbers
+16:01 naught to 10 on them actually you can
+16:02 get a score right one number and then
+16:04 you just rank them that's
+16:06 a really good way of actually
+16:07 prioritizing the projects you're going
+16:09 to do
+16:11 that often gets sort of
+16:13 i get flagged for that because people
+16:14 argue that data signs you can't put time
+16:16 downs on it and you can't
+16:18 you can't
+16:19 kind of as tightly define
+16:21 data science that we can maybe get into
+16:22 that and running teams a bit later but
+16:24 that's something that i think is really
+16:26 valuable to do
+16:27 yeah so basically a matic is a number
+16:31 that converts
+16:32 like an output of some system to
+16:34 like to a number right and then it tells
+16:37 how this system is doing and then we can
+16:41 use it to compare multiple systems right
+16:43 multiple things and then we can say okay
+16:45 this thing is objectively better than
+16:47 that thing because the metrics say it's
+16:49 all right
+16:51 yeah and units
+16:52 units are really important being a
+16:54 physicist like yeah units are super
+16:56 important even in business metrics and
+16:57 things like that because you have to
+16:58 make sure you are comparing life alike
+17:01 can you think of some simple examples
+17:03 examples of metrics i think we you
+17:05 mentioned like
+17:07 revenue
+17:08 and what are the other commonly used
+17:11 metrics that you so let's say when
+17:13 working uh at a consultancy company you
+17:16 probably work with many clients so are
+17:18 there some metrics that most of the
+17:20 clients have
+17:22 yeah yeah so
+17:23 there's other ones you hear about in
+17:24 like sort of accountancy one-on-one
+17:26 you've got revenue profit
+17:28 costs um
+17:29 [Music]
+17:31 you can go a little bit deeper than that
+17:33 so we if you start working with sales
+17:35 functions and marketing teams there's a
+17:36 very common language lots of them use
+17:38 and you'll hear about the pipeline
+17:40 and that can turn to things so you get
+17:42 so
+17:43 in a sales team they'll typically be
+17:46 expected projects and sales that are
+17:47 going to land and that is they will rate
+17:50 them by probabilities they'll say right
+17:52 well this project will land and they'll
+17:53 give it a waiting they'll say it's a 300
+17:55 grand project it's 50 likely to come in
+17:58 so you go so the revenue of that land
+18:00 would be three 300 grand right but what
+18:02 they would then do is they will multiply
+18:04 that by the 50
+18:05 and say well it's weighted revenues this
+18:07 is a really common metric weighted
+18:08 revenue is 150 grand and that lets me if
+18:12 you trust your probability ratings which
+18:14 no one ever does because that's a really
+18:16 hard thing to do right
+18:17 you trust your probability ratings and
+18:19 your sort of estimations of the project
+18:21 size you can then say
+18:22 yeah the 10 million pound long shot that
+18:24 i've got down as a 5
+18:27 is
+18:28 more or less valuable than the 300 grand
+18:30 i've got 90
+18:32 because you you can multiply them all
+18:34 through you can pay a weighted revenue
+18:36 to
+18:37 to revenue and then make your decisions
+18:39 and focus your efforts on that kind of
+18:40 thing weight revenue you've also got
+18:43 things like marketing interactions is
+18:45 really good and you get qualified leads
+18:46 and sales qualified leads and marketing
+18:49 qualified leads so
+18:51 if you're you've got a website someone
+18:53 downloaded a bit of your content well
+18:54 that's a marketing interaction right and
+18:56 i put that's a great metric to
+18:59 to measure or maybe turn into a kpi for
+19:02 your marketing team you want people to
+19:04 download your stuff right so you just
+19:05 want people to do that it's maybe not
+19:07 the only thing you want though because
+19:08 you can go and get if it's if you're
+19:10 just ticking that off you can go and get
+19:12 10 to 100 000 more interactions by doing
+19:15 a few tick top videos than you can by
+19:18 writing really good content those tick
+19:20 tock videos might not probably won't
+19:22 convert to any actual money which is the
+19:24 point
+19:25 where as someone that attends an
+19:27 hour-long webinar or a day-long event
+19:29 you've run is far more likely there's
+19:31 more that
+19:33 given more over to you more of their
+19:34 time and commitment to you so you go
+19:36 from market interactions to leads and
+19:39 market qualified leads so a marketing
+19:41 organization might have criteria and
+19:43 they use all these funny acronyms like
+19:45 banter was one that we use so it's like
+19:47 do they have budget do they have the
+19:48 authority is there a need is there a
+19:50 timeline and is there any risk
+19:55 but they would have like these acronyms
+19:57 and you answer these questions if they
+19:58 tickle the box it goes from a lead to a
+20:00 market qualified lead and then their
+20:02 sales have another one and they they'll
+20:04 take it next step further and your this
+20:05 is what they call the pipeline as you go
+20:07 down these steps you're
+20:10 going ever closer to money actual money
+20:12 that's in the bank right you draw this
+20:14 for most organizations with a sales
+20:16 function but these are really handy
+20:18 things to
+20:19 learn especially as a data scientist
+20:21 because
+20:22 every organization charges money well
+20:24 the vast majority of they just charge
+20:26 money and sell things to people right so
+20:28 they're the things that your company
+20:30 gonna care about
+20:32 you've also got costs and stuff like
+20:33 that debt if you get to professional
+20:35 services you can start to come up with
+20:37 some
+20:38 pretty
+20:39 interesting derived metrics so you can
+20:41 go from
+20:42 simple stuff that you'd understand to
+20:43 things like um
+20:46 burn down rate right so in a
+20:48 professional services business i've got
+20:50 100 consultants that are all say they
+20:52 all cost
+20:53 that
+20:54 they all cost x pounds a day to
+20:57 to hire out to people
+20:59 well actually and they've i've got a
+21:00 backlog of work that we're churning away
+21:02 at or at what rate do i
+21:06 churn through my whole backlog of work
+21:08 and that burn down rate so if i'm
+21:10 changing through 50 grand worth a day
+21:13 because i've got so many people then i
+21:15 need
+21:16 to be
+21:17 selling at least 50 grand a day
+21:19 otherwise we're going to start having
+21:20 redundancies for people right so if your
+21:23 burn down rate is higher than your sales
+21:25 rate you've got this situation whereby
+21:28 you're going to run out of work for
+21:29 people to do
+21:31 and eventually bankrupt yourself or make
+21:33 people redundant you've got
+21:34 maintainability so that that thing is
+21:36 called maintainability of earnings is
+21:38 that so we're now into like tertiary
+21:40 layered these kind of derived metrics
+21:42 that will come out and they're
+21:44 interesting things that they're banned
+21:45 around some organizations it depends on
+21:47 sort of where you go and you'll have
+21:49 similar stuff so we did a lot of
+21:50 professional services and i worked to
+21:52 run a professional services company so
+21:53 that's kind of where i'm more
+21:54 comfortable i'd say but you get the same
+21:56 for manufacturing things like lean and
+21:58 six sigma they look at like faults in um
+22:02 what six ingredients like for how many
+22:04 sort of defective products in
+22:06 x thousand built and things like that
+22:08 that kind of stuff these are all good
+22:09 metrics to look at because they allow
+22:11 you to turn
+22:12 fluffy terms like quality
+22:15 into
+22:16 something you can measure right a new
+22:18 guy gets brought in new purple male or
+22:19 woman gets brought in improve the
+22:21 quality of our product what does that
+22:23 mean
+22:24 what do you mean quality what defined
+22:25 quality is always my first question and
+22:27 that can get really hairy and if you
+22:29 start doing big projects and investing
+22:31 money to improve quality without
+22:34 in black and white having what that
+22:35 means you'll
+22:37 you'll get arguments down the road as to
+22:38 whether or not any anything was
+22:39 effective
+22:41 okay and you said one thing um a couple
+22:44 of minutes ago that some of these
+22:45 metrics are good that you want to turn
+22:47 them into a kpi
+22:49 so what is the kpi and how do we turn
+22:51 the metric into a kpi
+22:53 yeah so
+22:55 metrics are
+22:58 basically i always think of
+23:00 kpis as like sort of the metrics that
+23:03 you
+23:04 want to
+23:06 almost from a top-down point of view
+23:08 from so from bottom up or anyone could
+23:10 use metrics in their own work i have my
+23:12 own metrics that i don't really use for
+23:13 anyone else the way i work right things
+23:16 i do that i need to check off a big fan
+23:17 of checklists but they don't align to
+23:20 everyone they don't they don't
+23:22 guarantee good behavior across teams and
+23:24 people might understand them right
+23:26 um
+23:27 whereas kpis are things that the
+23:30 organization have kind of maybe
+23:31 highlighted to say this is going to
+23:33 drive behavior
+23:34 so they're essentially metrics key
+23:36 performance indicators that
+23:38 you are measuring the performance of a
+23:41 team or an individual or a function
+23:44 against
+23:45 so
+23:46 back to them the sales example you might
+23:48 say
+23:49 yeah weighted revenue um and number of
+23:52 sales and revenue might be kpis you pick
+23:55 a few
+23:56 and it's quite important that you pick a
+23:57 few and i actually
+24:00 encourage people to pick some that may
+24:01 be conflict or maybe don't
+24:04 that aren't quite clearly
+24:07 necessarily all in line because it helps
+24:10 encourage like good behaviors
+24:12 but kpis are essentially the things that
+24:14 you are
+24:16 going to put in front of their ceo
+24:18 to say thumbs up thumbs down is this
+24:20 team function project whatever doing
+24:22 well is this a good thing should we put
+24:24 more money into it it should be kind
+24:26 that kind of thing and i always think
+24:27 that you need to make them there's a lot
+24:29 of kind of rules around them i think for
+24:31 like good kpis and stuff like that but
+24:33 you want them to be easy for people to
+24:35 understand to grok quite quickly and
+24:37 just get make a nice chart make it nice
+24:40 easy to sort of
+24:43 if i see a map right and there's like
+24:45 seven different colors on it and it's
+24:46 trying to tell me things that's
+24:48 confusing if i say heat map though and
+24:50 it's just going from like yellow sort of
+24:52 blue to red i know very quickly exactly
+24:55 what i'm looking at so those kind of
+24:56 turning stuff into kpis that easy visual
+24:59 that kind of stuff really becomes really
+25:00 important and then you just use them as
+25:03 sort of milestones or checkpoints
+25:05 frequently measure
+25:08 whatever it is you're looking to
+25:10 to
+25:11 to monitor against those kpis and you
+25:14 would hope that they drive performance
+25:17 and the big important thing for me is
+25:18 you want to make sure your kpis
+25:21 are aligned to the company strategy and
+25:23 typically we would say right your
+25:25 company should have a strategy of what
+25:26 it's trying to do
+25:27 then
+25:28 your function or whatever you're like
+25:30 should have it's a strategy that's
+25:31 aligned to that but more specific to
+25:33 what they do and you just follow that
+25:35 kind of hierarchical alignment all the
+25:37 way down to the individual to where
+25:38 you're like as an individual right my my
+25:41 quarterly objectives or whatever your my
+25:43 performance my bonus my my appraisals
+25:46 all aligned to
+25:48 something like a metric or kpi that that
+25:50 feeds higher up kpis that feed all the
+25:52 way up to delivering part of that
+25:54 company
+25:56 so basically kpi is an important metric
+25:59 this is a metric that we want to put
+26:01 maybe in a dashboard and then maybe on a
+26:04 on a screen and then everybody watches
+26:07 basically i think kpi because right
+26:10 that's the kind of that's what it should
+26:12 be
+26:13 they end up being just more numbers that
+26:15 you have to as a data professional you
+26:17 almost certainly have to go and find
+26:19 calais
+26:20 produce and put in a report and no one
+26:22 will read right because people love them
+26:24 the challenge with kpis is people love
+26:25 them and they just want all of them and
+26:28 they make kpis that may be really
+26:29 specific or too niche
+26:32 i always think
+26:33 when you're when you're defining kpis
+26:35 what behavior are you trying to drive
+26:38 they should drive a behavior if they
+26:40 don't drive a behavior
+26:42 cut them they either drive individuals
+26:44 to teams to behave a certain way
+26:47 or
+26:48 and there should be consequences like
+26:49 both positive and negative for that
+26:51 behavior going like in the line with or
+26:53 against that
+26:55 or they should be used to make decisions
+26:57 right they should you should you they
+26:58 should that number should go towards
+27:00 making a decision if
+27:02 it's a vanity metric which is a common
+27:04 thing you'll hear which is like people
+27:06 um yeah a number of customers spoken to
+27:08 right that's some that can be an all
+27:10 right sales metric sometimes but
+27:11 sometimes it's a vanity thing which well
+27:13 i did this and it's like
+27:15 putting busy over
+27:17 important there's a really good quote
+27:19 from it's mcnamara and it unfortunately
+27:21 it's about the vietnam war but it's a
+27:23 good quote around that i think metrics
+27:25 he says we should be careful not to make
+27:28 the measurable important
+27:30 but to make the important measurable and
+27:32 that's basically saying don't make
+27:34 numbers that are easy to count and get
+27:37 the ones that we make the most important
+27:39 so when someone says oh well my projects
+27:41 5 000 lines of code right well that's an
+27:44 easy number to get and it's not
+27:46 important even i think bill gates turned
+27:48 around and said that's like measuring an
+27:49 airplane by weight right that's not
+27:51 that's not a good thing to measure an
+27:53 airplane by right that's not a good
+27:54 thing to imagine code products for make
+27:56 what is important measurable and that's
+27:58 actually can be quite difficult
+28:02 especially in software
+28:04 so and so you said that a kpi should
+28:05 drive a behavior and some drive some
+28:08 behavior and i'm thinking
+28:10 um like what kind of kpi let's say in
+28:14 your example you were working as a
+28:16 startup and you were trying to minimize
+28:18 the number of returns right so the
+28:20 number of returns could be a good metric
+28:22 that drives behavior right so the
+28:24 behavior is that people
+28:26 get
+28:27 the
+28:28 the clause that fits right they don't
+28:30 need to return it
+28:32 right is it
+28:33 they get really dangerous though right
+28:34 don't they because if i
+28:37 so i can drive that number so this is
+28:38 the this is one of the things about kpis
+28:40 you have to be very careful one of the
+28:42 things i i think when i was consulting
+28:45 would encourage people to do is think
+28:47 about malicious actors within your
+28:49 company or within your customs or
+28:50 whatever think about people
+28:53 that
+28:54 that could unlock a really big bonus
+28:56 like a ten time salary bonus say you
+28:58 started a new position and someone could
+28:59 get 10 times their salary if they hit
+29:01 the kpi for the year they smashed the
+29:03 kpi what would they do if they were
+29:05 malicious and they were cheese and
+29:07 whatever think about actually okay so
+29:09 you've set a kpi reduce the number of
+29:11 returns
+29:13 all right then
+29:14 it costs 100 pounds to return any item
+29:16 to this shop
+29:18 but yeah i'm not going to get any
+29:19 returns anymore or actually i'm just not
+29:21 going to sell anything sorry
+29:23 i'll stop selling stuff or stop getting
+29:25 returns and that's a stupid example but
+29:28 it highlights the point right so
+29:31 think about malicious actors and that
+29:32 again is a bit of a physicist thing you
+29:34 kind of anything anyone presents any
+29:36 kind of model to you you immediately go
+29:37 to the extremes to try and break it to
+29:39 see if it still works so that's a really
+29:42 good thing to do with kpis like what
+29:44 what
+29:46 there's the
+29:47 because it's not good enough really to
+29:49 think about how the spirit in which
+29:51 they're written and so the spirit in
+29:53 which that is that's been said is i want
+29:55 to reduce returns because that's going
+29:57 to save the company money
+29:59 right
+30:00 but if you don't link that to sales in
+30:03 some way or inversely link it to sale or
+30:05 give the same person a kpi to drive
+30:08 sales up
+30:09 actually
+30:11 you'll you could get into a really
+30:12 sticky spot so that's why yeah competing
+30:14 kpis are really good ones that like so
+30:16 if i increase sales i'm going to
+30:17 increase my returns
+30:19 so actually having okay both of them as
+30:22 kpis increase one reduce the other that
+30:25 then lock that that undoes that stupid
+30:27 example i've just come up with
+30:29 okay yeah
+30:31 uh that's interesting yeah so like we
+30:33 should try to make them less hackable or
+30:36 make sure that
+30:38 people will yeah so a good idea maybe in
+30:41 this case we can derive some other
+30:43 metric from both returns and sales that
+30:46 kind of covers what we really want to do
+30:48 and we want to maximize the margin right
+30:50 because when people return
+30:52 we
+30:53 lose money so we don't want to lose
+30:54 money so let's do something that uh
+30:57 you know
+30:59 maximize the margin right depending on
+31:02 where who you're working with
+31:04 there's two approaches and i think
+31:05 they're both valid i think depending on
+31:07 your situation right so
+31:09 in some certain so i mentioned
+31:11 maintainability of earlings which is
+31:13 like a tertiary derived kpi right
+31:15 i said that to anyone on the street they
+31:17 don't have a clue what i want about so
+31:19 if i if i'm telling
+31:21 the head of
+31:22 the incremental group like sort of the
+31:25 increment was not the company but say
+31:26 like kpi or talk to say i'm talking to a
+31:30 huge organization about one small part
+31:32 of its
+31:33 derived metric this their executives
+31:36 might not really understand it think
+31:38 about your audience so
+31:40 yeah derived derived like something one
+31:42 over the other like sales over returns
+31:44 or something like that that's good if
+31:46 the people i'm sharing it with and using
+31:48 it with
+31:49 understand
+31:50 really easily what it is and it's like
+31:53 if i'm talking to data scientists i
+31:55 don't have to explain the difference
+31:56 between supervised and unsupervised
+31:58 machine learning right but when my mum
+32:00 asks me what i do for a living i say
+32:02 working i.t because it's
+32:05 i mean i
+32:06 you have to think about the the level
+32:08 you're communicating at so when you're
+32:09 communicating at that higher level or
+32:11 maybe a bit zoomed out or people with
+32:13 less time or that just aren't as close
+32:15 i'd consider reporting both numbers
+32:17 don't report the derived metric report
+32:19 both of them because
+32:21 yeah sales have gone up and returns have
+32:23 gone down i get that that's great you've
+32:25 used up maybe one extra thing it's easy
+32:27 when you're talking about two when you
+32:28 get into more complicated stuff that can
+32:30 be
+32:31 you don't wanna you don't wanna report
+32:32 10 kpis in a chart because that that
+32:35 gets confusing there's a there's a
+32:36 balance to be made you have to really
+32:37 think about yeah your audience but
+32:39 that's true of anything i think
+32:43 yeah and we already have quite a few
+32:46 questions and i think i want to combine
+32:48 two questions into one so the first one
+32:50 is what is the process of coming up with
+32:53 best metrics
+32:54 and then another question is what kpis
+32:56 are important for retails and grocery
+32:59 stores and i was thinking i don't know
+33:01 if you have experience with uh retail
+33:03 stores maybe you did i was thinking
+33:06 maybe we can try to come up with some
+33:08 metrics that are important for
+33:10 uh grocery stores for retail
+33:13 and then yeah also
+33:15 go through the process of coming like
+33:17 how do you come up with this metrics
+33:19 yeah well look i still do a bit of
+33:21 consultancy myself on the side actually
+33:22 i've not done so yeah if anyone's really
+33:25 keen and wants to go through the
+33:26 workshops with me i can kind of do them
+33:28 just reach out but um the process is a
+33:31 little bit
+33:32 like what i've said right but you you i
+33:34 can't even go right so
+33:36 what kind of i need to know what kind of
+33:38 grocery store is this and what is the
+33:40 company's strategic goal right and it's
+33:43 now that is a
+33:44 rubbish word to use i think i hate like
+33:47 i say a lot because i've been a
+33:48 consultant but strategic and tactical
+33:51 all that stuff really does really annoy
+33:52 me what i mean is ultimately at its core
+33:55 what is this company trying to do what's
+33:56 this organization trying to do because
+33:59 if this grocery store is maybe a third
+34:02 sector organization trying to provide
+34:04 healthy food to a deprived area
+34:06 right
+34:08 revenue is not going to be a metric i'm
+34:09 going to use a kpi i'm going to use
+34:11 um i might look at yeah number of new
+34:14 customers or a number of return
+34:16 customers
+34:19 average things like
+34:21 can i reduce the average basket cost
+34:24 compared to the next club the closest
+34:25 supermarket can i
+34:27 um count like per family sort of number
+34:30 of whole meals produced so if i'm trying
+34:32 to if that is my strategic objective is
+34:35 to bring a healthy sort of
+34:37 low-cost food option into an inviting a
+34:40 community then that's great
+34:42 if i'm
+34:43 a
+34:44 company that wants to grow
+34:46 then actually revenue might not even be
+34:49 sorry profit might not actually be my
+34:53 objective i might not be especially for
+34:55 most anyone that's worked in a startup
+34:57 you kind of don't like profits this long
+34:58 distant thing that no one thinks about
+35:00 for quite a while because you might have
+35:02 lots of investment to be the next hour
+35:04 db the next middle and you're going to
+35:06 disrupt the uk supermarket space by
+35:09 coming in
+35:10 putting sites down across towns and then
+35:13 trying to you get things like cotton um
+35:16 cost leaders that there will be products
+35:18 that bring people in the store to try
+35:20 and capture people from the bigger
+35:21 supermarkets so in that case new
+35:23 customers is going to be really
+35:25 important number of just the volume of
+35:26 people through my door
+35:28 again marketing interactions and stuff
+35:30 like that how many people
+35:32 can i
+35:32 sign up to my club card or my loyalty
+35:34 scheme that's a really important metric
+35:36 to me because i'm hopefully gonna be
+35:38 able to get them back people i can get
+35:40 data off of like their email addresses
+35:42 can i pester them with offers and deals
+35:44 that's that's about widening my net
+35:46 drawing more people to the store
+35:49 not that kind of stuff isn't maybe what
+35:52 yeah my lovely sort of healthy eating
+35:56 low-cost supermarket supermarkets gonna
+35:57 do so
+35:59 how do we go about defining that well i
+36:02 come in usually waffle for a bit like i
+36:03 have here get the whiteboard out and
+36:05 then
+36:06 start asking the
+36:08 the people at the top of the
+36:09 organization or the top of the team or
+36:10 the function depending on whatever we're
+36:11 doing this in what's important to them
+36:13 what do they think good looks like um
+36:16 still other people's hard work as well i
+36:18 say some of the time right
+36:20 who's done what you're trying to do well
+36:22 can you find blog posts by them what did
+36:24 they do what are their metrics so like
+36:27 if you look up um
+36:28 because you you mentioned north star
+36:30 metrics to me in the lead up to this and
+36:32 yeah i think spotify's north star metric
+36:35 is
+36:35 something like number of minutes
+36:37 listened to
+36:38 they just that is it how many minutes of
+36:41 audio are people listening to on their
+36:43 software
+36:44 brilliant just increase that number
+36:46 that's really in mind what they want to
+36:47 do because that captures so much stuff
+36:49 there's loads of ways of doing that yeah
+36:51 people like me either obsessed with it
+36:52 listening 24 hours a day
+36:54 and to listen to the time and get people
+36:56 like me to share it and spread it to
+36:58 other people and that's all gonna
+37:00 pyramid up into some into that one
+37:02 number at the top lots of stuff
+37:04 underneath it so
+37:06 come in do a bit of a workshop talk
+37:07 about what's that you don't have to have
+37:09 an idiot like me to do that you can do
+37:10 that yourself you just talk about what's
+37:12 really important what are we trying to
+37:13 achieve once you've got that think about
+37:16 okay well
+37:19 actually his profit on the table do we
+37:21 need to is profit still really important
+37:22 to us in most cases it will be so we
+37:24 will maybe keep profit but
+37:27 do i want my individual customers in the
+37:30 grocery store to spend more each do i
+37:33 want the people coming in for the weekly
+37:35 shop to also buy gift cards and buy like
+37:38 expensive electrical items right that's
+37:40 a great way to increase the average
+37:42 bucket basket price or do i just want
+37:45 more people through the shop and things
+37:46 like that so once you've got those these
+37:49 are the important things to us
+37:51 put more than you need up on the board
+37:53 and then
+37:54 basically rank them and start because
+37:55 you don't want to have like 50 kpis
+37:57 right you want a handful and if
+38:01 every individual can't remember them
+38:03 like
+38:04 again these need to drive behavior so
+38:08 the perhaps the people whose behavior
+38:09 you are driving they need to be able to
+38:11 remember all of the kpis if i've got 15
+38:14 kpis i'm not going to keep them all in
+38:15 my mind if i've got five i can probably
+38:18 probably keep track of when i need to do
+38:19 these things and i can see why that's
+38:21 important and they should then help
+38:24 smooth conversations and stuff going
+38:26 forward about decisions and someone
+38:28 wants to do something and it seemed a
+38:29 bit weird you can go right
+38:31 how does that does that
+38:33 affect kpis and
+38:35 if it's all nicely lined up it makes the
+38:36 decision making process easier and
+38:38 things like that and then don't be
+38:40 afraid to get going
+38:41 and
+38:43 change right you have to you have to
+38:45 find a balance of
+38:46 try them out with without sort of
+38:48 perfections in a good right to try them
+38:50 out and get and get some data give them
+38:52 a shelf life but have a set review point
+38:55 so give them a chance but not forever
+38:58 say
+38:59 six weeks 12 weeks and go right in six
+39:01 weeks we have a look at these did
+39:02 anything change was it better
+39:05 has it helped kind of thing don't be
+39:07 afraid to change them don't be too
+39:08 precious about them
+39:10 one of the other great things you can do
+39:11 is look at
+39:13 if you've got it historical data this
+39:15 becomes really important
+39:17 how you're collecting the data is really
+39:18 important it's all well and good saying
+39:20 like
+39:21 customer sat i want my customers to be
+39:23 really satisfied
+39:24 but i don't have any means of contacting
+39:27 them i can't send them surveys it's all
+39:30 anonymous
+39:31 uh web transactions i don't even get
+39:34 like email addresses on them
+39:36 that's
+39:37 okay that's not gonna be a great kpi
+39:39 because you're gonna struggle to get the
+39:41 the data back like
+39:43 um
+39:45 things that require so i actually have a
+39:46 sporting events company as well right
+39:48 and we run events and satisfaction was
+39:50 one that we wanted and we had to run
+39:52 focus groups to get that not that as any
+39:55 um a feedback thing but i have to
+39:57 incentivize people to attend them
+39:59 because it's i'm taking time off them
+40:01 that was really difficult but it was
+40:03 really important to me
+40:04 if i put that as a kpi for my
+40:05 organization going forward
+40:07 even just doing the kpi becomes a whole
+40:09 industry and of itself and it
+40:12 that
+40:13 if it's difficult to do it's going to
+40:15 start causing people to go corners and
+40:17 you want to automate that as much as
+40:19 possible really
+40:20 being a data nerd you should want to do
+40:22 that anyway
+40:24 and how do we evaluate the efficiency of
+40:27 a metric so i think you you mentioned
+40:29 that okay metric should be easy to
+40:31 measure if it's difficult to measure
+40:33 then people will try to
+40:36 get away from like or not measure it
+40:39 um
+40:40 then yeah so how do we measure
+40:43 the effectiveness
+40:45 like i guess you you came up with a list
+40:47 of metrics and then you said we need to
+40:50 um
+40:51 to reduce the number to
+40:53 just a bunch of them and so how do we go
+40:56 from that to
+40:59 a smaller set of metrics i guess we need
+41:00 to to evaluate each one of them right
+41:03 and then to reduce so how do you usually
+41:05 do this
+41:06 yeah and so i would look at so for the
+41:08 ones we've come up so say we've then got
+41:10 a short list of five metrics or
+41:11 something like that five kpis i would
+41:13 then say
+41:14 as a warm-up to the workshop i would say
+41:17 bring in like if they if they could
+41:19 share with me bringing in old board
+41:21 reports or old performance review stuff
+41:23 from the team or the organization
+41:25 typically do this at a company level
+41:26 when they have these kind of management
+41:27 information board reports so bring them
+41:29 in and then you can look at historically
+41:32 okay can we can we create these metrics
+41:34 and i'd maybe go away with that data and
+41:36 create a few slides saying this is what
+41:38 i roughly think these metrics might have
+41:40 been if we had the data
+41:42 and then just bring up again an open
+41:44 discussion would we have made a
+41:46 different decision having seen this
+41:48 trend line of this metric would we have
+41:50 made a different decision having because
+41:51 that's the other thing yeah obviously
+41:53 collecting the data and what made that
+41:54 but you also have to report on it and
+41:55 you have to make that super visible and
+41:57 lots of people have this thing about
+41:58 like
+41:59 making companies have this weird thing
+42:01 about have kpis and then never share
+42:02 them with the staff make sure the
+42:04 executive team know them and no one else
+42:06 and it's like
+42:07 why like make them i would say
+42:10 power bi tableau dashboards and mount
+42:12 them in your
+42:13 sharepoint or your slack or whatever
+42:16 teams put them in places that people can
+42:19 really quickly check what are what the
+42:21 current marketing interactions and stuff
+42:22 like that so that everyone's involved
+42:24 informed and involved and actually go so
+42:26 far as to in a few places have worked
+42:28 they've done this and i tell customers
+42:30 to try this doing your all hands like if
+42:32 you do a weekly or monthly call with
+42:34 your exec have the executives explain
+42:36 the kpis
+42:38 regularly what they mean what the
+42:40 executives think of it it brings
+42:41 everyone on that journey
+42:43 and then effectiveness that's uh
+42:46 this can be a tricky one
+42:48 it depends on
+42:51 so i've done a lot of work with
+42:52 charities back at incremental and one of
+42:54 the things they really struggle with is
+42:56 what they call outcomes how do we
+42:57 measure our outcomes so for a child care
+42:59 charity right i intervene with difficult
+43:02 or trump like children with difficult
+43:04 pasts and
+43:06 try and keep them on like a path to
+43:07 education and good health and all that
+43:09 staying out of trouble and how do you
+43:11 measure the outcome over the course of
+43:14 that person's life you can't there's no
+43:16 control group right
+43:17 um that becomes a really difficult thing
+43:19 and you have to
+43:21 you do have to kind of agree up front
+43:23 right we're gonna set these as targets
+43:26 um because
+43:32 these kpis should trend towards
+43:33 something it's very it's not it's often
+43:35 it's not good to kind of have kpis that
+43:36 sits stagnant you you kind of want them
+43:38 to go one of two ways um
+43:41 effectiveness then is looking at in
+43:42 review do regular reviews of them and
+43:44 just go back and say are we using this
+43:46 like is there is this a useful number to
+43:49 us does anyone actually care have we
+43:51 have we made decisions based on this
+43:53 number do we always just go ah yeah but
+43:55 actually we'll ignore that because of
+43:57 this and if that's the case bend them
+43:59 like don't don't keep them because you
+44:01 thought they were a good idea iterate on
+44:02 them improve agile right just make make
+44:05 better ones try try and find something
+44:07 that works for you
+44:08 that's why i say steal other people's
+44:09 hard work look what other people have
+44:11 done but make it yours take it and try
+44:13 and tweak them to fit your your
+44:14 situation because it'll be different
+44:16 this isn't easy stuff right this is why
+44:18 companies like kpmg and that get paid
+44:19 millions to do this because it's it's
+44:21 not straightforward it's it's a
+44:23 difficult process the advantage of
+44:25 consultancy is and i'm i'm not a
+44:27 consultant anymore so i can sort of
+44:28 stole their virtues without standing on
+44:30 that salesman the advantage of what i do
+44:32 even though i do anyway
+44:33 they
+44:34 getting the is that they've done this
+44:35 more than once so a lot of consultants
+44:37 will have done this multiple times and
+44:38 have frameworks and processes to help
+44:40 you with this as a grocery store maybe
+44:43 you've never done this maybe this is
+44:45 your first like ah
+44:47 how do i measure my business how this
+44:49 sounds like a thing i want to do
+44:50 and to become a bit more sort of forward
+44:52 thinking
+44:54 doing it from scratch i've been advised
+44:55 like use other people's experience and
+44:57 go from there
+44:59 thank you do you
+45:00 you mentioned north star medic like in
+45:03 case of spotify this is the number of
+45:05 minute minutes listened i think in case
+45:07 of youtube is like how many minutes of
+45:09 video people watched
+45:12 the north star metric is
+45:14 what exactly is just a single number
+45:16 that
+45:17 like the most important uh kpi for the
+45:20 company or what is that yeah often
+45:22 you'll find that like i've said there
+45:24 they can
+45:26 like the spotify one it can almost
+45:28 capture
+45:29 lots of different things rolled into
+45:32 something super simple and that's the
+45:34 the best metrics and the best kpis
+45:37 are really simple to the point where you
+45:40 could tell anyone
+45:41 like on the street
+45:43 within a couple of minutes what your
+45:45 company does and what the metric means
+45:47 and they'll understand right that's the
+45:48 number you want to go up or down right
+45:50 that's that's kind of it yeah
+45:52 that's
+45:53 so it's trying to find something that
+45:55 that does that for your organization and
+45:57 then
+45:58 yeah like the north side you use it to
+46:00 guide
+46:01 your decision-making
+46:03 your other metrics should kind of align
+46:05 to it you should be
+46:06 it should capture in essence what you're
+46:09 trying to do
+46:11 some of them as well like for these big
+46:12 companies they're very good at this
+46:14 right some of them are marketing tools a
+46:16 little bit as well the metric itself is
+46:17 a bit of a marketing tool in to say that
+46:20 is our mission statement that is this is
+46:21 what we're doing
+46:23 and
+46:25 here's how good it we are and it becomes
+46:27 easy for me to look at that and go
+46:28 that's a big number and always gone up
+46:30 always doubled in three years
+46:33 and you also mentioned at the very
+46:35 beginning when we took we were talking
+46:37 about lasers you mentioned that there is
+46:39 a thing called threshold metric
+46:42 what is the threshold metric
+46:44 yeah so again for me threshold metrics
+46:46 being
+46:47 they
+46:48 so i've said for most kpis you kind of
+46:50 want them to be above us you want them
+46:52 to go up or down always right that's
+46:54 kind of improvement and growth
+46:56 but there are some that just need to be
+46:58 at a level so
+47:00 right if i'm running an airline deaths
+47:03 passenger deaths i want the metric is
+47:05 zero i want the metric to stay at zero
+47:07 right that's it if it goes up and as
+47:10 soon as i cross that threshold
+47:12 i have to do something about it kind of
+47:14 thing that's that's kind of how that's a
+47:16 big again an extreme example but
+47:17 probably quite a good one so these will
+47:19 be like health check factors within your
+47:22 organization things that that
+47:25 if you cross the threshold there's a
+47:28 significant issue that needs addressed
+47:31 and
+47:32 so
+47:32 for for a sas company it might be data
+47:34 leak right you might have a you know no
+47:37 data breaches or we want to um
+47:41 they can be more sort of like so i've
+47:43 i've named a lot of very binary examples
+47:45 there i think some that aren't binary um
+47:47 [Music]
+47:50 you might even have things like customer
+47:52 churn rate right so like the number of
+47:54 users you lose every month and you might
+47:56 want to you might not actually care too
+47:58 much if your plan is to require loads of
+48:00 users then churn rate might not be super
+48:03 important to you in the short term it
+48:05 will be in the long term but early
+48:07 stages just acquire a choir
+48:10 but so instead of saying well we'll just
+48:12 ignore churn you might say right but we
+48:13 need to keep churn above below 5
+48:17 or something like that
+48:19 if it ever crosses five percent we do a
+48:21 review
+48:22 and we start to think do we now need to
+48:24 introduce something else to drive
+48:26 behavior do we need to change the way we
+48:28 operate do we need to change the way we
+48:29 work and until it hits that five percent
+48:31 sort of
+48:32 amber warning light
+48:34 will not we'll kind of we'll be happy
+48:36 with that so you measure it you do all
+48:37 the reporting on it and then if it's a
+48:39 thumbs up it's a thumbs up and you carry
+48:41 on so that's kind of what i'd call about
+48:42 you're not going to actively drive a
+48:44 threshold metric you just want to make
+48:45 sure it stays up
+48:47 not the right side of the threshold
+48:48 is it
+48:49 a similar concept to the health metric
+48:52 uh
+48:52 yeah or like hygiene factors they get
+48:54 called as well sometimes that's like
+48:56 things that you just this must exist if
+48:58 it doesn't exist then
+49:00 well games off so we this has to happen
+49:03 no matter what and these could be
+49:05 regulatory things these could be kind of
+49:06 health and safety like these are quite
+49:09 common in these kind of fields
+49:11 so what is a health metric
+49:14 yeah it's just the like um things like
+49:17 down time's a really common one for like
+49:19 sas
+49:20 business like how
+49:22 down time over a number of days months
+49:24 years or whatever like um
+49:27 percentage of
+49:29 um you know like servers that are up and
+49:31 stuff like that so if that is
+49:34 trending the wrong way you know you've
+49:36 got an issue and you
+49:38 again to the health of your service
+49:40 um it's not really
+49:43 it's something it's like asymptotic
+49:44 almost in there it it's either good or
+49:46 it's something's going wrong um you
+49:49 don't really you don't want like a 200
+49:51 percent
+49:52 so i mean it's it's never gonna it's not
+49:54 a thing you're gonna drive your business
+49:56 as long as it's sorted you can kind of
+49:57 ignore it yeah so it's like a threshold
+49:59 so you don't want like number of down
+50:01 times for example yes but yeah but again
+50:03 like with a health metric it's like
+50:06 there's some leniency okay whereas a
+50:08 threshold you would say hardline there's
+50:10 a problem with a health metric you might
+50:12 say okay there's gonna be some downtime
+50:15 because we can't control everything
+50:17 yeah and uh are there any other kinds of
+50:20 metrics that are important to know like
+50:22 we talked about kpis we talked about
+50:24 north star metric we talk about uh this
+50:26 threshold and health metrics are there
+50:28 any other types of metrics that are
+50:31 probably um i'm just trying to think
+50:32 there's probably like
+50:37 yeah there's probably very industry
+50:40 specific ones and
+50:42 things like that i'm trying to get very
+50:43 general cases but or like the actual
+50:46 theory behind this now this is the kind
+50:48 of thing that
+50:51 yeah this is the kind of thing that like
+50:53 a really good
+50:55 bi consultant would be able to help you
+50:56 with and say like these are the kind of
+50:58 this is how i would turn this in this is
+51:00 what i've seen before where you would
+51:01 start drawing other people's experience
+51:03 actual kinds of metrics i'm not sure
+51:05 like i kind of draw very much on the
+51:07 specifics of what's important to you
+51:09 um
+51:11 yeah that's
+51:12 we also wanted to talk a bit about
+51:14 metrics that are specific to machine
+51:16 learning and data science
+51:19 so do you know that um like let's say we
+51:22 have a data science team so what the
+51:24 data science team should care we can
+51:26 take a
+51:27 i don't know the grocery uh shop example
+51:30 so let's say it's a grocery shop they
+51:32 went through this
+51:34 digitalization process so they have a
+51:36 data science team in the in the grocery
+51:39 chain
+51:40 so
+51:41 what are the important things for data
+51:42 scientists to know like uh
+51:45 for their work
+51:47 yeah so
+51:49 this is this is good actually because
+51:51 what you'll find is left if you leave it
+51:53 to the data scientists they'll come up
+51:55 with a lot of metrics
+51:56 that very technical very technical
+51:59 focused and it'll be around model
+52:01 performance and it'll be around um
+52:04 yeah
+52:06 like accuracy and things like that right
+52:08 which are they're important they are
+52:09 important
+52:10 but
+52:11 i i do joke that no one cares like no
+52:14 one outside of the data team will care
+52:16 and i in some one of the talks i do for
+52:18 some early stage data career people i
+52:21 would i talk about how if you can in a
+52:24 data team in a wider organization
+52:26 it's different if you're
+52:28 if like technology or data is the core
+52:31 of what your company does there's a
+52:32 slightly different thing but in the
+52:34 grocery store example or like when i was
+52:35 insurance it was a nice to have or an
+52:37 add-on or added value in that case
+52:40 try and convert everything you do
+52:43 every model
+52:45 accuracy and all that try and convert it
+52:47 back to
+52:49 pounds
+52:50 or seconds
+52:52 and leave it at that because ultimately
+52:55 if the ceo of the grocery store group
+52:58 comes along
+52:59 he's probably got a background in
+53:01 selling groceries right or running
+53:04 businesses hasn't got a background in
+53:06 machine learning and data so if you tell
+53:08 him i've improved my
+53:11 random forest
+53:12 accuracy by six percent by doing this
+53:15 and that
+53:16 that doesn't mean anything to these
+53:18 people that is meaningless if you say my
+53:21 model might i've improved the model and
+53:23 it leads to ten thousand pounds a month
+53:26 in improvement across our whole revenue
+53:28 thing that's okay i can see the return
+53:30 on investment and this is something that
+53:32 i did really early and then
+53:35 then once you once you're in that mind
+53:37 space it helps you as a data scientist
+53:38 individual as well
+53:40 not waste time on stuff that's
+53:42 like
+53:44 polish and gold plating like if you can
+53:46 that because that's something else a lot
+53:48 of data scientists are really guilty of
+53:49 it's like keep tweaking the model keeper
+53:51 because it's fun right it's interesting
+53:53 yes yeah no exactly that's why we all
+53:55 love it but
+53:57 sometimes like the 80 20 is good enough
+53:59 like you just you get the bulk of it
+54:01 done
+54:02 and again getting
+54:04 to a point where you've paid off the
+54:06 bulk of the work and you know that
+54:07 actually it's going to take the same
+54:08 amount of time to do another
+54:10 sort of diminishing returns type stuff
+54:14 thinking in pounds and seconds save so
+54:16 the reason i like pounds because
+54:18 everyone understands that's the
+54:19 universal language business and the kind
+54:20 of high ups will get it seconds is a
+54:22 good one as well because you can talk
+54:24 about time saved or things like that
+54:26 that's that's easy for people to get you
+54:28 haven't got to explain to
+54:30 the people in the sales department
+54:32 what you mean by
+54:34 your f1 score and stuff like that or
+54:36 your rock uc right so these are all like
+54:39 numbers that we love because they we get
+54:41 them and if you're talking to me please
+54:43 tell me you're okay you see and you want
+54:44 different scores i like all that but if
+54:46 i'm then going to help you try and sell
+54:49 your next project to
+54:51 the function lead let's do it in power
+54:54 coins let's do in seconds because
+54:56 they're the numbers that are on slides
+54:58 i'm always thinking that i'm going to
+55:00 present my argument in four or five
+55:02 slides
+55:04 and my boss or whoever i'm presenting it
+55:06 to is going to copy exactly those slides
+55:08 and present them up the chain if you
+55:09 think about that right is your boss's
+55:12 boss going to be able to explain your f1
+55:15 score to their boss
+55:17 if the answer is no let's go back to
+55:20 pounds seconds whatever and some again
+55:22 some organizations
+55:24 actually everyone's super technically
+55:25 literally website's really high it might
+55:28 be you're in a style and everyone's a
+55:29 data scientist in which case throw that
+55:31 out the window go nuts kind of thing um
+55:34 you'll find your own way there but it is
+55:36 a useful sort of approach
+55:41 and
+55:42 yeah you mentioned
+55:45 you said about measuring and control
+55:47 group so i guess this is something also
+55:49 important uh
+55:50 like once you have a
+55:52 like a model you want to measure it so
+55:54 how do we usually go about this maybe
+55:56 you can just
+55:57 go a bit into details like how do we do
+55:59 this usually
+56:01 yeah so
+56:03 see so once i've what you've talked
+56:04 about instead of implementing model how
+56:06 to
+56:07 yeah we have a metric and we have a
+56:09 model and then uh yeah if we say it's
+56:12 every
+56:13 like auc is 80 nobody will care right so
+56:16 we need to come to the business people
+56:19 saying hey my model generated that
+56:22 percent of uplift in minutes like now my
+56:25 new recommender system and spotify
+56:27 um
+56:28 causes like 10 more
+56:31 minutes listen right so how do we
+56:33 actually measure that so it's really
+56:35 hard actually that is really really
+56:36 difficult if you're lucky enough to live
+56:39 in a world where you've got a good
+56:40 simulator and the cost of simulation is
+56:43 low then simulate it right reinforcement
+56:46 they're great right that's rare um if
+56:49 you've got good historical data
+56:52 in
+56:53 whereby and i'm thinking a very specific
+56:54 use case good historical data whereby
+56:57 your actions don't make much of an
+56:58 impact on the state of the world i the
+57:01 stock market right so if you're your
+57:04 model you can play it against the
+57:06 historical data that's a really good
+57:08 like back testing and looking at the way
+57:10 quants do that that's a really good
+57:11 approach again really difficult um what
+57:14 we did
+57:15 and what a lot of sas companies would do
+57:17 um
+57:18 so what we did in insurance companies
+57:20 and yeah again a lot of sas companies do
+57:22 is um market teams are used to this this
+57:24 our a b testing and or champion
+57:26 challenger modeling we called it so
+57:28 for a very small percentage of our
+57:30 customers if you've got high enough
+57:32 customer numbers um a very small
+57:34 percentage would randomly get selected
+57:36 as the challenger group and they would
+57:38 be served
+57:39 a different model to the one that's in
+57:42 deployment so maybe there's no modeling
+57:43 deployment at the moment fine 95 of the
+57:47 customers that come through
+57:48 go through that
+57:50 normal
+57:51 procedure but five percent get siphoned
+57:53 off and it has to be random and be very
+57:55 careful about how you randomize things
+57:57 because using things like birthdays and
+57:58 stuff like that sometimes causes issues
+58:00 that isn't quite random but
+58:02 five percent of them then get through
+58:04 the new model and then once you've built
+58:06 up enough data you can compare life for
+58:08 light because they were the same time
+58:09 frame they're the same thing and if the
+58:11 challenger model beats the champion the
+58:13 one that's currently running you then
+58:15 promote it to the main the main model
+58:17 and then change something else and don't
+58:19 change too many things at once change
+58:20 one thing at a time and you you'll be
+58:22 able to see slowly but surely
+58:25 over a two three five week period
+58:26 depends on your kind of sales volume or
+58:28 your customer volume that's a really
+58:29 good way of of seeing if you're in a
+58:31 live environment how to measure your
+58:33 impact and things like that i realized
+58:35 we kind of started time i dodged the
+58:37 what kind of kpis should software data
+58:40 science teams care about i talked a lot
+58:41 about when you're communicating your
+58:43 output to other people
+58:45 but internally there's a there's quite a
+58:47 lot you can do as well um you can look
+58:49 at that concord value and look at like
+58:51 impact we've made um a number of
+58:53 reusable what i love for data teams is
+58:56 number of reusable
+58:57 um
+58:58 like tools or applications or bits of
+59:00 software or pipelines
+59:02 that are being used
+59:04 and reused so if i if i build a
+59:08 function to help me get data from
+59:09 somewhere and munch in a certain way
+59:12 actually if that gets turned into
+59:13 utility that you can use as your next
+59:15 project in the same team that's a
+59:17 positive that's a really good kpi to
+59:19 look at look at the ones that um
+59:22 there's a really good post actually by
+59:23 domino data lab i'll try and find and
+59:25 share it but they talk about a little
+59:26 bit of this but they go this guy i think
+59:28 they're old now but they they talk about
+59:31 some of these ones they're really good
+59:32 and also still other people's hard work
+59:34 what the software teams use they're not
+59:35 always going to work but things like um
+59:37 models deployed that can be quite good
+59:39 like how how much stuff is in production
+59:41 are you putting things in production how
+59:43 many service users internally are using
+59:46 your models it's always good having a
+59:48 super cool neural network but if no one
+59:50 uses it
+59:51 don't waste the time right
+59:53 um so yeah sorry we like to dodge that
+59:54 question yeah and that uh we have a
+59:57 related question i don't know if you
+59:59 have a couple of minutes uh yeah yeah
+1:00:00 i'm here
+1:00:02 yeah so a question uh
+1:00:04 is uh so we already talked about like
+1:00:07 measuring effectiveness of teams like by
+1:00:09 how many like how many users of the
+1:00:11 service are there how many parts of the
+1:00:13 pipeline
+1:00:14 are used and the question is as a
+1:00:16 manager do you find accelerate metrics
+1:00:19 like lead time deployment frequency
+1:00:21 useful for measuring your team's
+1:00:23 performance
+1:00:25 depends on the team yeah i do yes um it
+1:00:28 depends on the team i so i found
+1:00:30 actually from running teams and i've run
+1:00:32 fairly big teams of data professionals
+1:00:34 um like in the tens right and i found
+1:00:37 that a lot of them really resist
+1:00:41 being managed i don't know why but it
+1:00:42 seems to be a thing in data that we
+1:00:45 don't like to be managed and we
+1:00:48 i don't think it comes out of academia
+1:00:49 but there's and i was like this as well
+1:00:50 right when i started you you kind of
+1:00:52 want freedom to explore and solve the
+1:00:55 problem and do stuff that just doesn't
+1:00:57 work
+1:00:59 like it
+1:01:00 doesn't really work for many
+1:01:01 organizations it's sometimes it does but
+1:01:04 most of the time it doesn't one of the
+1:01:05 things i learned from elizabeth
+1:01:07 hollinger who's head of insight for
+1:01:09 greco she's
+1:01:10 really done really good things and
+1:01:12 they've got a great data team there but
+1:01:14 she did a talk yonks ago about how
+1:01:17 they they just do everything and i've
+1:01:19 kind of changed this a beer so if i miss
+1:01:21 quotes now please forgive me but if
+1:01:24 essentially
+1:01:25 time box everything into like two weeks
+1:01:27 right and i do this with my teams and
+1:01:29 it's great so you just say instead of
+1:01:31 saying if i say to you right how long is
+1:01:32 it going to take you to build me a
+1:01:33 reinforcement learner for that thing
+1:01:36 we just
+1:01:39 yeah like if you want a rubbish answer
+1:01:41 30 seconds if you want a really good
+1:01:42 answer yeah six years i don't know so
+1:01:45 what instead of that which is where we
+1:01:46 all get stuck and we say we want the
+1:01:48 freedom to explore we don't know how
+1:01:49 long you just say you've got two weeks
+1:01:52 build me something that's better than
+1:01:53 what's currently in play
+1:01:55 and that becomes a really good way to
+1:01:58 discretize what you're doing turn it
+1:01:59 into something you can measure then when
+1:02:01 you're in that mind frame actually
+1:02:04 it lines up much more cleanly with the
+1:02:07 traditional agile like
+1:02:09 stuff like um yeah you're not gonna get
+1:02:13 like user stories and things the same
+1:02:14 it's more like running spikes all the
+1:02:16 time right but it will allow you to
+1:02:19 to integrate your data teams more
+1:02:21 readily with those kind of management
+1:02:23 like agile management practices and
+1:02:24 things like that i find that works
+1:02:26 really really well and then everyone can
+1:02:27 trust it like your product manager for
+1:02:29 example
+1:02:30 can
+1:02:30 know that if they want an improvement on
+1:02:33 the
+1:02:33 [Music]
+1:02:35 sales model
+1:02:37 then the cost is two weeks and there's
+1:02:39 no guaranteed outcome from that two
+1:02:41 weeks there's there's
+1:02:43 you kind of set the guaranteed outcomes
+1:02:45 as a report on what was tried and
+1:02:47 and how it performed there's not
+1:02:50 guaranteed improvement but then your
+1:02:52 product owner who's kind of running the
+1:02:54 team and responsible for deadlines knows
+1:02:56 that it's their budget and they say
+1:02:58 right it's been two weeks on that two
+1:02:59 weeks on that and then they can
+1:03:00 re-prioritize on other things so that
+1:03:02 that's quite a good way of doing it um
+1:03:04 yeah it depends on the team if you're in
+1:03:05 a team of software engineers that have
+1:03:07 data then it's really really good if
+1:03:09 you're in the team with lots of data
+1:03:10 professionals that hate software
+1:03:11 engineering um
+1:03:15 okay thanks um anything else you want to
+1:03:18 add before we wrap up
+1:03:20 um no look been great talking to you uh
+1:03:21 yeah sorry if i ramble on come on over
+1:03:23 the place a bit this is i find all this
+1:03:24 stuff really exciting interesting if
+1:03:26 anyone does want to talk about it in
+1:03:27 more detail here please reach out um as
+1:03:30 i don't know if you caught the restart
+1:03:32 i've just had my first child so i'm
+1:03:35 useless at getting back to people this
+1:03:36 last couple of weeks um
+1:03:38 but i'll hopefully catch up but yeah
+1:03:40 catch my links into it or whatever
+1:03:42 and i'd love to hear what other people
+1:03:43 are doing kpis i'd love to hear anyone
+1:03:45 that thinks
+1:03:47 i'm speaking rubbish if anyone really
+1:03:48 disagrees with what i've said i'd love
+1:03:50 to hear it because that's the only way i
+1:03:52 think we learn is when we get challenged
+1:03:53 on stuff right so please if you if you
+1:03:55 think i'm
+1:03:56 speaking rubbish they're the best
+1:03:57 conversations for me to have so i'd love
+1:03:59 to hear it
+1:04:00 okay thanks a lot thanks for joining us
+1:04:02 finding the time to actually talk us
+1:04:05 talk to us i know it's not
+1:04:07 not easy for you so thanks a lot and
+1:04:09 thanks everyone for being active for
+1:04:11 asking questions sorry that we didn't
+1:04:12 cover everything
+1:04:14 but i hope it was useful for you and
+1:04:16 have a great weekend everyone
+1:04:19 thanks goodbye

@@ -1,0 +1,1748 @@
+Advancing Big Data Analytics: Post-Doctoral Research
+
+0:00 hello everyone thanks for joining us
+0:02 today this event is brought to you by
+0:04 data talks club which is a community of
+0:06 people who love data we have weekly
+0:08 events this event or this event is one
+0:10 of such events if you want to find out
+0:13 more about the events we have there is a
+0:15 link in the description just go there
+0:17 click on this link and you'll find
+0:19 out what what are the ones we have in
+0:22 our schedule
+0:23 then if you haven't subscribed to our
+0:25 youtube channel now it's the best time
+0:27 to do it just go under the video click
+0:29 on the subscribe button and you'll have
+0:31 all our videos in your feed and then
+0:33 finally this is the most important thing
+0:35 if you haven't joined our slack yet
+0:38 you should do it now and then you will
+0:40 get to talk about different data things
+0:43 um
+0:44 during today's
+0:46 interview you can ask any question you
+0:48 want there is a link in the live chat
+0:50 click on this link
+0:52 and ask any question and then i'll be
+0:54 covering these questions during the
+0:55 interview today
+0:57 so
+0:58 that's all
+1:00 so now
+1:02 let me just
+1:03 get the questions
+1:05 are you ready to start
+1:07 ah yes i am
+1:11 so this week we'll talk about uh doing
+1:14 postdoctoral research so we have a
+1:16 special guest today eleni eleni is a
+1:18 postdoctoral researcher at the demon
+1:20 group like tea berlin so this is the
+1:22 same university where i got my master's
+1:25 like six seven years ago this is the
+1:27 same group where i started so eleni is
+1:29 working there as a postdoctoral
+1:31 researcher
+1:32 she is doing research on spatial data
+1:35 special big data analytics and she's
+1:37 interested in stream processing in iot
+1:40 environment so she
+1:42 published her research in many
+1:45 data management venues like vldb
+1:48 and others and she published
+1:51 like one of your papers one of your
+1:54 papers he received the
+1:56 acmc point best demonstration award
+1:59 right and it was
+2:01 one of the best
+2:02 um yes it is
+2:04 it was a demo paper so this is a special
+2:06 category of paper where you actually
+2:09 like demonstrate or showcase uh
+2:12 you know a technique or a system that
+2:13 you have developed and you know you go
+2:15 to the conference and you actually have
+2:17 your laptop and you know show how this
+2:19 works live
+2:21 so so yeah
+2:22 yeah we'll talk about that as well so
+2:24 eleni holds a phd in computer science
+2:27 from epcl
+2:28 so welcome
+2:30 uh yeah uh hello thanks for having me
+2:33 i'm happy to be here today
+2:36 um
+2:37 yeah
+2:39 so before
+2:40 going into our main topic of doing
+2:42 research i wanted to ask you about your
+2:44 background can you tell us about your
+2:46 career journey so far
+2:48 yes so okay you practically already
+2:51 covered most of it but yeah let me also
+2:53 say a few things from my
+2:54 uh perspective so yes i'm currently a
+2:56 postdoc at the technical university of
+2:58 berlin and i have been in berlin uh
+3:01 since october 2019 so roughly two years
+3:04 now
+3:05 prior to that i spent six years in
+3:08 lausanne switzerland where i did my phd
+3:10 in computer science and more
+3:12 specifically in data management at epfl
+3:15 which is the occult polytechnic federal
+3:17 degree
+3:19 during my phd i also spent some time in
+3:21 new york for months
+3:23 where i worked at nyu
+3:26 before my phd i was in my home country
+3:29 greece
+3:30 where i did my undergraduate studies in
+3:32 electrical and computer engineering
+3:34 at the national technical university of
+3:36 athens so yeah to sum it up i went from
+3:38 undergrads in athens to phd in lausanne
+3:40 and then i posted in berlin so i've been
+3:43 in academia my whole
+3:45 career so far
+3:47 i had some interruption in the video but
+3:49 yeah i think
+3:50 so the question was about my topic right
+3:53 because the uh spatial big data
+3:55 analytics my main research area so far
+3:58 has been spatial big data analytics this
+4:01 is the
+4:02 like broader topic of my phd and the
+4:04 topic that i'm still working on even
+4:06 though now i'm not focusing on that
+4:08 entirely
+4:09 um so yeah what is it um well
+4:12 you know wrong speaking it is
+4:14 essentially the process of analyzing
+4:16 spatial data
+4:17 to find trends gain insights and answer
+4:20 questions and then the next question you
+4:22 might have of course is what is patient
+4:24 data what is this data that we are
+4:25 analyzing uh and you know spatial data
+4:28 is any data that contains some you know
+4:31 geometric or geographic feature
+4:34 so spatial data can be points in space
+4:37 that can for example correspond to gps
+4:39 locations so you know you have uh
+4:42 you know data that is about uh
+4:45 like taxi rides uh
+4:47 that's special because we have the
+4:49 location
+4:50 and the trajectory of uh override um
+4:54 then it can also be um
+4:56 lines that represent uh
+4:59 a road on a river on a map it can be
+5:02 polygons that represent regional
+5:03 boundaries uh and i think you get the
+5:05 idea and these are examples that
+5:08 are in two dimensions but
+5:11 also we
+5:12 have three-dimensional spatial data uh
+5:15 so that can represent something
+5:18 you know that has volume uh in space
+5:20 uh and there is also another category of
+5:23 spatial data uh which are um
+5:27 and
+5:28 the main representative of that category
+5:30 is satellite images
+5:32 um because in such images you have a
+5:35 collection of pixels and then for each
+5:38 pixel uh
+5:40 that corresponds to some geographic
+5:42 location
+5:43 uh so this is also an example of spatial
+5:45 data
+5:48 so what do you usually do at work what
+5:51 kind of responsibilities you have now as
+5:53 a postdoctoral researcher
+5:56 yeah i do a few different things i would
+5:59 say okay first of all i participate in
+6:03 research activities uh and that you know
+6:07 again also uh contains many different
+6:09 things but it broadly means you know
+6:11 working to solve some research problems
+6:13 or even thinking about new ones
+6:15 um participating in uh you know project
+6:18 meetings with other colleagues
+6:21 and writing papers so when a project is
+6:23 mature enough and there are results that
+6:25 can be published
+6:27 i also mentor students
+6:30 so far mainly for bachelor and master's
+6:33 thesis
+6:34 but i also have some experience
+6:36 co-mentoring some phd students
+6:39 and currently i also teach
+6:41 a bachelor course
+6:44 sometimes i also have to disseminate my
+6:46 research by giving talks at conferences
+6:49 or other venues
+6:51 and yeah finally another thing that i'm
+6:54 doing it's not strictly tied to
+6:58 um
+6:58 you know my job description but yeah
+7:00 it's that i'm also contributing
+7:02 contributing to them like international
+7:05 um community in my field by uh reviewing
+7:08 uh papers for conferences or journals
+7:11 um so yeah if i look at you know my week
+7:14 i would say this is
+7:16 usually what's on my schedule
+7:19 is it would you say this is a typical
+7:23 day of somebody working as a postdoc
+7:26 in academia
+7:29 um yeah i would say a typical week
+7:31 because okay i you know i i try to avoid
+7:34 multitasking as much as possible because
+7:36 yeah i don't find it effective so i try
+7:39 you know to have some days where i can
+7:40 focus entirely on one activity or
+7:43 another
+7:44 um
+7:45 so yeah i would say this is how
+7:46 typically a week looks like and i mean
+7:49 also but okay over the course of the
+7:52 of a month or of a few months um
+7:55 the like distribution of these tasks can
+7:57 also change and maybe there are periods
+7:59 where
+8:00 uh some task goes completely away for
+8:03 example okay as you know there are like
+8:04 semester breaks where you don't have to
+8:06 do any teaching
+8:07 uh or i mean i don't always have papers
+8:09 to review for conferences for example uh
+8:12 but yeah
+8:14 yeah but other activities like you know
+8:16 having
+8:16 [Music]
+8:18 you know mentoring students uh having
+8:21 kind of some regular meetings with them
+8:22 yeah these are usually
+8:29 that you're writing papers if there is
+8:31 some outcome to share how often it
+8:33 happens i'm curious that you do some
+8:36 research
+8:37 and then
+8:38 yeah you don't have an outcome to share
+8:40 and you don't end up writing a paper is
+8:42 it
+8:43 something that happens often or not
+8:45 yeah that is a good question
+8:48 uh i mean what can happen is that you
+8:51 don't have
+8:52 you know results are good enough to
+8:54 write a really good paper that can be
+8:56 published that they're really you know
+8:59 one of the top conferences in the field
+9:01 so you know yeah to have um
+9:03 an idea and then results that uh are
+9:07 kind of you know top level um
+9:09 yeah this is hard i think it happened
+9:11 that initially you're targeting this
+9:13 kind of you know uh top level uh venues
+9:16 that uh in the end
+9:18 your results make it hard uh for you to
+9:21 to publish there
+9:23 but then in my experience i mean if you
+9:25 still did some thorough and decent work
+9:28 uh even if the results are you know a
+9:31 bit disappointing and like not what you
+9:33 were hoping for i mean there's still a
+9:36 way to publish your work because i mean
+9:38 there there is always some interesting
+9:40 finding in it uh it's just that yeah you
+9:43 might need to
+9:44 just you know go to a less competitive
+9:46 thing uh for that
+9:48 but yeah i mean for me you know if there
+9:51 are some reasonable results and as i
+9:53 said if you can't do a good job um this
+9:56 is usually the case yeah there is
+10:00 it makes still sense to publish them
+10:01 somewhere
+10:03 and the top venues there where you
+10:05 publish are usually vldb and uh what
+10:08 else
+10:10 yeah they're very proud of the two yeah
+10:12 these two are the really the top ones
+10:14 yes
+10:15 so bill db's
+10:18 very large what db databases yeah yes
+10:23 i still remember that
+10:26 yeah
+10:27 and sigmoid is like special interest
+10:29 group on what management of dating all
+10:34 right
+10:34 yeah yeah this is uh like these are the
+10:37 places where researchers who work in
+10:41 databases the data management big data
+10:45 analytics and all these things this is
+10:47 the
+10:49 these are the conferences where these
+10:50 researchers
+10:51 want to publish first right so these are
+10:53 the two yeah these are top values there
+10:55 is a third one that's also
+10:58 i would say
+11:00 equally good is uh i it's called icd
+11:03 uh so that's international conference of
+11:06 data engineering
+11:08 i think this this three yeah
+11:11 interesting
+11:12 okay and uh
+11:14 um is being a postdoc different from
+11:17 being a phd student so yeah you
+11:19 mentioned that you need to do a lot of
+11:21 things like uh thinking about research
+11:23 problems writing papers mentoring
+11:25 students teaching a course reading
+11:27 papers
+11:28 but uh phd students also
+11:31 do these things right
+11:33 yes you're quite right you are quite
+11:35 right about that yes so
+11:37 um
+11:39 overall for me how i feel is that the
+11:42 main difference comes because in the
+11:44 faster position you have more
+11:45 responsibility so it's kind of the
+11:47 amount of responsibility that changes
+11:50 and okay maybe also a little bit uh you
+11:52 know
+11:53 like the distribution of time on these
+11:56 different tasks so like going back as a
+11:58 phd student like still my primary
+12:01 primary
+12:03 job was to work on my phd thesis
+12:06 it was clear that this is the top
+12:08 priority
+12:09 i was also teaching
+12:11 as an assistant but you know that was
+12:14 not more than let's say 20 percent of my
+12:16 work time
+12:18 and from time to times i also mentored
+12:20 some bachelor and master's students
+12:21 during my phd
+12:23 but not so many and not so frequently
+12:25 like not every semester for example um
+12:28 so
+12:29 and then also uh in my phd component in
+12:33 my phd
+12:34 research
+12:35 i
+12:37 was mainly conducting research on my own
+12:39 so like i had a lot of a long uh time
+12:43 to work on my thesis
+12:47 and
+12:48 yeah so what has changed now i would say
+12:50 that yeah i have more mentoring
+12:54 to do
+12:55 so
+12:56 like now i mentor students you know
+12:58 every semester uh and also this
+13:00 mentoring i would say comes with
+13:02 more responsibility um because um you
+13:05 know i mentor not only bachelor and
+13:07 master students but also some phd
+13:08 students like a commenter uh and um you
+13:12 know it is important to ensure that they
+13:14 will be successful right you don't want
+13:16 your students to just
+13:18 waste their time uh you know working on
+13:21 something that
+13:23 is not promising
+13:25 and then teaching also comes now with
+13:27 more responsibility uh now before as i
+13:30 said i was insistent so i didn't have to
+13:33 think about
+13:34 you know
+13:35 the tasks that needed to be done i was
+13:37 assigned to these tasks i just needed to
+13:39 carry them out and that was it
+13:41 now i am the one that like runs the
+13:43 course manages the course so i need to
+13:46 organize everything and make sure that
+13:48 the course runs smoothly so this
+13:50 responsibility uh falls on me
+13:53 and then as i said in my phd i spent
+13:56 quite some you know a long working time
+13:59 but yeah now i would say i do less
+14:01 research completely on my own and more
+14:04 in collaboration with others
+14:07 and in my like everyday life this also
+14:10 means that i spend more time in meetings
+14:13 with other people
+14:15 and yeah i also mentioned uh
+14:17 the like reviewing papers before and i i
+14:21 have to say that this is something that
+14:23 i didn't do much in my phd
+14:26 uh but you know that's normal because
+14:29 you are invited to uh review papers for
+14:31 conferences when you are a little bit
+14:32 more senior uh in the field so
+14:36 yeah usually you don't get a lot of
+14:38 these invitations as a phd student
+14:40 so if i summarize then you get a broader
+14:43 scope so you
+14:45 do not
+14:46 get to do as many i guess so previously
+14:50 you would just sit and do research
+14:51 yourself but now you're more like
+14:53 delegating the work to others so others
+14:56 do research and uh you're helping them
+14:58 uh with that
+15:00 instead of just sitting there just by
+15:02 yourself uh doing that right did they
+15:04 summarize it uh yes i would say
+15:07 currently i actually kind of work a bit
+15:09 in two modes i mean yeah there is a
+15:11 little bit of delegating aspect which um
+15:13 you can say happens when
+15:15 i work with uh with a student because i
+15:17 mean
+15:18 you know still like if someone is doing
+15:20 like their thesis with me or their phd
+15:23 i mean they are still uh expected to own
+15:26 their work and you know
+15:29 these their own thesis i mean i help
+15:30 them but i'm not supposed to
+15:32 improve the thesis for them right so in
+15:34 that sense uh yeah
+15:36 uh um i'm providing guidance uh but then
+15:39 i'm also i also do some
+15:42 i mean
+15:43 i get not on a constant basis but like
+15:45 say in the past year i also do some
+15:47 collaborative research with other
+15:49 researchers that are more um like uh at
+15:52 the same level of seniority as me let's
+15:54 say so in that sense it's more a
+15:56 collaboration and nobody's delegating
+15:57 anything to someone else we would like
+15:59 to to to the other person but it's more
+16:02 kind of you know
+16:05 sharing
+16:06 the
+16:09 yeah thanks and then you mentioned one
+16:11 thing i think that's quite important so
+16:14 now a part of your job so you have more
+16:16 responsibility and the part of your job
+16:18 is
+16:18 you need to help others be more
+16:20 successful so you have bachelor students
+16:23 you have master students you have phd
+16:25 students that you call
+16:27 a commenter or
+16:29 advice
+16:30 now
+16:30 so how do you actually make sure that
+16:32 they are more successful like oh
+16:35 how do you do this
+16:37 like how do you help them select topics
+16:39 like because phd this is quite
+16:42 a large
+16:44 piece of work right it's like
+16:46 five years
+16:47 um
+16:48 so that's a lot of responsibility
+16:51 when you come up with a topic so how do
+16:53 you help them
+16:55 [Music]
+16:57 uh yeah that's a
+16:59 great question
+17:01 um so okay maybe i can also talk a bit
+17:04 about uh
+17:05 yeah
+17:06 master and bachelor students so in this
+17:08 case i have to say it's easier of course
+17:10 and yeah most of my experience also is
+17:13 with working with master and bachelor
+17:15 students uh because in that case um i'm
+17:18 typically the one that proposes a list
+17:20 of topics like i advertise these topics
+17:22 and then
+17:23 the student picks you and they like and
+17:25 then we potentially tailor it together
+17:27 to their interests so you know there
+17:30 it's a little bit easier the scope is
+17:32 also uh smaller because uh
+17:35 you know this is research that needs to
+17:36 be completed within let's say six months
+17:39 right so
+17:40 yeah
+17:42 that also limits a little bit uh you
+17:44 know what you can do um during that time
+17:46 uh now in terms of phd students so far i
+17:49 have only acted as a co-supervisor which
+17:51 means that also the responsibility is
+17:53 shared
+17:55 but overall how it works at dima um
+17:59 at least what i have seen so far and my
+18:01 time at lima is that in general we have
+18:04 a few bigger um research themes
+18:07 uh in the group um like some bigger
+18:10 umbrella topics um that
+18:12 you know they are mostly i guess
+18:15 determined by uh
+18:19 the leader of the group professor markle
+18:22 uh and then students typically so i mean
+18:25 students typically need to identify a
+18:27 sub-topic that interests them within
+18:28 these bigger research teams so already
+18:31 you know the fact that there's kind of
+18:32 these bigger umbrella topics provides
+18:34 some guidance
+18:36 uh and then from there you know they
+18:38 come up with ideas
+18:41 you know by reading brainstorming
+18:42 talking to their mentors
+18:44 but also to other uh colleagues and
+18:46 fellow students and that's why you know
+18:49 the whole group can kind of provide some
+18:51 guidance there
+18:52 uh so yeah for phd students i don't
+18:55 dictate the topic
+18:57 they
+18:58 mostly have to come up with it on their
+19:00 own within
+19:02 like a bigger research team but i mostly
+19:05 how i help them is mostly by
+19:08 you know asking them questions and
+19:10 talking to them to make sure that they
+19:11 really understand the problem that they
+19:12 picked and to also make sure that uh
+19:14 this is indeed an open research problem
+19:17 uh so you know i
+19:19 expect the student for example to be
+19:20 able to clearly articulate what the
+19:22 problem is you know like succinctly and
+19:25 like in a sentence ideally
+19:28 why it is interesting uh and important
+19:31 and why it is hard and why it hasn't
+19:32 been solved before so you know
+19:35 usually i
+19:37 challenge the student and the student
+19:38 has to convince me that they can answer
+19:40 these questions about their chosen topic
+19:44 and then you know
+19:45 then we can go ahead with that topic
+19:48 is it some sort of formal process where
+19:50 the student just comes to you and you
+19:52 have a discussion over i don't know a
+19:53 cup of tea
+19:55 and you ask tough questions
+19:57 uh
+19:58 well i mean it is a little bit of a more
+20:00 formal process in the sense that they're
+20:02 like no we have some like regular
+20:04 meetings with some structure and yeah
+20:07 also in some cases it might be that i
+20:09 ask the student to actually you know
+20:11 answer these questions in written form
+20:13 because sometimes also writing down
+20:16 things uh helps you
+20:18 you know structure your thoughts
+20:20 um and then yeah i mean as i said i'm
+20:22 the commenter right so there's
+20:25 there are also other people that uh
+20:27 um
+20:30 interact with the students and make sure
+20:32 that
+20:33 they are working on something good
+20:36 but from what i understood it's actually
+20:38 the responsibility of a phd student to
+20:40 come up with a good topic you're just
+20:42 helping them to to make sure that the
+20:45 topic they pick up is good and they
+20:47 really understand what they want to
+20:48 solve right but
+20:50 it's more like coaching
+20:52 yeah this is how it usually yeah works
+20:55 so
+20:56 uh yeah
+20:58 i mean yeah overall in academia i have
+21:00 seen
+21:03 and i mean this is also more or less how
+21:04 it was for me right in my phd like i was
+21:06 not assigned to specific topics that i
+21:09 worked on on the specific problems i was
+21:11 given a broader direction but then you
+21:13 know finding the specific research
+21:15 problem within that
+21:17 direction was my own responsibility i
+21:20 mean i have seen in other
+21:21 [Music]
+21:23 groups in academia and that especially
+21:25 for
+21:26 first-year students it might be that
+21:27 actually the professor gives them some
+21:29 more concrete topics like similar to how
+21:31 i said i give topics to master students
+21:35 so
+21:36 like usually to get them started with
+21:38 their like first with the first research
+21:40 problem that they will um work on
+21:43 but yeah i mean as you said earlier also
+21:45 a phd is a larger piece of work so
+21:48 usually you know you're you're expected
+21:50 to publish two or three papers
+21:52 that will all be part of your phd so
+21:55 even if you are assigned a topic at the
+21:57 beginning you're still expecting that
+21:58 you know for the next paper uh you will
+22:00 be more independent in choosing your own
+22:02 topic
+22:04 i'm curious how does it work like you
+22:06 have a broader direction and then a
+22:08 student come with a more neurons
+22:10 research do they just read a lot of
+22:12 papers and then
+22:14 see which ideas they like and then they
+22:16 just run these ideas by you and you say
+22:18 yeah these are cool ideas let's dig
+22:20 deeper something like that
+22:22 yeah something like that i mean okay
+22:24 yeah
+22:25 it could also be that we provide a few
+22:27 more pointers about you know what is
+22:29 still open uh
+22:31 in this broader topic because
+22:33 since the the topics are broader it also
+22:35 means that there is there are other
+22:36 people also that work in
+22:38 the broader area so
+22:40 we also want to make sure that each
+22:42 student has a separate topic from the
+22:44 other students and they don't overlap
+22:45 too much right so
+22:47 yeah we also have some pointers about
+22:49 okay this uh these are not taken yet or
+22:51 like in this direction
+22:52 yeah and by the way what are the
+22:56 so you said there are a few bigger
+22:58 research themes in the group
+23:00 uh what are these themes
+23:02 it's a demon group so i know iot right
+23:05 is one of these
+23:06 topics what are the others
+23:08 now there are practically two bigger
+23:10 topics now so one is yes iot or like um
+23:13 you know
+23:15 building a general purpose
+23:17 data management system for the iot
+23:21 this is a
+23:23 system that we call a nebula strip
+23:26 and then there is another topic
+23:29 that
+23:30 we call agora
+23:32 and this is a unified data
+23:34 infrastructure for building ecosystems
+23:38 and in this ecosystem we want to bring
+23:40 together
+23:41 different data assets that can be data
+23:44 itself but also algorithms models
+23:46 computational resources
+23:48 so that uh users can combine all these
+23:51 resources uh and uh yeah
+23:54 they can um use them uh to develop on
+23:58 their applications
+24:00 is the demogroup still involved with
+24:02 apache flink because i remember when i
+24:04 was started there it was like a very big
+24:06 thing and
+24:07 a lot of research was focused on
+24:09 flink but now since link like is a more
+24:12 independent entity is it still
+24:14 the case um yeah not really so basically
+24:18 in a sense this nebulous stream system
+24:20 is kind of the next flink you would say
+24:23 uh yeah
+24:25 um but yeah i mean you see this is
+24:27 representative of how yeah
+24:29 the demon group works you know yeah
+24:30 before there was flink and a lot of
+24:34 researchers were working on different
+24:36 problems related to that system and now
+24:38 we have nebulous stream and agora and
+24:40 you know a lot of
+24:41 the research goes into building these
+24:44 systems
+24:45 cool so you're working on the next link
+24:47 that's that's really awesome
+24:49 so the working name now is nebula right
+24:53 yeah
+24:54 yeah interesting and
+24:57 in general i'm curious
+24:59 how do you know what are the important
+25:01 topics in research so if there are some
+25:03 topics like themes in in the group in
+25:06 general
+25:07 that you try to
+25:09 you know to stay within these teams
+25:12 but this is still quite broad right so
+25:14 this uh streaming in general
+25:17 is quite broad like how do you know what
+25:19 is uh an important topic like what uh
+25:22 what are the trends in this in this
+25:24 topic
+25:25 like how do you stay on top of that
+25:28 well that's hard i mean it's a very good
+25:30 question like something in general hard
+25:32 to do i guess
+25:33 i mean it depends also a little bit on
+25:35 how much uh forward we want to look into
+25:37 the future i think in general you can
+25:40 tell what are like the current important
+25:42 topics and trends mainly by looking at
+25:44 what is being published currently at the
+25:47 major conferences right in your field
+25:49 and it can help even more if you attend
+25:51 these conferences um
+25:53 to exchange ideas with your peers
+25:55 so
+25:56 yeah this helps you identify yeah the
+26:00 trendy topics
+26:01 in the present time
+26:04 um
+26:05 now as i said i have also been reviewing
+26:07 papers for conferences and in general
+26:10 this means that they have access to
+26:11 papers before they are actually
+26:13 published while they're still working
+26:16 progress
+26:17 and
+26:18 this to some extent can help foresee
+26:20 trends
+26:21 that might come up in the near future so
+26:23 let's say within one two three years
+26:25 maybe because yeah you still get access
+26:28 to some work that's
+26:29 yeah not published and maybe it won't be
+26:31 published
+26:32 uh that cycle but um you see what people
+26:36 are working on so this helps you form an
+26:38 idea but what is really hard of course
+26:41 is um
+26:42 to predict the next big trend that will
+26:44 come let's say 10 years or so
+26:47 and i mean unfortunately i cannot claim
+26:49 that i'm in a position to do that
+26:51 but if you can really do this um it is
+26:54 very valuable because yeah i mean these
+26:56 strengths in research are coming a
+26:57 little bit in waves uh and if you are at
+27:00 the beginning of such a wave and you are
+27:02 one of the first people um to work on a
+27:04 certain topic before it is broadly
+27:06 popular
+27:07 uh when later the topic becomes popular
+27:10 so if your you know prediction was
+27:12 correct and this becomes an important
+27:13 topic you will be a pioneer in the field
+27:15 right and your work will really get a
+27:17 lot of attention
+27:18 and a lot of people will refer back to
+27:20 it and
+27:21 cite it which is something that matters
+27:25 now
+27:27 in
+27:28 something else that i can mention here
+27:30 is that in the database research
+27:31 community there is a tradition that
+27:33 every few years i think every five years
+27:36 or so
+27:37 a group of more senior database
+27:40 researchers
+27:41 gather together uh and
+27:44 like in the same location so they meet
+27:46 physically and they brainstorm uh on
+27:48 what are the big
+27:50 trends the next big trends and how we as
+27:53 a community can get more impact out of
+27:55 our research
+27:57 and uh yeah after the gathering they
+28:00 write down their findings in the report
+28:02 so
+28:03 yeah in general i find that this can be
+28:06 quite helpful for more um junior
+28:08 researchers um to help them identify
+28:11 future research directions
+28:13 and yeah i mentioned before that um yeah
+28:15 going to conferences can also help and
+28:17 one of the reasons uh one other reason
+28:19 that it can help is that there are also
+28:21 some like discussion panels where again
+28:23 you see more senior people
+28:26 uh you know discuss about the future of
+28:28 the fields so yeah so basically
+28:31 networking right
+28:33 so conferences seeing what is published
+28:37 do you think it's important to also
+28:40 be in touch with maybe industry partners
+28:43 to see what is
+28:44 going on in industry
+28:46 to see
+28:47 you know
+28:48 like what may be
+28:50 will be important there or
+28:54 the conferences scientific necessary now
+28:57 that is a great uh point and i mean i
+28:59 have to say that in general in our
+29:00 conferences i mean there are also people
+29:02 from industry i mean we are not
+29:04 you know we yeah yeah we are a field
+29:06 that is quite open to to to industry
+29:10 um so so yeah definitely i think this is
+29:14 also something that uh
+29:16 i can help um
+29:19 yeah
+29:21 and uh finally i think that you
+29:22 mentioned that you know
+29:24 speaking things that will be important
+29:26 in the future is uh difficult well the
+29:28 demon group i think managed to do it at
+29:30 least once with flink yeah and i
+29:33 remember when i was choosing whether to
+29:35 go to berlin or to some other city so i
+29:38 saw a pitch from professor michael and
+29:40 what he said was that
+29:42 they don't at dima they do not teach
+29:45 things that are important now
+29:47 they teach things that will be important
+29:48 in like three five years
+29:51 and
+29:52 yeah he would then go into
+29:55 flink back then it was called satisfy i
+29:57 think like how cool this thing is and he
+30:00 was actually right like
+30:03 because back then i don't think it was
+30:05 really appreciated
+30:07 in the industry like this spring thing
+30:10 but now yeah people like it
+30:13 yeah definitely i mean yeah i would say
+30:15 in the sense yeah definitely professor
+30:17 martel is a visionary person and yeah i
+30:21 mean in that sense again for me as a
+30:23 more junior researcher it also helps to
+30:25 have him as a mentor
+30:27 okay so but the domain
+30:30 sort of the main way of seeing trends in
+30:32 research is attending conferences and
+30:35 then doing these gatherings and then
+30:37 having discussion panels and i think you
+30:39 mentioned those reviewing papers
+30:41 which is
+30:42 um how typical it is for people to also
+30:45 work on reviewing papers like do all
+30:48 postdocs do this or
+30:50 not everyone
+30:53 i would say most postdocs i mean you
+30:56 know to get to review papers i mean you
+30:58 have to be invited
+31:00 and you know it's invitation based
+31:03 and then it but then you know it is also
+31:06 a volunteering activity so in general
+31:08 you know yeah you're not getting paid or
+31:10 anything to do that right so
+31:12 uh but yeah i i you know i would say
+31:14 most postdocs um you know are
+31:19 known enough
+31:20 to to be invited for suction
+31:23 for such things yeah
+31:26 um
+31:30 yeah someone has invited you so they
+31:31 they need to do something you know
+31:34 a few papers and then they say okay this
+31:36 person is clearly uh this person clearly
+31:39 knows what the
+31:40 like about this particular area or
+31:42 research that's invite them and ask them
+31:44 to review papers
+31:47 yeah i mean i would say yeah you need to
+31:49 have published some papers on your own
+31:50 because it's also a little bit weird to
+31:52 judge
+31:53 other people's research if yourself have
+31:55 not proved that you are actually able to
+31:58 conduct good research
+32:00 but then you know
+32:02 it might be the case that someone has
+32:04 published a lot of papers but they're
+32:05 still not invited for these conferences
+32:07 just because they don't know
+32:10 a key person in the committee that can
+32:12 actually uh invite them to to you know
+32:15 to be in the committee so in that sense
+32:18 you have totally some networking
+32:21 in my case i guess i was uh you know
+32:23 lucky that i have been in
+32:26 research groups that have visibility and
+32:29 so both like the demon group and also my
+32:33 group at epfl which was called diaz
+32:36 um yeah our
+32:38 research groups that have international
+32:40 visibility are all the best in the field
+32:44 so you know that also helped
+32:47 for me to get visibility
+32:49 yeah thanks and speaking of trends in
+32:53 research so sometimes you come to a
+32:55 conference and then there is one topic
+32:57 that everyone talks about like it's
+32:59 clearly
+33:00 but the next year you come and everyone
+33:02 forgets about this i'm sure you can
+33:04 think of such things that you know
+33:06 common ways and then go and a few years
+33:09 after that nobody remembers god right so
+33:12 i would call it like hype
+33:15 but there are things that uh
+33:17 you know they don't get
+33:19 the attention they deserve
+33:22 sometimes there are other things people
+33:24 get more excited about them but there
+33:26 are things that maybe people
+33:28 do not notice
+33:30 do you think there are some research
+33:31 topics in uh in your area of research
+33:34 that are underrated right now
+33:38 yeah i have to say that's a
+33:40 difficult question i think uh so first
+33:42 i'll try to give a bit of a more general
+33:44 answer
+33:45 so one of the things that i have
+33:46 personally noticed in the field um that
+33:49 to some extent bothers me is that in
+33:51 most cases
+33:52 people only focus on improving
+33:54 performance which typically means
+33:57 you know improving runtimes or measuring
+33:59 performance by runtime
+34:01 so when you come up with a new technique
+34:03 and a new solution in order to convince
+34:05 the reviewers at the conferences to
+34:06 accept your paper for publication
+34:09 you usually have to show all my new
+34:10 technique is like x times faster than
+34:12 all previous techniques and then you
+34:14 know it's easy but of course
+34:17 yeah this is important to improve you
+34:19 know decrease the runtime but there are
+34:22 also a lot of metrics that can be
+34:23 important
+34:24 um like i i don't know like the ease of
+34:27 adoption of a certain technique or you
+34:29 know the usability the programmability
+34:31 or even things like energy consumption
+34:34 and these metrics in my experience are
+34:36 typically a bit overlooked so
+34:38 to some extent i think this happens
+34:40 because they are a little bit hard to
+34:41 quantify and put in a number
+34:44 uh and that's the result so that's a bit
+34:45 of a general answer but as a result i
+34:47 think if your work focuses on improving
+34:49 a metric that's other than performance
+34:52 uh it is usually
+34:54 in my opinion a bit undervalued by the
+34:57 community and you know it's harder for
+34:59 you to publish your work and then there
+35:02 is another like broader topic that i
+35:05 think um well i do not think it is
+35:07 undervalued but maybe you could say that
+35:09 it's uh
+35:11 underrated because it's a topic that uh
+35:14 everyone understands its importance
+35:16 uh but it's still not so popular in the
+35:18 sense that not so many people want to
+35:19 work on that and the topic is a data
+35:22 cleaning
+35:23 um so
+35:25 i mean i i think everybody would agree
+35:26 this is a really important uh to like
+35:28 really open a problem
+35:30 um
+35:31 but yeah i don't i don't think there are
+35:33 enough people working on that right now
+35:36 and yeah i mean i think this is probably
+35:39 a combination of factors because it is a
+35:40 really hard problem so to begin with
+35:42 this is a bit scary i think and at the
+35:45 same time again maybe there is this
+35:46 issue that
+35:48 in the case of data cleaning
+35:50 uh it is harder to quantify again the
+35:52 impact of new approaches and convince
+35:54 the community about their value i mean
+35:55 again you cannot say and uh you cannot
+35:58 just go and say oh i made things like
+36:00 you know towards why we look faster it's
+36:02 a bit more complex than that
+36:04 i'm wondering okay data cleaning is more
+36:06 like art than science like how do you
+36:08 actually quantify that
+36:10 i guess there are metrics that you know
+36:12 measure the cleanness of data like
+36:14 yeah i guess this is a sticky one
+36:17 and uh
+36:18 is there research in this area
+36:20 yeah i mean there there is still
+36:22 research yes of course i mean i i don't
+36:24 have experience i haven't done research
+36:25 in this area i mean i have to say that i
+36:28 went like early in my phd
+36:30 um
+36:32 you know my professor mentioned this as
+36:34 an option back then and i have to say
+36:35 that i was also a little bit negative or
+36:37 scared of the topic uh
+36:40 because okay i mean to some extent it
+36:42 still might be that yourself you
+36:44 recognize that the problem is important
+36:45 but okay you also need to like it for
+36:47 some reason you don't like it okay you
+36:49 cannot force yourself to work on that
+36:51 even if you believe that it's important
+36:53 um
+36:54 but yeah i mean there are people uh yeah
+36:58 it's not i mean it is an existing
+37:00 research area definitely
+37:02 um
+37:03 i just think that the overall it's still
+37:06 not popular enough i mean it's not as
+37:08 sexy or fancy as other topics
+37:11 that are probably less important
+37:14 right now at least in the industry this
+37:15 is a very very manual process you need
+37:18 to do about trials and errors and then
+37:20 you need to handle the corner cases and
+37:23 then the code you have for cleaning like
+37:25 becomes bigger and bigger with every
+37:27 corner case i guess the area of research
+37:29 would be like how to actually automate
+37:31 it this side
+37:32 yeah yeah
+37:34 infinite loop of uh trial and error how
+37:37 do you actually have a
+37:39 way to automatically figuring out what
+37:41 the data problems basically problems are
+37:43 and solving them yeah yeah i mean yeah
+37:48 yeah the main effort yeah i would go to
+37:50 like
+37:50 uh either fully automate or i mean maybe
+37:53 that's not still so realistic but at
+37:54 least uh yeah make it easier for the you
+37:56 know data scientists
+37:58 yeah i can relate to that problem like i
+38:01 can imagine like having a black box
+38:03 saying hey like here's a pile of dirty
+38:05 data please make it nice
+38:07 yeah i wouldn't use that
+38:10 can you imagine yes
+38:13 yeah thanks and you also mentioned now
+38:15 that as a postdoc you do a lot of
+38:20 work in collaboration with other
+38:22 postdocs so they are on the same level
+38:24 so you are not necessarily mentoring
+38:25 them
+38:26 but you are more collaborating with them
+38:29 do you collaborate do you work a lot of
+38:31 people from different industries
+38:34 like maybe let's say from different
+38:35 groups that are not necessarily
+38:38 data management groups
+38:41 um yeah that's um yeah i have some
+38:44 experience yes working with people that
+38:46 are not in data management
+38:48 uh so
+38:50 um yeah um
+38:52 because i mean yeah in general uh
+38:55 there are connections so uh it's easy to
+38:57 find connections uh from data management
+39:00 to other disciplines
+39:03 so
+39:05 um for example yeah in my phd uh i was
+39:08 involved in a large
+39:10 multi-disciplinary
+39:12 project and that was uh and tlis
+39:15 called the human brain project
+39:18 and one of the main goals of the project
+39:20 was to build um
+39:22 three-dimensional models of the human
+39:24 brain and then run simulations over them
+39:26 so for that project i had a
+39:29 collaboration
+39:30 with neuroscientists
+39:32 that were the ones
+39:34 building their brain models and then
+39:37 within that collaboration i developed
+39:39 some like tools
+39:41 that allow them to access subregions of
+39:43 those models more efficiently so this is
+39:47 the data management component
+39:49 so
+39:51 yeah in my experience having this kind
+39:53 of collaborations
+39:55 does require some extra effort
+39:57 because you need to find a common
+39:59 language
+40:00 no you need to find a way to communicate
+40:02 with someone who is outside of your
+40:04 field
+40:05 and that's not always easy
+40:08 and it goes both ways i mean you know
+40:10 some things that were obvious to me i
+40:12 had to understand that it's not to
+40:14 someone outside of the field and i have
+40:15 to find a way to explain to them
+40:18 but also you know to understand what
+40:20 they are telling me
+40:21 um but yeah i am it can also be quite
+40:24 rewarding because um you see your work
+40:27 being applied to solve the real problem
+40:30 um
+40:30 [Music]
+40:32 yeah
+40:33 yeah i remember in dima so like it was a
+40:37 seventh floor building uh so we were on
+40:39 the seventh floor and then sometimes i
+40:41 would go on the sixth floor and then
+40:43 there was a group that was doing some
+40:45 video and coding i don't remember like a
+40:47 completely different thing
+40:50 and then i don't remember what was on
+40:52 the fifth floor but also something
+40:53 unrelated and what i found interesting
+40:56 is that um these groups they don't
+40:58 really communicate with each other
+41:00 so do you
+41:02 um is is it still the case or you're
+41:05 trying to somehow find ways of
+41:08 connecting with each other
+41:09 yeah that's a good point i mean
+41:11 um
+41:13 maybe now it has improved i would say um
+41:16 like actually there is one um issue that
+41:19 they find a problem
+41:20 as you said that um
+41:24 where the group is which is the actual
+41:26 building no i mean i i think it's
+41:28 actually not so great that yeah the
+41:30 demon group is on the seventh floor uh
+41:32 you know by itself so everybody on that
+41:34 floor is from the same group so
+41:36 and then the other groups are on
+41:37 different floors and then you know you
+41:39 have a common lounge area but when you
+41:41 are there you will only see and interact
+41:44 with people from your own group there's
+41:45 no chance you'll meet someone outside
+41:47 outside of your group where you can
+41:48 initiate some maybe interesting
+41:49 discussion
+41:50 so um yeah i i think that this is not
+41:54 great and um yeah if we had like some
+41:57 like lounge areas
+41:59 where people from different groups can
+42:00 hang out uh this would really help a lot
+42:03 to like you know bootstrap some
+42:05 collaborations and i have to say in my
+42:07 previous group it was a little bit um
+42:09 there was a bit more mean link between
+42:11 yeah and my previous university there
+42:13 was a bit more middling between the
+42:14 different groups um however yeah you
+42:17 mentioned the sixth floor so i'm not i'm
+42:18 not sure yeah which group you were
+42:20 you're referring to but for example
+42:22 right now
+42:23 uh i am involved also in a collaboration
+42:25 with another group um actually berlin
+42:27 which is the remote sensing group
+42:30 and yeah
+42:31 in this
+42:33 group they
+42:35 are working with like satellite imagery
+42:38 um
+42:40 and
+42:41 yeah how to efficiently
+42:45 index these images but based on their
+42:48 actual content
+42:50 which requires some deep learning
+42:51 techniques that they have developed
+42:54 and yes and i mean we have a
+42:56 collaboration with them to you know help
+42:58 them tackle the problem also from the
+43:00 data management
+43:02 aspect
+43:03 um
+43:04 yeah
+43:05 yeah sorry if it came as uh came out as
+43:08 a critique i wanted to lead actually
+43:10 this to you know asking how you
+43:12 collaborate with other groups and how
+43:14 you find uh you know ways of
+43:16 collaborating and this what you brought
+43:18 up like remote sensing group yeah it's
+43:20 quite interesting um do you know how it
+43:23 happened like how you met and decided to
+43:25 work
+43:26 together because i guess this is also
+43:28 related to your
+43:30 uh
+43:31 area of research like this special
+43:33 analysis exactly yes yes um it does um
+43:37 not but yeah however yeah i mean even
+43:40 though i have been
+43:41 i mean i am involved in this um
+43:43 collaboration i have also been in
+43:45 collaborations before i was not the one
+43:46 that like would drop them like that
+43:48 initiated them i mean this was done
+43:51 usually by you know the professors
+43:52 leading the groups um so
+43:56 i would say this was probably the case
+43:59 uh here i mean i was brought in touch
+44:01 with a professor that works in remote
+44:03 sensing through you know
+44:05 my uh
+44:08 through the professor that i'm working
+44:10 with so
+44:12 yeah
+44:13 he made the connection um
+44:17 yeah thanks i noticed that
+44:19 i've been ignoring questions so
+44:21 apologies for that so we have a few
+44:23 questions and uh amin is asking uh he's
+44:26 or she
+44:27 i don't know
+44:28 so i mean
+44:30 he's wondering um for computer master
+44:32 student what field
+44:35 would be good
+44:36 to work in order to be able to apply for
+44:39 a phd position at a top european or
+44:42 american university
+44:45 um
+44:47 i mean okay i
+44:49 that's a good question but i mean of
+44:50 course it's really i would say you know
+44:52 it depends on your interests right and i
+44:54 mean i'm in data management so i would
+44:56 you know advertise and support my field
+44:58 uh
+44:59 i would say you know
+45:01 to do research in data management um
+45:04 so but you know in the end of the day
+45:06 you should pick the topic some that um
+45:10 you like and in the end uh what matters
+45:13 is
+45:14 you know the quality of your research
+45:16 rather than the um
+45:20 the topic now that said of course i mean
+45:23 i cannot ignore that uh right now there
+45:25 is a big um
+45:28 um
+45:30 let's say uh
+45:33 focus
+45:34 in academia on
+45:36 ai and machine learning right
+45:38 i mean i cannot ignore that
+45:41 so in that sense
+45:43 in these domains
+45:45 there are probably more opportunities
+45:47 and open positions
+45:49 than in other domains
+45:51 but also there is more competition so
+45:53 this is also something to take into
+45:55 account
+45:56 and that's why again it goes back to
+45:58 really make sure that this is something
+46:00 that you like and you want to do it
+46:02 because you like it and not because it's
+46:04 um you know then next
+46:05 you know because it's popular right now
+46:08 uh because there is competition so if
+46:10 you don't like it enough there will be
+46:12 someone else that does it and they like
+46:14 it and they will be better than you
+46:17 yeah and
+46:18 i guess like for any field you take you
+46:21 will be able to find a university or a
+46:24 group at some university
+46:26 that does this work and you'll be able
+46:28 to go there
+46:31 but i'm curious like how do you go about
+46:33 selecting topics there so let's say you
+46:36 pick a broader field
+46:37 and then you want to find some topics
+46:39 that uh
+46:41 and i think it goes back to the
+46:43 discussion we have like identifying
+46:45 trends so i guess this is what uh you
+46:47 can also do right so you can
+46:49 look at take a look at the conference
+46:51 conferences like bigger venues in this
+46:54 field and then see what are the
+46:57 trends there right and then you can pick
+46:59 some of these trends there and try to
+47:02 um to see if
+47:04 you like them right
+47:06 yeah
+47:07 and yeah then yeah maybe two more things
+47:10 uh so okay of uh one thing maybe is to
+47:13 try to do research already in your
+47:15 masters
+47:17 because uh yeah this can help you
+47:20 identify what
+47:22 you like
+47:23 which can mean that you know you may
+47:25 work in your masters in the field and
+47:27 you see that you really like it and you
+47:28 continue in your phd but it can also
+47:30 mean that you try something in your
+47:31 masters and it's a good way to find out
+47:33 that you actually don't like it and then
+47:35 you fall into a different area which was
+47:37 a little bit the case uh for me for
+47:40 example like my master's thesis topic
+47:42 was related to signal processing so it
+47:44 was not in databases
+47:46 um
+47:48 and another thing that i actually also
+47:51 did is that i did an internship
+47:54 prior to my phd in the same group where
+47:57 i ended up doing my phd
+47:58 uh but i first worked there a few months
+48:00 as an intern again to kind of make sure
+48:02 that this is something i like before i
+48:05 commit to something bigger like a phd
+48:08 uh and in addition to that in my
+48:10 previous university uh etf in
+48:13 switzerland and there might be other
+48:14 universities that apply the same thing
+48:17 i'm not sure about that but there was a
+48:19 chance that um
+48:21 if you're selected with a fellowship
+48:24 you can actually spend your first year
+48:25 at the university working on different
+48:28 groups
+48:29 um
+48:30 until you decide which is a group where
+48:33 you actually want to stay and do your
+48:34 phd
+48:36 so that also
+48:38 gave some students the flexibility to
+48:40 try different things to yeah
+48:43 and identify what they like
+48:46 the actually
+48:48 maybe this is something you can also
+48:49 help uh this is a question that comes up
+48:51 in the community quite often maybe at
+48:53 least uh once in a month
+48:55 is uh especially during the times when
+48:58 students need to select a topic but they
+49:00 must start this is like how do i
+49:03 actually select a topic
+49:05 do you have any advice for those
+49:07 students how can they
+49:09 pick a topic for the
+49:10 master's studies
+49:12 for the thesis
+49:17 yeah
+49:18 um i mean yeah as i said at least that
+49:21 in my group everybody advertises them
+49:23 the topics right so
+49:25 uh you don't have to come up like master
+49:27 students don't really have to think from
+49:29 scratch about the topic but they can go
+49:32 through a list of advertised topics that
+49:35 each of them comes with a description as
+49:37 well right
+49:40 so
+49:42 i mean yeah i mean i would say again it
+49:44 goes back to what uh you find
+49:47 interesting
+49:48 but also okay
+49:50 one other aspect is to maybe also make
+49:52 sure that you have enough background for
+49:54 that topic because uh
+49:56 um or if you don't that you
+49:59 are aware of that and that you're really
+50:01 prepared to you know cover the missing
+50:04 background because otherwise it can be
+50:06 like a bad negative experience to work
+50:08 on something that um you don't have the
+50:12 skill set for
+50:13 um
+50:15 so yeah and i mean then to some extent
+50:17 sometimes also
+50:19 who you're working with can be as
+50:21 important as the topic
+50:23 uh or in some cases even more so you
+50:25 know i would also say to
+50:27 uh be careful in choosing your mentor
+50:31 and make sure that you
+50:34 have a good uh
+50:37 connection to that mentor and that
+50:39 you're aligned in terms of how you work
+50:41 together
+50:43 so in practice it means basically
+50:45 finding a phd student whose research you
+50:48 like and then trying to see how you can
+50:50 help them in their phd research right
+50:54 yeah
+50:55 at least this is how it was for me and
+50:57 [Music]
+50:58 this is how it works
+51:00 i remember
+51:02 we had like a
+51:04 sort of meeting and then phd students
+51:06 would come and pitch the topics that
+51:08 they're working on and then whoever
+51:10 likes the topic would come then and
+51:12 directly approach the
+51:13 phd students saying hey i like what
+51:16 you're working on let's
+51:18 do something
+51:19 yeah yeah that's true because yeah i
+51:21 mean phd students are also involved in
+51:22 teaching
+51:23 so
+51:24 it's actually an opportunity for like
+51:26 master and bachelor students to interact
+51:28 with them and see what they're working
+51:29 on and yeah have some discussions
+51:33 about potential
+51:34 topics
+51:36 so in that sense you can also
+51:38 cover what i said that
+51:40 um like you want to have a mentor that
+51:43 you're happy with because you actually
+51:45 can work with a person that you are
+51:47 already familiar because you
+51:50 had that person as a teacher in some
+51:53 course
+51:53 and to me it happens a lot that the
+51:55 students that end up doing a thesis with
+51:57 me they are students that already know
+51:59 me from some course where i was involved
+52:02 they're not complete strangers
+52:05 okay
+52:06 and
+52:07 what advice would you give to somebody
+52:09 who is just graduating from masters and
+52:11 they are not sure
+52:13 whether they want to do continue
+52:15 researching and do a phd or they just
+52:17 want to work
+52:19 in the industry
+52:20 um
+52:22 i think this is quite a difficult
+52:23 problem like i remember for me it was a
+52:25 different decision like do you have any
+52:28 suggestion or
+52:29 advice
+52:30 for people who need to decide to help
+52:33 them do this
+52:35 um
+52:37 i mean yeah to some extent it's a bit
+52:39 what i already said which is already
+52:41 like give it a try
+52:44 but like at the smaller scale so before
+52:47 uh before you start the phd to try to do
+52:49 some research either in your master's or
+52:51 like as part of an internship
+52:53 and i mean one important thing that
+52:55 comes with that is that you can have
+52:57 more fun actually doing research and in
+52:59 your phd because there's also less
+53:00 pressure
+53:01 there is no pressure to publish doing
+53:04 research in your master's is completely
+53:06 optional
+53:07 there is no you know clock ticking
+53:09 telling you that in three years you need
+53:10 to publish three papers
+53:12 so you actually can have more fun
+53:15 i think
+53:16 um
+53:17 and
+53:18 i mean then the same way so i am someone
+53:20 that unfortunately doesn't have industry
+53:22 experience but i mean i would say the
+53:23 same way also you can try to do some
+53:25 internships also in in industry right
+53:29 and
+53:32 yeah work
+53:33 also for some companies so
+53:35 you know you try both and then hopefully
+53:38 it will become clear what you like
+53:40 more um
+53:43 yeah
+53:45 yeah so doing these and then also doing
+53:47 internships and like seeing what you
+53:50 like
+53:52 [Music]
+53:54 yeah that's actually a good point about
+53:56 uh
+53:57 no pressure to publish because i
+53:59 remember like when i was writing my
+54:00 thesis
+54:01 uh we decided to publish it as a paper
+54:04 after i graduated
+54:06 uh so it was uh
+54:08 it was a lot uh you know nobody forced
+54:10 me like hey write this paper or you will
+54:13 not graduate uh you will not get your
+54:15 masters but in with phd if you don't
+54:18 write your paper then you do not
+54:20 graduate right
+54:21 yeah with no publications um you cannot
+54:24 graduate
+54:25 yeah that's
+54:27 because with a master thesis you just
+54:28 defend it and then your advisor
+54:31 supervisor says okay like this is uh
+54:33 this kind of mark and then the
+54:36 the people the jury who
+54:38 who watch the defense they say okay yeah
+54:40 this is the mark and then you get your
+54:43 your papers right
+54:46 so with phd you still have to do that
+54:48 but on top of that you need to have like
+54:50 uh
+54:52 quite a bunch of papers published in top
+54:54 venues right
+54:56 yeah
+54:57 that stuff
+54:58 and yeah different groups have different
+55:00 requirements in terms of you know how
+55:02 many papers you are expected to publish
+55:05 but yeah in general
+55:07 it's always at least one i mean probably
+55:09 speaking i mean at the mines typically
+55:11 actually three and like
+55:13 three uh top conferences so it is uh not
+55:17 easy
+55:18 and one last thing i wanted to ask you
+55:21 and this is actually uh something we
+55:23 also talked with
+55:24 a guest a few podcasts ago so with
+55:26 barbara who is taking part in women in
+55:30 data science
+55:32 community so and there um
+55:36 the question some of the
+55:38 somebody from the audience had to cure
+55:40 is like how can we promote uh
+55:43 computer science to
+55:45 female students because this is not very
+55:47 popular among female students and
+55:50 in general data science computer science
+55:52 these are
+55:53 like i would say male dominated areas
+55:57 what do you think we can do to attract
+55:58 more female students to research in
+56:00 computer science
+56:02 yeah so yeah this is a topic like you
+56:04 know that uh i like to talk about and i
+56:08 personally also find it very important
+56:10 um and um yeah there are a lot of
+56:13 discussions on that topic so i will
+56:16 actually try them to give my personal
+56:18 experience and perspective uh and share
+56:21 with you uh you know what attracted me
+56:23 personally to first study computer
+56:25 science and then first your career in
+56:27 research and then try to see how this uh
+56:30 how this could apply uh more generally
+56:32 for other women as well so okay to begin
+56:35 with uh in my case my choice was
+56:37 influenced by my father actually because
+56:39 he's a professor of computer science in
+56:41 greece so in my case it was a little bit
+56:43 i was a bit lucky let's say i had this
+56:45 influence in my home
+56:46 uh but then like now taking this to the
+56:48 general case i think it is important
+56:51 that we organize events uh for you know
+56:54 younger
+56:55 students in high school or even primary
+56:57 school in particular female ones but it
+57:00 can like these events could be addressed
+57:01 to all students
+57:03 where
+57:04 we can
+57:05 they can
+57:06 students can see
+57:08 what computer science is but in a very
+57:10 gender neutral way and
+57:12 yeah i really want to put emphasis on
+57:15 this you know gender neutrality uh
+57:17 because i think it is really crucial
+57:19 that the students um
+57:21 stop making this association in their
+57:23 minds uh that computer science is only
+57:26 meant you know for giga guys that's it i
+57:28 don't know in their basements uh wearing
+57:30 glasses and like dirty t-shirts and
+57:33 you know i'm like over-exaggerating now
+57:35 the stereotype from the other side but i
+57:36 mean this is how cs is often like
+57:39 depicted in the pop culture right and i
+57:41 mean
+57:42 in the movies yes i mean inevitably this
+57:45 actually uh influences people uh but
+57:49 yeah i think so i think you know in
+57:51 these young ages it is really important
+57:53 for students to realize that you know
+57:55 your gender and your fashion choices
+57:57 are like completely relevant and just
+57:59 focus on the essence
+58:01 um now
+58:03 again going back to my personal
+58:05 experience um
+58:07 so yeah as i said you know through my
+58:09 father i
+58:10 got attracted to the field but i mean
+58:12 later on uh when i was doing my phd uh
+58:15 for me it was quite helpful that my phd
+58:17 advisor was actually a woman
+58:19 so in that sense i had a female role
+58:21 model
+58:23 and actually even more what helped me
+58:25 was the fact that a lot of my phd peers
+58:28 in my group were also a female
+58:32 to me this was actually more helpful
+58:34 because i could more easily relate to
+58:37 other women around my age who were just
+58:40 like one or two steps ahead of me and i
+58:41 could feel that you know i'm not alone
+58:44 and that if they are successful then i
+58:46 can also be successful
+58:48 uh so again extrapolating what this
+58:50 means in general i think it is important
+58:53 for universities to employ females
+58:55 at all levels uh as professors but also
+58:58 to make sure that they're also female
+58:59 posters and female phd students
+59:02 um yeah
+59:04 and yeah maybe finally
+59:07 the hardest part is to actually keep
+59:09 women in research and more specifically
+59:12 in academic research in the long run i
+59:15 mean if you look um there are like all
+59:17 these different studies that show that
+59:19 uh
+59:20 in the current
+59:21 situation at every stage women are more
+59:24 likely to drop out than men
+59:26 uh you know so to begin with we don't
+59:28 have so many uh master students when
+59:30 they get even fewer at the phd level
+59:32 even here at the foster level and even
+59:34 here at the you know professor level uh
+59:37 and um yeah i think for me this is maybe
+59:40 the hardest problem
+59:42 um
+59:44 and yeah it happens because it's quite
+59:45 hard to combine creating a family with
+59:47 the academic expectations that require
+59:50 you to be mobile and change cities or
+59:53 countries until you get a permanent
+59:55 position
+59:56 while also you have to work long hours
+1:00:00 so yeah this is one of the hardest
+1:00:02 problems i think to solve of course some
+1:00:04 solutions go towards the direction of
+1:00:06 having better child care and support for
+1:00:09 women
+1:00:10 but yeah i mean my feeling is it somehow
+1:00:12 goes beyond that and that somehow
+1:00:15 universities need to acknowledge and be
+1:00:16 aware of the additional challenges uh
+1:00:19 that women make
+1:00:21 may face in their personal lives and
+1:00:23 yeah make some adjustments for that
+1:00:26 we should start with schools right like
+1:00:28 you said uh yeah we have these events
+1:00:31 and uh
+1:00:32 i guess if uh
+1:00:33 if this event like somebody who comes
+1:00:36 and presents
+1:00:37 is uh
+1:00:38 um the presenter is
+1:00:41 a guy like you know in this t-shirt like
+1:00:43 described like you described and then
+1:00:46 so maybe it's helpful to have a female
+1:00:48 uh
+1:00:49 presenter as well right no i mean this i
+1:00:52 can really tell you this from my
+1:00:53 personal experience that this problem is
+1:00:54 real i mean when i was younger and i was
+1:00:57 starting with my phd i mean i somehow
+1:00:59 really
+1:01:00 felt that okay
+1:01:01 um
+1:01:02 the way i dress and you know the fact
+1:01:05 that i don't know i wear makeup and all
+1:01:06 that like
+1:01:08 it's somehow incompatible with me being
+1:01:09 in computer science i mean it's maybe a
+1:01:11 sign that i'm actually not good for that
+1:01:13 which is crazy but i mean i
+1:01:15 like going back i can really see that i
+1:01:17 was to some extent making these stars
+1:01:19 feeling that i don't fit in the
+1:01:21 stereotype right and that this is
+1:01:22 probably because i'm doing something
+1:01:24 wrong not because the stereotype is
+1:01:26 wrong but because there's something
+1:01:27 wrong with me so
+1:01:28 um it's um yeah
+1:01:31 it can have an impact
+1:01:33 yeah so we should be wrapping up
+1:01:36 if people have questions to you how can
+1:01:39 they find you
+1:01:40 well like i guess you
+1:01:42 um
+1:01:43 i mean i you have already shared i think
+1:01:45 my information on your website right
+1:01:48 something
+1:01:50 to the demo page with all your contacts
+1:01:52 yeah i mean this information is up to
+1:01:55 date only i guess uh yeah there is my
+1:01:57 email on my website so i guess that's
+1:02:00 the easiest way
+1:02:01 okay thanks a lot thanks for joining us
+1:02:04 today thanks for sharing your story
+1:02:06 thanks for telling us about the work
+1:02:08 you're doing uh also talking about
+1:02:10 thanks for talking about challenges uh
+1:02:12 openly like uh and uh all these things
+1:02:15 so thanks a lot thanks everyone for
+1:02:18 joining us today for asking questions
+1:02:21 and yeah thanks eleni
+1:02:23 thanks a lot alex i yeah yeah it was
+1:02:26 great being in the podcast
+1:02:27 great to meet you
+1:02:29 yeah and sorry for technical
+1:02:31 difficulties i hope it was fine that i
+1:02:34 was from my mobile phone no oh no no i
+1:02:36 mean after like this
+1:02:38 first issue then it was perfect yeah
+1:02:40 yeah maybe i should just do this for my
+1:02:42 mobile phone all the time
+1:02:45 yeah
+1:02:46 okay thanks a lot and
+1:02:48 yeah have a great weekend
+1:02:50 yeah you too thanks goodbye
+1:02:52 goodbye

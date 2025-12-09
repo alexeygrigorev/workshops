@@ -1,0 +1,1738 @@
+From Open-Source Maintainer to Founder
+
+0:00 hi everyone welcome to our event
+0:02 this event is brought to you by the docs
+0:04 club which is a community of people who
+0:06 love data we have weekly events well
+0:08 actually this week we have more than
+0:10 just one weekly event we have
+0:13 four weekly weekly events but this is
+0:16 simply because i am taking a month off
+0:19 in july
+0:20 so i thought we can just you know now
+0:22 schedule quite a few of them in june and
+0:24 then
+0:25 release them a little bit one by one
+0:29 anyways long story short we have quite a
+0:31 few events scheduled for this and next
+0:33 week check it out so we have actually a
+0:36 link in the description click on this
+0:38 link and you'll see
+0:39 some events for this week and a couple
+0:41 for the next one
+0:42 and if any of these events is
+0:45 interesting for you
+0:47 register for them
+0:49 and then very important don't forget to
+0:50 subscribe to our youtube channel there
+0:52 is a big red button below the video
+0:55 click on this link and you'll be
+0:57 notified about all our streams and
+0:58 videos
+1:00 and we have an amazing slack community
+1:02 if for whatever reason you haven't
+1:03 registered yet yeah do it now you'll get
+1:06 to
+1:07 hang out with other data folks
+1:10 during today's interview you can ask any
+1:12 question you want there is a link in the
+1:14 live chat it's pinned click on this link
+1:16 ask your question and i will be covering
+1:18 these questions during the interview
+1:22 okay
+1:23 i think this part is done now i will
+1:27 open the questions i prepared for you
+1:32 okay
+1:34 are you ready
+1:36 okay i'm ready
+1:39 this week we'll talk about working on
+1:40 open source and we have a special guest
+1:42 today will will is a software engineer
+1:45 and author
+1:46 and he is quite an enthusiastic
+1:48 developer of open source software and he
+1:50 is the creator of some very popular
+1:53 python packages welcome will
+1:55 thank you it's good to be here
+1:57 yeah before we go into our main topic of
+2:00 working on open source let's start with
+2:02 your background can you tell us about
+2:03 your career journey so far
+2:06 um career journey so far i'm condensed
+2:09 25 years into
+2:11 into a few sentences um
+2:13 well i started out in video games i was
+2:15 working
+2:16 video games for about
+2:18 10 years plus
+2:19 pc games playstation games even
+2:22 dreamcast
+2:23 and then i kind of moved into um desktop
+2:27 applications i worked for a while for
+2:28 the internet chess club
+2:30 um then i worked in various kind of new
+2:33 media websites that kind of things and
+2:36 for the last uh well prior to my current
+2:38 position
+2:39 um
+2:40 i was freelancing and doing mostly
+2:44 python style mostly web related um
+2:46 building servers and
+2:48 protocols and uh very recently i've uh
+2:52 started a company called textualize
+2:57 yeah that was pretty condensed
+2:59 for 25 years you said right yeah
+3:02 that's
+3:03 yeah
+3:04 for your work at the chess club did you
+3:06 have to play chess well
+3:10 um no i'm a very weak player to be
+3:11 honest um i'm better at implementing
+3:14 software than i am at playing chess
+3:16 and i was working on um a new interface
+3:19 for the internet chess club um so it was
+3:22 like um a chess board where you could
+3:23 move pieces around
+3:25 and and draw arrows and uh you know
+3:27 exchange chat with other players
+3:30 yeah i was imagining an interview where
+3:32 you need to win like a couple of people
+3:34 in order to pass the interview yeah
+3:37 it wasn't like that was it yeah i mean i
+3:39 did uh i quite liked chess and i did uh
+3:42 play a little bit but the reason i got
+3:43 that job was because i built some chess
+3:45 software in my spare time
+3:48 uh you know a few years previously and i
+3:50 was selling that
+3:52 and this is before my
+3:54 open source adventures this was um
+3:56 something to
+3:57 make profit from
+3:58 and well i didn't make a lot of money uh
+4:01 but it brought in
+4:02 um you know a few thousand pounds um but
+4:04 i got the attention of internet chess
+4:06 club so i got a job um out of it um so
+4:08 it's not so bad
+4:10 yeah cool so speaking about your open
+4:12 source so can you tell us about your
+4:14 open source projects what what are they
+4:16 what did you work on
+4:18 um i had a few small projects a while
+4:21 ago um i had a bb code parser
+4:25 um don't if you're familiar with bb code
+4:27 um and this is like something we use for
+4:30 old php forums right
+4:32 and uh
+4:34 yeah
+4:34 built-in boards if you wanted to um add
+4:37 a type something that had bold in it you
+4:39 would do
+4:40 uh square bracket be closed yeah it's
+4:42 like html but with sign
+4:45 yeah and at the time i was um adding
+4:48 that to a website and it didn't there
+4:50 wasn't a bb code parser um so i built
+4:53 one
+4:54 and then i published it for python yeah
+4:57 and it started to get a bit of
+4:59 traction um because at the time other
+5:01 people in the same position wanted to
+5:02 implement
+5:03 uh bb code and so i think that's my
+5:06 first
+5:07 uh
+5:08 actually it's not my first but the first
+5:09 project which got traction and people
+5:11 started using i'd run other things prior
+5:14 to that
+5:14 um was it something you just saw like
+5:17 you you really need this and you thought
+5:19 okay like there is nothing let me just
+5:21 implement this
+5:22 it's exactly like that yeah i just uh i
+5:24 needed it for a website um i i googled
+5:27 couldn't find anything and did it so i
+5:29 just implemented it and it was quite
+5:31 interesting it's um a simple kind of
+5:34 parser and renderer
+5:36 um
+5:37 yeah i just most of my open source stuff
+5:39 has been like that i wanted something to
+5:41 exist
+5:42 um if there was something already that
+5:43 we did it i would have just
+5:45 taken off the shelf
+5:46 um but when it doesn't um i think about
+5:49 you know building it myself
+5:52 yes sorry i interrupted you you wanted
+5:54 to tell us about the other the next
+5:56 project you worked after this bb parser
+5:59 um oh there's a few other small projects
+6:01 which um i'd open sourced
+6:03 um
+6:05 what was it um
+6:07 oh there was a chess library um a
+6:09 library which
+6:10 um i wrote over a few weeks which parsed
+6:14 chess moves uh read pgn files which is
+6:17 um what stores um chess game information
+6:22 and uh yeah i i published that
+6:25 um it was quite buggy actually there was
+6:26 a few bugs um but people
+6:29 um submitted uh prs i don't even i'm not
+6:32 sure if they were called pr's at the
+6:33 time
+6:34 was it on did github exist back then uh
+6:37 this was pre github i'm pretty sure um i
+6:40 think it might what was it
+6:41 google code
+6:43 uh yeah i remember this thing too but
+6:45 they closed it
+6:48 maybe good for github but i kept quite a
+6:51 few projects there
+6:52 yeah it wasn't bad for the day it used
+6:55 um svn
+6:56 um which was i quite liked svn but i
+6:59 think it took over
+7:01 yeah um yeah so i had a few projects on
+7:04 there um
+7:05 but in my next
+7:06 uh the project that took off was
+7:08 something called pi file system
+7:10 um so again it's a python library um
+7:13 which abstracts file systems um so for a
+7:16 file system
+7:17 would be like your hard drive but it
+7:20 could also be
+7:21 an ftp server
+7:23 or it could be
+7:24 a zip file
+7:25 and pi file system would provide a
+7:28 common interface
+7:29 onto all of those things
+7:31 so you could write some code
+7:33 um
+7:34 which by default would read files off
+7:36 your hard drive but if you want to read
+7:38 it files from the cloud you could do
+7:39 that by just swapping it online
+7:42 or if you want to write a zip file um
+7:44 it's just just a matter of copying
+7:46 between two file systems
+7:47 like i think so it's kind of a
+7:49 abstraction layer for file systems
+7:52 i think it's pretty commonly used still
+7:54 right
+7:55 it's still quite popular um
+7:58 it's been you know it was over 10 years
+8:00 ago and it's um on version two
+8:03 of the interface and it's still being
+8:05 used i had to
+8:07 give it over to um other maintainers
+8:10 um because i just um didn't have the
+8:13 time to to maintain it that's that's the
+8:15 um the tragedy of open source is once
+8:17 you
+8:18 uh once you build something that gains
+8:20 traction
+8:22 um
+8:23 there's no end
+8:24 there's no end to it um people use it
+8:26 they will want uh they want fixes and
+8:29 they want updates
+8:30 and refinements um and i did that for
+8:33 nearly ten years um but at some point
+8:36 you have to say
+8:37 um
+8:38 sorry i have to you know i have to
+8:40 go into another project um but but
+8:43 fortunately um there's a couple of very
+8:45 talented developers who were um already
+8:47 submitting prs and who already
+8:49 maintainers um so i just had to leave it
+8:52 to them and they've done a fantastic job
+8:53 so far it's they're also the beauty of
+8:56 open source you said that yeah the
+8:58 tragedy but also the beauty right
+9:00 because there are people who the core is
+9:02 open right so if you
+9:04 say okay this is enough for me
+9:06 then
+9:07 the code is open right anyone
+9:09 can come and keep on working on this
+9:12 that's right and that's that's the
+9:13 awesome thing about
+9:14 about open source um your little pet
+9:17 project um can become
+9:19 something bigger
+9:21 and other people can
+9:23 fairly naturally migrate to it and start
+9:26 producing content and fixes um so a
+9:29 project can you know can be
+9:31 bigger than that the one person that
+9:33 started it
+9:35 and s3fs is also your thing
+9:39 um yes
+9:41 so sgfs
+9:42 um
+9:43 is a pi file system
+9:45 uh file system so it has exactly the
+9:48 same interface as all the other ones um
+9:51 but it writes to amazon s3
+9:54 um tricky part was amazon s3 um
+9:57 isn't a full
+9:59 file system it looks kind of like a file
+10:01 system
+10:02 i like the folders are fake right the
+10:04 folders are fake it's basically just um
+10:08 files and you can't by convention you
+10:10 can
+10:10 uh impose a kind of a logical file
+10:12 system um but it's not a full file
+10:15 system
+10:16 um but you know the interface is um
+10:19 flexible enough in that it can
+10:22 uh present the illusion to the developer
+10:26 that it is just a file system uh like
+10:28 your hard drive
+10:30 yeah the just a few days ago i
+10:32 discovered that in pandas you can read
+10:34 and write to csv or two s3 sorry
+10:38 and then of course you know what it uses
+10:41 for uh reading and writing to s3 is it
+10:44 used as svfs
+10:46 yeah they they do yes so they made me
+10:48 install it they say okay it looks like
+10:50 you're trying to write s3 but you need
+10:52 to install this uh dependency to be able
+10:54 to do this
+10:56 okay
+10:57 i think um is it the pi file system
+10:59 version because i think there's another
+11:00 package called s3fs
+11:03 i don't know so i just needed to do peep
+11:05 and install s3fs and
+11:08 i'm not sure what which exactly or
+11:10 whatever i think that's another one i
+11:11 think uh my sdfs um on on pi pi is um fs
+11:16 underscore sgfs because uh they came
+11:19 before before me
+11:22 it was very unimaginative
+11:24 um regarding uh
+11:28 and
+11:29 yeah i guess i already answered you how
+11:32 do you come up with this these ideas so
+11:34 you see in it
+11:36 you need something you need to do
+11:37 something right you need a bb code
+11:39 parser you need a airway to access files
+11:43 like a common way of working with zip
+11:45 files ftp file s3 and there is nothing
+11:48 and then you go ahead and implement this
+11:50 is this how it works for all your open
+11:53 source projects
+11:55 um often
+11:57 um i think my file system had an
+11:59 interest origin that that came from when
+12:01 i was working
+12:02 um
+12:03 for the internet chess club um so they
+12:06 had a chess interface which came with a
+12:08 bunch of files
+12:10 and we were implementing a plugin system
+12:14 where you could distribute
+12:16 a zip file
+12:18 um
+12:19 and that would overlay the existing file
+12:21 system with other files but do it
+12:23 virtually um so it didn't copy over
+12:26 files it just kind of transparently
+12:29 presented the illusions application um
+12:31 that was reading
+12:32 combined file systems
+12:34 um so i meant something
+12:36 like pi file system for that
+12:39 um but when i left internet chess club
+12:42 um i realized that this is quite a
+12:44 flexible
+12:45 system
+12:46 um
+12:47 you know just creating this uh this
+12:49 virtual file system illusion you could
+12:51 put anything behind it
+12:53 um so i implemented i implemented that
+12:56 in my spare time
+12:57 and
+12:58 yeah it took him a few months to to to
+13:00 come together but yep that's how that
+13:02 started but there was an idea that you
+13:04 got inspiration from your full-time job
+13:07 and you thought okay it doesn't seem
+13:08 like there is anything like that
+13:10 out there yeah and you thought okay like
+13:13 let's just implement this
+13:15 and exactly yeah that's um how most of
+13:17 my
+13:18 projects start and then sometimes it's
+13:20 um
+13:21 intellectual curiosity like i don't know
+13:24 how
+13:25 to implement something i've got some
+13:26 vague ideas
+13:27 um
+13:28 you know sometimes the best way to learn
+13:30 is to give a go and see what you can
+13:32 come up with and yeah i've got way more
+13:35 abandoned projects than
+13:37 than projects that you know become you
+13:40 know popular
+13:43 do you publish everything you do opens
+13:45 like in the
+13:47 in open source
+13:48 or there are some things i think you
+13:50 mentioned this uh chess thing
+13:52 uh was it chess uh
+13:54 i don't remember what was it like
+13:56 something related to chess that you said
+13:57 it wasn't open source right so some
+13:59 things
+14:00 um yeah that was open source um on on
+14:05 google code and but in those days um
+14:07 google code didn't have his um
+14:09 the collaboration features
+14:11 so it was just kind of something i did
+14:12 in my spare time on my own computer and
+14:15 then i thought someone might be
+14:16 interested in this and i would upload it
+14:17 to to google code and uh some people did
+14:21 take it and put into you know their own
+14:23 projects and fixed fixed bugs there and
+14:25 some of those
+14:26 um you know got got fed back is it the
+14:30 thing that got you a job in the
+14:32 chess website because you mentioned you
+14:34 were selling something for a couple of
+14:36 uh 100 pounds per month
+14:39 did you already make money with open
+14:41 source or what was it a different thing
+14:43 uh no that was something um proprietary
+14:45 that i was just um working on
+14:47 um as a hobby um i want to turn it into
+14:50 a living but i couldn't quite do that so
+14:53 i built
+14:54 a chest in my face i think it was in c
+14:57 c plus
+14:59 um
+15:00 and that's how i learned all about um
+15:02 parsing chess and
+15:04 validating uh moves and such
+15:07 i know we didn't cover all your open
+15:09 source projects and there are some more
+15:11 recent ones which we'll probably talk
+15:12 later when we talk about your career or
+15:15 your experience as a founder but i
+15:17 wanted to go a little bit uh back in
+15:19 time maybe 10 years ago so i checked
+15:22 your linkedin and i saw that your last
+15:24 full-time job was in 2010
+15:26 and since then you've been a freelancer
+15:29 so why did you decide to go solo why did
+15:32 you decide to start freelancing back
+15:34 then
+15:35 um
+15:37 it wasn't a particularly conscious
+15:39 decision i was in a job at the time that
+15:42 i wasn't enjoying
+15:44 um and i was uh you know looking on i
+15:47 think it's python job board i know
+15:49 someone looking for
+15:50 a a python developer to do three months
+15:53 work
+15:54 and i thought
+15:56 well that's quite good um i can leave
+15:57 this job that i don't enjoy um i can do
+15:59 this three months work and the pay was
+16:01 quite good and that would give me a
+16:02 buffer
+16:03 um find my next full-time position
+16:07 um but anyway those three months turned
+16:09 into
+16:10 another six months and
+16:12 that contract just kept
+16:14 being extended so i was with uh with
+16:16 that company
+16:18 um for um more than 10 years 11 years
+16:21 actually
+16:22 ah so it's like uh
+16:25 not quite freelancing it's freelancing
+16:26 but not quite right because
+16:28 it's a company
+16:30 technically
+16:31 freelancing um okay yeah
+16:34 for tax purposes um interesting
+16:37 yeah
+16:39 this is how it can also work i didn't
+16:42 i don't think i ever met anyone who's
+16:45 who's done anything like that in germany
+16:47 actually it's interesting in germany
+16:49 like if you try to pull something to
+16:52 pull off something like this then the
+16:54 um
+16:55 the
+16:56 tax authority will
+16:58 come after you they'll they will say oh
+17:00 something is suspicious suspicious here
+17:02 like it looks like full-time employment
+17:04 like who are you trying to
+17:06 uh
+17:07 cheat
+17:08 it
+17:09 yeah yeah we have that here as well and
+17:12 you have to be
+17:12 very aware
+17:14 um
+17:15 of the rules
+17:16 um but we stayed on on the right side so
+17:19 it was uh always technically uh
+17:22 freelancing
+17:23 and i did actually other jobs as well as
+17:25 well and there's a few
+17:27 um jobs that came up um
+17:30 much smaller contracts generally but the
+17:32 fact that you can do two contracts at
+17:33 the same time
+17:34 uh is indicative of freelancing because
+17:36 a full-time position you're generally
+17:38 not allowed to do and take on any other
+17:40 work
+17:42 um so yeah i was very conscious to um
+17:44 stay on the right side of the
+17:46 of the rules
+17:48 and this experience of being a
+17:50 freelancer working with multiple clients
+17:53 long-term clients and smaller or like
+17:56 shorter contracts
+17:58 like was it something you also
+18:01 also gave you inspiration for your open
+18:03 source projects or your open sourcing
+18:06 activities were quite unrelated to your
+18:08 freelancing
+18:10 um
+18:11 strangely the open source stuff was kind
+18:13 of like um an escape
+18:16 from
+18:17 let's see from the contracting because
+18:19 i'm at the contracting you've got lots
+18:20 of
+18:21 um
+18:22 business requirements
+18:24 and you have to integrate with
+18:26 other people's
+18:28 software and you have much less scope
+18:30 well i found that in that position had
+18:32 much less scope
+18:34 um to make the big decisions and to
+18:35 influence uh how the project
+18:38 grows
+18:39 and so what i found was that i would do
+18:40 a project um on the side
+18:44 um and when i did that i was like master
+18:46 of my own domain you know and i can make
+18:49 all the big decisions and and uh you
+18:51 know influence the architecture
+18:53 and i found that um
+18:55 bizarrely um to be um
+18:58 you know kind of cathartic a kind of a
+19:00 release from my my day job
+19:04 it's interesting that many people who
+19:06 work in i.t developers
+19:09 and they also have uh development
+19:11 software engineering as a hobby
+19:13 to escape together it's very strange you
+19:16 know it'd be like um
+19:17 a doctor who did appendectomies at the
+19:20 weekend just to just relax
+19:23 it's kind of it doesn't make much sense
+19:25 yeah yeah that's interesting
+19:28 and then yeah maybe let's talk a bit
+19:30 about your
+19:32 more recent open source projects
+19:34 so i know that one of the projects which
+19:36 you will tell us now um actually led to
+19:40 starting a company so yeah maybe
+19:42 can you tell us how it happened uh
+19:46 and
+19:47 yeah like what's the story there
+19:49 um yeah sure so um so i think the
+19:52 project you're leading to is is rich
+19:55 which is another python library um which
+19:57 can write um
+19:59 interesting things the terminal so
+20:00 you've got like color and style
+20:02 formatting and tables and things like
+20:04 progress bars and spinners etc
+20:07 and um he started out with a much
+20:10 smaller
+20:11 vision
+20:12 i had this idea um
+20:14 several years ago i was working on a
+20:17 web framework again another hobby
+20:18 project and as part of that web
+20:21 framework there was um a module called
+20:23 console.pi
+20:25 and console.pi had many of the the same
+20:28 ideas as rich
+20:30 in that you could um write a kind of a
+20:32 markup which would
+20:34 insert color and style into your text
+20:37 and it could manipulate that that text
+20:39 to produce um more interesting
+20:41 formatting
+20:42 and when i left that project
+20:45 i still had at the back of my mind that
+20:47 maybe
+20:48 um i should take that console.pie and
+20:51 factor out into another library because
+20:54 it was quite useful
+20:55 and i found myself wishing that existed
+20:58 when i was working on other projects
+21:00 um so that was you know a few years had
+21:02 passed um and then i had some
+21:05 spare time when i was traveling and i
+21:07 thought i'll give this a go i'll just um
+21:10 i'll write something i'll i'll figure
+21:12 out how to do these um ansi codes
+21:14 um to add add color and then like you
+21:18 know a week or two i had my hello world
+21:20 only my hello world was
+21:22 um in bold magenta in the terminal
+21:25 and uh
+21:27 that that was the start of it um i built
+21:29 um
+21:30 a flexible system for applying style to
+21:34 text
+21:35 and still allowing
+21:37 uh the developer to format that text
+21:39 this whole vision terminal right
+21:41 all this in the terminal yeah um
+21:45 so there was lots of libraries which did
+21:48 um similar things
+21:50 and but what i found was they didn't
+21:52 integrate very well
+21:53 so if you had them a library which say
+21:56 um turn some text into bold or italic or
+22:00 or give it some color
+22:02 um
+22:03 you know that would work but then you've
+22:04 got another library which does tables
+22:07 and you want to put some formatted text
+22:09 inside the table cell
+22:11 and you couldn't
+22:12 um just once you format the text you
+22:14 couldn't manipulate it afterwards
+22:16 um so there's all these libraries which
+22:18 did you know a fairly good job of what
+22:20 they were intended to do but they didn't
+22:21 work together
+22:23 um so
+22:24 you couldn't you still couldn't do a
+22:27 great deal
+22:28 and i think you could see that from the
+22:30 projects in those days that when they
+22:31 did that color it tended to be a single
+22:34 line at a time if you if you saw a table
+22:37 um it tended to be just two colors just
+22:40 foreground and background
+22:42 and so i want to build something which
+22:44 took all these ideas and put them
+22:46 together in a way
+22:48 where you could functionally integrate
+22:50 them so if you have some
+22:52 text you could put it in a cell and it
+22:54 would wrap properly and you can also
+22:56 style that text in advance so you could
+22:59 apply
+23:00 say syntax highlighting to code uh put
+23:03 that within a table cell and that would
+23:05 just render um as you'd wanted to
+23:10 um and i
+23:11 built this system and then i published
+23:12 it and it took off
+23:15 basically i think other people
+23:18 found that need um so i started getting
+23:20 lots of which is quite interesting
+23:23 like usually developers who are into the
+23:27 terminal world
+23:29 so who are in cl command line interfaces
+23:33 i found
+23:35 and i'm one of those people
+23:37 like
+23:39 maybe these people care less about the
+23:41 visual the aesthetics
+23:44 but they care more about their function
+23:47 functionality right
+23:48 yeah
+23:49 and this is not necessarily um
+23:52 a conflict there
+23:54 um because um if you use rich it doesn't
+23:56 break any of the kind of like um
+23:58 functionality of a terminal for instance
+23:59 if you pass the place of it it makes it
+24:01 nicer yeah but if you pipe some of the
+24:03 content that you've done with rich um
+24:06 into another file it will or another
+24:08 application it will strip off the color
+24:10 um so it doesn't break anything as far
+24:13 as the kind of like terminal apps go
+24:16 and then i think even those people that
+24:17 said oh i don't you know i don't mind i
+24:19 just want to see that
+24:21 and the content and when you add a bit
+24:23 of
+24:23 color and style say just um emphasizing
+24:27 strings
+24:28 or
+24:29 formatting data structures and they go
+24:32 okay
+24:34 yeah this i actually wanted
+24:36 i must admit that uh cli tools that i
+24:39 use that have these features
+24:41 uh they are more attractive right so
+24:43 it's not like that that actually matters
+24:46 at the end like when it comes to
+24:47 functionality like
+24:50 if it gets the job done it gets dropped
+24:51 down but still there is this uh
+24:55 you know appealing element that is quite
+24:57 nice this touch a little touch that okay
+25:00 now it's just more pleasant to look at
+25:03 yeah but more pleasant to look at but um
+25:06 you know we say something's more
+25:07 pleasant it also means it's more
+25:08 readable um you can pick out the
+25:10 information
+25:11 which you which is more relevant quicker
+25:15 and if all your um
+25:17 your command line applications are like
+25:19 that
+25:19 um it saves you time it saves you time
+25:22 you know um
+25:23 i'm sure you've been you know got paid
+25:25 pages of output and you're scrolling
+25:27 through and it's quite it's quite dense
+25:30 um it takes it takes time for you to
+25:32 visually parse and and pick out the
+25:34 information you need but if that's
+25:36 formulated
+25:38 usually it's logs
+25:39 yeah and which has a log formatter uh
+25:43 which puts things nice neat columns and
+25:45 it colorizes appropriate bits of
+25:47 information
+25:48 um so you can pick out can you just pipe
+25:50 it like let's say i have a
+25:52 boring dial block
+25:54 from i don't know my python
+25:56 server
+25:57 now and then can i just pipe it through
+26:00 reach to make it
+26:02 more pleasant
+26:03 no no not by default no but um
+26:06 python has a logging library
+26:08 and rich has a handler for this so you
+26:11 can swap out
+26:12 um regular python logging for rich
+26:15 logging
+26:16 and then you get nice neat formatted
+26:19 output
+26:21 but i guess when you write it to a file
+26:23 it's all lost right
+26:24 it's all lost yeah um so you see it when
+26:27 it's in the terminal here
+26:29 okay
+26:31 and yeah so you have this uh you worked
+26:33 on this library reach and uh what
+26:36 happened after that
+26:38 um so rich was becoming
+26:40 um really popular um and this at some
+26:43 point someone
+26:45 um
+26:46 a couple guys very talented guys they
+26:47 took rich and they built um
+26:50 a text user interface with it
+26:52 uh which would
+26:54 um
+26:55 display
+26:56 um information from the github api it
+26:58 would show like recent pull requests and
+27:00 it
+27:01 divided the screen up into four and
+27:03 showed like scrolling windows and it
+27:04 formatted it really nicely
+27:07 and when i saw that
+27:09 i realized that there was so much
+27:11 potential
+27:12 um to take
+27:14 ridge and then build a framework around
+27:17 it which did more dynamic things so
+27:20 instead of just um
+27:22 writing content to the the uh scroll
+27:25 buffer that you could scroll through um
+27:27 and like most applications do it could
+27:29 take over the entire screen
+27:31 and it could
+27:32 present
+27:35 um yeah but that's that's the um the two
+27:38 ease of yesterday
+27:40 and you can do so much so much more
+27:43 um you know um
+27:44 terminal support 16.7
+27:47 million colors
+27:48 um it's very rare to see um applications
+27:51 which actually use that
+27:53 and you can update things quite quickly
+27:57 like the entire
+27:59 webpage there right
+28:00 sorry
+28:01 you can have a web page there you said
+28:03 it supports 16 million like basically
+28:06 called rgb space right
+28:07 yeah so you can create something which
+28:09 um
+28:10 works much more like a web page i mean
+28:12 it's um it's also very limited in what
+28:14 you can present
+28:17 but it can be remarkably
+28:19 functional
+28:20 and these applications
+28:22 um if you're familiar with a web page or
+28:24 a desktop application even if you're not
+28:25 a technical user or developer and we can
+28:28 sit you down in front of these
+28:30 applications and you can use it because
+28:32 it's um got lots of uh familiar controls
+28:36 um anyway what i just described there
+28:38 was it was a textual which is a
+28:40 framework
+28:41 um that i started
+28:42 building
+28:43 which is built on on top of rich
+28:46 and um
+28:49 you know i was really pleased the way
+28:50 that was going i realized a lot of
+28:51 potential there and i had this idea um
+28:55 for a business
+28:56 um and i was at a point in my career
+28:58 where i thought
+29:00 i should take a year off
+29:02 uh live off
+29:04 savings
+29:05 for a year uh and give this a go um
+29:08 because i thought it was a great idea at
+29:09 the end of that year
+29:10 maybe i could approach
+29:12 um
+29:13 you know someone with venture capital um
+29:16 to build a company around it and so i
+29:19 started um you know i was blogging about
+29:20 this sorry not blogging uh tweeting um
+29:23 kind of an avid
+29:25 and
+29:27 i think that i think it was tweets which
+29:30 um got the attention of a venture
+29:32 capital firm and they they approached me
+29:34 and at the time i hadn't fully
+29:36 um explained my idea for business but i
+29:39 discussed it uh with them
+29:42 and
+29:43 you know it took a while lots of
+29:45 backwards and forwards i mean i i
+29:46 refined a business plan of sorts
+29:50 um and then
+29:51 i got investment so it was um i was
+29:53 unemployed for
+29:55 barely three months
+29:58 so you gave yourself a year but after
+30:00 three months you
+30:02 got yeah because um i thought that i
+30:05 would need to have something which was
+30:06 approaching um a finished product before
+30:10 i could go to someone and ask for money
+30:13 um
+30:14 but the venture capital scene at that
+30:16 time
+30:17 um
+30:19 was more and more time is it bearish or
+30:21 bullish i can't remember um but they
+30:23 were willing to
+30:24 um invest in on a good idea something
+30:26 which had had potential
+30:29 um so we got um i think it's called
+30:31 pre-seed funding
+30:33 and it's it's enough to
+30:35 start a company and employ some
+30:37 developers
+30:39 and how did this tweet look like i
+30:42 imagine you didn't specifically write
+30:44 hey this is like i fixed this bug by the
+30:47 way if you're abc
+30:48 give us some money this didn't look like
+30:50 this right so no
+30:52 not at all because like yeah because my
+30:54 plan a was to take that year off yeah um
+30:57 and that's what i was tweeting about
+31:00 i think that just um you know got the
+31:02 attention of um you know the vc company
+31:05 and they they approached me
+31:07 and certainly our first conversation
+31:09 i thought it was just someone
+31:11 wanting to discuss
+31:12 what i was working on because i i do
+31:14 that i like to um talk to people in the
+31:16 python community and you know exchange
+31:19 your ideas and you know
+31:21 go over the projects they're working on
+31:23 um but then a student i soon
+31:25 realized that okay maybe this is a you
+31:27 know opportunity
+31:28 um to to get investment and certainly
+31:31 that was much more attractive
+31:33 um than me running up a year's worth of
+31:36 savings of course
+31:38 yeah
+31:40 i think this approach is called building
+31:42 in public right so when you just
+31:45 do something work on your project and
+31:47 then every little thing you work on you
+31:50 share it on social media on twitter
+31:52 right
+31:53 yeah pretty much i mean you you do that
+31:55 without um any expectation that anyone's
+31:57 going to read it or or see it um but if
+32:00 there's people there's people out there
+32:02 you know that they might find that
+32:04 interesting and they start to follow you
+32:06 and the thing about the stuff i was
+32:08 working on rich and textual is it's um
+32:10 by its very nature is quite visual
+32:13 and so i can work on something and i can
+32:15 post a screenshot or a video
+32:18 okay this is what i did today right and
+32:20 this is the bugger fixed right and then
+32:21 you just take a picture
+32:23 exactly yeah and here's the feature that
+32:25 i'm working on and i can show
+32:27 um progress so initially you know the
+32:30 first few hours work i get something
+32:31 that's very rudimentary but it kind of
+32:33 looks like it might turn into something
+32:35 nice and then every time i add a feature
+32:38 or refine it i can post a new new video
+32:41 a new tweet explaining what i did
+32:44 and people follow that because it's you
+32:46 know it can be quite interesting to some
+32:48 people
+32:50 did you do this with intention of
+32:52 getting somebody's attention or just was
+32:55 out of your or out of the habit
+32:58 or i don't know why did you actually
+32:59 tweet about this
+33:01 i guess um
+33:03 it's just something that i'm interested
+33:04 in and that's what twitter is for you
+33:06 just kind of like um
+33:07 like this is what i think today is what
+33:09 i did today well i sometimes do that i
+33:11 sometimes post pictures of what i cooked
+33:14 but no one was interested in that at all
+33:16 um i did notice that people did actually
+33:17 react to the screenshots um that i
+33:20 posted um so that kind of motivated me
+33:23 to
+33:25 do more of that kind of content
+33:27 yeah this comment about what i ate i i
+33:30 started
+33:31 my twitter journey in 2020
+33:35 and before that i thought that the tutu
+33:38 is the place where people shared the
+33:40 food they eat like they just took me
+33:41 this is the burger i ate today at
+33:43 mcdonald's and this is my french fries
+33:46 and i thought this is what twitter is
+33:47 for but i was so
+33:49 surprised when i learned that it's not
+33:51 actually that
+33:53 now it's instagram where people
+33:55 start well it still is that a bit and
+33:57 it's and more and there's lots of
+33:59 bubbles um the people that follow you
+34:02 and and people you followed they create
+34:04 kind of like a bubble so you get people
+34:06 that are like-minded who are interested
+34:08 in the same things
+34:10 um
+34:11 that you're interested in so i mean
+34:13 twitter can be a really horrible place
+34:16 like don't post anything political um
+34:19 you know
+34:20 it's a bad idea but if you get that
+34:23 bubble of people that are interested in
+34:25 the same thing you're interested in
+34:27 you can get a lot of feedback from what
+34:28 you do you can learn a lot from them
+34:31 and it can be very positive
+34:34 now i think last time i checked
+34:36 i think today you had quite a few
+34:38 followers right it was 18k or something
+34:41 like this yeah 18 18 000. yeah crazy
+34:45 was it like that when you got approached
+34:48 by the abc
+34:50 um yeah well it's slightly less
+34:52 obviously um but yeah i did have
+34:54 a very number of followers i think it
+34:55 might have been like 12 000 at the time
+34:58 so you have this habit of just tweeting
+35:02 or
+35:02 about what you work on and then over
+35:05 time you accumulated a decent number of
+35:08 followers right and then
+35:11 i guess when you have quite a large
+35:13 i don't know if audience is the right
+35:15 word but people who
+35:17 uh who follow you
+35:19 um
+35:19 then
+35:20 it's natural that
+35:23 you get attention from
+35:24 people like vc's right but it wasn't
+35:26 your attention
+35:28 it wasn't my intention okay at the start
+35:31 certainly i mean later on i won't lie
+35:33 i've i have um sort of game game the
+35:36 system so i i try to get people to um
+35:38 react to i try to post things which
+35:40 people might be interested in
+35:42 um but initially it was just it was just
+35:44 um me because um
+35:46 software development could be kind of
+35:47 like a a solitary thing
+35:50 um i mean
+35:51 i'm married but my wife is not in the
+35:55 she's not a developer and she doesn't
+35:57 get excited about the same things that i
+35:59 get excited about as far as software
+36:01 development goes so it's quite nice to
+36:02 be able to um reach other people that
+36:05 are interested in
+36:07 in what you're interested in
+36:08 and so that's why i did it um i just
+36:11 put something out there and
+36:14 you know
+36:15 got a feel for what the kind of reaction
+36:16 was
+36:17 so it was never i've never any intention
+36:20 of um trying
+36:22 you know trying to attract
+36:24 investment so i guess one day you woke
+36:27 up you see a
+36:28 direct message saying hey
+36:31 take our money right and then you
+36:33 thought okay let's take it and you
+36:36 started the company right
+36:38 um wasn't quite as direct as that
+36:41 um there was lots i mean obviously they
+36:43 they want to do the due diligence so
+36:44 they'll discuss the business plan with
+36:46 you and then they want they want details
+36:49 and
+36:50 um you know there's lots of backs and
+36:52 forwards but in all honesty it didn't
+36:54 take
+36:55 um all that much much time
+36:58 um i mean everything i read told me that
+37:01 but when you come to look for investment
+37:03 um it'll take you a long time
+37:06 you'll have to approach many investors
+37:07 and you'll have to get used to getting
+37:08 knocked back and refining your pitch
+37:11 um but for whatever reason
+37:13 that wasn't the case for me it was
+37:14 actually um a little bit easier
+37:18 okay
+37:18 and uh yeah so you started the company
+37:21 so i guess you're the ceo of the company
+37:24 right yeah that's right yeah
+37:25 okay and you said you got this precede
+37:28 round which gave you enough money to
+37:30 actually start hiring right yeah
+37:33 yeah so um two other developers now and
+37:37 we will be hiring again and probably
+37:39 within a few months
+37:41 okay so they gave you some money with
+37:43 the intention
+37:45 um that you
+37:46 spent this money on hiring developers
+37:48 right
+37:50 we're just running the business but
+37:52 developers are generally the most
+37:53 expensive part of business basically
+37:55 they just give you the money and do and
+37:57 say do whatever you think is necessary
+38:00 and then it's up to you to decide if you
+38:02 want to spend this money on developers
+38:04 on marketing or or on whatever um yeah
+38:08 essentially i mean um you still have
+38:10 like a controlling share of the company
+38:11 so it's your company
+38:13 um
+38:14 but
+38:15 you know um they want you to succeed and
+38:18 they know the kind of the tech industry
+38:21 um so they're good to have on your site
+38:23 um
+38:25 they can help you navigate the you know
+38:28 the world of um tech
+38:30 startups and
+38:33 how do you earn money with texturewise
+38:36 do you earn money with this or
+38:38 um no not the moment um so we're in kind
+38:40 of a research and development
+38:43 phase
+38:44 um we're building uh textual creating
+38:47 this framework which you can use to
+38:48 build applications uh within the
+38:50 terminal try to make that as as elegant
+38:53 and
+38:53 as beautiful as we possibly can
+38:56 um and then what we want to do is build
+38:59 a kind of web interface which takes
+39:02 those uh terminal based applications and
+39:05 turns them into web applications
+39:07 uh with a single switch so you can build
+39:09 an application
+39:10 and distribute it on pi pi or usual
+39:13 channels if you wish
+39:15 um but you can also build it and then
+39:17 serve it on the web and just incredibly
+39:20 easily
+39:21 and that will make it available to
+39:23 non-technical people because
+39:25 terminal applications um are generally
+39:27 kind of a walled garden is
+39:29 almost exclusively developers
+39:31 and some other technical people that
+39:33 that use them
+39:34 but a textual application
+39:37 can be you know usable by non-technical
+39:40 people
+39:41 and i think um you know there's a big
+39:43 market there it's a it's a probably a
+39:45 very small
+39:47 sliver
+39:48 of the web application
+39:50 market but i think if we do it right um
+39:53 it can be like
+39:54 we would have you know the whole whole
+39:56 sliver to ourselves if that makes sense
+40:00 yeah and i guess one of because we don't
+40:03 give you money just to have fun right so
+40:05 they want to see that eventually in a
+40:07 couple of years or i don't know how
+40:09 long
+40:10 you will be able to
+40:12 uh return this money right to give them
+40:15 return investment so they need some sort
+40:17 of business plan for you like in two
+40:19 years i would want to earn money
+40:22 well this way right
+40:24 so basically something concrete right or
+40:26 how great it should be
+40:28 well there has to be a road map
+40:30 i mean sometimes when you're in this
+40:31 kind of retraction development phase um
+40:34 the exact nature of how you're gonna
+40:35 make money um might not be that clear
+40:39 and but has to be a roadmap where you
+40:40 can see
+40:41 you could have a viable product uh which
+40:44 people might want to pay for uh in the
+40:47 future
+40:48 and the thing i like about what we've
+40:50 done
+40:51 is that it can still stay true to its
+40:54 roots as open source i'm still building
+40:56 something which is open source you get
+40:58 all the code
+41:00 and
+41:01 you can do
+41:02 what you want with it but this web
+41:03 service is an add-on thing it doesn't
+41:06 take anything away from what you got it
+41:08 just gives you an extra an extra feature
+41:11 and we do plan on
+41:13 having a very generous um
+41:15 free tier and for
+41:18 individual developers open source
+41:19 projects and it'll be free and you can
+41:21 serve it to
+41:23 quite a lot of users
+41:24 um
+41:25 so beyond that we would charge for some
+41:28 features for more enterprise
+41:31 type of uses
+41:33 i think there's a app called stream lead
+41:35 maybe you heard about this uh uh yeah
+41:37 they were recently acquired yeah for um
+41:39 800
+41:40 i think they have yeah
+41:43 that was
+41:44 that was a good uh good number right
+41:47 but the business model they have is
+41:48 somewhat similar right
+41:50 they don't have a terminal
+41:53 right but the the business model itself
+41:55 like you can get you can cost a few
+41:58 things for free but if you want to go
+42:01 beyond this limit then you have to play
+42:02 something yeah
+42:04 yeah it's quite a similar business model
+42:06 and even they have a python api and
+42:08 we'll have a python api
+42:11 um so it's very related their audience
+42:13 is probably slightly different from ours
+42:16 we're aiming at um
+42:18 more kind of um
+42:19 engineer type use cases engineer tools
+42:22 developer tools um
+42:25 something to bridge that gap between
+42:27 engineers
+42:28 and you know the their their managers
+42:31 and their bosses um but streamlight is
+42:33 um data science machine learning
+42:36 um
+42:37 but yeah the model is quite similar
+42:40 and i guess you wouldn't mind being
+42:41 acquired by snowflake i wouldn't mind
+42:44 yeah
+42:47 okay yeah if you're from from snowflake
+42:49 yeah please say dm will
+42:53 anyways uh yeah so you mentioned hiring
+42:55 so you already hired somebody right
+42:58 uh yeah we've got two developers yeah
+43:00 they've
+43:01 been working to protectionize for some
+43:03 months now
+43:05 and how did the process look like like
+43:06 did you just tweet hey by the way we got
+43:08 some money who wants to work with uh
+43:11 with me
+43:12 well
+43:13 the first hire was someone that i knew
+43:15 of already um
+43:18 he had an open source project and i just
+43:20 exchanged some messages
+43:22 about those open source projects and
+43:25 well before
+43:26 um textualize happens and of course i
+43:28 could see all this code and i thought um
+43:30 well this guy is quite good and
+43:32 quite by chance he happened to be in the
+43:33 same city
+43:35 um so i approached him
+43:37 and
+43:39 quite by chance again he happened to be
+43:41 having doubts about the company that he
+43:42 was working for
+43:44 and so that that worked out quite well
+43:46 um so he started when the company
+43:48 started um in january
+43:51 and i heard another developer
+43:53 um fairly recently who's a web
+43:55 specialist has lots of experience
+43:58 um so yeah i'm quite pleased this
+44:00 company is very small obviously
+44:02 um but i'm quite two people
+44:04 three people including you right that's
+44:06 right yeah so you have to do all the hr
+44:10 uh pretty much everything right
+44:13 um yeah my wife helps um she's my pa
+44:16 slash boot keeper
+44:18 hr
+44:19 um
+44:20 which is you know uh is a big help
+44:22 because those kind of admin tasks um
+44:25 they take up
+44:27 way too much time um so i'm very
+44:29 grateful to my wife for for taking those
+44:31 on so it's actually four people right
+44:34 four people in total yeah yeah yeah okay
+44:36 developers
+44:38 and uh for you how important it is that
+44:40 when you hire when you're hiring people
+44:43 that they
+44:44 contributed they have contributed to
+44:46 open source
+44:48 um it's not essential
+44:51 um but it is an indication well the
+44:53 great thing is when someone's
+44:54 contributed to open source um you can
+44:56 see their work they've got a body of
+44:57 work that you can look through and
+44:59 without their knowledge and you can also
+45:01 see their interactions with people
+45:03 because
+45:04 we're building in public so
+45:06 um
+45:07 the code is just as important um as how
+45:10 you you respond to prs
+45:12 and issues
+45:14 um
+45:15 so it gives you a good idea of um the
+45:18 you know the employee that you're that
+45:19 you're hiring
+45:21 so i would say it's not essential um
+45:24 it not ever not all developers work with
+45:26 open source and there's some very
+45:28 talented developers which
+45:29 which which don't um but it's certainly
+45:33 certainly a a
+45:35 you know a check on a list if a
+45:37 developer has open source experience
+45:39 the two developers that you hired
+45:41 already
+45:42 do they have this experience
+45:44 um the first first developer he he did
+45:46 he had quite a lot of experience um
+45:48 second developer um he had
+45:50 some codes um but not a particular big
+45:53 body of work um but he did have lots of
+45:55 experience in a variety of areas
+46:00 but the way you work is completely open
+46:02 right so i guess you have i don't know
+46:04 maybe can you tell us uh like how
+46:06 exactly you organize work
+46:08 between three of you
+46:10 um so it's all a standard kind of
+46:11 workflow with with github and we're
+46:13 using everything github and to manage
+46:16 the work we use um github projects which
+46:19 is kind of like a kanban
+46:21 board uh you've got a backlog which is
+46:24 jobs that need to do and i have a to-do
+46:27 list uh which is things that i'd like to
+46:29 be done um soonish i can um
+46:33 order those by priority
+46:35 and then a developer can pick one that
+46:38 he feels
+46:39 um he could do and he drags that to the
+46:42 doing list and works on that and then
+46:45 we do a pr review and then when it goes
+46:47 to the review process
+46:48 it gets merged and we drag that to done
+46:50 um
+46:51 it's a super simple
+46:53 system
+46:54 there's only three of us now
+46:56 um so i think that'll be fine for for
+46:59 quite some time i'm sure at some point
+47:02 uh when the team gets bigger uh we might
+47:04 have to
+47:05 uh and investigate
+47:07 some other methodologies to manage tasks
+47:10 but
+47:11 so far that seems to be working for us
+47:13 do you have occasional contributors so
+47:15 people who use
+47:16 who use it and then they see okay maybe
+47:18 there is a bug and then there is to
+47:20 submit a pr
+47:21 ah yes we do yeah so um for both rich
+47:24 and actually because textual uses rich
+47:26 um
+47:28 we're refining
+47:29 rich i'm making that faster and fixing
+47:32 blocks also adding features
+47:33 and people can contribute to to both
+47:36 projects
+47:37 rich in particular uh textual's tricky
+47:40 because we're really actively
+47:42 working on that
+47:43 um in in different branches and but we
+47:45 do welcome
+47:47 contributions and you know in form of
+47:49 code or or issues or discussions even
+47:54 i think
+47:56 yep sorry so i think that's one of the
+47:58 um the strengths of working that way
+48:00 working
+48:02 in the open
+48:03 um if you're working you know with
+48:05 everything closed uh you
+48:07 work work work and then you release
+48:09 something which is almost
+48:10 finished and then you get feedback um
+48:13 with you know the interfaces and and the
+48:15 functionality
+48:16 um but if you're working in the open
+48:18 with open source you get feedback
+48:21 immediately and and ongoing um so by the
+48:25 time you get to release and lots of
+48:27 people have seen it and used it and
+48:29 and
+48:30 possibly contributed and found bugs so i
+48:33 think it's actually a very
+48:35 um productive way of working
+48:37 yeah i wanted to ask you if let's say
+48:39 somebody wants to contribute do you have
+48:41 any good first issues
+48:44 um
+48:45 we don't at the moment um rich
+48:48 um
+48:49 has
+48:50 issues um but rich is very mature it's
+48:52 been around for two years um
+48:54 we never seem to run out of issues um
+48:57 so if someone wanted wanted to
+48:59 contribute that'd probably be the better
+49:01 project to contribute just um pick an
+49:03 issue if you think it's something you
+49:04 might fix we can just you know we can
+49:06 discuss the approach
+49:07 and then contribute um textual at the
+49:10 moment is just
+49:12 you know we're just um working really
+49:13 hard on it is quite hard for someone to
+49:16 contribute at the moment
+49:18 um not that we would discourage it um it
+49:20 might be tricky for um someone who's new
+49:22 to the project
+49:23 um i'm hoping all that the plan is by
+49:26 july we'll have another release and a
+49:28 more stable interface
+49:30 um so that would be the best point i
+49:32 think for
+49:33 um developers to contribute
+49:36 do you have something like github
+49:38 discussions or you know discord or
+49:40 guitar or slack or something like this
+49:42 uh yeah we have um github discussions so
+49:45 you can jump on that board we also have
+49:47 um
+49:48 a discord so discourse server i can't
+49:51 remember the difference discord and this
+49:53 course one's chat and one thing
+49:56 yeah one this course i think is a forum
+49:58 and discord to the chat yes this course
+50:01 that we have okay
+50:03 okay
+50:05 yeah
+50:05 yeah i have a few more questions i
+50:07 wanted to ask you they're somewhat
+50:09 related but not quite um yeah so you
+50:12 have a post
+50:13 the post that has a name getting your
+50:15 first one okay github stars okay
+50:19 so maybe can you give us a summary what
+50:21 is inside this post and how can i get
+50:23 100 1000 sorry github starts yeah
+50:27 well so so with that post what i wanted
+50:30 to do was um
+50:32 see if i could give some advice for
+50:33 things that work for me um the trouble
+50:36 with these kind of posts is
+50:37 if something worked for use doesn't
+50:39 necessarily mean that
+50:40 it's going to translate to other people
+50:43 um
+50:44 right but it might yeah um so the thing
+50:47 is a lot of people a lot of developers
+50:48 will work on something
+50:50 and then they'll put on github
+50:52 and then no one will ever visit their
+50:55 the github repo e the code could be
+50:57 excellent it could be very useful
+50:59 um so at a certain extent you have to
+51:02 you have to advertise
+51:04 uh yourself if you want to get the
+51:06 feedback you have to tell people
+51:09 you know about your project to get them
+51:11 interested in
+51:12 um so i can't remember exactly what i
+51:14 wrote in that post but i think that that
+51:15 was the nature of it you have to you
+51:17 have to advertise on various things like
+51:19 um like reddit reddit is quite good for
+51:22 announcing your project uh getting
+51:24 feedback um is there a specific
+51:26 community or like you should find a
+51:28 community that is relevant to your
+51:30 project
+51:31 yeah there's definitely one i mean if
+51:33 it's python you go to mr python um i
+51:37 found it that
+51:38 when it works
+51:40 it works pretty well but usually i found
+51:42 that moderators are quite annoying of
+51:44 course they want to keep the community
+51:47 uh safe but like let's say i want to
+51:49 share a piece of work
+51:51 of my work right but moderators
+51:54 they
+51:55 do not always welcome this work and i
+51:57 can totally understand because i also
+51:59 moderate the slack we have in data talks
+52:01 club
+52:03 but do you also did you also have this
+52:05 experience that you know you want to
+52:06 share something people get excited about
+52:08 moderators then moderators come and just
+52:10 remove this thing
+52:12 um that does happen i think when you
+52:14 when you prove something onto social
+52:16 media um
+52:18 you have to give something
+52:20 um
+52:21 extra and you can't just post a link and
+52:24 say try this
+52:26 you'd have to add some
+52:27 content um explaining what this project
+52:30 is and why you built it give some
+52:33 examples
+52:34 um etc it has to be more more
+52:36 interesting content than just um
+52:39 just
+52:40 you don't want it to feel like spam
+52:42 um you wanted to feel like something
+52:43 which someone would
+52:45 actively
+52:46 uh want to read um so if you can do that
+52:48 you you stand a good chance of it
+52:50 getting you know you know to the to r
+52:53 slash reddit or sorry python or whatever
+52:56 channel um you want and but even then
+52:59 you know um
+53:00 sometimes sometimes i've posted things
+53:02 thinking oh this is this is fantastic
+53:04 people really love this
+53:05 and i get like two up votes and then no
+53:07 one comments i don't know why um two
+53:10 outboards two down awards right yeah
+53:12 yeah
+53:12 um so it's just um
+53:14 you just have to keep pushing your
+53:17 content out there try to make it more
+53:19 interesting
+53:20 um and then get feedback that way and
+53:23 eventually if it's an interesting
+53:24 project that other people would want to
+53:26 try you will get a bite and you will
+53:28 start to get some traction and you will
+53:30 get get upstairs and
+53:31 and you know and responses to your posts
+53:35 the final thing
+53:36 with github stars you mentioned that
+53:38 the project might have may have an
+53:40 excellent codec very good code base
+53:44 you know good test coverage great
+53:45 documentation but only 10 stars
+53:48 yeah
+53:49 and while there are projects that do not
+53:51 do anything there is a project that
+53:53 doesn't do anything
+53:55 right and then it has like i don't know
+53:56 100 000 stars all right
+53:59 and i think that the the message in that
+54:01 project was like the best code is the
+54:03 quote you never wrote something like
+54:04 this
+54:05 you know it's like intended as a joke
+54:07 project i guess yeah but
+54:09 that's fine it's like how much attention
+54:11 this project received while there are
+54:13 projects
+54:14 where people put a lot of effort into
+54:17 them
+54:18 right so that project is maybe
+54:20 like the person just did this in half an
+54:23 hour put it out there and then it got
+54:25 some like i guess the tweet went well or
+54:27 something yeah or maybe hacker news post
+54:30 or whatever
+54:32 but then when you constantly put out of
+54:34 good work
+54:35 and nobody notices it can be
+54:37 discouraging right it can be it can be
+54:40 very discouraging uh yeah you have to be
+54:42 a little bit
+54:43 um persistent and also recognize that um
+54:46 every project has a certain number of um
+54:50 people that might use it so you have to
+54:52 work within that the thing about rich
+54:54 was that um
+54:56 it was a niche but quite a big niche the
+54:58 niche was developers python developers
+55:00 who used the terminal and wanted to be
+55:02 prettier
+55:03 um it's quite a
+55:04 broad niche that's why it attracted lots
+55:06 of stars if you have something that's um
+55:09 very specific you know a bit of code
+55:12 which might be of impress to maybe you
+55:14 know a dozen developers around the world
+55:17 um
+55:18 you're not going to get many stars but
+55:20 if you get you know 10 stars out of 12
+55:23 then yeah exactly
+55:25 exactly so you got to you've got to um
+55:27 normalize it to
+55:29 to be a percentage of your bubble
+55:31 um so if you've got 10 10 of the 12
+55:34 developers who use it i've started it
+55:36 that is excellent
+55:38 and i guess twitter helps because you
+55:40 constantly share what you work then
+55:44 maybe one of these 10 tweets you share
+55:46 for whatever reasons i don't know how
+55:48 twitter works but for whatever reason
+55:50 twitter decides to show it to more than
+55:53 i don't know 10 people
+55:54 uh yeah can be like 100 000 uh
+55:57 like and sometimes like it's so sort of
+56:00 the same
+56:01 tweet you make but in one case
+56:04 it has only like i don't know 500
+56:05 impression in another case it have 50 k
+56:08 impressions right yeah it has to reach
+56:10 like a critical
+56:12 threshold threshold you have to have um
+56:14 maybe someone who's got i don't know how
+56:16 it works exactly i'm guessing that
+56:18 someone with a lot with a lot of them
+56:20 followers retweets it and then twitter
+56:22 sees that as a higher value thing
+56:25 and then that gets retweeted and then it
+56:27 goes viral which is a critical threshold
+56:29 and it starts to start to spread
+56:32 um just like a virus it's like just like
+56:35 covet but
+56:37 not as unpleasant
+56:40 okay so i guess
+56:41 like if you do this
+56:42 every day then there are chances that
+56:44 one of these tweets might
+56:46 be noticed like even if the rest do not
+56:49 i don't you you do not put this like in
+56:52 your case you did not put this with the
+56:53 intention of
+56:55 getting noticed by vcs right you just
+56:57 wanted to document your your journey
+56:59 to document my journey and um get
+57:01 feedback from other developers you know
+57:03 even if it's even if it's a good job
+57:06 then
+57:07 it feels good um they might give you a
+57:08 suggestion
+57:09 which you feedback into what you're
+57:11 working on um so the process makes what
+57:14 you're working on
+57:15 and better it motivates you and gives
+57:17 you ideas
+57:18 [Music]
+57:20 if somebody wants to start their
+57:21 open source career or i don't know
+57:24 start working on open source is there
+57:26 something you would
+57:27 uh suggest them do
+57:30 um probably find something which solves
+57:32 a problem that they have
+57:34 um because
+57:36 the nature of problems is that it's not
+57:38 just one individual which has it um if
+57:40 you're solving a problem
+57:42 you'll find that lots of other people
+57:44 with that same problem
+57:46 and they might appreciate your work
+57:48 um so yeah find a problem you have
+57:51 solve it
+57:52 and then see if other people
+57:54 also have that problem
+57:57 would you suggest to open source
+57:58 everything we work on just put it on
+58:00 github if it's possible of course like
+58:03 if it's not something
+58:05 you do at work and then of course don't
+58:06 open source that unless your employer
+58:08 agrees but like in your free time would
+58:11 you open source everything you work on
+58:13 in your free time
+58:14 um i think the only reasons not to open
+58:16 source something is if you want to
+58:20 um
+58:20 [Music]
+58:21 profit from it in in a way that
+58:24 you can't share um if you're building a
+58:28 a website or service or something that
+58:30 you plan on charging for um if you're
+58:32 making that completely open source
+58:34 you've given away the thing which can
+58:36 make you an income um
+58:38 in an ideal world i'd love everything to
+58:40 be open source
+58:42 um
+58:43 but practically
+58:44 uh some things will always be
+58:47 proprietary at least for a while at
+58:49 least for the point where it can make
+58:51 the developers an income
+58:54 um you know but once you reach a point
+58:57 that point you could you can make it
+58:58 open source then
+59:00 um
+59:00 so i would say open source as much as
+59:02 you can even if it's just um some code
+59:04 you just tinkered with
+59:06 um you can put it on github
+59:08 and
+59:09 it might be a bit of interest to someone
+59:10 else and it might turn into it might
+59:12 snowball it might become a bigger
+59:13 project
+59:15 and you can maybe start a company maybe
+59:18 yeah i know i didn't start you know i
+59:20 had no intention of starting a company
+59:23 when i started working on rich
+59:25 i just wanted to you know print hello
+59:27 world and bold magenta
+59:29 that was how it started
+59:31 okay
+59:32 yeah i think that's all we have time for
+59:34 today so i want to thank you for joining
+59:36 us today for answering all the questions
+59:39 thank you um for sharing your experience
+59:42 yeah maybe before we wrap up um before
+59:44 we finish if people have questions
+59:46 what's the best way to
+59:49 to to reach out to you
+59:51 um probably twitter
+59:54 so we'll have fittings there
+59:56 okay i guess that's it anything you want
+59:59 to say before we end
+1:00:02 the goal um nothing comes to mind um
+1:00:05 it's been fun
+1:00:06 okay yeah thank you will it was
+1:00:09 definitely fun
+1:00:10 and thanks everyone for joining us and
+1:00:12 yeah
+1:00:13 see you soon we have an event tomorrow
+1:00:15 as well so check it out
+1:00:17 okay
+1:00:18 that's a link and subscribe
+1:00:20 yeah of course
+1:00:21 and also like likes are important
+1:00:23 comment uh what else do i need to say
+1:00:27 and you just do yeah tweet of course
+1:00:30 yeah
+1:00:31 ready
+1:00:32 okay my

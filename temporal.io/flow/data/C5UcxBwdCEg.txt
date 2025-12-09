@@ -1,0 +1,1406 @@
+Analytics Engineer: New Role in a Data Team
+
+0:00 hello
+0:02 everyone this event is brought to you by
+0:04 data talk club which is a community of
+0:06 people who love data and we have weekly
+0:08 events and this event is one of such
+0:11 events you can uh uh to see all our
+0:14 events you can go to the description and
+0:17 there is a link to all our events you
+0:19 can just click on this link and you'll
+0:21 see all the amazing events we prepared
+0:24 which is not that much right now because
+0:26 we have an amazing conference in the
+0:29 next two weeks so do check it out
+0:31 there's actually a link here on the
+0:33 website and on all the pages and also
+0:36 there is uh yeah so there's another Link
+0:39 in the description also to the
+0:41 conference uh to not miss any of our
+0:45 videos subscribe to our YouTube channel
+0:48 then join our slack because a lot of uh
+0:50 fun stuff happens in slack we talk a lot
+0:53 about different topics about data and
+0:56 then as I mentioned we have conference
+0:58 with uh two weeks conference every day
+1:01 we'll have a talk uh first week we'll
+1:03 talk about career and data and the
+1:05 second week we'll talk about machine
+1:06 learning production and the link is in
+1:09 the
+1:10 description and during today you during
+1:14 today's interview you can ask any
+1:16 question you want there is a link in the
+1:19 live chat it's a pin link you can click
+1:21 on this link and you can ask any
+1:24 question and
+1:26 that's all I have for the introduction
+1:32 and yeah so I'll just uh make the Tweet
+1:36 which uh I
+1:39 promised are you ready to start
+1:43 yes
+1:45 okay
+1:47 so this week we'll talk about a new role
+1:50 in data team and this role is analytics
+1:53 engineer and we have a special guest
+1:55 today Victoria uh Victoria Victoria
+1:59 Works uh as an analytics engineer uh she
+2:03 has background in system engineering and
+2:05 she works as analytics engineer at tier
+2:08 in Berlin and overall she has over five
+2:10 years of experience working with Erp
+2:12 systems reporting and
+2:15 databases she's very passionate about
+2:17 using technology she wants to help
+2:20 people to make their daily task easier
+2:22 with that and in her free time she likes
+2:24 to encourage people to enter the it
+2:26 World by volunteering teaching and
+2:28 mentoring and also so Victoria is one of
+2:31 the first people who joined data Tu Club
+2:34 one of first 10 or 20 I don't remember
+2:37 but uh yeah um so welcome
+2:42 Victoria uh thank you for having me yeah
+2:45 before we go into our main topic of what
+2:49 is analytics engineering let's start
+2:51 with your background uh can you tell us
+2:53 about your career Journey so far um yeah
+2:56 so as you said I started systems
+2:58 engineer in back artina so that is
+3:01 computer science basically um and then
+3:05 since I knew a lot about accounting
+3:07 because my parents are accountants and I
+3:09 work with them for several years and I
+3:11 like that as well it felt Supernatural
+3:14 to me to start working with Erp
+3:16 systems um and um I was basically
+3:20 helping accountants to use Erp to use
+3:23 technology to calculate payroll and
+3:26 taxes um and then from there um came to
+3:30 berim in 2018 and then I continue also
+3:33 working in a similar role so helping in
+3:36 the finance team uh defining making
+3:39 reports uh connecting the Earp systems
+3:42 with other
+3:43 systems um and automating processes and
+3:47 then eventually I wanted to move from
+3:49 the Erp world and that's uh kind of like
+3:52 how end up in the analytics engineer
+3:55 role um so I've been here now for seven
+3:59 months as analytics engineer and enying
+4:02 it a
+4:04 lot yes so what do you do as an
+4:07 analytics engineer what kind of
+4:08 responsibilities do you have and how
+4:10 does your typical uh day look
+4:13 like um so I do a lot of uh data
+4:17 modeling I work a lot around also uh the
+4:20 data quality the data availability so uh
+4:24 things that I could be doing in a
+4:25 day-to-day are for example trying to
+4:28 build a new p
+4:30 pipeline uh making that data available
+4:33 building a model cleaning that data so
+4:35 then it's available for the data analyst
+4:37 and the data scientist to use um so
+4:40 exposing that data to ler for
+4:43 example and also working if um there's
+4:47 something that went wrong because
+4:49 something failed then I definitely have
+4:51 to jump in and check why the data is not
+4:53 available why the data is not
+4:58 clean dat uh so you said modeling I mean
+5:01 it's you probably mean data modeling
+5:03 right yeah data modeling so like
+5:05 creating all
+5:07 this diagrams like how the data looks
+5:10 like uh what are the entities in the
+5:13 data um yeah so more like writing the so
+5:17 what is what is
+5:19 that um yeah so more writing like the
+5:22 SQL definitely I meant like doing the
+5:25 building the models around the the data
+5:27 and um creating the table
+5:30 or views and writing the queries behind
+5:33 it to model the data to be able to to be
+5:36 used for the
+5:39 analysis okay and you mentioned one tool
+5:42 I think you mentioned looker which is a
+5:44 I don't know is like a tool maybe for
+5:46 building dashboards or what is that yeah
+5:48 yeah so looker is a bi tool similar to
+5:51 what would be tavau for example um and
+5:55 in there you can build uh so you can do
+5:57 queries as well from there um and then
+6:00 you can have dashboards uh and build
+6:03 reports as well so that that would be
+6:06 the tool that exposed to the end user so
+6:09 the business users they're going to be
+6:11 consuming the data from ler and then for
+6:14 us or in the data team we use DVT for
+6:16 doing like the whole
+6:18 modeling and what it does DVT is
+6:21 essentially a transformation
+6:23 tool um so we take the the data from
+6:26 from the that comes from the data
+6:28 Pipelines from either our backend events
+6:31 or um maybe our external data and then
+6:35 with DBT we transform that data and we
+6:37 make the model so we do like everything
+6:39 that we need to either clean or we need
+6:42 to change or like maybe calculate
+6:43 something or things like that we try to
+6:46 do it everything in
+6:48 DBT and uh so this DBT is a
+6:51 transformation tool you said so what
+6:53 does it do exactly is it like you just
+6:56 write a bunch of SQL queries and uh put
+6:58 them yeah basically but also it helps
+7:02 you so yeah basically it's that
+7:03 essentially is that you write a lot of
+7:05 skill queries with it uh but it has a
+7:08 very good things um so it helps you
+7:11 introduce all the software if you think
+7:13 about like the software development
+7:14 process that you normally study in
+7:16 University uh and you think about data
+7:19 they don't get alone very well normally
+7:21 uh so DVT brings that I would say DT
+7:24 brings that to the data team and the
+7:27 data work um basically you have like
+7:29 like all these SQL files but you also
+7:31 have uh yml files where you would have
+7:33 documentation about the models that
+7:35 you're writing about and um everything
+7:39 is in a GitHub repository so you have
+7:41 version controlling as well um which is
+7:44 sometimes very hard or at least in my
+7:46 experience to introduce uh in data uh
+7:49 something like version controlling but
+7:51 it's also something that it's extremely
+7:53 useful to have um and uh it also helps
+7:57 you so it has test you can write t test
+7:59 about your data you can write your own
+8:01 and you can also use normal kind of like
+8:03 unique non Nal kind of test um and the
+8:07 nice thing about it is that you don't
+8:09 really have to write the ddl so you
+8:10 wouldn't have to write create table
+8:13 create view drop table you just write an
+8:16 an a select and um it does the whole
+8:20 thing for you it compiles the code
+8:24 afterwards so DBT is a tool you set for
+8:27 transformation for transforma dat so you
+8:30 write a bunch of SQL queries and then
+8:32 takes care of understanding like of
+8:35 creating these tables actually right you
+8:37 said you don't need to write to worry
+8:39 about the ddl so then you can also do
+8:43 tests with this tool right so check that
+8:47 the data quality is good and uh I guess
+8:51 you can also schedule the queries like
+8:53 to run them at particular day yeah so
+8:56 they if there's like dependency
+9:00 yes yes it it managed like the whole
+9:03 dependencies um it even builds the the
+9:06 doag uh and you can see like how the
+9:09 models connect to each other and you can
+9:10 like you could run so let's say we have
+9:12 like a source model and then on top of
+9:14 that like you will be a deem table then
+9:17 you could you could run for from the
+9:19 deem table everything that comes before
+9:22 or from the source everything that comes
+9:23 afterwards which is very nice um so you
+9:26 can easily like check dependencies down
+9:29 stream and Upstream as well um and then
+9:32 also they have this so DT is open source
+9:34 but then they also have this paid part
+9:36 uh Enterprise part I think it is uh
+9:39 which is DVT cloud and in there you can
+9:41 schedule
+9:42 everything um so so in there you can you
+9:46 can set the schedule and run your models
+9:49 depending on tax that you could use for
+9:51 example or or like if they are tables or
+9:53 views or something like that uh we have
+9:56 some of them for example some of the
+9:57 data is refreshing every hour some of
+10:00 the data only during the night so this
+10:03 is uh so you mentioned lare which is the
+10:05 tool for end users you mentioned
+10:07 DBT are there other tools that you also
+10:10 typically use in your in your work um
+10:15 yes so I also use one tool that's called
+10:17 at lip for for doing the the ETL we we
+10:21 mostly
+10:23 do because the transformation is done in
+10:26 DVT right but um I was saying that we
+10:29 also use e liip uh at lip so it's like a
+10:33 ETL tool to to load the data from the
+10:37 the S3 so we have the data coming into
+10:39 S3 buckets and then we use this tool to
+10:41 load this data into snowflake so also
+10:44 snowflake um we used to have redtive
+10:46 before so normally you would have to to
+10:49 to use one of these cloud computing uh
+10:53 warehouses um and I've seen also other
+10:56 companies they use maybe sometimes
+10:58 python or or these sh notebooks in the
+11:01 analytics engineer role or at least they
+11:03 they request for that do you also use
+11:06 them or you just saw that others
+11:09 required I saw that others do it I I
+11:12 don't I just use this I use a lot of
+11:14 like basically uh that's my my main
+11:18 language and then atly uh Snowflake and
+11:22 ler okay so snowflake is there so you
+11:25 have this DBT where you write skill
+11:28 queries but these queries need to be
+11:31 executed somewhere yeah and this
+11:33 somewhere is no flight right so this is
+11:35 when where the queries are running yeah
+11:37 like run like datory and stff like
+11:45 basically okay and uh how did you become
+11:48 an analytics engineer I think you you
+11:50 mentioned uh yeah uh that you were
+11:53 interested in accounting and you were
+11:55 doing all the this uh
+11:59 P analysis uh and working with financial
+12:02 data but then at some point you decided
+12:05 to become analytics engineer so how did
+12:07 this happen to you and what did you need
+12:09 to to actually do to to transition in
+12:12 this role um yeah so it was kind of like
+12:16 chances it wasn't that I was act
+12:17 actively looking for analytics engineer
+12:19 and I didn't really know what it was
+12:21 analytics engineer before to be honest
+12:24 um but um I apply for a normal bi
+12:28 position I would say I don't even
+12:30 remember which was the position that I
+12:31 apply for and then I did all the
+12:34 interviews and I think like the last
+12:36 interviews were on a Friday and then on
+12:38 a Monday I was told that they were going
+12:40 to hire in for us because of Corona and
+12:43 then after a few months um the hiring
+12:47 manager they he reached out to me again
+12:50 and said um hey we we are opening we're
+12:53 hiring again are you willing to talk and
+12:55 then like have a chat and then he told
+12:57 me about this position
+12:59 and it sounded really cool it sounded
+13:01 like something that I wanted to to be
+13:03 doing it was very so some parts I mean
+13:06 they're very similar what I was doing
+13:07 before so before I was also working in
+13:09 with data warehousing and all of that
+13:11 but I was working like more with the Erp
+13:14 data so the the sap data and this um was
+13:19 more like data in general I would say
+13:20 and also so specific so domain um in
+13:24 that domain and um yeah so that's
+13:27 basically how how I ended up and I even
+13:30 remember that at the end of that call he
+13:31 he then says oh okay so then I'll send
+13:33 you the email with the offers the like
+13:36 the details of the offer and by the way
+13:38 the the role is called analytics
+13:40 engineer and yeah okay so you had no
+13:44 idea that this is the role you
+13:46 interviewed for yeah
+13:49 basic okay that's interesting uh yeah do
+13:54 you know how they actually decided why
+13:57 they decided to have this uh this kind
+13:59 the
+14:00 company uh how did they came up with the
+14:03 idea of starting to have Engineers um no
+14:06 I mean I know that during Corona they
+14:08 were thinking about how to reshape the
+14:12 the the team and how were they going to
+14:15 grow like make the team grow and all of
+14:17 that there's also I mean they were using
+14:19 DVT before and DVT are the one of the
+14:22 the main um pushers like the ones that
+14:25 are pushing for the analytics Engineers
+14:27 I would say uh so that would make sense
+14:29 that it came from from there but I owe
+14:32 you the answer to that one this position
+14:35 looks like uh so to me when I read job
+14:38 descriptions uh it really looks like a
+14:40 data engineer but on the other hand
+14:42 there's this analytics components so
+14:44 what is the main difference between
+14:45 analytics engineer a data analyst and
+14:48 data
+14:49 engineer um so the the analytics
+14:52 engineer is supposed to be in the middle
+14:54 of the data engineer and the data
+14:57 analyst um and the lines are a little
+15:00 bit blurry I would say because I think
+15:03 that even in my team not even different
+15:05 companies some of us we we go like more
+15:07 in the data engineer side and others
+15:10 more like in the data analyst kind of
+15:12 side I think that will it's going to
+15:16 vary um but um overall the data analyst
+15:21 they sometimes they have to do a lot of
+15:22 like this data clean and data
+15:24 availability when in reality they have a
+15:26 lot of like the business knowledge and
+15:28 they should take care of analyzing the
+15:30 data and not cleaning the data right and
+15:32 maybe their SQL they work and it has a
+15:34 lot of business logic but it's not the
+15:37 most efficient kind of queries or like
+15:39 the because they normally come from
+15:41 another type of background not like a
+15:43 computer science kind kind of background
+15:46 and they don't have like the uh good
+15:48 software development kind of practices
+15:50 and the in the case of the data
+15:52 Engineers they are way way more
+15:53 Technical and maybe they're lacking a
+15:55 little bit more like the business Vision
+15:57 uh to the thing so they do have the
+15:59 software engineering kind of practices
+16:02 but they don't have the maybe the domain
+16:04 knowledge so the analytics engineer
+16:06 comes a little bit in between of that
+16:09 and it's supposed to help the analyst to
+16:13 to apply their business knowledge but
+16:15 also work with the data Engineers so
+16:17 collaborate with the data Engineers as
+16:19 well bringing like this business uh
+16:21 knowledge as
+16:23 well so basically they they know both
+16:27 right so analytic engineer knows how to
+16:31 be a good analyst and they also know how
+16:33 to be a good data engineer right
+16:37 or in between yeah I mean I don't I I I
+16:41 wouldn't say that I would be like a
+16:43 great data analyst because I'm an
+16:45 analytics engineer so I had to know but
+16:48 um yeah I wouldn't I wouldn't replace
+16:51 any of my data analyst coworkers
+16:54 basically six month ago we had a chat
+16:57 and you told me that you found this new
+16:59 job called analytics engineer and I
+17:02 asked you what is that and before that I
+17:06 had no idea that this role existed but
+17:08 after talking to you all of a sudden I
+17:11 started noticing it everywhere like I
+17:14 would go to LinkedIn and I would see um
+17:16 open positions I would go to uh some
+17:19 slack communities and I would see job
+17:20 postings there and also on the internet
+17:24 I started to see this thing and it
+17:27 looked like became popular
+17:31 recently um at least this is my
+17:33 impression um do you know why it
+17:36 happened why it became popular and what
+17:39 is the the Gap this role is trying to
+17:41 close um yeah so that's definitely an
+17:44 analytics engineer movement a
+17:47 sardin um and um I I left a few links
+17:52 about this um and about like uh people
+17:55 when they started to talk about this and
+17:59 um like what is that they need and
+18:01 things like that and there's one about
+18:02 Spotify and they um they talk about this
+18:06 very clearly like they were having this
+18:08 kind of issues that the analysts were
+18:10 having to spend too much time uh doing
+18:13 like the cleaning of the of the data and
+18:16 working so whenever like they needed a
+18:18 new data they they needed to set up like
+18:21 this stream of the new data coming in
+18:24 they needed to check the quality on it
+18:26 they needed to model the data in a way
+18:28 they could use it and only after that
+18:30 they were able to sit and and do the
+18:32 actual analysis that they needed right
+18:34 and then on the other side data
+18:35 Engineers they didn't really wanted to
+18:37 get more into the that part so taking
+18:40 that work out of the data analyst and
+18:43 then they say that they open this
+18:44 position like they say okay let's just
+18:47 hire like a new person like we need
+18:49 someone else someone in
+18:51 between yeah you were saying that um
+18:54 data analysts spend too much time
+18:57 cleaning uh data solving quality issues
+19:01 and then data Engineers for some reasons
+19:03 didn't want to take care of that yeah
+19:05 they don't want to get more like in the
+19:07 modeling this type of data because then
+19:09 they have to understand what this data
+19:10 is for basically and and they just want
+19:13 to build the the
+19:14 infrastructure um and then um also what
+19:17 they were seeing is that data analysts
+19:20 were very good at writing and doing like
+19:22 this kind of thing but they weren't
+19:24 writing like the
+19:26 best code that's say uh and uh they
+19:31 started to see that then they were
+19:33 hiring like more people to do this or
+19:34 something like that and then they said
+19:36 we need like a person to do this as a
+19:38 full-time job and then they open uh this
+19:42 position and they invented a a title
+19:45 which wasn't analytics engineer it was
+19:47 something else it's like data specialist
+19:49 something um and yeah and that's how
+19:52 they hired their first analytics
+19:53 engineer and this guy that was hired as
+19:56 the first Spotify like an ICS engineer
+19:59 in Spotify said at the begin like hey
+20:01 this title that you gave me is crap and
+20:05 I don't know like if they maybe found
+20:06 like a blog or something else and and
+20:08 then they Chang it to analytics
+20:10 engineer okay so it started at Spotify
+20:13 right and then it uh other companies
+20:15 noticed it and also decided
+20:18 to I don't know exactly so they did it
+20:20 in early
+20:22 2018 and every blog and kind of like
+20:25 that they they seem to have started over
+20:27 there so I don't I wouldn't Point like
+20:29 yes it was Spotify but I would say
+20:31 people stared noticing like this missing
+20:35 role in between and then so analysts
+20:38 could actually analyze data and data
+20:39 Engineers could actually just care about
+20:42 the infrastructure and the
+20:44 pipelines um yeah and then someone came
+20:47 up with analytics engineer okay yeah I
+20:52 actually thought that the data engineer
+20:54 should take care of data quality but I
+20:57 never thought about this of for like as
+20:59 they would need to go into uh how do I
+21:03 say have this domain knowledge that uh
+21:06 maybe it's difficult to acquire while
+21:09 analyst have it so
+21:12 okay yeah so I uh before this interview
+21:17 I wanted to check a couple of positions
+21:20 of analytics engineer a couple of job
+21:22 postings and see what kind of uh what
+21:26 kind of requirements are there so didn't
+21:28 check Spotify I found a drop posting
+21:31 from
+21:33 Airbnb and they have these requirements
+21:36 so the first requirement is understand
+21:39 data needs by interacting with data
+21:42 scientists and data engineer then the
+21:45 second one architect and build data
+21:47 pipelines with data
+21:49 engineers then third one is be a data
+21:52 expert and own data quality and I think
+21:55 we talked already about all these things
+21:57 uh like creating data pipelines and uh
+22:01 taking care of data quality then the
+22:04 fourth one is build and improv data
+22:07 tools for auditing error login and so on
+22:10 and the fifth one is uh design and build
+22:14 dashboards to enable S Self Service do
+22:18 you think this is an accurate
+22:19 description of the requirements that
+22:22 analytics engineer have in general yeah
+22:25 yeah I would say so it kind fact goes
+22:27 from the pipeline to the the vi Tool uh
+22:30 basically but again I think it it also
+22:34 it's going to since it's especially
+22:35 since it's such a nice uh position and
+22:38 all it's going to change from company to
+22:40 company so then for example in a Spotify
+22:43 they they also talk about something
+22:45 quite similar they they do a lot of I
+22:49 think they they talk a little bit more
+22:51 about like being the data owner in a
+22:54 sense and and check on data quality but
+22:56 for example in other companies like I've
+22:58 seen in trade Republic it looks like
+23:02 they they don't even mention data
+23:04 pipelines and it seems to be more like
+23:07 on the business kind of side so going a
+23:10 little bit more towards the data analyst
+23:11 for example so like there is a wide
+23:14 spectrum of uh so you have on one side
+23:17 you have the data analyst you have on
+23:18 the other side the data engineer and
+23:21 there is whole spectrum of like how you
+23:24 can mix the two right to arrive at the
+23:27 at the analytics engineer so you take
+23:29 50/50 uh I think in case of Airbnb my
+23:32 impression is it more leans towards the
+23:37 data engineer because there is a lot of
+23:39 uh data pipelines and uh data tools uh
+23:44 but still they have this uh design and
+23:46 build dashboards which is more what
+23:48 analysts would typically do uh so they
+23:51 have maybe I don't know 70% data
+23:53 engineering 30% uh um data analyst okay
+23:58 and then you said trade anal trade
+24:00 Republic they more like maybe there on
+24:02 the other side of the spectrum so maybe
+24:05 70% analysts and then 30% Engineers um
+24:11 they they do write a lot in the Netflix
+24:13 I I really like the Netflix uh blog in
+24:15 medium and um they actually have an
+24:18 article that I also put on the links uh
+24:20 where they talk about this and uh it
+24:23 looks also like it varries from Team to
+24:25 team so like some teams are going to
+24:27 need people like analytics Engineers are
+24:29 going to be more technical than others
+24:32 um and there's also another link that I
+24:35 put about newbank that they also have
+24:37 they use DVT as well and uh so for
+24:40 example Airbnb doesn't seem to like they
+24:42 use
+24:44 DVT um so even the tooling changes right
+24:47 and then in newbank they even have like
+24:49 this um the comparison of what they
+24:53 expect to have like in the analytics
+24:54 engineer profile uh versus the engineer
+24:58 the data engineer and the and the data
+25:00 analyst and in the case of the analytics
+25:03 engineer it goes more like to analytics
+25:05 and Reporting data pipelines and then
+25:08 also like uh this um data modeling and
+25:11 then uh the whole like data quality and
+25:15 and data
+25:17 sharing and there's nice comment in the
+25:19 live chat uh I just noticed that uh uh
+25:23 the comment from luasa um is that data
+25:25 Engineers are mainly focused on the
+25:27 infrastructure they don't leverage
+25:29 insight and curate data analytics
+25:31 Engineers would take the data and
+25:33 carefully create it so un Leist can
+25:35 streamline I guess use it data easier do
+25:40 you agree with that yeah I I would agree
+25:43 I also think that uh I heard like I
+25:46 didn't he properly the name I also think
+25:48 it's my coworker luasa but I maybe I Mis
+25:52 pronounce it what's the right way of
+25:54 pronouncing no no no no it's not it's a
+25:56 different it look a little bit like oh
+25:59 yeah but there is Alan who says Victoria
+26:02 rocks maybe he's your colleague no I
+26:05 don't know any Alan okay maybe he just
+26:09 realized I rock yeah I do agree with him
+26:13 so then um again I continued with the
+26:17 same position so we just we talked about
+26:20 requirements and then after requirements
+26:22 they usually have the skill session
+26:24 section and in that position the skills
+26:27 that are being be requires from um
+26:29 analytics engineer uh this is SQL so no
+26:34 wonder then the second category of
+26:36 skills is distributed systems for data
+26:39 processing which is spark prto and hi
+26:42 then they have programming python or R
+26:46 schema design dimensional data modeling
+26:49 and the last thing which I liked an ie
+26:51 for design so most of these things I
+26:53 think are technical maybe apart from the
+26:56 the last one and I think most of the
+26:58 this uh skills again apart from the an
+27:02 for Design This is what I would see
+27:05 typically in data engineering positions
+27:08 um I think dimensional data modeling
+27:11 schema design is also something that
+27:13 data Engineers tend to do like when
+27:16 designing uh data warehouses maybe or
+27:18 data leges or
+27:20 whatever uh so to me they look quite
+27:24 typical for data Engineers uh is it a
+27:27 typical skill set for for an analytics
+27:29 engineer or um so I wouldn't say so if
+27:33 if you want to apply for analytics
+27:34 engineer at tier um and we do have a lot
+27:37 of for PRS by the way um I wouldn't say
+27:40 you would need all of this for example
+27:43 it's definitely you need to know SQL
+27:44 you're definitely know to need um data
+27:47 modeling so like what is a deem table
+27:49 what is a fact table um so basically
+27:53 have red keyb um data model data
+27:57 warehouse uh book and then I would
+28:00 expect also something from Snowflake so
+28:03 definitely not like a spark pressor Hado
+28:05 Hive like not all of that that looks
+28:07 also way more data engineer Focus to me
+28:10 and in the in programming also python or
+28:13 R we don't so we analytics engineers at
+28:16 the moment we don't use that um it could
+28:20 also be something that eventually we
+28:22 start using so for example if um we do
+28:25 have some some Python scripts and I it's
+28:29 not like I've never seen a python code
+28:32 ever in the last seven months that I've
+28:34 been working at tier but I wouldn't say
+28:36 I need it
+28:38 and and to me also python seems a little
+28:40 bit like isy something that you could
+28:42 pick up if you if you know coding
+28:45 already
+28:48 um yeah I I I would say it's a little
+28:51 bit
+28:53 simpler and not like so data engineer
+28:55 and focus but again like rbnb definitely
+28:59 looks way more
+29:01 technical um the analytics engineer
+29:04 role do you remember so you mentioned
+29:07 also Spotify and you mentioned trade
+29:09 Republic um do you remember what kind of
+29:12 uh skills they have in their positions
+29:15 um so I know Tre Republic uh has a very
+29:18 similar Tech stock to the one we have so
+29:21 um they
+29:23 also have or are about to have a St flag
+29:26 and and then they use DBT as as well and
+29:29 uh some ETL tool something like that so
+29:33 something around that would probably be
+29:37 um I don't remember in the case of
+29:39 Spotify what was but uh yeah for example
+29:42 in new bank is the same very similar to
+29:45 to what we have as well like they use
+29:47 DVT a lot as well uh they've been featur
+29:50 in the DVT blogs and all uh so it would
+29:53 be something again like SQL for sure
+29:55 definitely that that is going to be uh
+29:58 what you need and to be uh familiarized
+30:01 at least with everything like data
+30:05 modeling and I think DBT when I see DBT
+30:08 mentioned I often see also analytics
+30:10 engineer mentioned I think this is like
+30:12 a a pretty typical tool that analytics
+30:16 Engineers use right yeah I think even
+30:19 DBT has an article about uh the role of
+30:22 analytics engineer like the the tool the
+30:25 company itself they wrote an article
+30:27 about the Ro of the analytics engineer
+30:30 right yeah see yeah so it's also on the
+30:32 links um and they they they have also
+30:34 learn like useful resources for Learning
+30:36 and L so yeah and and they're one of the
+30:40 main I would say you the the ones that
+30:42 started the analytics engineer movement
+30:44 for sure like starting this uh doing
+30:47 this kind of blogs or talking about
+30:49 analytics engineer or being in
+30:51 conference talking about analytics
+30:53 Engineers uh so they're definitely
+30:55 starting and it's heavily related the so
+30:58 you think about analytics engineer or at
+31:00 least I do and I immediately think of
+31:02 DVT and I think it goes the other way
+31:04 around DVT analytics
+31:06 engineer okay and what I also noticed is
+31:10 I work as a data scientist and when it
+31:13 comes to data science this is also a
+31:16 very how say like the description really
+31:20 is for every company the the description
+31:23 of a role is a little bit different so
+31:25 we have some data analy for more
+31:28 uh data in data scientists who are more
+31:31 actually data analysts so they do the
+31:33 kind of work uh that at our company at
+31:36 toix UN list zo but in some uh in some
+31:40 cases data scientists are doing the
+31:42 engineering work so they are like the
+31:45 the other maybe end of the spectrum is
+31:48 ml engineer so sometimes it's called
+31:50 data scientist and from what I see when
+31:53 it comes to analytics
+31:55 engineer uh it's very similar so there
+31:57 is there is an analyst there is a data
+32:00 engineer and then you have have the
+32:02 whole spectrum of things in between and
+32:03 every company has its own interpretation
+32:06 of throw right yeah but I also think uh
+32:10 the new data teams that say that include
+32:13 the analytics engineer then they they
+32:16 also have a well a more defined data
+32:19 analyst or data scientist like as a data
+32:21 analyst you you should only take care of
+32:23 analyzing the data right because then we
+32:26 analytics Engineers are going to take
+32:28 care of the
+32:29 rest uh same for data scientists so data
+32:32 scientists they complain all the time oh
+32:34 how to clean the data all the time I can
+32:37 never well you don't need to because we
+32:40 are there for you okay so I should ask
+32:44 uh for analytics engineer uh for
+32:47 analytics Engineers that work
+32:49 right to help me clean the you should
+32:53 you should ask for an analytics engineer
+32:55 definitely you need one okay so this is
+32:58 will will help us clean the data
+33:01 yeah okay and um yeah so you mentioned
+33:05 that analytics Engineers help uh
+33:08 analysts and data scientists with
+33:10 cleaning data they help with they help
+33:13 data Engineers to maybe understand the
+33:16 business domain better how in general
+33:19 they work with others in the team uh
+33:21 like with uh product managers for
+33:24 example uh with uh maybe backend engers
+33:28 and with other with other people in the
+33:31 team um yeah so since I would say our
+33:35 stakeholders in my case my stakeholders
+33:37 are my co-workers most of the time so
+33:41 the the data analyst and the data
+33:42 scientists for example um so in there it
+33:46 varries a lot I for example in
+33:48 particular I don't have much exposure to
+33:51 product managers to to the business of
+33:54 stakeholders some of my co-workers they
+33:56 do have so Analytics Engineers they do
+33:58 have more but the idea is also that the
+34:01 analyst is going to take care of doing
+34:04 like he's going to or he or she is going
+34:06 to still be doing their their work and
+34:08 they're talking like to this business as
+34:10 stakeholders understand what they need
+34:12 and then um also take to us but this
+34:14 doesn't mean that we analytics Engineers
+34:17 are not going to talk with the business
+34:19 stakeholders it could be that you also
+34:20 need to go directly to the business
+34:22 stakeholder as well and in the case of
+34:24 the backend Engineers it's most likely
+34:27 that you're also going to be involved in
+34:29 the let's say that there's a new event
+34:31 that has to come in because of new kind
+34:33 of data is coming in then you're
+34:36 probably going to have to talk with the
+34:37 backend Engineers as well to see how
+34:39 they set up that event because at the
+34:41 end you're going to consume that right
+34:43 so you have to of course be
+34:46 involved um also one one thing about the
+34:50 analytics Engineers um in in a team and
+34:54 how it
+34:55 works um in my in my company we have the
+34:58 analytics platform so the like the data
+35:00 platform and then we have like more um
+35:03 so like operations analytics commercial
+35:06 analytics and they have data analyst and
+35:08 data scientist and we in the platform
+35:11 and then there's data engineer right and
+35:13 we in the platform we are all analytics
+35:15 Engineers but then each one of these
+35:18 teams they're also getting an analytics
+35:21 engineer so this is going to be so it's
+35:24 getting like to be decentralized so this
+35:27 Analytics for example they're going to
+35:28 be more exposed to that right so to to
+35:31 this business stakeholders because
+35:33 they're going to be inside the let's say
+35:36 the operations analytics team um and
+35:39 this is also in the links I I left um a
+35:42 link on how new Vanka is actually
+35:44 talking about how they're doing that how
+35:46 they're scaling and making that these
+35:48 teams they don't depend on the on the
+35:50 platform they don't depend on the
+35:52 analytics Engineers uh from the platform
+35:54 they have their own analytics engineers
+35:56 in their teams so this is also like a
+35:58 way to collaborate let's say so if to
+36:02 summarize it to make sure I understood
+36:04 you correctly so there is a platform
+36:06 team where there are a lot of analytics
+36:09 engineers and then you have uh separate
+36:12 teams and then each team maybe would
+36:14 have uh one analytics engineer who would
+36:17 work with the rest of the people in the
+36:20 team right yeah exactly that will take
+36:22 care only of the let's say the
+36:25 commercial analytics engineer will take
+36:28 care of the commercial topics for
+36:31 example where me in the platform I'm
+36:34 going to be working more on the base uh
+36:37 data in general so like maybe more
+36:40 Source kind of data or things like
+36:43 that and actually speaking of sources we
+36:46 have a question about that so in your
+36:48 role how do you deal with bad data
+36:51 coming from uh from different sources or
+36:54 from changing
+36:56 schemas um um yeah so in the case of
+36:59 changing schemas at least the the the
+37:01 tool that we have at the moment uh it
+37:04 adapts to that so in there we don't have
+37:07 much of an issue I would say I mean it's
+37:11 of course something that could still
+37:12 like if we have models that rely a lot
+37:15 on that but um um in that sense I would
+37:19 say it's not such a big issue and then
+37:21 in the terms of data quality that's
+37:23 something that we're still working a lot
+37:25 and I don't think it's something that
+37:26 you ever finished
+37:28 you ever get to a point that say my my
+37:30 data is 100% like the best data um but
+37:34 um there's a lot also outside there's a
+37:37 lot going on on the company uh not a
+37:40 little bit like outside of us as well
+37:42 because uh coming a lot of this data
+37:44 from the backing Engineers the data has
+37:46 to come clean from there as well right
+37:48 or like in a good quality from there
+37:50 where we are doing I can tell you what
+37:52 we are doing right now is we clean a lot
+37:55 of that in DVT and that gives a lot of
+37:58 um control because we can see that code
+38:01 definitely what what it's doing like
+38:03 what is exactly what are the records
+38:05 that we are I don't know D duplicating
+38:07 or excluding or um transforming or
+38:10 things like that so we do a lot of that
+38:12 DVT also lets you create what they call
+38:16 macros uh which is a UDF basically like
+38:20 you would create in in in U any SQL um I
+38:24 don't know server snowflake or whatever
+38:27 and um kind of thing and then we can
+38:29 also use that we use that sometimes to
+38:31 transform let's say like the name of the
+38:33 Cities so we have like the same names
+38:35 for all the cities in every in all of
+38:38 our data or things like
+38:40 that and there's also test right so like
+38:42 we check that the cities are defin um
+38:47 that I don't know if a number has to be
+38:48 between one to five it doesn't go beyond
+38:51 that or things like that and these test
+38:54 they apply to each incoming row so for
+38:56 each row the DBT is yeah there is a test
+38:59 and if some record doesn't pass this
+39:02 test you get an alert um so so uh so the
+39:06 test is basically a query uh so let's
+39:09 say you would Define your model you
+39:11 would create your model and then you
+39:13 would Define The Columns and then I
+39:15 would Define that this column for
+39:17 example the test that I'm going to apply
+39:19 is not null so then at the end when you
+39:21 run the test when you execute this test
+39:24 what it's going to do is going to select
+39:27 from this table uh where this field is
+39:30 null and then if this returns something
+39:34 if this returns nothing then okay test
+39:36 pass if it returns something then it's
+39:38 going to give you either a warning or an
+39:41 error and the nice thing about DT is
+39:43 that we can do that before building the
+39:46 models so then we could like for example
+39:48 what we do is we check that the sources
+39:50 don't have errors if they do have errors
+39:53 then the modeles that use the sources
+39:55 they're not going to be built so we
+39:57 build things on wrong data let's
+40:00 say that's how we control quality and
+40:03 then I guess at some point maybe
+40:05 somebody comes to you an analyst and
+40:08 saying hey something is wrong with this
+40:10 data and you start looking and then
+40:12 maybe a uh realizing that there is you
+40:16 missed something in your test and then
+40:18 you would add an extra test right yeah
+40:20 ideally so this is U my what I would
+40:24 really like is that we never get to that
+40:26 point right we never get to the point
+40:28 that someone has to say hey this numbers
+40:31 they do much or whatever so I would like
+40:34 that we have test kind of like for
+40:35 everything so we are always ahead but I
+40:37 don't know if you ever get to that
+40:40 point yeah thanks um we have another
+40:43 question is um how is this position
+40:46 related to a bi analyst and bi developer
+40:50 and how is it different from these two
+40:54 um I don't know exactly what would be
+40:58 bi analyst I would imagine something
+41:00 more like a data analyst kind of right
+41:02 so then it would be the same as before
+41:05 right like you're a little bit before
+41:07 you don't really do the analysis per se
+41:09 you just make the data available so the
+41:12 data analyst they can do the
+41:14 analysis uh and with bi Pi developer I
+41:19 think I suspect maybe uh like in this bi
+41:22 tools uh instead of having a data
+41:25 engineer and data analyst you would have
+41:27 a bi analyst who who does the analysis
+41:31 and then you would have a data warehouse
+41:33 developer who would actually build the
+41:34 data
+41:35 warehous uh which is probably synonymous
+41:39 uh to the role of a data engineer these
+41:42 days um yes um maybe it's yeah I would
+41:47 say maybe VI developer I think it would
+41:50 also depend right on on what the company
+41:53 is calling a VI developer I would say
+41:55 it's quite close to maybe the analytics
+41:58 engineer because I would imagine they
+42:00 write SQL as well and and things like
+42:03 that yeah yeah and then we have a
+42:07 question about uh how and this is
+42:10 something I also wanted to ask you like
+42:13 let's say I am an analyst and I want to
+42:15 become an analytics
+42:17 engineer how can I do this how can I
+42:20 make this transition what kind of things
+42:22 I need to do to to become an analytics
+42:25 engineer
+42:27 um yeah so try to learn about I would
+42:30 say try to learn about good uh software
+42:33 development kind of practices what does
+42:36 good code looks like what are the good
+42:38 practices to implement uh learn about
+42:42 definitely learn about data modelings of
+42:44 read books like kimbal maybe
+42:47 inmon um there's also so there's also
+42:51 two links I left one is DVT learning
+42:54 they they have a lot of and and this is
+42:57 um and they have of course it's around
+42:59 DVT but they do talk they do talk about
+43:02 de tables fact tables what are those and
+43:05 things like that um and there's also
+43:07 another repository that someone very
+43:10 generous build and it has a lot of
+43:12 things it has a lot of links to reading
+43:15 about pipelines uh reading about good
+43:18 practices reading about um SQL so
+43:21 definitely right good SQL um and other
+43:25 kind of like tools like for
+43:29 example is it also you mentioned this
+43:33 repository with information uh is it
+43:37 something you also put in the links yeah
+43:39 yeah it's in the in the learning
+43:42 resources this one is very good
+43:45 analytics readings is called analytics
+43:48 readings yeah yeah and the the links
+43:51 there is a question I'm not seeing the
+43:53 links uh they are not in the chat
+43:55 they're in the description so if you go
+43:57 to the description the first link there
+43:59 you click on this and there's an notion
+44:01 document with all the links that
+44:03 Victoria prepared
+44:05 today yeah and
+44:08 uh okay so these are the the good
+44:11 resources so you said we need to like an
+44:14 an analyst would need to pick up some uh
+44:16 good software engineering practices
+44:18 learn data modeling and then uh learn
+44:22 DBT and SQL is the most important tool
+44:24 but I think for analysts this is not the
+44:27 problem they already know SQL
+44:30 right more or
+44:32 less I think for analyst this is the the
+44:35 tool that they use 80% of the time
+44:37 perhaps yeah so they're they should be
+44:40 pretty good at this already so prob not
+44:43 to be like the data analyst at
+44:46 Spotify code
+44:49 apparently yeah and uh how can I like I
+44:55 really like what I hear and and let's
+44:57 say I'm an analyst or data engineer or I
+45:00 don't know somebody who works in with
+45:02 Erp systems and I think this is really
+45:06 cool I want to try how do I make sure
+45:09 that this is something for me how do I
+45:11 make sure that I love this kind of
+45:14 work um so if you like data modeling if
+45:17 you if you like like um figure out how
+45:20 to like create like your your models you
+45:23 like your tables how to to make model
+45:26 the data to make it available if you
+45:28 show more that so let's say you're a
+45:30 data analyst and then you show more that
+45:32 part for example even I think you're
+45:34 going like a little bit to analytic
+45:35 engineer right um if you also care a lot
+45:38 about the data quality I would say um
+45:41 about the good practices right uh as I
+45:43 said before so for example we we built a
+45:46 lot in my in with my team we buildt a
+45:49 lot like guidelines and things like that
+45:50 for everyone so for the data analyst and
+45:52 data scientists as well on how to write
+45:54 the code where are like the good
+45:56 practice
+45:58 around this how to take care of the test
+46:01 and and things like add your test or
+46:03 like how to do a proper PR review and
+46:05 all these kind of things um and that's
+46:08 something also I would say that we all
+46:10 have in common in with the other
+46:12 analytics engineer like we we care a lot
+46:15 about that more than maybe the the data
+46:18 analysts that they care a little bit
+46:20 more about answering those questions
+46:22 right which is okay because that's what
+46:24 they're meant to be doing mhm mhm yeah
+46:28 and I'm also wondering if there is uh
+46:30 there are some annoying parts of your
+46:33 work so for me as a data scientist I
+46:36 have to clean a lot of data and for many
+46:38 people this is like H again I have to
+46:41 you know clean the data now by the way I
+46:43 know the solution we just need to hire
+46:45 analytics Engineers are there such
+46:47 things in uh for analytics Engineers
+46:51 that uh they are annoying but you have
+46:54 to do this because if you don't then uh
+46:56 like for example if I don't clean the
+46:58 data then uh my models will be bad so I
+47:01 have to do this so it's annoying but
+47:03 it's inevitable are there things like
+47:06 that in uh in the job of an analytics
+47:10 engineer um yeah so I would say that the
+47:12 most I wouldn't say it's like extremely
+47:15 annoying but the most annoying part is
+47:16 that we work a lot of like defining
+47:18 guidelines all these kind of things um
+47:22 and then maybe we we can't really make
+47:25 people follow them
+47:27 um which is um sometimes a bit uh maybe
+47:32 like yeah that would be the most
+47:33 annoying part
+47:35 also not annoying but not as rewarding
+47:39 let's say if I compare it with other
+47:41 shops I have in the past so before if I
+47:44 would automate and something like a
+47:46 process and reports and something like
+47:48 that when I was working on my with my
+47:49 stakeholders were the accountants and
+47:52 then month and close suddenly was being
+47:53 done in one day thanks to my work
+47:56 instead of one week it was like a party
+47:58 right like I was a superhero and and now
+48:02 since my EST holders are um like
+48:05 technical technical people they kind of
+48:07 like know a little bit more so they
+48:08 don't get
+48:09 surprised um yeah
+48:14 okay a Boer ego maybe H but I also asked
+48:18 this about to my co-workers and um okay
+48:21 so one of them said that the annoying is
+48:23 working with another analytics Engineers
+48:25 but I thought he was
+48:28 string how many do you have in your
+48:30 company what how many analytics
+48:33 Engineers you have in your more than two
+48:35 nine we are nine
+48:40 okay well I can be very pushy so I don't
+48:44 know maybe that
+48:46 was to
+48:48 me but they also they also talk a lot
+48:51 about like the stakeholders uh
+48:53 management um the QI and QC so like
+48:57 everything around that kind of things um
+49:00 and sometimes like you have to deal with
+49:02 things that you don't expect from
+49:05 backend backend event so like even the
+49:07 the stakeholders like suddenly you have
+49:08 to kind of like jump in uh to stuff that
+49:11 could have been plan or something like
+49:13 that um and then that we don't have much
+49:16 control over the raw data we are very
+49:19 limited to the tool that we have in that
+49:21 sense and it's not like we build custom
+49:24 pipelines um in like because we use this
+49:28 tool
+49:29 right so you have less control over the
+49:33 rad data than data Engineers right yeah
+49:36 so maybe data Engineers can do more and
+49:38 you're limited to the
+49:41 tools another thing that uh that one
+49:44 said I almost forgot it was like that
+49:46 data quality is not our fault in most
+49:50 cases unless like we made a mistake of
+49:52 course but we are affected by that the
+49:55 most right because the we're the ones
+49:57 that take care of that most of the time
+49:59 and like when something when the the
+50:01 quality is not good of the data we are
+50:03 the ones that immediately we have to
+50:05 jump in and take like all this adhoc um
+50:10 work I guess it happens for many people
+50:13 not just analytics Engineers like
+50:15 analysts would also need to do like ad
+50:18 hoc dashboards for something important
+50:21 and data Engineers would also I don't
+50:23 know maybe there's some data quality
+50:26 issue and then they need to run and fix
+50:28 it yes do you know what is a data
+50:32 profile because there is a question
+50:34 about data profile and I so I don't know
+50:38 maybe I can just read the question and
+50:40 you tell me if it makes sense for you
+50:42 not what a data profile is but yeah you
+50:44 can read it and let's see if we can ask
+50:46 yeah so curious about the data
+50:48 documentation uh I've been planning to
+50:50 use DBT uh but I noticed it doesn't have
+50:53 a great data profile how do you show
+50:55 data profile I think this is to yeah I
+50:58 know what data profile is like it's the
+51:00 yeah the profiling of the data like you
+51:02 see kind of like how the data looks like
+51:04 average no vales and things like that um
+51:07 yeah it's
+51:08 true um it doesn't D doesn't have it
+51:12 very well there are also tools that are
+51:14 working now on top of Date of DVT for
+51:17 example and they are taking care of that
+51:19 for
+51:20 example um data fold data fold has
+51:24 something like that about data profiling
+51:26 and
+51:28 um there's another one Monte Carlo for
+51:31 example I think they also have data
+51:32 profiling Alo there are other tools as
+51:34 well U DVT doesn't doesn't have that I
+51:38 think doesn't have that yet uh but it's
+51:41 also because it's not the role right of
+51:43 Dy so D is going to support you in the
+51:46 workflow but on
+51:48 documentation which is not the same
+51:50 right uh documentation um data profiling
+51:53 helps you to understand it so it could
+51:55 be considered part of documentation but
+51:56 I wouldn't say it's the same on
+51:58 documentation DVT actually has a
+52:00 lot um it could have more but it has a
+52:03 lot because it has a schema WL
+52:05 Associated to every model and every
+52:07 source as well and in there you can
+52:09 write descriptions you can write
+52:11 descriptions for your model and you can
+52:12 also write descriptions for every field
+52:14 if you wanted to and then you can have
+52:17 tags on your models you can even add
+52:20 your custom metadata kind of like Fields
+52:24 so let's say I want to have like a
+52:25 metadata field field for um I don't know
+52:29 the area the model it's about or things
+52:31 like that and then all of this goes to
+52:34 they have this DVT docs uh that you can
+52:37 host yourself or it's part of the DVT
+52:39 Cloud as well and there you can see
+52:42 everything and you can filter you can
+52:43 filter by the by the model names you can
+52:46 filter by the field names uh it also has
+52:50 like the the everything like the and it
+52:52 has a very small profiling which is
+52:57 um amount of lines so yeah amount of
+53:00 rows that the table has table size and
+53:03 maybe like one more little thing but
+53:06 it's not super detailed and it has the
+53:08 code and it has the pendencies so it's
+53:11 very easy to go from there and see what
+53:13 else are you going to affect if you
+53:15 touch
+53:17 something so as understood so the like
+53:20 in DBT when you write your queries you
+53:22 can also have a different file next to
+53:25 your queries where you can Define the
+53:27 schema and then for each field there you
+53:29 can write the description of this field
+53:32 and then based on that you can generate
+53:33 a documentation which you can host
+53:35 yourself on hosting the cloud and this
+53:38 documentation will also show you the
+53:40 dependencies between different tables
+53:41 right yeah okay which
+53:44 is pretty nice uh like I guess it shows
+53:47 you not only you have uh you know what
+53:51 kind of data you have what kind of
+53:52 fields you have you also can see the
+53:54 data L linage because you know where the
+53:57 data is coming from yeah
+54:00 okay
+54:01 [Music]
+54:03 so um
+54:05 I'm I'm looking at the question so
+54:08 another question we have is how do you
+54:10 go about writing tests using SQL um I
+54:14 think we touched on that a bit you said
+54:18 like with DBT you can write some unit
+54:20 test right yeah which are queries um is
+54:24 there anything else uh in DBT for that
+54:28 um so you can use some of them the ones
+54:31 that that come which are like the unique
+54:33 and not n for example like basic stuff
+54:35 and they would do they would translate
+54:36 to a query right so you would only write
+54:39 unique for example in the test you want
+54:41 to apply and that would translate to a
+54:43 query like I said like it would do
+54:45 select from uh this field that you said
+54:49 is null or um something like that but
+54:51 then you can write your own queries and
+54:53 your queries can do anything you want um
+54:58 just think about that right it should
+55:00 give you something like a sell account
+55:02 at the end kind of query right but you
+55:04 can you can do anything around
+55:08 that do you uh so the the question is
+55:12 also I get continuous I only ask the
+55:14 first part of the question uh so uh I
+55:19 feel that it can get overwhelming to
+55:21 maintain all these tests over time do
+55:24 you have any best practices uh
+55:26 uh for that like how can you deal with
+55:29 maintaining all the
+55:31 tests
+55:33 um not that I can think of but I would
+55:35 say try to keep them generic or
+55:38 something like that right try to maybe
+55:40 try to think about your test as
+55:43 something that could be a
+55:44 package um if we think about like let's
+55:47 say like a python package or something
+55:48 that like try to think about like that
+55:50 like would be a library so try to keep
+55:51 them generic and not like super specific
+55:54 sometimes you don't need something super
+55:56 specific to test
+55:59 if a certain number is right or wrong
+56:01 right
+56:02 so probably try to do something like
+56:05 that I would
+56:07 say okay so there are a couple of not
+56:11 questions but quotes and I want to read
+56:14 them out so the first is think of the
+56:17 analytics engineer like a librarian who
+56:20 curates the data in a certain way so
+56:22 scientists and analysts can find what
+56:25 they need more effec L more efficiently
+56:28 yeah that comes from the DT Vlog I'm 70%
+56:32 sure on that one but account from D blog
+56:36 okay I agree yeah that's interesting a
+56:39 librarian and then another one maybe you
+56:42 also know where it comes from or
+56:46 so this is how it goes the analytics
+56:49 engineer is the chameleon of the team
+56:51 they can build custom apps and tools to
+56:54 serve the team they are working with
+56:57 uh nice I didn't know that one but I do
+57:00 know someone that one that's very
+57:01 similar and it was written
+57:04 by um her name is Rosio but I don't
+57:08 remember the surname and she used to be
+57:09 an analytics engineer in in Netflix and
+57:12 she said that the analytics Engineers
+57:14 are Swiss knife or
+57:17 Miss H so similar right like as a
+57:21 camilon I would say yeah so you need to
+57:23 do to know some analytics how to do some
+57:26 analytics you also need to do some data
+57:28 engineering and uh so I guess you need
+57:31 to wear different hats all the
+57:34 time okay um I think we run out of
+57:38 questions the last question we have is
+57:40 this will video be recorded and put on
+57:41 YouTube it is already on YouTube it will
+57:44 stay there it will not go away so you
+57:46 can at any point of Time come back to
+57:48 this video and rewatch it and it will
+57:51 also be released as a podcast one week
+57:54 later so do check it out out and U yeah
+57:58 I think I covered all the questions I
+58:00 prepared for you do you have any last
+58:03 words uh no there's only one that uh
+58:06 we're missing which is like how
+58:08 technical the role is in presented ah
+58:11 yeah but I think we covered that yeah um
+58:15 but I just want to to say like one thing
+58:18 I was thinking like it was more like a
+58:19 50 or 60 and then I asked my coworker
+58:23 and he was a data analyst then he moved
+58:25 to data engineer and now he's an
+58:27 analytics engineer and he told me that
+58:30 it's only like
+58:33 20% so uh if we think like okay so 0%
+58:39 technical is let's say 5% technical is
+58:41 product manager right so sometimes they
+58:44 run some SQL queries but they are mostly
+58:46 dealing with uh priorities and other
+58:49 stuff that is not Technical and then we
+58:51 have maybe data engineer who is super
+58:54 technical maybe 95% so they still get to
+58:56 talk to people this remaining five 5%
+58:59 but they're uh qu Technical and what
+59:03 you're saying is that you think that
+59:06 it's 60% right so analytics engineer is
+59:10 60 while your colleague thinks it's 20
+59:13 see it's like 2030 because he says he's
+59:16 not doing writing so much code as he
+59:18 used to as engineer okay so he was a
+59:22 data engineer and became an analytics
+59:25 engineer he he wor the whole amount of
+59:27 cuts because he was a data analyst and
+59:30 then a DAT engineer and now an analytics
+59:32 engineer uh so that person can
+59:36 actually have he has seen many different
+59:41 things okay yeah makes sense so do you
+59:43 agree with that no I I I I stay on the I
+59:47 understand where he comes from I I stay
+59:49 on the 55060 I would say because you
+59:52 even though you don't write the code as
+59:54 much you definitely need to know how to
+59:56 or like at least to see to see when it's
+59:58 bad code let's say and and be able to to
+1:00:01 correct
+1:00:02 it and uh when I look at this
+1:00:06 description of an analytics engineer in
+1:00:08 at Airbnb I think it's very technical
+1:00:11 like if we talk about that kind of
+1:00:14 analytics engineer that is a very
+1:00:16 technical role so I think it's maybe
+1:00:18 like 70% or 80 yeah I I would say that's
+1:00:22 like a good mix at least for me that
+1:00:25 I've never been
+1:00:26 100% technical I've always been kind of
+1:00:29 like in between I always had to either
+1:00:30 learn about accounting and it at the
+1:00:33 same time kind of thing I would say it's
+1:00:37 a good mix because there are days that I
+1:00:39 have to be in meetings and like
+1:00:41 brainstorming and learning stuff and
+1:00:42 things like that about like where the
+1:00:44 questions going around the data and
+1:00:46 there are other days that I can just
+1:00:48 listen to my music and write my my
+1:00:51 models and things like that okay yeah so
+1:00:55 do have any other last
+1:00:57 words no how people can find
+1:01:02 you uh LinkedIn you can find me on
+1:01:04 LinkedIn um yeah I guess my name is on
+1:01:07 the video right
+1:01:10 Victoria uh well I guess uh that's it
+1:01:13 for today um yeah thanks a lot for
+1:01:16 joining us uh today for sharing your
+1:01:18 experience with us and thanks everyone
+1:01:20 for listening and asking your questions
+1:01:23 and for sharing this night's quotes uh
+1:01:25 really likeed them um yeah that's uh
+1:01:30 that's it for today I guess and everyone
+1:01:32 U have a great
+1:01:34 weekend oh thank you thank you for
+1:01:36 having me and so I had a great time have
+1:01:39 a nice as well me too goodbye

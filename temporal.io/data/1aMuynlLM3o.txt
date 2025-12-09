@@ -1,0 +1,1446 @@
+Trends in AI Infrastructure
+
+0:01 everyone Welcome to our event this is
+0:03 our first event in
+0:05 2025 happy New Year everyone and yeah
+0:08 I'm really excited to start the new year
+0:10 with this stream and uh but before like
+0:14 I'll do the usual thing so we have a lot
+0:17 of uh things a lot of events planned uh
+0:21 so there is a link in the description
+0:22 you can go there click on that link and
+0:24 see all the event we have on our
+0:25 pipeline uh there are a few like there
+0:27 is one Workshop there is um a few other
+0:30 things so check it out uh then of course
+0:33 if you have not subscribed to our
+0:34 YouTube channel now it's the best time
+0:36 to do it so click on the Subscribe
+0:38 button and then you'll get notified
+0:40 about all future streams like the one we
+0:42 have today and last but not least we
+0:44 have an amazing slack Community where
+0:45 you can hang out with other data inas
+0:48 the link is also in the description
+0:50 during today's interview you can ask any
+0:51 question you want there is a pin Link in
+0:53 the live chat click on that link ask
+0:55 your questions and we will be covering
+0:57 these questions during the
+0:58 interview um it's good that I still
+1:01 remember this thing I think if you just
+1:03 wake me up in the middle of the night
+1:04 I'll still be able to do this
+1:06 introduction hopefully even though it's
+1:08 been roughly one month since the last
+1:11 maybe slightly less but anyways um so
+1:15 now I will open the questions that we
+1:18 prepared for you and if you're ready we
+1:21 can
+1:22 start yeah I should
+1:24 it yeah so then this week we'll talk
+1:27 about AI infrastructure everything
+1:29 around that that uh maybe we'll slightly
+1:31 talk about we'll talk a bit about Trends
+1:34 in a infrastructure but we will see
+1:36 where the conversation goes so we have a
+1:38 special guest today Andre Andre is the
+1:40 founder and CEO of DC which is an open
+1:43 source alternative to kubernetes and SL
+1:45 I don't know what slur is I know what
+1:47 kubernetes is but we'll probably talk
+1:48 about that uh and the idea behind this
+1:51 Tech is it's build to simplify the
+1:53 artion of AI infrastructure before this
+1:55 T Andre worked at J jet brains for 10
+1:59 years helping different teams make the
+2:02 best developer
+2:03 tools so welcome thank you Alex for
+2:08 introducing me and yeah also for
+2:10 inviting so yeah uh pretty excited
+2:13 talking about the infra and everything
+2:15 that is
+2:18 related and we've actually known each
+2:20 other for quite some time so it was long
+2:23 overdue to actually invite you so thanks
+2:25 for accepting the invite and um as
+2:28 always the questions for today interview
+2:30 you are prepared by Johanna Bayer thanks
+2:32 Johanna for help and let's start with
+2:35 our main topic AI
+2:37 infrastructure and before we go into the
+2:40 main topic let's talk about your
+2:43 background can you tell us about your
+2:44 career Journey so far sure um well um I
+2:50 started my professional career as a
+2:52 software engineer and back then I didn't
+2:55 call it in professional career just um
+2:58 liked coding uh um and I even skip
+3:02 sometimes going to school because I was
+3:03 working on some coding problem uh
+3:06 started coding at high school yes yes
+3:09 and I missed those days when I coded it
+3:12 only for fun
+3:14 um
+3:16 great don't we all those
+3:19 things then I switch to professional um
+3:23 software development um and yeah worked
+3:27 in different companies uh one of the
+3:31 companies's worst mentioning was Dev
+3:33 experts um I lived in s Petersburg the
+3:36 company was uh making professional tools
+3:38 for Traders like options talks
+3:41 everything um and that was quite fun so
+3:45 while that was professional development
+3:47 I really enjoyed uh that and then I uh
+3:51 joined J RS and it was basically a dream
+3:55 job uh as a programmer um at least for
+3:58 me and I know for many other people uh
+4:01 well J Rin tools are the the best uh and
+4:05 um when I was invited to to join them it
+4:08 was super super cool uh um thing um and
+4:14 yeah um I like you mentioned spend there
+4:18 like a 10 years uh working with
+4:20 different teams I started working with
+4:22 intellig then also um was um helping
+4:27 launch a data group this an ID for for
+4:30 um for working with database and then
+4:33 also worked with other IDs as well help
+4:36 launch goand is a go ID and and
+4:39 eventually eventually I uh joined the
+4:43 pycharm team as a PM and uh what I was
+4:46 working on was uh called Data spell this
+4:49 is actually a dedicated ID for data
+4:53 analysis and data science um and it is
+4:56 also a part of pie charm and this is how
+4:59 I was introduced to machine learning and
+5:02 that that's what eventually caused me to
+5:05 to leave Jet brains to fully focus on
+5:08 D how did this idea of
+5:12 actually focusing on this Tech come to
+5:15 you why why this te why this topic why
+5:19 you thought that okay like this is the
+5:20 problem people have and I want to focus
+5:23 full-time on U solving this
+5:26 problem right um yeah this is a I mean
+5:31 this is certainly a topic that we can
+5:33 talk about longer than we we have time
+5:37 for for this one uh but maybe if you ask
+5:40 me for very few uh specific reasons uh
+5:45 um one uh one is I remember very
+5:49 specifically I I was um I was doing
+5:52 quite a lot of interviews with different
+5:54 my teams and I one one topic that I've
+5:57 heard a lot um I was always curious like
+6:00 okay so what is standing in the way in
+6:02 your way what is standing in the way of
+6:04 your ml team um and oh you can imagine
+6:08 there are so many problems right as an
+6:10 my team you can deal with uh but one
+6:14 that struck me like a super interesting
+6:17 one is uh
+6:20 um there are two ways and there are
+6:22 still two ways to to do machine learning
+6:24 today one is on Prem and other one is
+6:26 cloud and um um there were some teams
+6:30 that uh couldn't do either of them
+6:33 because uh the cost was a big topic like
+6:36 for example on Prem infrastructure is is
+6:39 fixed cost you have to invest a lot of
+6:41 time and then you have to utilize that
+6:43 that hardware and that's uh quite hard
+6:46 to to make this decision about investing
+6:48 this uh this money and before you do
+6:51 that investment um um I mean in order to
+6:55 do that you have to clearly understand
+6:56 how you would utilize that and uh
+7:00 how to make this uh process
+7:02 straightforward for the entire team so
+7:03 there's a lot of risks associated with
+7:06 that right and that that's why a lot of
+7:08 companies are not that uh open to to
+7:11 using on PR and the other one the cloud
+7:15 cloud what what we know about cloud is
+7:17 it's expensive right um and when it when
+7:20 when it comes to machine learning uh
+7:22 it's even more expensive uh so if if you
+7:24 look at uh the cost structure for uh
+7:28 well those teams that do cutting age
+7:31 development in AI it's it's very costly
+7:33 of course um compan is very concerned
+7:36 about that and
+7:38 um but the more I worked with different
+7:40 teams the more I learned that there were
+7:42 ways to work this around um but but
+7:46 again there were no straightforward way
+7:48 for example when when it comes to Cloud
+7:50 development right now everybody knows
+7:52 that is thanks to the tools like
+7:54 terraform like kubernetes um and Docker
+7:58 it's it's not
+8:00 rocket science anymore when it comes to
+8:01 deploying to to Cloud now it's
+8:03 predictable I mean of course cost is a
+8:05 is a concern but but thanks to these
+8:08 open source tools is a lot more
+8:10 straightforward process and that's why
+8:12 originally I thought there should be
+8:15 something for an now uh that would
+8:17 greatly reduce the costs of ownership
+8:21 and the entire process that that's why I
+8:23 started working on
+8:25 this there is something for ML but uh
+8:28 you know all this tools like Sage maker
+8:30 but I guess when we talk about costs
+8:32 then this is become becoming an issue
+8:35 right it's a good example uh yeah well
+8:39 while Sage maker is one of the best most
+8:41 mature let's say Amo platforms for
+8:44 working with aob yes um of course
+8:47 they're certainly like not addressed by
+8:51 that tool at all and that's also why
+8:53 people are afraid of using cloud in the
+8:55 first
+8:56 place yeah because I I remember when I
+8:58 joined my prev company um as a senior
+9:01 data scientist was like um six years ago
+9:04 yes so the first thing I wanted to do is
+9:06 get a a machine with a GPU with couple
+9:10 of gpus and then yeah like I don't think
+9:13 they still have it cuz like I I wrote a
+9:16 proposal saying hey like I want to have
+9:18 this uh uh machine with this gpus and
+9:21 then uh everyone approved it but then it
+9:24 never just happened cuz like the cost of
+9:27 ownership of this like this GPU needs to
+9:30 this computer needs to stay somewhere
+9:32 right somebody needs to look after it
+9:34 and with the cloud sometimes it's way
+9:35 simpler to just you know you go there
+9:37 click a button but then when you click a
+9:40 button and then a month later you see
+9:42 the bill it's like okay it's expensive
+9:45 so one of the first tasks I had as a
+9:48 senior data scientist at the same
+9:50 company was porting some code from Sage
+9:52 maker to
+9:54 kubernetes so I guess this is how people
+9:59 used to do this right yes and while many
+10:01 of this um much of this is still um um
+10:07 actual topic today of course is still a
+10:09 problem and it's not
+10:11 solved um there are even more challenges
+10:14 ahead right now since since uh basically
+10:17 how they say CH GPT moment there are
+10:19 even bigger challenges and that that's
+10:23 yeah makes AI in even more important
+10:25 topic
+10:26 today for how long have you been doing
+10:29 this
+10:30 um it's uh it's now um two years U maybe
+10:36 just a bit years yeah uh but it's two
+10:40 years I think we have known each other
+10:42 for two years maybe slightly more right
+10:45 so basically I managed to see the tack
+10:49 starting yes yes I was I was uh
+10:52 basically doing um doing some
+10:54 experiments even though I was was still
+10:56 with jet BRS um and um and yeah it went
+11:01 U like what I call official day I qued
+11:05 J okay
+11:08 okay so um so the question I have the
+11:11 next one is how did you begin working on
+11:14 on AI infrastructure but I think you
+11:16 partly answered that right so you
+11:18 started uh as a PM at jet brains right
+11:23 uh you saw some things related to
+11:25 machine learning and then you understood
+11:27 that there is a problem you started St
+11:29 and this is how it happened
+11:31 right um yeah in a in a rough sense uh
+11:37 well what what I can uh tell about J BRS
+11:40 is that it's this very flat company
+11:44 where well while of course everyone has
+11:47 a dedicated Ro uh still it's it's very
+11:51 close to programming so for example a
+11:53 lot of marketing people that work with J
+11:54 Brands they were originally programmers
+11:57 and that's why they they were hard to do
+11:59 marketing and that's how I got into jet
+12:01 Brands to to do marketing and product
+12:02 management
+12:04 eventually um and then also everything
+12:06 you do at jet Brands is mostly around
+12:07 developer tuning um and that's why your
+12:11 your full-time job is to think about the
+12:13 developer experience taking feedback
+12:15 from the community to the development
+12:16 team and then spreading the word so
+12:18 basically um for me this even though it
+12:22 was a bit like
+12:24 challenging decision to to live to brins
+12:27 at the same time it didn't change much
+12:29 things for me uh I was I was still
+12:31 working on developer tooling uh it is
+12:34 just that I focused more on on very
+12:37 specific topic of AI
+12:39 infrastructure uh and yeah just title
+12:43 maybe changed on Twitter and nothing
+12:47 more well now you have to figure out
+12:50 where to get money yourself right well
+12:52 previously it was different especially
+12:55 working on open source for sure yeah so
+12:58 speaking of open source that's actually
+13:00 the other thing like I wanted to ask you
+13:03 why open source why did you decide to
+13:06 work in the open and I see this is a
+13:09 trend many companies actually start
+13:10 working uh in open source some start as
+13:14 closed Source but then they make their
+13:17 code open eventually so why did you make
+13:19 this decision of uh to follow this model
+13:23 to work on open source to uh open all
+13:26 your code from the beginning
+13:29 uh right um yeah
+13:34 well I
+13:37 think um it's a it's a clear pattern
+13:40 right a lot of for example
+13:45 um we we know a lot a lot of developer
+13:48 choose are open source uh and even
+13:51 without knowing the actual reasons why
+13:54 people decide to open source uh we can
+13:57 we can see that the clear pattern that
+13:59 that a lot of developer tools are open
+14:00 source so there must be a reason right
+14:03 uh that would go beyond someone's
+14:05 personal opinion about like whether
+14:08 something should be open source or not
+14:10 of course in the end the company has
+14:12 just as you said
+14:14 commercial um interest um uh there are
+14:19 not so many uh fully known profit
+14:23 companies uh one we know is open AI
+14:26 which is as it comes not nonprofit
+14:31 anymore but uh they recently changed
+14:34 their model completely right uh true uh
+14:38 yes uh again I I don't know the story at
+14:43 full detail but it's it's a known fact
+14:45 that they started as nonprofit uh and it
+14:48 was financed as a nonprofit but at
+14:51 certain point the motel has changed
+14:53 again the motel is is always a
+14:55 reflection of uh uh what is the best way
+14:58 to achieve the goal right sometimes goal
+15:00 change change sometimes uh we change our
+15:04 minds about what is the best way to get
+15:05 where we want uh so which is totally
+15:08 fine I think and again there's I would
+15:11 not rant to be honest now that I
+15:14 mentioned open AI that well non commerci
+15:17 nonprofit is better than commercial or
+15:19 the the other way around I would just
+15:20 say that um we we
+15:24 see normally we see a pattern that most
+15:27 of a Point has to go commercial way and
+15:31 we know that a lot of the opp tooling
+15:33 companies leverage open source as the
+15:35 way
+15:37 forward now now getting back to to to
+15:41 the question that you asked um for D
+15:44 well
+15:46 we this was not
+15:48 their um let's say obvious decision for
+15:52 for us for example when we started we
+15:54 were not really sure whether it should
+15:55 be open source or not but uh the more we
+15:59 talked with different teams that were
+16:00 using different tools uh the well the
+16:03 more we learn from that and one of the
+16:05 learnings was that open source has um
+16:09 one advantage um when it comes to infa
+16:13 for example when it comes to using
+16:15 something within the company that is
+16:17 sensitive to the infrastructure uh there
+16:20 is typically process and uh well in
+16:23 order to move the tool forward and and
+16:25 increase this adoption you you need to
+16:27 bring adopter or early adopters of the
+16:30 tool and then most importantly you need
+16:32 to get feedback from them to to the team
+16:35 so you can uh improve the tool and open
+16:38 source um is uh one of the best
+16:41 Frameworks that allow you to set out
+16:43 this process um again there could be
+16:45 different ways and there's no way to say
+16:47 that open source is better than
+16:49 something else um for me as a as a as a
+16:54 someone who has always been working with
+16:56 developer tooling um
+17:00 to me it's it's a lot I I understand
+17:02 better how developers think so for me
+17:04 it's much easier to to communicate
+17:07 directly to the development team rather
+17:09 than for example to go through this
+17:11 sales cycle and uh work with a decision
+17:14 makers that that are not technical at
+17:17 all um which which is the way that also
+17:21 works but but for me uh due to the
+17:23 background and everything it's it's a
+17:24 lot easier to to communicate to the
+17:26 developers and really relate to their
+17:28 problems that that's why open source is
+17:30 the is the best one of the best
+17:32 approaches to
+17:34 that and I I think I don't also know the
+17:37 story behind open Ai and what they were
+17:39 doing but I think at the beginning they
+17:41 were actually open they were releasing
+17:43 uh many things that they were doing open
+17:46 source I think gpt2 was open source
+17:48 right if I remember correctly they also
+17:50 did a lot of things like
+17:52 whisper uh clip right so many many
+17:55 things were actually open sourced but
+17:58 then when they realized that they
+18:00 sitting on a gold mine right when they
+18:03 released gpt3 they thought maybe this is
+18:05 the cow we should milk right we
+18:07 shouldn't just release it uh but then of
+18:10 course people started to uh reproduce it
+18:14 like the there was I don't remember the
+18:16 name of the company but basically like
+18:17 there were people who repeated Chad GPT
+18:20 gpt3 as open source and they were on par
+18:24 when it comes to Performance and then of
+18:26 course uh what I see now GPT is
+18:29 releasing something is releasing
+18:30 something and then open source Community
+18:32 tries to catch up so what is your
+18:34 opinion um so we have some close Source
+18:36 Solutions like uh open AI anthropic
+18:40 right so
+18:41 that give really good performance right
+18:44 they give models um but they also
+18:47 Hostess models versus you have due to
+18:49 yourself uh open source like uh so many
+18:53 different models with different uh
+18:55 characteristics uh with different uh I
+18:58 don't know patterns of usage with
+19:01 different use cases uh so what's your
+19:04 opinion on that like where is the
+19:06 industry going with all that right right
+19:09 yeah this is um um it's a Pity that uh
+19:12 we we have to discuss it uh super
+19:15 briefly uh this one topics that uh that
+19:19 we could uh talk hours um um and I i'
+19:25 I've i' I've done some some talks
+19:27 recently about closed Source models
+19:29 versus open source models um and I had a
+19:33 chance to to think and reflect on that
+19:35 um and what I what I think is um a lot
+19:39 of people get confused uh because people
+19:43 uh I mean maybe it's sounds as like I'm
+19:45 getting old but um it seems that a lot
+19:48 of people live in a bubble um and uh for
+19:52 example there's a lot of conversation
+19:53 okay so what is better proprietary or
+19:55 open source will open source catch up uh
+19:59 and to me it it seems like people live
+20:00 in a bubble uh because they the world
+20:03 basically is very small and they think
+20:06 okay so which is
+20:08 better if you think of it a bit more uh
+20:10 you'll realize that you cannot even
+20:13 frame the questions like that doesn't
+20:15 even matter what is better or like uh
+20:18 there are so many different dimensions
+20:20 here to this to this question um and
+20:25 it's not even a question of what is
+20:26 better like at all nobody really cares
+20:28 what is better it's it's not even a
+20:30 question that is important at all like
+20:33 worth
+20:34 discussing uh the question is like
+20:39 sorry okay yeah I'm just wondering where
+20:42 is it going right um so um um if if if
+20:48 you think of um um like of propriatary
+20:54 models and um and open source models you
+20:57 see that those are two different um
+21:01 different
+21:02 businesses uh one business is about uh
+21:06 more a
+21:09 service uh and it's monolith it's
+21:12 centralized it means there's one company
+21:15 and it offers you a service and they
+21:17 it's a very big company there's so many
+21:20 Engineers working on different aspects
+21:21 of that service and AI is a service it's
+21:25 it's not just a model it's a it's so
+21:27 many things in the end it's a service
+21:29 that uh as we see impacts every part of
+21:32 our life right so we chpt is much more
+21:35 than just a model right yes uh it's it's
+21:37 a lot more than model it's um it's um
+21:40 it's a I don't know for me it's a new
+21:42 Google right Google Chang our life now
+21:45 we Google everything we can Google
+21:47 anything and just the fact that we can
+21:49 Google anything changes so many aspects
+21:51 of our life so now that we can chpt
+21:54 things um it's um it changes uh not even
+21:58 how we I don't know how we search for
+22:00 something but but how we work in China
+22:01 so like it is like super uh disruptive
+22:05 change but if you think of Open Source
+22:08 AI open source AI is a totally different
+22:10 business it's it's a business of
+22:12 decentralized uh approach where um um
+22:17 where it's not all done by one company
+22:20 but it's all but it's when um different
+22:23 aspects of that let's say business can
+22:27 be done by different companies
+22:29 and different
+22:31 stakeholders um just one little example
+22:34 here let's take privacy right you
+22:37 consider bank and for bank it's very
+22:39 important to control every aspect of um
+22:41 what they call AI or what the employees
+22:43 call AI um and they think totally
+22:48 different way they think of control they
+22:51 they think of
+22:52 privacy um and this this monolith
+22:56 approach just simply doesn't work it
+22:57 doesn't work at
+22:59 all um but then it's not only one like
+23:02 Bank there are so many Industries um
+23:05 where control and privacy matter
+23:07 healthare right and yeah and then it's
+23:10 not only controlling privacy it's also
+23:13 competition right you like to compete
+23:15 and um uh bring your own value otherwise
+23:20 if AI will disrupt everything and then
+23:22 your margin margin of every business
+23:24 will shrink and shrink and shrink and
+23:27 then you are not able to even compete so
+23:30 you basically protect your business uh
+23:32 by leveraging open source that's why
+23:34 open source AI is such a big thing and
+23:37 it doesn't even matter whether open
+23:38 source AI is better than CH gbt or not
+23:41 at
+23:41 all so that's a bit ranty answer to your
+23:45 question but that's Le it's more like uh
+23:48 it depends right depends on your use
+23:51 case um yes but but the whole point here
+23:54 is
+23:55 decentralization open source is about
+23:57 decentral ation and it's a mega Trend
+24:01 and it's Mega Trend uh that is not
+24:03 influenced by the even the
+24:05 quality the quality is the result of
+24:07 that meat
+24:09 Trend we we see that open source models
+24:11 are better it's not that people use open
+24:14 source model because they are better
+24:15 than CH GPT they are better because
+24:17 people need
+24:19 that but it's not like they are better
+24:21 in terms of performance but they are
+24:23 better in terms of other aspects like
+24:26 being able to control the data flow or
+24:30 like other things being able to control
+24:33 latency if you host it yourself yeah
+24:36 yeah and then and that's when we can dis
+24:39 then we can can compare some of the
+24:42 aspects of of models uh
+24:44 uh but but again to me does make sense
+24:47 to compare them side by side
+24:51 uh and what is certainly makes sense for
+24:55 open source models is um
+24:59 um whether they are customizable and
+25:02 that's why we use them because they are
+25:04 very easy to customize and but what even
+25:07 more important is that there's another
+25:09 Mega Trend here is that um it's getting
+25:13 less rocket
+25:15 science uh the process uh pre-training
+25:18 and post trining is done getting easier
+25:21 and simpler because this
+25:23 decentralization trend going on we want
+25:27 we may like it or we may not like it but
+25:30 this trend is there and we cannot even
+25:33 influence
+25:35 that and do you know if these big
+25:38 companies like uh so we have Meta Meta
+25:42 releases meta contributes a lot to the
+25:44 open source Community uh especially when
+25:47 it comes to AI with models like llama do
+25:50 you know if there is any if they put any
+25:54 information in public how exactly uh
+25:56 they train these models and what they AI
+25:59 infrastructure uh
+26:03 is well I want to answer for sure uh but
+26:08 I would say yes
+26:11 um um well te typically typically it's
+26:15 called the technical report right
+26:17 [Music]
+26:20 um
+26:21 even open AI while they not open
+26:25 sourcing uh most of what they do um
+26:28 still they are sharing some of the
+26:31 information on how they and they
+26:32 contributed significantly into
+26:36 theity um and it started even before
+26:39 that so like for example if you remember
+26:41 this attention is all you need is like
+26:43 it's dated I guess if I'm not mistaken
+26:46 17th year yeah so it was 2017 yeah
+26:52 2017
+26:54 um and even though it wasn't open sour
+26:57 but but uh the the P paper on on on this
+26:59 algorithm on this Transformers thing uh
+27:01 was was open um and of course meta um
+27:07 went even further for example with a
+27:09 Lama model U with at least with their
+27:12 with the 3.1 they open they open the
+27:15 weights again again sometimes people
+27:19 rent about this word whether open source
+27:21 actually applies to Motors and some
+27:24 people prefer to say open ways to be
+27:26 honest I I'm not that picky um um but
+27:32 but the thing is um uh even opening I
+27:35 shared a lot of details on how they do
+27:38 post training or
+27:40 pre-training uh and of course Lama uh
+27:43 shared this um technical report on how
+27:47 they trained it so there are so many
+27:49 details on on how this is done and this
+27:51 is also how the community learns um and
+27:55 from it and it's it's a very good
+27:57 example of um of what I mean with
+28:00 decentralization it's not even about the
+28:02 moral in the end it's not so much about
+28:05 the moral it's it's about sharing um uh
+28:08 the details on the technical details on
+28:11 how the training and post training was
+28:13 was done how many gpus were used what
+28:16 was the what was the architecture of the
+28:18 model so a lot of details are publicly
+28:22 available and this is also one of the
+28:24 best ways for learning how I start by by
+28:27 reading technical reports uh might seem
+28:31 that it's um it's a boring thing so some
+28:35 some people might think oh it's too
+28:36 boring maybe I'll just read some high
+28:38 level overview but I personally
+28:41 encourage everyone to read those
+28:43 technical reports so they are not that
+28:45 boring uh they are super interesting and
+28:49 um well I mean I am actually a big fan
+28:52 of books and um I I used to read a lot
+28:54 and well most of that was fiction uh but
+28:57 but nowadays
+28:58 R fiction is super boring for me so
+29:01 actually I find reg for a lot more
+29:05 entertaining
+29:07 okay uh yeah right uh and uh so since
+29:11 you like this way of entertaining
+29:13 yourself I'm just wondering what are the
+29:15 challenges these companies discuss and
+29:18 whether these challenges uh apply to
+29:21 small smaller companies like I don't
+29:24 know of course there are metas there are
+29:25 Googles there are uh I don't know open
+29:28 but there are companies like small
+29:30 Enterprises or midsize companies or like
+29:33 Smalls siiz companies they probably have
+29:36 different training challenges right so
+29:37 what are these challenges are in general
+29:39 and how does this affect the the trends
+29:42 in AI
+29:44 infrastructure H yeah well um I mean uh
+29:49 I I I prefer to call myself a generalist
+29:52 that that's why I always uh try to at
+29:55 least I'm interested not only in the
+29:56 technical side of things but but also
+29:58 the other one the other side of things
+30:00 that that's why for example when when
+30:01 you say okay so what are the challenges
+30:03 I'm like um probably there are technical
+30:06 challenges and every every team which is
+30:08 focused on very specific thing has their
+30:10 own challenges like for example there's
+30:12 infra team there's this uh AI team
+30:14 there's data team um well maybe we can
+30:17 talk about since we talk about AI
+30:19 infrastructure maybe we can focus on
+30:21 that uh because in order to train a
+30:24 model we need thousands of gpus right so
+30:27 how do we get them in the first place
+30:29 how do we coordinate like I guess these
+30:31 are all the questions we need to think
+30:32 about when we embark on something like
+30:34 that yes yes yes uh which is still why
+30:38 we have to think not only about
+30:40 technical problems but also the other
+30:42 side where where do we get money from uh
+30:46 because because well what what we know
+30:48 for sure is that without GPU we cannot
+30:50 do that simply it's just possible
+30:54 challenges or not challenges uh
+30:58 for example like lamb 3.1 was trained
+31:02 like
+31:03 16,000 gpus using 16,000
+31:07 GPS uh just for you to compare um
+31:11 well um I I guess meta uh has uh an
+31:16 another of magnitude more gpus in
+31:18 general so they use only a fraction or
+31:21 small fraction what they what they
+31:23 actually have U to train this L 3.1
+31:29 um but getting back uh so first first
+31:34 question is is you need inra however I
+31:36 was still to like to mention one thing
+31:38 like um we we tend to think that it's
+31:42 it's GPU that that we need to in the end
+31:45 to train Frontier models right but what
+31:48 was quite interesting recently was uh
+31:50 deep
+31:51 seek uh release this V3 model
+31:58 it on my social media
+32:00 feeds like um a couple of days ago I
+32:03 just started seeing these posts all over
+32:05 my yeah it was basically end of December
+32:09 when when I seen the report uh they they
+32:13 used a small fraction of what meta used
+32:17 to train Lama 3.1 and they trained a
+32:19 model that is um well another of magude
+32:23 better I mean
+32:25 MH maybe not another but
+32:28 um significantly better in terms of
+32:31 their benchmarks uh compared to L1 and
+32:35 then also given the the size of the
+32:37 money so what I'm I'm trying to say here
+32:39 is that um GPU are important and uh and
+32:45 money are important but it's not it's
+32:47 not all of it so there are other aspects
+32:50 but but back to your question uh by no
+32:52 means I I would aim to you know kind of
+32:56 answer your question at at depth
+32:58 uh it's just super
+33:00 super challenging even to generally
+33:05 answer your question but but basically
+33:07 you can think of uh like when it when it
+33:09 comes to to like free training um it is
+33:14 high scale and a lot of gpus are
+33:17 involved means that it's distributed and
+33:19 basically man distributed training is is
+33:22 a big pain in the S uh and it's
+33:24 basically it's a it's a it's a um if if
+33:28 you if you speak with some of these
+33:31 people they
+33:32 are they are yeah they can share like
+33:36 how
+33:38 uh close to horrible the the in terms of
+33:41 the complexity the the process is
+33:43 basically just you have tons of gpus and
+33:46 you need to run a process which is
+33:49 coordinated uh on all those
+33:51 infrastructure and then something
+33:52 doesn't work and that's the main
+33:54 challenge basically something doesn't
+33:55 work on some of the nodes you have to do
+33:57 with
+33:58 that yeah the more gpus you have the
+34:01 more chances that somebody something
+34:03 will go wrong right yeah and and you
+34:05 need to manage that at scale and uh of
+34:08 course there are so many other issues
+34:10 and you still need to address this
+34:14 one uh do you know how does it actually
+34:17 look like so probably there are computer
+34:19 I don't know there's a computer with
+34:20 four or hpus there's another computer
+34:22 with four hpus and all these computers
+34:24 are a part of a network and somehow you
+34:26 need to um distribute your training
+34:30 process across all these computers
+34:31 across and each computer has a bunch of
+34:33 gpus and then like each of these gpus
+34:35 needs to compute something then send the
+34:37 weight or gradients I don't know what
+34:39 whatever it does somewhere back to the
+34:42 central location right so this is how
+34:44 roughly it looks like
+34:46 or uh yes uh but um again just like any
+34:51 any complex problem uh any any complex
+34:54 problem can be um split into smaller
+34:58 problems uh and then be solved uh on
+35:02 different levels of
+35:03 abstraction um generally speaking
+35:06 there's py torch right this is a
+35:09 framework again mostly by meta uh um
+35:15 built to to do training and distributed
+35:18 training is basically just the general
+35:20 use General use case the one of the main
+35:22 use cases for for training so by George
+35:25 for that's what we what is used for
+35:28 llama and other models right it's
+35:31 by
+35:33 uh yes uh again I I I only B based my
+35:39 reply on on the latest uh Lama training
+35:44 report but um it even even though the
+35:47 the previous versions were trained with
+35:50 something else even though I don't think
+35:53 why they I think when we download models
+35:56 from hgen face hub
+35:58 um and we use this Transformers uh
+36:01 package right and it's based on byor
+36:03 yeah but but again the point here is not
+36:05 that it's py torch is just matter is
+36:07 using pytorch mostly and a lot of other
+36:09 people are also using pytorch uh for
+36:12 example Google uh is not using that
+36:16 again I I invite people to correct me um
+36:21 I'm I'm not that aware of of the the
+36:23 process like uh Jim for example was
+36:26 trained but I assume that py toch was
+36:28 not used there
+36:31 um but because again it's it's a
+36:35 different topic for a discussion why and
+36:37 maybe we touch upon that if we have time
+36:40 for talking about different chips uh but
+36:43 uh B basically even if it's not py torch
+36:45 there's another framework but again it
+36:48 doesn't have to be py torch it can be
+36:50 any other training framework it's it's
+36:51 one level of abstraction but on the on
+36:55 the beneath pie torch there is a back
+36:57 end which is responsible for
+36:59 communication between NES for example
+37:03 one of the most famous ones is is called
+37:06 nickel um and this is what is
+37:09 responsible for the most challenging
+37:12 part communication of
+37:15 ndes uh and for example if you talk to
+37:19 like folks training Frontier morals this
+37:22 is what caused a lot of frustration and
+37:25 they had to basically reimplement that
+37:27 nle from from scratch maybe uh to to
+37:30 make sure that this process is
+37:35 optimized so if I just summarize what
+37:38 you said you've said many things so um
+37:42 there is this trend that when it comes
+37:44 to training these large language models
+37:46 uh while previously it was mostly using
+37:49 blun Force like okay we're meta we have
+37:51 a ton of gpus we can just take a
+37:53 fraction of them and just throw I don't
+37:56 know this problem at the these gpus and
+37:58 they will process it um not everyone not
+38:02 all companies can afford that not all
+38:04 companies have the same amount of gpus
+38:07 like Google and meta uh so there are
+38:09 smaller companies like this deep seek
+38:11 who try
+38:13 to like the trend is being smarter
+38:16 rather than just using blun Force right
+38:18 and this is what we see now when it
+38:20 comes to uh actually large scale
+38:22 training that okay like how can we
+38:24 optimize if we don't have access to so
+38:26 many gpus
+38:28 and we don't have so much money how can
+38:30 we train uh a similar model right so
+38:34 that's the one of the trends that we
+38:36 see how about yeah
+38:40 yeah yeah I was just thinking okay this
+38:42 is one thing but like most of people
+38:46 most of the companies most of the use
+38:47 cases they're not about training these
+38:49 models so if I need a
+38:53 model right and if I don't know have a
+38:56 specific use case
+38:58 I take this model and maybe I F tune or
+39:00 maybe I don't even need F tuning I just
+39:02 Host this model so the challenges in AI
+39:04 infrastructure I have are very different
+39:07 from the challenges the these companies
+39:09 like meta or DPS uh that they have right
+39:12 so I'm more concerned about uh I know
+39:15 how do i f tune the model and how do I
+39:17 serve the model and the challenges are
+39:19 different so I'm wondering what these
+39:20 challenges are and where do you see the
+39:22 trend is going with like you know small
+39:24 or medium companies that do not need to
+39:27 train a model they just want to use a
+39:30 model um correct even though I would
+39:35 say maybe I'm a bit picky here on the
+39:37 terms but I would not even split them
+39:40 into small and medium size and large
+39:42 ones I would talk about AI first and not
+39:45 AI first privacy first Andy first um
+39:49 once we figure out that then everything
+39:51 is so much clear at least to me um first
+39:55 company then you want to customize tomor
+39:57 to make sure that the performance is
+39:59 optimized and then you choose between uh
+40:02 which part of the process you want to
+40:04 optimize depending on how much resources
+40:07 you want um uh if if you have a lot of
+40:09 resources you indeed can go into either
+40:13 pre-training or heavily fine-tuned that
+40:16 uh and you don't if you don't have that
+40:18 much resources or if you are not AI FOC
+40:21 first uh company for example you can be
+40:23 a very big
+40:24 Bank um and you can be concerned a lot
+40:28 about the privacy but because you are
+40:30 not AI first I mean some banks going to
+40:34 go AI first and I could even predict
+40:36 that um it's like a lot of banks went
+40:39 software first or mobile first right um
+40:43 can you go AI first like because for
+40:47 that you need a new company
+40:49 no um
+40:52 again some companies some compan some
+40:55 some banks if you talk about Bank some
+40:57 banks may decide make that decision to
+41:00 to go first and then they have their own
+41:03 idea what what they mean with that um
+41:06 some banks might not and there might be
+41:08 some new
+41:10 Banks uh on the market that actually you
+41:12 know focus on just that and again some
+41:15 companies will go um leveraging orp
+41:19 model and some companies will will go uh
+41:22 customizing B but getting back now to
+41:24 your actually main question which is
+41:27 okay so uh what are the challenges and
+41:30 uh your assumption is that most the
+41:32 companies do not need to to go That
+41:34 Matter's way and and pre-train the model
+41:37 um and my assumption is that yeah and
+41:41 yeah uh uh
+41:44 obviously if they don't uh buy gpus uh
+41:50 um on the daily basis um um then yes uh
+41:55 but then they it's all about
+41:58 customization of the models and it's
+42:00 it's
+42:01 um certainly in France becomes a very
+42:05 important topic um and then also uh
+42:09 systemization of the post basically fine
+42:12 tuning we can use the word fine tuning
+42:14 for now to to simplify not go into how
+42:16 exactly this fine tuning Works
+42:19 um not not even because I don't know uh
+42:24 we even need that but I I would even say
+42:27 that we would go there simply because we
+42:30 can imagine you are a team in a bank you
+42:34 not a focus sorry AI first but you still
+42:37 want to want to leverage Ai and you want
+42:39 to you know in introduce AI into
+42:43 services that your bank offers um of
+42:47 course your team would be interested in
+42:50 how do I make that more efficient how
+42:53 can I improve the accuracy and then
+42:55 Engineers will figure out okay so I need
+42:57 to fine tune or I need to align on
+43:00 um and and and and then again if you are
+43:03 not AI first you would seek for um for
+43:07 already existing Solutions right you're
+43:09 not going to implement your own
+43:10 inference framework I mean unless you
+43:13 arei first team you would go and um and
+43:17 use some of their existing tools well
+43:20 thanks thanks to the open source
+43:22 Community uh we we have quite a few
+43:25 inference Solutions and also the point
+43:28 Solutions uh but what I want to say here
+43:31 is that even if you area first you would
+43:33 still go that way even if you first you
+43:36 would still be looking for ways to
+43:39 optimize your development and you would
+43:42 use open source tools that's why open
+43:46 source Community is the B is the is the
+43:48 main winner of the process yeah mhm and
+43:53 for this Tech the clients uh or the
+43:56 users let's say the users are mainly
+43:58 this non AI thirst category like I mean
+44:01 the the companies Who U are looking for
+44:05 existing Solutions rather
+44:07 than well I guess otherwise they would
+44:09 be implementing this tack themselves
+44:11 right uh finally enough well those that
+44:16 that use this de originally were
+44:18 implementing it themselves
+44:20 uhuh uh that's classic uh right so
+44:24 people try to implement something then
+44:26 they figure out that there's something
+44:28 else there that Sol the problem and then
+44:30 okay like we don't feel like maintaining
+44:31 our own thing let's just switch yes yes
+44:34 for sure everybody's looking for ways to
+44:36 do what they do already better without
+44:39 investing that much effort um at the
+44:41 same time I would would have what I how
+44:44 I like to think of this de is not in
+44:46 terms of we are doing it for smaller
+44:49 teams or not the first teams or AI first
+44:52 teams um um um take kubernetes for
+44:57 example as an example and we
+44:58 actually we publicly say that that we
+45:01 are building alternative to that um you
+45:03 can actually say that kubernetes is for
+45:06 cloud first companies
+45:07 or uh not Cloud first companies kuar is
+45:11 for everyone like it's a it's a
+45:15 foundational um it's a platform
+45:18 foundational platform uh and it doesn't
+45:20 really matter whether your your use case
+45:22 is a expert use case or um even beginner
+45:26 use case PL is designed in a in a in a
+45:28 way that it's it's Universal and then
+45:32 foundational so that's exactly how we
+45:34 think of D stack um and there's all
+45:38 there's never black and white uh it's
+45:41 it's always
+45:43 Spectrum um sometimes you need to train
+45:47 a large model sometimes you need to
+45:49 fine-tune that sometimes you um need a
+45:53 something very simple but but you don't
+45:55 want to use different Sol soltions for
+45:57 this and that and then and something in
+45:59 between right so that's how you reduce
+46:03 the cost of ownership by invest
+46:06 investing into one tool that is
+46:08 universal and that sounds challenging
+46:11 and that's actually challenging to make
+46:13 such a universal tool and that's what
+46:15 the most challenging about building this
+46:18 TCH is is to is to make it Universal and
+46:22 flexible but get the question the the
+46:25 idea here just to make it Universal um
+46:29 mhm okay and um so we already have
+46:32 kubernetes why do we need another
+46:34 Universal tool well I know you have an
+46:37 opinion on that and I remember from my
+46:39 days like I was when somebody would
+46:41 mention kubernetes I was like sounds
+46:43 scary like I don't want to go there when
+46:46 I figured out how it works it was way
+46:48 easier but like my first impression was
+46:51 it's something complex I want to stay
+46:52 away but then as I got into that it
+46:55 turned out to be quite
+46:57 easy maybe not easy not simp not
+47:01 manageable I would say but we had a team
+47:05 who was looking for after the kubernetes
+47:07 cluster right and I guess that's the
+47:08 main problem like not everyone has a
+47:11 team that can do
+47:15 that totally yeah um I mean again this
+47:19 is one of the topics that that uh that
+47:21 deserves that that would need more time
+47:23 to for more fair and more let's say
+47:27 specific
+47:29 discussions but but on that high level
+47:32 um um we are focusing on teams that are
+47:38 constrained by kubernetes orl um umra in
+47:44 which sense they cannot move the speit
+47:47 they want they are challenged by that or
+47:49 they they have experience specific pain
+47:52 there and again because this te is
+47:55 focused on AI uh um well you can guess
+47:58 that most the challenges are around yeah
+48:01 making it work for yeah for example take
+48:03 kubernetes um there are two topics uh
+48:06 that pop up uh a lot first one is well
+48:11 kubernetes um it's it like AI is not
+48:14 first class citizen right on kubernetes
+48:17 kubernetes is designed for for
+48:19 containers for ports basically ports is
+48:22 a is a deployment um um is a
+48:27 is a deployment
+48:29 Paradigm
+48:31 uh and for example when it comes to AI
+48:36 there's always training involved uh and
+48:39 even if we take just training just
+48:41 training for training um as an a
+48:44 engineer you certainly don't don't think
+48:46 in terms of PODS
+48:48 right you would think in terms of their
+48:51 that's why for example slurm exists
+48:52 right because it simplifies that and a
+48:54 lot of people enjoy slurm in the first
+48:56 place because it simplified that that
+48:58 thing uh instead of going devops and
+49:01 learning kubernetes they only had to
+49:03 learn Lear because it's a specialized
+49:05 tool for
+49:07 engineers um and that's that's an
+49:10 advantage right for example why don't we
+49:11 use assembler I mean is is assembler
+49:14 worse than rust of course it's not worse
+49:18 yes powerful but complex there is one
+49:21 more aspect very important that cost and
+49:26 development speed are very important
+49:29 points in the process and they are not
+49:31 only good to have they are must for the
+49:34 more process that that's why we're
+49:37 talking about orchestration if we talk
+49:39 about container orchestration um and
+49:42 that's our thesis that container
+49:45 orchestration should be
+49:47 rethought that's the thesis that we
+49:49 drive it simply should re thought we
+49:52 cannot go the the pre the the old way we
+49:55 we should rethink it and that that's
+49:56 what we try to do and again we I
+49:59 wouldn't claim that we're doing it
+50:00 better or um we are certainly interested
+50:03 in rethinking it and we see a lot of
+50:05 people that are very much interested
+50:06 about that as
+50:07 well um that's why we work on that um
+50:11 and it doesn't mean that that well I
+50:14 mean uh for example I mean maybe
+50:17 assembler is not used today but but
+50:19 prologue is certainly used and I if we
+50:22 compare for example C++ and and Python
+50:24 and and rust we see that rust usage
+50:27 sorry C++ usage is only
+50:29 growing
+50:31 MH uh seriously if if you if you look at
+50:34 at the usage C++ usage is
+50:37 growing regardless of python regardless
+50:40 of go regardless of rust well it's just
+50:44 to tell that uh that kubernetes adoption
+50:47 is going to grow as well but uh we this
+50:51 super vibrant
+50:53 niche of Engineers that are interested
+50:57 in the
+50:58 infr so as an engineer as a software
+51:01 engineer I still should uh not stay away
+51:05 from kubernetes and it's still a good
+51:07 tool in your tool belt
+51:10 right uh that's the only tool when it
+51:13 comes to
+51:15 deployment right okay is the only one uh
+51:20 whenever regardless of what you use aw
+51:23 Azure or
+51:24 even alib CL
+51:27 um you in the end use kubernetes MH I
+51:31 mean I personally don't but the projects
+51:33 I have are smaller I don't want to pay
+51:35 like I don't know how much per day of a
+51:38 govern cluster but for companies that
+51:40 are more than I know one person then
+51:43 perhaps it makes sense
+51:45 right yeah yeah I mean of course there
+51:47 are age cases and I'm probably use more
+51:52 General average enter
+51:56 there is a question um do you think that
+52:00 the future is hybrid bare metal plus
+52:03 cloud or Cloud
+52:06 only well predicting future is a super
+52:09 uh easy
+52:13 thing and some people even like that but
+52:17 if we extrapolate the trans right
+52:21 now
+52:22 [Music]
+52:24 um cloud is the trend
+52:27 in the only cloud is the only
+52:30 Trend yeah because people don't want to
+52:33 have a GPU machine under the desk or
+52:37 what I don't know 16,000 of them
+52:41 um
+52:43 well uh it's more predictable for
+52:46 Enterprises to use
+52:48 cloud uh right on the other hand on the
+52:52 other
+52:53 hand AI is kind of a black SW here
+52:57 M um so nobody really knows uh What will
+53:01 What what will happen um
+53:05 and a lot of companies right now are
+53:10 investing into onr so we see cont Trend
+53:14 because of a because of a we see cont
+53:16 Trend here a lot of companies are very
+53:18 much interested in um but uh but again
+53:22 um
+53:26 again I'm maybe not the best not like a
+53:30 real expert in that particular in the
+53:32 discussion of that particular charm but
+53:35 personally personally I prefer not to
+53:37 use again I'm using the word on PR but
+53:40 when I for example know like like with
+53:43 myself I I don't like the word on
+53:46 PR because it's very confusing term um
+53:51 um for
+53:54 example um you can you can have your own
+53:58 rack uh in your building and then you
+54:02 can call it on Prem on the other hand
+54:04 you can call it a data center however
+54:07 when you data center you can also call
+54:09 it a CL
+54:12 Cloud right there are difficulties in
+54:15 these terms that's why there's no
+54:18 there's when I'm with myself only I I
+54:21 don't I don't even say on pram or Cloud
+54:23 I just say different versions of cloud
+54:28 okay yeah so what I think um when I hear
+54:32 on pram when it comes to data teams data
+54:35 science teams ml teams so in my first
+54:37 company in Germany we actually had a
+54:40 machine with gpus there and everyone had
+54:43 access to these machines we would just
+54:45 SSH to this machine and do things there
+54:47 and then we would need to figure out
+54:49 like how
+54:49 to uh uh claim the gpus okay I'm using
+54:54 this GPU so you cannot use it like you
+54:56 have to wait and then uh yeah it was
+54:59 like at the end it was terrible like
+55:01 coordinating this stuff so this is what
+55:02 I think about on Prem and the challenges
+55:04 okay now you have these machines and how
+55:06 do you actually split and now I use this
+55:09 machine but then your project is more
+55:11 important doesn't mean I need to stop my
+55:13 training and you can start training like
+55:15 these things so this is what I think um
+55:18 this is what comes to mind when I think
+55:19 on Prem on Prem GPU machines yes I think
+55:23 you are right actually here you are more
+55:26 when accurate here all p is is when you
+55:29 have to deal with a lot of challenges
+55:31 yourself of maintaining those servers
+55:34 and you have to think about updating the
+55:36 software you have uh to think of
+55:39 managing
+55:41 um the orchestration there yourself uh
+55:45 with the cloud it's done by as a service
+55:48 uh with with your Hardware is done by
+55:51 you MH and then maybe also it's kind of
+55:54 on Prem when you or a machine that you
+55:58 rent is somewhere remote on a remote
+56:01 location but you have access to this
+56:03 machine uh so for example there is a
+56:06 provider called hetner in Germany maybe
+56:08 you know it right so where you can there
+56:10 you can just rent a machine for a year
+56:13 and this machine can have a GPU or maybe
+56:15 like a bunch of powerful CPUs but
+56:18 basically what you have SSH access to
+56:19 this machine and nothing else right so
+56:21 there is machine it's not physically
+56:23 under your desk but you can always SSH
+56:25 to that
+56:26 but because all you have is just this
+56:29 SSH it comes with all these challenges
+56:32 that we talked about right so when there
+56:34 is a team there are four machines and
+56:36 there is a team of 10 people and
+56:38 somebody wants to train their XG boost
+56:40 models there right like how do you
+56:42 coordinate that so that's kind of all on
+56:44 Prem
+56:47 right well uh bar metal uh okay bare
+56:52 metal right bare metal is a service and
+56:54 there are companies that offer bar on
+56:56 the
+56:57 service uh this is where the management
+56:59 is split uh they still allow you to
+57:03 provision those sometimes machines as a
+57:05 service programmatic you can just say
+57:07 okay so I need a since next week I I
+57:09 need a thousand machines uh and you have
+57:12 access to that and that service will
+57:13 promise you in that the firmware will be
+57:16 up to date uh and you don't have to
+57:19 update the firmware yourself however for
+57:22 example now imagine that you would like
+57:23 to run a service yourself and then you'd
+57:25 like to rent bar met from from this
+57:27 Provider from that provider you now need
+57:29 to automate that process and ensure that
+57:32 even though these bare Mets come from
+57:33 different providers they are up to dat
+57:36 uh now you have to deal with that so
+57:39 basically split between Barrow provider
+57:41 and and you but yes basically you have
+57:43 to have to think of it yourself as
+57:47 well so the best example of one Prem is
+57:50 a GPU machine under my desk
+57:52 right no uh
+57:57 by the way we we didn't talk about that
+57:59 um um I don't know how much time we we
+58:02 have but uh it's a time we can talk like
+58:05 for five 10 minutes one maybe that that
+58:08 might be last uh last uh one to speak
+58:11 about
+58:13 Edge uh and cloud and how this is
+58:17 different so what is Edge is it like uh
+58:21 HS like this
+58:22 one um yeah well to be entirely Fair
+58:27 again maybe there are Edge experts that
+58:30 will correct me uh but but based on what
+58:32 I know um um there is nothing
+58:38 that
+58:39 agreed by everyone what we call
+58:42 Edge I would even say that there is a
+58:45 lot of
+58:45 confusion and most people because it
+58:48 could be a Raspberry Pi device right or
+58:50 maybe
+58:51 Jetson uh yeah so Edge can be any
+58:56 customer facing device
+58:58 or site facing device it's any device
+59:02 which is somewhere not in the in their
+59:06 um in their in their let's say cloud but
+59:11 but some people even call
+59:15 original cloud services as Edge for
+59:19 example uh there's such a thing as Edge
+59:22 Ai and some Cloud companies refer to Ed
+59:25 AI
+59:27 well it's just normal Cloud it's just
+59:29 that they offer original comput so in a
+59:32 way for example when you use aob yes I
+59:34 mean following that logic you can call
+59:36 it AI because you have a in your region
+59:40 right on the other hand we have uh
+59:43 exactly like like you said uh mobile
+59:46 devices or your laptop or I don't know
+59:48 some some device in your smart um house
+59:52 or some video
+59:54 cams or some that's a drone that is
+59:57 flying around uh that hopefully nothing
+1:00:01 is flying
+1:00:04 around maybe in
+1:00:06 Theon but the the point is that yes this
+1:00:09 is Edge Edge is uh when it's a remote
+1:00:12 remote device and of course you can run
+1:00:15 guy there as
+1:00:17 well and this is where where you need
+1:00:20 actually small
+1:00:21 models
+1:00:23 because because it's really hard to to
+1:00:26 ship yeah on on these
+1:00:30 devices I think uh there are companies
+1:00:34 who do Federated learning right so this
+1:00:36 is when you need to do learning on the
+1:00:40 edge like let's say there is this
+1:00:42 customer facing device I don't know a
+1:00:44 drone or a I don't know a probe
+1:00:47 somewhere and then like you cannot
+1:00:49 really send all the data somewhere you
+1:00:51 just do the training on device and then
+1:00:52 you somehow centralize it I don't know
+1:00:55 if it's a think in uh llms in EI in
+1:00:58 general but that's certainly I think in
+1:01:00 some manufacturing uh
+1:01:03 setups well a lot of people will hate me
+1:01:06 for that uh but I would say that
+1:01:09 Federated learning is a very Orthodox
+1:01:12 and um let's say
+1:01:15 very uh Niche use case um I just again
+1:01:20 it's it's like debating on um on U uh
+1:01:27 D5 uh versus I don't know some Cloud
+1:01:30 basically it's it's a debatable topic
+1:01:34 um it's it's it's called distributed
+1:01:38 comput well it's used to call to be
+1:01:41 called by Federate learning today people
+1:01:44 say distributed
+1:01:47 compute okay and
+1:01:50 uh it it's but but then it goes in the
+1:01:54 also in a similar direction as as
+1:01:55 blockchain into the
+1:01:57 decentralization and then it it's
+1:01:59 becomes
+1:02:01 religion
+1:02:03 science I mean it's still science but
+1:02:05 it's more
+1:02:07 religion if you see what I mean and then
+1:02:09 you have also um some evangelist let's
+1:02:13 say let's use that word that that preach
+1:02:16 that idea that everything should be over
+1:02:19 blockchain um and we see we are not
+1:02:22 there even with blockchain yet but but
+1:02:24 we see a lot of stuff not a lot but
+1:02:27 maybe some stuff going there right we we
+1:02:29 see some stuff going blockchain but not
+1:02:31 all stuff going
+1:02:32 [Laughter]
+1:02:34 blockchain yeah I'm not really following
+1:02:37 that uh domain let's say well maybe last
+1:02:40 question for you but yeah just closing
+1:02:43 this down this is a big topic as well
+1:02:45 and there are quite a lot of experts
+1:02:47 that that really believe in in a
+1:02:49 distributed compute as
+1:02:51 well so last question for you so you
+1:02:53 mentioned you like science fiction so
+1:02:56 what's your favorite
+1:02:59 book uh well this one of the most
+1:03:02 difficult it's much easier to talk about
+1:03:04 I don't know challenges in distributed
+1:03:06 training rather than picking one best
+1:03:09 book okay well I don't know
+1:03:12 three it's it's it's it's still fun to
+1:03:16 to just pick one um well if we talk
+1:03:20 about science fiction um certainly three
+1:03:22 body
+1:03:23 problem biing three body problem yeah
+1:03:29 that's that's that's the book body right
+1:03:32 yeah yeah three
+1:03:34 body okay by who Ling if I pronounce the
+1:03:38 name correctly it's a Chinese um
+1:03:41 um um author um but again there TV
+1:03:48 show yeah but I'm not saying anything
+1:03:50 new so like for example okay whether you
+1:03:54 are into science fiction or not but it's
+1:03:55 a name that's pretty much known to
+1:03:58 anyone who is who is into science
+1:04:00 fiction I guess uh I have not heard
+1:04:04 about I'm not into science fiction I a
+1:04:07 year ago I read ring world I did not
+1:04:10 know about this book but it was quite
+1:04:12 interesting so I'm looking to expand my
+1:04:16 yeah totally can recommend that one it's
+1:04:18 actually three books it's not just one
+1:04:20 it's a three books three body problem is
+1:04:23 just okay it's it's actually from math
+1:04:28 uh three body problem is a geom not it's
+1:04:31 not geometrical but it's math problem
+1:04:33 it's you have three uh three physical
+1:04:37 bodies in let's say
+1:04:41 SP uh for example three
+1:04:44 sons and then there's a gra okay and
+1:04:47 then uh you need to come up with an um
+1:04:51 with a with a formula for to predict the
+1:04:55 movement basically to you need to come
+1:04:58 up with an
+1:05:00 equation it's known as a non solvable
+1:05:04 problem uhuh so I'm reading I'm looking
+1:05:07 at the article right now called Oilers
+1:05:10 three body problem in physics and
+1:05:12 astronomy ear three problem is to solve
+1:05:15 the for the motion of a particle that is
+1:05:17 acted up okay it's difficult techque the
+1:05:20 the book is interesting because it goes
+1:05:22 beyond math and it goes into philosophy
+1:05:26 and politics um and uh basically
+1:05:30 existential um
+1:05:33 problems it's certainly a good way to
+1:05:35 kill time
+1:05:37 U okay Andre thanks a lot we haven't we
+1:05:41 only talked about a partion par portion
+1:05:44 like only a fraction of topics we wanted
+1:05:46 to cover today which is not the surprise
+1:05:49 right because we wanted to talk about so
+1:05:51 many things um but yeah it was awesome
+1:05:53 it was really great thanks for being
+1:05:56 here thanks for accepting the invite I
+1:05:58 really enjoyed our conversation and uh
+1:06:00 looking forward to working more with you
+1:06:04 thank you Alex and everyone else uh see

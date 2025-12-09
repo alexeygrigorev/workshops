@@ -1,0 +1,1592 @@
+Data Strategy: Key Principles and Best Practices
+
+0:00 hi everyone Welcome to our event this
+0:02 event is brought to you by datadox club
+0:03 which is a community of people who love
+0:05 data we have weekly events and today is
+0:08 one of such events if you want to find
+0:10 out more about the events we have go to
+0:12 this link that you will find in the
+0:14 description
+0:15 sadly right now there is just one event
+0:16 which is this one but actually we have
+0:19 more in the pipeline it's just
+0:21 we need to find time to finally put them
+0:24 there and announce so this one the event
+0:26 we have today was announced only this
+0:28 week but we knew about it a long long
+0:30 time ago
+0:31 so but yeah anyways keep an eye on this
+0:34 do not subscribe to our YouTube channel
+0:35 because this way you will not miss any
+0:38 cool streams like the one today you will
+0:41 get a notification and we have a great
+0:42 slack Community join it if you want to
+0:45 hang out with other data enthusiasts
+0:47 during today's interview you can ask any
+0:49 question you want there is a pinned Link
+0:51 in the live chat click on this link ask
+0:54 your question and I will be covering
+0:55 these questions during the interview
+0:58 and by the way there is one more link
+1:00 in the description which is about our
+1:03 envelopes course data strategy and
+1:05 envelopes maybe are not super related
+1:06 but if by any chance you are into
+1:09 envelopes and you do not know about our
+1:11 free course there is a link that you can
+1:13 check there I will shut up right now
+1:16 stop sharing my screen
+1:18 and find the document that we prepared
+1:21 for you
+1:24 okay I think I have it
+1:29 we take a sip of water
+1:31 yeah perfect
+1:35 is it buoyant or buoyant that's that's a
+1:38 good question like everybody gets it
+1:40 wrong so you can say boy and I mean
+1:42 Germany it's a bit easier to say boy oh
+1:44 yeah correct but how do you say it
+1:47 yeah okay
+1:51 I'll try my best so this week we'll talk
+1:55 about data strategy and we have a
+1:57 special guest today boyan boyan is a
+1:59 data strategist with the decade of
+2:00 experience in various academic
+2:02 commercial environments such as
+2:04 bioinformatics clinical trials HR Tech
+2:07 legal Tech and management consulting
+2:10 he is an author of two books one of them
+2:12 is elements of data strategy and the
+2:14 other one is Python and R for the modern
+2:16 data scientist currently he is leading
+2:19 the data strategy function at Exeter AG
+2:22 I hope I pronounce it correctly which is
+2:25 a large technology company that focuses
+2:27 on the German speech and speaking region
+2:29 of the world and he is running also
+2:32 running a digital transformation
+2:33 consultancy so welcome well yeah hello
+2:38 I'm glad to be here glad to talk about
+2:40 data strategy the favorite topic
+2:43 as usual the questions for today's
+2:45 interview are prepared by Johanna Bayer
+2:47 thanks Johanna for your help so now
+2:49 let's start before we go into our main
+2:52 topic of data strategy design let's
+2:55 start with your background can you tell
+2:57 us about your career Journey so far yeah
+2:59 I think that's uh that's that's the
+3:01 favorite question I mean in the my
+3:03 career I think it took me quite many
+3:04 different places I think for especially
+3:07 for your audience it's interesting to
+3:08 hear because I was a data scientist
+3:10 before there was such a thing I would
+3:12 say I think it was right on the edge of
+3:14 that so I studied actually biochemistry
+3:16 cell biology
+3:17 after these complete feedbacks and I
+3:20 started to do a master status which was
+3:23 was a bit more computational that's
+3:25 where I started to code
+3:26 and around the time I I wondered what
+3:29 should I do with my life and being able
+3:31 to code knowing a bit of Statistics you
+3:34 know than I've heard in the US they have
+3:36 this title data scientist and I thought
+3:38 well let me try Germany and in Germany
+3:40 you know you're because I studied in
+3:42 Germany normally people really care
+3:44 about your background uh in so I was
+3:48 very lucky that the startups don't so
+3:50 the startups look at me and said yeah
+3:51 actually if you can code if you know
+3:53 things about data you can be a data
+3:56 scientist
+3:57 so I got the title I got the job and I
+3:59 spent the first half of my career being
+4:01 a data scientist for all those kind of
+4:03 different startups mostly and that was
+4:05 fun I learned a lot I learned also a lot
+4:07 how not to do things which I think is
+4:09 also useful
+4:11 and kind of to the end of my second half
+4:14 of my career it was a bit like another
+4:17 accident happened to me because I was
+4:19 seeing myself as a more introverted
+4:21 person and going into Consulting wasn't
+4:23 an obvious thing for me to be honest but
+4:27 I tried and I loved it so there I got
+4:29 the very strange title data strategist
+4:31 which even at the time people don't
+4:33 didn't understand and now I think we
+4:35 still uh there's still a lot of work to
+4:37 be done there so hopefully I can help a
+4:39 bit with that today
+4:40 so I spent some years there I did a data
+4:44 strategy for somebody for a company and
+4:47 they invited me to be the CTO after that
+4:49 so it was funny thing because it shows
+4:51 you if you do a data strategy then
+4:53 easily you can transition to a different
+4:55 role
+4:56 but also we have a sink in Bulgarian
+4:58 which means you have to eat the soup you
+5:00 cook so it was funny because I had to
+5:02 make the data strategy then I had to go
+5:04 and implement this and it's of course
+5:05 very challenging so we can talk about
+5:07 this today as well and yeah I was the
+5:09 CTO of this company that was more it's a
+5:12 really focused on data business so that
+5:13 was really obvious as the data
+5:15 strategies that would fit
+5:17 uh at some point uh though we weren't
+5:20 successful unfortunate like how many
+5:22 startups are and I uh really wanted to
+5:25 go back to Consulting and this is around
+5:28 the time when I finished my second book
+5:29 about data strategy and I thought okay
+5:32 now yeah I really have unfinished
+5:34 business there so this is why I'm back
+5:35 in Consulting ethics that where as you
+5:38 said like a leader date strategy
+5:39 function here and working with all kinds
+5:42 of clients on on the topic is by far my
+5:44 favorite topic data strategy yeah
+5:47 so how how did it happen that you were
+5:50 called a data strategist so you said or
+5:52 maybe my impression was that it happened
+5:54 kind of by accident
+5:57 yeah I went into Consulting by accident
+5:59 and that company they had the data
+6:01 strategist as a title and I looked at it
+6:04 at first I was thinking well okay that's
+6:05 uh interesting you know I'm a data
+6:08 scientist so yeah is this something for
+6:10 me or not right so
+6:12 um at that point I started to realize
+6:14 actually I do know I I'm comfortable and
+6:16 do enjoy the things around data science
+6:19 and I thought let me try this out
+6:21 because there was a lot of unfamiliar
+6:23 words to be honest and this is the
+6:24 reason why I wrote the second book
+6:25 because I got the title and I started to
+6:28 ask uh yeah what do I do now as a data
+6:30 strategist because you get the
+6:32 requirement from your company which is
+6:35 like yeah make data projects successful
+6:37 and yeah go have fun right I mean which
+6:40 is everything without the coding part
+6:42 yeah uh and that was challenging right I
+6:46 asked a lot the raw wasn't super defined
+6:48 it was kind of this uh purple people you
+6:50 often call them I think uh there was a
+6:53 mention of that yeah I heard this there
+6:55 was a article I think from DVC this data
+6:59 versioning Tool uh one of the people
+7:01 there they they mentioned that they're
+7:03 these purple people I don't know why why
+7:05 that's the name but uh the people who
+7:07 are kind of in between technology and
+7:09 data and between technology and business
+7:11 right
+7:15 yeah kind of kind of yeah data product
+7:18 managers you know when I wrote my book I
+7:20 asked that question how do you call such
+7:21 people is it data strategies the right
+7:23 title uh and I haven't found a better
+7:26 one I think it's cool to say data
+7:28 product manager I think that that kind
+7:30 of feels right
+7:31 because actually it's not all we do is a
+7:34 data strategy that's a big confusion
+7:35 which current people think all we do is
+7:37 a data strategy well actually eighty
+7:40 percent of the work is implementing a
+7:42 strategy
+7:43 but that doesn't come from the title
+7:46 so that's how it happened that's how it
+7:48 became a data strategist but the skills
+7:50 weren't defined uh it was really the
+7:52 requirement was yeah get value from data
+7:55 without coding basically yeah and I had
+7:57 to find my way this is actually why I
+7:59 wrote the book try to Define it a bit
+8:01 yeah actually I did this Venn diagram of
+8:03 skills you know the data science Venn
+8:05 diagram right that was the
+8:08 that was the original thing in data
+8:09 science we had the same thing if you
+8:11 remember many years ago yes I do so data
+8:15 strategies getting value of data without
+8:17 coding right
+8:20 and if you can give a
+8:22 [Music]
+8:24 I don't know yeah definition more
+8:27 precise yes
+8:28 the data strategy uh this is technically
+8:33 a plan to get value from data
+8:37 this plan has to be actionable and it
+8:41 has to be flexible enough to be changed
+8:42 when in operation
+8:45 and this plan it has to contain a lot of
+8:48 information right you often see I think
+8:52 on LinkedIn sometimes you see when
+8:53 people say data strategy and you have a
+8:55 list of goals right a list of goals is
+8:57 not a strategy this is always obsessed
+9:00 me when I see that a strategy uh it's
+9:03 it's normally a very big document
+9:06 and that's actually a dangerous thing
+9:08 but in this document what you do you
+9:12 um I can talk about the phases because
+9:14 in the book I split the process of doing
+9:16 data strategy in phases but one
+9:18 important thing to say here is a
+9:20 strategy cannot be static that's a big
+9:22 mistake right you have some kind of
+9:24 plans
+9:25 for your data teams for your data
+9:28 products projects and then things don't
+9:31 work out right it's very typical
+9:33 scenario right somebody does a data
+9:34 strategy and nothing happens so I'm very
+9:36 focused on
+9:38 making a data strategy which is flexible
+9:40 and iterative right you do make this
+9:42 static document at the beginning
+9:44 normally it's a deck actually but then
+9:47 uh uh you you have to really be able to
+9:50 change this and there's a lot of
+9:51 artifacts actually connected to to the
+9:53 deck it's not just I can give you one
+9:55 example a data dictionary for example
+9:58 would be a part of the due diligence of
+10:01 a data strategy so you can imagine this
+10:03 deck and you have a big confidence page
+10:04 which contains a dictionary of the data
+10:08 Associated use case so just as an
+10:10 example how specific you can get
+10:12 yeah so it's still a bit abstract to me
+10:16 like okay we have a deck which is which
+10:18 describes the strategy yeah I know that
+10:20 strategy is a big document it can yeah
+10:22 static and then there are some other
+10:24 artifacts like data dictionary but then
+10:27 maybe you have like a more concrete
+10:28 example like what exactly is in this
+10:30 deck yeah maybe I can go into the to the
+10:33 to the process then of data strategy so
+10:35 uh you can't tell a company what to do
+10:38 if you don't know where they are so it's
+10:40 a classic mistake you hire somebody to
+10:42 give you a plan but you can't make a
+10:44 plan if you don't know what's there
+10:46 already this is a very classic example
+10:48 especially in big companies right you
+10:50 have to spend a lot of time at the
+10:51 beginning figuring things out
+10:53 I mean you know like when you do a data
+10:56 science so let's say a machine learning
+10:57 project
+10:58 uh you can't just say yeah we do need to
+11:02 make a churn model
+11:04 and then wait for Success that doesn't
+11:06 work so you have to see what data you
+11:07 have first
+11:08 that's the most important thing so
+11:10 that's the due diligence part
+11:12 and that takes a while the due diligence
+11:15 part is you're not
+11:16 strategizing is really mostly about
+11:19 figuring out where the company is uh and
+11:22 first you have to find out what the
+11:23 goals of the company are I even had this
+11:26 discussion today with my team actually
+11:27 how do you do it with clients because
+11:29 every business has some kind of
+11:32 a point right it wouldn't be a business
+11:34 let's say you're you're a company which
+11:36 sells socks right I mean let's take a
+11:38 basic example and then you have a data
+11:41 team and you can imagine yeah the goal
+11:43 is to sell more stocks faster
+11:45 yeah and taking this yeah yeah so we
+11:49 have a company that sells socks yeah the
+11:51 goal of the company is to sell more
+11:54 socks yeah let's say more socks faster
+11:57 let's make it a bit more yeah
+12:01 clear and then we have a data team in
+12:03 this company whose goal because they
+12:06 work also at the Sox company
+12:08 is the same goal as the internet should
+12:10 be it should be but this is where the
+12:12 strategy comes in right because normally
+12:14 what happens is in these companies is
+12:15 like uh the sea level people think let's
+12:18 hire a bunch of data scientists right
+12:21 and tell them exactly this yeah Help Us
+12:23 sell more stocks faster at a better
+12:26 price uh and that's literally how it is
+12:28 actually and then the data scientists
+12:30 you know they're like uh yeah but the
+12:32 data and this and that and that and we
+12:34 do need data Engineers we do need some
+12:36 kind of cloud platform we do need a
+12:38 budget for this what type of skills do
+12:40 we do we do we need you know this
+12:41 becomes a mess very quickly
+12:43 uh so this really what's happened in
+12:45 Germany after this campaigns realized
+12:47 how we do need data Engineers as well
+12:50 right because somebody needs to make the
+12:52 data available somebody needs to set up
+12:54 the infrastructure and now what happens
+12:56 is companies realize how we need data
+12:58 strategies as well because somebody
+13:01 needs to uh see how do you go from
+13:04 selling more stocks faster to ah you
+13:08 know actually if you do a trail model
+13:10 for a socks customer that somehow
+13:12 contributes to that goal right and this
+13:15 translation how does one uh more
+13:17 technical
+13:19 impact contributes to the business one
+13:22 that's very hard that's really hard to
+13:24 find the right the right thing to do
+13:26 mm-hmm so that's uh that part yeah I
+13:30 think I more or less understand but it's
+13:32 I'm still a bit confused so let's say we
+13:34 have a goal
+13:35 to sell more stocks faster right and
+13:39 then we
+13:41 so what exactly goes to the strategy
+13:43 because in order to implement this model
+13:45 we need to have like the data
+13:47 infrastructure yeah actual data data
+13:49 Engineers we need to have the platform
+13:51 we need to know to hire
+13:54 does this go into the deck with the
+13:57 strategy yeah correct I think I have to
+13:59 jump a bit forward and then go back
+14:00 again because now we go into the design
+14:02 phase let's say you you what you did in
+14:05 due diligence you find out about use
+14:06 cases they are do they have a cloud
+14:08 environment how does data look like what
+14:10 type of people are there you know this
+14:13 is like sync was there let's say you
+14:15 know the where the company is what is
+14:16 there now we have to design the strategy
+14:18 and the first thing you do is use case
+14:21 ideation right you basically have a look
+14:23 at what use case or possible mentioned
+14:27 the term model that's uh that's one use
+14:29 case but maybe you can make some kind of
+14:30 recommendation agents for the online
+14:32 shop right to sell socks that's another
+14:34 use case you can find probably 10 15 you
+14:37 know for any business right
+14:38 uh so that's that's the easy part
+14:42 because coming up with ideas you do need
+14:45 to have some experience again this is
+14:46 actually data strategies work because
+14:48 you do need to have seen many use cases
+14:51 but then what becomes very hard actually
+14:54 charge GPT can help you here a lot you
+14:57 could technically ask what are the use
+14:59 cases of selling socks you know in that
+15:01 example maybe it's stupid but you can
+15:03 say whatever use case of selling flowers
+15:05 or chairs how do we do we use data
+15:09 science to sell chairs you know and you
+15:10 can get a lot of nice ideas but the hard
+15:13 part comes here it's why a data
+15:14 strategist needs to understand technical
+15:16 things is the feasibility part right
+15:19 easy to come up with ideas but what's
+15:21 feasible is very hard and here you take
+15:24 the results from the first phase due
+15:27 diligence look at them because you know
+15:29 now what the data is there how the what
+15:31 the skills of the people are you don't
+15:33 know all of this we can say for the
+15:35 recommendation agent we have the right
+15:37 people we have the right data to have
+15:38 the right infrastructure let's do it
+15:41 there we have the prioritization part
+15:43 as well right because then you need to
+15:45 see you know okay let's say if you make
+15:48 a recommendation agent for the online
+15:49 shop for socks uh uh how important is
+15:52 this and you take the feasibility
+15:55 and the importance the business impact
+15:57 and then you prioritize that's a bit
+15:59 easier normally but again here the hard
+16:01 part is actually the technical
+16:02 understanding and this is what most
+16:04 companies mess up still is like you make
+16:07 some ideas and then you make a strategy
+16:10 and then when the people start to
+16:11 implement it's not feasible right and
+16:13 this is very hard to know what's
+16:15 feasible or not
+16:16 and for that you really need to know
+16:20 what is there right so what kind of
+16:21 thing yeah and this process uh I ideate
+16:24 feasibility and prioritization really
+16:26 this Triad is like the standard thing
+16:30 and to be honest after this you do need
+16:31 to do other several other things which
+16:33 come into the data strategy you have to
+16:35 set up the target architecture and
+16:37 Technology because let's see now you
+16:39 know what the use cases are and here
+16:41 there's something I want to talk a bit
+16:42 about it has the fancy name influence
+16:45 Cascade
+16:46 I'll give you a concrete example let's
+16:48 say uh we have a churn model
+16:52 and we you we use tabular data right
+16:55 through that like very standard
+16:56 numerical numerical stuff and for
+17:00 whatever reason uh and we build the
+17:02 whole we build the API we build the
+17:03 whole the whole product and it's done
+17:06 but for them for whatever reason then
+17:08 the uh the success it's not very
+17:10 successful right because
+17:12 we didn't take the right data the right
+17:15 people weren't involved we didn't know
+17:17 how to measure this some many reasons
+17:19 why it's not successful then you have to
+17:20 go back and let's say let's take text
+17:22 Data it happens this scope creep in data
+17:25 projects happens all the time
+17:27 but if you take text Data suddenly you
+17:29 have other problems and that's why I say
+17:31 cascading the product people they often
+17:34 think a small change here what's the big
+17:36 deal right it's just another data set oh
+17:38 no now you do need more storage
+17:40 uh maybe the date is PDF right
+17:43 uh you do need and this is the card so
+17:46 you don't need any NLP people suddenly
+17:47 right
+17:48 and then the whole thing breaks down
+17:50 start from the beginning this is why you
+17:51 do the use case stuff first and then you
+17:54 do Target architecture like because if
+17:56 you change the use case you change
+17:58 everything
+17:59 so this way that's the first step
+18:01 um yeah but this is a design process
+18:03 there's a few other steps there like
+18:04 data governance and operating model
+18:07 which are a bit more standard as the
+18:09 operating model basically what uh how do
+18:12 people operate together do you set up
+18:14 like a hybrid team do you set up uh like
+18:18 a centralized Center effects on Steam
+18:20 all of that right
+18:22 so the goal of this deck of having this
+18:27 data strategy or that is the output from
+18:30 a data strategist is to join a company
+18:33 first understand what is there then come
+18:37 up with some cases come up with uh this
+18:40 uh architecture targeted architecture
+18:42 and all these things like uh you know
+18:45 designing this thing then thinking about
+18:47 data governance operating the people
+18:49 right yeah
+18:50 operating mode
+18:52 and then we have this deck right and
+18:55 then what happens next there's the
+18:57 million dollar question that is the
+18:58 Miller dockage because even if you do a
+19:00 great data strategy you have the right
+19:02 use case of the right people everything
+19:03 is correct it is static
+19:06 right and the world is very complex uh
+19:08 having such a deck already you have
+19:10 fixed a lot of problems which would
+19:12 happen anyways because people are
+19:14 supposedly gonna work on the right
+19:15 things the right people at the right
+19:17 time right you have a roadmap so I
+19:19 forgot to mention this and you're ready
+19:20 to start working but this is the whole
+19:23 third part of the book actually of my
+19:24 process is delivery
+19:26 and that's I'll be honest with you this
+19:28 is the hardest hardest part uh and I I
+19:31 personally haven't figured this out
+19:32 completely because here is where you
+19:36 face the reality uh what there's three
+19:38 elements here I have added uh in my in
+19:41 my model uh one is impact assessment
+19:44 another one is portfolio management and
+19:47 the third one is data Ops
+19:49 let's start with the first ones because
+19:52 the less controversial so impact
+19:53 assessment
+19:55 you do need to set up some kind of a
+19:57 baseline let's say let's take the socks
+19:59 again right so let's say you have a data
+20:00 strategy hey you're in a sock selling
+20:03 business uh and you remember the initial
+20:06 goal right selling more socks faster
+20:08 uh I mean that that should be measurable
+20:12 with any good business unfortunately
+20:13 often it's not but let's assume it is
+20:15 let's say the business unit measures
+20:17 that right it's a big assumption
+20:19 honestly for many companies but let's
+20:21 say they do measure that
+20:23 so then you really have to have a look
+20:25 in your data team from time to time and
+20:28 really every several months have a look
+20:30 well the chair model the recommendation
+20:32 agent is four or five use cases they are
+20:34 now being worked on and deployed does it
+20:37 move the needle somewhere
+20:39 right and that's very hard but you do
+20:41 need to have these check-ins because
+20:42 then you can adjust
+20:44 right let's say people spend a lot of
+20:46 time on the chair model and then you see
+20:48 yeah you kind of
+20:49 yeah it does improve the selling of
+20:52 stocks because less customers churn uh
+20:55 but it's hard to measure and here you
+20:57 have you'll have a lot of Statistics a b
+20:59 testing and all of those things you can
+21:00 do
+21:01 uh but the price of US maintaining this
+21:04 is not worth it so we have to refocus on
+21:07 something else so you completely scrub
+21:09 that use case even the part of the
+21:10 architecture and move to something else
+21:12 and this is the
+21:15 from the results from the impact
+21:16 assessment you go to portfolio man yeah
+21:18 sorry sorry do you do this actually
+21:20 after implementing so let's say we
+21:22 implemented this chart model
+21:24 we run it we did the a b test we see
+21:26 that there is positive impact but then
+21:28 we also did some calculations and see
+21:30 that the cost of having this team having
+21:32 this structure is outrageous like it's
+21:34 just too large it does not like it's not
+21:37 worth the impact it gives us right and
+21:39 then we say okay like let's
+21:41 yeah
+21:43 yeah this is the portfolio management
+21:45 but you have several use case that's the
+21:47 character you have to have a look at all
+21:49 of them at the same time it's not it's a
+21:51 qualitative measure often unfortunately
+21:53 I think and there's hidden costs right
+21:55 like the teams supporting them are
+21:58 expensive and I don't know uh you do it
+22:01 during you can do it obviously
+22:02 immediately after the start but most
+22:04 data projects you can go for you can do
+22:06 a pilot in a matter of weeks
+22:08 uh uh then you can start measuring but
+22:11 you do need the Baseline because what
+22:12 happens here is people forget about this
+22:14 is if you don't have a baseline let's
+22:17 say or you just started working you
+22:20 didn't set up some kind of metric at the
+22:21 beginning will you think okay come on
+22:23 let's let's see we're gonna see results
+22:24 you get the result at the end right at
+22:27 some point you measure the churn rate
+22:28 but you didn't know what the chain rate
+22:30 was at the beginning
+22:32 so you you go to the business owners and
+22:34 tell them uh yeah we did this and
+22:37 they'll tell you so how bad there is the
+22:38 situation
+22:40 from before so you have to set up this
+22:43 at the beginning and that's really
+22:44 something which very easy to forget that
+22:47 you didn't before the project look at
+22:49 the business metric that's the number
+22:51 and then two months later you can you
+22:53 can really say yeah we improve this with
+22:55 two percent I mean here the hard part
+22:57 comes Which business unit contributed
+22:59 the most to this right uh but at least
+23:02 you have some kind of a start yeah
+23:06 stuff
+23:08 yeah and detox maybe we can talk about
+23:11 this because this is a very
+23:13 uh I say it's controversial because
+23:15 people it's like the world date of
+23:17 product people think data product you
+23:19 know data mesh word is defined in one
+23:21 way
+23:22 um people uh think about data assets
+23:26 uh so very different things what I mean
+23:28 by data helps maybe we can start with
+23:31 data product because
+23:33 this is what the data strategy is about
+23:36 right about data products yeah I did
+23:40 change my mind on this one right uh I
+23:43 because I wrote data product I wrote
+23:46 about data products but to be honest
+23:48 like uh
+23:50 it should be a data and AI powered
+23:53 products yeah data product is something
+23:55 else data product it should be just the
+23:57 data I mean I I made a bit of a circle
+23:59 and I just joined the data mesh
+24:01 definition of that right it's just the
+24:03 data itself without the use case my view
+24:06 in the book was a data product is data
+24:08 plus use case
+24:10 uh but I don't want to compete with the
+24:12 more popular definition which is just
+24:14 the data and I think the Architectural
+24:17 Components around it is with the data
+24:19 Quantum in the data mesh where it's a
+24:20 bit more uh bigger but what I talk about
+24:23 is data and AI powered products
+24:25 it's like uh API endpoint for machine
+24:29 learning mode which predicts churn in
+24:31 Salesforce so that's data and AI powered
+24:33 products with an AI feature so this is
+24:36 when I say data product I
+24:38 so you have some data and then there is
+24:40 a specific use case on top of this data
+24:42 yeah that's exactly correct that that is
+24:44 a data and AI power product and
+24:46 technically we should say we talk about
+24:47 data and AI for product managers you
+24:50 know but it's a bit of a mouthful but
+24:52 data product we should leave it at the
+24:54 data level without the use case I think
+24:57 okay there's now let's talk about data
+25:00 Ops but then there is also an
+25:01 interesting question that I want to ask
+25:03 the data data Ops is a tricky tricky
+25:06 term uh people mean different things
+25:07 again in the book It's a combination
+25:10 between agile and lean it's just a
+25:11 methodology
+25:15 um
+25:15 and uh with the with the
+25:18 like cicd angle to it right and to be
+25:22 honest this is like there's a lot of
+25:24 ideas there and here's one book
+25:25 recommendation I'll give it at the end
+25:27 as well but agile data Ops the book
+25:30 uh
+25:32 uh and the idea is I mentioned lean and
+25:35 agile like this age of working data
+25:37 science is my favorite question short
+25:39 answer it doesn't
+25:41 but it's maybe it's like democracy is
+25:43 like not great but it's the best we've
+25:45 got you know I could say uh but
+25:48 um agile in data what I talked in the
+25:50 book I have this interviews with data
+25:52 data leaders practical data leaders and
+25:54 they all said yeah you could do Agile
+25:56 but in a software right you have to be
+25:57 careful about requirements
+26:00 um uh because it's very hard to measure
+26:03 certain things especially at the
+26:04 beginning so I'll leave the Azure topic
+26:07 a bit because the lean part that's
+26:09 fascinating in that book uh having their
+26:12 ad file is one of my favorite authors
+26:13 that book is brilliant he took the ideas
+26:16 from Lean Manufacturing
+26:19 cars and conveyor belts uh to to data
+26:23 right and the focus there it's not on
+26:26 doing the right things but avoiding the
+26:28 wrong things and this is so amazing in
+26:30 data science engineering because it's
+26:32 hard to know what the writing is but
+26:34 everybody knows the wrong thing so
+26:36 basically he focuses on how date the
+26:38 people waste their time
+26:39 and energy like definitions have done
+26:43 director the book you're talking about
+26:46 is a gel agile data Ops right oh
+26:48 practical data Ops I have to check this
+26:50 but uh and uh literally how how much
+26:54 time people data scientists spend
+26:55 waiting really concrete measurable
+26:58 things and just avoiding them and that's
+26:59 brilliant I think that's a brilliant way
+27:01 to manage data projects you don't focus
+27:03 on the what's good you focus on what's
+27:05 better
+27:08 by the way we I think we have two
+27:12 podcast interviews podcast episodes
+27:14 about dataops
+27:16 um so you can check them out for more
+27:17 details the question I see and it's
+27:21 quite an interesting one because I also
+27:22 wanted to ask you that what is the
+27:25 difference between a data strategic data
+27:28 strategist and a data science strategist
+27:30 because what you describe also to me
+27:32 looks like it's very data science
+27:34 Centric but it is not
+27:37 just about data science right
+27:40 Aces we have a
+27:42 and dashboards yeah um yeah I mean
+27:46 there's the idea that there's very nice
+27:48 articles also about how data strategy is
+27:50 going to split into flavors right data
+27:53 strategist is the most General flavor
+27:55 you could have an AI strategy somebody
+27:57 who just focuses on on that part a data
+28:00 strategies is just the more General uh
+28:02 uh idea right because then you have like
+28:06 data platforms data engineering it also
+28:09 is a value right it's a bit harder to
+28:10 measure the success of those right
+28:12 because they can have an enabler
+28:14 indirectly you don't know there's this
+28:16 hierarchy of needs from uh hierarchy of
+28:19 data science needs model from from
+28:21 Shopify where you have the advanced use
+28:24 cases on the top but you can't get to
+28:26 them if you don't have like the data
+28:28 platform and cloud services
+28:29 infrastructure uh so data strategies is
+28:32 responsible for that part too right to
+28:35 set this up especially bigger companies
+28:37 that's a bigger problem so I would say
+28:39 that's the difference it's just the more
+28:40 General one also business intelligence
+28:42 reporting is also there
+28:45 it's just a bit more difficult to
+28:47 measure but I guess we need analytics to
+28:50 be able to measure some things right
+28:52 otherwise we yeah it's sometimes it's a
+28:54 gradient yeah I do think we shouldn't
+28:56 try to measure everything it's not
+28:58 possible right you should you should at
+28:59 least have an idea right I mean uh of
+29:02 where things are going uh yeah but
+29:05 that's why I do like this the typical
+29:06 example is like when this Lighthouse
+29:09 projects right to hear them big
+29:11 companies want to do something very
+29:12 fancy with AI which is normally the last
+29:15 thing they should be doing actually this
+29:17 is this ideas from Martin sugart from
+29:18 that and tribal co-interuting the book
+29:21 is good friend of mine and this he
+29:22 really has brilliant ideas on this and
+29:24 he told me once uh about Lighthouse
+29:27 projects it's really the last thing a
+29:28 company should do
+29:29 because they it's normally a very
+29:32 Advanced use case it's some kind of NLP
+29:34 computer vision deep learning use case
+29:36 right because that's what gets the media
+29:38 attention it's amazing and things and
+29:40 people like it but to do this you do
+29:42 need crazy architecture crazy skills
+29:44 crazy anything to move beyond beyond the
+29:46 pilot what you should do instead is get
+29:48 the most boring use cases like reporting
+29:51 automation of reporting get that done
+29:54 show the number get the money from the
+29:56 business owners and then do the more
+29:57 advanced things and that's his idea it's
+29:59 not mine but it's a brilliant one
+30:02 and then coming back to the time when
+30:04 you were hired as a data strategist
+30:08 as in the studio background was data
+30:10 science correct yeah what skills you
+30:12 needed back then to actually be able to
+30:14 do this role what kind of skills like
+30:17 you needed to show you have and what
+30:19 kind of skills you need to develop when
+30:20 you join yeah that's I can refer to the
+30:23 Venn diagram but it's an exercise I did
+30:24 with my colleagues back then because uh
+30:26 not just me but the other data
+30:28 strategies we had all the same question
+30:30 what skills do we do we have we had some
+30:32 people who are business people
+30:34 completely business like people who just
+30:36 who never call the people and they are
+30:38 also data strategists right that's why
+30:40 you should have different flavors
+30:42 uh and I group it into three groups
+30:45 right so you have the data
+30:47 uh imagine a Venn diagram with three
+30:49 circles right we have data we have
+30:51 communication systems thinking and data
+30:54 data is the whole Tech thing right it's
+30:56 not just it's data science engineering
+30:57 Analytics
+30:59 cloud
+31:01 uh communication
+31:03 yeah everybody will tell you this is the
+31:05 skill and it is the skill can you write
+31:07 can you talk
+31:08 can you explain can you translate and
+31:11 this is the hardest skill of the
+31:12 ultimate data strategy is kiwis
+31:14 translation that's why they call them at
+31:16 McKinsey analytics translators uh which
+31:19 I I like as a title it doesn't sound so
+31:21 cool I think it's a strategist but you
+31:23 do need to to translate from the
+31:25 requirements sell more stocks to chair
+31:27 model and Beyond and you have to operate
+31:30 on
+31:31 on very different levels systems
+31:34 thinking that's that's what I mean this
+31:36 is the most abstract thing here which
+31:38 many people would roll their eyes when
+31:39 they hear this because it sounds like
+31:40 management consulting thing in the book
+31:43 I describe it a bit more but I'll give
+31:45 you an example a typical day of mine I
+31:49 I have to explain what AI is
+31:54 uh and in the same day I have to look at
+31:58 uh access access permissions on Azure
+32:02 right
+32:04 and explain how to do that part at the
+32:07 same in the same day and that's the
+32:08 hardest part about the job because you
+32:10 have to move between those two levels
+32:11 right and I do don't think a data
+32:14 strategy you can't have Junior data
+32:15 strategies almost I think because it's
+32:17 like something you do need to get from
+32:19 those different domains but you do have
+32:21 the flavors of people I think
+32:24 do you think it's important to have
+32:25 these technical skills like explaining
+32:27 roles in azure
+32:30 you know this is kind of an example I
+32:32 give sometimes with the understanding of
+32:34 uh let's get a data science example like
+32:37 support Vector machines let's take that
+32:38 one and most people wouldn't understand
+32:40 the math behind it but if you go on
+32:43 Wikipedia and look there's this nice
+32:44 diagram of separation of classes right
+32:46 you have the decision boundaries right
+32:48 and then you read the Wikipedia article
+32:51 and you see how well there's this kernel
+32:52 tricky thing it's called there's this
+32:54 trick to to maximize this boundary do
+32:57 you understand how supportive machine
+33:00 machines for Vector machines work no you
+33:02 have no idea you can't code it yourself
+33:03 but you understand kind of conceptually
+33:06 so this is the same level you do need to
+33:08 be a data strategist you do need these
+33:10 concepts of architecture you don't need
+33:11 to understand
+33:13 what is access water pipelines what is
+33:16 orchestration you really do need to
+33:17 understand this and I it's hard for me
+33:20 to say I come from a technical
+33:21 background uh I mean but I was a
+33:23 biologist before so
+33:25 uh yeah you do need to have uh
+33:28 conceptual knowledge of everything in in
+33:30 data for sure I think otherwise it's
+33:32 very hard
+33:33 but you don't have to be an expert in I
+33:36 don't know
+33:37 it's frustrating and on a personal I can
+33:40 tell you what's frustrating about the
+33:41 role because everybody knows gonna think
+33:43 let me become a data strategist this
+33:44 roses in unicorns you will feel stupid
+33:47 all the time you'll be talking to people
+33:49 who are
+33:50 20 years of experience in a data
+33:52 architecture
+33:53 in the same day with people who have 20
+33:55 years of experiences selling sales and
+33:57 business and with both groups you feel
+33:59 stupid because you're this weird jack of
+34:01 all trades uh that kind of knows and
+34:04 that you'll be judged from those two
+34:06 groups on their level right so you have
+34:08 to prepare yourself mentally for
+34:11 yeah but on the plus side you get to do
+34:13 many different things which is totally
+34:15 worth it I would say
+34:16 Okay cool so again skills are mostly
+34:21 communication skills like you need to be
+34:24 able to write read communicate and
+34:27 translate right
+34:28 then you need to have some
+34:31 technical skills like you don't need to
+34:33 be an expert but you need to know what
+34:36 what is I don't know the pipeline what
+34:38 is the data pipeline what is an
+34:40 orchestrator like all these technical
+34:41 terms so you because
+34:43 somebody will need to implement this so
+34:46 you need to have an idea what exactly it
+34:47 is and how much for effort it requires
+34:49 or maybe even you need to know like how
+34:53 which tool is going to be used like okay
+34:55 if we are building a data pipeline we
+34:58 would use this particular tool right
+35:00 at that point you can get the advice I
+35:02 think I think if you for example
+35:04 orchestration right airflow versus
+35:06 something else right that the second
+35:08 part you don't need to know I think
+35:10 because the tools change every day but
+35:12 you do need you know you do need to
+35:14 orchestrate some scripts you can't know
+35:15 what that looks like and then you find a
+35:18 more competent person to help you there
+35:20 okay so a data strategist is not
+35:22 necessarily a data architecture no no no
+35:26 no you take the strategy and
+35:30 or somebody will work with you on the
+35:32 strategy to actually come up with a
+35:34 Target architecture everywhere
+35:36 everywhere you had somebody working with
+35:38 you like in the business side you're
+35:40 also somebody is going to work with you
+35:41 on every of those sites it's like a row
+35:43 which alone is totally pointless destroy
+35:46 is an enabler only right it's completely
+35:48 pointless without other people
+35:50 so does it mean that the
+35:53 company who wants to hire a data
+35:55 strategist already needs to have all
+35:57 these places in place and all these
+35:59 people in place before they hire data
+36:01 strategists
+36:05 with uh
+36:07 um it's hard to say if you're if you're
+36:09 a smaller company just starting out you
+36:11 do need the data strategies but they
+36:12 will be called CDO Chief data officer
+36:15 head of data I think ahead of data
+36:18 science has to be a data strategist you
+36:21 know
+36:21 teamlet of data science has to be a bit
+36:23 of a data strategist so this kind of
+36:25 more managerial role of teamly they have
+36:27 to be a data strategist actually and you
+36:30 do need to hire them at the start to
+36:31 know what you're going to do I think
+36:34 okay let's say I work as a senior data
+36:37 scientist and now I listen to this
+36:39 podcast episode and
+36:41 I think okay this is so cool I want to
+36:43 do to be a data Scientologist so how do
+36:46 I go about that
+36:48 um you have to learn a lot of business
+36:51 you really have to learn a lot of
+36:52 business and
+36:54 you have to let go of a lot of things
+36:57 you have to start to understand that
+37:00 um because you as I said you will feel
+37:02 stupid this will be new to you and if
+37:04 your senior data scientist you feel like
+37:06 uh at that point that your career
+37:08 already feel your ego is already high
+37:10 because if you're okay I have learned so
+37:12 much I can do anything well now you
+37:14 start from scratch because suddenly you
+37:16 have to understand uh like very like how
+37:20 businesses work uh and that's that's
+37:22 it's easy to underestimate but you do
+37:25 need to start from the beginning so
+37:27 first understand how businesses work
+37:29 talk in your company to uh recording
+37:31 functional leadership so talk to
+37:34 uh the head of marketing and go to them
+37:37 and ask them so how can data help you
+37:39 and this is the first start that's the
+37:41 first start because then you start to
+37:43 understand what they want
+37:45 um and try to align uh your chair model
+37:48 to the socks selling right and talk to
+37:50 the people who sell the socks
+37:52 and you work in that area and of course
+37:56 I would say get the book the book won't
+37:57 make your data strategies but it will
+37:59 give you like exactly the
+38:01 the typical things that you need to do
+38:03 the activities right
+38:05 but you have to go and do the work
+38:07 actually you have to be comfortable of
+38:09 stopping being a data scientist because
+38:11 you work with very vague things
+38:13 and normally these are uncomfortable for
+38:15 for technical people who want to be
+38:17 specific
+38:18 I would say and and the worst is you
+38:20 have to work on different levels
+38:22 in the same day and this is what's also
+38:25 going to happen if you transition to
+38:26 that because as I said like in the in
+38:29 the morning you talk about business and
+38:30 then you have to write some python in
+38:32 the afternoon and that becomes a problem
+38:34 very fast I would say so yeah why
+38:38 um I think the the focus you do need to
+38:40 prepare uh I mean in the same day in in
+38:43 several different days I think it's
+38:45 great because your brain is uh active in
+38:47 many different levels but in the same
+38:48 way personally for me it was always
+38:50 challenging to switch the focus that
+38:51 fast right because I think about
+38:54 business I think in an abstract way I
+38:55 get interrupted also operationally but
+38:58 if you have to write code in the same
+39:00 day I think it's a challenge but between
+39:01 the days it's amazing I think if you can
+39:03 be a data strategist for two days and
+39:05 three days a data scientists maybe
+39:06 that's a good idea
+39:09 so coming back to your point of learning
+39:11 more about the business or learning a
+39:12 lot of business you mentioned that you
+39:14 need to talk to functional leaders way
+39:17 out of Marketing kind of product maybe
+39:19 like all people who
+39:22 know do something and then you come to
+39:24 them and say how can data help you but
+39:27 they have no idea right like who is this
+39:29 person
+39:30 so how can you make it clear what
+39:33 exactly you can help them with then you
+39:36 may then just tell them well ask them
+39:38 what they do and then because they
+39:39 understand you ask them what they do
+39:40 they sell the socks and then they start
+39:42 talking about customers and then you get
+39:45 this idea oh right maybe we can split we
+39:47 can do a customer segmentation model
+39:48 right you have to read about the use
+39:51 cases in your area
+39:52 which is easy if you're in a
+39:55 non-standard area it's hard if you're in
+39:56 a it's easy in a standard area but it's
+39:59 hard if you do something very specific
+40:02 um but then if you think about use cases
+40:04 and already prepared before those
+40:06 meetings you can give them those ideas
+40:07 and they'll ask you okay tell me what is
+40:09 the customer segmentation model then you
+40:11 have to be able to translate right and
+40:14 you mess it up the first time because
+40:16 just by saying customer segmentation
+40:18 mode you already messed up you should
+40:20 say yeah we have this way of separating
+40:22 the target groups you know and we can
+40:24 identify them if you say this yeah there
+40:26 you go but trust me if you say the
+40:28 moment you say something you feel smart
+40:32 not so smart and they don't understand
+40:34 so that's actually that's that's the
+40:36 biggest challenge that's communication
+40:37 yeah okay and the only way to learn this
+40:41 is by doing right so you just approach
+40:43 differently yeah but very like this uh
+40:46 how people should learn to play guitar
+40:48 you can just play guitar but you have to
+40:51 have this I think deliberate practice
+40:53 right
+40:54 can you have to do it deliberately to
+40:56 put yourself in an uncomfortable
+40:57 positions right where you have to
+40:59 translate you can't just uh you really
+41:02 have to uh
+41:03 uh deliberately learn yeah and it's not
+41:07 easy I would say but the results are
+41:08 amazing I think you get to work on to be
+41:10 honest I said it's hard but on the plus
+41:12 side you'll be very active in
+41:14 um in supporting the business you work
+41:16 on many different projects many
+41:18 different things
+41:19 your brain will always be excited about
+41:21 new things new technologies
+41:23 uh and as I said this is a gateway to
+41:26 other positions right I became a CTO
+41:27 after that so
+41:30 yeah by the way how did it happen like
+41:32 how exactly
+41:34 the transition happen for you yeah they
+41:37 they really like the data strategy which
+41:39 is like that was the biggest compliment
+41:41 to me right if you do like the data
+41:43 strategy and it was just a data strategy
+41:46 it was not a technology strategy I had
+41:48 to do that after that right and that's
+41:50 very different
+41:51 uh but they liked my Approach they liked
+41:54 that it was concrete they like this
+41:56 translation skills and this translation
+41:57 skill is the hardest thing in technology
+41:59 right I think with the GPT stuff uh
+42:02 coming up where do we go to escape from
+42:05 that and I would say we should go to
+42:06 those middle translating positions
+42:09 because that's very hard I think
+42:11 very few people can do this I think
+42:13 translate and that was very attractive
+42:15 to them because as a CTO that's what you
+42:17 do all day you translate
+42:21 can you tell us more about the skills
+42:22 you needed for University one how was it
+42:25 different from being a data strategist
+42:27 uh the skills uh the responsibility is
+42:31 much higher as a dating strategy of
+42:33 course a bit obvious of course but
+42:34 that's the data strategies you're in
+42:36 your data corner and your strategy is
+42:39 kind of a Consulting role right you
+42:41 that's another thing for through people
+42:43 transitioning to that your in-house
+42:44 consultant you see yourself in that way
+42:46 yeah your in-house consultant basically
+42:49 uh it becomes different when you an
+42:52 owner and you you own the whole topic
+42:55 because suddenly it becomes very
+42:57 operational so that's that's everything
+42:59 you do because very operational you you
+43:02 kind of suffer immediately the results
+43:03 of your mistakes
+43:06 um I had to learn even more about the
+43:08 business obviously I think I knew right
+43:10 but I had to learn even more you have to
+43:12 learn accounting
+43:13 uh you have to learn budgeting much more
+43:17 uh there's a lot of management of course
+43:20 is very very different role but being a
+43:23 data strategist helped me prepare
+43:24 because my ego was ready I was
+43:26 comfortable not knowing so for me when I
+43:28 needed to to uh do budgets high or
+43:31 firing people I felt okay I can handle
+43:33 this somehow right because of the data
+43:35 strategist you're already a bit uh weird
+43:38 you don't know different things already
+43:40 and then you can transition to to do
+43:42 something totally different I would say
+43:46 yeah interesting and then this is
+43:48 something I really wanted to talk to you
+43:50 about because for your book you used GPT
+43:55 and that's really nice that you
+43:59 explicitly acknowledge that oh that's
+44:02 necessary yeah that's the thing but also
+44:05 like um I don't know why I'm just
+44:06 thinking like do I when I feel
+44:08 comfortable saying that you know all the
+44:10 content I write is generated by chat TPT
+44:13 uh I don't know okay but this is
+44:16 necessary and I wanted to talk to you
+44:19 about like how did it actually happen
+44:20 like how yeah did you
+44:23 organize this process how did you use
+44:25 GPT
+44:27 there's different different things and
+44:29 I'll link to somebody else who did
+44:30 something even Next Level to that so it
+44:32 was at the beginning of this whole craze
+44:33 you know why I I just use it in several
+44:36 areas
+44:37 uh only in the sidebar so for example at
+44:40 some point I need to explain what middle
+44:42 stand is in Germany so like this uh the
+44:45 the small medium-sized companies which
+44:47 carry the economy so right when you
+44:48 write a book I want to write about
+44:50 strategy systems thinking and I don't
+44:52 want now to go to Wikipedia wherever to
+44:54 find a definition paraphrase that this
+44:56 is totally a complete waste of time and
+44:58 energy right
+44:59 absolutely pointless zero creativity in
+45:02 doing that right to to write what the
+45:04 definition of meter stand in a smart way
+45:05 no so that's why I have these sidebars
+45:08 only there and this is to be honest
+45:12 um the only I like that's the you really
+45:15 have to say that you did that right
+45:17 because it's very obvious I think as
+45:19 time goes on it's not going to be so
+45:20 obvious
+45:21 but I use it just for the sidebars I
+45:23 have this robot icon there and for
+45:25 really boring things which I think
+45:26 otherwise I just have to paraphrase
+45:28 right and this is what it is very good
+45:30 at but ethically
+45:32 somebody has to write original content
+45:34 to train those models right because we
+45:37 stopped feeding stack Overflow I don't
+45:39 remember the last time I was there
+45:41 uh and like that's down the line is
+45:45 going to stop feeding the the generative
+45:47 AI models right so if nobody produce
+45:49 original ideas
+45:51 you know we're gonna have a delayed
+45:52 problem later right so that's the big
+45:54 ethical number one problem of this whole
+45:56 technology
+45:57 is the thing is that when we stop
+45:58 generating unique content
+46:01 uh you can argue for the uniqueness of
+46:04 GPT mapping between ideas which I do use
+46:06 in my daily work as I mentioned like
+46:08 let's say I do want to find use cases in
+46:11 uh weird
+46:13 um
+46:13 maybe the the government agency which
+46:16 cleans the city how do you do data
+46:18 science for them right instead of me
+46:19 like spending like one hour I'll just
+46:22 ask yeah give me please five use cases
+46:24 right and then I go deeper
+46:26 for this type of stuff yeah but I think
+46:28 really original original things is we're
+46:31 a bit far off from there so that's my
+46:33 big biggest ethical concern there
+46:35 we're doing that but I can refer from
+46:38 For Christoph Monarch so he's really big
+46:40 in the expandable AI field he recently
+46:42 published an article about how he used
+46:44 that as an editor
+46:48 okay I didn't do this I wasn't that was
+46:51 before it was a bit early now you can do
+46:53 it and I think in the future I'm open to
+46:55 doing that I mean I do use grammarly for
+46:57 example You could argue grammar is
+46:59 actually pretty intelligent too right I
+47:01 mean now they have also generative AI
+47:02 features but uh grammarly also you could
+47:05 argue if you use grammar list the static
+47:07 or not right so it's a bit blurry the
+47:09 line there but I think as an editor is a
+47:13 definition engine great but anything
+47:15 else I just don't see it yet but I'm not
+47:18 saying it's not gonna happen
+47:20 so one thing I can think of is for
+47:24 example you want to write a chapter and
+47:28 then for me I always have this problem
+47:30 of um
+47:32 um
+47:33 blank page right like a blank page okay
+47:36 how do I start and then you can just ask
+47:38 GPT or charge GPT whatever yeah
+47:41 um okay I want to write a chapter
+47:44 of a book about that like and I need to
+47:47 help me come up with an outline for the
+47:49 chapter yeah I know I just uh you know
+47:52 you need to have these sections and then
+47:54 each section should have these
+47:55 subsections yeah and then absolutely
+47:57 absolutely yeah we have a list of uh
+48:01 um bullet like bullet point lists of
+48:04 what you should cover in this and then
+48:05 it's so immensely helpful I mean
+48:07 provided that it is correct right yeah
+48:10 no that's that's for sure instead of
+48:13 like I do write a lot but a lot of
+48:15 PowerPoint you can imagine we have a
+48:17 black PowerPoint where you do need to
+48:19 say three bullet points on a topic it's
+48:21 brilliant there is a start I can tell
+48:24 you I haven't seen it yet that you can
+48:25 just copy and paste what is it just
+48:28 doesn't there's a big difference between
+48:30 3.5 and 4 I have to save four is really
+48:33 getting there
+48:34 and with Microsoft co-pilot coming soon
+48:36 I think in PowerPoint you're gonna get
+48:38 some really nice new things but as you
+48:39 say at the beginning it's outlining two
+48:41 is great I think but the original
+48:42 thought we are a bit yeah I don't know
+48:44 it's going to be a very scary time
+48:47 yeah but for technical book how original
+48:50 you need to be
+48:51 that's true yeah for a very technical
+48:53 book I think that's uh that's yeah if
+48:56 you want to explain it because at the
+48:57 end of the day what there's a
+48:58 philosophical argument would you buy a
+49:00 book which is written just by by that
+49:02 philosophically
+49:04 you should because the technical book is
+49:07 it's not about convincing you that much
+49:09 you already bought a book about the rest
+49:10 right but you do want to learn rust and
+49:13 if that's the best way to learn it come
+49:15 on like I would read it I wouldn't care
+49:20 like Cadence and yeah because you do
+49:23 notice it's a bit monotonous right it's
+49:24 not exciting the text right and you need
+49:26 to know that you can trust a book
+49:29 yeah that's that's for sure yeah
+49:31 check the book If nobody edit it and
+49:33 nobody
+49:34 yeah that's for sure
+49:37 then like I would not and the references
+49:39 correct yeah but that's coming I think
+49:41 with the reference and Bing does that is
+49:42 all a bit so I think that's
+49:45 so do you think this is the future of
+49:47 writing books uh of co-piloting you're
+49:50 Rising hundred percent writing them uh I
+49:53 don't think so is we're a long way from
+49:55 uh from that I think right like
+49:57 non-technical right like technical books
+50:00 for sure I think we're gonna have a lot
+50:03 of this right if you just have manual
+50:04 tutorials that's different what is a
+50:06 book then right then it becomes a
+50:07 tutorial not a book no arguably
+50:10 philosophically right so if it's just a
+50:12 tutorial which is printed uh then yeah
+50:15 you you get this which I'm not saying is
+50:17 less valuable but the real book you do
+50:19 need a human still there as a main pilot
+50:21 for sure
+50:24 people just like
+50:26 one person is often not enough to relate
+50:29 yes for sure
+50:32 okay and by the way so speaking about
+50:34 Christoph Molnar he will do and ask me
+50:38 anything
+50:41 yeah brilliant person brilliant like he
+50:44 because I had an article about
+50:45 expandable Ai and uh yeah he's just like
+50:48 the the he has done so much good work
+50:50 for the field brilliant underrated I
+50:53 think people don't know enough about his
+50:54 amazing books like several really very
+50:56 strange and specific books which every
+50:58 data scientist should read I would say
+51:00 yeah
+51:01 coming back to data strategy I think he
+51:04 mentioned it at some point that it's
+51:06 okay to use chat GPT or GPT whatever for
+51:09 some things so how can we use chat GPT
+51:13 for a data strategy design
+51:16 um it's for the so you saw this is a
+51:19 topic which you do weeks and weeks and
+51:21 weeks and weeks right it's not a very
+51:22 concrete thing and every company is
+51:24 different you do the look at the use
+51:25 cases the architecture it will help you
+51:28 at the beginning let's say on the basic
+51:31 level you work in the stocks company and
+51:34 you ask what are the use cases for data
+51:37 science in an e-commerce
+51:39 store which sells socks right and it
+51:42 will give you like all those five or six
+51:44 things that's that's the most basic way
+51:45 then you become more specific because
+51:47 you don't know from the due diligence in
+51:49 that company they use postgres they have
+51:52 a lot of tax data from reviews right and
+51:55 then you do some prompt engineering I
+51:56 would guess and say yeah based on this
+51:59 data and they're on azure
+52:01 and they have a team of those people
+52:04 what how should they transition to to
+52:08 this architecture from this one right
+52:10 and then you get some information it's
+52:12 going to be a good start it's not going
+52:14 to do the work though no way we're very
+52:16 far from there you just get very basic
+52:18 things like I don't need whatever
+52:20 dynamodb for this you need this and then
+52:23 but then you can if you really are going
+52:25 to implement this then you go to the
+52:26 coding level of charge GPT and then it's
+52:28 like a different story it's a different
+52:30 thing you go from strategy to Tech then
+52:33 it's your best friend because then you
+52:34 can really I guess move very fast and
+52:37 develop things but till that point it's
+52:39 a bit like brainstorming it's the same
+52:40 like writing a book and outlining things
+52:43 okay cool well I see that we have a
+52:46 question
+52:47 um let's say we have to do a data
+52:50 strategy for a consumer
+52:52 b2b2c business that's very specific with
+52:54 the stakeholder
+52:57 b2b2c is what is a business that sells
+53:01 businesses to customers yeah correct
+53:04 yeah yeah okay we have that
+53:08 uh there is a stakeholder and
+53:11 with what and where do you start
+53:14 yeah first one is always due diligence
+53:16 who is the stakeholder he or she this
+53:20 person like what is their background
+53:22 right because uh that's really people
+53:25 forget about it's like who is the
+53:26 audience of this and this person maybe
+53:28 understands a ton about technology right
+53:31 and you're gonna change everything in
+53:33 the way you talk to this person normally
+53:35 it's not right normally this is a
+53:36 business person who who is doing this
+53:39 uh and uh approaching this the first
+53:43 thing you should do is absolutely zero
+53:45 technical terms zero
+53:48 and immediately you have to show you
+53:51 understand what the business is doing
+53:52 and this doesn't happen in a meeting
+53:55 only one meeting this person has to feel
+53:57 comfortable that you as a data
+53:59 strategist or whatever know what the
+54:01 business is doing otherwise they'll
+54:02 destroy you you're not gonna hit the
+54:04 target you have to be able to them to
+54:06 explain what the business is about stock
+54:08 selling you have to know it almost as
+54:09 good as they do not really
+54:12 but because they will ask you and once
+54:14 you show this then they will listen
+54:17 that's how humans work and when they
+54:18 listen then you you have to come up with
+54:21 a very specific plan again with zero
+54:23 technical uh
+54:26 um technical terms which is very short
+54:28 one use case very fast without risk like
+54:32 you can say let's we Let's do let's take
+54:34 one data scientist for three months
+54:36 let's do this thing let's say again a
+54:38 term model uh and let's see what happens
+54:41 so it's something very small and you
+54:42 should be able to feel comfortable to
+54:44 talking about budgets you say the salary
+54:46 of this person times three months
+54:48 seventy percent capacity this money I
+54:51 need can you sign give them a chance to
+54:53 just say yes or no you don't want them
+54:54 to think about Ai and whatever
+54:57 you can use the current hype of course
+54:58 which helps but then give them at the
+55:01 end like just one small you don't talk
+55:03 about data strategy by the way no no if
+55:05 you want to do a data strategy you don't
+55:07 talk about data strategy because data
+55:09 strategy uh sounds very static very
+55:13 expensive you first Focus so let's do a
+55:15 use case let's get the value first and
+55:17 you do a data strategy to do the use
+55:19 case
+55:20 but you focus on value and concrete
+55:22 results with a budget
+55:26 and yeah then you can say I did the data
+55:28 strategy there right and then you can
+55:30 move on yeah
+55:31 yeah and then we have a question about
+55:33 baselines in data strategy so the
+55:37 question is do we need to have two
+55:39 baselines in a strategy one is for the
+55:42 initial
+55:43 like initial discussion initial you know
+55:46 benchmarking initial understanding of
+55:49 what the what's the current status and
+55:50 then the second one is after
+55:52 implementation and actually running the
+55:54 model in production
+55:56 um
+55:57 I think it will be hard to come up with
+56:00 uh with the exact same thing that you
+56:02 try to measure I mean depends what your
+56:04 your
+56:05 Baseline is what normally is going to
+56:07 happen is yeah you have some kind of a
+56:10 business metric right reduce customer
+56:13 churn right and that's very concrete you
+56:15 can you can do a churn model but how do
+56:17 you measure how much debt contributed
+56:19 right so I don't think it's going to be
+56:21 one to one and you definitely need two
+56:23 because you do need to at least
+56:26 qualitatively show yeah we are roughly
+56:29 aligned with the
+56:30 Benchmark at the beginning and we can
+56:34 kind of demonstrate at least visually
+56:35 right or we this quarter since the model
+56:39 is deployed less people churned
+56:41 right again you get the question how
+56:44 does your stuff contribute but at least
+56:45 you are trying to work on the same thing
+56:48 I think that's the but you definitely
+56:50 need something at the beginning anything
+56:51 is more than a zero there right I would
+56:53 say
+56:55 well we should be wrapping up maybe last
+56:58 question for you is
+57:02 do you know of any books or other
+57:04 resources that you can recommend to the
+57:07 listeners who want to learn more about
+57:08 uh
+57:10 yeah this topic yeah so
+57:13 um the the best technology book like
+57:16 strategy this the book called technology
+57:18 strategy patterns
+57:20 which is like a gem uh which is again
+57:24 super criminally underrated book I can
+57:26 really recommend that one
+57:27 it's focused a bit more on uh like
+57:31 General stuff not just that much about
+57:33 data but it's also very very concrete
+57:36 uh I would say age of data Ops I
+57:39 mentioned that one and in phonomics
+57:43 by Doug Laney that's infonomics is great
+57:45 he talks about data assets and
+57:47 everything brilliant brilliant book
+57:49 uh the book by Alexander boric uh and
+57:53 that didn't preo that's really great
+57:54 it's about it's I think it's called
+57:56 digital transformation with AI I have to
+57:59 get the link but that's a brilliant book
+58:01 also it's very specific it goes much
+58:03 deeper than I do with concrete questions
+58:05 how do you what do you ask a business
+58:07 person for example and the final book
+58:09 which is very uh weird and that's why I
+58:12 say the secrets of power and negotiating
+58:15 a terrible name terrible terrible name
+58:17 it's like an old 70s American style book
+58:20 about how do you negotiate and convince
+58:22 people but it has absolutely brilliant
+58:24 advice how do you do that and a lot of
+58:26 data strategy work is just just that so
+58:29 read that one as well
+58:31 yeah cool thanks that's a lot of books
+58:34 thanks for joining us today
+58:37 and uh yeah that was a lot of useful
+58:41 information we will also include a link
+58:43 to your book and I think we have like
+58:46 five copies of your book which we are
+58:48 going to give away probably when we are
+58:51 going to release the audio only version
+58:52 so
+58:54 keep an eye on that and uh yeah have a
+58:57 great weekend

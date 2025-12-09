@@ -1,0 +1,1705 @@
+Growing Data Engineering Team in a Scale-Up
+
+0:00 hi everyone
+0:02 welcome to our event this event is
+0:03 brought to you by data talks club which
+0:05 is a community of people who love data
+0:07 we have weekly events this is one of
+0:09 such events and if you'd like to learn
+0:12 more about the events we have we have
+0:13 there is a link in the description so
+0:15 check it out you will see all the events
+0:16 we have in our schedule
+0:19 do not forget to subscribe to our
+0:21 youtube channel it's amazing you will
+0:23 not regret you will see videos like this
+0:25 one
+0:26 and you will get notified about them
+0:28 and also by the way our guest today
+0:30 maddie he also has an amazing channel
+0:33 which we will probably talk about
+0:35 which definitely need needs more
+0:37 subscribers so i will include the link
+0:39 in the subscription in the description
+0:40 too so check it out and this is like the
+0:44 best quality content in terms of
+0:47 you know not only the content itself but
+0:48 also
+0:50 sound video editing it's really amazing
+0:52 so we will probably talk a bit about
+0:54 that even though it's not the main topic
+0:56 but
+0:57 this is like really best quality content
+0:59 anyways yeah so please subscribe for our
+1:02 channels and then we have an amazing
+1:03 slack community data talks club there is
+1:06 also a link in the description and yeah
+1:08 so many announcements so we are actually
+1:10 running a free course machine learning
+1:12 engineering course
+1:14 starting in september so there is link
+1:16 in the description too
+1:17 um
+1:18 yeah and yeah finally during today's
+1:21 interview you can ask any question you
+1:23 want there is a link in the live chat
+1:25 it's pink click on this link ask your
+1:27 question and then i will be covering
+1:29 these questions during the interview
+1:32 so i think that's all from me now i will
+1:35 open the questions i prepared for you
+1:41 okay
+1:47 so i have um
+1:48 are you ready to start
+1:52 yes sure okay so let's start
+1:56 so this week we will talk about growing
+1:59 a data engineering team in a scale up
+2:01 and we have a special guest today maddie
+2:03 so i know media as a content creator and
+2:05 a data engineer so we live in the same
+2:07 city berlin and this is how we met
+2:10 it was actually near alexanderplatz
+2:12 where i work
+2:13 and yeah he has over eight years of
+2:15 experience in data and engineering now
+2:17 he works as a staff data engineer
+2:20 and
+2:21 yeah so today we will talk about scaling
+2:23 data teams in a scale up so welcome
+2:26 yeah thanks for
+2:28 welcoming on the show with such a praise
+2:31 on my youtube channel i need to keep up
+2:33 the game now
+2:35 okay so before we go into our main topic
+2:38 let's start with your background can you
+2:39 tell us about your career journey so far
+2:42 yeah sure um so i started
+2:46 as you mentioned about eight years ago
+2:49 in the data world
+2:50 doing bi classic like you know with like
+2:54 microsoft tooling and mostly click and
+2:58 drag and drop tooling and then i had
+3:00 like actually quite fast enough
+3:02 opportunity to jump early on the big
+3:05 data project
+3:07 so an on-premise adobe cluster back then
+3:10 and i just surfed on that wave then
+3:13 because uh back then it was like little
+3:16 resource actually to you know
+3:19 do such a such work at scale
+3:22 and um
+3:24 a lot of companies started to invest
+3:25 into their own premise cluster so i had
+3:28 like kind of a r d project but
+3:31 again remember there was no i mean cloud
+3:33 was there but not as popular without
+3:35 free tier so basically if you wanted to
+3:37 have a playground it was already cost
+3:40 you a lot of money but i just searched
+3:42 on that wave built my skills around data
+3:44 engineering mostly big data
+3:45 infrastructure
+3:47 working corporate
+3:49 and then move out from belgium about
+3:51 three years ago trying to eat the
+3:53 company
+3:54 um
+3:55 so like larna
+3:56 and black market
+3:58 and so
+3:59 those experiences the last experience
+4:01 work experience was mostly in the in a
+4:03 scale-up uh uh company um
+4:06 and yeah i think i think the the
+4:08 environment is
+4:10 is is pretty pretty different from from
+4:13 from standard company and that's uh yeah
+4:15 where i am today as i just started as a
+4:18 staff
+4:20 data engineer now
+4:22 do you miss those days when you had to
+4:24 have like a premise hadoop cluster to do
+4:28 analytics or big data or i don't i hate
+4:32 it i think like
+4:33 it was the
+4:34 the barrier to entry was so high you
+4:37 needed an entire team
+4:39 uh there was so much skills needed
+4:42 like networking setup
+4:44 servers i mean networking you still do
+4:47 on the cloud but not as heavy when you
+4:49 have to order the machine to the data
+4:51 center you know and configure your your
+4:54 network infrastructure itself so yeah
+4:58 yeah i remember we had four servers
+5:01 from hetzner four machines and then we
+5:04 had a hadoop cluster there
+5:06 and uh not only it was constantly
+5:09 breaking so we didn't have a team to
+5:11 look after it but also like uh most of
+5:13 the time it was idle and
+5:16 we data scientists would just ssh to one
+5:18 of these servers to do some data science
+5:20 stuff and then if somebody wants to run
+5:22 a hadoop job there that
+5:24 yeah
+5:25 many times
+5:26 yeah so today before when you were
+5:29 running a big job you were blocking
+5:31 everybody so people were coming at your
+5:33 desk now you're just burning your credit
+5:35 card so it's ideal for the months that
+5:37 people are coming at your desk
+5:40 okay
+5:41 so what does it uh
+5:43 what does it mean to be a scale-up so i
+5:45 know what the startup is so startup is a
+5:47 company that just started up and i know
+5:49 also more or less what enterprises and
+5:51 enterprise as a company a huge one with
+5:54 a lot of uh people working so what is a
+5:56 scale up is it something in between or
+5:58 what is it yeah
+5:59 um so i think there is different like
+6:01 understanding of what's the scale up
+6:04 that's like properly speaking is a
+6:06 company which is in hyper growth so it's
+6:08 a company that usually have
+6:10 uh achieved uh first revenues
+6:14 and they have you know another big
+6:16 funding series uh to basically uh scale
+6:21 up their their team because like the
+6:24 space um to which they get the user
+6:27 right is faster to the the engineering
+6:30 team right so they need to at a certain
+6:33 point have other challenge at other
+6:35 skills
+6:36 and so the heavily recruiting it's
+6:38 usually company that goes from i don't
+6:40 know
+6:41 80 people to
+6:43 uh to 400 in like two years or one years
+6:47 even so so it's like yeah so
+6:50 um when i was with glenn i was like
+6:53 30 people training every month um yeah
+6:56 so
+6:57 it's um
+6:58 it's a it's that's like mostly that i
+7:01 would say the the environment and
+7:03 connected to that right you have
+7:05 decision that needs to make fat
+7:08 be fast right so it's not like um
+7:12 where you have time because you also
+7:15 still need to prove yourself on the
+7:17 markets or you're in competition
+7:19 so you know the
+7:21 the driven decision for for
+7:23 such a feature are going faster
+7:28 so when you describe it i imagine a
+7:31 an environment where it's just a bunch
+7:33 of people a lot of users and uh
+7:35 everything is on fire and everyone is
+7:37 running around screaming
+7:39 is it similar to that yeah it's roughly
+7:42 correct yeah i mean um
+7:45 i think
+7:47 uh different like if i look at the
+7:49 different companies i've been working
+7:52 um they have different challenge at
+7:54 different time maybe they launched a new
+7:56 product maybe they launched
+7:59 like a classic uh challenge is when uh
+8:01 those like european company they scale
+8:04 to the us right
+8:07 uh it's a completely different dimension
+8:09 of them of users and of thermal usage
+8:13 um like
+8:15 one
+8:16 i would say if you if you do for example
+8:19 i don't know b b two b two b and you
+8:22 have one customer that has i don't know
+8:24 shopping for example and you serve
+8:26 something
+8:27 on the e-commerce over there
+8:29 um it has so much impact because the
+8:31 united states is so big that it's way
+8:34 bigger than what you can have on mar on
+8:36 european market so that brings like
+8:39 stream
+8:40 other challenge so this is like an
+8:42 example another example is like a new
+8:44 project feature right which is quite
+8:46 challenging
+8:47 um
+8:48 so
+8:49 um yeah i think it's it's it's really
+8:51 depend but yeah it's there is always a
+8:53 lot of stuff on fire uh and you need to
+8:56 basically make compromise to see what's
+8:58 what's the biggest one
+9:00 to focus on
+9:02 and not only that you also need to grow
+9:04 a team right and then yeah you need to
+9:06 quickly fix things that
+9:08 like your production issues
+9:10 in such a way that maybe later you will
+9:12 regret but you need to to fix us up
+9:15 right and then you also need to hire a
+9:16 lot of people and then all these people
+9:18 come and also add these code fixes right
+9:21 and then
+9:22 i guess it's uh
+9:24 it's quite a challenge right
+9:26 yes as
+9:27 exactly as you mentioned you need to do
+9:29 compromise between
+9:30 [Music]
+9:31 speed and quality all the time
+9:36 yeah because otherwise you're
+9:38 you're just collecting technical depth
+9:40 if you just use speeds right
+9:42 um
+9:43 and this dimension
+9:45 of onboarding people
+9:48 is i think for me that was the biggest
+9:51 uh one of the biggest challenge
+9:53 uh where you have so much people coming
+9:55 in uh not just in your team but as a
+9:58 stakeholder you know
+10:01 um so yeah it's
+10:02 it's i think for me it's like the two
+10:05 two biggest things like
+10:07 how do you make your compromise uh all
+10:10 the time and how do you keep your your
+10:12 onboarding process
+10:14 uh smooth and
+10:16 also your product ready to scale
+10:18 internally or externally right
+10:21 so hyper growth here that you
+10:24 were talking about refers to both
+10:26 growing in terms of user users user base
+10:29 also in terms of traffic consequently
+10:31 right and also in terms of uh the number
+10:34 of people who work at the company and it
+10:37 happens at the same time right
+10:39 i mean it depends but usually uh they
+10:42 want to hire a lot of people because
+10:43 they get a lot of user and they have uh
+10:46 they have new challenges right
+10:49 so what are some of the recent companies
+10:52 that you would describe as scale up
+10:54 maybe you heard about gorillas this is
+10:56 like grocery delivery would it be a
+10:58 scale up
+10:59 yeah yeah yeah and definitely i mean in
+11:01 berlin there is a lot i think what i
+11:03 would not call a skill up even if
+11:06 there's tech companies like zalendo for
+11:08 example it's more established or spotify
+11:10 enterprise yeah because they're already
+11:14 you know reach um i would say they're
+11:17 still growing but not at the same curve
+11:20 that would say
+11:21 uh a company and they have like more
+11:23 established revenue that makes them you
+11:26 know more comfortable to
+11:28 to survive
+11:29 such a period as we have now for example
+11:33 and scale ups typically they have
+11:37 investors right so they are not
+11:38 necessarily
+11:40 or earning all this money they are
+11:41 usually
+11:42 um they just cost maybe investment
+11:44 around so they have borrowed money so
+11:47 it's not yeah necessary they won't
+11:49 yeah most most of the time i'm not such
+11:51 a huge fan i mean that's been like what
+11:54 the landscape has been like this past uh
+11:56 these past years and with huge funding
+11:59 um
+12:00 was it reasonable not that's another
+12:02 story but yeah usually there is uh
+12:05 that's what i was saying is that there
+12:07 is some achieved first revenues right
+12:11 but the
+12:13 the value is still yet to be proven
+12:16 and that's why basically you bet on
+12:20 on investing into a lot of features and
+12:22 a lot of engineer to basically
+12:26 reach a
+12:27 state where you you're comfortable
+12:29 and what do data engineers do in a
+12:32 scale-up environment like how how is it
+12:34 how is this work different from you know
+12:37 your typical enterprise
+12:40 um i mean i would say like the
+12:43 i would put the the so we put like the
+12:45 the landscape and so
+12:48 here it is you're joining a team and
+12:51 like
+12:52 next week so a data engineering team has
+12:54 uh or in a data platform team
+12:57 um
+12:59 has maybe
+13:00 uh multiple cons
+13:02 consumer internally right data is data
+13:05 scientist and so let's say you have
+13:08 100 of them today or maybe way less 50
+13:11 but the growth of the for the months is
+13:14 really big right
+13:16 so aside from the people you would
+13:18 expect a lot of more use case um
+13:21 different uh way of using your products
+13:24 uh as a data platform engineer
+13:27 um and so you need to think when you
+13:31 build stuff and how how you can scale
+13:33 the usability directly and remove
+13:36 yourself from the equation
+13:38 so that's like that was mostly my role i
+13:40 forgot to mention in the intro but
+13:42 because there is multiple definition of
+13:43 data engineer right
+13:45 but i've been working more as a data
+13:47 platform engineer providing tool and
+13:49 service i've been doing before
+13:51 more like really writing pipeline and
+13:55 i would say business logic to deliver to
+13:57 other
+13:58 internal data stakeholder
+14:01 there will still be those kind of people
+14:03 in scale up right
+14:05 but it's the same thing they need to
+14:07 think um
+14:09 how they can scale like
+14:11 you know okay i'm doing a small pipeline
+14:13 that reach a google sheet and it's
+14:16 totally fine for this small use case but
+14:19 then suddenly that google sheets blow it
+14:21 up because there is way more data giving
+14:23 a certain context to come back we we go
+14:26 to the us for example so what do you do
+14:29 right um
+14:31 and so that's the thing you need to
+14:32 anticipate more about things going to
+14:36 break
+14:37 uh way sooner
+14:38 uh than it would be i would say like in
+14:40 startup you can make
+14:42 more saying a bit more cowboy because
+14:45 you say okay let's let's just have users
+14:48 right and
+14:49 and do shortcut and maybe there is some
+14:52 technical depth down the line that we're
+14:54 going to regret
+14:55 but it's fine let's just bring value and
+14:57 go for it and in scallop environment uh
+15:01 yeah it's it's a bit different because
+15:03 if you do the shortcuts
+15:05 uh without thinking too much it's gonna
+15:07 cost you way sooner than than expected
+15:11 so here is in the studio so
+15:13 as a data platform engineer or data
+15:16 engineer working in the data platform so
+15:18 your role is to let others build data
+15:21 pipelines so build tools for that so
+15:23 then data scientists data analyst
+15:25 whoever needs data they can use this
+15:28 platform
+15:29 to do i don't know whatever they need
+15:32 and you need to build it in such a way
+15:34 that i don't know it can withstand 10
+15:37 times more traffic than
+15:39 yeah and so i think like coming back to
+15:42 the onboarding thing um
+15:44 i think it's super there is a lot of
+15:47 education uh to do around those
+15:49 different people because they all come
+15:51 from different background
+15:53 against like data role in general the
+15:55 name they're super confusing right data
+15:57 scientists analytics engineer like
+16:00 how deep the technical person is does he
+16:02 has uh experience with that technology
+16:05 or that right and so also your job as a
+16:08 data platform engineer is really to make
+16:10 it
+16:11 as simple as possible so that you know
+16:14 you is you like
+16:16 assume a certain technical level of your
+16:20 data consumer consumers okay i think
+16:21 they're going to be able to do that and
+16:23 that
+16:24 but not that much and it's pretty well
+16:26 documented you have maybe you know an
+16:28 onboarding session
+16:30 um a support channel that is there
+16:33 that is reactive that listen to the user
+16:36 so so yeah it's it's it's a really
+16:40 um
+16:41 kind of like a
+16:43 startup inside the scale-up where you
+16:46 you really need to listen closely to
+16:48 your consumer because they're growing
+16:51 um
+16:52 they're growing quickly
+16:53 and if you just uh behave like okay i'm
+16:57 gonna do that pipeline myself right
+17:00 uh because it's faster
+17:02 like you could do for example in other
+17:04 set of company
+17:06 um
+17:07 you will regret down the line because
+17:09 you're not you're still
+17:11 putting yourself in the equation as a
+17:13 dependency right
+17:14 um and here it's it's really about
+17:16 leveraging
+17:18 other
+17:19 data data people
+17:22 and in practical terms what does having
+17:24 a data platform usually mean is it like
+17:26 an airflow cluster and then
+17:28 some other things that you can use from
+17:30 this airflow cluster or
+17:33 yeah so i think it's it's it's more than
+17:35 that so definitely it's uh because this
+17:38 is like just one piece uh
+17:41 it's like uh having a car without the
+17:43 driving
+17:44 license you cannot do much
+17:47 um i mean you could but then i probably
+17:49 thinks it's gonna break i think that's
+17:51 so airflow is the car right what is the
+17:54 driving license um the driving license
+17:56 would be probably like
+17:59 an example repo how you should structure
+18:01 a thing what's uh how you should handle
+18:04 secrets for example in airflow what's
+18:06 the naming convention
+18:08 um maybe also configure uh some airflow
+18:12 pipeline as a yammel file if they're
+18:14 generic rather than having to rewrite
+18:16 them all in all
+18:17 um again this is a classic thing where
+18:21 you take an airflow dag yeah it's okay
+18:24 we can we can do you know manually and
+18:26 copy paste there are slightly different
+18:28 we are not going into the struggle of
+18:31 having a yaml file that generate dags
+18:34 uh there is easy frameworks by the way
+18:36 to help you to do so now but the point
+18:38 is um yeah again you need to think ahead
+18:41 and say okay are we going to have 10
+18:43 pipeline like this or 20 pipeline next
+18:45 month like this right
+18:48 so maybe we should better invest that
+18:50 time now
+18:51 but it's always about compromise right
+18:54 but it's really uh to coming back to
+18:56 your question
+18:58 um the driving license is basically
+19:00 all the best practice that you can put
+19:03 from the start
+19:05 so that i think those
+19:07 things goes nuts bananas and heart of
+19:10 control
+19:12 and that's that's usually the case if
+19:14 you have a lot of users they have so
+19:16 much imagination that's
+19:17 at the end you end up with
+19:20 a lot of
+19:22 interesting things on your platform
+19:25 so in some ways so data platform for the
+19:27 car
+19:28 with the car part it's uh
+19:31 airflow plus i guess some connections
+19:33 maybe to date uh databases uh data lakes
+19:37 and so on right so then you can read
+19:39 from somewhere right to to some other
+19:41 place
+19:42 and then in addition to that you have a
+19:44 set of
+19:46 rules or playbook or something that
+19:48 people can use in order to effectively
+19:50 use
+19:51 the
+19:52 airflow part right the car part so they
+19:54 can drive the car right you as a data
+19:56 engineer you need to make sure that uh
+19:59 that they
+20:00 first of all the these things are up to
+20:02 date right and users know how to use it
+20:04 and you i guess help them also figure
+20:07 out like how exactly they should use it
+20:09 yeah that's exactly that yeah
+20:13 and uh
+20:14 okay who do we need to actually build
+20:16 this thing uh this touch of data
+20:18 platform
+20:20 yeah i think i can tell about like
+20:23 some mistake
+20:25 i saw in the past
+20:27 um is that you probably for a scale-up
+20:30 you probably don't want to make
+20:32 compromise on seniority
+20:34 you know there is just saying uh
+20:37 if you pay peanuts you get monkey
+20:41 the point is uh
+20:43 you shouldn't um
+20:45 try to re you should try to recruit a
+20:48 lot of senior folks first to set those
+20:51 best practice right you don't need none
+20:53 of them
+20:54 but if you just are relying on on junior
+20:58 or new starter you know intimidating the
+21:00 career to set up things that scale right
+21:03 at huge huge fast pace
+21:05 um
+21:06 it's it will be really difficult because
+21:07 the problem is that learning on the job
+21:10 is really challenging because
+21:13 the challenge just fall down on your
+21:15 desk right it's like okay and now we're
+21:17 going to do yes you need to scale so
+21:19 it's not just okay what if we put that
+21:21 feature no it's like it's happening next
+21:24 month
+21:24 um
+21:25 so yeah um also trying to get people uh
+21:30 with a niche
+21:31 skills if you need again it's the same
+21:34 reason because it's really difficult to
+21:36 ramp up on certain technology
+21:39 let's say you have an
+21:41 eugene use case um with streaming right
+21:45 and you you need to implement the kafka
+21:47 cluster
+21:49 um
+21:50 don't expect like people that has no
+21:52 never work with kafka if they even if
+21:54 they're brilliant engineer right
+21:57 to just learn by themselves and set up
+21:59 the whole thing to to scale up hard like
+22:03 even if it's like temporary
+22:05 uh like an expert in that that has huge
+22:07 seniority
+22:08 same if you're going to the cloud right
+22:11 um
+22:12 and all most of the company are already
+22:14 in the cloud or if you're changing cloud
+22:16 provider just get someone that has
+22:18 experience with that
+22:20 um
+22:21 and and that will help to to
+22:24 to put the best practice in place
+22:25 because
+22:26 i mean even you and me right we are both
+22:29 experienced in the domain but whenever
+22:31 we tackle the new technology it's always
+22:33 super hard to say is it the right way to
+22:36 use it right you need like there is a
+22:39 valuable
+22:40 um experience of having to
+22:43 work before with technology if you need
+22:45 to scale it fast yeah
+22:48 and so you mentioned we realized that we
+22:50 need a kafka cluster but if we don't
+22:52 have experience using kafka how do we
+22:55 know that we actually need it it would
+22:57 be funny to hire a person who is who has
+23:00 this experience with kafka only for them
+23:03 when they start working to say hey
+23:06 like we shouldn't use kafka here
+23:09 yeah no that that's uh that's fairly
+23:11 true uh there is like an architecture
+23:14 decision that should be also drive by
+23:16 some seniority people right but i think
+23:19 you need somebody like that to write to
+23:21 yeah like when you
+23:23 designing the platform yeah but but but
+23:26 the point is also at lower level like
+23:28 let's say you have the you have engineer
+23:31 in general software engine you're just
+23:32 comfortable with subsystem maybe rabbit
+23:35 mq right and they want to consider kafka
+23:37 and you know some of them have heard of
+23:39 that some of them have been playing a
+23:41 bit like they consume right to kafka
+23:43 topic but the point is
+23:45 just uh having like high level knowledge
+23:49 on this to possibly make
+23:51 some decision right and some good
+23:53 decision
+23:54 is not enough to say okay now we're
+23:56 going to implement it and serve it a
+23:58 skill with a team and we're going to
+23:59 maintain it right and that's like
+24:01 a huge difference because the point is
+24:03 that you're not going i mean you're
+24:04 gonna start with one or two topic right
+24:07 to to try it out and then the next pump
+24:09 probably gonna have 15 and by the end of
+24:12 like three months you're gonna have
+24:14 hundreds of topics right and if you
+24:16 don't have or you didn't have the kafka
+24:18 expert at the beginning
+24:20 then it's really hard to untie
+24:22 everything right uh
+24:24 to to do so concrete example i can give
+24:26 you i was mentioning kappa just like of
+24:29 the way but
+24:30 for data folks it's like um data
+24:32 contract with a user so you know
+24:35 software engineer push data to kafka
+24:38 and they have usage from service to
+24:40 service right as a pub sub and they
+24:42 often really not
+24:44 care about what's happening downstream
+24:45 and then data team is going to apply to
+24:47 kafka downstream to s3 and then this
+24:49 transformation
+24:51 a best practice to do in that sense is
+24:53 to
+24:55 put actually some data contract with the
+24:58 data folks and say okay this is
+25:00 um the schema that we're going to have
+25:02 everything is going to be typed so we
+25:04 are not going to put like random json
+25:06 it's going to be like avro for example
+25:09 on the schema registry you can consult
+25:11 the latest version if there is a change
+25:14 during uh
+25:15 in the schema this is what we're going
+25:17 to allow of change uh this is our
+25:19 process for changing schema and so all
+25:22 those things will smooth for the things
+25:24 down the line because then if you have a
+25:26 new user of capca you just you know read
+25:28 the guideline and that's it
+25:30 but if there is no guideline again
+25:32 people are really creative
+25:35 and at the end you're just suffering um
+25:38 consuming those stuff as data platform
+25:40 teams say oh
+25:42 there is a data type change in that
+25:44 schema
+25:46 that was allowed or there is not even
+25:48 like you know proper schema it's just a
+25:50 json that's evolving it's really hard to
+25:52 parse
+25:53 we have i computes
+25:55 cost on our spark cluster or data
+25:58 warehouse because the data is not super
+26:00 well modeled from the from the source so
+26:03 yeah you you basically it's just a few
+26:05 examples
+26:07 create a lot of of downstream problem
+26:09 that you could have avoided with
+26:12 some best practices from the start
+26:14 so i guess if you don't have experience
+26:16 in kafka then you might not know that
+26:20 schemas change or you might not realize
+26:22 right and he went okay i'll just send
+26:24 i'll just be sending jason
+26:27 what can possibly go wrong right but
+26:29 then in a couple of months something
+26:30 happens yeah data changes right and you
+26:33 just didn't think about this but person
+26:35 who had
+26:36 uh explicitly has experienced this who
+26:40 probably lived through this
+26:42 experience of having to somehow manage
+26:44 this
+26:45 ever-changing json files
+26:47 perhaps maybe you did have this
+26:49 experience that's why you're bringing
+26:51 this up right yeah
+26:53 then these people yeah they know hey hey
+26:56 wait a minute like we first need to
+26:57 think about this thing because when
+26:59 there are 100
+27:01 topics then it will bite us right yeah
+27:05 uh we have quite a few questions um so
+27:08 the question we had we have is um
+27:11 hi i recently got a senior data
+27:13 engineering role and i expect it to be
+27:16 fast paced
+27:17 any idea as to how i can manage the pace
+27:20 while ensuring personal growth
+27:24 that's a really good question
+27:27 i've seen
+27:30 depressed data engineer and scale-up
+27:32 environment sometimes because they
+27:35 you know uh we're talking about that
+27:37 trade between speed and quality
+27:39 um i mean sometimes you're not really in
+27:42 control of that decision you know there
+27:44 is politics in place and you just redo
+27:47 and so if you are in a place where you
+27:49 keep redoing things and you keep like uh
+27:51 just distinguish fire right without
+27:53 having a proper vision and i mean always
+27:57 the same fire um that's hurtful um and
+28:01 it's also not really
+28:04 interesting for learning because you're
+28:06 just redoing the same things and the
+28:08 same fixes
+28:10 so i think it's really depend on
+28:13 [Music]
+28:14 the general culture uh i would say that
+28:17 in a scale up like once you get like
+28:20 above 200 people
+28:22 i would say
+28:24 um
+28:25 you have basically
+28:26 a macro culture of the company and the
+28:29 micro culture reading team that could be
+28:32 quite different okay
+28:34 so i would say talk with your
+28:37 [Music]
+28:39 with your future teammates your
+28:41 your
+28:42 your engineer to feel it if you are
+28:44 accepted i understand like uh
+28:47 uh yeah so you really got the the role
+28:50 so you just started actually
+28:52 but um
+28:53 yeah i think it's a discussion within
+28:54 the team to basically
+28:57 make those compromise together i think
+28:59 it's important so
+29:02 i think it's just a part of negotiating
+29:04 uh if you just keep fixing all the
+29:07 things right without like having the
+29:09 time to build
+29:10 stuff that is more interesting where you
+29:12 can learn
+29:14 um
+29:15 then it's just that
+29:17 there is
+29:18 a problem somewhere else where someone
+29:20 is just accepting everything and it's
+29:22 just not putting a buffer right
+29:24 and again it's not just say hey let's uh
+29:26 see each other in the months and we'll
+29:28 build those stuff and coming back with
+29:30 uh we were rockets it's just about
+29:32 compromise just say okay you need this
+29:35 thing tomorrow can you do it uh can you
+29:37 have it in three days i want to refactor
+29:40 this part right and for bigger projects
+29:42 it's a lot of communication
+29:45 with the stakeholder to say hey uh we
+29:47 want to get away with this this is all
+29:49 the pain points that we've been notified
+29:51 um we this so if you're intentional with
+29:55 what you want to improve
+29:57 and um
+29:59 the time that you're gonna save
+30:01 um then i think uh you're gonna have a
+30:04 lot of space to to learn and grow but i
+30:07 it's true that
+30:08 it can be challenging um to have to
+30:12 to make those compromise and it's highly
+30:14 depending on
+30:16 who is supporting you in in which team
+30:18 you are ending up
+30:20 and he also brought up this topic of
+30:22 culture and i guess
+30:24 a company that recently was a startup
+30:26 but now all of a sudden xp is
+30:28 experiencing growth then the culture is
+30:32 now they might not
+30:34 had a chance to adapt
+30:36 to
+30:38 this uh you know new environment right
+30:40 so then maybe as a senior data engineer
+30:43 you can try to
+30:45 somehow influence the culture right you
+30:47 can say okay no this is not how we
+30:49 should do this because we're no longer a
+30:50 startup because we expect that the next
+30:53 week there could be two times three
+30:55 times ten times more traffic right and
+30:56 then uh as a senior
+30:59 data engineer or as a senior engineer in
+31:01 general i think sometimes it's kind of
+31:03 expected that you
+31:04 bring these topics up right yeah and so
+31:08 yeah it's it's a really great point you
+31:10 you brought up that um
+31:12 basically you you have to
+31:15 know that the general company is in
+31:17 transformation like huge shifts
+31:20 and
+31:21 they
+31:22 um they are open right i mean they
+31:24 should uh in terms of cultures say okay
+31:28 we used to you know do one release every
+31:30 week and that was fine uh said no but we
+31:32 have too much bring we need to change
+31:34 our process we need to change the way we
+31:36 work
+31:37 uh i mean that's
+31:39 uh so this is
+31:41 you you you have space uh to speak up
+31:44 but you have to take that space and
+31:47 it's true that sometimes people they
+31:49 they end up in a scale-up environment a
+31:51 bit like randomly you know but they're
+31:53 not really aware that it's okay it's a
+31:55 company that's growing a lot
+31:58 but so you you should be stepping back
+32:00 saying okay there is a lot of stuff that
+32:02 not going to work exactly as you
+32:03 mentioned because people think oh we're
+32:05 still a startup we can do that i'll get
+32:07 that that's not working
+32:09 as soon as like a simple thing like
+32:11 sending
+32:13 birthday uh you know or goodbye email to
+32:17 the wall company you know as the company
+32:19 grow like in corporate you're not going
+32:21 to say hey it's my birthday and
+32:24 you love him but i saw some tech you
+32:26 know some scale of like still doing that
+32:27 and you feel like okay you know we
+32:29 probably shouldn't do that anymore i
+32:31 mean it's a really minor thing right
+32:33 it's just like a small story but you get
+32:35 the point there is a lot of uh internal
+32:38 thing that needs to change and you just
+32:40 need to embrace that change and suggest
+32:42 uh how we can move forward
+32:45 and uh this uh so this uh question is a
+32:48 bit ambiguous and maybe on purpose
+32:51 so it says while ensuring personal
+32:52 growth and personal growth can mean
+32:54 different things for different people
+32:56 right so what kind of personal growth do
+32:58 you think you can expect from a
+33:01 scale-up
+33:02 like is it more like
+33:04 this culture changing sort of personal
+33:06 growth
+33:07 i don't know leading a team like you i
+33:10 guess had experience
+33:12 with or it's more like new tools uh
+33:14 scaling problems or all of the above
+33:18 yeah um
+33:21 yeah i think like when i heard like
+33:23 personal growth i think it's like both
+33:25 from technical and you know
+33:27 on the ic track individual contributor
+33:30 or the manager track and all about
+33:32 leadership
+33:33 um and everything else but i think it's
+33:36 uh
+33:37 it's both sides but i i again it's um
+33:40 [Music]
+33:42 um
+33:44 yeah it's it's it's uh it's it's it's
+33:46 really heavily depending where where you
+33:48 you ending up
+33:50 um
+33:51 but but you do have huge opportunity
+33:53 over there you have i would say if i
+33:55 compare to let's take the problem the
+33:57 other way around
+33:58 if you are in a slow growth company
+34:01 right they might not have that much
+34:03 budget they might you may hire maybe one
+34:05 or two people in your team or you know
+34:07 like it's completely different but here
+34:09 you have opportunity to work on the
+34:11 onboarding process get the other people
+34:14 up to speed improving um your tool sets
+34:17 uh improving the
+34:20 the data platform that you you serve
+34:23 uh because you have a lot of use case
+34:25 and people are screaming right and i
+34:27 feel
+34:28 it's
+34:29 even if it's like a constant fire and
+34:31 it's agreed it might not fit everybody
+34:34 depending on their
+34:35 mood
+34:37 but at least you know that
+34:39 some people are using what you're doing
+34:41 right
+34:42 and in a slow growth company maybe
+34:44 you're gonna work in on that small
+34:45 project or that existing project
+34:49 um
+34:50 and it's it's harder to see your your
+34:53 impacts where
+34:54 in in in a scale-up environment you have
+34:56 so much opportunities that uh
+34:59 you're gonna see
+35:00 at a certain point an impact that you're
+35:03 gonna do
+35:04 so would you recommend somebody
+35:07 let's say it's a senior and that person
+35:09 is considering
+35:11 multiple offers and one of these offers
+35:13 is for a scale-up
+35:15 company and let's say another offer is
+35:18 for enterprise so would you suggest that
+35:20 person to go with a scale up or with
+35:23 enterprise
+35:25 i think it's personal life uh i mean
+35:29 now i've heard uh both things uh i mean
+35:33 and you know i both have kids i think
+35:35 like when you have kids for depending on
+35:37 the you say situation in life right it's
+35:40 it's it's different
+35:41 uh what what you want what you you do
+35:44 next to your job
+35:45 uh i mean people are really fine to do
+35:48 just nine to five you know and have
+35:50 their family time and then don't look
+35:51 further they look to learn something new
+35:54 and there is nothing wrong with that
+35:55 right uh everybody is different
+35:57 everybody has different uh ambition
+36:01 um so i would not i would i would not
+36:03 advise i give like i think it's a really
+36:06 opinionated choice right now i can tell
+36:08 like okay if you're
+36:10 you want to grow your career
+36:13 faster then definitely a scale up
+36:17 or a big fan company is is a good place
+36:20 uh
+36:21 a big fan company you will meet
+36:22 incredible people because there is a
+36:24 base level which is really high right
+36:28 um so you're gonna work on a really
+36:30 niche product so the problem is not that
+36:33 maybe your impact is not gonna be that
+36:35 big right you're gonna work on that
+36:38 google doc comments you know color like
+36:41 it's gonna be really really small right
+36:44 but you're gonna
+36:45 learn technically so much things and
+36:46 build a network which is insane
+36:49 um
+36:50 and for me like i actually is there to
+36:52 go into a thanks so that's the third
+36:55 option i would say
+36:56 a big tech company like facebook or
+36:58 netflix
+36:59 but
+37:00 i found like a scale up is actually the
+37:03 good compromise with the startup because
+37:06 they have money to run a couple of years
+37:08 right there is interest i say normally
+37:10 there is first revenue generated
+37:13 and uh but they're still
+37:15 not at the same low size than uh of
+37:17 course a big tech company so you could
+37:19 have project that has a huge impact
+37:21 company-wide right
+37:23 so i feel like it's it's the best of the
+37:27 two worlds between a startup and a fan
+37:29 for for growth
+37:31 um but now it can be really stressful
+37:34 uh it can be you know time consuming or
+37:38 extra hours here there i mean it's also
+37:40 depending on the culture right in the
+37:42 u.s it's like it's
+37:44 even more different than europe
+37:47 um
+37:48 but yeah take that into consideration uh
+37:51 also again do reverse i always do
+37:53 reverse interview after the process
+37:56 i do one more interview with
+37:58 uh the manager that i'm gonna work or
+38:00 some teammates right directly messing
+38:03 them and work and just you know
+38:04 chat a bit more informally about like my
+38:07 concern and so on to to to grasp like
+38:10 what's the mood over there and what do
+38:12 you ask
+38:14 um yeah
+38:16 so
+38:17 what's what's the most boring thing at
+38:19 work
+38:20 um
+38:21 was the
+38:22 um
+38:23 i'm easily even asked that during the
+38:26 interview process because i don't have
+38:28 the offer yet so like the people getting
+38:29 interviewed they're not sure if i'm the
+38:31 right fit right i mean in general
+38:33 because there is multiple people
+38:35 um asking but i think there is question
+38:37 that you can ask
+38:39 like that
+38:40 or what are you used to work during the
+38:42 weekend or not um so
+38:45 um yeah at what time is you do you stop
+38:48 uh
+38:48 it's it's like informality question but
+38:51 um
+38:52 if you ask that on everybody on your
+38:54 interview process you you get the
+38:57 the graphs of the of the general filter
+38:59 and how it's it's driven
+39:02 and would you answer be different for a
+39:05 junior specialist so somebody who is
+39:06 just entering the field of data
+39:08 engineering or maybe just has has less
+39:10 than one year of experience
+39:12 like for them yeah that's a good point
+39:16 yeah maybe it will be just too boring
+39:18 right to yeah work nine to five yeah
+39:20 yeah indeed so as you're coming by i
+39:22 think it's depending on your on
+39:25 where you're situating in life and
+39:27 corporate versus scale up yeah um
+39:30 that's where concerning if you already
+39:32 have a couple of years of experience if
+39:34 it junior yet then definitely that's
+39:36 that's the best way to
+39:38 dive into the cold water
+39:40 uh you don't have i would say other
+39:44 let's say hard commitments on different
+39:46 things so you can really spend a lot of
+39:49 time
+39:50 on your work at least for the first
+39:51 years to just uh ramp up
+39:54 um and yeah i've seen like
+39:57 people
+39:58 growing super super fast in scale up in
+40:01 in a lot of scale up i think in that
+40:03 company also there has like two
+40:05 promotion around per year right
+40:08 and i've seen some unique talent okay
+40:10 this is like really unique and that's
+40:12 happening like something
+40:14 don't get mad don't get me wrong but
+40:15 like being promoted two times a year
+40:18 it's just because there we are
+40:19 delivering so much
+40:21 um again everybody is different
+40:23 everybody has a live context which is
+40:26 different but the point is you have the
+40:27 opportunity right in a classic company
+40:29 that that would never happen that would
+40:31 never happen because you won't have the
+40:32 opportunity it's not about the promotion
+40:35 around it's also about having the
+40:36 projects right to basically show off
+40:39 right and i think in one year you know
+40:42 in a certain scale up when you see their
+40:44 products you know before and after the
+40:46 year a lot of things could happen right
+40:48 so yeah why not
+40:51 yeah another question we have i am
+40:53 leading a data team in a hyper growth
+40:55 scaling up company in lion fronts how do
+40:58 you guys source big data engineers i
+41:00 guess these questions how where do we
+41:02 find talent how do we find data
+41:04 engineers
+41:06 we don't find them there is not enough
+41:08 of them
+41:09 [Laughter]
+41:11 so you will not not answer this question
+41:13 no no no no no
+41:17 no no i think um
+41:19 there is something
+41:21 that definitely helped and that the
+41:23 scaleup need to work
+41:25 on uh easily to start to work on is the
+41:28 engineering culture
+41:30 so a good example of establish tech
+41:32 company like airbnb
+41:35 for example a lot of engineers know them
+41:39 of course because of the service but
+41:41 they know them on the engineering parts
+41:42 because they have so much operations
+41:44 project they have an insane blog right
+41:47 they speak at conference
+41:49 uh so so yeah you know them because of
+41:52 what they do on the engineering side um
+41:55 and uh i think a scale scale up need to
+41:58 invest into those things into
+41:59 contributing back to the community to
+42:01 show this is our engineering environment
+42:04 and i feel that's the best way to
+42:06 attract talents like
+42:08 engineering in general they're mostly in
+42:11 uh i mean attracted by injuring problems
+42:14 so uh if they see there is like you know
+42:17 brian mike said in that open source
+42:19 project from that company
+42:22 um yeah when they are passion they
+42:24 passionate they they they actually look
+42:27 at that and also it's a it's a way to
+42:30 filter some people
+42:33 i mean to get some people which are more
+42:35 curious right i think like curiosity is
+42:39 and it's a really great value to to get
+42:43 when you're seeking for talent it's
+42:45 really hard to evaluate right
+42:48 like you can ask like okay do you have
+42:50 side project
+42:51 how far do you
+42:52 often do you read the technical book or
+42:54 right but
+42:56 i think when you get people
+42:59 contributing on your open source project
+43:01 reaching out to you after uh you know a
+43:04 tech conference because they they heard
+43:06 you speaking you know that those people
+43:09 there are you know curious and
+43:12 willing to learn and passionate about
+43:14 what they do
+43:15 uh which uh easily show up as a talent
+43:18 that can grow
+43:20 uh
+43:21 really well
+43:22 and you also at the beginning you
+43:24 mentioned
+43:25 that you sometimes met with depressed
+43:27 data engineers i guess in this
+43:29 environment where people might already
+43:32 felt like squeezed lemons now you also
+43:34 ask them to
+43:36 you know if you want as a vp of
+43:38 engineering you realize okay now i want
+43:40 to improve culture because we want to or
+43:43 change culture because we want to
+43:45 attract more talent so we want to be to
+43:47 have like nice employer brands right and
+43:49 now you tell all your squeezed engineers
+43:52 to also write articles and then okay
+43:55 like now i work uh
+43:57 i don't know 12 hours per day so where
+43:59 do i find time that's again i guess the
+44:02 question of
+44:03 culture right yeah i think yeah it's a
+44:06 balance but it's it's it's a
+44:08 um
+44:09 it's a really good point and coming back
+44:12 to
+44:12 to reality that uh
+44:15 not everything is uh is green and nice
+44:17 um
+44:19 but uh but like
+44:21 normally like for those kind of
+44:22 opportunities of conference and blog to
+44:26 also be lead by it should be lead by
+44:28 more seniority people
+44:30 um so i would say if we come back to our
+44:34 example with the junior person right uh
+44:36 it's
+44:37 um it's not necessarily him that's gonna
+44:39 write but he's gonna have opportunity to
+44:41 write
+44:42 uh a blog about it it's gonna take extra
+44:45 work right
+44:46 um
+44:47 but i believe that the reward is really
+44:50 is really insane to give another example
+44:53 i know it's really uh also opinionated
+44:56 and i think they they don't do it
+44:57 anymore uh google is the 20
+45:00 i don't know if you remember that where
+45:02 you have 20
+45:03 yeah we have 20 of your time to work on
+45:07 any tech any project
+45:09 uh if you have to justify everything i
+45:12 never been too much in detail
+45:14 um and a lot of people were saying oh
+45:16 but it's not 100
+45:18 it's not 80 and 20 percent it's under 20
+45:22 right and up to work on the weekend for
+45:25 this project
+45:27 where you need to show up something
+45:30 but google maps
+45:32 was built on those 20
+45:35 so
+45:35 the point is that it was never driven by
+45:38 um it was an opportunity there and
+45:41 yeah someone take it on on the side
+45:44 um so i think you the point is that you
+45:47 have you have opportunities to
+45:50 um
+45:51 to show up but it it will require um
+45:54 quite some work and i think at a certain
+45:56 point you can find a balance where
+45:57 you're not to squeeze at lyme and
+45:59 as you as you mentioned
+46:02 i uh i also happen at work to be an
+46:05 editor of our corporate tech blog
+46:08 and what i notice is sometimes
+46:11 somebody works on a very cool thing
+46:13 and then i asked them hey can you write
+46:16 something about this because this is so
+46:17 cool and i get a bit of a pushback but
+46:19 this is nothing special i just do my
+46:21 work
+46:22 so i'm wondering if you
+46:26 if you have a suggestion for me like how
+46:28 do i convince them that actually what
+46:29 they work on
+46:30 is not only you know usual
+46:34 i mean it's not usual but it's also
+46:37 quite interesting and many other people
+46:38 will also be interested in learning this
+46:40 thing about the problem the solution and
+46:43 things like this yeah so
+46:45 any advice i recommend for any junior
+46:47 getting in the industry is writing
+46:49 content or doing content in general and
+46:52 it can be when i say content it can be a
+46:55 pr uh um on the on a repo it can be your
+46:59 project that you push on
+47:02 as open source
+47:03 it can be a blog
+47:05 video anything because the best way to
+47:07 learn is actually to teach it to to
+47:09 someone else right
+47:12 so that's like the first thing and the
+47:13 second thing so i think like there is a
+47:16 lot of value in writing in general
+47:18 uh because it force you to summarize
+47:21 things out right you get to a review
+47:23 process when you get feedback from
+47:25 people
+47:26 um and then afterwards as you mentioned
+47:29 is that when you share it you get
+47:31 feedback also from other people
+47:33 and fun fact is that you get
+47:36 most of the time you get more feedback
+47:38 from people outside of your company than
+47:41 inside your company because your things
+47:43 are so niche and you are so connected in
+47:47 2022 online right
+47:49 i think this community is a really good
+47:51 example you would never
+47:53 be able to launch like an
+47:55 on mostly online community like five
+47:57 years ago right but if we get more
+48:00 network online and feedback online
+48:04 um that it's it's a really good
+48:06 opportunity or for you to get feedback
+48:08 on this oh actually that design you know
+48:10 it sucks and it's okay
+48:13 you're gonna have haters anyway but it's
+48:16 it's it puts you yourself in perspective
+48:18 and say okay and other people say okay
+48:20 actually uh this is really great and we
+48:23 did exactly the same but slightly
+48:25 different you know
+48:26 um yeah i had long talks with people
+48:29 that read some of my blog posts online
+48:32 right so we book uh an hour and i
+48:35 learned so much from them i learn as
+48:37 much as
+48:38 as they give so people see that as a
+48:40 work you know like oh i have to do this
+48:42 for others
+48:43 but you're gonna learn um a lot through
+48:46 the process pro and counts so it's it's
+48:50 a really best way to to evaluate where
+48:52 are you standing
+48:53 how do do you get this call so somebody
+48:55 read your article they reach out to you
+48:57 on linkedin saying hey amazing article
+48:59 and then you ask them
+49:01 can we get on a call and i want to ask
+49:03 you about your yeah you know what do you
+49:05 think about this
+49:06 it's a it's the other way around or are
+49:08 i mean
+49:10 so they asked directly to to
+49:13 okay
+49:14 they want more insight maybe because you
+49:16 know sometimes in the article you need
+49:18 to take some shortcuts
+49:20 or sometimes they they reach out um
+49:23 by chat and they
+49:24 they give like a pretty technical
+49:26 question you know like okay you didn't
+49:28 mention this can you please elaborate on
+49:31 how
+49:32 um
+49:33 and uh and yeah and then i'm coming back
+49:36 to them because i know they have such
+49:37 implementation and i'm like oh by the
+49:39 way i fixed that issue why do you think
+49:42 no it's like it's a win-win so that's i
+49:44 really want to insist on that it's it's
+49:46 it's most of the time it's uh
+49:49 it's a it's always a win-win when people
+49:51 uh
+49:52 with shouts when you
+49:54 at least and when you start to you know
+49:56 go more to further than the hello world
+50:00 project because when it's a company blog
+50:02 it's often not an award project right
+50:05 so i think there is way more value
+50:07 actually um in writing those blogs than
+50:09 your personal blog is also super great
+50:11 to do but like company blog can bring a
+50:14 lot of value
+50:16 yeah thanks uh in a scale up in a scale
+50:19 up people usually need to work on a wide
+50:21 range of tasks right so like you
+50:25 pretty much a generalist but then as
+50:28 the scale-up grows evolves
+50:31 you know these people might need to
+50:32 specialize later do you think it's okay
+50:35 and how to deal with this specialization
+50:38 um yeah i i
+50:40 i don't think you're that much i mean
+50:42 data engineer already is a generalist
+50:45 right but everything we can in that role
+50:48 i think it's the same for most of the
+50:49 data role
+50:51 uh you know like data centers might be
+50:53 doing a lot of pipelining scale up until
+50:56 they found like a proper data
+50:58 engineering team to help them
+51:00 um
+51:01 so
+51:02 going
+51:03 so i think it's a again it's depending
+51:06 on the setup i didn't feel like
+51:08 i was too much generalist
+51:11 and as the
+51:12 the the team are growing right
+51:15 your responsibility will be scoping down
+51:18 and more niche and then hence your skill
+51:20 set right
+51:23 so
+51:24 to give a concrete example
+51:27 uh i don't know let's say you
+51:30 are the data platform that maintains uh
+51:33 data warehouse and
+51:35 infra
+51:36 kafka cluster right
+51:39 okay now you have a lot of user and you
+51:41 want to build the framework like dbt to
+51:44 enable people to do you know
+51:47 sql execute sql uh in a production
+51:50 manner so like what dbt does so it's an
+51:53 open source project okay it's available
+51:55 but let's say you have to build this
+51:56 thing in the house it doesn't exist
+51:58 it's going to be a dedicated team right
+52:00 you cannot manage to do it in our house
+52:02 plus that at the same time so you scope
+52:05 will go down so you're more going to
+52:07 from like a sql i mean access management
+52:11 uh
+52:12 role to like really proper developing a
+52:14 service that involves different set of
+52:17 technology same thing for streaming
+52:19 right okay now we involve into streaming
+52:21 so
+52:22 you
+52:23 based on the project and how the things
+52:25 are going to grow if you're gonna be
+52:27 scoped down and be more niche uh we were
+52:30 talking about you know google doc
+52:32 comment features
+52:34 i think you need to have specific skill
+52:36 sets
+52:37 uh like real time you know websocket and
+52:40 so on for those kind of
+52:42 team
+52:44 and and yeah and so you're going to
+52:46 build a certain profile
+52:49 base basically on project that's going
+52:50 to come over that's like what i would
+52:53 say roughly
+52:55 yeah also at the beginning i mentioned
+52:57 that there are different kinds of data
+52:59 engineers so one
+53:01 type of data engineers work
+53:03 where they work on platforms and the
+53:05 other work
+53:07 works more on the use cases so the
+53:09 question that we have here is what is
+53:11 the ratio between uh racial work between
+53:15 platform building and use case pipelines
+53:21 so really good question again depending
+53:23 on the size of your company
+53:26 i would say like like if you're a small
+53:28 startup
+53:29 uh but let's say yeah in the scale up in
+53:31 the context of the scale up
+53:33 uh
+53:34 i would say
+53:36 um
+53:37 50 50 because
+53:39 you're gonna build as much pipeline as
+53:41 features that you're gonna
+53:44 develop to
+53:45 ease the development of this pipeline
+53:48 um so
+53:50 um so yeah they're gonna be a lot of
+53:53 requests that's similar basically right
+53:56 and uh and you need to build frameworks
+53:59 to you know
+54:00 build something generic around it so
+54:02 that's more of the data platform
+54:05 um
+54:06 but yes i would say i would say 50 50 in
+54:08 general
+54:10 so you start getting requests and then
+54:12 you see
+54:13 if there is any pattern and then for
+54:15 those
+54:16 when there is a pattern you kind of
+54:18 build
+54:18 a solution for this so then these people
+54:21 can like i don't know those who require
+54:24 um who request these things they will
+54:26 just be able to solve
+54:28 exactly
+54:30 okay
+54:32 what would you say is the most important
+54:34 attribute for a data engineer who
+54:36 wants to get promoted from mid-level
+54:38 role to a senior role
+54:44 i think in
+54:46 a good way to
+54:52 to uh yeah you you can so there is um i
+54:55 think you need to be more proactive as
+54:58 uh so i think in as a mid engineer
+55:00 you're basically solving problem really
+55:03 for your team right
+55:06 and as in the senior you're stepping
+55:08 back and you're looking what's like the
+55:11 you know the next team next to you like
+55:14 what i mean by that it's like
+55:16 the closest team in term of data
+55:18 platform or you know users and
+55:21 and have projects start to have thinking
+55:24 okay
+55:26 you have uh
+55:28 you need to do something to to help two
+55:30 team for example my team and another one
+55:33 and then it's the same thing for staff
+55:34 like when you get stuff it's like more
+55:36 at the you know the whole engineering
+55:38 scope
+55:39 okay how do i have a project that you
+55:42 know solve issue that has that is
+55:44 present on the all engineering
+55:47 teams so the i would say that the more
+55:49 you grow the bigger the impact you
+55:52 should have and so basically
+55:54 as a mindset you should always like kind
+55:56 of a step back from you know your ticket
+55:59 and what you have in the backlog and say
+56:01 okay why are we doing this right what's
+56:03 what's the problem go talk with people
+56:05 from
+56:06 other teams uh book a chat i think it's
+56:09 way harder now in regards for me at
+56:12 least before i just you know i got to
+56:14 the coffee machine and i learned stuff
+56:16 um but book intentionally stuff to say
+56:19 hey i just want to
+56:21 to chat uh informally like uh what have
+56:24 you been up to and maybe you're gonna
+56:26 you know see oh there is something to to
+56:29 do i think uh
+56:31 yeah
+56:33 yep are you looking for a band somebody
+56:36 is interested if uh
+56:38 if you are because they appear it
+56:40 appears they need a bass guitar player a
+56:43 bass guitar player no i'm not i have my
+56:45 own project and i've been putting that
+56:47 side
+56:48 but
+56:49 yeah
+56:50 but i think they want to have somebody
+56:53 who is both a date engineer and a bus
+56:55 guitar player
+56:58 yes so maybe yeah i don't know
+57:01 i don't i don't have any
+57:03 time for that
+57:04 how many caps do you have
+57:07 uh
+57:09 is that like is that your question or is
+57:11 it a question okay this is mine
+57:13 okay because uh i was
+57:16 i was thinking maybe there is some uh
+57:18 colleagues trolling me because it's a
+57:20 common question
+57:21 no the okay say a number say a number
+57:24 i'll say lower or higher
+57:26 100
+57:28 now lower
+57:30 okay i'll disappoint
+57:35 20
+57:37 um
+57:39 still a bit lower
+57:40 okay okay we stopped that we stopped
+57:42 there we stopped there i want to leave
+57:44 the you know
+57:47 okay yeah actually i wanted to talk
+57:48 about your channel but then we have
+57:50 quite a few questions so i wanted to
+57:52 cover them
+57:53 too so tell us
+57:55 about your channel
+57:57 yeah um
+57:59 so
+57:59 [Music]
+58:01 it's uh it's a channel about data
+58:04 engineering mostly i mean also coding i
+58:06 mean any software engineer is welcome
+58:08 right i think
+58:10 data engineer
+58:11 they are software engineering at first
+58:13 so it's mostly me sharing uh whatever i
+58:16 can about my experience around data
+58:19 scope
+58:20 um how and i have now i put like a
+58:24 data engineer roadmap as project so like
+58:27 roadmap with a specific project
+58:30 so
+58:31 um and i'll be showcasing those projects
+58:34 so really my intention there it's just
+58:36 like um
+58:38 sharing my knowledge and get feedback
+58:40 again so when people are coming back to
+58:42 me say hi
+58:43 uh maybe you did that wrong or
+58:45 um
+58:46 and so uh so yeah that's like the
+58:49 channel it's called meteo data tv
+58:52 i also have a podcast now
+58:54 uh which is called datacreators.club
+58:57 which is also on uh the youtube channel
+59:01 um and there is links on spotify and so
+59:03 on and datacreators.club is the website
+59:06 i've done to find um
+59:10 data mentors right so you can search any
+59:12 data mentors
+59:14 on any channel youtube linkedin medium
+59:17 it's a pretty simple website but it gets
+59:20 a lot of traction
+59:22 so yeah i guess it's me just learning
+59:25 from people and putting a list of those
+59:27 you are of course inside at least
+59:31 and uh and yeah and that's mostly like
+59:33 uh where i'm active like and on the
+59:35 writing i'm using medium and linkedin
+59:39 to write
+59:41 how much time do you spend on creating a
+59:43 video because when i look at this it's
+59:46 amazingly high quality videos and i know
+59:49 that there are other creators and they
+59:51 have an entire team actually to do this
+59:53 um yeah but
+59:55 so i i i don't have a team i'm cloning
+59:57 myself right i have this one if we can
+1:00:00 like it's two people right
+1:00:03 but
+1:00:04 for those who are just listening and not
+1:00:06 seeing video you're pointing at uh
+1:00:11 darth vader yeah exactly sorry
+1:00:14 um
+1:00:15 you know so
+1:00:16 uh i definitely spent too much time at
+1:00:18 the moment i'm still figuring out the
+1:00:20 process i started in december with like
+1:00:23 roughly
+1:00:24 one video months taking a lot of time
+1:00:27 i'm getting better like the first video
+1:00:29 it literally took me two months like
+1:00:31 because you don't know what the you know
+1:00:33 like the banner creating a youtube
+1:00:35 channel the intro the outro
+1:00:39 um i think uh
+1:00:41 it takes me more time to produce content
+1:00:43 i don't have the flying wheel yet
+1:00:45 because my expectation in production are
+1:00:48 high so it's not really a good thing
+1:00:50 because you were mentioning all the
+1:00:51 quality is good but i maybe i don't
+1:00:53 spend enough some time
+1:00:56 you know time on the core content
+1:00:58 but i believe i will have you know when
+1:01:01 my process will be figured out right
+1:01:04 then like okay now i can pull a high
+1:01:06 quality video in less time so i can
+1:01:08 spend more time on the content so the
+1:01:10 point don't be discouraged if anyone is
+1:01:13 listening
+1:01:14 i want to go on youtube channel you just
+1:01:17 need today a smartphone and you're good
+1:01:19 to go as long as you have a good story
+1:01:22 to tell
+1:01:23 but for me it's definitely taking too
+1:01:26 much time at the moment still
+1:01:28 getting into the process to to lower
+1:01:30 that
+1:01:30 and get to
+1:01:32 a right pace
+1:01:34 and you mentioned cloning yourself and i
+1:01:35 think in one of the videos was it about
+1:01:37 the different types of data engineers
+1:01:39 yeah yeah
+1:01:40 there was actually three
+1:01:42 yeah there was three of you yeah yeah
+1:01:45 i know we should be wrapping up i don't
+1:01:48 know if you need to go somewhere
+1:01:51 a uh but
+1:01:51 minutes that's that's fine
+1:01:54 how did you do this
+1:01:56 uh
+1:01:57 you filmed you filmed like three
+1:01:59 different things and then you kind of
+1:02:00 stitched it through yeah that's as
+1:02:02 simple as that so the only thing you
+1:02:04 need to really to pay attention it's
+1:02:06 just a setup is the light the light need
+1:02:08 to be constant because if you have a
+1:02:11 shadow that's coming over it and when
+1:02:13 you're gonna cut you know each piece
+1:02:14 you're gonna see a dark one and so
+1:02:16 you're gonna see where the video is
+1:02:19 being cut uh this is the only thing it's
+1:02:21 like a simple trick there there is a lot
+1:02:24 of trick which is way more simple than
+1:02:26 people think it's just uh
+1:02:28 doing some research on youtube and uh
+1:02:32 you know figure that out um i love doing
+1:02:34 those i'm having fun doing those if you
+1:02:36 don't have having fun it's
+1:02:38 it's uh you're gonna give up but like
+1:02:41 for me it's it's
+1:02:42 like those effects and
+1:02:44 being a bit more fun funnier than would
+1:02:47 said the average uh
+1:02:49 uh learning resource it's it's what may
+1:02:52 like exciting me so yeah
+1:02:55 yeah i i wish i started asking you about
+1:02:57 this a bit earlier because i wasn't
+1:02:59 watching time but yeah thanks for
+1:03:01 sharing all this thanks for telling
+1:03:02 about all this uh
+1:03:04 thanks for sharing your experience and
+1:03:06 thanks for telling about your channel
+1:03:08 everyone from us will appreciate the
+1:03:10 effort you put in the videos so for
+1:03:12 everyone who is listening please go
+1:03:14 check it out i will put the link in the
+1:03:16 description yeah i guess that's all for
+1:03:19 today
+1:03:20 have a nice weekend
+1:03:21 and i'll see you soon i guess
+1:03:23 yeah goodbye bye
