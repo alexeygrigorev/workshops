@@ -482,9 +482,27 @@ result = await workflow.execute_activity(
 
 After downloading the transcripts, you can create another Temporal workflow to index them in Elasticsearch for full-text search.
 
-### Setup
 
-First, make sure Elasticsearch is running (see the Docker command at the bottom of this document).
+Run Elasticsearch in Docker:
+
+```bash
+docker run -it \
+  --rm \
+  --name elasticsearch \
+  -m 4GB \
+  -p 9200:9200 \
+  -p 9300:9300 \
+  -e "discovery.type=single-node" \
+  -e "xpack.security.enabled=false" \
+  -v es-data9:/usr/share/elasticsearch/data \
+  docker.elastic.co/elasticsearch/elasticsearch:9.2.0
+```
+
+Verify it's running:
+
+```bash
+curl http://localhost:9200
+```
 
 Install the Elasticsearch Python client:
 
@@ -492,105 +510,19 @@ Install the Elasticsearch Python client:
 uv add elasticsearch
 ```
 
-### Create Elasticsearch Activities
+TODO add code from elastic.py
 
-Add these activities to handle Elasticsearch operations:
 
-```python
-from elasticsearch import Elasticsearch
+## Turning Indexing into Temporal.io Flow
 
-@activity.defn
-async def create_index():
-    """Create Elasticsearch index with proper mappings"""
-    es = Elasticsearch("http://localhost:9200")
-    
-    index_settings = {
-        "settings": {
-            "number_of_shards": 1,
-            "number_of_replicas": 0
-        },
-        "mappings": {
-            "properties": {
-                "video_id": {"type": "keyword"},
-                "title": {"type": "text"},
-                "text": {"type": "text"},
-                "timestamp": {"type": "keyword"}
-            }
-        }
-    }
-    
-    if not es.indices.exists(index="podcasts"):
-        es.indices.create(index="podcasts", body=index_settings)
-    
-    return True
+Turn this code into Temporal activities:
 
-@activity.defn
-async def index_transcript(video_id: str, video_title: str, subtitles_file: str):
-    """Index a transcript file into Elasticsearch"""
-    es = Elasticsearch("http://localhost:9200")
-    
-    # Read and parse the transcript file
-    with open(subtitles_file, 'r', encoding='utf-8') as f:
-        lines = f.readlines()[2:]  # Skip title and blank line
-    
-    # Index each subtitle entry
-    for line in lines:
-        if not line.strip():
-            continue
-            
-        parts = line.split(' ', 1)
-        if len(parts) == 2:
-            timestamp, text = parts
-            
-            doc = {
-                "video_id": video_id,
-                "title": video_title,
-                "timestamp": timestamp.strip(),
-                "text": text.strip()
-            }
-            
-            es.index(index="podcasts", document=doc)
-    
-    return True
-```
+TODO
 
 ### Create Indexing Workflow
 
 Create a new workflow in `flow/index_workflow.py`:
 
-```python
-@workflow.defn
-class IndexTranscriptsWorkflow:
-    """Workflow to index transcripts into Elasticsearch"""
-    
-    @workflow.run
-    async def run(self) -> dict:
-        # Create index
-        await workflow.execute_activity(
-            create_index,
-            start_to_close_timeout=timedelta(seconds=30),
-        )
-        
-        # Get all transcript files
-        transcript_files = list(data_root.glob("*.txt"))
-        
-        # Index each file
-        indexed = 0
-        for file_path in transcript_files:
-            video_id = file_path.stem
-            
-            with open(file_path, 'r', encoding='utf-8') as f:
-                video_title = f.readline().strip()
-            
-            await workflow.execute_activity(
-                index_transcript,
-                args=[video_id, video_title, str(file_path)],
-                start_to_close_timeout=timedelta(seconds=60),
-            )
-            indexed += 1
-        
-        return {"indexed": indexed, "total": len(transcript_files)}
-```
 
 Run the indexing workflow similarly to the transcript workflow - start the worker with the new workflow and activities, then execute it with a client script.
 
@@ -605,25 +537,3 @@ Run the indexing workflow similarly to the transcript workflow - start the worke
 
 
 
-## Start Elasticsearch
-
-Run Elasticsearch in Docker:
-
-```bash
-docker run -it \
-  --rm \
-  --name elasticsearch \
-  -m 4GB \
-  -p 9200:9200 \
-  -p 9300:9300 \
-  -e "discovery.type=single-node" \
-  -e "xpack.security.enabled=false" \
-  -v es-data:/usr/share/elasticsearch/data \
-  docker.elastic.co/elasticsearch/elasticsearch:8.4.3
-```
-
-Verify it's running:
-
-```bash
-curl http://localhost:9200
-```
