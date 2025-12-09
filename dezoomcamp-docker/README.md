@@ -1,6 +1,7 @@
 # Docker and PostgreSQL: Data Engineering Workshop
 
-* Video: TBA
+* Video: [link](https://www.youtube.com/watch?v=lP8xXebHmuE)
+* Slides: [link](https://docs.google.com/presentation/d/19pXcInDwBnlvKWCukP5sDoCAb69SPqgIoxJ_0Bikr00/edit?usp=sharing)
 
 In this workshop, we will explore Docker fundamentals and data engineering workflows using Docker containers. This workshop is an update for Module 1 of the [Data Engineering Zoomcamp](https://github.com/DataTalksClub/data-engineering-zoomcamp).
 
