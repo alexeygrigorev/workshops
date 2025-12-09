@@ -1,6 +1,6 @@
 # Docker and PostgreSQL: Data Engineering Workshop
 
-* Video: TBD
+* Video: TBA
 
 In this workshop, we will explore Docker fundamentals and data engineering workflows using Docker containers. This workshop is an update for Module 1 of the [Data Engineering Zoomcamp](https://github.com/DataTalksClub/data-engineering-zoomcamp).
 
@@ -197,11 +197,20 @@ You'll see the files from your host machine are accessible in the container!
 
 A **data pipeline** is a service that receives data as input and outputs more data. For example, reading a CSV file, transforming the data somehow and storing it as a table in a PostgreSQL database.
 
-TODO: use built-in diagram language to show this:
+```mermaid
+graph LR
+    A[CSV File] --> B[Data Pipeline]
+    B --> C[Parquet File]
+    B --> D[PostgreSQL Database]
+    B --> E[Data Warehouse]
+    style B fill:#4CAF50,stroke:#333,stroke-width:2px,color:#fff
+```
 
-csv -> data pipeline -> parquet
-
-Illustration: Data pipeline diagram
+In this workshop, we'll build pipelines that:
+- Download CSV data from the web
+- Transform and clean the data with pandas
+- Load it into PostgreSQL for querying
+- Process data in chunks to handle large files
 
 Let's create an example pipeline. First, create a directory `pipeline` and inside, create a file  `pipeline.py`:
 
@@ -1132,6 +1141,83 @@ docker-compose down -v
 
 If you want to re-run the dockerized ingest script when you run Postgres and pgAdmin with `docker-compose`, you will have to find the name of the virtual network that Docker compose created for the containers. You can use the command `docker network ls` to find it and then change the `docker run` command for the dockerized script to include the network name.
 
+
+## Cleanup
+
+When you're done with the workshop, clean up Docker resources to free up disk space:
+
+**Stop all running containers:**
+```bash
+docker-compose down
+```
+
+**Remove specific containers:**
+```bash
+# List all containers
+docker ps -a
+
+# Remove specific container
+docker rm <container_id>
+
+# Remove all stopped containers
+docker container prune
+```
+
+**Remove Docker images:**
+```bash
+# List all images
+docker images
+
+# Remove specific image
+docker rmi taxi_ingest:v001
+docker rmi test:pandas
+
+# Remove all unused images
+docker image prune -a
+```
+
+**Remove Docker volumes:**
+```bash
+# List volumes
+docker volume ls
+
+# Remove specific volumes
+docker volume rm ny_taxi_postgres_data
+docker volume rm pgadmin_data
+
+# Remove all unused volumes
+docker volume prune
+```
+
+**Remove Docker networks:**
+```bash
+# List networks
+docker network ls
+
+# Remove specific network
+docker network rm pg-network
+
+# Remove all unused networks
+docker network prune
+```
+
+**Complete cleanup (removes everything):**
+```bash
+# ⚠️ Warning: This removes ALL Docker resources!
+docker system prune -a --volumes
+```
+
+**Clean up local files:**
+```bash
+# Remove parquet files
+rm *.parquet
+
+# Remove Python cache
+rm -rf __pycache__ .pytest_cache
+
+# Remove virtual environment (if using venv)
+rm -rf .venv
+```
 
 --- 
 
