@@ -807,28 +807,384 @@ recreate_index = False         # Set to True to recreate the index
 
 Set `recreate_index = True` if you want to delete and recreate the index with fresh data.
 
-## Agent
+## Building an AI Research Agent
 
+Now that we have transcripts indexed in Elasticsearch, we can build an AI agent that uses them to conduct research and answer questions.
+
+### Setup
+
+Create a new directory for the agent:
+
+```bash
 mkdir agent
 cd agent
+```
 
+Initialize the project with required dependencies:
+
+```bash
 uv init
 uv add pydantic-ai openai elasticsearch python-dotenv
 uv add --dev jupyter
+```
 
-add `OPENAI_API_KEY` to `.env`
+Create a `.env` file with your OpenAI API key:
 
 ```
 OPENAI_API_KEY='your-key'
 ```
 
-start jupoyter 
+Start Jupyter to work interactively:
 
+```bash
 uv run jupyter notebook
+```
 
-creae a new notebook agent.ipynb
+Create a new notebook `agent.ipynb` to follow along.
 
+### Creating Search Tools
 
+First, connect to Elasticsearch and create search functions that will serve as tools for the agent:
+
+```python
+from elasticsearch import Elasticsearch
+
+es = Elasticsearch("http://localhost:9200")
+
+def search_videos(query: str, size: int = 5) -> list[dict]:
+    """
+    Search for videos whose titles or subtitles match a given query.
+    
+    Returns highlighted match information including video IDs and snippets.
+    """
+    body = {
+        "size": size,
+        "query": {
+            "multi_match": {
+                "query": query,
+                "fields": ["title^3", "subtitles"],
+                "type": "best_fields",
+                "analyzer": "english_with_stop_and_stem"
+            }
+        },
+        "highlight": {
+            "pre_tags": ["*"],
+            "post_tags": ["*"],
+            "fields": {
+                "title": {
+                    "fragment_size": 150,
+                    "number_of_fragments": 1
+                },
+                "subtitles": {
+                    "fragment_size": 150,
+                    "number_of_fragments": 1
+                }
+            }
+        }
+    }
+    
+    response = es.search(index="podcasts", body=body)
+    hits = response.body['hits']['hits']
+    
+    results = []
+    for hit in hits:
+        highlight = hit['highlight']
+        highlight['video_id'] = hit['_id']
+        results.append(highlight)
+    
+    return results
+
+def get_subtitles_by_id(video_id: str) -> dict:
+    """
+    Retrieve the full subtitle content for a specific video.
+    """
+    result = es.get(index="podcasts", id=video_id)
+    return result['_source']
+```
+
+Test the search function:
+
+```python
+search_videos('how do I get rich with AI?')
+```
+
+### Creating a Basic Research Agent
+
+Create a simple agent with search capabilities using Pydantic AI:
+
+```python
+from pydantic_ai import Agent
+
+research_instructions = """
+You're a helpful researcher agent.
+""".strip()
+
+research_agent = Agent(
+    name='research_agent',
+    instructions=research_instructions,
+    model='openai:gpt-4o-mini',
+    tools=[search_videos, get_subtitles_by_id]
+)
+
+result = await research_agent.run(
+    user_prompt='how do I get rich with AI?'
+)
+
+print(result.output)
+```
+
+**Tracking tool calls:**
+
+To see which tools the agent is calling, create a callback handler:
+
+```python
+from pydantic_ai.messages import FunctionToolCallEvent
+
+class NamedCallback:
+    """Stream handler that prints the tool calls triggered by an agent."""
+    
+    def __init__(self, agent: Agent):
+        self.agent_name = agent.name
+    
+    async def _print_function_calls(self, ctx, event) -> None:
+        # Detect nested streams
+        if hasattr(event, "__aiter__"):
+            async for sub_event in event:
+                await self._print_function_calls(ctx, sub_event)
+            return
+        
+        if isinstance(event, FunctionToolCallEvent):
+            tool_name = event.part.tool_name
+            args = event.part.args
+            print(f"TOOL CALL ({self.agent_name}): {tool_name}({args})")
+    
+    async def __call__(self, ctx, event) -> None:
+        await self._print_function_calls(ctx, event)
+
+# Use the callback
+research_agent_callback = NamedCallback(research_agent)
+
+result = await research_agent.run(
+    user_prompt='how do I get rich with AI?',
+    event_stream_handler=research_agent_callback
+)
+```
+
+You can also inspect the conversation messages:
+
+```python
+messages = result.new_messages()
+
+for m in messages:
+    for p in m.parts:
+        kind = p.part_kind
+        if kind == 'user-prompt':
+            print('USER:', p.content)
+            print()
+        if kind == 'text':
+            print('ASSISTANT:', p.content)
+            print()
+        if kind == 'tool-call':
+            print('TOOL CALL:', p.tool_name, p.args)
+```
+
+**Improving instructions for better tool usage:**
+
+To get the agent to actually use the tools and conduct thorough research, provide detailed instructions:
+
+```python
+research_instructions = """
+You're a researcher and your task is to use the available tools to conduct research on the topic 
+that the user provided.
+
+Cite the sources with video IDs and timestamps.
+""".strip()
+
+research_agent = Agent(
+    name='research_agent',
+    instructions=research_instructions,
+    model='openai:gpt-4o-mini',
+    tools=[search_videos, get_subtitles_by_id]
+)
+
+result = await research_agent.run(
+    user_prompt='how do I get rich with AI?',
+    event_stream_handler=research_agent_callback
+)
+
+print(result.output)
+```
+
+This still doens't create great results. let's use something more comprehensive 
+
+For comprehensive research with structured exploration, use more detailed instructions:
+
+```python
+research_instructions = """
+You are an autonomous research agent. Your goal is to perform deep, multi-stage research on the
+given topic using the available search function.
+
+Research process:
+
+Stage 1: Initial Exploration  
+- Using your own knowledge of the topic, perform 3-5 broad search queries to understand the main topic
+  and identify related areas. Only use search function.
+- After the initial search exploration, summarize key concepts, definitions, and major themes.
+
+Stage 2: Deep Investigation 
+- Perform 5-6 refined queries focusing on depth.
+- Inspect relevant documents for specific mechanisms, case studies, and technical details.
+- Gather diverse viewpoints and data to strengthen depth and accuracy.
+
+Rules:
+1. Search queries:
+   - Do not include years unless explicitly requested by the user.
+   - Use timeless, concept-based queries (e.g., "AI investment trends" not "AI trends 2024").
+
+2. The article must contain:
+   - A clear, descriptive title.
+   - An introduction with 2-3 paragraphs (each 4-6 sentences).
+   - At least 10 sections, each focused on a distinct subtopic.
+   - Each section must have at least 4 paragraphs, preferably 5-6.
+
+3. Each paragraph must have at least one reference object containing:
+   - video_id (YouTube video ID)
+   - timestamp ("mm:ss" or "h:mm:ss")
+   - quote (a short excerpt from that video segment)
+
+4. Evidence quality:
+   - All claims must be traceable to real YouTube sources.
+   - References must correspond to valid video_id and timestamp pairs.
+   - Do not fabricate data or sources.
+
+5. Tone and style:
+   - Write in a professional, neutral, analytical tone.
+   - Emphasize explanation, synthesis, and comparison.
+
+6. Output format: Markdown
+""".strip()
+```
+
+### Managing Context with Summarization
+
+When dealing with long transcripts, we exceed context window. But we can summarize the transcripts. 
+
+Let's create a summarizing agent:
+
+```python
+summarization_instructions = """
+Your task is to summarize the provided YouTube transcript for a specific topic.
+
+Select the parts of the transcripts that are relevant for the topic and search queries.
+
+Format: 
+paragraph with discussion (timestamp)
+""".strip()
+
+summarization_agent = Agent(
+    name='summarization',
+    instructions=summarization_instructions,
+    model='openai:gpt-4o-mini'
+)
+```
+
+You can use it directly to test:
+
+```python
+user_query = 'how do I get rich with AI?'
+search_queries = [
+    "investment opportunities in AI",
+    "starting AI-focused businesses",
+    "AI applications in wealth generation"
+]
+
+subtitles = get_subtitles_by_id('1aMuynlLM3o')['subtitles']
+
+prompt = f"""
+user query:
+{user_query}
+
+search engine queries: 
+{'\n'.join(search_queries)}
+
+subtitles:
+{subtitles}
+""".strip()
+
+summary_result = await summarization_agent.run(prompt)
+print(summary_result.output)
+```
+
+### Making it a tool
+
+To make summarization available as a tool for the research agent, create a dynamic function that uses conversation context:
+
+```python
+from pydantic_ai import RunContext
+import textwrap
+import json
+
+async def summarize(ctx: RunContext, video_id: str) -> str:
+    """
+    Generate a summary for a video based on the conversation history,
+    search queries, and the video's subtitles.
+    """
+    user_queries = []
+    search_queries = []
+    
+    # Extract context from conversation history
+    for m in ctx.messages:
+        for p in m.parts:
+            kind = p.part_kind
+            if kind == 'user-prompt':
+                user_queries.append(p.content)
+            if kind == 'tool-call':
+                if p.tool_name == 'search_videos':
+                    args = json.loads(p.args)
+                    query = args['query']
+                    search_queries.append(query)
+    
+    # Get full subtitles
+    subtitles = get_subtitles_by_id(video_id)['subtitles']
+    
+    # Build contextual prompt
+    prompt = textwrap.dedent(f"""
+        user query:
+        {'\n'.join(user_queries)}
+        
+        search engine queries: 
+        {'\n'.join(search_queries)}
+        
+        subtitles:
+        {subtitles}
+    """).strip()
+    
+    summary_result = await summarization_agent.run(prompt) 
+    return summary_result.output
+
+# Update research agent with summarization tool
+research_agent = Agent(
+    name='research_agent',
+    instructions=research_instructions,
+    model='openai:gpt-4o-mini',
+    tools=[search_videos, summarize]  # Replace get_subtitles_by_id with summarize
+)
+
+result = await research_agent.run(
+    user_prompt='how do I get rich with AI?',
+    event_stream_handler=research_agent_callback
+)
+
+print(result.output)
+```
+
+This approach allows the agent to:
+1. Search for relevant videos
+2. Summarize only the relevant parts of long transcripts
+3. Stay within context limits while accessing detailed information
+4. Conduct multi-stage research with proper citations
+
+## Making Agent Durable
 
 
 
