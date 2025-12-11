@@ -12,7 +12,13 @@ from activities import (
     process_video,
     setup_proxy,
 )
+from index_activities import (
+    create_index,
+    get_transcript_files,
+    index_document,
+)
 from workflow import PodcastTranscriptWorkflow
+from index_workflow import IndexTranscriptsWorkflow
 
 
 async def main():
@@ -27,12 +33,15 @@ async def main():
     worker = Worker(
         client,
         task_queue="podcast-transcript-queue",
-        workflows=[PodcastTranscriptWorkflow],
+        workflows=[PodcastTranscriptWorkflow, IndexTranscriptsWorkflow],
         activities=[
             setup_proxy,
             fetch_podcast_episodes,
             fetch_videos,
             process_video,
+            create_index,
+            get_transcript_files,
+            index_document,
         ],
     )
     

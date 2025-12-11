@@ -216,7 +216,32 @@ for video in tqdm(videos):
 
 ## Using Proxies
 
+
 At some point you encounter rate limiting. We fix it by using a proxy
+
+I have a proxy that I will use. Let's configure it. 
+
+create `.env` file:
+
+```bash
+PROXY_BASE_URL=...
+PROXY_USER=...
+PROXY_PASSWORD=...
+```
+
+create `.gitignore` with `.env`
+
+use `dirdotenv` to automatically load these variables
+
+Stop jupyter 
+
+```bash
+echo 'eval "$(uvx dirdotenv hook bash)"' >> .bashrc
+source .bashrc
+```
+
+Start again and let's add proxies:
+
 
 ```python
 import os
@@ -261,14 +286,6 @@ Run the script:
 uv run python workflow.py
 ```
 
-If you need to use a proxy, set the environment variables first:
-
-```bash
-export PROXY_USER="your_user"
-export PROXY_PASSWORD="your_password"
-export PROXY_BASE_URL="proxy.example.com:8080"
-uv run python workflow.py
-```
 
 The script will:
 1. Fetch the list of podcast videos from DataTalks.Club
@@ -304,20 +321,24 @@ Temporal.io solves these problems by providing:
 **For Linux:**
 
 ```bash
+# Create a dir for executables
+echo 'PATH="${PATH}:~/bin"' >> ~/.bashrc
+source ~/.bashrc
+
+
 # Download the Temporal CLI
 wget 'https://temporal.download/cli/archive/latest?platform=linux&arch=amd64' -O temporal.tar.gz
 
 # Extract
 tar -xzf temporal.tar.gz
 
-# Move to a directory in your PATH (e.g., ~/bin or /usr/local/bin)
+# Move to ~/bin
 mv temporal ~/bin/
 rm temporal.tar.gz LICENSE
 
 # Make it executable
 chmod +x ~/bin/temporal
 ```
-
 
 **Verify installation:**
 
@@ -326,6 +347,7 @@ temporal -v
 ```
 
 You should see output like:
+
 ```
 temporal version 1.5.1 (Server 1.29.1, UI 2.42.1)
 ```
@@ -510,21 +532,304 @@ Install the Elasticsearch Python client:
 uv add elasticsearch
 ```
 
-TODO add code from elastic.py
+### Setting Up the Index
 
+Connect to Elasticsearch:
+
+```python
+from elasticsearch import Elasticsearch
+
+es = Elasticsearch("http://localhost:9200")
+```
+
+Create an index with custom analyzers for better search. We'll use English stemming and stopword removal:
+
+```python
+stopwords = [
+    "a","about","above","after","again","against","all","am","an","and","any",
+    "are","aren","aren't","as","at","be","because","been","before","being",
+    "below","between","both","but","by","can","can","can't","cannot","could",
+    "couldn't","did","didn't","do","does","doesn't","doing","don't","down",
+    "during","each","few","for","from","further","had","hadn't","has","hasn't",
+    "have","haven't","having","he","he'd","he'll","he's","her","here","here's",
+    "hers","herself","him","himself","his","how","how's","i","i'd","i'll",
+    "i'm","i've","if","in","into","is","isn't","it","it's","its","itself",
+    "let's","me","more","most","mustn't","my","myself","no","nor","not","of",
+    "off","on","once","only","or","other","ought","our","ours","ourselves",
+    "out","over","own","same","shan't","she","she'd","she'll","she's","should",
+    "shouldn't","so","some","such","than","that","that's","the","their",
+    "theirs","them","themselves","then","there","there's","these","they",
+    "they'd","they'll","they're","they've","this","those","through","to",
+    "too","under","until","up","very","was","wasn't","we","we'd","we'll",
+    "we're","we've","were","weren't","what","what's","when","when's","where",
+    "where's","which","while","who","who's","whom","why","why's","with",
+    "won't","would","wouldn't","you","you'd","you'll","you're","you've",
+    "your","yours","yourself","yourselves",
+    "get"
+]
+
+index_settings = {
+    "settings": {
+        "analysis": {
+            "filter": {
+                "english_stop": {
+                    "type": "stop",
+                    "stopwords": stopwords
+                },
+                "english_stemmer": {
+                    "type": "stemmer",
+                    "language": "english"
+                },
+                "english_possessive_stemmer": {
+                    "type": "stemmer",
+                    "language": "possessive_english"
+                }
+            },
+            "analyzer": {
+                "english_with_stop_and_stem": {
+                    "type": "custom",
+                    "tokenizer": "standard",
+                    "filter": [
+                        "lowercase",
+                        "english_possessive_stemmer",
+                        "english_stop",
+                        "english_stemmer"
+                    ]
+                }
+            }
+        }
+    },
+    "mappings": {
+        "properties": {
+            "title": {
+                "type": "text",
+                "analyzer": "english_with_stop_and_stem",
+                "search_analyzer": "english_with_stop_and_stem"
+            },
+            "subtitles": {
+                "type": "text",
+                "analyzer": "english_with_stop_and_stem",
+                "search_analyzer": "english_with_stop_and_stem"
+            }
+        }
+    }
+}
+```
+
+Create the index:
+
+```python
+es.indices.create(index="podcasts", body=index_settings)
+```
+
+### Indexing Documents
+
+Read all transcript files and index them:
+
+```python
+from pathlib import Path
+from tqdm.auto import tqdm
+
+data = Path('data/')
+files = sorted(data.glob('*.txt'))
+
+def read_doc(subtitle_file):
+    raw_text = subtitle_file.read_text(encoding='utf8')
+    lines = raw_text.split('\n')
+    
+    video_title = lines[0]
+    subtitles = '\n'.join(lines[2:]).strip()
+    video_id = subtitle_file.stem
+    
+    return {
+        "video_id": video_id,
+        "title": video_title,
+        "subtitles": subtitles
+    }
+
+# Index all files
+for subtitle_file in tqdm(files):
+    doc = read_doc(subtitle_file)
+    es.index(index="podcasts", id=doc['video_id'], document=doc)
+```
+
+### Searching
+
+Create a search function with highlighting:
+
+```python
+def search_videos(query: str, size: int=5):
+    """
+    Search over both `title` and `subtitles`,
+    boosting `title` 3x for higher relevance.
+    Uses stemming + stopword removal.
+    """
+    body = {
+        "size": size,
+        "query": {
+            "multi_match": {
+                "query": query,
+                "fields": ["title^3", "subtitles"],
+                "type": "best_fields",
+                "analyzer": "english_with_stop_and_stem"
+            }
+        },
+        "highlight": {
+            "pre_tags": ["*"],
+            "post_tags": ["*"],
+            "fields": {
+                "title": {
+                    "fragment_size": 150,
+                    "number_of_fragments": 1
+                },
+                "subtitles": {
+                    "fragment_size": 150,
+                    "number_of_fragments": 1
+                }
+            }
+        }
+    }
+    
+    response = es.search(index="podcasts", body=body)
+    hits = response.body['hits']['hits']
+    
+    results = []
+    for hit in hits:
+        highlight = hit['highlight']
+        highlight['video_id'] = hit['_id']
+        results.append(highlight)
+    
+    return results
+
+# Example search
+result = search_videos('how do I get rich with ai')
+```
+
+Get full subtitles by video ID:
+
+```python
+def get_subtitles_by_id(video_id):
+    result = es.get(index="podcasts", id=video_id)
+    return result['_source']
+```
 
 ## Turning Indexing into Temporal.io Flow
 
-Turn this code into Temporal activities:
+Now let's implement the indexing process as a Temporal workflow for better reliability, error handling, and observability.
 
-TODO
+### Implementation Files
 
-### Create Indexing Workflow
+We've created three new files in the `flow/` directory:
 
-Create a new workflow in `flow/index_workflow.py`:
+**1. `index_activities.py`** - Contains Elasticsearch activities:
+
+- `create_index()`: Creates the Elasticsearch index with custom analyzers
+  - Supports recreating the index if it already exists
+  - Uses the same index settings with stemming and stopwords
+  
+- `index_document()`: Indexes a single transcript file
+  - Reads and parses the transcript file
+  - Indexes it into Elasticsearch with the video ID as the document ID
+  
+- `get_transcript_files()`: Scans the data directory for transcript files
+  - Returns a list of file paths to index
+
+**2. `index_workflow.py`** - Defines the `IndexTranscriptsWorkflow`:
+
+```python
+@workflow.defn
+class IndexTranscriptsWorkflow:
+    @workflow.run
+    async def run(
+        self, 
+        data_dir: str = "data",
+        es_url: str = "http://localhost:9200",
+        recreate_index: bool = False,
+        max_concurrent: int = 5
+    ) -> dict:
+```
+
+The workflow:
+1. Creates the Elasticsearch index (or uses existing one)
+2. Gets the list of all transcript files
+3. Indexes each file sequentially with retry logic
+4. Returns summary of successful and failed indexing operations
+
+All activities use retry policies with exponential backoff (3 attempts, 1-10 second intervals).
+
+**3. `run_index_workflow.py`** - Client script to execute the workflow
+
+**4. `worker.py`** - Updated to include the new indexing workflow and activities
+
+### Running the Indexing Workflow
+
+Make sure Elasticsearch is running (see Docker command earlier in this document).
+
+**Terminal 1 - Temporal Server** (if not already running):
+```bash
+temporal server start-dev
+```
+
+**Terminal 2 - Start the Worker:**
+
+The worker has been updated to include both transcript downloading and indexing workflows:
+
+```bash
+cd flow
+uv run python worker.py
+```
+
+**Terminal 3 - Execute the Indexing Workflow:**
+
+```bash
+cd flow
+uv run python run_index_workflow.py
+```
+
+The indexing workflow will:
+1. Connect to Elasticsearch at `http://localhost:9200`
+2. Create the `podcasts` index with custom analyzers
+3. Scan the `data/` directory for transcript files
+4. Index each transcript with retry logic
+5. Display results showing total files, successful, and failed indexing
+
+You can monitor the workflow execution in the Temporal Web UI at `http://localhost:8233`.
+
+### Configuration Options
+
+You can modify the configuration in `run_index_workflow.py`:
+
+```python
+data_dir = "data"              # Directory containing transcript files
+es_url = "http://localhost:9200"  # Elasticsearch URL
+recreate_index = False         # Set to True to recreate the index
+```
+
+Set `recreate_index = True` if you want to delete and recreate the index with fresh data.
+
+## Agent
+
+mkdir agent
+cd agent
+
+uv init
+uv add pydantic-ai openai elasticsearch python-dotenv
+uv add --dev jupyter
+
+add `OPENAI_API_KEY` to `.env`
+
+```
+OPENAI_API_KEY='your-key'
+```
+
+start jupoyter 
+
+uv run jupyter notebook
+
+creae a new notebook agent.ipynb
 
 
-Run the indexing workflow similarly to the transcript workflow - start the worker with the new workflow and activities, then execute it with a client script.
+
 
 
 ## Additional Resources
