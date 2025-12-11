@@ -90,46 +90,257 @@ def make_subtitles(transcript) -> str:
         lines.append(ts + ' ' + text)
 
     return '\n'.join(lines)
+
+# Example: Process the transcript
+subtitles = make_subtitles(transcript)
+print(subtitles[:500])  # Print first 500 characters
 ```
 
-## Storing Transcripts
+<details>
+<summary><b>Alternative: Fetching pre-processed transcripts from GitHub</b></summary>
 
-Create a structured way to handle subtitles:
+If you don't want to deal with YouTube API rate limits and proxies, we've pre-processed all the transcripts and made them available on GitHub.
+
+Install requests library:
+
+```bash
+uv add requests
+```
+
+Fetch a transcript:
 
 ```python
-from pathlib import Path
-from dataclasses import dataclass
+import requests
 
-@dataclass
-class Subtitles:
-    video_id: str
-    video_title: str
-    subtitles: str
+video_id = '-Gj7SaI-QW4'
+url_prefix = 'https://raw.githubusercontent.com/alexeygrigorev/workshops/refs/heads/main/temporal.io/data'
+url = f'{url_prefix}/{video_id}.txt'
 
-    def write_file(self, subtitles_file: Path):    
-        with subtitles_file.open('wt', encoding='utf-8') as f_out:
-            f_out.write(self.video_title)
-            f_out.write('\n\n')
-            f_out.write(self.subtitles)
+raw_text = requests.get(url).content.decode('utf8')
+
+# Parse the transcript file
+lines = raw_text.split('\n')
+
+video_title = lines[0]
+subtitles = '\n'.join(lines[2:]).strip()
+
+doc = {
+    "video_id": video_id,
+    "title": video_title,
+    "subtitles": subtitles
+}
 ```
 
-Now let's save a transcript to file:
-# Setup data directory
-data_root = Path('data')
-data_root.mkdir(exist_ok=True)
+**Note**: If you use this approach, adjust the workflow functions below to fetch from GitHub instead of YouTube API.
 
-# Create and save subtitles
-s = Subtitles(
-    video_id=video_id,
-    video_title="Your Video Title",
-    subtitles=subtitles
-)
+</details>
+<br>
 
-subtitles_file = data_root / f"{s.video_id}.txt"
-s.write_file(subtitles_file)
+## Setting Up Elasticsearch
+
+Now let's store transcripts in Elasticsearch.
+
+Run Elasticsearch in Docker:
+
+```bash
+docker run -it \
+  --rm \
+  --name elasticsearch \
+  -m 4GB \
+  -p 9200:9200 \
+  -p 9300:9300 \
+  -e "discovery.type=single-node" \
+  -e "xpack.security.enabled=false" \
+  docker.elastic.co/elasticsearch/elasticsearch:9.2.0
+```
+
+Verify it's running:
+
+```bash
+curl http://localhost:9200
+```
+
+Install the Elasticsearch Python client:
+
+```bash
+uv add elasticsearch
+```
+
+### Creating the Index
+
+Connect to Elasticsearch and create an index with custom analyzers for better search:
+
+```python
+from elasticsearch import Elasticsearch
+
+es = Elasticsearch("http://localhost:9200")
+
+# Define stopwords for English
+stopwords = [
+    "a","about","above","after","again","against","all","am","an","and","any",
+    "are","aren","aren't","as","at","be","because","been","before","being",
+    "below","between","both","but","by","can","can","can't","cannot","could",
+    "couldn't","did","didn't","do","does","doesn't","doing","don't","down",
+    "during","each","few","for","from","further","had","hadn't","has","hasn't",
+    "have","haven't","having","he","he'd","he'll","he's","her","here","here's",
+    "hers","herself","him","himself","his","how","how's","i","i'd","i'll",
+    "i'm","i've","if","in","into","is","isn't","it","it's","its","itself",
+    "let's","me","more","most","mustn't","my","myself","no","nor","not","of",
+    "off","on","once","only","or","other","ought","our","ours","ourselves",
+    "out","over","own","same","shan't","she","she'd","she'll","she's","should",
+    "shouldn't","so","some","such","than","that","that's","the","their",
+    "theirs","them","themselves","then","there","there's","these","they",
+    "they'd","they'll","they're","they've","this","those","through","to",
+    "too","under","until","up","very","was","wasn't","we","we'd","we'll",
+    "we're","we've","were","weren't","what","what's","when","when's","where",
+    "where's","which","while","who","who's","whom","why","why's","with",
+    "won't","would","wouldn't","you","you'd","you'll","you're","you've",
+    "your","yours","yourself","yourselves",
+    "get"
+]
+
+index_settings = {
+    "settings": {
+        "analysis": {
+            "filter": {
+                "english_stop": {
+                    "type": "stop",
+                    "stopwords": stopwords
+                },
+                "english_stemmer": {
+                    "type": "stemmer",
+                    "language": "english"
+                },
+                "english_possessive_stemmer": {
+                    "type": "stemmer",
+                    "language": "possessive_english"
+                }
+            },
+            "analyzer": {
+                "english_with_stop_and_stem": {
+                    "type": "custom",
+                    "tokenizer": "standard",
+                    "filter": [
+                        "lowercase",
+                        "english_possessive_stemmer",
+                        "english_stop",
+                        "english_stemmer"
+                    ]
+                }
+            }
+        }
+    },
+    "mappings": {
+        "properties": {
+            "title": {
+                "type": "text",
+                "analyzer": "english_with_stop_and_stem",
+                "search_analyzer": "english_with_stop_and_stem"
+            },
+            "subtitles": {
+                "type": "text",
+                "analyzer": "english_with_stop_and_stem",
+                "search_analyzer": "english_with_stop_and_stem"
+            }
+        }
+    }
+}
+
+# Create the index
+index_name = "podcasts"
+
+if es.indices.exists(index=index_name):
+    es.indices.delete(index=index_name)
+    
+es.indices.create(index=index_name, body=index_settings)
+print(f"Index '{index_name}' created successfully")
+```
+
+## Indexing Our First Document
+
+Now let's index the transcript we downloaded:
+
+```python
+# Prepare the document
+doc = {
+    "video_id": video_id,
+    "title": "Your Video Title Here",  # You can fetch this from YouTube API
+    "subtitles": subtitles
+}
+
+# Index the document (use video_id as the document ID)
+es.index(index="podcasts", id=video_id, document=doc)
+print(f"Indexed video: {video_id}")
+```
+
+## Checking if a Document Exists
+
+Before indexing, we should check if the video is already in Elasticsearch:
+
+```python
+if es.exists(index="podcasts", id=video_id):
+    print(f"Video {video_id} already indexed, skipping...")
+else:
+    print(f"Video {video_id} not found, indexing...")
+    es.index(index="podcasts", id=video_id, document=doc)
+```
+
+## Testing Search
+
+Let's verify our document is searchable:
+
+```python
+def search_videos(query: str, size: int = 5):
+    """Search for videos by title or subtitle content."""
+    body = {
+        "size": size,
+        "query": {
+            "multi_match": {
+                "query": query,
+                "fields": ["title^3", "subtitles"],
+                "type": "best_fields",
+                "analyzer": "english_with_stop_and_stem"
+            }
+        },
+        "highlight": {
+            "pre_tags": ["*"],
+            "post_tags": ["*"],
+            "fields": {
+                "title": {
+                    "fragment_size": 150,
+                    "number_of_fragments": 1
+                },
+                "subtitles": {
+                    "fragment_size": 150,
+                    "number_of_fragments": 1
+                }
+            }
+        }
+    }
+    
+    response = es.search(index="podcasts", body=body)
+    hits = response.body['hits']['hits']
+    
+    results = []
+    for hit in hits:
+        highlight = hit['highlight']
+        highlight['video_id'] = hit['_id']
+        results.append(highlight)
+
+    return results
+
+# Test search
+results = search_videos("machine learning")
+for result in results:
+    print(f"Video ID: {result['video_id']}")
+    print(f"Title: {result['title'][0]}")
+    print(f"Snippet: {result['subtitles'][0]}")
+    print()
 ```
 
 ## Processing Multiple Videos
+
+Now let's scale up to process all podcast videos from DataTalks.Club.
 
 Install the required libraries for fetching video metadata:
 
@@ -150,10 +361,11 @@ events_data = yaml.load(raw_yaml, yaml.CSafeLoader)
 
 # Filter for podcasts with YouTube links
 podcasts = [d for d in events_data if (d.get('type') == 'podcast') and (d.get('youtube'))]
+
+print(f"Found {len(podcasts)} podcasts")
 ```
 
 Extract video IDs from the podcast data:
-
 
 ```python
 videos = []
@@ -169,6 +381,8 @@ for podcast in podcasts:
         'title': podcast['title'],
         'video_id': video_id
     })
+
+print(f"Will process {len(videos)} videos")
 ```
 
 Install tqdm for progress tracking:
@@ -177,51 +391,74 @@ Install tqdm for progress tracking:
 uv add tqdm
 ```
 
-Create a workflow that:
+Create a workflow function that:
 
-1. Checks if transcript already exists
-2. Fetches transcript if needed
-3. Formats and saves it
+1. Checks if the video is already indexed in Elasticsearch
+2. If not, fetches the transcript from YouTube
+3. Formats it and indexes it to Elasticsearch
 
 ```python
 from tqdm.auto import tqdm
 
-def workflow(video_id, video_name):
-    subtitles_file = data_root / f"{video_id}.txt"
+def workflow(video_id, video_title) -> bool:
+    """Process a single video: fetch transcript and index to Elasticsearch."""
     
-    # Skip if already processed
-    if subtitles_file.exists():
-        return subtitles_file
+    # Check if already indexed
+    # TODO: don't use document_exists, use es.exists 
+    if document_exists(es, "podcasts", video_id):
+        return False
 
-    # Fetch and process
+    # Fetch and process transcript from YouTube
     transcript = fetch_transcript(video_id)
     subtitles = make_subtitles(transcript)
 
-    # Save
-    s = Subtitles(
-        video_id=video_id,
-        video_title=video_name,
-        subtitles=subtitles
-    )
-    s.write_file(subtitles_file)
+    # Prepare document
+    doc = {
+        "video_id": video_id,
+        "title": video_title,
+        "subtitles": subtitles
+    }
     
-    return subtitles_file
+    # Index to Elasticsearch
+    es.index(index="podcasts", id=video_id, document=doc)
+    
+    return True
+```
 
-# Process all videos with progress bar
+Let's now process all the videos:
+
+```python
+indexed = 0
+skipped = 0
+errors = 0
+
 for video in tqdm(videos):
     video_id = video['video_id']
-    video_name = video['title']
-    workflow(video_id, video_name)
+    video_title = video['title']
+    
+    try:
+        result = workflow(video_id, video_title)
+        if result == "indexed":
+            indexed += 1
+        else:
+            skipped += 1
+    except Exception as e:
+        errors += 1
+        print(f"Error processing {video_id}: {e}")
+
+print(f"\nProcessing complete:")
+print(f"  Indexed: {indexed}")
+print(f"  Skipped: {skipped}")
+print(f"  Errors: {errors}")
 ```
 
 ## Using Proxies
 
+At some point we will encounter rate limiting from YouTube.
 
-At some point you encounter rate limiting. We fix it by using a proxy
+We fix this by using a proxy.
 
-I have a proxy that I will use. Let's configure it. 
-
-create `.env` file:
+Create a `.env` file with your proxy credentials:
 
 ```bash
 PROXY_BASE_URL=...
@@ -229,19 +466,20 @@ PROXY_USER=...
 PROXY_PASSWORD=...
 ```
 
-create `.gitignore` with `.env`
+Create `.gitignore` to exclude `.env`:
 
-use `dirdotenv` to automatically load these variables
+```bash
+echo '.env' >> .gitignore
+```
 
-Stop jupyter 
+Stop Jupyter. Use `dirdotenv` to load the variables from the `.env` file:
 
 ```bash
 echo 'eval "$(uvx dirdotenv hook bash)"' >> .bashrc
 source .bashrc
 ```
 
-Start again and let's add proxies:
-
+Update your fetch function to use proxy:
 
 ```python
 import os
@@ -266,35 +504,14 @@ def fetch_transcript(video_id):
     return transcript
 ```
 
-But even with proxies we have problems:
+Even with proxies, we can still face challenges:
 
-- sometimes our requests are still blocked by IP
-- sometimes we get SSL errors (`SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number (_ssl.c:2648)`)
-- other problems 
+- Requests can be blocked by IP
+- SSL errors (`SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number`)
+- Network timeouts
+- Rate limiting
 
-So we need to have a reliable way of retrying it.
-
-First, we put everything in a single script, and then automate this script with Temporal.io.
-
-## Creating a workflow script 
-
-Let's put everything in a Python script `workflow.py` (created from `youtube.py`)
-
-Run the script:
-
-```bash
-uv run python workflow.py
-```
-
-
-The script will:
-1. Fetch the list of podcast videos from DataTalks.Club
-2. For each video, check if transcript already exists
-3. Download and process transcripts
-4. Save them to the `data/` directory
-5. Show progress with a progress bar
-6. Handle errors gracefully and continue with other videos
-
+This is where Temporal.io becomes valuable - it provides reliable retry logic and durable execution.
 
 ## Temporal.io
 
@@ -500,222 +717,16 @@ result = await workflow.execute_activity(
 )
 ```
 
-## Ingesting Data to Elasticsearch
+## Advanced: Indexing with Temporal Workflows
 
-After downloading the transcripts, you can create another Temporal workflow to index them in Elasticsearch for full-text search.
+Now that we have the basic workflow working with Elasticsearch, let's make it more robust using Temporal workflows for the indexing process.
 
+### Why Use Temporal for Indexing?
 
-Run Elasticsearch in Docker:
-
-```bash
-docker run -it \
-  --rm \
-  --name elasticsearch \
-  -m 4GB \
-  -p 9200:9200 \
-  -p 9300:9300 \
-  -e "discovery.type=single-node" \
-  -e "xpack.security.enabled=false" \
-  -v es-data9:/usr/share/elasticsearch/data \
-  docker.elastic.co/elasticsearch/elasticsearch:9.2.0
-```
-
-Verify it's running:
-
-```bash
-curl http://localhost:9200
-```
-
-Install the Elasticsearch Python client:
-
-```bash
-uv add elasticsearch
-```
-
-### Setting Up the Index
-
-Connect to Elasticsearch:
-
-```python
-from elasticsearch import Elasticsearch
-
-es = Elasticsearch("http://localhost:9200")
-```
-
-Create an index with custom analyzers for better search. We'll use English stemming and stopword removal:
-
-```python
-stopwords = [
-    "a","about","above","after","again","against","all","am","an","and","any",
-    "are","aren","aren't","as","at","be","because","been","before","being",
-    "below","between","both","but","by","can","can","can't","cannot","could",
-    "couldn't","did","didn't","do","does","doesn't","doing","don't","down",
-    "during","each","few","for","from","further","had","hadn't","has","hasn't",
-    "have","haven't","having","he","he'd","he'll","he's","her","here","here's",
-    "hers","herself","him","himself","his","how","how's","i","i'd","i'll",
-    "i'm","i've","if","in","into","is","isn't","it","it's","its","itself",
-    "let's","me","more","most","mustn't","my","myself","no","nor","not","of",
-    "off","on","once","only","or","other","ought","our","ours","ourselves",
-    "out","over","own","same","shan't","she","she'd","she'll","she's","should",
-    "shouldn't","so","some","such","than","that","that's","the","their",
-    "theirs","them","themselves","then","there","there's","these","they",
-    "they'd","they'll","they're","they've","this","those","through","to",
-    "too","under","until","up","very","was","wasn't","we","we'd","we'll",
-    "we're","we've","were","weren't","what","what's","when","when's","where",
-    "where's","which","while","who","who's","whom","why","why's","with",
-    "won't","would","wouldn't","you","you'd","you'll","you're","you've",
-    "your","yours","yourself","yourselves",
-    "get"
-]
-
-index_settings = {
-    "settings": {
-        "analysis": {
-            "filter": {
-                "english_stop": {
-                    "type": "stop",
-                    "stopwords": stopwords
-                },
-                "english_stemmer": {
-                    "type": "stemmer",
-                    "language": "english"
-                },
-                "english_possessive_stemmer": {
-                    "type": "stemmer",
-                    "language": "possessive_english"
-                }
-            },
-            "analyzer": {
-                "english_with_stop_and_stem": {
-                    "type": "custom",
-                    "tokenizer": "standard",
-                    "filter": [
-                        "lowercase",
-                        "english_possessive_stemmer",
-                        "english_stop",
-                        "english_stemmer"
-                    ]
-                }
-            }
-        }
-    },
-    "mappings": {
-        "properties": {
-            "title": {
-                "type": "text",
-                "analyzer": "english_with_stop_and_stem",
-                "search_analyzer": "english_with_stop_and_stem"
-            },
-            "subtitles": {
-                "type": "text",
-                "analyzer": "english_with_stop_and_stem",
-                "search_analyzer": "english_with_stop_and_stem"
-            }
-        }
-    }
-}
-```
-
-Create the index:
-
-```python
-es.indices.create(index="podcasts", body=index_settings)
-```
-
-### Indexing Documents
-
-Read all transcript files and index them:
-
-```python
-from pathlib import Path
-from tqdm.auto import tqdm
-
-data = Path('data/')
-files = sorted(data.glob('*.txt'))
-
-def read_doc(subtitle_file):
-    raw_text = subtitle_file.read_text(encoding='utf8')
-    lines = raw_text.split('\n')
-    
-    video_title = lines[0]
-    subtitles = '\n'.join(lines[2:]).strip()
-    video_id = subtitle_file.stem
-    
-    return {
-        "video_id": video_id,
-        "title": video_title,
-        "subtitles": subtitles
-    }
-
-# Index all files
-for subtitle_file in tqdm(files):
-    doc = read_doc(subtitle_file)
-    es.index(index="podcasts", id=doc['video_id'], document=doc)
-```
-
-### Searching
-
-Create a search function with highlighting:
-
-```python
-def search_videos(query: str, size: int=5):
-    """
-    Search over both `title` and `subtitles`,
-    boosting `title` 3x for higher relevance.
-    Uses stemming + stopword removal.
-    """
-    body = {
-        "size": size,
-        "query": {
-            "multi_match": {
-                "query": query,
-                "fields": ["title^3", "subtitles"],
-                "type": "best_fields",
-                "analyzer": "english_with_stop_and_stem"
-            }
-        },
-        "highlight": {
-            "pre_tags": ["*"],
-            "post_tags": ["*"],
-            "fields": {
-                "title": {
-                    "fragment_size": 150,
-                    "number_of_fragments": 1
-                },
-                "subtitles": {
-                    "fragment_size": 150,
-                    "number_of_fragments": 1
-                }
-            }
-        }
-    }
-    
-    response = es.search(index="podcasts", body=body)
-    hits = response.body['hits']['hits']
-    
-    results = []
-    for hit in hits:
-        highlight = hit['highlight']
-        highlight['video_id'] = hit['_id']
-        results.append(highlight)
-    
-    return results
-
-# Example search
-result = search_videos('how do I get rich with ai')
-```
-
-Get full subtitles by video ID:
-
-```python
-def get_subtitles_by_id(video_id):
-    result = es.get(index="podcasts", id=video_id)
-    return result['_source']
-```
-
-## Turning Indexing into Temporal.io Flow
-
-Now let's implement the indexing process as a Temporal workflow for better reliability, error handling, and observability.
+- **Reliability**: Automatic retries if indexing fails
+- **Observability**: Track which videos were successfully indexed
+- **Scalability**: Process videos concurrently
+- **Resume**: Can continue from where it stopped if interrupted
 
 ### Implementation Files
 
