@@ -10,6 +10,7 @@ from activities import (
     fetch_podcast_episodes,
     fetch_videos,
     process_video,
+    setup_elasticsearch,
     setup_proxy,
 )
 from index_activities import (
@@ -35,6 +36,7 @@ async def main():
         task_queue="podcast-transcript-queue",
         workflows=[PodcastTranscriptWorkflow, IndexTranscriptsWorkflow],
         activities=[
+            setup_elasticsearch,
             setup_proxy,
             fetch_podcast_episodes,
             fetch_videos,

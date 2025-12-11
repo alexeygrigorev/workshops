@@ -12,6 +12,7 @@ with workflow.unsafe.imports_passed_through():
         fetch_podcast_episodes,
         fetch_videos,
         process_video,
+        setup_elasticsearch,
         setup_proxy,
     )
 
@@ -21,13 +22,14 @@ class PodcastTranscriptWorkflow:
     """Workflow to process podcast transcripts from YouTube"""
 
     @workflow.run
-    async def run(self, commit_id: str, max_concurrent: int = 10) -> dict:
+    async def run(self, commit_id: str, max_concurrent: int = 10, recreate_index: bool = False) -> dict:
         """
         Main workflow execution
         
         Args:
             commit_id: GitHub commit ID to fetch podcast episodes from
             max_concurrent: Maximum number of videos to process concurrently (default: 10)
+            recreate_index: Whether to recreate the Elasticsearch index (default: False)
             
         Returns:
             Dictionary with processing results
@@ -38,6 +40,15 @@ class PodcastTranscriptWorkflow:
             maximum_interval=timedelta(seconds=30),
             maximum_attempts=3,
             backoff_coefficient=2.0,
+        )
+        
+        # Setup Elasticsearch index
+        workflow.logger.info("Setting up Elasticsearch index...")
+        await workflow.execute_activity(
+            setup_elasticsearch,
+            recreate_index,
+            start_to_close_timeout=timedelta(seconds=30),
+            retry_policy=retry_policy,
         )
         
         use_proxy = await workflow.execute_activity(

@@ -570,21 +570,24 @@ temporal version 1.5.1 (Server 1.29.1, UI 2.42.1)
 ```
 
 
-## Dowloading YouTube Transcripts with Temporal.io 
+## Downloading YouTube Transcripts with Temporal.io 
 
-The `flow/` directory contains the complete Temporal.io implementation:
+The `flow/` directory contains the complete Temporal.io implementation that fetches transcripts from YouTube and indexes them directly to Elasticsearch:
 
 - **`workflow.py`**: Defines the `PodcastTranscriptWorkflow` class that orchestrates the entire process
+  - Sets up the Elasticsearch index with custom analyzers
   - Fetches podcast episodes from DataTalks.Club GitHub repo
   - Extracts video IDs and metadata
   - Processes each video transcript with retry logic
+  - Indexes transcripts directly to Elasticsearch (skipping file storage)
   - Returns summary of successful and failed operations
 
 - **`activities.py`**: Contains all the activity functions:
+  - `setup_elasticsearch()`: Creates the Elasticsearch index with custom analyzers
   - `setup_proxy()`: Checks if proxy configuration is available
   - `fetch_podcast_episodes()`: Fetches podcast list from GitHub
   - `fetch_videos()`: Extracts video IDs from podcast data
-  - `process_video()`: Downloads and saves individual transcripts
+  - `process_video()`: Downloads transcripts from YouTube and indexes directly to Elasticsearch
 
 - **`worker.py`**: Starts the Temporal worker that executes workflows and activities
 
@@ -594,9 +597,18 @@ The workflow includes built-in retry policies with exponential backoff (3 attemp
 
 ## Workflow Implementation
 
-First version:
+The workflow first sets up the Elasticsearch index, then processes videos:
 
 ```python
+# Setup Elasticsearch index
+workflow.logger.info("Setting up Elasticsearch index...")
+await workflow.execute_activity(
+    setup_elasticsearch,
+    recreate_index,
+    start_to_close_timeout=timedelta(seconds=30),
+    retry_policy=retry_policy,
+)
+
 use_proxy = await workflow.execute_activity(
     setup_proxy,
     start_to_close_timeout=timedelta(seconds=10),
@@ -620,7 +632,7 @@ videos = await workflow.execute_activity(
 )
 workflow.logger.info(f"Found {len(videos)} videos")
 
-# Process all videos
+# Process all videos - fetch from YouTube and index to Elasticsearch
 successful = 0
 failed = 0
 failed_videos = []
@@ -638,7 +650,7 @@ for video in videos:
         
         if result:
             successful += 1
-            workflow.logger.info(f"Processed {video_id}: {video_name}")
+            workflow.logger.info(f"Indexed {video_id}: {video_name}")
     except Exception as e:
         failed += 1
         failed_videos.append({
@@ -654,6 +666,42 @@ return {
     'failed': failed,
     'failed_videos': failed_videos
 }
+```
+
+The `process_video` activity fetches the transcript from YouTube and indexes it directly to Elasticsearch:
+
+```python
+@activity.defn
+async def process_video(video_id: str, video_name: str, use_proxy: bool = False) -> bool:
+    """Process a single video: fetch transcript and index to Elasticsearch"""
+    
+    es = get_es_connection()
+    index_name = "podcasts"
+    
+    # Skip if already indexed
+    if es.exists(index=index_name, id=video_id):
+        activity.logger.info(f"Video {video_id} already indexed, skipping")
+        return False
+    
+    # Setup proxy if configured
+    proxy = get_proxy_config() if use_proxy else None
+    
+    # Fetch transcript from YouTube
+    ytt_api = YouTubeTranscriptApi(proxy_config=proxy)
+    transcript = ytt_api.fetch(video_id)
+    subtitles = make_subtitles(transcript)
+    
+    # Index directly to Elasticsearch
+    doc = {
+        "video_id": video_id,
+        "title": video_name,
+        "subtitles": subtitles
+    }
+    
+    es.index(index=index_name, id=video_id, document=doc)
+    activity.logger.info(f"Indexed video {video_id} to Elasticsearch")
+    
+    return True
 ```
 
 ## Running the Workflow
@@ -691,10 +739,19 @@ cd flow
 uv run python run_workflow.py
 ```
 
-This triggers the workflow execution. Watch the progress in:
+This triggers the workflow execution which will:
+1. Set up the Elasticsearch index with custom analyzers
+2. Fetch the list of podcast videos from DataTalks.Club
+3. For each video:
+   - Check if already indexed in Elasticsearch (using `es.exists()`)
+   - If not, fetch transcript from YouTube
+   - Index directly to Elasticsearch
+
+Watch the progress in:
 - Terminal 2: Worker logs showing activity executions
 - Terminal 3: Final results summary
 - Browser: `http://localhost:8233` for detailed workflow visualization
+- Elasticsearch: Videos are indexed as they're processed
 
 
 ## Retrials
@@ -717,107 +774,6 @@ result = await workflow.execute_activity(
 )
 ```
 
-## Advanced: Indexing with Temporal Workflows
-
-Now that we have the basic workflow working with Elasticsearch, let's make it more robust using Temporal workflows for the indexing process.
-
-### Why Use Temporal for Indexing?
-
-- **Reliability**: Automatic retries if indexing fails
-- **Observability**: Track which videos were successfully indexed
-- **Scalability**: Process videos concurrently
-- **Resume**: Can continue from where it stopped if interrupted
-
-### Implementation Files
-
-We've created three new files in the `flow/` directory:
-
-**1. `index_activities.py`** - Contains Elasticsearch activities:
-
-- `create_index()`: Creates the Elasticsearch index with custom analyzers
-  - Supports recreating the index if it already exists
-  - Uses the same index settings with stemming and stopwords
-  
-- `index_document()`: Indexes a single transcript file
-  - Reads and parses the transcript file
-  - Indexes it into Elasticsearch with the video ID as the document ID
-  
-- `get_transcript_files()`: Scans the data directory for transcript files
-  - Returns a list of file paths to index
-
-**2. `index_workflow.py`** - Defines the `IndexTranscriptsWorkflow`:
-
-```python
-@workflow.defn
-class IndexTranscriptsWorkflow:
-    @workflow.run
-    async def run(
-        self, 
-        data_dir: str = "data",
-        es_url: str = "http://localhost:9200",
-        recreate_index: bool = False,
-        max_concurrent: int = 5
-    ) -> dict:
-```
-
-The workflow:
-1. Creates the Elasticsearch index (or uses existing one)
-2. Gets the list of all transcript files
-3. Indexes each file sequentially with retry logic
-4. Returns summary of successful and failed indexing operations
-
-All activities use retry policies with exponential backoff (3 attempts, 1-10 second intervals).
-
-**3. `run_index_workflow.py`** - Client script to execute the workflow
-
-**4. `worker.py`** - Updated to include the new indexing workflow and activities
-
-### Running the Indexing Workflow
-
-Make sure Elasticsearch is running (see Docker command earlier in this document).
-
-**Terminal 1 - Temporal Server** (if not already running):
-```bash
-temporal server start-dev
-```
-
-**Terminal 2 - Start the Worker:**
-
-The worker has been updated to include both transcript downloading and indexing workflows:
-
-```bash
-cd flow
-uv run python worker.py
-```
-
-**Terminal 3 - Execute the Indexing Workflow:**
-
-```bash
-cd flow
-uv run python run_index_workflow.py
-```
-
-The indexing workflow will:
-1. Connect to Elasticsearch at `http://localhost:9200`
-2. Create the `podcasts` index with custom analyzers
-3. Scan the `data/` directory for transcript files
-4. Index each transcript with retry logic
-5. Display results showing total files, successful, and failed indexing
-
-You can monitor the workflow execution in the Temporal Web UI at `http://localhost:8233`.
-
-### Configuration Options
-
-You can modify the configuration in `run_index_workflow.py`:
-
-```python
-data_dir = "data"              # Directory containing transcript files
-es_url = "http://localhost:9200"  # Elasticsearch URL
-recreate_index = False         # Set to True to recreate the index
-```
-
-Set `recreate_index = True` if you want to delete and recreate the index with fresh data.
-
 ## Building an AI Research Agent
 
 Now that we have transcripts indexed in Elasticsearch, we can build an AI agent that uses them to conduct research and answer questions.
@@ -835,13 +791,13 @@ Initialize the project with required dependencies:
 
 ```bash
 uv init
-uv add pydantic-ai openai elasticsearch python-dotenv
+uv add pydantic-ai openai elasticsearch
 uv add --dev jupyter
 ```
 
 Create a `.env` file with your OpenAI API key:
 
-```
+```bash
 OPENAI_API_KEY='your-key'
 ```
 
@@ -1215,84 +1171,42 @@ Temporal's durable execution model is perfect for AI agents because:
 4. **Observable**: Full execution history in Temporal Web UI for debugging
 5. **Scalable**: Workers can be distributed across multiple machines
 
-### Architecture Overview
-
-**Key Concepts:**
-
-- **Workflows**: Deterministic orchestration logic (coordinates agents, preserves state)
-- **Activities**: Non-deterministic operations (Elasticsearch searches, API calls)
-- **TemporalAgent**: Pydantic AI wrapper that makes agent calls durable
-
-**File Structure:**
-
-```
-agent/
-├── models.py              # Data structures (SearchResult, etc.)
-├── activities.py          # Elasticsearch operations as activities
-├── workflow.py            # Main research workflow
-├── worker.py              # Runs workflow executions
-├── start_workflow.py      # Starts new research workflows
-└── .env                   # Environment variables
-```
-
 ### Installing Dependencies
 
-Update your `pyproject.toml` to include Temporal:
+Make sure you have Temporal support:
 
 ```bash
+cd agent
 uv add pydantic-ai[temporal] temporalio
 ```
 
-### Creating Data Models
+### Creating the Workflow
 
-Create `models.py` with Pydantic models for structured data:
+Now we'll convert our research agent to use Temporal. The approach is similar to what we did before, but we wrap the agents and activities for durability.
+
+Create `agent_workflow.py`:
 
 ```python
-"""Data models for the research workflow."""
-from pydantic import BaseModel
+"""Research workflow using Temporal and Pydantic AI."""
+from temporalio import workflow, activity
+from temporalio.exceptions import ApplicationError
+from datetime import timedelta
 from typing import List
-
-class SearchResult(BaseModel):
-    """Result from a video search."""
-    video_id: str
-    title_highlight: str | None = None
-    subtitles_highlight: str | None = None
-    relevance_score: float
-
-class ResearchStage(BaseModel):
-    """Results from a research stage."""
-    stage_name: str
-    queries_executed: List[str]
-    videos_found: List[str]
-    key_insights: str
-
-class ResearchReport(BaseModel):
-    """Final research report."""
-    title: str
-    introduction: str
-    sections: List[dict]
-    conclusion: str
-    total_videos_analyzed: int
-    total_searches_conducted: int
-```
-
-### Creating Activities
-
-Activities wrap non-deterministic operations like Elasticsearch queries. Create `activities.py`:
-
-```python
-"""Temporal activities for research workflow."""
-from temporalio import activity
 from elasticsearch import Elasticsearch
-from typing import List
-from models import SearchResult
 import os
+import textwrap
+import json
 
+from pydantic_ai import Agent, RunContext
+from pydantic_ai.durable_exec.temporal import TemporalAgent
+
+
+# Elasticsearch activities
 @activity.defn
-async def search_videos_activity(query: str, size: int = 5) -> List[SearchResult]:
+async def search_videos_activity(query: str, size: int = 5) -> list[dict]:
     """Search for videos - runs as a Temporal activity."""
-    es_host = os.getenv("ELASTICSEARCH_HOST", "http://localhost:9200")
-    es = Elasticsearch(es_host)
+    es_url = os.getenv("ELASTICSEARCH_URL", "http://localhost:9200")
+    es = Elasticsearch(es_url)
     
     body = {
         "size": size,
@@ -1320,53 +1234,31 @@ async def search_videos_activity(query: str, size: int = 5) -> List[SearchResult
     results = []
     for hit in hits:
         highlight = hit.get('highlight', {})
-        result = SearchResult(
-            video_id=hit['_id'],
-            title_highlight=highlight.get('title', [None])[0] if 'title' in highlight else None,
-            subtitles_highlight=highlight.get('subtitles', [None])[0] if 'subtitles' in highlight else None,
-            relevance_score=hit['_score']
-        )
+        result = {'video_id': hit['_id']}
+        if 'title' in highlight:
+            result['title'] = highlight['title'][0]
+        if 'subtitles' in highlight:
+            result['subtitles'] = highlight['subtitles'][0]
         results.append(result)
     
     es.close()
     return results
 
+
 @activity.defn
 async def get_subtitles_activity(video_id: str) -> dict:
     """Retrieve subtitles for a video - runs as a Temporal activity."""
-    es_host = os.getenv("ELASTICSEARCH_HOST", "http://localhost:9200")
-    es = Elasticsearch(es_host)
+    es_url = os.getenv("ELASTICSEARCH_URL", "http://localhost:9200")
+    es = Elasticsearch(es_url)
     
     result = es.get(index="podcasts", id=video_id)
     source = result['_source']
     
     es.close()
     return source
-```
 
-**Why Activities?**
-- They can fail and retry independently without restarting the workflow
-- Results are cached in workflow history (executed exactly once)
-- Have configurable timeouts and retry policies
 
-### Creating the Workflow
-
-Create `workflow.py` with the durable research workflow:
-
-```python
-"""Research workflow using Temporal and Pydantic AI."""
-from temporalio import workflow
-from temporalio.exceptions import ApplicationError
-from datetime import timedelta
-from typing import List
-
-from pydantic_ai import Agent, RunContext
-from pydantic_ai.durable_exec.temporal import TemporalAgent
-from activities import search_videos_activity, get_subtitles_activity
-import textwrap
-import json
-
-# Summarization agent
+# Agents
 summarization_agent = Agent(
     name='summarization',
     instructions="""Your task is to summarize the provided YouTube transcript 
@@ -1374,7 +1266,6 @@ summarization_agent = Agent(
     model='openai:gpt-4o-mini'
 )
 
-# Research agent instructions (same as before, but now durable)
 research_instructions = """
 You are an autonomous research agent performing deep research.
 
@@ -1387,6 +1278,7 @@ Generate a comprehensive report with:
 - Citations with video_id and timestamps
 - Professional, analytical tone
 """
+
 
 @workflow.defn
 class ResearchWorkflow:
@@ -1446,18 +1338,10 @@ class ResearchWorkflow:
                 start_to_close_timeout=timedelta(seconds=30),
             )
             
-            # Convert to dicts for agent
-            results_dict = []
             for r in results:
-                self.videos_analyzed.append(r.video_id)
-                result_dict = {'video_id': r.video_id}
-                if r.title_highlight:
-                    result_dict['title'] = r.title_highlight
-                if r.subtitles_highlight:
-                    result_dict['subtitles'] = r.subtitles_highlight
-                results_dict.append(result_dict)
+                self.videos_analyzed.append(r['video_id'])
             
-            return results_dict
+            return results
         
         # Create research agent with tools
         research_agent = Agent(
@@ -1501,14 +1385,15 @@ class ResearchWorkflow:
 ```
 
 **Key Features:**
+- Activities (`search_videos_activity`, `get_subtitles_activity`) wrap Elasticsearch operations
 - `TemporalAgent` wraps Pydantic AI agents for durable execution
-- `workflow.execute_activity` runs Elasticsearch searches
+- Tools (search_videos, summarize_video) use activities internally
 - Workflow state (`search_queries_log`, `videos_analyzed`) is preserved
 - Full conversation history survives failures
 
 ### Creating the Worker
 
-Create `worker.py` to run workflow executions:
+Create `agent_worker.py`:
 
 ```python
 """Temporal worker for research workflows."""
@@ -1518,8 +1403,11 @@ from temporalio.client import Client
 from temporalio.worker import Worker
 from dotenv import load_dotenv
 
-from workflow import ResearchWorkflow
-from activities import search_videos_activity, get_subtitles_activity
+from agent_workflow import (
+    ResearchWorkflow,
+    search_videos_activity,
+    get_subtitles_activity
+)
 
 async def main():
     load_dotenv()
@@ -1546,7 +1434,7 @@ if __name__ == "__main__":
 
 ### Starting Workflows
 
-Create `start_workflow.py` to launch research:
+Create `start_research.py`:
 
 ```python
 """Start a research workflow."""
@@ -1555,7 +1443,7 @@ import sys
 import os
 from temporalio.client import Client
 from dotenv import load_dotenv
-from workflow import ResearchWorkflow
+from agent_workflow import ResearchWorkflow
 
 async def main():
     load_dotenv()
@@ -1571,7 +1459,7 @@ async def main():
     handle = await client.start_workflow(
         ResearchWorkflow.run,
         query,
-        id=f"research-{asyncio.current_task().get_name()}",
+        id=f"research-{query[:30].replace(' ', '-')}",
         task_queue="research-task-queue",
     )
     
@@ -1597,42 +1485,25 @@ if __name__ == "__main__":
 
 ### Running the System
 
-**1. Install Temporal CLI:**
+Make sure Temporal server is running (see installation instructions in the Temporal.io section above).
 
-```bash
-# macOS
-brew install temporal
-
-# Windows (PowerShell as Administrator)
-iwr https://temporal.download/cli.ps1 | iex
-
-# Linux
-curl -sSf https://temporal.download/cli.sh | sh
-```
-
-**2. Start Temporal Server:**
+**Terminal 1 - Temporal Server:**
 
 ```bash
 temporal server start-dev
 ```
 
-Access the Web UI at http://localhost:8233
-
-**3. Run the Worker:**
-
-In a new terminal:
+**Terminal 2 - Run the Worker:**
 
 ```bash
 cd agent
-uv run python worker.py
+uv run python agent_worker.py
 ```
 
-**4. Start a Research Workflow:**
-
-In another terminal:
+**Terminal 3 - Start a Research Workflow:**
 
 ```bash
-uv run python start_workflow.py "how do I get rich with AI?"
+uv run python start_research.py "how do I get rich with AI?"
 ```
 
 ### What Happens Under the Hood
@@ -1645,7 +1516,7 @@ uv run python start_workflow.py "how do I get rich with AI?"
    - If OpenAI times out, only that agent call retries (searches not re-executed)
 4. **Summarization**: 
    - Agent calls `summarize_video` → Activity gets subtitles
-   - Summarization agent runs (also as activity)
+   - Summarization agent runs (also durable)
    - Results preserved even if it fails
 5. **Stage 2**: Deep investigation continues from where Stage 1 left off
 6. **Report Generated**: Final markdown report returned
@@ -1659,17 +1530,7 @@ uv run python start_workflow.py "how do I get rich with AI?"
 - See retry attempts and failures
 - Replay workflows for debugging
 
-**Worker Logs:**
-
-Watch real-time execution:
-```
-TOOL CALL (research_agent): search_videos({'query': 'AI investment trends'})
-Activity search_videos_activity completed
-TOOL CALL (research_agent): summarize_video({'video_id': '1aMuynlLM3o'})
-Activity get_subtitles_activity completed
-```
-
-
+The key advantage: if anything fails (network, API timeout, crash), Temporal automatically retries from the last successful point without losing conversation history or re-executing completed searches.
 
 ## Additional Resources
 
