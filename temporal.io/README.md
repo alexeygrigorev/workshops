@@ -2,7 +2,7 @@
 
 * Video: TBA
 
-In this workshop, we will create a deep research agent based on the DataTalks.Club podcast data. 
+In this workshop, we will create a deep research agent based on the DataTalks.Club podcast data.
 
 To do it, we will need:
 
