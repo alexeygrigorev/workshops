@@ -30,21 +30,31 @@ We'll use `uv` for fast Python package management:
 pip install uv
 ```
 
-Initialize the project:
+Create a folder "flow" and initialize an empty project there:
 
 ```bash
+mkdir flow
+cd flow
+
 uv init --python=3.13
 ```
 
 ## Fetching YouTube Transcripts
 
-Install the YouTube Transcript API library:
+Install the YouTube Transcript API library and Jupyter notebook:
 
 ```bash
 uv add youtube-transcript-api
+uv add --dev jupyter
 ```
 
-First, let's fetch a transcript for a single video:
+Now let's start Jupyter, and create a notebook there. We can call it "notebook.ipynb".
+
+```bash
+uv run jupyter notebook
+```
+
+Inside, we'll start by fetching a transcript for a single video:
 
 ```python
 from youtube_transcript_api import YouTubeTranscriptApi
@@ -54,21 +64,40 @@ def fetch_transcript(video_id):
     transcript = ytt_api.fetch(video_id)
     return transcript
 
-# Example usage
 video_id = 'D2rw52SOFfM'
 transcript = fetch_transcript(video_id)
 ```
 
 The transcript is a list of entries, each containing:
+
 - `start`: timestamp in seconds
 - `duration`: duration of the segment
 - `text`: the actual transcript text
 
-Create a function to format timestamps nicely:
+Now let's turn this into this format:
+
+```
+0:00 Hi everyone, welcome to our event. This
+0:03 event is brought to you by Data Dogs
+0:04 Club which is a community of people who
+0:06 love data. We have weekly events. Today
+0:09 is one of such events. If you want to
+0:11 found find out more about the events we
+0:13 have, there's a link in the description.
+0:14 Click on this link, you see all the
+0:17 events we have in our pipeline. Do not
+0:19 forget to subscribe to our YouTube
+0:21 channel. This way you'll get notified
+0:22 about all future events like the one we
+0:24 have today.
+```
+
+For that, we'll need to iterate over all chunks of the transcript, and 
+turn time in seconds into "mm:ss" format:
+
 
 ```python
 def format_timestamp(seconds: float) -> str:
-    """Convert seconds to H:MM:SS if > 1 hour, else M:SS"""
     total_seconds = int(seconds)
     hours, remainder = divmod(total_seconds, 3600)
     minutes, secs = divmod(remainder, 60)
@@ -76,11 +105,7 @@ def format_timestamp(seconds: float) -> str:
     if hours == 0:
         return f"{minutes}:{secs:02}"
     return f"{hours}:{minutes:02}:{secs:02}"
-```
 
-Convert the transcript to a readable subtitle format:
-
-```python
 def make_subtitles(transcript) -> str:
     lines = []
 
@@ -90,15 +115,18 @@ def make_subtitles(transcript) -> str:
         lines.append(ts + ' ' + text)
 
     return '\n'.join(lines)
+```
 
-# Example: Process the transcript
+Use it:
+
+```python
 subtitles = make_subtitles(transcript)
-print(subtitles[:500])  # Print first 500 characters
+print(subtitles[:500])
 ```
 
 <details>
 <summary><b>Alternative: Fetching pre-processed transcripts from GitHub</b></summary>
-
+<br/>
 If you don't want to deal with YouTube API rate limits and proxies, we've pre-processed all the transcripts and made them available on GitHub.
 
 Install requests library:
@@ -112,23 +140,22 @@ Fetch a transcript:
 ```python
 import requests
 
-video_id = '-Gj7SaI-QW4'
-url_prefix = 'https://raw.githubusercontent.com/alexeygrigorev/workshops/refs/heads/main/temporal.io/data'
-url = f'{url_prefix}/{video_id}.txt'
-
-raw_text = requests.get(url).content.decode('utf8')
-
-# Parse the transcript file
-lines = raw_text.split('\n')
-
-video_title = lines[0]
-subtitles = '\n'.join(lines[2:]).strip()
-
-doc = {
-    "video_id": video_id,
-    "title": video_title,
-    "subtitles": subtitles
-}
+def fetch_transcript_cached(video_id):
+    url_prefix = 'https://raw.githubusercontent.com/alexeygrigorev/workshops/refs/heads/main/temporal.io/data'
+    url = f'{url_prefix}/{video_id}.txt'
+    
+    raw_text = requests.get(url).content.decode('utf8')
+    
+    lines = raw_text.split('\n')
+    
+    video_title = lines[0]
+    subtitles = '\n'.join(lines[2:]).strip()
+    
+    return {
+        "video_id": video_id,
+        "title": video_title,
+        "subtitles": subtitles
+    }
 ```
 
 **Note**: If you use this approach, adjust the workflow functions below to fetch from GitHub instead of YouTube API.
@@ -138,7 +165,7 @@ doc = {
 
 ## Setting Up Elasticsearch
 
-Now let's store transcripts in Elasticsearch.
+Now let's store the transcripts in Elasticsearch.
 
 Run Elasticsearch in Docker:
 
@@ -149,6 +176,7 @@ docker run -it \
   -m 4GB \
   -p 9200:9200 \
   -p 9300:9300 \
+  -v elasticsearch-data:/usr/share/elasticsearch/data \
   -e "discovery.type=single-node" \
   -e "xpack.security.enabled=false" \
   docker.elastic.co/elasticsearch/elasticsearch:9.2.0
@@ -175,7 +203,6 @@ from elasticsearch import Elasticsearch
 
 es = Elasticsearch("http://localhost:9200")
 
-# Define stopwords for English
 stopwords = [
     "a","about","above","after","again","against","all","am","an","and","any",
     "are","aren","aren't","as","at","be","because","been","before","being",
@@ -246,7 +273,6 @@ index_settings = {
     }
 }
 
-# Create the index
 index_name = "podcasts"
 
 if es.indices.exists(index=index_name):
@@ -261,29 +287,16 @@ print(f"Index '{index_name}' created successfully")
 Now let's index the transcript we downloaded:
 
 ```python
-# Prepare the document
 doc = {
     "video_id": video_id,
-    "title": "Your Video Title Here",  # You can fetch this from YouTube API
+    "title": "Reinventing a Career in Tech",
     "subtitles": subtitles
 }
 
-# Index the document (use video_id as the document ID)
 es.index(index="podcasts", id=video_id, document=doc)
 print(f"Indexed video: {video_id}")
 ```
 
-## Checking if a Document Exists
-
-Before indexing, we should check if the video is already in Elasticsearch:
-
-```python
-if es.exists(index="podcasts", id=video_id):
-    print(f"Video {video_id} already indexed, skipping...")
-else:
-    print(f"Video {video_id} not found, indexing...")
-    es.index(index="podcasts", id=video_id, document=doc)
-```
 
 ## Testing Search
 
@@ -291,7 +304,6 @@ Let's verify our document is searchable:
 
 ```python
 def search_videos(query: str, size: int = 5):
-    """Search for videos by title or subtitle content."""
     body = {
         "size": size,
         "query": {
@@ -329,13 +341,7 @@ def search_videos(query: str, size: int = 5):
 
     return results
 
-# Test search
 results = search_videos("machine learning")
-for result in results:
-    print(f"Video ID: {result['video_id']}")
-    print(f"Title: {result['title'][0]}")
-    print(f"Snippet: {result['subtitles'][0]}")
-    print()
 ```
 
 ## Processing Multiple Videos
@@ -359,7 +365,6 @@ events_url = 'https://raw.githubusercontent.com/DataTalksClub/datatalksclub.gith
 raw_yaml = requests.get(events_url).content
 events_data = yaml.load(raw_yaml, yaml.CSafeLoader)
 
-# Filter for podcasts with YouTube links
 podcasts = [d for d in events_data if (d.get('type') == 'podcast') and (d.get('youtube'))]
 
 print(f"Found {len(podcasts)} podcasts")
@@ -391,66 +396,31 @@ Install tqdm for progress tracking:
 uv add tqdm
 ```
 
-Create a workflow function that:
+Now we can download and index all the videos:
 
-1. Checks if the video is already indexed in Elasticsearch
-2. If not, fetches the transcript from YouTube
-3. Formats it and indexes it to Elasticsearch
-
-```python
+```bash
 from tqdm.auto import tqdm
 
-def workflow(video_id, video_title) -> bool:
-    """Process a single video: fetch transcript and index to Elasticsearch."""
-    
-    # Check if already indexed
-    # TODO: don't use document_exists, use es.exists 
-    if document_exists(es, "podcasts", video_id):
-        return False
+for video in tqdm(videos):
+    video_id = video['video_id']
+    video_title = video['title']
 
-    # Fetch and process transcript from YouTube
+    if es.exists(index='podcasts', id=video_id):
+        print(f'already processed {video_id}')
+        continue
+
     transcript = fetch_transcript(video_id)
     subtitles = make_subtitles(transcript)
 
-    # Prepare document
     doc = {
         "video_id": video_id,
         "title": video_title,
         "subtitles": subtitles
     }
     
-    # Index to Elasticsearch
     es.index(index="podcasts", id=video_id, document=doc)
-    
-    return True
 ```
 
-Let's now process all the videos:
-
-```python
-indexed = 0
-skipped = 0
-errors = 0
-
-for video in tqdm(videos):
-    video_id = video['video_id']
-    video_title = video['title']
-    
-    try:
-        result = workflow(video_id, video_title)
-        if result == "indexed":
-            indexed += 1
-        else:
-            skipped += 1
-    except Exception as e:
-        errors += 1
-        print(f"Error processing {video_id}: {e}")
-
-print(f"\nProcessing complete:")
-print(f"  Indexed: {indexed}")
-print(f"  Skipped: {skipped}")
-print(f"  Errors: {errors}")
-```
 
 ## Using Proxies
 
@@ -472,11 +442,14 @@ Create `.gitignore` to exclude `.env`:
 echo '.env' >> .gitignore
 ```
 
-Stop Jupyter. Use `dirdotenv` to load the variables from the `.env` file:
+Stop Jupyter.
+
+To load these variables, we'll use `dirdotenv` to load the variables from the `.env` file:
 
 ```bash
-echo 'eval "$(uvx dirdotenv hook bash)"' >> .bashrc
-source .bashrc
+echo 'alias dirdotenv="uvx dirdotenv"' >> ~/.bashrc
+echo 'eval "$(dirdotenv hook bash)"' >> ~/.bashrc
+source ~/.bashrc
 ```
 
 Update your fetch function to use proxy:
@@ -485,10 +458,9 @@ Update your fetch function to use proxy:
 import os
 from youtube_transcript_api.proxies import GenericProxyConfig
 
-# Set up proxy configuration
-proxy_user = os.getenv('PROXY_USER')
-proxy_password = os.getenv('PROXY_PASSWORD')
-proxy_base_url = os.getenv('PROXY_BASE_URL')
+proxy_user = os.environ['PROXY_USER']
+proxy_password = os.environ['PROXY_PASSWORD']
+proxy_base_url = os.environ['PROXY_BASE_URL']
 
 proxy_url = f'http://{proxy_user}:{proxy_password}@{proxy_base_url}'
 
@@ -497,33 +469,28 @@ proxy = GenericProxyConfig(
     https_url=proxy_url,
 )
 
-# Update fetch function to use proxy
 def fetch_transcript(video_id):
     ytt_api = YouTubeTranscriptApi(proxy_config=proxy)
     transcript = ytt_api.fetch(video_id)
     return transcript
 ```
 
-Even with proxies, we can still face challenges:
+Now continue processing.
+
+
+## Temporal.io
+
+But even with proxies, we can still face challenges:
 
 - Requests can be blocked by IP
 - SSL errors (`SSLError: [SSL: WRONG_VERSION_NUMBER] wrong version number`)
 - Network timeouts
 - Rate limiting
 
-This is where Temporal.io becomes valuable - it provides reliable retry logic and durable execution.
+So we need a reliable way of making retrials. We can implement it ourselves, but
+it will be a lot of code that we will need to maintain. 
 
-## Temporal.io
-
-Now let's do it with Temporal
-
-When processing multiple YouTube transcripts, we face several challenges:
-
-1. Reliability: Network requests can fail due to rate limiting, timeouts, or SSL errors
-2. Retries: We need smart retry logic with exponential backoff
-3. Progress Tracking: If the script crashes, we need to resume from where we left off
-4. Observability: We want to monitor which videos succeeded or failed
-5. Scalability: Process multiple videos concurrently while respecting API limits
+Let's use a special tool for that: Temporal.io. It provides a reliable way to orchestrate workflows with retry logic and durable execution.
 
 Temporal.io solves these problems by providing:
 
@@ -533,15 +500,13 @@ Temporal.io solves these problems by providing:
 - Visibility: Web UI to monitor workflow execution
 - Concurrency control: Easy to manage parallel execution
 
-### Installing Temporal
-
-**For Linux:**
+Let's install it. For Linux: 
 
 ```bash
 # Create a dir for executables
+mkdir ~/bin
 echo 'PATH="${PATH}:~/bin"' >> ~/.bashrc
 source ~/.bashrc
-
 
 # Download the Temporal CLI
 wget 'https://temporal.download/cli/archive/latest?platform=linux&arch=amd64' -O temporal.tar.gz
@@ -552,12 +517,9 @@ tar -xzf temporal.tar.gz
 # Move to ~/bin
 mv temporal ~/bin/
 rm temporal.tar.gz LICENSE
-
-# Make it executable
-chmod +x ~/bin/temporal
 ```
 
-**Verify installation:**
+Verify that it works:
 
 ```bash
 temporal -v
@@ -568,6 +530,81 @@ You should see output like:
 ```
 temporal version 1.5.1 (Server 1.29.1, UI 2.42.1)
 ```
+
+You can see how to install it for other platforms [here](temporal-install.md).
+
+Add temporal to our project with uv:
+
+```bash
+uv add temporalio
+```
+
+
+## Creating a Workflow
+
+Before we create a Temporal workflow, let's first organize everything in a proper Python project, not a Jupyter notebook.
+
+Let's start with converting our notebook into a Python script:
+
+
+```bash
+uv run jupyter nbconvert --to=script notebook.ipynb
+```
+
+Next, move index creation logic to `create_index.py`.
+
+For the rest of the logic, let's create a file `workflow.py` (see [workflow.py](workflow.py)).
+
+Let's take a look at the main flow and identify places where the code can break:
+
+
+```python
+
+def workflow():
+    commit_id = '187b7d056a36d5af6ac33e4c8096c52d13a078a7'
+    # here: network
+    videos = find_podcast_videos(commit_id)
+
+    for video in videos:
+        video_id = video['video_id']
+        video_title = video['title']
+
+        # here: network
+        if es.exists(index='podcasts', id=video_id):
+            print(f'already processed {video_id}')
+            continue
+
+        # here: many reasons
+        subtitles = fetch_subtitles(video_id)
+
+        doc = {
+            "video_id": video_id,
+            "title": video_title,
+            "subtitles": subtitles
+        }
+
+        # here: network
+        es.index(index="podcasts", id=video_id, document=doc)
+```
+
+## Temporal Activities
+
+These pieces of code become our **activities** -  individual units of work that a Temporal Workflow performs. Usually they are tasks that we need to do: 
+
+- interacting with external systems (e.g., making API calls)
+- writing data to a database
+- sending emails or notifications
+- sprocessing files, images, or other business logic
+
+We annotate them with `@activity.defn`. 
+
+Let's move them to a separate file `activities.py` (see the result here).
+
+
+## Temporal Workflow
+
+These activities are executed in a **workflow**. 
+ 
 
 
 ## Downloading YouTube Transcripts with Temporal.io 
