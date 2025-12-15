@@ -533,6 +533,13 @@ temporal version 1.5.1 (Server 1.29.1, UI 2.42.1)
 
 You can see how to install it for other platforms [here](temporal-install.md).
 
+Start the server: 
+
+```bash
+temporal server start-dev
+```
+
+
 Add temporal to our project with uv:
 
 ```bash
@@ -559,7 +566,6 @@ Let's take a look at the main flow and identify places where the code can break:
 
 
 ```python
-
 def workflow():
     commit_id = '187b7d056a36d5af6ac33e4c8096c52d13a078a7'
     # here: network
@@ -598,218 +604,186 @@ These pieces of code become our **activities** -  individual units of work that 
 
 We annotate them with `@activity.defn`. 
 
-Let's move them to a separate file `activities.py` (see the result here).
+Let's move them to a separate file `activities.py` (see the result [here](flow/activities.py)).
 
 
 ## Temporal Workflow
 
 These activities are executed in a **workflow**. 
- 
 
-
-## Downloading YouTube Transcripts with Temporal.io 
-
-The `flow/` directory contains the complete Temporal.io implementation that fetches transcripts from YouTube and indexes them directly to Elasticsearch:
-
-- **`workflow.py`**: Defines the `PodcastTranscriptWorkflow` class that orchestrates the entire process
-  - Sets up the Elasticsearch index with custom analyzers
-  - Fetches podcast episodes from DataTalks.Club GitHub repo
-  - Extracts video IDs and metadata
-  - Processes each video transcript with retry logic
-  - Indexes transcripts directly to Elasticsearch (skipping file storage)
-  - Returns summary of successful and failed operations
-
-- **`activities.py`**: Contains all the activity functions:
-  - `setup_elasticsearch()`: Creates the Elasticsearch index with custom analyzers
-  - `setup_proxy()`: Checks if proxy configuration is available
-  - `fetch_podcast_episodes()`: Fetches podcast list from GitHub
-  - `fetch_videos()`: Extracts video IDs from podcast data
-  - `process_video()`: Downloads transcripts from YouTube and indexes directly to Elasticsearch
-
-- **`worker.py`**: Starts the Temporal worker that executes workflows and activities
-
-- **`run_workflow.py`**: Client script to start and execute the workflow
-
-The workflow includes built-in retry policies with exponential backoff (3 attempts, 1-30 second intervals) for all activities.
-
-## Workflow Implementation
-
-The workflow first sets up the Elasticsearch index, then processes videos:
+This is the code we have so far: 
 
 ```python
-# Setup Elasticsearch index
-workflow.logger.info("Setting up Elasticsearch index...")
-await workflow.execute_activity(
-    setup_elasticsearch,
-    recreate_index,
-    start_to_close_timeout=timedelta(seconds=30),
-    retry_policy=retry_policy,
-)
+from elasticsearch import Elasticsearch
 
-use_proxy = await workflow.execute_activity(
-    setup_proxy,
-    start_to_close_timeout=timedelta(seconds=10),
-)
+def workflow():
+    commit_id = '187b7d056a36d5af6ac33e4c8096c52d13a078a7'
+    videos = find_podcast_videos(commit_id)
 
-# Fetch podcast episodes
-workflow.logger.info("Fetching podcast episodes...")
-podcasts = await workflow.execute_activity(
-    fetch_podcast_episodes,
-    commit_id,
-    start_to_close_timeout=timedelta(seconds=30),
-)
-workflow.logger.info(f"Found {len(podcasts)} podcast episodes")
+    es_address = "http://localhost:9200"
 
-# Fetch videos
-workflow.logger.info("Fetching video list...")
-videos = await workflow.execute_activity(
-    fetch_videos,
-    podcasts,
-    start_to_close_timeout=timedelta(seconds=10),
-)
-workflow.logger.info(f"Found {len(videos)} videos")
+    for video in videos:
+        video_id = video['video_id']
 
-# Process all videos - fetch from YouTube and index to Elasticsearch
-successful = 0
-failed = 0
-failed_videos = []
+        if video_exists(es_address, video_id):
+            print(f'already processed {video_id}')
+            continue
 
-for video in videos:
-    video_id = video['video_id']
-    video_name = video['title']
-    
-    try:
-        result = await workflow.execute_activity(
-            process_video,
-            args=[video_id, video_name, use_proxy],
-            start_to_close_timeout=timedelta(seconds=60),
-        )
+        subtitles = fetch_subtitles(video_id)
+        index_video(es_address, video, subtitles)
+```
+
+Let's turn it into a Temporal workflow. It's a class annotaged with `@workflow.defn` which must have an async method for running the workflow annotated with `@workflow.run`
+
+```python
+from datetime import timedelta
+from temporalio import workflow
+
+with workflow.unsafe.imports_passed_through():
+    from activities import (
+        fetch_subtitles,
+        find_podcast_videos,
+        video_exists,
+        index_video,
+    )
+
+
+@workflow.defn
+class PodcastTranscriptWorkflow:
+
+    @workflow.run
+    async def run(self, commit_id: str, es_address: str) -> dict:
+        workflow.logger.info(f"Finding podcast videos from commit {commit_id}...")
         
-        if result:
-            successful += 1
-            workflow.logger.info(f"Indexed {video_id}: {video_name}")
-    except Exception as e:
-        failed += 1
-        failed_videos.append({
-            'video_id': video_id,
-            'title': video_name,
-            'error': str(e)
-        })
-        workflow.logger.error(f"Failed to process {video_id}: {e}")
+        videos = await workflow.execute_activity(
+            activity=find_podcast_videos,
+            args=(commit_id,),
+            start_to_close_timeout=timedelta(minutes=1),
+        )
 
-return {
-    'total': len(videos),
-    'successful': successful,
-    'failed': failed,
-    'failed_videos': failed_videos
-}
+        workflow.logger.info(f"Connecting to Elasticsearch at {es_address}...")
+
+        for video in videos:
+            video_id = video['video_id']
+
+            if await workflow.execute_activity(
+                activity=video_exists,
+                args=(es_address, video_id),
+                start_to_close_timeout=timedelta(seconds=10),
+            ):
+                workflow.logger.info(f'already processed {video_id}')
+                continue
+
+            subtitles = await workflow.execute_activity(
+                activity=fetch_subtitles,
+                args=(video_id,),
+                start_to_close_timeout=timedelta(minutes=1),
+            )
+
+            await workflow.execute_activity(
+                activity=index_video,
+                args=(es_address, video, subtitles),
+                start_to_close_timeout=timedelta(seconds=30),
+            )
+        
+        return {
+            "status": "completed",
+            "processed_videos": len(videos),
+        }
 ```
 
-The `process_video` activity fetches the transcript from YouTube and indexes it directly to Elasticsearch:
+This is how we run it:
 
 ```python
-@activity.defn
-async def process_video(video_id: str, video_name: str, use_proxy: bool = False) -> bool:
-    """Process a single video: fetch transcript and index to Elasticsearch"""
-    
-    es = get_es_connection()
-    index_name = "podcasts"
-    
-    # Skip if already indexed
-    if es.exists(index=index_name, id=video_id):
-        activity.logger.info(f"Video {video_id} already indexed, skipping")
-        return False
-    
-    # Setup proxy if configured
-    proxy = get_proxy_config() if use_proxy else None
-    
-    # Fetch transcript from YouTube
-    ytt_api = YouTubeTranscriptApi(proxy_config=proxy)
-    transcript = ytt_api.fetch(video_id)
-    subtitles = make_subtitles(transcript)
-    
-    # Index directly to Elasticsearch
-    doc = {
-        "video_id": video_id,
-        "title": video_name,
-        "subtitles": subtitles
-    }
-    
-    es.index(index=index_name, id=video_id, document=doc)
-    activity.logger.info(f"Indexed video {video_id} to Elasticsearch")
-    
-    return True
+import asyncio
+from temporalio.client import Client
+
+
+async def run_workflow():
+    client = await Client.connect("localhost:7233")
+
+    commit_id = '187b7d056a36d5af6ac33e4c8096c52d13a078a7'
+    es_address = 'http://localhost:9200'
+
+    result = await client.execute_workflow(
+        PodcastTranscriptWorkflow.run,
+        args=(commit_id, es_address),
+        id="podcast_transcript_workflow",
+        task_queue="podcast_transcript_task_queue",
+    )
+
+    print("Workflow completed! Result:", result)
+
+
+if __name__ == "__main__":
+    asyncio.run(run_workflow())
 ```
 
-## Running the Workflow
+Let's run it:
 
-To run the complete workflow, you need **three terminals**:
-
-**Terminal 1 - Start Temporal Server:**
-
-```bash
-temporal server start-dev
+```python
+uv run python workflow.py
 ```
 
-This starts the Temporal server in development mode with an in-memory database. The server runs on:
-- gRPC: `localhost:7233` (for workflow/activity execution)
-- Web UI: `http://localhost:8233` (for monitoring)
+We can see this workflow in the UI, but nothing is happening. We need a **worker** - a process that actually executes the workflow and the activities.
 
-For persistence across restarts, use:
-```bash
-temporal server start-dev --db-filename temporal.db
+Let's create `worker.py`:
+
+```python
+import asyncio
+
+from temporalio.worker import Worker
+from temporalio.client import Client
+
+from workflow import PodcastTranscriptWorkflow
+import activities
+
+
+async def run_worker():
+    client = await Client.connect("localhost:7233")
+
+    worker = Worker(
+        client,
+        task_queue="podcast-transcript-task-queue",
+        workflows=[PodcastTranscriptWorkflow],
+        activities=[
+            activities.fetch_subtitles,
+            activities.find_podcast_videos,
+            activities.video_exists,
+            activities.index_video,
+        ],
+    )
+
+    await worker.run()
+
+
+if __name__ == "__main__":
+    asyncio.run(run_worker())
 ```
 
-**Terminal 2 - Start the Worker:**
+When I run it, I get an error:
+
+Fix: add `ThreadPoolExecutor` for executing sync activities. 
+
+```python
+from concurrent.futures import ThreadPoolExecutor
+
+executor = ThreadPoolExecutor(max_workers=10)
+
+worker = Worker(
+    ...
+    activity_executor=executor,
+)
+```
+
+Run it:
 
 ```bash
-cd flow
 uv run python worker.py
 ```
 
-The worker connects to the Temporal server and registers workflows/activities. Keep this running.
+Now we can go to UI and see the flow being executed. It should take aroud 10 minutes to complete.
 
-**Terminal 3 - Execute the Workflow:**
-
-```bash
-cd flow
-uv run python run_workflow.py
-```
-
-This triggers the workflow execution which will:
-1. Set up the Elasticsearch index with custom analyzers
-2. Fetch the list of podcast videos from DataTalks.Club
-3. For each video:
-   - Check if already indexed in Elasticsearch (using `es.exists()`)
-   - If not, fetch transcript from YouTube
-   - Index directly to Elasticsearch
-
-Watch the progress in:
-- Terminal 2: Worker logs showing activity executions
-- Terminal 3: Final results summary
-- Browser: `http://localhost:8233` for detailed workflow visualization
-- Elasticsearch: Videos are indexed as they're processed
-
-
-## Retrials
-
-We can add retrials explicitly:
-
-```python
-retry_policy = RetryPolicy(
-    initial_interval=timedelta(seconds=1),
-    maximum_interval=timedelta(seconds=30),
-    maximum_attempts=3,
-    backoff_coefficient=2.0,
-)
-
-...
-
-result = await workflow.execute_activity(
-    ...
-    retry_policy=retry_policy,
-)
-```
 
 ## Building an AI Research Agent
 
