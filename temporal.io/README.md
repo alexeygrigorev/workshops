@@ -19,12 +19,7 @@ To do it, we will need:
 
 ## Environment Setup
 
-For this workshop, you can use:
-* GitHub Codespaces (recommended)
-* Local Python environment
-* Any Jupyter-compatible environment
-
-We'll use `uv` for fast Python package management:
+We'll use `uv` for package management:
 
 ```bash
 pip install uv
@@ -67,6 +62,10 @@ def fetch_transcript(video_id):
 video_id = 'D2rw52SOFfM'
 transcript = fetch_transcript(video_id)
 ```
+
+**Note:** If you're running this code on Codespaces, it won't work.
+So you either need to get a proxy or use the transcripts we already
+processed. You will see more information about it later today.
 
 The transcript is a list of entries, each containing:
 
@@ -482,8 +481,7 @@ But even with proxies, we can still face challenges:
 - Network timeouts
 - Rate limiting
 
-So we need a reliable way of making retrials. We can implement it ourselves, but
-it will be a lot of code that we will need to maintain. 
+We need a reliable way to handle retries. We can implement it ourselves, but that requires a lot of code to maintain.
 
 Let's use a special tool for that: Temporal.io. It provides a reliable way to orchestrate workflows with retry logic and durable execution.
 
@@ -495,7 +493,7 @@ Temporal.io solves these problems by providing:
 - Visibility: Web UI to monitor workflow execution
 - Concurrency control: Easy to manage parallel execution
 
-Let's install it. For Linux: 
+Install it for Linux: 
 
 ```bash
 # Create a dir for executables
@@ -544,9 +542,9 @@ uv add temporalio
 
 ## Creating a Workflow
 
-Before we create a Temporal workflow, let's first organize everything in a proper Python project, not a Jupyter notebook.
+Before creating a Temporal workflow, organize everything in a proper Python project instead of a Jupyter notebook.
 
-Let's start with converting our notebook into a Python script:
+Convert the notebook into a Python script:
 
 
 ```bash
@@ -590,7 +588,7 @@ def workflow():
 
 ## Temporal Activities
 
-These pieces of code become our **activities** -  individual units of work that a Temporal Workflow performs. Usually they are tasks that we need to do: 
+These pieces of code become our **activities** - individual units of work that a Temporal Workflow performs. They are tasks we need to do: 
 
 - interacting with external systems (e.g., making API calls)
 - writing data to a database
@@ -645,7 +643,7 @@ def workflow():
         index_video(es_address, video, subtitles)
 ```
 
-Let's turn it into a Temporal workflow. It's a class annotaged with `@workflow.defn` which must have an async method for running the workflow annotated with `@workflow.run`
+Let's turn it into a Temporal workflow. It's a class annotated with `@workflow.defn` that must have an async method for running the workflow annotated with `@workflow.run`
 
 ```python
 from datetime import timedelta
@@ -709,7 +707,7 @@ When we import the activities, we use this line:
 with workflow.unsafe.imports_passed_through():
 ```
 
-Without it, it won't work because internally we use Elasticsearch's client. Even though it's marked "unsafe", it's a very common thing to set. It means "I trust I'm importing and using this module across workflows in a deterministic way".
+Without it, the code won't work because we use Elasticsearch's client internally. Even though it's marked "unsafe", this is a common setting. It means "I trust I'm importing and using this module across workflows in a deterministic way".
 
 You can find more information about it [here](https://docs.temporal.io/develop/python/python-sdk-sandbox#passthrough-modules).
 
@@ -747,7 +745,7 @@ Let's run it:
 uv run python workflow.py
 ```
 
-We can see this workflow in the UI, but nothing is happening. We need a **worker** - a process that actually executes the workflow and the activities.
+We can see this workflow in the UI, but nothing is happening. We need a **worker** - a process that executes the workflow and activities.
 
 Let's create `worker.py`:
 
@@ -791,8 +789,7 @@ if __name__ == "__main__":
     asyncio.run(run_worker())
 ```
 
-Note that here we use concrete instances of our activity classes. The worker does the actual execution of the activities, so that's why it needs properly instantiated
-activities with all the dependencies. 
+Note that we use concrete instances of our activity classes. The worker executes the activities, so it needs properly instantiated activities with all dependencies. 
 
 Howeever, when I run it, I get an error. 
 
@@ -965,11 +962,9 @@ for m in messages:
             print('TOOL CALL:', p.tool_name, p.args)
 ```
 
-Looks like it didn't use any tools. 
+It didn't use any tools.
 
-Let's update the instructions:
-
-To get the agent to actually use the tools and conduct thorough research, provide detailed instructions:
+Update the instructions to get the agent to use the tools and conduct thorough research:
 
 ```python
 research_instructions = """
@@ -1021,7 +1016,7 @@ result = await research_agent.run(
 
 ## Improving the Agent
 
-This still doens't create great results. let's use something more comprehensive 
+This still doesn't create great results. Let's use something more comprehensive.
 
 For comprehensive research with structured exploration, use more detailed instructions:
 
@@ -1071,9 +1066,9 @@ Rules:
 """.strip()
 ```
 
-And use a different model, e.g. `gpt-5-mini`. 
+Use a different model, e.g. `gpt-5-mini`.
 
-But when dealing with long transcripts, we exceed context window. But we can summarize the transcripts. 
+When dealing with long transcripts, we exceed the context window. We can summarize the transcripts instead. 
 
 Let's create a summarizing agent:
 
@@ -1485,20 +1480,19 @@ Temporal's durable execution model is perfect for AI agents because:
 5. Scalable: Workers can be distributed across multiple machines
 
 
-Now we'll convert our research agent to use Temporal. The approach is similar to what we did before, but we wrap the agents and activities for durability.
+Now convert the research agent to use Temporal. The approach is similar to what we did before, but we wrap the agents and activities for durability.
 
 Pydantic AI has built-in integration with Temporal: https://ai.pydantic.dev/durable_execution/temporal/.
 
-So we only need to add Temporal to our project:
+Add Temporal to the project:
 
 ```bash
 uv add temporalio
 ```
 
-We don't need to change anything in our tools - Pydantic AI takes care 
-of turning tool calls into activities. 
+We don't need to change anything in our tools. Pydantic AI handles turning tool calls into activities.
 
-But we need to work on our `agent.py` code. 
+Work on the `agent.py` code instead. 
 
 First, we need to turn our agent into a `TemporalAgent`:
 
@@ -1577,13 +1571,10 @@ async with Worker(
 ):
 ```
 
-We need to do it, because we create a worker for specific activities. If 
-we don't pass the activities, our workflow will get stuck waiting for execution.
-That's also the reason why we want to make `temporal_agent` global.
+We need to do this because we create a worker for specific activities. If we don't pass the activities, the workflow will get stuck waiting for execution. This is why we make `temporal_agent` global.
 
 
-However, it's still failing: one of our tools rely on `RunContext`, and it's 
-not fully serializable. So we need an adaptor:
+However, it's still failing. One of our tools relies on `RunContext`, which is not fully serializable. We need an adapter:
 
 ```python
 class AppRunContext(TemporalRunContext):
@@ -1613,19 +1604,75 @@ uv run python agent.py
 See the result at http://localhost:8233/
 
 
-That's it for today!
+That's it!
 
+We implemented:
 
-We have implemented:
-
-- Ingestion pipeline for getting youtube transcripts
+- An ingestion pipeline for getting YouTube transcripts
 - Made it reliable with Temporal.io
-- Created a deep research agent 
-- Used Temporal.io for it too
+- Created a deep research agent
+- Used Temporal.io for the agent
+
+I'd like to thank the Temporal.io team for collaborating on this project.
 
 
-I'd like to thank the Temporal.io team for collaborating with
-me on this project.
+## Learning in Public
+
+We encourage everyone to share what they learned. This is called "learning in public". 
+
+Learning in public is one of the most effective ways to accelerate your growth. Here's why:
+
+1. Accountability: Sharing your progress creates commitment and motivation to continue
+2. Feedback: The community can provide valuable suggestions and corrections
+3. Networking: You'll connect with like-minded people and potential collaborators
+4. Documentation: Your posts become a learning journal you can reference later
+5. Opportunities: Employers and clients often discover talent through public learning
+
+Don't worry about being perfect. Everyone starts somewhere, and people love following genuine learning journeys!
+
+### Example post for LinkedIn:
+
+--- 
+🚀 Just completed the Deep Research Agent workshop with @Alexey Grigorev and @Temporal Technologies!
+
+Built an end-to-end AI research agent that:
+
+- 📹 Fetches transcripts from YouTube videos
+- 🔍 Indexes them in Elasticsearch for search
+- 🤖 Uses Pydantic AI to conduct multi-stage research
+- ⚡ Runs durably with Temporal.io (survives crashes & retries automatically)
+
+Key learnings:
+
+- ✅ Building reliable workflows with Temporal
+- ✅ Creating AI agents with tool calling
+- ✅ Making agents production-ready with durable execution
+
+Here's my code from the tutorial: <LINK>
+
+Workshop materials: https://github.com/alexeygrigorev/workshops/tree/main/temporal.io
+
+---
+
+### Example post for Twitter/X:
+
+---
+
+🚀 Built AI research agent in @Al_Grigor's workshop with @temporalio!
+
+- 📹 Transcript ingestion
+- 🔍 Search with Elasticsearch
+- 🤖 Multi-stage AI agent
+- ⚡ Durable execution
+
+Code: https://github.com/alexeygrigorev/workshops/tree/main/temporal.io
+
+Agent survives crashes & API failures automatically!
+
+https://github.com/alexeygrigorev/workshops/tree/main/temporal.io
+
+---
+
 
 ## Additional Resources
 
