@@ -274,12 +274,8 @@ index_settings = {
 }
 
 index_name = "podcasts"
-
-if es.indices.exists(index=index_name):
-    es.indices.delete(index=index_name)
     
 es.indices.create(index=index_name, body=index_settings)
-print(f"Index '{index_name}' created successfully")
 ```
 
 ## Indexing Our First Document
@@ -294,7 +290,6 @@ doc = {
 }
 
 es.index(index="podcasts", id=video_id, document=doc)
-print(f"Indexed video: {video_id}")
 ```
 
 
@@ -606,6 +601,23 @@ We annotate them with `@activity.defn`.
 
 Let's move them to a separate file `activities.py` (see the result [here](flow/activities.py)).
 
+When an activity has a dependency (proxy, DB connection, etc), we put it in a class:
+
+
+```python
+class YouTubeActivities: 
+    def __init__(self):
+        self.proxy_config = cteate_proxy_config()
+
+    @activity.defn
+    def fetch_subtitles(self, video_id):
+        ytt_api = YouTubeTranscriptApi(proxy_config=self.proxy_config)
+        transcript = ytt_api.fetch(video_id)
+        subtitles = make_subtitles(transcript)
+        return subtitles
+```
+
+
 
 ## Temporal Workflow
 
@@ -641,10 +653,9 @@ from temporalio import workflow
 
 with workflow.unsafe.imports_passed_through():
     from activities import (
-        fetch_subtitles,
+        YouTubeActivities,
+        ElasticsearchActivities,
         find_podcast_videos,
-        video_exists,
-        index_video,
     )
 
 
@@ -652,7 +663,7 @@ with workflow.unsafe.imports_passed_through():
 class PodcastTranscriptWorkflow:
 
     @workflow.run
-    async def run(self, commit_id: str, es_address: str) -> dict:
+    async def run(self, commit_id: str) -> dict:
         workflow.logger.info(f"Finding podcast videos from commit {commit_id}...")
         
         videos = await workflow.execute_activity(
@@ -661,28 +672,28 @@ class PodcastTranscriptWorkflow:
             start_to_close_timeout=timedelta(minutes=1),
         )
 
-        workflow.logger.info(f"Connecting to Elasticsearch at {es_address}...")
+        workflow.logger.info("Connecting to Elasticsearch...")
 
         for video in videos:
             video_id = video['video_id']
 
             if await workflow.execute_activity(
-                activity=video_exists,
-                args=(es_address, video_id),
+                activity=ElasticsearchActivities.video_exists,
+                args=(video_id, ),
                 start_to_close_timeout=timedelta(seconds=10),
             ):
                 workflow.logger.info(f'already processed {video_id}')
                 continue
 
             subtitles = await workflow.execute_activity(
-                activity=fetch_subtitles,
+                activity=YouTubeActivities.fetch_subtitles,
                 args=(video_id,),
                 start_to_close_timeout=timedelta(minutes=1),
             )
 
             await workflow.execute_activity(
-                activity=index_video,
-                args=(es_address, video, subtitles),
+                activity=ElasticsearchActivities.index_video,
+                args=(video, subtitles, ),
                 start_to_close_timeout=timedelta(seconds=30),
             )
         
@@ -692,7 +703,18 @@ class PodcastTranscriptWorkflow:
         }
 ```
 
-This is how we run it:
+When we import the activities, we use this line:
+
+```python
+with workflow.unsafe.imports_passed_through():
+```
+
+Without it, it won't work because internally we use Elasticsearch's client. Even though it's marked "unsafe", it's a very common thing to set. It means "I trust I'm importing and using this module across workflows in a deterministic way".
+
+You can find more information about it [here](https://docs.temporal.io/develop/python/python-sdk-sandbox#passthrough-modules).
+
+
+This is how we run our workflow:
 
 ```python
 import asyncio
@@ -736,21 +758,29 @@ from temporalio.worker import Worker
 from temporalio.client import Client
 
 from workflow import PodcastTranscriptWorkflow
-import activities
+
+from activities import (
+    YouTubeActivities,
+    ElasticsearchActivities,
+    find_podcast_videos,
+)
 
 
 async def run_worker():
     client = await Client.connect("localhost:7233")
 
+    yt_activities = YouTubeActivities()
+    es_activities = ElasticsearchActivities()
+
     worker = Worker(
         client,
-        task_queue="podcast-transcript-task-queue",
+        task_queue="podcast_transcript_task_queue",
         workflows=[PodcastTranscriptWorkflow],
         activities=[
-            activities.fetch_subtitles,
-            activities.find_podcast_videos,
-            activities.video_exists,
-            activities.index_video,
+            find_podcast_videos,
+            yt_activities.fetch_subtitles,
+            es_activities.video_exists,
+            es_activities.index_video,
         ],
     )
 
@@ -761,9 +791,12 @@ if __name__ == "__main__":
     asyncio.run(run_worker())
 ```
 
-When I run it, I get an error:
+Note that here we use concrete instances of our activity classes. The worker does the actual execution of the activities, so that's why it needs properly instantiated
+activities with all the dependencies. 
 
-Fix: add `ThreadPoolExecutor` for executing sync activities. 
+Howeever, when I run it, I get an error. 
+
+Fix: add `ThreadPoolExecutor` for executing sync activities:
 
 ```python
 from concurrent.futures import ThreadPoolExecutor
@@ -789,8 +822,6 @@ Now we can go to UI and see the flow being executed. It should take aroud 10 min
 
 Now that we have transcripts indexed in Elasticsearch, we can build an AI agent that uses them to conduct research and answer questions.
 
-### Setup
-
 Create a new directory for the agent:
 
 ```bash
@@ -801,7 +832,7 @@ cd agent
 Initialize the project with required dependencies:
 
 ```bash
-uv init
+uv init --python=3.13
 uv add pydantic-ai openai elasticsearch
 uv add --dev jupyter
 ```
@@ -812,15 +843,13 @@ Create a `.env` file with your OpenAI API key:
 OPENAI_API_KEY='your-key'
 ```
 
-Start Jupyter to work interactively:
+Start Jupyter:
 
 ```bash
 uv run jupyter notebook
 ```
 
 Create a new notebook `agent.ipynb` to follow along.
-
-### Creating Search Tools
 
 First, connect to Elasticsearch and create search functions that will serve as tools for the agent:
 
@@ -834,6 +863,10 @@ def search_videos(query: str, size: int = 5) -> list[dict]:
     Search for videos whose titles or subtitles match a given query.
     
     Returns highlighted match information including video IDs and snippets.
+
+    Args:
+        query (str): The search query string to match against video titles and subtitles. Must be a non-empty string.
+        size (int, optional): Maximum number of results to return. Must be a positive integer. Defaults to 5.
     """
     body = {
         "size": size,
@@ -875,6 +908,9 @@ def search_videos(query: str, size: int = 5) -> list[dict]:
 def get_subtitles_by_id(video_id: str) -> dict:
     """
     Retrieve the full subtitle content for a specific video.
+
+    Args:
+        video_id (str): the YouTube video id for which we want to get the subtitles
     """
     result = es.get(index="podcasts", id=video_id)
     return result['_source']
@@ -886,7 +922,7 @@ Test the search function:
 search_videos('how do I get rich with AI?')
 ```
 
-### Creating a Basic Research Agent
+## Creating a Basic Research Agent
 
 Create a simple agent with search capabilities using Pydantic AI:
 
@@ -911,9 +947,41 @@ result = await research_agent.run(
 print(result.output)
 ```
 
-**Tracking tool calls:**
+Let's check if it used any tools in the message history:
 
-To see which tools the agent is calling, create a callback handler:
+```python
+messages = result.new_messages()
+
+for m in messages:
+    for p in m.parts:
+        kind = p.part_kind
+        if kind == 'user-prompt':
+            print('USER:', p.content)
+            print()
+        if kind == 'text':
+            print('ASSISTANT:', p.content)
+            print()
+        if kind == 'tool-call':
+            print('TOOL CALL:', p.tool_name, p.args)
+```
+
+Looks like it didn't use any tools. 
+
+Let's update the instructions:
+
+To get the agent to actually use the tools and conduct thorough research, provide detailed instructions:
+
+```python
+research_instructions = """
+You're a researcher and your task is to use the available tools to conduct research on the topic 
+that the user provided.
+
+Cite the sources with video IDs and timestamps.
+""".strip()
+```
+
+
+Also, to see during request time which tools the agent is calling, create a callback handler:
 
 ```python
 from pydantic_ai.messages import FunctionToolCallEvent
@@ -938,8 +1006,11 @@ class NamedCallback:
     
     async def __call__(self, ctx, event) -> None:
         await self._print_function_calls(ctx, event)
+```
 
-# Use the callback
+Let's use it:
+
+```python
 research_agent_callback = NamedCallback(research_agent)
 
 result = await research_agent.run(
@@ -948,50 +1019,7 @@ result = await research_agent.run(
 )
 ```
 
-You can also inspect the conversation messages:
-
-```python
-messages = result.new_messages()
-
-for m in messages:
-    for p in m.parts:
-        kind = p.part_kind
-        if kind == 'user-prompt':
-            print('USER:', p.content)
-            print()
-        if kind == 'text':
-            print('ASSISTANT:', p.content)
-            print()
-        if kind == 'tool-call':
-            print('TOOL CALL:', p.tool_name, p.args)
-```
-
-**Improving instructions for better tool usage:**
-
-To get the agent to actually use the tools and conduct thorough research, provide detailed instructions:
-
-```python
-research_instructions = """
-You're a researcher and your task is to use the available tools to conduct research on the topic 
-that the user provided.
-
-Cite the sources with video IDs and timestamps.
-""".strip()
-
-research_agent = Agent(
-    name='research_agent',
-    instructions=research_instructions,
-    model='openai:gpt-4o-mini',
-    tools=[search_videos, get_subtitles_by_id]
-)
-
-result = await research_agent.run(
-    user_prompt='how do I get rich with AI?',
-    event_stream_handler=research_agent_callback
-)
-
-print(result.output)
-```
+## Improving the Agent
 
 This still doens't create great results. let's use something more comprehensive 
 
@@ -1043,9 +1071,9 @@ Rules:
 """.strip()
 ```
 
-### Managing Context with Summarization
+And use a different model, e.g. `gpt-5-mini`. 
 
-When dealing with long transcripts, we exceed context window. But we can summarize the transcripts. 
+But when dealing with long transcripts, we exceed context window. But we can summarize the transcripts. 
 
 Let's create a summarizing agent:
 
@@ -1093,9 +1121,7 @@ summary_result = await summarization_agent.run(prompt)
 print(summary_result.output)
 ```
 
-### Making it a tool
-
-To make summarization available as a tool for the research agent, create a dynamic function that uses conversation context:
+Let's turn it into a tool: 
 
 ```python
 from pydantic_ai import RunContext
@@ -1110,7 +1136,6 @@ async def summarize(ctx: RunContext, video_id: str) -> str:
     user_queries = []
     search_queries = []
     
-    # Extract context from conversation history
     for m in ctx.messages:
         for p in m.parts:
             kind = p.part_kind
@@ -1122,10 +1147,8 @@ async def summarize(ctx: RunContext, video_id: str) -> str:
                     query = args['query']
                     search_queries.append(query)
     
-    # Get full subtitles
     subtitles = get_subtitles_by_id(video_id)['subtitles']
     
-    # Build contextual prompt
     prompt = textwrap.dedent(f"""
         user query:
         {'\n'.join(user_queries)}
@@ -1139,8 +1162,11 @@ async def summarize(ctx: RunContext, video_id: str) -> str:
     
     summary_result = await summarization_agent.run(prompt) 
     return summary_result.output
+```
 
-# Update research agent with summarization tool
+Let's use it for the research agent:
+
+```python
 research_agent = Agent(
     name='research_agent',
     instructions=research_instructions,
@@ -1157,32 +1183,32 @@ print(result.output)
 ```
 
 This approach allows the agent to:
+
 1. Search for relevant videos
 2. Summarize only the relevant parts of long transcripts
 3. Stay within context limits while accessing detailed information
 4. Conduct multi-stage research with proper citations
 
+
 ## Making the Agent Durable with Temporal
 
 The agent we've built works well, but it has limitations in production:
+
 - If the OpenAI API times out, we lose all progress
 - System crashes mean starting over from scratch
 - No automatic retry handling for failures
 - State is not preserved across restarts
 
-Temporal solves these problems with **durable execution**. The workflow looks like it's running continuously, but it can survive crashes, API failures, and even days-long pauses without losing state.
+Temporal solves these problems with durable execution. The workflow looks like it's running continuously, but it can survive crashes, API failures, and even days-long pauses without losing state.
 
-### Why Temporal for AI Agents?
 
 Temporal's durable execution model is perfect for AI agents because:
 
-1. **Automatic State Preservation**: Conversation history and search results are saved automatically
-2. **Resilient to Failures**: API timeouts and crashes trigger automatic retries, not restarts
-3. **Long-Running Workflows**: Can pause for hours/days (e.g., waiting for approval) without consuming resources
-4. **Observable**: Full execution history in Temporal Web UI for debugging
-5. **Scalable**: Workers can be distributed across multiple machines
-
-### Installing Dependencies
+1. Automatic State Preservation: Conversation history and search results are saved automatically
+2. Resilient to Failures: API timeouts and crashes trigger automatic retries, not restarts
+3. Long-Running Workflows: Can pause for hours/days (e.g., waiting for approval) without consuming resources
+4. Observable: Full execution history in Temporal Web UI for debugging
+5. Scalable: Workers can be distributed across multiple machines
 
 Make sure you have Temporal support:
 
@@ -1191,14 +1217,12 @@ cd agent
 uv add pydantic-ai[temporal] temporalio
 ```
 
-### Creating the Workflow
 
 Now we'll convert our research agent to use Temporal. The approach is similar to what we did before, but we wrap the agents and activities for durability.
 
 Create `agent_workflow.py`:
 
 ```python
-"""Research workflow using Temporal and Pydantic AI."""
 from temporalio import workflow, activity
 from temporalio.exceptions import ApplicationError
 from datetime import timedelta
@@ -1212,10 +1236,8 @@ from pydantic_ai import Agent, RunContext
 from pydantic_ai.durable_exec.temporal import TemporalAgent
 
 
-# Elasticsearch activities
 @activity.defn
 async def search_videos_activity(query: str, size: int = 5) -> list[dict]:
-    """Search for videos - runs as a Temporal activity."""
     es_url = os.getenv("ELASTICSEARCH_URL", "http://localhost:9200")
     es = Elasticsearch(es_url)
     
@@ -1258,7 +1280,6 @@ async def search_videos_activity(query: str, size: int = 5) -> list[dict]:
 
 @activity.defn
 async def get_subtitles_activity(video_id: str) -> dict:
-    """Retrieve subtitles for a video - runs as a Temporal activity."""
     es_url = os.getenv("ELASTICSEARCH_URL", "http://localhost:9200")
     es = Elasticsearch(es_url)
     

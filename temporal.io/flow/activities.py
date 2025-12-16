@@ -1,6 +1,3 @@
-#!/usr/bin/env python
-# coding: utf-8
-
 import os
 
 import yaml
@@ -26,8 +23,6 @@ def cteate_proxy_config():
     )
 
 
-
-
 def format_timestamp(seconds: float) -> str:
     """Convert seconds to H:MM:SS if > 1 hour, else M:SS"""
     total_seconds = int(seconds)
@@ -50,13 +45,46 @@ def make_subtitles(transcript) -> str:
     return '\n'.join(lines)
 
 
-@activity.defn
-def fetch_subtitles(video_id):
-    proxy = cteate_proxy_config()
-    ytt_api = YouTubeTranscriptApi(proxy_config=proxy)
-    transcript = ytt_api.fetch(video_id)
-    subtitles = make_subtitles(transcript)
-    return subtitles
+class YouTubeActivities: 
+    def __init__(self, use_proxy: bool = True):
+        if use_proxy:
+            self.proxy_config = cteate_proxy_config()
+        else:
+            self.proxy_config = None
+
+
+    @activity.defn
+    def fetch_subtitles(self, video_id):
+        ytt_api = YouTubeTranscriptApi(proxy_config=self.proxy_config)
+        transcript = ytt_api.fetch(video_id)
+        subtitles = make_subtitles(transcript)
+        return subtitles
+
+
+class ElasticsearchActivities:
+
+    def __init__(self, es_address: str = None):
+        if es_address is None:
+            es_address = os.getenv('ELASTICSEARCH_ADDRESS', 'http://localhost:9200')
+        self.es = Elasticsearch(es_address)
+
+    @activity.defn
+    def video_exists(self, video_id):
+        resp = self.es.exists(index="podcasts", id=video_id)
+        return resp.body
+
+    @activity.defn
+    def index_video(self, video, subtitles):
+        video_id = video['video_id']
+        video_title = video['title']
+        
+        doc = {
+            "video_id": video_id,
+            "title": video_title,
+            "subtitles": subtitles
+        }
+
+        self.es.index(index="podcasts", id=video_id, document=doc)
 
 
 @activity.defn
@@ -86,26 +114,4 @@ def find_podcast_videos(commit_id):
 
     print(f"Will process {len(videos)} videos")
     return videos
-
-
-@activity.defn
-def video_exists(es_address, video_id):
-    es = Elasticsearch(es_address)
-    resp = es.exists(index="podcasts", id=video_id)
-    return resp.body
-
-
-@activity.defn
-def index_video(es_address, video, subtitles):
-    video_id = video['video_id']
-    video_title = video['title']
-    
-    doc = {
-        "video_id": video_id,
-        "title": video_title,
-        "subtitles": subtitles
-    }
-
-    es = Elasticsearch(es_address)
-    es.index(index="podcasts", id=video_id, document=doc)
 

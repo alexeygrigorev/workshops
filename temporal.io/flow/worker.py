@@ -7,10 +7,9 @@ from temporalio.client import Client
 from workflow import PodcastTranscriptWorkflow
 
 from activities import (
-    fetch_subtitles,
+    YouTubeActivities,
+    ElasticsearchActivities,
     find_podcast_videos,
-    video_exists,
-    index_video,
 )
 
 
@@ -19,15 +18,18 @@ async def run_worker():
 
     executor = ThreadPoolExecutor(max_workers=10)
 
+    yt_activities = YouTubeActivities()
+    es_activities = ElasticsearchActivities()
+
     worker = Worker(
         client,
         task_queue="podcast_transcript_task_queue",
         workflows=[PodcastTranscriptWorkflow],
         activities=[
-            fetch_subtitles,
             find_podcast_videos,
-            video_exists,
-            index_video,
+            yt_activities.fetch_subtitles,
+            es_activities.video_exists,
+            es_activities.index_video,
         ],
         activity_executor=executor,
     )
