@@ -1,6 +1,6 @@
 # End-To-End Deep Research Agent
 
-* Video: TBA
+* Video: https://www.youtube.com/watch?v=N1gaI3Qz6vw
 
 In this workshop, we will create a deep research agent based on the DataTalks.Club podcast data.
 
@@ -373,7 +373,7 @@ for podcast in podcasts:
     _, video_id = podcast['youtube'].split('watch?v=')
 
     # Skip problematic videos
-    if video_id == 'FRi0SUtxdMw':
+    if video_id in ['FRi0SUtxdMw', 's8kyzy8V5b8']:
         continue
 
     videos.append({
@@ -621,29 +621,7 @@ class YouTubeActivities:
 
 These activities are executed in a **workflow**. 
 
-This is the code we have so far: 
-
-```python
-from elasticsearch import Elasticsearch
-
-def workflow():
-    commit_id = '187b7d056a36d5af6ac33e4c8096c52d13a078a7'
-    videos = find_podcast_videos(commit_id)
-
-    es_address = "http://localhost:9200"
-
-    for video in videos:
-        video_id = video['video_id']
-
-        if video_exists(es_address, video_id):
-            print(f'already processed {video_id}')
-            continue
-
-        subtitles = fetch_subtitles(video_id)
-        index_video(es_address, video, subtitles)
-```
-
-Let's turn it into a Temporal workflow. It's a class annotated with `@workflow.defn` that must have an async method for running the workflow annotated with `@workflow.run`
+Let's turn the code we have into a Temporal workflow. It's a class annotated with `@workflow.defn` that must have an async method for running the workflow annotated with `@workflow.run`
 
 ```python
 from datetime import timedelta
@@ -727,7 +705,7 @@ async def run_workflow():
 
     result = await client.execute_workflow(
         PodcastTranscriptWorkflow.run,
-        args=(commit_id, es_address),
+        args=(commit_id, ),
         id="podcast_transcript_workflow",
         task_queue="podcast_transcript_task_queue",
     )
@@ -1678,7 +1656,7 @@ https://github.com/alexeygrigorev/workshops/tree/main/temporal.io
 
 - [Temporal 101: Getting Started with Temporal](https://learn.temporal.io/getting_started/python/?utm_source=datatalks&utm_medium=sponsorship&utm_campaign=influencer-2025-12-16-datatalksclub&utm_content=datatalks-durable-ai-application)
 - [Building Durable AI Applications with Temporal](https://learn.temporal.io/tutorials/ai/building-durable-ai-applications/?utm_source=datatalks&utm_medium=sponsorship&utm_campaign=influencer-2025-12-16-datatalksclub&utm_content=datatalks-durable-ai-application)
-- [Temporal Deep Research Documentation](https://docs.temporal.io/deep-research)
+- [Temporal Deep Research Documentation](https://docs.temporal.io/ai-cookbook/basic-openai-python)
 - [Pydantic AI + Temporal Integration](https://ai.pydantic.dev/durable-exec/temporal/)
 - [Temporal Python SDK](https://docs.temporal.io/dev-guide/python)
 - [YouTube Transcript API Documentation](https://github.com/jdepoix/youtube-transcript-api)

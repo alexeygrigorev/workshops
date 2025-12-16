@@ -104,7 +104,7 @@ def find_podcast_videos(commit_id):
         _, video_id = podcast['youtube'].split('watch?v=')
 
         # Skip problematic videos
-        if video_id == 'FRi0SUtxdMw':
+        if video_id in ['FRi0SUtxdMw', 's8kyzy8V5b8']:
             continue
 
         videos.append({
