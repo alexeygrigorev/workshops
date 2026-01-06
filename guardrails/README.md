@@ -6,11 +6,7 @@ This workshop is about making AI agents safer with guardrails.
 
 - Python 3.10+
 - OpenAI API key
-- Install dependencies:
 
-```bash
-uv add openai-agents
-```
 
 ## What are Guardrails?
 
@@ -28,6 +24,7 @@ Why do we need them?
 - Agents might make inappropriate promises (e.g., refunds, legal advice)
 - You want to restrict what your agent can talk about
 
+
 ## Part 1: Building an Agent (Starting Point)
 
 Before adding guardrails, let's build a complete agent with tools. We'll create a **DataTalks.Club FAQ Assistant** that helps students find answers about the Data Engineering Zoomcamp.
@@ -37,7 +34,34 @@ Before adding guardrails, let's build a complete agent with tools. We'll create 
 First, install the required dependencies:
 
 ```bash
-uv add openai-agents minsearch requests frontmatter
+pip install uv
+uv init
+uv add jupyter openai openai-agents minsearch requests python-frontmatter
+```
+
+Add your OpenAI key in `.env`:
+
+```
+OPENAI_API_KEY='your-key'
+```
+
+Make sure `.env` is in `.gitignore`:
+
+```bash
+echo .env >> .gitignore
+```
+
+I use `dirdotenv` to get access to the env variables from `.env` and `.envrc` to my terminal:
+
+```bash
+pip install dirdotenv
+echo 'eval "$(dirdotenv hook bash)"' >> ~/.bashrc
+```
+
+Start the notebook:
+
+```bash
+uv run jupyter notebook
 ```
 
 ### Loading FAQ Data from GitHub
@@ -52,18 +76,14 @@ This logic is implemented inside `docs.py` file with a `GithubRepositoryDataRead
 Download `docs.py`:
 
 ```bash
-wget TODO
+wget https://raw.githubusercontent.com/alexeygrigorev/workshops/refs/heads/main/guardrails/docs.py
 ```
 
 Let's use it to fetch the DataTalks.Club FAQ:
 
 ```python
-from agents import Agent, function_tool, Runner
 from docs import GithubRepositoryDataReader, parse_data
-from minsearch import Index
-from typing import List, Dict
 
-# Download FAQ from DataTalks.Club GitHub repository
 reader = GithubRepositoryDataReader(
     repo_owner="DataTalksClub",
     repo_name="faq",
@@ -80,18 +100,23 @@ print(f"Loaded {len(faq_documents)} FAQ entries")
 ### Creating the Search Index
 
 ```python
-# Create a search index using minsearch
-faq_index = Index(
-    text_fields=["title", "content", "filename"],
-    keyword_fields=[]
-)
+from minsearch import Index
+
+faq_index = Index(text_fields=["title", "content", "filename"])
 
 faq_index.fit(faq_documents)
+
+faq_index.search('how do I join the course?')
 ```
 
 ### Define Tools
 
+We turn this into a tool for our agent:
+
 ```python
+from agents import function_tool
+from typing import List, Dict
+
 @function_tool
 def search_faq(query: str) -> List[Dict]:
     """Search the DataTalks.Club FAQ for relevant answers.
@@ -108,7 +133,11 @@ def search_faq(query: str) -> List[Dict]:
 
 ### Create the Agent
 
+Now create the agent:
+
 ```python
+from agents import Agent
+
 faq_instructions = """
 You are a helpful teaching assistant for the Data Engineering Zoomcamp.
 
@@ -128,15 +157,23 @@ faq_agent = Agent(
 )
 ```
 
-### Test the Agent
+### Run the Agent
 
 ```python
-# Search for existing info
+from agents import Runner
+
 result = await Runner.run(faq_agent, "How do I register for the course?")
 print(result.final_output)
 ```
 
 The agent will search the FAQ and return relevant answers from the DataTalks.Club Data Engineering Zoomcamp FAQ.
+
+We can see the tool calls:
+
+```python
+for item in result.new_items:
+    print(item)
+```
 
 ### The Problem
 
@@ -201,15 +238,11 @@ topic_guardrail_agent = Agent(
 ### Test the Guardrail Directly
 
 ```python
-# Test with a relevant question
 result = await Runner.run(topic_guardrail_agent, "How do I install Docker?")
 print(f"Relevant: {result.final_output}")
-# TopicGuardrailOutput(reasoning='About course setup', fail=False)
 
-# Test with an irrelevant question
 result = await Runner.run(topic_guardrail_agent, "What's the best pizza recipe?")
 print(f"Irrelevant: {result.final_output}")
-# TopicGuardrailOutput(reasoning='About cooking, not course', fail=True)
 ```
 
 ### Create the Guardrail Function
@@ -236,10 +269,18 @@ async def topic_guardrail(ctx, agent, input):
 guarded_faq_agent = Agent(
     name="guarded_faq_assistant",
     instructions=faq_instructions,
-    tools=[search_faq, add_faq_entry],
+    tools=[search_faq],
     model="gpt-4o-mini",
     input_guardrails=[topic_guardrail],
 )
+```
+
+Run it:
+
+```python
+prompt = "how do I eat salami?"
+result = await Runner.run(guarded_faq_agent, prompt)
+result.final_output
 ```
 
 ### Handle Guardrail Failures
@@ -349,7 +390,7 @@ async def safety_guardrail(ctx, agent, input, output):
 fully_guarded_agent = Agent(
     name="fully_guarded_faq",
     instructions=faq_instructions,
-    tools=[search_faq, add_faq_entry],
+    tools=[search_faq],
     model="gpt-4o-mini",
     input_guardrails=[topic_guardrail],
     output_guardrails=[safety_guardrail],
