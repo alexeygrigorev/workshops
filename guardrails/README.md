@@ -2,6 +2,10 @@
 
 This workshop is about making AI agents safer with guardrails.
 
+* [Video](https://www.youtube.com/watch?v=Sk1aqwNJWT4) 
+* [Code](notebook.ipynb)
+
+
 ## Prerequisites
 
 - Python 3.10+
@@ -10,7 +14,7 @@ This workshop is about making AI agents safer with guardrails.
 
 ## What are Guardrails?
 
-Guardrails are safety checks that run **before** (input) or **after** (output) your agent executes.
+Guardrails are safety checks that run before (input) or after (output) your agent executes.
 
 ```
 Input Guardrail:  User -> [CHECK] -> Agent (only if check passes)
@@ -27,7 +31,7 @@ Why do we need them?
 
 ## Part 1: Building an Agent (Starting Point)
 
-Before adding guardrails, let's build a complete agent with tools. We'll create a **DataTalks.Club FAQ Assistant** that helps students find answers about the Data Engineering Zoomcamp.
+Before adding guardrails, let's build a complete agent with tools. We'll create a DataTalks.Club FAQ Assistant that helps students find answers about the Data Engineering Zoomcamp.
 
 setup:
 
@@ -71,6 +75,7 @@ For this workshop, we will create an agent that uses [FAQ data from DataTalks.Cl
 The data for the FAQ is in [a GitHub repo](https://datatalks.club/faq/), so we will use it. We can download all the data as a ZIP archive,  
 
 This logic is implemented inside `docs.py` file with a `GithubRepositoryDataReader` class that downloads markdown files from any GitHub repository. 
+
 > **Want to learn more?** Check out this free email course to learn how `docs.py` works and how to build your first AI agent: https://alexeygrigorev.com/aihero/
 
 Download `docs.py`:
@@ -103,13 +108,10 @@ Creating the search index:
 from minsearch import Index
 
 faq_index = Index(text_fields=["title", "content", "filename"])
-
 faq_index.fit(faq_documents)
 
 faq_index.search('how do I join the course?')
 ```
-
-define tools:
 
 We turn this into a tool for our agent:
 
@@ -130,8 +132,6 @@ def search_faq(query: str) -> List[Dict]:
     results = faq_index.search(query, num_results=5)
     return results
 ```
-
-Create the agent:
 
 Now create the agent:
 
@@ -175,7 +175,6 @@ for item in result.new_items:
     print(item)
 ```
 
-the problem:
 
 Our agent works, but what if:
 
@@ -190,7 +189,8 @@ Our agent works, but what if:
    - "Write my homework for me"
    - The agent might comply
 
-This is where **guardrails** come in.
+This is where guardrails come in.
+
 
 ## Part 2: Input Guardrails
 
@@ -201,12 +201,12 @@ Define the guardrail output:
 Guardrails use LLMs to make decisions. We define a structured output:
 
 ```python
+from pydantic import BaseModel
+
 class TopicGuardrailOutput(BaseModel):
     reasoning: str
     fail: bool
 ```
-
-Create the guardrail agent:
 
 A guardrail is just another agent with a specific purpose:
 
@@ -541,7 +541,7 @@ async def run_streaming_guarded(agent, user_input):
 
 ## Part 6: Tool-Based Guardrails (Works with Any Framework)
 
-What if your framework doesn't have built-in guardrails? A simple alternative is to use **tools** as guardrails.
+What if your framework doesn't have built-in guardrails? A simple alternative is to use tools as guardrails.
 
 The idea: give your agent a "check if this is appropriate" tool. If the check fails, the agent knows to stop.
 
@@ -591,12 +591,15 @@ result = await Runner.run(faq_agent_with_guardrail, "How do I bake a cake?")
 print(result.final_output)
 ```
 
-**Why this works:**
+Why this works:
+
 - Every framework supports tools
 - The agent self-regulates by checking first
 - Simple to understand and debug
 
-**Limitations:**
+Limitations:
+
+- Sequential execution, the user has to wait
 - The agent might forget to use the tool
 - Less reliable than framework-enforced guardrails
 - Agent could be tricked into skipping the check
@@ -609,24 +612,6 @@ When to use: Quick prototypes, frameworks without guardrail support, simple use 
 In the case of tools, we first run the check and then proceed to output. Sometimes it takes too much time and we can't let the user wait for too long.
 
 In this case, we need to run checks alongside the agent. This is how it's implemented in the Agents SDK.
-
-First, let's define the data structures we'll need:
-
-```python
-from dataclasses import dataclass
-
-@dataclass
-class GuardrailResult:
-    """Result from a guardrail check."""
-    reasoning: str
-    triggered: bool
-
-class GuardrailException(Exception):
-    """Raised when a guardrail trips."""
-    def __init__(self, result: GuardrailResult):
-        self.result = result
-        super().__init__(result.reasoning)
-```
 
 Why async matters:
 
@@ -676,9 +661,7 @@ results = await asyncio.gather(
 )
 ```
 
-creating tasks:
-
-`asyncio.create_task()` starts async work in the background:
+To be able to cancel a coroutine, we need to turn it into a task. We do it usign `asyncio.create_task()` - it starts async work in the background:
 
 ```python
 # Start both in background
@@ -719,7 +702,7 @@ class GuardrailException(Exception):
 And the code:
 
 ```python
-async def failing_guardrail():
+async def failing_guardrail(input):
     """A guardrail that fails after a short delay."""
     await asyncio.sleep(1.5)
     raise GuardrailException(GuardrailResult(
@@ -727,7 +710,7 @@ async def failing_guardrail():
         triggered=True
     ))
 
-guard_task = asyncio.create_task(failing_guardrail())
+guard_task = asyncio.create_task(failing_guardrail("hello"))
 agent_task = asyncio.create_task(mock_agent("hello"))
 
 try:
@@ -765,7 +748,7 @@ async def run_with_guardrails(agent_coro, guardrails):
     """
     # Create tasks
     agent_task = asyncio.create_task(agent_coro)
-    guardrail_tasks = [asyncio.create_task(g()) for g in guardrails]
+    guardrail_tasks = [asyncio.create_task(g) for g in guardrails]
 
     try:
         # Wait for agent OR any guardrail to trip
@@ -854,80 +837,26 @@ Example: using the guardrail agent with our FAQ agent:
 
 ```python
 
-# Guardrail function that raises GuardrailException on fail
-async def check_input_guardrail(user_input: str):
-    """Run the topic guardrail and raise if it fails."""
-    result = await Runner.run(topic_guardrail_agent, user_input)
-    if result.final_output.fail:
-        raise GuardrailException(GuardrailResult(
-            reasoning=result.final_output.reasoning,
-            triggered=True
-        ))
-
-# Wrap the agent execution with guardrails
-async def run_faq_with_guardrails(user_input: str):
-    """Run the FAQ agent with concurrent guardrail checking."""
-    # Create the agent task
-    agent_task = asyncio.create_task(Runner.run(faq_agent, user_input))
-
-    # Create the guardrail task
-    guardrail_task = asyncio.create_task(check_input_guardrail(user_input))
-
-    try:
-        # Wait for both to complete
-        await asyncio.gather(agent_task, guardrail_task)
-        return agent_task.result().final_output
-
-    except GuardrailException as e:
-        # Guardrail tripped - cancel the agent
-        agent_task.cancel()
-        try:
-            await agent_task
-        except asyncio.CancelledError:
-            print("[Agent cancelled - saved tokens!]")
-        raise
+prompt = 'I just discovered the course, can I still join?' #How can I cook pizza?'
+result = await run_with_guardrails(
+    Runner.run(faq_agent, prompt),
+    [topic_guardrail(prompt),]
+)
+result.final_output
 ```
 
-Test: guardrail passes:
-
-```python
-print("=== Test 1: Relevant question ===")
-try:
-    result = await run_faq_with_guardrails("How do I submit homework?")
-    print(f"Result: {result[:100]}...")
-except GuardrailException as e:
-    print(f"Blocked: {e.result.reasoning}")
-```
-
-Test: guardrail fails:
-
-```python
-print("\n=== Test 2: Off-topic question ===")
-try:
-    result = await run_faq_with_guardrails("How do I bake a cake?")
-    print(f"Result: {result}")
-except GuardrailException as e:
-    print(f"Blocked: {e.result.reasoning}")
-```
-
-Notice the agent is cancelled immediately when the guardrail trips - we save tokens and time!
+Notice the agent is cancelled immediately when the guardrail trips!
 
 ## Summary
 
-| Approach | Pros | Cons |
-|----------|------|------|
-| Built-in (Agents SDK) | Easiest, well-tested, handles edge cases | Framework-specific |
-| Tool-based | Works with any framework with tools | Agent might forget to use the tool |
-| Manual (asyncio) | Works with any framework, full control | More code, handle edge cases yourself |
-
 Key Takeaways:
 
-1. **Guardrails are just agents** - They use LLMs to make pass/fail decisions
-2. **Input guardrails** - Block irrelevant or harmful input before the agent sees it
-3. **Output guardrails** - Catch inappropriate responses before showing users
-4. **Run concurrently** - Guardrails add no latency when run in parallel
-5. **Cancel early** - If a guardrail trips, cancel the agent immediately to save tokens
-6. **Works with any framework** - The pattern is simple enough to implement yourself
+1. Guardrails are just agents - They use LLMs to make pass/fail decisions
+2. Input guardrails - Block irrelevant or harmful input before the agent sees it
+3. Output guardrails - Catch inappropriate responses before showing users
+4. Run concurrently - Guardrails add no latency when run in parallel
+5. Cancel early - If a guardrail trips, cancel the agent immediately to save tokens
+6. Works with any framework - The pattern is simple enough to implement yourself
 
 When to Use Each Type:
 
@@ -940,5 +869,4 @@ When to Use Each Type:
 ## Further Reading
 
 - [OpenAI Agents SDK - Guardrails](https://openai.github.io/openai-agents-python/guardrails/)
-- [Pydantic AI](https://ai.pydantic.dev/)
 - [Python AsyncIO Documentation](https://docs.python.org/3/library/asyncio.html)
