@@ -6,7 +6,6 @@ This workshop is about making AI agents safer with guardrails. It is a part of t
 * [Video](https://www.youtube.com/watch?v=Sk1aqwNJWT4) 
 * [Code](notebook.ipynb)
 
-This work
 
 
 ## Prerequisites
