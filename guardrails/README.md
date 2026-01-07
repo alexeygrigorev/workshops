@@ -1,9 +1,12 @@
 # Guardrails for AI Agents
 
-This workshop is about making AI agents safer with guardrails.
+This workshop is about making AI agents safer with guardrails. It is a part of the
+[AI Bootcamp: From RAG to Agents](https://maven.com/alexey-grigorev/from-rag-to-agents) course.
 
 * [Video](https://www.youtube.com/watch?v=Sk1aqwNJWT4) 
 * [Code](notebook.ipynb)
+
+This work
 
 
 ## Prerequisites
@@ -870,3 +873,12 @@ When to Use Each Type:
 
 - [OpenAI Agents SDK - Guardrails](https://openai.github.io/openai-agents-python/guardrails/)
 - [Python AsyncIO Documentation](https://docs.python.org/3/library/asyncio.html)
+
+
+## Final words 
+
+That's it! 
+
+If you're interested in learning more about it, check out my course about building AI Agents:
+
+https://maven.com/alexey-grigorev/from-rag-to-agents
