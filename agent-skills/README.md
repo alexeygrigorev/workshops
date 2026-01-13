@@ -620,169 +620,209 @@ BUt le'ts stat with loaing the commands
 
 ### COMMAND.md Format
 
-Commands are markdown files with YAML frontmatter. They are similar to skills, but typically one command = one markdown file. not a folder. 
+Commands are markdown files with YAML frontmatter. They are similar to skills, but typically one command = one markdown file, not a folder.
 
-TODO: show the /kid command from earlier
+Here's the [`/kid`](https://raw.githubusercontent.com/alexeygrigorev/claude-code-kid-parent/refs/heads/main/.claude/commands/kid.md) command:
 
-We put these commands in the commands/ folder. Let's create one with /kid and /parent:
+```markdown
+---
+description: The Claude Code Kid asks for random coding things to implement!
+---
+
+You are the Claude Code Kid - a wildly UNPREDICTABLE coding child!
+Come up with something NEW and SURPRISING each time!
+
+## YOUR MISSION:
+Invent a COMPLETELY ORIGINAL coding request each time.
+...
+```
+
+We put commands in the `commands/` folder. Let's create it and download the kid and parent commands:
 
 ```bash
-TODO: create folder
-wget kid
-wget parent
+mkdir commands
+cd commands
+
+wget https://raw.githubusercontent.com/alexeygrigorev/claude-code-kid-parent/refs/heads/main/.claude/commands/kid.md
+wget https://raw.githubusercontent.com/alexeygrigorev/claude-code-kid-parent/refs/heads/main/.claude/commands/parent.md
 ```
 
-TODO create a simple class COmmandLoader like SkillLoader and then create the commands tool that wraps the loader
-
-the description: if you see a /command, use this tool to read the file. if the command oesn't exist, process it differently
-
-TODO ^^^ do this
-
-
-## Putting It All Together
-
-### Complete Agent
+Now let's create the `CommandLoader` class:
 
 ```python
-from src import CodingAgent
-
-agent = CodingAgent(
-    project_dir=".",
-    skills_dir="skills/",
-    commands_dir="commands/",
-)
+@dataclass
+class Command:
+    name: str
+    description: str
+    template: str
 ```
 
-### Processing User Input
+And implement the loader:
 
 ```python
-# Commands are intercepted first
-processed = agent.process_input("/review main.py")
-# Agent receives the rendered review prompt
+class CommandLoader:
+    def __init__(self, commands_dir: Path | str = None):
+        self.commands_dir = Path(commands_dir)
 
-processed = agent.process_input("I need tests")
-# Agent receives the original text, then can load test-writer skill
+    def load_command(self, name: str) -> Command:
+        command_file = self.commands_dir / f"{name}.md"
+        if not command_file.exists():
+            return None
+
+        parsed = frontmatter.load(command_file, encoding="utf-8")
+        metadata = dict(parsed.metadata)
+
+        return Command(
+            name=name,
+            description=metadata.get("description", ""),
+            template=parsed.content,
+        )
+
+    def list_commands(self) -> list[Command]:
+        """List all available commands."""
+        commands = []
+
+        if not self.commands_dir.exists():
+            return commands
+
+        for md_file in sorted(self.commands_dir.glob("*.md")):
+            name = md_file.stem
+            command = self.get(name)
+            commands.append(command)
+
+        return commands
 ```
 
-### Connecting to an LLM
+Test it:
 
 ```python
-from openai import OpenAI
-from toyaikit.tools import Tools
-from toyaikit.chat import IPythonChatInterface
-from toyaikit.llm import OpenAIChatCompletionsClient
-from toyaikit.chat.runners import OpenAIChatCompletionsRunner
-from src import CodingAgent, GENERAL_CODING_PROMPT
+command_loader = CommandLoader(Path('commands/'))
+command_loader.load_command('kid')
+```
 
-# Create agent
-agent = CodingAgent(project_dir=".")
+Create a tool wrapper that the agent can call:
 
-# Set up tools (includes skill tool)
-tools_obj = Tools()
-tools_obj.add_tools(agent.tools)
-tools_obj.add_tools(agent.skill_tools)
+```python
+def process_template(template: str, arguments: str) -> str:
+    # process $1, $2, $3, $ARGUMENTS
+    return template
 
-# Set up LLM
-llm_client = OpenAIChatCompletionsClient(
-    model='gpt-4o-mini',
-    client=OpenAI(),
-)
 
-# Create runner
-chat_interface = IPythonChatInterface()
-runner = OpenAIChatCompletionsRunner(
+class CommandsTool:
+    def __init__(self, command_loader: CommandLoader):
+        self.command_loader = command_loader
+
+    def execute_command(self, name: str, arguments: str = "") -> str:
+        """Execute a command by name and return the rendered prompt.
+
+        If you see input starting with /command, use this tool to load and execute it.
+        If the command doesn't exist, let the user know.
+
+        Args:
+            name: The command name (without the / prefix).
+            arguments: Optional arguments to substitute into the template.
+
+        Returns:
+            The rendered command template as a string.
+        """
+        if name.startswith('/'):
+            name = name.lstrip('/')
+
+        command = self.command_loader.load_command(name)
+        if not command:
+            return f"Command not found: /{name}"
+
+        return process_template(command.template, arguments)
+```
+
+Add it to the tools:
+
+```python
+commands_tool = CommandsTool(command_loader=command_loader)
+commands_tool.execute_command('kid')
+```
+
+
+### Agent
+
+Now let's add this tool:
+
+```python
+tools_obj.add_tools(commands_tool)
+```
+
+We need to tell our agent what's the difference between skills and commands:
+
+```python
+SKILL_INJECTION_PROMPT = f'''
+
+Don't confuse skills and commands:
+
+- Skills are discovered automatically, without user explicitly asking for it
+- Instructions to execute commands are given explicitly: "/test" -> "run the 'test' command"
+
+When you see "/command", use the tools to execute the command "command"
+'''.strip()
+
+AGENT_WITH_SKILLS_INSTRUCTIONS = AGENT_INSTRUCTIONS + '\n\n' + SKILL_INJECTION_PROMPT
+```
+
+Tools:
+
+```python
+def process_template(template: str, arguments: str) -> str:
+    # process $1, $2, $3, $ARGUMENTS
+    return template
+
+
+class CommandsTool:
+    def __init__(self, command_loader: CommandLoader):
+        self.command_loader = command_loader
+
+    def execute_command(self, name: str, arguments: str = "") -> str:
+        """Execute a command by name and return the rendered prompt.
+
+        If you see input starting with /command, use this tool to load and execute it.
+        If the command doesn't exist, let the user know.
+
+        Examples: 
+            User inputs "/test" -> invoke command with name="test"
+            User inputs "/download" -> invoke command name="download"
+
+        Args:
+            name: The command name (without the / prefix).
+            arguments: Optional arguments to substitute into the template.
+
+        Returns:
+            The rendered command template as a string.
+        """
+        if name.startswith('/'):
+            name = name.lstrip('/')
+
+        command = self.command_loader.load_command(name)
+        if not command:
+            return f"Command not found: /{name}"
+
+        return process_template(command.template, arguments)
+```
+
+Add this tool:
+
+```python
+tools_obj.add_tools(commands_tool)
+```
+
+And finally put everything together:
+
+
+```python
+runner = OpenAIResponsesRunner(
     tools=tools_obj,
-    developer_prompt=GENERAL_CODING_PROMPT,
+    developer_prompt=AGENT_WITH_SKILLS_INSTRUCTIONS,
     llm_client=llm_client,
+    chat_interface=chat_interface,
 )
-
-# Define wrapper that handles commands
-def run_with_commands(user_input: str):
-    processed = agent.process_input(user_input)
-    return runner.loop(prompt=processed)
-
-# Run!
-# run_with_commands("I need tests for calculator.py")
-# run_with_commands("/review main.py")
 ```
-
-### CLI Interface
-
-```bash
-cd workshop
-python -m src.main
-```
-
-Available commands:
-- `/list` - List all available skills
-- `/show <name>` - Show skill details
-- `/commands` - List all commands
-- `/quit` - Exit
-
-
-## Skills vs Commands
-
-| Aspect | Skills | Commands |
-|--------|--------|----------|
-| Who invokes | Agent (autonomous) | User (manual) |
-| Syntax | `skill({name: "..."})` | `/command args` |
-| Agent sees | Yes, in tool description | No, pre-processed |
-| Content | Full instructions | Prompt template |
-| Use case | Specialized capabilities | Quick shortcuts |
-
-Remember:
-- Skills: Agent decides automatically based on user request
-  - User says: "I need tests" → Agent loads test-writer skill
-
-- Commands: User invokes directly for quick access
-  - User says: "/review main.py" → Agent receives review prompt
-
-
-## Running the Workshop
-
-```bash
-cd workshop
-uv run jupyter notebook
-```
-
-Open the notebooks in order:
-1. `01-recap.ipynb` - Quick recap of the coding agent
-2. `02-general-agent.ipynb` - Remove Django dependency
-3. `03-skills.ipynb` - Introduce skills
-4. `04-commands.ipynb` - Introduce commands
-5. `05-complete-agent.ipynb` - Full integration
-
-
-## Project Structure
-
-```
-workshop/
-├── README.md
-├── notebooks/
-│   ├── 01-recap.ipynb
-│   ├── 02-general-agent.ipynb
-│   ├── 03-skills.ipynb
-│   ├── 04-commands.ipynb
-│   └── 05-complete-agent.ipynb
-├── src/
-│   ├── __init__.py
-│   ├── agent.py
-│   ├── tools.py
-│   ├── skills.py
-│   ├── commands.py
-│   └── main.py
-├── skills/
-│   ├── hello/SKILL.md
-│   ├── joke/SKILL.md
-│   ├── counter/SKILL.md
-│   ├── coding_standards/SKILL.md
-│   └── deploy_app/SKILL.md
-└── commands/
-    ├── test.md
-    ├── review.md
-    └── explain.md
-```
-
 
 ## References
 
