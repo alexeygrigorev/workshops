@@ -273,6 +273,79 @@ You're here to help users build better software efficiently. Start by understand
 
 This simplified version removes all framework-specific details, so the agent works on any codebase, not just Django.
 
+## Setting Up the Agent
+
+Now let's set up the agent. We'll use `toyaikit` - a small library for orchestrating agents with tools. It handles the tool calling loop so we don't have to.
+
+```bash
+pip install toyaikit
+```
+
+First, create a project folder where the agent will work:
+
+```python
+from pathlib import Path
+
+project_path = Path('test-project')
+project_path.mkdir(exist_ok=True)
+```
+
+Initialize the agent tools with the project path:
+
+```python
+import tools
+
+agent_tools = tools.AgentTools(project_path)
+```
+
+Create a `Tools` object and add the agent tools to it:
+
+```python
+from toyaikit.tools import Tools
+
+tools_obj = Tools()
+tools_obj.add_tools(agent_tools)
+```
+
+Set up the OpenAI client:
+
+```python
+import os
+from openai import OpenAI
+
+client = OpenAI(api_key=os.getenv('OPENAI_API_KEY'))
+```
+
+Create the LLM client wrapper:
+
+```python
+from toyaikit.llm import OpenAIClient
+
+llm_client = OpenAIClient(client=client)
+```
+
+Create the chat interface for Jupyter and the runner:
+
+```python
+from toyaikit.chat import IPythonChatInterface
+from toyaikit.chat.runners import OpenAIResponsesRunner
+
+chat_interface = IPythonChatInterface()
+
+runner = OpenAIResponsesRunner(
+    tools=tools_obj,
+    developer_prompt=GENERAL_CODING_PROMPT,
+    llm_client=llm_client,
+    chat_interface=chat_interface,
+)
+```
+
+Run the agent:
+
+```python
+runner.run()
+```
+
 ## Implementing Skills
 
 ### SKILL.md Format
