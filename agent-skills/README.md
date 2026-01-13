@@ -403,8 +403,8 @@ In the [`skills`](skills/) folder we have a few other examples:
 - `coding_standards/SKILL.md` - Use when writing or reviewing code
 - `counter/SKILL.md` - Count things or list items with numbers
 - `deploy_app/SKILL.md` - Deploy the application using deployment scripts
-- `hello/SKILL.md` - MANDATORY for ALL greeting requests
-- `joke/SKILL.md` - MANDATORY for ALL joke requests
+- `hello/SKILL.md` - Use for greetings
+- `joke/SKILL.md` - Use for jokes
 
 
 ### Skills Loader
@@ -605,199 +605,38 @@ result = runner.run();
 
 ## Implementing Commands
 
+Commands are somewhat similar to skills but agent doesn't load them automatically like skills. TYpically the user asks to invoke a command and htne the agent does it. 
+
+So we want to parse the input. When we unrestand that it starst with /, then we load the command and inject it as a prompt. 
+
+There are multiple ways to implement it:
+
+- intercept the message, if it starts with /, load the command, and replace the input
+- have a tool - execute command
+
+We'll follow the second approach because here it's simpler: we won't need to change our code or modify the `runner.run`method. in real life when you implement something like that you probablky want to have more contro so you'd impelemnt this manually by followign the first approch.
+
+BUt le'ts stat with loaing the commands
+
 ### COMMAND.md Format
 
-Commands are markdown files with YAML frontmatter:
+Commands are markdown files with YAML frontmatter. They are similar to skills, but typically one command = one markdown file. not a folder. 
 
-```markdown
----
-description: Review code for quality
----
+TODO: show the /kid command from earlier
 
-Review the code at $1 for:
-1. Code quality and readability
-2. Potential bugs
-3. Performance issues
-4. Best practices violations
+We put these commands in the commands/ folder. Let's create one with /kid and /parent:
 
-Focus on: $ARGUMENTS
+```bash
+TODO: create folder
+wget kid
+wget parent
 ```
 
-### Placeholders
+TODO create a simple class COmmandLoader like SkillLoader and then create the commands tool that wraps the loader
 
-Commands support these placeholders:
+the description: if you see a /command, use this tool to read the file. if the command oesn't exist, process it differently
 
-- `$1`, `$2`, `$3` - Positional arguments
-- `$ARGUMENTS` - All arguments
-
-### Directory Structure
-
-```
-commands/
-├── test.md
-├── review.md
-└── explain.md
-```
-
-### Creating the Commands Module
-
-Create `src/commands.py` with the command discovery and execution code:
-
-```python
-# src/commands.py
-"""Command discovery and execution system."""
-
-import frontmatter
-import re
-import shlex
-from dataclasses import dataclass
-from pathlib import Path
-
-
-@dataclass
-class CommandInfo:
-    """Information about a command."""
-    name: str
-    description: str
-    template: str
-
-
-class CommandLoader:
-    """Discovers and loads commands from a directory."""
-
-    def __init__(self, commands_dir: Path | str = None):
-        """Initialize the command loader."""
-        if commands_dir is None:
-            commands_dir = Path("commands")
-        self.commands_dir = Path(commands_dir)
-
-    def get(self, name: str) -> CommandInfo | None:
-        """Get a command by name."""
-        command_file = self.commands_dir / f"{name}.md"
-        if not command_file.exists():
-            return None
-
-        with open(command_file, "r", encoding="utf-8") as f:
-            content = f.read()
-
-        parsed = frontmatter.loads(content)
-        metadata = dict(parsed.metadata)
-        body = parsed.content
-
-        return CommandInfo(
-            name=name,
-            description=metadata.get("description", ""),
-            template=body,
-        )
-
-    def list(self) -> list[CommandInfo]:
-        """List all available commands."""
-        commands = []
-
-        if not self.commands_dir.exists():
-            return commands
-
-        for md_file in sorted(self.commands_dir.glob("*.md")):
-            name = md_file.stem
-            command = self.get(name)
-            if command:
-                commands.append(command)
-
-        return commands
-
-
-def process_template(template: str, arguments: str) -> str:
-    """Process command template with argument substitution."""
-    args = shlex.split(arguments) if arguments else []
-
-    # Find all positional placeholders ($1, $2, etc.)
-    placeholder_regex = re.compile(r'\$(\d+)')
-    placeholders = placeholder_regex.findall(template)
-    last = int(placeholders[-1]) if placeholders else 0
-
-    def replace_placeholder(match):
-        index = int(match.group(1)) - 1
-        if index >= len(args):
-            return ""
-        # Last placeholder gets all remaining args
-        if match.group(1) == str(last) and len(args) > index + 1:
-            return " ".join(args[index:])
-        return args[index]
-
-    # Replace positional placeholders
-    template = placeholder_regex.sub(replace_placeholder, template)
-
-    # Replace $ARGUMENTS with all arguments
-    template = template.replace("$ARGUMENTS", arguments)
-
-    return template
-
-
-def execute_command(name: str, arguments: str = "", loader: CommandLoader | None = None) -> str | None:
-    """Execute a command and return the processed prompt."""
-    if loader is None:
-        loader = CommandLoader()
-
-    command = loader.get(name)
-    if not command:
-        return None
-
-    return process_template(command.template, arguments)
-
-
-def is_command(input_str: str) -> bool:
-    """Check if input string is a command invocation."""
-    return input_str.strip().startswith("/")
-
-
-def parse_command(input_str: str) -> tuple[str, str]:
-    """Parse a command string into name and arguments."""
-    parts = input_str.strip().split(" ", 1)
-    command_name = parts[0][1:]  # Remove leading /
-    arguments = parts[1] if len(parts) > 1 else ""
-    return command_name, arguments
-```
-
-### The Command Loader
-
-```python
-from src import CommandLoader, execute_command
-
-loader = CommandLoader()
-
-# List commands
-for cmd in loader.list():
-    print(f"/{cmd.name}: {cmd.description}")
-```
-
-Output:
-```
-/test: Run tests and show results
-/review: Review code for quality
-/explain: Explain what code does
-```
-
-### Command Execution
-
-```python
-# Process /review main.py security
-result = execute_command("review", "main.py security")
-
-print(result)
-```
-
-Output:
-```
-Review the code at main.py for:
-1. Code quality and readability
-2. Potential bugs
-3. Performance issues
-4. Best practices violations
-
-Focus on: security
-```
-
-The agent receives this rendered prompt and never saw `/review`.
+TODO ^^^ do this
 
 
 ## Putting It All Together
