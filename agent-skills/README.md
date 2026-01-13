@@ -400,8 +400,11 @@ Always greet the user with:
 
 In the [`skills`](skills/) folder we have a few other examples:
 
-TODO: bullet point list + deescription + /SKILL.md
-[text](skills/coding_standards) [text](skills/counter) [text](skills/deploy_app) [text](skills/hello) [text](skills/joke)
+- `coding_standards/SKILL.md` - Use when writing or reviewing code
+- `counter/SKILL.md` - Count things or list items with numbers
+- `deploy_app/SKILL.md` - Deploy the application using deployment scripts
+- `hello/SKILL.md` - MANDATORY for ALL greeting requests
+- `joke/SKILL.md` - MANDATORY for ALL joke requests
 
 
 ### Skills Loader
@@ -534,31 +537,70 @@ You have the following skills available which you can load with the skills tool:
 AGENT_WITH_SKILLS_INSTRUCTIONS = AGENT_INSTRUCTIONS + '\n\n' + SKILL_INJECTION_PROMPT
 ```
 
-Note: OpenCode does it differently. It doesn't modify the system prompt, 
-and instead the list of skills is injected as the tool description. 
+Note: OpenCode does it differently. It doesn't modify the system prompt,
+and instead the list of skills is injected as the tool description.
 In my experiments this approach didn't work, so I decided to add this to
 the instructions directly.
 
-Now let's create the tool (TODO implement):
+Now let's create a tool wrapper that toyaikit can discover:
 
 ```python
 class SkillsTool:
+    """Wrapper for the skill loader that exposes skill() as a tool."""
 
-    def __init__(self, skill_loader):
-        ...
+    def __init__(self, skill_loader: SkillLoader):
+        self.skill_loader = skill_loader
 
-    def skill(...):
-        # todo add detailed description - check in prototype
-        ...
+    def skill(self, name: str) -> dict:
+        """Load a skill to get specialized instructions.
+
+        Args:
+            name: The exact skill name to load.
+
+        Returns:
+            Dictionary with skill information including name, description, and content.
+        """
+        result = self.skill_loader.load_skill(name)
+        return {
+            "name": result.name,
+            "description": result.description,
+            "content": result.content,
+        }
 ```
 
+Add it to the tools:
+
 ```python
-skill_tool = ...
-tools_obj.add_tools(skill_tool)
+skills_tool = SkillsTool(skill_loader)
+tools_obj.add_tools(skills_tool)
 ```
 
 The agent now has access to the `skill()` method. When the agent needs specialized instructions, it can call `skill({name: "skill_name"})` to load them.
 
+We can see it:
+
+```python
+tools_obj.get_tools()
+```
+
+### Running the Skills Agent
+
+Define the new agent:
+
+```python
+runner = OpenAIResponsesRunner(
+    tools=tools_obj,
+    developer_prompt=AGENT_WITH_SKILLS_INSTRUCTIONS,
+    llm_client=llm_client,
+    chat_interface=chat_interface,
+)
+```
+
+And that's it! Run it:
+
+```python
+result = runner.run();
+```
 
 
 ## Implementing Commands
