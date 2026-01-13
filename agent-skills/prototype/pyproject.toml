@@ -1,0 +1,28 @@
+[project]
+name = "prototype"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "Alexey Grigorev", email = "alexey.s.grigoriev@gmail.com" }
+]
+requires-python = ">=3.13"
+dependencies = [
+    "python-dotenv>=1.2.1",
+    "python-frontmatter>=1.1.0",
+    "pyyaml>=6.0.3",
+    "toyaikit>=0.0.8",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src"]
+
+[dependency-groups]
+dev = [
+    "jupyter>=1.1.1",
+    "pytest>=9.0.2",
+]

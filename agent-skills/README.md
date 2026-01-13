@@ -1,5 +1,9 @@
 # Coding Agent with Skills and Commands
 
+This workshop is part of the [AI Bootcamp: From RAG to Agents](https://maven.com/alexey-grigorev/from-rag-to-agents) course.
+
+**Notebook**: [notebook.ipynb](notebook.ipynb)
+
 This workshop builds on the [Create a Coding Agent](../coding-agent/) workshop.
 
 We extend the agent we built there: we turn it into a general-purpose coding agent and add skills and commands:
@@ -27,7 +31,7 @@ This workshop assumes you're familiar with agents and tool use. For a refresher,
 - [agents-mcp/](../agents-mcp/) - Introduction to agents and MCP
 - [coding-agent/](../coding-agent/) - Building your first coding agent
 
-We will do a quick recap, but if you feel lost during this session,I recommend checking the pre-requisite workshops first and then come back here.
+We will do a quick recap, but if you feel lost during this session, I recommend checking the prerequisite workshops first and then come back here.
 
 
 ## Skills and Commands
@@ -49,7 +53,7 @@ I'll use Claude Code to show you how skills and commands work. You don't need to
 
 The skill is here: [gh-fetch-skill.md](gh-fetch-skill.md).
 
-We will craete another folder - `demo`:
+We will create another folder - `demo`:
 
 ```bash
 mkdir demo
@@ -232,7 +236,7 @@ wget https://raw.githubusercontent.com/alexeygrigorev/workshops/refs/heads/main/
 
 ## General-Purpose Agent
 
-Let's start implementing the agent. We'll use [`toyaikit`](https://github.com/alexeygrigorev/toyaikit) - a small library for orchestrating agents with tools. It handles the tool calling loop so we don't have to. This library is useful for workshops, because we can see all the interactions between the agent and the tools, but in practice you probably want to use a library like PydanticAI.  
+Let's start implementing the agent. We'll use [`toyaikit`](https://github.com/alexeygrigorev/toyaikit) - a small library for orchestrating agents with tools. It handles the tool calling loop for us. This library is useful for workshops because we can see all the interactions between the agent and the tools. In practice, you might prefer a library like PydanticAI.  
 
 
 For us the agent is:
@@ -277,13 +281,11 @@ Now `tools_obj.get_tools()` returns all the tools in the OpenAI responses format
 
 ### Instructions
 
-We set up the tools. Now let's set up the instructions..
+We set up the tools. Now let's set up the instructions.
 
 The Django agent from the previous workshop has [a very detailed prompt](https://github.com/alexeygrigorev/workshops/blob/main/coding-agent/README.md#L384). But for a general-purpose agent, we need a general-purpose prompt.
 
-Since I used [OpenCode](https://github.com/anomalyco/opencode) as the reference implementation of a coding agent, I thought we can take [theirs](https://github.com/anomalyco/opencode/blob/dev/packages/opencode/src/session/prompt/anthropic.txt). 
-
-But it's fairly large, so let's simplify it:
+I used [OpenCode](https://github.com/anomalyco/opencode) as the reference implementation. You can see [their prompt](https://github.com/anomalyco/opencode/blob/dev/packages/opencode/src/session/prompt/anthropic.txt), but it's quite large. Let's simplify it:
 
 ```python
 AGENT_INSTRUCTIONS = """You are a coding agent designed to help with software engineering tasks.
@@ -298,8 +300,8 @@ You help users with:
 
 Your task is to use the available tools to satisfy the requests from the user.
 
-When user asks to implement something, or create something, create and modiry the files
-using the provided tools. Use your best judgement when deciding how to name files and folders.
+When user asks to implement something, or create something, create and modify the files
+using the provided tools. Use your best judgment when deciding how to name files and folders.
 
 # Core Principles
 
@@ -409,9 +411,9 @@ In the [`skills`](skills/) folder we have a few other examples:
 
 ### Skills Loader
 
-We need to iterate over the folders in the skills director and load the skills.
+We need to iterate over the folders in the skills directory and load the skills.
 
-Let's start with definining a data class for the skills:
+Let's start with defining a data class for the skills:
 
 ```python
 from dataclasses import dataclass
@@ -605,18 +607,18 @@ result = runner.run();
 
 ## Implementing Commands
 
-Commands are somewhat similar to skills but agent doesn't load them automatically like skills. TYpically the user asks to invoke a command and htne the agent does it. 
+Commands are similar to skills, but the agent doesn't load them automatically. The user explicitly invokes commands.
 
-So we want to parse the input. When we unrestand that it starst with /, then we load the command and inject it as a prompt. 
+We need to parse the input. When we detect that it starts with `/`, we load the command and inject it as a prompt.
 
-There are multiple ways to implement it:
+There are multiple ways to implement this:
 
-- intercept the message, if it starts with /, load the command, and replace the input
-- have a tool - execute command
+- Intercept the message, check if it starts with `/`, load the command, and replace the input
+- Have a tool that executes commands
 
-We'll follow the second approach because here it's simpler: we won't need to change our code or modify the `runner.run`method. in real life when you implement something like that you probablky want to have more contro so you'd impelemnt this manually by followign the first approch.
+We'll follow the second approach because it's simpler. We won't need to modify the `runner.run` method. In production, you'd probably want the first approach for more control.
 
-BUt le'ts stat with loaing the commands
+But let's start with loading the commands.
 
 ### COMMAND.md Format
 
@@ -687,7 +689,7 @@ class CommandLoader:
 
         for md_file in sorted(self.commands_dir.glob("*.md")):
             name = md_file.stem
-            command = self.get(name)
+            command = self.load_command(name)
             commands.append(command)
 
         return commands
@@ -705,6 +707,7 @@ Create a tool wrapper that the agent can call:
 ```python
 def process_template(template: str, arguments: str) -> str:
     # process $1, $2, $3, $ARGUMENTS
+    # for simplicity not doing it here
     return template
 
 
@@ -742,7 +745,6 @@ commands_tool = CommandsTool(command_loader=command_loader)
 commands_tool.execute_command('kid')
 ```
 
-
 ### Agent
 
 Now let's add this tool:
@@ -751,10 +753,13 @@ Now let's add this tool:
 tools_obj.add_tools(commands_tool)
 ```
 
-We need to tell our agent what's the difference between skills and commands:
+We need to tell our agent the difference between skills and commands:
 
 ```python
 SKILL_INJECTION_PROMPT = f'''
+You have the following skills available which you can load with the skills tool:
+
+{skill_loader.get_description()}
 
 Don't confuse skills and commands:
 
@@ -767,52 +772,7 @@ When you see "/command", use the tools to execute the command "command"
 AGENT_WITH_SKILLS_INSTRUCTIONS = AGENT_INSTRUCTIONS + '\n\n' + SKILL_INJECTION_PROMPT
 ```
 
-Tools:
-
-```python
-def process_template(template: str, arguments: str) -> str:
-    # process $1, $2, $3, $ARGUMENTS
-    return template
-
-
-class CommandsTool:
-    def __init__(self, command_loader: CommandLoader):
-        self.command_loader = command_loader
-
-    def execute_command(self, name: str, arguments: str = "") -> str:
-        """Execute a command by name and return the rendered prompt.
-
-        If you see input starting with /command, use this tool to load and execute it.
-        If the command doesn't exist, let the user know.
-
-        Examples: 
-            User inputs "/test" -> invoke command with name="test"
-            User inputs "/download" -> invoke command name="download"
-
-        Args:
-            name: The command name (without the / prefix).
-            arguments: Optional arguments to substitute into the template.
-
-        Returns:
-            The rendered command template as a string.
-        """
-        if name.startswith('/'):
-            name = name.lstrip('/')
-
-        command = self.command_loader.load_command(name)
-        if not command:
-            return f"Command not found: /{name}"
-
-        return process_template(command.template, arguments)
-```
-
-Add this tool:
-
-```python
-tools_obj.add_tools(commands_tool)
-```
-
-And finally put everything together:
+Finally, put everything together:
 
 
 ```python
@@ -824,6 +784,10 @@ runner = OpenAIResponsesRunner(
 )
 ```
 
+## Prototype 
+
+For a more complete implementation of skill-driven agent with commands, see [`prototype/`](prototype/), where I re-implemented the core functionality from OpenCode with Python. This code was the basis for this workshop.
+
 ## References
 
 - OpenCode: https://github.com/anomalyco/opencode
@@ -831,3 +795,7 @@ runner = OpenAIResponsesRunner(
 - AgentSkills Spec: https://agentskills.io
 - Original coding-agent: ../coding-agent/
 - ToyAIKit: https://github.com/alexeygrigorev/toyaikit
+
+---
+
+**Want to learn more?** In the [AI Bootcamp: From RAG to Agents](https://maven.com/alexey-grigorev/from-rag-to-agents) course, you'll learn not only how to implement agents from scratch but also how to test, evaluate, and monitor them to make them production-ready.
