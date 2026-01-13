@@ -9,62 +9,31 @@ We extend the agent we built there: we turn it into a general-purpose coding age
 
 If you used Claude Code, you might have come across them already. 
 
-For this workshop, I analyzed the source code of [Open Code](https://github.com/anomalyco/opencode) (Claude Code open-source alternative). I will tell you how they are implemented there, and we together will implement them in Python.
+For this workshop, I analyzed the source code of [Open Code](https://github.com/anomalyco/opencode) (Claude Code open-source alternative).
+
+I will tell you how they are implemented there, and we together will implement them in Python.
 
 
 ## Prerequisites
 
 - Python 3.10+
 - Jupyter
-- OpenAI API key (or Anthropic/Z.ai as alternatives)
-
-
-## Environment Setup
-
-For this workshop, you need Python with Jupyter.
+- OpenAI API key (or Anthropic/Groq/Z.ai as alternatives)
 
 GitHub Codespaces is recommended (see the [coding-agent workshop](../coding-agent/)), but any environment with Jupyter works.
 
-### Installing required libraries
+This workshop assumes you're familiar with agents and tool use. For a refresher, see these workshops:
 
-```bash
-pip install uv
-uv init
-uv add jupyter openai toyaikit frontmatter
-```
+- [agents-mcp/](../agents-mcp/) - Introduction to agents and MCP
+- [coding-agent/](../coding-agent/) - Building your first coding agent
 
-### Setting up API keys
-
-Add your OpenAI key in `.env`:
-
-```
-OPENAI_API_KEY='your-key'
-```
-
-Make sure `.env` is in `.gitignore`:
-
-```bash
-echo .env >> .gitignore
-```
-
-I use `dirdotenv` to get access to the env variables from `.env` and `.envrc` to my terminal:
-
-```bash
-pip install dirdotenv
-echo 'eval "$(dirdotenv hook bash)"' >> ~/.bashrc
-```
-
-Start the notebook:
-
-```bash
-uv run jupyter notebook
-```
+We will do a quick recap, but if you feel lost during this session,I recommend checking the pre-requisite workshops first and then come back here.
 
 
 ## Skills and Commands
 
-* Skills are modular behavior packages that agents can load on-demand.
-* Commands are user-facing shortcuts for common tasks.
+* Skills are modular behavior packages that agents can load on-demand
+* Commands are user-facing shortcuts for common tasks
 
 
 ### Demo
@@ -80,12 +49,15 @@ I'll use Claude Code to show you how skills and commands work. You don't need to
 
 The skill is here: [gh-fetch-skill.md](gh-fetch-skill.md).
 
+We will craete another folder - `demo`:
 
 ```bash
 mkdir demo
 cd demo
-mkdir -p .claude/skills/gh-fetch
+
 wget https://raw.githubusercontent.com/alexeygrigorev/workshops/refs/heads/main/agent-skills/gh-fetch-skill.md
+
+mkdir -p .claude/skills/gh-fetch
 mv gh-fetch-skill.md .claude/skills/gh-fetch/SKILL.md
 ```
 
@@ -95,7 +67,7 @@ Start claude code:
 claude
 ```
 
-Ask Claude to fetch the commands 
+Ask Claude to download the commands 
 
 ```
 get files kid and parent commands from
@@ -111,6 +83,7 @@ claude -c
 ```
 
 Now run `/kid` and then `/parent`. The kid will come up with a crazy project idea and the parent will implement it in HTML+JS.
+
 
 ### Skills
 
@@ -138,11 +111,92 @@ Commands are user-facing shortcuts. From our demo:
 
 The agent never sees the `/kid` syntax - only the rendered prompt.
 
-## Quick Recap - The Agent Tools
 
-Previously we did a workshop about creating our own coding agent. Here's a [demo of what we built](https://www.loom.com/share/b4c47e3491504375b9244ea69fe095df).
+## Environment Preparation
 
-The coding agent has five core tools:
+Create a separate folder:
+
+```bash
+mkdir code
+cd code
+```
+
+Initialize the project and install all the dependencies:
+
+```bash
+pip install uv
+uv init
+uv add jupyter openai toyaikit frontmatter
+```
+
+Add your OpenAI key in `.env`:
+
+```
+OPENAI_API_KEY='your-key'
+```
+
+Make sure `.env` is in `.gitignore`:
+
+```bash
+echo .env >> .gitignore
+```
+
+I use `dirdotenv` to get access to the env variables from `.env` and `.envrc` to my terminal:
+
+```bash
+pip install dirdotenv
+echo 'eval "$(dirdotenv hook bash)"' >> ~/.bashrc
+```
+
+Start the notebook:
+
+```bash
+uv run jupyter notebook
+```
+
+## Quick Recap
+
+### What is an Agent?
+
+By now you've seen agents in previous workshops ([agents-mcp/](../agents-mcp/) and [coding-agent/](../coding-agent/)). Let's briefly recap the core concepts.
+
+An agent consists of four components:
+
+* Model - The LLM, the "brain" that reasons and decides
+* System prompt - Instructions that define the agent's behavior and role
+* Tools - Functions the agent can call to interact with the world
+* Memory - Message history that provides context from previous turns
+
+How it works:
+
+* User gives input
+* Agent sees: input + system prompt + available tools + memory
+* Agent decides: respond OR call a tool
+* If tool call: execute, add result to memory, loop
+* When done: send final response
+
+The agent autonomously decides which tools to use and in what order - no hard-coded sequences.
+
+Example:
+
+```
+User: "Fix the bug in calculator.py"
+
+LLM: I'll read the file first.
+→ Tool: read_file("calculator.py")
+
+LLM: Found the issue. I'll fix it.
+→ Tool: write_file("calculator.py", fixed_code)
+
+LLM: Let me verify the fix works.
+→ Tool: execute_bash("pytest")
+
+LLM: "Fixed! Added a check for division by zero."
+```
+
+### The Coding Agent Tools
+
+In the [coding-agent](../coding-agent/) workshop, we built a coding agent with five core tools:
 
 ```python
 class AgentTools:
@@ -172,13 +226,21 @@ With these tools, the agent can:
 
 These tools are generic. What makes an agent specialized is the prompt.
 
-## Part 2: From Django Agent to General-Purpose Agent
+We will use these tools in this project too, so let's download them:
 
-The Django agent from the previous workshop has a detailed prompt with Django-specific instructions. See the full prompt at [workshop/src/agent.py](workshop/src/agent.py) (search for `DJANGO_PROMPT`).
+```bash
+wget https://raw.githubusercontent.com/alexeygrigorev/workshops/refs/heads/main/coding-agent/tools.py
+```
 
-For a general-purpose agent, we use a simpler prompt based on OpenCode's system prompt ([anthropic.txt](https://github.com/anomalyco/opencode/blob/main/packages/opencode/src/session/prompt/anthropic.txt) in the [OpenCode repo](https://github.com/anomalyco/opencode)).
+## General-Purpose Agent
 
-Our simplified prompt:
+The Django agent from the previous workshop has a detailed prompt with Django-specific instructions. See the full prompt in [coding-agent/README.md](https://github.com/alexeygrigorev/workshops/blob/main/coding-agent/README.md#L384).
+
+For a general-purpose agent, we need a general-purpose prompt.
+
+For this workshop, I used [OpenCode](https://github.com/anomalyco/opencode) as the reference implementation of a coding agent. Here's their prompt: [anthropic.txt](https://github.com/anomalyco/opencode/blob/dev/packages/opencode/src/session/prompt/anthropic.txt).
+
+We will simplify it:
 
 ```python
 GENERAL_CODING_PROMPT = """You are a coding agent designed to help with software engineering tasks.
@@ -211,7 +273,7 @@ You're here to help users build better software efficiently. Start by understand
 
 This simplified version removes all framework-specific details, so the agent works on any codebase, not just Django.
 
-## Part 3: Implementing Skills
+## Implementing Skills
 
 ### SKILL.md Format
 
@@ -318,7 +380,7 @@ Available skills:
 This description is what the agent sees. When a user says "tell me a joke", the agent reads this description, matches "joke" to the joke skill, and calls `skill({name: "joke"})` automatically.
 
 
-## Part 4: Implementing Commands
+## Implementing Commands
 
 ### COMMAND.md Format
 
@@ -396,7 +458,7 @@ Focus on: security
 The agent receives this rendered prompt and never saw `/review`.
 
 
-## Part 5: Putting It All Together
+## Putting It All Together
 
 ### Complete Agent
 
