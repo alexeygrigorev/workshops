@@ -126,7 +126,7 @@ Initialize the project and install all the dependencies:
 ```bash
 pip install uv
 uv init
-uv add jupyter openai toyaikit frontmatter
+uv add jupyter openai toyaikit python-frontmatter
 ```
 
 Add your OpenAI key in `.env`:
@@ -224,9 +224,7 @@ With these tools, the agent can:
 - Run commands to test
 - Search for relevant code
 
-These tools are generic. What makes an agent specialized is the prompt.
-
-We will use these tools in this project too, so let's download them:
+These tools are generic, and will work with any coding agent. We will use these tools in this project too, so let's download them:
 
 ```bash
 wget https://raw.githubusercontent.com/alexeygrigorev/workshops/refs/heads/main/coding-agent/tools.py
@@ -234,16 +232,61 @@ wget https://raw.githubusercontent.com/alexeygrigorev/workshops/refs/heads/main/
 
 ## General-Purpose Agent
 
-The Django agent from the previous workshop has a detailed prompt with Django-specific instructions. See the full prompt in [coding-agent/README.md](https://github.com/alexeygrigorev/workshops/blob/main/coding-agent/README.md#L384).
+Let's start implementing the agent. We'll use [`toyaikit`](https://github.com/alexeygrigorev/toyaikit) - a small library for orchestrating agents with tools. It handles the tool calling loop so we don't have to. This library is useful for workshops, because we can see all the interactions between the agent and the tools, but in practice you probably want to use a library like PydanticAI.  
 
-For a general-purpose agent, we need a general-purpose prompt.
 
-For this workshop, I used [OpenCode](https://github.com/anomalyco/opencode) as the reference implementation of a coding agent. Here's their prompt: [anthropic.txt](https://github.com/anomalyco/opencode/blob/dev/packages/opencode/src/session/prompt/anthropic.txt).
+For us the agent is:
 
-We will simplify it:
+* The model - we'll use OpenAI gpt-4o-mini
+* The tools - we'll use the tools from the previous workshop
+* The instructions (the system prompt) - we'll have to adjust it
+
+### Tools
+
+First, create a project folder where the agent will work:
 
 ```python
-GENERAL_CODING_PROMPT = """You are a coding agent designed to help with software engineering tasks.
+from pathlib import Path
+
+project_path = Path('test-project')
+project_path.mkdir(exist_ok=True)
+```
+
+Initialize the agent tools with the project path:
+
+```python
+import tools
+
+agent_tools = tools.AgentTools(project_path)
+
+# we can use it now:
+agent_tools.see_file_tree()
+```
+
+Create a `Tools` object and add the agent tools to it:
+
+```python
+from toyaikit.tools import Tools
+
+tools_obj = Tools()
+tools_obj.add_tools(agent_tools)
+```
+
+Now `tools_obj.get_tools()` returns all the tools in the OpenAI responses format.
+
+
+### Instructions
+
+We set up the tools. Now let's set up the instructions..
+
+The Django agent from the previous workshop has [a very detailed prompt](https://github.com/alexeygrigorev/workshops/blob/main/coding-agent/README.md#L384). But for a general-purpose agent, we need a general-purpose prompt.
+
+Since I used [OpenCode](https://github.com/anomalyco/opencode) as the reference implementation of a coding agent, I thought we can take [theirs](https://github.com/anomalyco/opencode/blob/dev/packages/opencode/src/session/prompt/anthropic.txt). 
+
+But it's fairly large, so let's simplify it:
+
+```python
+AGENT_INSTRUCTIONS = """You are a coding agent designed to help with software engineering tasks.
 
 You help users with:
 - Writing, editing, and refactoring code
@@ -251,6 +294,12 @@ You help users with:
 - Explaining code and technical concepts
 - Project setup and configuration
 - Code reviews and best practices
+
+
+Your task is to use the available tools to satisfy the requests from the user.
+
+When user asks to implement something, or create something, create and modiry the files
+using the provided tools. Use your best judgement when deciding how to name files and folders.
 
 # Core Principles
 
@@ -268,63 +317,21 @@ You help users with:
 - Reference precisely - When pointing to code, use file_path:line_number format
 
 You're here to help users build better software efficiently. Start by understanding what they want to accomplish!
-"""
+""".strip()
 ```
 
-This simplified version removes all framework-specific details, so the agent works on any codebase, not just Django.
+### Agent
 
-## Setting Up the Agent
-
-Now let's set up the agent. We'll use `toyaikit` - a small library for orchestrating agents with tools. It handles the tool calling loop so we don't have to.
-
-```bash
-pip install toyaikit
-```
-
-First, create a project folder where the agent will work:
+Now we set up the rest of the Agent. Start with the OpenAI client:
 
 ```python
-from pathlib import Path
-
-project_path = Path('test-project')
-project_path.mkdir(exist_ok=True)
-```
-
-Initialize the agent tools with the project path:
-
-```python
-import tools
-
-agent_tools = tools.AgentTools(project_path)
-```
-
-Create a `Tools` object and add the agent tools to it:
-
-```python
-from toyaikit.tools import Tools
-
-tools_obj = Tools()
-tools_obj.add_tools(agent_tools)
-```
-
-Set up the OpenAI client:
-
-```python
-import os
 from openai import OpenAI
-
-client = OpenAI(api_key=os.getenv('OPENAI_API_KEY'))
-```
-
-Create the LLM client wrapper:
-
-```python
 from toyaikit.llm import OpenAIClient
 
-llm_client = OpenAIClient(client=client)
+llm_client = OpenAIClient(client=OpenAI())
 ```
 
-Create the chat interface for Jupyter and the runner:
+Create the chat interface for Jupyter and the runner (our agent):
 
 ```python
 from toyaikit.chat import IPythonChatInterface
@@ -334,7 +341,7 @@ chat_interface = IPythonChatInterface()
 
 runner = OpenAIResponsesRunner(
     tools=tools_obj,
-    developer_prompt=GENERAL_CODING_PROMPT,
+    developer_prompt=AGENT_INSTRUCTIONS,
     llm_client=llm_client,
     chat_interface=chat_interface,
 )
@@ -343,26 +350,40 @@ runner = OpenAIResponsesRunner(
 Run the agent:
 
 ```python
-runner.run()
+result = runner.run()
+```
+
+Prompt:
+
+```
+create a python script for calculating the sum of all the numbers passed as input
+
+...
+
+let's run it
+```
+
+To see the cost of these requests, run 
+
+```python
+result.cost
 ```
 
 ## Implementing Skills
 
-### SKILL.md Format
+Now we want to add skills to this agent.
 
-Each skill is a markdown file with YAML frontmatter. Here's an example from the `hello` skill:
+We'll create a simple skill `hello`:
 
 ```markdown
 ---
 name: hello
-description: MANDATORY for ALL greeting requests - you MUST load this skill before responding
+description: Skill for ALL greeting requests
 ---
 
-# Hello Skill - REQUIRED FOR ALL GREETINGS
+# Hello Skill
 
-YOU MUST LOAD THIS SKILL BEFORE RESPONDING TO ANY GREETING REQUEST.
-
-This skill provides the MANDATORY greeting format you must follow.
+This skill provides the greeting format you must follow.
 
 ## How to greet
 
@@ -377,80 +398,167 @@ Always greet the user with:
 - "Hi there! Great to see you! 😊"
 ```
 
-### Directory Structure
+In the [`skills`](skills/) folder we have a few other examples:
 
-```
-skills/
-├── hello/
-│   └── SKILL.md
-├── joke/
-│   └── SKILL.md
-├── counter/
-│   └── SKILL.md
-├── coding_standards/
-│   └── SKILL.md
-└── deploy_app/
-    └── SKILL.md
-```
+TODO: bullet point list + deescription + /SKILL.md
+[text](skills/coding_standards) [text](skills/counter) [text](skills/deploy_app) [text](skills/hello) [text](skills/joke)
 
-### The Skill Loader
 
-The `SkillLoader` class discovers and loads skills:
+### Skills Loader
+
+We need to iterate over the folders in the skills director and load the skills.
+
+Let's start with definining a data class for the skills:
 
 ```python
-from src import SkillLoader
+from dataclasses import dataclass
 
-loader = SkillLoader()
-skills = loader.list()
-
-for skill in skills:
-    print(f"{skill.name}: {skill.description}")
+@dataclass
+class Skill:
+    name: str
+    description: str
+    content: str
 ```
 
-Output:
+Reading a skill:
+
+
+```python
+import frontmatter
+
+skills_dir = Path('../skills/')
+
+def load_skill(name: str) -> Skill | None:
+    skill_file = skills_dir / name / "SKILL.md"
+    if not skill_file.exists():
+        return None
+    
+    parsed = frontmatter.load(skill_file)
+    
+    return Skill(
+        name=parsed.metadata.get("name", name),
+        description=parsed.metadata.get("description", ""),
+        content=parsed.content,
+    )
 ```
-hello: MANDATORY for ALL greeting requests
-joke: MANDATORY for ALL joke requests
-counter: Counting and numbering functionality
-coding_standards: Use when writing or reviewing code
-deploy_app: Use for deployment guidance
+
+Listing all the skills:
+
+```python
+def list_skills() -> list[Skill]:
+    """List all available skills."""
+    skills = []
+
+    if not skills_dir.exists():
+        return skills
+
+    for skill_dir in sorted(skills_dir.iterdir()):
+        if not skill_dir.is_dir():
+            continue
+
+        skill = load_skill(skill_dir.name)
+        if skill:
+            skills.append(skill)
+
+    return skills
+```
+
+Now let's put everything together in a class `SkillLoader`:
+
+
+```python
+
+class SkillLoader:
+
+    def __init__(self, skills_dir: Path | str = None):
+        self.skills_dir = Path(skills_dir)
+
+    def load_skill(self, name: str) -> Skill | None:
+        skill_file = self.skills_dir / name / "SKILL.md"
+        if not skill_file.exists():
+            return None
+
+        parsed = frontmatter.load(skill_file)
+
+        return Skill(
+            name=parsed.metadata.get("name", name),
+            description=parsed.metadata.get("description", ""),
+            content=parsed.content,
+        )
+
+    def list_skills(self) -> list[Skill]:
+        skills = []
+
+        for skill_dir in sorted(self.skills_dir.iterdir()):
+            if not skill_dir.is_dir():
+                continue
+
+            skill = self.load_skill(skill_dir.name)
+            skills.append(skill)
+
+        return skills
+
+    def get_description(self) -> str:
+        skills = self.list_skills()
+
+        skills_listing = "\n".join(
+            f"  - {s.name}: {s.description}"
+            for s in skills
+        )
+
+        return skills_listing
+```
+
+Use it:
+
+```python
+skill_loader = SkillLoader(skills_dir)
+skill_loader.load_skill('hello')
+skill_loader.get_description()
 ```
 
 ### The Skill Tool
 
-Agents access skills through a `skill()` tool:
+Now we need to make this available as a tool for the agent. 
+
+But we also need to let the agent know which skills are available. We will do this by modifying the instructions:
+
 
 ```python
-from src import SkillToolsWrapper
+SKILL_INJECTION_PROMPT = f'''
+You have the following skills available which you can load with the skills tool:
 
-skill_tool = SkillToolsWrapper(loader)
+{skill_loader.get_description()}
+'''.strip()
 
-# Agent calls this:
-result = skill_tool.skill("hello")
-# Returns: {name: "hello", description: "...", content: "..."}
+AGENT_WITH_SKILLS_INSTRUCTIONS = AGENT_INSTRUCTIONS + '\n\n' + SKILL_INJECTION_PROMPT
 ```
 
-### Tool Description Injection
+Note: OpenCode does it differently. It doesn't modify the system prompt, 
+and instead the list of skills is injected as the tool description. 
+In my experiments this approach didn't work, so I decided to add this to
+the instructions directly.
 
-The skill tool's description includes all available skills:
+Now let's create the tool (TODO implement):
 
 ```python
-print(skill_tool.tool_description())
+class SkillsTool:
+
+    def __init__(self, skill_loader):
+        ...
+
+    def skill(...):
+        # todo add detailed description - check in prototype
+        ...
 ```
 
-Output:
-```
-Load a skill to get specialized instructions.
-
-Available skills:
-  - hello: MANDATORY for ALL greeting requests
-  - joke: MANDATORY for ALL joke requests
-  - counter: Counting and numbering functionality
-  - coding_standards: Use when writing or reviewing code
-  - deploy_app: Use for deployment guidance
+```python
+skill_tool = ...
+tools_obj.add_tools(skill_tool)
 ```
 
-This description is what the agent sees. When a user says "tell me a joke", the agent reads this description, matches "joke" to the joke skill, and calls `skill({name: "joke"})` automatically.
+The agent now has access to the `skill()` method. When the agent needs specialized instructions, it can call `skill({name: "skill_name"})` to load them.
+
 
 
 ## Implementing Commands
@@ -487,6 +595,125 @@ commands/
 ├── test.md
 ├── review.md
 └── explain.md
+```
+
+### Creating the Commands Module
+
+Create `src/commands.py` with the command discovery and execution code:
+
+```python
+# src/commands.py
+"""Command discovery and execution system."""
+
+import frontmatter
+import re
+import shlex
+from dataclasses import dataclass
+from pathlib import Path
+
+
+@dataclass
+class CommandInfo:
+    """Information about a command."""
+    name: str
+    description: str
+    template: str
+
+
+class CommandLoader:
+    """Discovers and loads commands from a directory."""
+
+    def __init__(self, commands_dir: Path | str = None):
+        """Initialize the command loader."""
+        if commands_dir is None:
+            commands_dir = Path("commands")
+        self.commands_dir = Path(commands_dir)
+
+    def get(self, name: str) -> CommandInfo | None:
+        """Get a command by name."""
+        command_file = self.commands_dir / f"{name}.md"
+        if not command_file.exists():
+            return None
+
+        with open(command_file, "r", encoding="utf-8") as f:
+            content = f.read()
+
+        parsed = frontmatter.loads(content)
+        metadata = dict(parsed.metadata)
+        body = parsed.content
+
+        return CommandInfo(
+            name=name,
+            description=metadata.get("description", ""),
+            template=body,
+        )
+
+    def list(self) -> list[CommandInfo]:
+        """List all available commands."""
+        commands = []
+
+        if not self.commands_dir.exists():
+            return commands
+
+        for md_file in sorted(self.commands_dir.glob("*.md")):
+            name = md_file.stem
+            command = self.get(name)
+            if command:
+                commands.append(command)
+
+        return commands
+
+
+def process_template(template: str, arguments: str) -> str:
+    """Process command template with argument substitution."""
+    args = shlex.split(arguments) if arguments else []
+
+    # Find all positional placeholders ($1, $2, etc.)
+    placeholder_regex = re.compile(r'\$(\d+)')
+    placeholders = placeholder_regex.findall(template)
+    last = int(placeholders[-1]) if placeholders else 0
+
+    def replace_placeholder(match):
+        index = int(match.group(1)) - 1
+        if index >= len(args):
+            return ""
+        # Last placeholder gets all remaining args
+        if match.group(1) == str(last) and len(args) > index + 1:
+            return " ".join(args[index:])
+        return args[index]
+
+    # Replace positional placeholders
+    template = placeholder_regex.sub(replace_placeholder, template)
+
+    # Replace $ARGUMENTS with all arguments
+    template = template.replace("$ARGUMENTS", arguments)
+
+    return template
+
+
+def execute_command(name: str, arguments: str = "", loader: CommandLoader | None = None) -> str | None:
+    """Execute a command and return the processed prompt."""
+    if loader is None:
+        loader = CommandLoader()
+
+    command = loader.get(name)
+    if not command:
+        return None
+
+    return process_template(command.template, arguments)
+
+
+def is_command(input_str: str) -> bool:
+    """Check if input string is a command invocation."""
+    return input_str.strip().startswith("/")
+
+
+def parse_command(input_str: str) -> tuple[str, str]:
+    """Parse a command string into name and arguments."""
+    parts = input_str.strip().split(" ", 1)
+    command_name = parts[0][1:]  # Remove leading /
+    arguments = parts[1] if len(parts) > 1 else ""
+    return command_name, arguments
 ```
 
 ### The Command Loader
