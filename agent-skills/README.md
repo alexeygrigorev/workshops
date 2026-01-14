@@ -2,7 +2,8 @@
 
 This workshop is part of the [AI Bootcamp: From RAG to Agents](https://maven.com/alexey-grigorev/from-rag-to-agents) course.
 
-**Notebook**: [notebook.ipynb](notebook.ipynb)
+- Video: https://youtu.be/OhgDEZfHsvg
+- Notebook: [notebook.ipynb](notebook.ipynb)
 
 This workshop builds on the [Create a Coding Agent](../coding-agent/) workshop.
 
@@ -798,4 +799,4 @@ For a more complete implementation of skill-driven agent with commands, see [`pr
 
 ---
 
-**Want to learn more?** In the [AI Bootcamp: From RAG to Agents](https://maven.com/alexey-grigorev/from-rag-to-agents) course, you'll learn not only how to implement agents from scratch but also how to test, evaluate, and monitor them to make them production-ready.
+Want to learn more? In the [AI Bootcamp: From RAG to Agents](https://maven.com/alexey-grigorev/from-rag-to-agents) course, you'll learn not only how to implement agents from scratch but also how to test, evaluate, and monitor them to make them production-ready.
