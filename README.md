@@ -25,6 +25,8 @@ One repository for some of the workshops I'm giving
 
 - **[guardrails](guardrails/)** - Guardrails for AI agents. Learn to make AI agents safer with input and output guardrails to prevent harmful behavior and keep agents on-topic.
 
+- **[agent-fastapi-vectordb](agent-fastapi-vectordb/)** - Deploy your AI agent project to production with FastAPI and a vector database (Qdrant). Turn a RAG prototype into a deployable FastAPI service with ingestion, search, and grounded answer endpoints.
+
 ### Development Tools & Workflows
 
 - **[vibe-coding](vibe-coding/)** - Introduction to Vibe Coding with AI-assisted development tools including chat applications, coding assistants, IDEs, project bootstrappers, and agents.

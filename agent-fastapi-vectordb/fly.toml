@@ -1,0 +1,20 @@
+app = "agent-fastapi-vectordb"
+primary_region = "fra"
+
+[build]
+
+[env]
+  QDRANT_URL = "http://qdrant.internal:6333"
+
+[http_service]
+  internal_port = 9696
+  force_https = true
+  auto_stop_machines = true
+  auto_start_machines = true
+  min_machines_running = 0
+  processes = ["app"]
+
+[[vm]]
+  cpu_kind = "shared"
+  cpus = 1
+  memory_mb = 1024
