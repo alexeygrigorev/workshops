@@ -1,24 +1,25 @@
-# Vanilla Todo Reference
+# Vanilla Todo Instructions
 
-This reference project shows a small todo app built with:
+Create a small browser-based todo app with these requirements:
 
-- plain HTML
-- vanilla JavaScript
-- `localStorage` for persistence
+- use plain HTML and vanilla JavaScript
+- use `localStorage` to persist todos between page reloads
+- do not use frameworks or external dependencies
 
-The goal is to keep the implementation frontend-only.
+The app should support:
 
-Core behavior:
+- adding a todo
+- marking a todo as completed
+- deleting a todo
+- loading saved todos from `localStorage` on page load
 
-- add a new todo item
-- mark an item as done or not done
-- delete an item
-- store the list in `localStorage`
-- restore the list when the page reloads
+Implementation constraints:
 
-Files:
+- keep the app frontend-only
+- keep the structure simple
+- store the todo items as JSON in `localStorage`
 
-- `index.html` - page structure and UI
-- `app.js` - todo logic and `localStorage` integration
+Suggested files:
 
-Use this as a reference when creating a similar browser-based project.
+- `index.html`
+- `app.js`
