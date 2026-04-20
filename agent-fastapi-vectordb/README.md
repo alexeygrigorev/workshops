@@ -6,7 +6,7 @@ This workshop is a part of [AI Shipping Labs](https://luma.com/j1zzd47e).
 * Video: [TODO: Add YouTube link]
 * Code: [app.py](app.py), [ingest.py](ingest.py), [frontend/](frontend/)
 
-Most AI projects stop at "it works in my notebook". In this workshop we
+Many AI projects stop at "it works in my notebook". In this workshop we
 take a RAG/agent prototype and turn it into a small but production-shaped
 application:
 
