@@ -29,7 +29,7 @@ class AgentTools:
         """
         self.project_dir = project_dir
 
-    def read_file(self, filepath: str) -> None:
+    def read_file(self, filepath: str) -> str:
         """
         Read and return the contents of a file at the given relative filepath.
 
@@ -39,8 +39,11 @@ class AgentTools:
             str: Contents of the file.
         """
         abs_path = self.project_dir / filepath
-        with open(abs_path, "r", encoding="utf-8") as f:
-            return f.read()
+        try:
+            with open(abs_path, "r", encoding="utf-8") as f:
+                return f.read()
+        except FileNotFoundError:
+            return f"Error: file '{filepath}' not found."
 
     def write_file(self, filepath: str, content: str) -> None:
         """

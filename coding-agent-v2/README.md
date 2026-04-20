@@ -116,6 +116,10 @@ openai_client = OpenAI(
 model = 'llama-3.3-70b-versatile'
 ```
 
+Use OpenAI if you want to reproduce the full workshop end to end exactly as shown.
+
+Groq currently works best for the simpler OpenAI SDK experiments in Part 1. For the `toyaikit` sections later in the workshop, add the fallback pricing snippet shown in Part 2 before you call `runner.run()`. Also note that current Groq models can still be less reliable than OpenAI on repeated tool-calling turns in these notebook examples.
+
 
 ## Part 1: Tool Calls Intro
 
@@ -258,12 +262,14 @@ response.output
 
 `response.output` contains everything the model returned. In a text-only response, this is usually a message. In a tool-calling response, one of the items can be a `function_call`.
 
-Let's look at the first item:
+Let's look at the first tool call:
 
 ```python
-call = response.output[0]
+call = next(item for item in response.output if item.type == "function_call")
 call
 ```
+
+Some providers can include other items such as `reasoning` before the `function_call`, so it is better to look up the first tool call explicitly.
 
 The most important fields here are:
 
@@ -337,15 +343,38 @@ The `call_id` matters because it tells the model which tool call this output bel
 
 Ask the model again.
 
-Now that the model has the tool result, we call it one more time:
+Now that the model has the tool result, keep calling until the model returns a message:
 
 ```python
-response = openai_client.responses.create(
-    model=model,
-    input=chat_messages,
-    tools=[see_file_tree_description]
-)
+while True:
+    response = openai_client.responses.create(
+        model=model,
+        input=chat_messages,
+        tools=[see_file_tree_description]
+    )
+
+    has_tool_calls = False
+    chat_messages.extend(response.output)
+
+    for item in response.output:
+        if item.type == "function_call":
+            has_tool_calls = True
+            args = json.loads(item.arguments)
+            result = see_file_tree(**args)
+
+            chat_messages.append({
+                "type": "function_call_output",
+                "call_id": item.call_id,
+                "output": json.dumps(result),
+            })
+        elif item.type == "message":
+            print(item.content[0].text)
+
+    if not has_tool_calls:
+        break
 ```
+
+This is a little more verbose than a single follow-up call, but it works reliably across providers that may ask for the same tool more than once before answering.
 
 And now we can read the final text answer:
 
@@ -361,8 +390,11 @@ Define `read_file`:
 
 ```python
 def read_file(filepath: str) -> str:
-    with open(filepath, "r", encoding="utf-8") as f:
-        return f.read()
+    try:
+        with open(filepath, "r", encoding="utf-8") as f:
+            return f.read()
+    except FileNotFoundError:
+        return f"Error: file '{filepath}' not found."
 ```
 
 Test it directly:
@@ -461,7 +493,7 @@ We iterate until we have an answer.
 When we have it, we print it:
 
 ```python
-item = response.output[0]
+item = next(item for item in response.output if item.type == "message")
 print(item.content[0].text)
 ```
 
@@ -638,6 +670,19 @@ from toyaikit.llm import OpenAIClient
 from toyaikit.chat.runners import OpenAIResponsesRunner
 ```
 
+If you're using Groq in the `toyaikit` sections, register a fallback price once before you create the runner:
+
+```python
+from decimal import Decimal
+from toyaikit.pricing import FALLBACK_PRICING
+
+if model == "llama-3.3-70b-versatile":
+    FALLBACK_PRICING[model] = {
+        "input": Decimal("0.59"),
+        "output": Decimal("0.79"),
+    }
+```
+
 Register the two tools we already have:
 
 ```python
@@ -708,8 +753,11 @@ def read_file(filepath: str) -> str:
     Args:
         filepath: Path to the file to read.
     """
-    with open(filepath, "r", encoding="utf-8") as f:
-        return f.read()
+    try:
+        with open(filepath, "r", encoding="utf-8") as f:
+            return f.read()
+    except FileNotFoundError:
+        return f"Error: file '{filepath}' not found."
 ```
 
 Then we can simply do:
@@ -765,8 +813,11 @@ class ProjectTools:
             filepath: Path to the file to read.
         """
         abs_path = self.project_dir / filepath
-        with open(abs_path, "r", encoding="utf-8") as f:
-            return f.read()
+        try:
+            with open(abs_path, "r", encoding="utf-8") as f:
+                return f.read()
+        except FileNotFoundError:
+            return f"Error: file '{filepath}' not found."
 
     def search_in_files(self, search_term: str) -> list[str]:
         """Search for a string in project files.
