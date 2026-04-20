@@ -1253,52 +1253,78 @@ For this part, install PydanticAI:
 uv add pydantic-ai
 ```
 
-The important point is that we keep the same tools and the same prompt. We only change the orchestration layer.
+Here we remove `toyaikit` completely. We keep the same prompt and the same underlying tool implementations, but we register the tools directly in PydanticAI and run the Q&A loop ourselves.
 
 ```python
-from pydantic_ai import Agent
-from toyaikit.tools import get_instance_methods
-from toyaikit.chat import IPythonChatInterface
-from toyaikit.chat.runners import PydanticAIRunner
+from pydantic_ai import Agent, RunUsage
 ```
 
-Collect the same tools:
+Create the PydanticAI agent:
 
 ```python
-coding_agent_tools_list = (
-    get_instance_methods(agent_tools)
-    + get_instance_methods(skills_tool)
-)
-```
-
-Define the agent:
-
-```python
-pydantic_model = 'openai:gpt-5.4-mini'
-
 coding_agent = Agent(
-    pydantic_model,
+    'openai:gpt-5.4-mini',
     instructions=AGENT_WITH_SKILLS_INSTRUCTIONS,
-    tools=coding_agent_tools_list
+    tools=[
+        agent_tools.read_file,
+        agent_tools.write_file,
+        agent_tools.see_file_tree,
+        agent_tools.execute_bash_command,
+        agent_tools.search_in_files,
+        skills_tool.skill,
+    ],
 )
 ```
 
-And run it:
+To show progress, we use the same `print_messages` pattern from the buildcamp materials:
 
 ```python
-chat_interface = IPythonChatInterface()
+def print_messages(messages):
+    for m in messages:
+        print(m.kind)
+        for p in m.parts:
+            part_kind = p.part_kind
+            if part_kind == "user-prompt":
+                print("USER:", p.content)
+            if part_kind == "tool-call":
+                print("TOOL CALL:", p.tool_name, p.args)
+            if part_kind == "tool-return":
+                print("TOOL RETURN:", p.tool_name)
+            if part_kind == "text":
+                print("ASSISTANT:", p.content)
+        print()
+```
 
-runner = PydanticAIRunner(
-    chat_interface=chat_interface,
-    agent=coding_agent
-)
+Now add the Q&A loop:
 
-await runner.run()
+```python
+messages = []
+usage = RunUsage()
+
+while True:
+    user_prompt = input("You: ").strip()
+    if not user_prompt or user_prompt.lower() == "stop":
+        break
+
+    result = await coding_agent.run(
+        user_prompt,
+        message_history=messages,
+    )
+    usage = usage + result.usage()
+
+    print_messages(result.new_messages())
+    messages.extend(result.new_messages())
+```
+
+At the end, you can inspect the total usage:
+
+```python
+usage
 ```
 
 Type `stop` to end the chat loop.
 
-This is the same coding agent, now running with PydanticAI instead of the earlier `toyaikit` OpenAI runner.
+This is the same coding agent, now running with plain PydanticAI instead of `toyaikit`.
 
 
 ## Summary
