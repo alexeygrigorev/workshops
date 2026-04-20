@@ -1237,7 +1237,7 @@ Type `stop` to end the chat loop.
 Try it with:
 
 ```text
-Create a browser-based todo app in this project. First fetch coding-agent-v2/vanilla-todo-reference/README.md from alexeygrigorev/workshops, save it under references/, read the instructions there, and then implement the app here using vanilla JavaScript, HTML, and localStorage.
+Create a browser-based todo app in this Django project. First fetch coding-agent-v2/plan.md from alexeygrigorev/workshops, save it under references/, read the spec there, and then implement it here. Use Django only to serve the page. The todo functionality itself should use vanilla JavaScript, HTML, and localStorage.
 ```
 
 At this point, we still have the same coding agent as before, but now it can load skills.
