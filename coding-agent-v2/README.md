@@ -79,7 +79,7 @@ Initialize the project:
 ```bash
 pip install uv
 uv init
-uv add jupyter
+uv add jupyter openai
 ```
 
 Start Jupyter:
@@ -88,13 +88,9 @@ Start Jupyter:
 uv run jupyter notebook
 ```
 
-### OpenAI openai_client setup
+All Python snippets below are meant to be run inside the notebook. If you want to run them from the terminal instead, use `uv run python`.
 
-For the API examples in the next part, install the OpenAI SDK:
-
-```bash
-uv add openai
-```
+### OpenAI Client Setup
 
 We will use these two variables throughout the OpenAI SDK sections of the workshop:
 
@@ -102,12 +98,12 @@ We will use these two variables throughout the OpenAI SDK sections of the worksh
 from openai import OpenAI
 
 openai_client = OpenAI()
-model = 'gpt-4o-mini'
+model = 'gpt-5.4-mini'
 ```
 
 ### Optional: Groq with the OpenAI SDK
 
-If you want to use Groq instead, keep the same variable names and switch the openai_client and model:
+If you want to use Groq instead, keep the same variable names and switch `openai_client` and `model`:
 
 ```python
 from openai import OpenAI
@@ -155,9 +151,11 @@ We will start with a smaller example before moving to the full coding-agent tool
 
 In this example, we will ask the same question several times and see how the answer changes as we give the model more capabilities.
 
-Question:
+Questions:
 
-- `Explain what do we have in this folder.`
+- `What's in this folder?`
+- `What dependencies does this project have?`
+- `What's in this folder and inside the files?`
 
 ### Without Tools
 
@@ -165,7 +163,7 @@ First, let's ask the model a question without any tools:
 
 ```python
 system_prompt = "You are a helpful coding assistant."
-user_prompt = "Explain what do we have in this folder."
+user_prompt = "What's in this folder?"
 
 chat_messages = [
     {"role": "developer", "content": system_prompt},
@@ -240,22 +238,7 @@ see_file_tree_description = {
 
 ### Using the First Tool
 
-Prepare the request.
-
-First, prepare the prompt and the messages:
-
-```python
-system_prompt = "You are a helpful coding assistant. Use the project-inspection tools when you need to understand the codebase."
-
-chat_messages = [
-    {"role": "developer", "content": system_prompt},
-    {"role": "user", "content": "Explain what do we have in this folder."}
-]
-```
-
-Send the request with the tool available.
-
-Now call the model and tell it that `see_file_tree` is available:
+Now let's include the tool in the request:
 
 ```python
 response = openai_client.responses.create(
@@ -334,21 +317,16 @@ Add the tool result to the conversation.
 
 Because the model is stateless, we need to maintain the conversation history ourselves.
 
-Start by rebuilding the message history and adding the model's tool call:
+We first add all the output:
 
 ```python
-messages = [
-    {"role": "developer", "content": system_prompt},
-    {"role": "user", "content": "Explain what do we have in this folder."}
-]
-
-messages.extend(response.output)
+chat_messages.extend(response.output)
 ```
 
 Now append the tool result as `function_call_output`:
 
 ```python
-messages.append({
+chat_messages.append({
     "type": "function_call_output",
     "call_id": call.call_id,
     "output": json.dumps(result),
@@ -364,7 +342,7 @@ Now that the model has the tool result, we call it one more time:
 ```python
 response = openai_client.responses.create(
     model=model,
-    input=messages,
+    input=chat_messages,
     tools=[see_file_tree_description]
 )
 ```
@@ -375,13 +353,11 @@ And now we can read the final text answer:
 print(response.output_text)
 ```
 
-This already gives the model access to the project tree, but it still cannot inspect file contents.
-
 ### Adding the Second Tool
 
-If we want the model to go beyond the directory tree and inspect actual files, we need another tool.
-
-Define `read_file`.
+If we want the model to go beyond the directory tree and inspect actual files, we need another tool. Let's allow the agent to read files.
+ 
+Define `read_file`:
 
 ```python
 def read_file(filepath: str) -> str:
@@ -418,18 +394,28 @@ read_file_description = {
 }
 ```
 
-### Using Both Tools
+### Using the Second Tool
 
-Now the model can first inspect the tree and then read important files such as `pyproject.toml` or `README.md`.
+Now we ask a question that should make the agent inspect project files.
 
-Send the request with both tools.
+Now we ask a narrower question:
+
+- `What dependencies does this project have?`
+
+To answer it, the model should inspect one of the important project files, most likely `pyproject.toml`.
+
+We will already make both tools available here. The model may only need `read_file`, but we want to keep the setup aligned with the next step.
 
 ```python
+user_prompt = "What dependencies does this project have?"
+
 chat_messages = [
     {"role": "developer", "content": system_prompt},
-    {"role": "user", "content": "Explain what do we have in this folder."}
+    {"role": "user", "content": user_prompt}
 ]
 ```
+
+Send the request:
 
 ```python
 response = openai_client.responses.create(
@@ -439,130 +425,205 @@ response = openai_client.responses.create(
 )
 ```
 
-Inspect the returned items.
+Go through the response and make tool calls:
 
 ```python
-response.output
+chat_messages.extend(response.output)
+
+for item in response.output:
+    if item.type == 'function_call':
+        f_name = item.name
+        args = json.loads(item.arguments)
+        print(f'tool_call: {f_name}({args})')
+
+        if f_name == 'see_file_tree':
+            result = see_file_tree(**args)
+        elif f_name == 'read_file':
+            result = read_file(**args)
+        else:
+            raise Exception(f'unknown function {f_name}')
+
+        chat_messages.append({
+            "type": "function_call_output",
+            "call_id": item.call_id,
+            "output": json.dumps(result),
+        })
 ```
 
-At this stage, the model may decide to:
-
-- call `see_file_tree`
-- call `read_file`
-- call `see_file_tree` first and `read_file` after that
-
-Let's first handle one tool call manually.
-
-### One Tool Call Round-Trip
-
-If the LLM decided to invoke one of our functions, we need to execute it and send the result back.
-
-Remember, LLMs are stateless. They do not remember previous requests, so we have to maintain the conversation history ourselves.
-
-First, add the LLM's response to our messages:
+See what's inside `chat_messages`:
 
 ```python
-import json
+chat_messages
+```
 
-messages = [
+We iterate until we have an answer.
+
+When we have it, we print it:
+
+```python
+item = response.output[0]
+print(item.content[0].text)
+```
+
+Let's put this together:
+
+```python
+chat_messages.extend(response.output)
+
+for item in response.output:
+    if item.type == 'function_call':
+        f_name = item.name
+        args = json.loads(item.arguments)
+        print(f'tool_call: {f_name}({args})')
+
+        if f_name == 'see_file_tree':
+            result = see_file_tree(**args)
+        elif f_name == 'read_file':
+            result = read_file(**args)
+        else:
+            raise Exception(f'unknown function {f_name}')
+
+        chat_messages.append({
+            "type": "function_call_output",
+            "call_id": item.call_id,
+            "output": json.dumps(result),
+        })
+    elif item.type == 'message':
+        print(item.content[0].text)
+```
+
+### Generalizing to a Loop
+
+In the previous example we manually execute the cells until we get a response. We can replace that with a while loop: we iterate until we have no tool calls.
+
+We can implement it like this:
+
+```python
+chat_messages = [
     {"role": "developer", "content": system_prompt},
-    {"role": "user", "content": "Explain what do we have in this folder."}
-]
-
-messages.extend(response.output)
-```
-
-Then execute the function and append the result:
-
-```python
-call = response.output[0]
-args = json.loads(call.arguments)
-
-if call.name == 'see_file_tree':
-    result = see_file_tree(**args)
-elif call.name == 'read_file':
-    result = read_file(**args)
-else:
-    result = {"error": f"Unknown tool: {call.name}"}
-
-result_json = json.dumps(result, indent=2)
-
-messages.append({
-    "type": "function_call_output",
-    "call_id": call.call_id,
-    "output": result_json,
-})
-```
-
-Now invoke the model again with the tool result:
-
-```python
-response = openai_client.responses.create(
-    model=model,
-    input=messages,
-    tools=[see_file_tree_description, read_file_description]
-)
-
-print(response.output_text)
-```
-
-This handles one tool call. But what if the model needs to call multiple tools? After seeing the result of one tool call, it may decide to call another tool, or even the same tool again with different parameters.
-
-### Tool-Calling Loop
-
-This is why we need a loop. We keep calling the API until there are no more tool calls.
-
-```python
-messages = [
-    {"role": "developer", "content": system_prompt},
-    {"role": "user", "content": "Explain what do we have in this folder."}
+    {"role": "user", "content": user_prompt}
 ]
 
 while True:
     response = openai_client.responses.create(
         model=model,
-        input=messages,
+        input=chat_messages,
         tools=[see_file_tree_description, read_file_description]
     )
 
     has_tool_calls = False
 
-    for entry in response.output:
-        messages.append(entry)
+    chat_messages.extend(response.output)
 
-        if entry.type == 'function_call':
-            args = json.loads(entry.arguments)
-
-            if entry.name == 'see_file_tree':
-                result = see_file_tree(**args)
-            elif entry.name == 'read_file':
-                result = read_file(**args)
-            else:
-                result = {"error": f"Unknown tool: {entry.name}"}
-
-            result_json = json.dumps(result, indent=2)
-
-            messages.append({
-                "type": "function_call_output",
-                "call_id": entry.call_id,
-                "output": result_json,
-            })
+    for item in response.output:
+        if item.type == 'function_call':
             has_tool_calls = True
 
-        elif entry.type == 'message':
-            print(entry.content[0].text)
+            f_name = item.name
+            args = json.loads(item.arguments)
+            print(f'tool_call: {f_name}({args})')
+
+            if f_name == 'see_file_tree':
+                result = see_file_tree(**args)
+            elif f_name == 'read_file':
+                result = read_file(**args)
+            else:
+                raise Exception(f'unknown function {f_name}')
+
+            chat_messages.append({
+                "type": "function_call_output",
+                "call_id": item.call_id,
+                "output": json.dumps(result),
+            })
+        elif item.type == 'message':
+            print(item.content[0].text)
 
     if not has_tool_calls:
         break
 ```
 
-This is the tool-calling loop. Every agent framework implements this internally.
+The structure is still the same:
+
+1. ask the model
+2. inspect `response.output`
+3. execute the requested tool
+4. append `function_call_output`
+5. ask again
+
+### Outer Q&A Loop
+
+What if we want to conitunue the conversation? Let's add input:
+
+```python
+chat_messages = [
+    {"role": "developer", "content": system_prompt}
+]
+
+while True:
+    user_prompt = input("You:").strip()
+
+    if user_prompt.lower() == "stop":
+        print("Chat ended.")
+        break
+
+    chat_messages.append({
+        "role": "user",
+        "content": user_prompt,
+    })
+
+    while True:
+        response = openai_client.responses.create(
+            model=model,
+            input=chat_messages,
+            tools=[see_file_tree_description, read_file_description]
+        )
+
+        has_tool_calls = False
+
+        for item in response.output:
+            chat_messages.append(item)
+
+            if item.type == 'function_call':
+                has_tool_calls = True
+
+                f_name = item.name
+                args = json.loads(item.arguments)
+                print(f'tool_call: {f_name}({args})')
+
+                if f_name == 'see_file_tree':
+                    result = see_file_tree(**args)
+                elif f_name == 'read_file':
+                    result = read_file(**args)
+                else:
+                    raise Exception(f'unknown function {f_name}')
+
+                chat_messages.append({
+                    "type": "function_call_output",
+                    "call_id": item.call_id,
+                    "output": json.dumps(result),
+                })
+            elif item.type == 'message':
+                print(item.content[0].text)
+
+        if not has_tool_calls:
+            break
+```
+
+Now we have two loops:
+
+1. the inner loop handles tool calls until the model is ready to answer
+2. the outer loop keeps the conversation going until the user types `stop`
+
+This is the basic shape of an interactive agent.
+
+Ask: "explore the repo and tell me what you find".
+
 
 ## Part 2: Coding Agent
 
-Now we build the same coding agent as in [coding-agent](../coding-agent/).
+### Agentic framework
 
-For this part, install `toyaikit`:
+Now we'll use a framework for implementing this agentic loop. Install `toyaikit`:
 
 ```bash
 uv add toyaikit
@@ -633,12 +694,6 @@ For this workshop, we will not re-implement the whole class in the notebook. We 
 
 - [tools.py](/home/alexey/git/workshops/coding-agent/tools.py:1)
 
-Download a local copy:
-
-```bash
-wget https://raw.githubusercontent.com/alexeygrigorev/workshops/refs/heads/main/coding-agent/tools.py
-```
-
 These are going to be our tools:
 
 1. `read_file` - read a file relative to the project directory
@@ -677,24 +732,26 @@ Now run the agent with `toyaikit`:
 ```python
 from toyaikit.tools import Tools
 from toyaikit.chat import IPythonChatInterface
-from toyaikit.llm import OpenAIopenai_Client
+from toyaikit.llm import OpenAIClient
 from toyaikit.chat.runners import OpenAIResponsesRunner
 
 tools_obj = Tools()
 tools_obj.add_tools(agent_tools)
 
 chat_interface = IPythonChatInterface()
-llm_openai_client = OpenAIopenai_Client(openai_client=openai_client, model=model)
+llm_client = OpenAIClient(client=openai_client, model=model)
 
 runner = OpenAIResponsesRunner(
     tools=tools_obj,
     developer_prompt=DEVELOPER_PROMPT,
     chat_interface=chat_interface,
-    llm_openai_client=llm_openai_client
+    llm_client=llm_client
 )
 
 runner.run()
 ```
+
+Type `stop` to end the chat loop.
 
 This is the same coding-agent foundation as before. We do not change the architecture here.
 
@@ -942,12 +999,14 @@ Run the updated agent:
 runner = OpenAIResponsesRunner(
     tools=tools_obj,
     developer_prompt=AGENT_WITH_SKILLS_INSTRUCTIONS,
-    llm_openai_client=llm_openai_client,
+    llm_client=llm_client,
     chat_interface=chat_interface,
 )
 
 runner.run()
 ```
+
+Type `stop` to end the chat loop.
 
 At this point, we still have the same coding agent as before, but now it can load skills and execute commands.
 
@@ -984,7 +1043,7 @@ coding_agent_tools_list = (
 Define the agent:
 
 ```python
-pydantic_model = 'openai:gpt-4o-mini'
+pydantic_model = 'openai:gpt-5.4-mini'
 
 coding_agent = Agent(
     pydantic_model,
@@ -1005,6 +1064,8 @@ runner = PydanticAIRunner(
 
 await runner.run()
 ```
+
+Type `stop` to end the chat loop.
 
 This is the same coding agent, now running with PydanticAI instead of the earlier `toyaikit` OpenAI runner.
 
