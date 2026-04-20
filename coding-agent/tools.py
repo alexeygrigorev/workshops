@@ -8,7 +8,7 @@ import subprocess
 
 
 class AgentTools:
-    # Directories to skip when building file tree
+    # Directories to skip when scanning project files
     SKIP_DIRS = {
         ".venv",
         "__pycache__",
@@ -133,7 +133,12 @@ class AgentTools:
         """
         abs_root = self.project_dir / root_dir
         matches = []
-        for dirpath, _, filenames in os.walk(abs_root):
+
+        for dirpath, dirnames, filenames in os.walk(abs_root):
+            for skip_dir in list(dirnames):
+                if skip_dir in self.SKIP_DIRS:
+                    dirnames.remove(skip_dir)
+
             for filename in filenames:
                 filepath = os.path.join(dirpath, filename)
                 try:
