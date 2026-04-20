@@ -6,7 +6,7 @@ Plan:
 
 1. Start with a short introduction to tool calling
 2. Build the coding agent itself
-3. Add skills and commands
+3. Add skills
 4. Run the same agent with PydanticAI
 
 
@@ -629,20 +629,296 @@ Now we'll use a framework for implementing this agentic loop. Install `toyaikit`
 uv add toyaikit
 ```
 
-First, get the Django template:
+In Part 1 we wrote the loops ourselves. Now let's port exactly the same idea to `toyaikit`.
 
-```bash
-git clone https://github.com/alexeygrigorev/django_template.git
+```python
+from toyaikit.tools import Tools
+from toyaikit.chat import IPythonChatInterface
+from toyaikit.llm import OpenAIClient
+from toyaikit.chat.runners import OpenAIResponsesRunner
 ```
 
-The large tool file already exists in this repo, so we reuse it instead of rewriting it:
+Register the two tools we already have:
 
-- [`../coding-agent/tools.py`](../coding-agent/tools.py)
+```python
+tools_obj = Tools()
+tools_obj.add_tool(see_file_tree, see_file_tree_description)
+tools_obj.add_tool(read_file, read_file_description)
+```
+
+Create the runner:
+
+```python
+chat_interface = IPythonChatInterface()
+llm_client = OpenAIClient(client=openai_client, model=model)
+
+runner = OpenAIResponsesRunner(
+    tools=tools_obj,
+    developer_prompt=system_prompt,
+    chat_interface=chat_interface,
+    llm_client=llm_client
+)
+```
+
+Run it:
+
+```python
+results = runner.run()
+```
+
+Type `stop` to end the chat loop.
+
+The important point is that the agent behavior did not change. We only replaced our manual outer and inner loops with a framework that does the same thing for us.
+
+### Tool Definitions from Docstrings
+
+In Part 1 we had to maintain function schemas such as `see_file_tree_description` and `read_file_description`.
+
+That is fine for learning, but it becomes annoying once we have more tools.
+
+With `toyaikit` (or any other agentic framework), if we provide:
+
+- type hints
+- docstrings
+
+then we no longer need to write the tool definitions manually. The framework can infer them.
+
+```python
+def see_file_tree(root_dir: str = ".") -> list[str]:
+    """List files and directories in the current project.
+
+    Args:
+        root_dir: Directory to list. Defaults to the current directory.
+    """
+    tree = []
+
+    for dirpath, dirnames, filenames in os.walk(root_dir):
+        dirnames[:] = [d for d in dirnames if d not in {".git", ".venv", "__pycache__"}]
+
+        for name in sorted(dirnames + filenames):
+            full_path = os.path.join(dirpath, name)
+            tree.append(os.path.relpath(full_path, root_dir))
+
+    return tree
+
+
+def read_file(filepath: str) -> str:
+    """Read the contents of a file in the current project.
+
+    Args:
+        filepath: Path to the file to read.
+    """
+    with open(filepath, "r", encoding="utf-8") as f:
+        return f.read()
+```
+
+Then we can simply do:
+
+```python
+tools_obj = Tools()
+tools_obj.add_tool(see_file_tree)
+tools_obj.add_tool(read_file)
+```
+
+No separate schema dictionary is needed anymore.
+
+### Grouping Tools in a Class
+
+We also want some structure.
+
+For a coding agent, several tools need shared state, especially the project directory they operate on.
+
+Instead of passing many unrelated functions around, we can group them into a class.
+
+Let's start with a small class that contains the tools we already have:
+
+```python
+import os
+from pathlib import Path
+
+class ProjectTools:
+    def __init__(self, project_dir: Path):
+        self.project_dir = project_dir
+
+    def see_file_tree(self, root_dir: str = ".") -> list[str]:
+        """List files and directories in the project.
+
+        Args:
+            root_dir: Directory to list relative to the project root.
+        """
+        abs_root = self.project_dir / root_dir
+        tree = []
+
+        for dirpath, dirnames, filenames in os.walk(abs_root):
+            dirnames[:] = [d for d in dirnames if d not in {".git", ".venv", "__pycache__"}]
+
+            for name in sorted(dirnames + filenames):
+                full_path = os.path.join(dirpath, name)
+                tree.append(os.path.relpath(full_path, self.project_dir))
+
+        return tree
+
+    def read_file(self, filepath: str) -> str:
+        """Read the contents of a file relative to the project root.
+
+        Args:
+            filepath: Path to the file to read.
+        """
+        abs_path = self.project_dir / filepath
+        with open(abs_path, "r", encoding="utf-8") as f:
+            return f.read()
+
+    def search_in_files(self, search_term: str) -> list[str]:
+        """Search for a string in project files.
+
+        Args:
+            search_term: Text to search for.
+        """
+        matches = []
+
+        for dirpath, dirnames, filenames in os.walk(self.project_dir):
+            dirnames[:] = [d for d in dirnames if d not in {".git", ".venv", "__pycache__"}]
+
+            for filename in filenames:
+                abs_path = Path(dirpath) / filename
+
+                try:
+                    content = abs_path.read_text(encoding="utf-8")
+                except Exception:
+                    continue
+
+                if search_term in content:
+                    matches.append(str(abs_path.relative_to(self.project_dir)))
+
+        return matches
+```
+
+Initialize it for the current repository:
+
+```python
+project_tools = ProjectTools(Path("."))
+```
+
+Try one of the methods directly:
+
+```python
+project_tools.search_in_files("agent")
+```
+
+And pass the whole instance to `toyaikit`:
+
+```python
+tools_obj = Tools()
+tools_obj.add_tools(project_tools)
+```
+
+This is already better structured:
+
+- both tools share the same project root
+- both tools live in one place
+- `toyaikit` can infer schemas from the method signatures and docstrings
+
+### Full Tool Class
+
+For the actual coding agent, we want more than just `see_file_tree` and `read_file`.
+
+We already have a ready implementation here:
+
+- [`coding-agent/tools.py`](../coding-agent/tools.py)
 
 Download a local copy:
 
 ```bash
 wget https://raw.githubusercontent.com/alexeygrigorev/workshops/refs/heads/main/coding-agent/tools.py
+```
+
+These are going to be our tools:
+
+1. `read_file` - read a file relative to the project directory
+2. `write_file` - write a file and create missing directories if needed
+3. `see_file_tree` - list the project files while skipping noisy folders such as `.git` and `.venv`
+4. `execute_bash_command` - run shell commands in the project directory
+5. `search_in_files` - search for text inside project files
+
+Now use this class in the current repository:
+
+```python
+import tools
+agent_tools = tools.AgentTools(Path("."))
+
+tools_obj = Tools()
+tools_obj.add_tools(agent_tools)
+```
+
+Test it:
+
+```python
+project_tools.search_in_files('agent')
+```
+
+Let's create an agent for it:
+
+```python
+chat_interface = IPythonChatInterface()
+llm_client = OpenAIClient(client=openai_client, model=model)
+
+runner = OpenAIResponsesRunner(
+    tools=tools_obj,
+    developer_prompt=system_prompt,
+    chat_interface=chat_interface,
+    llm_client=llm_client
+)
+```
+
+Run it:
+
+```python
+runner.run();
+```
+
+Test it with a prompt: "create a browser based vanilla js snake game in snake.html".
+
+
+## Part 3: Template
+
+### Structure and Constraints
+
+Now we can talk about the actual coding-agent project.
+
+We do not want the agent to work in a completely unconstrained environment. If we just say "build me an app" with no structure, the agent has to invent:
+
+- which framework to use
+- where files should go
+- how the app is organized
+- how to run it
+- how to verify it
+
+That makes the task slower and less reliable.
+
+A template gives the agent constraints and structure:
+
+- the file tree is already there
+- the framework is already chosen
+- the important files already exist
+- there is a known place for HTML, views, settings, and URLs
+
+This helps the agent work faster because it spends less time inventing structure and more time modifying the existing project correctly.
+
+### Adding Django
+
+We will use a prepared Django template project:
+
+```bash
+git clone https://github.com/alexeygrigorev/django_template.git
+```
+
+If you want to make sure the template works before using it with the agent, run it once:
+
+```bash
+cd django_template
+uv sync
+make migrate
+make run
 ```
 
 Create a helper that copies the template into a new project folder:
@@ -661,7 +937,7 @@ def start(project_name):
         print(f"Directory '{project_name}' already exists.")
         return
 
-    shutil.copytree('django_template', project_name)
+    shutil.copytree("django_template", project_name)
     print(f"Django template copied to '{project_name}' directory.")
     return project_name
 ```
@@ -673,68 +949,92 @@ project_name = input("Enter the new Django project name: ").strip()
 start(project_name)
 ```
 
-In Part 1 we used standalone functions. That is fine for a small example, but for a coding agent we need multiple tools that all work relative to the same project directory.
-
-So instead of passing around many independent functions, we will group them into a class.
-
-The idea looks like this:
+Now point the same tool class at the new Django project:
 
 ```python
-from pathlib import Path
-
-
-class AgentTools:
-    def __init__(self, project_dir: Path):
-        self.project_dir = project_dir
-```
-
-This gives us one place to store shared state such as the project root, and all tool methods can use it.
-
-For this workshop, we will not re-implement the whole class in the notebook. We already have it here:
-
-- [tools.py](/home/alexey/git/workshops/coding-agent/tools.py:1)
-
-These are going to be our tools:
-
-1. `read_file` - read a file relative to the project directory
-2. `write_file` - write a file and create missing directories if needed
-3. `see_file_tree` - list the project files while skipping noisy folders such as `.git` and `.venv`
-4. `execute_bash_command` - run shell commands in the project directory
-5. `search_in_files` - search for text inside project files
-
-Now initialize the class:
-
-```python
-import tools
-from pathlib import Path
-
 project_path = Path(project_name)
 agent_tools = tools.AgentTools(project_path)
 ```
 
-At this point, `agent_tools` is one object that contains all the methods we want to expose to the agent.
+### A More Detailed Prompt
 
-Start with the same simple coding-agent prompt:
+To make it work better, we need a stronger prompt than the exploratory prompt from Part 1:
 
 ```python
-DEVELOPER_PROMPT = """
-You are a coding agent. Your task is to modify the provided
-Django project template according to user instructions.
-"""
+djago_agent_prompt = """
+You are a coding agent. Your task is to modify the provided Django project template
+according to user instructions. You don't tell the user what to do; you do it yourself using the
+available tools. First, think about the sequence of steps you will do, and then
+execute the sequence.
+Always ensure changes are consistent with Django best practices and the project's structure.
+
+## Project Overview
+
+The project is a Django 5.2.4 web application scaffolded with standard best practices. It uses:
+- Python 3.12+
+- Django 5.2.4 (as specified in pyproject.toml)
+- uv for Python environment and dependency management
+- SQLite as the default database (see settings.py)
+- Standard Django apps and a custom app called myapp
+- HTML templates for rendering views
+- TailwindCSS for styling
+
+## File Tree
+
+├── .python-version
+├── README.md
+├── manage.py
+├── pyproject.toml
+├── uv.lock
+├── myapp/
+│   ├── __init__.py
+│   ├── admin.py
+│   ├── apps.py
+│   ├── migrations/
+│   │   └── __init__.py
+│   ├── models.py
+│   ├── templates/
+│   │   └── home.html
+│   ├── tests.py
+│   └── views.py
+├── myproject/
+│   ├── __init__.py
+│   ├── asgi.py
+│   ├── settings.py
+│   ├── urls.py
+│   └── wsgi.py
+└── templates/
+    └── base.html
+
+## Content Description
+
+- manage.py: Standard Django management script for running commands.
+- README.md: Setup and run instructions, including use of uv for dependency management.
+- pyproject.toml: Project metadata and dependencies (Django 5.2.4).
+- uv.lock: Lock file for reproducible Python environments.
+- .python-version: Specifies the Python version for the project.
+- myapp/: Custom Django app with models, views, admin, tests, and a template (home.html).
+  - migrations/: Contains migration files for database schema.
+- myproject/: Django project configuration (settings, URLs, WSGI/ASGI entrypoints).
+  - settings.py: Configures installed apps, middleware, database (SQLite), templates, etc.
+- templates/: Project-level templates, including base.html.
+
+You have full access to modify, add, or remove files and code within this structure using your available tools.
+
+## Additional instructions
+
+- Don't execute "runserver", but you can execute other commands to check if the project is working.
+- Make sure you use Tailwind styles for making the result look beatiful
+- Use pictograms and emojis when possible. Font-awesome is awailable
+- Avoid putting complex logic to templates - do it on the server side when possible
+""".strip()
 ```
 
-### Using a Framework
+### Running the Coding Agent
 
-With [`toyaikit`](https://github.com/alexeygrigorev/toyaikit), we can pass the entire class instance instead of registering each tool one by one.
-
-Now run the agent with `toyaikit`:
+Now run the agent with the full tool class:
 
 ```python
-from toyaikit.tools import Tools
-from toyaikit.chat import IPythonChatInterface
-from toyaikit.llm import OpenAIClient
-from toyaikit.chat.runners import OpenAIResponsesRunner
-
 tools_obj = Tools()
 tools_obj.add_tools(agent_tools)
 
@@ -743,7 +1043,7 @@ llm_client = OpenAIClient(client=openai_client, model=model)
 
 runner = OpenAIResponsesRunner(
     tools=tools_obj,
-    developer_prompt=DEVELOPER_PROMPT,
+    developer_prompt=djago_agent_prompt,
     chat_interface=chat_interface,
     llm_client=llm_client
 )
@@ -753,23 +1053,34 @@ runner.run()
 
 Type `stop` to end the chat loop.
 
-This is the same coding-agent foundation as before. We do not change the architecture here.
+Now we have a real coding agent:
+
+- it works inside a structured project
+- it has multiple project-aware tools
+- it has a more specific prompt
+- and the framework handles the agentic loop for us
 
 
 ## Part 3: Skills
 
-Now we extend the same coding agent with the skills capabilities from [agent-skills](../agent-skills/).
+Now we extend the same coding agent with skills.
 
-For loading `SKILL.md` and command files with frontmatter, install:
+Skills are reusable instruction files that teach the agent how to handle a specific kind of task.
+
+Instead of putting every possible workflow into one long system prompt, we keep the base agent smaller and let it load extra instructions only when they are relevant.
+
+This matters for two reasons:
+
+- the agent stays simpler and easier to control
+- we can add new capabilities without rewriting the whole agent
+
+In this part, we will keep the coding agent from Part 2 and add a tool that can load `SKILL.md` files on demand.
+
+For loading `SKILL.md` files with frontmatter, install:
 
 ```bash
 uv add python-frontmatter
 ```
-
-We will keep the agent from Part 2 and add two things:
-
-- skills
-- commands
 
 First, create a skills folder and download the example GitHub-fetch skill:
 
@@ -794,6 +1105,14 @@ class Skill:
 ```
 
 Now the loader:
+
+The skills live as files on disk, but the agent needs a structured way to work with them.
+
+That is why we need a loader. It does three things:
+
+- given a skill name, it reads `skills/<name>/SKILL.md`
+- it lists all available skills in the `skills/` folder
+- it prepares a short description of the available skills so we can tell the agent what it can load
 
 ```python
 class SkillLoader:
@@ -843,6 +1162,17 @@ class SkillLoader:
 
 Expose skills as a tool:
 
+The loader is a normal Python object, but the model cannot call Python methods directly.
+
+It only knows how to call tools that are registered in the agent.
+
+So if we want the agent to decide on its own when to load a skill, the skill loader has to be exposed as a tool. Then the model can do this flow itself:
+
+- see from the prompt that some skills are available
+- decide that one of them is relevant
+- call the `skill` tool with the skill name
+- read the returned instructions and continue the task
+
 ```python
 class SkillsTool:
     """Wrapper for the skill loader that exposes skill() as a tool."""
@@ -860,7 +1190,43 @@ class SkillsTool:
         }
 ```
 
-Initialize it and inject the available skills into the prompt:
+For the skills-based agent, we switch to the general-purpose system prompt from the skills workshop:
+
+```python
+AGENT_INSTRUCTIONS = """You are a coding agent designed to help with software engineering tasks.
+
+You help users with:
+- Writing, editing, and refactoring code
+- Debugging and fixing errors
+- Explaining code and technical concepts
+- Project setup and configuration
+- Code reviews and best practices
+
+Your task is to use the available tools to satisfy the requests from the user.
+
+When user asks to implement something, or create something, create and modify the files
+using the provided tools. Use your best judgment when deciding how to name files and folders.
+
+# Core Principles
+
+1. Be concise but thorough - Get straight to the point, but don't skip important details
+2. Show your work - Explain your reasoning for complex changes
+3. Ask questions - When requirements are unclear, ask rather than assume
+4. Use tools effectively - ALWAYS use available tools when relevant
+5. Code quality matters - Write clean, maintainable code following best practices
+
+# Working with Code
+
+- Prefer editing over creating new files when possible
+- Read before writing - Understand existing patterns before making changes
+- Test your changes - Run builds/tests and fix any errors you introduce
+- Reference precisely - When pointing to code, use file_path:line_number format
+
+You're here to help users build better software efficiently. Start by understanding what they want to accomplish!
+""".strip()
+```
+
+Initialize the skill loader and inject the available skills into that prompt:
 
 ```python
 skill_loader = SkillLoader(Path("skills/"))
@@ -872,125 +1238,21 @@ You have the following skills available which you can load with the skills tool:
 {skill_loader.get_description()}
 '''.strip()
 
-AGENT_WITH_SKILLS_INSTRUCTIONS = DEVELOPER_PROMPT + '\n\n' + SKILL_INJECTION_PROMPT
+AGENT_WITH_SKILLS_INSTRUCTIONS = AGENT_INSTRUCTIONS + '\n\n' + SKILL_INJECTION_PROMPT
 ```
 
-Add the tool:
+Before we add the skills tool, let's create a fresh project folder and point the coding-agent tools to it:
 
 ```python
+skills_project_name = input("Enter the project name for the skills agent: ").strip()
+start(skills_project_name)
+
+project_path = Path(skills_project_name)
+agent_tools = tools.AgentTools(project_path)
+
+tools_obj = Tools()
+tools_obj.add_tools(agent_tools)
 tools_obj.add_tools(skills_tool)
-```
-
-### Commands
-
-Commands are user-facing shortcuts. We keep the same approach as in [agent-skills](../agent-skills/).
-
-Create the commands folder and download the example commands:
-
-```bash
-mkdir commands
-cd commands
-
-wget https://raw.githubusercontent.com/alexeygrigorev/claude-code-kid-parent/refs/heads/main/.claude/commands/kid.md
-wget https://raw.githubusercontent.com/alexeygrigorev/claude-code-kid-parent/refs/heads/main/.claude/commands/parent.md
-
-cd ..
-```
-
-Create a data class for commands:
-
-```python
-@dataclass
-class Command:
-    name: str
-    description: str
-    template: str
-```
-
-And the loader:
-
-```python
-class CommandLoader:
-    def __init__(self, commands_dir: Path | str = None):
-        self.commands_dir = Path(commands_dir)
-
-    def load_command(self, name: str) -> Command:
-        command_file = self.commands_dir / f"{name}.md"
-        if not command_file.exists():
-            return None
-
-        parsed = frontmatter.load(command_file, encoding="utf-8")
-        metadata = dict(parsed.metadata)
-
-        return Command(
-            name=name,
-            description=metadata.get("description", ""),
-            template=parsed.content,
-        )
-
-    def list_commands(self) -> list[Command]:
-        commands = []
-
-        if not self.commands_dir.exists():
-            return commands
-
-        for md_file in sorted(self.commands_dir.glob("*.md")):
-            name = md_file.stem
-            command = self.load_command(name)
-            commands.append(command)
-
-        return commands
-```
-
-Wrap commands as a tool:
-
-```python
-def process_template(template: str, arguments: str) -> str:
-    return template
-
-
-class CommandsTool:
-    def __init__(self, command_loader: CommandLoader):
-        self.command_loader = command_loader
-
-    def execute_command(self, name: str, arguments: str = "") -> str:
-        """Execute a command by name and return the rendered prompt."""
-        if name.startswith('/'):
-            name = name.lstrip('/')
-
-        command = self.command_loader.load_command(name)
-        if not command:
-            return f"Command not found: /{name}"
-
-        return process_template(command.template, arguments)
-```
-
-Initialize and register:
-
-```python
-command_loader = CommandLoader(Path("commands/"))
-commands_tool = CommandsTool(command_loader=command_loader)
-
-tools_obj.add_tools(commands_tool)
-```
-
-Update the prompt so the agent knows the difference between skills and commands:
-
-```python
-SKILL_INJECTION_PROMPT = f'''
-You have the following skills available which you can load with the skills tool:
-
-{skill_loader.get_description()}
-
-Don't confuse skills and commands:
-
-- Skills are discovered automatically, without user explicitly asking for it
-- Instructions to execute commands are given explicitly: "/test" -> "run the 'test' command"
-
-When you see "/command", use the tools to execute the command "command"
-'''.strip()
-
-AGENT_WITH_SKILLS_INSTRUCTIONS = DEVELOPER_PROMPT + '\n\n' + SKILL_INJECTION_PROMPT
 ```
 
 Run the updated agent:
@@ -1003,12 +1265,18 @@ runner = OpenAIResponsesRunner(
     chat_interface=chat_interface,
 )
 
-runner.run()
+runner.run();
 ```
 
 Type `stop` to end the chat loop.
 
-At this point, we still have the same coding agent as before, but now it can load skills and execute commands.
+Try it with:
+
+```text
+Create a browser-based todo app in this project. First fetch coding-agent-v2/vanilla-todo-reference/README.md, coding-agent-v2/vanilla-todo-reference/index.html, and coding-agent-v2/vanilla-todo-reference/app.js from alexeygrigorev/workshops, save them under references/, then implement a similar app here using vanilla JavaScript, HTML, and localStorage.
+```
+
+At this point, we still have the same coding agent as before, but now it can load skills.
 
 
 ## Part 4: PydanticAI
@@ -1036,7 +1304,6 @@ Collect the same tools:
 coding_agent_tools_list = (
     get_instance_methods(agent_tools)
     + get_instance_methods(skills_tool)
-    + get_instance_methods(commands_tool)
 )
 ```
 
@@ -1079,4 +1346,4 @@ This is the same coding agent, now running with PydanticAI instead of the earlie
 3. skills
 4. PydanticAI
 
-The stack stays the same as in the earlier workshops, the code stays close to the original versions, and the README contains the code needed to follow along without jumping between multiple workshop folders.
+This README contains the code needed to follow along in one place, while still reusing a few larger files where that is more practical.
