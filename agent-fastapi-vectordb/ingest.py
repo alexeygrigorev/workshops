@@ -1,27 +1,9 @@
 import os
 
-import requests
 from qdrant_client import QdrantClient, models
 
-
-BASE_FAQ_URL = "https://datatalks.club/faq"
-COURSES_INDEX_URL = f"{BASE_FAQ_URL}/json/courses.json"
-
-COLLECTION_NAME = "faq"
-EMBEDDING_MODEL = "jinaai/jina-embeddings-v2-small-en"
-EMBEDDING_DIM = 512
-
-
-def load_documents():
-    documents = []
-    courses_index = requests.get(COURSES_INDEX_URL).json()
-
-    for course in courses_index:
-        course_url = f"{BASE_FAQ_URL}/{course['path']}"
-        course_data = requests.get(course_url).json()
-        documents.extend(course_data)
-
-    return documents
+from faq import load_documents
+from search import COLLECTION_NAME, EMBEDDING_DIM, EMBEDDING_MODEL
 
 
 def connect_qdrant():

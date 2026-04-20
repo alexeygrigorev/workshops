@@ -8,7 +8,7 @@ ENV PATH="/code/.venv/bin:$PATH"
 COPY "pyproject.toml" "uv.lock" ".python-version" ./
 RUN uv sync --locked
 
-COPY "app.py" ./
+COPY "app.py" "engine.py" "faq.py" "ingest.py" "notebook.py" "search.py" ./
 COPY "frontend/" ./frontend/
 
 EXPOSE 9696
