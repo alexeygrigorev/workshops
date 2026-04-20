@@ -1,73 +1,66 @@
+import json
 import os
 from typing import Optional
 
-import uvicorn
 from fastapi import FastAPI
-from pydantic import BaseModel, Field, ConfigDict
+from fastapi.staticfiles import StaticFiles
+from pydantic import BaseModel, ConfigDict, Field
+from sse_starlette.sse import EventSourceResponse
+
+from openai import AsyncOpenAI
 from qdrant_client import QdrantClient, models
-from openai import OpenAI
 
 
 COLLECTION_NAME = "faq"
 EMBEDDING_MODEL = "jinaai/jina-embeddings-v2-small-en"
+MODEL_NAME = "gpt-4o-mini"
+MAX_ITERATIONS = 5
 
-QDRANT_URL = os.getenv("QDRANT_URL", "http://localhost:6333")
-
-qdrant = QdrantClient(QDRANT_URL)
-openai_client = OpenAI()
+qdrant = QdrantClient(
+    url=os.getenv("QDRANT_URL", "http://localhost:6333"),
+    api_key=os.getenv("QDRANT_API_KEY"),
+)
+openai_client = AsyncOpenAI()
 
 app = FastAPI(title="faq-agent")
 
 
-class SearchRequest(BaseModel):
-    model_config = ConfigDict(extra="forbid")
-
-    query: str = Field(..., min_length=1)
-    course: Optional[str] = None
-    limit: int = Field(5, ge=1, le=20)
-
-
-class SearchHit(BaseModel):
-    id: int
-    score: float
-    question: str
-    text: str
-    section: str
-    course: str
-
-
-class SearchResponse(BaseModel):
-    hits: list[SearchHit]
-
-
-class AskRequest(BaseModel):
-    model_config = ConfigDict(extra="forbid")
-
-    question: str = Field(..., min_length=1)
-    course: Optional[str] = None
-    limit: int = Field(5, ge=1, le=20)
+search_tool = {
+    "type": "function",
+    "name": "search",
+    "description": "Search the DataTalks.Club FAQ knowledge base using semantic search.",
+    "parameters": {
+        "type": "object",
+        "properties": {
+            "query": {
+                "type": "string",
+                "description": "What to search for.",
+            },
+            "course": {
+                "type": "string",
+                "description": (
+                    "Filter to a specific course. "
+                    "One of: llm-zoomcamp, ml-zoomcamp, mlops-zoomcamp, "
+                    "data-engineering-zoomcamp. Omit to search all courses."
+                ),
+            },
+        },
+        "required": ["query"],
+        "additionalProperties": False,
+    },
+}
 
 
-class AskResponse(BaseModel):
-    answer: str
-    sources: list[SearchHit]
-
-
-class IndexRequest(BaseModel):
-    model_config = ConfigDict(extra="forbid")
-
-    id: int
-    question: str
-    text: str
-    section: str
-    course: str
-
-
-def search_qdrant(query: str, course: Optional[str], limit: int):
+def search(query: str, course: Optional[str] = None, limit: int = 5):
     query_filter = None
     if course:
         query_filter = models.Filter(
-            must=[models.FieldCondition(key="course", match=models.MatchValue(value=course))]
+            must=[
+                models.FieldCondition(
+                    key="course",
+                    match=models.MatchValue(value=course),
+                )
+            ]
         )
 
     results = qdrant.query_points(
@@ -79,75 +72,153 @@ def search_qdrant(query: str, course: Optional[str], limit: int):
     )
 
     hits = []
-    for point in results.points:
-        payload = point.payload or {}
+    for p in results.points:
+        payload = p.payload or {}
         hits.append(
-            SearchHit(
-                id=int(point.id),
-                score=float(point.score),
-                question=payload.get("question", ""),
-                text=payload.get("text", ""),
-                section=payload.get("section", ""),
-                course=payload.get("course", ""),
-            )
+            {
+                "id": payload.get("id"),
+                "course": payload.get("course"),
+                "section": payload.get("section"),
+                "question": payload.get("question"),
+                "answer": payload.get("answer"),
+                "score": float(p.score),
+            }
         )
     return hits
 
 
-INSTRUCTIONS = (
-    "You're a course teaching assistant. Answer the QUESTION using only "
-    "facts from the CONTEXT. If the context is not sufficient, say so."
-)
+def make_call(tool_call):
+    args = json.loads(tool_call.arguments)
+    if tool_call.name == "search":
+        result = search(**args)
+    else:
+        result = {"error": f"unknown tool: {tool_call.name}"}
+
+    return {
+        "type": "function_call_output",
+        "call_id": tool_call.call_id,
+        "output": json.dumps(result),
+    }
 
 
-def build_prompt(question: str, hits: list[SearchHit]) -> str:
-    context = "\n\n".join(
-        f"section: {h.section}\nquestion: {h.question}\nanswer: {h.text}" for h in hits
-    )
-    return f"<QUESTION>\n{question}\n</QUESTION>\n\n<CONTEXT>\n{context}\n</CONTEXT>"
+INSTRUCTIONS = """
+You're a teaching assistant for DataTalks.Club zoomcamps.
+
+Answer the user's question using the FAQ knowledge base. Use the `search`
+tool to look things up. You can call search multiple times with different
+queries to explore the topic well.
+
+Rules:
+- Use only facts from the search results.
+- If the answer isn't in the results, say so clearly.
+- At the end, list the FAQ entries you used under a "Sources" section,
+  one per line in the form: `- [id] section > question`.
+""".strip()
 
 
-def llm(question: str, hits: list[SearchHit]) -> str:
-    response = openai_client.responses.create(
-        model="gpt-4o-mini",
-        input=[
-            {"role": "system", "content": INSTRUCTIONS},
-            {"role": "user", "content": build_prompt(question, hits)},
-        ],
-    )
-    return response.output_text
+class AskRequest(BaseModel):
+    model_config = ConfigDict(extra="forbid")
+
+    question: str = Field(..., min_length=1)
+    course: Optional[str] = None
 
 
-@app.get("/health")
+def sse(type_: str, **payload) -> dict:
+    return {"data": json.dumps({"type": type_, **payload})}
+
+
+async def run_agent(question: str, course: Optional[str]):
+    yield sse("status", message="thinking...")
+
+    if course:
+        user_message = f"[course hint: {course}]\n{question}"
+    else:
+        user_message = question
+
+    message_history = [
+        {"role": "system", "content": INSTRUCTIONS},
+        {"role": "user", "content": user_message},
+    ]
+
+    for iteration in range(1, MAX_ITERATIONS + 1):
+        yield sse("iteration", n=iteration)
+
+        async with openai_client.responses.stream(
+            model=MODEL_NAME,
+            input=message_history,
+            tools=[search_tool],
+        ) as stream:
+            async for event in stream:
+                if event.type == "response.output_text.delta":
+                    yield sse("token", delta=event.delta)
+
+            final = await stream.get_final_response()
+
+        message_history.extend(final.output)
+
+        tool_calls = [m for m in final.output if m.type == "function_call"]
+
+        for tc in tool_calls:
+            args = json.loads(tc.arguments)
+            yield sse("tool_call", name=tc.name, arguments=args)
+
+            tool_output = make_call(tc)
+            message_history.append(tool_output)
+
+            result = json.loads(tool_output["output"])
+            if isinstance(result, list):
+                preview = [
+                    {
+                        "id": h.get("id"),
+                        "course": h.get("course"),
+                        "question": h.get("question"),
+                        "score": round(h.get("score", 0.0), 3),
+                    }
+                    for h in result
+                ]
+            else:
+                preview = result
+            yield sse("tool_result", name=tc.name, result=preview)
+
+        if not tool_calls:
+            final_text = ""
+            for m in final.output:
+                if m.type == "message":
+                    for c in m.content:
+                        if getattr(c, "text", None):
+                            final_text += c.text
+            yield sse("done", answer=final_text)
+            return
+
+    yield sse("done", answer="(stopped: reached max iterations)")
+
+
+@app.post("/api/ask")
+async def ask(req: AskRequest):
+    return EventSourceResponse(run_agent(req.question, req.course))
+
+
+@app.get("/api/courses")
+def courses():
+    return {
+        "courses": [
+            {"id": "llm-zoomcamp", "name": "LLM Zoomcamp"},
+            {"id": "ml-zoomcamp", "name": "ML Zoomcamp"},
+            {"id": "mlops-zoomcamp", "name": "MLOps Zoomcamp"},
+            {"id": "data-engineering-zoomcamp", "name": "Data Engineering Zoomcamp"},
+        ]
+    }
+
+
+@app.get("/api/health")
 def health():
     return {"status": "ok"}
 
 
-@app.post("/search")
-def search(req: SearchRequest) -> SearchResponse:
-    hits = search_qdrant(req.query, req.course, req.limit)
-    return SearchResponse(hits=hits)
-
-
-@app.post("/ask")
-def ask(req: AskRequest) -> AskResponse:
-    hits = search_qdrant(req.question, req.course, req.limit)
-    answer = llm(req.question, hits)
-    return AskResponse(answer=answer, sources=hits)
-
-
-@app.post("/index")
-def index(doc: IndexRequest):
-    point = models.PointStruct(
-        id=doc.id,
-        vector=models.Document(
-            text=f"{doc.question}\n\n{doc.text}", model=EMBEDDING_MODEL
-        ),
-        payload=doc.model_dump(),
-    )
-    qdrant.upsert(collection_name=COLLECTION_NAME, points=[point])
-    return {"status": "indexed", "id": doc.id}
+app.mount("/", StaticFiles(directory="frontend", html=True), name="frontend")
 
 
 if __name__ == "__main__":
+    import uvicorn
+
     uvicorn.run(app, host="0.0.0.0", port=9696)

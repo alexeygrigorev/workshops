@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FAQ Agent</title>
+    <link rel="stylesheet" href="/style.css" />
+</head>
+<body>
+    <header>
+        <h1>FAQ Agent</h1>
+        <label>
+            Course:
+            <select id="course">
+                <option value="">All courses</option>
+            </select>
+        </label>
+    </header>
+
+    <main id="messages"></main>
+
+    <form id="ask-form">
+        <input
+            id="question"
+            type="text"
+            placeholder="Ask something about the course..."
+            autocomplete="off"
+            required
+        />
+        <button type="submit" id="submit">Ask</button>
+    </form>
+
+    <script src="/app.js"></script>
+</body>
+</html>

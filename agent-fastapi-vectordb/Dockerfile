@@ -9,6 +9,7 @@ COPY "pyproject.toml" "uv.lock" ".python-version" ./
 RUN uv sync --locked
 
 COPY "app.py" ./
+COPY "frontend/" ./frontend/
 
 EXPOSE 9696
 

@@ -2,67 +2,102 @@
 
 This workshop is a part of [AI Shipping Labs](https://luma.com/j1zzd47e).
 
-- Event: https://luma.com/j1zzd47e
-- Video: [TODO: Add YouTube link]
+* Event: https://luma.com/j1zzd47e
+* Video: [TODO: Add YouTube link]
+* Code: [app.py](app.py), [ingest.py](ingest.py), [frontend/](frontend/)
 
 Most AI projects stop at "it works in my notebook". In this workshop we
-turn a RAG/agent prototype into a small but production-shaped backend:
+take a RAG/agent prototype and turn it into a small but production-shaped
+application:
 
-- A FastAPI service that exposes clean endpoints
-- A vector database (Qdrant) as the retrieval layer
-- An ingestion/indexing pipeline for documents
-- A grounded `/ask` endpoint powered by an LLM
-- Containerization and a deployment path
+- A **FastAPI backend** that runs an agentic loop and **streams** events
+  over Server-Sent Events
+- A **Qdrant** vector database as the retrieval layer
+- A tiny **vanilla JS frontend** (no build step) that consumes the SSE
+  stream and renders tokens as they arrive
+- **One container** that ships the backend and the frontend together
+- Deployment to **Fly.io** using **Qdrant Cloud** for the vector DB
 
-By the end you will have a deployable skeleton you can extend with your
-own data, agents, and tools.
+By the end you have a deployable, extensible foundation you can point at
+your own data.
+
+
+## What We Will Build
+
+```
++---------------------+     POST /api/ask (SSE)     +------------------+
+|  Vanilla JS UI      | <-------------------------- |  FastAPI         |
+|  (served by         |     token / tool_call /     |  + agent loop    |
+|   FastAPI)          |     tool_result / done      |  + streaming     |
++---------------------+                             +--------+---------+
+                                                             |
+                                              search tool    | OpenAI
+                                                             v
+                                                    +------------------+
+                                                    |  Qdrant          |
+                                                    |  (FAQ vectors)   |
+                                                    +------------------+
+```
+
+The agent uses a single tool: `search(query, course=None)`. The loop
+runs until the agent stops calling tools. At every step the backend
+pushes an SSE event to the frontend so the user sees progress instead
+of a spinner.
 
 
 ## Prerequisites
 
 - Python 3.13+
-- Docker
+- Docker (for local Qdrant)
 - OpenAI API key
-
-
-## What We Will Build
-
-We will build an FAQ assistant around the
-[DataTalks.Club zoomcamp FAQ documents](https://raw.githubusercontent.com/DataTalksClub/llm-zoomcamp/refs/heads/main/03-evaluation/search_evaluation/documents-with-ids.json),
-but the same structure works for any corpus.
-
-Architecture:
-
-```
-[ documents ] --> [ ingest.py ] --> [ Qdrant ]
-                                       ^
-                                       |
-[ client ] -->  [ FastAPI /search /ask /index ] --> [ OpenAI ]
-```
+- A Qdrant Cloud account for deployment (free 1 GB cluster works)
+- A Fly.io account for deployment
 
 
 ## Environment Setup
 
-Initialize the project with [uv](https://docs.astral.sh/uv/):
+We use [uv](https://docs.astral.sh/uv/):
 
 ```bash
 uv init agent-fastapi-vectordb
 cd agent-fastapi-vectordb
-uv add fastapi uvicorn openai qdrant-client fastembed requests
-uv add --dev jupyter
+uv add fastapi uvicorn sse-starlette openai qdrant-client fastembed requests
 ```
 
-Export your OpenAI key:
+Put your OpenAI key in `.env` (and add `.env` to `.gitignore`):
 
-```bash
-export OPENAI_API_KEY="sk-..."
+```
+OPENAI_API_KEY=sk-...
 ```
 
 
-## Start Qdrant
+## Part 1: Ingest the DataTalks.Club FAQ into Qdrant
 
-We will use [Qdrant](https://qdrant.tech/) as the vector database. The
-easiest way to get it running locally is Docker:
+### The dataset
+
+We use the [DataTalks.Club FAQ](https://datatalks.club/faq/) — ~1200 Q&A
+entries across four zoomcamps (LLM, ML, MLOps, Data Engineering). Each
+entry has `id`, `course`, `section`, `question`, `answer`.
+
+The FAQ is published as JSON:
+
+```python
+import requests
+
+base = 'https://datatalks.club/faq'
+courses_index = requests.get(f'{base}/json/courses.json').json()
+
+documents = []
+for course in courses_index:
+    course_data = requests.get(f"{base}/{course['path']}").json()
+    documents.extend(course_data)
+
+len(documents)
+```
+
+### Start Qdrant locally
+
+For development we run Qdrant with Docker:
 
 ```bash
 docker run -d --name qdrant -p 6333:6333 \
@@ -70,61 +105,47 @@ docker run -d --name qdrant -p 6333:6333 \
     qdrant/qdrant:latest
 ```
 
-Open the dashboard at http://localhost:6333/dashboard to confirm it is
-up.
+Dashboard: http://localhost:6333/dashboard.
 
+### The ingestion script
 
-## From Prototype to Service
+Create [`ingest.py`](ingest.py). It:
 
-A typical RAG prototype looks like this:
-
-```python
-def rag(question):
-    results = search(question)
-    prompt = build_prompt(question, results)
-    return llm(prompt)
-```
-
-That works in a notebook, but in production we need:
-
-- A **persistent** retrieval layer (not a dict we rebuild every run)
-- **Typed** inputs and outputs
-- **Stable** endpoints that clients can call
-- A way to **re-index** documents without restarting
-
-FastAPI + Qdrant give us all four.
-
-
-## Ingestion Pipeline
-
-Create [`ingest.py`](ingest.py) that:
-
-1. Loads FAQ documents
+1. Pulls all FAQ entries from DataTalks.Club
 2. Creates a Qdrant collection
-3. Embeds each document and upserts it with its payload
+3. Upserts each entry with an embedding generated by
+   `jinaai/jina-embeddings-v2-small-en` (computed by `fastembed`)
 
 ```python
+import os
 import requests
 from qdrant_client import QdrantClient, models
 
-DOCS_URL = (
-    "https://raw.githubusercontent.com/DataTalksClub/llm-zoomcamp/"
-    "refs/heads/main/03-evaluation/search_evaluation/documents-with-ids.json"
-)
-
-COLLECTION_NAME = "faq"
-EMBEDDING_MODEL = "jinaai/jina-embeddings-v2-small-en"
+BASE_FAQ_URL = 'https://datatalks.club/faq'
+COLLECTION_NAME = 'faq'
+EMBEDDING_MODEL = 'jinaai/jina-embeddings-v2-small-en'
 EMBEDDING_DIM = 512
 
 
 def load_documents():
-    return requests.get(DOCS_URL).json()
+    documents = []
+    courses = requests.get(f'{BASE_FAQ_URL}/json/courses.json').json()
+    for course in courses:
+        course_data = requests.get(f"{BASE_FAQ_URL}/{course['path']}").json()
+        documents.extend(course_data)
+    return documents
+
+
+def connect_qdrant():
+    return QdrantClient(
+        url=os.getenv('QDRANT_URL', 'http://localhost:6333'),
+        api_key=os.getenv('QDRANT_API_KEY'),
+    )
 
 
 def recreate_collection(client):
     if client.collection_exists(COLLECTION_NAME):
         client.delete_collection(COLLECTION_NAME)
-
     client.create_collection(
         collection_name=COLLECTION_NAME,
         vectors_config=models.VectorParams(
@@ -137,19 +158,18 @@ def recreate_collection(client):
 def index_documents(client, documents):
     points = []
     for i, doc in enumerate(documents):
-        text = f"{doc['question']}\n\n{doc['text']}"
-        point = models.PointStruct(
+        text = f"{doc['section']}\n{doc['question']}\n{doc['answer']}"
+        points.append(models.PointStruct(
             id=i,
             vector=models.Document(text=text, model=EMBEDDING_MODEL),
             payload=doc,
-        )
-        points.append(point)
-
+        ))
     client.upsert(collection_name=COLLECTION_NAME, points=points)
 ```
 
-`qdrant-client` with `fastembed` computes embeddings locally for us.
-No extra embedding API is required.
+The nice thing about `models.Document(text=..., model=...)` is that
+`qdrant-client` + `fastembed` compute embeddings locally — no extra
+embedding API to manage.
 
 Run it:
 
@@ -157,336 +177,398 @@ Run it:
 uv run python ingest.py
 ```
 
-
-## A Minimal FastAPI App
-
-Start with the simplest possible app in `app.py`:
-
-```python
-from fastapi import FastAPI
-import uvicorn
-
-app = FastAPI(title="faq-agent")
-
-@app.get("/health")
-def health():
-    return {"status": "ok"}
-
-if __name__ == "__main__":
-    uvicorn.run(app, host="0.0.0.0", port=9696)
-```
-
-Run it:
-
-```bash
-uv run uvicorn app:app --host 0.0.0.0 --port 9696 --reload
-```
-
-Docs are available at http://localhost:9696/docs — free with FastAPI.
+Later, the same script works against **Qdrant Cloud** — we just set
+`QDRANT_URL` and `QDRANT_API_KEY` via environment variables.
 
 
-## The `/search` Endpoint
+## Part 2: A Streaming Agent with FastAPI
 
-The first real endpoint: vector search over the FAQ collection.
+### The agent loop (recap)
+
+An agentic loop is:
 
 ```python
-from typing import Optional
-from pydantic import BaseModel, Field, ConfigDict
-from qdrant_client import QdrantClient, models
+while True:
+    response = llm(messages, tools=[search_tool])
+    messages.extend(response.output)
 
-qdrant = QdrantClient("http://localhost:6333")
+    for item in response.output:
+        if item.type == 'function_call':
+            messages.append(execute_tool(item))
+
+    if no_function_calls_were_made:
+        break
+```
+
+We want the frontend to see what's happening **as** it happens, not at
+the end. So instead of returning the final answer, we'll stream events
+throughout the loop.
+
+### Why SSE?
+
+We want one-way streaming: server -> client. That's exactly what
+[Server-Sent Events](https://developer.mozilla.org/en-US/docs/Web/API/Server-sent_events)
+are for. Compared to WebSockets they are:
+
+- simpler (plain HTTP, no handshake protocol)
+- survive proxies and CDNs better
+- trivially consumed from JavaScript
+
+We'll use [`sse-starlette`](https://github.com/sysid/sse-starlette),
+which gives us `EventSourceResponse` — pass it an async generator of
+`{"data": "..."}` dicts and you get SSE for free.
+
+### The search tool
+
+```python
+search_tool = {
+    "type": "function",
+    "name": "search",
+    "description": "Search the FAQ knowledge base using semantic search.",
+    "parameters": {
+        "type": "object",
+        "properties": {
+            "query": {"type": "string"},
+            "course": {"type": "string"},
+        },
+        "required": ["query"],
+        "additionalProperties": False,
+    },
+}
 
 
-class SearchRequest(BaseModel):
-    model_config = ConfigDict(extra="forbid")
-
-    query: str = Field(..., min_length=1)
-    course: Optional[str] = None
-    limit: int = Field(5, ge=1, le=20)
-
-
-class SearchHit(BaseModel):
-    id: int
-    score: float
-    question: str
-    text: str
-    section: str
-    course: str
-
-
-class SearchResponse(BaseModel):
-    hits: list[SearchHit]
-
-
-def search_qdrant(query, course, limit):
+def search(query, course=None, limit=5):
     query_filter = None
     if course:
-        query_filter = models.Filter(
-            must=[models.FieldCondition(
-                key="course",
-                match=models.MatchValue(value=course),
-            )]
-        )
+        query_filter = models.Filter(must=[models.FieldCondition(
+            key='course', match=models.MatchValue(value=course))])
 
     results = qdrant.query_points(
-        collection_name="faq",
+        collection_name='faq',
         query=models.Document(text=query, model=EMBEDDING_MODEL),
         query_filter=query_filter,
         limit=limit,
         with_payload=True,
     )
-
-    hits = []
-    for point in results.points:
-        payload = point.payload or {}
-        hits.append(SearchHit(
-            id=int(point.id),
-            score=float(point.score),
-            question=payload.get("question", ""),
-            text=payload.get("text", ""),
-            section=payload.get("section", ""),
-            course=payload.get("course", ""),
-        ))
-    return hits
-
-
-@app.post("/search")
-def search(req: SearchRequest) -> SearchResponse:
-    hits = search_qdrant(req.query, req.course, req.limit)
-    return SearchResponse(hits=hits)
+    return [{
+        'id': p.payload.get('id'),
+        'course': p.payload.get('course'),
+        'section': p.payload.get('section'),
+        'question': p.payload.get('question'),
+        'answer': p.payload.get('answer'),
+        'score': float(p.score),
+    } for p in results.points]
 ```
 
-Pydantic models give us:
-
-- **Input validation** — bad requests get a 422 automatically
-- **Typed responses** — OpenAPI schema is generated for free
-- **`extra="forbid"`** — catches typos in client code early
-
-
-## The `/ask` Endpoint — Grounded Answers
-
-Now wire an LLM on top of search to get a grounded answer:
+### `make_call` — dispatching tool calls
 
 ```python
-from openai import OpenAI
+def make_call(tool_call):
+    args = json.loads(tool_call.arguments)
+    if tool_call.name == 'search':
+        result = search(**args)
+    else:
+        result = {'error': f'unknown tool: {tool_call.name}'}
+    return {
+        'type': 'function_call_output',
+        'call_id': tool_call.call_id,
+        'output': json.dumps(result),
+    }
+```
 
-openai_client = OpenAI()
+### The streaming generator
 
-INSTRUCTIONS = (
-    "You're a course teaching assistant. Answer the QUESTION using only "
-    "facts from the CONTEXT. If the context is not sufficient, say so."
-)
+This is the core of the workshop. An **async generator** that runs the
+agent loop and yields SSE events at each step.
 
-
-def build_prompt(question, hits):
-    context = "\n\n".join(
-        f"section: {h.section}\nquestion: {h.question}\nanswer: {h.text}"
-        for h in hits
-    )
-    return f"<QUESTION>\n{question}\n</QUESTION>\n\n<CONTEXT>\n{context}\n</CONTEXT>"
+```python
+def sse(type_, **payload):
+    return {"data": json.dumps({"type": type_, **payload})}
 
 
-def llm(question, hits):
-    response = openai_client.responses.create(
-        model="gpt-4o-mini",
-        input=[
-            {"role": "system", "content": INSTRUCTIONS},
-            {"role": "user", "content": build_prompt(question, hits)},
-        ],
-    )
-    return response.output_text
+async def run_agent(question, course):
+    yield sse("status", message="thinking...")
+
+    if course:
+        question = f"[course hint: {course}]\n{question}"
+
+    message_history = [
+        {"role": "system", "content": INSTRUCTIONS},
+        {"role": "user", "content": question},
+    ]
+
+    for iteration in range(1, MAX_ITERATIONS + 1):
+        yield sse("iteration", n=iteration)
+
+        async with openai_client.responses.stream(
+            model="gpt-4o-mini",
+            input=message_history,
+            tools=[search_tool],
+        ) as stream:
+            async for event in stream:
+                if event.type == "response.output_text.delta":
+                    yield sse("token", delta=event.delta)
+            final = await stream.get_final_response()
+
+        message_history.extend(final.output)
+        tool_calls = [m for m in final.output if m.type == "function_call"]
+
+        for tc in tool_calls:
+            yield sse("tool_call", name=tc.name,
+                      arguments=json.loads(tc.arguments))
+            output = make_call(tc)
+            message_history.append(output)
+            yield sse("tool_result", name=tc.name,
+                      result=json.loads(output["output"]))
+
+        if not tool_calls:
+            yield sse("done", answer="")
+            return
+
+    yield sse("done", answer="(stopped: max iterations)")
+```
+
+Notice:
+
+- **Tokens stream in real time** via `response.output_text.delta`
+- **Tool calls and results** are separate events, so the UI can render
+  them as a trace
+- The loop runs until the model stops calling tools
+
+### The endpoint
+
+```python
+from fastapi import FastAPI
+from fastapi.staticfiles import StaticFiles
+from sse_starlette.sse import EventSourceResponse
+from pydantic import BaseModel, ConfigDict, Field
+from typing import Optional
+
+app = FastAPI(title="faq-agent")
 
 
 class AskRequest(BaseModel):
     model_config = ConfigDict(extra="forbid")
-
     question: str = Field(..., min_length=1)
     course: Optional[str] = None
-    limit: int = Field(5, ge=1, le=20)
 
 
-class AskResponse(BaseModel):
-    answer: str
-    sources: list[SearchHit]
-
-
-@app.post("/ask")
-def ask(req: AskRequest) -> AskResponse:
-    hits = search_qdrant(req.question, req.course, req.limit)
-    answer = llm(req.question, hits)
-    return AskResponse(answer=answer, sources=hits)
+@app.post("/api/ask")
+async def ask(req: AskRequest):
+    return EventSourceResponse(run_agent(req.question, req.course))
 ```
 
-We return the sources alongside the answer — this makes the service
-auditable, and makes it possible for a frontend to show citations.
+Full code in [`app.py`](app.py). Run it:
 
-
-## The `/index` Endpoint — Adding Documents at Runtime
-
-A production-ready service should let you add new documents without
-redeploying:
-
-```python
-class IndexRequest(BaseModel):
-    model_config = ConfigDict(extra="forbid")
-
-    id: int
-    question: str
-    text: str
-    section: str
-    course: str
-
-
-@app.post("/index")
-def index(doc: IndexRequest):
-    point = models.PointStruct(
-        id=doc.id,
-        vector=models.Document(
-            text=f"{doc.question}\n\n{doc.text}",
-            model=EMBEDDING_MODEL,
-        ),
-        payload=doc.model_dump(),
-    )
-    qdrant.upsert(collection_name="faq", points=[point])
-    return {"status": "indexed", "id": doc.id}
+```bash
+uv run uvicorn app:app --host 0.0.0.0 --port 9696 --reload
 ```
 
-The full app is in [`app.py`](app.py).
-
-
-## Testing the Service
-
-Create [`test.py`](test.py):
-
-```python
-import requests
-
-URL = "http://localhost:9696"
-
-resp = requests.post(f"{URL}/ask", json={
-    "question": "I just discovered the course, can I still join?",
-    "course": "data-engineering-zoomcamp",
-})
-print(resp.json())
-```
-
-Run it:
+Test it from the terminal (see [`test.py`](test.py)):
 
 ```bash
 uv run python test.py
 ```
 
-You can also hit the endpoints from the auto-generated docs at
-http://localhost:9696/docs.
+You'll see tool calls, tool results, token stream, and final answer —
+all printed as they arrive.
 
 
-## Containerize the App
+## Part 3: A Frontend That Renders the Stream
 
-[`Dockerfile`](Dockerfile):
+We keep this deliberately simple: **one HTML file, one JS file, one CSS
+file**, no build step, no framework. This is easy to show in a workshop
+and trivial to bake into a Docker image later.
+
+### Serving the frontend from FastAPI
+
+Mount a static directory **after** all API routes are registered:
+
+```python
+app.mount("/", StaticFiles(directory="frontend", html=True), name="frontend")
+```
+
+API routes on `/api/...` still take precedence. Everything else falls
+through to `frontend/index.html`.
+
+### Consuming SSE from plain JS
+
+`EventSource` only supports `GET`, so for a `POST` body we parse SSE
+manually. It's short:
+
+```js
+const response = await fetch('/api/ask', {
+    method: 'POST',
+    headers: {'Content-Type': 'application/json'},
+    body: JSON.stringify({question, course}),
+});
+
+const reader = response.body.getReader();
+const decoder = new TextDecoder();
+let buffer = '';
+
+while (true) {
+    const {done, value} = await reader.read();
+    if (done) break;
+    buffer += decoder.decode(value, {stream: true});
+
+    const parts = buffer.split('\n\n');
+    buffer = parts.pop();
+
+    for (const part of parts) {
+        const line = part.split('\n').find(l => l.startsWith('data: '));
+        if (!line) continue;
+        const event = JSON.parse(line.slice(6));
+        handleEvent(event);
+    }
+}
+```
+
+Each `event` is our own `{type, ...}` JSON. The UI renders:
+
+- `token` -> append to the current answer bubble
+- `iteration` / `tool_call` / `tool_result` / `status` -> write into the
+  collapsible "agent trace" panel
+- `done` -> finish
+
+See [`frontend/app.js`](frontend/app.js) and
+[`frontend/index.html`](frontend/index.html) for the full UI.
+
+
+## Part 4: Package It All Together
+
+Now the backend and frontend live in the same repo, but we want **one
+container** that serves both.
+
+### Dockerfile
 
 ```dockerfile
 FROM python:3.13.5-slim-bookworm
-
 COPY --from=ghcr.io/astral-sh/uv:latest /uv /uvx /bin/
 WORKDIR /code
-
 ENV PATH="/code/.venv/bin:$PATH"
 
 COPY "pyproject.toml" "uv.lock" ".python-version" ./
 RUN uv sync --locked
 
 COPY "app.py" ./
+COPY "frontend/" ./frontend/
 
 EXPOSE 9696
-
 ENTRYPOINT ["uvicorn", "app:app", "--host", "0.0.0.0", "--port", "9696"]
 ```
 
-Build it:
+Build:
 
 ```bash
 docker build -t agent-fastapi-vectordb .
 ```
 
+### Run everything locally with Docker Compose
 
-## Run Everything with Docker Compose
-
-To bring up both Qdrant and our app, use
-[`docker-compose.yml`](docker-compose.yml):
+[`docker-compose.yml`](docker-compose.yml) brings up both the app and a
+local Qdrant:
 
 ```bash
-export OPENAI_API_KEY="sk-..."
+export OPENAI_API_KEY=sk-...
 docker compose up --build
 ```
 
-Then run the ingestion once against the container:
+Then index the FAQ against the container's Qdrant:
 
 ```bash
 QDRANT_URL=http://localhost:6333 uv run python ingest.py
 ```
 
-And test:
+Open http://localhost:9696 — you should see the UI.
+
+
+## Part 5: Deploy to Fly.io with Qdrant Cloud
+
+### Step 1 — Qdrant Cloud
+
+1. Sign up at https://cloud.qdrant.io/ (free 1 GB cluster is enough for
+   this workshop)
+2. Create a cluster — note the **URL** and the **API key**
+3. Ingest the data into the cloud cluster from your laptop:
 
 ```bash
-uv run python test.py
+export QDRANT_URL="https://<your-cluster>.qdrant.io:6333"
+export QDRANT_API_KEY="<your-key>"
+uv run python ingest.py
 ```
 
+### Step 2 — Fly.io
 
-## Deployment
-
-Once containerized, you can deploy this anywhere — Fly.io, Google Cloud
-Run, AWS App Runner, Render, a VM.
-
-We will use [Fly.io](https://fly.io/) because it takes about three
-commands:
+Install `flyctl` and sign in:
 
 ```bash
-# install flyctl if needed
 curl -L https://fly.io/install.sh | sh
+fly auth login
+```
 
-fly auth signup
+Launch the app (don't deploy yet — we need to set secrets first):
 
-# the app service
-fly launch --generate-name --no-deploy
+```bash
+fly launch --no-deploy --name agent-fastapi-vectordb
+```
 
-# attach a Qdrant machine (Fly supports private networking between apps)
-# or point QDRANT_URL at a managed Qdrant Cloud cluster
+Set secrets:
 
+```bash
+fly secrets set \
+    OPENAI_API_KEY="sk-..." \
+    QDRANT_URL="https://<your-cluster>.qdrant.io:6333" \
+    QDRANT_API_KEY="<your-qdrant-key>"
+```
+
+Deploy:
+
+```bash
 fly deploy
 ```
 
-Get the URL from the logs, update `URL` in `test.py`, and verify.
+Fly prints the URL, e.g. `https://agent-fastapi-vectordb.fly.dev`.
+Open it — you should see the UI, talking to your Qdrant Cloud index via
+your deployed FastAPI agent.
 
 When you're done:
 
 ```bash
-fly apps destroy <app-name>
+fly apps destroy agent-fastapi-vectordb
 ```
 
-Note: check pricing before leaving anything running.
+Note: check Fly's pricing before leaving anything running.
 
 
 ## Where to Go From Here
 
-This service is a foundation, not a finish line. Natural next steps:
-
-- Replace the single LLM call with an **agent** that can choose between
-  `/search`, `/index`, and external tools
-- Add **evaluation** on top (see
-  [rag-evaluations](../rag-evaluations/))
+- Add more tools: `add_faq_entry`, `web_search`, `create_ticket`...
+- Persist conversations per user (currently each request is stateless)
+- Add **evaluation** (see [rag-evaluations](../rag-evaluations/))
 - Add **guardrails** (see [guardrails](../guardrails/))
-- Wrap it with **MCP** so other agents can call it (see
+- Expose it to other agents via **MCP** (see
   [agents-mcp](../agents-mcp/))
-- Add observability: request logging, latency, retrieval quality
-- Swap the embedding model or add a re-ranker
+- Swap the UI for a Vite + React app — the SSE consumer stays the same
+- Observability: log every `tool_call` / `tool_result` with latency,
+  track retrieval quality per query
 
 
 ## Summary
 
-In this workshop we took a RAG prototype and turned it into a small
-production-shaped service:
+We turned a notebook-style RAG/agent prototype into a production-shaped
+application:
 
-- Structured the code around FastAPI endpoints
-- Used Qdrant as a persistent retrieval layer
-- Validated inputs and outputs with Pydantic
-- Containerized the app and prepared it for deployment
+- Qdrant as the vector DB, with an ingestion script that works
+  unchanged locally and on Qdrant Cloud
+- A FastAPI backend with an agentic loop that **streams SSE events** —
+  tokens, tool calls, tool results
+- A tiny vanilla JS frontend that renders the stream, served by the
+  same FastAPI process
+- One Docker image, deployed to Fly.io
+
+
+## Final Words
+
+If you want to learn more, check out the full course this workshop
+builds on: [AI Engineering BuildCamp](https://alexeygrigorev.com/aihero/).

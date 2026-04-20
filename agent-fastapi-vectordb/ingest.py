@@ -1,12 +1,11 @@
-import requests
+import os
 
+import requests
 from qdrant_client import QdrantClient, models
 
 
-DOCS_URL = (
-    "https://raw.githubusercontent.com/DataTalksClub/llm-zoomcamp/"
-    "refs/heads/main/03-evaluation/search_evaluation/documents-with-ids.json"
-)
+BASE_FAQ_URL = "https://datatalks.club/faq"
+COURSES_INDEX_URL = f"{BASE_FAQ_URL}/json/courses.json"
 
 COLLECTION_NAME = "faq"
 EMBEDDING_MODEL = "jinaai/jina-embeddings-v2-small-en"
@@ -14,11 +13,21 @@ EMBEDDING_DIM = 512
 
 
 def load_documents():
-    return requests.get(DOCS_URL).json()
+    documents = []
+    courses_index = requests.get(COURSES_INDEX_URL).json()
+
+    for course in courses_index:
+        course_url = f"{BASE_FAQ_URL}/{course['path']}"
+        course_data = requests.get(course_url).json()
+        documents.extend(course_data)
+
+    return documents
 
 
-def build_text(doc):
-    return f"{doc['question']}\n\n{doc['text']}"
+def connect_qdrant():
+    url = os.getenv("QDRANT_URL", "http://localhost:6333")
+    api_key = os.getenv("QDRANT_API_KEY")
+    return QdrantClient(url=url, api_key=api_key)
 
 
 def recreate_collection(client):
@@ -36,10 +45,12 @@ def recreate_collection(client):
 
 def index_documents(client, documents):
     points = []
+
     for i, doc in enumerate(documents):
+        text = f"{doc['section']}\n{doc['question']}\n{doc['answer']}"
         point = models.PointStruct(
             id=i,
-            vector=models.Document(text=build_text(doc), model=EMBEDDING_MODEL),
+            vector=models.Document(text=text, model=EMBEDDING_MODEL),
             payload=doc,
         )
         points.append(point)
@@ -48,9 +59,10 @@ def index_documents(client, documents):
 
 
 def main():
-    client = QdrantClient("http://localhost:6333")
+    client = connect_qdrant()
+
     documents = load_documents()
-    print(f"loaded {len(documents)} documents")
+    print(f"loaded {len(documents)} FAQ entries")
 
     recreate_collection(client)
     index_documents(client, documents)

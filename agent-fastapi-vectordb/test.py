@@ -1,33 +1,51 @@
+import json
+
 import requests
+
 
 URL = "http://localhost:9696"
 # URL = "https://agent-fastapi-vectordb.fly.dev"
 
 
-def test_search():
-    payload = {
-        "query": "I just discovered the course, can I join now?",
-        "course": "data-engineering-zoomcamp",
-        "limit": 3,
-    }
-    response = requests.post(f"{URL}/search", json=payload)
-    print("search:", response.status_code)
-    for hit in response.json()["hits"]:
-        print(f"  {hit['score']:.3f}  {hit['question']}")
+def ask(question: str, course: str = None):
+    response = requests.post(
+        f"{URL}/api/ask",
+        json={"question": question, "course": course},
+        headers={"Accept": "text/event-stream"},
+        stream=True,
+    )
 
+    for raw_line in response.iter_lines():
+        if not raw_line:
+            continue
+        line = raw_line.decode("utf-8")
+        if not line.startswith("data: "):
+            continue
 
-def test_ask():
-    payload = {
-        "question": "I just discovered the course, can I still join?",
-        "course": "data-engineering-zoomcamp",
-    }
-    response = requests.post(f"{URL}/ask", json=payload)
-    print("ask:", response.status_code)
-    body = response.json()
-    print("answer:", body["answer"])
+        event = json.loads(line[6:])
+        t = event["type"]
+
+        if t == "token":
+            print(event["delta"], end="", flush=True)
+        elif t == "tool_call":
+            print(f"\n[tool_call] {event['name']}({event['arguments']})")
+        elif t == "tool_result":
+            count = len(event["result"]) if isinstance(event["result"], list) else "?"
+            print(f"[tool_result] {event['name']} -> {count} hits")
+        elif t == "iteration":
+            print(f"\n--- iteration {event['n']} ---")
+        elif t == "status":
+            print(f"[{event['message']}]")
+        elif t == "done":
+            if event.get("answer"):
+                print(f"\n\n[done]\n{event['answer']}")
+            else:
+                print("\n[done]")
+            return
 
 
 if __name__ == "__main__":
-    test_search()
-    print()
-    test_ask()
+    ask(
+        "I just discovered the course, can I still join?",
+        course="llm-zoomcamp",
+    )
