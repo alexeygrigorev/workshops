@@ -1190,43 +1190,7 @@ class SkillsTool:
         }
 ```
 
-For the skills-based agent, we switch to the general-purpose system prompt from the skills workshop:
-
-```python
-AGENT_INSTRUCTIONS = """You are a coding agent designed to help with software engineering tasks.
-
-You help users with:
-- Writing, editing, and refactoring code
-- Debugging and fixing errors
-- Explaining code and technical concepts
-- Project setup and configuration
-- Code reviews and best practices
-
-Your task is to use the available tools to satisfy the requests from the user.
-
-When user asks to implement something, or create something, create and modify the files
-using the provided tools. Use your best judgment when deciding how to name files and folders.
-
-# Core Principles
-
-1. Be concise but thorough - Get straight to the point, but don't skip important details
-2. Show your work - Explain your reasoning for complex changes
-3. Ask questions - When requirements are unclear, ask rather than assume
-4. Use tools effectively - ALWAYS use available tools when relevant
-5. Code quality matters - Write clean, maintainable code following best practices
-
-# Working with Code
-
-- Prefer editing over creating new files when possible
-- Read before writing - Understand existing patterns before making changes
-- Test your changes - Run builds/tests and fix any errors you introduce
-- Reference precisely - When pointing to code, use file_path:line_number format
-
-You're here to help users build better software efficiently. Start by understanding what they want to accomplish!
-""".strip()
-```
-
-Initialize the skill loader and inject the available skills into that prompt:
+For the skills-based agent, we keep using the Django prompt from Part 2 and add the skills injection on top of it:
 
 ```python
 skill_loader = SkillLoader(Path("skills/"))
@@ -1238,7 +1202,7 @@ You have the following skills available which you can load with the skills tool:
 {skill_loader.get_description()}
 '''.strip()
 
-AGENT_WITH_SKILLS_INSTRUCTIONS = AGENT_INSTRUCTIONS + '\n\n' + SKILL_INJECTION_PROMPT
+AGENT_WITH_SKILLS_INSTRUCTIONS = djago_agent_prompt + '\n\n' + SKILL_INJECTION_PROMPT
 ```
 
 Before we add the skills tool, let's create a fresh project folder and point the coding-agent tools to it:
