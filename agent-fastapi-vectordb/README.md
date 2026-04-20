@@ -10,13 +10,13 @@ Most AI projects stop at "it works in my notebook". In this workshop we
 take a RAG/agent prototype and turn it into a small but production-shaped
 application:
 
-- A **FastAPI backend** that runs an agentic loop and **streams** events
+- A FastAPI backend that runs an agentic loop and streams events
   over Server-Sent Events
-- A **Qdrant** vector database as the retrieval layer
-- A tiny **vanilla JS frontend** (no build step) that consumes the SSE
+- A Qdrant vector database as the retrieval layer
+- A tiny vanilla JS frontend (no build step) that consumes the SSE
   stream and renders tokens as they arrive
-- **One container** that ships the backend and the frontend together
-- Deployment to **Fly.io** using **Qdrant Cloud** for the vector DB
+- One container that ships the backend and the frontend together
+- Deployment to Fly.io using Qdrant Cloud for the vector DB
 
 By the end you have a deployable, extensible foundation you can point at
 your own data.
@@ -24,19 +24,17 @@ your own data.
 
 ## What We Will Build
 
-```
-+---------------------+     POST /api/ask (SSE)     +------------------+
-|  Vanilla JS UI      | <-------------------------- |  FastAPI         |
-|  (served by         |     token / tool_call /     |  + agent loop    |
-|   FastAPI)          |     tool_result / done      |  + streaming     |
-+---------------------+                             +--------+---------+
-                                                             |
-                                              search tool    | OpenAI
-                                                             v
-                                                    +------------------+
-                                                    |  Qdrant          |
-                                                    |  (FAQ vectors)   |
-                                                    +------------------+
+```mermaid
+flowchart LR
+    UI["Vanilla JS UI<br/>(served by FastAPI)"]
+    API["FastAPI<br/>agent loop + streaming"]
+    OPENAI["OpenAI"]
+    QDRANT["Qdrant<br/>(FAQ vectors)"]
+
+    UI -->|POST /api/ask| API
+    API -->|SSE: token / tool_call / tool_result / done| UI
+    API -->|LLM calls| OPENAI
+    API -->|search tool| QDRANT
 ```
 
 The agent uses a single tool: `search(query, course=None)`. The loop
@@ -177,7 +175,7 @@ Run it:
 uv run python ingest.py
 ```
 
-Later, the same script works against **Qdrant Cloud** — we just set
+Later, the same script works against Qdrant Cloud — we just set
 `QDRANT_URL` and `QDRANT_API_KEY` via environment variables.
 
 
@@ -200,7 +198,7 @@ while True:
         break
 ```
 
-We want the frontend to see what's happening **as** it happens, not at
+We want the frontend to see what's happening as it happens, not at
 the end. So instead of returning the final answer, we'll stream events
 throughout the loop.
 
@@ -266,7 +264,7 @@ def search(query, course=None, limit=5):
 def make_call(tool_call):
     args = json.loads(tool_call.arguments)
     if tool_call.name == 'search':
-        result = search(**args)
+        result = search(args)
     else:
         result = {'error': f'unknown tool: {tool_call.name}'}
     return {
@@ -278,12 +276,12 @@ def make_call(tool_call):
 
 ### The streaming generator
 
-This is the core of the workshop. An **async generator** that runs the
+This is the core of the workshop. An async generator that runs the
 agent loop and yields SSE events at each step.
 
 ```python
-def sse(type_, **payload):
-    return {"data": json.dumps({"type": type_, **payload})}
+def sse(type_, payload):
+    return {"data": json.dumps({"type": type_, payload})}
 
 
 async def run_agent(question, course):
@@ -330,8 +328,8 @@ async def run_agent(question, course):
 
 Notice:
 
-- **Tokens stream in real time** via `response.output_text.delta`
-- **Tool calls and results** are separate events, so the UI can render
+- Tokens stream in real time via `response.output_text.delta`
+- Tool calls and results are separate events, so the UI can render
   them as a trace
 - The loop runs until the model stops calling tools
 
@@ -376,13 +374,13 @@ all printed as they arrive.
 
 ## Part 3: A Frontend That Renders the Stream
 
-We keep this deliberately simple: **one HTML file, one JS file, one CSS
-file**, no build step, no framework. This is easy to show in a workshop
+We keep this deliberately simple: one HTML file, one JS file, one CSS
+file, no build step, no framework. This is easy to show in a workshop
 and trivial to bake into a Docker image later.
 
 ### Serving the frontend from FastAPI
 
-Mount a static directory **after** all API routes are registered:
+Mount a static directory after all API routes are registered:
 
 ```python
 app.mount("/", StaticFiles(directory="frontend", html=True), name="frontend")
@@ -437,8 +435,8 @@ See [`frontend/app.js`](frontend/app.js) and
 
 ## Part 4: Package It All Together
 
-Now the backend and frontend live in the same repo, but we want **one
-container** that serves both.
+Now the backend and frontend live in the same repo, but we want one
+container that serves both.
 
 ### Dockerfile
 
@@ -489,7 +487,7 @@ Open http://localhost:9696 — you should see the UI.
 
 1. Sign up at https://cloud.qdrant.io/ (free 1 GB cluster is enough for
    this workshop)
-2. Create a cluster — note the **URL** and the **API key**
+2. Create a cluster — note the URL and the API key
 3. Ingest the data into the cloud cluster from your laptop:
 
 ```bash
@@ -545,9 +543,9 @@ Note: check Fly's pricing before leaving anything running.
 
 - Add more tools: `add_faq_entry`, `web_search`, `create_ticket`...
 - Persist conversations per user (currently each request is stateless)
-- Add **evaluation** (see [rag-evaluations](../rag-evaluations/))
-- Add **guardrails** (see [guardrails](../guardrails/))
-- Expose it to other agents via **MCP** (see
+- Add evaluation (see [rag-evaluations](../rag-evaluations/))
+- Add guardrails (see [guardrails](../guardrails/))
+- Expose it to other agents via MCP (see
   [agents-mcp](../agents-mcp/))
 - Swap the UI for a Vite + React app — the SSE consumer stays the same
 - Observability: log every `tool_call` / `tool_result` with latency,
@@ -561,7 +559,7 @@ application:
 
 - Qdrant as the vector DB, with an ingestion script that works
   unchanged locally and on Qdrant Cloud
-- A FastAPI backend with an agentic loop that **streams SSE events** —
+- A FastAPI backend with an agentic loop that streams SSE events —
   tokens, tool calls, tool results
 - A tiny vanilla JS frontend that renders the stream, served by the
   same FastAPI process

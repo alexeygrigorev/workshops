@@ -21,6 +21,8 @@ One repository for some of the workshops I'm giving
 
 - **[agent-skills](agent-skills/)** - Coding agent with skills and commands. Extend your coding agent with modular capabilities and user-facing shortcuts inspired by Claude Code.
 
+- **[coding-agent-v2](coding-agent-v2/)** - Updated coding-agent workshop with skills capabilities. Reuse the same agent, tools, and stack, then add skills, commands, and a PydanticAI version.
+
 - **[rag-evaluations](rag-evaluations/)** - RAG evaluations workshop covering how to evaluate RAG systems and Agentic RAG implementations with metrics like Hit Rate and MRR.
 
 - **[guardrails](guardrails/)** - Guardrails for AI agents. Learn to make AI agents safer with input and output guardrails to prevent harmful behavior and keep agents on-topic.
