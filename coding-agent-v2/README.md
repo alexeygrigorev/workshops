@@ -1326,3 +1326,11 @@ This is the same coding agent, now running with plain PydanticAI instead of `toy
 4. PydanticAI
 
 This README contains the code needed to follow along in one place, while still reusing a few larger files where that is more practical.
+
+
+If you liked this workshop and you want to do something similar at your company, you can reach out to me at alexey@datatalks.club
+
+If you're intersted in learing more from me, check:
+
+- AI Shipping Labs: a community of AI Builders: http://aishippinglabs.com/
+- AI Engineering Buildcamp: a course about AI Engineering: https://maven.com/alexey-grigorev/from-rag-to-agents
