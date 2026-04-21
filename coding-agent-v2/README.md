@@ -113,12 +113,12 @@ openai_client = OpenAI(
     api_key=os.getenv('GROQ_API_KEY'),
     base_url='https://api.groq.com/openai/v1'
 )
-model = 'llama-3.3-70b-versatile'
+model = 'openai/gpt-oss-120b'
 ```
 
 Use OpenAI if you want to reproduce the full workshop end to end exactly as shown.
 
-Groq currently works best for the simpler OpenAI SDK experiments in Part 1. For the `toyaikit` sections later in the workshop, add the fallback pricing snippet shown in Part 2 before you call `runner.run()`. Also note that current Groq models can still be less reliable than OpenAI on repeated tool-calling turns in these notebook examples.
+> It's recommended to use OpenAI for this workshop
 
 
 ## Part 1: Tool Calls Intro
@@ -195,7 +195,7 @@ def see_file_tree(root_dir: str = ".") -> list[str]:
     tree = []
 
     for dirpath, dirnames, filenames in os.walk(root_dir):
-        dirnames[:] = [d for d in dirnames if d not in {".git", ".venv", "__pycache__"}]
+        dirnames[:] = [d for d in dirnames if d not in {".git", ".venv", "__pycache__", ".ipynb_checkpoints"}]
 
         for name in sorted(dirnames + filenames):
             full_path = os.path.join(dirpath, name)
@@ -207,7 +207,7 @@ def see_file_tree(root_dir: str = ".") -> list[str]:
 Let's test it:
 
 ```python
-see_file_tree(".")[:20]
+see_file_tree(".")
 ```
 
 At this point, this is just a regular Python function. The LLM still doesn't know that it exists.
@@ -310,7 +310,7 @@ Now run the actual Python function:
 
 ```python
 result = see_file_tree(**args)
-result[:20]
+result
 ```
 
 This is the key idea of tool calling:
@@ -341,56 +341,22 @@ chat_messages.append({
 
 The `call_id` matters because it tells the model which tool call this output belongs to.
 
-Ask the model again.
-
-Now that the model has the tool result, keep calling until the model returns a message:
-
-```python
-while True:
-    response = openai_client.responses.create(
-        model=model,
-        input=chat_messages,
-        tools=[see_file_tree_description]
-    )
-
-    has_tool_calls = False
-    chat_messages.extend(response.output)
-
-    for item in response.output:
-        if item.type == "function_call":
-            has_tool_calls = True
-            args = json.loads(item.arguments)
-            result = see_file_tree(**args)
-
-            chat_messages.append({
-                "type": "function_call_output",
-                "call_id": item.call_id,
-                "output": json.dumps(result),
-            })
-        elif item.type == "message":
-            print(item.content[0].text)
-
-    if not has_tool_calls:
-        break
-```
-
-This is a little more verbose than a single follow-up call, but it works reliably across providers that may ask for the same tool more than once before answering.
-
-And now we can read the final text answer:
-
-```python
-print(response.output_text)
-```
+Now call the model one more time to see the answer.
 
 ### Adding the Second Tool
 
-If we want the model to go beyond the directory tree and inspect actual files, we need another tool. Let's allow the agent to read files.
+If we want the model to go beyond the directory tree and inspect actual files, we need another tool.
+
+Let's allow the agent to read files.
  
 Define `read_file`:
 
 ```python
 def read_file(filepath: str) -> str:
     try:
+        if filepath == 'uv.lock':
+            return "you're not allowed to read this file"
+
         with open(filepath, "r", encoding="utf-8") as f:
             return f.read()
     except FileNotFoundError:
@@ -473,7 +439,7 @@ for item in response.output:
         elif f_name == 'read_file':
             result = read_file(**args)
         else:
-            raise Exception(f'unknown function {f_name}')
+            result = {'error': f'unknown function {f_name}'}
 
         chat_messages.append({
             "type": "function_call_output",
@@ -513,7 +479,7 @@ for item in response.output:
         elif f_name == 'read_file':
             result = read_file(**args)
         else:
-            raise Exception(f'unknown function {f_name}')
+            result = {'error': f'unknown function {f_name}'}
 
         chat_messages.append({
             "type": "function_call_output",
@@ -560,7 +526,7 @@ while True:
             elif f_name == 'read_file':
                 result = read_file(**args)
             else:
-                raise Exception(f'unknown function {f_name}')
+                result = {'error': f'unknown function {f_name}'}
 
             chat_messages.append({
                 "type": "function_call_output",
@@ -627,7 +593,7 @@ while True:
                 elif f_name == 'read_file':
                     result = read_file(**args)
                 else:
-                    raise Exception(f'unknown function {f_name}')
+                    result = {'error': f'unknown function {f_name}'}
 
                 chat_messages.append({
                     "type": "function_call_output",
@@ -670,19 +636,6 @@ from toyaikit.llm import OpenAIClient
 from toyaikit.chat.runners import OpenAIResponsesRunner
 ```
 
-If you're using Groq in the `toyaikit` sections, register a fallback price once before you create the runner:
-
-```python
-from decimal import Decimal
-from toyaikit.pricing import FALLBACK_PRICING
-
-if model == "llama-3.3-70b-versatile":
-    FALLBACK_PRICING[model] = {
-        "input": Decimal("0.59"),
-        "output": Decimal("0.79"),
-    }
-```
-
 Register the two tools we already have:
 
 ```python
@@ -695,7 +648,10 @@ Create the runner:
 
 ```python
 chat_interface = IPythonChatInterface()
-llm_client = OpenAIClient(client=openai_client, model=model)
+llm_client = OpenAIClient(
+    client=openai_client,
+    model=model
+)
 
 runner = OpenAIResponsesRunner(
     tools=tools_obj,
@@ -738,7 +694,7 @@ def see_file_tree(root_dir: str = ".") -> list[str]:
     tree = []
 
     for dirpath, dirnames, filenames in os.walk(root_dir):
-        dirnames[:] = [d for d in dirnames if d not in {".git", ".venv", "__pycache__"}]
+        dirnames[:] = [d for d in dirnames if d not in {".git", ".venv", "__pycache__", ".ipynb_checkpoints"}]
 
         for name in sorted(dirnames + filenames):
             full_path = os.path.join(dirpath, name)
@@ -754,6 +710,9 @@ def read_file(filepath: str) -> str:
         filepath: Path to the file to read.
     """
     try:
+        if filepath == 'uv.lock':
+            return "you're not allowed to read this file"
+
         with open(filepath, "r", encoding="utf-8") as f:
             return f.read()
     except FileNotFoundError:
@@ -812,36 +771,15 @@ class ProjectTools:
         Args:
             filepath: Path to the file to read.
         """
+        if 'uv.lock' in filepath:
+            return "you're not allowed to read this file"
+
         abs_path = self.project_dir / filepath
         try:
             with open(abs_path, "r", encoding="utf-8") as f:
                 return f.read()
         except FileNotFoundError:
             return f"Error: file '{filepath}' not found."
-
-    def search_in_files(self, search_term: str) -> list[str]:
-        """Search for a string in project files.
-
-        Args:
-            search_term: Text to search for.
-        """
-        matches = []
-
-        for dirpath, dirnames, filenames in os.walk(self.project_dir):
-            dirnames[:] = [d for d in dirnames if d not in {".git", ".venv", "__pycache__"}]
-
-            for filename in filenames:
-                abs_path = Path(dirpath) / filename
-
-                try:
-                    content = abs_path.read_text(encoding="utf-8")
-                except Exception:
-                    continue
-
-                if search_term in content:
-                    matches.append(str(abs_path.relative_to(self.project_dir)))
-
-        return matches
 ```
 
 Initialize it for the current repository:
