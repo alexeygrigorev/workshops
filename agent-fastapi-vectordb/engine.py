@@ -1,6 +1,6 @@
 import json
 import os
-from collections.abc import Awaitable, Callable
+from typing import Protocol
 
 from openai import AsyncOpenAI
 
@@ -8,7 +8,9 @@ from openai import AsyncOpenAI
 MODEL_NAME = os.getenv("OPENAI_MODEL", "gpt-4o-mini")
 MAX_ITERATIONS = 5
 
-EventCallback = Callable[[str, dict], Awaitable[None]]
+
+class Renderer(Protocol):
+    async def handle_event(self, event_type: str, payload: dict): ...
 
 search_tool = {
     "type": "function",
@@ -20,14 +22,6 @@ search_tool = {
             "query": {
                 "type": "string",
                 "description": "What to search for.",
-            },
-            "course": {
-                "type": "string",
-                "description": (
-                    "Filter to a specific course. "
-                    "One of: llm-zoomcamp, ml-zoomcamp, mlops-zoomcamp, "
-                    "data-engineering-zoomcamp. Omit to search all courses."
-                ),
             },
         },
         "required": ["query"],
@@ -50,8 +44,9 @@ Rules:
 """.strip()
 
 
-async def noop_callback(_event_type: str, _payload: dict):
-    return None
+class NullRenderer:
+    async def handle_event(self, _event_type: str, _payload: dict):
+        return None
 
 
 class FAQAgentEngine:
@@ -70,45 +65,40 @@ class FAQAgentEngine:
     async def run(
         self,
         question: str,
+        renderer: Renderer | None = None,
         course: str | None = None,
-        on_event: EventCallback = noop_callback,
     ):
-        await self.emit(on_event, "status", message="thinking...")
-        message_history = self.build_message_history(question, course)
+        renderer = renderer or NullRenderer()
+        await renderer.handle_event("status", {"message": "thinking..."})
+        message_history = self.build_message_history(question)
 
         for iteration in range(1, self.max_iterations + 1):
-            await self.emit(on_event, "iteration", n=iteration)
+            await renderer.handle_event("iteration", {"n": iteration})
 
-            final = await self.stream_model_response(message_history, on_event)
-            message_history.extend(final.output)
+            response = await self.request_response(message_history, renderer)
 
-            tool_calls = self.extract_tool_calls(final.output)
-            if not tool_calls:
-                answer = self.collect_response_text(final.output)
-                await self.emit(on_event, "done", answer=answer)
+            has_tool_calls = await self.handle_tool_calls(
+                response,
+                message_history,
+                renderer,
+                course,
+            )
+            if not has_tool_calls:
+                answer = self.collect_answer(response)
+                await renderer.handle_event("done", {"answer": answer})
                 return answer
 
-            await self.handle_tool_calls(tool_calls, message_history, on_event)
-
         answer = "(stopped: reached max iterations)"
-        await self.emit(on_event, "done", answer=answer)
+        await renderer.handle_event("done", {"answer": answer})
         return answer
 
-    async def emit(self, on_event: EventCallback, event_type: str, **payload):
-        await on_event(event_type, payload)
-
-    def build_message_history(self, question: str, course: str | None = None):
-        if course:
-            user_message = f"[course hint: {course}]\n{question}"
-        else:
-            user_message = question
-
+    def build_message_history(self, question: str):
         return [
             {"role": "system", "content": INSTRUCTIONS},
-            {"role": "user", "content": user_message},
+            {"role": "user", "content": question},
         ]
 
-    async def stream_model_response(self, message_history, on_event: EventCallback):
+    async def request_response(self, message_history, renderer: Renderer):
         async with self.openai_client.responses.stream(
             model=self.model_name,
             input=message_history,
@@ -116,47 +106,65 @@ class FAQAgentEngine:
         ) as stream:
             async for event in stream:
                 if event.type == "response.output_text.delta":
-                    await self.emit(on_event, "token", delta=event.delta)
+                    await renderer.handle_event("token", {"delta": event.delta})
 
             return await stream.get_final_response()
 
-    def extract_tool_calls(self, response_output):
-        return [item for item in response_output if item.type == "function_call"]
+    def append_tool_messages(self, message_history, tool_call, result):
+        message_history.append(
+            {
+                "type": "function_call",
+                "call_id": tool_call.call_id,
+                "name": tool_call.name,
+                "arguments": tool_call.arguments,
+            }
+        )
+        message_history.append(
+            {
+                "type": "function_call_output",
+                "call_id": tool_call.call_id,
+                "output": json.dumps(result),
+            }
+        )
 
-    async def handle_tool_calls(self, tool_calls, message_history, on_event: EventCallback):
-        for tool_call in tool_calls:
-            args = json.loads(tool_call.arguments)
-            await self.emit(
-                on_event,
+    async def handle_tool_calls(
+        self,
+        response,
+        message_history,
+        renderer: Renderer,
+        course: str | None = None,
+    ):
+        has_tool_calls = False
+
+        for item in response.output:
+            if item.type != "function_call":
+                continue
+
+            has_tool_calls = True
+
+            args = json.loads(item.arguments)
+            await renderer.handle_event(
                 "tool_call",
-                name=tool_call.name,
-                arguments=args,
+                {"name": item.name, "arguments": args},
             )
 
-            tool_output = self.make_tool_output(tool_call)
-            message_history.append(tool_output)
-
-            result = json.loads(tool_output["output"])
-            await self.emit(
-                on_event,
+            result = self.call_tool(item, course=course)
+            await renderer.handle_event(
                 "tool_result",
-                name=tool_call.name,
-                result=self.preview_result(result),
+                {"name": item.name, "result": self.preview_result(result)},
             )
 
-    def make_tool_output(self, tool_call):
+            self.append_tool_messages(message_history, item, result)
+
+        return has_tool_calls
+
+    def call_tool(self, tool_call, course: str | None = None):
         args = json.loads(tool_call.arguments)
 
-        if tool_call.name == "search":
-            result = self.search_backend.search(**args)
-        else:
-            result = {"error": f"unknown tool: {tool_call.name}"}
+        if tool_call.name != "search":
+            return {"error": f"unknown tool: {tool_call.name}"}
 
-        return {
-            "type": "function_call_output",
-            "call_id": tool_call.call_id,
-            "output": json.dumps(result),
-        }
+        return self.search_backend.search(query=args["query"], course=course)
 
     def preview_result(self, result):
         if not isinstance(result, list):
@@ -174,9 +182,9 @@ class FAQAgentEngine:
             )
         return preview
 
-    def collect_response_text(self, response_output):
+    def collect_answer(self, response):
         parts = []
-        for item in response_output:
+        for item in response.output:
             if item.type != "message":
                 continue
 

@@ -103,17 +103,18 @@ index.fit(documents)
 And wrap it in a small search function:
 
 ```python
-def search(query, course, limit=5):
+def search(query, limit=5):
     """Search the FAQ for one course using the in-memory minsearch index.
 
     Args:
         query: Student question to look up.
-        course: Course id, such as "llm-zoomcamp".
         limit: Maximum number of matching FAQ entries to return.
 
     Returns:
         A list of matching FAQ documents.
     """
+    course = 'data-engineering-zoomcamp'
+
     return index.search(
         query=query,
         filter_dict={"course": course},
@@ -124,27 +125,19 @@ def search(query, course, limit=5):
 
 ### Add a Tool and Run the Agent Loop
 
-The model gets one tool, `search(query, course)`, and uses it until it has enough context to answer.
+The model gets one tool, `search(query)`, and uses it until it has enough context to answer.
 
 To talk to OpenAI, import the async client and define the model settings we want to use:
 
 ```python
+import json
 from openai import AsyncOpenAI
 
 openai_client = AsyncOpenAI()
 MODEL_NAME = "gpt-4o-mini"
-MAX_ITERATIONS = 5
 ```
 
-We use `AsyncOpenAI` here because the agent loop streams tokens and tool decisions asynchronously:
-
-```python
-async with openai_client.responses.stream(...) as stream:
-    async for event in stream:
-        ...
-```
-
-Using the async client keeps the notebook code aligned with the FastAPI version we build later, where blocking the event loop would be the wrong shape.
+We use `AsyncOpenAI` because the model response arrives as a live stream, not as one big finished string. The notebook listens to that stream event by event, so the async client is the natural fit. It also keeps the notebook version aligned with the FastAPI version we build later, where the server is already working in an async style.
 
 Now define the tool schema. This is what the model sees when it decides whether to call `search`:
 
@@ -157,9 +150,8 @@ search_tool = {
         "type": "object",
         "properties": {
             "query": {"type": "string"},
-            "course": {"type": "string"},
         },
-        "required": ["query", "course"],
+        "required": ["query"],
         "additionalProperties": False,
     },
 }
@@ -183,117 +175,217 @@ Rules:
 """.strip()
 ```
 
-To make notebook output readable, define a small event printer. It prints tokens inline and logs the other events in a readable format:
+Instead of jumping straight to `run_agent(...)`, start with one request by hand. First prepare the question and the initial message history:
 
 ```python
-async def print_event(event_type, payload):
-    if event_type == "token":
-        print(payload["delta"], end="", flush=True)
-        return
+question = "I just discovered the course, can I still join?"
 
-    if event_type == "status":
-        print(f"[{payload['message']}]")
-        return
-
-    if event_type == "iteration":
-        print(f"\n--- iteration {payload['n']} ---")
-        return
-
-    if event_type == "tool_call":
-        print(f"\n[tool_call] {payload['name']}({payload['arguments']})")
-        return
-
-    if event_type == "tool_result":
-        count = len(payload["result"]) if isinstance(payload["result"], list) else "?"
-        print(f"[tool_result] {payload['name']} -> {count} hits")
-        return
-
-    if event_type == "done":
-        print(f"\n\n[done]\n{payload['answer']}")
+message_history = [
+    {"role": "system", "content": INSTRUCTIONS},
+    {"role": "user", "content": question},
+]
 ```
 
-Now write the agent loop directly in the notebook. This is the code we will later extract into `engine.py`:
+Now run the model call in its own cell. This cell opens a streaming response from OpenAI, and the loop processes each event as it arrives, printing text tokens immediately instead of waiting for the whole response to finish:
 
 ```python
-import json
+async with openai_client.responses.stream(
+    model=MODEL_NAME,
+    input=message_history,
+    tools=[search_tool],
+) as stream:
+    response = await stream.get_final_response()
+```
 
 
-async def run_agent(question, course):
-    await print_event("status", {"message": "thinking..."})
+Now let's implement the tool call loop:
 
+```python
+for item in response.output:
+    if item.type != "function_call":
+        continue
+
+    print(item)
+
+    args = json.loads(item.arguments)
+    result = search(**args)
+
+    message_history.append({
+        "type": "function_call",
+        "call_id": item.call_id,
+        "name": item.name,
+        "arguments": item.arguments,
+    })
+
+    message_history.append({
+        "type": "function_call_output",
+        "call_id": item.call_id,
+        "output": json.dumps(result),
+    })
+```
+
+After that, run one more cell to ask again with the updated history:
+
+```python
+async with openai_client.responses.stream(
+    model=MODEL_NAME,
+    input=message_history,
+    tools=[search_tool],
+) as stream:
+    async for event in stream:
+        if event.type == "response.output_text.delta":
+            print(event.delta, end="", flush=True)
+
+    response = await stream.get_final_response()
+```
+
+Once that makes sense, we can package it into a loop.
+
+To make notebook output readable, define a small renderer class. It dispatches each event type to a dedicated handler:
+
+```python
+class NotebookRenderer:
+    async def handle_event(self, event_type, payload):
+        handler = getattr(self, f"handle_{event_type}", self.handle_unknown)
+        await handler(payload)
+
+    async def handle_status(self, payload):
+        print(f"[{payload['message']}]")
+
+    async def handle_iteration(self, payload):
+        print(f"\n--- iteration {payload['n']} ---")
+
+    async def handle_tool_call(self, payload):
+        print(f"\n[tool_call] {payload['name']}({payload['arguments']})")
+
+    async def handle_tool_result(self, payload):
+        count = len(payload["result"]) if isinstance(payload["result"], list) else "?"
+        print(f"[tool_result] {payload['name']} -> {count} hits")
+
+    async def handle_token(self, payload):
+        print(payload["delta"], end="", flush=True)
+
+    async def handle_done(self, payload):
+        print(f"\n\n[done]\n{payload['answer']}")
+
+    async def handle_unknown(self, payload):
+        print(payload)
+
+
+renderer = NotebookRenderer()
+```
+
+Next add a helper that wraps the model call. It takes the current history and the renderer, streams tokens as they arrive, and returns the final response object:
+
+```python
+async def request_response(message_history, renderer):
+    async with openai_client.responses.stream(
+        model=MODEL_NAME,
+        input=message_history,
+        tools=[search_tool],
+    ) as stream:
+        async for event in stream:
+            if event.type == "response.output_text.delta":
+                await renderer.handle_event("token", {"delta": event.delta})
+
+        return await stream.get_final_response()
+```
+
+Now add a helper that appends tool messages in the safe format. We append plain dicts here, not the raw SDK objects from `response.output`:
+
+```python
+def append_tool_messages(message_history, item, result):
+    message_history.append({
+        "type": "function_call",
+        "call_id": item.call_id,
+        "name": item.name,
+        "arguments": item.arguments,
+    })
+
+    message_history.append({
+        "type": "function_call_output",
+        "call_id": item.call_id,
+        "output": json.dumps(result),
+    })
+```
+
+Then add one helper that executes every tool call from a response and reports progress through the renderer:
+
+```python
+async def handle_tool_calls(response, message_history, renderer):
+    has_tool_calls = False
+
+    for item in response.output:
+        if item.type != "function_call":
+            continue
+
+        has_tool_calls = True
+
+        args = json.loads(item.arguments)
+        await renderer.handle_event(
+            "tool_call",
+            {"name": item.name, "arguments": args},
+        )
+
+        result = search(**args)
+        await renderer.handle_event(
+            "tool_result",
+            {"name": item.name, "result": result},
+        )
+
+        append_tool_messages(message_history, item, result)
+
+    return has_tool_calls
+```
+
+We also need a tiny helper to extract the final answer once the model stops calling tools:
+
+```python
+def collect_answer(response):
+    answer = ""
+
+    for item in response.output:
+        if item.type != "message":
+            continue
+
+        for content in item.content:
+            if getattr(content, "text", None):
+                answer += content.text
+
+    return answer
+```
+
+Now `run_agent(...)` becomes much smaller because it only orchestrates those helpers:
+
+```python
+MAX_ITERATIONS = 5
+
+
+async def run_agent(question, renderer):
+    await renderer.handle_event("status", {"message": "thinking..."})
     message_history = [
         {"role": "system", "content": INSTRUCTIONS},
-        {"role": "user", "content": f"[course hint: {course}]\n{question}"},
+        {"role": "user", "content": question},
     ]
 
     for iteration in range(1, MAX_ITERATIONS + 1):
-        await print_event("iteration", {"n": iteration})
+        await renderer.handle_event("iteration", {"n": iteration})
 
-        async with openai_client.responses.stream(
-            model=MODEL_NAME,
-            input=message_history,
-            tools=[search_tool],
-        ) as stream:
-            async for event in stream:
-                if event.type == "response.output_text.delta":
-                    await print_event("token", {"delta": event.delta})
+        response = await request_response(message_history, renderer)
+        has_tool_calls = await handle_tool_calls(response, message_history, renderer)
 
-            final = await stream.get_final_response()
-
-        message_history.extend(final.output)
-        tool_calls = [item for item in final.output if item.type == "function_call"]
-
-        if not tool_calls:
-            answer = ""
-            for item in final.output:
-                if item.type != "message":
-                    continue
-                for content in item.content:
-                    if getattr(content, "text", None):
-                        answer += content.text
-
-            await print_event("done", {"answer": answer})
+        if not has_tool_calls:
+            answer = collect_answer(response)
+            await renderer.handle_event("done", {"answer": answer})
             return
 
-        for tool_call in tool_calls:
-            args = json.loads(tool_call.arguments)
-            await print_event(
-                "tool_call",
-                {"name": tool_call.name, "arguments": args},
-            )
-
-            result = search(args["query"], args["course"])
-            preview = [
-                {
-                    "id": hit.get("id"),
-                    "course": hit.get("course"),
-                    "question": hit.get("question"),
-                }
-                for hit in result
-            ]
-            await print_event(
-                "tool_result",
-                {"name": tool_call.name, "result": preview},
-            )
-
-            message_history.append(
-                {
-                    "type": "function_call_output",
-                    "call_id": tool_call.call_id,
-                    "output": json.dumps(result),
-                }
-            )
-
-    await print_event("done", {"answer": "(stopped: reached max iterations)"})
+    await renderer.handle_event("done", {"answer": "(stopped: reached max iterations)"})
 ```
 
 With that in place, run one example question. In Jupyter you can use top-level `await` directly:
 
 ```python
-await run_agent(
-    "I just discovered the course, can I still join?",
-    course="llm-zoomcamp",
-)
+await run_agent("I just discovered the course, can I still join?", renderer)
 ```
 
 You should see:
@@ -304,7 +396,6 @@ You should see:
 - streamed tokens
 - the final answer
 
-The repository also includes the script version in [notebook.py](notebook.py).
 
 ## Part 2: Split the Notebook into Modules
 
@@ -318,13 +409,13 @@ Once the notebook version works, split it into clear responsibilities.
 - streaming tokens from the model
 - extracting tool calls
 - executing tools
-- emitting progress events through a callback
+- emitting progress events through a renderer object
 
-The important change is that the engine does not know anything about SSE or FastAPI. It only calls:
+The important change is that the engine does not know anything about SSE or FastAPI. It only talks to a renderer:
 
 ```python
-await on_event("token", {"delta": "..."})
-await on_event("tool_call", {"name": "search", "arguments": {...}})
+await renderer.handle_event("token", {"delta": "..."})
+await renderer.handle_event("tool_call", {"name": "search", "arguments": {...}})
 ```
 
 That makes the same engine reusable from:
@@ -339,10 +430,12 @@ That makes the same engine reusable from:
 `app.py` is now thin:
 
 - define the FastAPI routes
-- turn engine callback events into SSE messages
+- create an `SseRenderer` that turns engine events into SSE messages
 - serve the static frontend
 
-This separation keeps `run_agent` small in the web layer and moves the real logic into reusable pieces.
+The key point is that `app.py` uses the same renderer idea as the notebook. In the notebook, `NotebookRenderer` prints things to the output cell. In the web app, `SseRenderer` pushes the same events into a queue and streams them to the browser as Server-Sent Events.
+
+That keeps the web entrypoint small: the engine still does the agent work, and `app.py` only adapts those events for the frontend. The existing frontend keeps working because `/api/ask` still streams the same event types and `/api/courses` still provides the course list for the selector.
 
 ## Part 3: Stream the Agent to the Browser
 

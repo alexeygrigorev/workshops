@@ -26,26 +26,59 @@ def sse(type_: str, **payload) -> dict:
     return {"data": json.dumps({"type": type_, **payload})}
 
 
-async def run_agent_stream(question: str, course: Optional[str]):
-    queue: asyncio.Queue[dict | None] = asyncio.Queue()
+class SseRenderer:
+    def __init__(self):
+        self.queue: asyncio.Queue[dict | None] = asyncio.Queue()
 
-    async def on_event(event_type: str, payload: dict):
-        await queue.put(sse(event_type, **payload))
+    async def handle_event(self, event_type: str, payload: dict):
+        handler = getattr(self, f"handle_{event_type}", self.handle_unknown)
+        await handler(payload)
+
+    async def handle_status(self, payload: dict):
+        await self.enqueue("status", payload)
+
+    async def handle_iteration(self, payload: dict):
+        await self.enqueue("iteration", payload)
+
+    async def handle_tool_call(self, payload: dict):
+        await self.enqueue("tool_call", payload)
+
+    async def handle_tool_result(self, payload: dict):
+        await self.enqueue("tool_result", payload)
+
+    async def handle_token(self, payload: dict):
+        await self.enqueue("token", payload)
+
+    async def handle_done(self, payload: dict):
+        await self.enqueue("done", payload)
+
+    async def handle_unknown(self, payload: dict):
+        await self.enqueue("status", {"message": str(payload)})
+
+    async def enqueue(self, event_type: str, payload: dict):
+        await self.queue.put(sse(event_type, **payload))
+
+    async def finish(self):
+        await self.queue.put(None)
+
+
+async def run_agent_stream(question: str, course: Optional[str]):
+    renderer = SseRenderer()
 
     async def runner():
         try:
-            await engine.run(question, course, on_event=on_event)
+            await engine.run(question, renderer, course=course)
         except Exception as exc:
-            await queue.put(sse("status", message=f"error: {exc}"))
-            await queue.put(sse("done", answer=""))
+            await renderer.handle_event("status", {"message": f"error: {exc}"})
+            await renderer.handle_event("done", {"answer": ""})
         finally:
-            await queue.put(None)
+            await renderer.finish()
 
     task = asyncio.create_task(runner())
 
     try:
         while True:
-            event = await queue.get()
+            event = await renderer.queue.get()
             if event is None:
                 break
             yield event
