@@ -23,6 +23,8 @@ One repository for some of the workshops I'm giving
 
 - **[coding-agent-v2](coding-agent-v2/)** - Updated coding-agent workshop with skills capabilities. Reuse the same agent, tools, and stack, then add skills, commands, and a PydanticAI version.
 
+- **[agentic-rag](agentic-rag/)** - From RAG to Agents: Implementing Agentic Search. Build a classic RAG over real documentation, then evolve it into agentic search with two tools (`search` for snippets, `get_file` for full documents). Uses `toyaikit` and ends with a migration to PydanticAI.
+
 - **[rag-evaluations](rag-evaluations/)** - RAG evaluations workshop covering how to evaluate RAG systems and Agentic RAG implementations with metrics like Hit Rate and MRR.
 
 - **[guardrails](guardrails/)** - Guardrails for AI agents. Learn to make AI agents safer with input and output guardrails to prevent harmful behavior and keep agents on-topic.
