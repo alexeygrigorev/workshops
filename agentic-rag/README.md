@@ -534,9 +534,22 @@ highlighter = Highlighter(
 )
 ```
 
-TODO: add usage example
+Let's try it. Run a search, then pass the results through the
+highlighter:
 
-What this does:
+```python
+query = "how to create a dashboard"
+search_results = index.search(query=query, num_results=5)
+
+snippets = highlighter.highlight(query, search_results)
+snippets[0]
+```
+
+Each result keeps the same fields, but `content` is replaced with a
+short list of snippets around the matched terms - exactly what we
+want to feed back to the agent.
+
+What the highlighter parameters do:
 
 - `highlight_fields` - which fields to extract snippets from
 - `max_matches=3` - up to 3 snippets per document (concise)
@@ -557,15 +570,32 @@ A simple dict is enough:
 file_index = {doc["filename"]: doc["content"] for doc in parsed_docs}
 ```
 
-TODO: usage example
+Look up a file by name to see what we get:
+
+```python
+filename = next(iter(file_index))
+print(filename)
+print(file_index[filename][:500])
+```
 
 ### The two-tool class
 
-Now define a tools class with the two methods:
+Why a class instead of two plain functions? Both `search` and
+`get_file` need access to the same shared state - the `index`, the
+`highlighter`, the `file_index`. A class lets us hold that state in
+one place instead of relying on globals, and adding more tools
+later (a re-ranker, a "list files" helper) is a one-line change.
 
-TODO explain why class not just two functions
-TODO also let's put it into a separate python script - explain why (I always keep tools separate from the agent logic because I can easily add/remove tools plus make them testable)
+I also like to keep tools in a separate Python file (e.g.
+`search_tools.py`) and import them from the notebook. Two reasons:
 
+- It separates *tool logic* from *agent logic*. The notebook stays
+  focused on wiring up the agent.
+- The tools become testable on their own - you can write
+  unit tests for `search` and `get_file` without spinning up an LLM.
+
+For the workshop we'll keep everything in the notebook for speed,
+but in a real project I'd put this in its own module.
 
 ```python
 from typing import Any, Dict, List
@@ -616,15 +646,77 @@ Let's initialize it:
 search_tools = SearchTools(index, highlighter, file_index)
 ```
 
-TODO: show how to use these methods
+Smoke-test both methods:
 
-### Agent instructions
+```python
+snippets = search_tools.search("create a dashboard")
+snippets[0]
+```
 
-The instructions guide the agent through a human-like research
-flow: search broadly, follow up on the most promising files, then
-synthesize. It's similar to how we search.
+```python
+filename = snippets[0]["filename"]
+search_tools.get_file(filename)[:500]
+```
 
-TODO; start with simple instructions and then switch to that (I thikn this is how we did it in the course)
+The first call returns a list of search results with highlighted
+snippets (decision-time data). The second call returns the full
+contents of the file we picked.
+
+### Wiring up the agent
+
+We already have `toyaikit` set up. Swap the single `search`
+function for our `SearchTools` instance:
+
+```python
+from toyaikit.tools import Tools
+from toyaikit.chat.runners import OpenAIResponsesRunner
+
+agent_tools = Tools()
+agent_tools.add_tools(search_tools)
+```
+
+Note `add_tools` (plural) - it discovers all public methods on the
+`search_tools` instance and registers them as tools, schemas and
+all.
+
+Now create the agent. We'll start with the same minimal instructions
+we used in Part 2:
+
+```python
+instructions = """
+You're a documentation assistant.
+Answer the user question using only the documentation knowledge base.
+""".strip()
+
+agent = OpenAIResponsesRunner(
+    tools=agent_tools,
+    developer_prompt=instructions,
+    chat_interface=chat_interface,
+    llm_client=llm_client,
+)
+```
+
+### Running it: simple prompt
+
+Run it on a single question with step-by-step output:
+
+```python
+result = agent.loop(
+    'how can I create evidently dahsbord? show me the code',
+    callback=runner_callback
+)
+```
+
+Watch what happens. With a minimal prompt, the agent often does the
+bare minimum: one `search`, then it answers from the snippets and
+calls it a day. Sometimes that's enough. Often it isn't - the
+snippets don't contain the code, or they miss the part of the doc
+that actually answers the question.
+
+### Tightening the prompt
+
+We can push the agent toward more thorough behavior by being
+explicit about the stages we want:
 
 ```python
 instructions = """
@@ -661,50 +753,39 @@ Additional notes:
 """.strip()
 ```
 
-This three-iteration pattern mirrors how a human researches: start
-broad, dive deeper into the most relevant sources, then consolidate.
+Why split it into three explicit stages? Without staging, the agent
+tends to stop early - one search, one answer. Naming the stages
+forces it to:
 
-TODO: I don't think so. explain why we actually want ot have 3 stages 
+- Start broad with a single search to see what exists.
+- Use the snippets to decide what to read in full and what to
+  search again for - this is the part where we actually use both
+  tools.
+- Only then commit to an answer, grounded in the full documents
+  it pulled.
 
-### Running the two-tool agent
+Asking for a 2-3 sentence explanation at each step is also useful
+in practice - it makes the agent's reasoning visible, so when
+something goes wrong you can see *why*.
 
-TODO we do it with the simple prompt first and then see how it changes iwht a more complicated prompt
-
-We already have `toyaikit` wired up. Swap the single `search`
-function for our `SearchTools` instance and use the new
-instructions:
+Recreate the agent with the new instructions and run the same
+question:
 
 ```python
-from toyaikit.tools import Tools
-from toyaikit.chat.runners import OpenAIResponsesRunner
-
-agent_tools = Tools()
-agent_tools.add_tools(search_tools)
-
 agent = OpenAIResponsesRunner(
     tools=agent_tools,
     developer_prompt=instructions,
     chat_interface=chat_interface,
     llm_client=llm_client,
 )
-```
 
-TODO split it into two cells
-
-Note `add_tools` (plural) - it discovers all public methods on the
-`search_tools` instance and registers them as tools, schemas and
-all.
-
-Run it on a single question with step-by-step output:
-
-```python
 result = agent.loop(
     'how can I create evidently dahsbord? show me the code',
     callback=runner_callback
 )
 ```
 
-Watch what happens:
+This time you should see:
 
 1. The agent searches with a fixed-up query.
 2. It looks at the snippets, picks the most promising filename(s),
@@ -712,10 +793,9 @@ Watch what happens:
 3. It synthesizes the answer from the full content - including code
    examples it pulled out of the actual document.
 
-This is agentic search: no information lost to chunking, no
-guessing about which fragment to retrieve. The agent reads what it
-needs to read.
-TODO: agent can't really guess - it just gets what it gets. there's no control 
+This is agentic search. Retrieval isn't fixed at index time - the
+agent decides what to open based on what it sees in the snippets,
+and reads only the documents it actually needs.
 
 You can also run it as an interactive chat (type `stop` to exit).
 Capture the result so the notebook doesn't dump the whole
