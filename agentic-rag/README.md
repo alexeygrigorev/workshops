@@ -2,25 +2,31 @@
 
 This workshop is a stripped-down version of two modules from the
 [AI Engineering Buildcamp: From RAG to Agents](https://maven.com/alexey-grigorev/from-rag-to-agents)
-course - the *RAG* module and the *Agents* module - distilled into a
-single hands-on session. If you want the full version (multiple use
-cases, evaluation, monitoring, guardrails, capstone project), take
+course. I took the RAG and the Agents modules and distilled it into a single hands-on session.
+
+If you want the full version (multiple use
+cases, evaluation, monitoring, guardrails, capstone project), check
 the course.
 
-It accompanies the tutorial
-["From RAG to Agents: Implementing Agentic Search"](https://www.datamakersfest.com/agenda)
-at Datamakers Fest.
+To see my other tutorials, check [AI Shipping Labs](https://aishippinglabs.com/) - a community of AI Builders.
 
-- Video: [TODO: Add YouTube link]
+Places where you can find me:
+
+- Alexey On Data substack: https://alexeyondata.substack.com/
+- LinkedIn: https://www.linkedin.com/in/agrigorev/
+- X: https://x.com/Al_Grigor
+
+
+## Introduction
 
 Retrieval Augmented Generation (RAG) put LLMs in contact with your
 data. Agents put them in the driver's seat.
 
-In this workshop, you'll start by building a classic RAG system over
-real-world documentation (the [Evidently AI](https://github.com/evidentlyai/docs)
-docs) and then progressively evolve it into an agentic search
-workflow - one that doesn't just answer questions but actively
-reasons, explores, and decides what to read next.
+In this workshop, we will:
+
+- Build a classic RAG system over the [Evidently AI docs](https://github.com/evidentlyai/docs)
+- Create an agent that can use search from RAG as a tool
+- Turn it into an agentic search agent that explores the knowledge base 
 
 Step by step, you'll:
 
@@ -30,18 +36,10 @@ Step by step, you'll:
 - Build an agentic search flow with two tools:
   - `search` - returns highlighted snippets
   - `get_file` - fetches the full document on demand
-
-After Part 3, we'll show how to swap `toyaikit` for PydanticAI -
-the same agent, with a production-grade framework underneath.
+- Use an agentic framework to make it manageable
 
 If you know Python and have an OpenAI-compatible API key, you're
 ready to go.
-
-
-## Prerequisites
-
-- Python
-- OpenAI key (any OpenAI-compatible provider also works)
 
 
 ## Environment
@@ -92,15 +90,35 @@ Start Jupyter:
 uv run jupyter notebook
 ```
 
+Open Jupyter and check that everything works:
+
+```python
+from openai import OpenAI
+openai_client = OpenAI()
+```
+
+For Groq or other OpenAI-compatible proviers:
+
+```python
+from openai import OpenAI
+import os
+
+openai_client = OpenAI(
+    api_key=os.getenv('GROQ_API_KEY'),
+    base_url='https://api.groq.com/openai/v1'
+)
+```
+
+If you see an error, make sure you set the key correctly.
+
 
 ## The use case: Evidently documentation
 
 Throughout the workshop, our knowledge base is the
 [Evidently AI documentation](https://github.com/evidentlyai/docs) -
-a real, evolving set of Markdown files. This is exactly the dataset
-used in the course.
+a real, evolving set of Markdown files. 
 
-Why documentation? LLMs have a knowledge cutoff, but library
+LLMs have a knowledge cutoff, but library
 documentation keeps changing. Plugging fresh docs into an LLM is
 one of the most common and useful applications of RAG.
 
@@ -141,7 +159,7 @@ We use `gitsource` to fetch and parse Markdown files from a GitHub
 repo:
 
 ```python
-from gitsource import GithubRepositoryDataReader, chunk_documents
+from gitsource import GithubRepositoryDataReader
 
 reader = GithubRepositoryDataReader(
     repo_owner="evidentlyai",
@@ -159,13 +177,17 @@ Each parsed doc has a few useful fields: `title`, `description`,
 ### Chunking
 
 The documents are too long to put into a prompt as-is. So we split
-them into smaller chunks. `chunk_documents(size=3000, step=1500)`
-makes 3000-character chunks with 1500-character overlap, so we
-don't lose information at chunk boundaries.
+them into smaller chunks.
 
 ```python
+from gitsource import chunk_documents
+
 chunked_docs = chunk_documents(parsed_docs, size=3000, step=1500)
 ```
+
+Here `chunk_documents(size=3000, step=1500)`
+makes 3000-character chunks with 1500-character overlap, so we
+don't lose information at chunk boundaries.
 
 ### Indexing and searching
 
@@ -196,11 +218,11 @@ def search(query):
 ### Building the prompt and calling the LLM
 
 The LLM doesn't see the docs unless we pass them in. So we build a
-prompt that contains the user's question and the retrieved chunks:
+prompt (instructions + template). 
+
+The instructions describe how our system should behave and the template will contain the user's question and the retrieved chunks:
 
 ```python
-import json
-
 RAG_INSTRUCTIONS = """
 You're a documentation assistant. Answer the QUESTION based on the CONTEXT from our documentation.
 
@@ -217,44 +239,46 @@ RAG_PROMPT_TEMPLATE = """
 {context}
 </CONTEXT>
 """.strip()
+```
+
+Let's use it:
+
+```python
+import json
 
 def build_prompt(question, search_results):
     context = json.dumps(search_results, indent=2)
     return RAG_PROMPT_TEMPLATE.format(question=question, context=context)
 ```
 
-Wire it up to OpenAI:
+Now let's create the `llm` funciton - the last line in our `rag` function:
 
 ```python
-from openai import OpenAI
-
-openai_client = OpenAI()
-
-def llm(user_prompt, model="gpt-4o-mini"):
+def llm(instructions, user_prompt, model="gpt-4o-mini"):
     messages = [
-        {"role": "system", "content": RAG_INSTRUCTIONS},
+        {"role": "system", "content": instructions},
         {"role": "user", "content": user_prompt}
     ]
     response = openai_client.responses.create(model=model, input=messages)
     return response.output_text
 ```
 
-Putting it together:
+Now it actually works:
 
 ```python
 def rag(question):
     search_results = search(question)
     user_prompt = build_prompt(question, search_results)
-    return llm(user_prompt)
+    return llm(RAG_INSTRUCTIONS, user_prompt)
 ```
 
 Try it:
 
 ```python
-print(rag('How do I create a dashboard in Evidently?'))
+rag('How do I create a dashboard in Evidently?')
 ```
 
-You should get a grounded answer.
+You should get an answer grounded to our knowledge base.
 
 ### Where classic RAG breaks down
 
@@ -269,15 +293,15 @@ This works for clean, simple questions. But notice what's happening:
 Now try the same question with a typo and see how it goes:
 
 ```python
-print(rag('How do I create a dahsbord in Evidently?'))
+rag('How do I create a dahsbord in Evidently?')
 ```
 
 The answer gets noticeably worse - or the system says it can't
 find anything. The literal token `dahsbord` doesn't match anything
 in the index, and our pipeline has no way to fix that.
 
-To do better, we need to put the LLM *in the driver's seat*. That's
-what an agent does.
+To do better, we need to put the LLM in the driver's seat and let it decide
+what to query. That's what an agent does.
 
 
 ## Part 2: From RAG to an Agent
@@ -293,29 +317,30 @@ The flow:
 1. The user asks a question.
 2. We send the question to the LLM along with the list of available tools.
 3. The LLM either:
-   - replies directly, OR
+   - replies directly (if we want - we configure it via instructions), OR
    - asks us to call one of the tools with specific arguments.
 4. If the LLM asks for a tool call, we execute it and return the result.
 5. The LLM looks at the result and either calls another tool or replies.
 6. We repeat until the LLM produces a final answer.
 
-What makes this *agentic* is step 3 - the LLM, not us, decides when
+What makes this agentic is step 3 - the LLM, not us, decides when
 and how to search.
 
 Under the hood this is a small request-response loop, often called
-the *agentic loop*: send messages to the LLM, run any tool calls it
+the agentic loop: send messages to the LLM, run any tool calls it
 asks for, append the results, and ask again until it stops asking
-for tools. We won't implement it here - the
-[AI Engineering Buildcamp](https://maven.com/alexey-grigorev/from-rag-to-agents)
-course walks through it step by step, and you can also read the
-short, readable implementation in the
-[`toyaikit`](https://github.com/alexeygrigorev/toyaikit) source.
+for tools.
 
 ### Using a framework: `toyaikit`
 
-Instead of writing the loop ourselves, we'll use
-[`toyaikit`](https://github.com/alexeygrigorev/toyaikit) - a tiny
-educational framework that wraps the OpenAI Responses API.
+We won't implement the agentic loop ourselves. I show it in the course
+and you can find a lot of information about it online too.
+
+I recommend implementing it yourself, but for the sake of time we will skip it 
+and delegate this part to a framework. 
+
+First, we'll use [`toyaikit`](https://github.com/alexeygrigorev/toyaikit) - a library that I implemented for teaching and workshops.
+You can see how the agentic loop is implemented there.
 
 > `toyaikit` is great for learning. For production you'll want a
 > "real" framework. We'll switch to PydanticAI at the end of the
@@ -327,8 +352,10 @@ Install it:
 uv add toyaikit
 ```
 
-`toyaikit` builds the JSON schema for each tool from the function's
-type hints and docstring, so we don't have to write it by hand.
+Like any other framework, `toyaikit` requires our tools to have 
+type hints and docstring. This information is then passed 
+to an LLM, so it knows when to use these functions.
+
 Let's annotate `search` properly:
 
 ```python
@@ -347,18 +374,6 @@ def search(query: str) -> List[Dict[str, Any]]:
     return index.search(query=query, num_results=5)
 ```
 
-The instructions we'll give the agent:
-
-```python
-instructions = """
-You're a documentation assistant.
-Answer the user question using the documentation knowledge base.
-
-Use only facts from the knowledge base when answering.
-If you cannot find the answer, inform the user.
-""".strip()
-```
-
 Wrap the function in a `Tools` collection:
 
 ```python
@@ -371,21 +386,37 @@ agent_tools.add_tool(search)
 agent_tools.get_tools()
 ```
 
-Wire up the LLM client and a chat interface, then create a runner:
+Let's start with imports for the agent:
 
 ```python
-from openai import OpenAI
 from toyaikit.llm import OpenAIClient
 from toyaikit.chat.interface import IPythonChatInterface
 from toyaikit.chat.runners import OpenAIResponsesRunner, DisplayingRunnerCallback
+```
 
+Now initialize the helpers:
+
+```python
 llm_client = OpenAIClient(
     model="gpt-4o-mini",
-    client=OpenAI()
+    client=openai_client,
 )
 
 chat_interface = IPythonChatInterface()
 runner_callback = DisplayingRunnerCallback(chat_interface=chat_interface)
+```
+
+And create the agent:
+
+
+```python
+instructions = """
+You're a documentation assistant.
+Answer the user question using the documentation knowledge base.
+
+Use only facts from the knowledge base when answering.
+If you cannot find the answer, inform the user.
+""".strip()
 
 agent = OpenAIResponsesRunner(
     tools=agent_tools,
@@ -407,35 +438,35 @@ result = agent.loop(
 print(result.last_message)
 ```
 
-Or run it as an interactive chat (type `stop` to exit). Capture the
-result so the notebook doesn't dump the whole conversation when the
-cell finishes:
+We can also run it as an interactive chat (type `stop` to exit):
 
 ```python
 result = agent.run()
 ```
 
 We've solved the typo problem - the LLM rewrote `dahsbord` into
-`dashboard` before searching. But we still have the chunking
+`dashboard` before searching.
+
+But we still have the chunking
 problem from Part 1: if the right answer spans several chunks,
 we're guessing. Let's fix that next.
 
 
 ## Part 3: Agentic Search - Going Beyond RAG
 
-We have an agent now. The big unlock is that an agent isn't limited
-to one tool - we can give it more, and let it choose between them.
-So let's use that.
+We have an agent now - an agent with one tool. But we can give it access to more tools, so it can choose between them.
 
 ### The chunking problem
 
 Traditional RAG has a fundamental limitation. We take a big
-document, chunk it, and *hope* the retrieved chunks contain what we
+document, chunk it, and hope the retrieved chunks contain what we
 need. If we retrieve chunks 2 and 4 out of 5, we're missing
 information from 1, 3, and 5.
 
-Now think about how *you* read documentation. You don't get
-pre-chunked fragments. You:
+Now think about how you read documentation. You don't get
+pre-chunked fragments.
+
+You:
 
 1. Search for something
 2. Look at the snippets and titles
@@ -493,14 +524,17 @@ from minsearch import Highlighter, Tokenizer
 from minsearch.tokenizer import DEFAULT_ENGLISH_STOP_WORDS
 
 stopwords = DEFAULT_ENGLISH_STOP_WORDS | {"evidently"}
+tokenizer = Tokenizer(stemmer="snowball", stop_words=stopwords)
 
 highlighter = Highlighter(
     highlight_fields=["content"],
     max_matches=3,
     snippet_size=50,
-    tokenizer=Tokenizer(stemmer="snowball", stop_words=stopwords)
+    tokenizer=tokenizer,
 )
 ```
+
+TODO: add usage example
 
 What this does:
 
@@ -515,15 +549,23 @@ What this does:
 ### File index: opening full documents on demand
 
 We also need a way to look up the full content of a document by
-filename. A simple dict does the job:
+filename. We need it for the second function. 
+
+A simple dict is enough:
 
 ```python
 file_index = {doc["filename"]: doc["content"] for doc in parsed_docs}
 ```
 
+TODO: usage example
+
 ### The two-tool class
 
 Now define a tools class with the two methods:
+
+TODO explain why class not just two functions
+TODO also let's put it into a separate python script - explain why (I always keep tools separate from the agent logic because I can easily add/remove tools plus make them testable)
+
 
 ```python
 from typing import Any, Dict, List
@@ -568,15 +610,21 @@ class SearchTools:
 The `search` method returns highlighted snippets. The `get_file`
 method returns the full document.
 
+Let's initialize it:
+
 ```python
 search_tools = SearchTools(index, highlighter, file_index)
 ```
 
+TODO: show how to use these methods
+
 ### Agent instructions
 
-The instructions guide the agent through a *human-like* research
+The instructions guide the agent through a human-like research
 flow: search broadly, follow up on the most promising files, then
-synthesize.
+synthesize. It's similar to how we search.
+
+TODO; start with simple instructions and then switch to that (I thikn this is how we did it in the course)
 
 ```python
 instructions = """
@@ -616,7 +664,11 @@ Additional notes:
 This three-iteration pattern mirrors how a human researches: start
 broad, dive deeper into the most relevant sources, then consolidate.
 
+TODO: I don't think so. explain why we actually want ot have 3 stages 
+
 ### Running the two-tool agent
+
+TODO we do it with the simple prompt first and then see how it changes iwht a more complicated prompt
 
 We already have `toyaikit` wired up. Swap the single `search`
 function for our `SearchTools` instance and use the new
@@ -636,6 +688,8 @@ agent = OpenAIResponsesRunner(
     llm_client=llm_client,
 )
 ```
+
+TODO split it into two cells
 
 Note `add_tools` (plural) - it discovers all public methods on the
 `search_tools` instance and registers them as tools, schemas and
@@ -661,6 +715,7 @@ Watch what happens:
 This is agentic search: no information lost to chunking, no
 guessing about which fragment to retrieve. The agent reads what it
 needs to read.
+TODO: agent can't really guess - it just gets what it gets. there's no control 
 
 You can also run it as an interactive chat (type `stop` to exit).
 Capture the result so the notebook doesn't dump the whole
@@ -673,40 +728,31 @@ result = agent.run()
 
 ## Part 4: From `toyaikit` to PydanticAI
 
-`toyaikit` is great for learning - it's small enough that you can
-read its source in an afternoon. For production, you'll want a
+`toyaikit` is great for learning - it's interactive, plus it's small enough that you can read its source in a few hours. 
+
+But for production, you'll want a
 framework that supports more providers, has better tracing, and is
 maintained as a library.
 
-[PydanticAI](https://ai.pydantic.dev/) is a good fit. Install it:
+My favorite agentic framework is [PydanticAI](https://ai.pydantic.dev/). I'll use it. Install it:
 
 ```bash
 uv add pydantic-ai
 ```
 
-Here's how to take the same `SearchTools` and run it under
-PydanticAI - no other changes.
-
 ### Collecting the tools
 
-PydanticAI takes a list of plain Python callables as tools. We can
-list them by hand:
+Instead of the `Tools` class, we need to prepare a list with functions. These functions, of course, need to have doc strings and type hints.
+
+Since our project is small, we can simply list them:
 
 ```python
 tools = [search_tools.search, search_tools.get_file]
 ```
 
-Or reuse the same helper from `toyaikit` to grab all instance
-methods automatically (so when you add a third tool to
-`SearchTools`, the agent picks it up):
-
-```python
-from toyaikit.tools import get_instance_methods
-
-tools = get_instance_methods(search_tools)
-```
-
 ### Creating the agent
+
+Now we're ready to create an agent:
 
 ```python
 from pydantic_ai import Agent
@@ -728,26 +774,27 @@ The pieces map one-to-one to what we had with `toyaikit`:
 
 ### Running the agent
 
-PydanticAI is async, so we `await`. The snippets below assume
-you're in a Jupyter notebook (which has a running event loop). If
-you're running from a `.py` file, wrap the calls in
-`asyncio.run(main())`.
+PydanticAI is async, so we need to use `await`.
 
+Let's run it: 
 ```python
 query = 'how do I use evidently to monitor my machine learning models?'
 
 result = await search_agent.run(query)
-
 print(result.output)
 ```
+
+I assume you're running it in a Jupyter notebook. If
+you're running from a `.py` file, wrap the calls in
+`asyncio.run(...)`.
+
 
 The agent runs the same agentic search pattern: search → snippets →
 `get_file` → synthesize.
 
 ### Inspecting the conversation
 
-PydanticAI exposes structured messages, which makes debugging much
-nicer than poking at raw API responses:
+PydanticAI exposes structured messages. This is how we can see what's inside:
 
 ```python
 def print_messages(messages):
@@ -771,7 +818,7 @@ print_messages(result.all_messages())
 Each message has a `kind` (request or response) and `parts`. Parts
 can be `user-prompt`, `tool-call`, `tool-return`, or `text`.
 
-You can also look at usage:
+You can also look at usage to see how much it cost us:
 
 ```python
 result.usage()
@@ -779,8 +826,9 @@ result.usage()
 
 ### Multi-turn conversations
 
-For a follow-up question, pass the previous messages as
-`message_history`:
+If we want to have a conversation with the agent, we need to be able to send a follow-up question.
+
+For that, pass the previous messages as `message_history`:
 
 ```python
 messages = result.all_messages()
@@ -832,8 +880,8 @@ In this workshop, we:
 - Turned `search` into a tool and ran the agentic loop with
   `toyaikit`
 - Went beyond RAG with the two-tool agentic search pattern:
-  - `search` returns highlighted snippets to *decide* what to read
-  - `get_file` returns the full document to *actually* read it
+  - `search` returns highlighted snippets to decide what to read
+  - `get_file` returns the full document to actually read it
 - Migrated the same agent to PydanticAI for production use
 
 You now have a working agentic search system and a clear mental
