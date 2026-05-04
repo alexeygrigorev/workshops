@@ -97,8 +97,8 @@ session.
 Install the dependencies:
 
 ```bash
-cd agentic-rag
-uv sync
+uv init
+uv add jupyter openai minsearch gitsource
 ```
 
 Start Jupyter:
