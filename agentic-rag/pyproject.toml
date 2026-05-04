@@ -1,0 +1,19 @@
+[project]
+name = "agentic-rag-workshop"
+version = "0.1.0"
+description = "Follow-along code for the Agentic RAG workshop"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "gitsource>=0.0.4",
+    "jupyter>=1.1.1",
+    "minsearch>=0.0.4",
+    "openai>=1.76.0",
+    "pydantic-ai>=0.8.1",
+    "toyaikit>=0.0.7",
+]
+
+[dependency-groups]
+dev = [
+    "pytest>=8.3.5",
+]

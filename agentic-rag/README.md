@@ -57,7 +57,8 @@ GitHub Codespaces is the recommended environment for this workshop.
 But you can use any other environment with Jupyter Notebook.
 If you want to do it on your laptop, that's perfectly fine.
 
-* Create a repository on GitHub, initialize it with `README.md`
+* Open this repository in GitHub Codespaces, or copy the
+  `agentic-rag` folder into your own repository
 * Add the OpenAI key:
     * Go to Settings -> Secrets and Variables (under Security) -> Codespaces
     * Click "New repository secret"
@@ -75,13 +76,29 @@ Jupyter:
 export OPENAI_API_KEY='YOUR_KEY'
 ```
 
+### Workshop files
+
+This folder contains the code we'll write during the workshop:
+
+- `notebook.py` - the follow-along version, split into notebook
+  cells with `# %%`. Copy each cell into Jupyter as we go, or open
+  it directly in VS Code/Jupyter.
+- `search_tools.py` - the same search-tool logic extracted into a
+  small module for reference after the workshop.
+- `test_search_tools.py` - lightweight tests for the `SearchTools`
+  class.
+
+During the live workshop, we'll write the code ourselves. The files
+are here so the workshop is still useful stand-alone after the
+session.
+
 ### Installing required libraries
 
-Initialize the project with `uv` and install the dependencies:
+Install the dependencies:
 
 ```bash
-uv init
-uv add jupyter openai minsearch gitsource
+cd agentic-rag
+uv sync
 ```
 
 Start Jupyter:
@@ -90,7 +107,8 @@ Start Jupyter:
 uv run jupyter notebook
 ```
 
-Open Jupyter and check that everything works:
+Open Jupyter, create a notebook, and copy the cells from
+`notebook.py` as we go. Check that the OpenAI client works:
 
 ```python
 from openai import OpenAI
@@ -195,9 +213,9 @@ We'll use [`minsearch`](https://github.com/alexeygrigorev/minsearch),
 a small in-memory search library:
 
 ```python
-from minsearch import AppendableIndex
+from minsearch import Index
 
-index = AppendableIndex(
+index = Index(
     text_fields=["title", "description", "content"],
     keyword_fields=["filename"]
 )
@@ -492,7 +510,7 @@ replaces the chunked index from Part 1:
 
 ```python
 from gitsource import GithubRepositoryDataReader
-from minsearch import AppendableIndex
+from minsearch import Index
 
 reader = GithubRepositoryDataReader(
     repo_owner="evidentlyai",
@@ -503,7 +521,7 @@ files = reader.read()
 
 parsed_docs = [doc.parse() for doc in files]
 
-index = AppendableIndex(
+index = Index(
     text_fields=["title", "description", "content"],
     keyword_fields=["filename"]
 )
