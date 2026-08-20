@@ -12,7 +12,7 @@ To see my other tutorials, check [AI Shipping Labs](https://aishippinglabs.com/)
 
 Places where you can find me:
 
-- Alexey On Data substack: https://alexeyondata.substack.com/
+- Alexey On Data substack: https://aishippingblog.com/
 - LinkedIn: https://www.linkedin.com/in/agrigorev/
 - X: https://x.com/Al_Grigor
 
